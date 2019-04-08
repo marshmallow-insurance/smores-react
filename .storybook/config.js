@@ -7,7 +7,7 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { withA11y } from '@storybook/addon-a11y';
 
-import { theme } from '../src/theme';
+import theme from '../src/theme';
 import { GlobalStyle } from './global-styles'
 
 setAddon(JSXAddon);
