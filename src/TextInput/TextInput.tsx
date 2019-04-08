@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import Icon from '../Icon';
+
 interface IInput {
 	error: boolean;
 }
@@ -21,6 +23,8 @@ type Props = {
 	errorMsg?: string;
 	/** onChange listener */
 	onChange: (e: string) => void;
+	/** onChange listener */
+	trailingIcon?: string;
 };
 
 type State = {
@@ -36,7 +40,8 @@ class TextInput extends React.PureComponent<Props, State> {
 			name,
 			value,
 			error,
-			errorMsg
+			errorMsg,
+			trailingIcon
 		} = this.props;
 
 		return (
@@ -56,6 +61,14 @@ class TextInput extends React.PureComponent<Props, State> {
 						autoComplete="off"
 						onChange={this.handleOnChange}
 					/>
+					{
+						trailingIcon &&
+						<Icon
+							render='contact-at'
+							size='32'
+							color='grey4'
+						/>
+					}
 				</Content>
 				{
 					error &&
