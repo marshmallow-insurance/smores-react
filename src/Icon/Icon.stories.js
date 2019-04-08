@@ -10,5 +10,6 @@ storiesOf('Icon', module)
     <Icon
       render={text('Render', 'contact-at')}
       size={text('Size (in px)', '32')}
+      color={text('Color', 'blue7')}
     />
   ))
