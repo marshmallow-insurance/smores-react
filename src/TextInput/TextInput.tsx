@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import Icon from '../Icon';
@@ -16,6 +16,7 @@ type Props = {
 	label?: string;
 	/** used for label - input connection */
 	name?: string;
+	/** input value */
 	value: string;
 	/** error flag */
 	error?: boolean;
@@ -65,7 +66,6 @@ class TextInput extends React.PureComponent<Props, State> {
 						trailingIcon &&
 						<Icon
 							render='contact-at'
-							size='32'
 							color='grey4'
 						/>
 					}

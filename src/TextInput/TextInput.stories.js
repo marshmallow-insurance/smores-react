@@ -11,7 +11,6 @@ storiesOf('TextInput', module)
     <TextInput
       id='textInput'
       name='textInput'
-      label={text('Label', 'label')}
       placeholder={text('Placeholder', 'Placeholder')}
       value=''
       onChange={(str) => {}}
@@ -26,6 +25,16 @@ storiesOf('TextInput', module)
       value='kek'
       error={boolean('Error', true)}
       errorMsg='Oh boy, something went wrong!'
+      onChange={(str) => {}}
+    />
+  ))
+  .addWithJSX('with Label', () => (
+    <TextInput
+      id='textInput'
+      name='textInput'
+      label={text('Label', 'label')}
+      placeholder={text('Placeholder', 'Placeholder')}
+      value=''
       onChange={(str) => {}}
     />
   ))
