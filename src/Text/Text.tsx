@@ -17,7 +17,7 @@ interface IText {
   /** color from the theme  */
   color: string;
   cursor: string;
-}
+};
 
 type Props = {
   children: any;
@@ -60,7 +60,7 @@ const Container = styled.p<IText>`
   margin: 0;
   padding: 0;
   color: ${p => p.theme.colors[p.color]};
-  font-family: 'Gordita';
+  font-family: ${p => p.theme.font.family.normal};
   font-size: ${p => `${p.mSize}px`};
   line-height: 21px;
   font-weight: ${p => p.weight};

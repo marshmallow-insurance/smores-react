@@ -1,6 +1,10 @@
 const colors = {
   white: '#ffffff',
 
+  //Background
+  bg3: '#F8F6F6',
+  bg2: '#F9F9F9',
+
   //Grey
   grey8: '#636768',
   grey7: '#818181',
@@ -12,11 +16,11 @@ const colors = {
 
   //Pink
   pink8: '#AB1D20',
-  pink7: '#B5445D',
+  pink7: '#E0364A',
   pink6: '#FD5064',
   pink5: '#FF4E75',
-  pink4: '',
-  pink3: '#FF7695',
+  pink4: '#FF7695',
+  pink3: '#FF8A8D',
   pink2: '#FFB2B4',
 
   //Green
