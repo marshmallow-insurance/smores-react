@@ -31,7 +31,7 @@ type Props = {
   cursor?: string;
 };
 
-const Text: SFC<Props> = ({
+export const Text: SFC<Props> = ({
   children,
   typo = 'base',
   tag = 'p',

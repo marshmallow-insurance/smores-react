@@ -18,7 +18,7 @@ type Props = {
 };
 
 
-const Icon: React.SFC<Props> = ({
+export const Icon: React.SFC<Props> = ({
   render,
   size = 32,
   color = 'blue7'
@@ -45,6 +45,3 @@ const Container = styled.span<IIcon>`
   max-width: ${p => `${p.size}px`};
   height: ${p => `${p.size}px`};
 `;
-
-export default Icon;
-

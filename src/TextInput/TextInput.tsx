@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
-import Icon from '../Icon';
+import { Icon } from '../Icon';
 
 interface IInput {
 	error: boolean;
@@ -32,7 +32,7 @@ type State = {
 	value: string;
 };
 
-class TextInput extends React.PureComponent<Props, State> {
+export class TextInput extends PureComponent<Props, State> {
 	public render() {
 		const {
 			id,
@@ -137,5 +137,3 @@ const ErrorBox = styled.span`
 	font-family: ${p => p.theme.font.family.normal};
 	font-size: 12px;
 `;
-
-export default TextInput;

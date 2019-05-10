@@ -1,4 +1,3 @@
-
 import React, { SFC } from 'react';
 import styled from 'styled-components';
 
@@ -21,22 +20,22 @@ type Props = {
   disabled: boolean;
 };
 
-const Button: SFC<Props> = ({
+export const Button: SFC<Props> = ({
   children,
   color,
   block,
   inverted,
   disabled,
 }) => (
-  <Container
-    color={color}
-    block={block}
-    inverted={inverted}
-    disabled={disabled}
-  >
-    {children}
-  </Container>
-);
+    <Container
+      color={color}
+      block={block}
+      inverted={inverted}
+      disabled={disabled}
+    >
+      {children}
+    </Container>
+  );
 
 const Container = styled.button<IButton>`
   position: relative;
@@ -70,5 +69,3 @@ const Container = styled.button<IButton>`
     font-size: 16px;
   }
 `;
-
-export default Button;

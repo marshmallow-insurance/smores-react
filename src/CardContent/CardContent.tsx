@@ -12,7 +12,7 @@ type Props = {
   narrow?: boolean;
 };
 
-const CardContent: SFC<Props> = ({
+export const CardContent: SFC<Props> = ({
   children,
   narrow = false,
 }) => (
@@ -29,5 +29,3 @@ const Container = styled.div<ICardContent>`
     padding: ${p => p.narrow ? '16px' : '48px'};
   }
 `;
-
-export default CardContent;
