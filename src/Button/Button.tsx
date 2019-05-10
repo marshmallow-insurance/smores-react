@@ -1,5 +1,6 @@
 import React, { SFC } from 'react';
 import styled from 'styled-components';
+import theme from '../theme';
 
 interface IButton {
   /** button color  */
@@ -43,24 +44,24 @@ const Container = styled.button<IButton>`
   box-sizing: border-box;
   border: none;
   border-radius: 8px;
-  font-family: ${p => p.theme.font.family.normal};
+  font-family: ${theme.font.family.normal};
   font-size: 14px;
   padding: 18px 24px 14px;
   outline: none;
   cursor: pointer;
   width: ${p => p.block ? '100%' : 'auto'};
-  background-color: ${p => p.inverted ? 'transparent' : p.theme.colors[`${p.color}5`]};
-  color: ${p => p.inverted ? p.theme.colors[`${p.color}5`] : p.theme.colors.white};
+  background-color: ${p => p.inverted ? 'transparent' : theme.colors[`${p.color}5`]};
+  color: ${p => p.inverted ? theme.colors[`${p.color}5`] : theme.colors.white};
   
   &:hover:not([disabled]) {
-    background-color: ${p => p.inverted ? p.theme.colors.bg2 : p.theme.colors[`${p.color}6`]};
+    background-color: ${p => p.inverted ? theme.colors.bg2 : theme.colors[`${p.color}6`]};
   }
   &:active:not([disabled]) {
-    background-color: ${p => p.inverted ? p.theme.colors.bg3 : p.theme.colors[`${p.color}7`]};
+    background-color: ${p => p.inverted ? theme.colors.bg3 : theme.colors[`${p.color}7`]};
   }
 
   &:disabled {
-    background-color: ${p => !p.inverted && p.theme.colors[`${p.color}3`]};
+    background-color: ${p => !p.inverted && theme.colors[`${p.color}3`]};
     cursor: not-allowed;
   }
 

@@ -1,6 +1,8 @@
 import React, { SFC } from 'react';
 import styled, { css } from 'styled-components';
 
+import theme from '../theme';
+
 interface IText {
   /** typography class name to apply predefined styles */
   typo: string;
@@ -59,8 +61,8 @@ export const Text: SFC<Props> = ({
 const Container = styled.p<IText>`
   margin: 0;
   padding: 0;
-  color: ${p => p.theme.colors[p.color]};
-  font-family: ${p => p.theme.font.family.normal};
+  color: ${p => theme.colors[p.color]};
+  font-family: ${theme.font.family.normal};
   font-size: ${p => `${p.mSize}px`};
   line-height: 21px;
   font-weight: ${p => p.weight};

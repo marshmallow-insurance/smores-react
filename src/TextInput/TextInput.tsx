@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import { Icon } from '../Icon';
 
+import theme from '../theme';
+
 interface IInput {
 	error: boolean;
 }
@@ -94,32 +96,32 @@ const Container = styled.div`
 `;
 
 const Label = styled.label`
-	color: ${p => p.theme.colors.grey4};
+	color: ${theme.colors.grey4};
 	font-size: 10px;
 	text-transform: uppercase;
 	font-weight: 700;
-	font-family: ${p => p.theme.font.family.bold};
+	font-family: ${theme.font.family.bold};
 `;
 
 const Content = styled.div<IInput>`
 	border-bottom: 1px solid;
-	border-color:  ${p => p.theme.colors[`${p.error ? 'red7' : 'grey4'}`]};
+	border-color:  ${p => theme.colors[`${p.error ? 'red7' : 'grey4'}`]};
 	display: flex;
 	height: 32px;
 
 	&:hover {
-		border-color: ${p => p.theme.colors[`${p.error ? 'red7' : 'grey6'}`]};
+		border-color: ${p => theme.colors[`${p.error ? 'red7' : 'grey6'}`]};
 	}
 
 	&:focus {
-		border-color: ${p => p.theme.colors[`${p.error ? 'red7' : 'blue5'}`]};
+		border-color: ${p => theme.colors[`${p.error ? 'red7' : 'blue5'}`]};
 	}
 `;
 
 const Input = styled.input<IInput>`
 	border: none;
-	color: ${p => p.theme.colors[`${p.error ? 'red7' : 'black'}`]};
-	font-family: ${p => p.theme.font.family.normal};
+	color: ${p => theme.colors[`${p.error ? 'red7' : 'black'}`]};
+	font-family: ${theme.font.family.normal};
 	font-size: 16px;
 	width: 254px;
 	outline: none;
@@ -127,13 +129,13 @@ const Input = styled.input<IInput>`
 
 
 	&::placeholder {
-		color: ${p => p.theme.colors.grey4};
+		color: ${theme.colors.grey4};
 	}
 `;
 
 const ErrorBox = styled.span`
 	margin-top: 7px;
-	color: ${p => p.theme.colors.red7};
-	font-family: ${p => p.theme.font.family.normal};
+	color: ${theme.colors.red7};
+	font-family: ${theme.font.family.normal};
 	font-size: 12px;
 `;
