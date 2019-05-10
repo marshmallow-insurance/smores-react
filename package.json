@@ -1,14 +1,17 @@
 {
-  "name": "design-system",
+  "name": "smores-react",
   "version": "0.1.0",
-  "main": "index",
-  "private": true,
+  "main": "./dist/index.js",
   "keywords": [
     "react",
     "components",
     "design"
   ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "prepublish": "tsc",
     "storybook": "start-storybook -p 6006 ",
     "build-storybook": "build-storybook -c .storybook -o .out"
   },
