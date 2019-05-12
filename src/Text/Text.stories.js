@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { text, number } from '@storybook/addon-knobs';
 
-import Text from './Text';
+import { Text } from './Text';
 
 storiesOf('Text', module)
   .addWithJSX('default', () => (

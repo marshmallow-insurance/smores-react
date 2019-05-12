@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { text, boolean } from '@storybook/addon-knobs';
 
-import TextInput from './TextInput';
+import { TextInput } from './TextInput';
 import BasicForm from './BasicForm';
 
 storiesOf('TextInput', module)

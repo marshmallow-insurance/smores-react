@@ -3,9 +3,9 @@ import { storiesOf } from '@storybook/react';
 
 import { text } from '@storybook/addon-knobs';
 
-import Card from '../Card';
-import Text from '../Text';
-import CardContent from './CardContent';
+import { Card } from '../Card';
+import { Text } from '../Text';
+import { CardContent } from './CardContent';
 
 storiesOf('CardContent', module)
   .addWithJSX('default', () => (
