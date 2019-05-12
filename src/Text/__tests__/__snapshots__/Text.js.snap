@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c0 {
+  margin: 0;
+  padding: 0;
+  color: #112035;
+  font-family: Gordita,sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: normal;
+  text-align: left;
+  cursor: auto;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: normal;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+<p
+  class="c0"
+  color="blue7"
+  cursor="auto"
+>
+  The quick brown fox jumps over the lazy dog
+</p>
+`;
