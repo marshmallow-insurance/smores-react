@@ -5,6 +5,8 @@ import theme from '../theme';
 interface IButton {
   /** button color  */
   color: string;
+  /** unique id */
+  id: string;
   /** take full 100% width  */
   block: boolean;
   /** invert bg and text colors */
@@ -15,6 +17,7 @@ interface IButton {
 
 type Props = {
   children: any;
+  id: string;
   color: string;
   block: boolean;
   inverted: boolean;
@@ -23,12 +26,14 @@ type Props = {
 
 export const Button: SFC<Props> = ({
   children,
+  id,
   color,
   block,
   inverted,
   disabled,
 }) => (
-    <Container
+   <Container
+      id={id}
       color={color}
       block={block}
       inverted={inverted}
@@ -36,8 +41,7 @@ export const Button: SFC<Props> = ({
     >
       {children}
     </Container>
-  );
-
+  )
 const Container = styled.button<IButton>`
   position: relative;
   display: inline-block;
