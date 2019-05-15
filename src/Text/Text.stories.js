@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import {storiesOf} from '@storybook/react';
 
-import { text, number } from '@storybook/addon-knobs';
+import {text, number} from '@storybook/addon-knobs';
 
-import { Text } from './Text';
+import {Text} from './Text';
 
 storiesOf('Text', module)
   .addWithJSX('default', () => (
@@ -17,31 +17,22 @@ storiesOf('Text', module)
       weight={text('Font-weight', 'normal')}
       align={text('Text-align', 'left')}
       cursor={text('Cursor', 'auto')}
-      >
+    >
       The quick brown fox jumps over the lazy dog
     </Text>
   ))
   .addWithJSX('header-large', () => (
-    <Text
-      tag={text('Tag', 'h2')}
-      typo="header-large"
-      >
+    <Text tag={text('Tag', 'h2')} typo="header-large">
       The quick brown fox jumps over the lazy dog
     </Text>
   ))
   .addWithJSX('desc-medium', () => (
-    <Text
-      tag={text('Tag', 'p')}
-      typo="desc-medium"
-      >
+    <Text tag={text('Tag', 'p')} typo="desc-medium">
       The quick brown fox jumps over the lazy dog
     </Text>
   ))
   .addWithJSX('label', () => (
-    <Text
-      tag={text('Tag', 'label')}
-      typo="label"
-      >
+    <Text tag={text('Tag', 'label')} typo="label">
       The quick brown fox jumps over the lazy dog
     </Text>
-  ))
+  ));

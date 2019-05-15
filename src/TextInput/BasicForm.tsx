@@ -1,7 +1,7 @@
 import React from 'react';
-import { TextInput } from './TextInput';
+import {TextInput} from './TextInput';
 
-type Props = {}
+type Props = {};
 
 type State = {
   value: string;
@@ -9,11 +9,11 @@ type State = {
 
 class BasicForm extends React.PureComponent<Props, State> {
   public state = {
-    value: ''
-  }
+    value: '',
+  };
 
   public render() {
-    const { value } = this.state;
+    const {value} = this.state;
 
     return (
       <form>
@@ -24,17 +24,17 @@ class BasicForm extends React.PureComponent<Props, State> {
           onChange={this.setTextInput}
           placeholder="Placeholder"
           error={value.length > 7}
-          errorMsg='Value is over 7 characters!'
-          trailingIcon='contact-at'
+          errorMsg="Value is over 7 characters!"
+          trailingIcon="contact-at"
           value={value}
         />
       </form>
-    )
+    );
   }
 
   private setTextInput = (e: string): void => {
-    this.setState({ value: e });
-  }
+    this.setState({value: e});
+  };
 }
 
 export default BasicForm;

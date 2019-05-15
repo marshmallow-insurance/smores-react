@@ -1,5 +1,4 @@
-
-import React, { SFC } from 'react';
+import React, {SFC} from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
 
@@ -7,14 +6,9 @@ type Props = {
   children: any;
 };
 
-export const Card: SFC<Props> = ({
-  children
-}) => (
-    <Container>
-      {children}
-    </Container>
-  );
-
+export const Card: SFC<Props> = ({children}) => (
+  <Container>{children}</Container>
+);
 
 const Container = styled.div`
   background: ${theme.colors.white};

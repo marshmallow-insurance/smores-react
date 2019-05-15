@@ -47,7 +47,7 @@ const colors = {
   //Red
   red7: '#D82C2C',
   red5: '#E06161',
-  red4: '#D7796A'
+  red4: '#D7796A',
 };
 
 const font = {
@@ -55,12 +55,12 @@ const font = {
     normal: 'Gordita, sans-serif',
     medium: 'GorditaMedium, sans-serif',
     bold: 'GorditaBold, sans-serif',
-  }
-}
+  },
+};
 
 const theme = {
   colors,
-  font
-}
+  font,
+};
 
 export default theme;

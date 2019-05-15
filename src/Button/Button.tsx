@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, {SFC} from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
 
@@ -13,7 +13,7 @@ interface IButton {
   inverted: boolean;
   /** disabled state */
   disabled: boolean;
-};
+}
 
 type Props = {
   children: any;
@@ -32,16 +32,16 @@ export const Button: SFC<Props> = ({
   inverted,
   disabled,
 }) => (
-   <Container
-      id={id}
-      color={color}
-      block={block}
-      inverted={inverted}
-      disabled={disabled}
-    >
-      {children}
-    </Container>
-  )
+  <Container
+    id={id}
+    color={color}
+    block={block}
+    inverted={inverted}
+    disabled={disabled}
+  >
+    {children}
+  </Container>
+);
 const Container = styled.button<IButton>`
   position: relative;
   display: inline-block;
@@ -53,15 +53,19 @@ const Container = styled.button<IButton>`
   padding: 18px 24px 14px;
   outline: none;
   cursor: pointer;
-  width: ${p => p.block ? '100%' : 'auto'};
-  background-color: ${p => p.inverted ? 'transparent' : theme.colors[`${p.color}5`]};
-  color: ${p => p.inverted ? theme.colors[`${p.color}5`] : theme.colors.white};
-  
+  width: ${p => (p.block ? '100%' : 'auto')};
+  background-color: ${p =>
+    p.inverted ? 'transparent' : theme.colors[`${p.color}5`]};
+  color: ${p =>
+    p.inverted ? theme.colors[`${p.color}5`] : theme.colors.white};
+
   &:hover:not([disabled]) {
-    background-color: ${p => p.inverted ? theme.colors.bg2 : theme.colors[`${p.color}6`]};
+    background-color: ${p =>
+      p.inverted ? theme.colors.bg2 : theme.colors[`${p.color}6`]};
   }
   &:active:not([disabled]) {
-    background-color: ${p => p.inverted ? theme.colors.bg3 : theme.colors[`${p.color}7`]};
+    background-color: ${p =>
+      p.inverted ? theme.colors.bg3 : theme.colors[`${p.color}7`]};
   }
 
   &:disabled {
@@ -69,7 +73,7 @@ const Container = styled.button<IButton>`
     cursor: not-allowed;
   }
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     padding: 19px 24px 15px;
     font-size: 16px;
   }
