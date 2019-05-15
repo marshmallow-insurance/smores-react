@@ -24,4 +24,7 @@ storiesOf('Button', module)
     <Button color={text('Color', 'blue')} block>
       Me Button
     </Button>
+  ))
+  .addWithJSX('clickable', () => (
+    <Button handleSubmit={() => console.log('clicked')}>Click me</Button>
   ));

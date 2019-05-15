@@ -13,6 +13,8 @@ interface IButton {
   inverted: boolean;
   /** disabled state */
   disabled: boolean;
+  /** onClick event handler */
+  onClick: (e: React.FormEvent<HTMLButtonElement>) => void;
 }
 
 type Props = {
@@ -22,15 +24,17 @@ type Props = {
   block: boolean;
   inverted: boolean;
   disabled: boolean;
+  handleClick: (e: React.FormEvent<HTMLButtonElement>) => void;
 };
 
 export const Button: SFC<Props> = ({
   children,
   id,
-  color,
+  color = 'blue',
   block,
   inverted,
   disabled,
+  handleClick,
 }) => (
   <Container
     id={id}
@@ -38,6 +42,7 @@ export const Button: SFC<Props> = ({
     block={block}
     inverted={inverted}
     disabled={disabled}
+    onClick={handleClick}
   >
     {children}
   </Container>
