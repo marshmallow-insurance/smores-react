@@ -2,11 +2,17 @@ import React from 'react';
 import {render} from 'react-testing-library';
 import 'jest-styled-components';
 
-import {Text} from '../Text';
+import {TextInput} from '../TextInput';
 
 test('renders', () => {
   const {container} = render(
-    <Text>The quick brown fox jumps over the lazy dog</Text>,
+    <TextInput
+      id="textInput"
+      name="textInput"
+      placeholder="Placeholder"
+      value=""
+      onChange={str => {}}
+    />,
   );
   expect(container.firstChild).toMatchSnapshot();
 });
