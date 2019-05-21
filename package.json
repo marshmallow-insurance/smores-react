@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "format": "prettier --write \"**/*.+(js|tsx|md)\"",
     "prepublishOnly": "tsc",
     "storybook": "start-storybook -p 6006 ",
