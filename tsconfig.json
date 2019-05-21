@@ -3,16 +3,8 @@
     "outDir": "./dist",
     "module": "es2015",
     "target": "es6",
-    "lib": [
-      "es5",
-      "es6",
-      "es7",
-      "es2017",
-      "dom"
-    ],
-    "types": [
-      "react"
-    ],
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "types": ["react"],
     "sourceMap": true,
     "allowJs": true,
     "jsx": "react",
@@ -29,12 +21,6 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true
   },
-  "include": [
-    "src/**/*",
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "scripts"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "scripts"]
 }
