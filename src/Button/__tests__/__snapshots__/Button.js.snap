@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c0 {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+  font-family: Gordita,sans-serif;
+  font-size: 14px;
+  padding: 18px 24px 14px;
+  outline: none;
+  cursor: pointer;
+  width: auto;
+  background-color: #55D6AA;
+  color: #ffffff;
+}
+
+.c0:hover:not([disabled]) {
+  background-color: #4CB99F;
+}
+
+.c0:active:not([disabled]) {
+  background-color: #469389;
+}
+
+.c0:disabled {
+  background-color: #A7D6C6;
+  cursor: not-allowed;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    padding: 19px 24px 15px;
+    font-size: 16px;
+  }
+}
+
+<button
+  class="c0"
+  color="green"
+/>
+`;
