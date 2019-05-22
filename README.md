@@ -3,6 +3,7 @@
 `smores-style` is a collection of [React](https://facebook.github.io/react/)
 components that conform to Marshmallow's Design System - "_S'mores_".
 
+![npm][version-badge]
 ![GitHub][licence-badge]
 ![Travis][build-badge]
 ![David][dependencies-badge]
@@ -13,16 +14,16 @@ components that conform to Marshmallow's Design System - "_S'mores_".
 ## Install
 
 ```
-$ npm i smores-style
+$ npm i @mrshmllw/smores-react
 # OR
-$ yarn add smores-style
+$ yarn add @mrshmllw/smores-react
 ```
 
 ## Usage
 
 ```js
 import React from 'react';
-import {Text, Button} from 'smores-style';
+import {Text, Button} from '@mrshmllw/smores-react';
 
 const App = () => (
   <>
@@ -47,3 +48,4 @@ MIT © [Marshmallow](https://www.marshmallow.com/)
 [dependencies-badge]: https://img.shields.io/david/txwkx/smores-style.svg?style=flat-square
 [licence-badge]: https://img.shields.io/github/license/txwkx/smores-style.svg?style=flat-square
 [prettier-badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
+[version-badge]: https://img.shields.io/npm/v/@mrshmllw/smores-react.svg?style=flat-square

@@ -1,5 +1,5 @@
 {
-  "name": "smores-react",
+  "name": "@mrshmllw/smores-react",
   "version": "0.1.0",
   "main": "./dist/index.js",
   "keywords": [
@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "test": "jest --coverage",
+    "test:watch": "jest --watch",
     "format": "prettier --write \"**/*.+(js|tsx|md)\"",
     "prepublishOnly": "tsc",
     "storybook": "start-storybook -p 6006 ",
@@ -47,5 +48,12 @@
     "react-dom": "^16.8.6",
     "styled-components": "^4.2.0",
     "typescript": "3.4.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/txwkx/smores-style.git"
+  },
+  "author": "Todor Tsankov",
+  "license": "MIT",
+  "homepage": "https://github.com/txwkx/smores-style#readme"
 }
