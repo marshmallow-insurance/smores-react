@@ -8,10 +8,6 @@ interface IText {
   typo: string;
   /** HTML tag  */
   as: any;
-  /** mobile screens font-size */
-  mSize: number;
-  /** desktop screens font-size  */
-  wSize: number;
   /** font-weight  */
   weight: string;
   /** text-align  */
@@ -25,8 +21,6 @@ type Props = {
   children: any;
   tag: any;
   typo?: string;
-  mSize?: number;
-  wSize?: number;
   weight?: string;
   align?: string;
   color?: string;
@@ -35,10 +29,8 @@ type Props = {
 
 export const Text: SFC<Props> = ({
   children,
-  typo = 'base',
+  typo,
   tag = 'p',
-  mSize = 14,
-  wSize = 16,
   weight = 'normal',
   align = 'left',
   color = 'blue7',
@@ -46,9 +38,7 @@ export const Text: SFC<Props> = ({
 }) => (
   <Container
     as={tag}
-    typo={typo}
-    mSize={mSize}
-    wSize={wSize}
+    typo={typo || 'base'}
     weight={weight}
     align={align}
     color={color}
@@ -63,17 +53,11 @@ const Container = styled.p<IText>`
   padding: 0;
   color: ${p => theme.colors[p.color]};
   font-family: ${theme.font.family.normal};
-  font-size: ${p => `${p.mSize}px`};
-  line-height: 21px;
   font-weight: ${p => p.weight};
   text-align: ${p => p.align};
   cursor: ${p => p.cursor};
   letter-spacing: 0.15px;
 
-  @media (min-width: 768px) {
-    font-size: ${p => `${p.wSize}px`};
-    line-height: 24px;
-  }
 
   /** PREDEFINED TYPOGRAPHY STYLES */
 

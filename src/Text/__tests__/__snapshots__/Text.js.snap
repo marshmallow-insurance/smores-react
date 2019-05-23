@@ -6,8 +6,6 @@ exports[`renders 1`] = `
   padding: 0;
   color: #112035;
   font-family: Gordita,sans-serif;
-  font-size: 14px;
-  line-height: 21px;
   font-weight: normal;
   text-align: left;
   cursor: auto;
@@ -18,13 +16,6 @@ exports[`renders 1`] = `
   font-size: 14px;
   line-height: 21px;
   font-weight: normal;
-}
-
-@media (min-width:768px) {
-  .c0 {
-    font-size: 16px;
-    line-height: 24px;
-  }
 }
 
 @media (min-width:768px) {
