@@ -16,6 +16,16 @@ storiesOf('TextInput', module)
       onChange={str => {}}
     />
   ))
+  .addWithJSX('type email', () => (
+    <TextInput
+      id="textInput"
+      type="email"
+      name="textInput"
+      placeholder={text('Placeholder', 'Placeholder')}
+      value=""
+      onChange={str => {}}
+    />
+  ))
   .addWithJSX('error', () => (
     <TextInput
       id="textInput"

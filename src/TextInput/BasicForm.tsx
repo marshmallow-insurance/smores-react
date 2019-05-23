@@ -1,40 +1,26 @@
-import React from 'react';
+import React, {SFC, useState} from 'react';
 import {TextInput} from './TextInput';
 
 type Props = {};
 
-type State = {
-  value: string;
+const BasicForm: SFC<Props> = () => {
+  const [value, setValue] = useState('');
+
+  return (
+    <form>
+      <TextInput
+        id="textInput"
+        label="label"
+        name="textInput"
+        onChange={(str: string) => setValue(str)}
+        placeholder="Placeholder"
+        error={value.length > 7}
+        errorMsg="Value is over 7 characters!"
+        trailingIcon="contact-at"
+        value={value}
+      />
+    </form>
+  );
 };
-
-class BasicForm extends React.PureComponent<Props, State> {
-  public state = {
-    value: '',
-  };
-
-  public render() {
-    const {value} = this.state;
-
-    return (
-      <form>
-        <TextInput
-          id="textInput"
-          label="label"
-          name="textInput"
-          onChange={this.setTextInput}
-          placeholder="Placeholder"
-          error={value.length > 7}
-          errorMsg="Value is over 7 characters!"
-          trailingIcon="contact-at"
-          value={value}
-        />
-      </form>
-    );
-  }
-
-  private setTextInput = (e: string): void => {
-    this.setState({value: e});
-  };
-}
 
 export default BasicForm;

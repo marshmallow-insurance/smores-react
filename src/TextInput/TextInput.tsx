@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {FormEvent, PureComponent} from 'react';
 import styled from 'styled-components';
 
 import {Icon} from '../Icon';
@@ -12,6 +12,8 @@ interface IInput {
 type Props = {
   /** ID, usually used for tests  */
   id: string;
+  /** Input type for proper browser support */
+  type?: string;
   /** Placeholder */
   placeholder: string;
   /** label displayed above the input  */
@@ -30,14 +32,13 @@ type Props = {
   trailingIcon?: string;
 };
 
-type State = {
-  value: string;
-};
+type State = {};
 
 export class TextInput extends PureComponent<Props, State> {
   public render() {
     const {
       id,
+      type,
       placeholder,
       label,
       name,
@@ -52,7 +53,7 @@ export class TextInput extends PureComponent<Props, State> {
         {label && <Label htmlFor={name}>{label}</Label>}
         <Content error={error || false}>
           <Input
-            type="text"
+            type={type || 'text'}
             id={id}
             name={name}
             placeholder={placeholder}
@@ -61,14 +62,14 @@ export class TextInput extends PureComponent<Props, State> {
             autoComplete="off"
             onChange={this.handleOnChange}
           />
-          {trailingIcon && <Icon render="contact-at" color="grey4" />}
+          {trailingIcon && <Icon render={trailingIcon} color="grey4" />}
         </Content>
         {error && <ErrorBox>{errorMsg}</ErrorBox>}
       </Container>
     );
   }
 
-  private handleOnChange = (e: React.FormEvent<HTMLInputElement>): void => {
+  private handleOnChange = (e: FormEvent<HTMLInputElement>): void => {
     const {onChange} = this.props;
     const value = e.currentTarget.value;
 
@@ -110,7 +111,7 @@ const Input = styled.input<IInput>`
   color: ${p => theme.colors[`${p.error ? 'red7' : 'black'}`]};
   font-family: ${theme.font.family.normal};
   font-size: 16px;
-  width: 254px;
+  width: 100%;
   outline: none;
   transition: all 0.2s ease-out;
 
