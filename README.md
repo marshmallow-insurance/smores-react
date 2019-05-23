@@ -1,6 +1,6 @@
-# Smores Style
+# Smores React
 
-`smores-style` is a collection of [React](https://facebook.github.io/react/)
+`smores-react` is a collection of [React](https://facebook.github.io/react/)
 components that conform to Marshmallow's Design System - "_S'mores_".
 
 ![npm][version-badge]
