@@ -1,4 +1,4 @@
-import React, {SFC} from 'react';
+import React, {SFC, ReactNode} from 'react';
 import styled, {css} from 'styled-components';
 
 import theme from '../theme';
@@ -18,7 +18,7 @@ interface IText {
 }
 
 type Props = {
-  children: any;
+  children: ReactNode;
   tag: any;
   typo?: string;
   weight?: string;

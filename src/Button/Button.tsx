@@ -1,4 +1,4 @@
-import React, {SFC} from 'react';
+import React, {SFC, ReactNode} from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
 
@@ -18,7 +18,7 @@ interface IButton {
 }
 
 type Props = {
-  children: any;
+  children: ReactNode;
   id: string;
   color: string;
   block?: boolean;

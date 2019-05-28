@@ -1,9 +1,9 @@
-import React, {SFC} from 'react';
+import React, {SFC, ReactNode} from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
 
 type Props = {
-  children: any;
+  children: ReactNode;
 };
 
 export const Card: SFC<Props> = ({children}) => (

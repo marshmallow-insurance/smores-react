@@ -1,4 +1,4 @@
-import React, {SFC} from 'react';
+import React, {SFC, ReactNode} from 'react';
 import styled from 'styled-components';
 
 interface ICardContent {
@@ -6,7 +6,7 @@ interface ICardContent {
 }
 
 type Props = {
-  children: any;
+  children: ReactNode;
   /** variation with narrow padding */
   narrow?: boolean;
 };
