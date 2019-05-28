@@ -21,9 +21,9 @@ type Props = {
   children: any;
   id: string;
   color: string;
-  block: boolean;
-  inverted: boolean;
-  disabled: boolean;
+  block?: boolean;
+  inverted?: boolean;
+  disabled?: boolean;
   handleClick: (e: React.FormEvent<HTMLButtonElement>) => void;
 };
 
@@ -31,9 +31,9 @@ export const Button: SFC<Props> = ({
   children,
   id,
   color = 'blue',
-  block,
-  inverted,
-  disabled,
+  block = false,
+  inverted = false,
+  disabled = false,
   handleClick,
 }) => (
   <Container
