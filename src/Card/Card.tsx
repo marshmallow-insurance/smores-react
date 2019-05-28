@@ -4,10 +4,11 @@ import theme from '../theme';
 
 type Props = {
   children: ReactNode;
+  className?: string;
 };
 
-export const Card: SFC<Props> = ({children}) => (
-  <Container>{children}</Container>
+export const Card: SFC<Props> = ({children, className = ''}) => (
+  <Container className={className}>{children}</Container>
 );
 
 const Container = styled.div`

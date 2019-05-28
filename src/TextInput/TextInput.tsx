@@ -12,6 +12,8 @@ interface IInput {
 type Props = {
   /** ID, usually used for tests  */
   id: string;
+  /** className attribute to apply classses from props */
+  className?: string;
   /** Input type for proper browser support */
   type?: string;
   /** Placeholder */
@@ -38,6 +40,7 @@ export class TextInput extends PureComponent<Props, State> {
   public render() {
     const {
       id,
+      className,
       type,
       placeholder,
       label,
@@ -49,7 +52,7 @@ export class TextInput extends PureComponent<Props, State> {
     } = this.props;
 
     return (
-      <Container>
+      <Container className={className}>
         {label && <Label htmlFor={name}>{label}</Label>}
         <Content error={error || false}>
           <Input

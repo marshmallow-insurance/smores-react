@@ -25,4 +25,13 @@ storiesOf('CardContent', module)
         </Text>
       </CardContent>
     </Card>
+  ))
+  .addWithJSX('card with class', () => (
+    <Card className="container">
+      <CardContent narrow>
+        <Text tag="h3" weight="bold">
+          Narrow padding
+        </Text>
+      </CardContent>
+    </Card>
   ));

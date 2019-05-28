@@ -20,6 +20,7 @@ interface IText {
 type Props = {
   children: ReactNode;
   tag: any;
+  className?: string;
   typo?: string;
   weight?: string;
   align?: string;
@@ -30,6 +31,7 @@ type Props = {
 export const Text: SFC<Props> = ({
   children,
   typo,
+  className = '',
   tag = 'p',
   weight = 'normal',
   align = 'left',
@@ -38,6 +40,7 @@ export const Text: SFC<Props> = ({
 }) => (
   <Container
     as={tag}
+    className={className}
     typo={typo || 'base'}
     weight={weight}
     align={align}

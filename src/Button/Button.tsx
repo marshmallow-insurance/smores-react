@@ -20,6 +20,7 @@ interface IButton {
 type Props = {
   children: ReactNode;
   id: string;
+  className?: string;
   color: string;
   block?: boolean;
   inverted?: boolean;
@@ -30,6 +31,7 @@ type Props = {
 export const Button: SFC<Props> = ({
   children,
   id,
+  className = '',
   color = 'blue',
   block = false,
   inverted = false,
@@ -38,6 +40,7 @@ export const Button: SFC<Props> = ({
 }) => (
   <Container
     id={id}
+    className={className}
     color={color}
     block={block}
     inverted={inverted}
