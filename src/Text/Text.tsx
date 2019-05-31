@@ -136,7 +136,7 @@ const Container = styled.p<IText>`
 
   /* Descriptor Light */
   ${p =>
-    p.typo === 'desc-medium' &&
+    p.typo === 'desc-light' &&
     css`
       font-size: 14px;
       line-height: 18px;
@@ -145,6 +145,20 @@ const Container = styled.p<IText>`
       @media (min-width: 768px) {
         font-size: 16px;
         line-height: 21px;
+      }
+    `}
+
+  /* Descriptor Small */
+  ${p =>
+    p.typo === 'desc-small' &&
+    css`
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: normal;
+
+      @media (min-width: 768px) {
+        font-size: 14px;
+        line-height: 18px;
       }
     `}
 
