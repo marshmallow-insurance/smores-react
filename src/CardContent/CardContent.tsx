@@ -1,4 +1,4 @@
-import React, {SFC, ReactNode} from 'react';
+import React, {FC, ReactNode} from 'react';
 import styled from 'styled-components';
 
 interface ICardContent {
@@ -11,7 +11,7 @@ type Props = {
   narrow?: boolean;
 };
 
-export const CardContent: SFC<Props> = ({children, narrow = false}) => (
+export const CardContent: FC<Props> = ({children, narrow = false}) => (
   <Container narrow={narrow}>{children}</Container>
 );
 

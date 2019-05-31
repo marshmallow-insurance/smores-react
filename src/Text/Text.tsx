@@ -1,4 +1,4 @@
-import React, {SFC, ReactNode} from 'react';
+import React, {FC, ReactNode} from 'react';
 import styled, {css} from 'styled-components';
 
 import theme from '../theme';
@@ -28,7 +28,7 @@ type Props = {
   cursor?: string;
 };
 
-export const Text: SFC<Props> = ({
+export const Text: FC<Props> = ({
   children,
   typo,
   className = '',

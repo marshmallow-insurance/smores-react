@@ -1,4 +1,4 @@
-import React, {SFC, ReactNode} from 'react';
+import React, {FC, ReactNode} from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
 
@@ -7,7 +7,7 @@ type Props = {
   className?: string;
 };
 
-export const Card: SFC<Props> = ({children, className = ''}) => (
+export const Card: FC<Props> = ({children, className = ''}) => (
   <Container className={className}>{children}</Container>
 );
 

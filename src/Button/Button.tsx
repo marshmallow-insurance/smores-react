@@ -1,4 +1,4 @@
-import React, {SFC, ReactNode} from 'react';
+import React, {FC, ReactNode} from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
 
@@ -28,7 +28,7 @@ type Props = {
   handleClick: (e: React.FormEvent<HTMLButtonElement>) => void;
 };
 
-export const Button: SFC<Props> = ({
+export const Button: FC<Props> = ({
   children,
   id,
   className = '',

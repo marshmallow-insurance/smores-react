@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styled from 'styled-components';
 
 import theme from '../theme';
@@ -17,11 +17,7 @@ type Props = {
   color?: string;
 };
 
-export const Icon: React.SFC<Props> = ({
-  render,
-  size = 32,
-  color = 'blue7',
-}) => (
+export const Icon: FC<Props> = ({render, size = 32, color = 'blue7'}) => (
   <Container size={size} color={color}>
     {// CONTACT - AT
     render === 'contact-at' && (

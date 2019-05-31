@@ -1,9 +1,9 @@
-import React, {SFC, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {TextInput} from './TextInput';
 
 type Props = {};
 
-const BasicForm: SFC<Props> = () => {
+const BasicForm: FC<Props> = () => {
   const [value, setValue] = useState('');
 
   return (
