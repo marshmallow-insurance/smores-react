@@ -7,12 +7,19 @@ interface ICardContent {
 
 type Props = {
   children: ReactNode;
+  className?: string;
   /** variation with narrow padding */
   narrow?: boolean;
 };
 
-export const CardContent: FC<Props> = ({children, narrow = false}) => (
-  <Container narrow={narrow}>{children}</Container>
+export const CardContent: FC<Props> = ({
+  children,
+  className,
+  narrow = false,
+}) => (
+  <Container className={className} narrow={narrow}>
+    {children}
+  </Container>
 );
 
 const Container = styled.div<ICardContent>`
