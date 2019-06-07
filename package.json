@@ -17,8 +17,10 @@
     "test:watch": "jest --watch",
     "format": "prettier --write \"**/*.+(js|tsx|md)\"",
     "prepublishOnly": "tsc",
+    "publish-npm": "npm publish --access public",
     "storybook": "start-storybook -p 6006 ",
-    "build-storybook": "build-storybook -c .storybook -o .out"
+    "build-storybook": "build-storybook -c .storybook -o .out",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -31,6 +33,7 @@
     "@storybook/addon-knobs": "^5.0.11",
     "@storybook/addons": "^5.0.11",
     "@storybook/react": "^5.0.11",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@types/jest": "24.0.13",
     "@types/react": "^16.8.18",
     "awesome-typescript-loader": "^5.2.1",
@@ -52,9 +55,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/txwkx/smores-style.git"
+    "url": "git+https://github.com/marshmallow-insurance/smores-react.git"
   },
   "author": "Todor Tsankov",
   "license": "MIT",
-  "homepage": "https://github.com/txwkx/smores-style#readme"
+  "homepage": "https://github.com/marshmallow-insurance/smores-react#readme"
 }
