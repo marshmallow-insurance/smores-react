@@ -5,4 +5,16 @@ node_js:
 
 cache: npm
 
-after_script: npx codecov
+before_script:
+npm run build-storybook
+
+deploy:
+  provider: pages
+  skip-cleanup: true 
+  github-token: $GITHUB_TOKEN
+  local_dir: storybook-static
+  repo: marshmallow-insurance/smores-react
+  target_branch: gh-pages
+  on:
+    branch: master
+
