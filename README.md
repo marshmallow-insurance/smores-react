@@ -7,7 +7,6 @@ components that conform to Marshmallow's Design System - "_S'mores_".
 ![GitHub][licence-badge]
 ![Travis][build-badge]
 ![David][dependencies-badge]
-[![Codecov][coverage-badge]](https://codecov.io/gh/txwkx/smores-style)
 ![Codacy grade][codacy-badge]
 ![Code style][prettier-badge]
 
@@ -42,10 +41,9 @@ const App = () => (
 
 MIT © [Marshmallow](https://www.marshmallow.com/)
 
-[build-badge]: https://img.shields.io/travis/com/txwkx/smores-style.svg?style=flat-square
-[codacy-badge]: https://img.shields.io/codacy/grade/812df48f2cc340ada6fa057d22586f96.svg?style=flat-square
-[coverage-badge]: https://img.shields.io/codecov/c/github/txwkx/smores-style.svg?style=flat-square
-[dependencies-badge]: https://img.shields.io/david/txwkx/smores-style.svg?style=flat-square
-[licence-badge]: https://img.shields.io/github/license/txwkx/smores-style.svg?style=flat-square
+[build-badge]: https://img.shields.io/travis/com/marshmallow-insurance/smores-react.svg?style=flat-square
+[codacy-badge]: https://img.shields.io/codacy/grade/b5a633b3e33749f29b96df4561dece12.svg?style=flat-square
+[dependencies-badge]: https://img.shields.io/david/marshmallow-insurance/smores-react.svg?style=flat-square
+[licence-badge]: https://img.shields.io/github/license/marshmallow-insurance/smores-react.svg?style=flat-square
 [prettier-badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
 [version-badge]: https://img.shields.io/npm/v/@mrshmllw/smores-react.svg?style=flat-square
