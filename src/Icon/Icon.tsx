@@ -36,7 +36,7 @@ export const Icon: FC<Props> = ({render, size = 32, color = 'blue7'}) => (
     )}
 
     {// CONTACT - AT
-    render === 'contact-at' && (
+    render === 'at' && (
       <svg
         width="100%"
         height="100%"
@@ -52,7 +52,7 @@ export const Icon: FC<Props> = ({render, size = 32, color = 'blue7'}) => (
     )}
 
     {// MISC - PADLOCK
-    render === 'misc-padlock' && (
+    render === 'padlock' && (
       <svg
         width="100%"
         height="100%"
@@ -88,7 +88,7 @@ export const Icon: FC<Props> = ({render, size = 32, color = 'blue7'}) => (
     )}
 
     {// FINANCE - POLICY
-    render === 'finance-policy' && (
+    render === 'policy' && (
       <svg
         width="100%"
         height="100%"
@@ -99,6 +99,24 @@ export const Icon: FC<Props> = ({render, size = 32, color = 'blue7'}) => (
         <path
           fill={theme.colors[color]}
           d="M25.707 11.293l-7-7A.996.996 0 0 0 18 4H9C7.346 4 6 5.346 6 7v18c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3V12a.996.996 0 0 0-.293-.707zM24 25a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h8.586L24 12.414V25zm-10-9v1h-1a1 1 0 1 0 0 2h1v1h-1a1 1 0 1 0 0 2h5a1 1 0 1 0 0-2h-2v-1h1a1 1 0 1 0 0-2h-1v-1a1 1 0 0 1 1.867-.498 1 1 0 1 0 1.73-1.004A3.011 3.011 0 0 0 17 13c-1.654 0-3 1.346-3 3z"
+        />
+      </svg>
+    )}
+
+    {// INTERFACE - UP-DOWN
+    render === 'up-down' && (
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill={theme.colors[color]}
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M15.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1-1.414 1.414L16 9.414l-3.293 3.293a1 1 0 0 1-1.414-1.414l4-4zM16.707 24.707a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L16 22.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-4 4z"
         />
       </svg>
     )}
