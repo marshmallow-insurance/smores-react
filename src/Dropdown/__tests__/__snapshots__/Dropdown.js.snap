@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 24px;
+  height: 24px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 44px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c1 {
+  border-bottom: 1px solid;
+  border-color: #C1C1C1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c1:hover {
+  border-color: #9E9E9E;
+}
+
+.c1:focus {
+  border-color: #545E7E;
+}
+
+.c2 {
+  border: none;
+  color: #112035;
+  font-family: Gordita,sans-serif;
+  font-size: 16px;
+  width: 100%;
+  padding: 0;
+  outline: none;
+  text-align: left;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c2::-moz-placeholder {
+  color: #C1C1C1;
+}
+
+.c2:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c2::placeholder {
+  color: #C1C1C1;
+}
+
+.c4 {
+  display: none;
+  position: absolute;
+  -webkit-transform: translateY(32px);
+  -ms-transform: translateY(32px);
+  transform: translateY(32px);
+  max-height: 192px;
+  width: 100%;
+  overflow: auto;
+  top: 0px;
+  left: 0px;
+  padding: 0;
+  margin: 0;
+  will-change: transform;
+  z-index: 200;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #C1C1C1;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.c5 {
+  padding: 16px;
+  font-family: Gordita,sans-serif;
+}
+
+.c5:hover {
+  background-color: #F8F6F6;
+  cursor: pointer;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <span
+      class="c2"
+    />
+    <span
+      class="c3"
+      color="grey4"
+      size="24"
+    >
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 32 32"
+        width="100%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M15.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1-1.414 1.414L16 9.414l-3.293 3.293a1 1 0 0 1-1.414-1.414l4-4zM16.707 24.707a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L16 22.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-4 4z"
+          fill="#C1C1C1"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+    <ul
+      class="c4"
+    >
+      <li
+        class="c5"
+      >
+        Monday
+      </li>
+      <li
+        class="c5"
+      >
+        Tuesday
+      </li>
+      <li
+        class="c5"
+      >
+        Wednesday
+      </li>
+      <li
+        class="c5"
+      >
+        Thursday
+      </li>
+      <li
+        class="c5"
+      >
+        Friday
+      </li>
+      <li
+        class="c5"
+      >
+        Saturday
+      </li>
+      <li
+        class="c5"
+      >
+        Sunday
+      </li>
+    </ul>
+  </div>
+</div>
+`;
