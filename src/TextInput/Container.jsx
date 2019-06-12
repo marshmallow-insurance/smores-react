@@ -1,9 +1,7 @@
-import React, {FC, useState} from 'react';
+import React, {useState} from 'react';
 import {TextInput} from './TextInput';
 
-type Props = {};
-
-const BasicForm: FC<Props> = () => {
+export const Container = () => {
   const [value, setValue] = useState('');
 
   return (
@@ -12,7 +10,7 @@ const BasicForm: FC<Props> = () => {
         id="textInput"
         label="label"
         name="textInput"
-        onChange={(str: string) => setValue(str)}
+        onChange={str => setValue(str)}
         placeholder="Placeholder"
         error={value.length > 7}
         errorMsg="Value is over 7 characters!"
@@ -22,5 +20,3 @@ const BasicForm: FC<Props> = () => {
     </form>
   );
 };
-
-export default BasicForm;

@@ -4,7 +4,7 @@ import {storiesOf} from '@storybook/react';
 import {text, boolean} from '@storybook/addon-knobs';
 
 import {TextInput} from './TextInput';
-import BasicForm from './BasicForm.jsx';
+import Container from './Container.jsx';
 
 storiesOf('TextInput', module)
   .addWithJSX('default', () => (

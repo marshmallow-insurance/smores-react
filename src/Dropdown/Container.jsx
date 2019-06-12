@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Dropdown, DropdownItem} from './Dropdown';
+import {Dropdown} from './Dropdown';
 
 const days = [
   {
@@ -43,7 +43,7 @@ export const Container = () => {
         placeholder="Select Day"
         value={day}
         list={days}
-        onSelect={(item: DropdownItem) => setDay(item.label)}
+        onSelect={item => setDay(item.label)}
       />
     </div>
   );
