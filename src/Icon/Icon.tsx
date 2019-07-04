@@ -103,6 +103,22 @@ export const Icon: FC<Props> = ({render, size = 32, color = 'blue7'}) => (
       </svg>
     )}
 
+    {// INTERFACE - EDIT
+    render === 'edit' && (
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill={theme.colors[color]}
+          d="M24.121 12.122A2.982 2.982 0 0 0 25 10c0-.801-.312-1.555-.879-2.121A2.976 2.976 0 0 0 22 7c-.801 0-1.555.312-2.121.879l-1.464 1.464 4.243 4.243 1.463-1.464zM21.243 15L17 10.757 8.667 19.09 7 25l5.91-1.667L21.243 15z"
+        />
+      </svg>
+    )}
+
     {// INTERFACE - UP-DOWN
     render === 'up-down' && (
       <svg
