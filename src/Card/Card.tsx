@@ -4,24 +4,27 @@ import theme from '../theme';
 
 interface ICard {
   maxWidth: string;
-  marginX: string;
-  marginY: string;
+  marginX: number;
+  marginY: number;
 }
 
 type Props = {
   children: ReactNode;
   className?: string;
-  maxWidth: string;
-  marginX: string;
-  marginY: string;
+  /** margin */
+  maxWidth?: string;
+  /** left-right margin */
+  marginX?: number;
+  /** top-bottom margin */
+  marginY?: number;
 };
 
 export const Card: FC<Props> = ({
   children,
   className = '',
-  maxWidth,
-  marginX,
-  marginY,
+  maxWidth = '',
+  marginX = 0,
+  marginY = 0,
 }) => (
   <Container
     className={className}
@@ -42,11 +45,12 @@ const Container = styled.div<ICard>`
 
   padding: 32px;
 
+  width: 100%;
   max-width: ${p => p.maxWidth};
-  margin-top: ${p => p.marginY};
-  margin-right: ${p => p.marginX};
-  margin-bottom: ${p => p.marginY};
-  margin-left: ${p => p.marginX};
+  margin-top: ${p => `${p.marginY}px`};
+  margin-right: ${p => `${p.marginX}px`};
+  margin-bottom: ${p => `${p.marginY}px`};
+  margin-left: ${p => `${p.marginX}px`};
 
   @media (min-width: 768px) {
     padding: 48px;
