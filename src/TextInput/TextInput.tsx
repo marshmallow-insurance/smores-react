@@ -5,6 +5,10 @@ import {Icon} from '../Icon';
 
 import theme from '../theme';
 
+interface IContainer {
+  hasLabel: boolean;
+}
+
 interface IInput {
   error: boolean;
 }
@@ -52,7 +56,7 @@ export class TextInput extends PureComponent<Props, State> {
     } = this.props;
 
     return (
-      <Container className={className}>
+      <Container className={className} hasLabel={!!label}>
         {label && <Label htmlFor={name}>{label}</Label>}
         <Content error={error || false}>
           <Input
@@ -80,10 +84,10 @@ export class TextInput extends PureComponent<Props, State> {
   };
 }
 
-const Container = styled.div`
+const Container = styled.div<IContainer>`
   display: flex;
   flex-direction: column;
-  height: 64px;
+  height: ${p => (p.hasLabel ? '64px' : '52px')};
 `;
 
 const Label = styled.label`
