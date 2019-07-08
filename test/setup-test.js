@@ -1,1 +1,1 @@
-import 'react-testing-library/cleanup-after-each';
+import '@testing-library/react/cleanup-after-each';
