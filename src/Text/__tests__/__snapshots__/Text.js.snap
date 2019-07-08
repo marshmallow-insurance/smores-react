@@ -9,13 +9,13 @@ exports[`renders 1`] = `
   padding: 0;
   color: #112035;
   font-family: Gordita,sans-serif;
+  font-weight: normal;
   text-align: left;
   cursor: auto;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
-  font-weight: normal;
 }
 
 @media (min-width:768px) {
