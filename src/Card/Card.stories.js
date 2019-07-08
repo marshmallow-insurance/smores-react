@@ -27,8 +27,8 @@ storiesOf('Card', module)
       <Text tag="h3">Before margin</Text>
       <Card
         className="container"
-        marginX={number('Margin X', 50)}
-        marginY={number('Margin Y', 30)}
+        marginX={number('Margin X', '50px')}
+        marginY={number('Margin Y', '30px')}
       >
         <Text tag="h3">Card with margin</Text>
       </Card>
