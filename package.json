@@ -15,6 +15,7 @@
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --watch",
+    "update-snapshots": "jest --updateSnapshot",
     "format": "prettier --write \"**/*.+(js|tsx|md)\"",
     "prepublishOnly": "tsc",
     "publish-npm": "npm publish --access public",
