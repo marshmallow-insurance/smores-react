@@ -1,21 +1,32 @@
+<p align="center">
+    <img src="./smores-logo.svg"
+        height="95">
+</p>
+<p align="center">
+  <a href="https://www.npmjs.com/package/@mrshmllw/smores-react" alt="npm-version-badge">
+    <img src="https://img.shields.io/npm/v/@mrshmllw/smores-react.svg?style=flat-square" /></a>
+  <a href="https://github.com/marshmallow-insurance/smores-react/blob/master/LICENSE" alt="licence-badge">
+    <img src="https://img.shields.io/github/license/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
+  <a href="https://travis-ci.com/marshmallow-insurance/smores-react" alt="travis-build-badge">
+    <img src="https://img.shields.io/travis/com/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
+  <a href="https://david-dm.org/marshmallow-insurance/smores-react" alt="dependencies-badge">
+    <img src="https://img.shields.io/david/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
+  <a href="https://www.codacy.com/app/Marshmallow/smores-react?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marshmallow-insurance/smores-react&amp;utm_campaign=Badge_Grade"><img src="https://img.shields.io/codacy/grade/e6e23095e1e64ca6bba6076b7589fa4a.svg?style=flat-square"/></a>
+  <a href="https://prettier.io/" alt="prettier-badge">
+    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" /></a>
+</p>
+
 # Smores React
 
 `smores-react` is a collection of [React](https://facebook.github.io/react/)
 components that conform to Marshmallow's Design System - "_S'mores_".
 
-![npm][version-badge]
-![GitHub][licence-badge]
-![Travis][build-badge]
-![David][dependencies-badge]
-![Codacy grade][codacy-badge]
-![Code style][prettier-badge]
-
 ## Install
 
-```
-$ npm i @mrshmllw/smores-react
-# OR
+```bash
 $ yarn add @mrshmllw/smores-react
+# OR
+$ npm i @mrshmllw/smores-react
 ```
 
 ## Usage
@@ -40,10 +51,3 @@ const App = () => (
 ## License
 
 MIT © [Marshmallow](https://www.marshmallow.com/)
-
-[build-badge]: https://img.shields.io/travis/com/marshmallow-insurance/smores-react.svg?style=flat-square
-[codacy-badge]: https://img.shields.io/codacy/grade/b5a633b3e33749f29b96df4561dece12.svg?style=flat-square
-[dependencies-badge]: https://img.shields.io/david/marshmallow-insurance/smores-react.svg?style=flat-square
-[licence-badge]: https://img.shields.io/github/license/marshmallow-insurance/smores-react.svg?style=flat-square
-[prettier-badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
-[version-badge]: https://img.shields.io/npm/v/@mrshmllw/smores-react.svg?style=flat-square
