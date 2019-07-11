@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react';
 import styled from 'styled-components';
-import theme from '../theme';
+import {theme} from '../theme';
 
 interface ICard {
   maxWidth: string;

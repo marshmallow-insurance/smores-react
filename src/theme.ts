@@ -58,9 +58,7 @@ const font = {
   },
 };
 
-const theme = {
+export const theme = {
   colors,
   font,
 };
-
-export default theme;

@@ -1,7 +1,7 @@
 import React, {FC, ReactNode} from 'react';
 import styled, {css} from 'styled-components';
 
-import theme from '../theme';
+import {theme} from '../theme';
 
 interface IText {
   /** typography class name to apply predefined styles */
@@ -204,5 +204,3 @@ const Container = styled.p<IText>`
   cursor: ${p => p.cursor};
   letter-spacing: 0.15px;
 `;
-
-export default Text;

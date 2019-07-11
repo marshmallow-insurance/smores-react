@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import {Icon} from '../Icon';
 
-import theme from '../theme';
+import {theme} from '../theme';
 
 interface IContainer {
   hasLabel: boolean;
