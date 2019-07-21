@@ -1,5 +1,5 @@
 import React, {FC, ReactNode} from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 import {theme} from '../theme';
 
@@ -14,6 +14,8 @@ interface IButton {
   inverted: boolean;
   /** disabled state */
   disabled: boolean;
+  /** outline styling */
+  outlined: boolean;
   /** onClick event handler */
   onClick: (e: React.FormEvent<HTMLButtonElement>) => void;
 }
@@ -22,10 +24,11 @@ type Props = {
   children: ReactNode;
   id: string;
   className?: string;
-  color: string;
+  color?: string;
   block?: boolean;
   inverted?: boolean;
   disabled?: boolean;
+  outlined?: boolean;
   handleClick: (e: React.FormEvent<HTMLButtonElement>) => void;
 };
 
@@ -37,6 +40,7 @@ export const Button: FC<Props> = ({
   block = false,
   inverted = false,
   disabled = false,
+  outlined = false,
   handleClick,
 }) => (
   <Container
@@ -46,11 +50,13 @@ export const Button: FC<Props> = ({
     block={block}
     inverted={inverted}
     disabled={disabled}
+    outlined={outlined}
     onClick={handleClick}
   >
     {children}
   </Container>
 );
+
 const Container = styled.button<IButton>`
   position: relative;
   display: inline-block;
@@ -63,24 +69,34 @@ const Container = styled.button<IButton>`
   outline: none;
   cursor: pointer;
   width: ${p => (p.block ? '100%' : 'auto')};
-  background-color: ${p =>
-    p.inverted ? 'transparent' : theme.colors[`${p.color}5`]};
-  color: ${p =>
-    p.inverted ? theme.colors[`${p.color}5`] : theme.colors.white};
+  background-color: ${p => theme.colors[`${p.color}5`]};
+  color: ${theme.colors.white};
 
   &:hover:not([disabled]) {
-    background-color: ${p =>
-      p.inverted ? theme.colors.bg2 : theme.colors[`${p.color}6`]};
+    background-color: ${p => theme.colors[`${p.color}6`]};
   }
   &:active:not([disabled]) {
-    background-color: ${p =>
-      p.inverted ? theme.colors.bg3 : theme.colors[`${p.color}7`]};
+    background-color: ${p => theme.colors[`${p.color}7`]};
   }
-
   &:disabled {
-    background-color: ${p => !p.inverted && theme.colors[`${p.color}3`]};
+    opacity: 0.5;
     cursor: not-allowed;
   }
+
+  ${p =>
+    (p.inverted || p.outlined) &&
+    css`
+      background-color: transparent;
+      border: 1px solid ${p.outlined ? theme.colors.grey4 : 'transparent'};
+      color: ${p.outlined ? theme.colors.blue7 : theme.colors[`${p.color}5`]};
+
+      &:hover:not([disabled]) {
+        background-color: ${theme.colors.bg2};
+      }
+      &:active:not([disabled]) {
+        background-color: ${theme.colors.bg3};
+      }
+    `};
 
   @media (min-width: 768px) {
     padding: 19px 24px 15px;

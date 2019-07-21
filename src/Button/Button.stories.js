@@ -7,24 +7,17 @@ import {Button} from './Button';
 
 storiesOf('Button', module)
   .addWithJSX('default', () => <Button color="blue">Me Button</Button>)
-  .addWithJSX('grey', () => <Button color="grey">Me Button</Button>)
-  .addWithJSX('green', () => <Button color="green">Green Button</Button>)
-  .addWithJSX('pink', () => <Button color="pink">Pink Button</Button>)
-  .addWithJSX('inverted', () => (
-    <Button color={text('Color', 'blue')} inverted>
-      Me Button
-    </Button>
+  .addWithJSX('coloured', () => (
+    <Button color={text('Color', 'green')}>Coloured Button</Button>
   ))
+  .addWithJSX('inverted', () => <Button inverted>Me Button</Button>)
+  .addWithJSX('outlined', () => <Button outlined>Outlined</Button>)
   .addWithJSX('disabled', () => (
     <Button color={text('Color', 'blue')} disabled>
       Me Button
     </Button>
   ))
-  .addWithJSX('block', () => (
-    <Button color={text('Color', 'blue')} block>
-      Me Button
-    </Button>
-  ))
+  .addWithJSX('block', () => <Button block>Me Button</Button>)
   .addWithJSX('clickable', () => (
     <Button handleSubmit={() => console.log('clicked')}>Click me</Button>
   ));
