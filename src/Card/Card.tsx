@@ -6,6 +6,8 @@ interface ICard {
   maxWidth: string;
   marginX: string;
   marginY: string;
+  narrow: boolean;
+  wide: boolean;
 }
 
 type Props = {
@@ -17,6 +19,10 @@ type Props = {
   marginX?: string;
   /** top-bottom margin */
   marginY?: string;
+  /** Narrow padding */
+  narrow?: boolean;
+  /** Wide padding */
+  wide?: boolean;
 };
 
 export const Card: FC<Props> = ({
@@ -25,12 +31,16 @@ export const Card: FC<Props> = ({
   maxWidth = '',
   marginX = '',
   marginY = '',
+  narrow = false,
+  wide = false,
 }) => (
   <Container
     className={className}
     maxWidth={maxWidth}
     marginX={marginX}
     marginY={marginY}
+    narrow={narrow}
+    wide={wide}
   >
     {children}
   </Container>
@@ -43,15 +53,15 @@ const Container = styled.div<ICard>`
   box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
 
-  padding: 32px;
-
   max-width: ${p => p.maxWidth};
   margin-top: ${p => p.marginY};
   margin-right: ${p => p.marginX};
   margin-bottom: ${p => p.marginY};
   margin-left: ${p => p.marginX};
 
+  padding: ${p => (p.narrow ? '16px' : p.wide ? '32px' : '24px')};
+
   @media (min-width: 768px) {
-    padding: 48px;
+    padding: ${p => (p.narrow ? '24px' : p.wide ? '48px' : '32px')};
   }
 `;

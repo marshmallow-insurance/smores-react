@@ -1,7 +1,7 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 
-import {text, number} from '@storybook/addon-knobs';
+import {text, number, boolean} from '@storybook/addon-knobs';
 
 import {Card} from '../Card';
 import {Text} from '../Text';
@@ -21,6 +21,11 @@ storiesOf('Card', module)
         <Text tag="h3">Very very very very long card with max width</Text>
       </Card>
     </>
+  ))
+  .addWithJSX('narrow/wide padding', () => (
+    <Card narrow={boolean('Narrow', false)} wide={boolean('Wide', true)}>
+      <Text tag="h3">Narrow or Wide padding</Text>
+    </Card>
   ))
   .addWithJSX('margins', () => (
     <>
