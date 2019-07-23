@@ -6,6 +6,7 @@ import {theme} from '../theme';
 interface IIcon {
   size: number;
   color: string;
+  rotate: number;
 }
 
 type Props = {
@@ -15,10 +16,17 @@ type Props = {
   size?: number;
   /** set color of the Icon */
   color?: string;
+  /** rotation degrees */
+  rotate?: number;
 };
 
-export const Icon: FC<Props> = ({render, size = 32, color = 'blue7'}) => (
-  <Container size={size} color={color}>
+export const Icon: FC<Props> = ({
+  render,
+  size = 32,
+  color = 'blue7',
+  rotate = 0,
+}) => (
+  <Container size={size} color={color} rotate={rotate}>
     {// CONTACT - EMAIL
     render === 'contact-email' && (
       <svg
@@ -136,6 +144,22 @@ export const Icon: FC<Props> = ({render, size = 32, color = 'blue7'}) => (
         />
       </svg>
     )}
+
+    {// INTERFACE - CARET
+    render === 'caret' && (
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill={theme.colors[color]}
+          d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
+        />
+      </svg>
+    )}
   </Container>
 );
 
@@ -146,4 +170,5 @@ const Container = styled.span<IIcon>`
   width: 100%;
   max-width: ${p => `${p.size}px`};
   height: ${p => `${p.size}px`};
+  transform: rotate(${p => p.rotate}deg);
 `;
