@@ -6,7 +6,7 @@ import {Icon} from '../Icon';
 
 test('renders', () => {
   const {container} = render(
-    <Icon render="contact-at" size="32" color="pink" />,
+    <Icon render="at" size="32" color="pink" />,
   );
   expect(container.firstChild).toMatchSnapshot();
 });

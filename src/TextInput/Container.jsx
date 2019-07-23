@@ -14,7 +14,7 @@ export const Container = () => {
         placeholder="Placeholder"
         error={value.length > 7}
         errorMsg="Value is over 7 characters!"
-        trailingIcon="contact-at"
+        trailingIcon="at"
         value={value}
       />
     </form>

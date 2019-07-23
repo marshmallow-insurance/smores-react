@@ -55,7 +55,7 @@ storiesOf('TextInput', module)
       label={text('Label', 'label')}
       placeholder={text('Placeholder', 'Placeholder')}
       value="kek"
-      trailingIcon="contact-at"
+      trailingIcon="at"
       onChange={str => {}}
     />
   ))
