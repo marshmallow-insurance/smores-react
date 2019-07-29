@@ -1,4 +1,4 @@
-import React, {FC, useRef, useEffect} from 'react';
+import React, {FC} from 'react';
 import styled from 'styled-components';
 
 import {Text} from '../Text';
@@ -6,13 +6,9 @@ import {Icon} from '../Icon';
 
 import {theme} from '../theme';
 
-interface IDropdown {
-  active: boolean;
-}
-
 export type DropdownItem = {
   label: string;
-  value: string | number | boolean;
+  value: string | number;
 };
 
 type Props = {
@@ -24,12 +20,12 @@ type Props = {
   label?: string;
   /** Placeholder (initial state) */
   placeholder?: string;
-  /** current active item selected */
-  value: string;
+  /** Disabled flag */
+  disabled?: boolean;
   /** list of items for the dropdown list */
   list: DropdownItem[];
   /** onSelect handler */
-  onSelect: (item: DropdownItem) => void;
+  onSelect: (str: string) => void;
 };
 
 export const Dropdown: FC<Props> = ({
@@ -37,69 +33,41 @@ export const Dropdown: FC<Props> = ({
   className = '',
   label,
   placeholder,
-  value,
+  disabled = false,
   list,
   onSelect,
-}) => {
-  const node = useRef<HTMLDivElement>(null);
-  const [isOpen, setOpen] = React.useState(false);
+}) => (
+  <Container className={className}>
+    {label && (
+      <Text tag="label" color="grey4" typo="label">
+        {label}
+      </Text>
+    )}
+    <Content>
+      <Select
+        id={id}
+        disabled={disabled}
+        onChange={(e: React.FormEvent<HTMLSelectElement>) =>
+          onSelect(e.currentTarget.value)
+        }
+      >
+        <option selected hidden>
+          {placeholder}
+        </option>
+        {list.map((el, i) => (
+          <option key={i} value={el.value}>
+            {el.label}
+          </option>
+        ))}
+      </Select>
+      <Caret>
+        <Icon render="caret" color="grey4" size={24} />
+      </Caret>
+    </Content>
+  </Container>
+);
 
-  const handleClick = (e: any) => {
-    if (node && node.current) {
-      if (node.current.contains(e.target)) {
-        // inside click
-        return;
-      }
-    }
-    // outside click
-    setOpen(false);
-  };
-
-  useEffect(() => {
-    // add when mounted
-    document.addEventListener('mousedown', handleClick);
-    // return function to be called when unmounted
-    return () => {
-      document.removeEventListener('mousedown', handleClick);
-    };
-  }, []);
-
-  const selectItem = (newItem: DropdownItem) => {
-    if (newItem.value !== value) {
-      onSelect(newItem);
-    }
-
-    setOpen(false);
-  };
-
-  return (
-    <Container
-      ref={node}
-      className={className}
-      active={isOpen}
-      onClick={() => setOpen(!isOpen)}
-    >
-      {label && (
-        <Text tag="label" color="grey4" typo="label">
-          {label}
-        </Text>
-      )}
-      <Content id={id}>
-        <Value>{value || placeholder}</Value>
-        <Icon render="up-down" color="grey4" size={24} />
-        <List active={isOpen}>
-          {list.map((el, i) => (
-            <Item key={i} onClick={() => selectItem(el)}>
-              {el.label}
-            </Item>
-          ))}
-        </List>
-      </Content>
-    </Container>
-  );
-};
-
-const Container = styled.div<IDropdown>`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 44px;
@@ -109,65 +77,43 @@ const Container = styled.div<IDropdown>`
 `;
 
 const Content = styled.div`
+  width: 100%;
+  position: relative;
+`;
+
+const Select = styled.select`
+  width: 100%;
+  height: 32px;
+  padding-right: 24px;
+  background-color: ${theme.colors.white};
+  border: none;
   border-bottom: 1px solid;
   border-color: ${theme.colors.grey4};
-  display: flex;
-  height: 32px;
-  position: relative;
-  align-items: center;
+  border-radius: 0;
+  font-family: ${theme.font.family.normal};
+  font-size: 16px;
   cursor: pointer;
+  appearance: none; /* remove default arrow */
+
+  &:disabled {
+    cursor: default;
+  }
 
   &:hover {
     border-color: ${theme.colors.grey6};
   }
 
-  &:focus {
+  &:focus,
+  &:checked {
     border-color: ${theme.colors.blue5};
   }
 `;
 
-const Value = styled.span`
-  border: none;
-  color: ${theme.colors.blue7};
-  font-family: ${theme.font.family.normal};
-  font-size: 16px;
-  width: 100%;
-  padding: 0;
-  outline: none;
-  text-align: left;
-
-  &::placeholder {
-    color: ${theme.colors.grey4};
-  }
-`;
-
-const List = styled.ul<IDropdown>`
-  display: ${p => (p.active ? 'block' : 'none')};
+const Caret = styled.div`
   position: absolute;
-  transform: translateY(32px);
-  max-height: 192px;
-  width: 100%;
-  overflow: auto;
-  top: 0px;
-  left: 0px;
-  padding: 0;
-  margin: 0;
-  will-change: transform;
-  z-index: 200;
-  list-style: none;
-  background-color: ${theme.colors.white};
-  border: 1px solid ${theme.colors.grey4};
-  border-top: none;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-`;
-
-const Item = styled.li`
-  padding: 16px;
-  font-family: ${theme.font.family.normal};
-
-  &:hover {
-    background-color: ${theme.colors.bg3};
-    cursor: pointer;
-  }
+  top: 50%;
+  z-index: 1;
+  right: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
 `;
