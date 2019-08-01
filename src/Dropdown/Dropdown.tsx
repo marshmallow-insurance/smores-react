@@ -47,11 +47,12 @@ export const Dropdown: FC<Props> = ({
       <Select
         id={id}
         disabled={disabled}
+        defaultValue={placeholder}
         onChange={(e: React.FormEvent<HTMLSelectElement>) =>
           onSelect(e.currentTarget.value)
         }
       >
-        <option selected hidden>
+        <option value={placeholder} hidden>
           {placeholder}
         </option>
         {list.map((el, i) => (
