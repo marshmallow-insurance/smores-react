@@ -29,13 +29,7 @@ export const Icon: FC<Props> = ({
   <Container size={size} color={color} rotate={rotate}>
     {// CONTACT - EMAIL
     render === 'contact-email' && (
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         <path
           fill={theme.colors[color]}
           d="M25 6H7C5.346 6 4 7.346 4 9v14c0 1.654 1.346 3 3 3h18c1.654 0 3-1.346 3-3V9c0-1.654-1.346-3-3-3zm1 17c0 .551-.449 1-1 1H7c-.551 0-1-.449-1-1v-9.514l7.905 3.649a5 5 0 0 0 4.19-.001L26 13.486V23zm0-11.717l-8.743 4.035a2.995 2.995 0 0 1-2.515 0L6 11.283V9c0-.551.449-1 1-1h18c.551 0 1 .449 1 1v2.283z"
@@ -45,13 +39,7 @@ export const Icon: FC<Props> = ({
 
     {// CONTACT - AT
     render === 'at' && (
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         <path
           fill={theme.colors[color]}
           d="M16 6C10.486 6 6 10.486 6 16s4.486 10 10 10a1 1 0 1 0 0-2c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8c0 1.103-.897 2-2 2s-2-.897-2-2c0-2.206-1.794-4-4-4s-4 1.794-4 4 1.794 4 4 4c1.2 0 2.266-.542 3-1.382.734.84 1.8 1.382 3 1.382 2.206 0 4-1.794 4-4 0-5.514-4.486-10-10-10zm0 12c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"
@@ -59,15 +47,19 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
 
+    {// CONTACT - UPLOAD-EMAIL
+    render === 'upload-email' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <path
+          fill={theme.colors[color]}
+          d="M27.611 12.709l-11-8.5a1.001 1.001 0 0 0-1.223 0l-11 8.5c-.244.19-.388.482-.388.792V25c0 1.653 1.346 3 3 3h5a1 1 0 1 0 0-2H7c-.552 0-1-.45-1-1v-9.246l5.459 3.512a1 1 0 0 0 1.082-1.682l-6.108-3.93L16 6.266l9.567 7.393-6.108 3.93a1 1 0 1 0 1.082 1.681L26 15.757V25c0 .552-.448 1-1 1h-5a1 1 0 1 0 0 2h5c1.654 0 3-1.346 3-3V13.5c0-.31-.144-.601-.389-.791zM19.999 15a1 1 0 0 0 .601-1.8l-4-3c-.041-.032-.088-.046-.132-.07-.039-.02-.074-.043-.115-.06a.989.989 0 0 0-.346-.07H15.994a.989.989 0 0 0-.346.07c-.042.017-.076.04-.115.06-.044.024-.092.04-.133.07l-4 3a1 1 0 1 0 1.199 1.6L15 13v14a1 1 0 1 0 2 0V13l2.4 1.8c.18.134.39.2.599.2z"
+        />
+      </svg>
+    )}
+
     {// MISC - PADLOCK
     render === 'padlock' && (
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         <path
           fill={theme.colors[color]}
           fillRule="evenodd"
@@ -77,15 +69,19 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
 
+    {// PEOPLE - PROFILE
+    render === 'profile' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <path
+          fill={theme.colors[color]}
+          d="M16 9.995c.553 0 1-.453 1-1.005a1 1 0 1 0-2 0V9c0 .552.447.995 1 .995zM23 7h-2.432A4.99 4.99 0 0 0 16 4a4.99 4.99 0 0 0-4.568 3H9c-1.654 0-3 1.346-3 3v15c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3V10c0-1.654-1.346-3-3-3zm-3 19h-8v-.161C12 24.3 13.832 23 16 23s4 1.3 4 2.839V26zm4-1a1 1 0 0 1-1 1h-1v-.161C22 23.171 19.309 21 16 21s-6 2.171-6 4.839V26H9a1 1 0 0 1-1-1V10c0-.551.448-1 1-1h3.142a1 1 0 0 0 .968-.749A2.993 2.993 0 0 1 16 6c1.358 0 2.547.926 2.891 2.251a.998.998 0 0 0 .967.749H23c.552 0 1 .449 1 1v15zm-8-12c-1.93 0-3.5 1.57-3.5 3.5S14.07 20 16 20s3.5-1.57 3.5-3.5S17.93 13 16 13zm0 5c-.827 0-1.5-.673-1.5-1.5S15.173 15 16 15s1.5.673 1.5 1.5S16.827 18 16 18z"
+        />
+      </svg>
+    )}
+
     {// INSURANCE - CAR
     render === 'car' && (
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         <path
           fill={theme.colors[color]}
           fillRule="evenodd"
@@ -97,13 +93,7 @@ export const Icon: FC<Props> = ({
 
     {// FINANCE - POLICY
     render === 'policy' && (
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         <path
           fill={theme.colors[color]}
           d="M25.707 11.293l-7-7A.996.996 0 0 0 18 4H9C7.346 4 6 5.346 6 7v18c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3V12a.996.996 0 0 0-.293-.707zM24 25a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h8.586L24 12.414V25zm-10-9v1h-1a1 1 0 1 0 0 2h1v1h-1a1 1 0 1 0 0 2h5a1 1 0 1 0 0-2h-2v-1h1a1 1 0 1 0 0-2h-1v-1a1 1 0 0 1 1.867-.498 1 1 0 1 0 1.73-1.004A3.011 3.011 0 0 0 17 13c-1.654 0-3 1.346-3 3z"
@@ -113,13 +103,7 @@ export const Icon: FC<Props> = ({
 
     {// INTERFACE - EDIT
     render === 'edit' && (
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         <path
           fill={theme.colors[color]}
           d="M24.121 12.122A2.982 2.982 0 0 0 25 10c0-.801-.312-1.555-.879-2.121A2.976 2.976 0 0 0 22 7c-.801 0-1.555.312-2.121.879l-1.464 1.464 4.243 4.243 1.463-1.464zM21.243 15L17 10.757 8.667 19.09 7 25l5.91-1.667L21.243 15z"
@@ -129,13 +113,7 @@ export const Icon: FC<Props> = ({
 
     {// INTERFACE - UP-DOWN
     render === 'up-down' && (
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         <path
           fill={theme.colors[color]}
           fillRule="evenodd"
@@ -147,16 +125,20 @@ export const Icon: FC<Props> = ({
 
     {// INTERFACE - CARET
     render === 'caret' && (
-      <svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         <path
           fill={theme.colors[color]}
           d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
+        />
+      </svg>
+    )}
+
+    {// INTERFACE - DOC-DOWNLOAD
+    render === 'doc-download' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <path
+          fill={theme.colors[color]}
+          d="M20.707 22.293a.999.999 0 0 0-1.414 0L17 24.586V17a1 1 0 0 0-2 0v7.586l-2.293-2.293a.999.999 0 1 0-1.414 1.414l4 4A1.01 1.01 0 0 0 16 28a1.01 1.01 0 0 0 .707-.293l4-4a.999.999 0 0 0 0-1.414zm5-12l-6-6A.997.997 0 0 0 19 4H9C7.346 4 6 5.346 6 7v18c0 1.654 1.346 3 3 3h2a1 1 0 0 0 0-2H9c-.551 0-1-.449-1-1V7c0-.551.449-1 1-1h9.586L24 11.414V25c0 .551-.449 1-1 1h-2a1 1 0 0 0 0 2h2c1.654 0 3-1.346 3-3V11a.997.997 0 0 0-.293-.707z"
         />
       </svg>
     )}
