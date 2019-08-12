@@ -27,6 +27,28 @@ export const Icon: FC<Props> = ({
   rotate = 0,
 }) => (
   <Container size={size} color={color} rotate={rotate}>
+    {// MISC - PADLOCK
+    render === 'padlock' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <path
+          fill={theme.colors[color]}
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M24 12h-2v-2c0-3.309-2.691-6-6-6s-6 2.691-6 6v2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V14a2 2 0 0 0-2-2zm-8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-4-11h8v-2c0-2.206-1.794-4-4-4s-4 1.794-4 4v2z"
+        />
+      </svg>
+    )}
+
+    {// MISC - RENEWAL
+    render === 'renewal' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <path
+          fill={theme.colors[color]}
+          d="M24.75 6a1 1 0 1 1 2 0v7a1 1 0 0 1-1 1h-7a1 1 0 1 1 0-2h4.708c-1.648-3.079-4.69-5-8.083-5-3.863 0-7.273 2.49-8.686 6.344a1 1 0 1 1-1.878-.689C6.516 8.005 10.663 5 15.375 5c3.838 0 7.301 1.995 9.375 5.248V6zm.061 12.656a.999.999 0 1 1 1.878.689C24.984 23.995 20.837 27 16.125 27c-3.838 0-7.301-1.995-9.375-5.248V26a1 1 0 1 1-2 0v-7a1 1 0 0 1 1-1h7a1 1 0 1 1 0 2H8.042c1.648 3.079 4.69 5 8.083 5 3.863 0 7.273-2.49 8.686-6.344z"
+        />
+      </svg>
+    )}
+
     {// CONTACT - EMAIL
     render === 'contact-email' && (
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
@@ -53,18 +75,6 @@ export const Icon: FC<Props> = ({
         <path
           fill={theme.colors[color]}
           d="M27.611 12.709l-11-8.5a1.001 1.001 0 0 0-1.223 0l-11 8.5c-.244.19-.388.482-.388.792V25c0 1.653 1.346 3 3 3h5a1 1 0 1 0 0-2H7c-.552 0-1-.45-1-1v-9.246l5.459 3.512a1 1 0 0 0 1.082-1.682l-6.108-3.93L16 6.266l9.567 7.393-6.108 3.93a1 1 0 1 0 1.082 1.681L26 15.757V25c0 .552-.448 1-1 1h-5a1 1 0 1 0 0 2h5c1.654 0 3-1.346 3-3V13.5c0-.31-.144-.601-.389-.791zM19.999 15a1 1 0 0 0 .601-1.8l-4-3c-.041-.032-.088-.046-.132-.07-.039-.02-.074-.043-.115-.06a.989.989 0 0 0-.346-.07H15.994a.989.989 0 0 0-.346.07c-.042.017-.076.04-.115.06-.044.024-.092.04-.133.07l-4 3a1 1 0 1 0 1.199 1.6L15 13v14a1 1 0 1 0 2 0V13l2.4 1.8c.18.134.39.2.599.2z"
-        />
-      </svg>
-    )}
-
-    {// MISC - PADLOCK
-    render === 'padlock' && (
-      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
-        <path
-          fill={theme.colors[color]}
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M24 12h-2v-2c0-3.309-2.691-6-6-6s-6 2.691-6 6v2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V14a2 2 0 0 0-2-2zm-8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-4-11h8v-2c0-2.206-1.794-4-4-4s-4 1.794-4 4v2z"
         />
       </svg>
     )}
@@ -111,13 +121,21 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
 
+    {// INTERFACE - SEARCH
+    render === 'search' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <path
+          fill={theme.colors[color]}
+          d="M7 14a7 7 0 1 1 14 0 7 7 0 0 1-14 0zm7-9a9 9 0 1 0 5.618 16.032l5.675 5.675a1 1 0 0 0 1.414-1.414l-5.675-5.675A9 9 0 0 0 14 5z"
+        />
+      </svg>
+    )}
+
     {// INTERFACE - UP-DOWN
     render === 'up-down' && (
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         <path
           fill={theme.colors[color]}
-          fillRule="evenodd"
-          clipRule="evenodd"
           d="M15.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1-1.414 1.414L16 9.414l-3.293 3.293a1 1 0 0 1-1.414-1.414l4-4zM16.707 24.707a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L16 22.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-4 4z"
         />
       </svg>

@@ -8,7 +8,7 @@ import {Icon} from './Icon';
 storiesOf('Icon', module).addWithJSX('default', () => (
   <Icon
     render={text('Render', 'at')}
-    size={text('Size (in px)', '32')}
+    size={number('Size (in px)', 32)}
     color={text('Color', 'blue7')}
     rotate={number('Rotate', 0)}
   />
