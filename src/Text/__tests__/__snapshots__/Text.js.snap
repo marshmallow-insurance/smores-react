@@ -9,9 +9,8 @@ exports[`renders 1`] = `
   padding: 0;
   color: #112035;
   font-family: Gordita,sans-serif;
-  font-weight: normal;
   text-align: left;
-  cursor: auto;
+  cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
@@ -28,7 +27,7 @@ exports[`renders 1`] = `
 <p
   class="c0"
   color="blue7"
-  cursor="auto"
+  cursor="inherit"
 >
   The quick brown fox jumps over the lazy dog
 </p>

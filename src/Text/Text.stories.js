@@ -13,8 +13,6 @@ storiesOf('Text', module)
     <Text
       tag={text('Tag', 'h1')}
       color={text('Color', 'pink5')}
-      wSize={number('Font-size', 28)}
-      weight={text('Font-weight', 'normal')}
       align={text('Text-align', 'left')}
       cursor={text('Cursor', 'auto')}
     >

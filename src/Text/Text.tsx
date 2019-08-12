@@ -8,8 +8,6 @@ interface IText {
   typo: string;
   /** HTML tag  */
   as: any;
-  /** font-weight  */
-  weight: string;
   /** text-align  */
   align: string;
   /** color from the theme  */
@@ -22,7 +20,6 @@ type Props = {
   tag: any;
   className?: string;
   typo?: string;
-  weight?: string;
   align?: string;
   color?: string;
   cursor?: string;
@@ -33,16 +30,14 @@ export const Text: FC<Props> = ({
   typo,
   className = '',
   tag = 'p',
-  weight = 'normal',
   align = 'left',
   color = 'blue7',
-  cursor = 'auto',
+  cursor = 'inherit',
 }) => (
   <Container
     as={tag}
     className={className}
     typo={typo || 'base'}
-    weight={weight}
     align={align}
     color={color}
     cursor={cursor}
@@ -199,7 +194,6 @@ const Container = styled.p<IText>`
   padding: 0;
   color: ${p => theme.colors[p.color]};
   font-family: ${theme.font.family.normal};
-  font-weight: ${p => p.weight};
   text-align: ${p => p.align};
   cursor: ${p => p.cursor};
   letter-spacing: 0.15px;
