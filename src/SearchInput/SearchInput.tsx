@@ -103,7 +103,6 @@ const Label = styled.label`
   font-size: 10px;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: ${theme.font.family.bold};
 `;
 
 const Input = styled.input<ISearchInput>`
@@ -113,7 +112,6 @@ const Input = styled.input<ISearchInput>`
   border-color: ${theme.colors.grey4};
   outline: none;
   color: ${theme.colors.blue7};
-  font-family: ${theme.font.family.normal};
   font-size: 16px;
   height: 32px;
   box-sizing: border-box;
@@ -131,6 +129,7 @@ const ResultsContainer = styled.div<IContainer>`
 
   ul {
     max-height: ${p => (p.show ? '192px' : '0px')};
+    border-color: ${p => (p.show ? `${theme.colors.grey4}` : 'transparent')};
   }
 `;
 
@@ -150,7 +149,6 @@ const ResultsList = styled.ul`
     padding: 16px 14px;
     box-sizing: border-box;
     font-size: 16px;
-    font-family: ${theme.font.family.normal};
     color: ${theme.colors.blue7};
     cursor: pointer;
 

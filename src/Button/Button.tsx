@@ -63,7 +63,6 @@ const Container = styled.button<IButton>`
   box-sizing: border-box;
   border: none;
   border-radius: 8px;
-  font-family: ${theme.font.family.normal};
   font-size: 14px;
   padding: 18px 24px 14px;
   outline: none;

@@ -193,7 +193,6 @@ const Container = styled.p<IText>`
   margin: 0;
   padding: 0;
   color: ${p => theme.colors[p.color]};
-  font-family: ${theme.font.family.normal};
   text-align: ${p => p.align};
   cursor: ${p => p.cursor};
   letter-spacing: 0.15px;
