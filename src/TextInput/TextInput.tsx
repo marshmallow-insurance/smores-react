@@ -1,4 +1,4 @@
-import React, {FormEvent, PureComponent} from 'react';
+import React, {FormEvent, FC} from 'react';
 import styled from 'styled-components';
 
 import {Icon} from '../Icon';
@@ -38,51 +38,44 @@ type Props = {
   trailingIcon?: string;
 };
 
-type State = {};
-
-export class TextInput extends PureComponent<Props, State> {
-  public render() {
-    const {
-      id,
-      className,
-      type,
-      placeholder,
-      label,
-      name,
-      value,
-      error,
-      errorMsg,
-      trailingIcon,
-    } = this.props;
-
-    return (
-      <Container className={className} hasLabel={!!label}>
-        {label && <Label htmlFor={name}>{label}</Label>}
-        <Content error={error || false}>
-          <Input
-            type={type || 'text'}
-            id={id}
-            name={name}
-            placeholder={placeholder}
-            value={value}
-            error={error || false}
-            autoComplete="off"
-            onChange={this.handleOnChange}
-          />
-          {trailingIcon && <Icon render={trailingIcon} color="grey4" />}
-        </Content>
-        {error && <ErrorBox>{errorMsg}</ErrorBox>}
-      </Container>
-    );
-  }
-
-  private handleOnChange = (e: FormEvent<HTMLInputElement>): void => {
-    const {onChange} = this.props;
+export const TextInput: FC<Props> = ({
+  id,
+  className,
+  type,
+  placeholder,
+  label,
+  name,
+  value,
+  error,
+  errorMsg,
+  trailingIcon,
+  onChange,
+}) => {
+  const handleOnChange = (e: FormEvent<HTMLInputElement>): void => {
     const value = e.currentTarget.value;
-
     onChange(value);
   };
-}
+
+  return (
+    <Container className={className} hasLabel={!!label}>
+      {label && <Label htmlFor={name}>{label}</Label>}
+      <Content error={error || false}>
+        <Input
+          type={type || 'text'}
+          id={id}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          error={error || false}
+          autoComplete="off"
+          onChange={handleOnChange}
+        />
+        {trailingIcon && <Icon render={trailingIcon} color="grey4" />}
+      </Content>
+      {error && <ErrorBox>{errorMsg}</ErrorBox>}
+    </Container>
+  );
+};
 
 const Container = styled.div<IContainer>`
   display: flex;
@@ -95,7 +88,6 @@ const Label = styled.label`
   font-size: 10px;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: ${theme.font.family.bold};
 `;
 
 const Content = styled.div<IInput>`
@@ -116,7 +108,6 @@ const Content = styled.div<IInput>`
 const Input = styled.input<IInput>`
   border: none;
   color: ${p => theme.colors[`${p.error ? 'red7' : 'black'}`]};
-  font-family: ${theme.font.family.normal};
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -130,6 +121,5 @@ const Input = styled.input<IInput>`
 const ErrorBox = styled.span`
   margin-top: 7px;
   color: ${theme.colors.red7};
-  font-family: ${theme.font.family.normal};
   font-size: 12px;
 `;
