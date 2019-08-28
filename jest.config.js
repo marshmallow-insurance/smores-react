@@ -14,5 +14,4 @@ module.exports = {
     '!**/node_modules/**',
   ],
   //after Jest is loaded
-  setupFilesAfterEnv: [require.resolve('./test/setup-test.js')],
 };
