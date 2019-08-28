@@ -7,7 +7,6 @@ exports[`renders 1`] = `
   box-sizing: border-box;
   border: none;
   border-radius: 8px;
-  font-family: Gordita,sans-serif;
   font-size: 14px;
   padding: 18px 24px 14px;
   outline: none;

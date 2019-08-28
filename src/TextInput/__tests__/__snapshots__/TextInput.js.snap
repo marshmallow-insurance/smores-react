@@ -32,7 +32,6 @@ exports[`renders 1`] = `
 
 .c2 {
   border: none;
-  font-family: Gordita,sans-serif;
   font-size: 16px;
   width: 100%;
   outline: none;

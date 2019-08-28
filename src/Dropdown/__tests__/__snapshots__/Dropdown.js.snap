@@ -50,7 +50,6 @@ exports[`renders 1`] = `
   border-bottom: 1px solid;
   border-color: #C1C1C1;
   border-radius: 0;
-  font-family: Gordita,sans-serif;
   font-size: 16px;
   cursor: pointer;
   -webkit-appearance: none;

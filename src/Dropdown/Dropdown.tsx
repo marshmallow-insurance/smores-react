@@ -91,7 +91,6 @@ const Select = styled.select`
   border-bottom: 1px solid;
   border-color: ${theme.colors.grey4};
   border-radius: 0;
-  font-family: ${theme.font.family.normal};
   font-size: 16px;
   cursor: pointer;
   appearance: none; /* remove default arrow */
