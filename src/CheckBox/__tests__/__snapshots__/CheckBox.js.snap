@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<label
+  class="sc-htpNat gAjghl"
+>
+  <span
+    class="sc-bdVaJa ikTbEa"
+    color="blue7"
+    cursor="inherit"
+  />
+  <input
+    type="checkbox"
+  />
+  <span
+    class="sc-bwzfXH cNpRHM"
+  />
+</label>
+`;
