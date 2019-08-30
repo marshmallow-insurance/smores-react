@@ -20,10 +20,14 @@ interface ISearchInput {
 }
 
 type Props = {
+  /** ID, usually used for tests  */
   id: string;
-  label: string;
+  /** label displayed above the input  */
+  label?: string;
+  /** list of items for the search list */
   searchList: SearchInputItem[];
-  onFound: (item: SearchInputItem) => void;
+  /** onFound listener */
+  onFound: (element: string) => void;
 };
 
 export const SearchInput: FC<Props> = ({id, label, searchList, onFound}) => {
@@ -58,7 +62,7 @@ export const SearchInput: FC<Props> = ({id, label, searchList, onFound}) => {
   const select = (selectedItem: SearchInputItem): void => {
     setActive(false);
     setSelectedResult(selectedItem.label);
-    onFound(selectedItem);
+    onFound(selectedItem.value);
   };
 
   return (
@@ -114,6 +118,7 @@ const Input = styled.input<ISearchInput>`
   color: ${theme.colors.blue7};
   font-size: 16px;
   height: 32px;
+  width: 100%;
   box-sizing: border-box;
 
   &::placeholder {
@@ -139,11 +144,12 @@ const ResultsList = styled.ul`
   overflow-y: auto;
   padding: 0;
   margin: 0;
+  background-color: ${theme.colors.white};
   border: 1px solid ${theme.colors.grey4};
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  transition: all 0.2s linear;
+  z-index: 1000;
 
   li {
     padding: 16px 14px;

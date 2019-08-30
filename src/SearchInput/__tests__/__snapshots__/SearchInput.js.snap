@@ -23,6 +23,7 @@ exports[`renders 1`] = `
   color: #112035;
   font-size: 16px;
   height: 32px;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -60,12 +61,12 @@ exports[`renders 1`] = `
   overflow-y: auto;
   padding: 0;
   margin: 0;
+  background-color: #ffffff;
   border: 1px solid #C1C1C1;
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
+  z-index: 1000;
 }
 
 .c4 li {

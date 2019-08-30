@@ -25,7 +25,7 @@ type Props = {
   /** list of items for the dropdown list */
   list: DropdownItem[];
   /** onSelect handler */
-  onSelect: (str: string) => void;
+  onSelect: (element: string | number) => void;
 };
 
 export const Dropdown: FC<Props> = ({

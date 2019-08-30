@@ -50,32 +50,27 @@ export const TextInput: FC<Props> = ({
   errorMsg,
   trailingIcon,
   onChange,
-}) => {
-  const handleOnChange = (e: FormEvent<HTMLInputElement>): void => {
-    const value = e.currentTarget.value;
-    onChange(value);
-  };
-
-  return (
-    <Container className={className} hasLabel={!!label}>
-      {label && <Label htmlFor={name}>{label}</Label>}
-      <Content error={error || false}>
-        <Input
-          type={type || 'text'}
-          id={id}
-          name={name}
-          placeholder={placeholder}
-          value={value}
-          error={error || false}
-          autoComplete="off"
-          onChange={handleOnChange}
-        />
-        {trailingIcon && <Icon render={trailingIcon} color="grey4" />}
-      </Content>
-      {error && <ErrorBox>{errorMsg}</ErrorBox>}
-    </Container>
-  );
-};
+}) => (
+  <Container className={className} hasLabel={!!label}>
+    {label && <Label htmlFor={name}>{label}</Label>}
+    <Content error={error || false}>
+      <Input
+        type={type || 'text'}
+        id={id}
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        error={error || false}
+        autoComplete="off"
+        onChange={(e: FormEvent<HTMLInputElement>) =>
+          onChange(e.currentTarget.value)
+        }
+      />
+      {trailingIcon && <Icon render={trailingIcon} color="grey4" />}
+    </Content>
+    {error && <ErrorBox>{errorMsg}</ErrorBox>}
+  </Container>
+);
 
 const Container = styled.div<IContainer>`
   display: flex;
@@ -111,7 +106,6 @@ const Input = styled.input<IInput>`
   font-size: 16px;
   width: 100%;
   outline: none;
-  transition: all 0.2s ease-out;
 
   &::placeholder {
     color: ${theme.colors.grey4};
