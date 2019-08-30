@@ -16,10 +16,10 @@ const colors = {
 
   //Pink
   pink2: '#FFB2B4',
-  pink6: '#FD5064',
   pink3: '#FF8A8D',
   pink4: '#FF7695',
   pink5: '#FF4E75',
+  pink6: '#FD5064',
   pink7: '#E0364A',
   pink8: '#AB1D20',
 
@@ -34,10 +34,10 @@ const colors = {
 
   //Blue
   blue2: '#ACB6D8',
-  blue6: '#363F59',
   blue3: '#94A0C6',
   blue4: '#6F7AA0',
   blue5: '#545E7E',
+  blue6: '#363F59',
   blue7: '#112035',
   blue8: '#05090E',
 
