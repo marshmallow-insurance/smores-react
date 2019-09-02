@@ -8322,18 +8322,18 @@ react-dev-utils@^9.0.0:
     text-table "0.2.0"
 
 react-docgen-typescript-loader@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/react-docgen-typescript-loader/-/react-docgen-typescript-loader-3.1.1.tgz#c1992538524fb9e45246d6c1314ddcfbf26e9d08"
-  integrity sha512-h8xfQIiEI4Z1oZewZhi9oohiWMS5Ek19LmgrvoL77Y/5d3tzu6fE3QHqhzYzdPnTaCfMzF7JMDUaydJiLbsDKg==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-docgen-typescript-loader/-/react-docgen-typescript-loader-3.2.0.tgz#137afca0d96211b82685253eb7397dab2ee43920"
+  integrity sha512-FL7H3yXNkcsQD/OKwReJ1i8faqaarRBzpjZd/pNtpz4nH6hx1h/oWkmaIaL8I2YaY4moPaNgAoi2PAMA9o0K7A==
   dependencies:
     "@webpack-contrib/schema-utils" "^1.0.0-beta.0"
     loader-utils "^1.2.3"
-    react-docgen-typescript "^1.12.3"
+    react-docgen-typescript "^1.14.0"
 
-react-docgen-typescript@^1.12.3:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/react-docgen-typescript/-/react-docgen-typescript-1.13.0.tgz#73f42392a700446d9cfd455b2e111a4e7bfb4541"
-  integrity sha512-hygNmugf8wH9CXYapW1M4AY+be8UrJu3ptPXt7cxxaPXV/o5kyMW5e8Milb6vQWxqwg4yGUspsf8oq0fyQFm5w==
+react-docgen-typescript@^1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/react-docgen-typescript/-/react-docgen-typescript-1.14.0.tgz#f795992e7da2f4f621c6addc23a60419f2f3924a"
+  integrity sha512-LalT7mYQwsgXjKBo9qRO9fuArAql0yQ2nmlVhoxu0/pVQ+oBnIPXGn1D+seFXdtm6VmgDJv9YN/A99fKU/6Y8g==
 
 react-docgen@^4.1.0:
   version "4.1.1"
