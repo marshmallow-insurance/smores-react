@@ -9391,9 +9391,9 @@ store2@^2.7.1:
   integrity sha512-JmK+95jLX2zAP75DVAJ1HAziQ6f+f495h4P9ez2qbmxazN6fE7doWlitqx9hj2YohH3kOi6RVksJe1UH0sJfPw==
 
 storybook-addon-jsx@^7.1.5:
-  version "7.1.5"
-  resolved "https://registry.yarnpkg.com/storybook-addon-jsx/-/storybook-addon-jsx-7.1.5.tgz#f57b4fdc7da5d07b85b1da6a9425207bffbc2fb1"
-  integrity sha512-OU3JcBYGmFHeZjkvG6nbEOKy8AesURi+s7CcT7Ud68adAP8cJEDNxL6DUXWdJyt5DUKUivxewRmyQT8B9v8qWw==
+  version "7.1.6"
+  resolved "https://registry.yarnpkg.com/storybook-addon-jsx/-/storybook-addon-jsx-7.1.6.tgz#56177cc0c98d836fcec837c8bb2f7e2c64838f7f"
+  integrity sha512-1aCF4xFYImjwJDJhI9f7l8PEt1ScCNfkgvofFRB7CwxFf4chepM5HirH4wc2kSWhFcBRoQhx/Y0cNxnlsJAN4A==
   dependencies:
     copy-to-clipboard "^3.0.8"
     js-beautify "^1.8.8"
