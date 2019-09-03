@@ -24,13 +24,21 @@ type Props = {
   id: string;
   /** label displayed above the input  */
   label?: string;
+  /** Placeholder (initial state) */
+  placeholder?: string;
   /** list of items for the search list */
   searchList: SearchInputItem[];
   /** onFound listener */
   onFound: (element: string) => void;
 };
 
-export const SearchInput: FC<Props> = ({id, label, searchList, onFound}) => {
+export const SearchInput: FC<Props> = ({
+  id,
+  label,
+  placeholder,
+  searchList,
+  onFound,
+}) => {
   const [active, setActive] = useState(false);
   const [list, setList] = useState(searchList);
   const [selectedResult, setSelectedResult] = useState('');
@@ -72,7 +80,7 @@ export const SearchInput: FC<Props> = ({id, label, searchList, onFound}) => {
         id={id}
         type="text"
         name={name}
-        placeholder={label}
+        placeholder={placeholder}
         autoComplete="off"
         value={selectedResult}
         onKeyUp={search}

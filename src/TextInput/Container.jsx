@@ -10,7 +10,7 @@ export const Container = () => {
         id="textInput"
         label="label"
         name="textInput"
-        onChange={str => setValue(str)}
+        onChange={setValue}
         placeholder="Placeholder"
         error={value.length > 7}
         errorMsg="Value is over 7 characters!"

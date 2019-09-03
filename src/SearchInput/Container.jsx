@@ -27,6 +27,12 @@ const list = [
 
 export const Container = () => {
   return (
-    <SearchInput id="days" label="Days" searchList={list} onFound={() => {}} />
+    <SearchInput
+      id="days"
+      label="Days"
+      placeholder="Search days"
+      searchList={list}
+      onFound={() => {}}
+    />
   );
 };

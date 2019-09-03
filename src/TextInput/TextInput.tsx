@@ -7,6 +7,7 @@ import {theme} from '../theme';
 
 interface IContainer {
   hasLabel: boolean;
+  hasError: boolean;
 }
 
 interface IInput {
@@ -40,27 +41,27 @@ type Props = {
 
 export const TextInput: FC<Props> = ({
   id,
-  className,
-  type,
+  className = '',
+  type = 'text',
   placeholder,
   label,
   name,
   value,
-  error,
+  error = false,
   errorMsg,
   trailingIcon,
   onChange,
 }) => (
-  <Container className={className} hasLabel={!!label}>
+  <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
     {label && <Label htmlFor={name}>{label}</Label>}
-    <Content error={error || false}>
+    <Content error={error}>
       <Input
-        type={type || 'text'}
+        type={type}
         id={id}
         name={name}
         placeholder={placeholder}
         value={value}
-        error={error || false}
+        error={error}
         autoComplete="off"
         onChange={(e: FormEvent<HTMLInputElement>) =>
           onChange(e.currentTarget.value)
@@ -75,7 +76,7 @@ export const TextInput: FC<Props> = ({
 const Container = styled.div<IContainer>`
   display: flex;
   flex-direction: column;
-  height: ${p => (p.hasLabel ? '64px' : '52px')};
+  height: ${p => (p.hasLabel && p.hasError ? '64px' : '52px')};
 `;
 
 const Label = styled.label`
