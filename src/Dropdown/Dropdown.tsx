@@ -51,8 +51,9 @@ export const Dropdown: FC<Props> = ({
         onChange={(e: React.FormEvent<HTMLSelectElement>) =>
           onSelect(e.currentTarget.value)
         }
+        required
       >
-        <option value={placeholder} hidden>
+        <option value="" hidden>
           {placeholder}
         </option>
         {list.map((el, i) => (
@@ -97,6 +98,10 @@ const Select = styled.select`
 
   &:disabled {
     cursor: default;
+  }
+
+  &:not(:focus):invalid {
+    color: ${theme.colors.grey4};
   }
 
   &:hover {

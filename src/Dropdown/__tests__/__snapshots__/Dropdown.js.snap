@@ -61,6 +61,10 @@ exports[`renders 1`] = `
   cursor: default;
 }
 
+.c2:not(:focus):invalid {
+  color: #C1C1C1;
+}
+
 .c2:hover {
   border-color: #9E9E9E;
 }
@@ -89,9 +93,11 @@ exports[`renders 1`] = `
   >
     <select
       class="c2"
+      required=""
     >
       <option
         hidden=""
+        value=""
       />
       <option
         value="Monday"
