@@ -1,6 +1,7 @@
 import React, {FC, useState} from 'react';
 import styled from 'styled-components';
 
+import {Text} from '../Text';
 import {theme} from '../theme';
 
 export type SearchInputItem = {
@@ -75,7 +76,11 @@ export const SearchInput: FC<Props> = ({
 
   return (
     <Container show={active}>
-      {label && <Label htmlFor={name}>{label}</Label>}
+      {label && (
+        <Text tag="label" color="grey4" typo="label">
+          {label}
+        </Text>
+      )}
       <Input
         id={id}
         type="text"
@@ -108,13 +113,6 @@ const Container = styled.div<IContainer>`
   position: relative;
   width: 100%;
   background: ${theme.colors.white};
-`;
-
-const Label = styled.label`
-  color: ${theme.colors.grey4};
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
 `;
 
 const Input = styled.input<ISearchInput>`

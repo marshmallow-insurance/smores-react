@@ -1,6 +1,7 @@
 import React, {FormEvent, FC} from 'react';
 import styled from 'styled-components';
 
+import {Text} from '../Text';
 import {Icon} from '../Icon';
 
 import {theme} from '../theme';
@@ -53,7 +54,11 @@ export const TextInput: FC<Props> = ({
   onChange,
 }) => (
   <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
-    {label && <Label htmlFor={name}>{label}</Label>}
+    {label && (
+      <Text tag="label" color="grey4" typo="label">
+        {label}
+      </Text>
+    )}
     <Content error={error}>
       <Input
         type={type}
@@ -77,13 +82,6 @@ const Container = styled.div<IContainer>`
   display: flex;
   flex-direction: column;
   height: ${p => (p.hasLabel && p.hasError ? '64px' : '52px')};
-`;
-
-const Label = styled.label`
-  color: ${theme.colors.grey4};
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
 `;
 
 const Content = styled.div<IInput>`

@@ -183,6 +183,7 @@ const Container = styled.p<IText>`
       line-height: 9px;
       font-weight: bold;
       text-transform: uppercase;
+      letter-spacing: 0.75px;
 
       @media (min-width: 768px) {
         font-size: 10px;

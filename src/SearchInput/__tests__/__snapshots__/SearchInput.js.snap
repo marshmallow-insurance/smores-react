@@ -1,17 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
+.c1 {
+  font-size: 8px;
+  line-height: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.75px;
+  -moz-letter-spacing: 0.75px;
+  -ms-letter-spacing: 0.75px;
+  letter-spacing: 0.75px;
+  margin: 0;
+  padding: 0;
+  color: #C1C1C1;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
 .c0 {
   position: relative;
   width: 100%;
   background: #ffffff;
-}
-
-.c1 {
-  color: #C1C1C1;
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
 }
 
 .c2 {
@@ -81,12 +94,20 @@ exports[`renders 1`] = `
   background-color: #F8F6F6;
 }
 
+@media (min-width:768px) {
+  .c1 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
 <div
   class="c0"
 >
   <label
     class="c1"
-    for="nodejs"
+    color="grey4"
+    cursor="inherit"
   >
     Days
   </label>
