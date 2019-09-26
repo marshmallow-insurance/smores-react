@@ -26,7 +26,7 @@ components that conform to Marshmallow's Design System - "_S'mores_".
 ```bash
 $ yarn add @mrshmllw/smores-react
 # OR
-$ npm i @mrshmllw/smores-react
+$ npm install @mrshmllw/smores-react
 ```
 
 ## Usage
