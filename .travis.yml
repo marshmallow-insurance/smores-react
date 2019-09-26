@@ -4,12 +4,12 @@ node_js:
   - '8'
 
 cache:
-  yarn: true
+  npm: true
   directories:
     - node_modules
 
 before_script:
-  - yarn run build-storybook
+  - npm run build-storybook
 
 deploy:
   provider: pages
