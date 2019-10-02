@@ -179,21 +179,21 @@ export const Icon: FC<Props> = ({
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         {/* tslint:disable-next-line:max-line-length */}
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M7 9a1 1 0 00-1 1v12a1 1 0 001 1h18a1 1 0 001-1V10a1 1 0 00-1-1H7zm-3 1a3 3 0 013-3h18a3 3 0 013 3v12a3 3 0 01-3 3H7a3 3 0 01-3-3V10z"
           fill={theme.colors[color]}
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M15.676 19.659a1 1 0 01.094-1.412L18.339 16l-2.569-2.247a1 1 0 011.317-1.506l3.429 3a1 1 0 010 1.506l-3.429 3a1 1 0 01-1.411-.095z"
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M16.324 12.341a1 1 0 01-.094 1.412L13.661 16l2.569 2.247a1 1 0 01-1.317 1.506l-3.429-3a1 1 0 010-1.506l3.429-3a1 1 0 011.411.095z"
           fill={theme.colors[color]}
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M20.857 16a1 1 0 01-1 1h-7.714a1 1 0 110-2h7.714a1 1 0 011 1z"
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M11.143 16a1 1 0 011-1h7.714a1 1 0 110 2h-7.714a1 1 0 01-1-1z"
           fill={theme.colors[color]}
         />
       </svg>
@@ -204,20 +204,20 @@ export const Icon: FC<Props> = ({
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         {/* tslint:disable-next-line:max-line-length */}
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M7 9a1 1 0 00-1 1v12a1 1 0 001 1h18a1 1 0 001-1V10a1 1 0 00-1-1H7zm-3 1a3 3 0 013-3h18a3 3 0 013 3v12a3 3 0 01-3 3H7a3 3 0 01-3-3V10z"
           fill={theme.colors[color]}
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M15.676 19.659a1 1 0 01.094-1.412L18.339 16l-2.569-2.247a1 1 0 011.317-1.506l3.429 3a1 1 0 010 1.506l-3.429 3a1 1 0 01-1.411-.095z"
           fill={theme.colors[color]}
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M20.857 16a1 1 0 01-1 1h-7.714a1 1 0 110-2h7.714a1 1 0 011 1z"
           fill={theme.colors[color]}
         />
