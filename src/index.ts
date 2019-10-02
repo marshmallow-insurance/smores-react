@@ -7,3 +7,4 @@ export * from './Loader';
 export * from './SearchInput';
 export * from './Text';
 export * from './TextInput';
+export * from './Toggle';
