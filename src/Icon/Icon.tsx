@@ -173,6 +173,67 @@ export const Icon: FC<Props> = ({
         />
       </svg>
     )}
+
+    {// REFUND (Box with arrow facing left)
+    render === 'refund' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        {/* tslint:disable-next-line:max-line-length */}
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M7 9a1 1 0 00-1 1v12a1 1 0 001 1h18a1 1 0 001-1V10a1 1 0 00-1-1H7zm-3 1a3 3 0 013-3h18a3 3 0 013 3v12a3 3 0 01-3 3H7a3 3 0 01-3-3V10z"
+          fill={theme.colors[color]}
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M15.676 19.659a1 1 0 01.094-1.412L18.339 16l-2.569-2.247a1 1 0 011.317-1.506l3.429 3a1 1 0 010 1.506l-3.429 3a1 1 0 01-1.411-.095z"
+          fill={theme.colors[color]}
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M20.857 16a1 1 0 01-1 1h-7.714a1 1 0 110-2h7.714a1 1 0 011 1z"
+          fill={theme.colors[color]}
+        />
+      </svg>
+    )}
+
+    {// CHARGE (Box with arrow facing right)
+    render === 'charge' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        {/* tslint:disable-next-line:max-line-length */}
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M7 9a1 1 0 00-1 1v12a1 1 0 001 1h18a1 1 0 001-1V10a1 1 0 00-1-1H7zm-3 1a3 3 0 013-3h18a3 3 0 013 3v12a3 3 0 01-3 3H7a3 3 0 01-3-3V10z"
+          fill={theme.colors[color]}
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M15.676 19.659a1 1 0 01.094-1.412L18.339 16l-2.569-2.247a1 1 0 011.317-1.506l3.429 3a1 1 0 010 1.506l-3.429 3a1 1 0 01-1.411-.095z"
+          fill={theme.colors[color]}
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M20.857 16a1 1 0 01-1 1h-7.714a1 1 0 110-2h7.714a1 1 0 011 1z"
+          fill={theme.colors[color]}
+        />
+      </svg>
+    )}
+
+    {// CAR CLAIM (Car going over a bump)
+    render === 'car-claim' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        {/* tslint:disable-next-line:max-line-length */}
+        <path
+          d="M23.942 22.667A4.005 4.005 0 0020.171 20a4.006 4.006 0 00-3.772 2.667 1 1 0 001.886.666 2 2 0 013.773 0 .998.998 0 001.275.61.997.997 0 00.609-1.276zm-17.697-7.62a.996.996 0 00-1.211-.725 1.003 1.003 0 00.242 1.974 1 1 0 00.971-1.242l-.002-.008zM4.016 20.31l16.751-4.489.652 2.432a1 1 0 001.932-.518l-.91-3.397v-.002l-1.73-6.457a2.733 2.733 0 00-.47-.957L16.565 2.09a2.744 2.744 0 00-2.909-.995L2.811 4A2.75 2.75 0 00.788 6.315l-.767 6.027a2.75 2.75 0 00.072 1.06l2.642 9.856a1 1 0 101.932-.517l-.651-2.43zM2.772 6.568a.755.755 0 01.556-.637l10.844-2.905a.753.753 0 01.8.274l2.983 3.924L2.15 11.458l.622-4.89zm.726 11.811l-1.303-4.862 16.751-4.489 1.303 4.861-16.751 4.49zm14.64-6.506a.996.996 0 00-1.202-.74 1.001 1.001 0 00.46 1.952c.537-.127.87-.665.744-1.203l-.002-.009z"
+          fill={theme.colors[color]}
+        />
+      </svg>
+    )}
   </Container>
 );
 
