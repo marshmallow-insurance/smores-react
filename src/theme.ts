@@ -41,6 +41,9 @@ const colors = {
   blue7: '#112035',
   blue8: '#05090E',
 
+  // Third-party brand colours
+  stripe: '#6772E5',
+
   //Yellow
   yellow5: '#FFD53C',
 
