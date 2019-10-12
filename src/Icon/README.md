@@ -34,3 +34,8 @@ const App = () => (
 * up-down
 * caret
 * doc-download
+* refund
+* charge
+* car-claim
+* tick
+* cross
