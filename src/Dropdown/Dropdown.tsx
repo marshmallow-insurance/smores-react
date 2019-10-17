@@ -52,7 +52,7 @@ export const Dropdown: FC<Props> = ({
         <Select
           id={id}
           disabled={disabled}
-          defaultValue={list.length === 1 ? list[0].value : placeholder}
+          defaultValue={list.length === 1 ? String(list[0].value) : placeholder}
           onChange={(e: React.FormEvent<HTMLSelectElement>) =>
             onSelect(e.currentTarget.value)
           }
