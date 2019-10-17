@@ -1,4 +1,4 @@
-import React, {FC, useEffect} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import styled from 'styled-components';
 
 import {Text} from '../Text';
@@ -14,7 +14,7 @@ export type DropdownItem = {
 type Props = {
   /** ID, usually used for tests  */
   id: string;
-  /** className attribute to apply classses from props */
+  /** className attribute to apply classes from props */
   className?: string;
   /** label displayed above the dropdown  */
   label?: string;
@@ -37,9 +37,17 @@ export const Dropdown: FC<Props> = ({
   list,
   onSelect,
 }) => {
+
+  const [value, setValue] = useState('');
+
   useEffect(() => {
-    if (list.length === 1) onSelect(list[0].value);
-  }, []);
+    if (list.length === 1) {
+      setValue(String(list[0].value));
+      onSelect(String(list[0].value));
+    } else {
+      setValue('');
+    }
+  }, [list]);
 
   return (
     <Container className={className}>
@@ -52,13 +60,14 @@ export const Dropdown: FC<Props> = ({
         <Select
           id={id}
           disabled={disabled}
-          defaultValue={list.length === 1 ? String(list[0].value) : placeholder}
-          onChange={(e: React.FormEvent<HTMLSelectElement>) =>
-            onSelect(e.currentTarget.value)
-          }
+          onChange={(e: React.FormEvent<HTMLSelectElement>) => {
+            setValue(e.currentTarget.value);
+            onSelect(e.currentTarget.value);
+          }}
           required
+          value={value}
         >
-          {list.length > 1 && (
+          {list.length !== 1 && (
             <option value="" hidden>
               {placeholder}
             </option>
