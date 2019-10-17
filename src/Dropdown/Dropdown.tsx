@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import styled from 'styled-components';
 
 import {Text} from '../Text';
@@ -36,38 +36,46 @@ export const Dropdown: FC<Props> = ({
   disabled = false,
   list,
   onSelect,
-}) => (
-  <Container className={className}>
-    {label && (
-      <Text tag="label" color="grey4" typo="label">
-        {label}
-      </Text>
-    )}
-    <Content>
-      <Select
-        id={id}
-        disabled={disabled}
-        defaultValue={placeholder}
-        onChange={(e: React.FormEvent<HTMLSelectElement>) =>
-          onSelect(e.currentTarget.value)
-        }
-        required
-      >
-        <option value="" hidden>
-          {placeholder}
-        </option>
-        {list.map((el, i) => (
-          <option key={i} value={el.value}>
-            {el.label}
-          </option>
-        ))}
-      </Select>
-      <Caret>
-        <Icon render="caret" color="grey4" size={24} />
-      </Caret>
-    </Content>
-  </Container>
-);
+}) => {
+  useEffect(() => {
+    if (list.length === 1) onSelect(list[0].value);
+  }, []);
+
+  return (
+    <Container className={className}>
+      {label && (
+        <Text tag="label" color="grey4" typo="label">
+          {label}
+        </Text>
+      )}
+      <Content>
+        <Select
+          id={id}
+          disabled={disabled}
+          defaultValue={list.length === 1 ? list[0].value : placeholder}
+          onChange={(e: React.FormEvent<HTMLSelectElement>) =>
+            onSelect(e.currentTarget.value)
+          }
+          required
+        >
+          {list.length > 1 && (
+            <option value="" hidden>
+              {placeholder}
+            </option>
+          )}
+          {list.map((el, i) => (
+            <option key={i} value={el.value}>
+              {el.label}
+            </option>
+          ))}
+        </Select>
+        <Caret>
+          <Icon render="caret" color="grey4" size={24} />
+        </Caret>
+      </Content>
+    </Container>
+  );
+};
 
 const Container = styled.div`
   display: flex;
