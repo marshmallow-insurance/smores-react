@@ -39,11 +39,14 @@ export const Dropdown: FC<Props> = ({
 }) => {
 
   const [value, setValue] = useState('');
+  const setDropdownValue = (value : string) => {
+    setValue(value);
+    onSelect(value);
+  };
 
   useEffect(() => {
     if (list.length === 1) {
-      setValue(String(list[0].value));
-      onSelect(String(list[0].value));
+      setDropdownValue(String(list[0].value));
     } else {
       setValue('');
     }
@@ -61,8 +64,7 @@ export const Dropdown: FC<Props> = ({
           id={id}
           disabled={disabled}
           onChange={(e: React.FormEvent<HTMLSelectElement>) => {
-            setValue(e.currentTarget.value);
-            onSelect(e.currentTarget.value);
+            setDropdownValue(e.currentTarget.value);
           }}
           required
           value={value}
