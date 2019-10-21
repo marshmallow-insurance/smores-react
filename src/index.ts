@@ -5,6 +5,7 @@ export * from './Dropdown';
 export * from './Icon';
 export * from './Loader';
 export * from './SearchInput';
+export * from './Tag';
 export * from './Text';
 export * from './TextInput';
 export * from './Toggle';
