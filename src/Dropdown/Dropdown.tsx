@@ -37,9 +37,8 @@ export const Dropdown: FC<Props> = ({
   list,
   onSelect,
 }) => {
-
   const [value, setValue] = useState('');
-  const setDropdownValue = (value : string) => {
+  const setDropdownValue = (value: string) => {
     setValue(value);
     onSelect(value);
   };
