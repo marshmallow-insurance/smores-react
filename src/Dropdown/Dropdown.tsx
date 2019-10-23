@@ -8,7 +8,7 @@ import {theme} from '../theme';
 
 export type DropdownItem = {
   label: string;
-  value: string | number;
+  value: string;
 };
 
 type Props = {
@@ -25,7 +25,7 @@ type Props = {
   /** list of items for the dropdown list */
   list: DropdownItem[];
   /** onSelect handler */
-  onSelect: (element: string | number) => void;
+  onSelect: (element: string) => void;
 };
 
 export const Dropdown: FC<Props> = ({
@@ -45,7 +45,7 @@ export const Dropdown: FC<Props> = ({
 
   useEffect(() => {
     if (list.length === 1) {
-      setDropdownValue(String(list[0].value));
+      setDropdownValue(list[0].value);
     } else {
       setValue('');
     }
@@ -68,11 +68,9 @@ export const Dropdown: FC<Props> = ({
           required
           value={value}
         >
-          {list.length !== 1 && (
-            <option value="" hidden>
-              {placeholder}
-            </option>
-          )}
+          <option value="" hidden>
+            {placeholder}
+          </option>
           {list.map((el, i) => (
             <option key={i} value={el.value}>
               {el.label}
