@@ -19,7 +19,6 @@ export const Tag: FC<TagProps> = ({label, color = 'grey6'}) => (
 );
 
 const Wrapper = styled.div<IWrapper>`
-  font-family: GorditaRegular, sans-serif;
   font-size: 14px;
   display: inline-block;
   background-color: ${({color}) => theme.colors[color]};
