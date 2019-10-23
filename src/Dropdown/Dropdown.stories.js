@@ -72,4 +72,13 @@ storiesOf('Dropdown', module)
       list={days.slice(0, 1)}
       onSelect={e => console.log(e)}
     />
+  ))
+  .addWithJSX('empty list', () => (
+    <Dropdown
+      id="days"
+      label="Day"
+      placeholder="Select Day"
+      list={[]}
+      onSelect={e => console.log(e)}
+    />
   ));

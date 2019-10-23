@@ -1,4 +1,4 @@
-import React, {FC, useEffect} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import styled from 'styled-components';
 
 import {Text} from '../Text';
@@ -8,13 +8,13 @@ import {theme} from '../theme';
 
 export type DropdownItem = {
   label: string;
-  value: string | number;
+  value: string;
 };
 
 type Props = {
   /** ID, usually used for tests  */
   id: string;
-  /** className attribute to apply classses from props */
+  /** className attribute to apply classes from props */
   className?: string;
   /** label displayed above the dropdown  */
   label?: string;
@@ -25,7 +25,7 @@ type Props = {
   /** list of items for the dropdown list */
   list: DropdownItem[];
   /** onSelect handler */
-  onSelect: (element: string | number) => void;
+  onSelect: (element: string) => void;
 };
 
 export const Dropdown: FC<Props> = ({
@@ -37,9 +37,19 @@ export const Dropdown: FC<Props> = ({
   list,
   onSelect,
 }) => {
+  const [value, setValue] = useState('');
+  const setDropdownValue = (value: string) => {
+    setValue(value);
+    onSelect(value);
+  };
+
   useEffect(() => {
-    if (list.length === 1) onSelect(list[0].value);
-  }, []);
+    if (list.length === 1) {
+      setDropdownValue(list[0].value);
+    } else {
+      setValue('');
+    }
+  }, [list]);
 
   return (
     <Container className={className}>
@@ -52,17 +62,15 @@ export const Dropdown: FC<Props> = ({
         <Select
           id={id}
           disabled={disabled}
-          defaultValue={list.length === 1 ? String(list[0].value) : placeholder}
-          onChange={(e: React.FormEvent<HTMLSelectElement>) =>
-            onSelect(e.currentTarget.value)
-          }
+          onChange={(e: React.FormEvent<HTMLSelectElement>) => {
+            setDropdownValue(e.currentTarget.value);
+          }}
           required
+          value={value}
         >
-          {list.length > 1 && (
-            <option value="" hidden>
-              {placeholder}
-            </option>
-          )}
+          <option value="" hidden>
+            {placeholder}
+          </option>
           {list.map((el, i) => (
             <option key={i} value={el.value}>
               {el.label}
