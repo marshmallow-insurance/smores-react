@@ -17,7 +17,7 @@ export interface SpaceProps {
   pb?: string;
 }
 
-export const space: SpaceFN = (props: SpaceProps) => {
+const space: SpaceFN = (props: SpaceProps) => {
   const {m, mx, my, ml, mr, mt, mb, p, px, py, pl, pr, pt, pb} = props;
 
   return `
@@ -65,3 +65,5 @@ export const space: SpaceFN = (props: SpaceProps) => {
     ${pb ? `padding-bottom: ${pb};` : ''}
   `;
 };
+
+export default space;

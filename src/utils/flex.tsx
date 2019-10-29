@@ -22,7 +22,7 @@ export interface FlexProps {
     | 'stretch';
 }
 
-export const flex: FlexFN = (props: FlexProps) => {
+const flex: FlexFN = (props: FlexProps) => {
   const {
     flex,
     direction,
@@ -43,3 +43,5 @@ export const flex: FlexFN = (props: FlexProps) => {
     ${alignContent ? `align-content: ${alignContent};` : ''}
   `;
 };
+
+export default flex;
