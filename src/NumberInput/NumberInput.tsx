@@ -62,7 +62,7 @@ const DEFAULT_MAX_VALUE = 999999;
 
 export const NumberInput: FC<Props> = ({
   id,
-  className = '',
+  className,
   type = 'number',
   placeholder,
   label,
@@ -75,10 +75,10 @@ export const NumberInput: FC<Props> = ({
   prefix,
   suffix,
   required,
-  roundCurrency = false,
+  roundCurrency,
   min = DEFAULT_MIN_VALUE,
   max = DEFAULT_MAX_VALUE,
-  strict = false,
+  strict,
   step,
 }) => {
   // Check whether the min/max value exists is within the specified range
