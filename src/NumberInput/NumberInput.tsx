@@ -1,6 +1,7 @@
-import React, {ChangeEvent, FC} from 'react';
+import React, {ChangeEvent, FC, MouseEvent} from 'react';
 import styled from 'styled-components';
 
+import {Box} from '../Box';
 import {Text} from '../Text';
 import {Icon} from '../Icon';
 
@@ -52,6 +53,8 @@ type Props = {
   strict: boolean;
   /** Round currency to two decimal places if true */
   roundCurrency: boolean;
+  /** Increment and decrement the value by the following step count */
+  step: number;
 };
 
 export const NumberInput: FC<Props> = ({
@@ -73,10 +76,16 @@ export const NumberInput: FC<Props> = ({
   max,
   strict = false,
   roundCurrency = false,
+  step = 0,
 }) => {
   // Return an empty value if the value is null of undefined
   const defaultValueIfEmpty = (value: any) => {
     return isNaN(value) ? '' : value;
+  };
+
+  // Round the number to two decimal places
+  const roundNumber = (event: number) => {
+    return Math.round(event * 100) / 100;
   };
 
   // Check whether the min/max value exists is within the specified range
@@ -116,19 +125,32 @@ export const NumberInput: FC<Props> = ({
     return Math.abs(dMax) < Math.abs(dMin) ? max : min;
   };
 
-  const roundNumber = (event: number) => {
-    return Math.round(event * 100) / 100;
-  };
-
   const handleChange = (event: number) => {
     const amount = roundCurrency ? roundNumber(event) : event;
-
-    console.log(amount);
 
     if (strict) {
       onChange(defaultValueIfEmpty(handleStrictValue(amount)));
     } else {
       onChange(defaultValueIfEmpty(amount));
+    }
+  };
+
+  // Increment or decrement the value when clicking the Spinner controls
+  const incrementValue = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    const currentValue = Number(value) + step;
+
+    if (isInRange(currentValue)) {
+      onChange(currentValue);
+    }
+  };
+
+  const decrementValue = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    const currentValue = Number(value) - step;
+
+    if (isInRange(currentValue)) {
+      onChange(currentValue);
     }
   };
 
@@ -143,7 +165,7 @@ export const NumberInput: FC<Props> = ({
       <Content error={error}>
         {prefix && (
           <SymbolText tag="span" color="blue7">
-            {prefix}&nbsp;
+            {prefix}
           </SymbolText>
         )}
 
@@ -161,12 +183,24 @@ export const NumberInput: FC<Props> = ({
           required={required}
         />
 
-        {console.log(typeof value)}
-
         {suffix && (
-          <SymbolText tag="span" color="blue7">
-            &nbsp;{suffix}
-          </SymbolText>
+          <Box pr="8px">
+            <SymbolText tag="span" color="blue7">
+              {suffix}
+            </SymbolText>
+          </Box>
+        )}
+
+        {step !== 0 && (
+          <Spinner>
+            <SpinnerButton onClick={incrementValue}>
+              <Icon render="up" color="grey4" size={24} />
+            </SpinnerButton>
+
+            <SpinnerButton onClick={decrementValue}>
+              <Icon render="down" color="grey4" size={24} />
+            </SpinnerButton>
+          </Spinner>
         )}
 
         {trailingIcon && <Icon render={trailingIcon} color="grey4" />}
@@ -177,9 +211,7 @@ export const NumberInput: FC<Props> = ({
 };
 
 const Container = styled.div<IContainer>`
-  /* TODO: Remove me */
-  font-family: 'Gordita';
-
+  font-family: 'Gordita', san-serif;
   display: flex;
   flex-direction: column;
   height: ${({hasLabel, hasError}) => (hasLabel && hasError ? '64px' : '52px')};
@@ -201,15 +233,8 @@ const Content = styled.div<IInput>`
   }
 `;
 
-const SymbolText = styled(Text)`
-  font-size: 16px;
-`;
-
 const Input = styled.input<IInput>`
-  /* TODO: Remove me */
-  font-family: 'Gordita';
-  min-width: 200px;
-
+  font-family: 'Gordita', san-serif;
   border: none;
   color: ${({error}) => theme.colors[`${error ? 'red7' : 'black'}`]};
   font-size: 16px;
@@ -219,6 +244,15 @@ const Input = styled.input<IInput>`
   &::placeholder {
     color: ${theme.colors.grey4};
   }
+
+  /* Remove the spinner on Firefox and Webkit browsers */
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
 
 const ErrorBox = styled.span`
@@ -227,7 +261,26 @@ const ErrorBox = styled.span`
   font-size: 12px;
 `;
 
+const SymbolText = styled(Text)`
+  font-family: 'Gordita', san-serif;
+  font-size: 16px;
+`;
+
 const Asterisk = styled.span`
   font-size: 14px;
   color: ${theme.colors.green5};
+`;
+
+const Spinner = styled.div`
+  display: flex;
+  position: relative;
+  top: -3px;
+`;
+
+const SpinnerButton = styled.button`
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
 `;

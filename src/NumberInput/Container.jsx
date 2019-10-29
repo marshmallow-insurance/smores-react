@@ -13,15 +13,14 @@ export const Container = () => {
         name="numberInput"
         onChange={setValue}
         placeholder="100.00"
-        // error={value.length > 7}
-        // errorMsg="Value is over 7 characters!"
         prefix="£"
         value={value}
-        min={-10}
+        min={-100}
         max={100}
         strict
         roundCurrency
         required
+        step={10}
       />
     </form>
   );
