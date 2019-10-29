@@ -31,6 +31,8 @@ const App = () => (
 * policy
 * edit
 * search
+* up
+* down
 * up-down
 * caret
 * doc-download
