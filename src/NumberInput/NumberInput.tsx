@@ -45,7 +45,7 @@ type Props = {
   errorMsg?: string;
 
   /** onChange listener */
-  onChange: (e: any) => void;
+  onChange: (e: number) => void;
 
   /** onChange listener */
   trailingIcon?: string;
