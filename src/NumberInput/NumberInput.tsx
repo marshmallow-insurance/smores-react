@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, MouseEvent} from 'react';
+import React, {FormEvent, FC, MouseEvent} from 'react';
 import styled from 'styled-components';
 
 import {Box} from '../Box';
@@ -36,7 +36,7 @@ type Props = {
   /** error text message */
   errorMsg?: string;
   /** onChange listener */
-  onChange: (e: number) => void;
+  onChange: (e: string | number) => void;
   /** onChange listener */
   trailingIcon?: string;
   /** toggle for the prefix (i.e. currency symbol) */
@@ -46,9 +46,9 @@ type Props = {
   /** Required flag */
   required?: boolean;
   /** Minimum allowed number */
-  min?: number;
+  min: number;
   /** Maximum allowed number */
-  max?: number;
+  max: number;
   /** Adjust value if entering a number beyond the specified min or max */
   strict: boolean;
   /** Round currency to two decimal places if true */
@@ -56,6 +56,9 @@ type Props = {
   /** Increment and decrement the value by the following step count */
   step: number;
 };
+
+const DEFAULT_MIN_VALUE = -999999;
+const DEFAULT_MAX_VALUE = 999999;
 
 export const NumberInput: FC<Props> = ({
   id,
@@ -72,22 +75,12 @@ export const NumberInput: FC<Props> = ({
   prefix,
   suffix,
   required,
-  min,
-  max,
-  strict = false,
   roundCurrency = false,
-  step = 0,
+  min = DEFAULT_MIN_VALUE,
+  max = DEFAULT_MAX_VALUE,
+  strict = false,
+  step,
 }) => {
-  // Return an empty value if the value is null of undefined
-  const defaultValueIfEmpty = (value: any) => {
-    return isNaN(value) ? '' : value;
-  };
-
-  // Round the number to two decimal places
-  const roundNumber = (event: number) => {
-    return Math.round(event * 100) / 100;
-  };
-
   // Check whether the min/max value exists is within the specified range
   const isInRange = (value: number) => {
     if (min && value < min) {
@@ -101,14 +94,19 @@ export const NumberInput: FC<Props> = ({
     return true;
   };
 
-  const handleStrictValue = (event: number) => {
+  // Round the number to two decimal places
+  const roundNumber = (event: number) => {
+    return Math.round(event * 100) / 100;
+  };
+
+  const handleStrictValue = (event: number): number => {
     if (isInRange(event)) {
       return event;
     }
 
     // Get the difference between the max (or min) and the current value
-    const dMax = max && max - event;
-    const dMin = min && min - event;
+    const dMax = max - event;
+    const dMin = min - event;
 
     // if the difference is zero return the min value
     if (!dMax) {
@@ -125,13 +123,23 @@ export const NumberInput: FC<Props> = ({
     return Math.abs(dMax) < Math.abs(dMin) ? max : min;
   };
 
-  const handleChange = (event: number) => {
-    const amount = roundCurrency ? roundNumber(event) : event;
+  const handleChange = (event: string) => {
+    const EMPTY_INPUT = '';
 
-    if (strict) {
-      onChange(defaultValueIfEmpty(handleStrictValue(amount)));
+    if (event === EMPTY_INPUT) {
+      onChange(event);
     } else {
-      onChange(defaultValueIfEmpty(amount));
+      const formattedEvent = Number(event);
+
+      const amount = roundCurrency
+        ? roundNumber(formattedEvent)
+        : formattedEvent;
+
+      if (strict) {
+        onChange(handleStrictValue(amount));
+      } else {
+        onChange(amount);
+      }
     }
   };
 
@@ -141,7 +149,7 @@ export const NumberInput: FC<Props> = ({
     const currentValue = Number(value) + step;
 
     if (isInRange(currentValue)) {
-      onChange(currentValue);
+      onChange(roundNumber(currentValue));
     }
   };
 
@@ -150,7 +158,7 @@ export const NumberInput: FC<Props> = ({
     const currentValue = Number(value) - step;
 
     if (isInRange(currentValue)) {
-      onChange(currentValue);
+      onChange(roundNumber(currentValue));
     }
   };
 
@@ -177,8 +185,8 @@ export const NumberInput: FC<Props> = ({
           value={value}
           error={error}
           autoComplete="off"
-          onChange={(event: ChangeEvent<HTMLInputElement>) =>
-            handleChange(event.currentTarget.valueAsNumber)
+          onChange={(event: FormEvent<HTMLInputElement>) =>
+            handleChange(event.currentTarget.value)
           }
           required={required}
         />
@@ -191,7 +199,7 @@ export const NumberInput: FC<Props> = ({
           </Box>
         )}
 
-        {step !== 0 && (
+        {step && (
           <Spinner>
             <SpinnerButton onClick={incrementValue}>
               <Icon render="up" color="grey4" size={24} />
@@ -264,6 +272,7 @@ const ErrorBox = styled.span`
 const SymbolText = styled(Text)`
   font-family: 'Gordita', san-serif;
   font-size: 16px;
+  line-height: 19px;
 `;
 
 const Asterisk = styled.span`

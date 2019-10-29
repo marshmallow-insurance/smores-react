@@ -14,6 +14,7 @@ test('renders', () => {
       onChange={str => {}}
       placeholder="100.00"
       prefix="$"
+      prefix="km"
       min={-100}
       max={180}
       strict

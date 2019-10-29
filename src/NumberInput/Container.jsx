@@ -17,10 +17,10 @@ export const Container = () => {
         value={value}
         min={-100}
         max={180}
+        step={10}
         strict
         roundCurrency
         required
-        step={10}
       />
     </form>
   );

@@ -125,6 +125,7 @@ exports[`renders 1`] = `
 .c5 {
   font-family: 'Gordita',san-serif;
   font-size: 16px;
+  line-height: 19px;
 }
 
 .c2 {
@@ -187,7 +188,7 @@ exports[`renders 1`] = `
       color="blue7"
       cursor="inherit"
     >
-      $
+      km
     </span>
     <input
       autocomplete="off"

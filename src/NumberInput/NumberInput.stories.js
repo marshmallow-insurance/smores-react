@@ -39,22 +39,6 @@ storiesOf('NumberInput', module)
       onChange={str => {}}
     />
   ))
-  .addWithJSX('strict currency', () => (
-    <NumberInput
-      id={text('id', 'currency')}
-      label={text('label', 'Currency')}
-      name={text('name', 'currencyAmount')}
-      placeholder={text('placeholder', '0.00')}
-      prefix={text('prefix', '$')}
-      min={number('min', -100)}
-      max={number('max', 1000)}
-      strict={boolean('strict', true)}
-      roundCurrency={boolean('roundCurrency', true)}
-      required={boolean('required', true)}
-      step={number('step', 10)}
-      onChange={str => {}}
-    />
-  ))
   .addWithJSX('distance', () => (
     <NumberInput
       id={text('id', 'distance')}
