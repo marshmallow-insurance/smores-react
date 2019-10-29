@@ -10,8 +10,10 @@ module.exports = {
   },
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
+
+    // Ignore test coverage for the following files:
     '!src/**/*.{stories.js}',
     '!**/node_modules/**',
+    '!src/utils/**/*.{ts,tsx}',
   ],
-  //after Jest is loaded
 };
