@@ -13,10 +13,10 @@ export const Container = () => {
         name="numberInput"
         onChange={setValue}
         placeholder="100.00"
-        prefix="£"
+        prefix="$"
         value={value}
         min={-100}
-        max={100}
+        max={180}
         strict
         roundCurrency
         required
