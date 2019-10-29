@@ -19,40 +19,58 @@ interface IInput {
 type Props = {
   /** ID, usually used for tests  */
   id: string;
+
   /** className attribute to apply classses from props */
   className?: string;
-  /** Input type for proper browser support */
+
+  /** Input type enum for proper browser support */
   type?: 'number' | 'tel';
+
   /** Placeholder */
   placeholder: string;
+
   /** label displayed above the input  */
   label?: string;
+
   /** used for label - input connection */
   name?: string;
-  /** input value */
+
+  /** value of the input */
   value: string;
+
   /** error flag */
   error?: boolean;
+
   /** error text message */
   errorMsg?: string;
+
   /** onChange listener */
   onChange: (e: any) => void;
+
   /** onChange listener */
   trailingIcon?: string;
+
   /** toggle for the prefix (i.e. currency symbol) */
   prefix?: string;
+
   /** toggle for the suffix (i.e. miles or kilometre symbol) */
   suffix?: string;
+
   /** Required flag */
   required?: boolean;
+
   /** Minimum allowed number */
   min?: number;
+
   /** Maximum allowed number */
   max?: number;
+
   /** Adjust value if entering a number beyond the specified min or max */
   strict: boolean;
+
   /** Round currency to two decimal places if true */
   roundCurrency: boolean;
+
   /** Increment and decrement the value by the following step count */
   step: number;
 };
