@@ -1,0 +1,252 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c1 {
+  font-size: 8px;
+  line-height: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.75px;
+  -moz-letter-spacing: 0.75px;
+  -ms-letter-spacing: 0.75px;
+  letter-spacing: 0.75px;
+  margin: 0;
+  padding: 0;
+  color: #C1C1C1;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #112035;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 24px;
+  height: 24px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c0 {
+  font-family: 'Gordita',san-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 52px;
+}
+
+.c3 {
+  border-bottom: 1px solid;
+  border-color: #C1C1C1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+}
+
+.c3:hover {
+  border-color: #9E9E9E;
+}
+
+.c3:focus {
+  border-color: #545E7E;
+}
+
+.c6 {
+  font-family: 'Gordita',san-serif;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  -moz-appearance: textfield;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c6::-moz-placeholder {
+  color: #C1C1C1;
+}
+
+.c6:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c6::placeholder {
+  color: #C1C1C1;
+}
+
+.c6::-webkit-outer-spin-button,
+.c6::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c5 {
+  font-family: 'Gordita',san-serif;
+  font-size: 16px;
+}
+
+.c2 {
+  font-size: 14px;
+  color: #55D6AA;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  top: -3px;
+}
+
+.c8 {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+    color="grey4"
+    cursor="inherit"
+  >
+    Amount paid
+     
+    <span
+      class="c2"
+    >
+      *
+    </span>
+  </label>
+  <div
+    class="c3"
+  >
+    <span
+      class="c4 c5"
+      color="blue7"
+      cursor="inherit"
+    >
+      $
+    </span>
+    <input
+      autocomplete="off"
+      class="c6"
+      id="numberInput"
+      name="numberInput"
+      placeholder="100.00"
+      required=""
+      type="number"
+      value=""
+    />
+    <div
+      class="c7"
+    >
+      <button
+        class="c8"
+      >
+        <span
+          class="c9"
+          color="grey4"
+          rotate="0"
+          size="24"
+        >
+          <svg
+            fill="none"
+            height="100%"
+            viewBox="0 0 32 32"
+            width="100%"
+          >
+            <path
+              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              fill="#C1C1C1"
+            />
+          </svg>
+        </span>
+      </button>
+      <button
+        class="c8"
+      >
+        <span
+          class="c9"
+          color="grey4"
+          rotate="0"
+          size="24"
+        >
+          <svg
+            fill="none"
+            height="100%"
+            viewBox="0 0 32 32"
+            width="100%"
+          >
+            <path
+              d="M23.6592 12.2477C23.2422 11.8847 22.6122 11.9267 22.2482 12.3427L16.0002 19.4817L9.75216 12.3417C9.38816 11.9257 8.75716 11.8837 8.34116 12.2477C7.92516 12.6117 7.88416 13.2437 8.24816 13.6587L15.2482 21.6587C15.4382 21.8767 15.7112 22.0007 16.0002 22.0007C16.2892 22.0007 16.5622 21.8767 16.7522 21.6587L23.7522 13.6587C24.1162 13.2437 24.0742 12.6117 23.6592 12.2477Z"
+              fill="#C1C1C1"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
