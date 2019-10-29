@@ -9,7 +9,7 @@ export interface MeasureProps {
   minHeight?: string;
 }
 
-const measure: MeasureFN = (props: MeasureProps) => {
+export const measure: MeasureFN = (props: MeasureProps) => {
   const {width, height, maxWidth, minWidth, minHeight, maxHeight} = props;
 
   return `
@@ -21,5 +21,3 @@ const measure: MeasureFN = (props: MeasureProps) => {
     ${maxHeight ? `max-height: ${maxHeight}` : ''}
   `;
 };
-
-export default measure;
