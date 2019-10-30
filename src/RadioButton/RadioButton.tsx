@@ -68,7 +68,7 @@ const RadioLabel = styled.label`
   font-size: 16px;
   line-height: 17px;
   color: ${theme.colors.blue7};
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
   display: flex;
 `;
 
