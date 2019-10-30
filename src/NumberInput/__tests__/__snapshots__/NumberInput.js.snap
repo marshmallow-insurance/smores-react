@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders 1`] = `
+exports[`renders - currency 1`] = `
 .c1 {
   font-size: 8px;
   line-height: 9px;
@@ -21,7 +21,7 @@ exports[`renders 1`] = `
   letter-spacing: 0.15px;
 }
 
-.c4 {
+.c3 {
   font-size: 14px;
   line-height: 21px;
   font-weight: normal;
@@ -36,7 +36,7 @@ exports[`renders 1`] = `
   letter-spacing: 0.15px;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -69,7 +69,7 @@ exports[`renders 1`] = `
   height: 52px;
 }
 
-.c3 {
+.c2 {
   border-bottom: 1px solid;
   border-color: #C1C1C1;
   display: -webkit-box;
@@ -81,59 +81,57 @@ exports[`renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   height: 32px;
+  cursor: pointer;
+  opacity: 1;
 }
 
-.c3:hover {
+.c2:hover {
   border-color: #9E9E9E;
 }
 
-.c3:focus {
+.c2:focus {
   border-color: #545E7E;
 }
 
-.c6 {
+.c5 {
   font-family: 'Gordita',san-serif;
   border: none;
   font-size: 16px;
   width: 100%;
   outline: none;
+  cursor: pointer;
   -moz-appearance: textfield;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #C1C1C1;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #C1C1C1;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #C1C1C1;
 }
 
-.c6::placeholder {
+.c5::placeholder {
   color: #C1C1C1;
 }
 
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c5 {
+.c4 {
   font-family: 'Gordita',san-serif;
   font-size: 16px;
   line-height: 19px;
 }
 
-.c2 {
-  font-size: 14px;
-  color: #55D6AA;
-}
-
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -142,12 +140,13 @@ exports[`renders 1`] = `
   top: -3px;
 }
 
-.c8 {
+.c7 {
   width: 24px;
   height: 24px;
   background-color: transparent;
   border: 0;
   padding: 0;
+  cursor: pointer;
 }
 
 @media (min-width:768px) {
@@ -158,7 +157,7 @@ exports[`renders 1`] = `
 }
 
 @media (min-width:768px) {
-  .c4 {
+  .c3 {
     font-size: 16px;
     line-height: 24px;
   }
@@ -172,42 +171,36 @@ exports[`renders 1`] = `
     color="grey4"
     cursor="inherit"
   >
-    Amount paid
+    Currency
      
-    <span
-      class="c2"
-    >
-      *
-    </span>
   </label>
   <div
-    class="c3"
+    class="c2"
   >
     <span
-      class="c4 c5"
+      class="c3 c4"
       color="blue7"
       cursor="inherit"
     >
-      km
+      $
     </span>
     <input
       autocomplete="off"
-      class="c6"
-      id="numberInput"
-      name="numberInput"
+      class="c5"
+      id="currencyInput"
+      name="currencyInput"
       placeholder="100.00"
-      required=""
       type="number"
       value=""
     />
     <div
-      class="c7"
+      class="c6"
     >
       <button
-        class="c8"
+        class="c7"
       >
         <span
-          class="c9"
+          class="c8"
           color="grey4"
           rotate="0"
           size="24"
@@ -226,10 +219,10 @@ exports[`renders 1`] = `
         </span>
       </button>
       <button
-        class="c8"
+        class="c7"
       >
         <span
-          class="c9"
+          class="c8"
           color="grey4"
           rotate="0"
           size="24"
@@ -248,6 +241,287 @@ exports[`renders 1`] = `
         </span>
       </button>
     </div>
+  </div>
+</div>
+`;
+
+exports[`renders - number 1`] = `
+.c1 {
+  font-size: 8px;
+  line-height: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.75px;
+  -moz-letter-spacing: 0.75px;
+  -ms-letter-spacing: 0.75px;
+  letter-spacing: 0.75px;
+  margin: 0;
+  padding: 0;
+  color: #C1C1C1;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c0 {
+  font-family: 'Gordita',san-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 52px;
+}
+
+.c2 {
+  border-bottom: 1px solid;
+  border-color: #C1C1C1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.c2:hover {
+  border-color: #9E9E9E;
+}
+
+.c2:focus {
+  border-color: #545E7E;
+}
+
+.c3 {
+  font-family: 'Gordita',san-serif;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  -moz-appearance: textfield;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c3::-moz-placeholder {
+  color: #C1C1C1;
+}
+
+.c3:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c3::placeholder {
+  color: #C1C1C1;
+}
+
+.c3::-webkit-outer-spin-button,
+.c3::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+    color="grey4"
+    cursor="inherit"
+  >
+    Number
+     
+  </label>
+  <div
+    class="c2"
+  >
+    <input
+      autocomplete="off"
+      class="c3"
+      id="numberInput"
+      name="numberInput"
+      placeholder="0.00"
+      type="number"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`renders - tel 1`] = `
+.c1 {
+  font-size: 8px;
+  line-height: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.75px;
+  -moz-letter-spacing: 0.75px;
+  -ms-letter-spacing: 0.75px;
+  letter-spacing: 0.75px;
+  margin: 0;
+  padding: 0;
+  color: #C1C1C1;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c3 {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #112035;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c0 {
+  font-family: 'Gordita',san-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 52px;
+}
+
+.c2 {
+  border-bottom: 1px solid;
+  border-color: #C1C1C1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.c2:hover {
+  border-color: #9E9E9E;
+}
+
+.c2:focus {
+  border-color: #545E7E;
+}
+
+.c5 {
+  font-family: 'Gordita',san-serif;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  -moz-appearance: textfield;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c5::-moz-placeholder {
+  color: #C1C1C1;
+}
+
+.c5:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c5::placeholder {
+  color: #C1C1C1;
+}
+
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c4 {
+  font-family: 'Gordita',san-serif;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+    color="grey4"
+    cursor="inherit"
+  >
+    Telephone number
+     
+  </label>
+  <div
+    class="c2"
+  >
+    <span
+      class="c3 c4"
+      color="blue7"
+      cursor="inherit"
+    >
+      +44
+    </span>
+    <input
+      autocomplete="off"
+      class="c5"
+      id="tel"
+      name="telephoneNumber"
+      placeholder="07446875876"
+      type="tel"
+      value=""
+    />
   </div>
 </div>
 `;

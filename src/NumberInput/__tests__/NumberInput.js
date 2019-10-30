@@ -4,22 +4,51 @@ import 'jest-styled-components';
 
 import {NumberInput} from '../NumberInput';
 
-test('renders', () => {
+test('renders - tel', () => {
   const {container} = render(
     <NumberInput
+      type="tel"
+      id="tel"
+      label="Telephone number"
+      name="telephoneNumber"
+      value=""
+      onChange={str => {}}
+      placeholder="07446875876"
+      prefix="+44"
+    />,
+  );
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('renders - number', () => {
+  const {container} = render(
+    <NumberInput
+      type="number"
       id="numberInput"
-      label="Amount paid"
+      label="Number"
       name="numberInput"
+      value=""
+      onChange={str => {}}
+      placeholder="0.00"
+    />,
+  );
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('renders - currency', () => {
+  const {container} = render(
+    <NumberInput
+      type="number"
+      id="currencyInput"
+      label="Currency"
+      name="currencyInput"
       value=""
       onChange={str => {}}
       placeholder="100.00"
       prefix="$"
-      prefix="km"
-      min={-100}
-      max={180}
-      strict
-      roundCurrency
-      required
+      strict={true}
+      min={0}
+      max={100}
       step={10}
     />,
   );
