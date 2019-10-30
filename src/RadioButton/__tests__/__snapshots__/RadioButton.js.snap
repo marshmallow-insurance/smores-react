@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders - checked 1`] = `
+.c0 {
+  margin-bottom: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 10px;
+  border: 8px solid #55D6AA;
+}
+
+.c1 {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.c2 {
+  font-family: 'Gordita',sans-serif;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 17px;
+  color: #112035;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  position: relative;
+  bottom: -5px;
+}
+
+<div
+  class="c0"
+>
+  <input
+    checked=""
+    class="c1"
+    id="radioButtonOne"
+    type="radio"
+    value="true"
+  />
+  <label
+    class="c2"
+    for="radioButtonOne"
+  >
+    <div
+      class="c3"
+    />
+    <span
+      class="c4"
+    >
+      What a lovely label
+    </span>
+  </label>
+</div>
+`;
+
+exports[`renders - unchecked 1`] = `
+.c0 {
+  margin-bottom: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 10px;
+  border: 1px solid #C1C1C1;
+}
+
+.c1 {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.c2 {
+  font-family: 'Gordita',sans-serif;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 17px;
+  color: #112035;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  position: relative;
+  bottom: -5px;
+}
+
+<div
+  class="c0"
+>
+  <input
+    class="c1"
+    id="radioButtonOne"
+    type="radio"
+    value="false"
+  />
+  <label
+    class="c2"
+    for="radioButtonOne"
+  >
+    <div
+      class="c3"
+    />
+    <span
+      class="c4"
+    >
+      What a lovely label
+    </span>
+  </label>
+</div>
+`;
