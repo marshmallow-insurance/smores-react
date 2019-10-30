@@ -7,16 +7,7 @@ import {Icon} from '../Icon';
 
 import {theme} from '../theme';
 
-interface IContainer {
-  hasLabel: boolean;
-  hasError: boolean;
-}
-
-interface IInput {
-  error: boolean;
-}
-
-type Props = {
+type NumberInputProps = {
   /** ID, usually used for tests  */
   id: string;
   /** className attribute to apply classses from props */
@@ -55,12 +46,14 @@ type Props = {
   roundCurrency: boolean;
   /** Increment and decrement the value by the following step count */
   step: number;
+  /** Disabled flag */
+  disabled?: boolean;
 };
 
 const DEFAULT_MIN_VALUE = -999999;
 const DEFAULT_MAX_VALUE = 999999;
 
-export const NumberInput: FC<Props> = ({
+export const NumberInput: FC<NumberInputProps> = ({
   id,
   className,
   type = 'number',
@@ -80,6 +73,7 @@ export const NumberInput: FC<Props> = ({
   max = DEFAULT_MAX_VALUE,
   strict,
   step,
+  disabled = false,
 }) => {
   // Check whether the min/max value exists is within the specified range
   const isInRange = (value: number) => {
@@ -170,7 +164,7 @@ export const NumberInput: FC<Props> = ({
         </Text>
       )}
 
-      <Content error={error}>
+      <Content error={error} disabled={disabled}>
         {prefix && (
           <SymbolText tag="span" color="blue7">
             {prefix}
@@ -178,6 +172,7 @@ export const NumberInput: FC<Props> = ({
         )}
 
         <Input
+          disabled={disabled}
           type={type}
           id={id}
           name={name}
@@ -201,11 +196,11 @@ export const NumberInput: FC<Props> = ({
 
         {step && (
           <Spinner>
-            <SpinnerButton onClick={incrementValue}>
+            <SpinnerButton onClick={incrementValue} disabled={disabled}>
               <Icon render="up" color="grey4" size={24} />
             </SpinnerButton>
 
-            <SpinnerButton onClick={decrementValue}>
+            <SpinnerButton onClick={decrementValue} disabled={disabled}>
               <Icon render="down" color="grey4" size={24} />
             </SpinnerButton>
           </Spinner>
@@ -218,6 +213,11 @@ export const NumberInput: FC<Props> = ({
   );
 };
 
+interface IContainer {
+  hasLabel: boolean;
+  hasError: boolean;
+}
+
 const Container = styled.div<IContainer>`
   font-family: 'Gordita', san-serif;
   display: flex;
@@ -225,12 +225,19 @@ const Container = styled.div<IContainer>`
   height: ${({hasLabel, hasError}) => (hasLabel && hasError ? '64px' : '52px')};
 `;
 
+interface IInput {
+  error: boolean;
+  disabled: boolean;
+}
+
 const Content = styled.div<IInput>`
   border-bottom: 1px solid;
   border-color: ${({error}) => theme.colors[`${error ? 'red7' : 'grey4'}`]};
   display: flex;
   align-items: center;
   height: 32px;
+  cursor: ${({disabled}) => (disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${({disabled}) => (disabled ? '0.5' : '1')};
 
   &:hover {
     border-color: ${({error}) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
@@ -248,6 +255,7 @@ const Input = styled.input<IInput>`
   font-size: 16px;
   width: 100%;
   outline: none;
+  cursor: ${({disabled}) => (disabled ? 'not-allowed' : 'pointer')};
 
   &::placeholder {
     color: ${theme.colors.grey4};
@@ -286,10 +294,15 @@ const Spinner = styled.div`
   top: -3px;
 `;
 
-const SpinnerButton = styled.button`
+interface IButton {
+  disabled: boolean;
+}
+
+const SpinnerButton = styled.button<IButton>`
   width: 24px;
   height: 24px;
   background-color: transparent;
   border: 0;
   padding: 0;
+  cursor: ${({disabled}) => (disabled ? 'not-allowed' : 'pointer')};
 `;
