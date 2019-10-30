@@ -58,7 +58,8 @@ exports[`renders 1`] = `
 }
 
 .c2:disabled {
-  cursor: default;
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .c2:not(:focus):invalid {

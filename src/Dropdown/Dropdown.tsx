@@ -113,7 +113,8 @@ const Select = styled.select`
   appearance: none; /* remove default arrow */
 
   &:disabled {
-    cursor: default;
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 
   &:not(:focus):invalid {
