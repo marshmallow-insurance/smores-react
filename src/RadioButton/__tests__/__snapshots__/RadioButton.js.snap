@@ -2,7 +2,6 @@
 
 exports[`renders - checked 1`] = `
 .c0 {
-  margin-bottom: 24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -18,9 +17,6 @@ exports[`renders - checked 1`] = `
   height: 24px;
   border-radius: 50%;
   background-color: #ffffff;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
   margin-right: 10px;
   border: 8px solid #55D6AA;
 }
@@ -43,6 +39,7 @@ exports[`renders - checked 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  cursor: pointer;
 }
 
 .c4 {
@@ -78,7 +75,6 @@ exports[`renders - checked 1`] = `
 
 exports[`renders - unchecked 1`] = `
 .c0 {
-  margin-bottom: 24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -94,9 +90,6 @@ exports[`renders - unchecked 1`] = `
   height: 24px;
   border-radius: 50%;
   background-color: #ffffff;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
   margin-right: 10px;
   border: 1px solid #C1C1C1;
 }
@@ -119,6 +112,7 @@ exports[`renders - unchecked 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  cursor: pointer;
 }
 
 .c4 {
