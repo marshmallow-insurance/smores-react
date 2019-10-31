@@ -14,13 +14,11 @@ type RadioButtonProps = {
   label: string;
   checked?: boolean;
   value: string;
-  type?: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const RadioButton: FC<RadioButtonProps> = ({
   id,
-  type = 'radio',
   label,
   checked,
   value,
@@ -29,7 +27,7 @@ export const RadioButton: FC<RadioButtonProps> = ({
   <Box flex alignItems="center" mb="24px">
     <RadioInput
       id={id}
-      type={type}
+      type="radio"
       checked={checked}
       value={value}
       onChange={onChange}
