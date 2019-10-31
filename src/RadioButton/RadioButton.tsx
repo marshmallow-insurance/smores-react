@@ -70,6 +70,7 @@ const RadioLabel = styled.label`
   color: ${theme.colors.blue7};
   margin-bottom: 0;
   display: flex;
+  cursor: pointer;
 `;
 
 // needed because the text is top aligned in its viewbox
