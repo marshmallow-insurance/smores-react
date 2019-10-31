@@ -24,7 +24,7 @@ export const RadioButton: FC<RadioButtonProps> = ({
   value,
   onChange,
 }) => (
-  <Box flex alignItems="center" mb="24px">
+  <Box flex alignItems="center">
     <RadioInput
       id={id}
       type="radio"
