@@ -59,4 +59,15 @@ storiesOf('TextInput', module)
       onChange={str => {}}
     />
   ))
+  .addWithJSX('disabled', () => (
+    <TextInput
+      id="textInput"
+      name="textInput"
+      label={text('Label', 'label')}
+      placeholder={text('Placeholder', 'Placeholder')}
+      value="kek"
+      onChange={str => {}}
+      disabled={true}
+    />
+  ))
   .addWithJSX('functional', () => <Container />);

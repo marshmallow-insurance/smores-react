@@ -1,7 +1,7 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 
-import {text} from '@storybook/addon-knobs';
+import {text, boolean} from '@storybook/addon-knobs';
 
 import {Dropdown} from './Dropdown';
 
@@ -58,7 +58,7 @@ storiesOf('Dropdown', module)
     <Dropdown
       id="days"
       label="Day"
-      disabled
+      disabled={boolean('disabled', true)}
       placeholder="Select Day"
       list={days}
       onSelect={e => console.log(e)}

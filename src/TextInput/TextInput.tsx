@@ -6,15 +6,6 @@ import {Icon} from '../Icon';
 
 import {theme} from '../theme';
 
-interface IContainer {
-  hasLabel: boolean;
-  hasError: boolean;
-}
-
-interface IInput {
-  error: boolean;
-}
-
 type Props = {
   /** ID, usually used for tests  */
   id: string;
@@ -38,6 +29,8 @@ type Props = {
   onChange: (e: string) => void;
   /** onChange listener */
   trailingIcon?: string;
+  /** Disabled flag */
+  disabled?: boolean;
 };
 
 export const TextInput: FC<Props> = ({
@@ -52,6 +45,7 @@ export const TextInput: FC<Props> = ({
   errorMsg,
   trailingIcon,
   onChange,
+  disabled = false,
 }) => (
   <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
     {label && (
@@ -59,8 +53,10 @@ export const TextInput: FC<Props> = ({
         {label}
       </Text>
     )}
+
     <Content error={error}>
       <Input
+        disabled={disabled}
         type={type}
         id={id}
         name={name}
@@ -78,11 +74,21 @@ export const TextInput: FC<Props> = ({
   </Container>
 );
 
+interface IContainer {
+  hasLabel: boolean;
+  hasError: boolean;
+}
+
 const Container = styled.div<IContainer>`
   display: flex;
   flex-direction: column;
   height: ${p => (p.hasLabel && p.hasError ? '64px' : '52px')};
 `;
+
+interface IInput {
+  error: boolean;
+  disabled?: boolean;
+}
 
 const Content = styled.div<IInput>`
   border-bottom: 1px solid;
@@ -105,6 +111,8 @@ const Input = styled.input<IInput>`
   font-size: 16px;
   width: 100%;
   outline: none;
+  cursor: ${({disabled}) => (disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${({disabled}) => (disabled ? '0.5' : '1')};
 
   &::placeholder {
     color: ${theme.colors.grey4};
