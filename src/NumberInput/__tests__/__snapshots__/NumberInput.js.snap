@@ -185,7 +185,6 @@ exports[`renders - currency 1`] = `
       $
     </span>
     <input
-      autocomplete="off"
       class="c5"
       id="currencyInput"
       name="currencyInput"
@@ -245,7 +244,7 @@ exports[`renders - currency 1`] = `
 </div>
 `;
 
-exports[`renders - number 1`] = `
+exports[`renders - disabled 1`] = `
 .c1 {
   font-size: 8px;
   line-height: 9px;
@@ -349,18 +348,406 @@ exports[`renders - number 1`] = `
     color="grey4"
     cursor="inherit"
   >
-    Number
+    Currency
      
   </label>
   <div
     class="c2"
   >
     <input
-      autocomplete="off"
       class="c3"
+      id="currencyInput"
+      name="currencyInput"
+      placeholder="100.00"
+      type="number"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`renders - error 1`] = `
+.c1 {
+  font-size: 8px;
+  line-height: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.75px;
+  -moz-letter-spacing: 0.75px;
+  -ms-letter-spacing: 0.75px;
+  letter-spacing: 0.75px;
+  margin: 0;
+  padding: 0;
+  color: #C1C1C1;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c3 {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #112035;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 24px;
+  height: 24px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c0 {
+  font-family: 'Gordita',san-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 64px;
+}
+
+.c2 {
+  border-bottom: 1px solid;
+  border-color: #D82C2C;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.c2:hover {
+  border-color: #D82C2C;
+}
+
+.c2:focus {
+  border-color: #D82C2C;
+}
+
+.c5 {
+  font-family: 'Gordita',san-serif;
+  border: none;
+  color: #D82C2C;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  -moz-appearance: textfield;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c5::-moz-placeholder {
+  color: #C1C1C1;
+}
+
+.c5:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c5::placeholder {
+  color: #C1C1C1;
+}
+
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c9 {
+  margin-top: 7px;
+  color: #D82C2C;
+  font-size: 12px;
+}
+
+.c4 {
+  font-family: 'Gordita',san-serif;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  top: -3px;
+}
+
+.c7 {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+    color="grey4"
+    cursor="inherit"
+  >
+    Currency
+     
+  </label>
+  <div
+    class="c2"
+  >
+    <span
+      class="c3 c4"
+      color="blue7"
+      cursor="inherit"
+    >
+      $
+    </span>
+    <input
+      class="c5"
+      id="currencyInput"
+      name="currencyInput"
+      placeholder="100.00"
+      type="number"
+      value=""
+    />
+    <div
+      class="c6"
+    >
+      <button
+        class="c7"
+      >
+        <span
+          class="c8"
+          color="grey4"
+          rotate="0"
+          size="24"
+        >
+          <svg
+            fill="none"
+            height="100%"
+            viewBox="0 0 32 32"
+            width="100%"
+          >
+            <path
+              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              fill="#C1C1C1"
+            />
+          </svg>
+        </span>
+      </button>
+      <button
+        class="c7"
+      >
+        <span
+          class="c8"
+          color="grey4"
+          rotate="0"
+          size="24"
+        >
+          <svg
+            fill="none"
+            height="100%"
+            viewBox="0 0 32 32"
+            width="100%"
+          >
+            <path
+              d="M23.6592 12.2477C23.2422 11.8847 22.6122 11.9267 22.2482 12.3427L16.0002 19.4817L9.75216 12.3417C9.38816 11.9257 8.75716 11.8837 8.34116 12.2477C7.92516 12.6117 7.88416 13.2437 8.24816 13.6587L15.2482 21.6587C15.4382 21.8767 15.7112 22.0007 16.0002 22.0007C16.2892 22.0007 16.5622 21.8767 16.7522 21.6587L23.7522 13.6587C24.1162 13.2437 24.0742 12.6117 23.6592 12.2477Z"
+              fill="#C1C1C1"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+  <span
+    class="c9"
+  >
+    Oh gosh, this is an error isn't it!
+  </span>
+</div>
+`;
+
+exports[`renders - number 1`] = `
+.c1 {
+  font-size: 8px;
+  line-height: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.75px;
+  -moz-letter-spacing: 0.75px;
+  -ms-letter-spacing: 0.75px;
+  letter-spacing: 0.75px;
+  margin: 0;
+  padding: 0;
+  color: #C1C1C1;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c0 {
+  font-family: 'Gordita',san-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 52px;
+}
+
+.c3 {
+  border-bottom: 1px solid;
+  border-color: #C1C1C1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.c3:hover {
+  border-color: #9E9E9E;
+}
+
+.c3:focus {
+  border-color: #545E7E;
+}
+
+.c4 {
+  font-family: 'Gordita',san-serif;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  -moz-appearance: textfield;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c4::-moz-placeholder {
+  color: #C1C1C1;
+}
+
+.c4:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c4::placeholder {
+  color: #C1C1C1;
+}
+
+.c4::-webkit-outer-spin-button,
+.c4::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c2 {
+  font-size: 14px;
+  color: #55D6AA;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+    color="grey4"
+    cursor="inherit"
+  >
+    Number
+     
+    <span
+      class="c2"
+    >
+      *
+    </span>
+  </label>
+  <div
+    class="c3"
+  >
+    <input
+      class="c4"
       id="numberInput"
       name="numberInput"
       placeholder="0.00"
+      required=""
       type="number"
       value=""
     />
@@ -514,7 +901,6 @@ exports[`renders - tel 1`] = `
       +44
     </span>
     <input
-      autocomplete="off"
       class="c5"
       id="tel"
       name="telephoneNumber"
@@ -522,6 +908,367 @@ exports[`renders - tel 1`] = `
       type="tel"
       value=""
     />
+  </div>
+</div>
+`;
+
+exports[`renders - with suffix 1`] = `
+.c4 {
+  padding-right: 8px;
+}
+
+.c1 {
+  font-size: 8px;
+  line-height: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.75px;
+  -moz-letter-spacing: 0.75px;
+  -ms-letter-spacing: 0.75px;
+  letter-spacing: 0.75px;
+  margin: 0;
+  padding: 0;
+  color: #C1C1C1;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c5 {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #112035;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c0 {
+  font-family: 'Gordita',san-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 52px;
+}
+
+.c2 {
+  border-bottom: 1px solid;
+  border-color: #C1C1C1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.c2:hover {
+  border-color: #9E9E9E;
+}
+
+.c2:focus {
+  border-color: #545E7E;
+}
+
+.c3 {
+  font-family: 'Gordita',san-serif;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  -moz-appearance: textfield;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c3::-moz-placeholder {
+  color: #C1C1C1;
+}
+
+.c3:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c3::placeholder {
+  color: #C1C1C1;
+}
+
+.c3::-webkit-outer-spin-button,
+.c3::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6 {
+  font-family: 'Gordita',san-serif;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+    color="grey4"
+    cursor="inherit"
+  >
+    Currency
+     
+  </label>
+  <div
+    class="c2"
+  >
+    <input
+      class="c3"
+      id="currencyInput"
+      name="currencyInput"
+      placeholder="100.00"
+      type="number"
+      value=""
+    />
+    <div
+      class="c4"
+    >
+      <span
+        class="c5 c6"
+        color="blue7"
+        cursor="inherit"
+      >
+        miles
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders - with trailing icon 1`] = `
+.c1 {
+  font-size: 8px;
+  line-height: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.75px;
+  -moz-letter-spacing: 0.75px;
+  -ms-letter-spacing: 0.75px;
+  letter-spacing: 0.75px;
+  margin: 0;
+  padding: 0;
+  color: #C1C1C1;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c3 {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #112035;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 32px;
+  height: 32px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c0 {
+  font-family: 'Gordita',san-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 52px;
+}
+
+.c2 {
+  border-bottom: 1px solid;
+  border-color: #C1C1C1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 32px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.c2:hover {
+  border-color: #9E9E9E;
+}
+
+.c2:focus {
+  border-color: #545E7E;
+}
+
+.c5 {
+  font-family: 'Gordita',san-serif;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  -moz-appearance: textfield;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c5::-moz-placeholder {
+  color: #C1C1C1;
+}
+
+.c5:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c5::placeholder {
+  color: #C1C1C1;
+}
+
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c4 {
+  font-family: 'Gordita',san-serif;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1"
+    color="grey4"
+    cursor="inherit"
+  >
+    Currency
+     
+  </label>
+  <div
+    class="c2"
+  >
+    <span
+      class="c3 c4"
+      color="blue7"
+      cursor="inherit"
+    >
+      $
+    </span>
+    <input
+      class="c5"
+      id="currencyInput"
+      name="currencyInput"
+      placeholder="100.00"
+      type="number"
+      value=""
+    />
+    <span
+      class="c6"
+      color="grey4"
+      rotate="0"
+      size="32"
+    >
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 32 32"
+        width="100%"
+      >
+        <path
+          d="M16 6C10.486 6 6 10.486 6 16s4.486 10 10 10a1 1 0 1 0 0-2c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8c0 1.103-.897 2-2 2s-2-.897-2-2c0-2.206-1.794-4-4-4s-4 1.794-4 4 1.794 4 4 4c1.2 0 2.266-.542 3-1.382.734.84 1.8 1.382 3 1.382 2.206 0 4-1.794 4-4 0-5.514-4.486-10-10-10zm0 12c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"
+          fill="#C1C1C1"
+        />
+      </svg>
+    </span>
   </div>
 </div>
 `;

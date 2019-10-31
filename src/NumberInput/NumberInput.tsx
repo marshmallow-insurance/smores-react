@@ -179,7 +179,6 @@ export const NumberInput: FC<NumberInputProps> = ({
           placeholder={placeholder}
           value={value}
           error={error}
-          autoComplete="off"
           onChange={(event: FormEvent<HTMLInputElement>) =>
             handleChange(event.currentTarget.value)
           }
