@@ -10,5 +10,6 @@ export * from './SearchInput';
 export * from './Tag';
 export * from './Text';
 export * from './TextInput';
+export * from './Textarea';
 export * from './Toggle';
 export * from './theme';
