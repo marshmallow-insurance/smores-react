@@ -45,7 +45,6 @@ const FakeInput = styled.div<IFakeInput>`
   height: 24px;
   border-radius: 50%;
   background-color: ${theme.colors.white};
-  flex-shrink: 0;
   margin-right: 10px;
   border: ${({checked}) =>
     checked
