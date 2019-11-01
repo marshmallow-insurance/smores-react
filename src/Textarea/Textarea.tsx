@@ -37,7 +37,7 @@ export const Textarea: FC<TextareaProps> = ({
   label,
   value,
   onChange,
-  className = '',
+  className,
   resize,
   error = false,
   errorMsg,

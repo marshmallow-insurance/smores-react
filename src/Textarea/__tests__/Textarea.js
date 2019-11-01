@@ -14,6 +14,7 @@ test('renders', () => {
       resize="both"
       disabled={false}
       placeholder="Placeholder text!"
+      className="Textarea"
     />,
   );
   expect(container.firstChild).toMatchSnapshot();

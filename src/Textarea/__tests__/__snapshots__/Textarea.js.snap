@@ -150,7 +150,7 @@ exports[`renders 1`] = `
 }
 
 <div
-  class="c0"
+  class="c0 Textarea"
   direction="column"
 >
   <label
