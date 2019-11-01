@@ -49,7 +49,7 @@ export const TextInput: FC<Props> = ({
 }) => (
   <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
     {label && (
-      <Text tag="label" color="grey4" typo="label">
+      <Text tag="label" color={theme.colors.grey[400]} typo="label">
         {label}
       </Text>
     )}
@@ -68,7 +68,9 @@ export const TextInput: FC<Props> = ({
           onChange(e.currentTarget.value)
         }
       />
-      {trailingIcon && <Icon render={trailingIcon} color="grey4" />}
+      {trailingIcon && (
+        <Icon render={trailingIcon} color={theme.colors.grey[400]} />
+      )}
     </Content>
     {error && <ErrorBox>{errorMsg}</ErrorBox>}
   </Container>
@@ -92,22 +94,25 @@ interface IInput {
 
 const Content = styled.div<IInput>`
   border-bottom: 1px solid;
-  border-color: ${p => theme.colors[`${p.error ? 'red7' : 'grey4'}`]};
+  border-color: ${p =>
+    p.error ? theme.colors.red[700] : theme.colors.grey[400]};
   display: flex;
   height: 32px;
 
   &:hover {
-    border-color: ${p => theme.colors[`${p.error ? 'red7' : 'grey6'}`]};
+    border-color: ${p =>
+      p.error ? theme.colors.red[700] : theme.colors.grey[600]};
   }
 
   &:focus {
-    border-color: ${p => theme.colors[`${p.error ? 'red7' : 'blue5'}`]};
+    border-color: ${p =>
+      p.error ? theme.colors.red[700] : theme.colors.blue[500]};
   }
 `;
 
 const Input = styled.input<IInput>`
   border: none;
-  color: ${p => theme.colors[`${p.error ? 'red7' : 'black'}`]};
+  color: ${p => (p.error ? theme.colors.red[700] : theme.colors.blue[700])};
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -115,12 +120,12 @@ const Input = styled.input<IInput>`
   opacity: ${({disabled}) => (disabled ? '0.5' : '1')};
 
   &::placeholder {
-    color: ${theme.colors.grey4};
+    color: ${theme.colors.grey[400]};
   }
 `;
 
 const ErrorBox = styled.span`
   margin-top: 7px;
-  color: ${theme.colors.red7};
+  color: ${theme.colors.red[700]};
   font-size: 12px;
 `;

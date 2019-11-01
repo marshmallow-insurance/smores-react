@@ -16,6 +16,14 @@ exports[`renders 1`] = `
   background-color: #55D6AA;
 }
 
+.c0:hover:not([disabled]) {
+  background-color: #4CB99F;
+}
+
+.c0:active:not([disabled]) {
+  background-color: #469389;
+}
+
 .c0:disabled {
   opacity: 0.5;
   cursor: not-allowed;

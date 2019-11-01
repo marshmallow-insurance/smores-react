@@ -12,12 +12,14 @@ exports[`disabled 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
+  color: grey5;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c0 {
@@ -88,12 +90,14 @@ exports[`renders 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
+  color: grey5;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c0 {
@@ -163,12 +167,14 @@ exports[`renders with error 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
+  color: grey5;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c0 {

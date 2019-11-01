@@ -12,12 +12,14 @@ exports[`renders 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
+  color: grey4;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c0 {
@@ -30,44 +32,29 @@ exports[`renders 1`] = `
   display: block;
   border: none;
   border-bottom: 1px solid;
+  border-color: #C1C1C1;
   outline: none;
+  color: #112035;
   font-size: 16px;
   height: 32px;
   width: 100%;
   box-sizing: border-box;
 }
 
-.c2 {
-  display: block;
-  border: none;
-  border-bottom: 1px solid;
-  outline: none;
-  font-size: 16px;
-  height: 32px;
-  width: 100%;
-  box-sizing: border-box;
+.c2::-webkit-input-placeholder {
+  color: #C1C1C1;
 }
 
-.c2 {
-  display: block;
-  border: none;
-  border-bottom: 1px solid;
-  outline: none;
-  font-size: 16px;
-  height: 32px;
-  width: 100%;
-  box-sizing: border-box;
+.c2::-moz-placeholder {
+  color: #C1C1C1;
 }
 
-.c2 {
-  display: block;
-  border: none;
-  border-bottom: 1px solid;
-  outline: none;
-  font-size: 16px;
-  height: 32px;
-  width: 100%;
-  box-sizing: border-box;
+.c2:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c2::placeholder {
+  color: #C1C1C1;
 }
 
 .c3 {
@@ -89,7 +76,7 @@ exports[`renders 1`] = `
   padding: 0;
   margin: 0;
   background-color: #ffffff;
-  border: 1px solid;
+  border: 1px solid #C1C1C1;
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -100,7 +87,12 @@ exports[`renders 1`] = `
   padding: 16px 14px;
   box-sizing: border-box;
   font-size: 16px;
+  color: #112035;
   cursor: pointer;
+}
+
+.c4 li:hover {
+  background-color: #F8F6F6;
 }
 
 @media (min-width:768px) {

@@ -12,12 +12,14 @@ exports[`renders - currency 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
+  color: grey4;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c3 {
@@ -26,12 +28,14 @@ exports[`renders - currency 1`] = `
   font-weight: normal;
   margin: 0;
   padding: 0;
+  color: blue7;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c8 {
@@ -266,12 +270,14 @@ exports[`renders - disabled 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
+  color: grey4;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c0 {
@@ -382,12 +388,14 @@ exports[`renders - error 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
+  color: grey4;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c3 {
@@ -396,12 +404,14 @@ exports[`renders - error 1`] = `
   font-weight: normal;
   margin: 0;
   padding: 0;
+  color: blue7;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c8 {
@@ -646,12 +656,14 @@ exports[`renders - number 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
+  color: grey4;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c0 {
@@ -770,12 +782,14 @@ exports[`renders - tel 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
+  color: grey4;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c3 {
@@ -784,12 +798,14 @@ exports[`renders - tel 1`] = `
   font-weight: normal;
   margin: 0;
   padding: 0;
+  color: blue7;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c0 {
@@ -922,12 +938,14 @@ exports[`renders - with suffix 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
+  color: grey4;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c5 {
@@ -936,12 +954,14 @@ exports[`renders - with suffix 1`] = `
   font-weight: normal;
   margin: 0;
   padding: 0;
+  color: blue7;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c0 {
@@ -1074,12 +1094,14 @@ exports[`renders - with trailing icon 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
+  color: grey4;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c3 {
@@ -1088,12 +1110,14 @@ exports[`renders - with trailing icon 1`] = `
   font-weight: normal;
   margin: 0;
   padding: 0;
+  color: blue7;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c6 {
