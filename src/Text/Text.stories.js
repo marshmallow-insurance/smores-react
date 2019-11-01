@@ -1,9 +1,10 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 
-import {text, number} from '@storybook/addon-knobs';
+import {text} from '@storybook/addon-knobs';
 
 import {Text} from './Text';
+import {theme} from '../theme';
 
 storiesOf('Text', module)
   .addWithJSX('default', () => (
@@ -12,7 +13,7 @@ storiesOf('Text', module)
   .addWithJSX('tweaked', () => (
     <Text
       tag={text('Tag', 'h1')}
-      color={text('Color', 'pink5')}
+      color={theme.colors.pink[500]}
       align={text('Text-align', 'left')}
       cursor={text('Cursor', 'auto')}
     >

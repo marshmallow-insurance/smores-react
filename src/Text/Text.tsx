@@ -3,19 +3,7 @@ import styled, {css} from 'styled-components';
 
 import {theme} from '../theme';
 
-interface IText {
-  /** typography class name to apply predefined styles */
-  typo: string;
-  /** HTML tag  */
-  as: any;
-  /** text-align  */
-  align: string;
-  /** color from the theme  */
-  color: string;
-  cursor: string;
-}
-
-type Props = {
+type TextProps = {
   children: ReactNode;
   tag: any;
   className?: string;
@@ -25,13 +13,13 @@ type Props = {
   cursor?: string;
 };
 
-export const Text: FC<Props> = ({
+export const Text: FC<TextProps> = ({
   children,
   typo,
-  className = '',
+  className,
   tag = 'p',
   align = 'left',
-  color = 'blue7',
+  color = theme.colors.textDark,
   cursor = 'inherit',
 }) => (
   <Container
@@ -46,6 +34,18 @@ export const Text: FC<Props> = ({
   </Container>
 );
 
+interface IText {
+  /** typography class name to apply predefined styles */
+  typo: string;
+  /** HTML tag  */
+  as: any;
+  /** text-align  */
+  align: string;
+  /** color from the theme  */
+  color: string;
+  /** style of the cursor  */
+  cursor: string;
+}
 const Container = styled.p<IText>`
   /** PREDEFINED TYPOGRAPHY STYLES */
 
@@ -193,8 +193,9 @@ const Container = styled.p<IText>`
 
   margin: 0;
   padding: 0;
-  color: ${p => theme.colors[p.color]};
+  color: ${p => p.color};
   text-align: ${p => p.align};
   cursor: ${p => p.cursor};
   letter-spacing: 0.15px;
+  font-family: 'Gordita', sans-serif;
 `;
