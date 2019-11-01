@@ -54,10 +54,11 @@ export const Dropdown: FC<Props> = ({
   return (
     <Container className={className}>
       {label && (
-        <Text tag="label" color="grey4" typo="label">
+        <Text tag="label" color={theme.colors.grey[400]} typo="label">
           {label}
         </Text>
       )}
+
       <Content>
         <Select
           id={id}
@@ -71,14 +72,16 @@ export const Dropdown: FC<Props> = ({
           <option value="" hidden>
             {placeholder}
           </option>
+
           {list.map((el, i) => (
             <option key={i} value={el.value}>
               {el.label}
             </option>
           ))}
         </Select>
+
         <Caret>
-          <Icon render="caret" color="grey4" size={24} />
+          <Icon render="caret" color={theme.colors.grey[400]} size={24} />
         </Caret>
       </Content>
     </Container>
@@ -106,7 +109,7 @@ const Select = styled.select`
   background-color: ${theme.colors.white};
   border: none;
   border-bottom: 1px solid;
-  border-color: ${theme.colors.grey4};
+  border-color: ${theme.colors.grey[400]};
   border-radius: 0;
   font-size: 16px;
   cursor: pointer;
@@ -118,16 +121,16 @@ const Select = styled.select`
   }
 
   &:not(:focus):invalid {
-    color: ${theme.colors.grey4};
+    color: ${theme.colors.grey[400]};
   }
 
   &:hover {
-    border-color: ${theme.colors.grey6};
+    border-color: ${theme.colors.grey[600]};
   }
 
   &:focus,
   &:checked {
-    border-color: ${theme.colors.blue5};
+    border-color: ${theme.colors.blue[500]};
   }
 `;
 
