@@ -19,7 +19,7 @@ export const Text: FC<TextProps> = ({
   className,
   tag = 'p',
   align = 'left',
-  color = theme.colors.textDark,
+  color = theme.colors.blue[700],
   cursor = 'inherit',
 }) => (
   <Container
