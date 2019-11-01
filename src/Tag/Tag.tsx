@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 import styled from 'styled-components';
 
 import {Text} from '../Text';
-import {theme} from '../theme';
 
 type TagProps = {
   label: string;
@@ -33,8 +32,8 @@ interface IWrapper {
 
 const Wrapper = styled.div<IWrapper>`
   display: inline-block;
-  background-color: ${({bgColor}) => theme.colors[bgColor]};
-  border: 1px solid ${({borderColor}) => theme.colors[borderColor]};
+  background-color: ${({bgColor}) => bgColor};
+  border: 1px solid ${({borderColor}) => borderColor};
   padding: 2px 13px 4px 13px;
   border-radius: 8px;
 `;
