@@ -2,6 +2,7 @@
 
 exports[`renders 1`] = `
 .c0 path {
+  fill: pink4;
   stroke: none;
   fill-rule: evenodd;
 }
