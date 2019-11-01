@@ -47,7 +47,7 @@ type NumberInputProps = {
   /** Increment and decrement the value by the following step count */
   step: number;
   /** Disabled flag */
-  disabled?: boolean;
+  disabled: boolean;
 };
 
 const DEFAULT_MIN_VALUE = -999999;
