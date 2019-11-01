@@ -62,7 +62,10 @@ const colors: any = {
 };
 
 colors.textDark = colors.blue[700];
+
 colors.boxShadow = 'rgba(0, 0, 0, 0.08)';
+
+colors.error = colors.red[700];
 
 export const theme = {
   colors,
