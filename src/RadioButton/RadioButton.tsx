@@ -5,10 +5,6 @@ import {Box} from '../Box';
 
 import {theme} from '../theme';
 
-interface IFakeInput {
-  checked?: boolean;
-}
-
 type RadioButtonProps = {
   id: string;
   label: string;
@@ -40,6 +36,10 @@ export const RadioButton: FC<RadioButtonProps> = ({
   </Box>
 );
 
+interface IFakeInput {
+  checked?: boolean;
+}
+
 const FakeInput = styled.div<IFakeInput>`
   width: 24px;
   height: 24px;
@@ -48,8 +48,8 @@ const FakeInput = styled.div<IFakeInput>`
   margin-right: 10px;
   border: ${({checked}) =>
     checked
-      ? `8px solid ${theme.colors.green5}`
-      : `1px solid ${theme.colors.grey4}`};
+      ? `8px solid ${theme.colors.green[500]}`
+      : `1px solid ${theme.colors.grey[400]}`};
 `;
 
 const RadioInput = styled.input`
@@ -64,13 +64,13 @@ const RadioLabel = styled.label`
   text-transform: none;
   font-size: 16px;
   line-height: 17px;
-  color: ${theme.colors.blue7};
+  color: ${theme.colors.blue[700]};
   margin-bottom: 0;
   display: flex;
   cursor: pointer;
 `;
 
-// needed because the text is top aligned in its viewbox
+// Needed because the text is top aligned in its viewbox
 const Text = styled.span`
   position: relative;
   bottom: -5px;
