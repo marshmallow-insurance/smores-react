@@ -18,6 +18,7 @@ exports[`renders 1`] = `
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  font-family: 'Gordita',sans-serif;
 }
 
 .c0 {

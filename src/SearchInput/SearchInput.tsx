@@ -119,16 +119,16 @@ const Input = styled.input<ISearchInput>`
   display: block;
   border: none;
   border-bottom: 1px solid;
-  border-color: ${theme.colors.grey4};
+  border-color: ${theme.colors.grey[400]};
   outline: none;
-  color: ${theme.colors.blue7};
+  color: ${theme.colors.blue[700]};
   font-size: 16px;
   height: 32px;
   width: 100%;
   box-sizing: border-box;
 
   &::placeholder {
-    color: ${theme.colors.grey4};
+    color: ${theme.colors.grey[400]};
   }
 `;
 
@@ -140,7 +140,8 @@ const ResultsContainer = styled.div<IContainer>`
 
   ul {
     max-height: ${p => (p.show ? '192px' : '0px')};
-    border-color: ${p => (p.show ? `${theme.colors.grey4}` : 'transparent')};
+    border-color: ${p =>
+      p.show ? `${theme.colors.grey[400]}` : 'transparent'};
   }
 `;
 
@@ -151,7 +152,7 @@ const ResultsList = styled.ul`
   padding: 0;
   margin: 0;
   background-color: ${theme.colors.white};
-  border: 1px solid ${theme.colors.grey4};
+  border: 1px solid ${theme.colors.grey[400]};
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -161,11 +162,11 @@ const ResultsList = styled.ul`
     padding: 16px 14px;
     box-sizing: border-box;
     font-size: 16px;
-    color: ${theme.colors.blue7};
+    color: ${theme.colors.blue[700]};
     cursor: pointer;
 
     &:hover {
-      background-color: ${theme.colors.bg3};
+      background-color: ${theme.colors.background[300]};
     }
   }
 `;
