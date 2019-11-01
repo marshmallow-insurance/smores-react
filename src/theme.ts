@@ -1,4 +1,8 @@
-const colors: any = {
+type ColorsType = {
+  [key: string]: {[key: string]: string} | string;
+};
+
+const colors: ColorsType = {
   background: {
     200: '#F9F9F9',
     300: '#F8F6F6',
@@ -53,9 +57,9 @@ const colors: any = {
   },
 
   stripe: {
+    active: '#3E4489',
     base: '#6772E5',
     hover: '#525BB7',
-    active: '#3E4489',
   },
 
   white: '#ffffff',
