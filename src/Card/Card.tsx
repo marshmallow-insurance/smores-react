@@ -1,5 +1,6 @@
 import React, {FC, ReactNode} from 'react';
 import styled from 'styled-components';
+
 import {theme} from '../theme';
 
 interface ICard {
@@ -48,17 +49,15 @@ export const Card: FC<Props> = ({
 
 const Container = styled.div<ICard>`
   background: ${theme.colors.white};
-  border: 1px solid ${theme.colors.grey2};
+  border: 1px solid ${theme.colors.grey[200]};
   box-sizing: border-box;
-  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 4px 3px ${theme.colors.boxShadow};
   border-radius: 8px;
-
   max-width: ${p => p.maxWidth};
   margin-top: ${p => p.marginY};
   margin-right: ${p => p.marginX};
   margin-bottom: ${p => p.marginY};
   margin-left: ${p => p.marginX};
-
   padding: ${p => (p.narrow ? '16px' : p.wide ? '32px' : '24px')};
 
   @media (min-width: 768px) {
