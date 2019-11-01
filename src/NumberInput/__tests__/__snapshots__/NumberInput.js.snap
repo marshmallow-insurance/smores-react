@@ -190,7 +190,7 @@ exports[`renders - currency 1`] = `
       name="currencyInput"
       placeholder="100.00"
       type="number"
-      value=""
+      value="50"
     />
     <div
       class="c6"
@@ -289,8 +289,8 @@ exports[`renders - disabled 1`] = `
   -ms-flex-align: center;
   align-items: center;
   height: 32px;
-  cursor: pointer;
-  opacity: 1;
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .c2:hover {
@@ -307,7 +307,7 @@ exports[`renders - disabled 1`] = `
   font-size: 16px;
   width: 100%;
   outline: none;
-  cursor: pointer;
+  cursor: not-allowed;
   -moz-appearance: textfield;
 }
 
@@ -353,9 +353,11 @@ exports[`renders - disabled 1`] = `
   </label>
   <div
     class="c2"
+    disabled=""
   >
     <input
       class="c3"
+      disabled=""
       id="currencyInput"
       name="currencyInput"
       placeholder="100.00"
@@ -563,7 +565,7 @@ exports[`renders - error 1`] = `
       name="currencyInput"
       placeholder="100.00"
       type="number"
-      value=""
+      value="200"
     />
     <div
       class="c6"

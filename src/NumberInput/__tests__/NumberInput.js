@@ -16,7 +16,7 @@ test('renders - tel', () => {
       placeholder="07446875876"
       prefix="+44"
       required={false}
-      disable={false}
+      disabled={false}
     />,
   );
   expect(container.firstChild).toMatchSnapshot();
@@ -45,7 +45,7 @@ test('renders - currency', () => {
       id="currencyInput"
       label="Currency"
       name="currencyInput"
-      value=""
+      value="50"
       onChange={str => {}}
       placeholder="100.00"
       prefix="$"
@@ -66,7 +66,7 @@ test('renders - error', () => {
       id="currencyInput"
       label="Currency"
       name="currencyInput"
-      value=""
+      value="200"
       onChange={str => {}}
       placeholder="100.00"
       prefix="$"
@@ -74,8 +74,8 @@ test('renders - error', () => {
       min={0}
       max={100}
       step={10}
-      error={true}
       roundCurrency={false}
+      error={true}
       errorMsg="Oh gosh, this is an error isn't it!"
     />,
   );
@@ -125,7 +125,7 @@ test('renders - disabled', () => {
       value=""
       onChange={str => {}}
       placeholder="100.00"
-      disable={true}
+      disabled={true}
     />,
   );
   expect(container.firstChild).toMatchSnapshot();
