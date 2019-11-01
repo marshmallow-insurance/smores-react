@@ -3,24 +3,7 @@ import styled, {css} from 'styled-components';
 
 import {theme} from '../theme';
 
-interface IButton {
-  /** button color  */
-  color: string;
-  /** unique id */
-  id: string;
-  /** take full 100% width  */
-  block: boolean;
-  /** invert bg and text colors */
-  inverted: boolean;
-  /** disabled state */
-  disabled: boolean;
-  /** outline styling */
-  outlined: boolean;
-  /** onClick event handler */
-  onClick: (e: React.FormEvent<HTMLButtonElement>) => void;
-}
-
-type Props = {
+type ButtonProps = {
   children: ReactNode;
   id: string;
   className?: string;
@@ -32,11 +15,11 @@ type Props = {
   handleClick: (e: React.FormEvent<HTMLButtonElement>) => void;
 };
 
-export const Button: FC<Props> = ({
+export const Button: FC<ButtonProps> = ({
   children,
   id,
   className = '',
-  color = 'blue',
+  color = theme.colors.blue[700],
   block = false,
   inverted = false,
   disabled = false,
@@ -57,6 +40,23 @@ export const Button: FC<Props> = ({
   </Container>
 );
 
+interface IButton {
+  /** button color  */
+  color: string;
+  /** unique id */
+  id: string;
+  /** take full 100% width  */
+  block: boolean;
+  /** invert bg and text colors */
+  inverted: boolean;
+  /** disabled state */
+  disabled: boolean;
+  /** outline styling */
+  outlined: boolean;
+  /** onClick event handler */
+  onClick: (e: React.FormEvent<HTMLButtonElement>) => void;
+}
+
 const Container = styled.button<IButton>`
   position: relative;
   display: inline-block;
@@ -68,15 +68,17 @@ const Container = styled.button<IButton>`
   outline: none;
   cursor: pointer;
   width: ${p => (p.block ? '100%' : 'auto')};
-  background-color: ${p => theme.colors[`${p.color}5`]};
   color: ${theme.colors.white};
+  background-color: ${({color}) => theme.colors[color][500]};
 
   &:hover:not([disabled]) {
-    background-color: ${p => theme.colors[`${p.color}6`]};
+    background-color: ${({color}) => theme.colors[color][600]};
   }
+
   &:active:not([disabled]) {
-    background-color: ${p => theme.colors[`${p.color}7`]};
+    background-color: ${({color}) => theme.colors[color][700]};
   }
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -86,14 +88,15 @@ const Container = styled.button<IButton>`
     (p.inverted || p.outlined) &&
     css`
       background-color: transparent;
-      border: 1px solid ${p.outlined ? theme.colors.grey4 : 'transparent'};
-      color: ${p.outlined ? theme.colors.blue7 : theme.colors[`${p.color}5`]};
+      border: 1px solid ${p.outlined ? theme.colors.grey[400] : 'transparent'};
+      color: ${p.outlined ? theme.colors.blue[700] : theme.colors[p.color][500]}
 
       &:hover:not([disabled]) {
-        background-color: ${theme.colors.bg2};
+        background-color: ${theme.colors.background[200]};
       }
+
       &:active:not([disabled]) {
-        background-color: ${theme.colors.bg3};
+        background-color: ${theme.colors.background[300]};
       }
     `};
 
