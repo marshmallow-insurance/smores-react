@@ -1,57 +1,67 @@
-const colors = {
+const colors: any = {
+  background: {
+    200: '#F9F9F9',
+    300: '#F8F6F6',
+  },
+
+  grey: {
+    200: '#ECECEC',
+    300: '#E5E5E5',
+    400: '#C1C1C1',
+    500: '#AEAEAE',
+    600: '#9E9E9E',
+    700: '#818181',
+    800: '#636768',
+  },
+
+  pink: {
+    200: '#FFB2B4',
+    300: '#FF8A8D',
+    400: '#FF7695',
+    500: '#FF4E75',
+    600: '#FD5064',
+    700: '#E0364A',
+    800: '#AB1D20',
+  },
+
+  green: {
+    300: '#A7D6C6',
+    500: '#55D6AA',
+    600: '#4CB99F',
+    700: '#469389',
+    800: '#16716E',
+  },
+
+  blue: {
+    200: '#ACB6D8',
+    300: '#94A0C6',
+    400: '#6F7AA0',
+    500: '#545E7E',
+    600: '#363F59',
+    700: '#112035',
+    800: '#05090E',
+  },
+
+  yellow: {
+    500: '#FFD53C',
+  },
+
+  red: {
+    400: '#D7796A',
+    500: '#E06161',
+    700: '#D82C2C',
+  },
+
+  stripe: {
+    base: '#6772E5',
+    hover: '#525BB7',
+    active: '#3E4489',
+  },
+
   white: '#ffffff',
-
-  //Background
-  bg2: '#F9F9F9',
-  bg3: '#F8F6F6',
-
-  //Grey
-  grey2: '#ECECEC',
-  grey3: '#E5E5E5',
-  grey4: '#C1C1C1',
-  grey5: '#AEAEAE',
-  grey6: '#9E9E9E',
-  grey7: '#818181',
-  grey8: '#636768',
-
-  //Pink
-  pink2: '#FFB2B4',
-  pink3: '#FF8A8D',
-  pink4: '#FF7695',
-  pink5: '#FF4E75',
-  pink6: '#FD5064',
-  pink7: '#E0364A',
-  pink8: '#AB1D20',
-
-  //Green
-  green2: '',
-  green3: '#A7D6C6',
-  green4: '',
-  green5: '#55D6AA',
-  green6: '#4CB99F',
-  green7: '#469389',
-  green8: '#16716E',
-
-  //Blue
-  blue2: '#ACB6D8',
-  blue3: '#94A0C6',
-  blue4: '#6F7AA0',
-  blue5: '#545E7E',
-  blue6: '#363F59',
-  blue7: '#112035',
-  blue8: '#05090E',
-
-  // Third-party brand colours
-  stripe: '#6772E5',
-
-  //Yellow
-  yellow5: '#FFD53C',
-
-  //Red
-  red4: '#D7796A',
-  red5: '#E06161',
-  red7: '#D82C2C',
 };
+
+colors.textDark = colors.blue[700];
 
 export const theme = {
   colors,
