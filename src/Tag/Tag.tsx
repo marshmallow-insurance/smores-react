@@ -1,31 +1,45 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
 
+import {Text} from '../Text';
 import {theme} from '../theme';
-
-interface IWrapper {
-  color: string;
-}
 
 type TagProps = {
   label: string;
-  color?: string;
+  className?: string;
+  color: string;
+  bgColor: string;
+  borderColor: string;
 };
 
-export const Tag: FC<TagProps> = ({label, color = 'grey6'}) => (
-  <Wrapper color={color}>
-    <span>{label}</span>
+export const Tag: FC<TagProps> = ({
+  label,
+  color,
+  borderColor,
+  bgColor,
+  className,
+}) => (
+  <Wrapper bgColor={bgColor} className={className} borderColor={borderColor}>
+    <TagText tag="span" typo="label" color={color}>
+      {label}
+    </TagText>
   </Wrapper>
 );
 
+interface IWrapper {
+  bgColor: string;
+  borderColor: string;
+}
+
 const Wrapper = styled.div<IWrapper>`
-  font-size: 14px;
   display: inline-block;
-  background-color: ${({color}) => theme.colors[color]};
-  color: ${theme.colors.white};
-  padding: 9px 16px 8px 16px;
+  background-color: ${({bgColor}) => theme.colors[bgColor]};
+  border: 1px solid ${({borderColor}) => theme.colors[borderColor]};
+  padding: 2px 13px 4px 13px;
   border-radius: 8px;
-  margin-bottom: 16px;
-  margin-right: 16px;
-  text-transform: capitalize;
+`;
+
+const TagText = styled(Text)`
+  font-family: 'Gordita', sans-serif;
+  text-transform: uppercase;
 `;
