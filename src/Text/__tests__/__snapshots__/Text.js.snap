@@ -7,7 +7,6 @@ exports[`renders 1`] = `
   font-weight: normal;
   margin: 0;
   padding: 0;
-  color: #112035;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;

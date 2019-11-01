@@ -12,16 +12,7 @@ exports[`renders 1`] = `
   outline: none;
   cursor: pointer;
   width: auto;
-  background-color: #55D6AA;
   color: #ffffff;
-}
-
-.c0:hover:not([disabled]) {
-  background-color: #4CB99F;
-}
-
-.c0:active:not([disabled]) {
-  background-color: #469389;
 }
 
 .c0:disabled {

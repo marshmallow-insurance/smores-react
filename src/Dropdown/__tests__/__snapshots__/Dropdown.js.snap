@@ -48,7 +48,6 @@ exports[`renders 1`] = `
   background-color: #ffffff;
   border: none;
   border-bottom: 1px solid;
-  border-color: #C1C1C1;
   border-radius: 0;
   font-size: 16px;
   cursor: pointer;
@@ -60,19 +59,6 @@ exports[`renders 1`] = `
 .c2:disabled {
   cursor: not-allowed;
   opacity: 0.5;
-}
-
-.c2:not(:focus):invalid {
-  color: #C1C1C1;
-}
-
-.c2:hover {
-  border-color: #9E9E9E;
-}
-
-.c2:focus,
-.c2:checked {
-  border-color: #545E7E;
 }
 
 .c3 {
@@ -153,7 +139,6 @@ exports[`renders 1`] = `
         >
           <path
             d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-            fill="#C1C1C1"
           />
         </svg>
       </span>

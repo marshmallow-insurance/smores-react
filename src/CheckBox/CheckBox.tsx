@@ -27,8 +27,8 @@ const Checkmark = styled.span`
   left: 0;
   width: 24px;
   height: 24px;
-  background-color: ${theme.colors.grey2};
-  border: solid 1px ${theme.colors.grey6};
+  background-color: ${theme.colors.grey[200]};
+  border: solid 1px ${theme.colors.grey[600]};
   border-radius: 50%;
   box-sizing: border-box;
 
@@ -40,7 +40,7 @@ const Checkmark = styled.span`
     left: 8px;
     width: 4px;
     height: 9px;
-    border: solid white;
+    border: solid ${theme.colors.white};
     border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -61,9 +61,10 @@ const BoxContainer = styled.label`
     opacity: 0;
 
     &:checked ~ ${Checkmark} {
-      background-color: ${theme.colors.green5};
-      border: solid 1px ${theme.colors.green5};
+      background-color: ${theme.colors.green[500]};
+      border: solid 1px ${theme.colors.green[500]};
     }
+
     &:checked ~ ${Checkmark}:after {
       display: block;
     }
@@ -71,8 +72,8 @@ const BoxContainer = styled.label`
 
   &:hover {
     ${Checkmark} {
-      background-color: ${theme.colors.grey3};
-      border: solid 1px ${theme.colors.grey7};
+      background-color: ${theme.colors.grey[300]};
+      border: solid 1px ${theme.colors.grey[700]};
     }
   }
 

@@ -21,9 +21,7 @@ exports[`renders 1`] = `
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #E5E5E5;
   border: 1px solid;
-  border-color: #C1C1C1;
   border-radius: 28px;
   -webkit-transition: 0.2s background-color border-color;
   transition: 0.2s background-color border-color;
@@ -45,9 +43,7 @@ exports[`renders 1`] = `
 }
 
 .c1:checked + .c2 {
-  background-color: #4CB99F;
   border: 1px solid;
-  border-color: #469389;
 }
 
 .c1:checked + .c2:before {
