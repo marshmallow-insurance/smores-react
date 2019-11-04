@@ -1,7 +1,7 @@
 {
   "bracketSpacing": true,
   "proseWrap": "always",
-  "semi": true,
+  "semi": false,
   "singleQuote": true,
   "trailingComma": "all"
 }
