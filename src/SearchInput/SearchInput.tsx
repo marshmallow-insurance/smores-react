@@ -77,7 +77,7 @@ export const SearchInput: FC<Props> = ({
   return (
     <Container show={active}>
       {label && (
-        <Text tag="label" color="grey4" typo="label">
+        <Text tag="label" color={theme.colors.grey[400]} typo="label">
           {label}
         </Text>
       )}

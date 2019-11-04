@@ -12,7 +12,7 @@ exports[`renders 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: grey4;
+  color: #C1C1C1;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -107,7 +107,7 @@ exports[`renders 1`] = `
 >
   <label
     class="c1"
-    color="grey4"
+    color="#C1C1C1"
     cursor="inherit"
   >
     Days

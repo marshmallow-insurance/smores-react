@@ -2,7 +2,7 @@
 
 exports[`renders 1`] = `
 .c0 path {
-  fill: pink4;
+  fill: #FF7695;
   stroke: none;
   fill-rule: evenodd;
 }
@@ -24,7 +24,7 @@ exports[`renders 1`] = `
 
 <svg
   class="c0"
-  color="pink4"
+  color="#FF7695"
   viewBox="0 0 60 32"
 >
   <g
