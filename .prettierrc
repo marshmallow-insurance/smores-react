@@ -1,5 +1,5 @@
 {
-  "bracketSpacing": false,
+  "bracketSpacing": true,
   "proseWrap": "always",
   "semi": true,
   "singleQuote": true,
