@@ -19,7 +19,7 @@ export const Button: FC<ButtonProps> = ({
   children,
   id,
   className = '',
-  color = theme.colors.blue[700],
+  color = 'blue',
   block = false,
   inverted = false,
   disabled = false,
