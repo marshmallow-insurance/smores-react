@@ -11,11 +11,10 @@ storiesOf('Textarea', module)
       id="textarea_id"
       label={text('label', 'Textarea label')}
       value={text('value', '')}
-      resize="both"
       onChange={() => {}}
       disabled={boolean('disabled', false)}
       placeholder="Here is some placeholder text."
-      className={text('Class name', '')}
+      className=""
     />
   ))
   .addWithJSX('disabled', () => (
@@ -27,7 +26,7 @@ storiesOf('Textarea', module)
       resize="none"
       disabled={boolean('disabled', true)}
       placeholder="Here is some placeholder text."
-      className={text('Class name', '')}
+      className=""
     />
   ))
   .addWithJSX('error', () => (
@@ -44,7 +43,7 @@ storiesOf('Textarea', module)
         'Something really quite terrible has gone wrong here!',
       )}
       placeholder={text('placeholder', 'Some lovely placeholder text!')}
-      className={text('Class name', '')}
+      className=""
     />
   ))
   .addWithJSX('functional', () => <Container />);

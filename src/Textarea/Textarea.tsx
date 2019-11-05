@@ -24,7 +24,7 @@ type TextareaProps = {
   /** error text message */
   errorMsg?: string;
   /** Allow user to resize the textarea vertically and horizontally or not */
-  resize: 'none' | 'both';
+  resize?: 'none' | 'both';
   /** onChange listener */
   onChange: (e: string) => void;
   /** Disabled flag */
@@ -38,7 +38,7 @@ export const Textarea: FC<TextareaProps> = ({
   value,
   onChange,
   className,
-  resize,
+  resize = 'none',
   error = false,
   errorMsg,
   placeholder,
