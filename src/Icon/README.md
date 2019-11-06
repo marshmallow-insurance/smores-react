@@ -39,3 +39,5 @@ const App = () => (
 * car-claim
 * tick
 * cross
+* arrow-left
+* trash
