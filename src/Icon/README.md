@@ -41,3 +41,8 @@ const App = () => (
 * cross
 * arrow
 * trash
+
+### Coloured Icons
+
+* calendar
+* credit-card

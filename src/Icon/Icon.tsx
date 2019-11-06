@@ -275,6 +275,93 @@ export const Icon: FC<Props> = ({
         />
       </svg>
     )}
+
+    {// COLORED ICON - CALENDAR
+    render === 'calendar' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <g clipPath="url(#clip0)">
+          <path
+            d="M26 6H6C4.896 6 4 6.896 4 8V13H28V8C28 6.896 27.104 6 26 6Z"
+            fill="#E74C3C"
+          />
+          <path
+            d="M10 11C9.448 11 9 10.552 9 10V5C9 4.448 9.448 4 10 4C10.552 4 11 4.448 11 5V10C11 10.552 10.552 11 10 11Z"
+            fill="#505050"
+          />
+          <path
+            d="M22 11C21.448 11 21 10.552 21 10V5C21 4.448 21.448 4 22 4C22.552 4 23 4.448 23 5V10C23 10.552 22.552 11 22 11Z"
+            fill="#505050"
+          />
+          <path
+            d="M26 9H6C4.896 9 4 9.773 4 10.728V26.273C4 27.227 4.896 28 6 28H26C27.105 28 28 27.227 28 26.272V10.728C28 9.773 27.104 9 26 9V9Z"
+            fill="#EBEBEB"
+          />
+          <path
+            d="M26 6H6C4.896 6 4 6.896 4 8V13H28V8C28 6.896 27.104 6 26 6Z"
+            fill="#E74C3C"
+          />
+          <path
+            d="M10 11C9.448 11 9 10.552 9 10V5C9 4.448 9.448 4 10 4C10.552 4 11 4.448 11 5V10C11 10.552 10.552 11 10 11Z"
+            fill="#505050"
+          />
+          <path
+            d="M22 11C21.448 11 21 10.552 21 10V5C21 4.448 21.448 4 22 4C22.552 4 23 4.448 23 5V10C23 10.552 22.552 11 22 11Z"
+            fill="#505050"
+          />
+          <path
+            d="M26 6H6C4.896 6 4 6.896 4 8V13H28V8C28 6.896 27.104 6 26 6Z"
+            fill="#E74C3C"
+          />
+          <path
+            d="M10 11C9.448 11 9 10.552 9 10V5C9 4.448 9.448 4 10 4C10.552 4 11 4.448 11 5V10C11 10.552 10.552 11 10 11Z"
+            fill="#505050"
+          />
+          <path
+            d="M22 11C21.448 11 21 10.552 21 10V5C21 4.448 21.448 4 22 4C22.552 4 23 4.448 23 5V10C23 10.552 22.552 11 22 11Z"
+            fill="#505050"
+          />
+        </g>
+
+        <defs>
+          <clipPath id="clip0">
+            <rect
+              width="24"
+              height="24"
+              fill="white"
+              transform="translate(4 4)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    )}
+
+    {// COLORED ICON - CREDIT CARD
+    render === 'credit-card' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <g clipPath="url(#clip0)">
+          <path
+            d="M4 23.003C4 24.106 4.894 25 5.997 25H26.003C27.106 25 28 24.106 28 23.003V15H4V23.003Z"
+            fill="#1ABC9C"
+          />
+          <path
+            d="M25.999 7H6.001C4.896 7 4 7.896 4 9.001V11H28V9.001C28 7.896 27.104 7 25.999 7V7Z"
+            fill="#1ABC9C"
+          />
+          <path d="M4 11H28V15H4V11Z" fill="#323232" />
+        </g>
+
+        <defs>
+          <clipPath id="clip0">
+            <rect
+              width="24"
+              height="24"
+              fill="white"
+              transform="translate(4 4)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    )}
   </Container>
 );
 
