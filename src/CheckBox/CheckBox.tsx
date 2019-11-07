@@ -16,6 +16,7 @@ export const CheckBox: FC<Props> = ({id, checked, children, toggle}) => (
     <Text tag="span" typo="base-small">
       {children}
     </Text>
+
     <input type="checkbox" checked={checked} onChange={toggle} />
     <Checkmark />
   </BoxContainer>
@@ -63,7 +64,7 @@ const BoxContainer = styled.label`
   position: relative;
   display: flex;
   align-items: center;
-  padding-left: 24px;
+  padding-left: 28px;
   user-select: none;
   cursor: pointer;
 
@@ -88,6 +89,6 @@ const BoxContainer = styled.label`
   }
 
   @media (min-width: 768px) {
-    padding-left: 32px;
+    padding-left: 36px;
   }
 `;
