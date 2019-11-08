@@ -37,21 +37,18 @@ type NumberInputProps = {
   /** Required flag */
   required?: boolean
   /** Minimum allowed number */
-  min: number
+  min?: number
   /** Maximum allowed number */
-  max: number
+  max?: number
   /** Adjust value if entering a number beyond the specified min or max */
-  strict: boolean
+  strict?: boolean
   /** Round currency to two decimal places if true */
-  roundCurrency: boolean
+  roundCurrency?: boolean
   /** Increment and decrement the value by the following step count */
-  step: number
+  step?: number
   /** Disabled flag */
-  disabled: boolean
+  disabled?: boolean
 }
-
-const DEFAULT_MIN_VALUE = -999999
-const DEFAULT_MAX_VALUE = 999999
 
 export const NumberInput: FC<NumberInputProps> = ({
   id,
@@ -69,10 +66,10 @@ export const NumberInput: FC<NumberInputProps> = ({
   suffix,
   required,
   roundCurrency,
-  min = DEFAULT_MIN_VALUE,
-  max = DEFAULT_MAX_VALUE,
+  min = -999999,
+  max = 999999,
   strict,
-  step,
+  step = 1,
   disabled = false,
 }) => {
   // Check whether the min/max value exists is within the specified range
