@@ -2,5 +2,6 @@
   "bracketSpacing": true,
   "proseWrap": "always",
   "semi": false,
-  "singleQuote": true
+  "singleQuote": true,
+  "trailingComma": "all"
 }
