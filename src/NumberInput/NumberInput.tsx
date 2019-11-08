@@ -193,11 +193,11 @@ export const NumberInput: FC<NumberInputProps> = ({
         {step && (
           <Spinner>
             <SpinnerButton onClick={incrementValue} disabled={disabled}>
-              <Icon render="up" color="grey4" size={24} />
+              <Icon render="caret" rotate={180} color="grey4" size={24} />
             </SpinnerButton>
 
             <SpinnerButton onClick={decrementValue} disabled={disabled}>
-              <Icon render="up" rotate={180} color="grey4" size={24} />
+              <Icon render="caret" color="grey4" size={24} />
             </SpinnerButton>
           </Spinner>
         )}
