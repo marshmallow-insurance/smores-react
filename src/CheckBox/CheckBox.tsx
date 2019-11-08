@@ -1,17 +1,17 @@
-import React, {FC, ReactNode} from 'react';
-import styled from 'styled-components';
+import React, { FC, ReactNode } from 'react'
+import styled from 'styled-components'
 
-import {Text} from '../Text';
-import {theme} from '../theme';
+import { Text } from '../Text'
+import { theme } from '../theme'
 
 type Props = {
-  id: string;
-  checked: boolean;
-  children: ReactNode;
-  toggle: () => void;
-};
+  id: string
+  checked: boolean
+  children: ReactNode
+  toggle: () => void
+}
 
-export const CheckBox: FC<Props> = ({id, checked, children, toggle}) => (
+export const CheckBox: FC<Props> = ({ id, checked, children, toggle }) => (
   <BoxContainer id={id}>
     <Text tag="span" typo="base-small">
       {children}
@@ -20,7 +20,7 @@ export const CheckBox: FC<Props> = ({id, checked, children, toggle}) => (
     <input type="checkbox" checked={checked} onChange={toggle} />
     <Checkmark />
   </BoxContainer>
-);
+)
 
 const Checkmark = styled.span`
   position: absolute;
@@ -46,7 +46,7 @@ const Checkmark = styled.span`
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-`;
+`
 
 const BoxContainer = styled.label`
   position: relative;
@@ -79,4 +79,4 @@ const BoxContainer = styled.label`
   @media (min-width: 768px) {
     padding-left: 32px;
   }
-`;
+`
