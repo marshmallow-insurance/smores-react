@@ -25,8 +25,8 @@ export const CheckBox: FC<Props> = ({id, checked, children, toggle}) => (
 const Checkmark = styled.span`
   position: absolute;
   left: 0;
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   background-color: ${theme.colors.grey2};
   border: solid 1px ${theme.colors.grey6};
   border-radius: 50%;
@@ -36,27 +36,15 @@ const Checkmark = styled.span`
     content: '';
     position: absolute;
     display: none;
-    top: 2px;
-    left: 5px;
-    width: 3px;
-    height: 6px;
+    top: 4px;
+    left: 8px;
+    width: 4px;
+    height: 9px;
     border: solid white;
     border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
-
-  @media (min-width: 768px) {
-    width: 24px;
-    height: 24px;
-
-    &:after {
-      top: 4px;
-      left: 8px;
-      width: 4px;
-      height: 9px;
-    }
   }
 `;
 
@@ -64,7 +52,7 @@ const BoxContainer = styled.label`
   position: relative;
   display: flex;
   align-items: center;
-  padding-left: 28px;
+  padding-left: 32px;
   user-select: none;
   cursor: pointer;
 
@@ -89,6 +77,6 @@ const BoxContainer = styled.label`
   }
 
   @media (min-width: 768px) {
-    padding-left: 36px;
+    padding-left: 32px;
   }
 `;
