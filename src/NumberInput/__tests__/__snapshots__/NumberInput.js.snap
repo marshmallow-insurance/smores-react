@@ -52,9 +52,9 @@ exports[`renders - currency 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .c9 {
@@ -73,9 +73,9 @@ exports[`renders - currency 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .c0 {
@@ -222,7 +222,7 @@ exports[`renders - currency 1`] = `
         <span
           class="c8"
           color="grey4"
-          rotate="0"
+          rotate="180"
           size="24"
         >
           <svg
@@ -232,7 +232,7 @@ exports[`renders - currency 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -244,7 +244,7 @@ exports[`renders - currency 1`] = `
         <span
           class="c9"
           color="grey4"
-          rotate="180"
+          rotate="0"
           size="24"
         >
           <svg
@@ -254,7 +254,7 @@ exports[`renders - currency 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -302,9 +302,9 @@ exports[`renders - disabled 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .c7 {
@@ -323,9 +323,9 @@ exports[`renders - disabled 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .c0 {
@@ -455,7 +455,7 @@ exports[`renders - disabled 1`] = `
         <span
           class="c6"
           color="grey4"
-          rotate="0"
+          rotate="180"
           size="24"
         >
           <svg
@@ -465,7 +465,7 @@ exports[`renders - disabled 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -478,7 +478,7 @@ exports[`renders - disabled 1`] = `
         <span
           class="c7"
           color="grey4"
-          rotate="180"
+          rotate="0"
           size="24"
         >
           <svg
@@ -488,7 +488,7 @@ exports[`renders - disabled 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -551,9 +551,9 @@ exports[`renders - error 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .c9 {
@@ -572,9 +572,9 @@ exports[`renders - error 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .c0 {
@@ -728,7 +728,7 @@ exports[`renders - error 1`] = `
         <span
           class="c8"
           color="grey4"
-          rotate="0"
+          rotate="180"
           size="24"
         >
           <svg
@@ -738,7 +738,7 @@ exports[`renders - error 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -750,7 +750,7 @@ exports[`renders - error 1`] = `
         <span
           class="c9"
           color="grey4"
-          rotate="180"
+          rotate="0"
           size="24"
         >
           <svg
@@ -760,7 +760,7 @@ exports[`renders - error 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -813,9 +813,9 @@ exports[`renders - number 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .c8 {
@@ -834,9 +834,9 @@ exports[`renders - number 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .c0 {
@@ -974,7 +974,7 @@ exports[`renders - number 1`] = `
         <span
           class="c7"
           color="grey4"
-          rotate="0"
+          rotate="180"
           size="24"
         >
           <svg
@@ -984,7 +984,7 @@ exports[`renders - number 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -996,7 +996,7 @@ exports[`renders - number 1`] = `
         <span
           class="c8"
           color="grey4"
-          rotate="180"
+          rotate="0"
           size="24"
         >
           <svg
@@ -1006,7 +1006,7 @@ exports[`renders - number 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -1069,9 +1069,9 @@ exports[`renders - tel 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .c9 {
@@ -1090,9 +1090,9 @@ exports[`renders - tel 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .c0 {
@@ -1239,7 +1239,7 @@ exports[`renders - tel 1`] = `
         <span
           class="c8"
           color="grey4"
-          rotate="0"
+          rotate="180"
           size="24"
         >
           <svg
@@ -1249,7 +1249,7 @@ exports[`renders - tel 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -1261,7 +1261,7 @@ exports[`renders - tel 1`] = `
         <span
           class="c9"
           color="grey4"
-          rotate="180"
+          rotate="0"
           size="24"
         >
           <svg
@@ -1271,7 +1271,7 @@ exports[`renders - tel 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -1338,9 +1338,9 @@ exports[`renders - with suffix 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .c10 {
@@ -1359,9 +1359,9 @@ exports[`renders - with suffix 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .c0 {
@@ -1512,7 +1512,7 @@ exports[`renders - with suffix 1`] = `
         <span
           class="c9"
           color="grey4"
-          rotate="0"
+          rotate="180"
           size="24"
         >
           <svg
@@ -1522,7 +1522,7 @@ exports[`renders - with suffix 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -1534,7 +1534,7 @@ exports[`renders - with suffix 1`] = `
         <span
           class="c10"
           color="grey4"
-          rotate="180"
+          rotate="0"
           size="24"
         >
           <svg
@@ -1544,7 +1544,7 @@ exports[`renders - with suffix 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -1607,9 +1607,9 @@ exports[`renders - with trailing icon 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .c9 {
@@ -1628,9 +1628,9 @@ exports[`renders - with trailing icon 1`] = `
   width: 100%;
   max-width: 24px;
   height: 24px;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .c10 {
@@ -1798,7 +1798,7 @@ exports[`renders - with trailing icon 1`] = `
         <span
           class="c8"
           color="grey4"
-          rotate="0"
+          rotate="180"
           size="24"
         >
           <svg
@@ -1808,7 +1808,7 @@ exports[`renders - with trailing icon 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
@@ -1820,7 +1820,7 @@ exports[`renders - with trailing icon 1`] = `
         <span
           class="c9"
           color="grey4"
-          rotate="180"
+          rotate="0"
           size="24"
         >
           <svg
@@ -1830,7 +1830,7 @@ exports[`renders - with trailing icon 1`] = `
             width="100%"
           >
             <path
-              d="M23.752 19.342L16.752 11.342C16.372 10.906 15.627 10.906 15.247 11.342L8.247 19.342C7.883 19.757 7.925 20.389 8.341 20.753C8.758 21.117 9.389 21.075 9.752 20.658L16 13.519L22.248 20.659C22.445 20.885 22.722 21 23 21C23.233 21 23.468 20.919 23.658 20.753C24.074 20.389 24.116 19.757 23.752 19.342Z"
+              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
               fill="#C1C1C1"
             />
           </svg>
