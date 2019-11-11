@@ -286,48 +286,6 @@ exports[`renders - disabled 1`] = `
   letter-spacing: 0.15px;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 24px;
-  height: 24px;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 24px;
-  height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
 .c0 {
   font-family: 'Gordita',san-serif;
   display: -webkit-box;
@@ -396,24 +354,6 @@ exports[`renders - disabled 1`] = `
   margin: 0;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  top: -3px;
-}
-
-.c5 {
-  width: 24px;
-  height: 24px;
-  background-color: transparent;
-  border: 0;
-  padding: 0;
-  cursor: not-allowed;
-}
-
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
@@ -445,56 +385,6 @@ exports[`renders - disabled 1`] = `
       type="number"
       value=""
     />
-    <div
-      class="c4"
-    >
-      <button
-        class="c5"
-        disabled=""
-      >
-        <span
-          class="c6"
-          color="grey4"
-          rotate="180"
-          size="24"
-        >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
-            />
-          </svg>
-        </span>
-      </button>
-      <button
-        class="c5"
-        disabled=""
-      >
-        <span
-          class="c7"
-          color="grey4"
-          rotate="0"
-          size="24"
-        >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
-            />
-          </svg>
-        </span>
-      </button>
-    </div>
   </div>
 </div>
 `;
@@ -797,48 +687,6 @@ exports[`renders - number 1`] = `
   letter-spacing: 0.15px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 24px;
-  height: 24px;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 24px;
-  height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
 .c0 {
   font-family: 'Gordita',san-serif;
   display: -webkit-box;
@@ -912,24 +760,6 @@ exports[`renders - number 1`] = `
   color: #55D6AA;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  top: -3px;
-}
-
-.c6 {
-  width: 24px;
-  height: 24px;
-  background-color: transparent;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
@@ -965,54 +795,6 @@ exports[`renders - number 1`] = `
       type="number"
       value=""
     />
-    <div
-      class="c5"
-    >
-      <button
-        class="c6"
-      >
-        <span
-          class="c7"
-          color="grey4"
-          rotate="180"
-          size="24"
-        >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
-            />
-          </svg>
-        </span>
-      </button>
-      <button
-        class="c6"
-      >
-        <span
-          class="c8"
-          color="grey4"
-          rotate="0"
-          size="24"
-        >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
-            />
-          </svg>
-        </span>
-      </button>
-    </div>
   </div>
 </div>
 `;
@@ -1051,48 +833,6 @@ exports[`renders - tel 1`] = `
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 24px;
-  height: 24px;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 24px;
-  height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
 }
 
 .c0 {
@@ -1169,24 +909,6 @@ exports[`renders - tel 1`] = `
   line-height: 19px;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  top: -3px;
-}
-
-.c7 {
-  width: 24px;
-  height: 24px;
-  background-color: transparent;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
@@ -1230,54 +952,6 @@ exports[`renders - tel 1`] = `
       type="tel"
       value=""
     />
-    <div
-      class="c6"
-    >
-      <button
-        class="c7"
-      >
-        <span
-          class="c8"
-          color="grey4"
-          rotate="180"
-          size="24"
-        >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
-            />
-          </svg>
-        </span>
-      </button>
-      <button
-        class="c7"
-      >
-        <span
-          class="c9"
-          color="grey4"
-          rotate="0"
-          size="24"
-        >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
-            />
-          </svg>
-        </span>
-      </button>
-    </div>
   </div>
 </div>
 `;
@@ -1320,48 +994,6 @@ exports[`renders - with suffix 1`] = `
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 24px;
-  height: 24px;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 24px;
-  height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
 }
 
 .c0 {
@@ -1438,24 +1070,6 @@ exports[`renders - with suffix 1`] = `
   line-height: 19px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  top: -3px;
-}
-
-.c8 {
-  width: 24px;
-  height: 24px;
-  background-color: transparent;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
@@ -1503,54 +1117,6 @@ exports[`renders - with suffix 1`] = `
         miles
       </span>
     </div>
-    <div
-      class="c7"
-    >
-      <button
-        class="c8"
-      >
-        <span
-          class="c9"
-          color="grey4"
-          rotate="180"
-          size="24"
-        >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
-            />
-          </svg>
-        </span>
-      </button>
-      <button
-        class="c8"
-      >
-        <span
-          class="c10"
-          color="grey4"
-          rotate="0"
-          size="24"
-        >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
-            />
-          </svg>
-        </span>
-      </button>
-    </div>
   </div>
 </div>
 `;
@@ -1591,49 +1157,7 @@ exports[`renders - with trailing icon 1`] = `
   letter-spacing: 0.15px;
 }
 
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 24px;
-  height: 24px;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 24px;
-  height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-.c10 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1728,24 +1252,6 @@ exports[`renders - with trailing icon 1`] = `
   line-height: 19px;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  top: -3px;
-}
-
-.c7 {
-  width: 24px;
-  height: 24px;
-  background-color: transparent;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
@@ -1789,56 +1295,8 @@ exports[`renders - with trailing icon 1`] = `
       type="number"
       value=""
     />
-    <div
-      class="c6"
-    >
-      <button
-        class="c7"
-      >
-        <span
-          class="c8"
-          color="grey4"
-          rotate="180"
-          size="24"
-        >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
-            />
-          </svg>
-        </span>
-      </button>
-      <button
-        class="c7"
-      >
-        <span
-          class="c9"
-          color="grey4"
-          rotate="0"
-          size="24"
-        >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
-            />
-          </svg>
-        </span>
-      </button>
-    </div>
     <span
-      class="c10"
+      class="c6"
       color="grey4"
       rotate="0"
       size="32"
