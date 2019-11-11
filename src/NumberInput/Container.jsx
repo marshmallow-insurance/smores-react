@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react'
 
-import {NumberInput} from './NumberInput';
+import { NumberInput } from './NumberInput'
 
 export const Container = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('')
 
   return (
     <form>
@@ -23,5 +23,5 @@ export const Container = () => {
         required
       />
     </form>
-  );
-};
+  )
+}

@@ -69,7 +69,7 @@ export const NumberInput: FC<NumberInputProps> = ({
   min = -999999,
   max = 999999,
   strict,
-  step = 1,
+  step = 0,
   disabled = false,
 }) => {
   // Check whether the min/max value exists is within the specified range
@@ -190,7 +190,7 @@ export const NumberInput: FC<NumberInputProps> = ({
           </Box>
         )}
 
-        {step && (
+        {step > 0 && (
           <Spinner>
             <SpinnerButton onClick={incrementValue} disabled={disabled}>
               <Icon render="caret" rotate={180} color="grey4" size={24} />
