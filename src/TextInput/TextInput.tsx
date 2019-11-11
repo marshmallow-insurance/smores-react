@@ -12,7 +12,7 @@ type Props = {
   /** className attribute to apply classses from props */
   className?: string;
   /** Input type for proper browser support */
-  type?: string;
+  type?: 'text' | 'email' | 'password';
   /** Placeholder */
   placeholder: string;
   /** label displayed above the input  */

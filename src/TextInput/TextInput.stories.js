@@ -12,7 +12,6 @@ storiesOf('TextInput', module)
       id="textInput"
       name="textInput"
       placeholder={text('Placeholder', 'Placeholder')}
-      value=""
       onChange={str => {}}
     />
   ))
@@ -22,7 +21,15 @@ storiesOf('TextInput', module)
       type="email"
       name="textInput"
       placeholder={text('Placeholder', 'Placeholder')}
-      value=""
+      onChange={str => {}}
+    />
+  ))
+  .addWithJSX('type password', () => (
+    <TextInput
+      id="textInput"
+      type="password"
+      name="textInput"
+      placeholder={text('Placeholder', 'Placeholder')}
       onChange={str => {}}
     />
   ))
@@ -32,7 +39,6 @@ storiesOf('TextInput', module)
       name="textInput"
       label={text('Label', 'label')}
       placeholder={text('Placeholder', 'Placeholder')}
-      value="kek"
       error={boolean('Error', true)}
       errorMsg="Oh boy, something went wrong!"
       onChange={str => {}}
@@ -44,7 +50,6 @@ storiesOf('TextInput', module)
       name="textInput"
       label={text('Label', 'label')}
       placeholder={text('Placeholder', 'Placeholder')}
-      value=""
       onChange={str => {}}
     />
   ))
@@ -54,7 +59,6 @@ storiesOf('TextInput', module)
       name="textInput"
       label={text('Label', 'label')}
       placeholder={text('Placeholder', 'Placeholder')}
-      value="kek"
       trailingIcon="at"
       onChange={str => {}}
     />

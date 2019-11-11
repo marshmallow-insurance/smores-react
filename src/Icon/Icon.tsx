@@ -1,24 +1,24 @@
-import React, {FC} from 'react';
-import styled from 'styled-components';
+import React, { FC } from 'react'
+import styled from 'styled-components'
 
-import {theme} from '../theme';
+import { theme } from '../theme'
 
 interface IIcon {
-  size: number;
-  color: string;
-  rotate: number;
+  size: number
+  color: string
+  rotate: number
 }
 
 type Props = {
   /** specify what Icon to render  */
-  render: string;
+  render: string
   /** set size of the Icon  */
-  size?: number;
+  size?: number
   /** set color of the Icon */
-  color?: string;
+  color?: string
   /** rotation degrees */
-  rotate?: number;
-};
+  rotate?: number
+}
 
 export const Icon: FC<Props> = ({
   render,
@@ -141,6 +141,27 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
 
+    {// INTERFACE - TICK
+    render === 'tick' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <path
+          d="M24.641 9.232C24.214 8.878 23.586 8.937 23.232 9.36L13.807 20.67L8.55499 17.169C8.09399 16.861 7.47399 16.986 7.16799 17.446C6.86099 17.905 6.98499 18.527 7.44499 18.833L13.445 22.833C13.615 22.945 13.808 23 13.999 23C14.287 23 14.571 22.876 14.769 22.64L24.769 10.64C25.122 10.216 25.064 9.585 24.641 9.232Z"
+          fill={theme.colors[color]}
+        />
+        />
+      </svg>
+    )}
+
+    {// INTERFACE - CROSS
+    render === 'cross' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <path
+          d="M17.4139 15.5L22.7068 9.82913C23.0977 9.41022 23.0977 8.7331 22.7068 8.31418C22.3158 7.89527 21.6838 7.89527 21.2928 8.31418L16 13.985L10.7072 8.31418C10.3162 7.89527 9.68423 7.89527 9.29324 8.31418C8.90225 8.7331 8.90225 9.41022 9.29324 9.82913L14.5861 15.5L9.29324 21.1709C8.90225 21.5898 8.90225 22.2669 9.29324 22.6858C9.48823 22.8947 9.74422 22.9997 10.0002 22.9997C10.2562 22.9997 10.5122 22.8947 10.7072 22.6858L16 17.0149L21.2928 22.6858C21.4878 22.8947 21.7438 22.9997 21.9998 22.9997C22.2558 22.9997 22.5118 22.8947 22.7068 22.6858C23.0977 22.2669 23.0977 21.5898 22.7068 21.1709L17.4139 15.5Z"
+          fill={theme.colors[color]}
+        />
+      </svg>
+    )}
+
     {// INTERFACE - UP-DOWN
     render === 'up-down' && (
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
@@ -157,8 +178,8 @@ export const Icon: FC<Props> = ({
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         {/* tslint:disable-next-line:max-line-length */}
         <path
-          fill={theme.colors[color]}
           d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
+          fill={theme.colors[color]}
         />
       </svg>
     )}
@@ -235,27 +256,6 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
 
-    {// TICK
-    render === 'tick' && (
-      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
-        <path
-          d="M24.641 9.232C24.214 8.878 23.586 8.937 23.232 9.36L13.807 20.67L8.55499 17.169C8.09399 16.861 7.47399 16.986 7.16799 17.446C6.86099 17.905 6.98499 18.527 7.44499 18.833L13.445 22.833C13.615 22.945 13.808 23 13.999 23C14.287 23 14.571 22.876 14.769 22.64L24.769 10.64C25.122 10.216 25.064 9.585 24.641 9.232Z"
-          fill={theme.colors[color]}
-        />
-        />
-      </svg>
-    )}
-
-    {// CROSS
-    render === 'cross' && (
-      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
-        <path
-          d="M17.4139 15.5L22.7068 9.82913C23.0977 9.41022 23.0977 8.7331 22.7068 8.31418C22.3158 7.89527 21.6838 7.89527 21.2928 8.31418L16 13.985L10.7072 8.31418C10.3162 7.89527 9.68423 7.89527 9.29324 8.31418C8.90225 8.7331 8.90225 9.41022 9.29324 9.82913L14.5861 15.5L9.29324 21.1709C8.90225 21.5898 8.90225 22.2669 9.29324 22.6858C9.48823 22.8947 9.74422 22.9997 10.0002 22.9997C10.2562 22.9997 10.5122 22.8947 10.7072 22.6858L16 17.0149L21.2928 22.6858C21.4878 22.8947 21.7438 22.9997 21.9998 22.9997C22.2558 22.9997 22.5118 22.8947 22.7068 22.6858C23.0977 22.2669 23.0977 21.5898 22.7068 21.1709L17.4139 15.5Z"
-          fill={theme.colors[color]}
-        />
-      </svg>
-    )}
-
     {// ARROW
     render === 'arrow' && (
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
@@ -286,7 +286,7 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
   </Container>
-);
+)
 
 const Container = styled.span<IIcon>`
   display: flex;
@@ -296,4 +296,4 @@ const Container = styled.span<IIcon>`
   max-width: ${p => `${p.size}px`};
   height: ${p => `${p.size}px`};
   transform: rotate(${p => p.rotate}deg);
-`;
+`
