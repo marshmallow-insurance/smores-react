@@ -1,11 +1,11 @@
-import React from 'react';
-import {render} from '@testing-library/react';
-import 'jest-styled-components';
+import React from 'react'
+import { render } from '@testing-library/react'
+import 'jest-styled-components'
 
-import {Textarea} from '../Textarea';
+import { Textarea } from '../Textarea'
 
 test('renders', () => {
-  const {container} = render(
+  const { container } = render(
     <Textarea
       id="textarea_id"
       label="Textarea label"
@@ -16,12 +16,12 @@ test('renders', () => {
       placeholder="Placeholder text!"
       className="Textarea"
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})
 
 test('disabled', () => {
-  const {container} = render(
+  const { container } = render(
     <Textarea
       id="textarea_id"
       label="Textarea label"
@@ -31,12 +31,12 @@ test('disabled', () => {
       disabled={true}
       placeholder="Placeholder text!"
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})
 
 test('renders with error', () => {
-  const {container} = render(
+  const { container } = render(
     <Textarea
       id="textarea_id"
       label="Textarea label"
@@ -48,6 +48,6 @@ test('renders with error', () => {
       errorMsg="Something really quite terrible has gone wrong here!"
       placeholder="Placeholder text!"
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})

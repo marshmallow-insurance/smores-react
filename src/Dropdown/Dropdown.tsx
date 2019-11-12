@@ -1,32 +1,32 @@
-import React, {FC, useEffect, useState} from 'react';
-import styled from 'styled-components';
+import React, { FC, useEffect, useState } from 'react'
+import styled from 'styled-components'
 
-import {Text} from '../Text';
-import {Icon} from '../Icon';
+import { Text } from '../Text'
+import { Icon } from '../Icon'
 
-import {theme} from '../theme';
+import { theme } from '../theme'
 
 export type DropdownItem = {
-  label: string;
-  value: string;
-};
+  label: string
+  value: string
+}
 
 type Props = {
   /** ID, usually used for tests  */
-  id: string;
+  id: string
   /** className attribute to apply classes from props */
-  className?: string;
+  className?: string
   /** label displayed above the dropdown  */
-  label?: string;
+  label?: string
   /** Placeholder (initial state) */
-  placeholder?: string;
+  placeholder?: string
   /** Disabled flag */
-  disabled?: boolean;
+  disabled?: boolean
   /** list of items for the dropdown list */
-  list: DropdownItem[];
+  list: DropdownItem[]
   /** onSelect handler */
-  onSelect: (element: string) => void;
-};
+  onSelect: (element: string) => void
+}
 
 export const Dropdown: FC<Props> = ({
   id,
@@ -37,19 +37,19 @@ export const Dropdown: FC<Props> = ({
   list,
   onSelect,
 }) => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('')
   const setDropdownValue = (value: string) => {
-    setValue(value);
-    onSelect(value);
-  };
+    setValue(value)
+    onSelect(value)
+  }
 
   useEffect(() => {
     if (list.length === 1) {
-      setDropdownValue(list[0].value);
+      setDropdownValue(list[0].value)
     } else {
-      setValue('');
+      setValue('')
     }
-  }, [list]);
+  }, [list])
 
   return (
     <Container className={className}>
@@ -64,7 +64,7 @@ export const Dropdown: FC<Props> = ({
           id={id}
           disabled={disabled}
           onChange={(e: React.FormEvent<HTMLSelectElement>) => {
-            setDropdownValue(e.currentTarget.value);
+            setDropdownValue(e.currentTarget.value)
           }}
           required
           value={value}
@@ -85,8 +85,8 @@ export const Dropdown: FC<Props> = ({
         </Caret>
       </Content>
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   display: flex;
@@ -95,12 +95,12 @@ const Container = styled.div`
   width: 100%;
   margin: 0;
   padding: 0;
-`;
+`
 
 const Content = styled.div`
   width: 100%;
   position: relative;
-`;
+`
 
 const Select = styled.select`
   width: 100%;
@@ -132,7 +132,7 @@ const Select = styled.select`
   &:checked {
     border-color: ${theme.colors.blue[500]};
   }
-`;
+`
 
 const Caret = styled.div`
   position: absolute;
@@ -141,4 +141,4 @@ const Caret = styled.div`
   right: 0;
   pointer-events: none;
   transform: translateY(-50%);
-`;
+`

@@ -1,10 +1,10 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 
-import {text, boolean, number} from '@storybook/addon-knobs';
+import { text, boolean, number } from '@storybook/addon-knobs'
 
-import {NumberInput} from './NumberInput';
-import {Container} from './Container.jsx';
+import { NumberInput } from './NumberInput'
+import { Container } from './Container.jsx'
 
 storiesOf('NumberInput', module)
   .addWithJSX('default', () => (
@@ -86,4 +86,4 @@ storiesOf('NumberInput', module)
       disabled={true}
     />
   ))
-  .addWithJSX('functional', () => <Container />);
+  .addWithJSX('functional', () => <Container />)

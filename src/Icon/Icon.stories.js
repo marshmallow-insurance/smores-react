@@ -1,9 +1,9 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 
-import {text, number} from '@storybook/addon-knobs';
+import { text, number } from '@storybook/addon-knobs'
 
-import {Icon} from './Icon';
+import { Icon } from './Icon'
 
 storiesOf('Icon', module).addWithJSX('default', () => (
   <Icon
@@ -12,4 +12,4 @@ storiesOf('Icon', module).addWithJSX('default', () => (
     color={text('Color', 'blue7')}
     rotate={number('Rotate', 0)}
   />
-));
+))

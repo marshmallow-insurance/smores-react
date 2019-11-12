@@ -1,9 +1,9 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
-import {text} from '@storybook/addon-knobs';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import { text } from '@storybook/addon-knobs'
 
-import {Tag} from './Tag';
-import {theme} from '../theme';
+import { Tag } from './Tag'
+import { theme } from '../theme'
 
 storiesOf('Tag', module).addWithJSX('default', () => (
   <Tag
@@ -13,4 +13,4 @@ storiesOf('Tag', module).addWithJSX('default', () => (
     color={text('Color', 'white')}
     className={text('Class name', '')}
   />
-));
+))

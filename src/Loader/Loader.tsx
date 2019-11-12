@@ -1,20 +1,23 @@
-import React, {FC} from 'react';
-import styled from 'styled-components';
+import React, { FC } from 'react'
+import styled from 'styled-components'
 
-import {theme} from '../theme';
+import { theme } from '../theme'
 
 interface ISvg {
-  height: string;
+  height: string
   /** color of the jumping marshmallows (from the theme) */
-  color: string;
+  color: string
 }
 
 type Props = {
-  height: string;
-  color?: string;
-};
+  height: string
+  color?: string
+}
 
-export const Loader: FC<Props> = ({height, color = theme.colors.pink[500]}) => (
+export const Loader: FC<Props> = ({
+  height,
+  color = theme.colors.pink[500],
+}) => (
   <LoaderSvg viewBox="0 0 60 32" height={height} color={color}>
     <g transform="translate(30,18.5455) translate(-30,-9)">
       {/* tslint:disable-next-line:max-line-length */}
@@ -37,7 +40,7 @@ export const Loader: FC<Props> = ({height, color = theme.colors.pink[500]}) => (
       />
     </g>
   </LoaderSvg>
-);
+)
 
 const LoaderSvg = styled.svg<ISvg>`
   height: ${p => p.height};
@@ -265,19 +268,19 @@ const LoaderSvg = styled.svg<ISvg>`
       );
     }
   }
-`;
+`
 
 const MarshOne = styled.path`
   animation: Marshmallow1_t 1.6s linear infinite both,
     Marshmallow1_d 1.6s linear infinite both;
-`;
+`
 
 const MarshTwo = styled.path`
   animation: Marshmallow2_t 1.6s linear infinite both,
     Marshmallow2_d 1.6s linear infinite both;
-`;
+`
 
 const MarshThree = styled.path`
   animation: Marshmallow3_t 1.6s linear infinite both,
     Marshmallow3_d 1.6s linear infinite both;
-`;
+`

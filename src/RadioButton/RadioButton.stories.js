@@ -1,10 +1,10 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 
-import {boolean} from '@storybook/addon-knobs';
+import { boolean } from '@storybook/addon-knobs'
 
-import {RadioButton} from './RadioButton';
-import {Container} from './Container';
+import { RadioButton } from './RadioButton'
+import { Container } from './Container'
 
 storiesOf('RadioButton', module)
   .addWithJSX('default', () => (
@@ -25,4 +25,4 @@ storiesOf('RadioButton', module)
       checked={boolean('checked', true)}
     />
   ))
-  .addWithJSX('functional', () => <Container />);
+  .addWithJSX('functional', () => <Container />)

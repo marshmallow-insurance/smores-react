@@ -1,11 +1,11 @@
-import React from 'react';
-import {render} from '@testing-library/react';
-import 'jest-styled-components';
+import React from 'react'
+import { render } from '@testing-library/react'
+import 'jest-styled-components'
 
-import {TextInput} from '../TextInput';
+import { TextInput } from '../TextInput'
 
 test('renders', () => {
-  const {container} = render(
+  const { container } = render(
     <TextInput
       id="textInput"
       name="textInput"
@@ -13,6 +13,6 @@ test('renders', () => {
       value=""
       onChange={str => {}}
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})

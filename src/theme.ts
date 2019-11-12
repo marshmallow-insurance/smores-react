@@ -1,6 +1,6 @@
 type ColorsType = {
-  [key: string]: {[key: string]: string} | string;
-};
+  [key: string]: { [key: string]: string } | string
+}
 
 const colors: ColorsType = {
   background: {
@@ -63,10 +63,10 @@ const colors: ColorsType = {
   },
 
   white: '#ffffff',
-};
+}
 
-colors.boxShadow = 'rgba(0, 0, 0, 0.08)';
+colors.boxShadow = 'rgba(0, 0, 0, 0.08)'
 
 export const theme = {
   colors,
-};
+}

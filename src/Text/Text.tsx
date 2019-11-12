@@ -1,17 +1,17 @@
-import React, {FC, ReactNode} from 'react';
-import styled, {css} from 'styled-components';
+import React, { FC, ReactNode } from 'react'
+import styled, { css } from 'styled-components'
 
-import {theme} from '../theme';
+import { theme } from '../theme'
 
 type TextProps = {
-  children: ReactNode;
-  tag: any;
-  className?: string;
-  typo?: string;
-  align?: string;
-  color?: string;
-  cursor?: string;
-};
+  children: ReactNode
+  tag: any
+  className?: string
+  typo?: string
+  align?: string
+  color?: string
+  cursor?: string
+}
 
 export const Text: FC<TextProps> = ({
   children,
@@ -32,19 +32,19 @@ export const Text: FC<TextProps> = ({
   >
     {children}
   </Container>
-);
+)
 
 interface IText {
   /** typography class name to apply predefined styles */
-  typo: string;
+  typo: string
   /** HTML tag  */
-  as: any;
+  as: any
   /** text-align  */
-  align: string;
+  align: string
   /** color from the theme  */
-  color: string;
+  color: string
   /** style of the cursor  */
-  cursor: string;
+  cursor: string
 }
 const Container = styled.p<IText>`
   /** PREDEFINED TYPOGRAPHY STYLES */
@@ -198,4 +198,4 @@ const Container = styled.p<IText>`
   cursor: ${p => p.cursor};
   letter-spacing: 0.15px;
   font-family: 'Gordita', sans-serif;
-`;
+`

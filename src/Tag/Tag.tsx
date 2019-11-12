@@ -1,15 +1,15 @@
-import React, {FC} from 'react';
-import styled from 'styled-components';
+import React, { FC } from 'react'
+import styled from 'styled-components'
 
-import {Text} from '../Text';
+import { Text } from '../Text'
 
 type TagProps = {
-  label: string;
-  className?: string;
-  color: string;
-  bgColor: string;
-  borderColor: string;
-};
+  label: string
+  className?: string
+  color: string
+  bgColor: string
+  borderColor: string
+}
 
 export const Tag: FC<TagProps> = ({
   label,
@@ -23,22 +23,22 @@ export const Tag: FC<TagProps> = ({
       {label}
     </TagText>
   </Wrapper>
-);
+)
 
 interface IWrapper {
-  bgColor: string;
-  borderColor: string;
+  bgColor: string
+  borderColor: string
 }
 
 const Wrapper = styled.div<IWrapper>`
   display: inline-block;
-  background-color: ${({bgColor}) => bgColor};
-  border: 1px solid ${({borderColor}) => borderColor};
+  background-color: ${({ bgColor }) => bgColor};
+  border: 1px solid ${({ borderColor }) => borderColor};
   padding: 2px 13px 4px 13px;
   border-radius: 8px;
-`;
+`
 
 const TagText = styled(Text)`
   font-family: 'Gordita', sans-serif;
   text-transform: uppercase;
-`;
+`

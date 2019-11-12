@@ -1,9 +1,9 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 
-import {text, boolean} from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs'
 
-import {Box} from './Box';
+import { Box } from './Box'
 
 storiesOf('Box', module).addWithJSX('default', () => (
   <Box
@@ -16,4 +16,4 @@ storiesOf('Box', module).addWithJSX('default', () => (
   >
     Some lovely content.
   </Box>
-));
+))

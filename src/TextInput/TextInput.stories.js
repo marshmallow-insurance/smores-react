@@ -1,10 +1,10 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 
-import {text, boolean} from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs'
 
-import {TextInput} from './TextInput';
-import {Container} from './Container.jsx';
+import { TextInput } from './TextInput'
+import { Container } from './Container.jsx'
 
 storiesOf('TextInput', module)
   .addWithJSX('default', () => (
@@ -74,4 +74,4 @@ storiesOf('TextInput', module)
       disabled={true}
     />
   ))
-  .addWithJSX('functional', () => <Container />);
+  .addWithJSX('functional', () => <Container />)

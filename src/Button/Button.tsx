@@ -1,19 +1,19 @@
-import React, {FC, ReactNode} from 'react';
-import styled, {css} from 'styled-components';
+import React, { FC, ReactNode } from 'react'
+import styled, { css } from 'styled-components'
 
-import {theme} from '../theme';
+import { theme } from '../theme'
 
 type ButtonProps = {
-  children: ReactNode;
-  id: string;
-  className?: string;
-  color?: string;
-  block?: boolean;
-  inverted?: boolean;
-  disabled?: boolean;
-  outlined?: boolean;
-  handleClick: (e: React.FormEvent<HTMLButtonElement>) => void;
-};
+  children: ReactNode
+  id: string
+  className?: string
+  color?: string
+  block?: boolean
+  inverted?: boolean
+  disabled?: boolean
+  outlined?: boolean
+  handleClick: (e: React.FormEvent<HTMLButtonElement>) => void
+}
 
 export const Button: FC<ButtonProps> = ({
   children,
@@ -38,23 +38,23 @@ export const Button: FC<ButtonProps> = ({
   >
     {children}
   </Container>
-);
+)
 
 interface IButton {
   /** button color  */
-  color: string;
+  color: string
   /** unique id */
-  id: string;
+  id: string
   /** take full 100% width  */
-  block: boolean;
+  block: boolean
   /** invert bg and text colors */
-  inverted: boolean;
+  inverted: boolean
   /** disabled state */
-  disabled: boolean;
+  disabled: boolean
   /** outline styling */
-  outlined: boolean;
+  outlined: boolean
   /** onClick event handler */
-  onClick: (e: React.FormEvent<HTMLButtonElement>) => void;
+  onClick: (e: React.FormEvent<HTMLButtonElement>) => void
 }
 
 const Container = styled.button<IButton>`
@@ -69,14 +69,14 @@ const Container = styled.button<IButton>`
   cursor: pointer;
   width: ${p => (p.block ? '100%' : 'auto')};
   color: ${theme.colors.white};
-  background-color: ${({color}) => theme.colors[color][500]};
+  background-color: ${({ color }) => theme.colors[color][500]};
 
   &:hover:not([disabled]) {
-    background-color: ${({color}) => theme.colors[color][600]};
+    background-color: ${({ color }) => theme.colors[color][600]};
   }
 
   &:active:not([disabled]) {
-    background-color: ${({color}) => theme.colors[color][700]};
+    background-color: ${({ color }) => theme.colors[color][700]};
   }
 
   &:disabled {
@@ -104,4 +104,4 @@ const Container = styled.button<IButton>`
     padding: 19px 24px 15px;
     font-size: 16px;
   }
-`;
+`

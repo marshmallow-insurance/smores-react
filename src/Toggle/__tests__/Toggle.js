@@ -1,12 +1,12 @@
-import React from 'react';
-import {render} from '@testing-library/react';
-import 'jest-styled-components';
+import React from 'react'
+import { render } from '@testing-library/react'
+import 'jest-styled-components'
 
-import {Toggle} from '../Toggle';
+import { Toggle } from '../Toggle'
 
 test('renders', () => {
-  const {container} = render(
+  const { container } = render(
     <Toggle id="toggle" checked={false} onToggle={() => {}} />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})

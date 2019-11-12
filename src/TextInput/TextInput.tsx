@@ -1,37 +1,37 @@
-import React, {FormEvent, FC} from 'react';
-import styled from 'styled-components';
+import React, { FormEvent, FC } from 'react'
+import styled from 'styled-components'
 
-import {Text} from '../Text';
-import {Icon} from '../Icon';
+import { Text } from '../Text'
+import { Icon } from '../Icon'
 
-import {theme} from '../theme';
+import { theme } from '../theme'
 
 type Props = {
   /** ID, usually used for tests  */
-  id: string;
+  id: string
   /** className attribute to apply classses from props */
-  className?: string;
+  className?: string
   /** Input type for proper browser support */
-  type?: 'text' | 'email' | 'password';
+  type?: 'text' | 'email' | 'password'
   /** Placeholder */
-  placeholder: string;
+  placeholder: string
   /** label displayed above the input  */
-  label?: string;
+  label?: string
   /** used for label - input connection */
-  name?: string;
+  name?: string
   /** input value */
-  value: string;
+  value: string
   /** error flag */
-  error?: boolean;
+  error?: boolean
   /** error text message */
-  errorMsg?: string;
+  errorMsg?: string
   /** onChange listener */
-  onChange: (e: string) => void;
+  onChange: (e: string) => void
   /** onChange listener */
-  trailingIcon?: string;
+  trailingIcon?: string
   /** Disabled flag */
-  disabled?: boolean;
-};
+  disabled?: boolean
+}
 
 export const TextInput: FC<Props> = ({
   id,
@@ -74,22 +74,22 @@ export const TextInput: FC<Props> = ({
     </Content>
     {error && <ErrorBox>{errorMsg}</ErrorBox>}
   </Container>
-);
+)
 
 interface IContainer {
-  hasLabel: boolean;
-  hasError: boolean;
+  hasLabel: boolean
+  hasError: boolean
 }
 
 const Container = styled.div<IContainer>`
   display: flex;
   flex-direction: column;
   height: ${p => (p.hasLabel && p.hasError ? '64px' : '52px')};
-`;
+`
 
 interface IInput {
-  error: boolean;
-  disabled?: boolean;
+  error: boolean
+  disabled?: boolean
 }
 
 const Content = styled.div<IInput>`
@@ -108,7 +108,7 @@ const Content = styled.div<IInput>`
     border-color: ${p =>
       p.error ? theme.colors.red[700] : theme.colors.blue[500]};
   }
-`;
+`
 
 const Input = styled.input<IInput>`
   border: none;
@@ -116,16 +116,16 @@ const Input = styled.input<IInput>`
   font-size: 16px;
   width: 100%;
   outline: none;
-  cursor: ${({disabled}) => (disabled ? 'not-allowed' : 'pointer')};
-  opacity: ${({disabled}) => (disabled ? '0.5' : '1')};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
 
   &::placeholder {
     color: ${theme.colors.grey[400]};
   }
-`;
+`
 
 const ErrorBox = styled.span`
   margin-top: 7px;
   color: ${theme.colors.red[700]};
   font-size: 12px;
-`;
+`

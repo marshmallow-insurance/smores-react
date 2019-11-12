@@ -1,10 +1,10 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 
-import {text, number, boolean} from '@storybook/addon-knobs';
+import { text, number, boolean } from '@storybook/addon-knobs'
 
-import {Card} from '../Card';
-import {Text} from '../Text';
+import { Card } from '../Card'
+import { Text } from '../Text'
 
 storiesOf('Card', module)
   .addWithJSX('default', () => (
@@ -39,4 +39,4 @@ storiesOf('Card', module)
       </Card>
       <Text tag="h3">After margin</Text>
     </>
-  ));
+  ))

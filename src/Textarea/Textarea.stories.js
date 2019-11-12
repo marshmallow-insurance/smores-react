@@ -1,9 +1,9 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
-import {text, boolean} from '@storybook/addon-knobs';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import { text, boolean } from '@storybook/addon-knobs'
 
-import {Container} from './Container';
-import {Textarea} from './Textarea';
+import { Container } from './Container'
+import { Textarea } from './Textarea'
 
 storiesOf('Textarea', module)
   .addWithJSX('default', () => (
@@ -43,4 +43,4 @@ storiesOf('Textarea', module)
       placeholder={text('placeholder', 'Some lovely placeholder text!')}
     />
   ))
-  .addWithJSX('functional', () => <Container />);
+  .addWithJSX('functional', () => <Container />)

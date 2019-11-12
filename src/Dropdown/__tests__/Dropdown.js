@@ -1,8 +1,8 @@
-import React from 'react';
-import {render} from '@testing-library/react';
-import 'jest-styled-components';
+import React from 'react'
+import { render } from '@testing-library/react'
+import 'jest-styled-components'
 
-import {Dropdown} from '../Dropdown';
+import { Dropdown } from '../Dropdown'
 
 const days = [
   {
@@ -33,9 +33,9 @@ const days = [
     label: 'Sunday',
     value: 'Sunday',
   },
-];
+]
 
 test('renders', () => {
-  const {container} = render(<Dropdown list={days} />);
-  expect(container.firstChild).toMatchSnapshot();
-});
+  const { container } = render(<Dropdown list={days} />)
+  expect(container.firstChild).toMatchSnapshot()
+})

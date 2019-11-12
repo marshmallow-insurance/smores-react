@@ -1,8 +1,8 @@
-import React from 'react';
-import {render} from '@testing-library/react';
-import 'jest-styled-components';
+import React from 'react'
+import { render } from '@testing-library/react'
+import 'jest-styled-components'
 
-import {SearchInput} from '../SearchInput';
+import { SearchInput } from '../SearchInput'
 
 const list = [
   {
@@ -26,11 +26,11 @@ const list = [
   {
     label: 'Sunday',
   },
-];
+]
 
 test('renders', () => {
-  const {container} = render(
+  const { container } = render(
     <SearchInput id="days" label="Days" searchList={list} onFound={() => {}} />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})

@@ -1,11 +1,11 @@
-import React from 'react';
-import {render} from '@testing-library/react';
-import 'jest-styled-components';
+import React from 'react'
+import { render } from '@testing-library/react'
+import 'jest-styled-components'
 
-import {RadioButton} from '../RadioButton';
+import { RadioButton } from '../RadioButton'
 
 test('renders - checked', () => {
-  const {container} = render(
+  const { container } = render(
     <RadioButton
       id="radioButtonOne"
       label="What a lovely label"
@@ -13,12 +13,12 @@ test('renders - checked', () => {
       checked={true}
       onChange={str => {}}
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})
 
 test('renders - unchecked', () => {
-  const {container} = render(
+  const { container } = render(
     <RadioButton
       id="radioButtonOne"
       label="What a lovely label"
@@ -26,6 +26,6 @@ test('renders - unchecked', () => {
       checked={false}
       onChange={str => {}}
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})

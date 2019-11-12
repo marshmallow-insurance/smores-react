@@ -1,7 +1,7 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 
-import {Button} from './Button';
+import { Button } from './Button'
 
 storiesOf('Button', module)
   .addWithJSX('default', () => <Button color="blue">Me Button</Button>)
@@ -16,4 +16,4 @@ storiesOf('Button', module)
   .addWithJSX('block', () => <Button block>Me Button</Button>)
   .addWithJSX('clickable', () => (
     <Button handleSubmit={() => console.log('clicked')}>Click me</Button>
-  ));
+  ))

@@ -1,10 +1,10 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 
-import {text} from '@storybook/addon-knobs';
+import { text } from '@storybook/addon-knobs'
 
-import {Text} from './Text';
-import {theme} from '../theme';
+import { Text } from './Text'
+import { theme } from '../theme'
 
 storiesOf('Text', module)
   .addWithJSX('default', () => (
@@ -34,4 +34,4 @@ storiesOf('Text', module)
     <Text tag={text('Tag', 'label')} typo="label">
       The quick brown fox jumps over the lazy dog
     </Text>
-  ));
+  ))

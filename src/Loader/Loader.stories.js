@@ -1,10 +1,10 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 
-import {number} from '@storybook/addon-knobs';
-import {theme} from '../theme';
+import { number } from '@storybook/addon-knobs'
+import { theme } from '../theme'
 
-import {Loader} from '../Loader';
+import { Loader } from '../Loader'
 
 storiesOf('Loader', module)
   .addWithJSX('default', () => (
@@ -15,4 +15,4 @@ storiesOf('Loader', module)
       height={`${number('height', '54')}px`}
       color={theme.colors.blue[600]}
     />
-  ));
+  ))

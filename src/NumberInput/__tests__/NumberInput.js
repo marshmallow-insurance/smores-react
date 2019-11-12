@@ -1,11 +1,11 @@
-import React from 'react';
-import {render} from '@testing-library/react';
-import 'jest-styled-components';
+import React from 'react'
+import { render } from '@testing-library/react'
+import 'jest-styled-components'
 
-import {NumberInput} from '../NumberInput';
+import { NumberInput } from '../NumberInput'
 
 test('renders - tel', () => {
-  const {container} = render(
+  const { container } = render(
     <NumberInput
       type="tel"
       id="tel"
@@ -18,12 +18,12 @@ test('renders - tel', () => {
       required={false}
       disabled={false}
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})
 
 test('renders - number', () => {
-  const {container} = render(
+  const { container } = render(
     <NumberInput
       type="number"
       id="numberInput"
@@ -34,12 +34,12 @@ test('renders - number', () => {
       placeholder="0.00"
       required={true}
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})
 
 test('renders - currency', () => {
-  const {container} = render(
+  const { container } = render(
     <NumberInput
       type="number"
       id="currencyInput"
@@ -55,12 +55,12 @@ test('renders - currency', () => {
       step={10}
       roundCurrency={true}
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})
 
 test('renders - error', () => {
-  const {container} = render(
+  const { container } = render(
     <NumberInput
       type="number"
       id="currencyInput"
@@ -78,12 +78,12 @@ test('renders - error', () => {
       error={true}
       errorMsg="Oh gosh, this is an error isn't it!"
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})
 
 test('renders - with trailing icon', () => {
-  const {container} = render(
+  const { container } = render(
     <NumberInput
       type="number"
       id="currencyInput"
@@ -95,12 +95,12 @@ test('renders - with trailing icon', () => {
       prefix="$"
       trailingIcon="at"
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})
 
 test('renders - with suffix', () => {
-  const {container} = render(
+  const { container } = render(
     <NumberInput
       type="number"
       id="currencyInput"
@@ -111,12 +111,12 @@ test('renders - with suffix', () => {
       placeholder="100.00"
       suffix="miles"
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})
 
 test('renders - disabled', () => {
-  const {container} = render(
+  const { container } = render(
     <NumberInput
       type="number"
       id="currencyInput"
@@ -127,6 +127,6 @@ test('renders - disabled', () => {
       placeholder="100.00"
       disabled={true}
     />,
-  );
-  expect(container.firstChild).toMatchSnapshot();
-});
+  )
+  expect(container.firstChild).toMatchSnapshot()
+})
