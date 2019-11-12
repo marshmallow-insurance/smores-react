@@ -12,7 +12,7 @@ exports[`renders - currency 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: grey4;
+  color: #C1C1C1;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -28,7 +28,7 @@ exports[`renders - currency 1`] = `
   font-weight: normal;
   margin: 0;
   padding: 0;
-  color: blue7;
+  color: #112035;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -94,6 +94,7 @@ exports[`renders - currency 1`] = `
 
 .c2 {
   border-bottom: 1px solid;
+  border-color: #C1C1C1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -107,9 +108,18 @@ exports[`renders - currency 1`] = `
   opacity: 1;
 }
 
+.c2:hover {
+  border-color: #9E9E9E;
+}
+
+.c2:focus {
+  border-color: #9E9E9E;
+}
+
 .c5 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #112035;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -117,22 +127,20 @@ exports[`renders - currency 1`] = `
   -moz-appearance: textfield;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c5::-webkit-input-placeholder {
+  color: #C1C1C1;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c5::-moz-placeholder {
+  color: #C1C1C1;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c5:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c5::placeholder {
+  color: #C1C1C1;
 }
 
 .c5::-webkit-outer-spin-button,
@@ -184,7 +192,7 @@ exports[`renders - currency 1`] = `
 >
   <label
     class="c1"
-    color="grey4"
+    color="#C1C1C1"
     cursor="inherit"
   >
     Currency
@@ -195,7 +203,7 @@ exports[`renders - currency 1`] = `
   >
     <span
       class="c3 c4"
-      color="blue7"
+      color="#112035"
       cursor="inherit"
     >
       $
@@ -216,7 +224,7 @@ exports[`renders - currency 1`] = `
       >
         <span
           class="c8"
-          color="grey4"
+          color="#C1C1C1"
           rotate="180"
           size="24"
         >
@@ -228,6 +236,7 @@ exports[`renders - currency 1`] = `
           >
             <path
               d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
+              fill="#C1C1C1"
             />
           </svg>
         </span>
@@ -237,7 +246,7 @@ exports[`renders - currency 1`] = `
       >
         <span
           class="c9"
-          color="grey4"
+          color="#C1C1C1"
           rotate="0"
           size="24"
         >
@@ -249,6 +258,7 @@ exports[`renders - currency 1`] = `
           >
             <path
               d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
+              fill="#C1C1C1"
             />
           </svg>
         </span>
@@ -270,7 +280,7 @@ exports[`renders - disabled 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: grey4;
+  color: #C1C1C1;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -294,6 +304,7 @@ exports[`renders - disabled 1`] = `
 
 .c2 {
   border-bottom: 1px solid;
+  border-color: #C1C1C1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -307,9 +318,18 @@ exports[`renders - disabled 1`] = `
   opacity: 0.5;
 }
 
+.c2:hover {
+  border-color: #9E9E9E;
+}
+
+.c2:focus {
+  border-color: #9E9E9E;
+}
+
 .c3 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #112035;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -317,22 +337,20 @@ exports[`renders - disabled 1`] = `
   -moz-appearance: textfield;
 }
 
-.c3::-webkit-outer-spin-button,
-.c3::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c3::-webkit-input-placeholder {
+  color: #C1C1C1;
 }
 
-.c3::-webkit-outer-spin-button,
-.c3::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c3::-moz-placeholder {
+  color: #C1C1C1;
 }
 
-.c3::-webkit-outer-spin-button,
-.c3::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c3:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c3::placeholder {
+  color: #C1C1C1;
 }
 
 .c3::-webkit-outer-spin-button,
@@ -353,7 +371,7 @@ exports[`renders - disabled 1`] = `
 >
   <label
     class="c1"
-    color="grey4"
+    color="#C1C1C1"
     cursor="inherit"
   >
     Currency
@@ -388,7 +406,7 @@ exports[`renders - error 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: grey4;
+  color: #C1C1C1;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -404,7 +422,7 @@ exports[`renders - error 1`] = `
   font-weight: normal;
   margin: 0;
   padding: 0;
-  color: blue7;
+  color: #112035;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -470,6 +488,7 @@ exports[`renders - error 1`] = `
 
 .c2 {
   border-bottom: 1px solid;
+  border-color: #D82C2C;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -483,9 +502,18 @@ exports[`renders - error 1`] = `
   opacity: 1;
 }
 
+.c2:hover {
+  border-color: #D82C2C;
+}
+
+.c2:focus {
+  border-color: #D82C2C;
+}
+
 .c5 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #D82C2C;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -493,22 +521,20 @@ exports[`renders - error 1`] = `
   -moz-appearance: textfield;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c5::-webkit-input-placeholder {
+  color: #C1C1C1;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c5::-moz-placeholder {
+  color: #C1C1C1;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c5:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c5::placeholder {
+  color: #C1C1C1;
 }
 
 .c5::-webkit-outer-spin-button,
@@ -519,6 +545,7 @@ exports[`renders - error 1`] = `
 
 .c10 {
   margin-top: 7px;
+  color: #D82C2C;
   font-size: 12px;
 }
 
@@ -565,7 +592,7 @@ exports[`renders - error 1`] = `
 >
   <label
     class="c1"
-    color="grey4"
+    color="#C1C1C1"
     cursor="inherit"
   >
     Currency
@@ -576,7 +603,7 @@ exports[`renders - error 1`] = `
   >
     <span
       class="c3 c4"
-      color="blue7"
+      color="#112035"
       cursor="inherit"
     >
       $
@@ -597,7 +624,7 @@ exports[`renders - error 1`] = `
       >
         <span
           class="c8"
-          color="grey4"
+          color="#C1C1C1"
           rotate="180"
           size="24"
         >
@@ -609,6 +636,7 @@ exports[`renders - error 1`] = `
           >
             <path
               d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
+              fill="#C1C1C1"
             />
           </svg>
         </span>
@@ -618,7 +646,7 @@ exports[`renders - error 1`] = `
       >
         <span
           class="c9"
-          color="grey4"
+          color="#C1C1C1"
           rotate="0"
           size="24"
         >
@@ -630,6 +658,7 @@ exports[`renders - error 1`] = `
           >
             <path
               d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
+              fill="#C1C1C1"
             />
           </svg>
         </span>
@@ -656,7 +685,7 @@ exports[`renders - number 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: grey4;
+  color: #C1C1C1;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -680,6 +709,7 @@ exports[`renders - number 1`] = `
 
 .c3 {
   border-bottom: 1px solid;
+  border-color: #C1C1C1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -693,9 +723,18 @@ exports[`renders - number 1`] = `
   opacity: 1;
 }
 
+.c3:hover {
+  border-color: #9E9E9E;
+}
+
+.c3:focus {
+  border-color: #9E9E9E;
+}
+
 .c4 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #112035;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -703,22 +742,20 @@ exports[`renders - number 1`] = `
   -moz-appearance: textfield;
 }
 
-.c4::-webkit-outer-spin-button,
-.c4::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c4::-webkit-input-placeholder {
+  color: #C1C1C1;
 }
 
-.c4::-webkit-outer-spin-button,
-.c4::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c4::-moz-placeholder {
+  color: #C1C1C1;
 }
 
-.c4::-webkit-outer-spin-button,
-.c4::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c4:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c4::placeholder {
+  color: #C1C1C1;
 }
 
 .c4::-webkit-outer-spin-button,
@@ -729,6 +766,7 @@ exports[`renders - number 1`] = `
 
 .c2 {
   font-size: 14px;
+  color: #55D6AA;
 }
 
 @media (min-width:768px) {
@@ -743,7 +781,7 @@ exports[`renders - number 1`] = `
 >
   <label
     class="c1"
-    color="grey4"
+    color="#C1C1C1"
     cursor="inherit"
   >
     Number
@@ -782,7 +820,7 @@ exports[`renders - tel 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: grey4;
+  color: #C1C1C1;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -798,7 +836,7 @@ exports[`renders - tel 1`] = `
   font-weight: normal;
   margin: 0;
   padding: 0;
-  color: blue7;
+  color: #112035;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -822,6 +860,7 @@ exports[`renders - tel 1`] = `
 
 .c2 {
   border-bottom: 1px solid;
+  border-color: #C1C1C1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -835,9 +874,18 @@ exports[`renders - tel 1`] = `
   opacity: 1;
 }
 
+.c2:hover {
+  border-color: #9E9E9E;
+}
+
+.c2:focus {
+  border-color: #9E9E9E;
+}
+
 .c5 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #112035;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -845,22 +893,20 @@ exports[`renders - tel 1`] = `
   -moz-appearance: textfield;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c5::-webkit-input-placeholder {
+  color: #C1C1C1;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c5::-moz-placeholder {
+  color: #C1C1C1;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c5:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c5::placeholder {
+  color: #C1C1C1;
 }
 
 .c5::-webkit-outer-spin-button,
@@ -894,7 +940,7 @@ exports[`renders - tel 1`] = `
 >
   <label
     class="c1"
-    color="grey4"
+    color="#C1C1C1"
     cursor="inherit"
   >
     Telephone number
@@ -905,7 +951,7 @@ exports[`renders - tel 1`] = `
   >
     <span
       class="c3 c4"
-      color="blue7"
+      color="#112035"
       cursor="inherit"
     >
       +44
@@ -938,7 +984,7 @@ exports[`renders - with suffix 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: grey4;
+  color: #C1C1C1;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -954,7 +1000,7 @@ exports[`renders - with suffix 1`] = `
   font-weight: normal;
   margin: 0;
   padding: 0;
-  color: blue7;
+  color: #112035;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -978,6 +1024,7 @@ exports[`renders - with suffix 1`] = `
 
 .c2 {
   border-bottom: 1px solid;
+  border-color: #C1C1C1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -991,9 +1038,18 @@ exports[`renders - with suffix 1`] = `
   opacity: 1;
 }
 
+.c2:hover {
+  border-color: #9E9E9E;
+}
+
+.c2:focus {
+  border-color: #9E9E9E;
+}
+
 .c3 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #112035;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -1001,22 +1057,20 @@ exports[`renders - with suffix 1`] = `
   -moz-appearance: textfield;
 }
 
-.c3::-webkit-outer-spin-button,
-.c3::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c3::-webkit-input-placeholder {
+  color: #C1C1C1;
 }
 
-.c3::-webkit-outer-spin-button,
-.c3::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c3::-moz-placeholder {
+  color: #C1C1C1;
 }
 
-.c3::-webkit-outer-spin-button,
-.c3::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c3:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c3::placeholder {
+  color: #C1C1C1;
 }
 
 .c3::-webkit-outer-spin-button,
@@ -1050,7 +1104,7 @@ exports[`renders - with suffix 1`] = `
 >
   <label
     class="c1"
-    color="grey4"
+    color="#C1C1C1"
     cursor="inherit"
   >
     Currency
@@ -1072,7 +1126,7 @@ exports[`renders - with suffix 1`] = `
     >
       <span
         class="c5 c6"
-        color="blue7"
+        color="#112035"
         cursor="inherit"
       >
         miles
@@ -1094,7 +1148,7 @@ exports[`renders - with trailing icon 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: grey4;
+  color: #C1C1C1;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -1110,7 +1164,7 @@ exports[`renders - with trailing icon 1`] = `
   font-weight: normal;
   margin: 0;
   padding: 0;
-  color: blue7;
+  color: #112035;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -1155,6 +1209,7 @@ exports[`renders - with trailing icon 1`] = `
 
 .c2 {
   border-bottom: 1px solid;
+  border-color: #C1C1C1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1168,9 +1223,18 @@ exports[`renders - with trailing icon 1`] = `
   opacity: 1;
 }
 
+.c2:hover {
+  border-color: #9E9E9E;
+}
+
+.c2:focus {
+  border-color: #9E9E9E;
+}
+
 .c5 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #112035;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -1178,22 +1242,20 @@ exports[`renders - with trailing icon 1`] = `
   -moz-appearance: textfield;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c5::-webkit-input-placeholder {
+  color: #C1C1C1;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c5::-moz-placeholder {
+  color: #C1C1C1;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.c5:-ms-input-placeholder {
+  color: #C1C1C1;
+}
+
+.c5::placeholder {
+  color: #C1C1C1;
 }
 
 .c5::-webkit-outer-spin-button,
@@ -1227,7 +1289,7 @@ exports[`renders - with trailing icon 1`] = `
 >
   <label
     class="c1"
-    color="grey4"
+    color="#C1C1C1"
     cursor="inherit"
   >
     Currency
@@ -1238,7 +1300,7 @@ exports[`renders - with trailing icon 1`] = `
   >
     <span
       class="c3 c4"
-      color="blue7"
+      color="#112035"
       cursor="inherit"
     >
       $
@@ -1253,7 +1315,7 @@ exports[`renders - with trailing icon 1`] = `
     />
     <span
       class="c6"
-      color="grey4"
+      color="#C1C1C1"
       rotate="0"
       size="32"
     >
@@ -1265,7 +1327,7 @@ exports[`renders - with trailing icon 1`] = `
       >
         <path
           d="M16 6C10.486 6 6 10.486 6 16s4.486 10 10 10a1 1 0 1 0 0-2c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8c0 1.103-.897 2-2 2s-2-.897-2-2c0-2.206-1.794-4-4-4s-4 1.794-4 4 1.794 4 4 4c1.2 0 2.266-.542 3-1.382.734.84 1.8 1.382 3 1.382 2.206 0 4-1.794 4-4 0-5.514-4.486-10-10-10zm0 12c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"
-          fill="grey4"
+          fill="#C1C1C1"
         />
       </svg>
     </span>

@@ -156,14 +156,14 @@ export const NumberInput: FC<NumberInputProps> = ({
   return (
     <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
       {label && (
-        <Text tag="label" color="grey4" typo="label">
+        <Text tag="label" color={theme.colors.grey[400]} typo="label">
           {label}&nbsp;{required && <Asterisk>*</Asterisk>}
         </Text>
       )}
 
       <Content error={error} disabled={disabled}>
         {prefix && (
-          <SymbolText tag="span" color="blue7">
+          <SymbolText tag="span" color={theme.colors.blue[700]}>
             {prefix}
           </SymbolText>
         )}
@@ -184,7 +184,7 @@ export const NumberInput: FC<NumberInputProps> = ({
 
         {suffix && (
           <Box pr="8px">
-            <SymbolText tag="span" color="blue7">
+            <SymbolText tag="span" color={theme.colors.blue[700]}>
               {suffix}
             </SymbolText>
           </Box>
@@ -193,17 +193,25 @@ export const NumberInput: FC<NumberInputProps> = ({
         {step > 0 && (
           <Spinner>
             <SpinnerButton onClick={incrementValue} disabled={disabled}>
-              <Icon render="caret" rotate={180} color="grey4" size={24} />
+              <Icon
+                render="caret"
+                rotate={180}
+                color={theme.colors.grey[400]}
+                size={24}
+              />
             </SpinnerButton>
 
             <SpinnerButton onClick={decrementValue} disabled={disabled}>
-              <Icon render="caret" color="grey4" size={24} />
+              <Icon render="caret" color={theme.colors.grey[400]} size={24} />
             </SpinnerButton>
           </Spinner>
         )}
 
-        {trailingIcon && <Icon render={trailingIcon} color="grey4" />}
+        {trailingIcon && (
+          <Icon render={trailingIcon} color={theme.colors.grey[400]} />
+        )}
       </Content>
+
       {error && <ErrorBox>{errorMsg}</ErrorBox>}
     </Container>
   )
@@ -229,7 +237,8 @@ interface IInput {
 
 const Content = styled.div<IInput>`
   border-bottom: 1px solid;
-  border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey4'}`]};
+  border-color: ${({ error }) =>
+    error ? theme.colors.red[700] : theme.colors.grey[400]};
   display: flex;
   align-items: center;
   height: 32px;
@@ -237,25 +246,28 @@ const Content = styled.div<IInput>`
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
 
   &:hover {
-    border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
+    border-color: ${({ error }) =>
+      error ? theme.colors.red[700] : theme.colors.grey[600]};
   }
 
   &:focus {
-    border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'blue5'}`]};
+    border-color: ${({ error }) =>
+      error ? theme.colors.red[700] : theme.colors.grey[600]};
   }
 `
 
 const Input = styled.input<IInput>`
   font-family: 'Gordita', san-serif;
   border: none;
-  color: ${({ error }) => theme.colors[`${error ? 'red7' : 'black'}`]};
+  color: ${({ error }) =>
+    error ? theme.colors.red[700] : theme.colors.blue[700]};
   font-size: 16px;
   width: 100%;
   outline: none;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
   &::placeholder {
-    color: ${theme.colors.grey4};
+    color: ${theme.colors.grey[400]};
   }
 
   /* Remove the spinner on Firefox and Webkit browsers */
@@ -270,7 +282,7 @@ const Input = styled.input<IInput>`
 
 const ErrorBox = styled.span`
   margin-top: 7px;
-  color: ${theme.colors.red7};
+  color: ${theme.colors.red[700]};
   font-size: 12px;
 `
 
@@ -282,7 +294,7 @@ const SymbolText = styled(Text)`
 
 const Asterisk = styled.span`
   font-size: 14px;
-  color: ${theme.colors.green5};
+  color: ${theme.colors.green[500]};
 `
 
 const Spinner = styled.div`
