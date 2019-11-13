@@ -51,8 +51,25 @@ const colors = {
   red4: '#D7796A',
   red5: '#E06161',
   red7: '#D82C2C',
-};
+}
+
+const font = {
+  family: 'Gordita',
+
+  weight: {
+    normal: 400,
+    medium: 500,
+    bold: 500,
+  },
+
+  system:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+}
+
+const fontStack = `font-family: ${font.family}, ${font.system};`
 
 export const theme = {
   colors,
-};
+  font,
+  fontStack,
+}
