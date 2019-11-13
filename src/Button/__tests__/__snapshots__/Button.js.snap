@@ -2,6 +2,8 @@
 
 exports[`renders 1`] = `
 .c0 {
+  font-family: Gordita,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-weight: 500;
   position: relative;
   display: inline-block;
   box-sizing: border-box;
