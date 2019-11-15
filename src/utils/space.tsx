@@ -1,24 +1,24 @@
-type SpaceFN = (arg: SpaceProps) => string;
+type SpaceFN = (arg: SpaceProps) => string
 
 export interface SpaceProps {
-  m?: string;
-  mx?: string;
-  my?: string;
-  ml?: string;
-  mr?: string;
-  mt?: string;
-  mb?: string;
-  p?: string;
-  px?: string;
-  py?: string;
-  pl?: string;
-  pr?: string;
-  pt?: string;
-  pb?: string;
+  m?: string
+  mx?: string
+  my?: string
+  ml?: string
+  mr?: string
+  mt?: string
+  mb?: string
+  p?: string
+  px?: string
+  py?: string
+  pl?: string
+  pr?: string
+  pt?: string
+  pb?: string
 }
 
 export const space: SpaceFN = (props: SpaceProps) => {
-  const {m, mx, my, ml, mr, mt, mb, p, px, py, pl, pr, pt, pb} = props;
+  const { m, mx, my, ml, mr, mt, mb, p, px, py, pl, pr, pt, pb } = props
 
   return `
     ${m ? `margin: ${m};` : ''}
@@ -63,5 +63,5 @@ export const space: SpaceFN = (props: SpaceProps) => {
     ${pr ? `padding-right: ${pr};` : ''}
     ${pt ? `padding-top: ${pt};` : ''}
     ${pb ? `padding-bottom: ${pb};` : ''}
-  `;
-};
+  `
+}

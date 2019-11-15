@@ -1,29 +1,29 @@
-import React, {FC, ReactNode} from 'react';
-import styled from 'styled-components';
-import {theme} from '../theme';
+import React, { FC, ReactNode } from 'react'
+import styled from 'styled-components'
+import { theme } from '../theme'
 
 interface ICard {
-  maxWidth: string;
-  marginX: string;
-  marginY: string;
-  narrow: boolean;
-  wide: boolean;
+  maxWidth: string
+  marginX: string
+  marginY: string
+  narrow: boolean
+  wide: boolean
 }
 
 type Props = {
-  children: ReactNode;
-  className?: string;
+  children: ReactNode
+  className?: string
   /** margin */
-  maxWidth?: string;
+  maxWidth?: string
   /** left-right margin */
-  marginX?: string;
+  marginX?: string
   /** top-bottom margin */
-  marginY?: string;
+  marginY?: string
   /** Narrow padding */
-  narrow?: boolean;
+  narrow?: boolean
   /** Wide padding */
-  wide?: boolean;
-};
+  wide?: boolean
+}
 
 export const Card: FC<Props> = ({
   children,
@@ -44,7 +44,7 @@ export const Card: FC<Props> = ({
   >
     {children}
   </Container>
-);
+)
 
 const Container = styled.div<ICard>`
   background: ${theme.colors.white};
@@ -64,4 +64,4 @@ const Container = styled.div<ICard>`
   @media (min-width: 768px) {
     padding: ${p => (p.narrow ? '24px' : p.wide ? '48px' : '32px')};
   }
-`;
+`

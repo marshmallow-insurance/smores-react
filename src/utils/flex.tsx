@@ -1,25 +1,25 @@
-type FlexFN = (arg: FlexProps) => string;
+type FlexFN = (arg: FlexProps) => string
 
 export interface FlexProps {
-  direction?: 'column' | 'column-reverse' | 'row' | 'row-reverse';
-  wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
-  flex?: boolean;
-  flow?: string;
+  direction?: 'column' | 'column-reverse' | 'row' | 'row-reverse'
+  wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
+  flex?: boolean
+  flow?: string
   justifyContent?:
     | 'center'
     | 'flex-end'
     | 'flex-start'
     | 'space-around'
     | 'space-between'
-    | 'space-evenly';
-  alignItems?: 'baseline' | 'center' | 'flex-end' | 'flex-start' | 'stretch';
+    | 'space-evenly'
+  alignItems?: 'baseline' | 'center' | 'flex-end' | 'flex-start' | 'stretch'
   alignContent?:
     | 'center'
     | 'flex-end'
     | 'flex-start'
     | 'space-around'
     | 'space-between'
-    | 'stretch';
+    | 'stretch'
 }
 
 export const flex: FlexFN = (props: FlexProps) => {
@@ -31,7 +31,7 @@ export const flex: FlexFN = (props: FlexProps) => {
     justifyContent,
     alignItems,
     alignContent,
-  } = props;
+  } = props
 
   return `
     ${flex ? `display: flex;` : ''}
@@ -41,5 +41,5 @@ export const flex: FlexFN = (props: FlexProps) => {
     ${justifyContent ? `justify-content: ${justifyContent};` : ''}
     ${alignItems ? `align-items: ${alignItems};` : ''}
     ${alignContent ? `align-content: ${alignContent};` : ''}
-  `;
-};
+  `
+}

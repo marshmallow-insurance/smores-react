@@ -1,35 +1,35 @@
-import React, {FC, FormEvent} from 'react';
-import styled from 'styled-components';
+import React, { FC, FormEvent } from 'react'
+import styled from 'styled-components'
 
-import {Text} from '../Text';
-import {Box} from '../Box';
+import { Text } from '../Text'
+import { Box } from '../Box'
 
-import {theme} from '../theme';
+import { theme } from '../theme'
 
 type TextareaProps = {
   /** ID, usually used for tests  */
-  id: string;
+  id: string
   /** className attribute to apply classses from props */
-  className?: string;
+  className?: string
   /** Placeholder */
-  placeholder?: string;
+  placeholder?: string
   /** label displayed above the input  */
-  label?: string;
+  label?: string
   /** used for label - input connection */
-  name?: string;
+  name?: string
   /** input value */
-  value: string;
+  value: string
   /** error flag */
-  error?: boolean;
+  error?: boolean
   /** error text message */
-  errorMsg?: string;
+  errorMsg?: string
   /** Allow user to resize the textarea vertically and horizontally or not */
-  resize?: 'none' | 'both';
+  resize?: 'none' | 'both'
   /** onChange listener */
-  onChange: (e: string) => void;
+  onChange: (e: string) => void
   /** Disabled flag */
-  disabled?: boolean;
-};
+  disabled?: boolean
+}
 
 export const Textarea: FC<TextareaProps> = ({
   id,
@@ -67,12 +67,12 @@ export const Textarea: FC<TextareaProps> = ({
     </Box>
     {error && <ErrorBox>{errorMsg}</ErrorBox>}
   </Box>
-);
+)
 
 interface ITextarea {
-  resize: 'none' | 'both';
-  disabled: boolean;
-  error: boolean;
+  resize: 'none' | 'both'
+  disabled: boolean
+  error: boolean
 }
 
 const Field = styled.textarea<ITextarea>`
@@ -85,22 +85,22 @@ const Field = styled.textarea<ITextarea>`
   width: 100%;
   padding: 16px;
   color: ${theme.colors.blue7};
-  resize: ${({resize}) => resize};
-  cursor: ${({disabled}) => (disabled ? 'not-allowed' : 'pointer')};
-  opacity: ${({disabled}) => (disabled ? '0.5' : '1')};
-  border-color: ${({error}) => theme.colors[`${error ? 'red7' : 'grey4'}`]};
+  resize: ${({ resize }) => resize};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
+  border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey4'}`]};
 
   &:hover {
-    border-color: ${({error}) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
+    border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
   }
 
   &:focus {
-    border-color: ${({error}) => theme.colors[`${error ? 'red7' : 'blue5'}`]};
+    border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'blue5'}`]};
   }
-`;
+`
 
 const ErrorBox = styled.span`
   margin-top: 7px;
   font-size: 12px;
   color: ${theme.colors.red7};
-`;
+`

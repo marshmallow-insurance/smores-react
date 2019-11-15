@@ -1,36 +1,36 @@
-import React, {FC, ReactNode} from 'react';
-import styled, {css} from 'styled-components';
+import React, { FC, ReactNode } from 'react'
+import styled, { css } from 'styled-components'
 
-import {theme} from '../theme';
+import { theme } from '../theme'
 
 interface IButton {
   /** button color  */
-  color: string;
+  color: string
   /** unique id */
-  id: string;
+  id: string
   /** take full 100% width  */
-  block: boolean;
+  block: boolean
   /** invert bg and text colors */
-  inverted: boolean;
+  inverted: boolean
   /** disabled state */
-  disabled: boolean;
+  disabled: boolean
   /** outline styling */
-  outlined: boolean;
+  outlined: boolean
   /** onClick event handler */
-  onClick: (e: React.FormEvent<HTMLButtonElement>) => void;
+  onClick: (e: React.FormEvent<HTMLButtonElement>) => void
 }
 
 type Props = {
-  children: ReactNode;
-  id: string;
-  className?: string;
-  color?: string;
-  block?: boolean;
-  inverted?: boolean;
-  disabled?: boolean;
-  outlined?: boolean;
-  handleClick: (e: React.FormEvent<HTMLButtonElement>) => void;
-};
+  children: ReactNode
+  id: string
+  className?: string
+  color?: string
+  block?: boolean
+  inverted?: boolean
+  disabled?: boolean
+  outlined?: boolean
+  handleClick: (e: React.FormEvent<HTMLButtonElement>) => void
+}
 
 export const Button: FC<Props> = ({
   children,
@@ -55,7 +55,7 @@ export const Button: FC<Props> = ({
   >
     {children}
   </Container>
-);
+)
 
 const Container = styled.button<IButton>`
   position: relative;
@@ -101,4 +101,4 @@ const Container = styled.button<IButton>`
     padding: 19px 24px 15px;
     font-size: 16px;
   }
-`;
+`
