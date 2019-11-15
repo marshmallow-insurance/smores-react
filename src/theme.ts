@@ -51,8 +51,8 @@ const colors = {
   red4: '#D7796A',
   red5: '#E06161',
   red7: '#D82C2C',
-};
+}
 
 export const theme = {
   colors,
-};
+}

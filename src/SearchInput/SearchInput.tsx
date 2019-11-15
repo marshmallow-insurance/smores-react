@@ -1,37 +1,37 @@
-import React, {FC, useState} from 'react';
-import styled from 'styled-components';
+import React, { FC, useState } from 'react'
+import styled from 'styled-components'
 
-import {Text} from '../Text';
-import {theme} from '../theme';
+import { Text } from '../Text'
+import { theme } from '../theme'
 
 export type SearchInputItem = {
-  label: string;
-  value: string;
-};
+  label: string
+  value: string
+}
 
 interface IContainer {
-  show: boolean;
+  show: boolean
 }
 interface ISearchInput {
-  id: string;
-  name: string;
-  value: string;
-  onKeyUp: (e: React.FormEvent<HTMLInputElement>) => void;
-  onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  id: string
+  name: string
+  value: string
+  onKeyUp: (e: React.FormEvent<HTMLInputElement>) => void
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void
 }
 
 type Props = {
   /** ID, usually used for tests  */
-  id: string;
+  id: string
   /** label displayed above the input  */
-  label?: string;
+  label?: string
   /** Placeholder (initial state) */
-  placeholder?: string;
+  placeholder?: string
   /** list of items for the search list */
-  searchList: SearchInputItem[];
+  searchList: SearchInputItem[]
   /** onFound listener */
-  onFound: (element: string) => void;
-};
+  onFound: (element: string) => void
+}
 
 export const SearchInput: FC<Props> = ({
   id,
@@ -40,39 +40,39 @@ export const SearchInput: FC<Props> = ({
   searchList,
   onFound,
 }) => {
-  const [active, setActive] = useState(false);
-  const [list, setList] = useState(searchList);
-  const [selectedResult, setSelectedResult] = useState('');
+  const [active, setActive] = useState(false)
+  const [list, setList] = useState(searchList)
+  const [selectedResult, setSelectedResult] = useState('')
 
   const search = (e: React.FormEvent<HTMLInputElement>): void => {
-    const value = e.currentTarget.value;
+    const value = e.currentTarget.value
 
     if (value) {
       // start filtering if the input has at least 2 characters
       if (value.length >= 2) {
         const filteredList = searchList.filter(el =>
           el.label.toLowerCase().includes(value.toLocaleLowerCase()),
-        );
+        )
 
         // update the local state with the filtered results
-        setActive(true);
-        setList(filteredList);
+        setActive(true)
+        setList(filteredList)
       }
     } else {
-      setActive(false);
+      setActive(false)
     }
-  };
+  }
 
   const updateInputState = (e: React.FormEvent<HTMLInputElement>): void => {
-    const value = e.currentTarget.value;
-    setSelectedResult(value);
-  };
+    const value = e.currentTarget.value
+    setSelectedResult(value)
+  }
 
   const select = (selectedItem: SearchInputItem): void => {
-    setActive(false);
-    setSelectedResult(selectedItem.label);
-    onFound(selectedItem.value);
-  };
+    setActive(false)
+    setSelectedResult(selectedItem.label)
+    onFound(selectedItem.value)
+  }
 
   return (
     <Container show={active}>
@@ -106,14 +106,14 @@ export const SearchInput: FC<Props> = ({
         </ResultsList>
       </ResultsContainer>
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.div<IContainer>`
   position: relative;
   width: 100%;
   background: ${theme.colors.white};
-`;
+`
 
 const Input = styled.input<ISearchInput>`
   display: block;
@@ -130,7 +130,7 @@ const Input = styled.input<ISearchInput>`
   &::placeholder {
     color: ${theme.colors.grey4};
   }
-`;
+`
 
 const ResultsContainer = styled.div<IContainer>`
   box-sizing: border-box;
@@ -142,7 +142,7 @@ const ResultsContainer = styled.div<IContainer>`
     max-height: ${p => (p.show ? '192px' : '0px')};
     border-color: ${p => (p.show ? `${theme.colors.grey4}` : 'transparent')};
   }
-`;
+`
 
 const ResultsList = styled.ul`
   position: relative;
@@ -168,4 +168,4 @@ const ResultsList = styled.ul`
       background-color: ${theme.colors.bg3};
     }
   }
-`;
+`

@@ -1,29 +1,29 @@
-import React, {FC, ReactNode} from 'react';
-import styled, {css} from 'styled-components';
+import React, { FC, ReactNode } from 'react'
+import styled, { css } from 'styled-components'
 
-import {theme} from '../theme';
+import { theme } from '../theme'
 
 interface IText {
   /** typography class name to apply predefined styles */
-  typo: string;
+  typo: string
   /** HTML tag  */
-  as: any;
+  as: any
   /** text-align  */
-  align: string;
+  align: string
   /** color from the theme  */
-  color: string;
-  cursor: string;
+  color: string
+  cursor: string
 }
 
 type Props = {
-  children: ReactNode;
-  tag: any;
-  className?: string;
-  typo?: string;
-  align?: string;
-  color?: string;
-  cursor?: string;
-};
+  children: ReactNode
+  tag: any
+  className?: string
+  typo?: string
+  align?: string
+  color?: string
+  cursor?: string
+}
 
 export const Text: FC<Props> = ({
   children,
@@ -44,7 +44,7 @@ export const Text: FC<Props> = ({
   >
     {children}
   </Container>
-);
+)
 
 const Container = styled.p<IText>`
   /** PREDEFINED TYPOGRAPHY STYLES */
@@ -197,4 +197,4 @@ const Container = styled.p<IText>`
   text-align: ${p => p.align};
   cursor: ${p => p.cursor};
   letter-spacing: 0.15px;
-`;
+`

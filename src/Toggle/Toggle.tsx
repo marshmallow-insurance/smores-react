@@ -1,25 +1,25 @@
-import React, {FC} from 'react';
-import styled from 'styled-components';
+import React, { FC } from 'react'
+import styled from 'styled-components'
 
-import {theme} from '../theme';
+import { theme } from '../theme'
 
 type Props = {
   /** unique ID */
-  id: string;
+  id: string
   /** checked flag  */
-  checked: boolean;
+  checked: boolean
   /** onToggle listener  */
-  onToggle: () => void;
-};
+  onToggle: () => void
+}
 
-export const Toggle: FC<Props> = ({checked, onToggle}) => {
+export const Toggle: FC<Props> = ({ checked, onToggle }) => {
   return (
     <Switch>
       <Checkbox type="checkbox" checked={checked} onChange={onToggle} />
       <Slider />
     </Switch>
-  );
-};
+  )
+}
 
 const Switch = styled.label`
   position: relative;
@@ -32,7 +32,7 @@ const Switch = styled.label`
     width: 0;
     height: 0;
   }
-`;
+`
 
 const Slider = styled.span`
   position: absolute;
@@ -59,7 +59,7 @@ const Slider = styled.span`
     transition: 0.2s transform;
     border-radius: 50%;
   }
-`;
+`
 
 const Checkbox = styled.input`
   &:checked + ${Slider} {
@@ -71,4 +71,4 @@ const Checkbox = styled.input`
   &:checked + ${Slider}:before {
     transform: translateX(18px);
   }
-`;
+`
