@@ -195,6 +195,28 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
 
+    {// FEEDBACK - QUESTION
+    render === 'question' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        {/* tslint:disable-next-line:max-line-length */}
+        <path
+          fill={theme.colors[color]}
+          d="M17.3 19.4c.16-1.313 1.164-2.202 2.156-2.932C20.962 15.36 22 13.935 22 11.996 22 8.802 19 7 16.08 7 12.92 7 10 8.996 10 12.373c0 .388.034.775.091 1.152l3.628.296a4.273 4.273 0 01-.092-.855c0-1.426.924-2.59 2.419-2.59 1.106 0 2.144.57 2.144 1.803 0 2.6-4.403 3.17-4.403 6.524 0 .229.023.468.046.696H17.3zm-3.89 4.186c0-1.244 1.016-2.27 2.236-2.27a2.28 2.28 0 012.293 2.27c0 1.243-1.015 2.258-2.293 2.258-1.22 0-2.235-1.015-2.235-2.258z"
+        />
+      </svg>
+    )}
+
+    {// FEEDBACK - CHAT-BUBBLE
+    render === 'chat-bubble' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        {/* tslint:disable-next-line:max-line-length */}
+        <path
+          fill={theme.colors[color]}
+          d="M18 16h-4a1 1 0 100 2h4a1 1 0 100-2zm3-4H11a1 1 0 100 2h10a1 1 0 100-2zm-2.5-7h-5C8.262 5 4 9.262 4 14.5a9.481 9.481 0 007 9.16V27a1 1 0 001.555.832L18.303 24h.197c5.238 0 9.5-4.262 9.5-9.5S23.738 5 18.5 5zm0 17H18c-.197 0-.391.059-.555.168L13 25.131V22.86a1 1 0 00-.824-.984A7.486 7.486 0 016 14.5C6 10.364 9.364 7 13.5 7h5c4.136 0 7.5 3.364 7.5 7.5S22.636 22 18.5 22z"
+        />
+      </svg>
+    )}
+
     {// REFUND (Box with arrow facing left)
     render === 'refund' && (
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
