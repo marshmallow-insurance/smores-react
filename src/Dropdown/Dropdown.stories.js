@@ -1,9 +1,9 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import { text, boolean } from '@storybook/addon-knobs'
 
-import {text, boolean} from '@storybook/addon-knobs';
-
-import {Dropdown} from './Dropdown';
+import { Dropdown } from './Dropdown'
+import { Container } from './Container'
 
 const days = [
   {
@@ -34,7 +34,7 @@ const days = [
     label: 'Sunday',
     value: 'Sunday',
   },
-];
+]
 
 storiesOf('Dropdown', module)
   .addWithJSX('default', () => (
@@ -81,4 +81,5 @@ storiesOf('Dropdown', module)
       list={[]}
       onSelect={e => console.log(e)}
     />
-  ));
+  ))
+  .addWithJSX('functional', () => <Container />)

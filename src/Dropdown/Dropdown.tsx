@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useEffect } from 'react'
 import styled from 'styled-components'
 
 import { Text } from '../Text'
@@ -37,17 +37,9 @@ export const Dropdown: FC<Props> = ({
   list,
   onSelect,
 }) => {
-  const [value, setValue] = useState('')
-  const setDropdownValue = (value: string) => {
-    setValue(value)
-    onSelect(value)
-  }
-
   useEffect(() => {
     if (list.length === 1) {
-      setDropdownValue(list[0].value)
-    } else {
-      setValue('')
+      onSelect(list[0].value)
     }
   }, [list])
 
@@ -58,25 +50,28 @@ export const Dropdown: FC<Props> = ({
           {label}
         </Text>
       )}
-      <Content>
+
+      <Content key={`${list[0].value}-${list.length}`}>
         <Select
           id={id}
+          defaultValue={list.length === 1 ? String(list[0].value) : placeholder}
           disabled={disabled}
           onChange={(e: React.FormEvent<HTMLSelectElement>) => {
-            setDropdownValue(e.currentTarget.value)
+            onSelect(e.currentTarget.value)
           }}
           required
-          value={value}
         >
           <option value="" hidden>
             {placeholder}
           </option>
+
           {list.map((el, i) => (
             <option key={i} value={el.value}>
               {el.label}
             </option>
           ))}
         </Select>
+
         <Caret>
           <Icon render="caret" color="grey4" size={24} />
         </Caret>
