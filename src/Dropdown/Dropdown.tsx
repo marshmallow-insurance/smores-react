@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import { Text } from '../Text'
@@ -37,10 +37,15 @@ export const Dropdown: FC<Props> = ({
   list,
   onSelect,
 }) => {
+  const [key, setKey] = useState('')
+
   useEffect(() => {
     if (list.length === 1) {
       onSelect(list[0].value)
     }
+
+    // update 'key' props in order to deselect the active option if a new list passed
+    list.length > 1 ? setKey(`${list[0].value}-${list.length}`) : ''
   }, [list])
 
   return (
@@ -51,11 +56,11 @@ export const Dropdown: FC<Props> = ({
         </Text>
       )}
 
-      <Content key={`${list[0].value}-${list.length}`}>
+      <Content key={key}>
         <Select
           id={id}
           defaultValue={list.length === 1 ? String(list[0].value) : placeholder}
-          disabled={disabled}
+          disabled={disabled || list.length < 1}
           onChange={(e: React.FormEvent<HTMLSelectElement>) => {
             onSelect(e.currentTarget.value)
           }}
