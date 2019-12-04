@@ -3,17 +3,20 @@
         height="95">
 </p>
 <p align="center">
-  <a href="https://www.npmjs.com/package/@mrshmllw/smores-react" alt="npm-version-badge">
-    <img src="https://img.shields.io/npm/v/@mrshmllw/smores-react.svg?style=flat-square" /></a>
-  <a href="https://github.com/marshmallow-insurance/smores-react/blob/master/LICENSE" alt="licence-badge">
-    <img src="https://img.shields.io/github/license/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
-  <a href="https://travis-ci.com/marshmallow-insurance/smores-react" alt="travis-build-badge">
-    <img src="https://img.shields.io/travis/com/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
-  <a href="https://david-dm.org/marshmallow-insurance/smores-react" alt="dependencies-badge">
-    <img src="https://img.shields.io/david/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
-  <a href="https://www.codacy.com/app/Marshmallow/smores-react?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marshmallow-insurance/smores-react&amp;utm_campaign=Badge_Grade"><img src="https://img.shields.io/codacy/grade/e6e23095e1e64ca6bba6076b7589fa4a.svg?style=flat-square"/></a>
-  <a href="https://prettier.io/" alt="prettier-badge">
-    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@mrshmllw/smores-react">
+    <img alt="npm-version-badge" src="https://img.shields.io/npm/v/@mrshmllw/smores-react.svg?style=flat-square" /></a>
+  <a href="https://github.com/marshmallow-insurance/smores-react/blob/master/LICENSE">
+    <img alt="licence-badge" src="https://img.shields.io/github/license/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
+  <a href="https://travis-ci.com/marshmallow-insurance/smores-react">
+    <img alt="travis-build-badge" src="https://img.shields.io/travis/com/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
+  <a href="https://david-dm.org/marshmallow-insurance/smores-react">
+    <img alt="dependencies-badge" src="https://img.shields.io/david/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
+  <a href="https://snyk.io//test/github/marshmallow-insurance/smores-react?targetFile=package.json">
+    <img alt="snyk-badge" src="https://img.shields.io/snyk/vulnerabilities/github/marshmallow-insurance/smores-react?style=flat-square" /></a>
+  <a href="https://www.codacy.com/app/Marshmallow/smores-react?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marshmallow-insurance/smores-react&amp;utm_campaign=Badge_Grade">
+    <img  alt="codacy-badge" src="https://img.shields.io/codacy/grade/e6e23095e1e64ca6bba6076b7589fa4a.svg?style=flat-square"/></a>
+  <a href="https://prettier.io/">
+    <img alt="prettier-badge" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" /></a>
 </p>
 
 # Smores React
