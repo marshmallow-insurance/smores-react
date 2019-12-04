@@ -29,6 +29,25 @@ $ yarn add @mrshmllw/smores-react
 $ npm install @mrshmllw/smores-react
 ```
 
+## List of Components
+
+* [Box](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Box)
+* [Button](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Button)
+* [Card](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Card)
+* [CheckBox](https://github.com/marshmallow-insurance/smores-react/tree/master/src/CheckBox)
+* [Dropdown](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Dropdown) 
+* [Icon](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Icon)
+* [Loader](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Loader)
+* [NumberInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/NumberInput) 
+* [RadioButton](https://github.com/marshmallow-insurance/smores-react/tree/master/src/RadioButton)
+* [SearchInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/SearchInput)
+* [Tag](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Tag)
+* [Text](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Text)
+* [TextInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/TextInput)
+* [Textarea](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Textarea)
+* [Toggle](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Toggle)
+
+
 ## Usage
 
 ```js
