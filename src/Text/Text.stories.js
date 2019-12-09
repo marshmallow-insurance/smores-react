@@ -1,9 +1,9 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 
-import {text, number} from '@storybook/addon-knobs';
+import { text } from '@storybook/addon-knobs'
 
-import {Text} from './Text';
+import { Text } from './Text'
 
 storiesOf('Text', module)
   .addWithJSX('default', () => (
@@ -12,6 +12,7 @@ storiesOf('Text', module)
   .addWithJSX('tweaked', () => (
     <Text
       tag={text('Tag', 'h1')}
+      typo={text('Typo', 'base')}
       color={text('Color', 'pink5')}
       align={text('Text-align', 'left')}
       cursor={text('Cursor', 'auto')}
@@ -33,4 +34,4 @@ storiesOf('Text', module)
     <Text tag={text('Tag', 'label')} typo="label">
       The quick brown fox jumps over the lazy dog
     </Text>
-  ));
+  ))

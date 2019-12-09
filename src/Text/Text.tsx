@@ -46,12 +46,12 @@ export const Text: FC<Props> = ({
   </Container>
 )
 
-const Container = styled.p<IText>`
+const Container = styled.p<IText>(
+  ({ align, color, cursor, typo }) => css`
   /** PREDEFINED TYPOGRAPHY STYLES */
 
   /* Header Large */
-  ${p =>
-    p.typo === 'header-large' &&
+  ${typo === 'header-large' &&
     css`
       font-size: 24px;
       line-height: 31px;
@@ -64,8 +64,7 @@ const Container = styled.p<IText>`
     `}
 
   /* Header medium */
-  ${p =>
-    p.typo === 'header-medium' &&
+  ${typo === 'header-medium' &&
     css`
       font-size: 21px;
       line-height: 27px;
@@ -78,8 +77,7 @@ const Container = styled.p<IText>`
     `}
 
   /* Header small */
-  ${p =>
-    p.typo === 'header-small' &&
+  ${typo === 'header-small' &&
     css`
       font-size: 18px;
       line-height: 23px;
@@ -92,8 +90,7 @@ const Container = styled.p<IText>`
     `}
 
   /* Descriptor Heavy */
-  ${p =>
-    p.typo === 'desc-heavy' &&
+  ${typo === 'desc-heavy' &&
     css`
       font-size: 14px;
       line-height: 18px;
@@ -106,8 +103,7 @@ const Container = styled.p<IText>`
     `}
 
   /* Descriptor Medium */
-  ${p =>
-    p.typo === 'desc-medium' &&
+  ${typo === 'desc-medium' &&
     css`
       font-size: 14px;
       line-height: 18px;
@@ -120,8 +116,7 @@ const Container = styled.p<IText>`
     `}
 
   /* Descriptor Light */
-  ${p =>
-    p.typo === 'desc-light' &&
+  ${typo === 'desc-light' &&
     css`
       font-size: 14px;
       line-height: 18px;
@@ -134,8 +129,7 @@ const Container = styled.p<IText>`
     `}
 
   /* Descriptor Small */
-  ${p =>
-    p.typo === 'desc-small' &&
+  ${typo === 'desc-small' &&
     css`
       font-size: 12px;
       line-height: 16px;
@@ -148,8 +142,7 @@ const Container = styled.p<IText>`
     `}
 
   /* Base */
-  ${p =>
-    p.typo === 'base' &&
+  ${typo === 'base' &&
     css`
       font-size: 14px;
       line-height: 21px;
@@ -162,8 +155,7 @@ const Container = styled.p<IText>`
     `}
 
   /* Base Small */
-  ${p =>
-    p.typo === 'base-small' &&
+  ${typo === 'base-small' &&
     css`
       font-size: 12px;
       line-height: 18px;
@@ -175,9 +167,21 @@ const Container = styled.p<IText>`
       }
     `}
 
+  /* Base Extra Small */
+  ${typo === 'base-xsmall' &&
+    css`
+      font-size: 10px;
+      line-height: 16px;
+      font-weight: normal;
+
+      @media (min-width: 768px) {
+        font-size: 12px;
+        line-height: 19px;
+      }
+    `}
+
   /* Label */
-  ${p =>
-    p.typo === 'label' &&
+  ${typo === 'label' &&
     css`
       font-size: 8px;
       line-height: 9px;
@@ -193,8 +197,9 @@ const Container = styled.p<IText>`
 
   margin: 0;
   padding: 0;
-  color: ${p => theme.colors[p.color]};
-  text-align: ${p => p.align};
-  cursor: ${p => p.cursor};
+  color: ${theme.colors[color]};
+  text-align: ${align};
+  cursor: ${cursor};
   letter-spacing: 0.15px;
-`
+`,
+)
