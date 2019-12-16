@@ -3,8 +3,8 @@
 exports[`renders 1`] = `
 .c0 {
   font-size: 14px;
-  line-height: 21px;
-  font-weight: normal;
+  line-height: 23px;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   color: #112035;
@@ -19,7 +19,7 @@ exports[`renders 1`] = `
 @media (min-width:768px) {
   .c0 {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 26px;
   }
 }
 

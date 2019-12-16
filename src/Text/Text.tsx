@@ -55,7 +55,7 @@ const Container = styled.p<IText>(
     css`
       font-size: 24px;
       line-height: 31px;
-      font-weight: bold;
+      font-weight: 500;
 
       @media (min-width: 768px) {
         font-size: 42px;
@@ -68,7 +68,7 @@ const Container = styled.p<IText>(
     css`
       font-size: 21px;
       line-height: 27px;
-      font-weight: bold;
+      font-weight: 500;
 
       @media (min-width: 768px) {
         font-size: 32px;
@@ -81,7 +81,7 @@ const Container = styled.p<IText>(
     css`
       font-size: 18px;
       line-height: 23px;
-      font-weight: bold;
+      font-weight: 500;
 
       @media (min-width: 768px) {
         font-size: 21px;
@@ -93,12 +93,12 @@ const Container = styled.p<IText>(
   ${typo === 'desc-heavy' &&
     css`
       font-size: 14px;
-      line-height: 18px;
-      font-weight: bold;
+      line-height: 20px;
+      font-weight: 700;
 
       @media (min-width: 768px) {
         font-size: 16px;
-        line-height: 21px;
+        line-height: 23px;
       }
     `}
 
@@ -106,12 +106,12 @@ const Container = styled.p<IText>(
   ${typo === 'desc-medium' &&
     css`
       font-size: 14px;
-      line-height: 18px;
+      line-height: 20px;
       font-weight: 500;
 
       @media (min-width: 768px) {
         font-size: 16px;
-        line-height: 21px;
+        line-height: 23px;
       }
     `}
 
@@ -119,12 +119,12 @@ const Container = styled.p<IText>(
   ${typo === 'desc-light' &&
     css`
       font-size: 14px;
-      line-height: 18px;
-      font-weight: normal;
+      line-height: 20px;
+      font-weight: 400;
 
       @media (min-width: 768px) {
         font-size: 16px;
-        line-height: 21px;
+        line-height: 23px;
       }
     `}
 
@@ -133,7 +133,7 @@ const Container = styled.p<IText>(
     css`
       font-size: 12px;
       line-height: 16px;
-      font-weight: normal;
+      font-weight: 400;
 
       @media (min-width: 768px) {
         font-size: 14px;
@@ -145,12 +145,12 @@ const Container = styled.p<IText>(
   ${typo === 'base' &&
     css`
       font-size: 14px;
-      line-height: 21px;
-      font-weight: normal;
+      line-height: 23px;
+      font-weight: 400;
 
       @media (min-width: 768px) {
         font-size: 16px;
-        line-height: 24px;
+        line-height: 26px;
       }
     `}
 
@@ -158,12 +158,12 @@ const Container = styled.p<IText>(
   ${typo === 'base-small' &&
     css`
       font-size: 12px;
-      line-height: 18px;
-      font-weight: normal;
+      line-height: 20px;
+      font-weight: 400;
 
       @media (min-width: 768px) {
         font-size: 14px;
-        line-height: 21px;
+        line-height: 23px;
       }
     `}
 
@@ -172,7 +172,7 @@ const Container = styled.p<IText>(
     css`
       font-size: 10px;
       line-height: 16px;
-      font-weight: normal;
+      font-weight: 400;
 
       @media (min-width: 768px) {
         font-size: 12px;
@@ -185,13 +185,13 @@ const Container = styled.p<IText>(
     css`
       font-size: 8px;
       line-height: 9px;
-      font-weight: bold;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.75px;
 
       @media (min-width: 768px) {
         font-size: 10px;
-        line-height: 11px;
+        line-height: 12px;
       }
     `}
 

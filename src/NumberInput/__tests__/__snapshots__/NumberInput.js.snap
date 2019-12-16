@@ -4,7 +4,7 @@ exports[`renders - currency 1`] = `
 .c1 {
   font-size: 8px;
   line-height: 9px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   -webkit-letter-spacing: 0.75px;
   -moz-letter-spacing: 0.75px;
@@ -23,8 +23,8 @@ exports[`renders - currency 1`] = `
 
 .c3 {
   font-size: 14px;
-  line-height: 21px;
-  font-weight: normal;
+  line-height: 23px;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   color: #112035;
@@ -173,14 +173,14 @@ exports[`renders - currency 1`] = `
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
-    line-height: 11px;
+    line-height: 12px;
   }
 }
 
 @media (min-width:768px) {
   .c3 {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 26px;
   }
 }
 
@@ -269,7 +269,7 @@ exports[`renders - disabled 1`] = `
 .c1 {
   font-size: 8px;
   line-height: 9px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   -webkit-letter-spacing: 0.75px;
   -moz-letter-spacing: 0.75px;
@@ -357,7 +357,7 @@ exports[`renders - disabled 1`] = `
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
-    line-height: 11px;
+    line-height: 12px;
   }
 }
 
@@ -393,7 +393,7 @@ exports[`renders - error 1`] = `
 .c1 {
   font-size: 8px;
   line-height: 9px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   -webkit-letter-spacing: 0.75px;
   -moz-letter-spacing: 0.75px;
@@ -412,8 +412,8 @@ exports[`renders - error 1`] = `
 
 .c3 {
   font-size: 14px;
-  line-height: 21px;
-  font-weight: normal;
+  line-height: 23px;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   color: #112035;
@@ -569,14 +569,14 @@ exports[`renders - error 1`] = `
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
-    line-height: 11px;
+    line-height: 12px;
   }
 }
 
 @media (min-width:768px) {
   .c3 {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 26px;
   }
 }
 
@@ -670,7 +670,7 @@ exports[`renders - number 1`] = `
 .c1 {
   font-size: 8px;
   line-height: 9px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   -webkit-letter-spacing: 0.75px;
   -moz-letter-spacing: 0.75px;
@@ -763,7 +763,7 @@ exports[`renders - number 1`] = `
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
-    line-height: 11px;
+    line-height: 12px;
   }
 }
 
@@ -803,7 +803,7 @@ exports[`renders - tel 1`] = `
 .c1 {
   font-size: 8px;
   line-height: 9px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   -webkit-letter-spacing: 0.75px;
   -moz-letter-spacing: 0.75px;
@@ -822,8 +822,8 @@ exports[`renders - tel 1`] = `
 
 .c3 {
   font-size: 14px;
-  line-height: 21px;
-  font-weight: normal;
+  line-height: 23px;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   color: #112035;
@@ -912,14 +912,14 @@ exports[`renders - tel 1`] = `
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
-    line-height: 11px;
+    line-height: 12px;
   }
 }
 
 @media (min-width:768px) {
   .c3 {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 26px;
   }
 }
 
@@ -964,7 +964,7 @@ exports[`renders - with suffix 1`] = `
 .c1 {
   font-size: 8px;
   line-height: 9px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   -webkit-letter-spacing: 0.75px;
   -moz-letter-spacing: 0.75px;
@@ -983,8 +983,8 @@ exports[`renders - with suffix 1`] = `
 
 .c5 {
   font-size: 14px;
-  line-height: 21px;
-  font-weight: normal;
+  line-height: 23px;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   color: #112035;
@@ -1073,14 +1073,14 @@ exports[`renders - with suffix 1`] = `
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
-    line-height: 11px;
+    line-height: 12px;
   }
 }
 
 @media (min-width:768px) {
   .c5 {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 26px;
   }
 }
 
@@ -1125,7 +1125,7 @@ exports[`renders - with trailing icon 1`] = `
 .c1 {
   font-size: 8px;
   line-height: 9px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   -webkit-letter-spacing: 0.75px;
   -moz-letter-spacing: 0.75px;
@@ -1144,8 +1144,8 @@ exports[`renders - with trailing icon 1`] = `
 
 .c3 {
   font-size: 14px;
-  line-height: 21px;
-  font-weight: normal;
+  line-height: 23px;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   color: #112035;
@@ -1255,14 +1255,14 @@ exports[`renders - with trailing icon 1`] = `
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
-    line-height: 11px;
+    line-height: 12px;
   }
 }
 
 @media (min-width:768px) {
   .c3 {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 26px;
   }
 }
 
