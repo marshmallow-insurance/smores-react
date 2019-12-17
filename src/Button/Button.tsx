@@ -57,48 +57,49 @@ export const Button: FC<Props> = ({
   </Container>
 )
 
-const Container = styled.button<IButton>`
-  position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  padding: 18px 24px 14px;
-  outline: none;
-  cursor: pointer;
-  width: ${p => (p.block ? '100%' : 'auto')};
-  background-color: ${p => theme.colors[`${p.color}5`]};
-  color: ${theme.colors.white};
+const Container = styled.button<IButton>(
+  ({ block, color, inverted, outlined }) => css`
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 18px 16px 14px;
+    outline: none;
+    cursor: pointer;
+    width: ${block ? '100%' : 'auto'};
+    background-color: ${theme.colors[`${color}5`]};
+    color: ${theme.colors.white};
 
-  &:hover:not([disabled]) {
-    background-color: ${p => theme.colors[`${p.color}6`]};
-  }
-  &:active:not([disabled]) {
-    background-color: ${p => theme.colors[`${p.color}7`]};
-  }
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+    &:hover:not([disabled]) {
+      background-color: ${theme.colors[`${color}6`]};
+    }
+    &:active:not([disabled]) {
+      background-color: ${theme.colors[`${color}7`]};
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
 
-  ${p =>
-    (p.inverted || p.outlined) &&
-    css`
-      background-color: transparent;
-      border: 1px solid ${p.outlined ? theme.colors.grey4 : 'transparent'};
-      color: ${p.outlined ? theme.colors.blue7 : theme.colors[`${p.color}5`]};
+    ${(inverted || outlined) &&
+      css`
+        background-color: transparent;
+        border: 1px solid ${outlined ? theme.colors.grey4 : 'transparent'};
+        color: ${outlined ? theme.colors.blue7 : theme.colors[`${color}5`]};
 
-      &:hover:not([disabled]) {
-        background-color: ${theme.colors.bg2};
-      }
-      &:active:not([disabled]) {
-        background-color: ${theme.colors.bg3};
-      }
-    `};
+        &:hover:not([disabled]) {
+          background-color: ${theme.colors.bg2};
+        }
+        &:active:not([disabled]) {
+          background-color: ${theme.colors.bg3};
+        }
+      `};
 
-  @media (min-width: 768px) {
-    padding: 19px 24px 15px;
-    font-size: 16px;
-  }
-`
+    @media (min-width: 768px) {
+      padding: 19px 16px 15px;
+      font-size: 16px;
+    }
+  `,
+)
