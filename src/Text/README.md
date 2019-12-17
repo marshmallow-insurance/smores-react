@@ -25,11 +25,11 @@ const App = () => (
 
 | name | size mobile (px) | size desktop (px) | weight |
 |------|:-----------:|:------------:|-------------|
-| header-large | 24 | 42 | bold |
-| header-medium | 21 | 32 | bold |
-| header-small | 18 | 21 | bold |
+| header-large | 24 | 42 | medium |
+| header-medium | 21 | 32 | medium |
+| header-small | 18 | 21 | medium |
 | desc-heavy | 14 | 16 | bold |
-| desc-medium | 14 | 16 | 500 |
+| desc-medium | 14 | 16 | medium |
 | desc-light | 14 | 16 | normal |
 | desc-small | 12 | 14 | normal |
 | **base** | **14** | **16** | **normal** |
