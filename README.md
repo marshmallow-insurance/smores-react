@@ -40,6 +40,7 @@ $ npm install @mrshmllw/smores-react
 * [CheckBox](https://github.com/marshmallow-insurance/smores-react/tree/master/src/CheckBox)
 * [Dropdown](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Dropdown) 
 * [Icon](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Icon)
+* [LabelledText](https://github.com/marshmallow-insurance/smores-react/tree/master/src/LabelledText)
 * [Loader](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Loader)
 * [NumberInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/NumberInput) 
 * [RadioButton](https://github.com/marshmallow-insurance/smores-react/tree/master/src/RadioButton)
