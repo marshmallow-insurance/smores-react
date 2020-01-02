@@ -6,7 +6,7 @@ import { LabelledText } from '../LabelledText'
 
 test('renders', () => {
   const { container } = render(
-    <LabelledText label="Name">Alexander Kent-Braham</LabelledText>,
+    <LabelledText label="Name">Hideo Kojima</LabelledText>,
   )
   expect(container.firstChild).toMatchSnapshot()
 })
