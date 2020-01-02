@@ -1,10 +1,10 @@
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 import styled from 'styled-components'
 
 import { Text } from '../Text'
 
 type Props = {
-  children: any
+  children: ReactNode
   label: string
 }
 
@@ -13,6 +13,7 @@ export const LabelledText: FC<Props> = ({ label, children }) => (
     <Text tag="label" color="grey6" typo="label">
       {label}
     </Text>
+
     {children}
   </Container>
 )
