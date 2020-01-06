@@ -51,6 +51,28 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
 
+    {// MISC - CALENDAR
+    render === 'calendar' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        {/* tslint:disable-next-line:max-line-length */}
+        <path
+          fill={theme.colors[color]}
+          d="M25 6h-2V5a1 1 0 00-2 0v1H11V5a1 1 0 00-2 0v1H7C5.346 6 4 7.346 4 9v16c0 1.654 1.346 3 3 3h18c1.654 0 3-1.346 3-3V9c0-1.654-1.346-3-3-3zm1 19c0 .552-.449 1-1 1H7c-.552 0-1-.449-1-1V15h20v10zm0-12H6V9c0-.552.449-1 1-1h2v2a1 1 0 002 0V8h10v2a1 1 0 002 0V8h2c.552 0 1 .449 1 1v4zm-5.5 11c1.93 0 3.5-1.57 3.5-3.5S22.43 17 20.5 17 17 18.57 17 20.5s1.57 3.5 3.5 3.5zm0-5c.827 0 1.5.673 1.5 1.5s-.673 1.5-1.5 1.5-1.5-.673-1.5-1.5.673-1.5 1.5-1.5z"
+        />
+      </svg>
+    )}
+
+    {// FINANCE - CARD
+    render === 'card' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        {/* tslint:disable-next-line:max-line-length */}
+        <path
+          fill={theme.colors[color]}
+          d="M12 20.995c.553 0 1-.453 1-1.005a1 1 0 10-2 0V20c0 .552.447.995 1 .995zM25 7H7c-1.654 0-3 1.346-3 3v12c0 1.654 1.346 3 3 3h18c1.654 0 3-1.346 3-3V10c0-1.654-1.346-3-3-3zm1 15c0 .551-.448 1-1 1H7c-.552 0-1-.449-1-1v-7h20v7zm0-9H6v-3c0-.551.448-1 1-1h18c.552 0 1 .449 1 1v3zM9 20.995c.553 0 1-.453 1-1.005a1 1 0 10-2 0V20c0 .552.447.995 1 .995z"
+        />
+      </svg>
+    )}
+
     {// CONTACT - EMAIL
     render === 'contact-email' && (
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">

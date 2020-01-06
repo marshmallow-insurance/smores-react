@@ -23,6 +23,8 @@ const App = () => (
 
 * padlock
 * renewal
+* calendar
+* card
 * contact-email
 * upload-email
 * at
