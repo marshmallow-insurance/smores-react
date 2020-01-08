@@ -329,6 +329,18 @@ export const Icon: FC<Props> = ({
         />
       </svg>
     )}
+
+    {// INFO
+    render === 'info' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M16 4C9.383 4 4 9.383 4 16C4 22.617 9.383 28 16 28C22.617 28 28 22.617 28 16C28 9.383 22.617 4 16 4ZM15 10.99C15 10.437 15.447 9.99001 16 9.99001C16.553 9.99001 17 10.437 17 10.99C17 11.543 16.553 11.995 16 11.995C15.447 11.995 15 11.553 15 11V10.99ZM15 15C15 14.447 15.447 14 16 14C16.553 14 17 14.447 17 15V22C17 22.553 16.553 23 16 23C15.447 23 15 22.553 15 22V15ZM6 16C6 21.514 10.486 26 16 26C21.514 26 26 21.514 26 16C26 10.486 21.514 6 16 6C10.486 6 6 10.486 6 16Z"
+          fill={theme.colors[color]}
+        />
+      </svg>
+    )}
   </Container>
 )
 
@@ -337,7 +349,7 @@ const Container = styled.span<IIcon>`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: ${p => `${p.size}px`};
-  height: ${p => `${p.size}px`};
+  max-width: ${({ size }) => `${size}px`};
+  height: ${({ size }) => `${size}px`};
   transform: rotate(${p => p.rotate}deg);
 `
