@@ -19,6 +19,7 @@
     "format": "prettier --write \"**/*.+(js|tsx|md)\"",
     "prepublishOnly": "tsc",
     "publish-npm": "npm publish --access public",
+    "start": "start-storybook -p 6006 ",
     "storybook": "start-storybook -p 6006 ",
     "build-storybook": "build-storybook -c .storybook -s public",
     "deploy-storybook": "storybook-to-ghpages"

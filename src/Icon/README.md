@@ -44,3 +44,4 @@ const App = () => (
 * arrow
 * trash
 * warning
+* info
