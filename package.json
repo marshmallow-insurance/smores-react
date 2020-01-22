@@ -41,7 +41,7 @@
     "@types/react": "^16.9.2",
     "@types/styled-components": "^4.1.18",
     "awesome-typescript-loader": "^5.2.1",
-    "babel-jest": "24.9.0",
+    "babel-jest": "25.1.0",
     "babel-loader": "^8.0.6",
     "jest": "24.9.0",
     "jest-styled-components": "^6.3.3",
