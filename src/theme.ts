@@ -53,6 +53,17 @@ const colors = {
   red7: '#D82C2C',
 }
 
+const font = {
+  weight: {
+    normal: 400,
+    medium: 500,
+    bold: 700,
+  },
+  system:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+}
+
 export const theme = {
   colors,
+  font,
 }
