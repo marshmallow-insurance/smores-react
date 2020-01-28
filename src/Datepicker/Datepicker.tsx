@@ -31,7 +31,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   range = 14,
   onDateSelect,
 }) => {
-  const [activeDay, setActiveDay] = useState(new Date())
+  const [activeDay, setActiveDay] = useState()
   const [activeMonth, setActiveMonth] = useState(0)
   const [listDays, setListDays] = useState<Month[]>([
     {
