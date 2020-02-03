@@ -263,10 +263,11 @@ exports[`renders 1`] = `
       color="blue7"
       cursor="inherit"
     >
-      January
+      February
     </h4>
     <button
       class="c2"
+      disabled=""
     >
       <span
         class="c6"
@@ -307,128 +308,107 @@ exports[`renders 1`] = `
         02
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         03
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         04
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         05
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         06
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         07
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         08
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         09
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         10
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         11
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         12
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         13
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         14
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         15
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         16
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         17
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         18
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         19
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         20
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         21
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         22
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         23
       </li>
@@ -457,24 +437,16 @@ exports[`renders 1`] = `
         27
       </li>
       <li
-        class="c10 ListItem "
+        class="c9 ListItem "
+        disabled=""
       >
         28
       </li>
       <li
-        class="c10 ListItem "
+        class="c9 ListItem "
+        disabled=""
       >
         29
-      </li>
-      <li
-        class="c10 ListItem "
-      >
-        30
-      </li>
-      <li
-        class="c10 ListItem "
-      >
-        31
       </li>
     </ul>
   </div>
