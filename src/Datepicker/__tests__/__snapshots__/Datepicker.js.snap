@@ -314,17 +314,20 @@ exports[`renders 1`] = `
         03
       </li>
       <li
-        class="c10 ListItem "
+        class="c9 ListItem "
+        disabled=""
       >
         04
       </li>
       <li
-        class="c10 ListItem "
+        class="c9 ListItem "
+        disabled=""
       >
         05
       </li>
       <li
-        class="c10 ListItem "
+        class="c9 ListItem "
+        disabled=""
       >
         06
       </li>
@@ -419,20 +422,17 @@ exports[`renders 1`] = `
         24
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         25
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         26
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         27
       </li>
