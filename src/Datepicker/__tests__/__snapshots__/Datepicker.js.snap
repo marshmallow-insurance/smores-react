@@ -267,7 +267,6 @@ exports[`renders 1`] = `
     </h4>
     <button
       class="c2"
-      disabled=""
     >
       <span
         class="c6"
@@ -332,17 +331,20 @@ exports[`renders 1`] = `
         06
       </li>
       <li
-        class="c10 ListItem "
+        class="c9 ListItem "
+        disabled=""
       >
         07
       </li>
       <li
-        class="c10 ListItem "
+        class="c9 ListItem "
+        disabled=""
       >
         08
       </li>
       <li
-        class="c10 ListItem "
+        class="c9 ListItem "
+        disabled=""
       >
         09
       </li>
@@ -437,14 +439,12 @@ exports[`renders 1`] = `
         27
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         28
       </li>
       <li
-        class="c9 ListItem "
-        disabled=""
+        class="c10 ListItem "
       >
         29
       </li>
