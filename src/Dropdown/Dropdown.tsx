@@ -20,6 +20,8 @@ type Props = {
   label?: string
   /** Placeholder (initial state) */
   placeholder?: string
+  /** Default value */
+  defaultValue?: string
   /** Disabled flag */
   disabled?: boolean
   /** list of items for the dropdown list */
@@ -33,6 +35,7 @@ export const Dropdown: FC<Props> = ({
   className = '',
   label,
   placeholder,
+  defaultValue,
   disabled = false,
   list,
   onSelect,
@@ -59,7 +62,13 @@ export const Dropdown: FC<Props> = ({
       <Content key={key}>
         <Select
           id={id}
-          defaultValue={list.length === 1 ? String(list[0].value) : placeholder}
+          defaultValue={
+            list.length === 1
+              ? String(list[0].value)
+              : defaultValue
+              ? defaultValue
+              : placeholder
+          }
           disabled={disabled || list.length < 1}
           onChange={(e: React.FormEvent<HTMLSelectElement>) => {
             onSelect(e.currentTarget.value)

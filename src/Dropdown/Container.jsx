@@ -88,7 +88,7 @@ const time = [
 
 export const Container = () => {
   const [year, setYear] = useState('')
-  const [month, setMonth] = useState('')
+  const [month, setMonth] = useState('July')
   const [option, setOption] = useState('')
 
   return (
@@ -108,6 +108,7 @@ export const Container = () => {
           id="months"
           label="Months"
           placeholder="Select month"
+          defaultValue={month}
           list={months}
           onSelect={month => setMonth(month)}
         />
