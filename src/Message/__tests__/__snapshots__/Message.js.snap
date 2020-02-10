@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default renders correctly 1`] = `
+.c2 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #112035;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 32px;
+  height: 32px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c0 {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 2px solid #112035;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 span {
+  margin: 0 8px 0 -4px;
+}
+
+.c3 {
+  font-weight: 500;
+}
+
+@media (min-width:768px) {
+  .c2 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+    type="info"
+  >
+    <span
+      class="c1"
+      color="blue7"
+      rotate="0"
+      size="32"
+    >
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 32 32"
+        width="100%"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M16 4C9.383 4 4 9.383 4 16C4 22.617 9.383 28 16 28C22.617 28 28 22.617 28 16C28 9.383 22.617 4 16 4ZM15 10.99C15 10.437 15.447 9.99001 16 9.99001C16.553 9.99001 17 10.437 17 10.99C17 11.543 16.553 11.995 16 11.995C15.447 11.995 15 11.553 15 11V10.99ZM15 15C15 14.447 15.447 14 16 14C16.553 14 17 14.447 17 15V22C17 22.553 16.553 23 16 23C15.447 23 15 22.553 15 22V15ZM6 16C6 21.514 10.486 26 16 26C21.514 26 26 21.514 26 16C26 10.486 21.514 6 16 6C10.486 6 6 10.486 6 16Z"
+          fill="#112035"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+    <p
+      class="c2 c3"
+      color="blue7"
+      cursor="inherit"
+    >
+      This is an infomation message for the customer!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`info renders correctly 1`] = `
+.c2 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #112035;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 32px;
+  height: 32px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c0 {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 2px solid #112035;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 span {
+  margin: 0 8px 0 -4px;
+}
+
+.c3 {
+  font-weight: 500;
+}
+
+@media (min-width:768px) {
+  .c2 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+    type="info"
+  >
+    <span
+      class="c1"
+      color="blue7"
+      rotate="0"
+      size="32"
+    >
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 32 32"
+        width="100%"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M16 4C9.383 4 4 9.383 4 16C4 22.617 9.383 28 16 28C22.617 28 28 22.617 28 16C28 9.383 22.617 4 16 4ZM15 10.99C15 10.437 15.447 9.99001 16 9.99001C16.553 9.99001 17 10.437 17 10.99C17 11.543 16.553 11.995 16 11.995C15.447 11.995 15 11.553 15 11V10.99ZM15 15C15 14.447 15.447 14 16 14C16.553 14 17 14.447 17 15V22C17 22.553 16.553 23 16 23C15.447 23 15 22.553 15 22V15ZM6 16C6 21.514 10.486 26 16 26C21.514 26 26 21.514 26 16C26 10.486 21.514 6 16 6C10.486 6 6 10.486 6 16Z"
+          fill="#112035"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+    <p
+      class="c2 c3"
+      color="blue7"
+      cursor="inherit"
+    >
+      This is a infomational message for the customer!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`warning renders correctly 1`] = `
+.c2 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #D82C2C;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 32px;
+  height: 32px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c0 {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 2px solid #D82C2C;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 span {
+  margin: 0 8px 0 -4px;
+}
+
+.c3 {
+  font-weight: 500;
+}
+
+@media (min-width:768px) {
+  .c2 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+    type="warning"
+  >
+    <span
+      class="c1"
+      color="red7"
+      rotate="0"
+      size="32"
+    >
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 32 32"
+        width="100%"
+      >
+        <path
+          d="M16 11a1 1 0 00-1 1v6a1 1 0 102 0v-6a1 1 0 00-1-1zm0 10.005a1.003 1.003 0 000 2.005 1 1 0 001-1V22a.995.995 0 00-1-.995zm11.42-.503L19.78 7.186A4.31 4.31 0 0016 5a4.31 4.31 0 00-3.78 2.186L4.58 20.502a4.288 4.288 0 00.009 4.327A4.313 4.313 0 008.36 27h15.28a4.313 4.313 0 003.771-2.171 4.288 4.288 0 00.009-4.327zm-1.739 3.324A2.333 2.333 0 0123.64 25H8.36a2.331 2.331 0 01-2.041-1.174 2.306 2.306 0 01-.005-2.328l7.64-13.316A2.332 2.332 0 0116 7c.856 0 1.621.441 2.046 1.182l7.64 13.316c.418.73.417 1.6-.005 2.328z"
+          fill="#D82C2C"
+        />
+      </svg>
+    </span>
+    <p
+      class="c2 c3"
+      color="red7"
+      cursor="inherit"
+    >
+      This is a warning message for the customer!
+    </p>
+  </div>
+</div>
+`;
