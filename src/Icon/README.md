@@ -46,3 +46,4 @@ const App = () => (
 * warning
 * info
 * id
+* intercom
