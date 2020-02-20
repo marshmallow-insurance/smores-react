@@ -1,6 +1,6 @@
 {
   "name": "@mrshmllw/smores-react",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "main": "./dist/index.js",
   "description": "Collection of React components used by Marshmallow Technology",
   "keywords": [
