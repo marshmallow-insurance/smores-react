@@ -13,11 +13,11 @@ export const measure: MeasureFN = (props: MeasureProps) => {
   const { width, height, maxWidth, minWidth, minHeight, maxHeight } = props
 
   return `
-    ${width ? `width: ${width}` : ''}
-    ${maxWidth ? `max-width: ${maxWidth}` : ''}
-    ${minWidth ? `min-width: ${minWidth}` : ''}
-    ${height ? `height: ${height}` : ''}
-    ${minHeight ? `min-height: ${minHeight}` : ''}
-    ${maxHeight ? `max-height: ${maxHeight}` : ''}
+    ${width ? `width: ${width};` : ''}
+    ${maxWidth ? `max-width: ${maxWidth};` : ''}
+    ${minWidth ? `min-width: ${minWidth};` : ''}
+    ${height ? `height: ${height};` : ''}
+    ${minHeight ? `min-height: ${minHeight};` : ''}
+    ${maxHeight ? `max-height: ${maxHeight};` : ''}
   `
 }
