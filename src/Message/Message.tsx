@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { Icon } from '../Icon'
 import { theme } from '../theme'
@@ -21,22 +21,22 @@ interface IWrapper {
   type: 'info' | 'warning'
 }
 
-const Wrapper = styled.div<IWrapper>`
-  align-items: center;
-  border: 2px solid
-    ${({ type }) =>
-      type === 'warning' ? theme.colors.red7 : theme.colors.blue7};
-  box-sizing: border-box;
-  border-radius: 8px;
-  margin-bottom: 24px;
-  padding: 16px;
-  display: flex;
-  font-family: ${theme.font.system};
-  color: ${({ type }) =>
-    type === 'warning' ? theme.colors.red7 : theme.colors.blue7};
-  font-weight: ${theme.font.weight.medium};
+const Wrapper = styled.div<IWrapper>(
+  ({ type }) => css`
+    align-items: center;
+    border: 2px solid
+      ${type === 'warning' ? theme.colors.red7 : theme.colors.blue7};
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 16px;
+    display: flex;
+    font-family: ${theme.font.system};
+    color: ${type === 'warning' ? theme.colors.red7 : theme.colors.blue7};
+    font-weight: ${theme.font.weight.medium};
 
-  span {
-    margin: 0 8px 0 -4px;
-  }
-`
+    span {
+      margin: 0 8px 0 -4px;
+    }
+  `,
+)
