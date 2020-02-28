@@ -24,6 +24,7 @@ const App = () => (
 * arrow
 * at
 * calendar
+* camera
 * car
 * car-claim
 * card
