@@ -353,7 +353,7 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
 
-    {// Intercom
+    {// INTERCOM
     render === 'intercom' && (
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         <path
@@ -363,7 +363,7 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
 
-    {// Contact - Chat
+    {// CONTACT - CHAT
     render === 'chat' && (
       <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none">
         <path
@@ -385,7 +385,7 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
 
-    {// Interface - Camera
+    {// INTERFACE - CAMERA
     render === 'camera' && (
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         <path
