@@ -1,21 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`default renders correctly 1`] = `
-.c2 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  color: #112035;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -38,7 +23,6 @@ exports[`default renders correctly 1`] = `
 }
 
 .c0 {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -52,21 +36,13 @@ exports[`default renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: #112035;
+  font-weight: 500;
 }
 
 .c0 span {
   margin: 0 8px 0 -4px;
-}
-
-.c3 {
-  font-weight: 500;
-}
-
-@media (min-width:768px) {
-  .c2 {
-    font-size: 14px;
-    line-height: 18px;
-  }
 }
 
 <div>
@@ -94,33 +70,12 @@ exports[`default renders correctly 1`] = `
         />
       </svg>
     </span>
-    <p
-      class="c2 c3"
-      color="blue7"
-      cursor="inherit"
-    >
-      This is an infomation message for the customer!
-    </p>
+    This is an infomation message for the customer!
   </div>
 </div>
 `;
 
 exports[`info renders correctly 1`] = `
-.c2 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  color: #112035;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -143,7 +98,6 @@ exports[`info renders correctly 1`] = `
 }
 
 .c0 {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -157,21 +111,13 @@ exports[`info renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: #112035;
+  font-weight: 500;
 }
 
 .c0 span {
   margin: 0 8px 0 -4px;
-}
-
-.c3 {
-  font-weight: 500;
-}
-
-@media (min-width:768px) {
-  .c2 {
-    font-size: 14px;
-    line-height: 18px;
-  }
 }
 
 <div>
@@ -199,33 +145,12 @@ exports[`info renders correctly 1`] = `
         />
       </svg>
     </span>
-    <p
-      class="c2 c3"
-      color="blue7"
-      cursor="inherit"
-    >
-      This is a infomational message for the customer!
-    </p>
+    This is a infomational message for the customer!
   </div>
 </div>
 `;
 
 exports[`warning renders correctly 1`] = `
-.c2 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  color: #D82C2C;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -248,7 +173,6 @@ exports[`warning renders correctly 1`] = `
 }
 
 .c0 {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -262,21 +186,13 @@ exports[`warning renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: #D82C2C;
+  font-weight: 500;
 }
 
 .c0 span {
   margin: 0 8px 0 -4px;
-}
-
-.c3 {
-  font-weight: 500;
-}
-
-@media (min-width:768px) {
-  .c2 {
-    font-size: 14px;
-    line-height: 18px;
-  }
 }
 
 <div>
@@ -302,13 +218,7 @@ exports[`warning renders correctly 1`] = `
         />
       </svg>
     </span>
-    <p
-      class="c2 c3"
-      color="red7"
-      cursor="inherit"
-    >
-      This is a warning message for the customer!
-    </p>
+    This is a warning message for the customer!
   </div>
 </div>
 `;
