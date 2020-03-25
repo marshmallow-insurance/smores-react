@@ -7,12 +7,18 @@
       "jsx": true
     }
   },
+  "env": {
+    "jest/globals": true,
+    "node": true
+  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "eslint-config-prettier"
+    "eslint-config-prettier",
+    "plugin:jest/recommended",
+    "plugin:jest/style"
   ],
-  "plugins": ["react-hooks"],
+  "plugins": ["jest", "react-hooks"],
   "rules": {
     "strict": ["error", "never"],
     "react-hooks/rules-of-hooks": "error",

@@ -1,21 +1,38 @@
 import React, { FC, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
+import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { theme } from '../theme'
 
 export type MessageProps = {
   children: ReactNode
   type?: 'info' | 'warning'
+  alignIcon?: 'center' | 'flex-start' | 'flex-end'
 }
 
-export const Message: FC<MessageProps> = ({ children, type = 'info' }) => (
+export const Message: FC<MessageProps> = ({
+  children,
+  type = 'info',
+  alignIcon = 'center',
+}) => (
   <Wrapper type={type}>
-    <Icon render={type} color={type === 'warning' ? 'red7' : 'blue7'} />
+    <IconWrapper alignIcon={alignIcon}>
+      <Icon render={type} color={type === 'warning' ? 'red7' : 'blue7'} />
+    </IconWrapper>
 
     {children}
   </Wrapper>
 )
+
+interface IIconWrapper {
+  alignIcon?: 'center' | 'flex-start' | 'flex-end'
+}
+
+const IconWrapper = styled(Box)<IIconWrapper>`
+  flex-shrink: 0;
+  align-self: ${({ alignIcon }) => alignIcon};
+`
 
 interface IWrapper {
   type: 'info' | 'warning'
@@ -24,7 +41,7 @@ interface IWrapper {
 const Wrapper = styled.div<IWrapper>(
   ({ type }) => css`
     align-items: center;
-    border: 2px solid
+    border: 1px solid
       ${type === 'warning' ? theme.colors.red7 : theme.colors.blue7};
     box-sizing: border-box;
     border-radius: 8px;
@@ -36,7 +53,7 @@ const Wrapper = styled.div<IWrapper>(
     font-weight: ${theme.font.weight.medium};
 
     span {
-      margin: 0 8px 0 -4px;
+      margin: 0 16px 0 0;
     }
   `,
 )

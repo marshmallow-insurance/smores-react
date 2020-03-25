@@ -33,7 +33,7 @@ it('info renders correctly', () => {
   expect(container).toMatchSnapshot()
 })
 
-it('props render correctly', () => {
+it('icon prop render correctly', () => {
   const { container } = render(
     <Message type="warning">
       This is a warning message for the customer!
