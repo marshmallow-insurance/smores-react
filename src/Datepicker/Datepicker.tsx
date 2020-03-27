@@ -31,7 +31,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   range = 14,
   onDateSelect,
 }) => {
-  const [activeDay, setActiveDay] = useState()
+  const [activeDay, setActiveDay] = useState<Date>()
   const [activeMonth, setActiveMonth] = useState(0)
   const [listDays, setListDays] = useState<Month[]>([
     {
@@ -39,10 +39,6 @@ export const Datepicker: FC<DatepickerProps> = ({
       filteredDays: [],
     },
   ])
-
-  useLayoutEffect(() => {
-    combineAvailableDays()
-  }, [activeDay, activeMonth])
 
   const handleSelectEvent = (date: Date) => {
     setActiveDay(date)
@@ -62,7 +58,7 @@ export const Datepicker: FC<DatepickerProps> = ({
       filteredDays.push({
         date,
         label: format(date, 'dd'),
-        active: isSameDay(date, activeDay),
+        active: activeDay ? isSameDay(date, activeDay) : false,
         disabled:
           !isToday(date) &&
           !isWithinInterval(date, { start: startDay, end: endDay }),
@@ -97,6 +93,10 @@ export const Datepicker: FC<DatepickerProps> = ({
 
     setListDays(availableDays)
   }
+
+  useLayoutEffect(() => {
+    combineAvailableDays()
+  }, [activeDay, activeMonth])
 
   return (
     <Container id="datepicker">
