@@ -1,13 +1,7 @@
 import React, { FC } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
-
-interface IIcon {
-  size: number
-  color: string
-  rotate: number
-}
 
 type Props = {
   /** specify what Icon to render  */
@@ -18,6 +12,11 @@ type Props = {
   color?: string
   /** rotation degrees */
   rotate?: number
+  /** margins TOP-RIGHT-BOTTOM-LEFT */
+  mt?: string
+  mr?: string
+  mb?: string
+  ml?: string
 }
 
 export const Icon: FC<Props> = ({
@@ -25,8 +24,20 @@ export const Icon: FC<Props> = ({
   size = 32,
   color = 'blue7',
   rotate = 0,
+  mt = '0',
+  mr = '0',
+  mb = '0',
+  ml = '0',
 }) => (
-  <Container size={size} color={color} rotate={rotate}>
+  <Container
+    size={size}
+    color={color}
+    rotate={rotate}
+    mt={mt}
+    mr={mr}
+    mb={mb}
+    ml={ml}
+  >
     {// MISC - PADLOCK
     render === 'padlock' && (
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
@@ -200,6 +211,19 @@ export const Icon: FC<Props> = ({
         {/* tslint:disable-next-line:max-line-length */}
         <path
           d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
+          fill={theme.colors[color]}
+        />
+      </svg>
+    )}
+
+    {// INTERFACE - PLUS CIRCLE
+    render === 'plus-circle' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        {/* tslint:disable-next-line:max-line-length */}
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M24.49 7.51c-4.681-4.68-12.299-4.68-16.98 0-4.68 4.682-4.68 12.298 0 16.98A11.97 11.97 0 0016 28c3.073 0 6.148-1.17 8.488-3.51 4.682-4.682 4.682-12.3.001-16.98zM20.001 15h-3.001v-3.001a1 1 0 00-2.001 0v3.001h-3.002a1 1 0 000 2H15v3.002a1 1 0 002 0V17h3.002a1 1 0 000-2.001zM8.925 23.074c3.9 3.9 10.249 3.9 14.15 0 3.9-3.901 3.9-10.248 0-14.149A9.974 9.974 0 0016 6a9.977 9.977 0 00-7.075 2.924c-3.9 3.901-3.9 10.249 0 14.15z"
           fill={theme.colors[color]}
         />
       </svg>
@@ -397,12 +421,28 @@ export const Icon: FC<Props> = ({
   </Container>
 )
 
-const Container = styled.span<IIcon>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: ${({ size }) => `${size}px`};
-  height: ${({ size }) => `${size}px`};
-  transform: rotate(${p => p.rotate}deg);
-`
+interface IIcon {
+  size: number
+  color: string
+  rotate: number
+  mt: string
+  mr: string
+  mb: string
+  ml: string
+}
+
+const Container = styled.span<IIcon>(
+  ({ size, rotate, mt, mr, mb, ml }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: ${size}px;
+    height: ${size}px;
+    transform: rotate(${rotate}deg);
+    margin-top: ${mt};
+    margin-right: ${mr};
+    margin-bottom: ${mb};
+    margin-left: ${ml};
+  `,
+)

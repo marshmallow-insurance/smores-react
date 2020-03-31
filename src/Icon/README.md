@@ -39,6 +39,7 @@ const App = () => (
 * info
 * intercom
 * padlock
+* plus-circle
 * policy
 * profile
 * refund
