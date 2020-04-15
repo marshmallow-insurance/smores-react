@@ -51,6 +51,18 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
 
+    {// MISC - FILE
+    render === 'file' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <path
+          fill={theme.colors[color]}
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M18.454 4H9a3 3 0 00-3 3v18a3 3 0 003 3h14a3 3 0 003-3V12.624L18.454 4zm5.217 9H18V6.518L23.671 13zM8 25a1 1 0 001 1h14a1 1 0 001-1V15h-8V6H9a1 1 0 00-1 1v18z"
+        />
+      </svg>
+    )}
+
     {// MISC - RENEWAL
     render === 'renewal' && (
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">

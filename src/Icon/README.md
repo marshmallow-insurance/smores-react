@@ -35,6 +35,7 @@ const App = () => (
 * cross
 * doc-download
 * edit
+* file
 * id
 * info
 * intercom
