@@ -42,6 +42,7 @@ const App = () => (
 * padlock
 * plus-circle
 * policy
+* pound
 * profile
 * refund
 * renewal
