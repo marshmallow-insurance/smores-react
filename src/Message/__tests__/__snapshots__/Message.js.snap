@@ -41,6 +41,7 @@ exports[`default renders correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border: 1px solid #112035;
+  background-color: #ffffff;
   box-sizing: border-box;
   border-radius: 8px;
   margin-bottom: 24px;
@@ -133,6 +134,7 @@ exports[`info renders correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border: 1px solid #112035;
+  background-color: #ffffff;
   box-sizing: border-box;
   border-radius: 8px;
   margin-bottom: 24px;
@@ -225,6 +227,7 @@ exports[`warning renders correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border: 1px solid #D82C2C;
+  background-color: #ffffff;
   box-sizing: border-box;
   border-radius: 8px;
   margin-bottom: 24px;

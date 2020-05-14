@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { text } from '@storybook/addon-knobs'
+import { text, boolean } from '@storybook/addon-knobs'
 
 import { Message } from './Message'
 
@@ -9,10 +9,14 @@ storiesOf('Message', module)
     <Message>This is a general infomation message</Message>
   ))
   .addWithJSX('info', () => (
-    <Message type="info">This is an explicitly set infomation message</Message>
+    <Message type="info" inverted={boolean('inverted', false)}>
+      This is an explicitly set infomation message
+    </Message>
   ))
   .addWithJSX('warning', () => (
-    <Message type="warning">This is an explicitly set warning message</Message>
+    <Message type="warning" inverted={boolean('inverted', false)}>
+      This is an explicitly set warning message
+    </Message>
   ))
   .addWithJSX('icon placement', () => (
     <Message type="warning" alignIcon={text('alignIcon', 'flex-start')}>
