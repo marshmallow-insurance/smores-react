@@ -497,7 +497,7 @@ exports[`renders - error 1`] = `
 
 .c2 {
   border-bottom: 1px solid;
-  border-color: #D82C2C;
+  border-color: #B52525;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -512,17 +512,17 @@ exports[`renders - error 1`] = `
 }
 
 .c2:hover {
-  border-color: #D82C2C;
+  border-color: #B52525;
 }
 
 .c2:focus {
-  border-color: #D82C2C;
+  border-color: #B52525;
 }
 
 .c5 {
   font-family: 'Gordita',san-serif;
   border: none;
-  color: #D82C2C;
+  color: #B52525;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -554,7 +554,7 @@ exports[`renders - error 1`] = `
 
 .c10 {
   margin-top: 7px;
-  color: #D82C2C;
+  color: #B52525;
   font-size: 12px;
 }
 

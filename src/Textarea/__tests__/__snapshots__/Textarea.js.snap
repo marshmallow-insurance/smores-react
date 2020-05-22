@@ -217,21 +217,21 @@ exports[`renders with error 1`] = `
   resize: both;
   cursor: pointer;
   opacity: 1;
-  border-color: #D82C2C;
+  border-color: #B52525;
 }
 
 .c2:hover {
-  border-color: #D82C2C;
+  border-color: #B52525;
 }
 
 .c2:focus {
-  border-color: #D82C2C;
+  border-color: #B52525;
 }
 
 .c3 {
   margin-top: 7px;
   font-size: 12px;
-  color: #D82C2C;
+  color: #B52525;
 }
 
 @media (min-width:768px) {

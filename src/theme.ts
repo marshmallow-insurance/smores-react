@@ -48,13 +48,17 @@ const colors = {
   yellow5: '#FFD53C',
 
   // Orange
+  orange4: '#EA9C56',
   orange5: '#E67E22',
   orange6: '#9C5617',
 
   // Red
+  red2: '#FFDCDC',
   red4: '#D7796A',
   red5: '#E06161',
-  red7: '#D82C2C',
+  red6: '#D82C2C',
+  red7: '#B52525',
+  red8: '#801A1A',
 }
 
 const font = {

@@ -226,7 +226,7 @@ exports[`warning renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: 1px solid #D82C2C;
+  border: 1px solid #B52525;
   background-color: #ffffff;
   box-sizing: border-box;
   border-radius: 8px;
@@ -237,7 +237,7 @@ exports[`warning renders correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  color: #D82C2C;
+  color: #B52525;
   font-weight: 500;
 }
 
@@ -267,7 +267,7 @@ exports[`warning renders correctly 1`] = `
         >
           <path
             d="M16 11a1 1 0 00-1 1v6a1 1 0 102 0v-6a1 1 0 00-1-1zm0 10.005a1.003 1.003 0 000 2.005 1 1 0 001-1V22a.995.995 0 00-1-.995zm11.42-.503L19.78 7.186A4.31 4.31 0 0016 5a4.31 4.31 0 00-3.78 2.186L4.58 20.502a4.288 4.288 0 00.009 4.327A4.313 4.313 0 008.36 27h15.28a4.313 4.313 0 003.771-2.171 4.288 4.288 0 00.009-4.327zm-1.739 3.324A2.333 2.333 0 0123.64 25H8.36a2.331 2.331 0 01-2.041-1.174 2.306 2.306 0 01-.005-2.328l7.64-13.316A2.332 2.332 0 0116 7c.856 0 1.621.441 2.046 1.182l7.64 13.316c.418.73.417 1.6-.005 2.328z"
-            fill="#D82C2C"
+            fill="#B52525"
           />
         </svg>
       </span>
