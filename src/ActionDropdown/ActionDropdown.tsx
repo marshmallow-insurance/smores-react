@@ -86,7 +86,7 @@ const Label = styled.div<ISelected>(
     justify-content: space-between;
     text-align: center;
     border-radius: 8px;
-    padding: 16px;
+    padding: 16px 16px 14px;
     box-sizing: border-box;
     user-select: none;
   `,
