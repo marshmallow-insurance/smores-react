@@ -14,8 +14,8 @@ type Props = {
   className?: string
   /** label displayed above the dropdown  */
   label?: string
-  /** initial Auto */
-  defaultAction?: ActionListItem
+  /** value */
+  value: ActionListItem
   /** list of items for the dropdown list */
   list: ActionListItem[]
   /** onSelect handler */
@@ -26,17 +26,11 @@ export const ActionDropdown: FC<Props> = ({
   id,
   className = '',
   label,
-  defaultAction,
+  value,
   list,
   onSelect,
 }) => {
   const [open, setOpen] = useState(false)
-  const [selectedAction, setSelectedAction] = useState(defaultAction ?? list[0])
-
-  const setAction = (action: ActionListItem) => {
-    setSelectedAction(action)
-    onSelect(action)
-  }
 
   return (
     <Container
@@ -50,20 +44,17 @@ export const ActionDropdown: FC<Props> = ({
         </Text>
       )}
 
-      <Label
-        text={selectedAction.textColor ?? 'blue7'}
-        bg={selectedAction.bgColor ?? 'grey2'}
-      >
-        <SelectedOption>{selectedAction.label}</SelectedOption>
+      <Label text={value.textColor ?? 'blue7'} bg={value.bgColor ?? 'grey2'}>
+        <SelectedOption>{value.label}</SelectedOption>
         <Icon
           render="caret"
-          color={selectedAction.textColor ?? 'grey7'}
+          color={value.textColor ?? 'grey7'}
           size={24}
           rotate={open ? 180 : 0}
         />
       </Label>
       <OuterContainer open={open}>
-        <List options={list} selectOption={setAction} />
+        <List options={list} selectOption={onSelect} />
       </OuterContainer>
     </Container>
   )

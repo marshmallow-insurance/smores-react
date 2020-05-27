@@ -21,7 +21,11 @@ const actions = [
 
 test('renders', () => {
   const { container } = render(
-    <ActionDropdown list={actions} onSelect={(e) => console.log(e)} />,
+    <ActionDropdown
+      value={actions[0]}
+      list={actions}
+      onSelect={(e) => console.log(e)}
+    />,
   )
   expect(container.firstChild).toMatchSnapshot()
 })
