@@ -64,6 +64,7 @@ const BoxContainer = styled.label`
       background-color: ${theme.colors.blue7};
       border: solid 1px ${theme.colors.blue7};
     }
+
     &:checked ~ ${Checkmark}:after {
       display: block;
     }
