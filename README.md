@@ -34,14 +34,18 @@ $ npm install @mrshmllw/smores-react
 
 ## List of Components
 
+* [ActionDropdown](https://github.com/marshmallow-insurance/smores-react/tree/master/src/ActionDropdown)
 * [Box](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Box)
 * [Button](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Button)
 * [Card](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Card)
 * [CheckBox](https://github.com/marshmallow-insurance/smores-react/tree/master/src/CheckBox)
+* [CheckBoxGroup](https://github.com/marshmallow-insurance/smores-react/tree/master/src/CheckBoxGroup)
+* [Datepicker](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Datepicker) 
 * [Dropdown](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Dropdown) 
 * [Icon](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Icon)
 * [LabelledText](https://github.com/marshmallow-insurance/smores-react/tree/master/src/LabelledText)
 * [Loader](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Loader)
+* [Message](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Message)
 * [NumberInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/NumberInput) 
 * [RadioButton](https://github.com/marshmallow-insurance/smores-react/tree/master/src/RadioButton)
 * [SearchInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/SearchInput)
