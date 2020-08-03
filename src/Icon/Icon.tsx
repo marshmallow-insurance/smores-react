@@ -186,6 +186,16 @@ export const Icon: FC<Props> = ({
       </svg>
     )}
 
+    {// INTERFACE - DOWNLOAD
+    render === 'download' && (
+      <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+        <path
+          fill={theme.colors[color]}
+          d="M15.292 19.706A1.01 1.01 0 0016 20a1.01 1.01 0 00.708-.294l3.999-3.999a.999.999 0 10-1.414-1.414L17 16.586V7a1 1 0 10-2 0v9.586l-2.293-2.293a.999.999 0 10-1.414 1.414l3.999 3.999zM23 24H9a1 1 0 100 2h14a1 1 0 100-2z"
+        />
+      </svg>
+    )}
+
     {// INTERFACE - TICK
     render === 'tick' && (
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
@@ -451,7 +461,7 @@ export const Icon: FC<Props> = ({
     render === 'pound-filled-circle' && (
       <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
         <path
-          d="M28 16c0 6.627-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4s12 5.373 12 12z" 
+          d="M28 16c0 6.627-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4s12 5.373 12 12z"
           fill={theme.colors[color]}
         />
         <path
