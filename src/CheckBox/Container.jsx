@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {CheckBox} from './CheckBox';
+import React, { useState } from 'react'
+import { CheckBox } from './CheckBox'
 
 export const Container = () => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false)
 
   return (
     <CheckBox
@@ -12,5 +12,5 @@ export const Container = () => {
     >
       I agree
     </CheckBox>
-  );
-};
+  )
+}

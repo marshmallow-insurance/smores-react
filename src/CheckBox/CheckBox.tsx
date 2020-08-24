@@ -13,7 +13,7 @@ type Props = {
 
 export const CheckBox: FC<Props> = ({ id, checked, children, toggle }) => (
   <BoxContainer id={id}>
-    <Text tag="span" typo="base-small">
+    <Text tag="span" typo="base">
       {children}
     </Text>
 
@@ -27,19 +27,18 @@ const Checkmark = styled.span`
   left: 0;
   width: 24px;
   height: 24px;
-  background-color: ${theme.colors.grey2};
-  border: solid 1px ${theme.colors.grey6};
-  border-radius: 50%;
+  border: solid 1px ${theme.colors.blue5};
   box-sizing: border-box;
+  border-radius: 1px;
 
   &:after {
     content: '';
     position: absolute;
     display: none;
-    top: 4px;
-    left: 8px;
-    width: 4px;
-    height: 9px;
+    top: 3px;
+    left: 7px;
+    width: 5px;
+    height: 12px;
     border: solid white;
     border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
@@ -59,11 +58,13 @@ const BoxContainer = styled.label`
   input {
     position: absolute;
     opacity: 0;
+    cursor: pointer;
 
     &:checked ~ ${Checkmark} {
-      background-color: ${theme.colors.green5};
-      border: solid 1px ${theme.colors.green5};
+      background-color: ${theme.colors.blue7};
+      border: solid 1px ${theme.colors.blue7};
     }
+
     &:checked ~ ${Checkmark}:after {
       display: block;
     }
@@ -72,7 +73,7 @@ const BoxContainer = styled.label`
   &:hover {
     ${Checkmark} {
       background-color: ${theme.colors.grey3};
-      border: solid 1px ${theme.colors.grey7};
+      border: solid 1px ${theme.colors.blue5};
     }
   }
 
