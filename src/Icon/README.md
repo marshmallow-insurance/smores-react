@@ -33,14 +33,16 @@ const App = () => (
 * chat
 * contact-email
 * cross
-* download
 * doc-download
+* download
 * edit
 * file
 * id
 * info
 * intercom
+* minus
 * padlock
+* plus
 * plus-circle
 * policy
 * pound
