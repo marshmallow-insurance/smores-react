@@ -1,39 +1,39 @@
-import React from 'react';
-import {ThemeProvider} from 'styled-components';
-import {configure, setAddon, addDecorator} from '@storybook/react';
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import { configure, setAddon, addDecorator } from '@storybook/react'
 
-import JSXAddon from 'storybook-addon-jsx';
-import {withInfo} from '@storybook/addon-info';
-import {withKnobs} from '@storybook/addon-knobs/react';
-import {withA11y} from '@storybook/addon-a11y';
+import JSXAddon from 'storybook-addon-jsx'
+import { withInfo } from '@storybook/addon-info'
+import { withKnobs } from '@storybook/addon-knobs'
+import { withA11y } from '@storybook/addon-a11y'
 
-import {theme} from '../src/theme';
-import {GlobalStyle} from './global-styles';
+import { theme } from '../src/theme'
+import { GlobalStyle } from './global-styles'
 
-setAddon(JSXAddon);
+setAddon(JSXAddon)
 
 addDecorator(
   withInfo({
     header: false,
   }),
-);
-addDecorator(withKnobs);
-addDecorator(withA11y);
+)
+addDecorator(withKnobs)
+addDecorator(withA11y)
 
 // automatically import all files ending in *.stories.js
-const req = require.context('../src', true, /.stories.js$/);
+const req = require.context('../src', true, /.stories.js$/)
 
 function loadStories() {
-  req.keys().forEach(filename => req(filename));
+  req.keys().forEach((filename) => req(filename))
 }
 
-addDecorator(story => (
+addDecorator((story) => (
   <ThemeProvider theme={theme}>
     <div>
       <GlobalStyle />
       {story()}
     </div>
   </ThemeProvider>
-));
+))
 
-configure(loadStories, module);
+configure(loadStories, module)
