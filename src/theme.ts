@@ -43,6 +43,7 @@ const colors = {
 
   // Third-party brand colours
   stripe: '#6772E5',
+  premfina: '#F08422',
 
   // Yellow
   yellow5: '#FFD53C',
@@ -59,6 +60,9 @@ const colors = {
   red6: '#D82C2C',
   red7: '#B52525',
   red8: '#801A1A',
+
+  //Cyan
+  cyan5: '#168DA0',
 }
 
 const font = {
