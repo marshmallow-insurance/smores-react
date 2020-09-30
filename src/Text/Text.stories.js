@@ -1,37 +1,25 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
-
-import { text } from '@storybook/addon-knobs'
-
 import { Text } from './Text'
 
-storiesOf('Text', module)
-  .addWithJSX('default', () => (
-    <Text>The quick brown fox jumps over the lazy dog</Text>
-  ))
-  .addWithJSX('tweaked', () => (
-    <Text
-      tag={text('Tag', 'h1')}
-      typo={text('Typo', 'base')}
-      color={text('Color', 'pink5')}
-      align={text('Text-align', 'left')}
-      cursor={text('Cursor', 'auto')}
-    >
-      The quick brown fox jumps over the lazy dog
-    </Text>
-  ))
-  .addWithJSX('header-large', () => (
-    <Text tag={text('Tag', 'h2')} typo="header-large">
-      The quick brown fox jumps over the lazy dog
-    </Text>
-  ))
-  .addWithJSX('desc-medium', () => (
-    <Text tag={text('Tag', 'p')} typo="desc-medium">
-      The quick brown fox jumps over the lazy dog
-    </Text>
-  ))
-  .addWithJSX('label', () => (
-    <Text tag={text('Tag', 'label')} typo="label">
-      The quick brown fox jumps over the lazy dog
-    </Text>
-  ))
+export default {
+  title: 'Text',
+  component: Text,
+}
+
+const Template = (args) => (
+  <Text {...args}>The quick brown fox jumps over the lazy dog</Text>
+)
+
+export const Default = Template.bind({})
+
+Default.args = {
+  tag: 'p',
+}
+
+export const Label = Template.bind({})
+
+Label.args = {
+  tag: 'label',
+  typo: 'label',
+  color: 'blue7',
+}

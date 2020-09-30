@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { storiesOf } from '@storybook/react'
-
 import { CheckBoxGroup } from './CheckBoxGroup'
 
 const options = [
@@ -43,4 +41,11 @@ const Group = () => {
   return <CheckBoxGroup list={list} onToggle={toggleCheck} />
 }
 
-storiesOf('CheckBoxGroup', module).addWithJSX('default', () => <Group />)
+export default {
+  title: 'Checkbox Group',
+  component: CheckBoxGroup,
+}
+
+const Template = (args) => <Group {...args} />
+
+export const Default = Template.bind({})

@@ -1,19 +1,26 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { Box } from './Box'
 
-import {text, boolean} from '@storybook/addon-knobs';
+export default {
+  title: 'Box',
+  component: Box,
+}
 
-import {Box} from './Box';
+const Template = (args) => <Box {...args}>Some lovely content.</Box>
 
-storiesOf('Box', module).addWithJSX('default', () => (
-  <Box
-    flex={boolean('flex', true)}
-    direction={text('direction', 'row')}
-    justifyContent={text('justifyContent', 'space-between')}
-    alignItems={text('alignItems', 'center')}
-    m={text('margin', '16px')}
-    p={text('padding', '16px')}
-  >
-    Some lovely content.
-  </Box>
-));
+export const Default = Template.bind({})
+
+Default.args = {
+  flex: true,
+  direction: 'row',
+  justifyContent: 'flex-start',
+  alignItems: 'flex-starts',
+  m: '16px',
+  p: '16px',
+}
+
+Default.argTypes = {
+  theme: { table: { disable: true } },
+  as: { table: { disable: true } },
+  forwardedAs: { table: { disable: true } },
+}

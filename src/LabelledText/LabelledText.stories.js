@@ -1,8 +1,15 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
-
 import { LabelledText } from './LabelledText'
 
-storiesOf('LabelledText', module).addWithJSX('default', () => (
-  <LabelledText label="Name">Hideo Kojima</LabelledText>
-))
+export default {
+  title: 'LabelledText',
+  component: LabelledText,
+}
+
+const Template = (args) => <LabelledText {...args}>Hideo Kojima</LabelledText>
+
+export const Default = Template.bind({})
+
+Default.args = {
+  label: 'Name',
+}

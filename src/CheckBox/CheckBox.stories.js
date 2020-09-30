@@ -1,6 +1,12 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
+import { CheckBox } from './CheckBox'
+import { Container as CheckBoxContainer } from './Container'
 
-import { Container } from './Container'
+export default {
+  title: 'Checkbox',
+  component: CheckBox,
+}
 
-storiesOf('CheckBox', module).addWithJSX('default', () => <Container />)
+const Template = (args) => <CheckBoxContainer {...args} />
+
+export const Default = Template.bind({})

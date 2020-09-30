@@ -1,6 +1,16 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
+import { ActionDropdown } from './ActionDropdown'
+import { Container as ActionDropdownContainer } from './Container'
 
-import { Container } from './Container'
+export default {
+  title: 'Action Dropdown',
+  component: ActionDropdown,
+}
 
-storiesOf('ActionDropdown', module).addWithJSX('default', () => <Container />)
+const Template = (args) => <ActionDropdownContainer {...args} />
+
+export const Default = Template.bind({})
+
+Default.args = {
+  textColor: 'blue7',
+}

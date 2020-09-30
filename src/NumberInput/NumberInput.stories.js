@@ -1,89 +1,100 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { NumberInput } from './NumberInput'
+import { Container } from './Container'
 
-import {text, boolean, number} from '@storybook/addon-knobs';
+export default {
+  title: 'Number Input',
+  component: NumberInput,
+  argTypes: { onChange: { action: 'changed' } },
+}
 
-import {NumberInput} from './NumberInput';
-import {Container} from './Container.jsx';
+const Template = (args) => <NumberInput {...args} />
 
-storiesOf('NumberInput', module)
-  .addWithJSX('default', () => (
-    <NumberInput
-      id={text('id', 'total_amount')}
-      label={text('label', 'Number')}
-      name={text('name', 'numberInput')}
-      placeholder={text('placeholder', '0')}
-      onChange={str => {}}
-    />
-  ))
-  .addWithJSX('required', () => (
-    <NumberInput
-      id={text('id', 'total_amount')}
-      label={text('label', 'Number')}
-      name={text('name', 'numberInput')}
-      placeholder={text('placeholder', '0')}
-      required={boolean('required', true)}
-      onChange={str => {}}
-    />
-  ))
-  .addWithJSX('error', () => (
-    <NumberInput
-      id={text('id', 'total_amount')}
-      label={text('label', 'Number')}
-      name={text('name', 'numberInput')}
-      placeholder={text('placeholder', '0')}
-      required={boolean('required', true)}
-      onChange={str => {}}
-      error={boolean('error', true)}
-      errorMsg="Oh boy, something went wrong!"
-    />
-  ))
-  .addWithJSX('currency', () => (
-    <NumberInput
-      id={text('id', 'currency')}
-      label={text('label', 'Currency')}
-      name={text('name', 'currencyAmount')}
-      placeholder={text('placeholder', '0.00')}
-      prefix={text('prefix', '$')}
-      roundCurrency={boolean('roundCurrency', true)}
-      required={boolean('required', true)}
-      step={number('step', 10)}
-      onChange={str => {}}
-    />
-  ))
-  .addWithJSX('distance', () => (
-    <NumberInput
-      id={text('id', 'distance')}
-      label={text('label', 'Distance')}
-      name={text('name', 'distanceNumber')}
-      placeholder={text('placeholder', '0')}
-      suffix={text('suffix', 'km')}
-      required={boolean('required', true)}
-      step={number('step', 100)}
-      onChange={str => {}}
-    />
-  ))
-  .addWithJSX('telephone', () => (
-    <NumberInput
-      id={text('id', 'telephone')}
-      label={text('label', 'Telephone number')}
-      name={text('name', 'telephoneNumber')}
-      placeholder={text('placeholder', ' 7123 456789')}
-      prefix={text('prefix', '+44')}
-      required={boolean('required', true)}
-      onChange={str => {}}
-    />
-  ))
-  .addWithJSX('disabled', () => (
-    <NumberInput
-      id={text('id', 'telephone')}
-      label={text('label', 'Telephone number')}
-      name={text('name', 'telephoneNumber')}
-      placeholder={text('placeholder', ' 7123 456789')}
-      prefix={text('prefix', '+44')}
-      required={boolean('required', true)}
-      onChange={str => {}}
-      disabled={true}
-    />
-  ))
-  .addWithJSX('functional', () => <Container />);
+export const Default = Template.bind({})
+
+Default.args = {
+  id: 'total_amount',
+  label: 'Total Amount',
+  name: 'totalAmount',
+  placeholder: '0',
+  onChange: () => {},
+}
+
+export const Required = Template.bind({})
+
+Required.args = {
+  id: 'total_amount',
+  label: 'Total Amount',
+  name: 'totalAmount',
+  placeholder: '0',
+  onChange: () => {},
+  required: true,
+}
+
+export const Error = Template.bind({})
+
+Error.args = {
+  id: 'total_amount',
+  label: 'Total Amount',
+  name: 'totalAmount',
+  placeholder: '0',
+  onChange: () => {},
+  error: true,
+  errorMsg: 'Oh boy, something went wrong!',
+}
+
+export const Currency = Template.bind({})
+
+Currency.args = {
+  id: 'currency',
+  label: 'Currency',
+  name: 'currencyAmount',
+  placeholder: '0.00',
+  prefix: '$',
+  roundCurrency: true,
+  required: true,
+  onChange: () => {},
+  step: 10,
+}
+
+export const Distance = Template.bind({})
+
+Distance.args = {
+  id: 'distance',
+  label: 'Distance',
+  name: 'distanceNumber',
+  placeholder: '0',
+  suffix: 'km',
+  required: true,
+  onChange: () => {},
+  step: 100,
+}
+
+export const Telephone = Template.bind({})
+
+Telephone.args = {
+  id: 'telephone',
+  label: 'Telephone number',
+  name: 'telephoneNumber',
+  placeholder: '7123 456789',
+  prefix: '+44',
+  required: true,
+  onChange: () => {},
+}
+
+export const Disabled = Template.bind({})
+
+Disabled.args = {
+  id: 'telephone',
+  label: 'Telephone number',
+  name: 'telephoneNumber',
+  placeholder: '7123 456789',
+  prefix: '+44',
+  required: true,
+  onChange: () => {},
+  disabled: true,
+}
+
+const WorkingExampleTemplate = (args) => <Container {...args} />
+
+export const WorkingExample = WorkingExampleTemplate.bind({})

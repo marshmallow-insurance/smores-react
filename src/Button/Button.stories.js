@@ -1,23 +1,39 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { Button } from './Button'
 
-import {text} from '@storybook/addon-knobs';
+export default {
+  title: 'Button',
+  component: Button,
+  argTypes: { handleClick: { action: 'clicked' } },
+}
 
-import {Button} from './Button';
+const Template = (args) => <Button {...args}>Get started</Button>
 
-storiesOf('Button', module)
-  .addWithJSX('default', () => <Button color="blue">Me Button</Button>)
-  .addWithJSX('coloured', () => (
-    <Button color={text('Color', 'green')}>Coloured Button</Button>
-  ))
-  .addWithJSX('inverted', () => <Button inverted>Me Button</Button>)
-  .addWithJSX('outlined', () => <Button outlined>Outlined</Button>)
-  .addWithJSX('disabled', () => (
-    <Button color={text('Color', 'blue')} disabled>
-      Me Button
-    </Button>
-  ))
-  .addWithJSX('block', () => <Button block>Me Button</Button>)
-  .addWithJSX('clickable', () => (
-    <Button handleSubmit={() => console.log('clicked')}>Click me</Button>
-  ));
+export const Default = Template.bind({})
+
+Default.args = {
+  color: 'blue',
+}
+
+export const Coloured = Template.bind({})
+
+Coloured.args = {
+  color: 'green',
+}
+
+export const Inverted = Template.bind({})
+
+Inverted.args = {
+  inverted: true,
+}
+export const Outlined = Template.bind({})
+
+Outlined.args = {
+  outlined: true,
+}
+
+export const Block = Template.bind({})
+
+Block.args = {
+  block: true,
+}
