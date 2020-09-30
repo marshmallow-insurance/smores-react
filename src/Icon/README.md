@@ -23,6 +23,7 @@ const App = () => (
 
 * arrow
 * at
+* burger
 * calendar
 * camera
 * car
