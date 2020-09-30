@@ -24,7 +24,7 @@
     "test:watch": "jest --watch --silent",
     "test": "jest --silent",
     "snyk-protect": "snyk protect",
-    "prepare": "yarn run snyk-protect"
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
