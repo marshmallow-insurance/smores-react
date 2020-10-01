@@ -1,7 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { text, boolean } from '@storybook/addon-knobs'
-
 import { Dropdown } from './Dropdown'
 import { Container } from './Container'
 
@@ -36,50 +33,58 @@ const days = [
   },
 ]
 
-storiesOf('Dropdown', module)
-  .addWithJSX('default', () => (
-    <Dropdown
-      id="days"
-      placeholder={text('Placeholder', 'Select Day')}
-      list={days}
-      onSelect={e => console.log(e)}
-    />
-  ))
-  .addWithJSX('with Label', () => (
-    <Dropdown
-      id="days"
-      label="Day"
-      placeholder="Select Day"
-      list={days}
-      onSelect={e => console.log(e)}
-    />
-  ))
-  .addWithJSX('disabled', () => (
-    <Dropdown
-      id="days"
-      label="Day"
-      disabled={boolean('disabled', true)}
-      placeholder="Select Day"
-      list={days}
-      onSelect={e => console.log(e)}
-    />
-  ))
-  .addWithJSX('single list item', () => (
-    <Dropdown
-      id="days"
-      label="Day"
-      placeholder="Select Day"
-      list={days.slice(0, 1)}
-      onSelect={e => console.log(e)}
-    />
-  ))
-  .addWithJSX('empty list', () => (
-    <Dropdown
-      id="days"
-      label="Day"
-      placeholder="Select Day"
-      list={[]}
-      onSelect={e => console.log(e)}
-    />
-  ))
-  .addWithJSX('functional', () => <Container />)
+export default {
+  title: 'Dropdown',
+  component: Dropdown,
+  argTypes: { onSelect: { action: 'selected' } },
+}
+
+const Template = (args) => <Dropdown {...args} />
+
+export const Default = Template.bind({})
+
+Default.args = {
+  id: 'days',
+  list: days,
+  placeholder: 'Select Day',
+}
+
+export const WithLabel = Template.bind({})
+
+WithLabel.args = {
+  id: 'days',
+  list: days,
+  placeholder: 'Select Day',
+  label: 'Day',
+}
+
+export const Disabled = Template.bind({})
+
+Disabled.args = {
+  id: 'days',
+  list: days,
+  placeholder: 'Select Day',
+  disabled: true,
+}
+
+export const SingleListItem = Template.bind({})
+
+SingleListItem.args = {
+  id: 'days',
+  list: days.slice(0, 1),
+  placeholder: 'Select Day',
+}
+
+export const EmptyList = Template.bind({})
+
+EmptyList.args = {
+  id: 'days',
+  list: [],
+  placeholder: 'Select Day',
+}
+
+const DateSelectorExampleTemplate = (args) => <Container {...args} />
+
+export const DateSelectorExample = DateSelectorExampleTemplate.bind({})
+
+DateSelectorExample.args = {}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Box } from '../Box'
 import { ActionDropdown } from './ActionDropdown'
+import { Text } from '../Text'
 
 const actions = [
   {
@@ -39,7 +40,7 @@ export const Container = () => {
   const [selectedAction, setSelectedAction] = useState(actions[0])
 
   return (
-    <Box flex>
+    <Box flex alignItems="center">
       <ActionDropdown
         id="statusActions"
         list={actions}
@@ -50,7 +51,9 @@ export const Container = () => {
       <Box mr="16px" />
 
       <Box>
-        <p>{selectedAction.label}</p>
+        <Text tag="p" typo="base-small">
+          {selectedAction.label}
+        </Text>
       </Box>
     </Box>
   )

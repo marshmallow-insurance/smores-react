@@ -1,8 +1,12 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
-
 import { Datepicker } from './Datepicker'
 
-storiesOf('Datepicker', module).addWithJSX('default', () => (
-  <Datepicker onDateSelect={() => {}} />
-))
+export default {
+  title: 'Datepicker',
+  component: Datepicker,
+  argTypes: { onDateSelect: { action: 'date selected' } },
+}
+
+const Template = (args) => <Datepicker {...args} />
+
+export const Default = Template.bind({})

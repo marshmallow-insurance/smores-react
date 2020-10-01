@@ -1,28 +1,35 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { RadioButton } from './RadioButton'
+import { Container } from './Container'
 
-import {boolean} from '@storybook/addon-knobs';
+export default {
+  title: 'Radio Button',
+  component: RadioButton,
+  argTypes: { onChange: { action: 'clicked' } },
+}
 
-import {RadioButton} from './RadioButton';
-import {Container} from './Container';
+const Template = (args) => <RadioButton {...args} />
 
-storiesOf('RadioButton', module)
-  .addWithJSX('default', () => (
-    <RadioButton
-      id="radioButton"
-      label="What a lovely label"
-      value="radioButton"
-      onChange={str => {}}
-      checked={boolean('checked', false)}
-    />
-  ))
-  .addWithJSX('checked', () => (
-    <RadioButton
-      id="radioButton"
-      label="What a lovely label"
-      value="radioButton"
-      onChange={str => {}}
-      checked={boolean('checked', true)}
-    />
-  ))
-  .addWithJSX('functional', () => <Container />);
+export const Default = Template.bind({})
+
+Default.args = {
+  id: 'radioButton',
+  label: 'What a lovely label',
+  value: 'radioButton',
+  onChange: () => {},
+  checked: false,
+}
+
+export const Checked = Template.bind({})
+
+Checked.args = {
+  id: 'radioButton',
+  label: 'What a lovely label',
+  value: 'radioButton',
+  onChange: () => {},
+  checked: true,
+}
+
+const ContainerTemplate = (args) => <Container {...args} />
+
+export const WorkingExample = ContainerTemplate.bind({})

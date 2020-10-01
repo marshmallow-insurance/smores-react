@@ -1,6 +1,12 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { Toggle } from './Toggle'
+import { Container } from './Container'
 
-import {Container} from './Container.jsx';
+export default {
+  title: 'Toggle',
+  component: Toggle,
+}
 
-storiesOf('Toggle', module).addWithJSX('default', () => <Container />);
+const Template = (args) => <Container {...args} />
+
+export const Default = Template.bind({})

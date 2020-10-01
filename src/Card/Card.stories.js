@@ -1,42 +1,41 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { Card } from '../Card'
+import { Text } from '../Text'
 
-import {text, number, boolean} from '@storybook/addon-knobs';
+export default {
+  title: 'Card',
+  component: Card,
+}
 
-import {Card} from '../Card';
-import {Text} from '../Text';
+const Template = (args) => (
+  <Card {...args}>
+    <Text tag="h1">Card with default padding</Text>
+  </Card>
+)
 
-storiesOf('Card', module)
-  .addWithJSX('default', () => (
-    <Card>
-      <Text tag="h1">Default padding</Text>
-    </Card>
-  ))
-  .addWithJSX('max width', () => (
-    <>
-      <Card>
-        <Text tag="h3">Very very very very long card without max width</Text>
-      </Card>
-      <Card maxWidth={text('Max Width', '250px')}>
-        <Text tag="h3">Very very very very long card with max width</Text>
-      </Card>
-    </>
-  ))
-  .addWithJSX('narrow/wide padding', () => (
-    <Card narrow={boolean('Narrow', false)} wide={boolean('Wide', true)}>
-      <Text tag="h3">Narrow or Wide padding</Text>
-    </Card>
-  ))
-  .addWithJSX('margins', () => (
-    <>
-      <Text tag="h3">Before margin</Text>
-      <Card
-        className="container"
-        marginX={number('Margin X', '50px')}
-        marginY={number('Margin Y', '30px')}
-      >
-        <Text tag="h3">Card with margin</Text>
-      </Card>
-      <Text tag="h3">After margin</Text>
-    </>
-  ));
+export const Default = Template.bind({})
+
+export const MaxWidth = Template.bind({})
+
+MaxWidth.args = {
+  maxWidth: '250px',
+}
+
+export const NarrowPadding = Template.bind({})
+
+NarrowPadding.args = {
+  narrow: true,
+}
+
+export const WidePadding = Template.bind({})
+
+WidePadding.args = {
+  wide: true,
+}
+
+export const Margins = Template.bind({})
+
+Margins.args = {
+  marginX: '50px',
+  marginY: '30px',
+}

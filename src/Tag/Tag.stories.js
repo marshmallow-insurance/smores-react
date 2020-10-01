@@ -1,15 +1,24 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
-import {text} from '@storybook/addon-knobs';
+import React from 'react'
+import { Tag } from './Tag'
 
-import {Tag} from './Tag';
+export default {
+  title: 'Tag',
+  component: Tag,
+}
 
-storiesOf('Tag', module).addWithJSX('default', () => (
-  <Tag
-    label={text('Label', 'Covered')}
-    bgColor={text('Background color', 'green5')}
-    borderColor={text('Border color', 'green7')}
-    color={text('Color', 'white')}
-    className={text('Class name', '')}
-  />
-));
+const Template = (args) => <Tag {...args} />
+
+export const Default = Template.bind({})
+
+Default.args = {
+  label: 'This is a tag',
+  bgColor: 'green5',
+  borderColor: 'green7',
+  color: 'white',
+}
+
+Default.argTypes = {
+  theme: { table: { disable: true } },
+  as: { table: { disable: true } },
+  forwardedAs: { table: { disable: true } },
+}

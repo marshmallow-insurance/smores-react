@@ -1,46 +1,51 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
-import {text, boolean} from '@storybook/addon-knobs';
+import React from 'react'
+import { Container } from './Container'
+import { Textarea } from './Textarea'
 
-import {Container} from './Container';
-import {Textarea} from './Textarea';
+export default {
+  title: 'Textarea',
+  component: Textarea,
+}
 
-storiesOf('Textarea', module)
-  .addWithJSX('default', () => (
-    <Textarea
-      id="textarea_id"
-      label={text('label', 'Textarea label')}
-      value={text('value', '')}
-      onChange={() => {}}
-      disabled={boolean('disabled', false)}
-      placeholder="Here is some placeholder text."
-    />
-  ))
-  .addWithJSX('disabled', () => (
-    <Textarea
-      id="textarea_id"
-      label={text('label', 'Textarea label')}
-      value={text('value', '')}
-      onChange={() => {}}
-      resize="none"
-      disabled={boolean('disabled', true)}
-      placeholder="Here is some placeholder text."
-    />
-  ))
-  .addWithJSX('error', () => (
-    <Textarea
-      id="textarea_id"
-      label={text('label', 'Textarea label')}
-      value={text('value', '')}
-      onChange={() => {}}
-      resize="both"
-      disabled={boolean('disabled', false)}
-      error={boolean('error', true)}
-      errorMsg={text(
-        'error message',
-        'Something really quite terrible has gone wrong here!',
-      )}
-      placeholder={text('placeholder', 'Some lovely placeholder text!')}
-    />
-  ))
-  .addWithJSX('functional', () => <Container />);
+const Template = (args) => <Textarea {...args} />
+
+export const Default = Template.bind({})
+
+Default.args = {
+  id: 'textarea_id',
+  label: 'Textarea label',
+  value: '',
+  onChange: () => {},
+  disabled: false,
+  placeholder: 'Here is some placeholder text.',
+}
+
+export const Disabled = Template.bind({})
+
+Disabled.args = {
+  id: 'textarea_id',
+  label: 'Textarea label',
+  value: '',
+  onChange: () => {},
+  resize: 'none',
+  disabled: true,
+  placeholder: 'Here is some placeholder text.',
+}
+
+export const Error = Template.bind({})
+
+Error.args = {
+  id: 'textarea_id',
+  label: 'Textarea label',
+  value: '',
+  onChange: () => {},
+  disabled: false,
+  placeholder: 'Here is some placeholder text.',
+  resize: 'none',
+  error: true,
+  errorMsg: 'Something really quite terrible has gone wrong here!',
+}
+
+const WorkingExampleTemplate = (args) => <Container {...args} />
+
+export const WorkingExample = WorkingExampleTemplate.bind({})

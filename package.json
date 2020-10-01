@@ -32,19 +32,16 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
-    "@storybook/addon-a11y": "^6.0.21",
-    "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-knobs": "^6.0.21",
-    "@storybook/addons": "^6.0.21",
-    "@storybook/react": "^6.0.21",
+    "@storybook/addon-essentials": "^6.0.22",
+    "@storybook/react": "^6.0.22",
     "@storybook/storybook-deployer": "^2.8.6",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
     "@types/jest": "^26.0.14",
     "@types/react": "^16.9.49",
     "@types/styled-components": "^5.1.3",
-    "@typescript-eslint/eslint-plugin": "^4.2.0",
-    "@typescript-eslint/parser": "^4.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.3.0",
+    "@typescript-eslint/parser": "^4.3.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
@@ -59,16 +56,15 @@
     "jest-styled-components": "^7.0.3",
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
-    "react-docgen-typescript-loader": "^3.7.2",
-    "storybook-addon-jsx": "^7.3.4"
+    "react-docgen-typescript-loader": "^3.7.2"
   },
   "dependencies": {
     "date-fns": "^2.16.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "snyk": "^1.404.0",
     "styled-components": "^5.2.0",
-    "typescript": "^4.0.3",
-    "snyk": "^1.399.1"
+    "typescript": "^4.0.3"
   },
   "repository": {
     "type": "git",

@@ -1,17 +1,22 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react';
+import React from 'react'
+import { Loader } from '../Loader'
 
-import {number, text} from '@storybook/addon-knobs';
+export default {
+  title: 'Loader',
+  component: Loader,
+}
 
-import {Loader} from '../Loader';
+const Template = (args) => <Loader {...args} />
 
-storiesOf('Loader', module)
-  .addWithJSX('default', () => (
-    <Loader height={`${number('height', '32')}px`} />
-  ))
-  .addWithJSX('big and blue', () => (
-    <Loader
-      height={`${number('height', '54')}px`}
-      color={text('color', 'blue6')}
-    />
-  ));
+export const Default = Template.bind({})
+
+Default.args = {
+  height: 32,
+}
+
+export const BigAndBlue = Template.bind({})
+
+BigAndBlue.args = {
+  height: 54,
+  color: 'blue6',
+}
