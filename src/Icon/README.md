@@ -23,6 +23,7 @@ const App = () => (
 
 * arrow
 * at
+* briefcase
 * burger
 * calendar
 * camera
@@ -38,19 +39,24 @@ const App = () => (
 * download
 * edit
 * file
+* house
 * id
 * info
 * intercom
+* key
 * minus
 * padlock
 * plus
 * plus-circle
 * policy
 * pound
+* pound-filled-circle
+* pound-outline
 * profile
 * refund
 * renewal
 * search
+* shield
 * tick
 * trash
 * up-down
