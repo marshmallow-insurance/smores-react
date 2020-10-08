@@ -46,7 +46,9 @@ const colors = {
   premfina: '#F08422',
 
   // Yellow
+  yellow2: '#FFEFB5',
   yellow5: '#FFD53C',
+  yellow7: '#E1A717',
 
   // Orange
   orange4: '#EA9C56',
@@ -63,6 +65,7 @@ const colors = {
 
   //Cyan
   cyan5: '#168DA0',
+  cyan8: '#09454F',
 }
 
 const font = {
