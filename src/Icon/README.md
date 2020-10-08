@@ -23,6 +23,7 @@ const App = () => (
 
 * arrow
 * at
+* briefcase
 * burger
 * calendar
 * camera
@@ -44,7 +45,6 @@ const App = () => (
 * intercom
 * key
 * minus
-* mlp
 * padlock
 * plus
 * plus-circle
