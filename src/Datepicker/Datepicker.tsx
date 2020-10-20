@@ -110,7 +110,7 @@ export const Datepicker: FC<DatepickerProps> = ({
           disabled={listDays[activeMonth].monthName === listDays[0].monthName}
           onClick={() => setActiveMonth(activeMonth - 1)}
         >
-          <Icon render="caret" color="white" size={24} rotate={90} />
+          <Caret render="caret" color="white" size={24} rotate={90} />
         </Circle>
 
         <Heading tag="h4" typo="desc-base">
@@ -124,7 +124,7 @@ export const Datepicker: FC<DatepickerProps> = ({
           }
           onClick={() => setActiveMonth(activeMonth + 1)}
         >
-          <Icon render="caret" color="white" size={24} rotate={-90} />
+          <Caret render="caret" color="white" size={24} rotate={-90} />
         </Circle>
       </Header>
 
@@ -166,14 +166,18 @@ const Heading = styled(Text)`
   font-weight: ${theme.font.weight.medium};
 `
 
+const Caret = styled(Icon)`
+  position: relative;
+  top: 0;
+  left: 4px;
+`
+
 const Circle = styled.button`
   background-color: ${theme.colors.blue7};
   height: 32px;
   width: 32px;
   border-radius: 50%;
   border: none;
-  display: flex;
-  justify-content: center;
   padding: 0;
   cursor: pointer;
 
