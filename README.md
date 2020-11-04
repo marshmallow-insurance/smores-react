@@ -13,7 +13,6 @@
     <img alt="dependencies-badge" src="https://img.shields.io/david/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
   <a href="https://snyk.io//test/github/marshmallow-insurance/smores-react?targetFile=package.json">
     <img alt="snyk-badge" src="https://img.shields.io/snyk/vulnerabilities/github/marshmallow-insurance/smores-react?style=flat-square" /></a>
-  <a href="https://www.codacy.com/app/Marshmallow/smores-react?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marshmallow-insurance/smores-react&amp;utm_campaign=Badge_Grade">
     <img  alt="codacy-badge" src="https://img.shields.io/codacy/grade/e6e23095e1e64ca6bba6076b7589fa4a.svg?style=flat-square"/></a>
   <a href="https://prettier.io/">
     <img alt="prettier-badge" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" /></a>
@@ -40,13 +39,13 @@ $ npm install @mrshmllw/smores-react
 * [Card](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Card)
 * [CheckBox](https://github.com/marshmallow-insurance/smores-react/tree/master/src/CheckBox)
 * [CheckBoxGroup](https://github.com/marshmallow-insurance/smores-react/tree/master/src/CheckBoxGroup)
-* [Datepicker](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Datepicker) 
-* [Dropdown](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Dropdown) 
+* [Datepicker](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Datepicker)
+* [Dropdown](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Dropdown)
 * [Icon](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Icon)
 * [LabelledText](https://github.com/marshmallow-insurance/smores-react/tree/master/src/LabelledText)
 * [Loader](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Loader)
 * [Message](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Message)
-* [NumberInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/NumberInput) 
+* [NumberInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/NumberInput)
 * [RadioButton](https://github.com/marshmallow-insurance/smores-react/tree/master/src/RadioButton)
 * [SearchInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/SearchInput)
 * [Tag](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Tag)
@@ -54,7 +53,6 @@ $ npm install @mrshmllw/smores-react
 * [TextInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/TextInput)
 * [Textarea](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Textarea)
 * [Toggle](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Toggle)
-
 
 ## Usage
 
@@ -65,7 +63,7 @@ import {Text, Button} from '@mrshmllw/smores-react';
 const App = () => (
   <>
     <Text>Hey you</Text>
-    <Button 
+    <Button
       color="green"
       onClick={() => console.log('thanks for clicking :)')}
     >
