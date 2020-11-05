@@ -97,3 +97,10 @@ TertiaryLoading.args = {
   tertiary: true,
   loading: true
 }
+
+export const Icon = Template.bind({})
+
+Icon.args = {
+  primary: true,
+  icon: 'info'
+}

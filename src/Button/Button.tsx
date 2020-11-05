@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { theme } from '../theme'
 import { LegacyButton } from './LegacyButton'
 import { Loader } from '../Loader'
+import { Icon as IconComponent } from '../Icon'
 import { FontStyle } from '../fontStyle'
 
 interface IButton {
@@ -17,6 +18,8 @@ interface IButton {
   secondary: boolean
   /** tertiary button styling */
   tertiary: boolean
+  /** icon option */
+  icon: string
 }
 
 type Props = {
@@ -33,6 +36,7 @@ type Props = {
   primary?: boolean
   secondary?: boolean
   tertiary?: boolean
+  icon?: string
 }
 
 export const Button: FC<Props> = ({
@@ -48,7 +52,8 @@ export const Button: FC<Props> = ({
   loading = false,
   primary = false,
   secondary = false,
-  tertiary = false
+  tertiary = false,
+  icon = ''
 }) => {
 
   return (
@@ -63,14 +68,20 @@ export const Button: FC<Props> = ({
             primary={primary}
             secondary={secondary}
             tertiary={tertiary}
+            icon={icon}
           >
+            {icon && (            
+              <IconContainer   
+                render={icon}
+                size={24}
+                color={primary ? 'white' : `${theme.colors.blue7}`} />
+            )}
             {
               loading ? (
                 <Loader color={primary ? 'white' : `${theme.colors.blue7}`} height="16" />
               ) : (
                 children
-              )
-            }
+            )}
           </Container>
         ) : (
           <LegacyButton
@@ -109,6 +120,7 @@ const Container = styled.button<IButton>`
   font-size: 16px;
   font-family: 'Circular';
   opacity: ${p => p.disabled ? '0.5' : '1'};
+
   &:hover {
     background-color: ${p => p.primary ? theme.colors.pink6 : 
       p.secondary ? 
@@ -120,4 +132,8 @@ const Container = styled.button<IButton>`
   &:active {
     background-color: ${p => p.primary ? theme.colors.pink7 : p.secondary ? p.loading ? theme.colors.white : theme.colors.bg3 : theme.colors.grey3};
   }
+`
+
+const IconContainer = styled(IconComponent)`
+  padding-right: 20px;
 `
