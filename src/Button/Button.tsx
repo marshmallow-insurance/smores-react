@@ -9,10 +9,14 @@ import { FontStyle } from '../fontStyle'
 interface IButton {
   /** disabled state */
   disabled: boolean
-  /** primary button styling */
-  primary: boolean
   /** loading state */
   loading: boolean
+  /** primary button styling */
+  primary: boolean
+  /** secondary button styling */
+  secondary: boolean
+  /** tertiary button styling */
+  tertiary: boolean
 }
 
 type Props = {
@@ -25,8 +29,10 @@ type Props = {
   disabled?: boolean
   outlined?: boolean
   handleClick: (e: React.FormEvent<HTMLButtonElement>) => void
-  primary?: boolean
   loading?: boolean
+  primary?: boolean
+  secondary?: boolean
+  tertiary?: boolean
 }
 
 export const Button: FC<Props> = ({
@@ -39,24 +45,28 @@ export const Button: FC<Props> = ({
   disabled = false,
   outlined = false,
   handleClick,
+  loading = false,
   primary = false,
-  loading = false
+  secondary = false,
+  tertiary = false
 }) => {
 
   return (
     <div>
       {
-        primary === true ? (
+        primary || secondary || tertiary ? (
           <Container
             id={id}
             disabled={disabled}
             onClick={handleClick}
             loading={loading}
             primary={primary}
+            secondary={secondary}
+            tertiary={tertiary}
           >
             {
-              loading === true ? (
-                <Loader color="white" height="16" />
+              loading ? (
+                <Loader color={primary ? 'white' : `${theme.colors.blue7}`} height="16" />
               ) : (
                 children
               )
@@ -83,11 +93,11 @@ export const Button: FC<Props> = ({
 }
 
 const Container = styled.button<IButton>`
-  background-color: ${theme.colors.pink5};
+  background-color: ${p => p.primary ? theme.colors.pink5 : p.secondary ? theme.colors.white : theme.colors.bg2};
   box-shadow: none;
-  color: white;
+  color: ${p => p.primary ? 'white' : `${theme.colors.blue7}`};
   padding: 16px 20px;
-  border: none;
+  border: ${p => p.secondary ?  `2px solid ${theme.colors.blue7}` : 'none'};
   outline: none;
   border-radius: 8px;
   align-items: center;
@@ -100,9 +110,14 @@ const Container = styled.button<IButton>`
   font-family: 'Circular';
   opacity: ${p => p.disabled ? '0.5' : '1'};
   &:hover {
-    background-color: ${p => p.loading ? theme.colors.pink5 : theme.colors.pink6};
+    background-color: ${p => p.primary ? theme.colors.pink6 : 
+      p.secondary ? 
+        p.loading ? theme.colors.white : theme.colors.bg2 
+          : p.disabled ? theme.colors.bg2 
+            : theme.colors.grey2}; 
+    border-color: ${p => p.secondary && theme.colors.blue6};
   }
   &:active {
-    background-color: ${theme.colors.pink7};
+    background-color: ${p => p.primary ? theme.colors.pink7 : p.secondary ? p.loading ? theme.colors.white : theme.colors.bg3 : theme.colors.grey3};
   }
 `
