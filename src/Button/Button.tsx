@@ -1,23 +1,18 @@
 import React, { FC, ReactNode } from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import { theme } from '../theme'
+import { LegacyButton } from './LegacyButton'
+import { Loader } from '../Loader'
+import { FontStyle } from '../fontStyle'
 
 interface IButton {
-  /** button color  */
-  color: string
-  /** unique id */
-  id: string
-  /** take full 100% width  */
-  block: boolean
-  /** invert bg and text colors */
-  inverted: boolean
   /** disabled state */
   disabled: boolean
-  /** outline styling */
-  outlined: boolean
-  /** onClick event handler */
-  onClick: (e: React.FormEvent<HTMLButtonElement>) => void
+  /** primary button styling */
+  primary: boolean
+  /** loading state */
+  loading: boolean
 }
 
 type Props = {
@@ -30,6 +25,8 @@ type Props = {
   disabled?: boolean
   outlined?: boolean
   handleClick: (e: React.FormEvent<HTMLButtonElement>) => void
+  primary?: boolean
+  loading?: boolean
 }
 
 export const Button: FC<Props> = ({
@@ -42,64 +39,70 @@ export const Button: FC<Props> = ({
   disabled = false,
   outlined = false,
   handleClick,
-}) => (
-  <Container
-    id={id}
-    className={className}
-    color={color}
-    block={block}
-    inverted={inverted}
-    disabled={disabled}
-    outlined={outlined}
-    onClick={handleClick}
-  >
-    {children}
-  </Container>
-)
+  primary = false,
+  loading = false
+}) => {
 
-const Container = styled.button<IButton>(
-  ({ block, color, inverted, outlined }) => css`
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    padding: 18px 16px 14px;
-    outline: none;
-    cursor: pointer;
-    width: ${block ? '100%' : 'auto'};
-    background-color: ${theme.colors[`${color}5`]};
-    color: ${theme.colors.white};
+  return (
+    <div>
+      {
+        primary === true ? (
+          <Container
+            id={id}
+            disabled={disabled}
+            onClick={handleClick}
+            loading={loading}
+            primary={primary}
+          >
+            {
+              loading === true ? (
+                <Loader color="white" height="16" />
+              ) : (
+                children
+              )
+            }
+          </Container>
+        ) : (
+          <LegacyButton
+            id={id}
+            className={className}
+            color={color}
+            block={block}
+            inverted={inverted}
+            disabled={disabled}
+            outlined={outlined}
+            handleClick={handleClick}
+          >
+          {children}
+        </LegacyButton>
+        )
+      }
+      <FontStyle />
+    </div>
+  )
+}
 
-    &:hover:not([disabled]) {
-      background-color: ${theme.colors[`${color}6`]};
-    }
-    &:active:not([disabled]) {
-      background-color: ${theme.colors[`${color}7`]};
-    }
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    ${(inverted || outlined) &&
-      css`
-        background-color: transparent;
-        border: 1px solid ${outlined ? theme.colors.grey4 : 'transparent'};
-        color: ${outlined ? theme.colors.blue7 : theme.colors[`${color}5`]};
-
-        &:hover:not([disabled]) {
-          background-color: ${theme.colors.bg2};
-        }
-        &:active:not([disabled]) {
-          background-color: ${theme.colors.bg3};
-        }
-      `};
-
-    @media (min-width: 768px) {
-      padding: 19px 16px 15px;
-      font-size: 16px;
-    }
-  `,
-)
+const Container = styled.button<IButton>`
+  background-color: ${theme.colors.pink5};
+  box-shadow: none;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-weight: ${theme.font.weight.medium};
+  cursor: ${p => (p.disabled || p.loading) ? 'not-allowed' : 'pointer'};
+  line-height: 100%;
+  font-size: 16px;
+  font-family: 'Circular';
+  opacity: ${p => p.disabled ? '0.5' : '1'};
+  &:hover {
+    background-color: ${p => p.loading ? theme.colors.pink5 : theme.colors.pink6};
+  }
+  &:active {
+    background-color: ${theme.colors.pink7};
+  }
+`

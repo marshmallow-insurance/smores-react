@@ -37,3 +37,23 @@ export const Block = Template.bind({})
 Block.args = {
   block: true,
 }
+
+export const Primary = Template.bind({})
+
+Primary.args = {
+  primary: true,
+}
+
+export const PrimaryDisabled = Template.bind({})
+
+PrimaryDisabled.args = {
+  primary: true,
+  disabled: true
+}
+
+export const PrimaryLoading = Template.bind({})
+
+PrimaryLoading.args = {
+  primary: true,
+  loading: true
+}
