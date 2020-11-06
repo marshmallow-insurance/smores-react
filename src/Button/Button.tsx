@@ -20,8 +20,8 @@ interface IButton {
   tertiary: boolean
   /** icon state */
   icon: string
-  /** minWidth styling */
-  minWidth: string
+  /** forcedWidth styling */
+  forcedWidth: string
 }
 
 type Props = {
@@ -39,7 +39,7 @@ type Props = {
   secondary?: boolean
   tertiary?: boolean
   icon?: string
-  minWidth?: string
+  forcedWidth?: string
 }
 
 export const Button: FC<Props> = ({
@@ -57,7 +57,7 @@ export const Button: FC<Props> = ({
   secondary = false,
   tertiary = false,
   icon = '',
-  minWidth = '0'
+  forcedWidth = ''
 }) => {
 
   return (
@@ -73,7 +73,7 @@ export const Button: FC<Props> = ({
             secondary={secondary}
             tertiary={tertiary}
             icon={icon}
-            minWidth={minWidth}
+            forcedWidth={forcedWidth}
           >
             {icon && (            
               <IconContainer   
@@ -127,7 +127,7 @@ const Container = styled.button<IButton>`
   font-size: 16px;
   font-family: 'Circular';
   opacity: ${p => p.disabled ? '0.5' : '1'};
-  min-width: ${p => p.minWidth};
+  width: ${p => p.forcedWidth ? p.forcedWidth : 'auto'};
 
   &:hover {
     background-color: ${p => p.primary ? theme.colors.pink6 

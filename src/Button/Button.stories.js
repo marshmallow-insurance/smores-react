@@ -58,11 +58,11 @@ PrimaryLoading.args = {
   loading: true
 }
 
-export const PrimaryForcedMinWidth = Template.bind({})
+export const PrimaryForcedWidth = Template.bind({})
 
-PrimaryForcedMinWidth.args = {
+PrimaryForcedWidth.args = {
   primary: true,
-  minWidth: '300px'
+  forcedWidth: '300px'
 }
 
 export const Secondary = Template.bind({})
