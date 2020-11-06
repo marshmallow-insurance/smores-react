@@ -18,8 +18,10 @@ interface IButton {
   secondary: boolean
   /** tertiary button styling */
   tertiary: boolean
-  /** icon option */
+  /** icon state */
   icon: string
+  /** minWidth styling */
+  minWidth: string
 }
 
 type Props = {
@@ -37,6 +39,7 @@ type Props = {
   secondary?: boolean
   tertiary?: boolean
   icon?: string
+  minWidth?: string
 }
 
 export const Button: FC<Props> = ({
@@ -53,7 +56,8 @@ export const Button: FC<Props> = ({
   primary = false,
   secondary = false,
   tertiary = false,
-  icon = ''
+  icon = '',
+  minWidth = '0'
 }) => {
 
   return (
@@ -69,6 +73,7 @@ export const Button: FC<Props> = ({
             secondary={secondary}
             tertiary={tertiary}
             icon={icon}
+            minWidth={minWidth}
           >
             {icon && (            
               <IconContainer   
@@ -104,7 +109,9 @@ export const Button: FC<Props> = ({
 }
 
 const Container = styled.button<IButton>`
-  background-color: ${p => p.primary ? theme.colors.pink5 : p.secondary ? theme.colors.white : theme.colors.bg2};
+  background-color: ${p => p.primary ? theme.colors.pink5 
+    : p.secondary ? theme.colors.white 
+      : theme.colors.bg2};
   box-shadow: none;
   color: ${p => p.primary ? 'white' : `${theme.colors.blue7}`};
   padding: 16px 20px;
@@ -113,27 +120,33 @@ const Container = styled.button<IButton>`
   border-radius: 8px;
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: ${p => p.icon ? 'space-evenly' : 'center'};
   font-weight: ${theme.font.weight.medium};
   cursor: ${p => (p.disabled || p.loading) ? 'not-allowed' : 'pointer'};
   line-height: 100%;
   font-size: 16px;
   font-family: 'Circular';
   opacity: ${p => p.disabled ? '0.5' : '1'};
+  min-width: ${p => p.minWidth};
 
   &:hover {
-    background-color: ${p => p.primary ? theme.colors.pink6 : 
-      p.secondary ? 
-        p.loading ? theme.colors.white : theme.colors.bg2 
+    background-color: ${p => p.primary ? theme.colors.pink6 
+      : p.secondary ? 
+        p.loading ? theme.colors.white 
+        : theme.colors.bg2 
           : p.disabled ? theme.colors.bg2 
             : theme.colors.grey2}; 
     border-color: ${p => p.secondary && theme.colors.blue6};
   }
   &:active {
-    background-color: ${p => p.primary ? theme.colors.pink7 : p.secondary ? p.loading ? theme.colors.white : theme.colors.bg3 : theme.colors.grey3};
+    background-color: ${p => p.primary ? theme.colors.pink7 
+      : p.secondary ? 
+        p.loading ? theme.colors.white 
+          : theme.colors.bg3 
+            : theme.colors.grey3};
   }
 `
 
 const IconContainer = styled(IconComponent)`
-  padding-right: 20px;
+  padding-right: 10px;
 `
