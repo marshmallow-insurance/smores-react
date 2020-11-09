@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 32px;
+  height: 32px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  color: #112035;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c7 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #636768;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c1 {
+  position: absolute;
+  background: #112035;
+  opacity: 0.4;
+  height: calc(100vh);
+  width: 100%;
+}
+
+.c2 {
+  background: #ffffff;
+  z-index: 999;
+  position: absolute;
+  left: calc(50%);
+  top: calc(50%);
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.c5 {
+  cursor: pointer;
+}
+
+.c5:hover {
+  opacity: 0.8;
+}
+
+@media (min-width:768px) {
+  .c4 {
+    font-size: 21px;
+    line-height: 27px;
+  }
+}
+
+@media (min-width:768px) {
+  .c7 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      <h2
+        class="c4"
+        color="blue7"
+        cursor="inherit"
+      />
+      <div
+        class="c5"
+      >
+        <span
+          class="c6"
+          color="blue7"
+          rotate="0"
+          size="32"
+        >
+          <svg
+            fill="none"
+            height="100%"
+            viewBox="0 0 32 32"
+            width="100%"
+          >
+            <path
+              d="M17.4139 15.5L22.7068 9.82913C23.0977 9.41022 23.0977 8.7331 22.7068 8.31418C22.3158 7.89527 21.6838 7.89527 21.2928 8.31418L16 13.985L10.7072 8.31418C10.3162 7.89527 9.68423 7.89527 9.29324 8.31418C8.90225 8.7331 8.90225 9.41022 9.29324 9.82913L14.5861 15.5L9.29324 21.1709C8.90225 21.5898 8.90225 22.2669 9.29324 22.6858C9.48823 22.8947 9.74422 22.9997 10.0002 22.9997C10.2562 22.9997 10.5122 22.8947 10.7072 22.6858L16 17.0149L21.2928 22.6858C21.4878 22.8947 21.7438 22.9997 21.9998 22.9997C22.2558 22.9997 22.5118 22.8947 22.7068 22.6858C23.0977 22.2669 23.0977 21.5898 22.7068 21.1709L17.4139 15.5Z"
+              fill="#112035"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+    <p
+      class="c7"
+      color="grey8"
+      cursor="inherit"
+    />
+  </div>
+</div>
+`;
