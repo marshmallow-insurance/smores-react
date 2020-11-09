@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
 import { LegacyButton } from './LegacyButton'
@@ -108,44 +108,64 @@ export const Button: FC<Props> = ({
   )
 }
 
-const Container = styled.button<IButton>`
-  background-color: ${p => p.primary ? theme.colors.pink5 
-    : p.secondary ? theme.colors.white 
-      : theme.colors.bg2};
+const Container = styled.button<IButton>(
+  ({disabled, loading, primary, secondary, tertiary, icon, forcedWidth}) => css`
+  background-color: ${theme.colors.pink5};
   box-shadow: none;
-  color: ${p => p.primary ? 'white' : `${theme.colors.blue7}`};
+  color: ${theme.colors.blue7};
   padding: 16px 20px;
-  border: ${p => p.secondary ?  `2px solid ${theme.colors.blue7}` : 'none'};
+  border: none;
   outline: none;
   border-radius: 8px;
   align-items: center;
   display: flex;
-  justify-content: ${p => p.icon ? 'space-evenly' : 'center'};
+  justify-content: ${icon ? 'space-evenly' : 'center'};
   font-weight: ${theme.font.weight.medium};
-  cursor: ${p => (p.disabled || p.loading) ? 'not-allowed' : 'pointer'};
+  cursor: ${(disabled || loading) ? 'not-allowed' : 'pointer'};
   line-height: 100%;
   font-size: 16px;
   font-family: 'Circular';
-  opacity: ${p => p.disabled ? '0.5' : '1'};
-  width: ${p => p.forcedWidth ? p.forcedWidth : 'auto'};
+  opacity: ${disabled ? '0.5' : '1'};
+  width: ${forcedWidth ? forcedWidth : 'auto'};
 
-  &:hover {
-    background-color: ${p => p.primary ? theme.colors.pink6 
-      : p.secondary ? 
-        p.loading ? theme.colors.white 
-        : theme.colors.bg2 
-          : p.disabled ? theme.colors.bg2 
-            : theme.colors.grey2}; 
-    border-color: ${p => p.secondary && theme.colors.blue6};
+  ${(primary) &&
+    css`
+      color: ${theme.colors.white};
+      &:hover {
+        background-color: ${!(disabled || loading) && theme.colors.pink6};
+      }
+      &:active {
+        background-color: ${!(disabled || loading) && theme.colors.pink7};
+      }
+    `
   }
-  &:active {
-    background-color: ${p => p.primary ? theme.colors.pink7 
-      : p.secondary ? 
-        p.loading ? theme.colors.white 
-          : theme.colors.bg3 
-            : theme.colors.grey3};
+  ${(secondary) &&
+    css`
+      background-color: ${theme.colors.white};
+      border: 2px solid ${theme.colors.blue7};
+      &:hover {
+        background-color: ${!(disabled || loading) && theme.colors.bg2};
+        border: ${!(disabled || loading) && `2px solid ${theme.colors.blue6}`}
+      }
+      &:active {
+        background-color: ${theme.colors.bg2};
+        border: 2px solid ${theme.colors.blue7};
+      }
+    `
   }
-`
+  ${(tertiary) &&
+    css`
+      background-color:  ${theme.colors.bg2};
+      &:hover {
+        background-color: ${!(disabled || loading) && theme.colors.grey2};
+      }
+      &:active {
+        background-color: ${theme.colors.grey3};
+      }
+    `
+  }
+`,
+)
 
 const IconContainer = styled(IconComponent)`
   padding-right: 10px;
