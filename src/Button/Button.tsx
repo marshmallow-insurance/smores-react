@@ -57,78 +57,86 @@ export const Button: FC<Props> = ({
   secondary = false,
   tertiary = false,
   icon = '',
-  forcedWidth = ''
+  forcedWidth = '',
 }) => {
-
   return (
     <div>
-      {
-        primary || secondary || tertiary ? (
-          <Container
-            id={id}
-            disabled={disabled}
-            onClick={handleClick}
-            loading={loading}
-            primary={primary}
-            secondary={secondary}
-            tertiary={tertiary}
-            icon={icon}
-            forcedWidth={forcedWidth}
-          >
-            {icon && (            
-              <IconContainer   
-                render={icon}
-                size={24}
-                color={primary ? 'white' : `${theme.colors.blue7}`} />
-            )}
-            {
-              loading ? (
-                <Loader color={primary ? 'white' : `${theme.colors.blue7}`} height="16" />
-              ) : (
-                children
-            )}
-          </Container>
-        ) : (
-          <LegacyButton
-            id={id}
-            className={className}
-            color={color}
-            block={block}
-            inverted={inverted}
-            disabled={disabled}
-            outlined={outlined}
-            handleClick={handleClick}
-          >
+      {primary || secondary || tertiary ? (
+        <Container
+          id={id}
+          disabled={disabled}
+          onClick={handleClick}
+          loading={loading}
+          primary={primary}
+          secondary={secondary}
+          tertiary={tertiary}
+          icon={icon}
+          forcedWidth={forcedWidth}
+        >
+          {icon && (
+            <IconContainer
+              render={icon}
+              size={24}
+              color={primary ? 'white' : `${theme.colors.blue7}`}
+            />
+          )}
+          {loading ? (
+            <Loader
+              color={primary ? 'white' : `${theme.colors.blue7}`}
+              height="16"
+            />
+          ) : (
+            children
+          )}
+        </Container>
+      ) : (
+        <LegacyButton
+          id={id}
+          className={className}
+          color={color}
+          block={block}
+          inverted={inverted}
+          disabled={disabled}
+          outlined={outlined}
+          handleClick={handleClick}
+        >
           {children}
         </LegacyButton>
-        )
-      }
+      )}
       <FontStyle />
     </div>
   )
 }
 
 const Container = styled.button<IButton>(
-  ({disabled, loading, primary, secondary, tertiary, icon, forcedWidth}) => css`
-  background-color: ${theme.colors.pink5};
-  box-shadow: none;
-  color: ${theme.colors.blue7};
-  padding: 16px 20px;
-  border: none;
-  outline: none;
-  border-radius: 8px;
-  align-items: center;
-  display: flex;
-  justify-content: ${icon ? 'space-evenly' : 'center'};
-  font-weight: ${theme.font.weight.medium};
-  cursor: ${(disabled || loading) ? 'not-allowed' : 'pointer'};
-  line-height: 100%;
-  font-size: 16px;
-  font-family: 'Circular';
-  opacity: ${disabled ? '0.5' : '1'};
-  width: ${forcedWidth ? forcedWidth : 'auto'};
+  ({
+    disabled,
+    loading,
+    primary,
+    secondary,
+    tertiary,
+    icon,
+    forcedWidth,
+  }) => css`
+    background-color: ${theme.colors.pink5};
+    box-shadow: none;
+    color: ${theme.colors.blue7};
+    padding: 16px 20px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    justify-content: ${icon ? 'space-evenly' : 'center'};
+    font-weight: ${theme.font.weight.medium};
+    cursor: ${disabled || loading ? 'not-allowed' : 'pointer'};
+    line-height: 100%;
+    font-size: 16px;
+    font-family: 'Circular';
+    opacity: ${disabled ? '0.5' : '1'};
+    width: ${forcedWidth ? forcedWidth : 'auto'};
 
-  ${(primary) &&
+    ${primary &&
     css`
       color: ${theme.colors.white};
       &:hover {
@@ -137,34 +145,31 @@ const Container = styled.button<IButton>(
       &:active {
         background-color: ${!(disabled || loading) && theme.colors.pink7};
       }
-    `
-  }
-  ${(secondary) &&
+    `}
+    ${secondary &&
     css`
       background-color: ${theme.colors.white};
       border: 2px solid ${theme.colors.blue7};
       &:hover {
         background-color: ${!(disabled || loading) && theme.colors.bg2};
-        border: ${!(disabled || loading) && `2px solid ${theme.colors.blue6}`}
+        border: ${!(disabled || loading) && `2px solid ${theme.colors.blue6}`};
       }
       &:active {
         background-color: ${theme.colors.bg2};
         border: 2px solid ${theme.colors.blue7};
       }
-    `
-  }
-  ${(tertiary) &&
+    `}
+  ${tertiary &&
     css`
-      background-color:  ${theme.colors.bg2};
+      background-color: ${theme.colors.bg2};
       &:hover {
         background-color: ${!(disabled || loading) && theme.colors.grey2};
       }
       &:active {
         background-color: ${theme.colors.grey3};
       }
-    `
-  }
-`,
+    `}
+  `,
 )
 
 const IconContainer = styled(IconComponent)`
