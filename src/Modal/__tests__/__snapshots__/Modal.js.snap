@@ -101,10 +101,12 @@ exports[`renders 1`] = `
 
 .c5 {
   cursor: pointer;
+  background: #F9F9F9;
+  border-radius: 32px;
 }
 
 .c5:hover {
-  opacity: 0.8;
+  background: #F8F6F6;
 }
 
 @media (min-width:768px) {

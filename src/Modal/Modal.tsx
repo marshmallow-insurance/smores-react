@@ -13,7 +13,6 @@ interface IModal {
 
 type ModalProps = {
   title?: string,
-  body?: string,
   children?: ReactNode,
   showModal?: boolean,
   handleClick: () => void
@@ -21,28 +20,24 @@ type ModalProps = {
 
 export const Modal: FC<ModalProps> = ({
   title = '',
-  body = '',
-  children = '',
+  children,
   showModal = false,
   handleClick,
-}) => {
-
-  return (
-    <Wrapper showModal={showModal}>
-      <Overlay />
-      <Container>
-        <Box flex alignItems="center" justifyContent="space-between">
-          <Text tag="h2" typo="header-small" align="left">{title}</Text>
-          <IconContainer onClick={handleClick}>
-            <Icon render="cross" color="blue7" size={32} />
-          </IconContainer>
-        </Box>
-        <Text tag="p" typo="desc-small" color="grey8" align="left">
-          {children}
-        </Text>
-      </Container>
-  </Wrapper>
-)}
+}) => 
+  <Wrapper showModal={showModal}>
+    <Overlay />
+    <Container>
+      <Box flex alignItems="center" justifyContent="space-between">
+        <Text tag="h2" typo="header-small" align="left">{title}</Text>
+        <IconContainer onClick={handleClick}>
+          <Icon render="cross" color="blue7" size={32} />
+        </IconContainer>
+      </Box>
+      <Text tag="p" typo="desc-small" color="grey8" align="left">
+        {children}
+      </Text>
+    </Container>
+</Wrapper>
 
 const Wrapper = styled(Box)<IModal>(
   ({showModal}) => css`
@@ -76,7 +71,10 @@ const Container = styled.div`
 
 const IconContainer = styled.div`
   cursor: pointer;
+  background: ${theme.colors.bg2};
+  border-radius: 32px;
   &:hover {
-    opacity: 0.8;
+    background: ${theme.colors.bg3};
   }
 `
+
