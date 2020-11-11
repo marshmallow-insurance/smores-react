@@ -20,7 +20,7 @@ const Template = (args) => {
           [A modal window] creates a mode that disables the main window, but keeps it visible with the modal window as a child window in front of it.
         </Modal>
       ) : (
-        <Button primary handleClick={handleClick}>Show Modal</Button>
+        <Button primary handleClick={handleClick}>Show Modal with Mobile Drawer</Button>
       )}
     </Box>
   )
@@ -31,4 +31,5 @@ export const Default = Template.bind({})
 Default.args = {
   title: "Hello world i'm a beautiful modal",
   showModal: false,
+  drawer: true
 }

@@ -103,6 +103,7 @@ exports[`renders 1`] = `
   cursor: pointer;
   background: #F9F9F9;
   border-radius: 32px;
+  margin: 8px;
 }
 
 .c5:hover {
@@ -120,6 +121,20 @@ exports[`renders 1`] = `
   .c7 {
     font-size: 14px;
     line-height: 18px;
+  }
+}
+
+@media (max-width:768px) {
+  .c2 {
+    max-width: none;
+    width: 100%;
+    left: 0;
+    border-radius: 16px 16px 0px 0px;
+    padding: 10% 24px;
+    overflow: scroll;
+    max-height: 90vh;
+    height: 70vh;
+    top: 30vh;
   }
 }
 
