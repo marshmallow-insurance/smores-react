@@ -72,7 +72,10 @@ exports[`renders 1`] = `
 }
 
 .c0 {
+  display: none;
   position: relative;
+  height: calc(100vh);
+  width: 100%;
 }
 
 .c1 {
@@ -87,12 +90,13 @@ exports[`renders 1`] = `
   background: #ffffff;
   z-index: 999;
   position: absolute;
-  left: calc(50%);
-  top: calc(50%);
   border: 1px solid #E5E5E5;
   box-sizing: border-box;
   border-radius: 8px;
   padding: 24px;
+  max-width: 456px;
+  left: calc(50% - 460px / 2);
+  top: calc(50% - 265px / 2 + 0.5px);
 }
 
 .c5 {
@@ -161,7 +165,9 @@ exports[`renders 1`] = `
       class="c7"
       color="grey8"
       cursor="inherit"
-    />
+    >
+      Text inside
+    </p>
   </div>
 </div>
 `;
