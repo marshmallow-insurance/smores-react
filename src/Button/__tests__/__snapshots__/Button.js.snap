@@ -2,18 +2,20 @@
 
 exports[`renders 1`] = `
 .c0 {
+  font-family: 'Circular';
   position: relative;
   display: inline-block;
   box-sizing: border-box;
   border: none;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 16px;
   padding: 18px 16px 14px;
   outline: none;
   cursor: pointer;
   width: auto;
   background-color: #55D6AA;
   color: #ffffff;
+  font-weight: 500;
 }
 
 .c0:hover:not([disabled]) {
@@ -36,8 +38,10 @@ exports[`renders 1`] = `
   }
 }
 
-<button
-  class="c0"
-  color="green"
-/>
+<div>
+  <button
+    class="c0"
+    color="green"
+  />
+</div>
 `;

@@ -584,6 +584,7 @@ export const Icon: FC<Props> = ({
         </svg>
       )
     }
+
     {
       // HOUSE
       render === 'house' && (
@@ -595,6 +596,7 @@ export const Icon: FC<Props> = ({
         </svg>
       )
     }
+
     {
       //BRIEFCASE
       render === 'briefcase' && (
@@ -606,6 +608,7 @@ export const Icon: FC<Props> = ({
         </svg>
       )
     }
+
     {
       //SHIELD
       render === 'shield' && (
@@ -617,6 +620,7 @@ export const Icon: FC<Props> = ({
         </svg>
       )
     }
+
     {
       //KEY
       render === 'key' && (
@@ -625,6 +629,38 @@ export const Icon: FC<Props> = ({
             fillRule="evenodd"
             clipRule="evenodd"
             d="M27.134 11.878l-7.011-7.011c-1.116-1.116-3.063-1.117-4.179 0l-4.078 4.078a2.959 2.959 0 00-.193 3.968l-7.38 7.38a.997.997 0 00-.293.708v6a1 1 0 001 1h6a1 1 0 001-1v-3h3a1 1 0 001-1v-2h5.017a2.94 2.94 0 002.039-.865l4.078-4.078c.558-.558.866-1.3.866-2.09 0-.79-.308-1.532-.866-2.09zm-1.414 2.765l-4.078 4.078a.95.95 0 01-.652.28H15a1 1 0 00-1 1v2h-3a1 1 0 00-1 1v3H6v-4.586l7.785-7.786a.999.999 0 000-1.414l-.505-.505a.952.952 0 010-1.351l4.078-4.078a.957.957 0 011.351 0l7.011 7.012a.952.952 0 010 1.35zm-7.458-4.297a.999.999 0 011.414 0l2 2a.999.999 0 11-1.414 1.414l-2-2a.999.999 0 010-1.414z"
+            fill={theme.colors[color]}
+          />
+        </svg>
+      )
+    }
+
+    {
+      //SCHEDULE QUOTE
+      render === 'schedule-quote' && (
+        <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M13 13.5a2.5 2.5 0 012.5-2.5h2a1 1 0 110 2h-2a.5.5 0 000 1h1a2.5 2.5 0 010 5h-2a1 1 0 110-2h2a.5.5 0 000-1h-1a2.5 2.5 0 01-2.5-2.5z"
+            fill={theme.colors[color]}
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M16 9.5a1 1 0 011 1V12a1 1 0 11-2 0v-1.5a1 1 0 011-1zM16 17a1 1 0 011 1v1.5a1 1 0 11-2 0V18a1 1 0 011-1zM11 4a1 1 0 011 1v2a1 1 0 11-2 0V5a1 1 0 011-1zM16 4a1 1 0 011 1v2a1 1 0 11-2 0V5a1 1 0 011-1zM21 4a1 1 0 011 1v2a1 1 0 11-2 0V5a1 1 0 011-1z"
+            fill={theme.colors[color]}
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M9 8a1 1 0 00-1 1v16a1 1 0 001 1h14a1 1 0 001-1V9a1 1 0 00-1-1H9zM6 9a3 3 0 013-3h14a3 3 0 013 3v16a3 3 0 01-3 3H9a3 3 0 01-3-3V9z"
+            fill={theme.colors[color]}
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M10 23a1 1 0 011-1h10a1 1 0 110 2H11a1 1 0 01-1-1z"
             fill={theme.colors[color]}
           />
         </svg>
