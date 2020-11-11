@@ -2,6 +2,7 @@
 
 exports[`renders 1`] = `
 .c1 {
+  font-family: 'Circular';
   font-size: 8px;
   line-height: 9px;
   font-weight: 700;

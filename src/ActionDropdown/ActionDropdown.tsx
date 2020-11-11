@@ -6,6 +6,7 @@ import { Icon } from '../Icon'
 import { List, ActionListItem } from './List'
 
 import { theme } from '../theme'
+import { FontStyle } from '../fontStyle'
 
 type Props = {
   /** ID, usually used for tests  */
@@ -56,6 +57,7 @@ export const ActionDropdown: FC<Props> = ({
       <OuterContainer open={open}>
         <List options={list} selectOption={onSelect} />
       </OuterContainer>
+      <FontStyle />
     </Container>
   )
 }
@@ -88,7 +90,7 @@ const SelectedOption = styled.span`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: Gordita;
+  font-family: 'Circular';
 `
 
 const Container = styled.div`
@@ -100,6 +102,7 @@ const Container = styled.div`
   cursor: pointer;
   outline: none;
   border-radius: 8px;
+  font-family: 'Circular';
 `
 
 interface IOpen {
