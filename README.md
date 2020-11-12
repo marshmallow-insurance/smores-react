@@ -31,6 +31,26 @@ $ yarn add @mrshmllw/smores-react
 $ npm install @mrshmllw/smores-react
 ```
 
+## Release
+```md
+1. Checkout the `Master` branch and _bump_ the project version.
+> $ git checkout master
+> $ git pull
+> $ npm version [major | minor | patch]
+> $ git push && git push --tags
+> ! check build is successful (green tick in Travis CI) before next step
+
+2. Login to NPM.
+> $ npm login
+> enter your username and password
+> enter your email address
+> complete two factor authentication
+
+3. Publish to NPM.
+> $ npm publish
+```
+
+
 ## List of Components
 
 * [ActionDropdown](https://github.com/marshmallow-insurance/smores-react/tree/master/src/ActionDropdown)
