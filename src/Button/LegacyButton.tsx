@@ -59,7 +59,6 @@ export const LegacyButton: FC<Props> = ({
 
 const Container = styled.button<IButton>(
   ({ block, color, inverted, outlined }) => css`
-    font-family: 'Circular';
     position: relative;
     display: inline-block;
     box-sizing: border-box;

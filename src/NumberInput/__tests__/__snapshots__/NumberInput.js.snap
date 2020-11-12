@@ -2,7 +2,6 @@
 
 exports[`renders - currency 1`] = `
 .c1 {
-  font-family: 'Circular';
   font-size: 8px;
   line-height: 9px;
   font-weight: 700;
@@ -23,7 +22,6 @@ exports[`renders - currency 1`] = `
 }
 
 .c3 {
-  font-family: 'Circular';
   font-size: 14px;
   line-height: 23px;
   font-weight: 400;
@@ -277,7 +275,6 @@ exports[`renders - currency 1`] = `
 
 exports[`renders - disabled 1`] = `
 .c1 {
-  font-family: 'Circular';
   font-size: 8px;
   line-height: 9px;
   font-weight: 700;
@@ -402,7 +399,6 @@ exports[`renders - disabled 1`] = `
 
 exports[`renders - error 1`] = `
 .c1 {
-  font-family: 'Circular';
   font-size: 8px;
   line-height: 9px;
   font-weight: 700;
@@ -423,7 +419,6 @@ exports[`renders - error 1`] = `
 }
 
 .c3 {
-  font-family: 'Circular';
   font-size: 14px;
   line-height: 23px;
   font-weight: 400;
@@ -689,7 +684,6 @@ exports[`renders - error 1`] = `
 
 exports[`renders - number 1`] = `
 .c1 {
-  font-family: 'Circular';
   font-size: 8px;
   line-height: 9px;
   font-weight: 700;
@@ -823,7 +817,6 @@ exports[`renders - number 1`] = `
 
 exports[`renders - tel 1`] = `
 .c1 {
-  font-family: 'Circular';
   font-size: 8px;
   line-height: 9px;
   font-weight: 700;
@@ -844,7 +837,6 @@ exports[`renders - tel 1`] = `
 }
 
 .c3 {
-  font-family: 'Circular';
   font-size: 14px;
   line-height: 23px;
   font-weight: 400;
@@ -986,7 +978,6 @@ exports[`renders - with suffix 1`] = `
 }
 
 .c1 {
-  font-family: 'Circular';
   font-size: 8px;
   line-height: 9px;
   font-weight: 700;
@@ -1007,7 +998,6 @@ exports[`renders - with suffix 1`] = `
 }
 
 .c5 {
-  font-family: 'Circular';
   font-size: 14px;
   line-height: 23px;
   font-weight: 400;
@@ -1149,7 +1139,6 @@ exports[`renders - with suffix 1`] = `
 
 exports[`renders - with trailing icon 1`] = `
 .c1 {
-  font-family: 'Circular';
   font-size: 8px;
   line-height: 9px;
   font-weight: 700;
@@ -1170,7 +1159,6 @@ exports[`renders - with trailing icon 1`] = `
 }
 
 .c3 {
-  font-family: 'Circular';
   font-size: 14px;
   line-height: 23px;
   font-weight: 400;

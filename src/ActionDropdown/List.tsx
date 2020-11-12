@@ -42,7 +42,6 @@ const ListItem = styled.li`
   cursor: pointer;
   color: ${theme.colors.blue7};
   border-bottom: 1px solid ${theme.colors.grey3};
-  font-family: 'Circular';
 
   &:hover {
     background-color: ${theme.colors.grey3};

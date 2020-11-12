@@ -43,7 +43,6 @@ exports[`renders 1`] = `
   cursor: pointer;
   color: #112035;
   border-bottom: 1px solid #E5E5E5;
-  font-family: 'Circular';
 }
 
 .c6:hover {
@@ -87,7 +86,6 @@ exports[`renders 1`] = `
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: 'Circular';
 }
 
 .c0 {
@@ -99,7 +97,6 @@ exports[`renders 1`] = `
   cursor: pointer;
   outline: none;
   border-radius: 8px;
-  font-family: 'Circular';
 }
 
 .c4 {

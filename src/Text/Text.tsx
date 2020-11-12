@@ -2,7 +2,6 @@ import React, { FC, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
-import { FontStyle } from '../fontStyle'
 
 interface IText {
   /** typography class name to apply predefined styles */
@@ -44,14 +43,12 @@ export const Text: FC<Props> = ({
     cursor={cursor}
   >
     {children}
-    <FontStyle />
   </Container>
 )
 
 const Container = styled.p<IText>(
   ({ align, color, cursor, typo }) => css`
   /** PREDEFINED TYPOGRAPHY STYLES */
-  font-family: 'Circular';
 
   /* Header Large */
   ${typo === 'header-large' &&
