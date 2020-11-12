@@ -85,21 +85,21 @@ const Container = styled.button<IButton>(
     }
 
     ${(inverted || outlined) &&
-      css`
-        background-color: transparent;
-        border: 1px solid ${outlined ? theme.colors.grey4 : 'transparent'};
-        color: ${outlined ? theme.colors.blue7 : theme.colors[`${color}5`]};
+    css`
+      background-color: transparent;
+      border: 1px solid ${outlined ? theme.colors.grey4 : 'transparent'};
+      color: ${outlined ? theme.colors.blue7 : theme.colors[`${color}5`]};
 
-        &:hover:not([disabled]) {
-          background-color: ${theme.colors.bg2};
-        }
-        &:active:not([disabled]) {
-          background-color: ${theme.colors.bg3};
-        }
-      `};
+      &:hover:not([disabled]) {
+        background-color: ${theme.colors.bg2};
+      }
+      &:active:not([disabled]) {
+        background-color: ${theme.colors.bg3};
+      }
+    `};
 
     @media (min-width: 768px) {
-      padding: 19px 16px 15px;
+      padding: 16px 16px 15px;
       font-size: 16px;
     }
   `,
