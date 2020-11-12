@@ -56,6 +56,7 @@ export const ActionDropdown: FC<Props> = ({
       <OuterContainer open={open}>
         <List options={list} selectOption={onSelect} />
       </OuterContainer>
+
     </Container>
   )
 }
@@ -88,7 +89,6 @@ const SelectedOption = styled.span`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: Gordita;
 `
 
 const Container = styled.div`

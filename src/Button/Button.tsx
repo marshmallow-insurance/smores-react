@@ -5,7 +5,6 @@ import { theme } from '../theme'
 import { LegacyButton } from './LegacyButton'
 import { Loader } from '../Loader'
 import { Icon as IconComponent } from '../Icon'
-import { FontStyle } from '../fontStyle'
 
 interface IButton {
   /** disabled state */
@@ -103,7 +102,6 @@ export const Button: FC<Props> = ({
           {children}
         </LegacyButton>
       )}
-      <FontStyle />
     </div>
   )
 }
@@ -132,7 +130,6 @@ const Container = styled.button<IButton>(
     cursor: ${disabled || loading ? 'not-allowed' : 'pointer'};
     line-height: 100%;
     font-size: 16px;
-    font-family: 'Circular';
     opacity: ${disabled ? '0.5' : '1'};
     width: ${forcedWidth ? forcedWidth : 'auto'};
 
