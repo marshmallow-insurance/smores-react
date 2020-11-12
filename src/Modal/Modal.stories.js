@@ -32,5 +32,5 @@ Default.args = {
   title: "Hello world i'm a beautiful modal",
   showModal: false,
   drawer: true,
-  cross: true
+  cross: false
 }
