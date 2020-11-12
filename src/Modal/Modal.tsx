@@ -20,7 +20,8 @@ type ModalProps = {
   children?: ReactNode,
   showModal?: boolean,
   handleClick: () => void,
-  drawer?: boolean
+  drawer?: boolean,
+  cross?: boolean
 }
 
 export const Modal: FC<ModalProps> = ({
@@ -28,16 +29,19 @@ export const Modal: FC<ModalProps> = ({
   children,
   showModal = false,
   handleClick,
-  drawer = true
+  drawer = true,
+  cross = true
 }) => 
   <Wrapper showModal={showModal}>
     <Overlay />
     <Container drawer={drawer}>
       <Box flex alignItems="center" justifyContent="space-between">
         <Text tag="h2" typo="header-small" align="left">{title}</Text>
-        <IconContainer onClick={handleClick}>
-          <Icon render="cross" color="blue7" size={32} />
-        </IconContainer>
+        {cross && 
+          <IconContainer onClick={handleClick}>
+            <Icon render="cross" color="blue7" size={32} />
+          </IconContainer>
+        }
       </Box>
       <Text tag="p" typo="desc-small" color="grey8" align="left">
         {children}

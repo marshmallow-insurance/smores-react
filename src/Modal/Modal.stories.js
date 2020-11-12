@@ -31,5 +31,6 @@ export const Default = Template.bind({})
 Default.args = {
   title: "Hello world i'm a beautiful modal",
   showModal: false,
-  drawer: true
+  drawer: true,
+  cross: true
 }
