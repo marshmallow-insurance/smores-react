@@ -137,31 +137,34 @@ const Container = styled.button<IButton>(
     width: ${forcedWidth ? forcedWidth : 'auto'};
 
     ${primary &&
-    css`
-      color: ${theme.colors.white};
-      &:hover {
-        background-color: ${!(disabled || loading) && theme.colors.pink6};
-      }
-      &:active {
-        background-color: ${!(disabled || loading) && theme.colors.pink7};
-      }
-    `}
+      css`
+        color: ${theme.colors.white};
+
+        &:hover {
+          background-color: ${!(disabled || loading) && theme.colors.pink6};
+        }
+        &:active {
+          background-color: ${!(disabled || loading) && theme.colors.pink7};
+        }
+      `}
     ${secondary &&
-    css`
-      background-color: ${theme.colors.white};
-      border: 2px solid ${theme.colors.blue7};
-      &:hover {
-        background-color: ${!(disabled || loading) && theme.colors.bg2};
-        border: ${!(disabled || loading) && `2px solid ${theme.colors.blue6}`};
-      }
-      &:active {
-        background-color: ${theme.colors.bg2};
+        css`
+        background-color: ${theme.colors.white};
         border: 2px solid ${theme.colors.blue7};
-      }
-    `}
+
+        &:hover {
+          background-color: ${!(disabled || loading) && theme.colors.bg2};
+          border: ${!(disabled || loading) && `2px solid ${theme.colors.blue6}`};
+        }
+        &:active {
+          background-color: ${theme.colors.bg2};
+          border: 2px solid ${theme.colors.blue7};
+        }
+      `}
   ${tertiary &&
     css`
       background-color: ${theme.colors.bg2};
+      
       &:hover {
         background-color: ${!(disabled || loading) && theme.colors.grey2};
       }
