@@ -65,6 +65,7 @@ $ npm install @mrshmllw/smores-react
 * [LabelledText](https://github.com/marshmallow-insurance/smores-react/tree/master/src/LabelledText)
 * [Loader](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Loader)
 * [Message](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Message)
+* [Modal](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Modal)
 * [NumberInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/NumberInput)
 * [RadioButton](https://github.com/marshmallow-insurance/smores-react/tree/master/src/RadioButton)
 * [SearchInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/SearchInput)
