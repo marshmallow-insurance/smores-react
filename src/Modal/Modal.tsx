@@ -62,11 +62,14 @@ const Wrapper = styled(Box)<IModalWrapper>(
 )
 
 const Overlay = styled.div`
-  position: absolute;
+  position: fixed;
   background: ${theme.colors.blue7};
   opacity: 0.4;
   height: calc(100vh);
   width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
 `
 
 const Container = styled.div<IModalContainer>(
