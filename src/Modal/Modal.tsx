@@ -45,9 +45,9 @@ export const Modal: FC<ModalProps> = ({
           </IconContainer>
         )}
       </Box>
-      <Text tag="p" typo="desc-small" color="grey8" align="left">
+      <Box flex direction="row">
         {children}
-      </Text>
+      </Box>
     </Container>
   </Wrapper>
 )

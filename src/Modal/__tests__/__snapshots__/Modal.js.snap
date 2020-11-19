@@ -16,6 +16,16 @@ exports[`renders 1`] = `
   align-items: center;
 }
 
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -48,21 +58,6 @@ exports[`renders 1`] = `
   margin: 0;
   padding: 0;
   color: #112035;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
-.c7 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  color: #636768;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -114,13 +109,6 @@ exports[`renders 1`] = `
   .c4 {
     font-size: 21px;
     line-height: 27px;
-  }
-}
-
-@media (min-width:768px) {
-  .c7 {
-    font-size: 14px;
-    line-height: 18px;
   }
 }
 
@@ -178,13 +166,12 @@ exports[`renders 1`] = `
         </span>
       </div>
     </div>
-    <p
+    <div
       class="c7"
-      color="grey8"
-      cursor="inherit"
+      direction="row"
     >
       Text inside
-    </p>
+    </div>
   </div>
 </div>
 `;
