@@ -45,7 +45,7 @@ export const Modal: FC<ModalProps> = ({
           </IconContainer>
         )}
       </Box>
-      <Box flex direction="row">
+      <Box flex direction="column">
         {children}
       </Box>
     </Container>
