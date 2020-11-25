@@ -115,7 +115,7 @@ exports[`renders 1`] = `
     autocomplete="off"
     class="c2"
     id="days"
-    name=""
+    name="search_input"
     type="text"
     value=""
   />
