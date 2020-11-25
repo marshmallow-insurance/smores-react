@@ -20,9 +20,11 @@ interface ISearchInput {
   onChange: (e: React.FormEvent<HTMLInputElement>) => void
 }
 
-type Props = {
+type SearchInputProps = {
   /** ID, usually used for tests  */
   id: string
+  /** Name of the form control  */
+  name?: string
   /** label displayed above the input  */
   label?: string
   /** Placeholder (initial state) */
@@ -33,8 +35,9 @@ type Props = {
   onFound: (element: string) => void
 }
 
-export const SearchInput: FC<Props> = ({
+export const SearchInput: FC<SearchInputProps> = ({
   id,
+  name = 'search_input',
   label,
   placeholder,
   searchList,
@@ -50,7 +53,7 @@ export const SearchInput: FC<Props> = ({
     if (value) {
       // start filtering if the input has at least 2 characters
       if (value.length >= 2) {
-        const filteredList = searchList.filter(el =>
+        const filteredList = searchList.filter((el) =>
           el.label.toLowerCase().includes(value.toLocaleLowerCase()),
         )
 
@@ -139,8 +142,8 @@ const ResultsContainer = styled.div<IContainer>`
   width: 100%;
 
   ul {
-    max-height: ${p => (p.show ? '192px' : '0px')};
-    border-color: ${p => (p.show ? `${theme.colors.grey4}` : 'transparent')};
+    max-height: ${(p) => (p.show ? '192px' : '0px')};
+    border-color: ${(p) => (p.show ? `${theme.colors.grey4}` : 'transparent')};
   }
 `
 
