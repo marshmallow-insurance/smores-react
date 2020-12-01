@@ -23,18 +23,21 @@ const App = () => (
 
 * arrow
 * at
+* breakdown
 * briefcase
 * burger
 * calendar
 * camera
 * car
 * car-claim
+* car-mta
 * card
 * caret
 * charge
 * chat
 * contact-email
 * cross
+* doc
 * doc-download
 * download
 * edit
