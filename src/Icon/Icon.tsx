@@ -670,13 +670,7 @@ export const Icon: FC<Props> = ({
     {
       //CAR MTA
       render === 'car-mta' && (
-        <svg
-          width="47"
-          height="47"
-          viewBox="0 0 47 47"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg width="100%" height="100%" viewBox="0 0 47 47" fill="none">
           <path
             d="M19.0938 38.1875C19.0938 40.621 17.121 42.5938 14.6875 42.5938C12.254 42.5938 10.2812 40.621 10.2812 38.1875C10.2812 35.754 12.254 33.7812 14.6875 33.7812C17.121 33.7812 19.0938 35.754 19.0938 38.1875Z"
             fill="#112035"
@@ -764,13 +758,7 @@ export const Icon: FC<Props> = ({
     {
       //DOC
       render === 'doc' && (
-        <svg
-          width="46"
-          height="46"
-          viewBox="0 0 46 46"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg width="100%" height="100%" viewBox="0 0 46 46" fill="none">
           <path
             d="M12.9375 4.3125H43.125V33.6615C43.125 38.2926 39.3707 42.0469 34.7396 42.0469H12.9375V4.3125Z"
             fill="white"
@@ -829,13 +817,7 @@ export const Icon: FC<Props> = ({
     {
       //BREAKDOWN
       render === 'breakdown' && (
-        <svg
-          width="46"
-          height="46"
-          viewBox="0 0 46 46"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg width="100%" height="100%" viewBox="0 0 46 46" fill="none">
           <path
             d="M37.4973 17.3178L40.569 14.2461C43.0042 11.8109 43.0042 7.86456 40.569 5.4294C38.1339 2.99424 34.1875 2.99424 31.7524 5.4294L26.875 10.3068"
             stroke="#112035"
