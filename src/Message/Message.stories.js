@@ -6,7 +6,9 @@ export default {
   component: Message,
 }
 
-const Template = (args) => <Message {...args}>This is a message</Message>
+const Template = (args) => (
+  <Message {...args}>Customer currently in BACS queue</Message>
+)
 
 export const Default = Template.bind({})
 
@@ -14,14 +16,12 @@ export const Info = Template.bind({})
 
 Info.args = {
   type: 'info',
-  inverted: true,
 }
 
 export const Warning = Template.bind({})
 
 Warning.args = {
   type: 'warning',
-  inverted: false,
 }
 
 export const IconPlacement = Template.bind({})

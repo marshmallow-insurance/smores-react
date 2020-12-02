@@ -9,21 +9,16 @@ export type MessageProps = {
   children: ReactNode
   type?: 'info' | 'warning'
   alignIcon?: 'center' | 'flex-start' | 'flex-end'
-  inverted?: boolean
 }
 
 export const Message: FC<MessageProps> = ({
   children,
   type = 'info',
   alignIcon = 'center',
-  inverted = false,
 }) => (
-  <Wrapper type={type} inverted={inverted}>
+  <Wrapper type={type}>
     <IconWrapper alignIcon={alignIcon}>
-      <Icon
-        render={type}
-        color={inverted ? 'white' : type === 'warning' ? 'red7' : 'blue7'}
-      />
+      <Icon render={type} color={type === 'warning' ? 'pink8' : 'blue7'} />
     </IconWrapper>
 
     {children}
@@ -41,30 +36,21 @@ const IconWrapper = styled(Box)<IIconWrapper>`
 
 interface IWrapper {
   type: 'info' | 'warning'
-  inverted: boolean
 }
 
 const Wrapper = styled.div<IWrapper>(
-  ({ inverted, type }) => css`
+  ({ type }) => css`
     align-items: center;
-    border: 1px solid
-      ${type === 'warning' ? theme.colors.red7 : theme.colors.blue7};
-    background-color: ${inverted
-      ? type === 'warning'
-        ? theme.colors.red5
-        : theme.colors.blue5
-      : theme.colors.white};
+    background-color: ${type === 'warning'
+      ? theme.colors.red2
+      : theme.colors.blue2};
     box-sizing: border-box;
     border-radius: 8px;
     margin-bottom: 24px;
     padding: 16px;
     display: flex;
     font-family: ${theme.font.system};
-    color: ${inverted
-      ? theme.colors.white
-      : type === 'warning'
-      ? theme.colors.red7
-      : theme.colors.blue7};
+    color: ${type === 'warning' ? theme.colors.pink8 : theme.colors.blue7};
     font-weight: ${theme.font.weight.medium};
 
     span {
