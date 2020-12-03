@@ -108,6 +108,7 @@ exports[`renders 1`] = `
     class="c1"
     color="grey4"
     cursor="inherit"
+    title=""
   >
     Days
   </label>

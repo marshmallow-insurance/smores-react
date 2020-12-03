@@ -5,9 +5,10 @@ exports[`renders 1`] = `
   class="sc-dlfnbm rlmgG"
 >
   <span
-    class="sc-bdfBwQ jTmxRe"
+    class="sc-bdfBwQ jvAsmG"
     color="blue7"
     cursor="inherit"
+    title=""
   />
   <input
     type="checkbox"

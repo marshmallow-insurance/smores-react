@@ -199,6 +199,7 @@ exports[`renders - currency 1`] = `
     class="c1"
     color="grey4"
     cursor="inherit"
+    title=""
   >
     Currency
      
@@ -210,6 +211,7 @@ exports[`renders - currency 1`] = `
       class="c3 c4"
       color="blue7"
       cursor="inherit"
+      title=""
     >
       $
     </span>
@@ -376,6 +378,7 @@ exports[`renders - disabled 1`] = `
     class="c1"
     color="grey4"
     cursor="inherit"
+    title=""
   >
     Currency
      
@@ -603,6 +606,7 @@ exports[`renders - error 1`] = `
     class="c1"
     color="grey4"
     cursor="inherit"
+    title=""
   >
     Currency
      
@@ -614,6 +618,7 @@ exports[`renders - error 1`] = `
       class="c3 c4"
       color="blue7"
       cursor="inherit"
+      title=""
     >
       $
     </span>
@@ -790,6 +795,7 @@ exports[`renders - number 1`] = `
     class="c1"
     color="grey4"
     cursor="inherit"
+    title=""
   >
     Number
      
@@ -946,6 +952,7 @@ exports[`renders - tel 1`] = `
     class="c1"
     color="grey4"
     cursor="inherit"
+    title=""
   >
     Telephone number
      
@@ -957,6 +964,7 @@ exports[`renders - tel 1`] = `
       class="c3 c4"
       color="blue7"
       cursor="inherit"
+      title=""
     >
       +44
     </span>
@@ -1107,6 +1115,7 @@ exports[`renders - with suffix 1`] = `
     class="c1"
     color="grey4"
     cursor="inherit"
+    title=""
   >
     Currency
      
@@ -1129,6 +1138,7 @@ exports[`renders - with suffix 1`] = `
         class="c5 c6"
         color="blue7"
         cursor="inherit"
+        title=""
       >
         miles
       </span>
@@ -1293,6 +1303,7 @@ exports[`renders - with trailing icon 1`] = `
     class="c1"
     color="grey4"
     cursor="inherit"
+    title=""
   >
     Currency
      
@@ -1304,6 +1315,7 @@ exports[`renders - with trailing icon 1`] = `
       class="c3 c4"
       color="blue7"
       cursor="inherit"
+      title=""
     >
       $
     </span>
