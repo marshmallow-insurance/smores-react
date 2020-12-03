@@ -23,6 +23,7 @@ type Props = {
   align?: string
   color?: string
   cursor?: string
+  title?: string
 }
 
 export const Text: FC<Props> = ({
@@ -33,6 +34,7 @@ export const Text: FC<Props> = ({
   align = 'left',
   color = 'blue7',
   cursor = 'inherit',
+  title = '',
 }) => (
   <Container
     as={tag}
@@ -41,6 +43,7 @@ export const Text: FC<Props> = ({
     align={align}
     color={color}
     cursor={cursor}
+    title={title}
   >
     {children}
   </Container>
@@ -48,10 +51,10 @@ export const Text: FC<Props> = ({
 
 const Container = styled.p<IText>(
   ({ align, color, cursor, typo }) => css`
-  /** PREDEFINED TYPOGRAPHY STYLES */
+    /** PREDEFINED TYPOGRAPHY STYLES */
 
-  /* Header Large */
-  ${typo === 'header-large' &&
+    /* Header Large */
+    ${typo === 'header-large' &&
     css`
       font-size: 24px;
       line-height: 31px;
@@ -63,7 +66,7 @@ const Container = styled.p<IText>(
       }
     `}
 
-  /* Header medium */
+    /* Header medium */
   ${typo === 'header-medium' &&
     css`
       font-size: 21px;
@@ -196,10 +199,10 @@ const Container = styled.p<IText>(
     `}
 
   margin: 0;
-  padding: 0;
-  color: ${theme.colors[color]};
-  text-align: ${align};
-  cursor: ${cursor};
-  letter-spacing: 0.15px;
-`,
+    padding: 0;
+    color: ${theme.colors[color]};
+    text-align: ${align};
+    cursor: ${cursor};
+    letter-spacing: 0.15px;
+  `,
 )

@@ -23,3 +23,10 @@ Label.args = {
   typo: 'label',
   color: 'blue7',
 }
+
+export const WithTitle = Template.bind({})
+
+WithTitle.args = {
+  tag: 'p',
+  title: 'a11y title tooltip',
+}

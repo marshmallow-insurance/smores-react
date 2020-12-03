@@ -47,6 +47,7 @@ exports[`renders 1`] = `
     class="c1 c2"
     color="red7"
     cursor="inherit"
+    title=""
   >
     Cancelled - Refunded Manually
   </span>
