@@ -51,7 +51,6 @@ const Wrapper = styled.div<IWrapper>(
     display: flex;
     font-family: ${theme.font.system};
     color: ${type === 'warning' ? theme.colors.pink8 : theme.colors.blue7};
-    font-weight: ${theme.font.weight.medium};
 
     span {
       margin: 0 16px 0 0;
