@@ -51,7 +51,6 @@ exports[`default renders correctly 1`] = `
   display: flex;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   color: #112035;
-  font-weight: 500;
 }
 
 .c0 span {
@@ -143,7 +142,6 @@ exports[`info renders correctly 1`] = `
   display: flex;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   color: #112035;
-  font-weight: 500;
 }
 
 .c0 span {
@@ -235,7 +233,6 @@ exports[`warning renders correctly 1`] = `
   display: flex;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   color: #AB1D20;
-  font-weight: 500;
 }
 
 .c0 span {
