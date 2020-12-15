@@ -62,6 +62,7 @@ const App = () => (
 * shield
 * tick
 * trash
+* clock
 * up-down
 * upload-email
 * warning
