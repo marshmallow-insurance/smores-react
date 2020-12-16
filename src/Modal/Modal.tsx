@@ -13,6 +13,8 @@ interface IModalWrapper {
 interface IModalContainer {
   // drawer state
   drawer: boolean
+  // modal width
+  width: string
 }
 
 type ModalProps = {
@@ -22,6 +24,7 @@ type ModalProps = {
   handleClick: () => void
   drawer?: boolean
   cross?: boolean
+  width?: string
 }
 
 export const Modal: FC<ModalProps> = ({
@@ -31,10 +34,11 @@ export const Modal: FC<ModalProps> = ({
   handleClick,
   drawer = true,
   cross = true,
+  width,
 }) => (
   <Wrapper showModal={showModal}>
     <Overlay />
-    <Container drawer={drawer}>
+    <Container drawer={drawer} width={width || '460px'}>
       <Box flex alignItems="center" justifyContent="space-between">
         <Text tag="h2" typo="header-small" align="left">
           {title}
@@ -73,7 +77,7 @@ const Overlay = styled.div`
 `
 
 const Container = styled.div<IModalContainer>(
-  ({ drawer }) => css`
+  ({ drawer, width }) => css`
     background: ${theme.colors.white};
     z-index: 999;
     position: absolute;
@@ -81,8 +85,8 @@ const Container = styled.div<IModalContainer>(
     box-sizing: border-box;
     border-radius: 8px;
     padding: 24px;
-    max-width: 456px;
-    left: calc(50% - 460px / 2);
+    max-width: ${width};
+    left: calc(50% - ${width} / 2);
     top: calc(50% - 265px / 2 + 0.5px);
 
     ${drawer === true &&

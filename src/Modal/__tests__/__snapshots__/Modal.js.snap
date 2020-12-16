@@ -92,7 +92,7 @@ exports[`renders 1`] = `
   box-sizing: border-box;
   border-radius: 8px;
   padding: 24px;
-  max-width: 456px;
+  max-width: 460px;
   left: calc(50% - 460px / 2);
   top: calc(50% - 265px / 2 + 0.5px);
 }
@@ -137,6 +137,7 @@ exports[`renders 1`] = `
   />
   <div
     class="c2"
+    width="460px"
   >
     <div
       class="c3"
