@@ -19,6 +19,7 @@ interface IModalContainer {
 
 type ModalProps = {
   title?: string
+  icon?: string
   children?: ReactNode
   showModal?: boolean
   handleClick: () => void
@@ -29,6 +30,7 @@ type ModalProps = {
 
 export const Modal: FC<ModalProps> = ({
   title = '',
+  icon = '',
   children,
   showModal = false,
   handleClick,
@@ -39,10 +41,15 @@ export const Modal: FC<ModalProps> = ({
   <Wrapper showModal={showModal}>
     <Overlay />
     <Container drawer={drawer} width={width || '460px'}>
-      <Box flex alignItems="center" justifyContent="space-between">
-        <Text tag="h2" typo="header-small" align="left">
-          {title}
-        </Text>
+      <Box flex alignItems="flex-start" justifyContent="space-between">
+        <TitleElements flex direction="column">
+          {icon !== '' && (
+            <Icon render={icon} size={24} color="blue5" mr="8px" />
+          )}
+          <Text tag="h2" typo="header-small" align="left">
+            {title}
+          </Text>
+        </TitleElements>
         {cross && (
           <IconContainer onClick={handleClick}>
             <Icon render="cross" color="blue7" size={32} />
@@ -110,9 +117,14 @@ const IconContainer = styled.div`
   cursor: pointer;
   background: ${theme.colors.bg2};
   border-radius: 32px;
-  margin: 8px;
+  margin-right: 8px;
 
   &:hover {
     background: ${theme.colors.bg3};
   }
+`
+
+const TitleElements = styled(Box)`
+  align-self: center;
+  margin: 8px 0;
 `

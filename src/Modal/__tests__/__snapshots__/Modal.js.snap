@@ -10,13 +10,13 @@ exports[`renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
-.c7 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26,7 +26,7 @@ exports[`renders 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -51,7 +51,7 @@ exports[`renders 1`] = `
   margin-left: 0;
 }
 
-.c4 {
+.c6 {
   font-size: 18px;
   line-height: 23px;
   font-weight: 500;
@@ -97,19 +97,26 @@ exports[`renders 1`] = `
   top: calc(50% - 265px / 2 + 0.5px);
 }
 
-.c5 {
+.c7 {
   cursor: pointer;
   background: #F9F9F9;
   border-radius: 32px;
-  margin: 8px;
+  margin-right: 8px;
 }
 
-.c5:hover {
+.c7:hover {
   background: #F8F6F6;
 }
 
+.c5 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin: 8px 0;
+}
+
 @media (min-width:768px) {
-  .c4 {
+  .c6 {
     font-size: 21px;
     line-height: 27px;
   }
@@ -142,17 +149,22 @@ exports[`renders 1`] = `
     <div
       class="c3"
     >
-      <h2
-        class="c4"
-        color="blue7"
-        cursor="inherit"
-        title=""
-      />
       <div
-        class="c5"
+        class="c4 c5"
+        direction="column"
+      >
+        <h2
+          class="c6"
+          color="blue7"
+          cursor="inherit"
+          title=""
+        />
+      </div>
+      <div
+        class="c7"
       >
         <span
-          class="c6"
+          class="c8"
           color="blue7"
           rotate="0"
           size="32"
@@ -172,7 +184,7 @@ exports[`renders 1`] = `
       </div>
     </div>
     <div
-      class="c7"
+      class="c4"
       direction="column"
     >
       Text inside
