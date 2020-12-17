@@ -4,11 +4,11 @@ import { Button } from '../Button'
 import { Box } from '../Box'
 
 export default {
-  title: 'Modal'
+  title: 'Modal',
 }
 
 const Template = (args) => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   const handleClick = () => {
     setShowModal(!showModal)
@@ -17,10 +17,14 @@ const Template = (args) => {
     <Box>
       {showModal ? (
         <Modal {...args} handleClick={handleClick} showModal={showModal}>
-          [A modal window] creates a mode that disables the main window, but keeps it visible with the modal window as a child window in front of it.
+          [A modal window] creates a mode that disables the main window, but
+          keeps it visible with the modal window as a child window in front of
+          it.
         </Modal>
       ) : (
-        <Button primary handleClick={handleClick}>Show Modal with Mobile Drawer</Button>
+        <Button primary handleClick={handleClick}>
+          Show Modal with Mobile Drawer
+        </Button>
       )}
     </Box>
   )
@@ -29,8 +33,10 @@ const Template = (args) => {
 export const Default = Template.bind({})
 
 Default.args = {
+  icon: 'calendar',
   title: "Hello world i'm a beautiful modal",
   showModal: false,
   drawer: true,
-  cross: false
+  cross: false,
+  width: '640px',
 }

@@ -41,10 +41,10 @@ export const Modal: FC<ModalProps> = ({
   <Wrapper showModal={showModal}>
     <Overlay />
     <Container drawer={drawer} width={width || '460px'}>
-      <Box flex alignItems="flex-start" justifyContent="space-between">
+      <Box flex alignItems="flex-start" justifyContent="space-between" mb="8px">
         <TitleElements flex direction="column">
           {icon !== '' && (
-            <Icon render={icon} size={24} color="blue5" mr="8px" />
+            <Icon render={icon} size={56} color="blue7" mb="16px" />
           )}
           <Text tag="h2" typo="header-small" align="left">
             {title}
@@ -126,5 +126,4 @@ const IconContainer = styled.div`
 
 const TitleElements = styled(Box)`
   align-self: center;
-  margin: 8px 0;
 `
