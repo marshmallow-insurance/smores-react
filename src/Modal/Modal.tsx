@@ -106,8 +106,9 @@ const Container = styled.div<IModalContainer>(
         padding: 10% 24px;
         overflow: scroll;
         max-height: 90vh;
-        height: 70vh;
-        top: 30vh;
+        position: fixed;
+        top: auto;
+        bottom: 0;
       }
     `}
   `,
