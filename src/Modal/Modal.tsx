@@ -65,10 +65,15 @@ export const Modal: FC<ModalProps> = ({
 
 const Wrapper = styled(Box)<IModalWrapper>(
   ({ showModal }) => css`
-    display: ${showModal ? 'contents' : 'none'};
+    display: ${showModal ? 'flex' : 'none'};
     position: absolute;
+    top: 0;
+    left: 0;
     height: calc(100vh);
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   `,
 )
 
@@ -87,14 +92,11 @@ const Container = styled.div<IModalContainer>(
   ({ drawer, width }) => css`
     background: ${theme.colors.white};
     z-index: 999;
-    position: absolute;
     border: 1px solid ${theme.colors.grey3};
     box-sizing: border-box;
     border-radius: 8px;
     padding: 24px;
     max-width: ${width};
-    left: calc(50% - ${width} / 2);
-    top: calc(50% - 265px / 2 + 0.5px);
 
     ${drawer === true &&
     css`
@@ -109,6 +111,7 @@ const Container = styled.div<IModalContainer>(
         position: fixed;
         top: auto;
         bottom: 0;
+        position: absolute;
       }
     `}
   `,
