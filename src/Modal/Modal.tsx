@@ -71,7 +71,6 @@ const Wrapper = styled(Box)<IModalWrapper>(
     left: 0;
     height: calc(100vh);
     width: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
   `,
