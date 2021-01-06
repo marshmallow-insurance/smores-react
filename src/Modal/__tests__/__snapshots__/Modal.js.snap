@@ -74,10 +74,6 @@ exports[`renders 1`] = `
   left: 0;
   height: calc(100vh);
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
