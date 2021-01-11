@@ -76,7 +76,7 @@ export const Button: FC<Props> = ({
             <IconContainer
               render={icon}
               size={24}
-              color={primary ? 'white' : `${theme.colors.blue7}`}
+              color={primary ? 'white' : 'blue7'}
             />
           )}
           {loading ? (
