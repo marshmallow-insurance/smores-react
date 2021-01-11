@@ -13,7 +13,7 @@ import {
   getDaysInMonth,
   isToday,
   isWeekend,
-  getDay,
+  getISODay,
 } from 'date-fns'
 
 import { Box } from '../Box'
@@ -27,6 +27,7 @@ import { Month } from './types'
 type DatepickerProps = {
   disableWeekend?: boolean
   firstDayShift?: boolean
+  fromDate?: Date
   range?: number
   onDateSelect: (date: string) => void
 }
@@ -35,6 +36,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   disableWeekend = true,
   firstDayShift = false,
   range = 14,
+  fromDate = new Date(),
   onDateSelect,
 }) => {
   const [activeDay, setActiveDay] = useState<Date>()
@@ -59,8 +61,11 @@ export const Datepicker: FC<DatepickerProps> = ({
     const filteredDays = []
 
     if (firstDayShift) {
-      const date = new Date(year, month, 0)
-      const blankDays = getDay(date)
+      const date = new Date(year, month, 1)
+      const dayOfTheWeek = getISODay(date)
+      const blankDays = dayOfTheWeek === 7 ? 0 : dayOfTheWeek - 1
+      console.log(date)
+      console.log(blankDays)
 
       for (let i = 0; i < blankDays; i += 1) {
         filteredDays.push({
@@ -93,7 +98,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   }
 
   const combineAvailableDays = () => {
-    const today = new Date()
+    const today = fromDate
     const endDay = addDays(today, range)
     const sameMonth = isSameMonth(today, endDay)
 
