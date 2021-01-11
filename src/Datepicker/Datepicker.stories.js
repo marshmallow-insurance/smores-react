@@ -10,3 +10,9 @@ export default {
 const Template = (args) => <Datepicker {...args} />
 
 export const Default = Template.bind({})
+
+Default.args = {
+  disableWeekend: false,
+  firstDayShift: true,
+  range: 300
+}
