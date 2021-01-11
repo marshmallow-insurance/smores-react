@@ -12,6 +12,8 @@ import {
   startOfMonth,
   getDaysInMonth,
   isToday,
+  isWeekend,
+  getDay,
 } from 'date-fns'
 
 import { Box } from '../Box'
@@ -23,11 +25,15 @@ import { DatesList } from './DatesList'
 import { Month } from './types'
 
 type DatepickerProps = {
+  disableWeekend?: boolean
+  firstDayShift?: boolean
   range?: number
   onDateSelect: (date: string) => void
 }
 
 export const Datepicker: FC<DatepickerProps> = ({
+  disableWeekend = true,
+  firstDayShift = false,
   range = 14,
   onDateSelect,
 }) => {
@@ -52,6 +58,20 @@ export const Datepicker: FC<DatepickerProps> = ({
     const year = getYear(startDay)
     const filteredDays = []
 
+    if (firstDayShift) {
+      const date = new Date(year, month, 0)
+      const blankDays = getDay(date)
+
+      for (let i = 0; i < blankDays; i += 1) {
+        filteredDays.push({
+          date,
+          label: '',
+          active: false,
+          disabled: true,
+        })
+      }
+    }
+
     for (let i = 1; i <= daysInMonth; i += 1) {
       const date = new Date(year, month, i)
 
@@ -60,8 +80,9 @@ export const Datepicker: FC<DatepickerProps> = ({
         label: format(date, 'dd'),
         active: activeDay ? isSameDay(date, activeDay) : false,
         disabled:
-          !isToday(date) &&
-          !isWithinInterval(date, { start: startDay, end: endDay }),
+          (!isToday(date) &&
+            !isWithinInterval(date, { start: startDay, end: endDay })) ||
+          (disableWeekend && isWeekend(date)),
       })
     }
 
@@ -178,7 +199,7 @@ const Circle = styled.button`
   width: 32px;
   border-radius: 50%;
   border: none;
-  padding: 0;
+  padding: 0 !important;
   cursor: pointer;
 
   :disabled {
