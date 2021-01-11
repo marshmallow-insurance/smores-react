@@ -174,5 +174,5 @@ const Container = styled.button<IButton>(
 )
 
 const IconContainer = styled(IconComponent)`
-  padding-right: 10px;
+  margin-right: 10px;
 `
