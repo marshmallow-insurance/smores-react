@@ -9,7 +9,7 @@ type EmojiProps = {
   /** set size of the Emoji  */
   size?: number
   /** aria-label to identify Emoji */
-  label?: string
+  label: string
   /** margins TOP-RIGHT-BOTTOM-LEFT */
   mt?: string
   mr?: string
@@ -21,7 +21,7 @@ export const Emoji: FC<EmojiProps> = ({
   className = '',
   symbol,
   size = 12,
-  label = 'emoji',
+  label,
   mt = '0',
   mr = '0',
   mb = '0',

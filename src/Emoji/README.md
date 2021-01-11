@@ -3,9 +3,9 @@
 ## Props:
 
 ```ts
-symbol:   string;
+symbol:   string; /* copy/paste directly the emoji, not it's text representation. See example for reference */
 size?:    number; /* emoji dimentions */
-label?:   string; /* aria-label */
+label:   string; /* aria-label */
 ```
 
 ## Usage
