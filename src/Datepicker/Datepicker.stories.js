@@ -14,5 +14,6 @@ export const Default = Template.bind({})
 Default.args = {
   disableWeekend: false,
   firstDayShift: true,
-  range: 300
+  range: 31,
+  fromDate: new Date('2021/03/14'),
 }
