@@ -64,8 +64,6 @@ export const Datepicker: FC<DatepickerProps> = ({
       const date = new Date(year, month, 1)
       const dayOfTheWeek = getISODay(date)
       const blankDays = dayOfTheWeek === 7 ? 0 : dayOfTheWeek - 1
-      console.log(date)
-      console.log(blankDays)
 
       for (let i = 0; i < blankDays; i += 1) {
         filteredDays.push({
