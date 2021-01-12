@@ -63,7 +63,7 @@ export const Button: FC<Props> = ({
       {primary || secondary || tertiary ? (
         <Container
           id={id}
-          disabled={disabled}
+          disabled={disabled || loading}
           onClick={handleClick}
           isLoading={loading}
           primary={primary}
@@ -72,20 +72,22 @@ export const Button: FC<Props> = ({
           icon={icon}
           forcedWidth={forcedWidth}
         >
-          {icon && (
-            <IconContainer
-              render={icon}
-              size={24}
-              color={primary ? 'white' : 'blue7'}
-            />
-          )}
           {loading ? (
             <Loader
               color={primary ? 'white' : `${theme.colors.blue7}`}
               height="16"
             />
           ) : (
-            <ChildrenContainer>{children}</ChildrenContainer>
+            <>
+              {icon && (
+                <IconContainer
+                  render={icon}
+                  size={24}
+                  color={primary ? 'white' : 'blue7'}
+                />
+              )}
+              <ChildrenContainer>{children}</ChildrenContainer>
+            </>
           )}
         </Container>
       ) : (
