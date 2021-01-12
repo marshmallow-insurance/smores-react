@@ -117,10 +117,10 @@ const Container = styled.button<IButton>(
     forcedWidth,
   }) => css`
     background-color: ${theme.colors.pink5};
+    border: 2px solid;
     box-shadow: none;
     color: ${theme.colors.blue7};
     padding: 16px 20px;
-    border: none;
     outline: none;
     border-radius: 8px;
     align-items: center;
@@ -136,6 +136,7 @@ const Container = styled.button<IButton>(
     ${primary &&
     css`
       color: ${theme.colors.white};
+      border-color: ${theme.colors.pink5};
 
       &:hover {
         background-color: ${!(disabled || isLoading) && theme.colors.pink6};
@@ -147,7 +148,7 @@ const Container = styled.button<IButton>(
     ${secondary &&
     css`
       background-color: ${theme.colors.white};
-      border: 2px solid ${theme.colors.blue7};
+      border-color: ${theme.colors.blue7};
 
       &:hover {
         background-color: ${!(disabled || isLoading) && theme.colors.bg2};
