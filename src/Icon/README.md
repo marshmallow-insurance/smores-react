@@ -4,7 +4,7 @@
 
 ```ts
 render:   string; 
-size?:    number; /* box dimentions */
+size?:    number; /* icon dimentions */
 color?:   string; /* from theme */
 rotate?:  number; /* degrees */
 ```
