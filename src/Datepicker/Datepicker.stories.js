@@ -15,5 +15,5 @@ Default.args = {
   disableWeekend: false,
   firstDayShift: true,
   range: 31,
-  fromDate: new Date('2021/03/14'),
+  fromDate: new Date('2021/07/14'),
 }
