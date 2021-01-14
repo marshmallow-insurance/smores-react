@@ -63,7 +63,7 @@ export const Datepicker: FC<DatepickerProps> = ({
     if (firstDayShift) {
       const date = new Date(year, month, 1)
       const dayOfTheWeek = getISODay(date)
-      const blankDays = dayOfTheWeek === 7 ? 0 : dayOfTheWeek - 1
+      const blankDays = dayOfTheWeek - 1
 
       for (let i = 0; i < blankDays; i += 1) {
         filteredDays.push({
