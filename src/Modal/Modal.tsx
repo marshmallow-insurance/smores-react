@@ -96,6 +96,7 @@ const Container = styled.div<IModalContainer>(
     border-radius: 8px;
     padding: 24px;
     max-width: ${width};
+    position: fixed;
 
     ${drawer === true &&
     css`
@@ -110,7 +111,6 @@ const Container = styled.div<IModalContainer>(
         position: fixed;
         top: auto;
         bottom: 0;
-        position: absolute;
       }
     `}
   `,
