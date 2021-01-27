@@ -177,6 +177,21 @@ export const Icon: FC<Props> = ({
     }
 
     {
+      // PEOPLE - PERSON
+      render === 'person' && (
+        <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
+          {/* tslint:disable-next-line:max-line-length */}
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            fill={theme.colors[color]}
+            d="M16 16c3.309 0 6-2.691 6-6s-2.691-6-6-6-6 2.691-6 6 2.691 6 6 6zm0-10c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4zM6 24.25C6 20.745 10.393 18 16 18s10 2.745 10 6.25V27a1 1 0 01-2 0v-2.75c0-2.264-3.738-4.25-8-4.25-4.262 0-8 1.986-8 4.25V27a1 1 0 01-2 0v-2.75z"
+          />
+        </svg>
+      )
+    }
+
+    {
       // INSURANCE - CAR
       render === 'car' && (
         <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
