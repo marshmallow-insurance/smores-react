@@ -48,6 +48,7 @@ const colors = {
   // Yellow
   yellow2: '#FFEFB5',
   yellow5: '#FFD53C',
+  yellow6: '#F5CA47',
   yellow7: '#E1A717',
 
   // Orange
