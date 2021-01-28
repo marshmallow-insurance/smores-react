@@ -49,6 +49,7 @@ const App = () => (
 * key
 * minus
 * padlock
+* person
 * plus
 * plus-circle
 * policy
