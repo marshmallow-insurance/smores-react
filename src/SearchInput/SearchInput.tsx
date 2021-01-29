@@ -140,6 +140,7 @@ const ResultsContainer = styled.div<IContainer>`
   overflow-y: hidden;
   position: absolute;
   width: 100%;
+  visibility: ${(p) => (p.show ? 'visible' : 'hidden')};
 
   ul {
     max-height: ${(p) => (p.show ? '192px' : '0px')};
