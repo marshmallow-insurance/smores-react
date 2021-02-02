@@ -6,12 +6,10 @@ update_configs:
     default_assignees:
       - 'ellajay'
       - 'habin-isa'
-      - 'alexwllms'
       - 'fleonard'
     default_reviewers:
       - 'ellajay'
       - 'habin-isa'
-      - 'alexwllms'
       - 'fleonard'
     automerged_updates:
       - match:
