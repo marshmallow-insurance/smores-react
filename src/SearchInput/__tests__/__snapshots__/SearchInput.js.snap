@@ -61,6 +61,7 @@ exports[`renders 1`] = `
   overflow-y: hidden;
   position: absolute;
   width: 100%;
+  visibility: hidden;
 }
 
 .c3 ul {
