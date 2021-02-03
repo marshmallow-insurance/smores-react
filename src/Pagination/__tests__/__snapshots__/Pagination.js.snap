@@ -1,0 +1,272 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c3 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  color: #112035;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c5 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #112035;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c7 {
+  font-size: 14px;
+  line-height: 23px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #112035;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 24px;
+  height: 24px;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 24px;
+}
+
+.c1 > div {
+  width: 24px;
+  margin-right: 4px;
+}
+
+.c1 > div:last-child {
+  margin-right: 0;
+}
+
+.c2 {
+  background: #F9F9F9;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.c4 {
+  background: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+@media (min-width:768px) {
+  .c3 {
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+
+@media (min-width:768px) {
+  .c7 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+<div
+  class="c0 c1"
+  direction="row"
+>
+  <div
+    class="c2"
+  >
+    <p
+      class="c3"
+      color="blue7"
+      cursor="inherit"
+      title=""
+    >
+      1
+    </p>
+  </div>
+  <div
+    class="c4"
+  >
+    <p
+      class="c5"
+      color="blue7"
+      cursor="inherit"
+      title=""
+    >
+      2
+    </p>
+  </div>
+  <div
+    class="c4"
+  >
+    <p
+      class="c5"
+      color="blue7"
+      cursor="inherit"
+      title=""
+    >
+      3
+    </p>
+  </div>
+  <div
+    class="c4"
+  >
+    <p
+      class="c5"
+      color="blue7"
+      cursor="inherit"
+      title=""
+    >
+      4
+    </p>
+  </div>
+  <div
+    class="c4"
+  >
+    <p
+      class="c5"
+      color="blue7"
+      cursor="inherit"
+      title=""
+    >
+      5
+    </p>
+  </div>
+  <div
+    class="c6"
+  >
+    <p
+      class="c7"
+      color="blue7"
+      cursor="inherit"
+      title=""
+    >
+      ...
+    </p>
+  </div>
+  <div
+    class="c4"
+  >
+    <p
+      class="c5"
+      color="blue7"
+      cursor="inherit"
+      title=""
+    >
+      11
+    </p>
+  </div>
+  <div
+    class="c4"
+  >
+    <span
+      class="c8"
+      color="blue7"
+      rotate="180"
+      size="24"
+    >
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 32 32"
+        width="100%"
+      >
+        <path
+          d="M6.087 16.401C6.101 16.434 6.129 16.459 6.147 16.49C6.197 16.577 6.251 16.66 6.324 16.728C6.332 16.735 6.334 16.746 6.342 16.753L14.342 23.753C14.757 24.116 15.389 24.075 15.753 23.659C16.116 23.243 16.074 22.612 15.658 22.248L9.661 17L25 17C25.553 17 26 16.552 26 16C26 15.448 25.553 15 25 15L9.661 15L15.658 9.752C16.074 9.388 16.116 8.757 15.753 8.341C15.555 8.116 15.278 8 15 8C14.766 8 14.531 8.082 14.342 8.248L6.342 15.248C6.334 15.255 6.331 15.266 6.324 15.273C6.251 15.341 6.197 15.424 6.147 15.511C6.129 15.542 6.102 15.567 6.087 15.6C6.032 15.722 6 15.857 6 16C6 16.143 6.032 16.278 6.087 16.401Z"
+          fill="#112035"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
