@@ -38,7 +38,7 @@ $ npm install @mrshmllw/smores-react
 > $ git pull
 > $ npm version [major | minor | patch]
 > $ git push && git push --tags
-> ! check build is successful (green tick in Travis CI) before next step
+> ! check build is successful (green tick in GitHub Actions workflow) before next step
 
 2. Login to NPM.
 > $ npm login
