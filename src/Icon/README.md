@@ -35,6 +35,7 @@ const App = () => (
 * caret
 * charge
 * chat
+* clock
 * contact-email
 * cross
 * doc
@@ -48,6 +49,7 @@ const App = () => (
 * intercom
 * key
 * minus
+* new-window
 * padlock
 * person
 * plus
@@ -60,11 +62,10 @@ const App = () => (
 * refund
 * renewal
 * search
+* send-message
 * shield
 * tick
 * trash
-* clock
 * up-down
 * upload-email
 * warning
-* send-message
