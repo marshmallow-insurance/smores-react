@@ -55,7 +55,6 @@ const App = () => (
 * plus
 * plus-circle
 * policy
-* pound
 * pound-filled-circle
 * pound-outline
 * profile
