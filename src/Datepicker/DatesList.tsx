@@ -27,10 +27,15 @@ export const DatesList: FC<Props> = ({ items, handleDateSelect }) => (
 
 const Container = styled.ul`
   display: grid;
-  grid-column-gap: 8px;
+  grid-column-gap: 4px;
   grid-row-gap: 8px;
   grid-template-columns: repeat(7, 1fr);
-  padding: 16px;
+  padding: 8px;
+
+  @media (min-width: 360px) {
+    grid-gap: 8px;
+    padding: 16px;
+  }
 
   @media (min-width: 768px) {
     grid-column-gap: 16px;
