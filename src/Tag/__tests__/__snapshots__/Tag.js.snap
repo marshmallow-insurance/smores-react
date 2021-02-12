@@ -29,7 +29,7 @@ exports[`renders 1`] = `
 }
 
 .c2 {
-  font-family: 'Gordita',sans-serif;
+  font-family: 'Circular',sans-serif;
   text-transform: uppercase;
 }
 
