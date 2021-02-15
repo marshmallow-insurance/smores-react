@@ -40,7 +40,6 @@ const Wrapper = styled.div<IWrapper>`
 `
 
 const TagText = styled(Text)`
-  font-family: 'Circular', sans-serif;
   font-weight: 500;
   text-transform: uppercase;
 `
