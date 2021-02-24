@@ -67,6 +67,11 @@ const colors = {
   //Cyan
   cyan5: '#168DA0',
   cyan8: '#09454F',
+
+  // New Brand
+  'bg-beige': '#FAF3EE',
+  'bg-pink': '#ECD2D0',
+  'bg-taupe': '#D9CFC9',
 }
 
 const font = {

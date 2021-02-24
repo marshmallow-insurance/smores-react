@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c0 {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c2 {
+  position: absolute;
+  width: 100%;
+  max-width: 16px;
+  height: 16px;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 32px;
+  height: 32px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+<div
+  class="c0"
+>
+  <span
+    class="c1"
+    color="blue7"
+    rotate="0"
+    size="32"
+  >
+    <svg
+      fill="none"
+      height="100%"
+      viewBox="0 0 46 46"
+      width="100%"
+    >
+      <path
+        d="M26.6484 26.1015L35.7622 29.0628M25.2549 21.8136L30.8861 14.0607M20.7487 21.8136L15.1175 14.0607M19.3558 26.1015L10.2421 29.0627M13.4225 34.3129C12.0156 32.8792 10.9097 31.1063 10.2466 29.0651C7.95614 22.0175 11.8125 14.4486 18.8601 12.1601C25.9076 9.87158 33.4766 13.726 35.767 20.7736C37.3636 25.6879 35.9701 30.8572 32.5911 34.3129M1.91797 42.1668H44.0846M26.8346 24.9168C26.8346 27.0339 25.1184 28.7502 23.0013 28.7502C20.8842 28.7502 19.168 27.0339 19.168 24.9168C19.168 22.7997 20.8842 21.0835 23.0013 21.0835C25.1184 21.0835 26.8346 22.7997 26.8346 24.9168ZM10.9014 42.1668H35.0993C40.5273 38.3527 44.0846 32.0545 44.0846 24.9168C44.0846 13.2731 34.645 3.8335 23.0013 3.8335C11.3576 3.8335 1.91797 13.2731 1.91797 24.9168C1.91797 32.0545 5.4753 38.3527 10.9014 42.1668Z"
+        stroke="#112035"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+        stroke-width="3"
+      />
+    </svg>
+  </span>
+  <div
+    class="c2"
+    r="auto"
+    size="16"
+  >
+    <svg
+      fill="none"
+      height="100%"
+      viewBox="0 0 16 16"
+      width="100%"
+    >
+      <circle
+        cx="8"
+        cy="8"
+        fill="#55D6AA"
+        r="8"
+      />
+      <path
+        d="M12.3203 4.61579C12.1068 4.43879 11.7928 4.46829 11.6158 4.67979L6.9033 10.3348L4.2773 8.58429C4.0468 8.43029 3.7368 8.49279 3.5838 8.72279C3.4303 8.95229 3.4923 9.26329 3.7223 9.41629L6.7223 11.4163C6.8073 11.4723 6.9038 11.4998 6.9993 11.4998C7.1433 11.4998 7.2853 11.4378 7.3843 11.3198L12.3843 5.31979C12.5608 5.10779 12.5318 4.79229 12.3203 4.61579V4.61579Z"
+        fill="white"
+      />
+    </svg>
+  </div>
+</div>
+`;
