@@ -14,7 +14,7 @@ exports[`renders 1`] = `
 
 .c1 {
   border-bottom: 1px solid;
-  border-color: #C1C1C1;
+  border-color: #D2D2D2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -40,19 +40,19 @@ exports[`renders 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c2::-moz-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c2:-ms-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c2::placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 <div

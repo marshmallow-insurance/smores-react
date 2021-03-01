@@ -91,7 +91,7 @@ exports[`renders - unchecked 1`] = `
   border-radius: 50%;
   background-color: #ffffff;
   margin-right: 10px;
-  border: 1px solid #C1C1C1;
+  border: 1px solid #D2D2D2;
 }
 
 .c1 {

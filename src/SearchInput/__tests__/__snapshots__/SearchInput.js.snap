@@ -12,7 +12,7 @@ exports[`renders 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #C1C1C1;
+  color: #D2D2D2;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -31,7 +31,7 @@ exports[`renders 1`] = `
   display: block;
   border: none;
   border-bottom: 1px solid;
-  border-color: #C1C1C1;
+  border-color: #D2D2D2;
   outline: none;
   color: #112035;
   font-size: 16px;
@@ -41,19 +41,19 @@ exports[`renders 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c2::-moz-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c2:-ms-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c2::placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c3 {
@@ -76,7 +76,7 @@ exports[`renders 1`] = `
   padding: 0;
   margin: 0;
   background-color: #ffffff;
-  border: 1px solid #C1C1C1;
+  border: 1px solid #D2D2D2;
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
