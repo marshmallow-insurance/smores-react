@@ -12,7 +12,7 @@ exports[`renders - currency 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #C1C1C1;
+  color: #D2D2D2;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -100,7 +100,7 @@ exports[`renders - currency 1`] = `
 
 .c2 {
   border-bottom: 1px solid;
-  border-color: #C1C1C1;
+  border-color: #D2D2D2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -133,19 +133,19 @@ exports[`renders - currency 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5::-moz-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5:-ms-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5::placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5::-webkit-outer-spin-button,
@@ -243,7 +243,7 @@ exports[`renders - currency 1`] = `
           >
             <path
               d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
+              fill="#D2D2D2"
             />
           </svg>
         </span>
@@ -265,7 +265,7 @@ exports[`renders - currency 1`] = `
           >
             <path
               d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
+              fill="#D2D2D2"
             />
           </svg>
         </span>
@@ -287,7 +287,7 @@ exports[`renders - disabled 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #C1C1C1;
+  color: #D2D2D2;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -310,7 +310,7 @@ exports[`renders - disabled 1`] = `
 
 .c2 {
   border-bottom: 1px solid;
-  border-color: #C1C1C1;
+  border-color: #D2D2D2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -343,19 +343,19 @@ exports[`renders - disabled 1`] = `
 }
 
 .c3::-webkit-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c3::-moz-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c3:-ms-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c3::placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c3::-webkit-outer-spin-button,
@@ -412,7 +412,7 @@ exports[`renders - error 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #C1C1C1;
+  color: #D2D2D2;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -534,19 +534,19 @@ exports[`renders - error 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5::-moz-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5:-ms-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5::placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5::-webkit-outer-spin-button,
@@ -650,7 +650,7 @@ exports[`renders - error 1`] = `
           >
             <path
               d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
+              fill="#D2D2D2"
             />
           </svg>
         </span>
@@ -672,7 +672,7 @@ exports[`renders - error 1`] = `
           >
             <path
               d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#C1C1C1"
+              fill="#D2D2D2"
             />
           </svg>
         </span>
@@ -699,7 +699,7 @@ exports[`renders - number 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #C1C1C1;
+  color: #D2D2D2;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -722,7 +722,7 @@ exports[`renders - number 1`] = `
 
 .c3 {
   border-bottom: 1px solid;
-  border-color: #C1C1C1;
+  border-color: #D2D2D2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -755,19 +755,19 @@ exports[`renders - number 1`] = `
 }
 
 .c4::-webkit-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c4::-moz-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c4:-ms-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c4::placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c4::-webkit-outer-spin-button,
@@ -833,7 +833,7 @@ exports[`renders - tel 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #C1C1C1;
+  color: #D2D2D2;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -871,7 +871,7 @@ exports[`renders - tel 1`] = `
 
 .c2 {
   border-bottom: 1px solid;
-  border-color: #C1C1C1;
+  border-color: #D2D2D2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -904,19 +904,19 @@ exports[`renders - tel 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5::-moz-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5:-ms-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5::placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5::-webkit-outer-spin-button,
@@ -996,7 +996,7 @@ exports[`renders - with suffix 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #C1C1C1;
+  color: #D2D2D2;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -1034,7 +1034,7 @@ exports[`renders - with suffix 1`] = `
 
 .c2 {
   border-bottom: 1px solid;
-  border-color: #C1C1C1;
+  border-color: #D2D2D2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1067,19 +1067,19 @@ exports[`renders - with suffix 1`] = `
 }
 
 .c3::-webkit-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c3::-moz-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c3:-ms-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c3::placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c3::-webkit-outer-spin-button,
@@ -1159,7 +1159,7 @@ exports[`renders - with trailing icon 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #C1C1C1;
+  color: #D2D2D2;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -1222,7 +1222,7 @@ exports[`renders - with trailing icon 1`] = `
 
 .c2 {
   border-bottom: 1px solid;
-  border-color: #C1C1C1;
+  border-color: #D2D2D2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1255,19 +1255,19 @@ exports[`renders - with trailing icon 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5::-moz-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5:-ms-input-placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5::placeholder {
-  color: #C1C1C1;
+  color: #D2D2D2;
 }
 
 .c5::-webkit-outer-spin-button,
@@ -1341,7 +1341,7 @@ exports[`renders - with trailing icon 1`] = `
       >
         <path
           d="M16 6C10.486 6 6 10.486 6 16s4.486 10 10 10a1 1 0 1 0 0-2c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8c0 1.103-.897 2-2 2s-2-.897-2-2c0-2.206-1.794-4-4-4s-4 1.794-4 4 1.794 4 4 4c1.2 0 2.266-.542 3-1.382.734.84 1.8 1.382 3 1.382 2.206 0 4-1.794 4-4 0-5.514-4.486-10-10-10zm0 12c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"
-          fill="#C1C1C1"
+          fill="#D2D2D2"
         />
       </svg>
     </span>

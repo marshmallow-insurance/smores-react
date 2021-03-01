@@ -8,7 +8,7 @@ const colors = {
   // Grey
   grey2: '#ECECEC',
   grey3: '#E5E5E5',
-  grey4: '#C1C1C1',
+  grey4: '#D2D2D2',
   grey5: '#AEAEAE',
   grey6: '#9E9E9E',
   grey7: '#818181',
