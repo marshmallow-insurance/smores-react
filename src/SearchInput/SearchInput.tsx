@@ -12,6 +12,12 @@ export type SearchInputItem = {
 interface IContainer {
   show: boolean
 }
+
+interface IResultsContainer {
+  show: boolean
+  absolutePosition: boolean
+}
+
 interface ISearchInput {
   id: string
   name: string
@@ -33,6 +39,8 @@ type SearchInputProps = {
   searchList: SearchInputItem[]
   /** onFound listener */
   onFound: (element: string) => void
+  /** Displays search results in a relative position to other elements */
+  resultsRelativePosition?: boolean
 }
 
 export const SearchInput: FC<SearchInputProps> = ({
@@ -42,6 +50,7 @@ export const SearchInput: FC<SearchInputProps> = ({
   placeholder,
   searchList,
   onFound,
+  resultsRelativePosition = false,
 }) => {
   const [active, setActive] = useState(false)
   const [list, setList] = useState(searchList)
@@ -95,7 +104,10 @@ export const SearchInput: FC<SearchInputProps> = ({
         onChange={updateInputState}
       />
 
-      <ResultsContainer show={active}>
+      <ResultsContainer
+        show={active}
+        absolutePosition={!resultsRelativePosition}
+      >
         <ResultsList>
           {list.length ? (
             list.map((el, i) => (
@@ -135,10 +147,10 @@ const Input = styled.input<ISearchInput>`
   }
 `
 
-const ResultsContainer = styled.div<IContainer>`
+const ResultsContainer = styled.div<IResultsContainer>`
   box-sizing: border-box;
   overflow-y: hidden;
-  position: absolute;
+  ${(p) => p.absolutePosition && 'position: absolute;'}
   width: 100%;
   visibility: ${(p) => (p.show ? 'visible' : 'hidden')};
 
