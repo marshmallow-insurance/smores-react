@@ -78,20 +78,21 @@ const Container = styled.div<IContainer>(
     0};
     border: 1px solid ${theme.colors.grey4};
     display: grid;
-    grid-template-columns: ${iconLeft ? `5% auto 5%` : `auto 5%`};
-    padding: 24px;
+    grid-template-columns: ${iconLeft ? `10% auto 10%` : `auto 10%`};
+    padding: 16px;
+    grid-gap: 12px;
     align-items: center;
-    border-top: ${borderTop === false && `none`};
-    border-bottom: ${borderBottom === false && `none`};
+    border-top: ${!borderTop && `none`};
+    border-bottom: ${!borderBottom && `none`};
 
     .iconRight {
       justify-self: end;
     }
 
-    @media (max-width: 768px) {
-      grid-template-columns: ${iconLeft ? `10% auto 10%` : `auto 10%`};
-      padding: 16px;
-      grid-gap: 12px;
+    @media (min-width: 768px) {
+      grid-template-columns: ${iconLeft ? `5% auto 5%` : `auto 5%`};
+      padding: 24px;
+      grid-gap: 0;
     }
   `,
 )
