@@ -7,32 +7,35 @@ import { Box } from '../Box'
 import { Text } from '../Text'
 
 export type Props = {
-  icon?: string
+  iconLeft?: string
   heading: string
   subHeading?: string
   type?: 'first' | 'last' | 'curved'
-  caret?: boolean
+  iconRight?: string
+  iconRightColor?: string
   borderTop?: boolean
   borderBottom?: boolean
 }
 
 export const Row: FC<Props> = ({
-  icon,
+  iconLeft,
+  iconRight,
+  iconRightColor,
   heading,
   subHeading,
   type,
-  caret = true,
   borderTop = true,
   borderBottom = true,
 }) => {
   return (
     <Container
       type={type}
-      icon={icon}
+      iconLeft={iconLeft}
       borderTop={borderTop}
       borderBottom={borderBottom}
+      iconRight={iconRight}
     >
-      {icon && <Icon render={icon} size={24} />}
+      {iconLeft && <Icon render={iconLeft} size={24} />}
       <Box>
         <Text tag="h1" typo="base">
           {heading}
@@ -41,8 +44,14 @@ export const Row: FC<Props> = ({
           {subHeading}
         </Text>
       </Box>
-      {caret && (
-        <Icon className="caret" render="caret" rotate={-90} color="grey8" />
+      {iconRight && (
+        <Icon
+          className="iconRight"
+          render={iconRight}
+          size={24}
+          rotate={iconRight === 'caret' ? -90 : 0}
+          color={iconRightColor}
+        />
       )}
     </Container>
   )
@@ -50,31 +59,32 @@ export const Row: FC<Props> = ({
 
 interface IContainer {
   type?: 'first' | 'last' | 'curved'
-  icon?: string
+  iconLeft?: string
+  iconRight?: string
   borderTop: boolean
   borderBottom: boolean
 }
 
 const Container = styled.div<IContainer>(
-  ({ type, icon, borderTop, borderBottom }) => css`
+  ({ type, iconLeft, borderTop, borderBottom }) => css`
     border-radius: ${(type === 'first' && `8px 8px 0 0`) ||
     (type === 'curved' && `8px`) ||
     (type === 'last' && `0 0 8px 8px`) ||
     0};
     border: 1px solid ${theme.colors.grey4};
     display: grid;
-    grid-template-columns: ${icon ? `5% auto 5%` : `auto 5%`};
+    grid-template-columns: ${iconLeft ? `5% auto 5%` : `auto 5%`};
     padding: 24px;
     align-items: center;
     border-top: ${borderTop === false && `none`};
     border-bottom: ${borderBottom === false && `none`};
 
-    .caret {
+    .iconRight {
       justify-self: end;
     }
 
     @media (max-width: 768px) {
-      grid-template-columns: ${icon ? `10% auto 10%` : `auto 10%`};
+      grid-template-columns: ${iconLeft ? `10% auto 10%` : `auto 10%`};
       padding: 16px;
       grid-gap: 12px;
     }

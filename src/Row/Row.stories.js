@@ -11,36 +11,29 @@ const Template = (args) => <Row {...args} />
 export const Default = Template.bind({})
 
 Default.args = {
-  icon: 'info',
+  iconLeft: 'info',
+  iconRight: 'caret',
+  iconRightColor: 'grey8',
   heading: 'A lovely heading',
   subHeading: 'The quick brown fox jumps over the lazy dog',
-  caret: true,
   type: 'curved',
   borderTop: true,
   borderBottom: true,
 }
 
-export const NoIcon = Template.bind({})
+export const NoIcons = Template.bind({})
 
-NoIcon.args = {
+NoIcons.args = {
   heading: 'A lovely heading',
-  subHeading: 'A row without an Icon',
+  subHeading: 'A row without an IconLeft or IconRight',
 }
 
 export const NoSubheading = Template.bind({})
 
 NoSubheading.args = {
   heading: 'A lovely heading without a subheading',
-  icon: 'info',
-}
-
-export const NoCaret = Template.bind({})
-
-NoCaret.args = {
-  heading: 'A lovely heading',
-  subHeading: 'A row without a caret',
-  icon: 'info',
-  caret: false,
+  iconLeft: 'info',
+  iconRight: 'download',
 }
 
 export const First = Template.bind({})
