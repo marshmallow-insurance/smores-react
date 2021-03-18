@@ -16,6 +16,8 @@ Default.args = {
   subHeading: 'The quick brown fox jumps over the lazy dog',
   caret: true,
   type: 'curved',
+  borderTop: true,
+  borderBottom: true,
 }
 
 export const NoIcon = Template.bind({})
@@ -45,8 +47,9 @@ export const First = Template.bind({})
 
 First.args = {
   heading: 'The first row',
-  subHeading: 'A first row with curved corners at the top',
+  subHeading: 'A first row with curved corners at the top and no bottom border',
   type: 'first',
+  borderBottom: false,
 }
 
 export const Middle = Template.bind({})
@@ -60,8 +63,9 @@ export const Last = Template.bind({})
 
 Last.args = {
   heading: 'The last row',
-  subHeading: 'A last row with curved corners at the bottom',
+  subHeading: 'A last row with curved corners at the bottom and no top border',
   type: 'last',
+  borderTop: false,
 }
 
 export const Curved = Template.bind({})

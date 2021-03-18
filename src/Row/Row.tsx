@@ -12,6 +12,8 @@ export type Props = {
   subHeading?: string
   type?: 'first' | 'last' | 'curved'
   caret?: boolean
+  borderTop?: boolean
+  borderBottom?: boolean
 }
 
 export const Row: FC<Props> = ({
@@ -20,9 +22,16 @@ export const Row: FC<Props> = ({
   subHeading,
   type,
   caret = true,
+  borderTop = true,
+  borderBottom = true,
 }) => {
   return (
-    <Container type={type} icon={icon}>
+    <Container
+      type={type}
+      icon={icon}
+      borderTop={borderTop}
+      borderBottom={borderBottom}
+    >
       {icon && <Icon render={icon} size={24} />}
       <Box>
         <Text tag="h1" typo="base">
@@ -42,10 +51,12 @@ export const Row: FC<Props> = ({
 interface IContainer {
   type?: 'first' | 'last' | 'curved'
   icon?: string
+  borderTop: boolean
+  borderBottom: boolean
 }
 
 const Container = styled.div<IContainer>(
-  ({ type, icon }) => css`
+  ({ type, icon, borderTop, borderBottom }) => css`
     border-radius: ${(type === 'first' && `8px 8px 0 0`) ||
     (type === 'curved' && `8px`) ||
     (type === 'last' && `0 0 8px 8px`) ||
@@ -55,6 +66,8 @@ const Container = styled.div<IContainer>(
     grid-template-columns: ${icon ? `5% auto 5%` : `auto 5%`};
     padding: 24px;
     align-items: center;
+    border-top: ${borderTop === false && `none`};
+    border-bottom: ${borderBottom === false && `none`};
 
     .caret {
       justify-self: end;
