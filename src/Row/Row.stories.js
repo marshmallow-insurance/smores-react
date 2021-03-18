@@ -3,7 +3,7 @@ import { Row } from '../Row'
 
 export default {
   title: 'Row',
-  conmponent: Row,
+  component: Row,
   argTypes: { handleClick: { action: 'clicked' } },
 }
 
@@ -13,6 +13,7 @@ export const Default = Template.bind({})
 
 Default.args = {
   iconLeft: 'info',
+  iconLeftColor: 'blue7',
   iconRight: 'caret',
   iconRightColor: 'grey8',
   heading: 'A lovely heading',

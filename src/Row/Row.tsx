@@ -8,6 +8,7 @@ import { Text } from '../Text'
 
 export type Props = {
   iconLeft?: string
+  iconLeftColor?: string
   iconRight?: string
   iconRightColor?: string
   handleClick?: () => void
@@ -20,6 +21,7 @@ export type Props = {
 
 export const Row: FC<Props> = ({
   iconLeft,
+  iconLeftColor,
   iconRight,
   iconRightColor,
   handleClick,
@@ -38,7 +40,7 @@ export const Row: FC<Props> = ({
       iconRight={iconRight}
       onClick={handleClick}
     >
-      {iconLeft && <Icon render={iconLeft} size={24} />}
+      {iconLeft && <Icon render={iconLeft} size={24} color={iconLeftColor} />}
       <Box>
         <Text tag="h1" typo="base">
           {heading}
