@@ -22,9 +22,9 @@ export const Row: FC<Props> = ({
   caret = true,
 }) => {
   return (
-    <Container type={type}>
-      <Box>{icon && <Icon render={icon} size={24} />}</Box>
-      <Box pl="24px">
+    <Container type={type} icon={icon}>
+      {icon && <Icon render={icon} size={24} />}
+      <Box>
         <Text tag="h1" typo="base">
           {heading}
         </Text>
@@ -32,25 +32,38 @@ export const Row: FC<Props> = ({
           {subHeading}
         </Text>
       </Box>
-      <Box>{caret && <Icon render="caret" rotate={-90} color="grey8" />}</Box>
+      {caret && (
+        <Icon className="caret" render="caret" rotate={-90} color="grey8" />
+      )}
     </Container>
   )
 }
 
 interface IContainer {
   type?: 'first' | 'last' | 'curved'
+  icon?: string
 }
 
 const Container = styled.div<IContainer>(
-  ({ type }) => css`
+  ({ type, icon }) => css`
     border-radius: ${(type === 'first' && `8px 8px 0 0`) ||
     (type === 'curved' && `8px`) ||
     (type === 'last' && `0 0 8px 8px`) ||
     0};
     border: 1px solid ${theme.colors.grey4};
     display: grid;
-    grid-template-columns: 24px auto 24px;
-    padding: 16px;
+    grid-template-columns: ${icon ? `5% auto 5%` : `auto 5%`};
+    padding: 24px;
     align-items: center;
+
+    .caret {
+      justify-self: end;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: ${icon ? `10% auto 10%` : `auto 10%`};
+      padding: 16px;
+      grid-gap: 12px;
+    }
   `,
 )

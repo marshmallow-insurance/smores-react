@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`default renders correctly 1`] = `
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -27,10 +27,6 @@ exports[`default renders correctly 1`] = `
 }
 
 .c1 {
-  padding-left: 24px;
-}
-
-.c2 {
   font-size: 14px;
   line-height: 23px;
   font-weight: 400;
@@ -45,7 +41,7 @@ exports[`default renders correctly 1`] = `
   letter-spacing: 0.15px;
 }
 
-.c3 {
+.c2 {
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
@@ -64,25 +60,37 @@ exports[`default renders correctly 1`] = `
   border-radius: 0;
   border: 1px solid #D2D2D2;
   display: grid;
-  grid-template-columns: 24px auto 24px;
-  padding: 16px;
+  grid-template-columns: auto 5%;
+  padding: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
+.c0 .caret {
+  justify-self: end;
+}
+
 @media (min-width:768px) {
-  .c2 {
+  .c1 {
     font-size: 16px;
     line-height: 26px;
   }
 }
 
 @media (min-width:768px) {
-  .c3 {
+  .c2 {
     font-size: 14px;
     line-height: 18px;
+  }
+}
+
+@media (max-width:768px) {
+  .c0 {
+    grid-template-columns: auto 10%;
+    padding: 16px;
+    grid-gap: 12px;
   }
 }
 
@@ -92,12 +100,9 @@ exports[`default renders correctly 1`] = `
   >
     <div
       class=""
-    />
-    <div
-      class="c1"
     >
       <h1
-        class="c2"
+        class="c1"
         color="blue7"
         cursor="inherit"
         title=""
@@ -105,34 +110,30 @@ exports[`default renders correctly 1`] = `
         This is a Row with a heading
       </h1>
       <p
-        class="c3"
+        class="c2"
         color="grey8"
         cursor="inherit"
         title=""
       />
     </div>
-    <div
-      class=""
+    <span
+      class="c3 caret"
+      color="grey8"
+      rotate="-90"
+      size="32"
     >
-      <span
-        class="c4"
-        color="grey8"
-        rotate="-90"
-        size="32"
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 32 32"
+        width="100%"
       >
-        <svg
-          fill="none"
-          height="100%"
-          viewBox="0 0 32 32"
-          width="100%"
-        >
-          <path
-            d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-            fill="#636768"
-          />
-        </svg>
-      </span>
-    </div>
+        <path
+          d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
+          fill="#636768"
+        />
+      </svg>
+    </span>
   </div>
 </div>
 `;
