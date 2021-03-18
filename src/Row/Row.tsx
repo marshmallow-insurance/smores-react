@@ -10,7 +10,7 @@ export type Props = {
   icon?: string
   heading: string
   subHeading?: string
-  type?: 'first' | 'last' | 'middle' | 'curved'
+  type?: 'first' | 'last' | 'curved'
   caret?: boolean
 }
 
@@ -38,7 +38,7 @@ export const Row: FC<Props> = ({
 }
 
 interface IContainer {
-  type?: 'first' | 'last' | 'middle' | 'curved'
+  type?: 'first' | 'last' | 'curved'
 }
 
 const Container = styled.div<IContainer>(
@@ -46,7 +46,7 @@ const Container = styled.div<IContainer>(
     border-radius: ${(type === 'first' && `8px 8px 0 0`) ||
     (type === 'curved' && `8px`) ||
     (type === 'last' && `0 0 8px 8px`) ||
-    (type === 'middle' && 0)};
+    0};
     border: 1px solid ${theme.colors.grey4};
     display: grid;
     grid-template-columns: 24px auto 24px;
