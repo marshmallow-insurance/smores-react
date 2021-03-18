@@ -4,6 +4,7 @@ import { Row } from '../Row'
 export default {
   title: 'Row',
   conmponent: Row,
+  argTypes: { handleClick: { action: 'clicked' } },
 }
 
 const Template = (args) => <Row {...args} />
