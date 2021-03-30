@@ -38,6 +38,14 @@ NoSubheading.args = {
   iconRight: 'download',
 }
 
+export const BoldHeading = Template.bind({})
+
+BoldHeading.args = {
+  heading: 'A row with a bold heading',
+  subHeading: `A row with a heading that has a font weight of 500`,
+  boldHeading: true,
+}
+
 export const First = Template.bind({})
 
 First.args = {
