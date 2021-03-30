@@ -78,7 +78,7 @@ const Container = styled.div<IContainer>(
     0};
     border: 1px solid ${theme.colors.grey4};
     display: grid;
-    grid-template-columns: ${iconLeft ? `10% auto 10%` : `auto 10%`};
+    grid-template-columns: ${iconLeft ? `24px auto 24px` : `auto 24px`};
     padding: 16px;
     grid-gap: 12px;
     align-items: center;
@@ -90,9 +90,9 @@ const Container = styled.div<IContainer>(
     }
 
     @media (min-width: 768px) {
-      grid-template-columns: ${iconLeft ? `5% auto 5%` : `auto 5%`};
+      grid-template-columns: ${iconLeft ? `24px auto 24px` : `auto 24px`};
       padding: 24px;
-      grid-gap: 0;
+      grid-gap: 24px;
     }
   `,
 )

@@ -35,7 +35,7 @@ exports[`default renders correctly 1`] = `
   border-radius: 0;
   border: 1px solid #D2D2D2;
   display: grid;
-  grid-template-columns: auto 10%;
+  grid-template-columns: auto 24px;
   padding: 16px;
   grid-gap: 12px;
   -webkit-align-items: center;
@@ -64,9 +64,9 @@ exports[`default renders correctly 1`] = `
 
 @media (min-width:768px) {
   .c0 {
-    grid-template-columns: auto 5%;
+    grid-template-columns: auto 24px;
     padding: 24px;
-    grid-gap: 0;
+    grid-gap: 24px;
   }
 }
 
