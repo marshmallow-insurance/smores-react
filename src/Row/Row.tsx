@@ -98,7 +98,6 @@ const Container = styled.div<IContainer>(
     }
 
     @media (min-width: 768px) {
-      grid-template-columns: ${iconLeft ? `24px auto 24px` : `auto 24px`};
       padding: 24px;
       grid-gap: 24px;
     }
