@@ -510,6 +510,33 @@ export const Icon: FC<Props> = ({
     }
 
     {
+      // CLAIM
+      render === 'claim' && (
+        <svg fill="none" viewBox="0 0 24 25">
+          <path
+            d="M8.474 3.082c1.508-2.815 5.544-2.815 7.052 0l8.32 15.53c1.427 2.664-.504 5.888-3.527 5.888H3.681c-3.023 0-4.954-3.224-3.526-5.889l8.319-15.53z"
+            fill="#fff"
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M22.027 19.243L14.54 4.763A2.854 2.854 0 0012 3.238c-1.074 0-2.056.59-2.54 1.527l-7.487 14.48c-.597 1.154.262 2.52 1.587 2.52h16.88c1.325 0 2.184-1.366 1.587-2.52zM12 1.5c-1.744 0-3.34.96-4.126 2.48L.387 18.46C-.808 20.77.91 23.5 3.56 23.5h16.88c2.65 0 4.368-2.73 3.173-5.04L16.126 3.98C15.34 2.46 13.744 1.5 12 1.5z"
+            fill={theme.colors[color]}
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M12 16.5a2 2 0 100-4 2 2 0 000 4zm0 2a4 4 0 100-8 4 4 0 000 8z"
+            fill={theme.colors[color]}
+          />
+          <defs>
+            <path fill="#fff" transform="translate(0 .5)" d="M0 0h24v24H0z" />
+          </defs>
+        </svg>
+      )
+    }
+
+    {
       // INFO
       render === 'info' && (
         <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none">
