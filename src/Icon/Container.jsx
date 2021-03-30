@@ -82,6 +82,10 @@ export const Container = () => {
         <Icon render="city" />
       </Wrapper>
       <Wrapper>
+        <span>claim</span>
+        <Icon render="claim" />
+      </Wrapper>
+      <Wrapper>
         <span>clock</span>
         <Icon render="clock" />
       </Wrapper>
@@ -156,6 +160,10 @@ export const Container = () => {
       <Wrapper>
         <span>new-window</span>
         <Icon render="new-window" />
+      </Wrapper>
+      <Wrapper>
+        <span>no-excess</span>
+        <Icon render="no-excess" />
       </Wrapper>
       <Wrapper>
         <span>padlock</span>
