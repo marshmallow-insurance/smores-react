@@ -17,6 +17,7 @@ export type Props = {
   type?: 'first' | 'last' | 'curved'
   borderTop?: boolean
   borderBottom?: boolean
+  boldHeading?: boolean
 }
 
 export const Row: FC<Props> = ({
@@ -30,6 +31,7 @@ export const Row: FC<Props> = ({
   type,
   borderTop = true,
   borderBottom = true,
+  boldHeading,
 }) => {
   return (
     <Container
@@ -39,6 +41,7 @@ export const Row: FC<Props> = ({
       borderBottom={borderBottom}
       iconRight={iconRight}
       onClick={handleClick}
+      boldHeading={boldHeading}
     >
       {iconLeft && <Icon render={iconLeft} size={24} color={iconLeftColor} />}
       <Box>
@@ -68,31 +71,35 @@ interface IContainer {
   iconRight?: string
   borderTop: boolean
   borderBottom: boolean
+  boldHeading?: boolean
 }
 
 const Container = styled.div<IContainer>(
-  ({ type, iconLeft, borderTop, borderBottom }) => css`
+  ({ type, iconLeft, borderTop, borderBottom, boldHeading }) => css`
     border-radius: ${(type === 'first' && `8px 8px 0 0`) ||
     (type === 'curved' && `8px`) ||
     (type === 'last' && `0 0 8px 8px`) ||
     0};
     border: 1px solid ${theme.colors.grey4};
     display: grid;
-    grid-template-columns: ${iconLeft ? `10% auto 10%` : `auto 10%`};
+    grid-template-columns: ${iconLeft ? `24px auto 24px` : `auto 24px`};
     padding: 16px;
     grid-gap: 12px;
     align-items: center;
     border-top: ${!borderTop && `none`};
     border-bottom: ${!borderBottom && `none`};
 
+    h1 {
+      font-weight: ${boldHeading && 500};
+    }
+
     .iconRight {
       justify-self: end;
     }
 
     @media (min-width: 768px) {
-      grid-template-columns: ${iconLeft ? `5% auto 5%` : `auto 5%`};
       padding: 24px;
-      grid-gap: 0;
+      grid-gap: 24px;
     }
   `,
 )
