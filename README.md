@@ -33,10 +33,11 @@ $ npm install @mrshmllw/smores-react
 
 ## Release
 ```md
-1. Checkout the `Master` branch and _bump_ the project version.
+1. Checkout the `Master` branch, update Changelog and _bump_ the project version.
 > $ git checkout master
 > $ git pull
-> $ npm version [major | minor | patch]
+> add changes to CHANGELOG.md according to [keepachangelog.com](https://keepachangelog.com/en/1.0.0/)
+> $ npm version [major | minor | patch] according to [semver.org](https://semver.org/)
 > $ git push && git push --tags
 > ! check build is successful (green tick in GitHub Actions workflow) before next step
 
@@ -61,18 +62,21 @@ $ npm install @mrshmllw/smores-react
 * [CheckBoxGroup](https://github.com/marshmallow-insurance/smores-react/tree/master/src/CheckBoxGroup)
 * [Datepicker](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Datepicker)
 * [Dropdown](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Dropdown)
+* [Emoji](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Emoji)
 * [Icon](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Icon)
+* [IconWrapper](https://github.com/marshmallow-insurance/smores-react/tree/master/src/IconWrapper)
 * [LabelledText](https://github.com/marshmallow-insurance/smores-react/tree/master/src/LabelledText)
 * [Loader](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Loader)
 * [Message](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Message)
 * [Modal](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Modal)
 * [NumberInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/NumberInput)
 * [RadioButton](https://github.com/marshmallow-insurance/smores-react/tree/master/src/RadioButton)
+* [Row](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Row)
 * [SearchInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/SearchInput)
 * [Tag](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Tag)
 * [Text](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Text)
-* [TextInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/TextInput)
 * [Textarea](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Textarea)
+* [TextInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/TextInput)
 * [Toggle](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Toggle)
 
 ## Usage
