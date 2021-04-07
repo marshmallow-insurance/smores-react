@@ -1,4 +1,4 @@
-## [0.60.0] - TBC
+## [0.60.0] - 2020-04-07
 ### Added
 - Added new release tag workflow
 
