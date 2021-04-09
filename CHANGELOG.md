@@ -1,5 +1,5 @@
 ## [0.60.1] - 2021-04-09
-### Updated
+### Changed
 - Updated Row padding, grid-gap and cursor
 - Updated Icon svgs for Info, Cross and Warning icons
 - Updated the size of the iconLeft in the Icon component to render a different size depending on screen width
