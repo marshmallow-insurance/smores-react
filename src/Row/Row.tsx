@@ -33,6 +33,8 @@ export const Row: FC<Props> = ({
   borderBottom = true,
   boldHeading,
 }) => {
+  const windowWidth = screen.width
+
   return (
     <Container
       type={type}
@@ -43,7 +45,13 @@ export const Row: FC<Props> = ({
       onClick={handleClick}
       boldHeading={boldHeading}
     >
-      {iconLeft && <Icon render={iconLeft} size={24} color={iconLeftColor} />}
+      {iconLeft && (
+        <Icon
+          render={iconLeft}
+          size={windowWidth > 768 ? 24 : 18}
+          color={iconLeftColor}
+        />
+      )}
       <Box>
         <Text tag="h1" typo="base">
           {heading}
@@ -84,10 +92,12 @@ const Container = styled.div<IContainer>(
     display: grid;
     grid-template-columns: ${iconLeft ? `24px auto 24px` : `auto 24px`};
     padding: 16px;
-    grid-gap: 12px;
+    grid-gap: 16px;
     align-items: center;
     border-top: ${!borderTop && `none`};
     border-bottom: ${!borderBottom && `none`};
+
+    cursor: pointer;
 
     h1 {
       font-weight: ${boldHeading && 500};
@@ -98,7 +108,6 @@ const Container = styled.div<IContainer>(
     }
 
     @media (min-width: 768px) {
-      padding: 24px;
       grid-gap: 24px;
     }
   `,
