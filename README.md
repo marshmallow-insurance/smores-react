@@ -36,7 +36,7 @@ $ npm install @mrshmllw/smores-react
 1. Checkout the `Master` branch, update Changelog and _bump_ the project version.
 > $ git checkout master
 > $ git pull
-> Be sure that CHANGELOG.md is updated according to [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) with the latest release notes
+> Be sure that CHANGELOG.md is updated according to [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) with the latest release notes. If not, do it in a separate branch before bumping npm version.
 > $ npm version [major | minor | patch] according to [semver.org](https://semver.org/)
 > $ git push && git push --tags
 > ! check build is successful (green tick in GitHub Actions workflow) before next step
