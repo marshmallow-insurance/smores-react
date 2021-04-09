@@ -1,13 +1,19 @@
-## [0.60.0] - 2020-04-07
+## [0.60.1] - 2021-04-09
+### Updated
+- Updated Row padding, grid-gap and cursor
+- Updated Icon svgs for Info, Cross and Warning icons
+- Updated the size of the iconLeft in the Icon component to render a different size depending on screen width
+## [0.60.0] - 2021-04-07
 ### Added
 - Added new release tag workflow
 
-## [0.59.0] - 2020-03-31
+## [0.59.0] - 2021-03-31
 ### Added
 - Added new icons
 
 ### Changed
 - Updated gap and styles on Row component
 
+[0.60.1]: https://github.com/marshmallow-insurance/smores-react/compare/v0.60.0...v0.60.1
 [0.60.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.59.0...v0.60.0
 [0.59.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.58.0...v0.59.0
