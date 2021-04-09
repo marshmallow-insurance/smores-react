@@ -89,6 +89,8 @@ const Container = styled.div<IContainer>(
     border-top: ${!borderTop && `none`};
     border-bottom: ${!borderBottom && `none`};
 
+    cursor: pointer;
+
     h1 {
       font-weight: ${boldHeading && 500};
     }
@@ -98,7 +100,7 @@ const Container = styled.div<IContainer>(
     }
 
     @media (min-width: 768px) {
-      padding: 24px;
+      padding: 16px;
       grid-gap: 24px;
     }
   `,
