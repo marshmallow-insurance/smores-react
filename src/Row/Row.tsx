@@ -84,7 +84,7 @@ const Container = styled.div<IContainer>(
     display: grid;
     grid-template-columns: ${iconLeft ? `24px auto 24px` : `auto 24px`};
     padding: 16px;
-    grid-gap: 12px;
+    grid-gap: 20px;
     align-items: center;
     border-top: ${!borderTop && `none`};
     border-bottom: ${!borderBottom && `none`};
@@ -100,7 +100,6 @@ const Container = styled.div<IContainer>(
     }
 
     @media (min-width: 768px) {
-      padding: 16px;
       grid-gap: 24px;
     }
   `,

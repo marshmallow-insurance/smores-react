@@ -37,7 +37,7 @@ exports[`default renders correctly 1`] = `
   display: grid;
   grid-template-columns: auto 24px;
   padding: 16px;
-  grid-gap: 12px;
+  grid-gap: 20px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -65,7 +65,6 @@ exports[`default renders correctly 1`] = `
 
 @media (min-width:768px) {
   .c0 {
-    padding: 16px;
     grid-gap: 24px;
   }
 }
