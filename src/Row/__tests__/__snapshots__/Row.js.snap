@@ -37,7 +37,7 @@ exports[`default renders correctly 1`] = `
   display: grid;
   grid-template-columns: auto 24px;
   padding: 16px;
-  grid-gap: 20px;
+  grid-gap: 16px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
