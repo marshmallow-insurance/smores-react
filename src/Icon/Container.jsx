@@ -126,6 +126,10 @@ export const Container = () => {
         <Icon render="fire" />
       </Wrapper>
       <Wrapper>
+        <span>globe</span>
+        <Icon render="globe" />
+      </Wrapper>
+      <Wrapper>
         <span>house</span>
         <Icon render="house" />
       </Wrapper>
@@ -148,6 +152,10 @@ export const Container = () => {
       <Wrapper>
         <span>key</span>
         <Icon render="key" />
+      </Wrapper>
+      <Wrapper>
+        <span>location</span>
+        <Icon render="location" />
       </Wrapper>
       <Wrapper>
         <span>minus</span>
@@ -184,6 +192,10 @@ export const Container = () => {
       <Wrapper>
         <span>plus-circle</span>
         <Icon render="plus-circle" />
+      </Wrapper>
+      <Wrapper>
+        <span>policy-doc</span>
+        <Icon render="policy-doc" />
       </Wrapper>
       <Wrapper>
         <span>policy</span>
@@ -228,6 +240,10 @@ export const Container = () => {
       <Wrapper>
         <span>shield</span>
         <Icon render="shield" />
+      </Wrapper>
+      <Wrapper>
+        <span>shield-check</span>
+        <Icon render="shield-check" />
       </Wrapper>
       <Wrapper>
         <span>tick</span>
