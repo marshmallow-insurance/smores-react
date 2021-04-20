@@ -42,16 +42,19 @@ const App = () => (
 * download
 * edit
 * file
+* globe
 * house
 * id
 * info
 * intercom
 * key
+* location
 * minus
 * padlock
 * plus
 * plus-circle
 * policy
+* policy-doc
 * pound
 * pound-filled-circle
 * pound-outline
@@ -60,6 +63,7 @@ const App = () => (
 * renewal
 * search
 * shield
+* shield-check
 * tick
 * trash
 * clock
