@@ -1,3 +1,9 @@
+## [0.63.0] - 2021-04-21
+### Added
+- Added label-large in typography for Text
+### Changed
+- Exposed typography in Tag
+
 ## [0.62.0] - 2021-04-21
 ### Added
 - New Icon svgs for Location, Policy-doc, Globe and Shield-check
