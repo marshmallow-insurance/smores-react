@@ -164,13 +164,14 @@ const Container = styled.button<IButton>(
     `}
   ${tertiary &&
     css`
-      background-color: ${theme.colors.bg2};
+      background-color: ${theme.colors.bg4};
+      border: none;
 
       &:hover {
         background-color: ${!(disabled || isLoading) && theme.colors.grey2};
       }
       &:active {
-        background-color: ${theme.colors.grey3};
+        background-color: ${theme.colors.bg4};
       }
     `}
   `,
