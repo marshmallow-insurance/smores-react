@@ -36,3 +36,4 @@ const App = () => (
 | base-small | 12 | 14 | normal |
 | base-xsmall | 10 | 12 | normal |
 | label | 8 | 10 | bold |
+| label-large | 10 | 12 | bold |

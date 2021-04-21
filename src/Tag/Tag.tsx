@@ -10,6 +10,7 @@ type TagProps = {
   color: string
   bgColor: string
   borderColor: string
+  typo?: string
 }
 
 export const Tag: FC<TagProps> = ({
@@ -18,9 +19,10 @@ export const Tag: FC<TagProps> = ({
   borderColor,
   bgColor,
   className,
+  typo,
 }) => (
   <Wrapper bgColor={bgColor} className={className} borderColor={borderColor}>
-    <TagText tag="span" typo="label" color={color}>
+    <TagText tag="span" typo={typo ?? 'label'} color={color}>
       {label}
     </TagText>
   </Wrapper>
