@@ -1,3 +1,7 @@
+## [0.62.0] - 2021-04-21
+### Added
+- New Icon svgs for Location, Policy-doc, Globe and Shield-check
+
 ## [0.60.1] - 2021-04-09
 ### Changed
 - Updated Row padding, grid-gap and cursor
@@ -14,6 +18,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[0.60.1]: https://github.com/marshmallow-insurance/smores-react/compare/v0.60.0...v0.62.0
 [0.60.1]: https://github.com/marshmallow-insurance/smores-react/compare/v0.60.0...v0.60.1
 [0.60.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.59.0...v0.60.0
 [0.59.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.58.0...v0.59.0
