@@ -4,6 +4,7 @@ const colors = {
   // Background
   bg2: '#F9F9F9',
   bg3: '#F8F6F6',
+  bg4: '#F4F4F4',
 
   // Grey
   grey2: '#ECECEC',
