@@ -3,7 +3,7 @@
 exports[`renders 1`] = `
 .c1 {
   font-size: 8px;
-  line-height: 9px;
+  line-height: 100%;
   font-weight: 700;
   text-transform: uppercase;
   -webkit-letter-spacing: 0.75px;
@@ -38,7 +38,6 @@ exports[`renders 1`] = `
 @media (min-width:768px) {
   .c1 {
     font-size: 10px;
-    line-height: 12px;
   }
 }
 
