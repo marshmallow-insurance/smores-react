@@ -187,30 +187,24 @@ const Container = styled.p<IText>(
   ${typo === 'label' &&
     css`
       font-size: 8px;
-      line-height: 9px;
+      line-height: 100%;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.75px;
 
       @media (min-width: 768px) {
         font-size: 10px;
-        line-height: 12px;
       }
     `}
   
   /* Label Large */
   ${typo === 'label-large' &&
     css`
-      font-size: 10px;
-      line-height: 9px;
+      font-size: 12px;
+      line-height: 100%;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.75px;
-
-      @media (min-width: 768px) {
-        font-size: 12px;
-        line-height: 12px;
-      }
     `}
 
   margin: 0;
