@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import { theme } from '../theme'
 import { Icon as IconComponent } from '../Icon'
 
-interface IChip {
+interface IButton {
   primary: boolean
   secondary: boolean
   icon: string
@@ -20,7 +20,7 @@ type Props = {
   forcedWidth?: string
 }
 
-export const Chips: FC<Props> = ({
+export const Chip: FC<Props> = ({
   children,
   handleClick,
   primary = false,
@@ -50,7 +50,7 @@ export const Chips: FC<Props> = ({
   )
 }
 
-const Container = styled.button<IChip>(
+const Container = styled.button<IButton>(
   ({ primary, secondary, icon, forcedWidth }) => css`
     align-items: center;
     background-color: ${theme.colors.pink5};
@@ -62,7 +62,7 @@ const Container = styled.button<IChip>(
     font-size: 16px;
     justify-content: ${icon ? 'space-evenly' : 'center'};
     line-height: 100%;
-    padding: 8px 16px 8px 8px;
+    padding: 8px 16px 8px ${icon ? '8px' : '16px'};
     width: ${forcedWidth ? forcedWidth : 'auto'};
 
     ${primary &&
@@ -92,5 +92,5 @@ const ChildrenContainer = styled.div`
   flex-grow: 1;
 `
 
-// font weight?
-// padding?
+// set width? for Add and Added
+// size of icon?

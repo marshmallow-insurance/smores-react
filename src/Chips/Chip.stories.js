@@ -1,13 +1,13 @@
 import React from 'react'
-import { Chips } from './Chips'
+import { Chip } from './Chip'
 
 export default {
-  title: 'Chips',
-  component: Chips,
+  title: 'Chip',
+  component: Chip,
   argTypes: { handleClick: { action: 'clicked' } },
 }
 
-const Template = (args) => <Chips {...args}>Add</Chips>
+const Template = (args) => <Chip {...args}>Add</Chip>
 
 export const Primary = Template.bind({})
 
