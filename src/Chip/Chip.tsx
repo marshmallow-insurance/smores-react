@@ -80,10 +80,6 @@ const Container = styled.button<IButton>(
   `,
 )
 
-// const IconContainer = styled(IconComponent)`
-//   margin-right: 10px;
-// `
-
 const ChildrenContainer = styled.div`
   flex-grow: 1;
 `
