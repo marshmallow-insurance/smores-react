@@ -7,23 +7,20 @@ export default {
   argTypes: { handleClick: { action: 'clicked' } },
 }
 
-const Template = (args) => <Chip {...args}>Add</Chip>
+const Template = (args) => <Chip {...args} />
 
 export const Primary = Template.bind({})
 
 Primary.args = {
   primary: true,
+  children: 'Add',
+  icon: 'plus',
 }
 
 export const Secondary = Template.bind({})
 
 Secondary.args = {
   secondary: true,
-}
-
-export const Icon = Template.bind({})
-
-Icon.args = {
-  primary: true,
+  children: 'Added',
   icon: 'tick',
 }

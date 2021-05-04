@@ -8,7 +8,6 @@ interface IButton {
   primary: boolean
   secondary: boolean
   icon: string
-  forcedWidth: string
 }
 
 type Props = {
@@ -17,7 +16,6 @@ type Props = {
   primary?: boolean
   secondary?: boolean
   icon?: string
-  forcedWidth?: string
 }
 
 export const Chip: FC<Props> = ({
@@ -26,7 +24,6 @@ export const Chip: FC<Props> = ({
   primary = false,
   secondary = false,
   icon = '',
-  forcedWidth = '',
 }) => {
   return (
     <div>
@@ -35,13 +32,12 @@ export const Chip: FC<Props> = ({
         secondary={secondary}
         onClick={handleClick}
         icon={icon}
-        forcedWidth={forcedWidth}
       >
         {icon && (
-          <IconContainer
+          <IconComponent
             render={icon}
-            size={24}
-            color={primary ? 'white' : 'blue7'}
+            size={20}
+            color={primary ? 'white' : 'pink5'}
           />
         )}
         <ChildrenContainer>{children}</ChildrenContainer>
@@ -51,7 +47,7 @@ export const Chip: FC<Props> = ({
 }
 
 const Container = styled.button<IButton>(
-  ({ primary, secondary, icon, forcedWidth }) => css`
+  ({ primary, secondary, icon }) => css`
     align-items: center;
     background-color: ${theme.colors.pink5};
     border-radius: 100px;
@@ -63,7 +59,7 @@ const Container = styled.button<IButton>(
     justify-content: ${icon ? 'space-evenly' : 'center'};
     line-height: 100%;
     padding: 8px 16px 8px ${icon ? '8px' : '16px'};
-    width: ${forcedWidth ? forcedWidth : 'auto'};
+    width: 98px;
 
     ${primary &&
     css`
@@ -84,13 +80,10 @@ const Container = styled.button<IButton>(
   `,
 )
 
-const IconContainer = styled(IconComponent)`
-  margin-right: 10px;
-`
+// const IconContainer = styled(IconComponent)`
+//   margin-right: 10px;
+// `
 
 const ChildrenContainer = styled.div`
   flex-grow: 1;
 `
-
-// set width? for Add and Added
-// size of icon?
