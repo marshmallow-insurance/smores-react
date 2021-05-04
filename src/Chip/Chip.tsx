@@ -26,23 +26,21 @@ export const Chip: FC<Props> = ({
   icon = '',
 }) => {
   return (
-    <div>
-      <Container
-        primary={primary}
-        secondary={secondary}
-        onClick={handleClick}
-        icon={icon}
-      >
-        {icon && (
-          <IconComponent
-            render={icon}
-            size={20}
-            color={primary ? 'white' : 'pink5'}
-          />
-        )}
-        <ChildrenContainer>{children}</ChildrenContainer>
-      </Container>
-    </div>
+    <Container
+      primary={primary}
+      secondary={secondary}
+      onClick={handleClick}
+      icon={icon}
+    >
+      {icon && (
+        <IconComponent
+          render={icon}
+          size={20}
+          color={primary ? 'white' : 'pink5'}
+        />
+      )}
+      <ChildrenContainer>{children}</ChildrenContainer>
+    </Container>
   )
 }
 

@@ -34,3 +34,15 @@
 [0.61.1]: https://github.com/marshmallow-insurance/smores-react/compare/v0.60.0...v0.60.1
 [0.60.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.59.0...v0.60.0
 [0.59.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.58.0...v0.59.0
+
+## [0.61.0] - 2021-04-21
+### Changed
+- tertiary button styling
+
+### Added
+- bg4 colour to theme
+
+## [0.65.0] - 2021-05-04
+### Added
+- New Chip component
+
