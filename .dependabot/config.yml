@@ -7,10 +7,12 @@ update_configs:
       - 'ellajay'
       - 'habin-isa'
       - 'fleonard'
+      - 'trcywu'
     default_reviewers:
       - 'ellajay'
       - 'habin-isa'
       - 'fleonard'
+      - 'trcywu'
     automerged_updates:
       - match:
           dependency_type: 'development'
