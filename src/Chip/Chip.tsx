@@ -50,7 +50,7 @@ const Container = styled.button<IButton>(
     background-color: ${theme.colors.pink5};
     border-radius: 100px;
     border-shadow: none;
-    border: 2px solid;
+    border: 2px solid ${theme.colors.pink5};
     color: ${theme.colors.white};
     display: flex;
     font-size: 16px;
@@ -58,6 +58,7 @@ const Container = styled.button<IButton>(
     line-height: 100%;
     padding: 8px 16px 8px ${icon ? '8px' : '16px'};
     width: 98px;
+    cursor: pointer;
 
     ${primary &&
     css`
@@ -69,7 +70,6 @@ const Container = styled.button<IButton>(
     ${secondary &&
     css`
       background-color: ${theme.colors.white};
-      border-color: ${theme.colors.pink5};
       color: ${theme.colors.pink5};
       &:hover {
         background-color: ${theme.colors.bg2};
