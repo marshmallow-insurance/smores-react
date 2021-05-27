@@ -1,3 +1,7 @@
+## [0.66.0] - 2021-05-25
+### Changed
+- Chip component: cursor and border color
+
 ## [0.65.0] - 2021-05-04
 ### Added
 - New Chip component
@@ -38,6 +42,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[0.66.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.65.0...v0.66.0
 [0.65.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.64.0...v0.65.0
 [0.64.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.63.0...v0.64.0
 [0.63.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.62.0...v0.63.0
