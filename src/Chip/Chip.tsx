@@ -19,8 +19,8 @@ type Props = {
   primary?: boolean
   secondary?: boolean
   icon?: string
-  disabled: boolean
-  loading: boolean
+  disabled?: boolean
+  loading?: boolean
 }
 
 export const Chip: FC<Props> = ({
