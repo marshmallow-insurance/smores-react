@@ -3,11 +3,14 @@ import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
 import { Icon as IconComponent } from '../Icon'
+import { Loader } from '../Loader'
 
 interface IButton {
   primary: boolean
   secondary: boolean
   icon: string
+  loading: boolean
+  disabled: boolean
 }
 
 type Props = {
@@ -16,6 +19,8 @@ type Props = {
   primary?: boolean
   secondary?: boolean
   icon?: string
+  disabled: boolean
+  loading: boolean
 }
 
 export const Chip: FC<Props> = ({
@@ -23,29 +28,39 @@ export const Chip: FC<Props> = ({
   handleClick,
   primary = false,
   secondary = false,
+  disabled = false,
+  loading = false,
   icon = '',
 }) => {
   return (
     <Container
       primary={primary}
       secondary={secondary}
+      disabled={disabled || loading}
+      loading={loading}
       onClick={handleClick}
       icon={icon}
     >
-      {icon && (
-        <IconComponent
-          render={icon}
-          size={20}
-          color={primary ? 'white' : 'pink5'}
-        />
+      {loading ? (
+        <Loader color="white" height="16" />
+      ) : (
+        <>
+          {icon && (
+            <IconComponent
+              render={icon}
+              size={20}
+              color={primary ? 'white' : 'pink5'}
+            />
+          )}
+          <ChildrenContainer>{children}</ChildrenContainer>
+        </>
       )}
-      <ChildrenContainer>{children}</ChildrenContainer>
     </Container>
   )
 }
 
 const Container = styled.button<IButton>(
-  ({ primary, secondary, icon }) => css`
+  ({ primary, secondary, icon, loading, disabled }) => css`
     align-items: center;
     background-color: ${theme.colors.pink5};
     border-radius: 100px;
@@ -58,23 +73,22 @@ const Container = styled.button<IButton>(
     line-height: 100%;
     padding: 8px 16px 8px ${icon ? '8px' : '16px'};
     width: 98px;
-    cursor: pointer;
-
+    cursor: ${disabled || loading ? 'not-allowed' : 'pointer'};
+    opacity: ${disabled ? '0.5' : '1'};
     ${primary &&
     css`
       &:hover {
-        background-color: ${theme.colors.pink6};
+        background-color: ${(disabled || loading) && theme.colors.pink6};
       }
     `}
-
     ${secondary &&
     css`
-      background-color: ${theme.colors.white};
       color: ${theme.colors.pink5};
+      background-color: ${theme.colors.white};
       &:hover {
-        background-color: ${theme.colors.bg2};
+        background-color: ${!(disabled || loading) && theme.colors.bg2};
       }
-    `}
+    `};
   `,
 )
 

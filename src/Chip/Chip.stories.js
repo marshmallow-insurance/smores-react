@@ -24,3 +24,18 @@ Secondary.args = {
   children: 'Added',
   icon: 'tick',
 }
+
+export const Loading = Template.bind({})
+
+Loading.args = {
+  loading: true,
+}
+
+export const SecondaryDisabled = Template.bind({})
+
+SecondaryDisabled.args = {
+  secondary: true,
+  disabled: true,
+  children: 'Add',
+  icon: 'plus',
+}
