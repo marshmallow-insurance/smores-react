@@ -1,4 +1,4 @@
-## [0.67.0] - 2021-06-09
+## [0.66.2] - 2021-06-09
 ### Changed
 - Chip component: loading and disabled state
 
@@ -46,7 +46,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
-[0.66.2]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.1...v0.67.0
+[0.66.2]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.1...v0.66.2
 [0.66.1]: https://github.com/marshmallow-insurance/smores-react/compare/v0.65.0...v0.66.1
 [0.65.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.64.0...v0.65.0
 [0.64.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.63.0...v0.64.0
