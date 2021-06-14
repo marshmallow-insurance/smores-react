@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: primer/figma-action@v1.0.0-alpha.3
         with:
-          args: 'format=svg outputDir=./src/Icon/svgs'
+          args: 'format=svg outputDir=./src/Icon/svgs/'
         env:
           FIGMA_FILE_URL: 'https://www.figma.com/file/rnQu7stzZse0zw67V2tSy6/DS-Global-Brand-assets-and-colours?node-id=1%3A3'
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
