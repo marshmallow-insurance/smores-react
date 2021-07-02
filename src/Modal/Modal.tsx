@@ -26,6 +26,7 @@ type ModalProps = {
   drawer?: boolean
   cross?: boolean
   width?: string
+  containerClass?: string
 }
 
 export const Modal: FC<ModalProps> = ({
@@ -37,10 +38,15 @@ export const Modal: FC<ModalProps> = ({
   drawer = true,
   cross = true,
   width,
+  containerClass,
 }) => (
   <Wrapper showModal={showModal}>
     <Overlay />
-    <Container drawer={drawer} width={width || '460px'}>
+    <Container
+      drawer={drawer}
+      width={width || '460px'}
+      className={containerClass}
+    >
       <Box flex alignItems="flex-start" justifyContent="space-between" mb="8px">
         <TitleElements flex direction="column">
           {icon !== '' && (
