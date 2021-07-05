@@ -31,6 +31,8 @@ type Props = {
   trailingIcon?: string
   /** Disabled flag */
   disabled?: boolean
+  /** Pattern prop */
+  pattern?: string
 }
 
 export const TextInput: FC<Props> = ({
@@ -46,6 +48,7 @@ export const TextInput: FC<Props> = ({
   trailingIcon,
   onChange,
   disabled = false,
+  pattern,
 }) => (
   <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
     {label && (
@@ -61,6 +64,7 @@ export const TextInput: FC<Props> = ({
         id={id}
         name={name}
         placeholder={placeholder}
+        pattern={pattern}
         value={value}
         error={error}
         autoComplete="off"
@@ -82,7 +86,7 @@ interface IContainer {
 const Container = styled.div<IContainer>`
   display: flex;
   flex-direction: column;
-  height: ${p => (p.hasLabel && p.hasError ? '64px' : '52px')};
+  height: ${(p) => (p.hasLabel && p.hasError ? '64px' : '52px')};
 `
 
 interface IInput {
@@ -92,22 +96,22 @@ interface IInput {
 
 const Content = styled.div<IInput>`
   border-bottom: 1px solid;
-  border-color: ${p => theme.colors[`${p.error ? 'red7' : 'grey4'}`]};
+  border-color: ${(p) => theme.colors[`${p.error ? 'red7' : 'grey4'}`]};
   display: flex;
   height: 32px;
 
   &:hover {
-    border-color: ${p => theme.colors[`${p.error ? 'red7' : 'grey6'}`]};
+    border-color: ${(p) => theme.colors[`${p.error ? 'red7' : 'grey6'}`]};
   }
 
   &:focus {
-    border-color: ${p => theme.colors[`${p.error ? 'red7' : 'blue5'}`]};
+    border-color: ${(p) => theme.colors[`${p.error ? 'red7' : 'blue5'}`]};
   }
 `
 
 const Input = styled.input<IInput>`
   border: none;
-  color: ${p => theme.colors[`${p.error ? 'red7' : 'black'}`]};
+  color: ${(p) => theme.colors[`${p.error ? 'red7' : 'black'}`]};
   font-size: 16px;
   width: 100%;
   outline: none;
