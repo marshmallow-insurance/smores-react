@@ -1,3 +1,6 @@
+## [0.66.5] - 2021-07-16
+### Added
+- Added prohibited icon
 ## [0.66.4] - 2021-07-05
 ### Added
 - Added pattern property to text inputs
@@ -54,6 +57,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[0.66.5]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.4...v0.66.5
 [0.66.4]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.3...v0.66.4
 [0.66.3]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.2...v0.66.3
 [0.66.2]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.1...v0.66.2

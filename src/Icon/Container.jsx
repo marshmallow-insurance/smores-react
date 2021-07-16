@@ -214,6 +214,10 @@ export const Container = () => {
         <Icon render="profile" />
       </Wrapper>
       <Wrapper>
+        <span>prohibited</span>
+        <Icon render="prohibited" />
+      </Wrapper>
+      <Wrapper>
         <span>question</span>
         <Icon render="question" />
       </Wrapper>
