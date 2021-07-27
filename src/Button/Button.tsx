@@ -39,6 +39,7 @@ type Props = {
   tertiary?: boolean
   icon?: string
   forcedWidth?: string
+  form?: string
 }
 
 export const Button: FC<Props> = ({
@@ -57,6 +58,7 @@ export const Button: FC<Props> = ({
   tertiary = false,
   icon = '',
   forcedWidth = '',
+  form,
 }) => {
   return (
     <div>
@@ -71,6 +73,7 @@ export const Button: FC<Props> = ({
           tertiary={tertiary}
           icon={icon}
           forcedWidth={forcedWidth}
+          {...(form ? { form } : {})}
         >
           {loading ? (
             <Loader
