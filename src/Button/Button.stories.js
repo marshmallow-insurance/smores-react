@@ -48,66 +48,66 @@ export const PrimaryDisabled = Template.bind({})
 
 PrimaryDisabled.args = {
   primary: true,
-  disabled: true
+  disabled: true,
 }
 
 export const PrimaryLoading = Template.bind({})
 
 PrimaryLoading.args = {
   primary: true,
-  loading: true
+  loading: true,
 }
 
 export const PrimaryForcedWidth = Template.bind({})
 
 PrimaryForcedWidth.args = {
   primary: true,
-  forcedWidth: '300px'
+  forcedWidth: '300px',
 }
 
 export const Secondary = Template.bind({})
 
 Secondary.args = {
-  secondary: true
+  secondary: true,
 }
 
 export const SecondaryDisabled = Template.bind({})
 
 SecondaryDisabled.args = {
   secondary: true,
-  disabled: true
+  disabled: true,
 }
 
 export const SecondaryLoading = Template.bind({})
 
 SecondaryLoading.args = {
   secondary: true,
-  loading: true
+  loading: true,
 }
 
 export const Tertiary = Template.bind({})
 
 Tertiary.args = {
-  tertiary: true
+  tertiary: true,
 }
 
 export const TertiaryDisabled = Template.bind({})
 
 TertiaryDisabled.args = {
   tertiary: true,
-  disabled: true
+  disabled: true,
 }
 
 export const TertiaryLoading = Template.bind({})
 
 TertiaryLoading.args = {
   tertiary: true,
-  loading: true
+  loading: true,
 }
 
 export const Icon = Template.bind({})
 
 Icon.args = {
   primary: true,
-  icon: 'info'
+  icon: 'info',
 }
