@@ -1,13 +1,21 @@
+## [0.66.7] - 2021-07-29
+### Added
+- Added new type to Message component
+- Added new Icon svg for Warning-Bubble
+
 ## [0.66.6] - 2021-07-27
 ### Added
 - Added form attribute to Button component
+
 ## [0.66.5] - 2021-07-16
 ### Added
 - Added prohibited icon
+
 ## [0.66.4] - 2021-07-05
 ### Added
 - Added pattern property to text inputs
 - Added dynamic class to Modal container 
+
 ## [0.66.3] - 2021-06-09
 ### Changed
 - Chip component: optional condition added for loading and disabled state
@@ -60,6 +68,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[0.66.7]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.6...v0.66.7
 [0.66.6]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.5...v0.66.6
 [0.66.5]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.4...v0.66.5
 [0.66.4]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.3...v0.66.4
