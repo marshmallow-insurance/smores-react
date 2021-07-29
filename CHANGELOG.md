@@ -1,3 +1,7 @@
+## [0.67.1] - 2021-07-29
+### Added
+- Added new prop sizeSmall to Message component
+
 ## [0.67.0] - 2021-07-29
 ### Added
 - Added new type to Message component
@@ -68,6 +72,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[0.67.1]: https://github.com/marshmallow-insurance/smores-react/compare/v0.67.0...v0.67.1
 [0.67.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.6...v0.67.0
 [0.66.6]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.5...v0.66.6
 [0.66.5]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.4...v0.66.5
