@@ -15,7 +15,7 @@ it('default renders correctly', () => {
 
 it('warning renders correctly', () => {
   const { container } = render(
-    <Message type="warning">
+    <Message type="warning" sizeSmall={false}>
       This is a warning message for the customer!
     </Message>,
   )
@@ -42,5 +42,17 @@ it('icon prop render correctly', () => {
 
   expect(container).toHaveTextContent(
     'This is a warning message for the customer!',
+  )
+})
+
+it('warning bubble size small renders correctly', () => {
+  const { container } = render(
+    <Message type="warning-bubble" backgroundColor="#FAF3EE" sizeSmall={true}>
+      This is a warning bubble message for the customer!
+    </Message>,
+  )
+
+  expect(container).toHaveTextContent(
+    'This is a warning bubble message for the customer!',
   )
 })
