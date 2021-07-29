@@ -129,7 +129,7 @@ export const Pagination: FC<PaginationProps> = ({
       )}
       {activePage + 1 <= lastPage && (
         <PageBox onClick={() => movePage(activePage + 1)}>
-          <Icon size={24} render="arrow" rotate={180} />
+          <Icon size={18} render="arrow" rotate={180} />
         </PageBox>
       )}
     </Container>

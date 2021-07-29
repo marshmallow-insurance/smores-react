@@ -2,3 +2,4 @@ node_modules
 dist
 build
 README.md
+src/__mocks__
