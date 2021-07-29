@@ -6,7 +6,8 @@
     "lib": ["es5", "es6", "es7", "es2017", "dom"],
     "types": ["react"],
     "sourceMap": true,
-    "allowJs": false,
+    "allowJs": true,
+    "checkJs": false,
     "jsx": "react",
     "declaration": true,
     "moduleResolution": "node",
@@ -22,6 +23,6 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "types/index.d.ts"],
   "exclude": ["node_modules", "dist", "scripts"]
 }
