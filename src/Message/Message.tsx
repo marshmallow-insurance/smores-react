@@ -21,7 +21,6 @@ export const Message: FC<MessageProps> = ({
   sizeSmall,
 }) => (
   <Wrapper type={type} backgroundColor={backgroundColor} sizeSmall={sizeSmall}>
-    {sizeSmall}
     <IconWrapper alignIcon={alignIcon}>
       <Icon
         size={sizeSmall ? 24 : 32}
