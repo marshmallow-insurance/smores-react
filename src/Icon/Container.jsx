@@ -278,6 +278,10 @@ export const Container = () => {
         <Icon render="warning" />
       </Wrapper>
       <Wrapper>
+        <span>warning-bubble</span>
+        <Icon render="warning-bubble" />
+      </Wrapper>
+      <Wrapper>
         <span>wheel-flat</span>
         <Icon render="wheel-flat" />
       </Wrapper>

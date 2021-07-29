@@ -7,16 +7,18 @@ import { theme } from '../theme'
 
 export type MessageProps = {
   children: ReactNode
-  type?: 'info' | 'warning'
+  type?: 'info' | 'warning' | 'warning-bubble'
   alignIcon?: 'center' | 'flex-start' | 'flex-end'
+  backgroundColor?: string
 }
 
 export const Message: FC<MessageProps> = ({
   children,
   type = 'info',
   alignIcon = 'center',
+  backgroundColor,
 }) => (
-  <Wrapper type={type}>
+  <Wrapper type={type} backgroundColor={backgroundColor}>
     <IconWrapper alignIcon={alignIcon}>
       <Icon render={type} color={type === 'warning' ? 'pink8' : 'blue7'} />
     </IconWrapper>
@@ -35,13 +37,16 @@ const IconWrapper = styled(Box)<IIconWrapper>`
 `
 
 interface IWrapper {
-  type: 'info' | 'warning'
+  type: 'info' | 'warning' | 'warning-bubble'
+  backgroundColor?: string
 }
 
 const Wrapper = styled.div<IWrapper>(
-  ({ type }) => css`
+  ({ type, backgroundColor }) => css`
     align-items: center;
-    background-color: ${type === 'warning'
+    background-color: ${backgroundColor
+      ? backgroundColor
+      : type === 'warning'
       ? theme.colors.red2
       : theme.colors.blue2};
     box-sizing: border-box;
