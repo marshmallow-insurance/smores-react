@@ -1,5 +1,6 @@
 import React from 'react'
 import { Message } from './Message'
+import { theme } from '../theme'
 
 export default {
   title: 'Message',
@@ -22,6 +23,20 @@ export const Warning = Template.bind({})
 
 Warning.args = {
   type: 'warning',
+}
+
+export const WarningBubble = Template.bind({})
+
+WarningBubble.args = {
+  type: 'warning-bubble',
+  backgroundColor: theme.colors['bg-beige'],
+}
+
+export const InfoBubble = Template.bind({})
+
+InfoBubble.args = {
+  type: 'info',
+  backgroundColor: theme.colors['bg-beige'],
 }
 
 export const IconPlacement = Template.bind({})
