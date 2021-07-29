@@ -54,7 +54,6 @@ const generateIconMap = (icons, { dir }) => {
   ].join('\n')
 
   writeFileSync(`${dir}/iconMap.js`, iconMapContent)
-  writeFileSync(`${dir}/index.d.ts`, "declare module 'iconMap'")
   console.log('Icon Map created! ✅')
 }
 
