@@ -1,4 +1,4 @@
-## [0.66.7] - 2021-07-29
+## [0.67.0] - 2021-07-29
 ### Added
 - Added new type to Message component
 - Added new Icon svg for Warning-Bubble
@@ -68,7 +68,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
-[0.66.7]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.6...v0.66.7
+[0.67.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.6...v0.67.0
 [0.66.6]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.5...v0.66.6
 [0.66.5]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.4...v0.66.5
 [0.66.4]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.3...v0.66.4
