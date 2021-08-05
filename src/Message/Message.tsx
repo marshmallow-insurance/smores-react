@@ -5,13 +5,17 @@ import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { theme } from '../theme'
 
+type BorderProps =
+  | { hasBorder?: false; borderColor?: never }
+  | { hasBorder: true; borderColor: string }
+
 export type MessageProps = {
   children: ReactNode
-  type?: 'info' | 'warning' | 'warning-bubble'
+  type?: 'info' | 'warning' | 'warning-bubble' | string
   alignIcon?: 'center' | 'flex-start' | 'flex-end'
   backgroundColor?: string
   sizeSmall?: boolean
-}
+} & BorderProps
 
 export const Message: FC<MessageProps> = ({
   children,
@@ -19,8 +23,16 @@ export const Message: FC<MessageProps> = ({
   alignIcon = 'center',
   backgroundColor,
   sizeSmall,
+  hasBorder,
+  borderColor,
 }) => (
-  <Wrapper type={type} backgroundColor={backgroundColor} sizeSmall={sizeSmall}>
+  <Wrapper
+    type={type}
+    backgroundColor={backgroundColor}
+    sizeSmall={sizeSmall}
+    hasBorder={hasBorder}
+    borderColor={borderColor}
+  >
     <IconWrapper alignIcon={alignIcon}>
       <Icon
         size={sizeSmall ? 24 : 32}
@@ -38,9 +50,11 @@ interface IIconWrapper {
 }
 
 interface IWrapper {
-  type: 'info' | 'warning' | 'warning-bubble'
+  type: 'info' | 'warning' | 'warning-bubble' | string
   backgroundColor?: string
   sizeSmall?: boolean
+  hasBorder?: boolean
+  borderColor?: string
 }
 
 const IconWrapper = styled(Box)<IIconWrapper>`
@@ -49,7 +63,7 @@ const IconWrapper = styled(Box)<IIconWrapper>`
 `
 
 const Wrapper = styled.div<IWrapper>(
-  ({ type, backgroundColor, sizeSmall }) => css`
+  ({ type, backgroundColor, sizeSmall, hasBorder, borderColor }) => css`
     align-items: center;
     background-color: ${backgroundColor
       ? backgroundColor
@@ -57,6 +71,7 @@ const Wrapper = styled.div<IWrapper>(
       ? theme.colors.red2
       : theme.colors.blue2};
     box-sizing: border-box;
+    ${hasBorder && `border: 1px solid ${borderColor};`}
     border-radius: 8px;
     margin-bottom: 24px;
     padding: 16px;

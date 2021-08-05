@@ -41,9 +41,12 @@ InfoBubbleSmall.args = {
   sizeSmall: true,
 }
 
-export const IconPlacement = Template.bind({})
+export const CardWithBorder = Template.bind({})
 
-IconPlacement.args = {
-  type: 'warning',
+CardWithBorder.args = {
+  type: 'card',
   alignIcon: 'flex-start',
+  backgroundColor: theme.colors.white,
+  hasBorder: true,
+  borderColor: theme.colors.blue7,
 }
