@@ -10,7 +10,7 @@ type Props = {
 
 export const LabelledText: FC<Props> = ({ label, children }) => (
   <Container>
-    <Text tag="label" color="grey6" typo="label">
+    <Text tag="label" color="grey8" typo="label">
       {label}
     </Text>
 
