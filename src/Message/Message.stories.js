@@ -25,10 +25,27 @@ Warning.args = {
   type: 'warning',
 }
 
-export const WarningBubbleSmall = Template.bind({})
+export const WarningBubbleSmallBeige = Template.bind({})
 
-WarningBubbleSmall.args = {
+WarningBubbleSmallBeige.args = {
   type: 'warning-bubble',
+  backgroundColor: theme.colors['bg-beige'],
+  sizeSmall: true,
+}
+
+export const WarningBubbleSmallRed = Template.bind({})
+
+WarningBubbleSmallRed.args = {
+  type: 'warning',
+  backgroundColor: 'none',
+  sizeSmall: true,
+  borderColor: theme.colors.pink8,
+}
+
+export const InfoBubbleSmallBeige = Template.bind({})
+
+InfoBubbleSmallBeige.args = {
+  type: 'info',
   backgroundColor: theme.colors['bg-beige'],
   sizeSmall: true,
 }
@@ -37,8 +54,9 @@ export const InfoBubbleSmall = Template.bind({})
 
 InfoBubbleSmall.args = {
   type: 'info',
-  backgroundColor: theme.colors['bg-beige'],
+  backgroundColor: 'none',
   sizeSmall: true,
+  borderColor: 'black',
 }
 
 export const IconPlacement = Template.bind({})

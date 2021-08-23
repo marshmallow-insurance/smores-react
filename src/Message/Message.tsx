@@ -11,6 +11,7 @@ export type MessageProps = {
   alignIcon?: 'center' | 'flex-start' | 'flex-end'
   backgroundColor?: string
   sizeSmall?: boolean
+  borderColor?: string
 }
 
 export const Message: FC<MessageProps> = ({
@@ -19,8 +20,14 @@ export const Message: FC<MessageProps> = ({
   alignIcon = 'center',
   backgroundColor,
   sizeSmall,
+  borderColor,
 }) => (
-  <Wrapper type={type} backgroundColor={backgroundColor} sizeSmall={sizeSmall}>
+  <Wrapper
+    type={type}
+    backgroundColor={backgroundColor}
+    sizeSmall={sizeSmall}
+    borderColor={borderColor}
+  >
     <IconWrapper alignIcon={alignIcon}>
       <Icon
         size={sizeSmall ? 24 : 32}
@@ -41,6 +48,7 @@ interface IWrapper {
   type: 'info' | 'warning' | 'warning-bubble'
   backgroundColor?: string
   sizeSmall?: boolean
+  borderColor?: boolean | undefined
 }
 
 const IconWrapper = styled(Box)<IIconWrapper>`
@@ -49,7 +57,7 @@ const IconWrapper = styled(Box)<IIconWrapper>`
 `
 
 const Wrapper = styled.div<IWrapper>(
-  ({ type, backgroundColor, sizeSmall }) => css`
+  ({ type, backgroundColor, sizeSmall, borderColor }) => css`
     align-items: center;
     background-color: ${backgroundColor
       ? backgroundColor
@@ -64,6 +72,7 @@ const Wrapper = styled.div<IWrapper>(
     font-family: ${theme.font.system};
     color: ${type === 'warning' ? theme.colors.pink8 : theme.colors.blue7};
     font-size: ${sizeSmall ? '12px' : '16px'};
+    border: ${borderColor ? `1px solid ${borderColor}` : 'none'};
 
     span {
       margin: 0 16px 0 0;
