@@ -48,7 +48,7 @@ interface IWrapper {
   type: 'info' | 'warning' | 'warning-bubble'
   backgroundColor?: string
   sizeSmall?: boolean
-  borderColor?: boolean | undefined
+  borderColor?: string
 }
 
 const IconWrapper = styled(Box)<IIconWrapper>`
