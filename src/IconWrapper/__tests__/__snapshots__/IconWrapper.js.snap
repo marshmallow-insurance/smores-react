@@ -33,8 +33,8 @@ exports[`renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
-  max-width: 24px;
-  height: 24px;
+  max-width: 32px;
+  height: 32px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -44,15 +44,6 @@ exports[`renders 1`] = `
   margin-left: 0;
 }
 
-.c1 svg {
-  width: 100%;
-  height: 100%;
-}
-
-.c1 svg path {
-  fill: blue7;
-}
-
 <div
   class="c0"
 >
@@ -60,10 +51,8 @@ exports[`renders 1`] = `
     class="c1"
     color="blue7"
     rotate="0"
-    size="24"
-  >
-    <div />
-  </span>
+    size="32"
+  />
   <div
     class="c2"
     r="auto"
