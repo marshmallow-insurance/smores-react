@@ -84,6 +84,8 @@ const Container = styled.span<IIcon>(
     margin-left: ${ml};
 
     svg {
+      width: 100%;
+      height: 100%;
       path {
         fill: ${color};
       }

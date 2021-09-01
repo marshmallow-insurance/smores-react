@@ -26,6 +26,11 @@ exports[`renders 1`] = `
   margin-left: 0;
 }
 
+.c3 svg {
+  width: 100%;
+  height: 100%;
+}
+
 .c3 svg path {
   fill: white;
 }

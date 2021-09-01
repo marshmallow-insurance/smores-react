@@ -26,6 +26,11 @@ exports[`default renders correctly 1`] = `
   margin-left: 0;
 }
 
+.c2 svg {
+  width: 100%;
+  height: 100%;
+}
+
 .c2 svg path {
   fill: blue7;
 }
@@ -110,6 +115,11 @@ exports[`info renders correctly 1`] = `
   margin-left: 0;
 }
 
+.c2 svg {
+  width: 100%;
+  height: 100%;
+}
+
 .c2 svg path {
   fill: blue7;
 }
@@ -192,6 +202,11 @@ exports[`warning renders correctly 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+}
+
+.c2 svg {
+  width: 100%;
+  height: 100%;
 }
 
 .c2 svg path {
