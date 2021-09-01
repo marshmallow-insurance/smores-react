@@ -52,6 +52,15 @@ exports[`renders 1`] = `
   margin-left: 0;
 }
 
+.c8 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c8 svg path {
+  fill: blue7;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 23px;
@@ -117,6 +126,10 @@ exports[`renders 1`] = `
   background: #F8F6F6;
 }
 
+.c7 svg {
+  padding: 3px;
+}
+
 .c5 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
@@ -178,17 +191,7 @@ exports[`renders 1`] = `
           rotate="0"
           size="32"
         >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 24 25"
-            width="100%"
-          >
-            <path
-              d="M13.414 12l5.293-5.67c.39-.42.39-1.097 0-1.516a.953.953 0 00-1.414 0L12 10.485l-5.293-5.67a.953.953 0 00-1.414 0 1.125 1.125 0 000 1.514L10.586 12l-5.293 5.67a1.125 1.125 0 000 1.516A.965.965 0 006 19.5a.965.965 0 00.707-.314L12 13.515l5.293 5.67A.965.965 0 0018 19.5a.965.965 0 00.707-.314c.39-.42.39-1.096 0-1.515L13.414 12z"
-              fill="#112035"
-            />
-          </svg>
+          <div />
         </span>
       </div>
     </div>

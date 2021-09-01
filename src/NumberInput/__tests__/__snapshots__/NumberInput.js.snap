@@ -61,6 +61,15 @@ exports[`renders - currency 1`] = `
   margin-left: 0;
 }
 
+.c8 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c8 svg path {
+  fill: grey4;
+}
+
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -84,6 +93,15 @@ exports[`renders - currency 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+}
+
+.c9 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c9 svg path {
+  fill: grey4;
 }
 
 .c0 {
@@ -234,17 +252,7 @@ exports[`renders - currency 1`] = `
           rotate="180"
           size="24"
         >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#D2D2D2"
-            />
-          </svg>
+          <div />
         </span>
       </button>
       <button
@@ -256,17 +264,7 @@ exports[`renders - currency 1`] = `
           rotate="0"
           size="24"
         >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#D2D2D2"
-            />
-          </svg>
+          <div />
         </span>
       </button>
     </div>
@@ -459,6 +457,15 @@ exports[`renders - error 1`] = `
   margin-left: 0;
 }
 
+.c8 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c8 svg path {
+  fill: grey4;
+}
+
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -482,6 +489,15 @@ exports[`renders - error 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+}
+
+.c9 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c9 svg path {
+  fill: grey4;
 }
 
 .c0 {
@@ -639,17 +655,7 @@ exports[`renders - error 1`] = `
           rotate="180"
           size="24"
         >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#D2D2D2"
-            />
-          </svg>
+          <div />
         </span>
       </button>
       <button
@@ -661,17 +667,7 @@ exports[`renders - error 1`] = `
           rotate="0"
           size="24"
         >
-          <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 32 32"
-            width="100%"
-          >
-            <path
-              d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-              fill="#D2D2D2"
-            />
-          </svg>
+          <div />
         </span>
       </button>
     </div>
@@ -1191,8 +1187,8 @@ exports[`renders - with trailing icon 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
-  max-width: 32px;
-  height: 32px;
+  max-width: 24px;
+  height: 24px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -1200,6 +1196,15 @@ exports[`renders - with trailing icon 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+}
+
+.c6 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c6 svg path {
+  fill: grey4;
 }
 
 .c0 {
@@ -1324,19 +1329,9 @@ exports[`renders - with trailing icon 1`] = `
       class="c6"
       color="grey4"
       rotate="0"
-      size="32"
+      size="24"
     >
-      <svg
-        fill="none"
-        height="100%"
-        viewBox="0 0 32 32"
-        width="100%"
-      >
-        <path
-          d="M16 6C10.486 6 6 10.486 6 16s4.486 10 10 10a1 1 0 1 0 0-2c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8c0 1.103-.897 2-2 2s-2-.897-2-2c0-2.206-1.794-4-4-4s-4 1.794-4 4 1.794 4 4 4c1.2 0 2.266-.542 3-1.382.734.84 1.8 1.382 3 1.382 2.206 0 4-1.794 4-4 0-5.514-4.486-10-10-10zm0 12c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"
-          fill="#D2D2D2"
-        />
-      </svg>
+      <div />
     </span>
   </div>
 </div>

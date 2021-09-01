@@ -7,4 +7,34 @@ module.exports = {
   typescript: {
     reactDocgen: 'react-docgen',
   },
+  webpackFinal: async (config, { configType }) => {
+    // Add SVGR Loader
+    // ========================================================
+    const assetRule = config.module.rules.find(({ test }) => test.test('.svg'))
+
+    const assetLoader = {
+      loader: assetRule.loader,
+      options: assetRule.options || assetRule.query,
+    }
+
+    // Merge our rule with existing assetLoader rules
+    config.module.rules.unshift({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            svgoConfig: {
+              plugins: {
+                removeViewBox: false,
+              },
+            },
+          },
+        },
+        assetLoader,
+      ],
+    })
+
+    return config
+  },
 }

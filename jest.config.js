@@ -8,6 +8,9 @@ module.exports = {
       functions: 50,
     },
   },
+  moduleNameMapper: {
+    '\\.svg': '<rootDir>/src/__mocks__/svgrMock.js',
+  },
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
 
@@ -16,4 +19,4 @@ module.exports = {
     '!**/node_modules/**',
     '!src/utils/**/*.{ts,tsx}',
   ],
-};
+}

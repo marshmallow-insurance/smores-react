@@ -26,6 +26,15 @@ exports[`renders 1`] = `
   margin-left: 0;
 }
 
+.c4 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c4 svg path {
+  fill: grey4;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -149,17 +158,7 @@ exports[`renders 1`] = `
         rotate="0"
         size="24"
       >
-        <svg
-          fill="none"
-          height="100%"
-          viewBox="0 0 32 32"
-          width="100%"
-        >
-          <path
-            d="M23.66 12.248a1 1 0 0 0-1.412.095L16 19.482l-6.248-7.14a1 1 0 1 0-1.504 1.317l7 8a.995.995 0 0 0 1.504 0l7-8a1 1 0 0 0-.093-1.411z"
-            fill="#D2D2D2"
-          />
-        </svg>
+        <div />
       </span>
     </div>
   </div>
