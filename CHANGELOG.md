@@ -1,3 +1,7 @@
+## [1.0.1] - 2021-09-01
+### Changed
+- Updated prepublish script
+
 ## [1.0.0] - 2021-09-01
 ### Changed
 - Reworked Icon component to render SVGs icons exported from Figma
@@ -88,6 +92,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.0.1]: https://github.com/marshmallow-insurance/smores-react/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.67.2...v1.0.0
 [0.67.3]: https://github.com/marshmallow-insurance/smores-react/compare/v0.67.2...v0.67.3
 [0.67.2]: https://github.com/marshmallow-insurance/smores-react/compare/v0.67.1...v0.67.2
