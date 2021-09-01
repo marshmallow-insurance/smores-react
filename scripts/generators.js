@@ -44,7 +44,7 @@ const generateIconMap = (icons, { dir }) => {
         (icon) =>
           `import { ReactComponent as ${toPascalCase(
             icon,
-          )} } from './${icon}.svg'`,
+          )} } from '../assets/icons/${icon}.svg'`,
       )
       .join('\n'),
     '',

@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 
-import iconMap from '../assets/icons/iconMap'
+import iconMap from './iconMap'
 
 /**
  * When adding a new Icon please remember to also add it
