@@ -27,7 +27,7 @@ const CollectionTemplate = (args) => <Container {...args} />
 export const Collection = CollectionTemplate.bind({})
 
 Collection.args = {
-  size: 32,
+  size: 24,
   color: 'blue7',
   rotate: '0',
   mt: '0',

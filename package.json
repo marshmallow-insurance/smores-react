@@ -13,13 +13,10 @@
     "dist"
   ],
   "scripts": {
-    "generate-icon": "node scripts/generateIcons",
-    "build-storybook": "npm run generate-icon && build-storybook -c .storybook -s public",
+    "build-storybook": "build-storybook -c .storybook -s public",
     "check-types": "tsc --noEmit",
-    "clean": "rimraf dist/",
-    "copy-files": "copyfiles -u 1 src/assets/icons/*.svg dist",
     "deploy-storybook": "storybook-to-ghpages",
-    "prepublishOnly": "npm run clean && tsc && npm run copy-files",
+    "prepublishOnly": "tsc",
     "publish-npm": "npm publish --access public",
     "start": "npm run storybook",
     "storybook": "start-storybook -p 6006 ",
@@ -39,7 +36,6 @@
     "@storybook/addon-essentials": "^6.2.6",
     "@storybook/react": "^6.2.6",
     "@storybook/storybook-deployer": "^2.8.7",
-    "@svgr/webpack": "^5.5.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^12.0.0",
     "@types/jest": "^26.0.14",
@@ -52,7 +48,6 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
-    "copyfiles": "^2.4.1",
     "eslint": "^7.9.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-plugin-jest": "^24.0.2",
@@ -63,7 +58,6 @@
     "jest-styled-components": "^7.0.3",
     "lint-staged": "^11.0.0",
     "prettier": "^2.1.2",
-    "rimraf": "^3.0.2",
     "snyk": "^1.529.0"
   },
   "dependencies": {
