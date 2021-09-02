@@ -78,7 +78,6 @@ export const Icon: FC<Props> = ({
         </defs>
       </svg>
     )}
-
     {render === 'account-breakdown' && (
       <svg
         width="100%"
@@ -101,7 +100,6 @@ export const Icon: FC<Props> = ({
         <path stroke="#112035" strokeWidth="2" d="M7.717 12.293l4 4" />
       </svg>
     )}
-
     {render === 'account-mlp' && (
       <svg
         width="100%"
