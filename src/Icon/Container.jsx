@@ -230,6 +230,10 @@ export const Container = () => {
         <Icon render="renewal" />
       </Wrapper>
       <Wrapper>
+        <span>renewal-line</span>
+        <Icon render="renewal-line" />
+      </Wrapper>
+      <Wrapper>
         <span>schedule-quote</span>
         <Icon render="schedule-quote" />
       </Wrapper>

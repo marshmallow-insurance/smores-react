@@ -1,3 +1,7 @@
+## [0.67.2] - 2021-09-14
+### Added
+- Added new Icon svg for Renewal-Line
+
 ## [0.67.1] - 2021-07-29
 ### Added
 - Added new prop sizeSmall to Message component
@@ -72,6 +76,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[0.67.2]: https://github.com/marshmallow-insurance/smores-react/compare/v0.67.1...v0.67.2
 [0.67.1]: https://github.com/marshmallow-insurance/smores-react/compare/v0.67.0...v0.67.1
 [0.67.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.6...v0.67.0
 [0.66.6]: https://github.com/marshmallow-insurance/smores-react/compare/v0.66.5...v0.66.6
