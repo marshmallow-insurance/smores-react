@@ -16,4 +16,4 @@ module.exports = {
     '!**/node_modules/**',
     '!src/utils/**/*.{ts,tsx}',
   ],
-};
+}
