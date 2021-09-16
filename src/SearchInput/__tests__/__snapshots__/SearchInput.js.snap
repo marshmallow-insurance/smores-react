@@ -122,35 +122,35 @@ exports[`renders 1`] = `
       type="text"
       value=""
     />
-    <div
-      class="c3"
+  </div>
+  <div
+    class="c3"
+  >
+    <ul
+      class="c4"
     >
-      <ul
-        class="c4"
-      >
-        <li>
-          Monday
-        </li>
-        <li>
-          Tuesday
-        </li>
-        <li>
-          Wednesday
-        </li>
-        <li>
-          Thursday
-        </li>
-        <li>
-          Friday
-        </li>
-        <li>
-          Saturday
-        </li>
-        <li>
-          Sunday
-        </li>
-      </ul>
-    </div>
+      <li>
+        Monday
+      </li>
+      <li>
+        Tuesday
+      </li>
+      <li>
+        Wednesday
+      </li>
+      <li>
+        Thursday
+      </li>
+      <li>
+        Friday
+      </li>
+      <li>
+        Saturday
+      </li>
+      <li>
+        Sunday
+      </li>
+    </ul>
   </div>
 </div>
 `;

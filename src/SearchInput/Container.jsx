@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {SearchInput} from './SearchInput';
+import React, { useState } from 'react'
+import { SearchInput } from './SearchInput'
 
 const list = [
   {
@@ -23,7 +23,7 @@ const list = [
   {
     label: 'Sunday',
   },
-];
+]
 
 export const Container = () => {
   return (
@@ -34,5 +34,5 @@ export const Container = () => {
       searchList={list}
       onFound={() => {}}
     />
-  );
-};
+  )
+}

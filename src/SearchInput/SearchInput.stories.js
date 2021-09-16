@@ -16,6 +16,6 @@ export const WithBorder = Template.bind({})
 WithBorder.args = {
   id: 'textInput',
   name: 'textInput',
-  hasBorder: true,
+  outlined: true,
   showCaret: true,
 }

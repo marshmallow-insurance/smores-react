@@ -10,31 +10,21 @@ export type SearchInputItem = {
   value: string
 }
 
-interface IContainer {
-  show: boolean
-  hasBorder?: boolean
+interface IUsesOutline {
+  outlined?: boolean
 }
 
-interface IInnerContainer {
-  hasBorder?: boolean
-}
-
-interface IResultsContainer {
+interface IResultsContainer extends IUsesOutline {
   show: boolean
   absolutePosition: boolean
-  hasBorder?: boolean
 }
 
-interface IResultList {
-  hasBorder?: boolean
-}
-interface ISearchInput {
+interface ISearchInput extends IUsesOutline {
   id: string
   name: string
   value: string
   onKeyUp: (e: React.FormEvent<HTMLInputElement>) => void
   onChange: (e: React.FormEvent<HTMLInputElement>) => void
-  hasBorder?: boolean
 }
 
 type SearchInputProps = {
@@ -55,7 +45,7 @@ type SearchInputProps = {
   /** Displays caret */
   showCaret?: boolean
   /** Displays border */
-  hasBorder?: boolean
+  outlined?: boolean
 }
 
 export const SearchInput: FC<SearchInputProps> = ({
@@ -67,7 +57,7 @@ export const SearchInput: FC<SearchInputProps> = ({
   onFound,
   resultsRelativePosition = false,
   showCaret,
-  hasBorder,
+  outlined,
 }) => {
   const [active, setActive] = useState(false)
   const [list, setList] = useState(searchList)
@@ -104,14 +94,14 @@ export const SearchInput: FC<SearchInputProps> = ({
   }
 
   return (
-    <Container show={active}>
+    <Container>
       {label && (
         <Text tag="label" color="grey4" typo="label">
           {label}
         </Text>
       )}
 
-      <InnerContainer hasBorder={hasBorder}>
+      <InnerContainer outlined={outlined}>
         <Input
           id={id}
           type="text"
@@ -121,59 +111,59 @@ export const SearchInput: FC<SearchInputProps> = ({
           value={selectedResult}
           onKeyUp={search}
           onChange={updateInputState}
-          hasBorder={hasBorder}
+          outlined={outlined}
         />
 
         {showCaret && (
           <IconContainer>
-            <Icon render="caret-down" />
+            <Icon color="grey3" render="caret" />
           </IconContainer>
         )}
-
-        <ResultsContainer
-          show={active}
-          absolutePosition={!resultsRelativePosition}
-          hasBorder={hasBorder}
-        >
-          <ResultsList hasBorder={hasBorder}>
-            {list.length ? (
-              list.map((el, i) => (
-                <li key={i} onClick={() => select(el)}>
-                  {el.label}
-                </li>
-              ))
-            ) : (
-              <li>No results</li>
-            )}
-          </ResultsList>
-        </ResultsContainer>
       </InnerContainer>
+
+      <ResultsContainer
+        show={active}
+        absolutePosition={!resultsRelativePosition}
+        outlined={outlined}
+      >
+        <ResultsList outlined={outlined}>
+          {list.length ? (
+            list.map((el, i) => (
+              <li key={i} onClick={() => select(el)}>
+                {el.label}
+              </li>
+            ))
+          ) : (
+            <li>No results</li>
+          )}
+        </ResultsList>
+      </ResultsContainer>
     </Container>
   )
 }
 
-const Container = styled.div<IContainer>`
+const Container = styled.div<IUsesOutline>`
   position: relative;
   width: 100%;
   background: ${theme.colors.white};
 `
 
-const InnerContainer = styled.div<IInnerContainer>`
+const InnerContainer = styled.div<IUsesOutline>`
   ${(p) =>
-    p.hasBorder
-      ? `
+    p.outlined &&
+    `
+    position: relative;
     border: 1px solid ${theme.colors.grey3};
     border-radius: 8px;
     padding: 16px;
-  `
-      : ``}
+  `}
 `
 
 const Input = styled.input<ISearchInput>`
   display: block;
   border: none;
   border-bottom: ${(p) =>
-    p.hasBorder ? 'none' : `1px solid ${theme.colors.grey4}`};
+    p.outlined ? 'none' : `1px solid ${theme.colors.grey4}`};
   outline: none;
   color: ${theme.colors.blue7};
   font-size: 16px;
@@ -199,7 +189,7 @@ const ResultsContainer = styled.div<IResultsContainer>`
   ${(p) => p.absolutePosition && 'position: absolute;'}
   width: 100%;
   visibility: ${(p) => (p.show ? 'visible' : 'hidden')};
-  ${(p) => p.hasBorder && 'left: 0px; top: 90%;'}
+  ${(p) => p.outlined && 'left: 0px; top: 90%;'}
 
   ul {
     max-height: ${(p) => (p.show ? '192px' : '0px')};
@@ -207,7 +197,7 @@ const ResultsContainer = styled.div<IResultsContainer>`
   }
 `
 
-const ResultsList = styled.ul<IResultList>`
+const ResultsList = styled.ul<IUsesOutline>`
   position: relative;
   list-style: none;
   overflow-y: auto;
@@ -216,7 +206,7 @@ const ResultsList = styled.ul<IResultList>`
   background-color: ${theme.colors.white};
   border: 1px solid ${theme.colors.grey4};
   border-top: ${(p) =>
-    p.hasBorder ? `1px solid ${theme.colors.grey4}` : `none`};
+    p.outlined ? `1px solid ${theme.colors.grey4}` : `none`};
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   z-index: 1000;
