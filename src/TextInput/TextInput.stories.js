@@ -50,6 +50,16 @@ Error.args = {
   errorMsg: 'Oh boy, something went wrong!',
 }
 
+export const WithOutline = Template.bind({})
+
+WithOutline.args = {
+  id: 'textInput',
+  name: 'textInput',
+  outlined: true,
+  placeholder: 'Placeholder text',
+  onChange: () => {},
+}
+
 export const WithLabel = Template.bind({})
 
 WithLabel.args = {
