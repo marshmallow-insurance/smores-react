@@ -30,8 +30,7 @@ exports[`renders 1`] = `
 .c2 {
   display: block;
   border: none;
-  border-bottom: 1px solid;
-  border-color: #D2D2D2;
+  border-bottom: 1px solid #D2D2D2;
   outline: none;
   color: #112035;
   font-size: 16px;
@@ -112,42 +111,46 @@ exports[`renders 1`] = `
   >
     Days
   </label>
-  <input
-    autocomplete="off"
-    class="c2"
-    id="days"
-    name="search_input"
-    type="text"
-    value=""
-  />
   <div
-    class="c3"
+    class=""
   >
-    <ul
-      class="c4"
+    <input
+      autocomplete="off"
+      class="c2"
+      id="days"
+      name="search_input"
+      type="text"
+      value=""
+    />
+    <div
+      class="c3"
     >
-      <li>
-        Monday
-      </li>
-      <li>
-        Tuesday
-      </li>
-      <li>
-        Wednesday
-      </li>
-      <li>
-        Thursday
-      </li>
-      <li>
-        Friday
-      </li>
-      <li>
-        Saturday
-      </li>
-      <li>
-        Sunday
-      </li>
-    </ul>
+      <ul
+        class="c4"
+      >
+        <li>
+          Monday
+        </li>
+        <li>
+          Tuesday
+        </li>
+        <li>
+          Wednesday
+        </li>
+        <li>
+          Thursday
+        </li>
+        <li>
+          Friday
+        </li>
+        <li>
+          Saturday
+        </li>
+        <li>
+          Sunday
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;

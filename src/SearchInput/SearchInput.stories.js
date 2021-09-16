@@ -10,3 +10,12 @@ export default {
 const Template = (args) => <Container {...args} />
 
 export const Default = Template.bind({})
+
+export const WithBorder = Template.bind({})
+
+WithBorder.args = {
+  id: 'textInput',
+  name: 'textInput',
+  hasBorder: true,
+  showCaret: true,
+}
