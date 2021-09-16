@@ -1,5 +1,5 @@
 import React, { FormEvent, FC } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { Text } from '../Text'
 import { Icon } from '../Icon'
@@ -13,6 +13,7 @@ type Props = {
   className?: string
   /** Input type for proper browser support */
   type?: 'text' | 'email' | 'password'
+  outlined?: boolean
   /** Placeholder */
   placeholder: string
   /** label displayed above the input  */
@@ -31,8 +32,6 @@ type Props = {
   trailingIcon?: string
   /** Disabled flag */
   disabled?: boolean
-  /** Pattern prop */
-  pattern?: string
 }
 
 export const TextInput: FC<Props> = ({
@@ -43,12 +42,12 @@ export const TextInput: FC<Props> = ({
   label,
   name,
   value,
+  outlined = false,
   error = false,
   errorMsg,
   trailingIcon,
   onChange,
   disabled = false,
-  pattern,
 }) => (
   <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
     {label && (
@@ -57,14 +56,13 @@ export const TextInput: FC<Props> = ({
       </Text>
     )}
 
-    <Content error={error}>
+    <Content outlined={outlined} error={error}>
       <Input
         disabled={disabled}
         type={type}
         id={id}
         name={name}
         placeholder={placeholder}
-        pattern={pattern}
         value={value}
         error={error}
         autoComplete="off"
@@ -94,20 +92,32 @@ interface IInput {
   disabled?: boolean
 }
 
-const Content = styled.div<IInput>`
-  border-bottom: 1px solid;
-  border-color: ${(p) => theme.colors[`${p.error ? 'red7' : 'grey4'}`]};
-  display: flex;
-  height: 32px;
+interface IInputOutline extends IInput {
+  outlined?: boolean
+}
 
-  &:hover {
-    border-color: ${(p) => theme.colors[`${p.error ? 'red7' : 'grey6'}`]};
-  }
+const Content = styled.div<IInputOutline>(
+  ({ outlined, error }) => css`
+    border-bottom: ${outlined ? '2px solid' : '1px solid'};
+    border-top: ${outlined ? '2px solid' : '0px'};
+    border-left: ${outlined ? '2px solid' : '0px'};
+    border-right: ${outlined ? '2px solid' : '0px'};
+    border-radius: ${outlined ? '8px' : '0px;'};
+    padding: ${outlined ? '16px 12px' : '0px;'};
 
-  &:focus {
-    border-color: ${(p) => theme.colors[`${p.error ? 'red7' : 'blue5'}`]};
-  }
-`
+    border-color: ${theme.colors[`${error ? 'red7' : 'grey4'}`]};
+    display: flex;
+    height: 32px;
+
+    &:hover {
+      border-color: ${theme.colors[`${error ? 'red7' : 'grey6'}`]};
+    }
+
+    &:focus {
+      border-color: ${theme.colors[`${error ? 'red7' : 'blue5'}`]};
+    }
+  `,
+)
 
 const Input = styled.input<IInput>`
   border: none;
