@@ -1,6 +1,6 @@
 import React from 'react'
 import { SearchInput } from './SearchInput'
-import { Container } from './Container'
+import { Container, list } from './Container'
 
 export default {
   title: 'Search Input',
@@ -9,13 +9,18 @@ export default {
 
 const Template = (args) => <Container {...args} />
 
+const SearchInputWithOutline = () => (
+  <SearchInput
+    id="days"
+    label="Days"
+    placeholder="Search days"
+    searchList={list}
+    onFound={() => {}}
+    showCaret
+    outlined
+  />
+)
+
 export const Default = Template.bind({})
 
-export const WithBorder = Template.bind({})
-
-WithBorder.args = {
-  id: 'textInput',
-  name: 'textInput',
-  outlined: true,
-  showCaret: true,
-}
+export const WithBorder = SearchInputWithOutline.bind({})

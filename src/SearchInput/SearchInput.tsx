@@ -149,51 +149,54 @@ const Container = styled.div<IUsesOutline>`
 `
 
 const InnerContainer = styled.div<IUsesOutline>`
-  ${(p) =>
-    p.outlined &&
+  ${({ outlined }) =>
+    outlined &&
     `
     position: relative;
     border: 1px solid ${theme.colors.grey3};
     border-radius: 8px;
-    padding: 16px;
+    padding: 10px;
   `}
 `
 
 const Input = styled.input<ISearchInput>`
   display: block;
   border: none;
-  border-bottom: ${(p) =>
-    p.outlined ? 'none' : `1px solid ${theme.colors.grey4}`};
+  border-bottom: ${({ outlined }) =>
+    outlined ? 'none' : `1px solid ${theme.colors.grey4}`};
   outline: none;
-  color: ${theme.colors.blue7};
+  color: ${({ outlined }) =>
+    outlined ? `${theme.colors.grey8}` : `${theme.colors.blue7}`};
   font-size: 16px;
   height: 32px;
   width: 100%;
   box-sizing: border-box;
 
   &::placeholder {
-    color: ${theme.colors.grey4};
+    color: ${({ outlined }) =>
+      outlined ? theme.colors.grey8 : theme.colors.grey4};
   }
 `
 
 const IconContainer = styled.div`
   position: absolute;
   top: 50%;
-  right: 25px;
+  right: 20px;
   transform: translateY(-50%);
 `
 
 const ResultsContainer = styled.div<IResultsContainer>`
   box-sizing: border-box;
   overflow-y: hidden;
-  ${(p) => p.absolutePosition && 'position: absolute;'}
+  ${({ absolutePosition }) => absolutePosition && 'position: absolute;'}
   width: 100%;
-  visibility: ${(p) => (p.show ? 'visible' : 'hidden')};
-  ${(p) => p.outlined && 'left: 0px; top: 90%;'}
+  visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
+  ${({ outlined }) => outlined && 'left: 0px; top: 90%;'}
 
   ul {
-    max-height: ${(p) => (p.show ? '192px' : '0px')};
-    border-color: ${(p) => (p.show ? `${theme.colors.grey4}` : 'transparent')};
+    max-height: ${({ show }) => (show ? '192px' : '0px')};
+    border-color: ${({ show }) =>
+      show ? `${theme.colors.grey4}` : 'transparent'};
   }
 `
 
@@ -205,8 +208,8 @@ const ResultsList = styled.ul<IUsesOutline>`
   margin: 0;
   background-color: ${theme.colors.white};
   border: 1px solid ${theme.colors.grey4};
-  border-top: ${(p) =>
-    p.outlined ? `1px solid ${theme.colors.grey4}` : `none`};
+  border-top: ${({ outlined }) =>
+    outlined ? `1px solid ${theme.colors.grey4}` : `none`};
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   z-index: 1000;

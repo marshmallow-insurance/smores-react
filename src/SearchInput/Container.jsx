@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { SearchInput } from './SearchInput'
 
-const list = [
+export const list = [
   {
     label: 'Monday',
   },
