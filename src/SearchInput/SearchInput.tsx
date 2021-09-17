@@ -27,7 +27,7 @@ interface ISearchInput extends IUsesOutline {
   onChange: (e: React.FormEvent<HTMLInputElement>) => void
 }
 
-type SearchInputProps = {
+export type SearchInputProps = {
   /** ID, usually used for tests  */
   id: string
   /** Name of the form control  */
