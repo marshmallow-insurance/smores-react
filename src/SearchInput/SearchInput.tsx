@@ -3,22 +3,23 @@ import styled from 'styled-components'
 
 import { Text } from '../Text'
 import { theme } from '../theme'
+import { Icon } from '../Icon'
 
 export type SearchInputItem = {
   label: string
   value: string
 }
 
-interface IContainer {
-  show: boolean
+interface IUsesOutline {
+  outlined?: boolean
 }
 
-interface IResultsContainer {
+interface IResultsContainer extends IUsesOutline {
   show: boolean
   absolutePosition: boolean
 }
 
-interface ISearchInput {
+interface ISearchInput extends IUsesOutline {
   id: string
   name: string
   value: string
@@ -26,7 +27,7 @@ interface ISearchInput {
   onChange: (e: React.FormEvent<HTMLInputElement>) => void
 }
 
-type SearchInputProps = {
+export type SearchInputProps = {
   /** ID, usually used for tests  */
   id: string
   /** Name of the form control  */
@@ -41,6 +42,10 @@ type SearchInputProps = {
   onFound: (element: string) => void
   /** Displays search results in a relative position to other elements */
   resultsRelativePosition?: boolean
+  /** Displays caret */
+  showCaret?: boolean
+  /** Displays border */
+  outlined?: boolean
 }
 
 export const SearchInput: FC<SearchInputProps> = ({
@@ -51,6 +56,8 @@ export const SearchInput: FC<SearchInputProps> = ({
   searchList,
   onFound,
   resultsRelativePosition = false,
+  showCaret,
+  outlined,
 }) => {
   const [active, setActive] = useState(false)
   const [list, setList] = useState(searchList)
@@ -87,28 +94,39 @@ export const SearchInput: FC<SearchInputProps> = ({
   }
 
   return (
-    <Container show={active}>
+    <Container>
       {label && (
         <Text tag="label" color="grey4" typo="label">
           {label}
         </Text>
       )}
-      <Input
-        id={id}
-        type="text"
-        name={name}
-        placeholder={placeholder}
-        autoComplete="off"
-        value={selectedResult}
-        onKeyUp={search}
-        onChange={updateInputState}
-      />
+
+      <InnerContainer outlined={outlined}>
+        <Input
+          id={id}
+          type="text"
+          name={name}
+          placeholder={placeholder}
+          autoComplete="off"
+          value={selectedResult}
+          onKeyUp={search}
+          onChange={updateInputState}
+          outlined={outlined}
+        />
+
+        {showCaret && (
+          <IconContainer>
+            <Icon color="grey3" render="caret" />
+          </IconContainer>
+        )}
+      </InnerContainer>
 
       <ResultsContainer
         show={active}
         absolutePosition={!resultsRelativePosition}
+        outlined={outlined}
       >
-        <ResultsList>
+        <ResultsList outlined={outlined}>
           {list.length ? (
             list.map((el, i) => (
               <li key={i} onClick={() => select(el)}>
@@ -124,43 +142,65 @@ export const SearchInput: FC<SearchInputProps> = ({
   )
 }
 
-const Container = styled.div<IContainer>`
+const Container = styled.div<IUsesOutline>`
   position: relative;
   width: 100%;
   background: ${theme.colors.white};
 `
 
+const InnerContainer = styled.div<IUsesOutline>`
+  ${({ outlined }) =>
+    outlined &&
+    `
+    position: relative;
+    border: 1px solid ${theme.colors.grey3};
+    border-radius: 8px;
+    padding: 10px;
+  `}
+`
+
 const Input = styled.input<ISearchInput>`
   display: block;
   border: none;
-  border-bottom: 1px solid;
-  border-color: ${theme.colors.grey4};
+  border-bottom: ${({ outlined }) =>
+    outlined ? 'none' : `1px solid ${theme.colors.grey4}`};
   outline: none;
-  color: ${theme.colors.blue7};
+  color: ${({ outlined }) =>
+    outlined ? `${theme.colors.grey8}` : `${theme.colors.blue7}`};
   font-size: 16px;
   height: 32px;
   width: 100%;
   box-sizing: border-box;
 
   &::placeholder {
-    color: ${theme.colors.grey4};
+    color: ${({ outlined }) =>
+      outlined ? theme.colors.grey8 : theme.colors.grey4};
   }
+`
+
+const IconContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
 `
 
 const ResultsContainer = styled.div<IResultsContainer>`
   box-sizing: border-box;
   overflow-y: hidden;
-  ${(p) => p.absolutePosition && 'position: absolute;'}
+  ${({ absolutePosition }) => absolutePosition && 'position: absolute;'}
   width: 100%;
-  visibility: ${(p) => (p.show ? 'visible' : 'hidden')};
+  visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
+  ${({ outlined }) => outlined && 'left: 0px; top: 90%;'}
 
   ul {
-    max-height: ${(p) => (p.show ? '192px' : '0px')};
-    border-color: ${(p) => (p.show ? `${theme.colors.grey4}` : 'transparent')};
+    max-height: ${({ show }) => (show ? '192px' : '0px')};
+    border-color: ${({ show }) =>
+      show ? `${theme.colors.grey4}` : 'transparent'};
   }
 `
 
-const ResultsList = styled.ul`
+const ResultsList = styled.ul<IUsesOutline>`
   position: relative;
   list-style: none;
   overflow-y: auto;
@@ -168,7 +208,8 @@ const ResultsList = styled.ul`
   margin: 0;
   background-color: ${theme.colors.white};
   border: 1px solid ${theme.colors.grey4};
-  border-top: none;
+  border-top: ${({ outlined }) =>
+    outlined ? `1px solid ${theme.colors.grey4}` : `none`};
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   z-index: 1000;
