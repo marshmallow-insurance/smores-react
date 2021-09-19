@@ -83,6 +83,15 @@ EmptyList.args = {
   placeholder: 'Select Day',
 }
 
+export const WithOutline = Template.bind({})
+
+WithOutline.args = {
+  id: 'days',
+  list: days,
+  placeholder: 'Select Day',
+  outlined: true,
+}
+
 const DateSelectorExampleTemplate = (args) => <Container {...args} />
 
 export const DateSelectorExample = DateSelectorExampleTemplate.bind({})

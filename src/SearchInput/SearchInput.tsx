@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { Text } from '../Text'
 import { theme } from '../theme'
-import { Icon } from '../Icon'
 
 export type SearchInputItem = {
   label: string
@@ -42,8 +41,6 @@ export type SearchInputProps = {
   onFound: (element: string) => void
   /** Displays search results in a relative position to other elements */
   resultsRelativePosition?: boolean
-  /** Displays caret */
-  showCaret?: boolean
   /** Displays border */
   outlined?: boolean
 }
@@ -56,7 +53,6 @@ export const SearchInput: FC<SearchInputProps> = ({
   searchList,
   onFound,
   resultsRelativePosition = false,
-  showCaret,
   outlined,
 }) => {
   const [active, setActive] = useState(false)
@@ -113,12 +109,6 @@ export const SearchInput: FC<SearchInputProps> = ({
           onChange={updateInputState}
           outlined={outlined}
         />
-
-        {showCaret && (
-          <IconContainer>
-            <Icon color="grey3" render="caret" />
-          </IconContainer>
-        )}
       </InnerContainer>
 
       <ResultsContainer
@@ -152,7 +142,6 @@ const InnerContainer = styled.div<IUsesOutline>`
   ${({ outlined }) =>
     outlined &&
     `
-    position: relative;
     border: 1px solid ${theme.colors.grey3};
     border-radius: 8px;
     padding: 10px;
@@ -176,13 +165,6 @@ const Input = styled.input<ISearchInput>`
     color: ${({ outlined }) =>
       outlined ? theme.colors.grey8 : theme.colors.grey4};
   }
-`
-
-const IconContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
 `
 
 const ResultsContainer = styled.div<IResultsContainer>`

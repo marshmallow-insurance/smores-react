@@ -32,7 +32,7 @@ const list = [
   },
 ]
 
-export const Container: FC<SearchInputProps> = ({ outlined, showCaret }) => {
+export const Container: FC<SearchInputProps> = ({ outlined }) => {
   return (
     <SearchInput
       id="days"
@@ -40,8 +40,7 @@ export const Container: FC<SearchInputProps> = ({ outlined, showCaret }) => {
       placeholder="Search days"
       searchList={list}
       onFound={() => console.log('found')}
-      outlined={outlined || false}
-      showCaret={showCaret || false}
+      outlined={outlined}
     />
   )
 }

@@ -51,8 +51,7 @@ exports[`renders 1`] = `
   padding-right: 24px;
   background-color: #ffffff;
   border: none;
-  border-bottom: 1px solid;
-  border-color: #D2D2D2;
+  border-bottom: 1px solid #D2D2D2;
   border-radius: 0;
   font-size: 16px;
   cursor: pointer;
