@@ -30,7 +30,8 @@ exports[`renders 1`] = `
 .c2 {
   display: block;
   border: none;
-  border-bottom: 1px solid #D2D2D2;
+  border-bottom: 1px solid;
+  border-color: #D2D2D2;
   outline: none;
   color: #112035;
   font-size: 16px;
@@ -111,18 +112,14 @@ exports[`renders 1`] = `
   >
     Days
   </label>
-  <div
-    class=""
-  >
-    <input
-      autocomplete="off"
-      class="c2"
-      id="days"
-      name="search_input"
-      type="text"
-      value=""
-    />
-  </div>
+  <input
+    autocomplete="off"
+    class="c2"
+    id="days"
+    name="search_input"
+    type="text"
+    value=""
+  />
   <div
     class="c3"
   >

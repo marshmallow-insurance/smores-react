@@ -11,10 +11,6 @@ export type DropdownItem = {
   value: string
 }
 
-interface IUsesOutline {
-  outlined?: boolean
-}
-
 type Props = {
   /** ID, usually used for tests  */
   id: string
@@ -32,8 +28,6 @@ type Props = {
   list: DropdownItem[]
   /** onSelect handler */
   onSelect: (element: string) => void
-  /** Displays border */
-  outlined?: boolean
 }
 
 export const Dropdown: FC<Props> = ({
@@ -45,7 +39,6 @@ export const Dropdown: FC<Props> = ({
   disabled = false,
   list,
   onSelect,
-  outlined = false,
 }) => {
   const [key, setKey] = useState('')
 
@@ -66,7 +59,7 @@ export const Dropdown: FC<Props> = ({
         </Text>
       )}
 
-      <Content outlined={outlined} key={key}>
+      <Content key={key}>
         <Select
           id={id}
           defaultValue={
@@ -81,7 +74,6 @@ export const Dropdown: FC<Props> = ({
             onSelect(e.currentTarget.value)
           }}
           required
-          outlined={outlined}
         >
           <option value="" hidden>
             {placeholder}
@@ -94,7 +86,7 @@ export const Dropdown: FC<Props> = ({
           ))}
         </Select>
 
-        <Caret outlined={outlined}>
+        <Caret>
           <Icon render="caret" color="grey4" size={24} />
         </Caret>
       </Content>
@@ -111,28 +103,19 @@ const Container = styled.div`
   padding: 0;
 `
 
-const Content = styled.div<IUsesOutline>`
+const Content = styled.div`
   width: 100%;
   position: relative;
-
-  ${({ outlined }) =>
-    outlined &&
-    `
-  border: 1px solid ${theme.colors.grey3};
-  border-radius: 8px;
-  padding: 10px;
-  box-sizing: border-box;
-`}
 `
 
-const Select = styled.select<IUsesOutline>`
+const Select = styled.select`
   width: 100%;
   height: 32px;
   padding-right: 24px;
   background-color: ${theme.colors.white};
   border: none;
-  border-bottom: ${({ outlined }) =>
-    !outlined && `1px solid ${theme.colors.grey4}`};
+  border-bottom: 1px solid;
+  border-color: ${theme.colors.grey4};
   border-radius: 0;
   font-size: 16px;
   cursor: pointer;
@@ -157,11 +140,11 @@ const Select = styled.select<IUsesOutline>`
   }
 `
 
-const Caret = styled.div<IUsesOutline>`
+const Caret = styled.div`
   position: absolute;
   top: 50%;
   z-index: 1;
-  right: ${({ outlined }) => (outlined ? '15px' : '0')};
+  right: 0;
   pointer-events: none;
   transform: translateY(-50%);
 `

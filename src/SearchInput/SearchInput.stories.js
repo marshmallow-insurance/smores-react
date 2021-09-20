@@ -10,10 +10,3 @@ export default {
 const Template = (args) => <Container {...args} />
 
 export const Default = Template.bind({})
-
-export const Outlined = Template.bind({})
-
-Outlined.args = {
-  outlined: true,
-  showCaret: true,
-}
