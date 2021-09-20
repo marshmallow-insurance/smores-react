@@ -14,6 +14,11 @@ exports[`renders 1`] = `
 
 .c1 {
   border-bottom: 1px solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px;
+  padding: 0px;
   border-color: #D2D2D2;
   display: -webkit-box;
   display: -webkit-flex;

@@ -168,7 +168,7 @@ const Container = styled.button<IButton>(
   ${tertiary &&
     css`
       background-color: ${theme.colors.bg4};
-      border: none;
+      border-color: ${theme.colors.bg4};
 
       &:hover {
         background-color: ${!(disabled || isLoading) && theme.colors.grey2};
