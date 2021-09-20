@@ -53,7 +53,7 @@ export const SearchInput: FC<SearchInputProps> = ({
   searchList,
   onFound,
   resultsRelativePosition = false,
-  outlined,
+  outlined = false,
 }) => {
   const [active, setActive] = useState(false)
   const [list, setList] = useState(searchList)

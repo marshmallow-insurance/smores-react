@@ -1,3 +1,12 @@
+## [1.2.2] - 2021-09-20
+### Changed
+- Additional props and styling for SearchInput
+- Additional props and styling for DropDown
+
+## [1.2.1] - 2021-09-20
+### Changed
+- Border css for Tertiary Button
+
 ## [1.2.0] - 2021-09-16
 ### Added
 - Added new outline property text input
@@ -104,6 +113,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.2.1]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/marshmallow-insurance/smores-react/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.0.1...v1.1.0

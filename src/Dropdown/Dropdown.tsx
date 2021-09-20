@@ -45,7 +45,7 @@ export const Dropdown: FC<Props> = ({
   disabled = false,
   list,
   onSelect,
-  outlined,
+  outlined = false,
 }) => {
   const [key, setKey] = useState('')
 
