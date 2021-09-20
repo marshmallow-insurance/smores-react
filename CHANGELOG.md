@@ -1,3 +1,8 @@
+## [1.2.2] - 2021-09-20
+### Changed
+- Additional props and styling for SearchInput
+- Additional props and styling for DropDown
+
 ## [1.2.1] - 2021-09-20
 ### Changed
 - Border css for Tertiary Button
