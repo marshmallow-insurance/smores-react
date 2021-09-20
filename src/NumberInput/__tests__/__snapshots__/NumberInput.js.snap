@@ -125,6 +125,7 @@ exports[`renders - currency 1`] = `
 .c5 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #000000;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -336,6 +337,7 @@ exports[`renders - disabled 1`] = `
 .c3 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #000000;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -748,6 +750,7 @@ exports[`renders - number 1`] = `
 .c4 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #000000;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -896,6 +899,7 @@ exports[`renders - tel 1`] = `
 .c5 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #000000;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -1058,6 +1062,7 @@ exports[`renders - with suffix 1`] = `
 .c3 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #000000;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -1245,6 +1250,7 @@ exports[`renders - with trailing icon 1`] = `
 .c5 {
   font-family: 'Gordita',san-serif;
   border: none;
+  color: #000000;
   font-size: 16px;
   width: 100%;
   outline: none;
