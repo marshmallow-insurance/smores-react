@@ -1,3 +1,7 @@
+## [1.2.3] - 2021-09-21
+### Changed
+- Update readme
+
 ## [1.2.2] - 2021-09-20
 ### Changed
 - Additional props and styling for SearchInput
