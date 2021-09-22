@@ -1,6 +1,7 @@
 import React, { FormEvent, FC } from 'react'
 import styled, { css } from 'styled-components'
 
+import { Box } from '../Box'
 import { Text } from '../Text'
 import { Icon } from '../Icon'
 
@@ -51,9 +52,11 @@ export const TextInput: FC<Props> = ({
 }) => (
   <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
     {label && (
-      <Text tag="label" color="grey4" typo="label">
-        {label}
-      </Text>
+      <Box mb={outlined ? '8px' : '0px'}>
+        <Text tag="label" color="grey4" typo="label">
+          {label}
+        </Text>
+      </Box>
     )}
 
     <Content outlined={outlined} error={error}>
