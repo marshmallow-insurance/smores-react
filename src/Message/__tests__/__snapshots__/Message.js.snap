@@ -226,8 +226,9 @@ exports[`warning renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFDCDC;
+  background-color: #ffffff;
   box-sizing: border-box;
+  border: 1px solid #AB1D20;
   border-radius: 8px;
   margin-bottom: 24px;
   padding: 16px;
