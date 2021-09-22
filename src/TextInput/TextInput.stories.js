@@ -68,6 +68,7 @@ WithLabel.args = {
   placeholder: 'Placeholder text',
   onChange: () => {},
   label: 'label',
+  outlined: false,
 }
 
 export const WithIcon = Template.bind({})
