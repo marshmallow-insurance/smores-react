@@ -68,10 +68,12 @@ const Wrapper = styled.div<IWrapper>(
     background-color: ${backgroundColor
       ? backgroundColor
       : type === 'warning'
-      ? theme.colors.red2
+      ? theme.colors.white
       : theme.colors.blue2};
     box-sizing: border-box;
-    ${hasBorder && `border: 1px solid ${borderColor};`}
+    ${type === 'warning'
+      ? `border: 1px solid ${theme.colors.pink8};`
+      : hasBorder && `border: 1px solid ${borderColor};`}
     border-radius: 8px;
     margin-bottom: 24px;
     padding: 16px;
