@@ -99,7 +99,7 @@ exports[`renders - currency 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 52px;
+  height: auto;
 }
 
 .c3 {
@@ -318,7 +318,7 @@ exports[`renders - disabled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 52px;
+  height: auto;
 }
 
 .c3 {
@@ -514,7 +514,7 @@ exports[`renders - error 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 64px;
+  height: auto;
 }
 
 .c3 {
@@ -744,7 +744,7 @@ exports[`renders - number 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 52px;
+  height: auto;
 }
 
 .c4 {
@@ -899,7 +899,7 @@ exports[`renders - tel 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 52px;
+  height: auto;
 }
 
 .c3 {
@@ -1068,7 +1068,7 @@ exports[`renders - with suffix 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 52px;
+  height: auto;
 }
 
 .c3 {
@@ -1262,7 +1262,7 @@ exports[`renders - with trailing icon 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 52px;
+  height: auto;
 }
 
 .c3 {

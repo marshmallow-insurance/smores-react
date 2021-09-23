@@ -228,8 +228,7 @@ const Container = styled.div<IContainer>`
   font-family: 'Gordita', san-serif;
   display: flex;
   flex-direction: column;
-  height: ${({ hasLabel, hasError }) =>
-    hasLabel && hasError ? '64px' : '52px'};
+  height: auto;
 `
 
 interface IInput {
