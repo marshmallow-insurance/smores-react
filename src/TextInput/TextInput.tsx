@@ -60,7 +60,7 @@ export const TextInput: FC<Props> = ({
       </Box>
     )}
 
-    <Content outlined={outlined} error={error}>
+    <Content value={value} outlined={outlined} error={error}>
       <Input
         disabled={disabled}
         type={type}
@@ -125,7 +125,8 @@ const Content = styled.div<IInputOutline>`
     value &&
     value != '' &&
     `
-      border: 2px solid ${theme.colors.grey4};`}
+      border-color: ${theme.colors.grey6};
+    `}
 `
 
 const Input = styled.input<IInput>`

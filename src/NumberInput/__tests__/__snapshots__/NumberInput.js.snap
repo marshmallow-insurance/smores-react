@@ -116,6 +116,7 @@ exports[`renders - currency 1`] = `
   height: 32px;
   cursor: pointer;
   opacity: 1;
+  border-color: #9E9E9E;
 }
 
 .c3:hover,
@@ -211,6 +212,7 @@ exports[`renders - currency 1`] = `
   </div>
   <div
     class="c3"
+    value="50"
   >
     <span
       class="c4 c5"
@@ -398,6 +400,7 @@ exports[`renders - disabled 1`] = `
   <div
     class="c3"
     disabled=""
+    value=""
   >
     <input
       class="c4"
@@ -528,6 +531,7 @@ exports[`renders - error 1`] = `
   height: 32px;
   cursor: pointer;
   opacity: 1;
+  border-color: #9E9E9E;
 }
 
 .c3:hover,
@@ -629,6 +633,7 @@ exports[`renders - error 1`] = `
   </div>
   <div
     class="c3"
+    value="200"
   >
     <span
       class="c4 c5"
@@ -830,6 +835,7 @@ exports[`renders - number 1`] = `
   </div>
   <div
     class="c4"
+    value=""
   >
     <input
       class="c5"
@@ -987,6 +993,7 @@ exports[`renders - tel 1`] = `
   </div>
   <div
     class="c3"
+    value=""
   >
     <span
       class="c4 c5"
@@ -1155,6 +1162,7 @@ exports[`renders - with suffix 1`] = `
   </div>
   <div
     class="c3"
+    value=""
   >
     <input
       class="c4"
@@ -1348,6 +1356,7 @@ exports[`renders - with trailing icon 1`] = `
   </div>
   <div
     class="c3"
+    value=""
   >
     <span
       class="c4 c5"

@@ -166,7 +166,12 @@ export const NumberInput: FC<NumberInputProps> = ({
         </Box>
       )}
 
-      <Content error={error} disabled={disabled} outlined={outlined}>
+      <Content
+        error={error}
+        disabled={disabled}
+        outlined={outlined}
+        value={value}
+      >
         {prefix && (
           <SymbolText tag="span" color="blue7">
             {prefix}
