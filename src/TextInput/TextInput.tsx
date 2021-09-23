@@ -88,7 +88,7 @@ interface IContainer {
 const Container = styled.div<IContainer>`
   display: flex;
   flex-direction: column;
-  height: ${(p) => (p.hasLabel && p.hasError ? '64px' : '52px')};
+  height: auto;
 `
 
 interface IInput {
