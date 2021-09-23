@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { Text } from '../Text'
 import { Icon } from '../Icon'
+import { Box } from '../Box'
 
 import { theme } from '../theme'
 
@@ -61,9 +62,11 @@ export const Dropdown: FC<Props> = ({
   return (
     <Container className={className}>
       {label && (
-        <Text tag="label" color="grey4" typo="label">
-          {label}
-        </Text>
+        <Box mb={outlined ? '2px' : '0px'}>
+          <Text tag="label" color="grey4" typo="label">
+            {label}
+          </Text>
+        </Box>
       )}
 
       <Content outlined={outlined} key={key}>
@@ -114,15 +117,6 @@ const Container = styled.div`
 const Content = styled.div<IUsesOutline>`
   width: 100%;
   position: relative;
-
-  ${({ outlined }) =>
-    outlined &&
-    `
-  border: 1px solid ${theme.colors.grey3};
-  border-radius: 8px;
-  padding: 10px;
-  box-sizing: border-box;
-`}
 `
 
 const Select = styled.select<IUsesOutline>`
@@ -138,6 +132,16 @@ const Select = styled.select<IUsesOutline>`
   cursor: pointer;
   appearance: none; /* remove default arrow */
 
+  ${({ outlined }) =>
+    outlined &&
+    `
+    border: 2px solid ${theme.colors.grey4};
+    border-radius: 8px;
+    padding: 16px 12px;
+    box-sizing: border-box;
+    height: auto;
+  `}
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
@@ -147,13 +151,13 @@ const Select = styled.select<IUsesOutline>`
     color: ${theme.colors.grey4};
   }
 
-  &:hover {
-    border-color: ${theme.colors.grey6};
-  }
-
+  &:hover,
+  &:valid,
   &:focus,
+  &:focus-visible,
   &:checked {
-    border-color: ${theme.colors.blue5};
+    outline: none;
+    border-color: ${theme.colors.grey6};
   }
 `
 

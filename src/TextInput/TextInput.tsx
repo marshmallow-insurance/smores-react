@@ -1,5 +1,5 @@
 import React, { FormEvent, FC } from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import { Box } from '../Box'
 import { Text } from '../Text'
@@ -14,6 +14,7 @@ type Props = {
   className?: string
   /** Input type for proper browser support */
   type?: 'text' | 'email' | 'password'
+  /** used to render outlined style */
   outlined?: boolean
   /** Placeholder */
   placeholder: string
@@ -52,7 +53,7 @@ export const TextInput: FC<Props> = ({
 }) => (
   <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
     {label && (
-      <Box mb={outlined ? '8px' : '0px'}>
+      <Box mb={outlined ? '2px' : '0px'}>
         <Text tag="label" color="grey4" typo="label">
           {label}
         </Text>
@@ -99,32 +100,30 @@ interface IInputOutline extends IInput {
   outlined?: boolean
 }
 
-const Content = styled.div<IInputOutline>(
-  ({ outlined, error }) => css`
-    border-bottom: ${outlined ? '2px solid' : '1px solid'};
-    border-top: ${outlined ? '2px solid' : '0px'};
-    border-left: ${outlined ? '2px solid' : '0px'};
-    border-right: ${outlined ? '2px solid' : '0px'};
-    border-radius: ${outlined ? '8px' : '0px;'};
-    padding: ${outlined ? '16px 12px' : '0px;'};
+const Content = styled.div<IInputOutline>`
+  border-bottom: 1px solid;
+  border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey4'}`]};
+  display: flex;
+  height: 32px;
 
-    border-color: ${theme.colors[`${error ? 'red7' : 'grey4'}`]};
-    display: flex;
-    height: 32px;
+  &:hover,
+  &:focus-within {
+    border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
+  }
 
-    &:hover {
-      border-color: ${theme.colors[`${error ? 'red7' : 'grey6'}`]};
-    }
-
-    &:focus {
-      border-color: ${theme.colors[`${error ? 'red7' : 'blue5'}`]};
-    }
-  `,
-)
+  ${({ outlined }) =>
+    outlined &&
+    `
+      border: 2px solid ${theme.colors.grey4};
+      border-radius: 8px;
+      padding: 16px 12px;
+      height: auto;
+    `}
+`
 
 const Input = styled.input<IInput>`
   border: none;
-  color: ${(p) => theme.colors[`${p.error ? 'red7' : 'black'}`]};
+  color: ${({ error }) => theme.colors[`${error ? 'red7' : 'black'}`]};
   font-size: 16px;
   width: 100%;
   outline: none;

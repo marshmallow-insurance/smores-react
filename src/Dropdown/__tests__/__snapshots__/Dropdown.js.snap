@@ -69,13 +69,13 @@ exports[`renders 1`] = `
   color: #D2D2D2;
 }
 
-.c2:hover {
-  border-color: #9E9E9E;
-}
-
+.c2:hover,
+.c2:valid,
 .c2:focus,
+.c2:focus-visible,
 .c2:checked {
-  border-color: #545E7E;
+  outline: none;
+  border-color: #9E9E9E;
 }
 
 .c3 {

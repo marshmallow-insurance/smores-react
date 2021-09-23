@@ -56,6 +56,7 @@ WithLabel.args = {
   list: days,
   placeholder: 'Select Day',
   label: 'Day',
+  outlined: false,
 }
 
 export const Disabled = Template.bind({})
