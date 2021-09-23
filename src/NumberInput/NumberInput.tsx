@@ -231,6 +231,7 @@ interface IInput {
   error: boolean
   disabled: boolean
   outlined?: boolean
+  value?: string
 }
 
 const Content = styled.div<IInput>`
@@ -255,6 +256,13 @@ const Content = styled.div<IInput>`
     padding: 16px 12px;
     height: auto;
   `}
+
+  ${({ value }) =>
+    value &&
+    value !== '' &&
+    `
+      border-color: ${theme.colors.grey6};
+    `}
 `
 
 const Input = styled.input<IInput>`

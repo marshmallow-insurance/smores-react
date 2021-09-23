@@ -94,6 +94,7 @@ const Container = styled.div<IContainer>`
 interface IInput {
   error: boolean
   disabled?: boolean
+  value?: string
 }
 
 interface IInputOutline extends IInput {
@@ -119,6 +120,12 @@ const Content = styled.div<IInputOutline>`
       padding: 16px 12px;
       height: auto;
     `}
+
+  ${({ value }) =>
+    value &&
+    value != '' &&
+    `
+      border: 2px solid ${theme.colors.grey4};`}
 `
 
 const Input = styled.input<IInput>`
