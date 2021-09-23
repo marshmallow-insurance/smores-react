@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react'
 import styled from 'styled-components'
 
 import { Text } from '../Text'
+import { Box } from '../Box'
 import { theme } from '../theme'
 
 export type SearchInputItem = {
@@ -22,6 +23,7 @@ interface ISearchInput extends IUsesOutline {
   id: string
   name: string
   value: string
+  selected: boolean
   onKeyUp: (e: React.FormEvent<HTMLInputElement>) => void
   onChange: (e: React.FormEvent<HTMLInputElement>) => void
 }
@@ -56,8 +58,9 @@ export const SearchInput: FC<SearchInputProps> = ({
   outlined = false,
 }) => {
   const [active, setActive] = useState(false)
-  const [list, setList] = useState(searchList)
+  const [list, setList] = useState<SearchInputItem[]>([])
   const [selectedResult, setSelectedResult] = useState('')
+  const [selected, setSelected] = useState(false)
 
   const search = (e: React.FormEvent<HTMLInputElement>): void => {
     const value = e.currentTarget.value
@@ -87,29 +90,31 @@ export const SearchInput: FC<SearchInputProps> = ({
     setActive(false)
     setSelectedResult(selectedItem.label)
     onFound(selectedItem.value)
+    setSelected(true)
   }
 
   return (
     <Container>
       {label && (
-        <Text tag="label" color="grey4" typo="label">
-          {label}
-        </Text>
+        <Box mb={outlined ? '2px' : '0px'}>
+          <Text tag="label" color="grey4" typo="label">
+            {label}
+          </Text>
+        </Box>
       )}
 
-      <InnerContainer outlined={outlined}>
-        <Input
-          id={id}
-          type="text"
-          name={name}
-          placeholder={placeholder}
-          autoComplete="off"
-          value={selectedResult}
-          onKeyUp={search}
-          onChange={updateInputState}
-          outlined={outlined}
-        />
-      </InnerContainer>
+      <Input
+        id={id}
+        type="text"
+        name={name}
+        placeholder={placeholder}
+        autoComplete="off"
+        value={selectedResult}
+        onKeyUp={search}
+        onChange={updateInputState}
+        outlined={outlined}
+        selected={selected}
+      />
 
       <ResultsContainer
         show={active}
@@ -138,16 +143,6 @@ const Container = styled.div<IUsesOutline>`
   background: ${theme.colors.white};
 `
 
-const InnerContainer = styled.div<IUsesOutline>`
-  ${({ outlined }) =>
-    outlined &&
-    `
-    border: 1px solid ${theme.colors.grey3};
-    border-radius: 8px;
-    padding: 10px;
-  `}
-`
-
 const Input = styled.input<ISearchInput>`
   display: block;
   border: none;
@@ -165,6 +160,27 @@ const Input = styled.input<ISearchInput>`
     color: ${({ outlined }) =>
       outlined ? theme.colors.grey8 : theme.colors.grey4};
   }
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    border-color: ${theme.colors.grey6};
+  }
+
+  ${({ outlined }) =>
+    outlined &&
+    `
+    border: 2px solid ${theme.colors.grey4};
+    border-radius: 8px;
+    padding: 16px 12px;
+    height: auto;
+  `}
+
+  ${({ selected }) =>
+    selected &&
+    `
+    border-color: ${theme.colors.grey6};
+  `}
 `
 
 const ResultsContainer = styled.div<IResultsContainer>`
@@ -177,8 +193,6 @@ const ResultsContainer = styled.div<IResultsContainer>`
 
   ul {
     max-height: ${({ show }) => (show ? '192px' : '0px')};
-    border-color: ${({ show }) =>
-      show ? `${theme.colors.grey4}` : 'transparent'};
   }
 `
 
@@ -190,11 +204,15 @@ const ResultsList = styled.ul<IUsesOutline>`
   margin: 0;
   background-color: ${theme.colors.white};
   border: 1px solid ${theme.colors.grey4};
-  border-top: ${({ outlined }) =>
-    outlined ? `1px solid ${theme.colors.grey4}` : `none`};
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   z-index: 1000;
+
+  ${({ outlined }) =>
+    outlined &&
+    `
+    border: 2px solid ${theme.colors.grey6};
+  `}
 
   li {
     padding: 16px 14px;

@@ -48,6 +48,8 @@ type NumberInputProps = {
   step?: number
   /** Disabled flag */
   disabled?: boolean
+  /** used to render outlined style */
+  outlined?: boolean
 }
 
 export const NumberInput: FC<NumberInputProps> = ({
@@ -71,6 +73,7 @@ export const NumberInput: FC<NumberInputProps> = ({
   strict,
   step = 0,
   disabled = false,
+  outlined = false,
 }) => {
   // Check whether the min/max value exists is within the specified range
   const isInRange = (value: number) => {
@@ -156,12 +159,19 @@ export const NumberInput: FC<NumberInputProps> = ({
   return (
     <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
       {label && (
-        <Text tag="label" color="grey4" typo="label">
-          {label}&nbsp;{required && <Asterisk>*</Asterisk>}
-        </Text>
+        <Box mb={outlined ? '2px' : '0px'}>
+          <Text tag="label" color="grey4" typo="label">
+            {label}&nbsp;{required && <Asterisk>*</Asterisk>}
+          </Text>
+        </Box>
       )}
 
-      <Content error={error} disabled={disabled}>
+      <Content
+        error={error}
+        disabled={disabled}
+        outlined={outlined}
+        value={value}
+      >
         {prefix && (
           <SymbolText tag="span" color="blue7">
             {prefix}
@@ -225,6 +235,8 @@ const Container = styled.div<IContainer>`
 interface IInput {
   error: boolean
   disabled: boolean
+  outlined?: boolean
+  value?: string
 }
 
 const Content = styled.div<IInput>`
@@ -236,13 +248,26 @@ const Content = styled.div<IInput>`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
   }
 
-  &:focus {
-    border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'blue5'}`]};
-  }
+  ${({ outlined }) =>
+    outlined &&
+    `
+    border: 2px solid ${theme.colors.grey4};
+    border-radius: 8px;
+    padding: 16px 12px;
+    height: auto;
+  `}
+
+  ${({ value }) =>
+    value &&
+    value !== '' &&
+    `
+      border-color: ${theme.colors.grey6};
+    `}
 `
 
 const Input = styled.input<IInput>`

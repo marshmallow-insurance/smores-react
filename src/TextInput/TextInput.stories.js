@@ -56,6 +56,7 @@ WithOutline.args = {
   id: 'textInput',
   name: 'textInput',
   outlined: true,
+  label: 'with outline',
   placeholder: 'Placeholder text',
   onChange: () => {},
 }
