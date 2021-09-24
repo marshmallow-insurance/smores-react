@@ -12,7 +12,7 @@ exports[`renders 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #D2D2D2;
+  color: #636768;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -116,7 +116,7 @@ exports[`renders 1`] = `
   >
     <label
       class="c2"
-      color="grey4"
+      color="grey8"
       cursor="inherit"
       title=""
     >

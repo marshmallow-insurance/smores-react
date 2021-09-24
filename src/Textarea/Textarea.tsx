@@ -46,7 +46,7 @@ export const Textarea: FC<TextareaProps> = ({
 }) => (
   <Box flex direction="column" className={className}>
     {label && (
-      <Text tag="label" color="grey5" typo="label">
+      <Text tag="label" color="grey8" typo="label">
         {label}
       </Text>
     )}

@@ -54,7 +54,7 @@ export const TextInput: FC<Props> = ({
   <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
     {label && (
       <Box mb={outlined ? '2px' : '0px'}>
-        <Text tag="label" color="grey4" typo="label">
+        <Text tag="label" color="grey8" typo="label">
           {label}
         </Text>
       </Box>
