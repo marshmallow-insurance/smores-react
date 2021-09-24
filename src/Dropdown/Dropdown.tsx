@@ -62,7 +62,7 @@ export const Dropdown: FC<Props> = ({
   return (
     <Container className={className}>
       {label && (
-        <Box mb={outlined ? '2px' : '0px'}>
+        <Box mb={outlined ? '4px' : '0px'}>
           <Text tag="label" color="grey8" typo="label">
             {label}
           </Text>
