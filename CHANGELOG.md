@@ -1,4 +1,8 @@
-## [1.2.3] - 2021-09-23
+## [1.2.5] - 2021-09-24
+### Changed
+- Updated label colour for form fields
+
+## [1.2.4] - 2021-09-23
 ### Changed
 - Updated form fields height
 
@@ -120,6 +124,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.2.5]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.4...v1.2.5
 [1.2.4]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.3...v1.2.4
 [1.2.3]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.1...v1.2.2

@@ -96,8 +96,8 @@ export const SearchInput: FC<SearchInputProps> = ({
   return (
     <Container>
       {label && (
-        <Box mb={outlined ? '2px' : '0px'}>
-          <Text tag="label" color="grey4" typo="label">
+        <Box mb={outlined ? '4px' : '0px'}>
+          <Text tag="label" color="grey8" typo="label">
             {label}
           </Text>
         </Box>
