@@ -29,6 +29,8 @@ type TextareaProps = {
   onChange: (e: string) => void
   /** Disabled flag */
   disabled?: boolean
+  /** maxLength property */
+  maxLength?: number
 }
 
 export const Textarea: FC<TextareaProps> = ({
@@ -43,6 +45,7 @@ export const Textarea: FC<TextareaProps> = ({
   errorMsg,
   placeholder,
   disabled = false,
+  maxLength,
 }) => (
   <Box flex direction="column" className={className}>
     {label && (
@@ -63,6 +66,7 @@ export const Textarea: FC<TextareaProps> = ({
         onChange={(e: FormEvent<HTMLTextAreaElement>) =>
           onChange(e.currentTarget.value)
         }
+        maxLength={maxLength}
       />
     </Box>
     {error && <ErrorBox>{errorMsg}</ErrorBox>}
