@@ -49,9 +49,11 @@ export const Textarea: FC<TextareaProps> = ({
 }) => (
   <Box flex direction="column" className={className}>
     {label && (
-      <Text tag="label" color="grey8" typo="label">
-        {label}
-      </Text>
+      <Box mb="4px">
+        <Text tag="label" color="grey8" typo="label">
+          {label}
+        </Text>
+      </Box>
     )}
 
     <Box flex direction="column">
@@ -77,13 +79,14 @@ interface ITextarea {
   resize: 'none' | 'both'
   disabled: boolean
   error: boolean
+  value: string
 }
 
 const Field = styled.textarea<ITextarea>`
   font-size: 16px;
   line-height: 20px;
   background: ${theme.colors.white};
-  border: 1px solid ${theme.colors.grey3};
+  border: 2px solid ${theme.colors.grey4};
   box-sizing: border-box;
   border-radius: 8px;
   width: 100%;
@@ -93,14 +96,23 @@ const Field = styled.textarea<ITextarea>`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey4'}`]};
+  outline: none;
 
   &:hover {
     border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
   }
 
-  &:focus {
-    border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'blue5'}`]};
+  &:focus,
+  &:focus-visible {
+    border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
   }
+
+  ${({ value }) =>
+    value &&
+    value != '' &&
+    `
+      border-color: ${theme.colors.grey6};
+    `}
 `
 
 const ErrorBox = styled.span`
