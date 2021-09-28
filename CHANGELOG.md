@@ -1,3 +1,6 @@
+## [1.2.6] - 2021-09-28
+### Changed
+- Added maxLength property to Textarea and updated styling
 ## [1.2.5] - 2021-09-24
 ### Changed
 - Updated label colour for form fields
