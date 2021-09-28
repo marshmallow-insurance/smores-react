@@ -98,10 +98,7 @@ const Field = styled.textarea<ITextarea>`
   border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey4'}`]};
   outline: none;
 
-  &:hover {
-    border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
-  }
-
+  &:hover,
   &:focus,
   &:focus-visible {
     border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};

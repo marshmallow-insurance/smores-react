@@ -52,10 +52,7 @@ exports[`disabled 1`] = `
   outline: none;
 }
 
-.c3:hover {
-  border-color: #9E9E9E;
-}
-
+.c3:hover,
 .c3:focus,
 .c3:focus-visible {
   border-color: #9E9E9E;
@@ -149,10 +146,7 @@ exports[`renders 1`] = `
   outline: none;
 }
 
-.c3:hover {
-  border-color: #9E9E9E;
-}
-
+.c3:hover,
 .c3:focus,
 .c3:focus-visible {
   border-color: #9E9E9E;
@@ -245,10 +239,7 @@ exports[`renders with error 1`] = `
   outline: none;
 }
 
-.c3:hover {
-  border-color: #B52525;
-}
-
+.c3:hover,
 .c3:focus,
 .c3:focus-visible {
   border-color: #B52525;
