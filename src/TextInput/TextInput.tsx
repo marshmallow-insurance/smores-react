@@ -30,18 +30,21 @@ type DefaultProps = {
   errorMsg?: string
   /** onBlur listener */
   onBlur?: (e: FormEvent<HTMLInputElement>) => void
-  /** onChange listener */
+  /** used for adding a trailing icon */
   trailingIcon?: string
   /** Disabled flag */
   disabled?: boolean
 }
 
+/** on change or on input required */
 type TruncateProps =
   | {
+      /** on change is required and on input optional */
       onChange: (e: string) => void
       onInputChange?: (e: FormEvent<HTMLInputElement>) => void
     }
   | {
+      /** on input is required and on change optional */
       onChange?: (e: string) => void
       onInputChange: (e: FormEvent<HTMLInputElement>) => void
     }
@@ -85,12 +88,11 @@ export const TextInput: FC<Props> = ({
         error={error}
         autoComplete="off"
         onChange={(e: FormEvent<HTMLInputElement>) => {
-          if (onChange) onChange(e.currentTarget.value)
-
-          if (onInputChange) onInputChange(e)
+          onChange && onChange(e.currentTarget.value)
+          onInputChange && onInputChange(e)
         }}
         onBlur={(e) => {
-          if (onBlur) onBlur(e)
+          onBlur && onBlur(e)
         }}
       />
       {trailingIcon && <Icon render={trailingIcon} color="grey4" />}
