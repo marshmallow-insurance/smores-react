@@ -2,6 +2,7 @@
 ### Added
 - Added new Accordion component
 - Added showIcon prop to SearchInput component
+- Added onChange input handler
 
 ## [1.2.6] - 2021-09-28
 ### Changed
