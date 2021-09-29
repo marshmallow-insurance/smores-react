@@ -33,13 +33,21 @@ $ npm install @mrshmllw/smores-react
 
 ## Release
 ```md
-1. Checkout the `Master` branch, update Changelog and _bump_ the project version.
+1. Checkout a new branch from the `Master` branch, update Changelog and _bump_ the project version.
 > $ git checkout master
 > $ git pull
 > Be sure that CHANGELOG.md is updated according to [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) with the latest release notes. If not, do it in a separate branch before bumping npm version.
+> $ git checkout -b release-prep
 > $ npm version [major | minor | patch] according to [semver.org](https://semver.org/)
-> $ git push && git push --tags
+> $ git push origin release-prep
+> Open a PR and get this approved
+> Merge the approved PR and pull the latest version of master:
+> $ git checkout master
+> $ git pull
+> Push new tags to master:
+> $ git push origin --tags
 > ! check build is successful (green tick in GitHub Actions workflow) before next step
+
 
 2. Login to NPM.
 > $ npm login
