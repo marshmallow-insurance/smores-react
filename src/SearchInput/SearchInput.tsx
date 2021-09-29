@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Text } from '../Text'
 import { Box } from '../Box'
 import { theme } from '../theme'
+import { Icon } from '../Icon'
 
 export type SearchInputItem = {
   label: string
@@ -45,6 +46,8 @@ export type SearchInputProps = {
   resultsRelativePosition?: boolean
   /** Displays border */
   outlined?: boolean
+  /** Displays search icon */
+  showIcon?: boolean
 }
 
 export const SearchInput: FC<SearchInputProps> = ({
@@ -56,6 +59,7 @@ export const SearchInput: FC<SearchInputProps> = ({
   onFound,
   resultsRelativePosition = false,
   outlined = false,
+  showIcon = false,
 }) => {
   const [active, setActive] = useState(false)
   const [list, setList] = useState<SearchInputItem[]>([])
@@ -103,18 +107,21 @@ export const SearchInput: FC<SearchInputProps> = ({
         </Box>
       )}
 
-      <Input
-        id={id}
-        type="text"
-        name={name}
-        placeholder={placeholder}
-        autoComplete="off"
-        value={selectedResult}
-        onKeyUp={search}
-        onChange={updateInputState}
-        outlined={outlined}
-        selected={selected}
-      />
+      <InputBox outlined={outlined}>
+        {showIcon && <SearchIcon size={24} render="search" color="grey5" />}
+        <Input
+          id={id}
+          type="text"
+          name={name}
+          placeholder={placeholder}
+          autoComplete="off"
+          value={selectedResult}
+          onKeyUp={search}
+          onChange={updateInputState}
+          outlined={outlined}
+          selected={selected}
+        />
+      </InputBox>
 
       <ResultsContainer
         show={active}
@@ -137,17 +144,30 @@ export const SearchInput: FC<SearchInputProps> = ({
   )
 }
 
-const Container = styled.div<IUsesOutline>`
+const Container = styled.div`
   position: relative;
   width: 100%;
   background: ${theme.colors.white};
 `
 
+const InputBox = styled.div<IUsesOutline>`
+  display: flex;
+  align-items: center;
+  border-bottom: ${({ outlined }) =>
+    outlined ? 'none' : `1px solid ${theme.colors.grey4}`};
+  ${({ outlined }) =>
+    outlined &&
+    `
+    border: 2px solid ${theme.colors.grey4};
+    border-radius: 8px;
+    padding: 16px 12px;
+    height: auto;
+`}
+`
+
 const Input = styled.input<ISearchInput>`
   display: block;
   border: none;
-  border-bottom: ${({ outlined }) =>
-    outlined ? 'none' : `1px solid ${theme.colors.grey4}`};
   outline: none;
   color: ${({ outlined }) =>
     outlined ? `${theme.colors.grey8}` : `${theme.colors.blue7}`};
@@ -166,15 +186,6 @@ const Input = styled.input<ISearchInput>`
   &:focus-visible {
     border-color: ${theme.colors.grey6};
   }
-
-  ${({ outlined }) =>
-    outlined &&
-    `
-    border: 2px solid ${theme.colors.grey4};
-    border-radius: 8px;
-    padding: 16px 12px;
-    height: auto;
-  `}
 
   ${({ selected }) =>
     selected &&
@@ -225,4 +236,8 @@ const ResultsList = styled.ul<IUsesOutline>`
       background-color: ${theme.colors.bg3};
     }
   }
+`
+
+const SearchIcon = styled(Icon)`
+  margin-right: 8px;
 `
