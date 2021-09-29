@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Text } from '../Text'
 import { Box } from '../Box'
 import { theme } from '../theme'
+import { Icon } from '../Icon'
 
 export type SearchInputItem = {
   label: string
@@ -28,6 +29,11 @@ interface ISearchInput extends IUsesOutline {
   onChange: (e: React.FormEvent<HTMLInputElement>) => void
 }
 
+interface IShowIcon extends IUsesOutline {
+  showIcon?: boolean
+  selected: boolean
+}
+
 export type SearchInputProps = {
   /** ID, usually used for tests  */
   id: string
@@ -45,6 +51,8 @@ export type SearchInputProps = {
   resultsRelativePosition?: boolean
   /** Displays border */
   outlined?: boolean
+  /** Displays search icon */
+  showIcon?: boolean
 }
 
 export const SearchInput: FC<SearchInputProps> = ({
@@ -56,6 +64,7 @@ export const SearchInput: FC<SearchInputProps> = ({
   onFound,
   resultsRelativePosition = false,
   outlined = false,
+  showIcon = false,
 }) => {
   const [active, setActive] = useState(false)
   const [list, setList] = useState<SearchInputItem[]>([])
@@ -103,18 +112,21 @@ export const SearchInput: FC<SearchInputProps> = ({
         </Box>
       )}
 
-      <Input
-        id={id}
-        type="text"
-        name={name}
-        placeholder={placeholder}
-        autoComplete="off"
-        value={selectedResult}
-        onKeyUp={search}
-        onChange={updateInputState}
-        outlined={outlined}
-        selected={selected}
-      />
+      <InputBox outlined={outlined} selected={selected}>
+        {showIcon && <SearchIcon size={24} render="search" color="grey5" />}
+        <Input
+          id={id}
+          type="text"
+          name={name}
+          placeholder={placeholder}
+          autoComplete="off"
+          value={selectedResult}
+          onKeyUp={search}
+          onChange={updateInputState}
+          outlined={outlined}
+          selected={selected}
+        />
+      </InputBox>
 
       <ResultsContainer
         show={active}
@@ -137,22 +149,46 @@ export const SearchInput: FC<SearchInputProps> = ({
   )
 }
 
-const Container = styled.div<IUsesOutline>`
+const Container = styled.div`
   position: relative;
   width: 100%;
   background: ${theme.colors.white};
 `
 
+const InputBox = styled.div<IShowIcon>`
+  display: flex;
+  align-items: center;
+  border-bottom: ${({ outlined }) =>
+    outlined ? 'none' : `1px solid ${theme.colors.grey4}`};
+  ${({ outlined }) =>
+    outlined &&
+    `
+    border: 2px solid ${theme.colors.grey4};
+    border-radius: 8px;
+    height: auto;
+  `}
+  padding: ${({ showIcon }) => (showIcon ? '14px 10px' : '16px 12px')};
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    border-color: ${theme.colors.grey6};
+  }
+
+  ${({ selected }) =>
+    selected &&
+    `
+    border-color: ${theme.colors.grey6};
+  `}
+  color: ${({ outlined }) =>
+    outlined ? `${theme.colors.grey8}` : `${theme.colors.blue7}`};
+`
+
 const Input = styled.input<ISearchInput>`
   display: block;
   border: none;
-  border-bottom: ${({ outlined }) =>
-    outlined ? 'none' : `1px solid ${theme.colors.grey4}`};
   outline: none;
-  color: ${({ outlined }) =>
-    outlined ? `${theme.colors.grey8}` : `${theme.colors.blue7}`};
   font-size: 16px;
-  height: 32px;
   width: 100%;
   box-sizing: border-box;
 
@@ -160,26 +196,10 @@ const Input = styled.input<ISearchInput>`
     color: ${({ outlined }) =>
       outlined ? theme.colors.grey8 : theme.colors.grey4};
   }
-
-  &:hover,
-  &:focus,
-  &:focus-visible {
-    border-color: ${theme.colors.grey6};
-  }
-
   ${({ outlined }) =>
     outlined &&
     `
-    border: 2px solid ${theme.colors.grey4};
-    border-radius: 8px;
-    padding: 16px 12px;
     height: auto;
-  `}
-
-  ${({ selected }) =>
-    selected &&
-    `
-    border-color: ${theme.colors.grey6};
   `}
 `
 
@@ -189,7 +209,7 @@ const ResultsContainer = styled.div<IResultsContainer>`
   ${({ absolutePosition }) => absolutePosition && 'position: absolute;'}
   width: 100%;
   visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
-  ${({ outlined }) => outlined && 'left: 0px; top: 90%;'}
+  ${({ outlined }) => outlined && 'left: 0px; top: 93%;'};
 
   ul {
     max-height: ${({ show }) => (show ? '192px' : '0px')};
@@ -225,4 +245,8 @@ const ResultsList = styled.ul<IUsesOutline>`
       background-color: ${theme.colors.bg3};
     }
   }
+`
+
+const SearchIcon = styled(Icon)`
+  margin-right: 8px;
 `
