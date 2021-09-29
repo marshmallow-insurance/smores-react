@@ -29,6 +29,10 @@ interface ISearchInput extends IUsesOutline {
   onChange: (e: React.FormEvent<HTMLInputElement>) => void
 }
 
+interface IInputBox extends IUsesOutline {
+  selected: boolean
+}
+
 export type SearchInputProps = {
   /** ID, usually used for tests  */
   id: string
@@ -107,7 +111,7 @@ export const SearchInput: FC<SearchInputProps> = ({
         </Box>
       )}
 
-      <InputBox outlined={outlined}>
+      <InputBox outlined={outlined} selected={selected}>
         {showIcon && <SearchIcon size={24} render="search" color="grey5" />}
         <Input
           id={id}
@@ -148,9 +152,10 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   background: ${theme.colors.white};
+  max-height: 58px;
 `
 
-const InputBox = styled.div<IUsesOutline>`
+const InputBox = styled.div<IInputBox>`
   display: flex;
   align-items: center;
   border-bottom: ${({ outlined }) =>
@@ -162,28 +167,11 @@ const InputBox = styled.div<IUsesOutline>`
     border-radius: 8px;
     padding: 16px 12px;
     height: auto;
-`}
-`
-
-const Input = styled.input<ISearchInput>`
-  display: block;
-  border: none;
-  outline: none;
-  color: ${({ outlined }) =>
-    outlined ? `${theme.colors.grey8}` : `${theme.colors.blue7}`};
-  font-size: 16px;
-  height: 32px;
-  width: 100%;
-  box-sizing: border-box;
-
-  &::placeholder {
-    color: ${({ outlined }) =>
-      outlined ? theme.colors.grey8 : theme.colors.grey4};
-  }
+  `}
 
   &:hover,
   &:focus,
-  &:focus-visible {
+  &:focus-within {
     border-color: ${theme.colors.grey6};
   }
 
@@ -191,6 +179,27 @@ const Input = styled.input<ISearchInput>`
     selected &&
     `
     border-color: ${theme.colors.grey6};
+  `}
+  color: ${({ outlined }) =>
+    outlined ? `${theme.colors.grey8}` : `${theme.colors.blue7}`};
+`
+
+const Input = styled.input<ISearchInput>`
+  display: block;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: ${({ outlined }) =>
+      outlined ? theme.colors.grey8 : theme.colors.grey4};
+  }
+  ${({ outlined }) =>
+    outlined &&
+    `
+    height: auto;
   `}
 `
 
@@ -200,7 +209,7 @@ const ResultsContainer = styled.div<IResultsContainer>`
   ${({ absolutePosition }) => absolutePosition && 'position: absolute;'}
   width: 100%;
   visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
-  ${({ outlined }) => outlined && 'left: 0px; top: 90%;'}
+  ${({ outlined }) => outlined && 'left: 0px; top: 136%;'}
 
   ul {
     max-height: ${({ show }) => (show ? '192px' : '0px')};

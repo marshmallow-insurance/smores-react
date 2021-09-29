@@ -29,6 +29,7 @@ exports[`renders 1`] = `
   position: relative;
   width: 100%;
   background: #ffffff;
+  max-height: 58px;
 }
 
 .c3 {
@@ -41,15 +42,20 @@ exports[`renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #D2D2D2;
+  color: #112035;
+}
+
+.c3:hover,
+.c3:focus,
+.c3:focus-within {
+  border-color: #9E9E9E;
 }
 
 .c4 {
   display: block;
   border: none;
   outline: none;
-  color: #112035;
   font-size: 16px;
-  height: 32px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -68,12 +74,6 @@ exports[`renders 1`] = `
 
 .c4::placeholder {
   color: #D2D2D2;
-}
-
-.c4:hover,
-.c4:focus,
-.c4:focus-visible {
-  border-color: #9E9E9E;
 }
 
 .c5 {
