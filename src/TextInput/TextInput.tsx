@@ -7,7 +7,7 @@ import { Icon } from '../Icon'
 
 import { theme } from '../theme'
 
-type Props = {
+type DefaultProps = {
   /** ID, usually used for tests  */
   id: string
   /** className attribute to apply classses from props */
@@ -28,13 +28,25 @@ type Props = {
   error?: boolean
   /** error text message */
   errorMsg?: string
-  /** onChange listener */
-  onChange: (e: string) => void
+  /** onBlur listener */
+  onBlur?: (e: FormEvent<HTMLInputElement>) => void
   /** onChange listener */
   trailingIcon?: string
   /** Disabled flag */
   disabled?: boolean
 }
+
+type TruncateProps =
+  | {
+      onChange: (e: string) => void
+      onInputChange?: (e: FormEvent<HTMLInputElement>) => void
+    }
+  | {
+      onChange?: (e: string) => void
+      onInputChange: (e: FormEvent<HTMLInputElement>) => void
+    }
+
+type Props = DefaultProps & TruncateProps
 
 export const TextInput: FC<Props> = ({
   id,
@@ -48,7 +60,9 @@ export const TextInput: FC<Props> = ({
   error = false,
   errorMsg,
   trailingIcon,
+  onBlur,
   onChange,
+  onInputChange,
   disabled = false,
 }) => (
   <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
@@ -70,9 +84,14 @@ export const TextInput: FC<Props> = ({
         value={value}
         error={error}
         autoComplete="off"
-        onChange={(e: FormEvent<HTMLInputElement>) =>
-          onChange(e.currentTarget.value)
-        }
+        onChange={(e: FormEvent<HTMLInputElement>) => {
+          if (onChange) onChange(e.currentTarget.value)
+
+          if (onInputChange) onInputChange(e)
+        }}
+        onBlur={(e) => {
+          if (onBlur) onBlur(e)
+        }}
       />
       {trailingIcon && <Icon render={trailingIcon} color="grey4" />}
     </Content>

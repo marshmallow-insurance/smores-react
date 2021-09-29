@@ -17,6 +17,8 @@ Default.args = {
   name: 'textInput',
   placeholder: 'Placeholder text',
   onChange: () => {},
+  onInputChange: () => {},
+  onBlur: () => {},
 }
 
 export const TypeEmail = Template.bind({})
@@ -26,6 +28,8 @@ TypeEmail.args = {
   name: 'textInput',
   placeholder: 'Placeholder text',
   onChange: () => {},
+  onInputChange: () => {},
+  onBlur: () => {},
   type: 'email',
 }
 
@@ -36,6 +40,8 @@ TypePassword.args = {
   name: 'textInput',
   placeholder: 'Placeholder text',
   onChange: () => {},
+  onInputChange: () => {},
+  onBlur: () => {},
   type: 'password',
 }
 
@@ -46,6 +52,8 @@ Error.args = {
   name: 'textInput',
   placeholder: 'Placeholder text',
   onChange: () => {},
+  onInputChange: () => {},
+  onBlur: () => {},
   error: true,
   errorMsg: 'Oh boy, something went wrong!',
 }
@@ -59,6 +67,8 @@ WithOutline.args = {
   label: 'with outline',
   placeholder: 'Placeholder text',
   onChange: () => {},
+  onInputChange: () => {},
+  onBlur: () => {},
 }
 
 export const WithLabel = Template.bind({})
@@ -68,6 +78,8 @@ WithLabel.args = {
   name: 'textInput',
   placeholder: 'Placeholder text',
   onChange: () => {},
+  onInputChange: () => {},
+  onBlur: () => {},
   label: 'label',
   outlined: false,
 }
@@ -79,6 +91,8 @@ WithIcon.args = {
   name: 'textInput',
   placeholder: 'Placeholder text',
   onChange: () => {},
+  onInputChange: () => {},
+  onBlur: () => {},
   label: 'label',
   trailingIcon: 'at',
 }
@@ -90,6 +104,8 @@ Disabled.args = {
   name: 'textInput',
   placeholder: 'Placeholder text',
   onChange: () => {},
+  onInputChange: () => {},
+  onBlur: () => {},
   label: 'label',
   disabled: true,
 }
