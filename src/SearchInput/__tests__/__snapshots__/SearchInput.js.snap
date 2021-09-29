@@ -29,7 +29,6 @@ exports[`renders 1`] = `
   position: relative;
   width: 100%;
   background: #ffffff;
-  max-height: 58px;
 }
 
 .c3 {
@@ -42,6 +41,7 @@ exports[`renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #D2D2D2;
+  padding: 16px 12px;
   color: #112035;
 }
 

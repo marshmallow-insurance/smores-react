@@ -29,7 +29,8 @@ interface ISearchInput extends IUsesOutline {
   onChange: (e: React.FormEvent<HTMLInputElement>) => void
 }
 
-interface IInputBox extends IUsesOutline {
+interface IShowIcon extends IUsesOutline {
+  showIcon?: boolean
   selected: boolean
 }
 
@@ -152,10 +153,9 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   background: ${theme.colors.white};
-  max-height: 58px;
 `
 
-const InputBox = styled.div<IInputBox>`
+const InputBox = styled.div<IShowIcon>`
   display: flex;
   align-items: center;
   border-bottom: ${({ outlined }) =>
@@ -165,9 +165,9 @@ const InputBox = styled.div<IInputBox>`
     `
     border: 2px solid ${theme.colors.grey4};
     border-radius: 8px;
-    padding: 16px 12px;
     height: auto;
   `}
+  padding: ${({ showIcon }) => (showIcon ? '14px 10px' : '16px 12px')};
 
   &:hover,
   &:focus,
@@ -209,7 +209,7 @@ const ResultsContainer = styled.div<IResultsContainer>`
   ${({ absolutePosition }) => absolutePosition && 'position: absolute;'}
   width: 100%;
   visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
-  ${({ outlined }) => outlined && 'left: 0px; top: 136%;'}
+  ${({ outlined }) => outlined && 'left: 0px; top: 93%;'};
 
   ul {
     max-height: ${({ show }) => (show ? '192px' : '0px')};
