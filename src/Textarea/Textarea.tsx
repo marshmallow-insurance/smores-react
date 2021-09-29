@@ -93,7 +93,7 @@ const Field = styled.textarea<ITextarea>`
   padding: 16px;
   color: ${theme.colors.blue7};
   resize: ${({ resize }) => resize};
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'text')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey4'}`]};
   outline: none;
