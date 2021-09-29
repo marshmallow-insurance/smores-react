@@ -1,6 +1,11 @@
+## [1.2.7] - 2021-09-29
+### Added
+- Added new Accordion component
+
 ## [1.2.6] - 2021-09-28
 ### Changed
 - Added maxLength property to Textarea and updated styling
+
 ## [1.2.5] - 2021-09-24
 ### Changed
 - Updated label colour for form fields
@@ -107,7 +112,7 @@
 
 ## [0.61.0] - 2021-04-21
 ### Changed
-- tertiary button styling
+- Tertiary button styling
 ### Added
 - bg4 colour to theme
 
@@ -127,6 +132,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.2.7]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.6...v1.2.7
 [1.2.6]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.5...v1.2.6
 [1.2.5]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.4...v1.2.5
 [1.2.4]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.3...v1.2.4
