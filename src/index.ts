@@ -1,3 +1,4 @@
+export * from './Accordion'
 export * from './ActionDropdown'
 export * from './Box'
 export * from './Button'

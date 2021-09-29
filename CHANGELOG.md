@@ -1,3 +1,8 @@
+
+## [1.2.8] - 2021-09-29
+### Added
+- Export for Accordion component + link in README
+
 ## [1.2.7] - 2021-09-29
 ### Added
 - Added new Accordion component
@@ -134,6 +139,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.2.8]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.7...v1.2.8
 [1.2.7]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.6...v1.2.7
 [1.2.6]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.5...v1.2.6
 [1.2.5]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.4...v1.2.5

@@ -62,6 +62,7 @@ $ npm install @mrshmllw/smores-react
 
 ## List of Components
 
+* [Accordion](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Accordion)
 * [ActionDropdown](https://github.com/marshmallow-insurance/smores-react/tree/master/src/ActionDropdown)
 * [Box](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Box)
 * [Button](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Button)
