@@ -16,3 +16,10 @@ export const Outlined = Template.bind({})
 Outlined.args = {
   outlined: true,
 }
+
+export const ShowIcon = Template.bind({})
+
+ShowIcon.args = {
+  showIcon: true,
+  outlined: true,
+}

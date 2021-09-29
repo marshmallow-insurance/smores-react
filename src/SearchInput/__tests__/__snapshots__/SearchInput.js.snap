@@ -32,40 +32,51 @@ exports[`renders 1`] = `
 }
 
 .c3 {
-  display: block;
-  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-bottom: 1px solid #D2D2D2;
-  outline: none;
+  padding: 16px 12px;
   color: #112035;
-  font-size: 16px;
-  height: 32px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.c3::-webkit-input-placeholder {
-  color: #D2D2D2;
-}
-
-.c3::-moz-placeholder {
-  color: #D2D2D2;
-}
-
-.c3:-ms-input-placeholder {
-  color: #D2D2D2;
-}
-
-.c3::placeholder {
-  color: #D2D2D2;
 }
 
 .c3:hover,
 .c3:focus,
-.c3:focus-visible {
+.c3:focus-within {
   border-color: #9E9E9E;
 }
 
 .c4 {
+  display: block;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #D2D2D2;
+}
+
+.c4::-moz-placeholder {
+  color: #D2D2D2;
+}
+
+.c4:-ms-input-placeholder {
+  color: #D2D2D2;
+}
+
+.c4::placeholder {
+  color: #D2D2D2;
+}
+
+.c5 {
   box-sizing: border-box;
   overflow-y: hidden;
   position: absolute;
@@ -73,11 +84,11 @@ exports[`renders 1`] = `
   visibility: hidden;
 }
 
-.c4 ul {
+.c5 ul {
   max-height: 0px;
 }
 
-.c5 {
+.c6 {
   position: relative;
   list-style: none;
   overflow-y: auto;
@@ -90,7 +101,7 @@ exports[`renders 1`] = `
   z-index: 1000;
 }
 
-.c5 li {
+.c6 li {
   padding: 16px 14px;
   box-sizing: border-box;
   font-size: 16px;
@@ -98,7 +109,7 @@ exports[`renders 1`] = `
   cursor: pointer;
 }
 
-.c5 li:hover {
+.c6 li:hover {
   background-color: #F8F6F6;
 }
 
@@ -123,19 +134,23 @@ exports[`renders 1`] = `
       Days
     </label>
   </div>
-  <input
-    autocomplete="off"
-    class="c3"
-    id="days"
-    name="search_input"
-    type="text"
-    value=""
-  />
   <div
-    class="c4"
+    class="c3"
+  >
+    <input
+      autocomplete="off"
+      class="c4"
+      id="days"
+      name="search_input"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    class="c5"
   >
     <ul
-      class="c5"
+      class="c6"
     >
       <li>
         No results
