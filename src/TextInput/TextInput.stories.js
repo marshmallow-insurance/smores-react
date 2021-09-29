@@ -56,6 +56,7 @@ WithOutline.args = {
   id: 'textInput',
   name: 'textInput',
   outlined: true,
+  label: 'with outline',
   placeholder: 'Placeholder text',
   onChange: () => {},
 }
@@ -68,6 +69,7 @@ WithLabel.args = {
   placeholder: 'Placeholder text',
   onChange: () => {},
   label: 'label',
+  outlined: false,
 }
 
 export const WithIcon = Template.bind({})

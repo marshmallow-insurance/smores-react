@@ -15,5 +15,4 @@ export const Outlined = Template.bind({})
 
 Outlined.args = {
   outlined: true,
-  showCaret: true,
 }

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
-.c1 {
+.c2 {
   font-size: 8px;
   line-height: 100%;
   font-weight: 700;
@@ -12,7 +12,7 @@ exports[`renders 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #D2D2D2;
+  color: #636768;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -21,13 +21,17 @@ exports[`renders 1`] = `
   letter-spacing: 0.15px;
 }
 
+.c1 {
+  margin-bottom: 0px;
+}
+
 .c0 {
   position: relative;
   width: 100%;
   background: #ffffff;
 }
 
-.c2 {
+.c3 {
   display: block;
   border: none;
   border-bottom: 1px solid #D2D2D2;
@@ -39,23 +43,29 @@ exports[`renders 1`] = `
   box-sizing: border-box;
 }
 
-.c2::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: #D2D2D2;
 }
 
-.c2::-moz-placeholder {
+.c3::-moz-placeholder {
   color: #D2D2D2;
 }
 
-.c2:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: #D2D2D2;
 }
 
-.c2::placeholder {
+.c3::placeholder {
   color: #D2D2D2;
 }
 
-.c3 {
+.c3:hover,
+.c3:focus,
+.c3:focus-visible {
+  border-color: #9E9E9E;
+}
+
+.c4 {
   box-sizing: border-box;
   overflow-y: hidden;
   position: absolute;
@@ -63,12 +73,11 @@ exports[`renders 1`] = `
   visibility: hidden;
 }
 
-.c3 ul {
+.c4 ul {
   max-height: 0px;
-  border-color: transparent;
 }
 
-.c4 {
+.c5 {
   position: relative;
   list-style: none;
   overflow-y: auto;
@@ -76,13 +85,12 @@ exports[`renders 1`] = `
   margin: 0;
   background-color: #ffffff;
   border: 1px solid #D2D2D2;
-  border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   z-index: 1000;
 }
 
-.c4 li {
+.c5 li {
   padding: 16px 14px;
   box-sizing: border-box;
   font-size: 16px;
@@ -90,12 +98,12 @@ exports[`renders 1`] = `
   cursor: pointer;
 }
 
-.c4 li:hover {
+.c5 li:hover {
   background-color: #F8F6F6;
 }
 
 @media (min-width:768px) {
-  .c1 {
+  .c2 {
     font-size: 10px;
   }
 }
@@ -103,52 +111,34 @@ exports[`renders 1`] = `
 <div
   class="c0"
 >
-  <label
+  <div
     class="c1"
-    color="grey4"
-    cursor="inherit"
-    title=""
   >
-    Days
-  </label>
-  <div
-    class=""
-  >
-    <input
-      autocomplete="off"
+    <label
       class="c2"
-      id="days"
-      name="search_input"
-      type="text"
-      value=""
-    />
+      color="grey8"
+      cursor="inherit"
+      title=""
+    >
+      Days
+    </label>
   </div>
-  <div
+  <input
+    autocomplete="off"
     class="c3"
+    id="days"
+    name="search_input"
+    type="text"
+    value=""
+  />
+  <div
+    class="c4"
   >
     <ul
-      class="c4"
+      class="c5"
     >
       <li>
-        Monday
-      </li>
-      <li>
-        Tuesday
-      </li>
-      <li>
-        Wednesday
-      </li>
-      <li>
-        Thursday
-      </li>
-      <li>
-        Friday
-      </li>
-      <li>
-        Saturday
-      </li>
-      <li>
-        Sunday
+        No results
       </li>
     </ul>
   </div>

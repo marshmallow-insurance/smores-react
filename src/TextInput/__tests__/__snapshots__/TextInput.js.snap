@@ -9,16 +9,11 @@ exports[`renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 52px;
+  height: auto;
 }
 
 .c1 {
   border-bottom: 1px solid;
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
-  border-radius: 0px;
-  padding: 0px;
   border-color: #D2D2D2;
   display: -webkit-box;
   display: -webkit-flex;
@@ -27,12 +22,9 @@ exports[`renders 1`] = `
   height: 32px;
 }
 
-.c1:hover {
+.c1:hover,
+.c1:focus-within {
   border-color: #9E9E9E;
-}
-
-.c1:focus {
-  border-color: #545E7E;
 }
 
 .c2 {
@@ -66,6 +58,7 @@ exports[`renders 1`] = `
 >
   <div
     class="c1"
+    value=""
   >
     <input
       autocomplete="off"

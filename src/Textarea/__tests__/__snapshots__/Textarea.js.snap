@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`disabled 1`] = `
-.c1 {
+.c2 {
   font-size: 8px;
   line-height: 100%;
   font-weight: 700;
@@ -12,7 +12,7 @@ exports[`disabled 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #AEAEAE;
+  color: #636768;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -31,11 +31,15 @@ exports[`disabled 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c1 {
+  margin-bottom: 4px;
+}
+
+.c3 {
   font-size: 16px;
   line-height: 20px;
   background: #ffffff;
-  border: 1px solid #E5E5E5;
+  border: 2px solid #D2D2D2;
   box-sizing: border-box;
   border-radius: 8px;
   width: 100%;
@@ -45,18 +49,17 @@ exports[`disabled 1`] = `
   cursor: not-allowed;
   opacity: 0.5;
   border-color: #D2D2D2;
+  outline: none;
 }
 
-.c2:hover {
+.c3:hover,
+.c3:focus,
+.c3:focus-visible {
   border-color: #9E9E9E;
 }
 
-.c2:focus {
-  border-color: #545E7E;
-}
-
 @media (min-width:768px) {
-  .c1 {
+  .c2 {
     font-size: 10px;
   }
 }
@@ -65,20 +68,24 @@ exports[`disabled 1`] = `
   class="c0"
   direction="column"
 >
-  <label
+  <div
     class="c1"
-    color="grey5"
-    cursor="inherit"
-    title=""
   >
-    Textarea label
-  </label>
+    <label
+      class="c2"
+      color="grey8"
+      cursor="inherit"
+      title=""
+    >
+      Textarea label
+    </label>
+  </div>
   <div
     class="c0"
     direction="column"
   >
     <textarea
-      class="c2"
+      class="c3"
       disabled=""
       id="textarea_id"
       placeholder="Placeholder text!"
@@ -88,7 +95,7 @@ exports[`disabled 1`] = `
 `;
 
 exports[`renders 1`] = `
-.c1 {
+.c2 {
   font-size: 8px;
   line-height: 100%;
   font-weight: 700;
@@ -99,7 +106,7 @@ exports[`renders 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #AEAEAE;
+  color: #636768;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -118,11 +125,15 @@ exports[`renders 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c1 {
+  margin-bottom: 4px;
+}
+
+.c3 {
   font-size: 16px;
   line-height: 20px;
   background: #ffffff;
-  border: 1px solid #E5E5E5;
+  border: 2px solid #D2D2D2;
   box-sizing: border-box;
   border-radius: 8px;
   width: 100%;
@@ -132,18 +143,17 @@ exports[`renders 1`] = `
   cursor: pointer;
   opacity: 1;
   border-color: #D2D2D2;
+  outline: none;
 }
 
-.c2:hover {
+.c3:hover,
+.c3:focus,
+.c3:focus-visible {
   border-color: #9E9E9E;
 }
 
-.c2:focus {
-  border-color: #545E7E;
-}
-
 @media (min-width:768px) {
-  .c1 {
+  .c2 {
     font-size: 10px;
   }
 }
@@ -152,20 +162,24 @@ exports[`renders 1`] = `
   class="c0 Textarea"
   direction="column"
 >
-  <label
+  <div
     class="c1"
-    color="grey5"
-    cursor="inherit"
-    title=""
   >
-    Textarea label
-  </label>
+    <label
+      class="c2"
+      color="grey8"
+      cursor="inherit"
+      title=""
+    >
+      Textarea label
+    </label>
+  </div>
   <div
     class="c0"
     direction="column"
   >
     <textarea
-      class="c2"
+      class="c3"
       id="textarea_id"
       placeholder="Placeholder text!"
     />
@@ -174,7 +188,7 @@ exports[`renders 1`] = `
 `;
 
 exports[`renders with error 1`] = `
-.c1 {
+.c2 {
   font-size: 8px;
   line-height: 100%;
   font-weight: 700;
@@ -185,7 +199,7 @@ exports[`renders with error 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #AEAEAE;
+  color: #636768;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -204,11 +218,15 @@ exports[`renders with error 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c1 {
+  margin-bottom: 4px;
+}
+
+.c3 {
   font-size: 16px;
   line-height: 20px;
   background: #ffffff;
-  border: 1px solid #E5E5E5;
+  border: 2px solid #D2D2D2;
   box-sizing: border-box;
   border-radius: 8px;
   width: 100%;
@@ -218,24 +236,23 @@ exports[`renders with error 1`] = `
   cursor: pointer;
   opacity: 1;
   border-color: #B52525;
+  outline: none;
 }
 
-.c2:hover {
+.c3:hover,
+.c3:focus,
+.c3:focus-visible {
   border-color: #B52525;
 }
 
-.c2:focus {
-  border-color: #B52525;
-}
-
-.c3 {
+.c4 {
   margin-top: 7px;
   font-size: 12px;
   color: #B52525;
 }
 
 @media (min-width:768px) {
-  .c1 {
+  .c2 {
     font-size: 10px;
   }
 }
@@ -244,26 +261,30 @@ exports[`renders with error 1`] = `
   class="c0"
   direction="column"
 >
-  <label
+  <div
     class="c1"
-    color="grey5"
-    cursor="inherit"
-    title=""
   >
-    Textarea label
-  </label>
+    <label
+      class="c2"
+      color="grey8"
+      cursor="inherit"
+      title=""
+    >
+      Textarea label
+    </label>
+  </div>
   <div
     class="c0"
     direction="column"
   >
     <textarea
-      class="c2"
+      class="c3"
       id="textarea_id"
       placeholder="Placeholder text!"
     />
   </div>
   <span
-    class="c3"
+    class="c4"
   >
     Something really quite terrible has gone wrong here!
   </span>

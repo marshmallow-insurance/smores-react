@@ -1,7 +1,21 @@
+## [1.2.6] - 2021-09-28
+### Changed
+- Added maxLength property to Textarea and updated styling
+## [1.2.5] - 2021-09-24
+### Changed
+- Updated label colour for form fields
+
+## [1.2.4] - 2021-09-23
+### Changed
+- Updated form fields height
+
+## [1.2.3] - 2021-09-23
+### Changed
+- Updated outlined design for all form fields
+
 ## [1.2.2] - 2021-09-20
 ### Changed
-- Additional props and styling for SearchInput
-- Additional props and styling for DropDown
+- Added new outline property to  SearchInput and Dropdown
 
 ## [1.2.1] - 2021-09-20
 ### Changed
@@ -9,7 +23,7 @@
 
 ## [1.2.0] - 2021-09-16
 ### Added
-- Added new outline property text input
+- Added new outline property to text input
 
 ## [1.1.1] - 2021-09-14
 ### Added
@@ -113,6 +127,10 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.2.6]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.5...v1.2.6
+[1.2.5]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.4...v1.2.5
+[1.2.4]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.3...v1.2.4
+[1.2.3]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.1.1...v1.2.0

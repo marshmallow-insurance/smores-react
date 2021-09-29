@@ -1,5 +1,6 @@
 module.exports = {
   testEnvironment: 'jest-environment-jsdom',
+  modulePathIgnorePatterns: ['<rootDir>/dist'],
   coverageThreshold: {
     global: {
       statements: 50,

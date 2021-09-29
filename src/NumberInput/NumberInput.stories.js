@@ -18,6 +18,7 @@ Default.args = {
   name: 'totalAmount',
   placeholder: '0',
   onChange: () => {},
+  outlined: false,
 }
 
 export const Required = Template.bind({})
@@ -29,6 +30,7 @@ Required.args = {
   placeholder: '0',
   onChange: () => {},
   required: true,
+  outlined: false,
 }
 
 export const Error = Template.bind({})
@@ -41,6 +43,7 @@ Error.args = {
   onChange: () => {},
   error: true,
   errorMsg: 'Oh boy, something went wrong!',
+  outlined: false,
 }
 
 export const Currency = Template.bind({})
@@ -55,6 +58,7 @@ Currency.args = {
   required: true,
   onChange: () => {},
   step: 10,
+  outlined: false,
 }
 
 export const Distance = Template.bind({})
@@ -68,6 +72,7 @@ Distance.args = {
   required: true,
   onChange: () => {},
   step: 100,
+  outlined: false,
 }
 
 export const Telephone = Template.bind({})
@@ -80,6 +85,7 @@ Telephone.args = {
   prefix: '+44',
   required: true,
   onChange: () => {},
+  outlined: false,
 }
 
 export const Disabled = Template.bind({})
@@ -93,6 +99,19 @@ Disabled.args = {
   required: true,
   onChange: () => {},
   disabled: true,
+  outlined: false,
+}
+
+export const WithOutline = Template.bind({})
+
+WithOutline.args = {
+  id: 'outlined',
+  label: 'with outline',
+  name: 'outlined',
+  required: false,
+  onChange: () => {},
+  disabled: false,
+  outlined: true,
 }
 
 const WorkingExampleTemplate = (args) => <Container {...args} />
