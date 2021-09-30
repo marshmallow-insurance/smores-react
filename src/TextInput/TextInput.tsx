@@ -1,4 +1,4 @@
-import React, { FormEvent, FC } from 'react'
+import React, { FormEvent, FC, RefObject } from 'react'
 import styled from 'styled-components'
 
 import { Box } from '../Box'
@@ -12,6 +12,8 @@ type DefaultProps = {
   id: string
   /** className attribute to apply classses from props */
   className?: string
+  /** ref attribute for input */
+  ref?: RefObject<HTMLInputElement>
   /** Input type for proper browser support */
   type?: 'text' | 'email' | 'password'
   /** used to render outlined style */
@@ -63,6 +65,7 @@ export const TextInput: FC<Props> = ({
   error = false,
   errorMsg,
   trailingIcon,
+  ref,
   onBlur,
   onChange,
   onInputChange,
@@ -83,6 +86,7 @@ export const TextInput: FC<Props> = ({
         type={type}
         id={id}
         name={name}
+        ref={ref}
         placeholder={placeholder}
         value={value}
         error={error}
