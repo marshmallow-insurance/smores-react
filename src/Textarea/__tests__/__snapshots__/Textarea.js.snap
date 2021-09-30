@@ -140,7 +140,7 @@ exports[`renders 1`] = `
   padding: 16px;
   color: #112035;
   resize: both;
-  cursor: pointer;
+  cursor: text;
   opacity: 1;
   border-color: #D2D2D2;
   outline: none;
@@ -233,7 +233,7 @@ exports[`renders with error 1`] = `
   padding: 16px;
   color: #112035;
   resize: both;
-  cursor: pointer;
+  cursor: text;
   opacity: 1;
   border-color: #B52525;
   outline: none;
