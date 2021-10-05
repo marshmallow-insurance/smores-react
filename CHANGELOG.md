@@ -1,3 +1,6 @@
+## [1.2.9] - 2021-09-30
+### Added
+- Added ref attribute TextInput
 
 ## [1.2.8] - 2021-09-29
 ### Added
@@ -139,6 +142,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.2.9]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.8...v1.2.9
 [1.2.8]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.7...v1.2.8
 [1.2.7]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.6...v1.2.7
 [1.2.6]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.5...v1.2.6
