@@ -150,6 +150,10 @@ export const Container = () => {
         <Icon render="claim" />
       </Wrapper>
       <Wrapper>
+        <span>claim-line</span>
+        <Icon render="claim-line" />
+      </Wrapper>
+      <Wrapper>
         <span>clipboard-check</span>
         <Icon render="clipboard-check" />
       </Wrapper>
