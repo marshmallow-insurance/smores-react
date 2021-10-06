@@ -1,3 +1,7 @@
+## [1.2.10] - 2021-10-06
+### Added
+- Added new claim-line and checkout-with-text icons
+
 ## [1.2.9] - 2021-09-30
 ### Added
 - Added ref attribute TextInput
@@ -142,6 +146,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.2.10]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.9...v1.2.10
 [1.2.9]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.8...v1.2.9
 [1.2.8]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.7...v1.2.8
 [1.2.7]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.6...v1.2.7

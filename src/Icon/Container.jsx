@@ -142,12 +142,20 @@ export const Container = () => {
         <Icon render="checkout" />
       </Wrapper>
       <Wrapper>
+        <span>checkout-with-text</span>
+        <Icon render="checkout-with-text" />
+      </Wrapper>
+      <Wrapper>
         <span>city</span>
         <Icon render="city" />
       </Wrapper>
       <Wrapper>
         <span>claim</span>
         <Icon render="claim" />
+      </Wrapper>
+      <Wrapper>
+        <span>claim-line</span>
+        <Icon render="claim-line" />
       </Wrapper>
       <Wrapper>
         <span>clipboard-check</span>
