@@ -12,6 +12,9 @@ jobs:
         with:
           persist-credentials: false
       - name: Install and Build 🔧
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
         run: |
           npm ci
           npm run build-storybook
