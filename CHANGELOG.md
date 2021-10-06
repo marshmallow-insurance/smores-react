@@ -1,6 +1,6 @@
 ## [1.2.10] - 2021-10-06
 ### Added
-- Added new claim-line icon
+- Added new claim-line and checkout-with-text icons
 
 ## [1.2.9] - 2021-09-30
 ### Added
