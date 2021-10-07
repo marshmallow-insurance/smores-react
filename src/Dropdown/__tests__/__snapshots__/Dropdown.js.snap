@@ -145,6 +145,7 @@ exports[`renders 1`] = `
       <span
         class="c4"
         color="grey4"
+        height=""
         rotate="0"
         size="24"
       >

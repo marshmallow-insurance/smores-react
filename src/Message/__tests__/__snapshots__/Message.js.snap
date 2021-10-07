@@ -69,6 +69,7 @@ exports[`default renders correctly 1`] = `
       <span
         class="c2"
         color="blue7"
+        height=""
         rotate="0"
         size="32"
       >
@@ -162,6 +163,7 @@ exports[`info renders correctly 1`] = `
       <span
         class="c2"
         color="blue7"
+        height=""
         rotate="0"
         size="32"
       >
@@ -256,6 +258,7 @@ exports[`warning renders correctly 1`] = `
       <span
         class="c2"
         color="pink8"
+        height=""
         rotate="0"
         size="32"
       >

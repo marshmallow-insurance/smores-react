@@ -50,6 +50,7 @@ exports[`renders 1`] = `
   <span
     class="c1"
     color="blue7"
+    height=""
     rotate="0"
     size="24"
   >

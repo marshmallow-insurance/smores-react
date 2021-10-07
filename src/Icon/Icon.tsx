@@ -26,6 +26,8 @@ type Props = {
   mr?: string
   mb?: string
   ml?: string
+  /** set height of the Icon */
+  height?: string
 }
 
 export const Icon: FC<Props> = ({
@@ -38,6 +40,7 @@ export const Icon: FC<Props> = ({
   mr = '0',
   mb = '0',
   ml = '0',
+  height = '',
 }) => (
   <Container
     className={className}
@@ -48,6 +51,7 @@ export const Icon: FC<Props> = ({
     mr={mr}
     mb={mb}
     ml={ml}
+    height={height}
   >
     {render === 'aa' && (
       <svg
@@ -782,7 +786,7 @@ export const Icon: FC<Props> = ({
     {render === 'checkout-with-text' && (
       <svg
         width="100%"
-        height="100%"
+        height="auto"
         viewBox="0 0 91 13"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -3773,16 +3777,17 @@ interface IIcon {
   mr: string
   mb: string
   ml: string
+  height: string
 }
 
 const Container = styled.span<IIcon>(
-  ({ size, rotate, mt, mr, mb, ml }) => css`
+  ({ size, rotate, mt, mr, mb, ml, height }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     max-width: ${size}px;
-    height: ${size}px;
+    height: ${height === '' ? `${size}px` : height};
     transform: rotate(${rotate}deg);
     margin-top: ${mt};
     margin-right: ${mr};

@@ -239,6 +239,7 @@ exports[`renders - currency 1`] = `
         <span
           class="c9"
           color="grey4"
+          height=""
           rotate="180"
           size="24"
         >
@@ -262,6 +263,7 @@ exports[`renders - currency 1`] = `
         <span
           class="c10"
           color="grey4"
+          height=""
           rotate="0"
           size="24"
         >
@@ -660,6 +662,7 @@ exports[`renders - error 1`] = `
         <span
           class="c9"
           color="grey4"
+          height=""
           rotate="180"
           size="24"
         >
@@ -683,6 +686,7 @@ exports[`renders - error 1`] = `
         <span
           class="c10"
           color="grey4"
+          height=""
           rotate="0"
           size="24"
         >
@@ -1377,6 +1381,7 @@ exports[`renders - with trailing icon 1`] = `
     <span
       class="c7"
       color="grey4"
+      height=""
       rotate="0"
       size="24"
     >
