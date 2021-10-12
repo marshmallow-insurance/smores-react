@@ -1,4 +1,4 @@
-## [1.2.11] - 2021-10-12
+## [1.2.12] - 2021-10-12
 ### Added
 - Added new confirmation radio buttons component
 ## [1.2.10] - 2021-10-06
@@ -148,7 +148,7 @@
 
 ### Changed
 - Updated gap and styles on Row component
-[1.2.11]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.10...v1.2.11
+[1.2.12]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.11...v1.2.12
 [1.2.10]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.9...v1.2.10
 [1.2.9]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.8...v1.2.9
 [1.2.8]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.7...v1.2.8
