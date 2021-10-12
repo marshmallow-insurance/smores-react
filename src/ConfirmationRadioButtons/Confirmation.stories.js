@@ -1,5 +1,6 @@
 import React from 'react'
 import { Confirmation } from './Confirmation'
+import { Container } from './Container'
 
 export default {
   title: 'Confirmation Radio Buttons',
@@ -20,7 +21,7 @@ Default.args = {
 
 export const WithError = Template.bind({})
 
-Default.args = {
+WithError.args = {
   id: 'radioButton',
   onChange: () => {},
   checked: false,
@@ -28,3 +29,7 @@ Default.args = {
   error: true,
   errorMsg: 'This field is required.',
 }
+
+const ContainerTemplate = (args) => <Container {...args} />
+
+export const WorkingExample = ContainerTemplate.bind({})
