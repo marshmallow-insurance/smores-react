@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<div
+  class="sc-bdfBQB sc-jrAFXE TqqZw iLemMM"
+>
+  <h3
+    class="sc-gsTEea loKXrH sc-kEjbQP iTVwxE"
+    color="blue7"
+    cursor="inherit"
+    title=""
+  />
+  <div
+    class="sc-gKseQn hCfHHW"
+  >
+    <div
+      class="sc-iBPTik kiaTVK"
+    >
+      <div
+        class="sc-fubCzh dlqgjn"
+      >
+        <div
+          class="sc-bdfBQB didYvo"
+        >
+          <input
+            class="sc-hKgJUU erwJFP"
+            type="radio"
+            value=""
+          />
+          <label
+            class="sc-eCstlR hEsIPO"
+          >
+            <div
+              class="sc-dlfnuX jdTRqe"
+            />
+            <span
+              class="sc-jSgvzq dZegDG"
+            >
+              Yes
+            </span>
+          </label>
+        </div>
+      </div>
+      <div
+        class="sc-fubCzh dlqgjn"
+      >
+        <div
+          class="sc-bdfBQB didYvo"
+        >
+          <input
+            class="sc-hKgJUU erwJFP"
+            id="undefined-1"
+            type="radio"
+            value="undefined-1"
+          />
+          <label
+            class="sc-eCstlR hEsIPO"
+            for="undefined-1"
+          >
+            <div
+              class="sc-dlfnuX jdTRqe"
+            />
+            <span
+              class="sc-jSgvzq dZegDG"
+            >
+              No
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
