@@ -24,7 +24,7 @@ export const WithError = Template.bind({})
 WithError.args = {
   id: 'radioButton',
   onChange: () => {},
-  checked: false,
+  checked: undefined,
   label: 'Do you like marshmallows?',
   error: true,
   errorMsg: 'This field is required.',
