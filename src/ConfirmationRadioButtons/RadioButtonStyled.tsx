@@ -5,6 +5,7 @@ import { Box } from '../Box'
 
 export interface FakeInput {
   checked?: boolean
+  error?: boolean
 }
 
 type RadioButtonProps = {
