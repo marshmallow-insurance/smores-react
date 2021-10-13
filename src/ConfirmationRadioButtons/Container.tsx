@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Confirmation } from './Confirmation'
 
 export const Container = () => {
-  const [checked, setChecked] = useState(undefined)
+  const [checked, setChecked] = useState<boolean | undefined>(undefined)
 
   return (
     <form>
