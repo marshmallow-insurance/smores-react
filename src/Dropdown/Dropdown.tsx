@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useEffect, useState, FormEvent, RefObject } from 'react'
 import styled from 'styled-components'
 
 import { Text } from '../Text'
@@ -14,9 +14,10 @@ export type DropdownItem = {
 
 interface IUsesOutline {
   outlined?: boolean
+  error?: boolean
 }
 
-type Props = {
+type DefaultProps = {
   /** ID, usually used for tests  */
   id: string
   /** className attribute to apply classes from props */
@@ -35,7 +36,30 @@ type Props = {
   onSelect: (element: string) => void
   /** Displays border */
   outlined?: boolean
+  /** conditionally renders error message below dropdown */
+  error?: boolean
+  /** error message to be displayed */
+  errorMsg?: string
+  /** ref attribute for select input */
+  ref?: RefObject<HTMLSelectElement>
+  /** onBlur listener */
+  onBlur?: (e: FormEvent<HTMLSelectElement>) => void
 }
+
+/** on change or on input required */
+type TruncateProps =
+  | {
+      /** on change is required and on input optional */
+      onSelect: (e: string) => void
+      onInputChange?: (e: FormEvent<HTMLSelectElement>) => void
+    }
+  | {
+      /** on input is required and on change optional */
+      onSelect?: (e: string) => void
+      onInputChange: (e: FormEvent<HTMLSelectElement>) => void
+    }
+
+type Props = DefaultProps & TruncateProps
 
 export const Dropdown: FC<Props> = ({
   id,
@@ -47,6 +71,11 @@ export const Dropdown: FC<Props> = ({
   list,
   onSelect,
   outlined = false,
+  error = false,
+  errorMsg = '',
+  onInputChange,
+  ref,
+  onBlur,
 }) => {
   const [key, setKey] = useState('')
 
@@ -80,11 +109,17 @@ export const Dropdown: FC<Props> = ({
               : placeholder
           }
           disabled={disabled || list.length < 1}
-          onChange={(e: React.FormEvent<HTMLSelectElement>) => {
-            onSelect(e.currentTarget.value)
+          onChange={(e: FormEvent<HTMLSelectElement>) => {
+            onSelect && onSelect(e.currentTarget.value)
+            onInputChange && onInputChange(e)
           }}
           required
           outlined={outlined}
+          error={error}
+          ref={ref}
+          onBlur={(e) => {
+            onBlur && onBlur(e)
+          }}
         >
           <option value="" hidden>
             {placeholder}
@@ -101,6 +136,7 @@ export const Dropdown: FC<Props> = ({
           <Icon render="caret" color="grey4" size={24} />
         </Caret>
       </Content>
+      {error && <ErrorBox>{errorMsg}</ErrorBox>}
     </Container>
   )
 }
@@ -118,6 +154,16 @@ const Content = styled.div<IUsesOutline>`
   width: 100%;
   position: relative;
 `
+
+const getErrorOutline = (outlined?: boolean, error?: boolean) => {
+  if (error && outlined) {
+    return `border: 2px solid ${theme.colors.red7}`
+  } else if (error && !outlined) {
+    return `border-bottom: 2px solid ${theme.colors.red7}`
+  } else {
+    return
+  }
+}
 
 const Select = styled.select<IUsesOutline>`
   width: 100%;
@@ -141,6 +187,7 @@ const Select = styled.select<IUsesOutline>`
     box-sizing: border-box;
     height: auto;
   `}
+  ${({ error, outlined }) => getErrorOutline(outlined, error)};
 
   &:disabled {
     cursor: not-allowed;
@@ -168,4 +215,10 @@ const Caret = styled.div<IUsesOutline>`
   right: ${({ outlined }) => (outlined ? '15px' : '0')};
   pointer-events: none;
   transform: translateY(-50%);
+`
+
+const ErrorBox = styled.span`
+  margin-top: 7px;
+  font-size: 12px;
+  color: ${theme.colors.red7};
 `
