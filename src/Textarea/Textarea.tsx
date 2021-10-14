@@ -11,6 +11,8 @@ type TextareaProps = {
   id: string
   /** className attribute to apply classses from props */
   className?: string
+  /** ref attribute for input */
+  ref?: RefObject<HTMLTextAreaElement>
   /** Placeholder */
   placeholder?: string
   /** label displayed above the input  */
@@ -25,16 +27,14 @@ type TextareaProps = {
   errorMsg?: string
   /** Allow user to resize the textarea vertically and horizontally or not */
   resize?: 'none' | 'both'
-  /** onChange listener */
-  onChange: (e: string) => void
   /** Disabled flag */
   disabled?: boolean
   /** maxLength property */
   maxLength?: number
   /** onBlur listener */
   onBlur?: (e: FormEvent<HTMLTextAreaElement>) => void
-  /** ref attribute for input */
-  ref?: RefObject<HTMLTextAreaElement>
+  /** number of rows of input */
+  rows?: number
 }
 
 /** on change or on input required */
@@ -68,6 +68,7 @@ export const Textarea: FC<Props> = ({
   maxLength,
   onBlur,
   ref,
+  rows = 4,
 }) => (
   <Box flex direction="column" className={className}>
     {label && (
@@ -96,6 +97,7 @@ export const Textarea: FC<Props> = ({
         onBlur={(e) => {
           onBlur && onBlur(e)
         }}
+        rows={rows}
       />
     </Box>
     {error && <ErrorBox>{errorMsg}</ErrorBox>}

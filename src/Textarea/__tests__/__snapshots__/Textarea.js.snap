@@ -89,6 +89,7 @@ exports[`disabled 1`] = `
       disabled=""
       id="textarea_id"
       placeholder="Placeholder text!"
+      rows="4"
     />
   </div>
 </div>
@@ -182,6 +183,7 @@ exports[`renders 1`] = `
       class="c3"
       id="textarea_id"
       placeholder="Placeholder text!"
+      rows="4"
     />
   </div>
 </div>
@@ -281,6 +283,7 @@ exports[`renders with error 1`] = `
       class="c3"
       id="textarea_id"
       placeholder="Placeholder text!"
+      rows="4"
     />
   </div>
   <span
