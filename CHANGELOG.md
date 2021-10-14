@@ -1,3 +1,7 @@
+## [1.2.14] - 2021-10-14
+### Added
+- Add error props and event handling props to input components
+
 ## [1.2.13] - 2021-10-12
 ### Added
 - Export new confirmation radio buttons component
@@ -151,6 +155,7 @@
 
 ### Changed
 - Updated gap and styles on Row component
+[1.2.14]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.13...v1.2.14
 [1.2.13]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.12...v1.2.13
 [1.2.12]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.11...v1.2.12
 [1.2.10]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.9...v1.2.10
