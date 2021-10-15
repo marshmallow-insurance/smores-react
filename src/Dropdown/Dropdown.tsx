@@ -31,7 +31,7 @@ type DefaultProps = {
   /** used for label - input connection */
   name?: string
   /** input value */
-  value: string
+  value?: string
   /** Default value */
   defaultValue?: string
   /** conditionally renders error message below dropdown */
