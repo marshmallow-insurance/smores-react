@@ -1,3 +1,6 @@
+## [1.2.16] - 2021-10-15
+### Added
+- Add missing optional flag value prop in Dropdown component
 ## [1.2.15] - 2021-10-15
 ### Added
 - Add missing event handling props to Dropdown component
@@ -159,6 +162,7 @@
 
 ### Changed
 - Updated gap and styles on Row component
+[1.2.16]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.15...v1.2.16
 [1.2.15]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.14...v1.2.15
 [1.2.14]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.13...v1.2.14
 [1.2.13]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.12...v1.2.13
