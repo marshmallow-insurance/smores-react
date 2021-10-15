@@ -22,12 +22,22 @@ type DefaultProps = {
   id: string
   /** className attribute to apply classes from props */
   className?: string
-  /** label displayed above the dropdown  */
-  label?: string
+  /** ref attribute for select input */
+  ref?: RefObject<HTMLSelectElement>
   /** Placeholder (initial state) */
   placeholder?: string
+  /** label displayed above the dropdown  */
+  label?: string
+  /** used for label - input connection */
+  name?: string
+  /** input value */
+  value: string
   /** Default value */
   defaultValue?: string
+  /** conditionally renders error message below dropdown */
+  error?: boolean
+  /** error message to be displayed */
+  errorMsg?: string
   /** Disabled flag */
   disabled?: boolean
   /** list of items for the dropdown list */
@@ -36,12 +46,6 @@ type DefaultProps = {
   onSelect: (element: string) => void
   /** Displays border */
   outlined?: boolean
-  /** conditionally renders error message below dropdown */
-  error?: boolean
-  /** error message to be displayed */
-  errorMsg?: string
-  /** ref attribute for select input */
-  ref?: RefObject<HTMLSelectElement>
   /** onBlur listener */
   onBlur?: (e: FormEvent<HTMLSelectElement>) => void
 }
@@ -64,8 +68,11 @@ type Props = DefaultProps & TruncateProps
 export const Dropdown: FC<Props> = ({
   id,
   className = '',
+  ref,
   label,
   placeholder,
+  name,
+  value,
   defaultValue,
   disabled = false,
   list,
@@ -74,7 +81,6 @@ export const Dropdown: FC<Props> = ({
   error = false,
   errorMsg = '',
   onInputChange,
-  ref,
   onBlur,
 }) => {
   const [key, setKey] = useState('')
@@ -120,6 +126,8 @@ export const Dropdown: FC<Props> = ({
           onBlur={(e) => {
             onBlur && onBlur(e)
           }}
+          name={name}
+          value={value}
         >
           <option value="" hidden>
             {placeholder}
