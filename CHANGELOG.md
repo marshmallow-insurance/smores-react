@@ -1,3 +1,7 @@
+## [1.2.15] - 2021-10-15
+### Added
+- Add missing event handling props to Dropdown component
+
 ## [1.2.14] - 2021-10-14
 ### Added
 - Add error props and event handling props to input components
@@ -155,6 +159,7 @@
 
 ### Changed
 - Updated gap and styles on Row component
+[1.2.15]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.14...v1.2.15
 [1.2.14]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.13...v1.2.14
 [1.2.13]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.12...v1.2.13
 [1.2.12]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.11...v1.2.12
