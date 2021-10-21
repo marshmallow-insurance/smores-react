@@ -1,4 +1,4 @@
-## [1.2.17] - 2021-10-15
+## [1.2.17] - 2021-10-21
 ### Added
 - Visual updates to input components
 - Add optional onBlur prop to Confirmation component
