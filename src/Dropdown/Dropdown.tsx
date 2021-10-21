@@ -186,17 +186,6 @@ const Select = styled.select<IUsesOutline>`
   cursor: pointer;
   appearance: none; /* remove default arrow */
 
-  ${({ outlined }) =>
-    outlined &&
-    `
-    border: 2px solid ${theme.colors.grey4};
-    border-radius: 8px;
-    padding: 16px 12px;
-    box-sizing: border-box;
-    height: auto;
-  `}
-  ${({ error, outlined }) => getErrorOutline(outlined, error)};
-
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
@@ -207,13 +196,35 @@ const Select = styled.select<IUsesOutline>`
   }
 
   &:hover,
-  &:valid,
   &:focus,
   &:focus-visible,
   &:checked {
     outline: none;
     border-color: ${theme.colors.grey6};
   }
+
+  ${({ outlined }) =>
+    outlined &&
+    `
+  border: 2px solid ${theme.colors.grey4};
+  border-radius: 8px;
+  padding: 16px 12px;
+  box-sizing: border-box;
+  height: auto;
+  &:hover,
+  &:focus-within {
+    border: 2px solid ${theme.colors.grey6};
+  }
+`}
+
+  ${({ value }) =>
+    value &&
+    value != '' &&
+    `
+    border: 2px solid ${theme.colors.grey4};
+`}
+
+${({ error, outlined }) => getErrorOutline(outlined, error)};
 `
 
 const Caret = styled.div<IUsesOutline>`

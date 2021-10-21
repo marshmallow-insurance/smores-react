@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, FormEvent } from 'react'
 import styled from 'styled-components'
 import { theme } from '../theme'
 import { Box } from '../Box'
@@ -12,6 +12,7 @@ type ConfirmationProps = {
   error?: boolean
   errorMsg?: string
   label: string
+  onBlur?: (e: FormEvent<HTMLInputElement>) => void
 }
 
 export const Confirmation: FC<ConfirmationProps> = ({
@@ -21,6 +22,7 @@ export const Confirmation: FC<ConfirmationProps> = ({
   error = false,
   errorMsg = '',
   label,
+  onBlur,
 }: ConfirmationProps) => {
   return (
     <ConfirmationWrapper>
@@ -34,6 +36,7 @@ export const Confirmation: FC<ConfirmationProps> = ({
               checked={checked === true}
               onChange={() => onChange(true)}
               value={id}
+              onBlur={onBlur}
             />
           </RadioButtonWrapper>
           <RadioButtonWrapper checked={checked === false} error={error}>
@@ -43,6 +46,7 @@ export const Confirmation: FC<ConfirmationProps> = ({
               checked={checked === false}
               onChange={() => onChange(false)}
               value={`${id}-1`}
+              onBlur={onBlur}
             />
           </RadioButtonWrapper>
         </RadioButtonGroup>
@@ -80,7 +84,7 @@ const RadioButtonWrapper = styled.div<FakeInput>`
   width: 139px;
   display: flex;
   align-items: center;
-  height: 49px;
+  height: 56px;
   padding-left: 12px;
   border-radius: 5px;
   font-weight: bold;
