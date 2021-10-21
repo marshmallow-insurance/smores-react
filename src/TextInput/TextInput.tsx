@@ -150,7 +150,7 @@ const Content = styled.div<IInputOutline>`
     value &&
     value != '' &&
     `
-      border-color: ${theme.colors.grey6};
+      border-color: ${theme.colors.grey4};
     `}
 `
 
@@ -164,7 +164,7 @@ const Input = styled.input<IInput>`
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
 
   &::placeholder {
-    color: ${theme.colors.grey4};
+    color: ${theme.colors.grey8};
   }
 `
 
