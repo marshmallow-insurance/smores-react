@@ -40,6 +40,7 @@ type Props = {
   icon?: string
   forcedWidth?: string
   form?: string
+  type?: 'button' | 'submit' | 'reset'
 }
 
 export const Button: FC<Props> = ({
@@ -59,6 +60,7 @@ export const Button: FC<Props> = ({
   icon = '',
   forcedWidth = '',
   form,
+  type,
 }) => {
   return (
     <div>
@@ -74,6 +76,7 @@ export const Button: FC<Props> = ({
           icon={icon}
           forcedWidth={forcedWidth}
           {...(form ? { form } : {})}
+          type={type}
         >
           {loading ? (
             <Loader
