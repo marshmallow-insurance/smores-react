@@ -1,3 +1,8 @@
+## [1.2.17] - 2021-10-15
+### Added
+- Visual updates to input components
+- Add optional onBlur prop to Confirmation component
+- Add optional type prop to Button component
 ## [1.2.16] - 2021-10-15
 ### Added
 - Add missing optional flag value prop in Dropdown component
@@ -162,6 +167,7 @@
 
 ### Changed
 - Updated gap and styles on Row component
+[1.2.17]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.16...v1.2.17
 [1.2.16]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.15...v1.2.16
 [1.2.15]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.14...v1.2.15
 [1.2.14]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.13...v1.2.14
