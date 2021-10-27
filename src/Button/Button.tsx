@@ -69,7 +69,9 @@ export const Button: FC<Props> = ({
           id={id}
           className={className}
           disabled={disabled || loading}
-          onClick={handleClick}
+          onClick={(e) => {
+            handleClick && handleClick(e)
+          }}
           isLoading={loading}
           primary={primary}
           secondary={secondary}
