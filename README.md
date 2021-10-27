@@ -87,7 +87,7 @@ yalc add @mrshmllw/smores-react
 
 this will copy the current version from the store to your project’s .yalc folder and inject a file: .yalc/@mrshmllw/smores-react dependency into package.json
 
-Every time you make changes in frames and you wan’t to see it in local
+Every time you make changes in Smores and you wan’t to see it in local
 
 run 
 
