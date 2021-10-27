@@ -32,7 +32,7 @@ type Props = {
   inverted?: boolean
   disabled?: boolean
   outlined?: boolean
-  handleClick: (e: React.FormEvent<HTMLButtonElement>) => void
+  handleClick?: (e: React.FormEvent<HTMLButtonElement>) => void
   loading?: boolean
   primary?: boolean
   secondary?: boolean
@@ -106,7 +106,9 @@ export const Button: FC<Props> = ({
           inverted={inverted}
           disabled={disabled}
           outlined={outlined}
-          handleClick={handleClick}
+          handleClick={(e) => {
+            handleClick && handleClick(e)
+          }}
         >
           {children}
         </LegacyButton>
