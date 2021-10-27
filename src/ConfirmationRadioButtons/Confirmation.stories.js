@@ -24,10 +24,20 @@ export const WithError = Template.bind({})
 WithError.args = {
   id: 'radioButton',
   onChange: () => {},
-  checked: false,
+  checked: undefined,
   label: 'Do you like marshmallows?',
   error: true,
   errorMsg: 'This field is required.',
+}
+
+export const WithSublabel = Template.bind({})
+
+WithSublabel.args = {
+  id: 'radioButton',
+  onChange: () => {},
+  checked: undefined,
+  label: 'Do you like marshmallows?',
+  sublabel: 'This includes smores and hot chocolate topped with marshmallows.',
 }
 
 const ContainerTemplate = (args) => <Container {...args} />

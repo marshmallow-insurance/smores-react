@@ -1,4 +1,4 @@
-import React, { FC, FormEvent } from 'react'
+import React, { FC, FormEvent, RefObject } from 'react'
 import styled from 'styled-components'
 
 import { Text } from '../Text'
@@ -11,6 +11,8 @@ type TextareaProps = {
   id: string
   /** className attribute to apply classses from props */
   className?: string
+  /** ref attribute for input */
+  ref?: RefObject<HTMLTextAreaElement>
   /** Placeholder */
   placeholder?: string
   /** label displayed above the input  */
@@ -25,20 +27,38 @@ type TextareaProps = {
   errorMsg?: string
   /** Allow user to resize the textarea vertically and horizontally or not */
   resize?: 'none' | 'both'
-  /** onChange listener */
-  onChange: (e: string) => void
   /** Disabled flag */
   disabled?: boolean
   /** maxLength property */
   maxLength?: number
+  /** onBlur listener */
+  onBlur?: (e: FormEvent<HTMLTextAreaElement>) => void
+  /** number of rows of input */
+  rows?: number
 }
 
-export const Textarea: FC<TextareaProps> = ({
+/** on change or on input required */
+type TruncateProps =
+  | {
+      /** on change is required and on input optional */
+      onChange: (e: string) => void
+      onInputChange?: (e: FormEvent<HTMLTextAreaElement>) => void
+    }
+  | {
+      /** on input is required and on change optional */
+      onChange?: (e: string) => void
+      onInputChange: (e: FormEvent<HTMLTextAreaElement>) => void
+    }
+
+type Props = TextareaProps & TruncateProps
+
+export const Textarea: FC<Props> = ({
   id,
   name,
   label,
   value,
   onChange,
+  onInputChange,
   className,
   resize = 'none',
   error = false,
@@ -46,6 +66,9 @@ export const Textarea: FC<TextareaProps> = ({
   placeholder,
   disabled = false,
   maxLength,
+  onBlur,
+  ref,
+  rows = 4,
 }) => (
   <Box flex direction="column" className={className}>
     {label && (
@@ -65,10 +88,16 @@ export const Textarea: FC<TextareaProps> = ({
         resize={resize}
         placeholder={placeholder}
         value={value}
-        onChange={(e: FormEvent<HTMLTextAreaElement>) =>
-          onChange(e.currentTarget.value)
-        }
+        onChange={(e: FormEvent<HTMLTextAreaElement>) => {
+          onChange && onChange(e.currentTarget.value)
+          onInputChange && onInputChange(e)
+        }}
         maxLength={maxLength}
+        ref={ref}
+        onBlur={(e) => {
+          onBlur && onBlur(e)
+        }}
+        rows={rows}
       />
     </Box>
     {error && <ErrorBox>{errorMsg}</ErrorBox>}

@@ -1,10 +1,11 @@
-import React, { FC, ChangeEvent } from 'react'
+import React, { FC, ChangeEvent, FormEvent } from 'react'
 import styled from 'styled-components'
 import { theme } from '../theme'
 import { Box } from '../Box'
 
 export interface FakeInput {
   checked?: boolean
+  error?: boolean
 }
 
 type RadioButtonProps = {
@@ -13,6 +14,7 @@ type RadioButtonProps = {
   checked?: boolean
   value: string
   onChange: (event: ChangeEvent<HTMLInputElement>) => void
+  onBlur?: (e: FormEvent<HTMLInputElement>) => void
 }
 
 export const RadioButton: FC<RadioButtonProps> = ({
@@ -21,6 +23,7 @@ export const RadioButton: FC<RadioButtonProps> = ({
   checked,
   value,
   onChange,
+  onBlur,
 }: RadioButtonProps) => (
   <Box flex alignItems="center">
     <RadioInput
@@ -29,6 +32,9 @@ export const RadioButton: FC<RadioButtonProps> = ({
       checked={checked}
       value={value}
       onChange={onChange}
+      onBlur={(e: FormEvent<HTMLInputElement>) => {
+        onBlur && onBlur(e)
+      }}
     />
     <RadioLabel htmlFor={id}>
       <FakeInput checked={checked} />

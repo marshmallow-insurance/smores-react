@@ -93,6 +93,30 @@ WithOutline.args = {
   outlined: true,
 }
 
+export const OutlineWithError = Template.bind({})
+
+OutlineWithError.args = {
+  id: 'days',
+  list: days,
+  placeholder: 'Select',
+  outlined: true,
+  error: true,
+  errorMsg: 'This field is required',
+  label: 'Select day',
+}
+
+export const WithError = Template.bind({})
+
+WithError.args = {
+  id: 'days',
+  list: days,
+  placeholder: 'Select',
+  outlined: false,
+  error: true,
+  errorMsg: 'This field is required',
+  label: 'Select day',
+}
+
 const DateSelectorExampleTemplate = (args) => <Container {...args} />
 
 export const DateSelectorExample = DateSelectorExampleTemplate.bind({})

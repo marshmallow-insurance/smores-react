@@ -32,7 +32,7 @@ type Props = {
   inverted?: boolean
   disabled?: boolean
   outlined?: boolean
-  handleClick: (e: React.FormEvent<HTMLButtonElement>) => void
+  handleClick?: (e: React.FormEvent<HTMLButtonElement>) => void
   loading?: boolean
   primary?: boolean
   secondary?: boolean
@@ -40,6 +40,7 @@ type Props = {
   icon?: string
   forcedWidth?: string
   form?: string
+  type?: 'button' | 'submit' | 'reset'
 }
 
 export const Button: FC<Props> = ({
@@ -59,14 +60,18 @@ export const Button: FC<Props> = ({
   icon = '',
   forcedWidth = '',
   form,
+  type,
 }) => {
   return (
     <div>
       {primary || secondary || tertiary ? (
         <Container
           id={id}
+          className={className}
           disabled={disabled || loading}
-          onClick={handleClick}
+          onClick={(e) => {
+            handleClick && handleClick(e)
+          }}
           isLoading={loading}
           primary={primary}
           secondary={secondary}
@@ -74,6 +79,7 @@ export const Button: FC<Props> = ({
           icon={icon}
           forcedWidth={forcedWidth}
           {...(form ? { form } : {})}
+          type={type}
         >
           {loading ? (
             <Loader
@@ -102,7 +108,9 @@ export const Button: FC<Props> = ({
           inverted={inverted}
           disabled={disabled}
           outlined={outlined}
-          handleClick={handleClick}
+          handleClick={(e) => {
+            handleClick && handleClick(e)
+          }}
         >
           {children}
         </LegacyButton>

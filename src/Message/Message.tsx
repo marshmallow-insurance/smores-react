@@ -10,6 +10,7 @@ type BorderProps =
   | { hasBorder: true; borderColor: string }
 
 export type MessageProps = {
+  className?: string
   children: ReactNode
   type?: 'info' | 'warning' | 'warning-bubble' | string
   alignIcon?: 'center' | 'flex-start' | 'flex-end'
@@ -18,6 +19,7 @@ export type MessageProps = {
 } & BorderProps
 
 export const Message: FC<MessageProps> = ({
+  className,
   children,
   type = 'info',
   alignIcon = 'center',
@@ -27,6 +29,7 @@ export const Message: FC<MessageProps> = ({
   borderColor,
 }) => (
   <Wrapper
+    className={className}
     type={type}
     backgroundColor={backgroundColor}
     sizeSmall={sizeSmall}

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, FormEvent } from 'react'
 import styled from 'styled-components'
 import { theme } from '../theme'
 import { Box } from '../Box'
@@ -12,37 +12,46 @@ type ConfirmationProps = {
   error?: boolean
   errorMsg?: string
   label: string
+  onBlur?: (e: FormEvent<HTMLInputElement>) => void
+  sublabel?: string
 }
 
 export const Confirmation: FC<ConfirmationProps> = ({
   checked,
   onChange,
   id,
-  error,
-  errorMsg,
+  error = false,
+  errorMsg = '',
   label,
+  onBlur,
+  sublabel
 }: ConfirmationProps) => {
   return (
     <ConfirmationWrapper>
-      <SectionHeadingText tag="h3">{label}</SectionHeadingText>
+      <TextWrapper>
+        <SectionHeadingText tag="h3">{label}</SectionHeadingText>
+        {sublabel && <Text tag="p" typo="base-small" color={theme.colors.grey8}>{sublabel}</Text>}
+      </TextWrapper>
       <RadioButtonGroupWrapper>
         <RadioButtonGroup>
-          <RadioButtonWrapper checked={checked === true}>
+          <RadioButtonWrapper checked={checked === true} error={error}>
             <RadioButton
               id={id}
               label="Yes"
               checked={checked === true}
               onChange={() => onChange(true)}
               value={id}
+              onBlur={onBlur}
             />
           </RadioButtonWrapper>
-          <RadioButtonWrapper checked={checked === false}>
+          <RadioButtonWrapper checked={checked === false} error={error}>
             <RadioButton
               id={`${id}-1`}
               label="No"
               checked={checked === false}
               onChange={() => onChange(false)}
               value={`${id}-1`}
+              onBlur={onBlur}
             />
           </RadioButtonWrapper>
         </RadioButtonGroup>
@@ -62,16 +71,25 @@ const RadioButtonGroup = styled.div`
   flex-direction: row;
 `
 
+const getColor = (checked?: boolean, error?: boolean) => {
+  if (error) {
+    return `2px solid ${theme.colors.red7}`
+  } else if (checked) {
+    return `2px solid ${theme.colors.blue7}`
+  } else {
+    return 'none'
+  }
+}
+
 const RadioButtonWrapper = styled.div<FakeInput>`
   background-color: ${({ checked }: FakeInput) =>
     !checked && `${theme.colors.bg4}`};
-  border: ${({ checked }: FakeInput) =>
-    checked && `2px solid ${theme.colors.blue7}`};
+  border: ${({ checked, error }: FakeInput) => getColor(checked, error)};
   margin: 0px 10px;
   width: 139px;
   display: flex;
   align-items: center;
-  height: 49px;
+  height: 56px;
   padding-left: 12px;
   border-radius: 5px;
   font-weight: bold;
@@ -83,12 +101,18 @@ const ErrorBox = styled.span`
   font-size: 12px;
   color: ${theme.colors.red7};
 `
+
 const ConfirmationWrapper = styled(Box)`
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
 `
 
 const SectionHeadingText = styled(Text)`
   font-weight: bold;
-  padding-bottom: 8px;
+`
+
+const TextWrapper = styled.div`
+display: flex;
+flex-direction: column;
 `
