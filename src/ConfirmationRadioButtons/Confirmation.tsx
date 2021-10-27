@@ -13,6 +13,7 @@ type ConfirmationProps = {
   errorMsg?: string
   label: string
   onBlur?: (e: FormEvent<HTMLInputElement>) => void
+  sublabel?: string
 }
 
 export const Confirmation: FC<ConfirmationProps> = ({
@@ -23,10 +24,14 @@ export const Confirmation: FC<ConfirmationProps> = ({
   errorMsg = '',
   label,
   onBlur,
+  sublabel
 }: ConfirmationProps) => {
   return (
     <ConfirmationWrapper>
-      <SectionHeadingText tag="h3">{label}</SectionHeadingText>
+      <TextWrapper>
+        <SectionHeadingText tag="h3">{label}</SectionHeadingText>
+        {sublabel && <Text tag="p" typo="base-small" color={theme.colors.grey8}>{sublabel}</Text>}
+      </TextWrapper>
       <RadioButtonGroupWrapper>
         <RadioButtonGroup>
           <RadioButtonWrapper checked={checked === true} error={error}>
@@ -100,9 +105,14 @@ const ErrorBox = styled.span`
 const ConfirmationWrapper = styled(Box)`
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
 `
 
 const SectionHeadingText = styled(Text)`
   font-weight: bold;
-  padding-bottom: 8px;
+`
+
+const TextWrapper = styled.div`
+display: flex;
+flex-direction: column;
 `
