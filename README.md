@@ -48,7 +48,6 @@ $ npm install @mrshmllw/smores-react
 > $ git push origin --tags
 > ! check build is successful (green tick in GitHub Actions workflow) before next step
 
-
 2. Login to NPM.
 > $ npm login
 > enter your username and password
@@ -59,6 +58,56 @@ $ npm install @mrshmllw/smores-react
 > $ npm publish
 ```
 
+## Running Smores in dev mode 
+To run Smores in dev mode follow the below instructions on installing and using Yalc to link up your project repo with Smores.
+
+Install yalc on a global level by running
+
+```
+npm i yalc -g
+```
+This only needs to be installed once. 
+
+To run Smores in dev mode :
+
+1. Make desired changes in Smores repo
+2. On your Smores branch run
+
+```
+yalc publish
+```
+
+This will copy all the files that should be published into a remote NPM registry
+
+In your project repo (not Smores e.g customer portal/sign up flow etc) run 
+
+```
+yalc add @mrshmllw/smores-react
+```
+
+this will copy the current version from the store to your project’s .yalc folder and inject a file: .yalc/@mrshmllw/smores-react dependency into package.json
+
+Every time you make changes in Smores and you wan’t to see it in local
+
+run 
+
+```
+npm run build
+yalc publish —private
+```
+
+In your project folder to see your Smores changes run the below to see the changes
+
+
+```
+yalc update
+```
+
+When you’ve finished deving run the below in your project folder to remove all packages linked
+
+```
+yalc remove —all
+```
 
 ## List of Components
 

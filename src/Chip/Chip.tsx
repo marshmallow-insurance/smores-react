@@ -9,7 +9,7 @@ interface IButton {
   primary: boolean
   secondary: boolean
   icon: string
-  loading: boolean
+  $loading: boolean
   disabled: boolean
 }
 
@@ -37,7 +37,7 @@ export const Chip: FC<Props> = ({
       primary={primary}
       secondary={secondary}
       disabled={disabled || loading}
-      loading={loading}
+      $loading={loading}
       onClick={handleClick}
       icon={icon}
     >
@@ -60,7 +60,7 @@ export const Chip: FC<Props> = ({
 }
 
 const Container = styled.button<IButton>(
-  ({ primary, secondary, icon, loading, disabled }) => css`
+  ({ primary, secondary, icon, $loading, disabled }) => css`
     align-items: center;
     background-color: ${theme.colors.pink5};
     border-radius: 100px;
@@ -73,12 +73,12 @@ const Container = styled.button<IButton>(
     line-height: 100%;
     padding: 8px 16px 8px ${icon ? '8px' : '16px'};
     width: 98px;
-    cursor: ${disabled || loading ? 'not-allowed' : 'pointer'};
+    cursor: ${disabled || $loading ? 'not-allowed' : 'pointer'};
     opacity: ${disabled ? '0.5' : '1'};
     ${primary &&
     css`
       &:hover {
-        background-color: ${(disabled || loading) && theme.colors.pink6};
+        background-color: ${(disabled || $loading) && theme.colors.pink6};
       }
     `}
     ${secondary &&
@@ -86,7 +86,7 @@ const Container = styled.button<IButton>(
       color: ${theme.colors.pink5};
       background-color: ${theme.colors.white};
       &:hover {
-        background-color: ${!(disabled || loading) && theme.colors.bg2};
+        background-color: ${!(disabled || $loading) && theme.colors.bg2};
       }
     `};
   `,
