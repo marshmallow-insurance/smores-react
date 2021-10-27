@@ -67,6 +67,7 @@ export const Button: FC<Props> = ({
       {primary || secondary || tertiary ? (
         <Container
           id={id}
+          className={className}
           disabled={disabled || loading}
           onClick={handleClick}
           isLoading={loading}
