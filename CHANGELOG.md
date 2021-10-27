@@ -1,3 +1,8 @@
+## [1.2.18] - 2021-10-27
+### Added
+- Add optional sublabel to Confirmation component and center label on radio buttons
+- Add className prop to Message component and Button component for use with styled components
+- Make onClick prop on Button component optional for cases when using type="submit" prop in forms
 ## [1.2.17] - 2021-10-21
 ### Added
 - Visual updates to input components
@@ -167,6 +172,7 @@
 
 ### Changed
 - Updated gap and styles on Row component
+[1.2.17]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.17...v1.2.18
 [1.2.17]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.16...v1.2.17
 [1.2.16]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.15...v1.2.16
 [1.2.15]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.14...v1.2.15
