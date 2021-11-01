@@ -1,4 +1,4 @@
-import React, { FC, ChangeEvent, FormEvent } from 'react'
+import React, { FC, ChangeEvent, FormEvent, ReactElement } from 'react'
 import styled from 'styled-components'
 import { theme } from '../theme'
 import { Box } from '../Box'
@@ -10,7 +10,7 @@ export interface FakeInput {
 
 type RadioButtonProps = {
   id: string
-  label: string
+  label: string | ReactElement
   checked?: boolean
   value: string
   onChange: (event: ChangeEvent<HTMLInputElement>) => void

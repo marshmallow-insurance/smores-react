@@ -1,4 +1,4 @@
-import React, { FC, FormEvent } from 'react'
+import React, { FC, FormEvent, ReactElement } from 'react'
 import styled from 'styled-components'
 import { theme } from '../theme'
 import { Box } from '../Box'
@@ -13,7 +13,9 @@ type ConfirmationProps = {
   errorMsg?: string
   label: string
   onBlur?: (e: FormEvent<HTMLInputElement>) => void
-  sublabel?: string
+  sublabel?: string | ReactElement
+  yesLabel?: string | ReactElement
+  noLabel?: string | ReactElement
 }
 
 export const Confirmation: FC<ConfirmationProps> = ({
@@ -24,20 +26,26 @@ export const Confirmation: FC<ConfirmationProps> = ({
   errorMsg = '',
   label,
   onBlur,
-  sublabel
+  sublabel,
+  yesLabel = 'Yes',
+  noLabel = 'No',
 }: ConfirmationProps) => {
   return (
     <ConfirmationWrapper>
       <TextWrapper>
         <SectionHeadingText tag="h3">{label}</SectionHeadingText>
-        {sublabel && <Text tag="p" typo="base-small" color={theme.colors.grey8}>{sublabel}</Text>}
+        {sublabel && (
+          <Text tag="p" typo="base-small" color={theme.colors.grey8}>
+            {sublabel}
+          </Text>
+        )}
       </TextWrapper>
       <RadioButtonGroupWrapper>
         <RadioButtonGroup>
           <RadioButtonWrapper checked={checked === true} error={error}>
             <RadioButton
               id={id}
-              label="Yes"
+              label={yesLabel}
               checked={checked === true}
               onChange={() => onChange(true)}
               value={id}
@@ -47,7 +55,7 @@ export const Confirmation: FC<ConfirmationProps> = ({
           <RadioButtonWrapper checked={checked === false} error={error}>
             <RadioButton
               id={`${id}-1`}
-              label="No"
+              label={noLabel}
               checked={checked === false}
               onChange={() => onChange(false)}
               value={`${id}-1`}
@@ -104,7 +112,7 @@ const ErrorBox = styled.span`
 
 const ConfirmationWrapper = styled(Box)`
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
 `
 
@@ -113,6 +121,6 @@ const SectionHeadingText = styled(Text)`
 `
 
 const TextWrapper = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `
