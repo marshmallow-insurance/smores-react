@@ -2,14 +2,18 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-bdfBQB sc-jrAFXE TqqZw iLemMM"
+  class="sc-bdfBQB sc-jrAFXE TqqZw dcSdxC"
 >
-  <h3
-    class="sc-gsTEea loKXrH sc-kEjbQP iTVwxE"
-    color="blue7"
-    cursor="inherit"
-    title=""
-  />
+  <div
+    class="sc-iqHYmW cfbQUQ"
+  >
+    <h3
+      class="sc-gsTEea loKXrH sc-kEjbQP cTfPNg"
+      color="blue7"
+      cursor="inherit"
+      title=""
+    />
+  </div>
   <div
     class="sc-gKseQn hCfHHW"
   >

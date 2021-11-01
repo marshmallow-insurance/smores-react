@@ -1,3 +1,6 @@
+## [1.2.20] - 2021-11-01
+### Added
+- Added new Icons
 ## [1.2.19] - 2021-10-27
 ### Added
 - Transient prop for loading in Chip component
@@ -180,6 +183,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.2.20]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.19...v1.2.20
 [1.2.19]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.18...v1.2.19
 [1.2.18]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.17...v1.2.18
 [1.2.17]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.16...v1.2.17
