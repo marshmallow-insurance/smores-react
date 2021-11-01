@@ -10,6 +10,10 @@ export const Container = () => {
         <Icon render="aa" />
       </Wrapper>
       <Wrapper>
+        <span>accidental-damage</span>
+        <Icon render="accidental-damage" />
+      </Wrapper>
+      <Wrapper>
         <span>account-breakdown</span>
         <Icon render="account-breakdown" />
       </Wrapper>
@@ -20,6 +24,10 @@ export const Container = () => {
       <Wrapper>
         <span>activity-clipboard</span>
         <Icon render="activity-clipboard" />
+      </Wrapper>
+      <Wrapper>
+        <span>add-ons</span>
+        <Icon render="add-ons" />
       </Wrapper>
       <Wrapper>
         <span>add-ons</span>
@@ -230,6 +238,10 @@ export const Container = () => {
         <Icon render="facebook" />
       </Wrapper>
       <Wrapper>
+        <span>falling-items</span>
+        <Icon render="falling-items" />
+      </Wrapper>
+      <Wrapper>
         <span>fence</span>
         <Icon render="fence" />
       </Wrapper>
@@ -260,6 +272,10 @@ export const Container = () => {
       <Wrapper>
         <span>fraud-alert</span>
         <Icon render="fraud-alert" />
+      </Wrapper>
+      <Wrapper>
+        <span>freezer-food</span>
+        <Icon render="freezer-food" />
       </Wrapper>
       <Wrapper>
         <span>fuel</span>
@@ -304,6 +320,10 @@ export const Container = () => {
       <Wrapper>
         <span>help-verification</span>
         <Icon render="help-verification" />
+      </Wrapper>
+      <Wrapper>
+        <span>home-excluded</span>
+        <Icon render="home-excluded" />
       </Wrapper>
       <Wrapper>
         <span>house-tree</span>
@@ -352,6 +372,10 @@ export const Container = () => {
       <Wrapper>
         <span>laptop</span>
         <Icon render="laptop" />
+      </Wrapper>
+      <Wrapper>
+        <span>leaks</span>
+        <Icon render="leaks" />
       </Wrapper>
       <Wrapper>
         <span>lightbulb</span>
@@ -440,6 +464,10 @@ export const Container = () => {
       <Wrapper>
         <span>onfido</span>
         <Icon render="onfido" />
+      </Wrapper>
+      <Wrapper>
+        <span>out-of-home</span>
+        <Icon render="out-of-home" />
       </Wrapper>
       <Wrapper>
         <span>padlock-outline</span>
@@ -610,6 +638,18 @@ export const Container = () => {
         <Icon render="stripe" />
       </Wrapper>
       <Wrapper>
+        <span>storm</span>
+        <Icon render="storm" />
+      </Wrapper>
+      <Wrapper>
+        <span>subsidence</span>
+        <Icon render="subsidence" />
+      </Wrapper>
+      <Wrapper>
+        <span>theft</span>
+        <Icon render="theft" />
+      </Wrapper>
+      <Wrapper>
         <span>thumbs-up</span>
         <Icon render="thumbs-up" />
       </Wrapper>
@@ -620,6 +660,10 @@ export const Container = () => {
       <Wrapper>
         <span>tow-truck</span>
         <Icon render="tow-truck" />
+      </Wrapper>
+      <Wrapper>
+        <span>trace-and-access</span>
+        <Icon render="trace-and-access" />
       </Wrapper>
       <Wrapper>
         <span>training</span>
@@ -648,6 +692,10 @@ export const Container = () => {
       <Wrapper>
         <span>upload</span>
         <Icon render="upload" />
+      </Wrapper>
+      <Wrapper>
+        <span>vandalism</span>
+        <Icon render="vandalism" />
       </Wrapper>
       <Wrapper>
         <span>village</span>
