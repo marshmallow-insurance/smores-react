@@ -34,14 +34,18 @@ interface IWrapper {
 }
 
 const Wrapper = styled.div<IWrapper>`
-  display: inline-block;
   background-color: ${({ bgColor }) => theme.colors[bgColor]};
-  border: 1px solid ${({ borderColor }) => theme.colors[borderColor]};
-  padding: 2px 13px 4px 13px;
   border-radius: 8px;
+  border: 1px solid ${({ borderColor }) => theme.colors[borderColor]};
+  box-sizing: border-box;
+  display: inline-flex;
+  height: 23px;
+  padding: 5 12px;
 `
 
 const TagText = styled(Text)`
+  font-size: 10px;
   font-weight: 500;
+  line-height: 12px;
   text-transform: uppercase;
 `
