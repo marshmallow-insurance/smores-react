@@ -22,14 +22,21 @@ exports[`renders 1`] = `
 }
 
 .c0 {
-  display: inline-block;
-  border: 1px solid;
-  padding: 2px 13px 4px 13px;
   border-radius: 8px;
+  border: 1px solid;
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 23px;
+  padding: 5 12px;
 }
 
 .c2 {
+  font-size: 10px;
   font-weight: 500;
+  line-height: 12px;
   text-transform: uppercase;
 }
 
