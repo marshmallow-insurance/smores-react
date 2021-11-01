@@ -4,3 +4,4 @@ build
 README.md
 CHANGELOG.md
 src/assets/**/*
+.github
