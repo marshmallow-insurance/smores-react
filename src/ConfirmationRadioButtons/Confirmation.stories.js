@@ -43,3 +43,13 @@ WithSublabel.args = {
 const ContainerTemplate = (args) => <Container {...args} />
 
 export const WorkingExample = ContainerTemplate.bind({})
+
+export const WithCustomLabel = Template.bind({})
+
+WithCustomLabel.args = {
+  id: 'radioButton',
+  onChange: () => {},
+  checked: undefined,
+  label: 'Do you like marshmallows?',
+  yesLabel: 'Correct',
+}

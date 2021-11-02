@@ -1,3 +1,8 @@
+## [1.2.22] - 2021-11-02
+### Added
+- Add Divider component
+- Fix Confirmation styles and add optional labels
+
 ## [1.2.21] - 2021-11-01
 ### Added
 - Fixed Tag Styles
@@ -186,8 +191,8 @@
 
 ### Changed
 - Updated gap and styles on Row component
-
-[1.2.21]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.19...v1.2.21
+[1.2.22]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.21...v1.2.22
+[1.2.21]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.20...v1.2.21
 [1.2.20]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.19...v1.2.20
 [1.2.19]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.18...v1.2.19
 [1.2.18]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.17...v1.2.18

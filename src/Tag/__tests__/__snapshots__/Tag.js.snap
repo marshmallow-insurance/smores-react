@@ -30,7 +30,7 @@ exports[`renders 1`] = `
   display: -ms-inline-flexbox;
   display: inline-flex;
   height: 23px;
-  padding: 5 12px;
+  padding: 5px 12px;
 }
 
 .c2 {
