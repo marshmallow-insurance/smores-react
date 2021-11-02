@@ -40,7 +40,7 @@ const Wrapper = styled.div<IWrapper>`
   box-sizing: border-box;
   display: inline-flex;
   height: 23px;
-  padding: 5 12px;
+  padding: 5px 12px;
 `
 
 const TagText = styled(Text)`
