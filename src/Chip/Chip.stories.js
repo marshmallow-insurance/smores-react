@@ -36,6 +36,7 @@ export const SecondaryDisabled = Template.bind({})
 SecondaryDisabled.args = {
   secondary: true,
   disabled: true,
+  loading: false,
   children: 'Add',
   icon: 'plus',
 }
