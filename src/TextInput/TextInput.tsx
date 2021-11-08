@@ -164,7 +164,7 @@ const Input = styled.input<IInput>`
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
 
   &::placeholder {
-    color: ${theme.colors.grey8};
+    color: ${theme.colors.grey4};
   }
 `
 

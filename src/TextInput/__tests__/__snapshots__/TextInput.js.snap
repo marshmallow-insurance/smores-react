@@ -38,19 +38,19 @@ exports[`renders 1`] = `
 }
 
 .c2::-webkit-input-placeholder {
-  color: #636768;
+  color: #D2D2D2;
 }
 
 .c2::-moz-placeholder {
-  color: #636768;
+  color: #D2D2D2;
 }
 
 .c2:-ms-input-placeholder {
-  color: #636768;
+  color: #D2D2D2;
 }
 
 .c2::placeholder {
-  color: #636768;
+  color: #D2D2D2;
 }
 
 <div

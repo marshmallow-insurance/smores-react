@@ -133,6 +133,10 @@ const Field = styled.textarea<ITextarea>`
     border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
   }
 
+  &::placeholder {
+    color: ${theme.colors.grey4};
+  }
+
   ${({ value }) =>
     value &&
     value != '' &&

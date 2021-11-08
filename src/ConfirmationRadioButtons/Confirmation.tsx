@@ -29,45 +29,59 @@ export const Confirmation: FC<ConfirmationProps> = ({
   sublabel,
   yesLabel = 'Yes',
   noLabel = 'No',
-}: ConfirmationProps) => {
-  return (
-    <ConfirmationWrapper>
-      <TextWrapper>
-        <SectionHeadingText tag="h3">{label}</SectionHeadingText>
-        {sublabel && (
-          <Text tag="p" typo="base-small" color={theme.colors.grey8}>
-            {sublabel}
-          </Text>
-        )}
-      </TextWrapper>
-      <RadioButtonGroupWrapper>
-        <RadioButtonGroup>
-          <RadioButtonWrapper checked={checked === true} error={error}>
-            <RadioButton
-              id={id}
-              label={yesLabel}
-              checked={checked === true}
-              onChange={() => onChange(true)}
-              value={id}
-              onBlur={onBlur}
-            />
-          </RadioButtonWrapper>
-          <RadioButtonWrapper checked={checked === false} error={error}>
-            <RadioButton
-              id={`${id}-1`}
-              label={noLabel}
-              checked={checked === false}
-              onChange={() => onChange(false)}
-              value={`${id}-1`}
-              onBlur={onBlur}
-            />
-          </RadioButtonWrapper>
-        </RadioButtonGroup>
-        {error && <ErrorBox>{errorMsg}</ErrorBox>}
-      </RadioButtonGroupWrapper>
-    </ConfirmationWrapper>
-  )
-}
+}: ConfirmationProps) => (
+  <ConfirmationWrapper>
+    <TextWrapper>
+      <SectionHeadingText tag="h3">{label}</SectionHeadingText>
+      {sublabel && (
+        <Text tag="p" typo="base-small" color={theme.colors.grey8}>
+          {sublabel}
+        </Text>
+      )}
+    </TextWrapper>
+    <RadioButtonGroupWrapper>
+      <RadioButtonGroup>
+        <RadioButtonWrapper
+          checked={checked === true}
+          error={error}
+          onClick={() =>
+            checked === true ? onChange(undefined) : onChange(true)
+          }
+        >
+          <RadioButton
+            id={id}
+            label={yesLabel}
+            checked={checked === true}
+            onChange={() =>
+              checked === true ? onChange(undefined) : onChange(true)
+            }
+            value={id}
+            onBlur={onBlur}
+          />
+        </RadioButtonWrapper>
+        <RadioButtonWrapper
+          checked={checked === false}
+          error={error}
+          onClick={() =>
+            checked === false ? onChange(undefined) : onChange(false)
+          }
+        >
+          <RadioButton
+            id={`${id}-1`}
+            label={noLabel}
+            checked={checked === false}
+            onChange={() =>
+              checked === false ? onChange(undefined) : onChange(false)
+            }
+            value={`${id}-1`}
+            onBlur={onBlur}
+          />
+        </RadioButtonWrapper>
+      </RadioButtonGroup>
+      {error && <ErrorBox>{errorMsg}</ErrorBox>}
+    </RadioButtonGroupWrapper>
+  </ConfirmationWrapper>
+)
 
 const RadioButtonGroupWrapper = styled.div`
   display: flex;
@@ -101,6 +115,9 @@ const RadioButtonWrapper = styled.div<FakeInput>`
   padding-left: 12px;
   border-radius: 5px;
   font-weight: bold;
+  :hover {
+    cursor: pointer;
+  }
 `
 
 const ErrorBox = styled.span`
