@@ -42,7 +42,7 @@ export const Chip: FC<Props> = ({
       icon={icon}
     >
       {loading ? (
-        <Loader color="white" height="16" />
+        <Loader color={primary ? 'white' : 'pink5'} height="16" />
       ) : (
         <>
           {icon && (
