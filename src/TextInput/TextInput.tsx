@@ -15,7 +15,7 @@ type DefaultProps = {
   /** ref attribute for input */
   ref?: RefObject<HTMLInputElement>
   /** Input type for proper browser support */
-  type?: 'text' | 'email' | 'password'
+  type?: 'text' | 'email' | 'password' | 'time' | 'date'
   /** used to render outlined style */
   outlined?: boolean
   /** Placeholder */
