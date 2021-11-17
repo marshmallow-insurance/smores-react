@@ -15,6 +15,7 @@ Primary.args = {
   primary: true,
   children: 'Add',
   icon: 'plus',
+  'data-testid': 'works!',
 }
 
 export const Secondary = Template.bind({})

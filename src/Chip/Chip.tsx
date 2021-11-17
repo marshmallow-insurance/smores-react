@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
@@ -23,16 +23,22 @@ type Props = {
   loading?: boolean
 }
 
-export const Chip: FC<Props> = ({
-  children,
-  handleClick,
-  primary = false,
-  secondary = false,
-  disabled = false,
-  loading = false,
-  icon = '',
-}) => {
-  return (
+type ChipProps = Props & ButtonHTMLAttributes<HTMLButtonElement>
+
+export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
+  (
+    {
+      children,
+      handleClick,
+      primary = false,
+      secondary = false,
+      disabled = false,
+      loading = false,
+      icon = '',
+      ...props
+    },
+    ref,
+  ) => (
     <Container
       primary={primary}
       secondary={secondary}
@@ -40,6 +46,8 @@ export const Chip: FC<Props> = ({
       $loading={loading}
       onClick={handleClick}
       icon={icon}
+      {...props}
+      ref={ref}
     >
       {loading ? (
         <Loader color={primary ? 'white' : 'pink5'} height="16" />
@@ -56,8 +64,10 @@ export const Chip: FC<Props> = ({
         </>
       )}
     </Container>
-  )
-}
+  ),
+)
+
+Chip.displayName = 'Chip'
 
 const Container = styled.button<IButton>(
   ({ primary, secondary, icon, $loading, disabled }) => css`
