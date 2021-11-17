@@ -42,6 +42,8 @@ export const Primary = Template.bind({})
 
 Primary.args = {
   primary: true,
+  'data-testid': 'test',
+  'aria-label': 'primary-button',
 }
 
 export const PrimaryDisabled = Template.bind({})
@@ -49,6 +51,7 @@ export const PrimaryDisabled = Template.bind({})
 PrimaryDisabled.args = {
   primary: true,
   disabled: true,
+  'aria-disabled': 'true',
 }
 
 export const PrimaryLoading = Template.bind({})

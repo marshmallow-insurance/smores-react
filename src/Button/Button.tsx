@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
@@ -43,26 +43,35 @@ type Props = {
   type?: 'button' | 'submit' | 'reset'
 }
 
-export const Button: FC<Props> = ({
-  children,
-  id,
-  className = '',
-  color = 'blue',
-  block = false,
-  inverted = false,
-  disabled = false,
-  outlined = false,
-  handleClick,
-  loading = false,
-  primary = false,
-  secondary = false,
-  tertiary = false,
-  icon = '',
-  forcedWidth = '',
-  form,
-  type,
-}) => {
-  return (
+type ButtonProps = Props & ButtonHTMLAttributes<HTMLButtonElement>
+
+export const Button: FC<ButtonProps> = forwardRef<
+  HTMLButtonElement,
+  ButtonProps
+>(
+  (
+    {
+      children,
+      id,
+      className = '',
+      color = 'blue',
+      block = false,
+      inverted = false,
+      disabled = false,
+      outlined = false,
+      handleClick,
+      loading = false,
+      primary = false,
+      secondary = false,
+      tertiary = false,
+      icon = '',
+      forcedWidth = '',
+      form,
+      type,
+      ...props
+    },
+    ref,
+  ) => (
     <div>
       {primary || secondary || tertiary ? (
         <Container
@@ -80,6 +89,8 @@ export const Button: FC<Props> = ({
           forcedWidth={forcedWidth}
           {...(form ? { form } : {})}
           type={type}
+          {...props}
+          ref={ref}
         >
           {loading ? (
             <Loader
@@ -116,8 +127,10 @@ export const Button: FC<Props> = ({
         </LegacyButton>
       )}
     </div>
-  )
-}
+  ),
+)
+
+Button.displayName = 'Button'
 
 const Container = styled.button<IButton>(
   ({
