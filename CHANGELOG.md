@@ -1,3 +1,7 @@
+## [1.3.0] - 2021-11-17
+### Changed
+- Updated Button and Chip components to allow forwarding of ref and other default properties like data and aria attributes
+
 ## [1.2.24] - 2021-11-12
 ### Changed
 - Added time and date as types in text input
