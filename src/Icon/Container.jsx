@@ -114,6 +114,10 @@ export const Container = () => {
         <Icon render="cancel" />
       </Wrapper>
       <Wrapper>
+        <span>cancel-bw</span>
+        <Icon render="cancel-bw" />
+      </Wrapper>
+      <Wrapper>
         <span>car-mta</span>
         <Icon render="car-mta" />
       </Wrapper>
