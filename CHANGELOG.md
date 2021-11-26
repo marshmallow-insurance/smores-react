@@ -1,4 +1,4 @@
-## [1.3.1] - 2021-11-17
+## [1.4.0] - 2021-11-17
 ### Changed
 - Added new cancel-bw icon to Icon component
 
@@ -208,6 +208,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.4.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.24...v1.4.0
 [1.2.24]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.23...v1.2.24
 [1.2.23]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.22...v1.2.23
 [1.2.22]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.21...v1.2.22
