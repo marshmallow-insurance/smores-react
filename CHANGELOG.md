@@ -1,3 +1,7 @@
+## [1.3.1] - 2021-11-17
+### Changed
+- Added new cancel-bw icon to Icon component
+
 ## [1.3.0] - 2021-11-17
 ### Changed
 - Updated Button and Chip components to allow forwarding of ref and other default properties like data and aria attributes
