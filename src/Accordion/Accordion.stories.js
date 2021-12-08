@@ -13,3 +13,9 @@ const Template = (args) => (
 )
 
 export const Default = Template.bind({})
+
+export const SubTitle = Template.bind({})
+
+SubTitle.args = {
+  subTitle: 'subTitle',
+}

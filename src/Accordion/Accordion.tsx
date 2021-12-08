@@ -4,28 +4,43 @@ import styled, { css } from 'styled-components'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { theme } from '../theme'
+import { Text } from '../Text'
 
 type AccordionProps = {
   title: string
+  subTitle?: string
   borderTop?: boolean
+  fullBorder?: boolean
 }
 
 export const Accordion: FC<AccordionProps> = ({
   title,
   children,
   borderTop = false,
+  subTitle,
+  fullBorder = false,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Wrapper isOpen={isOpen} borderTop={borderTop}>
+    <Wrapper isOpen={isOpen} borderTop={borderTop} fullBorder={fullBorder}>
       <TopContainer
         flex
         alignItems="center"
         justifyContent="space-between"
         onClick={() => setIsOpen(!isOpen)}
+        fullBorder={fullBorder}
+        isOpen={isOpen}
       >
-        <Title>{title}</Title>
+        <TitleContainer>
+          <Title>{title}</Title>
+          {subTitle && (
+            <Text tag="label" color="grey8" typo="label">
+              {subTitle}
+            </Text>
+          )}
+        </TitleContainer>
+
         <CaretIcon
           render="caret"
           size={24}
@@ -41,21 +56,46 @@ export const Accordion: FC<AccordionProps> = ({
 
 interface IAccordion {
   isOpen: boolean
-  borderTop: boolean
+  borderTop?: boolean
+  fullBorder?: boolean
 }
 
 const Wrapper = styled(Box)<IAccordion>(
-  ({ isOpen, borderTop }) => css`
+  ({ isOpen, borderTop, fullBorder }) => css`
     border-bottom: 1px solid ${theme.colors.grey3};
     padding-bottom: ${isOpen && '16px'};
     border-top: ${borderTop && `1px solid ${theme.colors.grey3}`};
+
+    ${fullBorder &&
+    css`
+      border: 1px solid ${theme.colors.grey3};
+      border-radius: 8px;
+      margin-bottom: 14px;
+      padding: 20px 15px;
+    `}
   `,
 )
 
-const TopContainer = styled(Box)`
-  padding: 15px 0;
-  cursor: pointer;
+const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `
+const TopContainer = styled(Box)<IAccordion>(
+  ({ isOpen, fullBorder }) => css`
+    padding: 15px 0px;
+    cursor: pointer;
+
+    ${fullBorder &&
+    css`
+      padding: 0px;
+    `}
+
+    ${isOpen &&
+    css`
+      margin-bottom: 14px;
+    `}
+  `,
+)
 
 const Title = styled.h2`
   color: ${theme.colors.blue7};

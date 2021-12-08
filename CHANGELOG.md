@@ -1,3 +1,6 @@
+## [1.5.0] - 2021-12-08
+### Changed
+- Added full border prop to accordion
 ## [1.4.0] - 2021-11-17
 ### Changed
 - Added new cancel-bw icon to Icon component
@@ -208,6 +211,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.5.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.24...v1.4.0
 [1.2.24]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.23...v1.2.24
 [1.2.23]: https://github.com/marshmallow-insurance/smores-react/compare/v1.2.22...v1.2.23
