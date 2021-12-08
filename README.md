@@ -92,7 +92,6 @@ Every time you make changes in Smores and you wan’t to see it in local
 run 
 
 ```
-npm run build
 yalc publish —private
 ```
 
