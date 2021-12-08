@@ -19,3 +19,9 @@ export const SubTitle = Template.bind({})
 SubTitle.args = {
   subTitle: 'subTitle',
 }
+
+export const FullBorder = Template.bind({})
+
+FullBorder.args = {
+  fullBorder: true,
+}
