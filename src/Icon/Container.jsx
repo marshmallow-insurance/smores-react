@@ -370,6 +370,10 @@ export const Container = () => {
         <Icon render="iphone" />
       </Wrapper>
       <Wrapper>
+        <span>jewellery</span>
+        <Icon render="jewellery" />
+      </Wrapper>
+      <Wrapper>
         <span>key</span>
         <Icon render="key" />
       </Wrapper>
@@ -468,6 +472,10 @@ export const Container = () => {
       <Wrapper>
         <span>onfido</span>
         <Icon render="onfido" />
+      </Wrapper>
+      <Wrapper>
+        <span>other</span>
+        <Icon render="other" />
       </Wrapper>
       <Wrapper>
         <span>out-of-home</span>
@@ -712,6 +720,10 @@ export const Container = () => {
       <Wrapper>
         <span>warning</span>
         <Icon render="warning" />
+      </Wrapper>
+      <Wrapper>
+        <span>watch</span>
+        <Icon render="watch" />
       </Wrapper>
       <Wrapper>
         <span>wave</span>
