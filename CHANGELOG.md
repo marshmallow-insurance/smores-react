@@ -1,3 +1,6 @@
+## [1.6.0] - 2021-12-15
+### Added
+- Added optional <optgroup> label to DropdownItem
 ## [1.5.1] - 2021-12-13
 ### Added
 - Added new icons
