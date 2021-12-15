@@ -1,41 +1,86 @@
-import React from 'react';
-import {render} from '@testing-library/react';
-import 'jest-styled-components';
+import React from 'react'
+import { render } from '@testing-library/react'
+import 'jest-styled-components'
 
-import {Dropdown} from '../Dropdown';
+import { Dropdown } from '../Dropdown'
 
 const days = [
   {
     label: 'Monday',
-    value: 'Monday',
+    value: 'MONDAY',
   },
   {
     label: 'Tuesday',
-    value: 'Tuesday',
+    value: 'TUESDAY',
   },
   {
     label: 'Wednesday',
-    value: 'Wednesday',
+    value: 'WEDNESDAY',
   },
   {
     label: 'Thursday',
-    value: 'Thursday',
+    value: 'THURSDAY',
   },
   {
     label: 'Friday',
-    value: 'Friday',
+    value: 'FRIDAY',
   },
   {
     label: 'Saturday',
-    value: 'Saturday',
+    value: 'SATURDAY',
   },
   {
     label: 'Sunday',
-    value: 'Sunday',
+    value: 'SUNDAY',
   },
-];
+]
 
-test('renders', () => {
-  const {container} = render(<Dropdown list={days} />);
-  expect(container.firstChild).toMatchSnapshot();
-});
+const daysWithGroups = [
+  {
+    label: 'Monday',
+    value: 'MONDAY',
+    optionGroupLabel: 'Weekday',
+  },
+  {
+    label: 'Tuesday',
+    value: 'TUESDAY',
+    optionGroupLabel: 'Weekday',
+  },
+  {
+    label: 'Wednesday',
+    value: 'WEDNESDAY',
+    optionGroupLabel: 'Weekday',
+  },
+  {
+    label: 'Thursday',
+    value: 'THURSDAY',
+    optionGroupLabel: 'Weekday',
+  },
+  {
+    label: 'Friday',
+    value: 'FRIDAY',
+    optionGroupLabel: 'Weekday',
+  },
+  {
+    label: 'Saturday',
+    value: 'SATURDAY',
+    optionGroupLabel: 'Weekend',
+  },
+  {
+    label: 'Sunday',
+    value: 'SUNDAY',
+    optionGroupLabel: 'Weekend',
+  },
+]
+
+test('rendersDropdown', () => {
+  const { container } = render(<Dropdown list={days} />)
+
+  expect(container.firstChild).toMatchSnapshot()
+})
+
+test('rendersDropdownWithGroups', () => {
+  const { container } = render(<Dropdown list={daysWithGroups} />)
+
+  expect(container.firstChild).toMatchSnapshot()
+})
