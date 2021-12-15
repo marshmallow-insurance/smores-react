@@ -8,6 +8,7 @@ import { Box } from '../Box'
 import { theme } from '../theme'
 
 export type DropdownItem = {
+  optionGroupLabel?: string
   label: string
   value: string
 }
@@ -84,6 +85,10 @@ export const Dropdown: FC<Props> = ({
   onBlur,
 }) => {
   const [key, setKey] = useState('')
+  const [hasOptGroups, setHasOptGroups] = useState(false)
+  const [dropdownItemsGroups, setDropdownItemsGroups] = useState(
+    [] as DropdownItem[][],
+  )
 
   useEffect(() => {
     if (list.length === 1) {
@@ -92,6 +97,20 @@ export const Dropdown: FC<Props> = ({
 
     // update 'key' props in order to deselect the active option if a new list passed
     list.length > 1 ? setKey(`${list[0].value}-${list.length}`) : ''
+
+    setHasOptGroups(!!list.find((item) => !!item.optionGroupLabel))
+
+    const itemsPerGroupLabel = new Map<string, DropdownItem[]>()
+
+    list.forEach((item) => {
+      const key = item.optionGroupLabel ?? ''
+      const group = itemsPerGroupLabel.get(key) ?? []
+
+      group.push(item)
+      itemsPerGroupLabel.set(key, group)
+    })
+
+    setDropdownItemsGroups(Array.from(itemsPerGroupLabel.values()))
   }, [list])
 
   return (
@@ -129,15 +148,38 @@ export const Dropdown: FC<Props> = ({
           name={name}
           value={value}
         >
-          <option value="" hidden>
-            {placeholder}
-          </option>
-
-          {list.map((el, i) => (
-            <option key={i} value={el.value}>
-              {el.label}
+          {hasOptGroups ? (
+            <optgroup label={placeholder}>
+              <option value="" hidden>
+                {placeholder}
+              </option>
+            </optgroup>
+          ) : (
+            <option value="" hidden>
+              {placeholder}
             </option>
-          ))}
+          )}
+
+          {dropdownItemsGroups.map((groupItems, i) =>
+            hasOptGroups ? (
+              <optgroup
+                key={i}
+                label={groupItems[0].optionGroupLabel ?? 'Other'}
+              >
+                {groupItems.map((el, j) => (
+                  <option key={`${i}-${j}`} value={el.value}>
+                    {el.label}
+                  </option>
+                ))}
+              </optgroup>
+            ) : (
+              groupItems.map((el, j) => (
+                <option key={j} value={el.value}>
+                  {el.label}
+                </option>
+              ))
+            ),
+          )}
         </Select>
 
         <Caret outlined={outlined}>
