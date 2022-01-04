@@ -1,3 +1,6 @@
+## [1.6.1] - 2021-12-15
+### Changed
+- Fix error state on outlined Text Input component
 ## [1.6.0] - 2021-12-15
 ### Added
 - Added optional <optgroup> label to DropdownItem
@@ -217,6 +220,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.6.1]: https://github.com/marshmallow-insurance/smores-react/compare/v1.6.0...v1.6.1
 [1.6.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.5.1...v1.6.0
 [1.5.1]: https://github.com/marshmallow-insurance/smores-react/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.4.0...v1.5.0
