@@ -71,6 +71,21 @@ WithOutline.args = {
   onBlur: () => {},
 }
 
+export const WithOutlineError = Template.bind({})
+
+WithOutlineError.args = {
+  id: 'textInput',
+  name: 'textInput',
+  outlined: true,
+  label: 'with outline',
+  placeholder: 'Placeholder text',
+  onChange: () => {},
+  onInputChange: () => {},
+  onBlur: () => {},
+  error: true,
+  errorMsg: 'Oh boy, something went wrong!',
+}
+
 export const WithLabel = Template.bind({})
 
 WithLabel.args = {
