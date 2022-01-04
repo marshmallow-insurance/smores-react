@@ -137,10 +137,10 @@ const Content = styled.div<IInputOutline>`
     border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
   }
 
-  ${({ outlined }) =>
+  ${({ outlined, error }) =>
     outlined &&
     `
-      border: 2px solid ${theme.colors.grey4};
+      border: 2px solid ${error ? theme.colors.red7 : theme.colors.grey4};
       border-radius: 8px;
       padding: 16px 12px;
       height: auto;
