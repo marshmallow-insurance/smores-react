@@ -167,7 +167,7 @@ exports[`renders 1`] = `
   >
     <p
       class="c3"
-      color="blue7"
+      color="coreSecondary"
       cursor="inherit"
       title=""
     >
@@ -179,7 +179,7 @@ exports[`renders 1`] = `
   >
     <p
       class="c5"
-      color="blue7"
+      color="coreSecondary"
       cursor="inherit"
       title=""
     >
@@ -191,7 +191,7 @@ exports[`renders 1`] = `
   >
     <p
       class="c5"
-      color="blue7"
+      color="coreSecondary"
       cursor="inherit"
       title=""
     >
@@ -203,7 +203,7 @@ exports[`renders 1`] = `
   >
     <p
       class="c5"
-      color="blue7"
+      color="coreSecondary"
       cursor="inherit"
       title=""
     >
@@ -215,7 +215,7 @@ exports[`renders 1`] = `
   >
     <p
       class="c5"
-      color="blue7"
+      color="coreSecondary"
       cursor="inherit"
       title=""
     >
@@ -227,7 +227,7 @@ exports[`renders 1`] = `
   >
     <p
       class="c7"
-      color="blue7"
+      color="coreSecondary"
       cursor="inherit"
       title=""
     >
@@ -239,7 +239,7 @@ exports[`renders 1`] = `
   >
     <p
       class="c5"
-      color="blue7"
+      color="coreSecondary"
       cursor="inherit"
       title=""
     >

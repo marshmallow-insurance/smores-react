@@ -78,7 +78,7 @@ exports[`default renders correctly 1`] = `
     >
       <h1
         class="c1"
-        color="blue7"
+        color="coreSecondary"
         cursor="inherit"
         title=""
       >
