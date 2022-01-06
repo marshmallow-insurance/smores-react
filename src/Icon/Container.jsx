@@ -10,6 +10,10 @@ export const Container = () => {
         <Icon render="aa" />
       </Wrapper>
       <Wrapper>
+        <span>aa-inverted</span>
+        <Icon render="aa-inverted" />
+      </Wrapper>
+      <Wrapper>
         <span>accidental-damage</span>
         <Icon render="accidental-damage" />
       </Wrapper>
