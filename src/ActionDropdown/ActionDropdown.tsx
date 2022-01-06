@@ -39,16 +39,16 @@ export const ActionDropdown: FC<Props> = ({
       onClick={() => setOpen((currentOpen) => !currentOpen)}
     >
       {label && (
-        <Text tag="label" color="grey4" typo="label">
+        <Text tag="label" color="subtext" typo="label">
           {label}
         </Text>
       )}
 
-      <Label text={value.textColor ?? 'blue7'} bg={value.bgColor ?? 'grey2'}>
+      <Label text={value.textColor ?? 'secondary'} bg={value.bgColor ?? 'subtext'}>
         <SelectedOption>{value.label}</SelectedOption>
         <Icon
           render="caret"
-          color={value.textColor ?? 'grey7'}
+          color={value.textColor ?? 'subtext'}
           size={24}
           rotate={open ? 180 : 0}
         />

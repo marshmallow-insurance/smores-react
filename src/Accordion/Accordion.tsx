@@ -44,7 +44,7 @@ export const Accordion: FC<AccordionProps> = ({
         <CaretIcon
           render="caret"
           size={24}
-          color="coreSecondary"
+          color="secondary"
           isOpen={isOpen}
           borderTop={borderTop}
         />
@@ -98,7 +98,7 @@ const TopContainer = styled(Box)<IAccordion>(
 )
 
 const Title = styled.h2`
-  color: ${theme.colors.coreSecondary};
+  color: ${theme.colors.secondary};
   font-size: 16px;
   line-height: 21px;
   font-weight: ${theme.font.weight.medium};

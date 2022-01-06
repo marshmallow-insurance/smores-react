@@ -2,9 +2,9 @@ const colors = {
   // NEW BRAND COLORS
 
   // Core brand
-  corePrimary: '#FF4E75',
-  coreSecondary: '#112035',
-  coreWhite: '#FFFFFF',
+  primary: '#FF4E75',
+  secondary: '#112035',
+  white: '#FFFFFF',
 
   // Brand background
   bgPrimary: '#ECD2D0',
@@ -35,7 +35,7 @@ const colors = {
 
   // OLD BRAND COLORS
   black: '#000000',
-  white: '#ffffff',
+  // white: '#ffffff',
 
   // Background
   bg2: '#F9F9F9',
