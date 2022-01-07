@@ -18,6 +18,12 @@ export const WithError = Template.bind({})
 WithError.args = {
   children: 'I disagree',
   error: true,
-  errorMsg: 'Something has gone wrong'
 }
 
+export const WithErrorLabel = Template.bind({})
+
+WithErrorLabel.args = {
+  children: 'I disagree',
+  error: true,
+  errorMsg: 'Something has gone wrong',
+}
