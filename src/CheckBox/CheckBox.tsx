@@ -9,25 +9,30 @@ type Props = {
   checked: boolean
   children: ReactNode
   toggle: () => void
+  error?: boolean
+  errorMsg?: string
 }
 
-export const CheckBox: FC<Props> = ({ id, checked, children, toggle }) => (
-  <BoxContainer id={id}>
-    <Text tag="span" typo="base">
-      {children}
-    </Text>
+export const CheckBox: FC<Props> = ({ id, checked, children, toggle, error, errorMsg }) => (
+  <>
+    <BoxContainer id={id}>
+      <Text tag="span" typo="base" color={error ? 'red7' : 'blue7'}>
+        {children}
+      </Text>
 
-    <input type="checkbox" checked={checked} onChange={toggle} />
-    <Checkmark />
-  </BoxContainer>
+      <input type="checkbox" checked={checked} onChange={toggle} />
+      <Checkmark error={error} />
+    </BoxContainer>
+    {error && errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
+  </>
 )
 
-const Checkmark = styled.span`
+const Checkmark = styled.span<{ error?: boolean }>`
   position: absolute;
   left: 0;
   width: 24px;
   height: 24px;
-  border: solid 1px ${theme.colors.blue5};
+  border: ${({ error }) => error ? `solid 1px ${theme.colors.red7}` : `solid 1px ${theme.colors.blue5}`} ;
   box-sizing: border-box;
   border-radius: 1px;
 
@@ -80,4 +85,10 @@ const BoxContainer = styled.label`
   @media (min-width: 768px) {
     padding-left: 32px;
   }
+`
+
+const ErrorBox = styled.span`
+  padding-top: 8px;
+  font-size: 12px;
+  color: ${theme.colors.red7};
 `
