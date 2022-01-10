@@ -16,7 +16,7 @@ exports[`renders - checked 1`] = `
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   margin-right: 10px;
   border: 8px solid #55D6AA;
 }
@@ -89,7 +89,7 @@ exports[`renders - unchecked 1`] = `
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   margin-right: 10px;
   border: 1px solid #D2D2D2;
 }

@@ -49,7 +49,7 @@ exports[`rendersDropdown 1`] = `
   width: 100%;
   height: 32px;
   padding-right: 24px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border: none;
   border-bottom: 1px solid #D2D2D2;
   border-radius: 0;
@@ -214,7 +214,7 @@ exports[`rendersDropdownWithGroups 1`] = `
   width: 100%;
   height: 32px;
   padding-right: 24px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border: none;
   border-bottom: 1px solid #D2D2D2;
   border-radius: 0;

@@ -6,7 +6,7 @@ exports[`renders 1`] = `
 >
   <span
     class="sc-bdvvtL gCEbaO"
-    color="coreSecondary"
+    color="secondary"
     cursor="inherit"
     title=""
   />

@@ -54,7 +54,7 @@ export const Button: FC<ButtonProps> = forwardRef<
       children,
       id,
       className = '',
-      color = 'blue',
+      color = 'secondary',
       block = false,
       inverted = false,
       disabled = false,
@@ -94,7 +94,7 @@ export const Button: FC<ButtonProps> = forwardRef<
         >
           {loading ? (
             <Loader
-              color={primary ? 'white' : `${theme.colors.blue7}`}
+              color={primary ? 'white' : `${theme.colors.secondary}`}
               height="16"
             />
           ) : (
@@ -103,7 +103,7 @@ export const Button: FC<ButtonProps> = forwardRef<
                 <IconContainer
                   render={icon}
                   size={24}
-                  color={primary ? 'white' : 'blue7'}
+                  color={primary ? 'white' : 'secondary'}
                 />
               )}
               <ChildrenContainer>{children}</ChildrenContainer>
@@ -142,10 +142,10 @@ const Container = styled.button<IButton>(
     icon,
     forcedWidth,
   }) => css`
-    background-color: ${theme.colors.pink5};
+    background-color: ${theme.colors.primary};
     border: 2px solid;
     box-shadow: none;
-    color: ${theme.colors.blue7};
+    color: ${theme.colors.secondary};
     padding: 16px 20px;
     outline: none;
     border-radius: 8px;
@@ -162,40 +162,41 @@ const Container = styled.button<IButton>(
     ${primary &&
     css`
       color: ${theme.colors.white};
-      border-color: ${theme.colors.pink5};
+      border-color: ${theme.colors.primary};
 
       &:hover {
-        background-color: ${!(disabled || isLoading) && theme.colors.pink6};
+        background-color: ${!(disabled || isLoading) && theme.colors.primary};
       }
       &:active {
-        background-color: ${!(disabled || isLoading) && theme.colors.pink7};
+        background-color: ${!(disabled || isLoading) && theme.colors.primary};
       }
     `}
     ${secondary &&
     css`
       background-color: ${theme.colors.white};
-      border-color: ${theme.colors.blue7};
+      border-color: ${theme.colors.secondary};
 
       &:hover {
-        background-color: ${!(disabled || isLoading) && theme.colors.bg2};
+        background-color: ${!(disabled || isLoading) &&
+        theme.colors.background};
         border: ${!(disabled || isLoading) &&
-        `2px solid ${theme.colors.blue6}`};
+        `2px solid ${theme.colors.secondary}`};
       }
       &:active {
-        background-color: ${theme.colors.bg2};
-        border: 2px solid ${theme.colors.blue7};
+        background-color: ${theme.colors.background};
+        border: 2px solid ${theme.colors.secondary};
       }
     `}
   ${tertiary &&
     css`
-      background-color: ${theme.colors.bg4};
-      border-color: ${theme.colors.bg4};
+      background-color: ${theme.colors.background};
+      border-color: ${theme.colors.background};
 
       &:hover {
-        background-color: ${!(disabled || isLoading) && theme.colors.grey2};
+        background-color: ${!(disabled || isLoading) && theme.colors.subtext};
       }
       &:active {
-        background-color: ${theme.colors.bg4};
+        background-color: ${theme.colors.background};
       }
     `}
   `,

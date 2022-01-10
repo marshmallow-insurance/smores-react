@@ -38,7 +38,7 @@ exports[`disabled 1`] = `
 .c3 {
   font-size: 16px;
   line-height: 20px;
-  background: #ffffff;
+  background: #FFFFFF;
   border: 2px solid #D2D2D2;
   box-sizing: border-box;
   border-radius: 8px;
@@ -133,7 +133,7 @@ exports[`renders 1`] = `
 .c3 {
   font-size: 16px;
   line-height: 20px;
-  background: #ffffff;
+  background: #FFFFFF;
   border: 2px solid #D2D2D2;
   box-sizing: border-box;
   border-radius: 8px;
@@ -227,7 +227,7 @@ exports[`renders with error 1`] = `
 .c3 {
   font-size: 16px;
   line-height: 20px;
-  background: #ffffff;
+  background: #FFFFFF;
   border: 2px solid #D2D2D2;
   box-sizing: border-box;
   border-radius: 8px;

@@ -54,7 +54,7 @@ exports[`renders 1`] = `
 }
 
 .c1 {
-  color: #ffffff;
+  color: #FFFFFF;
   background-color: #EA9C56;
   position: relative;
   width: 100%;
@@ -106,7 +106,7 @@ exports[`renders 1`] = `
   margin-top: 8px;
   display: none;
   max-height: 48px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border: 1px solid #E5E5E5;
   overflow-y: hidden;
   z-index: 2;
@@ -140,7 +140,7 @@ exports[`renders 1`] = `
       >
         <path
           d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
-          fill="#ffffff"
+          fill="#FFFFFF"
         />
       </svg>
     </span>

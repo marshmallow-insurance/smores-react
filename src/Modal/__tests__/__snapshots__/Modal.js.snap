@@ -96,7 +96,7 @@ exports[`renders 1`] = `
 }
 
 .c2 {
-  background: #ffffff;
+  background: #FFFFFF;
   z-index: 999;
   border: 1px solid #E5E5E5;
   box-sizing: border-box;
@@ -168,7 +168,7 @@ exports[`renders 1`] = `
       >
         <h2
           class="c6"
-          color="coreSecondary"
+          color="secondary"
           cursor="inherit"
           title=""
         />

@@ -12,13 +12,13 @@ const Template = (args) => <Button {...args}>Get started</Button>
 export const Default = Template.bind({})
 
 Default.args = {
-  color: 'blue',
+  color: 'secondary',
 }
 
 export const Coloured = Template.bind({})
 
 Coloured.args = {
-  color: 'green',
+  color: 'success',
 }
 
 export const Inverted = Template.bind({})

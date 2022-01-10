@@ -25,7 +25,7 @@ exports[`renders 1`] = `
 
 <p
   class="c0"
-  color="coreSecondary"
+  color="secondary"
   cursor="inherit"
   title=""
 >

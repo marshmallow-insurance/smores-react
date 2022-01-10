@@ -37,7 +37,7 @@ exports[`renders 1`] = `
   width: 24px;
   left: 3px;
   bottom: 3px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   -webkit-transition: 0.2s -webkit-transform;
   -webkit-transition: 0.2s transform;
   transition: 0.2s transform;
