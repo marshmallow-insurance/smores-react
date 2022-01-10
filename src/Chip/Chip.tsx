@@ -50,14 +50,14 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
       ref={ref}
     >
       {loading ? (
-        <Loader color={primary ? 'white' : 'pink5'} height="16" />
+        <Loader color={primary ? 'white' : 'primary'} height="16" />
       ) : (
         <>
           {icon && (
             <IconComponent
               render={icon}
               size={20}
-              color={primary ? 'white' : 'pink5'}
+              color={primary ? 'white' : 'primary'}
             />
           )}
           <ChildrenContainer>{children}</ChildrenContainer>
@@ -72,10 +72,10 @@ Chip.displayName = 'Chip'
 const Container = styled.button<IButton>(
   ({ primary, secondary, icon, $loading, disabled }) => css`
     align-items: center;
-    background-color: ${theme.colors.pink5};
+    background-color: ${theme.colors.primary};
     border-radius: 100px;
     border-shadow: none;
-    border: 2px solid ${theme.colors.pink5};
+    border: 2px solid ${theme.colors.primary};
     color: ${theme.colors.white};
     display: flex;
     font-size: 16px;
@@ -88,15 +88,15 @@ const Container = styled.button<IButton>(
     ${primary &&
     css`
       &:hover {
-        background-color: ${(disabled || $loading) && theme.colors.pink6};
+        background-color: ${(disabled || $loading) && theme.colors.primary};
       }
     `}
     ${secondary &&
     css`
-      color: ${theme.colors.pink5};
+      color: ${theme.colors.primary};
       background-color: ${theme.colors.white};
       &:hover {
-        background-color: ${!(disabled || $loading) && theme.colors.bg2};
+        background-color: ${!(disabled || $loading) && theme.colors.background};
       }
     `};
   `,
