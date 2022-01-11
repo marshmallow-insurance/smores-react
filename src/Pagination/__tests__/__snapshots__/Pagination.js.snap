@@ -110,7 +110,7 @@ exports[`renders 1`] = `
 }
 
 .c2 {
-  background: #F9F9F9;
+  background: #F4F4F4;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
