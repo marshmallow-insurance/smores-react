@@ -32,7 +32,7 @@ export const Icon: FC<Props> = ({
   className = '',
   render,
   size = 24,
-  color = 'blue7',
+  color = 'secondary',
   rotate = 0,
   mt = '0',
   mr = '0',
