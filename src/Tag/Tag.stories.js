@@ -12,8 +12,8 @@ export const Default = Template.bind({})
 
 Default.args = {
   label: 'This is a tag',
-  bgColor: 'green5',
-  borderColor: 'green7',
+  bgColor: 'success',
+  borderColor: 'success',
   color: 'white',
 }
 
