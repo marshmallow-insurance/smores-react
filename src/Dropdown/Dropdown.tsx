@@ -49,6 +49,8 @@ type DefaultProps = {
   outlined?: boolean
   /** onBlur listener */
   onBlur?: (e: FormEvent<HTMLSelectElement>) => void
+  /** required item */
+  required?: boolean
 }
 
 /** on change or on input required */
@@ -83,6 +85,7 @@ export const Dropdown: FC<Props> = ({
   errorMsg = '',
   onInputChange,
   onBlur,
+  required = true,
 }) => {
   const [key, setKey] = useState('')
   const [hasOptGroups, setHasOptGroups] = useState(false)
@@ -138,7 +141,7 @@ export const Dropdown: FC<Props> = ({
             onSelect && onSelect(e.currentTarget.value)
             onInputChange && onInputChange(e)
           }}
-          required
+          required={required}
           outlined={outlined}
           error={error}
           ref={ref}

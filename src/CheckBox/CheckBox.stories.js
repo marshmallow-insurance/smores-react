@@ -7,6 +7,23 @@ export default {
   component: CheckBox,
 }
 
-const Template = (args) => <CheckBoxContainer {...args} />
+const ContainerTemplate = (args) => <CheckBoxContainer {...args} />
 
-export const Default = Template.bind({})
+export const Default = ContainerTemplate.bind({})
+
+const Template = (args) => <CheckBox {...args} />
+
+export const WithError = Template.bind({})
+
+WithError.args = {
+  children: 'I disagree',
+  error: true,
+}
+
+export const WithErrorLabel = Template.bind({})
+
+WithErrorLabel.args = {
+  children: 'I disagree',
+  error: true,
+  errorMsg: 'Something has gone wrong',
+}
