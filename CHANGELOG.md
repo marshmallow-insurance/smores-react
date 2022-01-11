@@ -1,3 +1,7 @@
+## [1.8.1] - 2022-01-11
+### Changed
+- Updated AA icon to follow new brand guidelines
+
 ## [1.8.0] - 2022-01-07
 ### Added
 - Add error state and optional message to checkbox component
@@ -230,6 +234,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[1.8.1]: https://github.com/marshmallow-insurance/smores-react/compare/v1.8.0...v1.8.1
 [1.8.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.7.1...v1.8.0
 [1.7.1]: https://github.com/marshmallow-insurance/smores-react/compare/v1.7.0...v1.7.1
 [1.7.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.6.1...v1.7.0
