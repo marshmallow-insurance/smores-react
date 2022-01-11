@@ -72,7 +72,7 @@ const Wrapper = styled.div<IWrapper>(
       ? backgroundColor
       : type === 'warning'
       ? theme.colors.white
-      : theme.colors.secondary};
+      : theme.colors.background};
     box-sizing: border-box;
     ${type === 'warning'
       ? `border: 1px solid ${theme.colors.primary};`
