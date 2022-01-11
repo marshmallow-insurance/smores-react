@@ -73,7 +73,7 @@ export const Textarea: FC<Props> = ({
   <Box flex direction="column" className={className}>
     {label && (
       <Box mb="4px">
-        <Text tag="label" color="grey8" typo="label">
+        <Text tag="label" color="subtext" typo="label">
           {label}
         </Text>
       </Box>
@@ -115,34 +115,36 @@ const Field = styled.textarea<ITextarea>`
   font-size: 16px;
   line-height: 20px;
   background: ${theme.colors.white};
-  border: 2px solid ${theme.colors.grey4};
+  border: 2px solid ${theme.colors.outline};
   box-sizing: border-box;
   border-radius: 8px;
   width: 100%;
   padding: 16px;
-  color: ${theme.colors.blue7};
+  color: ${theme.colors.secondary};
   resize: ${({ resize }) => resize};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'text')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
-  border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey4'}`]};
+  border-color: ${({ error }) =>
+    theme.colors[`${error ? 'error' : 'outline'}`]};
   outline: none;
 
   &:hover,
   &:focus,
   &:focus-visible {
-    border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
+    border-color: ${({ error }) =>
+      theme.colors[`${error ? 'error' : 'outline'}`]};
   }
 
   ${({ value }) =>
     value &&
     value != '' &&
     `
-      border-color: ${theme.colors.grey6};
+      border-color: ${theme.colors.outline};
     `}
 `
 
 const ErrorBox = styled.span`
   margin-top: 7px;
   font-size: 12px;
-  color: ${theme.colors.red7};
+  color: ${theme.colors.error};
 `
