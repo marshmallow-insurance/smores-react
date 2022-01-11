@@ -176,7 +176,7 @@ const Header = styled(Box)`
   color: ${theme.colors.blue7};
   user-select: none;
   padding: 16px;
-  border-bottom: 1px solid ${theme.colors.grey3};
+  border-bottom: 1px solid ${theme.colors.outline};
 
   span {
     font-size: 16px;
@@ -197,7 +197,7 @@ const Caret = styled(Icon)`
 `
 
 const Circle = styled.button`
-  background-color: ${theme.colors.blue7};
+  background-color: ${theme.colors.secondary};
   height: 32px;
   width: 32px;
   border-radius: 50%;

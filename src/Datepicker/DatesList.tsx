@@ -58,19 +58,19 @@ const ListItem = styled.li<IListItem>`
   font-weight: ${theme.font.weight.medium};
   font-size: 14px;
   line-height: 15px;
-  color: ${theme.colors.blue7};
+  color: ${theme.colors.secondary};
   background-color: transparent;
   pointer-events: ${({ disabled }) => (disabled ? 'none' : '')};
   opacity: ${({ disabled }) => (disabled ? '0.2' : '1')};
   cursor: pointer;
 
   &:hover:not(.active) {
-    background-color: ${theme.colors.grey2};
+    background-color: ${theme.colors.background};
   }
 
   &.active {
     color: ${theme.colors.white};
-    background-color: ${theme.colors.blue7};
+    background-color: ${theme.colors.secondary};
     cursor: default;
   }
 `
