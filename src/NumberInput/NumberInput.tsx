@@ -281,7 +281,7 @@ const Input = styled.input<IInput>`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
   &::placeholder {
-    color: ${theme.colors.grey4};
+    color: ${theme.colors.subtext};
   }
 
   /* Remove the spinner on Firefox and Webkit browsers */

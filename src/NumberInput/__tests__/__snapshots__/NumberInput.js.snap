@@ -136,19 +136,19 @@ exports[`renders - currency 1`] = `
 }
 
 .c6::-webkit-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6::-moz-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6:-ms-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6::placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6::-webkit-outer-spin-button,
@@ -354,19 +354,19 @@ exports[`renders - disabled 1`] = `
 }
 
 .c4::-webkit-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c4::-moz-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c4:-ms-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c4::placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c4::-webkit-outer-spin-button,
@@ -551,19 +551,19 @@ exports[`renders - error 1`] = `
 }
 
 .c6::-webkit-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6::-moz-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6:-ms-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6::placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6::-webkit-outer-spin-button,
@@ -780,19 +780,19 @@ exports[`renders - number 1`] = `
 }
 
 .c5::-webkit-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c5::-moz-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c5:-ms-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c5::placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c5::-webkit-outer-spin-button,
@@ -935,19 +935,19 @@ exports[`renders - tel 1`] = `
 }
 
 .c6::-webkit-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6::-moz-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6:-ms-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6::placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6::-webkit-outer-spin-button,
@@ -1104,19 +1104,19 @@ exports[`renders - with suffix 1`] = `
 }
 
 .c4::-webkit-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c4::-moz-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c4:-ms-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c4::placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c4::-webkit-outer-spin-button,
@@ -1298,19 +1298,19 @@ exports[`renders - with trailing icon 1`] = `
 }
 
 .c6::-webkit-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6::-moz-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6:-ms-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6::placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c6::-webkit-outer-spin-button,

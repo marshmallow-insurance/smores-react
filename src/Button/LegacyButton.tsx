@@ -88,7 +88,7 @@ const Container = styled.button<IButton>(
     css`
       background-color: transparent;
       border: 1px solid ${outlined ? theme.colors.outline : 'transparent'};
-      color: ${outlined ? theme.colors.blue7 : theme.colors[`${color}`]};
+      color: ${outlined ? theme.colors.secondary : theme.colors[`${color}`]};
 
       &:hover:not([disabled]) {
         background-color: ${theme.colors.background};
