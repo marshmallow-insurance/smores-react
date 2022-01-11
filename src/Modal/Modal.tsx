@@ -50,7 +50,7 @@ export const Modal: FC<ModalProps> = ({
       <Box flex alignItems="flex-start" justifyContent="space-between" mb="8px">
         <TitleElements flex direction="column">
           {icon !== '' && (
-            <Icon render={icon} size={42} color="blue7" mb="16px" />
+            <Icon render={icon} size={42} color="secondary" mb="16px" />
           )}
           <Text tag="h2" typo="header-small" align="left">
             {title}
@@ -58,7 +58,7 @@ export const Modal: FC<ModalProps> = ({
         </TitleElements>
         {cross && (
           <IconContainer onClick={handleClick}>
-            <Icon render="cross" color="blue7" size={32} />
+            <Icon render="cross" color="secondary" size={32} />
           </IconContainer>
         )}
       </Box>
@@ -84,7 +84,7 @@ const Wrapper = styled(Box)<IModalWrapper>(
 
 const Overlay = styled.div`
   position: fixed;
-  background: ${theme.colors.blue7};
+  background: ${theme.colors.secondary};
   opacity: 0.4;
   height: calc(100vh);
   width: 100%;
@@ -97,7 +97,7 @@ const Container = styled.div<IModalContainer>(
   ({ drawer, width }) => css`
     background: ${theme.colors.white};
     z-index: 999;
-    border: 1px solid ${theme.colors.grey3};
+    border: 1px solid ${theme.colors.outline};
     box-sizing: border-box;
     border-radius: 8px;
     padding: 24px;
@@ -124,12 +124,12 @@ const Container = styled.div<IModalContainer>(
 
 const IconContainer = styled.div`
   cursor: pointer;
-  background: ${theme.colors.bg2};
+  background: ${theme.colors.background};
   border-radius: 32px;
   margin-right: 8px;
 
   &:hover {
-    background: ${theme.colors.bg3};
+    background: ${theme.colors.background};
   }
 
   svg {

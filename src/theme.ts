@@ -106,8 +106,8 @@ const colors = {
   cyan8: '#09454F',
 
   // New Brand
-  'bg-beige': '#FAF3EE',
-  'bg-pink': '#ECD2D0',
+  'bg-beige': '#FAF3EE', // popcorn, new brand bgsecondary
+  'bg-pink': '#ECD2D0', // candyfloss, new brand bgprimary
   'bg-taupe': '#D9CFC9',
 }
 

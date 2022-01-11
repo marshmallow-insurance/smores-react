@@ -98,7 +98,7 @@ exports[`renders 1`] = `
 .c2 {
   background: #FFFFFF;
   z-index: 999;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #112035;
   box-sizing: border-box;
   border-radius: 8px;
   padding: 24px;
@@ -108,13 +108,13 @@ exports[`renders 1`] = `
 
 .c7 {
   cursor: pointer;
-  background: #F9F9F9;
+  background: #F4F4F4;
   border-radius: 32px;
   margin-right: 8px;
 }
 
 .c7:hover {
-  background: #F8F6F6;
+  background: #F4F4F4;
 }
 
 .c7 svg {
@@ -178,7 +178,7 @@ exports[`renders 1`] = `
       >
         <span
           class="c8"
-          color="blue7"
+          color="secondary"
           rotate="0"
           size="32"
         >

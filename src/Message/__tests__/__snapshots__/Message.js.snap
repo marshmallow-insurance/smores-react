@@ -40,7 +40,7 @@ exports[`default renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #ACB6D8;
+  background-color: #112035;
   box-sizing: border-box;
   border-radius: 8px;
   margin-bottom: 24px;
@@ -68,7 +68,7 @@ exports[`default renders correctly 1`] = `
     >
       <span
         class="c2"
-        color="blue7"
+        color="secondary"
         rotate="0"
         size="32"
       >
@@ -133,7 +133,7 @@ exports[`info renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #ACB6D8;
+  background-color: #112035;
   box-sizing: border-box;
   border-radius: 8px;
   margin-bottom: 24px;
@@ -161,7 +161,7 @@ exports[`info renders correctly 1`] = `
     >
       <span
         class="c2"
-        color="blue7"
+        color="secondary"
         rotate="0"
         size="32"
       >
@@ -228,7 +228,7 @@ exports[`warning renders correctly 1`] = `
   align-items: center;
   background-color: #FFFFFF;
   box-sizing: border-box;
-  border: 1px solid #AB1D20;
+  border: 1px solid #FF4E75;
   border-radius: 8px;
   margin-bottom: 24px;
   padding: 16px;
@@ -237,7 +237,7 @@ exports[`warning renders correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  color: #AB1D20;
+  color: #FF4E75;
   font-size: 16px;
 }
 
@@ -255,7 +255,7 @@ exports[`warning renders correctly 1`] = `
     >
       <span
         class="c2"
-        color="pink8"
+        color="primary"
         rotate="0"
         size="32"
       >
@@ -268,7 +268,7 @@ exports[`warning renders correctly 1`] = `
         >
           <path
             d="M12.001 6a1 1 0 00-1 1v6a1 1 0 102 0V7a1 1 0 00-1-1zm0 10.005a1.003 1.003 0 000 2.005 1 1 0 001-1V17a.995.995 0 00-1-.995zm11.42-.503l-7.64-13.316A4.31 4.31 0 0012.001 0a4.31 4.31 0 00-3.78 2.186L.581 15.502a4.288 4.288 0 00.01 4.327A4.313 4.313 0 004.36 22h15.28a4.313 4.313 0 003.771-2.171 4.288 4.288 0 00.01-4.327zm-1.739 3.324A2.333 2.333 0 0119.642 20H4.361a2.331 2.331 0 01-2.042-1.174 2.306 2.306 0 01-.005-2.328l7.64-13.316A2.332 2.332 0 0112.001 2c.856 0 1.621.441 2.046 1.182l7.64 13.316c.418.73.417 1.6-.005 2.328z"
-            fill="#AB1D20"
+            fill="#FF4E75"
           />
         </svg>
       </span>
