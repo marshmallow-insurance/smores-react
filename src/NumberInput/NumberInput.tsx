@@ -160,7 +160,7 @@ export const NumberInput: FC<NumberInputProps> = ({
     <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
       {label && (
         <Box mb={outlined ? '4px' : '0px'}>
-          <Text tag="label" color="grey8" typo="label">
+          <Text tag="label" color="subtext" typo="label">
             {label}&nbsp;{required && <Asterisk>*</Asterisk>}
           </Text>
         </Box>
@@ -173,7 +173,7 @@ export const NumberInput: FC<NumberInputProps> = ({
         value={value}
       >
         {prefix && (
-          <SymbolText tag="span" color="blue7">
+          <SymbolText tag="span" color="secondary">
             {prefix}
           </SymbolText>
         )}
@@ -194,7 +194,7 @@ export const NumberInput: FC<NumberInputProps> = ({
 
         {suffix && (
           <Box pr="8px">
-            <SymbolText tag="span" color="blue7">
+            <SymbolText tag="span" color="secondary">
               {suffix}
             </SymbolText>
           </Box>
@@ -203,16 +203,16 @@ export const NumberInput: FC<NumberInputProps> = ({
         {step > 0 && (
           <Spinner>
             <SpinnerButton onClick={incrementValue} disabled={disabled}>
-              <Icon render="caret" rotate={180} color="grey4" size={24} />
+              <Icon render="caret" rotate={180} color="subtext" size={24} />
             </SpinnerButton>
 
             <SpinnerButton onClick={decrementValue} disabled={disabled}>
-              <Icon render="caret" color="grey4" size={24} />
+              <Icon render="caret" color="subtext" size={24} />
             </SpinnerButton>
           </Spinner>
         )}
 
-        {trailingIcon && <Icon render={trailingIcon} color="grey4" />}
+        {trailingIcon && <Icon render={trailingIcon} color="subtext" />}
       </Content>
       {error && <ErrorBox>{errorMsg}</ErrorBox>}
     </Container>
@@ -240,7 +240,8 @@ interface IInput {
 
 const Content = styled.div<IInput>`
   border-bottom: 1px solid;
-  border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey4'}`]};
+  border-color: ${({ error }) =>
+    theme.colors[`${error ? 'error' : 'outline'}`]};
   display: flex;
   align-items: center;
   height: 32px;
@@ -249,13 +250,14 @@ const Content = styled.div<IInput>`
 
   &:hover,
   &:focus-within {
-    border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
+    border-color: ${({ error }) =>
+      theme.colors[`${error ? 'error' : 'outline'}`]};
   }
 
   ${({ outlined }) =>
     outlined &&
     `
-    border: 2px solid ${theme.colors.grey4};
+    border: 2px solid ${theme.colors.outline};
     border-radius: 8px;
     padding: 16px 12px;
     height: auto;
@@ -265,14 +267,14 @@ const Content = styled.div<IInput>`
     value &&
     value !== '' &&
     `
-      border-color: ${theme.colors.grey6};
+      border-color: ${theme.colors.outline};
     `}
 `
 
 const Input = styled.input<IInput>`
   font-family: 'Gordita', san-serif;
   border: none;
-  color: ${({ error }) => theme.colors[`${error ? 'red7' : 'black'}`]};
+  color: ${({ error }) => theme.colors[`${error ? 'error' : 'secondary'}`]};
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -294,7 +296,7 @@ const Input = styled.input<IInput>`
 
 const ErrorBox = styled.span`
   margin-top: 7px;
-  color: ${theme.colors.red7};
+  color: ${theme.colors.error};
   font-size: 12px;
 `
 
@@ -306,7 +308,7 @@ const SymbolText = styled(Text)`
 
 const Asterisk = styled.span`
   font-size: 14px;
-  color: ${theme.colors.green5};
+  color: ${theme.colors.success};
 `
 
 const Spinner = styled.div`

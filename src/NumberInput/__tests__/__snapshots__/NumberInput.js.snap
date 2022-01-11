@@ -104,7 +104,7 @@ exports[`renders - currency 1`] = `
 
 .c3 {
   border-bottom: 1px solid;
-  border-color: #D2D2D2;
+  border-color: #112035;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -116,18 +116,18 @@ exports[`renders - currency 1`] = `
   height: 32px;
   cursor: pointer;
   opacity: 1;
-  border-color: #9E9E9E;
+  border-color: #112035;
 }
 
 .c3:hover,
 .c3:focus-within {
-  border-color: #9E9E9E;
+  border-color: #112035;
 }
 
 .c6 {
   font-family: 'Gordita',san-serif;
   border: none;
-  color: #000000;
+  color: #112035;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -202,7 +202,7 @@ exports[`renders - currency 1`] = `
   >
     <label
       class="c2"
-      color="grey8"
+      color="subtext"
       cursor="inherit"
       title=""
     >
@@ -216,7 +216,7 @@ exports[`renders - currency 1`] = `
   >
     <span
       class="c4 c5"
-      color="blue7"
+      color="secondary"
       cursor="inherit"
       title=""
     >
@@ -238,7 +238,7 @@ exports[`renders - currency 1`] = `
       >
         <span
           class="c9"
-          color="grey4"
+          color="subtext"
           rotate="180"
           size="24"
         >
@@ -251,7 +251,7 @@ exports[`renders - currency 1`] = `
           >
             <path
               d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
-              fill="#D2D2D2"
+              fill="#636768"
             />
           </svg>
         </span>
@@ -261,7 +261,7 @@ exports[`renders - currency 1`] = `
       >
         <span
           class="c10"
-          color="grey4"
+          color="subtext"
           rotate="0"
           size="24"
         >
@@ -274,7 +274,7 @@ exports[`renders - currency 1`] = `
           >
             <path
               d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
-              fill="#D2D2D2"
+              fill="#636768"
             />
           </svg>
         </span>
@@ -323,7 +323,7 @@ exports[`renders - disabled 1`] = `
 
 .c3 {
   border-bottom: 1px solid;
-  border-color: #D2D2D2;
+  border-color: #112035;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -339,13 +339,13 @@ exports[`renders - disabled 1`] = `
 
 .c3:hover,
 .c3:focus-within {
-  border-color: #9E9E9E;
+  border-color: #112035;
 }
 
 .c4 {
   font-family: 'Gordita',san-serif;
   border: none;
-  color: #000000;
+  color: #112035;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -389,7 +389,7 @@ exports[`renders - disabled 1`] = `
   >
     <label
       class="c2"
-      color="grey8"
+      color="subtext"
       cursor="inherit"
       title=""
     >
@@ -519,7 +519,7 @@ exports[`renders - error 1`] = `
 
 .c3 {
   border-bottom: 1px solid;
-  border-color: #B52525;
+  border-color: #D82C2C;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -531,18 +531,18 @@ exports[`renders - error 1`] = `
   height: 32px;
   cursor: pointer;
   opacity: 1;
-  border-color: #9E9E9E;
+  border-color: #112035;
 }
 
 .c3:hover,
 .c3:focus-within {
-  border-color: #B52525;
+  border-color: #D82C2C;
 }
 
 .c6 {
   font-family: 'Gordita',san-serif;
   border: none;
-  color: #B52525;
+  color: #D82C2C;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -574,7 +574,7 @@ exports[`renders - error 1`] = `
 
 .c11 {
   margin-top: 7px;
-  color: #B52525;
+  color: #D82C2C;
   font-size: 12px;
 }
 
@@ -623,7 +623,7 @@ exports[`renders - error 1`] = `
   >
     <label
       class="c2"
-      color="grey8"
+      color="subtext"
       cursor="inherit"
       title=""
     >
@@ -637,7 +637,7 @@ exports[`renders - error 1`] = `
   >
     <span
       class="c4 c5"
-      color="blue7"
+      color="secondary"
       cursor="inherit"
       title=""
     >
@@ -659,7 +659,7 @@ exports[`renders - error 1`] = `
       >
         <span
           class="c9"
-          color="grey4"
+          color="subtext"
           rotate="180"
           size="24"
         >
@@ -672,7 +672,7 @@ exports[`renders - error 1`] = `
           >
             <path
               d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
-              fill="#D2D2D2"
+              fill="#636768"
             />
           </svg>
         </span>
@@ -682,7 +682,7 @@ exports[`renders - error 1`] = `
       >
         <span
           class="c10"
-          color="grey4"
+          color="subtext"
           rotate="0"
           size="24"
         >
@@ -695,7 +695,7 @@ exports[`renders - error 1`] = `
           >
             <path
               d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
-              fill="#D2D2D2"
+              fill="#636768"
             />
           </svg>
         </span>
@@ -749,7 +749,7 @@ exports[`renders - number 1`] = `
 
 .c4 {
   border-bottom: 1px solid;
-  border-color: #D2D2D2;
+  border-color: #112035;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -765,13 +765,13 @@ exports[`renders - number 1`] = `
 
 .c4:hover,
 .c4:focus-within {
-  border-color: #9E9E9E;
+  border-color: #112035;
 }
 
 .c5 {
   font-family: 'Gordita',san-serif;
   border: none;
-  color: #000000;
+  color: #112035;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -803,7 +803,7 @@ exports[`renders - number 1`] = `
 
 .c3 {
   font-size: 14px;
-  color: #55D6AA;
+  color: #00875A;
 }
 
 @media (min-width:768px) {
@@ -820,7 +820,7 @@ exports[`renders - number 1`] = `
   >
     <label
       class="c2"
-      color="grey8"
+      color="subtext"
       cursor="inherit"
       title=""
     >
@@ -904,7 +904,7 @@ exports[`renders - tel 1`] = `
 
 .c3 {
   border-bottom: 1px solid;
-  border-color: #D2D2D2;
+  border-color: #112035;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -920,13 +920,13 @@ exports[`renders - tel 1`] = `
 
 .c3:hover,
 .c3:focus-within {
-  border-color: #9E9E9E;
+  border-color: #112035;
 }
 
 .c6 {
   font-family: 'Gordita',san-serif;
   border: none;
-  color: #000000;
+  color: #112035;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -983,7 +983,7 @@ exports[`renders - tel 1`] = `
   >
     <label
       class="c2"
-      color="grey8"
+      color="subtext"
       cursor="inherit"
       title=""
     >
@@ -997,7 +997,7 @@ exports[`renders - tel 1`] = `
   >
     <span
       class="c4 c5"
-      color="blue7"
+      color="secondary"
       cursor="inherit"
       title=""
     >
@@ -1073,7 +1073,7 @@ exports[`renders - with suffix 1`] = `
 
 .c3 {
   border-bottom: 1px solid;
-  border-color: #D2D2D2;
+  border-color: #112035;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1089,13 +1089,13 @@ exports[`renders - with suffix 1`] = `
 
 .c3:hover,
 .c3:focus-within {
-  border-color: #9E9E9E;
+  border-color: #112035;
 }
 
 .c4 {
   font-family: 'Gordita',san-serif;
   border: none;
-  color: #000000;
+  color: #112035;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -1152,7 +1152,7 @@ exports[`renders - with suffix 1`] = `
   >
     <label
       class="c2"
-      color="grey8"
+      color="subtext"
       cursor="inherit"
       title=""
     >
@@ -1177,7 +1177,7 @@ exports[`renders - with suffix 1`] = `
     >
       <span
         class="c6 c7"
-        color="blue7"
+        color="secondary"
         cursor="inherit"
         title=""
       >
@@ -1267,7 +1267,7 @@ exports[`renders - with trailing icon 1`] = `
 
 .c3 {
   border-bottom: 1px solid;
-  border-color: #D2D2D2;
+  border-color: #112035;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1283,13 +1283,13 @@ exports[`renders - with trailing icon 1`] = `
 
 .c3:hover,
 .c3:focus-within {
-  border-color: #9E9E9E;
+  border-color: #112035;
 }
 
 .c6 {
   font-family: 'Gordita',san-serif;
   border: none;
-  color: #000000;
+  color: #112035;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -1346,7 +1346,7 @@ exports[`renders - with trailing icon 1`] = `
   >
     <label
       class="c2"
-      color="grey8"
+      color="subtext"
       cursor="inherit"
       title=""
     >
@@ -1360,7 +1360,7 @@ exports[`renders - with trailing icon 1`] = `
   >
     <span
       class="c4 c5"
-      color="blue7"
+      color="secondary"
       cursor="inherit"
       title=""
     >
@@ -1376,7 +1376,7 @@ exports[`renders - with trailing icon 1`] = `
     />
     <span
       class="c7"
-      color="grey4"
+      color="subtext"
       rotate="0"
       size="24"
     >
@@ -1389,7 +1389,7 @@ exports[`renders - with trailing icon 1`] = `
       >
         <path
           d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10a1 1 0 100-2c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8c0 1.103-.897 2-2 2s-2-.897-2-2c0-2.206-1.794-4-4-4s-4 1.794-4 4 1.794 4 4 4c1.2 0 2.266-.542 3-1.382.734.84 1.8 1.382 3 1.382 2.206 0 4-1.794 4-4 0-5.514-4.486-10-10-10zm0 12c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"
-          fill="#D2D2D2"
+          fill="#636768"
         />
       </svg>
     </span>
