@@ -20,7 +20,7 @@ const DividerComponent = ({
   mr = '0px',
   mb = '0px',
   ml = '0px',
-  color = 'grey2',
+  color = 'outline',
 }) => (
   <Line
     maxWidth={maxWidth}

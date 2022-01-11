@@ -117,7 +117,7 @@ export const Dropdown: FC<Props> = ({
     <Container className={className}>
       {label && (
         <Box mb={outlined ? '4px' : '0px'}>
-          <Text tag="label" color="grey8" typo="label">
+          <Text tag="label" color="subtext" typo="label">
             {label}
           </Text>
         </Box>
@@ -183,7 +183,7 @@ export const Dropdown: FC<Props> = ({
         </Select>
 
         <Caret outlined={outlined}>
-          <Icon render="caret" color="grey4" size={24} />
+          <Icon render="caret" color="subtext" size={24} />
         </Caret>
       </Content>
       {error && <ErrorBox>{errorMsg}</ErrorBox>}
@@ -207,9 +207,9 @@ const Content = styled.div<IUsesOutline>`
 
 const getErrorOutline = (outlined?: boolean, error?: boolean) => {
   if (error && outlined) {
-    return `border: 2px solid ${theme.colors.red7}`
+    return `border: 2px solid ${theme.colors.error}`
   } else if (error && !outlined) {
-    return `border-bottom: 2px solid ${theme.colors.red7}`
+    return `border-bottom: 2px solid ${theme.colors.error}`
   } else {
     return
   }
@@ -222,7 +222,7 @@ const Select = styled.select<IUsesOutline>`
   background-color: ${theme.colors.white};
   border: none;
   border-bottom: ${({ outlined }) =>
-    !outlined && `1px solid ${theme.colors.grey4}`};
+    !outlined && `1px solid ${theme.colors.outline}`};
   border-radius: 0;
   font-size: 16px;
   cursor: pointer;
@@ -234,7 +234,7 @@ const Select = styled.select<IUsesOutline>`
   }
 
   &:not(:focus):invalid {
-    color: ${theme.colors.grey4};
+    color: ${theme.colors.outline};
   }
 
   &:hover,
@@ -242,20 +242,20 @@ const Select = styled.select<IUsesOutline>`
   &:focus-visible,
   &:checked {
     outline: none;
-    border-color: ${theme.colors.grey6};
+    border-color: ${theme.colors.outline};
   }
 
   ${({ outlined }) =>
     outlined &&
     `
-  border: 2px solid ${theme.colors.grey4};
+  border: 2px solid ${theme.colors.outline};
   border-radius: 8px;
   padding: 16px 12px;
   box-sizing: border-box;
   height: auto;
   &:hover,
   &:focus-within {
-    border: 2px solid ${theme.colors.grey6};
+    border: 2px solid ${theme.colors.outline};
   }
 `}
 
@@ -263,7 +263,7 @@ const Select = styled.select<IUsesOutline>`
     value &&
     value != '' &&
     `
-    border: 2px solid ${theme.colors.grey4};
+    border: 2px solid ${theme.colors.outline};
 `}
 
 ${({ error, outlined }) => getErrorOutline(outlined, error)};
@@ -281,5 +281,5 @@ const Caret = styled.div<IUsesOutline>`
 const ErrorBox = styled.span`
   margin-top: 7px;
   font-size: 12px;
-  color: ${theme.colors.red7};
+  color: ${theme.colors.error};
 `
