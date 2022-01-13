@@ -40,7 +40,7 @@ export const Message: FC<MessageProps> = ({
       <Icon
         size={sizeSmall ? 24 : 32}
         render={type}
-        color={type === 'warning' ? 'primary' : 'secondary'}
+        color={type === 'warning' ? 'error' : 'secondary'}
       />
     </IconWrapper>
 
