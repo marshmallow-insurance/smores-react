@@ -1,6 +1,6 @@
 ## [2.0.0] - 2022-01-13
-### Added
-- Update brand colours
+### Changed
+- 💥 Migrated theme to new brand colours
 ## [1.8.0] - 2022-01-07
 ### Added
 - Add error state and optional message to checkbox component
