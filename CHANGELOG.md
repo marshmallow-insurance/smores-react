@@ -1,3 +1,6 @@
+## [2.0.0] - 2022-01-13
+### Added
+- Update brand colours
 ## [1.8.0] - 2022-01-07
 ### Added
 - Add error state and optional message to checkbox component
@@ -230,6 +233,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.0.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.8.0...v2.0.0
 [1.8.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.7.1...v1.8.0
 [1.7.1]: https://github.com/marshmallow-insurance/smores-react/compare/v1.7.0...v1.7.1
 [1.7.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.6.1...v1.7.0
