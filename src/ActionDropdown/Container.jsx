@@ -7,25 +7,25 @@ const actions = [
   {
     label: 'Default grey',
     value: 'DEFAULT',
-    bgColor: 'grey2',
-    textColor: 'blue7',
+    bgColor: 'background',
+    textColor: 'secondary',
   },
   {
     label: 'Medium',
     value: 'MEDIUM',
-    bgColor: 'yellow5',
-    textColor: 'blue7',
+    bgColor: 'warning',
+    textColor: 'secondary',
   },
   {
     label: 'High alert',
     value: 'HIGH_ALERT',
-    bgColor: 'orange4',
+    bgColor: 'agentWarning',
     textColor: 'white',
   },
   {
     label: 'Good zone',
     value: 'GOOD_ZONE',
-    bgColor: 'green6',
+    bgColor: 'success',
     textColor: 'white',
   },
   {

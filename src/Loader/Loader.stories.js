@@ -18,5 +18,5 @@ export const BigAndBlue = Template.bind({})
 
 BigAndBlue.args = {
   height: 54,
-  color: 'blue6',
+  color: 'secondary',
 }

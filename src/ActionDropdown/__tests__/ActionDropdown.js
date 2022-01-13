@@ -8,13 +8,13 @@ const actions = [
   {
     label: 'High alert',
     value: 'HIGH_ALERT',
-    bgColor: 'orange4',
+    bgColor: 'agentWarning',
     textColor: 'white',
   },
   {
     label: 'Good zone',
     value: 'GOOD_ZONE',
-    bgColor: 'green6',
+    bgColor: 'success',
     textColor: 'white',
   },
 ]

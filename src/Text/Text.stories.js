@@ -21,7 +21,7 @@ export const Label = Template.bind({})
 Label.args = {
   tag: 'label',
   typo: 'label',
-  color: 'blue7',
+  color: 'secondary',
 }
 
 export const WithTitle = Template.bind({})

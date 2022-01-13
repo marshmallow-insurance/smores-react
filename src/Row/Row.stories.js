@@ -13,9 +13,9 @@ export const Default = Template.bind({})
 
 Default.args = {
   iconLeft: 'info',
-  iconLeftColor: 'blue7',
+  iconLeftColor: 'secondary',
   iconRight: 'caret',
-  iconRightColor: 'grey8',
+  iconRightColor: 'subtext',
   heading: 'A lovely heading',
   subHeading: 'The quick brown fox jumps over the lazy dog',
   type: 'curved',

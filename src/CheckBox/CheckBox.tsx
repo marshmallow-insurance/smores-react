@@ -13,10 +13,17 @@ type Props = {
   errorMsg?: string
 }
 
-export const CheckBox: FC<Props> = ({ id, checked, children, toggle, error, errorMsg }) => (
+export const CheckBox: FC<Props> = ({
+  id,
+  checked,
+  children,
+  toggle,
+  error,
+  errorMsg,
+}) => (
   <>
     <BoxContainer id={id}>
-      <Text tag="span" typo="base" color={error ? 'red7' : 'blue7'}>
+      <Text tag="span" typo="base" color={error ? 'red7' : 'secondary'}>
         {children}
       </Text>
 
@@ -32,7 +39,10 @@ const Checkmark = styled.span<{ error?: boolean }>`
   left: 0;
   width: 24px;
   height: 24px;
-  border: ${({ error }) => error ? `solid 1px ${theme.colors.error}` : `solid 1px ${theme.colors.secondary}`} ;
+  border: ${({ error }) =>
+    error
+      ? `solid 1px ${theme.colors.error}`
+      : `solid 1px ${theme.colors.secondary}`};
   box-sizing: border-box;
   border-radius: 1px;
 

@@ -1,5 +1,6 @@
 import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
+import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { LegacyButton } from './LegacyButton'
@@ -165,10 +166,12 @@ const Container = styled.button<IButton>(
       border-color: ${theme.colors.primary};
 
       &:hover {
-        background-color: ${!(disabled || isLoading) && theme.colors.primary};
+        background-color: ${!(disabled || isLoading) &&
+        darken(0.1, theme.colors.primary)};
       }
       &:active {
-        background-color: ${!(disabled || isLoading) && theme.colors.primary};
+        background-color: ${!(disabled || isLoading) &&
+        darken(0.1, theme.colors.primary)};
       }
     `}
     ${secondary &&
@@ -193,10 +196,12 @@ const Container = styled.button<IButton>(
       border-color: ${theme.colors.background};
 
       &:hover {
-        background-color: ${!(disabled || isLoading) && theme.colors.subtext};
+        background-color: ${!(disabled || isLoading) &&
+        darken(0.1, theme.colors.background)};
       }
       &:active {
-        background-color: ${theme.colors.background};
+        background-color: ${!(disabled || isLoading) &&
+        darken(0.1, theme.colors.background)};
       }
     `}
   `,

@@ -12,5 +12,5 @@ const Template = (args) => <ActionDropdownContainer {...args} />
 export const Default = Template.bind({})
 
 Default.args = {
-  textColor: 'blue7',
+  textColor: 'secondary',
 }
