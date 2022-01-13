@@ -36,7 +36,7 @@ export const LegacyButton: FC<Props> = ({
   children,
   id,
   className = '',
-  color = 'blue',
+  color = 'secondary',
   block = false,
   inverted = false,
   disabled = false,
@@ -69,15 +69,15 @@ const Container = styled.button<IButton>(
     outline: none;
     cursor: pointer;
     width: ${block ? '100%' : 'auto'};
-    background-color: ${theme.colors[`${color}5`]};
+    background-color: ${theme.colors[`${color}`]};
     color: ${theme.colors.white};
     font-weight: ${theme.font.weight.medium};
 
     &:hover:not([disabled]) {
-      background-color: ${theme.colors[`${color}6`]};
+      background-color: ${theme.colors[`${color}`]};
     }
     &:active:not([disabled]) {
-      background-color: ${theme.colors[`${color}7`]};
+      background-color: ${theme.colors[`${color}`]};
     }
     &:disabled {
       opacity: 0.5;
@@ -87,14 +87,14 @@ const Container = styled.button<IButton>(
     ${(inverted || outlined) &&
     css`
       background-color: transparent;
-      border: 1px solid ${outlined ? theme.colors.grey4 : 'transparent'};
-      color: ${outlined ? theme.colors.blue7 : theme.colors[`${color}5`]};
+      border: 1px solid ${outlined ? theme.colors.outline : 'transparent'};
+      color: ${outlined ? theme.colors.secondary : theme.colors[`${color}`]};
 
       &:hover:not([disabled]) {
-        background-color: ${theme.colors.bg2};
+        background-color: ${theme.colors.background};
       }
       &:active:not([disabled]) {
-        background-color: ${theme.colors.bg3};
+        background-color: ${theme.colors.background};
       }
     `};
 

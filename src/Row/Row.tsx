@@ -56,7 +56,7 @@ export const Row: FC<Props> = ({
         <Text tag="h1" typo="base">
           {heading}
         </Text>
-        <Text tag="p" typo="desc-small" color="grey8">
+        <Text tag="p" typo="desc-small" color="subtext">
           {subHeading}
         </Text>
       </Box>
@@ -88,7 +88,7 @@ const Container = styled.div<IContainer>(
     (type === 'curved' && `8px`) ||
     (type === 'last' && `0 0 8px 8px`) ||
     0};
-    border: 1px solid ${theme.colors.grey4};
+    border: 1px solid ${theme.colors.outline};
     display: grid;
     grid-template-columns: ${iconLeft ? `24px auto 24px` : `auto 24px`};
     padding: 16px;

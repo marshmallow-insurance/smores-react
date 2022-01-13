@@ -106,14 +106,14 @@ export const SearchInput: FC<SearchInputProps> = ({
     <Container>
       {label && (
         <Box mb={outlined ? '4px' : '0px'}>
-          <Text tag="label" color="grey8" typo="label">
+          <Text tag="label" color="subtext" typo="label">
             {label}
           </Text>
         </Box>
       )}
 
       <InputBox outlined={outlined} selected={selected}>
-        {showIcon && <SearchIcon size={24} render="search" color="grey5" />}
+        {showIcon && <SearchIcon size={24} render="search" color="subtext" />}
         <Input
           id={id}
           type="text"
@@ -159,11 +159,11 @@ const InputBox = styled.div<IShowIcon>`
   display: flex;
   align-items: center;
   border-bottom: ${({ outlined }) =>
-    outlined ? 'none' : `1px solid ${theme.colors.grey4}`};
+    outlined ? 'none' : `1px solid ${theme.colors.outline}`};
   ${({ outlined }) =>
     outlined &&
     `
-    border: 2px solid ${theme.colors.grey4};
+    border: 2px solid ${theme.colors.outline};
     border-radius: 8px;
     height: auto;
   `}
@@ -172,16 +172,16 @@ const InputBox = styled.div<IShowIcon>`
   &:hover,
   &:focus,
   &:focus-within {
-    border-color: ${theme.colors.grey6};
+    border-color: ${theme.colors.outline};
   }
 
   ${({ selected }) =>
     selected &&
     `
-    border-color: ${theme.colors.grey6};
+    border-color: ${theme.colors.outline};
   `}
   color: ${({ outlined }) =>
-    outlined ? `${theme.colors.grey8}` : `${theme.colors.blue7}`};
+    outlined ? `${theme.colors.outline}` : `${theme.colors.secondary}`};
 `
 
 const Input = styled.input<ISearchInput>`
@@ -193,9 +193,7 @@ const Input = styled.input<ISearchInput>`
   box-sizing: border-box;
 
   &::placeholder {
-    color: ${({ outlined }) =>
-      outlined ? theme.colors.grey8 : theme.colors.grey4};
-  }
+    color: ${theme.colors.subtext};
   ${({ outlined }) =>
     outlined &&
     `
@@ -223,7 +221,7 @@ const ResultsList = styled.ul<IUsesOutline>`
   padding: 0;
   margin: 0;
   background-color: ${theme.colors.white};
-  border: 1px solid ${theme.colors.grey4};
+  border: 1px solid ${theme.colors.outline};
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   z-index: 1000;
@@ -231,18 +229,18 @@ const ResultsList = styled.ul<IUsesOutline>`
   ${({ outlined }) =>
     outlined &&
     `
-    border: 2px solid ${theme.colors.grey6};
+    border: 2px solid ${theme.colors.outline};
   `}
 
   li {
     padding: 16px 14px;
     box-sizing: border-box;
     font-size: 16px;
-    color: ${theme.colors.blue7};
+    color: ${theme.colors.secondary};
     cursor: pointer;
 
     &:hover {
-      background-color: ${theme.colors.bg3};
+      background-color: ${theme.colors.background};
     }
   }
 `

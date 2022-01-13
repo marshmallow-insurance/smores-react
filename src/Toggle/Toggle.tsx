@@ -41,9 +41,9 @@ const Slider = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${theme.colors.grey3};
+  background-color: ${theme.colors.bgPrimary};
   border: 1px solid;
-  border-color: ${theme.colors.grey4};
+  border-color: ${theme.colors.bgPrimary};
   border-radius: 28px;
   transition: 0.2s background-color border-color;
   outline: none;
@@ -63,9 +63,9 @@ const Slider = styled.span`
 
 const Checkbox = styled.input`
   &:checked + ${Slider} {
-    background-color: ${theme.colors.green6};
+    background-color: ${theme.colors.success};
     border: 1px solid;
-    border-color: ${theme.colors.green7};
+    border-color: ${theme.colors.success};
   }
 
   &:checked + ${Slider}:before {

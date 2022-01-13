@@ -29,7 +29,7 @@ export const WarningBubbleSmall = Template.bind({})
 
 WarningBubbleSmall.args = {
   type: 'warning-bubble',
-  backgroundColor: theme.colors['bg-beige'],
+  backgroundColor: theme.colors.bgSecondary,
   sizeSmall: true,
 }
 
@@ -37,7 +37,7 @@ export const InfoBubbleSmall = Template.bind({})
 
 InfoBubbleSmall.args = {
   type: 'info',
-  backgroundColor: theme.colors['bg-beige'],
+  backgroundColor: theme.colors.bgSecondary,
   sizeSmall: true,
 }
 
@@ -48,5 +48,5 @@ CardWithBorder.args = {
   alignIcon: 'flex-start',
   backgroundColor: theme.colors.white,
   hasBorder: true,
-  borderColor: theme.colors.blue7,
+  borderColor: theme.colors.secondary,
 }

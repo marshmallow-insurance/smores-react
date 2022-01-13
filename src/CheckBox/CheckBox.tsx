@@ -32,7 +32,7 @@ const Checkmark = styled.span<{ error?: boolean }>`
   left: 0;
   width: 24px;
   height: 24px;
-  border: ${({ error }) => error ? `solid 1px ${theme.colors.red7}` : `solid 1px ${theme.colors.blue5}`} ;
+  border: ${({ error }) => error ? `solid 1px ${theme.colors.error}` : `solid 1px ${theme.colors.secondary}`} ;
   box-sizing: border-box;
   border-radius: 1px;
 
@@ -66,8 +66,8 @@ const BoxContainer = styled.label`
     cursor: pointer;
 
     &:checked ~ ${Checkmark} {
-      background-color: ${theme.colors.blue7};
-      border: solid 1px ${theme.colors.blue7};
+      background-color: ${theme.colors.secondary};
+      border: solid 1px ${theme.colors.secondary};
     }
 
     &:checked ~ ${Checkmark}:after {
@@ -77,8 +77,8 @@ const BoxContainer = styled.label`
 
   &:hover {
     ${Checkmark} {
-      background-color: ${theme.colors.grey3};
-      border: solid 1px ${theme.colors.blue5};
+      background-color: ${theme.colors.background};
+      border: solid 1px ${theme.colors.secondary};
     }
   }
 
@@ -90,5 +90,5 @@ const BoxContainer = styled.label`
 const ErrorBox = styled.span`
   padding-top: 8px;
   font-size: 12px;
-  color: ${theme.colors.red7};
+  color: ${theme.colors.error};
 `

@@ -21,9 +21,9 @@ exports[`renders 1`] = `
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #E5E5E5;
+  background-color: #ECD2D0;
   border: 1px solid;
-  border-color: #D2D2D2;
+  border-color: #ECD2D0;
   border-radius: 28px;
   -webkit-transition: 0.2s background-color border-color;
   transition: 0.2s background-color border-color;
@@ -37,7 +37,7 @@ exports[`renders 1`] = `
   width: 24px;
   left: 3px;
   bottom: 3px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   -webkit-transition: 0.2s -webkit-transform;
   -webkit-transition: 0.2s transform;
   transition: 0.2s transform;
@@ -45,9 +45,9 @@ exports[`renders 1`] = `
 }
 
 .c1:checked + .c2 {
-  background-color: #4CB99F;
+  background-color: #00875A;
   border: 1px solid;
-  border-color: #469389;
+  border-color: #00875A;
 }
 
 .c1:checked + .c2:before {

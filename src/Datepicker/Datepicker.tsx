@@ -169,14 +169,14 @@ const Container = styled(Box)`
   background-color: ${theme.colors.white};
   outline: none;
   border-radius: 8px;
-  box-shadow: inset 0 0 0 1px ${theme.colors.grey3};
+  box-shadow: inset 0 0 0 1px ${theme.colors.outline};
 `
 
 const Header = styled(Box)`
-  color: ${theme.colors.blue7};
+  color: ${theme.colors.secondary};
   user-select: none;
   padding: 16px;
-  border-bottom: 1px solid ${theme.colors.grey3};
+  border-bottom: 1px solid ${theme.colors.outline};
 
   span {
     font-size: 16px;
@@ -197,7 +197,7 @@ const Caret = styled(Icon)`
 `
 
 const Circle = styled.button`
-  background-color: ${theme.colors.blue7};
+  background-color: ${theme.colors.secondary};
   height: 32px;
   width: 32px;
   border-radius: 50%;

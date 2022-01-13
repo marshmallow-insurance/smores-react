@@ -9,7 +9,7 @@ exports[`renders 1`] = `
   >
     <h3
       class="sc-gsDKAQ MYwnP sc-kDTinF fvKitb"
-      color="blue7"
+      color="secondary"
       cursor="inherit"
       title=""
     />
@@ -35,7 +35,7 @@ exports[`renders 1`] = `
             class="sc-eCImPb nRbn"
           >
             <div
-              class="sc-dkPtRN bJYGke"
+              class="sc-dkPtRN khjpem"
             />
             <span
               class="sc-jRQBWg cWZaCo"
@@ -62,7 +62,7 @@ exports[`renders 1`] = `
             for="undefined-1"
           >
             <div
-              class="sc-dkPtRN bJYGke"
+              class="sc-dkPtRN khjpem"
             />
             <span
               class="sc-jRQBWg cWZaCo"

@@ -27,7 +27,7 @@ const Checkmark = styled.span`
   left: 0;
   width: 24px;
   height: 24px;
-  border: solid 1px ${theme.colors.blue5};
+  border: solid 1px ${theme.colors.secondary};
   box-sizing: border-box;
   border-radius: 1px;
 
@@ -61,8 +61,8 @@ const BoxContainer = styled.label`
     cursor: pointer;
 
     &:checked ~ ${Checkmark} {
-      background-color: ${theme.colors.blue7};
-      border: solid 1px ${theme.colors.blue7};
+      background-color: ${theme.colors.secondary};
+      border: solid 1px ${theme.colors.secondary};
     }
 
     &:checked ~ ${Checkmark}:after {
@@ -72,8 +72,8 @@ const BoxContainer = styled.label`
 
   &:hover {
     ${Checkmark} {
-      background-color: ${theme.colors.grey3};
-      border: solid 1px ${theme.colors.blue5};
+      background-color: ${theme.colors.background};
+      border: solid 1px ${theme.colors.secondary};
     }
   }
 

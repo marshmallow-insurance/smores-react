@@ -35,7 +35,7 @@ export const Confirmation: FC<ConfirmationProps> = ({
       <TextWrapper>
         <SectionHeadingText tag="h3">{label}</SectionHeadingText>
         {sublabel && (
-          <Text tag="p" typo="base-small" color={theme.colors.grey8}>
+          <Text tag="p" typo="base-small" color={theme.colors.subtext}>
             {sublabel}
           </Text>
         )}
@@ -81,9 +81,9 @@ const RadioButtonGroup = styled.div`
 
 const getColor = (checked?: boolean, error?: boolean) => {
   if (error) {
-    return `2px solid ${theme.colors.red7}`
+    return `2px solid ${theme.colors.error}`
   } else if (checked) {
-    return `2px solid ${theme.colors.blue7}`
+    return `2px solid ${theme.colors.secondary}`
   } else {
     return 'none'
   }
@@ -91,7 +91,7 @@ const getColor = (checked?: boolean, error?: boolean) => {
 
 const RadioButtonWrapper = styled.div<FakeInput>`
   background-color: ${({ checked }: FakeInput) =>
-    !checked && `${theme.colors.bg4}`};
+    !checked && `${theme.colors.background}`};
   border: ${({ checked, error }: FakeInput) => getColor(checked, error)};
   margin: 0px 10px;
   width: 139px;
@@ -107,7 +107,7 @@ const ErrorBox = styled.span`
   margin-top: 7px;
   margin-left: 12px;
   font-size: 12px;
-  color: ${theme.colors.red7};
+  color: ${theme.colors.error};
 `
 
 const ConfirmationWrapper = styled(Box)`

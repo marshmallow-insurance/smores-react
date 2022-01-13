@@ -14,7 +14,7 @@ type Props = {
   color?: string
 }
 
-export const Loader: FC<Props> = ({ height, color = 'pink5' }) => (
+export const Loader: FC<Props> = ({ height, color = 'primary' }) => (
   <LoaderSvg viewBox="0 0 60 32" height={height} color={color}>
     <g transform="translate(30,18.5455) translate(-30,-9)">
       {/* tslint:disable-next-line:max-line-length */}
@@ -40,10 +40,10 @@ export const Loader: FC<Props> = ({ height, color = 'pink5' }) => (
 )
 
 const LoaderSvg = styled.svg<ISvg>`
-  height: ${p => p.height};
+  height: ${(p) => p.height};
 
   path {
-    fill: ${p => theme.colors[p.color]};
+    fill: ${(p) => theme.colors[p.color]};
     stroke: none;
     fill-rule: evenodd;
   }

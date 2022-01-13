@@ -51,8 +51,8 @@ const FakeInput = styled.div<FakeInput>`
   margin-right: 10px;
   border: ${({ checked }: FakeInput) =>
     checked
-      ? `8px solid ${theme.colors.blue7}`
-      : `1px solid ${theme.colors.blue7}`};
+      ? `8px solid ${theme.colors.secondary}`
+      : `1px solid ${theme.colors.secondary}`};
 `
 
 const RadioInput = styled.input`
@@ -67,7 +67,7 @@ const RadioLabel = styled.label`
   text-transform: none;
   font-size: 16px;
   line-height: 17px;
-  color: ${theme.colors.blue7};
+  color: ${theme.colors.secondary};
   margin-bottom: 0;
   display: flex;
   cursor: pointer;

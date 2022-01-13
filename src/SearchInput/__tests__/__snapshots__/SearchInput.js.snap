@@ -28,7 +28,7 @@ exports[`renders 1`] = `
 .c0 {
   position: relative;
   width: 100%;
-  background: #ffffff;
+  background: #FFFFFF;
 }
 
 .c3 {
@@ -40,7 +40,7 @@ exports[`renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: 1px solid #D2D2D2;
+  border-bottom: 1px solid #112035;
   padding: 16px 12px;
   color: #112035;
 }
@@ -48,7 +48,7 @@ exports[`renders 1`] = `
 .c3:hover,
 .c3:focus,
 .c3:focus-within {
-  border-color: #9E9E9E;
+  border-color: #112035;
 }
 
 .c4 {
@@ -61,19 +61,19 @@ exports[`renders 1`] = `
 }
 
 .c4::-webkit-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c4::-moz-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c4:-ms-input-placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c4::placeholder {
-  color: #D2D2D2;
+  color: #636768;
 }
 
 .c5 {
@@ -94,8 +94,8 @@ exports[`renders 1`] = `
   overflow-y: auto;
   padding: 0;
   margin: 0;
-  background-color: #ffffff;
-  border: 1px solid #D2D2D2;
+  background-color: #FFFFFF;
+  border: 1px solid #112035;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   z-index: 1000;
@@ -110,7 +110,7 @@ exports[`renders 1`] = `
 }
 
 .c6 li:hover {
-  background-color: #F8F6F6;
+  background-color: #F4F4F4;
 }
 
 @media (min-width:768px) {
@@ -127,7 +127,7 @@ exports[`renders 1`] = `
   >
     <label
       class="c2"
-      color="grey8"
+      color="subtext"
       cursor="inherit"
       title=""
     >

@@ -39,16 +39,19 @@ export const ActionDropdown: FC<Props> = ({
       onClick={() => setOpen((currentOpen) => !currentOpen)}
     >
       {label && (
-        <Text tag="label" color="grey4" typo="label">
+        <Text tag="label" color="subtext" typo="label">
           {label}
         </Text>
       )}
 
-      <Label text={value.textColor ?? 'blue7'} bg={value.bgColor ?? 'grey2'}>
+      <Label
+        text={value.textColor ?? 'secondary'}
+        bg={value.bgColor ?? 'subtext'}
+      >
         <SelectedOption>{value.label}</SelectedOption>
         <Icon
           render="caret"
-          color={value.textColor ?? 'grey7'}
+          color={value.textColor ?? 'subtext'}
           size={24}
           rotate={open ? 180 : 0}
         />
@@ -56,7 +59,6 @@ export const ActionDropdown: FC<Props> = ({
       <OuterContainer open={open}>
         <List options={list} selectOption={onSelect} />
       </OuterContainer>
-
     </Container>
   )
 }
@@ -115,7 +117,7 @@ const OuterContainer = styled.div<IOpen>(
     display: ${open ? 'block' : 'none'};
     max-height: ${open ? '235px' : '48px'};
     background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.grey3};
+    border: 1px solid ${theme.colors.outline};
     overflow-y: ${open ? 'auto' : 'hidden'};
     z-index: 2;
     transition: all 0.2s ease-in-out;

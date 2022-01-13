@@ -74,7 +74,7 @@ export const TextInput: FC<Props> = ({
   <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
     {label && (
       <Box mb={outlined ? '4px' : '0px'}>
-        <Text tag="label" color="grey8" typo="label">
+        <Text tag="label" color="subtext" typo="label">
           {label}
         </Text>
       </Box>
@@ -99,7 +99,7 @@ export const TextInput: FC<Props> = ({
           onBlur && onBlur(e)
         }}
       />
-      {trailingIcon && <Icon render={trailingIcon} color="grey4" />}
+      {trailingIcon && <Icon render={trailingIcon} color="subtext" />}
     </Content>
     {error && <ErrorBox>{errorMsg}</ErrorBox>}
   </Container>
@@ -128,19 +128,21 @@ interface IInputOutline extends IInput {
 
 const Content = styled.div<IInputOutline>`
   border-bottom: 1px solid;
-  border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey4'}`]};
+  border-color: ${({ error }) =>
+    theme.colors[`${error ? 'error' : 'outline'}`]};
   display: flex;
   height: 32px;
 
   &:hover,
   &:focus-within {
-    border-color: ${({ error }) => theme.colors[`${error ? 'red7' : 'grey6'}`]};
+    border-color: ${({ error }) =>
+      theme.colors[`${error ? 'error' : 'outline'}`]};
   }
 
   ${({ outlined, error }) =>
     outlined &&
     `
-      border: 2px solid ${error ? theme.colors.red7 : theme.colors.grey4};
+      border: 2px solid ${error ? theme.colors.error : theme.colors.outline};
       border-radius: 8px;
       padding: 16px 12px;
       height: auto;
@@ -150,13 +152,13 @@ const Content = styled.div<IInputOutline>`
     value &&
     value != '' &&
     `
-      border-color: ${theme.colors.grey4};
+      border-color: ${theme.colors.outline};
     `}
 `
 
 const Input = styled.input<IInput>`
   border: none;
-  color: ${({ error }) => theme.colors[`${error ? 'red7' : 'black'}`]};
+  color: ${({ error }) => theme.colors[`${error ? 'error' : 'secondary'}`]};
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -164,12 +166,12 @@ const Input = styled.input<IInput>`
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
 
   &::placeholder {
-    color: ${theme.colors.grey8};
+    color: ${theme.colors.subtext};
   }
 `
 
 const ErrorBox = styled.span`
   margin-top: 7px;
-  color: ${theme.colors.red7};
+  color: ${theme.colors.error};
   font-size: 12px;
 `

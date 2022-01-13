@@ -49,9 +49,9 @@ exports[`rendersDropdown 1`] = `
   width: 100%;
   height: 32px;
   padding-right: 24px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border: none;
-  border-bottom: 1px solid #D2D2D2;
+  border-bottom: 1px solid #112035;
   border-radius: 0;
   font-size: 16px;
   cursor: pointer;
@@ -66,7 +66,7 @@ exports[`rendersDropdown 1`] = `
 }
 
 .c2:not(:focus):invalid {
-  color: #D2D2D2;
+  color: #112035;
 }
 
 .c2:hover,
@@ -74,7 +74,7 @@ exports[`rendersDropdown 1`] = `
 .c2:focus-visible,
 .c2:checked {
   outline: none;
-  border-color: #9E9E9E;
+  border-color: #112035;
 }
 
 .c3 {
@@ -143,7 +143,7 @@ exports[`rendersDropdown 1`] = `
     >
       <span
         class="c4"
-        color="grey4"
+        color="subtext"
         rotate="0"
         size="24"
       >
@@ -156,7 +156,7 @@ exports[`rendersDropdown 1`] = `
         >
           <path
             d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
-            fill="#D2D2D2"
+            fill="#636768"
           />
         </svg>
       </span>
@@ -214,9 +214,9 @@ exports[`rendersDropdownWithGroups 1`] = `
   width: 100%;
   height: 32px;
   padding-right: 24px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border: none;
-  border-bottom: 1px solid #D2D2D2;
+  border-bottom: 1px solid #112035;
   border-radius: 0;
   font-size: 16px;
   cursor: pointer;
@@ -231,7 +231,7 @@ exports[`rendersDropdownWithGroups 1`] = `
 }
 
 .c2:not(:focus):invalid {
-  color: #D2D2D2;
+  color: #112035;
 }
 
 .c2:hover,
@@ -239,7 +239,7 @@ exports[`rendersDropdownWithGroups 1`] = `
 .c2:focus-visible,
 .c2:checked {
   outline: none;
-  border-color: #9E9E9E;
+  border-color: #112035;
 }
 
 .c3 {
@@ -318,7 +318,7 @@ exports[`rendersDropdownWithGroups 1`] = `
     >
       <span
         class="c4"
-        color="grey4"
+        color="subtext"
         rotate="0"
         size="24"
       >
@@ -331,7 +331,7 @@ exports[`rendersDropdownWithGroups 1`] = `
         >
           <path
             d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
-            fill="#D2D2D2"
+            fill="#636768"
           />
         </svg>
       </span>

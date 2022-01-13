@@ -35,7 +35,7 @@ export const Accordion: FC<AccordionProps> = ({
         <TitleContainer>
           <Title>{title}</Title>
           {subTitle && (
-            <Text tag="label" color="grey8" typo="label">
+            <Text tag="label" color="subtext" typo="label">
               {subTitle}
             </Text>
           )}
@@ -44,7 +44,7 @@ export const Accordion: FC<AccordionProps> = ({
         <CaretIcon
           render="caret"
           size={24}
-          color="blue7"
+          color="secondary"
           isOpen={isOpen}
           borderTop={borderTop}
         />
@@ -62,13 +62,13 @@ interface IAccordion {
 
 const Wrapper = styled(Box)<IAccordion>(
   ({ isOpen, borderTop, fullBorder }) => css`
-    border-bottom: 1px solid ${theme.colors.grey3};
+    border-bottom: 1px solid ${theme.colors.outline};
     padding-bottom: ${isOpen && '16px'};
-    border-top: ${borderTop && `1px solid ${theme.colors.grey3}`};
+    border-top: ${borderTop && `1px solid ${theme.colors.subtext}`};
 
     ${fullBorder &&
     css`
-      border: 1px solid ${theme.colors.grey3};
+      border: 1px solid ${theme.colors.subtext};
       border-radius: 8px;
       margin-bottom: 14px;
       padding: 20px 15px;
@@ -98,7 +98,7 @@ const TopContainer = styled(Box)<IAccordion>(
 )
 
 const Title = styled.h2`
-  color: ${theme.colors.blue7};
+  color: ${theme.colors.secondary};
   font-size: 16px;
   line-height: 21px;
   font-weight: ${theme.font.weight.medium};

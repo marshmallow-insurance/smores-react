@@ -30,6 +30,7 @@ export const Loading = Template.bind({})
 
 Loading.args = {
   loading: true,
+  primary: true,
 }
 
 export const SecondaryDisabled = Template.bind({})
