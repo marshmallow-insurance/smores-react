@@ -5,8 +5,8 @@ exports[`renders 1`] = `
   class="sc-dkPtRN fyQpLT"
 >
   <span
-    class="sc-bdvvtL kRuemV"
-    color="blue7"
+    class="sc-bdvvtL gCEbaO"
+    color="secondary"
     cursor="inherit"
     title=""
   />
@@ -14,7 +14,7 @@ exports[`renders 1`] = `
     type="checkbox"
   />
   <span
-    class="sc-gsDKAQ gZiQgr"
+    class="sc-gsDKAQ kQQKjv"
   />
 </label>
 `;

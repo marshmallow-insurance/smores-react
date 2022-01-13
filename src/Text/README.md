@@ -17,7 +17,7 @@ cursor?:    string;
 import {Text} from '@mrshmllw/smores-react';
 
 const App = () => (
-  <Text tag='h2' typo='header' color='blue5'>Hey you</Text>
+  <Text tag='h2' typo='header' color='secondary'>Hey you</Text>
 );
 ```
 

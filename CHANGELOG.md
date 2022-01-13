@@ -1,3 +1,6 @@
+## [2.0.1] - 2022-01-13
+### Changed
+- Minor updated on hover colors
 ## [2.0.0] - 2022-01-13
 ### Changed
 - 💥 Migrated theme to new brand colours
@@ -156,7 +159,7 @@
 
 ## [0.67.3] - 2021-08-16
 ### Added
-- Updated LabelledText colour to grey8
+- Updated LabelledText colour to subtext
 
 ## [0.67.2] - 2021-08-05
 ### Added
@@ -237,6 +240,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.0.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.8.1...v2.0.0
 [1.8.1]: https://github.com/marshmallow-insurance/smores-react/compare/v1.8.0...v1.8.1
 [1.8.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.7.1...v1.8.0

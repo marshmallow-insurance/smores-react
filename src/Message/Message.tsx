@@ -75,16 +75,14 @@ const Wrapper = styled.div<IWrapper>(
       : theme.colors.background};
     box-sizing: border-box;
     ${type === 'warning'
-      ? `border: 1px solid ${theme.colors.primary};`
+      ? `border: 1px solid ${theme.colors.error};`
       : hasBorder && `border: 1px solid ${borderColor};`}
     border-radius: 8px;
     margin-bottom: 24px;
     padding: 16px;
     display: flex;
     font-family: ${theme.font.system};
-    color: ${type === 'warning'
-      ? theme.colors.primary
-      : theme.colors.secondary};
+    color: ${type === 'warning' ? theme.colors.error : theme.colors.secondary};
     font-size: ${sizeSmall ? '12px' : '16px'};
 
     span {
