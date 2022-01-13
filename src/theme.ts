@@ -3,6 +3,7 @@ const colors = {
   primary: '#FF4E75',
   secondary: '#112035',
   white: '#FFFFFF',
+  black: '#000000',
 
   // Brand background
   bgPrimary: '#ECD2D0',
