@@ -40,7 +40,7 @@ exports[`renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: 1px solid #112035;
+  border-bottom: 1px solid #D2D2D2;
   padding: 16px 12px;
   color: #112035;
 }
@@ -48,7 +48,7 @@ exports[`renders 1`] = `
 .c3:hover,
 .c3:focus,
 .c3:focus-within {
-  border-color: #112035;
+  border-color: #D2D2D2;
 }
 
 .c4 {
@@ -95,7 +95,7 @@ exports[`renders 1`] = `
   padding: 0;
   margin: 0;
   background-color: #FFFFFF;
-  border: 1px solid #112035;
+  border: 1px solid #D2D2D2;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   z-index: 1000;

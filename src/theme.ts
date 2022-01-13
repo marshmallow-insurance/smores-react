@@ -12,13 +12,13 @@ const colors = {
 
   // Neutrals
   subtext: '#636768',
-  outline: '#112035',
+  outline: '#D2D2D2',
   background: '#F4F4F4',
 
   // Traffic light
   error: '#D82C2C',
   agentWarning: '#FFC400',
-  warning: '#FFC400',
+  warning: '#FF8B00',
   success: '#00875A',
 
   // Third-party brand colours

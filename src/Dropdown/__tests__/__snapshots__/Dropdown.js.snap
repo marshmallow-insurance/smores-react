@@ -51,7 +51,7 @@ exports[`rendersDropdown 1`] = `
   padding-right: 24px;
   background-color: #FFFFFF;
   border: none;
-  border-bottom: 1px solid #112035;
+  border-bottom: 1px solid #D2D2D2;
   border-radius: 0;
   font-size: 16px;
   cursor: pointer;
@@ -66,7 +66,7 @@ exports[`rendersDropdown 1`] = `
 }
 
 .c2:not(:focus):invalid {
-  color: #112035;
+  color: #D2D2D2;
 }
 
 .c2:hover,
@@ -74,7 +74,7 @@ exports[`rendersDropdown 1`] = `
 .c2:focus-visible,
 .c2:checked {
   outline: none;
-  border-color: #112035;
+  border-color: #D2D2D2;
 }
 
 .c3 {
@@ -216,7 +216,7 @@ exports[`rendersDropdownWithGroups 1`] = `
   padding-right: 24px;
   background-color: #FFFFFF;
   border: none;
-  border-bottom: 1px solid #112035;
+  border-bottom: 1px solid #D2D2D2;
   border-radius: 0;
   font-size: 16px;
   cursor: pointer;
@@ -231,7 +231,7 @@ exports[`rendersDropdownWithGroups 1`] = `
 }
 
 .c2:not(:focus):invalid {
-  color: #112035;
+  color: #D2D2D2;
 }
 
 .c2:hover,
@@ -239,7 +239,7 @@ exports[`rendersDropdownWithGroups 1`] = `
 .c2:focus-visible,
 .c2:checked {
   outline: none;
-  border-color: #112035;
+  border-color: #D2D2D2;
 }
 
 .c3 {

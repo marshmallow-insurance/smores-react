@@ -42,7 +42,7 @@ exports[`renders 1`] = `
   font-size: 14px;
   cursor: pointer;
   color: #112035;
-  border-bottom: 1px solid #112035;
+  border-bottom: 1px solid #D2D2D2;
 }
 
 .c6:hover {
@@ -107,7 +107,7 @@ exports[`renders 1`] = `
   display: none;
   max-height: 48px;
   background-color: #FFFFFF;
-  border: 1px solid #112035;
+  border: 1px solid #D2D2D2;
   overflow-y: hidden;
   z-index: 2;
   -webkit-transition: all 0.2s ease-in-out;

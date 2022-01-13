@@ -39,7 +39,7 @@ exports[`disabled 1`] = `
   font-size: 16px;
   line-height: 20px;
   background: #FFFFFF;
-  border: 2px solid #112035;
+  border: 2px solid #D2D2D2;
   box-sizing: border-box;
   border-radius: 8px;
   width: 100%;
@@ -48,14 +48,14 @@ exports[`disabled 1`] = `
   resize: both;
   cursor: not-allowed;
   opacity: 0.5;
-  border-color: #112035;
+  border-color: #D2D2D2;
   outline: none;
 }
 
 .c3:hover,
 .c3:focus,
 .c3:focus-visible {
-  border-color: #112035;
+  border-color: #D2D2D2;
 }
 
 @media (min-width:768px) {
@@ -134,7 +134,7 @@ exports[`renders 1`] = `
   font-size: 16px;
   line-height: 20px;
   background: #FFFFFF;
-  border: 2px solid #112035;
+  border: 2px solid #D2D2D2;
   box-sizing: border-box;
   border-radius: 8px;
   width: 100%;
@@ -143,14 +143,14 @@ exports[`renders 1`] = `
   resize: both;
   cursor: text;
   opacity: 1;
-  border-color: #112035;
+  border-color: #D2D2D2;
   outline: none;
 }
 
 .c3:hover,
 .c3:focus,
 .c3:focus-visible {
-  border-color: #112035;
+  border-color: #D2D2D2;
 }
 
 @media (min-width:768px) {
@@ -228,7 +228,7 @@ exports[`renders with error 1`] = `
   font-size: 16px;
   line-height: 20px;
   background: #FFFFFF;
-  border: 2px solid #112035;
+  border: 2px solid #D2D2D2;
   box-sizing: border-box;
   border-radius: 8px;
   width: 100%;

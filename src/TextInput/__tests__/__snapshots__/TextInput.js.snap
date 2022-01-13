@@ -14,7 +14,7 @@ exports[`renders 1`] = `
 
 .c1 {
   border-bottom: 1px solid;
-  border-color: #112035;
+  border-color: #D2D2D2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,7 +24,7 @@ exports[`renders 1`] = `
 
 .c1:hover,
 .c1:focus-within {
-  border-color: #112035;
+  border-color: #D2D2D2;
 }
 
 .c2 {
