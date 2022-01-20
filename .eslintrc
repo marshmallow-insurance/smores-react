@@ -23,7 +23,7 @@
     "strict": ["error", "never"],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "warn"
   },
   "overrides": [
     {
@@ -39,7 +39,8 @@
       ],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": ["off"],
-        "@typescript-eslint/interface-name-prefix": ["off"]
+        "@typescript-eslint/interface-name-prefix": ["off"],
+        "react/prop-types": "off" // disables PropTypes for TS projects
       }
     }
   ]
