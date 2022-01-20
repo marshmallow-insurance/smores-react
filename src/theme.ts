@@ -17,8 +17,8 @@ const colors = {
 
   // Traffic light
   error: '#D82C2C',
-  agentWarning: '#FFC400',
-  warning: '#FF8B00',
+  agentWarning: '#FF8B00',
+  warning: '#FFC400',
   success: '#00875A',
 
   // Third-party brand colours
