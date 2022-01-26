@@ -1,3 +1,8 @@
+## [2.0.3] - 2022-01-26
+### Added
+- Story for new colour palette
+### Changed
+- Updated button hover state colours
 ## [2.0.2] - 2022-01-13
 ### Changed
 - Updated a couple of colour hexes
@@ -243,6 +248,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.0.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.0.2...v2.0.3
 [2.0.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/marshmallow-insurance/smores-react/compare/v1.8.1...v2.0.0
