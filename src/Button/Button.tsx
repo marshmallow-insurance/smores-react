@@ -168,10 +168,12 @@ const Container = styled.button<IButton>(
       &:hover {
         background-color: ${!(disabled || isLoading) &&
         darken(0.1, theme.colors.primary)};
+        border-color: ${!(disabled || isLoading) &&
+        darken(0.1, theme.colors.primary)};
       }
       &:active {
-        background-color: ${!(disabled || isLoading) &&
-        darken(0.1, theme.colors.primary)};
+        background-color: ${darken(0.1, theme.colors.primary)};
+        border-color: ${darken(0.1, theme.colors.primary)};
       }
     `}
     ${secondary &&
@@ -198,10 +200,12 @@ const Container = styled.button<IButton>(
       &:hover {
         background-color: ${!(disabled || isLoading) &&
         darken(0.1, theme.colors.background)};
+        border-color: ${!(disabled || isLoading) &&
+        darken(0.1, theme.colors.background)};
       }
       &:active {
-        background-color: ${!(disabled || isLoading) &&
-        darken(0.1, theme.colors.background)};
+        background-color: ${darken(0.1, theme.colors.background)};
+        border-color: ${darken(0.1, theme.colors.background)};
       }
     `}
   `,
