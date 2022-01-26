@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
@@ -26,28 +26,40 @@ type Props = {
   title?: string
 }
 
-export const Text: FC<Props> = ({
-  children,
-  typo,
-  className = '',
-  tag = 'p',
-  align = 'left',
-  color = 'secondary',
-  cursor = 'inherit',
-  title = '',
-}) => (
-  <Container
-    as={tag}
-    className={className}
-    typo={typo || 'base'}
-    align={align}
-    color={color}
-    cursor={cursor}
-    title={title}
-  >
-    {children}
-  </Container>
+type TextProps = Props & LabelHTMLAttributes<HTMLElement>
+
+export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
+  (
+    {
+      children,
+      typo,
+      className = '',
+      tag = 'p',
+      align = 'left',
+      color = 'secondary',
+      cursor = 'inherit',
+      title = '',
+      ...props
+    },
+    ref,
+  ) => (
+    <Container
+      as={tag}
+      className={className}
+      typo={typo || 'base'}
+      align={align}
+      color={color}
+      cursor={cursor}
+      title={title}
+      {...props}
+      ref={ref}
+    >
+      {children}
+    </Container>
+  ),
 )
+
+Text.displayName = 'Text'
 
 const Container = styled.p<IText>(
   ({ align, color, cursor, typo }) => css`

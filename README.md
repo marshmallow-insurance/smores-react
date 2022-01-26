@@ -105,7 +105,7 @@ yalc update
 When you’ve finished deving run the below in your project folder to remove all packages linked
 
 ```
-yalc remove —all
+yalc remove --all
 ```
 
 ## List of Components
