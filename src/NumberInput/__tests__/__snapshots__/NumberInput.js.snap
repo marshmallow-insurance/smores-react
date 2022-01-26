@@ -204,6 +204,7 @@ exports[`renders - currency 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
+      for="currencyInput"
       title=""
     >
       Currency
@@ -391,6 +392,7 @@ exports[`renders - disabled 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
+      for="currencyInput"
       title=""
     >
       Currency
@@ -625,6 +627,7 @@ exports[`renders - error 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
+      for="currencyInput"
       title=""
     >
       Currency
@@ -822,6 +825,7 @@ exports[`renders - number 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
+      for="numberInput"
       title=""
     >
       Number
@@ -985,6 +989,7 @@ exports[`renders - tel 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
+      for="tel"
       title=""
     >
       Telephone number
@@ -1154,6 +1159,7 @@ exports[`renders - with suffix 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
+      for="currencyInput"
       title=""
     >
       Currency
@@ -1348,6 +1354,7 @@ exports[`renders - with trailing icon 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
+      for="currencyInput"
       title=""
     >
       Currency
