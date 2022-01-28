@@ -1,6 +1,7 @@
 import React from 'react'
 import { TextInput } from './TextInput'
 import { Container } from './Container'
+import { theme } from '../theme'
 
 export default {
   title: 'Text Input',
@@ -97,6 +98,23 @@ WithLabel.args = {
   onBlur: () => {},
   label: 'label',
   outlined: false,
+}
+
+export const WithHeaderLabel = Template.bind({})
+
+WithHeaderLabel.args = {
+  id: 'textInput',
+  name: 'textInput',
+  placeholder: 'Placeholder text',
+  onChange: () => {},
+  onInputChange: () => {},
+  onBlur: () => {},
+  label: 'This is a header label',
+  labelColor: theme.colors.secondary,
+  labelTypo: 'header-medium',
+  labelTag: 'h3',
+  outlinedLabelMargin: '16px',
+  outlined: true,
 }
 
 export const WithIcon = Template.bind({})

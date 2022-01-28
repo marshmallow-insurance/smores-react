@@ -17,6 +17,14 @@ type TextareaProps = {
   placeholder?: string
   /** label displayed above the input  */
   label?: string
+  /** label typography displayed above input  */
+  labelTypo?: string
+  /** label tag displayed above input  */
+  labelTag?: string
+  /** label color displayed above input  */
+  labelColor?: string
+  /** margin below label, when input is not outlined */
+  labelMargin?: string
   /** used for label - input connection */
   name?: string
   /** input value */
@@ -56,6 +64,10 @@ export const Textarea: FC<Props> = ({
   id,
   name,
   label,
+  labelTypo = 'label',
+  labelTag = 'label',
+  labelColor = 'subtext',
+  labelMargin = '4px',
   value,
   onChange,
   onInputChange,
@@ -72,8 +84,8 @@ export const Textarea: FC<Props> = ({
 }) => (
   <Box flex direction="column" className={className}>
     {label && (
-      <Box mb="4px">
-        <Text tag="label" color="subtext" typo="label" htmlFor={id}>
+      <Box mb={labelMargin}>
+        <Text tag={labelTag} color={labelColor} typo={labelTypo} htmlFor={id}>
           {label}
         </Text>
       </Box>

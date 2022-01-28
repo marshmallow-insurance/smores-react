@@ -1,6 +1,7 @@
 import React from 'react'
 import { Dropdown } from './Dropdown'
 import { Container } from './Container'
+import { theme } from '../theme'
 
 const days = [
   {
@@ -164,6 +165,20 @@ WithOutline.args = {
   list: days,
   placeholder: 'Select Day',
   outlined: true,
+}
+
+export const WithHeaderLabel = Template.bind({})
+
+WithHeaderLabel.args = {
+  id: 'days',
+  list: days,
+  placeholder: 'Select Day',
+  outlined: true,
+  label: 'What day were you born?',
+  labelColor: theme.colors.secondary,
+  labelTypo: 'header-medium',
+  labelTag: 'h3',
+  outlinedLabelMargin: '16px',
 }
 
 export const WithOutlineWithGroups = Template.bind({})

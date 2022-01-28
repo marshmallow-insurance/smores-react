@@ -22,6 +22,16 @@ type DefaultProps = {
   placeholder: string
   /** label displayed above the input  */
   label?: string
+  /** label typography displayed above input  */
+  labelTypo?: string
+  /** label tag displayed above input  */
+  labelTag?: string
+  /** label color displayed above input  */
+  labelColor?: string
+  /** margin below label, when input is outlined */
+  outlinedLabelMargin?: string
+  /** margin below label, when input is not outlined */
+  labelMargin?: string
   /** used for label - input connection */
   name?: string
   /** input value */
@@ -59,6 +69,11 @@ export const TextInput: FC<Props> = ({
   type = 'text',
   placeholder,
   label,
+  labelTypo = 'label',
+  labelTag = 'label',
+  labelColor = 'subtext',
+  outlinedLabelMargin = '4px',
+  labelMargin = '0px',
   name,
   value,
   outlined = false,
@@ -73,8 +88,8 @@ export const TextInput: FC<Props> = ({
 }) => (
   <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
     {label && (
-      <Box mb={outlined ? '4px' : '0px'}>
-        <Text tag="label" color="subtext" typo="label" htmlFor={id}>
+      <Box mb={outlined ? outlinedLabelMargin : labelMargin}>
+        <Text tag={labelTag} color={labelColor} typo={labelTypo} htmlFor={id}>
           {label}
         </Text>
       </Box>

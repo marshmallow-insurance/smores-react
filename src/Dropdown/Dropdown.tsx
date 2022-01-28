@@ -29,6 +29,16 @@ type DefaultProps = {
   placeholder?: string
   /** label displayed above the dropdown  */
   label?: string
+  /** label typography displayed above input  */
+  labelTypo?: string
+  /** label tag displayed above input  */
+  labelTag?: string
+  /** label color displayed above input  */
+  labelColor?: string
+  /** margin below label, when input is outlined */
+  outlinedLabelMargin?: string
+  /** margin below label, when input is not outlined */
+  labelMargin?: string
   /** used for label - input connection */
   name?: string
   /** input value */
@@ -73,6 +83,11 @@ export const Dropdown: FC<Props> = ({
   className = '',
   ref,
   label,
+  labelTypo = 'label',
+  labelTag = 'label',
+  labelColor = 'subtext',
+  outlinedLabelMargin = '4px',
+  labelMargin = '0px',
   placeholder,
   name,
   value,
@@ -119,8 +134,8 @@ export const Dropdown: FC<Props> = ({
   return (
     <Container className={className}>
       {label && (
-        <Box mb={outlined ? '4px' : '0px'}>
-          <Text tag="label" color="subtext" typo="label" htmlFor={id}>
+        <Box mb={outlined ? outlinedLabelMargin : labelMargin}>
+          <Text tag={labelTag} color={labelColor} typo={labelTypo} htmlFor={id}>
             {label}
           </Text>
         </Box>
