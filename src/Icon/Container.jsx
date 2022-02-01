@@ -606,6 +606,10 @@ export const Container = () => {
         <Icon render="renewal-line" />
       </Wrapper>
       <Wrapper>
+        <span>repeat-charge</span>
+        <Icon render="repeat-charge" />
+      </Wrapper>
+      <Wrapper>
         <span>return</span>
         <Icon render="return" />
       </Wrapper>
