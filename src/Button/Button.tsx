@@ -26,7 +26,7 @@ interface IButton {
 
 type Props = {
   children: ReactNode
-  id: string
+  id?: string
   className?: string
   color?: string
   block?: boolean
