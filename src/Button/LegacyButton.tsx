@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
@@ -7,7 +7,7 @@ interface IButton {
   /** button color  */
   color: string
   /** unique id */
-  id: string
+  id?: string
   /** take full 100% width  */
   block: boolean
   /** invert bg and text colors */
@@ -21,8 +21,7 @@ interface IButton {
 }
 
 type Props = {
-  children: ReactNode
-  id: string
+  id?: string
   className?: string
   color?: string
   block?: boolean

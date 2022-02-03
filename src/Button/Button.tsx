@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
+import React, { FC, ButtonHTMLAttributes, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { darken } from 'polished'
 
@@ -25,8 +25,7 @@ interface IButton {
 }
 
 type Props = {
-  children: ReactNode
-  id: string
+  id?: string
   className?: string
   color?: string
   block?: boolean
