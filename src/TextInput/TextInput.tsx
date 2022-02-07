@@ -90,6 +90,7 @@ export const TextInput: FC<Props> = ({
         placeholder={placeholder}
         value={value}
         error={error}
+        outlined={outlined}
         autoComplete="off"
         onChange={(e: FormEvent<HTMLInputElement>) => {
           onChange && onChange(e.currentTarget.value)
@@ -120,16 +121,15 @@ interface IInput {
   error: boolean
   disabled?: boolean
   value?: string
-}
-
-interface IInputOutline extends IInput {
   outlined?: boolean
 }
 
-const Content = styled.div<IInputOutline>`
+const Content = styled.div<IInput>`
   border-bottom: 1px solid;
   border-color: ${({ error }) =>
     theme.colors[`${error ? 'error' : 'outline'}`]};
+  background-color: ${({ outlined }) =>
+    outlined ? 'transparent' : theme.colors['white']};
   display: flex;
   height: 32px;
 
@@ -144,7 +144,6 @@ const Content = styled.div<IInputOutline>`
     `
       border: 2px solid ${error ? theme.colors.error : theme.colors.outline};
       border-radius: 8px;
-      padding: 16px 12px;
       height: auto;
     `}
 
@@ -158,12 +157,13 @@ const Content = styled.div<IInputOutline>`
 
 const Input = styled.input<IInput>`
   border: none;
+  background-color: transparent;
   color: ${({ error }) => theme.colors[`${error ? 'error' : 'secondary'}`]};
   font-size: 16px;
   width: 100%;
   outline: none;
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
-  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'initial')};
+  padding: ${({ outlined }) => (outlined ? '17px 14px' : '1px 2px')};
 
   &::placeholder {
     color: ${theme.colors.subtext};
