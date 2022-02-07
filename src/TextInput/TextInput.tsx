@@ -163,6 +163,7 @@ const Input = styled.input<IInput>`
   width: 100%;
   outline: none;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'initial')};
+  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   padding: ${({ outlined }) => (outlined ? '17px 14px' : '1px 2px')};
 
   &::placeholder {
