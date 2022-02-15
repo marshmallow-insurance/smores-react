@@ -5,25 +5,21 @@ const options = [
   {
     id: 0,
     label: 'Apples',
-    value: 'APPLES',
     checked: false,
   },
   {
     id: 1,
     label: 'Oranges',
-    value: 'ORANGES',
     checked: false,
   },
   {
     id: 2,
     label: 'Grapes',
-    value: 'GRAPES',
     checked: false,
   },
   {
     id: 3,
     label: 'Bananas',
-    value: 'BANANAS',
     checked: false,
   },
 ]

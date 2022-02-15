@@ -6,7 +6,6 @@ import { CheckBox } from './CheckBox'
 type Item = {
   id: number
   label: string
-  value: string
   checked: boolean
 }
 
