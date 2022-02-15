@@ -1,3 +1,6 @@
+## [2.1.2] - 2022-02-15
+### Changed
+- Updated checkbox label alignment
 ## [2.1.1] - 2022-02-01
 ### Added
 - Added repeat-charge Icon
@@ -254,6 +257,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.1.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.0.3...v2.1.0
 [2.0.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.0.2...v2.0.3
