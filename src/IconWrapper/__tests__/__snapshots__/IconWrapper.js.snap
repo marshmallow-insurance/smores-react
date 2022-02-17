@@ -1,24 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
-.c0 {
-  position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.c2 {
-  position: absolute;
-  width: 100%;
-  max-width: 16px;
-  height: 16px;
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -44,6 +26,24 @@ exports[`renders 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+}
+
+.c0 {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c2 {
+  position: absolute;
+  width: 100%;
+  max-width: 16px;
+  height: 16px;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
 }
 
 <div
@@ -101,23 +101,30 @@ exports[`renders 1`] = `
     r="auto"
     size="16"
   >
-    <svg
-      fill="none"
-      height="100%"
-      viewBox="0 0 16 16"
-      width="100%"
+    <span
+      class="c1"
+      color="secondary"
+      rotate="0"
+      size="24"
     >
-      <circle
-        cx="8"
-        cy="8"
-        fill="#00875A"
-        r="8"
-      />
-      <path
-        d="M12.3203 4.61579C12.1068 4.43879 11.7928 4.46829 11.6158 4.67979L6.9033 10.3348L4.2773 8.58429C4.0468 8.43029 3.7368 8.49279 3.5838 8.72279C3.4303 8.95229 3.4923 9.26329 3.7223 9.41629L6.7223 11.4163C6.8073 11.4723 6.9038 11.4998 6.9993 11.4998C7.1433 11.4998 7.2853 11.4378 7.3843 11.3198L12.3843 5.31979C12.5608 5.10779 12.5318 4.79229 12.3203 4.61579V4.61579Z"
-        fill="white"
-      />
-    </svg>
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 24 24"
+        width="100%"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+          fill="#00875A"
+          fill-rule="evenodd"
+        />
+        <path
+          d="M16.8606 8.19301C16.6205 7.99388 16.2672 8.02707 16.0681 8.26501L10.7665 14.6269L7.81227 12.6576C7.55295 12.4843 7.2042 12.5546 7.03208 12.8134C6.85939 13.0716 6.92914 13.4214 7.18789 13.5936L10.5629 15.8436C10.6585 15.9066 10.7671 15.9375 10.8745 15.9375C11.0365 15.9375 11.1963 15.8678 11.3076 15.735L16.9326 8.98501C17.1312 8.74651 17.0986 8.39157 16.8606 8.19301Z"
+          fill="white"
+        />
+      </svg>
+    </span>
   </div>
 </div>
 `;

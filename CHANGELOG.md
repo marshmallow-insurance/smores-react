@@ -1,3 +1,7 @@
+## [2.1.3] - 2022-02-17
+### Added
+- Added 'included' and 'excluded' to Icon component
+- Updates IconWrapper to use Icon component
 ## [2.1.2] - 2022-02-15
 ### Changed
 - Updated checkbox label alignment
@@ -257,6 +261,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.1.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.2...v2.1.3
 [2.1.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.0.3...v2.1.0
