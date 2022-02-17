@@ -4090,8 +4090,8 @@ const Container = styled.span<IIcon>(
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: ${size}px;
+    flex-shrink: 0;
+    width: ${size}px;
     height: ${size}px;
     transform: rotate(${rotate}deg);
     margin-top: ${mt};

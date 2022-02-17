@@ -14,8 +14,10 @@ exports[`default renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 100%;
-  max-width: 32px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 32px;
   height: 32px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -27,9 +29,6 @@ exports[`default renders correctly 1`] = `
 }
 
 .c1 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -107,8 +106,10 @@ exports[`info renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 100%;
-  max-width: 32px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 32px;
   height: 32px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -120,9 +121,6 @@ exports[`info renders correctly 1`] = `
 }
 
 .c1 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -200,8 +198,10 @@ exports[`warning renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 100%;
-  max-width: 32px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 32px;
   height: 32px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -213,9 +213,6 @@ exports[`warning renders correctly 1`] = `
 }
 
 .c1 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
