@@ -80,8 +80,10 @@ exports[`renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 100%;
-  max-width: 18px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 18px;
   height: 18px;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);

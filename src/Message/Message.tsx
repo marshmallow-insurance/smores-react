@@ -61,7 +61,6 @@ interface IWrapper {
 }
 
 const IconWrapper = styled(Box)<IIconWrapper>`
-  flex-shrink: 0;
   align-self: ${({ alignIcon }) => alignIcon};
 `
 

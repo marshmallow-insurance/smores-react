@@ -14,8 +14,10 @@ exports[`renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 100%;
-  max-width: 32px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 32px;
   height: 32px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
