@@ -28,6 +28,33 @@ exports[`renders 1`] = `
   margin-left: 0;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
 .c0 {
   position: relative;
   width: -webkit-fit-content;
@@ -102,24 +129,32 @@ exports[`renders 1`] = `
     size="16"
   >
     <span
-      class="c1"
-      color="#00875A"
+      class="c3"
+      color="success"
       rotate="0"
-      size="24"
+      size="16"
     >
       <svg
         fill="none"
         height="100%"
         viewBox="0 0 24 24"
         width="100%"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path
           clip-rule="evenodd"
           d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+          fill="#00875A"
           fill-rule="evenodd"
         />
         <path
-          d="M16.8606 8.19301C16.6205 7.99388 16.2672 8.02707 16.0681 8.26501L10.7665 14.6269L7.81227 12.6576C7.55295 12.4843 7.2042 12.5546 7.03208 12.8134C6.85939 13.0716 6.92914 13.4214 7.18789 13.5936L10.5629 15.8436C10.6585 15.9066 10.7671 15.9375 10.8745 15.9375C11.0365 15.9375 11.1963 15.8678 11.3076 15.735L16.9326 8.98501C17.1312 8.74651 17.0986 8.39157 16.8606 8.19301Z"
+          clip-rule="evenodd"
+          d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+          fill="#00875A"
+          fill-rule="evenodd"
+        />
+        <path
+          d="M12.7953 11.7187L15.7726 8.52889C15.9925 8.29325 15.9925 7.91237 15.7726 7.67673C15.5526 7.44109 15.1971 7.44109 14.9772 7.67673L12 10.8666L9.02279 7.67673C8.80286 7.44109 8.44738 7.44109 8.22745 7.67673C8.00752 7.91237 8.00752 8.29325 8.22745 8.52889L11.2047 11.7187L8.22745 14.9086C8.00752 15.1442 8.00752 15.5251 8.22745 15.7608C8.33713 15.8783 8.48113 15.9373 8.62512 15.9373C8.76912 15.9373 8.91311 15.8783 9.02279 15.7608L12 12.5709L14.9772 15.7608C15.0869 15.8783 15.2309 15.9373 15.3749 15.9373C15.5189 15.9373 15.6629 15.8783 15.7726 15.7608C15.9925 15.5251 15.9925 15.1442 15.7726 14.9086L12.7953 11.7187Z"
           fill="white"
         />
       </svg>
