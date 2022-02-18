@@ -238,6 +238,10 @@ export const Container = () => {
         <Icon render="europe" />
       </Wrapper>
       <Wrapper>
+        <span>excluded</span>
+        <Icon render="excluded" />
+      </Wrapper>
+      <Wrapper>
         <span>expand</span>
         <Icon render="expand" />
       </Wrapper>
@@ -340,6 +344,10 @@ export const Container = () => {
       <Wrapper>
         <span>house</span>
         <Icon render="house" />
+      </Wrapper>
+      <Wrapper>
+        <span>included</span>
+        <Icon render="included" />
       </Wrapper>
       <Wrapper>
         <span>id</span>
