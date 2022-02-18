@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
+import { theme } from '../theme'
 
 import { Icon } from '../Icon'
 
@@ -32,8 +33,12 @@ export const IconWrapper: FC<Props> = ({
   <Container className={className}>
     {children}
     <IconContainer size={size} t={t} r={r} b={b} l={l}>
-      {render === 'included' && <Icon render="included" />}
-      {render === 'excluded' && <Icon render="excluded" />}
+      {render === 'included' && (
+        <Icon render="included" color={theme.colors.success} />
+      )}
+      {render === 'excluded' && (
+        <Icon render="excluded" color={theme.colors.error} />
+      )}
     </IconContainer>
   </Container>
 )
