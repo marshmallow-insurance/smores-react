@@ -1,3 +1,6 @@
+## [2.1.4] - 2022-02-21
+### Changed
+- Swapped 'included' and 'excluded' icons
 ## [2.1.3] - 2022-02-17
 ### Added
 - Added 'included' and 'excluded' to Icon component
