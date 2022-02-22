@@ -39,15 +39,21 @@ export const Pagination: FC<PaginationProps> = ({
   }, [lastPage])
 
   useEffect(() => {
-    const numberOfPages = Math.ceil(total / partition)
+    const numberOfPages = Math.ceil(total / partition);
     if (numberOfPages > 1) {
-      setLastPage(numberOfPages)
+        setLastPage(numberOfPages);
+    } else if(numberOfPages === 1) {
+        // Sets last page to be null to avoid duplicating the first page.
+        setLastPage(null);
     }
     if (numberOfPages > 2) {
-      const allPages = Array.from({ length: numberOfPages }, (_, i) => i + 1)
-      setPages(allPages.slice(1, numberOfPages - 1))
+        const allPages = Array.from({ length: numberOfPages }, (_, i) => i + 1);
+        setPages(allPages.slice(1, numberOfPages - 1));
+    } else {
+      // Sets pages to empty to avoid using the previous state if pages set before. 
+        setPages([])
     }
-  }, [total, partition])
+}, [total, partition]);
 
   useEffect(() => {
     if (lastPage <= MAX_PAGES) {
