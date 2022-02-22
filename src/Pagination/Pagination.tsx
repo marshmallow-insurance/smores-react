@@ -41,7 +41,7 @@ export const Pagination: FC<PaginationProps> = ({
   useEffect(() => {
     const numberOfPages = Math.ceil(total / partition)
     if (numberOfPages > 1) {
-        setLastPage(numberOfPages);
+        setLastPage(numberOfPages)
     } else if(numberOfPages === 1) {
         // Sets last page to be null to avoid duplicating the first page.
         setLastPage(null);
