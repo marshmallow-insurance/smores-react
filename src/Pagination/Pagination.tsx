@@ -43,7 +43,7 @@ export const Pagination: FC<PaginationProps> = ({
     if (numberOfPages > 1) {
         setLastPage(numberOfPages)
     } else if(numberOfPages === 1) {
-        // Sets last page to be null to avoid duplicating the first page.
+        // Sets last page to be null to avoid the last page being kept from previous state.
         setLastPage(null);
     }
     if (numberOfPages > 2) {
