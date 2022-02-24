@@ -1,4 +1,7 @@
-## [2.1.5] - 2022-02-23
+<<<<<<< HEAD
+## [2.1.5] - 2022-02-24
+### Added
+- Added `album-audio` icon
 ### Changed
 - Fix Pagination bug for small number of pages
 ## [2.1.4] - 2022-02-21

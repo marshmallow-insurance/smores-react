@@ -46,6 +46,10 @@ export const Container = () => {
         <Icon render="address-mta" />
       </Wrapper>
       <Wrapper>
+        <span>album-audio</span>
+        <Icon render="album-audio" />
+      </Wrapper>
+      <Wrapper>
         <span>alert-engine</span>
         <Icon render="alert-engine" />
       </Wrapper>
