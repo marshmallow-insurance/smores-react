@@ -1,3 +1,6 @@
+## [2.1.5] - 2022-02-23
+### Changed
+- Fix Pagination bug for small number of pages
 ## [2.1.4] - 2022-02-21
 ### Changed
 - Swapped 'included' and 'excluded' icons
@@ -264,6 +267,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.1.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.4...v2.1.5
 [2.1.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.3...v2.1.4
 [2.1.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.2...v2.1.3
 [2.1.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.1...v2.1.2
