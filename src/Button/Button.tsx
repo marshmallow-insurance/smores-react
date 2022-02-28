@@ -72,46 +72,9 @@ export const Button: FC<ButtonProps> = forwardRef<
       ...props
     },
     ref,
-  ) => (
-    <div>
-      {primary || secondary || tertiary ? (
-        <Container
-          id={id}
-          className={className}
-          disabled={disabled || loading}
-          onClick={(e) => {
-            handleClick && handleClick(e)
-          }}
-          isLoading={loading}
-          primary={primary}
-          secondary={secondary}
-          tertiary={tertiary}
-          icon={icon}
-          forcedWidth={forcedWidth}
-          {...(form ? { form } : {})}
-          type={type}
-          {...props}
-          ref={ref}
-        >
-          {loading ? (
-            <Loader
-              color={primary ? 'white' : `${theme.colors.secondary}`}
-              height="16"
-            />
-          ) : (
-            <>
-              {icon && (
-                <IconContainer
-                  render={icon}
-                  size={24}
-                  color={primary ? 'white' : 'secondary'}
-                />
-              )}
-              <ChildrenContainer>{children}</ChildrenContainer>
-            </>
-          )}
-        </Container>
-      ) : (
+  ) => {
+    if (!primary && !secondary && !tertiary) {
+      return (
         <LegacyButton
           id={id}
           className={className}
@@ -126,9 +89,48 @@ export const Button: FC<ButtonProps> = forwardRef<
         >
           {children}
         </LegacyButton>
-      )}
-    </div>
-  ),
+      )
+    }
+
+    return (
+      <Container
+        id={id}
+        className={className}
+        disabled={disabled || loading}
+        onClick={(e) => {
+          handleClick && handleClick(e)
+        }}
+        isLoading={loading}
+        primary={primary}
+        secondary={secondary}
+        tertiary={tertiary}
+        icon={icon}
+        forcedWidth={forcedWidth}
+        {...(form ? { form } : {})}
+        type={type}
+        {...props}
+        ref={ref}
+      >
+        {loading ? (
+          <Loader
+            color={primary ? 'white' : `${theme.colors.secondary}`}
+            height="16"
+          />
+        ) : (
+          <>
+            {icon && (
+              <IconContainer
+                render={icon}
+                size={24}
+                color={primary ? 'white' : 'secondary'}
+              />
+            )}
+            <ChildrenContainer>{children}</ChildrenContainer>
+          </>
+        )}
+      </Container>
+    )
+  },
 )
 
 Button.displayName = 'Button'
