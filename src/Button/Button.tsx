@@ -149,7 +149,7 @@ const Container = styled.button<IButton>(
     border: 2px solid;
     box-shadow: none;
     color: ${theme.colors.secondary};
-    padding: 16px 20px;
+    padding: 0 20px;
     outline: none;
     border-radius: 8px;
     align-items: center;
@@ -218,5 +218,6 @@ const IconContainer = styled(IconComponent)`
 `
 
 const ChildrenContainer = styled.div`
+  padding: 16px 0;
   flex-grow: 1;
 `
