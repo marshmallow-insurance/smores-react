@@ -25,7 +25,8 @@
     "test": "jest --silent",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect && husky install",
-    "pre-commit-lint": "npm run check-types && lint-staged"
+    "pre-commit-lint": "npm run check-types && lint-staged",
+    "lint": "eslint"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",
@@ -51,7 +52,7 @@
     "eslint": "^7.9.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-plugin-jest": "^26.0.0",
-    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.1.2",
     "husky": "^7.0.0",
     "jest": "^26.4.2",

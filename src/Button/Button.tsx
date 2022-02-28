@@ -111,23 +111,24 @@ export const Button: FC<ButtonProps> = forwardRef<
         {...props}
         ref={ref}
       >
-        {loading ? (
-          <Loader
-            color={primary ? 'white' : `${theme.colors.secondary}`}
-            height="16"
-          />
-        ) : (
-          <>
-            {icon && (
-              <IconContainer
-                render={icon}
-                size={24}
-                color={primary ? 'white' : 'secondary'}
-              />
-            )}
-            <ChildrenContainer>{children}</ChildrenContainer>
-          </>
+        {loading && (
+          <LoaderContainer>
+            <Loader
+              color={primary ? 'white' : `${theme.colors.secondary}`}
+              height="16"
+            />
+          </LoaderContainer>
         )}
+        <ContentContainer icon={icon} loading={loading}>
+          {icon && (
+            <IconContainer
+              render={icon}
+              size={24}
+              color={primary ? 'white' : 'secondary'}
+            />
+          )}
+          <ChildrenContainer>{children}</ChildrenContainer>
+        </ContentContainer>
       </Container>
     )
   },
@@ -136,15 +137,8 @@ export const Button: FC<ButtonProps> = forwardRef<
 Button.displayName = 'Button'
 
 const Container = styled.button<IButton>(
-  ({
-    disabled,
-    isLoading,
-    primary,
-    secondary,
-    tertiary,
-    icon,
-    forcedWidth,
-  }) => css`
+  ({ disabled, isLoading, primary, secondary, tertiary, forcedWidth }) => css`
+    position: relative;
     background-color: ${theme.colors.primary};
     border: 2px solid;
     box-shadow: none;
@@ -152,9 +146,6 @@ const Container = styled.button<IButton>(
     padding: 0 20px;
     outline: none;
     border-radius: 8px;
-    align-items: center;
-    display: flex;
-    justify-content: ${icon ? 'space-evenly' : 'center'};
     font-weight: ${theme.font.weight.medium};
     cursor: ${disabled || isLoading ? 'not-allowed' : 'pointer'};
     line-height: 100%;
@@ -212,6 +203,24 @@ const Container = styled.button<IButton>(
     `}
   `,
 )
+
+const LoaderContainer = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const ContentContainer = styled.div<Pick<ButtonProps, 'icon' | 'loading'>>`
+  display: flex;
+  align-items: center;
+  justify-content: ${({ icon }) => (icon ? 'space-evenly' : 'center')};
+  opacity: ${({ loading }) => (loading ? '0' : '1')};
+`
 
 const IconContainer = styled(IconComponent)`
   margin-right: 10px;
