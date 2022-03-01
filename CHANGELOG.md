@@ -1,7 +1,7 @@
-## [2.1.6] - 2022-02-28
+## [2.1.7] - 2022-03-01
 ### Fixed
 - Fix Button's layout shifting issue when having an icon or changing to a loading state
-## [2.1.5] - 2022-02-24
+## [2.1.6] - 2022-02-24
 ### Added
 - Added `album-audio` icon
 ### Changed

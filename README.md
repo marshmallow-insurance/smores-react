@@ -32,30 +32,41 @@ $ npm install @mrshmllw/smores-react
 ```
 
 ## Release
-```md
-1. Checkout a new branch from the `Master` branch, update Changelog and _bump_ the project version.
-> $ git checkout master
-> $ git pull
-> Be sure that CHANGELOG.md is updated according to [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) with the latest release notes. If not, do it in a separate branch before bumping npm version.
-> $ git checkout -b release-prep
-> $ npm version [major | minor | patch] according to [semver.org](https://semver.org/)
-> $ git push origin release-prep
-> Open a PR and get this approved
-> Merge the approved PR and pull the latest version of master:
-> $ git checkout master
-> $ git pull
-> Push new tags to master:
-> $ git push origin --tags
-> ! check build is successful (green tick in GitHub Actions workflow) before next step
 
-2. Login to NPM.
-> $ npm login
+Before starting, make sure that `CHANGELOG.md` is updated according to [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) with the latest release notes. If not, make a PR updating it before continuing.
+
+1. Checkout a new branch from the `Master` branch, update Changelog and _bump_ the project version.
+
+```
+git checkout master
+git pull
+git checkout -b [branch_name]
+```
+
+2. Bump the version according to [semver.org](https://semver.org/) and create a PR
+
+```
+npm version [major | minor | patch] 
+```
+
+3. When merged, go the the `master` branch, pull and push the new tag to `origin`
+
+```
+git checkout master
+git pull
+git push origin --tags
+```
+
+Wait for the build to be successful (green tick in GitHub Actions workflow) before next step
+
+4. Login and publish to NPM
+
+```
+npm login
 > enter your username and password
 > enter your email address
 > complete two factor authentication
-
-3. Publish to NPM.
-> $ npm publish
+npm publish
 ```
 
 ## Running Smores in dev mode 
