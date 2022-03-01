@@ -72,46 +72,9 @@ export const Button: FC<ButtonProps> = forwardRef<
       ...props
     },
     ref,
-  ) => (
-    <div>
-      {primary || secondary || tertiary ? (
-        <Container
-          id={id}
-          className={className}
-          disabled={disabled || loading}
-          onClick={(e) => {
-            handleClick && handleClick(e)
-          }}
-          isLoading={loading}
-          primary={primary}
-          secondary={secondary}
-          tertiary={tertiary}
-          icon={icon}
-          forcedWidth={forcedWidth}
-          {...(form ? { form } : {})}
-          type={type}
-          {...props}
-          ref={ref}
-        >
-          {loading ? (
-            <Loader
-              color={primary ? 'white' : `${theme.colors.secondary}`}
-              height="16"
-            />
-          ) : (
-            <>
-              {icon && (
-                <IconContainer
-                  render={icon}
-                  size={24}
-                  color={primary ? 'white' : 'secondary'}
-                />
-              )}
-              <ChildrenContainer>{children}</ChildrenContainer>
-            </>
-          )}
-        </Container>
-      ) : (
+  ) => {
+    if (!primary && !secondary && !tertiary) {
+      return (
         <LegacyButton
           id={id}
           className={className}
@@ -126,33 +89,63 @@ export const Button: FC<ButtonProps> = forwardRef<
         >
           {children}
         </LegacyButton>
-      )}
-    </div>
-  ),
+      )
+    }
+
+    return (
+      <Container
+        id={id}
+        className={className}
+        disabled={disabled || loading}
+        onClick={(e) => {
+          handleClick && handleClick(e)
+        }}
+        isLoading={loading}
+        primary={primary}
+        secondary={secondary}
+        tertiary={tertiary}
+        icon={icon}
+        forcedWidth={forcedWidth}
+        {...(form ? { form } : {})}
+        type={type}
+        {...props}
+        ref={ref}
+      >
+        {loading && (
+          <LoaderContainer>
+            <Loader
+              color={primary ? 'white' : `${theme.colors.secondary}`}
+              height="16"
+            />
+          </LoaderContainer>
+        )}
+        <ContentContainer icon={icon} loading={loading}>
+          {icon && (
+            <IconContainer
+              render={icon}
+              size={24}
+              color={primary ? 'white' : 'secondary'}
+            />
+          )}
+          <ChildrenContainer>{children}</ChildrenContainer>
+        </ContentContainer>
+      </Container>
+    )
+  },
 )
 
 Button.displayName = 'Button'
 
 const Container = styled.button<IButton>(
-  ({
-    disabled,
-    isLoading,
-    primary,
-    secondary,
-    tertiary,
-    icon,
-    forcedWidth,
-  }) => css`
+  ({ disabled, isLoading, primary, secondary, tertiary, forcedWidth }) => css`
+    position: relative;
     background-color: ${theme.colors.primary};
     border: 2px solid;
     box-shadow: none;
     color: ${theme.colors.secondary};
-    padding: 16px 20px;
+    padding: 0 20px;
     outline: none;
     border-radius: 8px;
-    align-items: center;
-    display: flex;
-    justify-content: ${icon ? 'space-evenly' : 'center'};
     font-weight: ${theme.font.weight.medium};
     cursor: ${disabled || isLoading ? 'not-allowed' : 'pointer'};
     line-height: 100%;
@@ -211,10 +204,29 @@ const Container = styled.button<IButton>(
   `,
 )
 
+const LoaderContainer = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const ContentContainer = styled.div<Pick<ButtonProps, 'icon' | 'loading'>>`
+  display: flex;
+  align-items: center;
+  justify-content: ${({ icon }) => (icon ? 'space-evenly' : 'center')};
+  opacity: ${({ loading }) => (loading ? '0' : '1')};
+`
+
 const IconContainer = styled(IconComponent)`
   margin-right: 10px;
 `
 
 const ChildrenContainer = styled.div`
+  padding: 16px 0;
   flex-grow: 1;
 `

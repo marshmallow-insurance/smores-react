@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { Button } from './Button'
+import { InteractivePlayground } from './InteractivePlayground'
 
 export default {
   title: 'Button',
@@ -14,6 +16,12 @@ export const Default = Template.bind({})
 Default.args = {
   color: 'secondary',
 }
+
+const InteractivePlaygroundTemplate = (args) => (
+  <InteractivePlayground {...args} />
+)
+
+export const Interactive = InteractivePlaygroundTemplate.bind({})
 
 export const Coloured = Template.bind({})
 
