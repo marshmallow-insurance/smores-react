@@ -119,7 +119,7 @@ export const Button: FC<ButtonProps> = forwardRef<
             />
           </LoaderContainer>
         )}
-        <ContentContainer icon={icon} loading={loading}>
+        <ContentContainer icon={icon} $loading={loading}>
           {icon && (
             <IconContainer
               render={icon}
@@ -215,11 +215,13 @@ const LoaderContainer = styled.div`
   justify-content: center;
 `
 
-const ContentContainer = styled.div<Pick<ButtonProps, 'icon' | 'loading'>>`
+const ContentContainer = styled.div<
+  Pick<ButtonProps, 'icon'> & { $loading: boolean }
+>`
   display: flex;
   align-items: center;
   justify-content: ${({ icon }) => (icon ? 'space-evenly' : 'center')};
-  opacity: ${({ loading }) => (loading ? '0' : '1')};
+  opacity: ${({ $loading }) => ($loading ? '0' : '1')};
 `
 
 const IconContainer = styled(IconComponent)`
