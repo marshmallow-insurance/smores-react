@@ -1,3 +1,6 @@
+## [2.1.8] - 2022-03-03
+### Changed
+- Fix Button `loading` prop to be a transient prop internally
 ## [2.1.7] - 2022-03-01
 ### Fixed
 - Fix Button's layout shifting issue when having an icon or changing to a loading state
