@@ -76,7 +76,7 @@ exports[`rendersDropdown 1`] = `
 .c2:focus-visible,
 .c2:checked {
   outline: none;
-  border-color: #D2D2D2;
+  border-color: #b9b9b9;
 }
 
 .c3 {
@@ -243,7 +243,7 @@ exports[`rendersDropdownWithGroups 1`] = `
 .c2:focus-visible,
 .c2:checked {
   outline: none;
-  border-color: #D2D2D2;
+  border-color: #b9b9b9;
 }
 
 .c3 {

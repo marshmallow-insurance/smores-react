@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState, FormEvent, RefObject } from 'react'
 import styled from 'styled-components'
+import { darken } from 'polished'
 
 import { Text } from '../Text'
 import { Icon } from '../Icon'
@@ -245,7 +246,7 @@ const Select = styled.select<IUsesOutline>`
   &:focus-visible,
   &:checked {
     outline: none;
-    border-color: ${theme.colors.outline};
+    border-color: ${darken(0.1, theme.colors.outline)};
   }
 
   ${({ outlined }) =>

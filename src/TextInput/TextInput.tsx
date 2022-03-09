@@ -1,5 +1,6 @@
 import React, { FormEvent, FC, RefObject } from 'react'
 import styled from 'styled-components'
+import { darken } from 'polished'
 
 import { Box } from '../Box'
 import { Text } from '../Text'
@@ -10,7 +11,7 @@ import { theme } from '../theme'
 type DefaultProps = {
   /** ID, usually used for tests  */
   id: string
-  /** className attribute to apply classses from props */
+  /** className attribute to apply classes from props */
   className?: string
   /** ref attribute for input */
   ref?: RefObject<HTMLInputElement>
@@ -136,7 +137,7 @@ const Content = styled.div<IInput>`
   &:hover,
   &:focus-within {
     border-color: ${({ error }) =>
-      theme.colors[`${error ? 'error' : 'outline'}`]};
+      error ? theme.colors.error : darken(0.1, theme.colors.outline)};
   }
 
   ${({ outlined, error }) =>

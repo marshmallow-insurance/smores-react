@@ -1,5 +1,6 @@
 import React, { FC, FormEvent, RefObject } from 'react'
 import styled from 'styled-components'
+import { darken } from 'polished'
 
 import { Text } from '../Text'
 import { Box } from '../Box'
@@ -132,7 +133,7 @@ const Field = styled.textarea<ITextarea>`
   &:focus,
   &:focus-visible {
     border-color: ${({ error }) =>
-      theme.colors[`${error ? 'error' : 'outline'}`]};
+      error ? theme.colors.error : darken(0.1, theme.colors.outline)};
   }
 
   ${({ value }) =>

@@ -1,3 +1,7 @@
+## [2.1.9] - 2022-03-09
+### Changed
+- Fixed form fields hover states
+- Deleted stories for deprecated Button styles
 ## [2.1.8] - 2022-03-03
 ### Changed
 - Fix Button `loading` prop to be a transient prop internally
@@ -275,6 +279,10 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.1.9]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.8...v2.1.9
+[2.1.8]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.7...v2.1.8
+[2.1.7]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.6...v2.1.7
+[2.1.6]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.5...v2.1.6
 [2.1.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.4...v2.1.5
 [2.1.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.3...v2.1.4
 [2.1.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.2...v2.1.3

@@ -25,7 +25,7 @@ exports[`renders 1`] = `
 
 .c1:hover,
 .c1:focus-within {
-  border-color: #D2D2D2;
+  border-color: #b9b9b9;
 }
 
 .c2 {
