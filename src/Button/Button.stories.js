@@ -11,40 +11,11 @@ export default {
 
 const Template = (args) => <Button {...args}>Get started</Button>
 
-export const Default = Template.bind({})
-
-Default.args = {
-  color: 'secondary',
-}
-
 const InteractivePlaygroundTemplate = (args) => (
   <InteractivePlayground {...args} />
 )
 
 export const Interactive = InteractivePlaygroundTemplate.bind({})
-
-export const Coloured = Template.bind({})
-
-Coloured.args = {
-  color: 'success',
-}
-
-export const Inverted = Template.bind({})
-
-Inverted.args = {
-  inverted: true,
-}
-export const Outlined = Template.bind({})
-
-Outlined.args = {
-  outlined: true,
-}
-
-export const Block = Template.bind({})
-
-Block.args = {
-  block: true,
-}
 
 export const Primary = Template.bind({})
 

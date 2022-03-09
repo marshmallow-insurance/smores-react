@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react'
 import styled from 'styled-components'
+import { darken } from 'polished'
 
 import { Text } from '../Text'
 import { Box } from '../Box'
@@ -172,7 +173,7 @@ const InputBox = styled.div<IShowIcon>`
   &:hover,
   &:focus,
   &:focus-within {
-    border-color: ${theme.colors.outline};
+    border-color: ${darken(0.1, theme.colors.outline)};
   }
 
   ${({ selected }) =>
