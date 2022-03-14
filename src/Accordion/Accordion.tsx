@@ -81,18 +81,12 @@ const TitleContainer = styled.div`
   flex-direction: column;
 `
 const TopContainer = styled(Box)<IAccordion>(
-  ({ isOpen, fullBorder }) => css`
-    padding: 15px 0px;
+  ({ fullBorder }) => css`
     cursor: pointer;
 
     ${fullBorder &&
     css`
       padding: 0px;
-    `}
-
-    ${isOpen &&
-    css`
-      margin-bottom: 14px;
     `}
   `,
 )
