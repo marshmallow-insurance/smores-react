@@ -23,6 +23,7 @@ const colors = {
 
   // Third-party brand colours
   compareTheMarket: '#004A8E',
+  confused: '#000A8C',
   onfido: '#3640F5',
   twitter: '#55ACEE',
   premfina: '#F08422',
