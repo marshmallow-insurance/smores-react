@@ -12,6 +12,7 @@ const neutrals = ['subtext', 'outline', 'background']
 const trafficLight = ['error', 'warning', 'agentWarning', 'success']
 const thirdPartyBrand = [
   'compareTheMarket',
+  'confused',
   'onfido',
   'twitter',
   'premfina',
