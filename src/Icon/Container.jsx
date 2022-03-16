@@ -186,6 +186,14 @@ export const Container = () => {
         <Icon render="clock" />
       </Wrapper>
       <Wrapper>
+        <span>confused</span>
+        <Icon render="confused" />
+      </Wrapper>
+      <Wrapper>
+        <span>confused-blue</span>
+        <Icon render="confused-blue" />
+      </Wrapper>
+      <Wrapper>
         <span>contact-email</span>
         <Icon render="contact-email" />
       </Wrapper>
