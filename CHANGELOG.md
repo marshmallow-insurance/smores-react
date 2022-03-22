@@ -1,6 +1,11 @@
+## [2.1.13] - 2022-03-22
+### Changed
+- Updated Accordion spacing
+
 ## [2.1.12] - 2022-03-16
 ### Changed
 - Added Confused logo in blue
+
 ## [2.1.11] - 2022-03-15
 ### Changed
 - Added Confused logo to icons and colour to third party colour palette
@@ -290,6 +295,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.1.13]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.12...v2.1.13
 [2.1.12]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.11...v2.1.12
 [2.1.11]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.10...v2.1.11
 [2.1.10]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.9...v2.1.10
