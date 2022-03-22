@@ -1,3 +1,7 @@
+## [2.1.14] - 2022-03-22
+### Changed
+- Updated Accordion border color
+
 ## [2.1.13] - 2022-03-22
 ### Changed
 - Updated Accordion spacing
@@ -295,6 +299,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.1.14]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.13...v2.1.14
 [2.1.13]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.12...v2.1.13
 [2.1.12]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.11...v2.1.12
 [2.1.11]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.10...v2.1.11
