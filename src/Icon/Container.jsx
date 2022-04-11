@@ -166,6 +166,10 @@ export const Container = () => {
         <Icon render="checkout-with-text" />
       </Wrapper>
       <Wrapper>
+        <span>circle-tick</span>
+        <Icon render="circle-tick" />
+      </Wrapper>
+      <Wrapper>
         <span>city</span>
         <Icon render="city" />
       </Wrapper>
