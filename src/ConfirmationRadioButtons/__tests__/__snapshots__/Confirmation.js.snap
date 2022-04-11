@@ -2,43 +2,43 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-bdvvtL sc-jrQzAO gBhudd cSnzvp"
+  class="sc-bczRLJ sc-jqUVSM fwUwPu dsgwcw"
 >
   <div
-    class="sc-iqseJM EKxTg"
+    class="sc-iqcoie kvhLPP"
   >
     <h3
-      class="sc-gsDKAQ MYwnP sc-kDTinF fvKitb"
+      class="sc-gsnTZi jZrEYv sc-kDDrLX irRxpq"
       color="secondary"
       cursor="inherit"
       title=""
     />
   </div>
   <div
-    class="sc-gKclnd gUQszg"
+    class="sc-gKXOVf bLqwLA"
   >
     <div
-      class="sc-iCfMLu hMAwuh"
+      class="sc-iBkjds ipBmMC"
     >
       <div
-        class="sc-furwcr jlBOWG"
+        class="sc-ftvSup blNGbF"
       >
         <div
-          class="sc-bdvvtL bZqKJd"
+          class="sc-bczRLJ fTuaZS"
         >
           <input
-            class="sc-hKwDye eSvXef"
+            class="sc-hKMtZM jiNniY"
             type="radio"
             value=""
           />
           <label
-            class="sc-eCImPb nRbn"
+            class="sc-eCYdqJ enYKyN"
           >
             <div
-              class="sc-dkPtRN khjpem"
+              class="sc-dkzDqf fxbkHh"
             />
             <span
-              class="sc-jRQBWg cWZaCo"
+              class="sc-jSMfEi jfnsHj"
             >
               Yes
             </span>
@@ -46,26 +46,26 @@ exports[`renders 1`] = `
         </div>
       </div>
       <div
-        class="sc-furwcr jlBOWG"
+        class="sc-ftvSup blNGbF"
       >
         <div
-          class="sc-bdvvtL bZqKJd"
+          class="sc-bczRLJ fTuaZS"
         >
           <input
-            class="sc-hKwDye eSvXef"
+            class="sc-hKMtZM jiNniY"
             id="undefined-1"
             type="radio"
             value="undefined-1"
           />
           <label
-            class="sc-eCImPb nRbn"
+            class="sc-eCYdqJ enYKyN"
             for="undefined-1"
           >
             <div
-              class="sc-dkPtRN khjpem"
+              class="sc-dkzDqf fxbkHh"
             />
             <span
-              class="sc-jRQBWg cWZaCo"
+              class="sc-jSMfEi jfnsHj"
             >
               No
             </span>
