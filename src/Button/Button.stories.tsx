@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button } from './Button'
+import { Button, ButtonProps } from './Button'
 import { InteractivePlayground } from './InteractivePlayground'
 
 export default {
@@ -9,9 +9,9 @@ export default {
   argTypes: { handleClick: { action: 'clicked' } },
 }
 
-const Template = (args) => <Button {...args}>Get started</Button>
+const Template = (args: ButtonProps) => <Button {...args}>Get started</Button>
 
-const InteractivePlaygroundTemplate = (args) => (
+const InteractivePlaygroundTemplate = (args: ButtonProps) => (
   <InteractivePlayground {...args} />
 )
 
