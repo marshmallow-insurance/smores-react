@@ -6,7 +6,7 @@ import { Icon } from '../Icon'
 import { Box } from '../Box'
 import { Text } from '../Text'
 
-export type Props = {
+export type RowProps = {
   iconLeft?: string
   iconLeftColor?: string
   iconRight?: string
@@ -20,7 +20,7 @@ export type Props = {
   boldHeading?: boolean
 }
 
-export const Row: FC<Props> = ({
+export const Row: FC<RowProps> = ({
   iconLeft,
   iconLeftColor,
   iconRight,

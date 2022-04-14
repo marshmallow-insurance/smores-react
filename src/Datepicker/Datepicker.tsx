@@ -24,7 +24,7 @@ import { theme } from '../theme'
 import { DatesList } from './DatesList'
 import { Month } from './types'
 
-type DatepickerProps = {
+export type DatepickerProps = {
   disableWeekend?: boolean
   firstDayShift?: boolean
   fromDate?: Date

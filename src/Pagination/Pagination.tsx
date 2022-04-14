@@ -11,7 +11,7 @@ import { theme } from '../theme'
 const MAX_PAGES = 7
 const MAX_ADDITIONAL_PAGES = Math.ceil(MAX_PAGES / 2)
 
-type PaginationProps = {
+export type PaginationProps = {
   /** Total number of records  */
   total: number
   /** Number of records per page  */

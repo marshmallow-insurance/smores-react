@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Box } from '../Box'
 import { theme } from '../theme'
 
-type DividerProps = {
+export type DividerProps = {
   maxWidth?: string
   height?: string
   mt?: string

@@ -6,7 +6,7 @@ import { Icon } from '../Icon'
 import { theme } from '../theme'
 import { Text } from '../Text'
 
-type AccordionProps = {
+export type AccordionProps = {
   title: string
   subTitle?: string
   borderTop?: boolean

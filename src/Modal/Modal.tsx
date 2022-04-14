@@ -17,7 +17,7 @@ interface IModalContainer {
   width: string
 }
 
-type ModalProps = {
+export type ModalProps = {
   title?: string
   icon?: string
   children?: ReactNode

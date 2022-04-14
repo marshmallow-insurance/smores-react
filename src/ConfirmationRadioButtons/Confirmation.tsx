@@ -5,7 +5,7 @@ import { Box } from '../Box'
 import { Text } from '../Text'
 import { RadioButton, FakeInput } from './RadioButtonStyled'
 
-type ConfirmationProps = {
+export type ConfirmationProps = {
   onChange(value?: boolean): void
   checked?: boolean
   id: string

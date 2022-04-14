@@ -7,7 +7,7 @@ import { Box } from '../Box'
 
 import { theme } from '../theme'
 
-type TextareaProps = {
+type BaseProps = {
   /** ID, usually used for tests  */
   id: string
   /** className attribute to apply classses from props */
@@ -51,9 +51,9 @@ type TruncateProps =
       onInputChange: (e: FormEvent<HTMLTextAreaElement>) => void
     }
 
-type Props = TextareaProps & TruncateProps
+export type TextareaProps = BaseProps & TruncateProps
 
-export const Textarea: FC<Props> = ({
+export const Textarea: FC<TextareaProps> = ({
   id,
   name,
   label,

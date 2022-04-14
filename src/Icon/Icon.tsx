@@ -10,7 +10,7 @@ import { theme } from '../theme'
  * Icons in the collection are alphabetically ordered.
  */
 
-type Props = {
+export type IconProps = {
   /** className attribute to apply classes from props */
   className?: string
   /** specify what Icon to render  */
@@ -28,7 +28,7 @@ type Props = {
   ml?: string
 }
 
-export const Icon: FC<Props> = ({
+export const Icon: FC<IconProps> = ({
   className = '',
   render,
   size = 24,

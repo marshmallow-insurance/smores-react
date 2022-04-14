@@ -9,7 +9,7 @@ interface IFakeInput {
   checked?: boolean
 }
 
-type RadioButtonProps = {
+export type RadioButtonProps = {
   id: string
   label: string
   checked?: boolean
