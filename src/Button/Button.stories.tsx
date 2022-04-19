@@ -9,10 +9,10 @@ export default {
   argTypes: { handleClick: { action: 'clicked' } },
 }
 
-const Template = (args: ButtonProps) => <Button {...args}>Get started</Button>
+const Template = (props: ButtonProps) => <Button {...props}>Get started</Button>
 
-const InteractivePlaygroundTemplate = (args: ButtonProps) => (
-  <InteractivePlayground {...args} />
+const InteractivePlaygroundTemplate = (props: ButtonProps) => (
+  <InteractivePlayground {...props} />
 )
 
 export const Interactive = InteractivePlaygroundTemplate.bind({})

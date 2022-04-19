@@ -7,8 +7,8 @@ export default {
   component: Card,
 }
 
-const Template = (args: CardProps) => (
-  <Card {...args}>
+const Template = (props: CardProps) => (
+  <Card {...props}>
     <Text tag="h1">Card with default padding</Text>
   </Card>
 )

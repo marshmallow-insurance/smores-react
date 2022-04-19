@@ -8,7 +8,7 @@ export default {
   component: Textarea,
 }
 
-const Template = (args: TextareaProps) => <Textarea {...args} />
+const Template = (props: TextareaProps) => <Textarea {...props} />
 
 export const Default = Template.bind({})
 

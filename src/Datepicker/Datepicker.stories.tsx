@@ -7,7 +7,7 @@ export default {
   argTypes: { onDateSelect: { action: 'date selected' } },
 }
 
-const Template = (args: DatepickerProps) => <Datepicker {...args} />
+const Template = (props: DatepickerProps) => <Datepicker {...props} />
 
 export const Default = Template.bind({})
 

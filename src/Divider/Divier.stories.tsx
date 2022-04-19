@@ -6,7 +6,7 @@ export default {
   component: Divider,
 }
 
-const Template = (args: DividerProps) => <Divider {...args} />
+const Template = (props: DividerProps) => <Divider {...props} />
 
 export const Default = Template.bind({})
 

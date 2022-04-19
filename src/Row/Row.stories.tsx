@@ -7,7 +7,7 @@ export default {
   argTypes: { handleClick: { action: 'clicked' } },
 }
 
-const Template = (args: RowProps) => <Row {...args} />
+const Template = (props: RowProps) => <Row {...props} />
 
 export const Default = Template.bind({})
 

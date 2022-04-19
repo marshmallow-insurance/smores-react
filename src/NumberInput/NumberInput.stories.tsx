@@ -9,7 +9,7 @@ export default {
   argTypes: { onChange: { action: 'changed' } },
 }
 
-const Template = (args: NumberInputProps) => <NumberInput {...args} />
+const Template = (props: NumberInputProps) => <NumberInput {...props} />
 
 export const Default = Template.bind({})
 

@@ -6,7 +6,7 @@ export default {
   component: Box,
 }
 
-const Template = (args: BoxProps) => <Box {...args}>Some lovely content.</Box>
+const Template = (props: BoxProps) => <Box {...props}>Some lovely content.</Box>
 
 export const Default = Template.bind({})
 

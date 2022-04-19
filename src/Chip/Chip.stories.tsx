@@ -7,7 +7,7 @@ export default {
   argTypes: { handleClick: { action: 'clicked' } },
 }
 
-const Template = (args: ChipProps) => <Chip {...args} />
+const Template = (props: ChipProps) => <Chip {...props} />
 
 export const Primary = Template.bind({})
 

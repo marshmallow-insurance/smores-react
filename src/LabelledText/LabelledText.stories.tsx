@@ -6,8 +6,8 @@ export default {
   component: LabelledText,
 }
 
-const Template = (args: LabelledTextProps) => (
-  <LabelledText {...args}>Hideo Kojima</LabelledText>
+const Template = (props: LabelledTextProps) => (
+  <LabelledText {...props}>Hideo Kojima</LabelledText>
 )
 
 export const Default = Template.bind({})

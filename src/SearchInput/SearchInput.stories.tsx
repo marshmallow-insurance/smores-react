@@ -7,7 +7,7 @@ export default {
   component: SearchInput,
 }
 
-const Template = (args: SearchInputProps) => <Container {...args} />
+const Template = (props: SearchInputProps) => <Container {...props} />
 
 export const Default = Template.bind({})
 

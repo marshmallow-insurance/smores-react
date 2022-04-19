@@ -7,8 +7,8 @@ export default {
   component: IconWrapper,
 }
 
-const Template = (args: IconWrapperProps) => (
-  <IconWrapper {...args}>
+const Template = (props: IconWrapperProps) => (
+  <IconWrapper {...props}>
     <Icon render="wheel-flat" />
   </IconWrapper>
 )

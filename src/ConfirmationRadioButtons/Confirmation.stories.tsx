@@ -9,7 +9,7 @@ export default {
   argTypes: { onChange: { action: 'clicked' } },
 }
 
-const Template = (args: ConfirmationProps) => <Confirmation {...args} />
+const Template = (props: ConfirmationProps) => <Confirmation {...props} />
 
 export const Default = Template.bind({})
 

@@ -11,7 +11,7 @@ const ContainerTemplate = () => <CheckBoxContainer />
 
 export const Default = ContainerTemplate.bind({})
 
-const Template = (args: CheckBoxProps) => <CheckBox {...args} />
+const Template = (props: CheckBoxProps) => <CheckBox {...props} />
 
 export const WithError = Template.bind({})
 

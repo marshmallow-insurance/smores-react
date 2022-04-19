@@ -6,8 +6,8 @@ export default {
   component: Accordion,
 }
 
-const Template = (args: AccordionProps) => (
-  <Accordion {...args} title="How it works">
+const Template = (props: AccordionProps) => (
+  <Accordion {...props} title="How it works">
     Lots of brilliant information about this beautiful component
   </Accordion>
 )

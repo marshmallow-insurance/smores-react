@@ -7,7 +7,7 @@ export default {
   argTypes: { handlePageChange: { action: 'pageChanged' } },
 }
 
-const Template = (args: PaginationProps) => <Pagination {...args} />
+const Template = (props: PaginationProps) => <Pagination {...props} />
 
 export const Default = Template.bind({})
 

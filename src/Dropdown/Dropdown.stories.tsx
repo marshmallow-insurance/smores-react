@@ -77,7 +77,7 @@ export default {
   argTypes: { onSelect: { action: 'selected' } },
 }
 
-const Template = (args: DropdownProps) => <Dropdown {...args} />
+const Template = (props: DropdownProps) => <Dropdown {...props} />
 
 export const Default = Template.bind({})
 

@@ -6,8 +6,8 @@ export default {
   component: Text,
 }
 
-const Template = (args: TextProps) => (
-  <Text {...args}>The quick brown fox jumps over the lazy dog</Text>
+const Template = (props: TextProps) => (
+  <Text {...props}>The quick brown fox jumps over the lazy dog</Text>
 )
 
 export const Default = Template.bind({})

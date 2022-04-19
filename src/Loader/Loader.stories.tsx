@@ -6,7 +6,7 @@ export default {
   component: Loader,
 }
 
-const Template = (args: LoaderProps) => <Loader {...args} />
+const Template = (props: LoaderProps) => <Loader {...props} />
 
 export const Default = Template.bind({})
 

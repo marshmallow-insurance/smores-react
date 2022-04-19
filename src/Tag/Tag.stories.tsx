@@ -6,7 +6,7 @@ export default {
   component: Tag,
 }
 
-const Template = (args: TagProps) => <Tag {...args} />
+const Template = (props: TagProps) => <Tag {...props} />
 
 export const Default = Template.bind({})
 

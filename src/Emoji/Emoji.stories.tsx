@@ -6,7 +6,7 @@ export default {
   component: Emoji,
 }
 
-const Template = (args: EmojiProps) => <Emoji {...args} />
+const Template = (props: EmojiProps) => <Emoji {...props} />
 
 export const Default = Template.bind({})
 

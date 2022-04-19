@@ -6,7 +6,7 @@ import { IconWrapper } from '../IconWrapper'
 import { Icon } from '../../Icon'
 
 test('renders', () => {
-  const args = {
+  const props = {
     render: 'included',
     size: 16,
     t: 'auto',
@@ -15,7 +15,7 @@ test('renders', () => {
     l: 'auto',
   }
   const { container } = render(
-    <IconWrapper {...args}>
+    <IconWrapper {...props}>
       <Icon render="wheel-flat" />
     </IconWrapper>,
   )

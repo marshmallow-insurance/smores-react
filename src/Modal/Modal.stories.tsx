@@ -7,7 +7,7 @@ export default {
   title: 'Modal',
 }
 
-const Template = (args: ModalProps) => {
+const Template = (props: ModalProps) => {
   const [showModal, setShowModal] = useState(false)
 
   const handleClick = () => {
@@ -16,7 +16,7 @@ const Template = (args: ModalProps) => {
   return (
     <Box>
       {showModal ? (
-        <Modal {...args} handleClick={handleClick} showModal={showModal}>
+        <Modal {...props} handleClick={handleClick} showModal={showModal}>
           [A modal window] creates a mode that disables the main window, but
           keeps it visible with the modal window as a child window in front of
           it.

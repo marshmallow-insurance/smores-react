@@ -7,8 +7,8 @@ export default {
   component: Message,
 }
 
-const Template = (args: MessageProps) => (
-  <Message {...args}>Customer currently in BACS queue</Message>
+const Template = (props: MessageProps) => (
+  <Message {...props}>Customer currently in BACS queue</Message>
 )
 
 export const Default = Template.bind({})

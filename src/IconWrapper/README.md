@@ -23,7 +23,7 @@ You can specify the position you want from the props and it will default to top/
 import {IconWrapper} from '@mrshmllw/smores-react';
 
 const App = () => (
-  <IconWrapper {...args}>
+  <IconWrapper {...props}>
     {children}
   </IconWrapper>
 );

@@ -9,7 +9,7 @@ export default {
   argTypes: { onChange: { action: 'clicked' } },
 }
 
-const Template = (args: RadioButtonProps) => <RadioButton {...args} />
+const Template = (props: RadioButtonProps) => <RadioButton {...props} />
 
 export const Default = Template.bind({})
 
