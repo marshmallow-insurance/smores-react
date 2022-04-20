@@ -66,7 +66,7 @@ const Section: FC<{ label: string; children?: ReactNode }> = ({
   return (
     <Box>
       <Box mb="16px">
-        <Text tag="span" typo="header-medium">
+        <Text tag="span" typo="header-small">
           {label}
         </Text>
       </Box>

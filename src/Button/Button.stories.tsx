@@ -16,6 +16,17 @@ const InteractivePlaygroundTemplate = (props: ButtonProps) => (
   <InteractivePlayground {...props} />
 )
 
+export const Playground = Template.bind({})
+
+Playground.args = {
+  primary: true,
+  secondary: false,
+  tertiary: false,
+  disabled: false,
+  loading: false,
+  icon: '',
+}
+
 export const Interactive = InteractivePlaygroundTemplate.bind({})
 export const Collection = CollectionPage.bind({})
 
