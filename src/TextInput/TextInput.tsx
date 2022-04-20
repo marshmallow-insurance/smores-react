@@ -52,9 +52,9 @@ type TruncateProps =
       onInputChange: (e: FormEvent<HTMLInputElement>) => void
     }
 
-type Props = DefaultProps & TruncateProps
+export type TextInputProps = DefaultProps & TruncateProps
 
-export const TextInput: FC<Props> = ({
+export const TextInput: FC<TextInputProps> = ({
   id,
   className = '',
   type = 'text',

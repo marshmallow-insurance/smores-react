@@ -67,9 +67,9 @@ type TruncateProps =
       onInputChange: (e: FormEvent<HTMLSelectElement>) => void
     }
 
-type Props = DefaultProps & TruncateProps
+export type DropdownProps = DefaultProps & TruncateProps
 
-export const Dropdown: FC<Props> = ({
+export const Dropdown: FC<DropdownProps> = ({
   id,
   className = '',
   ref,

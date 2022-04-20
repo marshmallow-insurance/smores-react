@@ -23,7 +23,7 @@ type Props = {
   loading?: boolean
 }
 
-type ChipProps = Props & ButtonHTMLAttributes<HTMLButtonElement>
+export type ChipProps = Props & ButtonHTMLAttributes<HTMLButtonElement>
 
 export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
   (

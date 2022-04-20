@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 
-type EmojiProps = {
+export type EmojiProps = {
   /** className attribute to apply classes from props */
   className?: string
   /** Emoji symbol */

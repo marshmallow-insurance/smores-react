@@ -3,12 +3,12 @@ import styled from 'styled-components'
 
 import { Text } from '../Text'
 
-type Props = {
+export type LabelledTextProps = {
   children: ReactNode
   label: string
 }
 
-export const LabelledText: FC<Props> = ({ label, children }) => (
+export const LabelledText: FC<LabelledTextProps> = ({ label, children }) => (
   <Container>
     <Text tag="label" color="subtext" typo="label">
       {label}

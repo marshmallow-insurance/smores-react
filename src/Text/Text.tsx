@@ -26,7 +26,7 @@ type Props = {
   title?: string
 }
 
-type TextProps = Props & LabelHTMLAttributes<HTMLElement>
+export type TextProps = Props & LabelHTMLAttributes<HTMLElement>
 
 export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
   (

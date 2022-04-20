@@ -9,12 +9,12 @@ interface ISvg {
   color: string
 }
 
-type Props = {
+export type LoaderProps = {
   height: string
   color?: string
 }
 
-export const Loader: FC<Props> = ({ height, color = 'primary' }) => (
+export const Loader: FC<LoaderProps> = ({ height, color = 'primary' }) => (
   <LoaderSvg viewBox="0 0 60 32" height={height} color={color}>
     <g transform="translate(30,18.5455) translate(-30,-9)">
       {/* tslint:disable-next-line:max-line-length */}

@@ -7,7 +7,7 @@ import { Icon } from '../Icon'
 
 import { theme } from '../theme'
 
-type NumberInputProps = {
+export type NumberInputProps = {
   /** ID, usually used for tests  */
   id: string
   /** className attribute to apply classses from props */

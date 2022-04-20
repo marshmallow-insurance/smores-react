@@ -44,7 +44,7 @@ type Props = {
   type?: 'button' | 'submit' | 'reset'
 }
 
-type ButtonProps = Props & ButtonHTMLAttributes<HTMLButtonElement>
+export type ButtonProps = Props & ButtonHTMLAttributes<HTMLButtonElement>
 
 export const Button: FC<ButtonProps> = forwardRef<
   HTMLButtonElement,

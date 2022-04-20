@@ -4,9 +4,9 @@ import { flex, FlexProps } from '../utils/flex'
 import { measure, MeasureProps } from '../utils/measure'
 import { space, SpaceProps } from '../utils/space'
 
-interface IBox extends SpaceProps, FlexProps, MeasureProps {}
+export type BoxProps = SpaceProps & FlexProps & MeasureProps
 
-export const Box = styled.div<IBox>`
+export const Box = styled.div<BoxProps>`
   ${space};
   ${flex};
   ${measure};

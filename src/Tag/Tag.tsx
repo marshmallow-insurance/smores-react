@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Text } from '../Text'
 import { theme } from '../theme'
 
-type TagProps = {
+export type TagProps = {
   label: string
   className?: string
   color: string

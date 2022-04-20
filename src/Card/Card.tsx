@@ -10,7 +10,7 @@ interface ICard {
   wide: boolean
 }
 
-type Props = {
+export type CardProps = {
   children: ReactNode
   className?: string
   /** margin */
@@ -25,7 +25,7 @@ type Props = {
   wide?: boolean
 }
 
-export const Card: FC<Props> = ({
+export const Card: FC<CardProps> = ({
   children,
   className = '',
   maxWidth = '',

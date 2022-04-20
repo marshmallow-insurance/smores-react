@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 
 import { Icon } from '../Icon'
 
-type Props = {
+export type IconWrapperProps = {
   /** className attribute to apply classes from props */
   className?: string
   /* */
@@ -19,7 +19,7 @@ type Props = {
   l?: string
 }
 
-export const IconWrapper: FC<Props> = ({
+export const IconWrapper: FC<IconWrapperProps> = ({
   className = '',
   children,
   size = 16,

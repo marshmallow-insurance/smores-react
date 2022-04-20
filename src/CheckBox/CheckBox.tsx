@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Text } from '../Text'
 import { theme } from '../theme'
 
-type Props = {
+export type CheckBoxProps = {
   id: string
   checked: boolean
   children: ReactNode
@@ -13,7 +13,7 @@ type Props = {
   errorMsg?: string
 }
 
-export const CheckBox: FC<Props> = ({
+export const CheckBox: FC<CheckBoxProps> = ({
   id,
   checked,
   children,
