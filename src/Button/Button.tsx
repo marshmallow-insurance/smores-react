@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { darken } from 'polished'
+import { darken, lighten } from 'polished'
 
 import { theme } from '../theme'
 import { LegacyButton } from './LegacyButton'
@@ -152,6 +152,21 @@ const Container = styled.button<IButton>(
     font-size: 16px;
     opacity: ${disabled ? '0.5' : '1'};
     width: ${forcedWidth ? forcedWidth : 'auto'};
+
+    &:focus-visible {
+      &::after {
+        content: '';
+        display: block;
+        pointer-events: none;
+        position: absolute;
+        top: -2px;
+        bottom: -2px;
+        left: -2px;
+        right: -2px;
+        border-radius: 8px;
+        box-shadow: 0 0 0 2px ${lighten(0.1, theme.colors.primary)};
+      }
+    }
 
     ${primary &&
     css`
