@@ -1,3 +1,7 @@
+## [2.1.16] - 2022-04-21
+### Changed
+- Add scrolling on the content of Modal on desktop
+
 ## [2.1.15] - 2022-04-11
 ### Added
 - New circle tick icon
@@ -303,6 +307,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.1.16]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.15...v2.1.16
 [2.1.15]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.14...v2.1.15
 [2.1.14]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.13...v2.1.14
 [2.1.13]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.12...v2.1.13
