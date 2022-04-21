@@ -1,3 +1,7 @@
+## [2.1.16] - 2022-04-21
+### Changed
+- Add scrolling on the content of Modal on desktop
+
 ## [2.1.15] - 2022-04-11
 ### Added
 - New circle tick icon
