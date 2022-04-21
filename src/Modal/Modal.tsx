@@ -73,6 +73,7 @@ const Wrapper = styled(Box)<IModalWrapper>(
   ({ showModal }) => css`
     display: ${showModal ? 'flex' : 'none'};
     position: absolute;
+    z-index: 999;
     top: 0;
     left: 0;
     height: 100vh;
