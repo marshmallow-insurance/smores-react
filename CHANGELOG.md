@@ -1,3 +1,7 @@
+## [2.1.17] - 2022-04-21
+### Changed
+- Add z-index to Modal container
+
 ## [2.1.16] - 2022-04-21
 ### Changed
 - Add scrolling on the content of Modal on desktop
