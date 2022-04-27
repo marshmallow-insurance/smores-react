@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import { darken } from 'polished'
 
 import { theme } from '../theme'
+import { focusOutline } from '../utils/focusOutline'
 import { LegacyButton } from './LegacyButton'
 import { Loader } from '../Loader'
 import { Icon as IconComponent } from '../Icon'
@@ -153,20 +154,7 @@ const Container = styled.button<IButton>(
     opacity: ${disabled ? '0.5' : '1'};
     width: ${forcedWidth ? forcedWidth : 'auto'};
 
-    &:focus-visible {
-      &::after {
-        content: '';
-        display: block;
-        pointer-events: none;
-        position: absolute;
-        top: -4px;
-        bottom: -4px;
-        left: -4px;
-        right: -4px;
-        border-radius: 8px;
-        box-shadow: 0 0 0 2px ${theme.colors.secondary};
-      }
-    }
+    ${focusOutline({ borderWidth: 2, borderRadius: 8 })}
 
     ${primary &&
     css`
