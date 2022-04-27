@@ -6,7 +6,9 @@ const outlineSpacing = 2
 export const focusOutline = ({
   borderWidth = 0,
   borderRadius = 0,
-}: { borderWidth?: number; borderRadius?: number } = {}) => {
+}: { borderWidth?: number; borderRadius?: number } = {}): ReturnType<
+  typeof css
+> => {
   const pxPosition = `-${borderWidth + outlineSpacing}px`
 
   return css`
