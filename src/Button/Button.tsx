@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { darken, lighten } from 'polished'
+import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { LegacyButton } from './LegacyButton'
@@ -159,12 +159,12 @@ const Container = styled.button<IButton>(
         display: block;
         pointer-events: none;
         position: absolute;
-        top: -2px;
-        bottom: -2px;
-        left: -2px;
-        right: -2px;
+        top: -4px;
+        bottom: -4px;
+        left: -4px;
+        right: -4px;
         border-radius: 8px;
-        box-shadow: 0 0 0 2px ${lighten(0.1, theme.colors.primary)};
+        box-shadow: 0 0 0 2px ${theme.colors.secondary};
       }
     }
 
