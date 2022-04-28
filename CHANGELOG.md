@@ -1,6 +1,7 @@
 ## [2.1.18] - 2022-04-27
 ### Changed
 - Add label as optional prop to Confirmation
+- Adds new labelHidden prop to Confirmation
 
 ## [2.1.17] - 2022-04-21
 ### Changed
