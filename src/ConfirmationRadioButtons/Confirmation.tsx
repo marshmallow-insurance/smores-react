@@ -105,7 +105,7 @@ const RadioButtonWrapper = styled.div<FakeInput>`
   background-color: ${({ checked }: FakeInput) =>
     !checked && `${theme.colors.background}`};
   border: ${({ checked, error }: FakeInput) => getColor(checked, error)};
-  margin: 0px 10px;
+  margin-right: 10px;
   width: 139px;
   display: flex;
   align-items: center;
