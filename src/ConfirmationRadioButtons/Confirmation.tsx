@@ -1,5 +1,5 @@
 import React, { FC, FormEvent, ReactElement } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { theme } from '../theme'
 import { Box } from '../Box'
 import { Text } from '../Text'
@@ -16,6 +16,7 @@ export type ConfirmationProps = {
   sublabel?: string | ReactElement
   yesLabel?: string | ReactElement
   noLabel?: string | ReactElement
+  labelHidden?: boolean
 }
 
 export const Confirmation: FC<ConfirmationProps> = ({
@@ -29,20 +30,24 @@ export const Confirmation: FC<ConfirmationProps> = ({
   sublabel,
   yesLabel = 'Yes',
   noLabel = 'No',
+  labelHidden = false,
 }: ConfirmationProps) => {
   return (
     <ConfirmationWrapper>
-      {label ||
-        (sublabel && (
-          <TextWrapper>
-            {label && <SectionHeadingText tag="h3">{label}</SectionHeadingText>}
-            {sublabel && (
-              <Text tag="p" typo="base-small" color={theme.colors.subtext}>
-                {sublabel}
-              </Text>
-            )}
-          </TextWrapper>
-        ))}
+      {!labelHidden && (
+        <TextWrapper>
+          {label && (
+            <SectionHeadingText tag="h3" labelHidden={labelHidden}>
+              {label}
+            </SectionHeadingText>
+          )}
+          {sublabel && (
+            <Text tag="p" typo="base-small" color={theme.colors.subtext}>
+              {sublabel}
+            </Text>
+          )}
+        </TextWrapper>
+      )}
       <RadioButtonGroupWrapper>
         <RadioButtonGroup>
           <RadioButtonWrapper checked={checked === true} error={error}>
@@ -70,6 +75,10 @@ export const Confirmation: FC<ConfirmationProps> = ({
       </RadioButtonGroupWrapper>
     </ConfirmationWrapper>
   )
+}
+
+interface ILabelHidden {
+  labelHidden?: boolean
 }
 
 const RadioButtonGroupWrapper = styled.div`
@@ -119,9 +128,22 @@ const ConfirmationWrapper = styled(Box)`
   align-items: center;
 `
 
-const SectionHeadingText = styled(Text)`
-  font-weight: bold;
-`
+const SectionHeadingText = styled(Text)<ILabelHidden>(
+  ({ labelHidden }) => css`
+    font-weight: bold;
+    ${labelHidden &&
+    `
+      clip: rect(1, 1, 1, 1);
+      clipPath: inset(50%);
+      height: 1;
+      margin: -1;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1;
+    `}
+  `,
+)
 
 const TextWrapper = styled.div`
   display: flex;

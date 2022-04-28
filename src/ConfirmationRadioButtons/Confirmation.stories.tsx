@@ -55,11 +55,12 @@ WithCustomLabel.args = {
   yesLabel: 'Correct',
 }
 
-export const WithNoLabel = Template.bind({})
+export const LabelHidden = Template.bind({})
 
-WithNoLabel.args = {
+LabelHidden.args = {
   id: 'radioButton',
   onChange: noop,
   checked: undefined,
   yesLabel: 'Yes',
+  labelHidden: true,
 }
