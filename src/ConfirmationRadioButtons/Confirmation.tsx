@@ -1,5 +1,5 @@
 import React, { FC, FormEvent, ReactElement } from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { theme } from '../theme'
 import { Box } from '../Box'
 import { Text } from '../Text'
@@ -16,7 +16,6 @@ export type ConfirmationProps = {
   sublabel?: string | ReactElement
   yesLabel?: string | ReactElement
   noLabel?: string | ReactElement
-  labelHidden?: boolean
 }
 
 export const Confirmation: FC<ConfirmationProps> = ({
@@ -30,17 +29,12 @@ export const Confirmation: FC<ConfirmationProps> = ({
   sublabel,
   yesLabel = 'Yes',
   noLabel = 'No',
-  labelHidden = false,
 }: ConfirmationProps) => {
   return (
     <ConfirmationWrapper>
-      {!labelHidden && (
+      {(label || sublabel) && (
         <TextWrapper>
-          {label && (
-            <SectionHeadingText tag="h3" labelHidden={labelHidden}>
-              {label}
-            </SectionHeadingText>
-          )}
+          {label && <SectionHeadingText tag="h3">{label}</SectionHeadingText>}
           {sublabel && (
             <Text tag="p" typo="base-small" color={theme.colors.subtext}>
               {sublabel}
@@ -77,10 +71,6 @@ export const Confirmation: FC<ConfirmationProps> = ({
   )
 }
 
-interface ILabelHidden {
-  labelHidden?: boolean
-}
-
 const RadioButtonGroupWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -105,7 +95,7 @@ const RadioButtonWrapper = styled.div<FakeInput>`
   background-color: ${({ checked }: FakeInput) =>
     !checked && `${theme.colors.background}`};
   border: ${({ checked, error }: FakeInput) => getColor(checked, error)};
-  margin: 0px 10px;
+  margin-right: 10px;
   width: 139px;
   display: flex;
   align-items: center;
@@ -128,22 +118,9 @@ const ConfirmationWrapper = styled(Box)`
   align-items: center;
 `
 
-const SectionHeadingText = styled(Text)<ILabelHidden>(
-  ({ labelHidden }) => css`
-    font-weight: bold;
-    ${labelHidden &&
-    `
-      clip: rect(1, 1, 1, 1);
-      clipPath: inset(50%);
-      height: 1;
-      margin: -1;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1;
-    `}
-  `,
-)
+const SectionHeadingText = styled(Text)`
+  font-weight: bold;
+`
 
 const TextWrapper = styled.div`
   display: flex;

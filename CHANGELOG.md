@@ -1,3 +1,8 @@
+## [2.1.19] - 2022-04-28
+### Changed
+- Removes redundant margin for Confirmation radio
+- Removes labelHidden prop from Confirmation
+
 ## [2.1.18] - 2022-04-27
 ### Changed
 - Add label as optional prop to Confirmation
@@ -316,6 +321,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.1.19]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.18...v2.1.19
 [2.1.18]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.17...v2.1.18
 [2.1.17]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.16...v2.1.17
 [2.1.16]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.15...v2.1.16
