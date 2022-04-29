@@ -1,6 +1,7 @@
 ## [2.1.19] - 2022-04-28
 ### Changed
 - Removes redundant margin for Confirmation radio
+- Removes labelHidden prop from Confirmation
 
 ## [2.1.18] - 2022-04-27
 ### Changed
