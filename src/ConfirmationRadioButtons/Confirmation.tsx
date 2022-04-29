@@ -11,7 +11,7 @@ export type ConfirmationProps = {
   id: string
   error?: boolean
   errorMsg?: string
-  label: string
+  label?: string
   onBlur?: (e: FormEvent<HTMLInputElement>) => void
   sublabel?: string | ReactElement
   yesLabel?: string | ReactElement
@@ -32,14 +32,16 @@ export const Confirmation: FC<ConfirmationProps> = ({
 }: ConfirmationProps) => {
   return (
     <ConfirmationWrapper>
-      <TextWrapper>
-        <SectionHeadingText tag="h3">{label}</SectionHeadingText>
-        {sublabel && (
-          <Text tag="p" typo="base-small" color={theme.colors.subtext}>
-            {sublabel}
-          </Text>
-        )}
-      </TextWrapper>
+      {(label || sublabel) && (
+        <TextWrapper>
+          {label && <SectionHeadingText tag="h3">{label}</SectionHeadingText>}
+          {sublabel && (
+            <Text tag="p" typo="base-small" color={theme.colors.subtext}>
+              {sublabel}
+            </Text>
+          )}
+        </TextWrapper>
+      )}
       <RadioButtonGroupWrapper>
         <RadioButtonGroup>
           <RadioButtonWrapper checked={checked === true} error={error}>
@@ -93,7 +95,7 @@ const RadioButtonWrapper = styled.div<FakeInput>`
   background-color: ${({ checked }: FakeInput) =>
     !checked && `${theme.colors.background}`};
   border: ${({ checked, error }: FakeInput) => getColor(checked, error)};
-  margin: 0px 10px;
+  margin-right: 10px;
   width: 139px;
   display: flex;
   align-items: center;

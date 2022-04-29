@@ -1,3 +1,21 @@
+## [2.1.19] - 2022-04-28
+### Changed
+- Removes redundant margin for Confirmation radio
+- Removes labelHidden prop from Confirmation
+
+## [2.1.18] - 2022-04-27
+### Changed
+- Add label as optional prop to Confirmation
+- Adds new labelHidden prop to Confirmation
+
+## [2.1.17] - 2022-04-21
+### Changed
+- Add z-index to Modal container
+
+## [2.1.16] - 2022-04-21
+### Changed
+- Add scrolling on the content of Modal on desktop
+
 ## [2.1.15] - 2022-04-11
 ### Added
 - New circle tick icon
@@ -303,6 +321,10 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.1.19]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.18...v2.1.19
+[2.1.18]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.17...v2.1.18
+[2.1.17]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.16...v2.1.17
+[2.1.16]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.15...v2.1.16
 [2.1.15]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.14...v2.1.15
 [2.1.14]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.13...v2.1.14
 [2.1.13]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.12...v2.1.13

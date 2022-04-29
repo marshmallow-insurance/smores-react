@@ -4,7 +4,7 @@ import { Confirmation, ConfirmationProps } from './Confirmation'
 import { Container } from './Container'
 
 export default {
-  title: 'Confirmation Radio Buttons',
+  title: 'Confirmation Radio Button',
   component: Confirmation,
   argTypes: { onChange: { action: 'clicked' } },
 }
@@ -53,4 +53,13 @@ WithCustomLabel.args = {
   checked: undefined,
   label: 'Do you like marshmallows?',
   yesLabel: 'Correct',
+}
+
+export const WithNoLabel = Template.bind({})
+
+WithNoLabel.args = {
+  id: 'radioButton',
+  onChange: noop,
+  checked: undefined,
+  yesLabel: 'Yes',
 }
