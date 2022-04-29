@@ -139,6 +139,7 @@ Button.displayName = 'Button'
 
 const Container = styled.button<IButton>(
   ({ disabled, isLoading, primary, secondary, tertiary, forcedWidth }) => css`
+    ${focusOutline}
     position: relative;
     background-color: ${theme.colors.primary};
     border: 2px solid;
@@ -153,8 +154,6 @@ const Container = styled.button<IButton>(
     font-size: 16px;
     opacity: ${disabled ? '0.5' : '1'};
     width: ${forcedWidth ? forcedWidth : 'auto'};
-
-    ${focusOutline({ borderWidth: 2, borderRadius: 8 })}
 
     ${primary &&
     css`

@@ -72,6 +72,8 @@ Chip.displayName = 'Chip'
 
 const Container = styled.button<IButton>(
   ({ primary, secondary, icon, $loading, disabled }) => css`
+    ${focusOutline}
+
     align-items: center;
     background-color: ${theme.colors.primary};
     border-radius: 100px;
@@ -85,8 +87,6 @@ const Container = styled.button<IButton>(
     width: 98px;
     cursor: ${disabled || $loading ? 'not-allowed' : 'pointer'};
     opacity: ${disabled ? '0.5' : '1'};
-
-    ${focusOutline({ borderWidth: 2, borderRadius: 100 })}
 
     ${primary &&
     css`
