@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 import { theme } from '../theme'
 import { Icon as IconComponent } from '../Icon'
 import { Loader } from '../Loader'
+import { focusOutline } from '../utils/focusOutline'
 
 interface IButton {
   primary: boolean
@@ -71,10 +72,11 @@ Chip.displayName = 'Chip'
 
 const Container = styled.button<IButton>(
   ({ primary, secondary, icon, $loading, disabled }) => css`
+    ${focusOutline}
+
     align-items: center;
     background-color: ${theme.colors.primary};
     border-radius: 100px;
-    border-shadow: none;
     border: 2px solid ${theme.colors.primary};
     color: ${theme.colors.white};
     display: flex;
@@ -85,6 +87,7 @@ const Container = styled.button<IButton>(
     width: 98px;
     cursor: ${disabled || $loading ? 'not-allowed' : 'pointer'};
     opacity: ${disabled ? '0.5' : '1'};
+
     ${primary &&
     css`
       &:hover {

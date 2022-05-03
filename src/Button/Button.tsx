@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import { darken } from 'polished'
 
 import { theme } from '../theme'
+import { focusOutline } from '../utils/focusOutline'
 import { LegacyButton } from './LegacyButton'
 import { Loader } from '../Loader'
 import { Icon as IconComponent } from '../Icon'
@@ -138,6 +139,7 @@ Button.displayName = 'Button'
 
 const Container = styled.button<IButton>(
   ({ disabled, isLoading, primary, secondary, tertiary, forcedWidth }) => css`
+    ${focusOutline}
     position: relative;
     background-color: ${theme.colors.primary};
     border: 2px solid;
