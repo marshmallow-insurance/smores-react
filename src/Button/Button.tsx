@@ -139,7 +139,7 @@ Button.displayName = 'Button'
 
 const Container = styled.button<IButton>(
   ({ disabled, isLoading, primary, secondary, tertiary, forcedWidth }) => css`
-    ${focusOutline}
+    ${focusOutline()}
     position: relative;
     background-color: ${theme.colors.primary};
     border: 2px solid;

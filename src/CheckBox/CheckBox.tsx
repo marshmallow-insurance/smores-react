@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react'
 import styled from 'styled-components'
+import { focusOutline } from '../utils/focusOutline'
 
 import { Text } from '../Text'
 import { theme } from '../theme'
@@ -83,6 +84,8 @@ const BoxContainer = styled.label`
     &:checked ~ ${Checkmark}:after {
       display: block;
     }
+
+    ${focusOutline({ selector: `&:focus-visible ~ ${Checkmark}` })}
   }
 
   &:hover {

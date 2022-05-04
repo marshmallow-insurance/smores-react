@@ -12,7 +12,7 @@ exports[`renders - checked 1`] = `
   align-items: center;
 }
 
-.c3 {
+.c5 {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -21,14 +21,7 @@ exports[`renders - checked 1`] = `
   border: 8px solid #00875A;
 }
 
-.c1 {
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-}
-
-.c2 {
+.c3 {
   font-family: 'Gordita',sans-serif;
   text-transform: none;
   font-size: 16px;
@@ -42,7 +35,20 @@ exports[`renders - checked 1`] = `
   cursor: pointer;
 }
 
-.c4 {
+.c1 {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  outline: 0;
+}
+
+.c1:focus-visible ~ .c2 .c4 {
+  outline: 2px solid #112035;
+  outline-offset: 2px;
+}
+
+.c6 {
   position: relative;
   bottom: -5px;
 }
@@ -58,14 +64,14 @@ exports[`renders - checked 1`] = `
     value="true"
   />
   <label
-    class="c2"
+    class="c2 c3"
     for="radioButtonOne"
   >
     <div
-      class="c3"
+      class="c4 c5"
     />
     <span
-      class="c4"
+      class="c6"
     >
       What a lovely label
     </span>
@@ -85,7 +91,7 @@ exports[`renders - unchecked 1`] = `
   align-items: center;
 }
 
-.c3 {
+.c5 {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -94,14 +100,7 @@ exports[`renders - unchecked 1`] = `
   border: 1px solid #D2D2D2;
 }
 
-.c1 {
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-}
-
-.c2 {
+.c3 {
   font-family: 'Gordita',sans-serif;
   text-transform: none;
   font-size: 16px;
@@ -115,7 +114,20 @@ exports[`renders - unchecked 1`] = `
   cursor: pointer;
 }
 
-.c4 {
+.c1 {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  outline: 0;
+}
+
+.c1:focus-visible ~ .c2 .c4 {
+  outline: 2px solid #112035;
+  outline-offset: 2px;
+}
+
+.c6 {
   position: relative;
   bottom: -5px;
 }
@@ -130,14 +142,14 @@ exports[`renders - unchecked 1`] = `
     value="false"
   />
   <label
-    class="c2"
+    class="c2 c3"
     for="radioButtonOne"
   >
     <div
-      class="c3"
+      class="c4 c5"
     />
     <span
-      class="c4"
+      class="c6"
     >
       What a lovely label
     </span>

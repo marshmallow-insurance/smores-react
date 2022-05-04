@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
-import { CheckBox } from './CheckBox'
+import { CheckBox } from '../CheckBox'
 
 type Item = {
   id: number
@@ -16,7 +16,7 @@ type Props = {
 
 export const CheckBoxGroup: FC<Props> = ({ list, onToggle }) => (
   <Container>
-    {list?.map((item: Item) => (
+    {list.map((item) => (
       <CheckBox
         key={item.id}
         id={String(item.id)}
@@ -30,6 +30,7 @@ export const CheckBoxGroup: FC<Props> = ({ list, onToggle }) => (
 )
 
 const Container = styled.div`
-  display: grid;
-  grid-row-gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 `

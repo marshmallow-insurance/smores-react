@@ -72,7 +72,7 @@ Chip.displayName = 'Chip'
 
 const Container = styled.button<IButton>(
   ({ primary, secondary, icon, $loading, disabled }) => css`
-    ${focusOutline}
+    ${focusOutline()}
 
     align-items: center;
     background-color: ${theme.colors.primary};

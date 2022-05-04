@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
+import { focusOutline } from '../utils/focusOutline'
 import { theme } from '../theme'
 
 type Props = {
@@ -62,6 +63,8 @@ const Slider = styled.span`
 `
 
 const Checkbox = styled.input`
+  ${focusOutline({ selector: `&:focus-visible + ${Slider}` })}
+
   &:checked + ${Slider} {
     background-color: ${theme.colors.success};
     border: 1px solid;
