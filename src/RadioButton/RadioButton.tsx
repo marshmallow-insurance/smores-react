@@ -1,5 +1,6 @@
 import React, { FC, ChangeEvent } from 'react'
 import styled from 'styled-components'
+import { focusOutline } from '../utils/focusOutline'
 
 import { Box } from '../Box'
 
@@ -52,13 +53,6 @@ const FakeInput = styled.div<IFakeInput>`
       : `1px solid ${theme.colors.outline}`};
 `
 
-const RadioInput = styled.input`
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-`
-
 const RadioLabel = styled.label`
   font-family: 'Gordita', sans-serif;
   text-transform: none;
@@ -68,6 +62,17 @@ const RadioLabel = styled.label`
   margin-bottom: 0;
   display: flex;
   cursor: pointer;
+`
+
+const RadioInput = styled.input`
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+
+  ${focusOutline({
+    selector: `&:focus-visible ~ ${RadioLabel} ${FakeInput}`,
+  })}
 `
 
 // needed because the text is top aligned in its viewbox

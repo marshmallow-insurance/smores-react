@@ -21,19 +21,21 @@ export const CheckBox: FC<CheckBoxProps> = ({
   toggle,
   error,
   errorMsg,
-}) => (
-  <>
-    <BoxContainer id={id}>
-      <Text tag="span" typo="base" color={error ? 'red7' : 'secondary'}>
-        {children}
-      </Text>
+}) => {
+  return (
+    <>
+      <BoxContainer>
+        <Text tag="span" typo="base" color={error ? 'red7' : 'secondary'}>
+          {children}
+        </Text>
 
-      <input type="checkbox" checked={checked} onChange={toggle} />
-      <Checkmark error={error} />
-    </BoxContainer>
-    {error && errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
-  </>
-)
+        <input id={id} type="checkbox" checked={checked} onChange={toggle} />
+        <Checkmark error={error} />
+      </BoxContainer>
+      {error && errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
+    </>
+  )
+}
 
 const Checkmark = styled.span<{ error?: boolean }>`
   position: absolute;
@@ -85,7 +87,7 @@ const BoxContainer = styled.label`
       display: block;
     }
 
-    ${focusOutline({ selector: `&:focus ~ ${Checkmark}` })}
+    ${focusOutline({ selector: `&:focus-visible ~ ${Checkmark}` })}
   }
 
   &:hover {
