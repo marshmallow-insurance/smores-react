@@ -23,12 +23,12 @@ export const CheckBox: FC<CheckBoxProps> = ({
   errorMsg,
 }) => (
   <>
-    <BoxContainer>
+    <BoxContainer id={id}>
       <Text tag="span" typo="base" color={error ? 'red7' : 'secondary'}>
         {children}
       </Text>
 
-      <input id={id} type="checkbox" checked={checked} onChange={toggle} />
+      <input type="checkbox" checked={checked} onChange={toggle} />
       <Checkmark error={error} />
     </BoxContainer>
     {error && errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
