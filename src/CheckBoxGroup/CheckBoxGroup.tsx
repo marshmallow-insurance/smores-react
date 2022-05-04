@@ -14,22 +14,20 @@ type Props = {
   onToggle: (id: number) => void
 }
 
-export const CheckBoxGroup: FC<Props> = ({ list, onToggle }) => {
-  return (
-    <Container>
-      {list.map((item) => (
-        <CheckBox
-          key={item.id}
-          id={String(item.id)}
-          checked={item.checked}
-          toggle={() => onToggle(item.id)}
-        >
-          {item.label}
-        </CheckBox>
-      ))}
-    </Container>
-  )
-}
+export const CheckBoxGroup: FC<Props> = ({ list, onToggle }) => (
+  <Container>
+    {list.map((item) => (
+      <CheckBox
+        key={item.id}
+        id={String(item.id)}
+        checked={item.checked}
+        toggle={() => onToggle(item.id)}
+      >
+        {item.label}
+      </CheckBox>
+    ))}
+  </Container>
+)
 
 const Container = styled.div`
   display: flex;

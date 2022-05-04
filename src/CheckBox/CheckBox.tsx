@@ -21,21 +21,19 @@ export const CheckBox: FC<CheckBoxProps> = ({
   toggle,
   error,
   errorMsg,
-}) => {
-  return (
-    <>
-      <BoxContainer>
-        <Text tag="span" typo="base" color={error ? 'red7' : 'secondary'}>
-          {children}
-        </Text>
+}) => (
+  <>
+    <BoxContainer>
+      <Text tag="span" typo="base" color={error ? 'red7' : 'secondary'}>
+        {children}
+      </Text>
 
-        <input id={id} type="checkbox" checked={checked} onChange={toggle} />
-        <Checkmark error={error} />
-      </BoxContainer>
-      {error && errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
-    </>
-  )
-}
+      <input id={id} type="checkbox" checked={checked} onChange={toggle} />
+      <Checkmark error={error} />
+    </BoxContainer>
+    {error && errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
+  </>
+)
 
 const Checkmark = styled.span<{ error?: boolean }>`
   position: absolute;
