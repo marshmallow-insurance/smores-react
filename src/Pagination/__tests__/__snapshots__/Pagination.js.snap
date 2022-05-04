@@ -22,51 +22,6 @@ exports[`renders 1`] = `
   justify-content: center;
 }
 
-.c3 {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 500;
-  margin: 0;
-  padding: 0;
-  color: #112035;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  color: #112035;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
-.c7 {
-  font-size: 14px;
-  line-height: 23px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  color: #112035;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -92,6 +47,51 @@ exports[`renders 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+}
+
+.c3 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  color: #112035;
+}
+
+.c5 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  color: #112035;
+}
+
+.c7 {
+  font-size: 14px;
+  line-height: 23px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  color: #112035;
 }
 
 .c1 {

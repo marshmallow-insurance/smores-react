@@ -5,41 +5,6 @@ exports[`renders - currency 1`] = `
   margin-bottom: 0px;
 }
 
-.c2 {
-  font-size: 8px;
-  line-height: 100%;
-  font-weight: 700;
-  text-transform: uppercase;
-  -webkit-letter-spacing: 0.75px;
-  -moz-letter-spacing: 0.75px;
-  -ms-letter-spacing: 0.75px;
-  letter-spacing: 0.75px;
-  margin: 0;
-  padding: 0;
-  color: #636768;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 23px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  color: #112035;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -92,6 +57,41 @@ exports[`renders - currency 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+}
+
+.c2 {
+  font-size: 8px;
+  line-height: 100%;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.75px;
+  -moz-letter-spacing: 0.75px;
+  -ms-letter-spacing: 0.75px;
+  letter-spacing: 0.75px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  color: #636768;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 23px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  color: #112035;
 }
 
 .c0 {
@@ -305,13 +305,13 @@ exports[`renders - disabled 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #636768;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  color: #636768;
 }
 
 .c0 {
@@ -426,41 +426,6 @@ exports[`renders - error 1`] = `
   margin-bottom: 0px;
 }
 
-.c2 {
-  font-size: 8px;
-  line-height: 100%;
-  font-weight: 700;
-  text-transform: uppercase;
-  -webkit-letter-spacing: 0.75px;
-  -moz-letter-spacing: 0.75px;
-  -ms-letter-spacing: 0.75px;
-  letter-spacing: 0.75px;
-  margin: 0;
-  padding: 0;
-  color: #636768;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 23px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  color: #112035;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -513,6 +478,41 @@ exports[`renders - error 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+}
+
+.c2 {
+  font-size: 8px;
+  line-height: 100%;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.75px;
+  -moz-letter-spacing: 0.75px;
+  -ms-letter-spacing: 0.75px;
+  letter-spacing: 0.75px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  color: #636768;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 23px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  color: #112035;
 }
 
 .c0 {
@@ -737,13 +737,13 @@ exports[`renders - number 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #636768;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  color: #636768;
 }
 
 .c0 {
@@ -878,13 +878,13 @@ exports[`renders - tel 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #636768;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  color: #636768;
 }
 
 .c4 {
@@ -893,13 +893,13 @@ exports[`renders - tel 1`] = `
   font-weight: 400;
   margin: 0;
   padding: 0;
-  color: #112035;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  color: #112035;
 }
 
 .c0 {
@@ -1048,13 +1048,13 @@ exports[`renders - with suffix 1`] = `
   letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
-  color: #636768;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  color: #636768;
 }
 
 .c6 {
@@ -1063,13 +1063,13 @@ exports[`renders - with suffix 1`] = `
   font-weight: 400;
   margin: 0;
   padding: 0;
-  color: #112035;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  color: #112035;
 }
 
 .c0 {
@@ -1207,41 +1207,6 @@ exports[`renders - with trailing icon 1`] = `
   margin-bottom: 0px;
 }
 
-.c2 {
-  font-size: 8px;
-  line-height: 100%;
-  font-weight: 700;
-  text-transform: uppercase;
-  -webkit-letter-spacing: 0.75px;
-  -moz-letter-spacing: 0.75px;
-  -ms-letter-spacing: 0.75px;
-  letter-spacing: 0.75px;
-  margin: 0;
-  padding: 0;
-  color: #636768;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 23px;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  color: #112035;
-  text-align: left;
-  cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
-}
-
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1267,6 +1232,41 @@ exports[`renders - with trailing icon 1`] = `
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+}
+
+.c2 {
+  font-size: 8px;
+  line-height: 100%;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.75px;
+  -moz-letter-spacing: 0.75px;
+  -ms-letter-spacing: 0.75px;
+  letter-spacing: 0.75px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  color: #636768;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 23px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  color: #112035;
 }
 
 .c0 {

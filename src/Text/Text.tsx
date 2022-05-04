@@ -2,6 +2,7 @@ import React, { FC, forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
+import { linkStyleOverride } from '../Link/Link'
 
 interface IText {
   /** typography class name to apply predefined styles */
@@ -219,11 +220,12 @@ const Container = styled.p<IText>(
       letter-spacing: 0.75px;
     `}
 
-  margin: 0;
+    margin: 0;
     padding: 0;
-    color: ${theme.colors[color]};
     text-align: ${align};
     cursor: ${cursor};
     letter-spacing: 0.15px;
+    color: ${theme.colors[color]};
+    ${linkStyleOverride({ color: theme.colors[color] })}
   `,
 )
