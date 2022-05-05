@@ -12,6 +12,7 @@ export type LinkProps = {
   onClick?: MouseEventHandler
   openInNewTab?: boolean
   children?: ReactNode
+  download?: boolean
 }
 
 export const Link: FC<LinkProps> = ({
@@ -19,6 +20,7 @@ export const Link: FC<LinkProps> = ({
   href,
   onClick,
   openInNewTab,
+  download,
   children,
 }) => {
   return (
@@ -26,6 +28,7 @@ export const Link: FC<LinkProps> = ({
       href={href}
       className={className}
       onClick={onClick}
+      download={download}
       {...(openInNewTab && {
         rel: 'noopener noreferrer',
         target: '_blank',
@@ -40,7 +43,7 @@ export const Link: FC<LinkProps> = ({
 }
 
 const LinkWrapper = styled.a`
-  ${focusOutline}
+  ${focusOutline()}
   display: inline-flex;
   flex-direction: row;
 
