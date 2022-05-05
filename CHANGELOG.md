@@ -1,3 +1,7 @@
+## [2.1.20] - 2022-05-05
+### Changed
+- Add focus outline to Button, Chip, CheckBox, CheckBoxGroup, RadioButton and Toggle
+
 ## [2.1.19] - 2022-04-28
 ### Changed
 - Removes redundant margin for Confirmation radio
@@ -321,6 +325,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.1.20]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.19...v2.1.20
 [2.1.19]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.18...v2.1.19
 [2.1.18]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.17...v2.1.18
 [2.1.17]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.16...v2.1.17
