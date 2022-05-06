@@ -18,6 +18,7 @@ exports[`renders 1`] = `
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  color: #D82C2C;
 }
 
 .c0 {
@@ -50,7 +51,7 @@ exports[`renders 1`] = `
 >
   <span
     class="c1 c2"
-    color="red7"
+    color="error"
     cursor="inherit"
     title=""
   >

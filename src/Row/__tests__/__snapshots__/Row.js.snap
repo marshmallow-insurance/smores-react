@@ -7,13 +7,13 @@ exports[`default renders correctly 1`] = `
   font-weight: 400;
   margin: 0;
   padding: 0;
-  color: #112035;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  color: #112035;
 }
 
 .c2 {
@@ -22,13 +22,13 @@ exports[`default renders correctly 1`] = `
   font-weight: 400;
   margin: 0;
   padding: 0;
-  color: #636768;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
   -moz-letter-spacing: 0.15px;
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
+  color: #636768;
 }
 
 .c0 {

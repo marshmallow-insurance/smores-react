@@ -2,33 +2,33 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-bczRLJ sc-jqUVSM fwUwPu dsgwcw"
+  class="sc-bczRLJ sc-crXcEl fwUwPu cHxJkJ"
 >
   <div
-    class="sc-gKXOVf bLqwLA"
+    class="sc-papXJ cWKQiM"
   >
     <div
-      class="sc-iBkjds ipBmMC"
+      class="sc-jqUVSM vwlpZ"
     >
       <div
-        class="sc-ftvSup ffgBDs"
+        class="sc-kDDrLX DTxVD"
       >
         <div
           class="sc-bczRLJ fTuaZS"
         >
           <input
-            class="sc-hKMtZM jiNniY"
+            class="sc-gKXOVf oNLau"
             type="radio"
             value=""
           />
           <label
-            class="sc-eCYdqJ enYKyN"
+            class="sc-iBkjds gPlNyQ"
           >
             <div
-              class="sc-dkzDqf fxbkHh"
+              class="sc-jSMfEi goqpSd"
             />
             <span
-              class="sc-jSMfEi jfnsHj"
+              class="sc-ftvSup fhyIwz"
             >
               Yes
             </span>
@@ -36,26 +36,26 @@ exports[`renders 1`] = `
         </div>
       </div>
       <div
-        class="sc-ftvSup ffgBDs"
+        class="sc-kDDrLX DTxVD"
       >
         <div
           class="sc-bczRLJ fTuaZS"
         >
           <input
-            class="sc-hKMtZM jiNniY"
+            class="sc-gKXOVf oNLau"
             id="undefined-1"
             type="radio"
             value="undefined-1"
           />
           <label
-            class="sc-eCYdqJ enYKyN"
+            class="sc-iBkjds gPlNyQ"
             for="undefined-1"
           >
             <div
-              class="sc-dkzDqf fxbkHh"
+              class="sc-jSMfEi goqpSd"
             />
             <span
-              class="sc-jSMfEi jfnsHj"
+              class="sc-ftvSup fhyIwz"
             >
               No
             </span>
