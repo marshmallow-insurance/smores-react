@@ -32,6 +32,8 @@ const colors = {
   stripe: '#6772E5',
   intercom: '##286EFA',
   ravelin: '#2A4AFC',
+  rac: '#EA7D24',
+  hometree: '#17171C',
 }
 
 const font = {
