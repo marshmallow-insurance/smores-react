@@ -21,6 +21,8 @@ const thirdPartyBrand = [
   'stripe',
   'intercom',
   'ravelin',
+  'rac',
+  'hometree',
 ]
 
 const ColorCard = ({ colorName }: { colorName: string }) => {

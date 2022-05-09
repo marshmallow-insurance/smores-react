@@ -1,3 +1,7 @@
+## [2.1.21] - 2022-05-09
+### Added
+- Added new third parties colours for home
+
 ## [2.1.20] - 2022-05-05
 ### Changed
 - Add focus outline to Button, Chip, CheckBox, CheckBoxGroup, RadioButton and Toggle
@@ -325,6 +329,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.1.21]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.20...v2.1.21
 [2.1.20]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.19...v2.1.20
 [2.1.19]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.18...v2.1.19
 [2.1.18]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.17...v2.1.18
