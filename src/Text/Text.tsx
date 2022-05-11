@@ -1,4 +1,4 @@
-import React, { forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
+import React, { FC, forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
 import { Color, theme } from '../theme'
@@ -29,7 +29,7 @@ type Props = {
 
 export type TextProps = Props & Omit<LabelHTMLAttributes<HTMLElement>, 'color'>
 
-export const Text = forwardRef<HTMLElement, TextProps>(
+export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
   (
     {
       children,
