@@ -1,17 +1,11 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
-import { theme } from '../theme'
-
-interface ISvg {
-  height: string
-  /** color of the jumping marshmallows (from the theme) */
-  color: string
-}
+import { Color, theme } from '../theme'
 
 export type LoaderProps = {
   height: string
-  color?: string
+  color?: Color
 }
 
 export const Loader: FC<LoaderProps> = ({ height, color = 'primary' }) => (
@@ -38,6 +32,12 @@ export const Loader: FC<LoaderProps> = ({ height, color = 'primary' }) => (
     </g>
   </LoaderSvg>
 )
+
+interface ISvg {
+  height: string
+  /** color of the jumping marshmallows (from the theme) */
+  color: Color
+}
 
 const LoaderSvg = styled.svg<ISvg>`
   height: ${(p) => p.height};

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Box } from '../Box'
-import { ActionDropdown } from './ActionDropdown'
+import { ActionDropdown, ActionDropdownProps } from './ActionDropdown'
 import { Text } from '../Text'
 
-const actions = [
+const actions: ActionDropdownProps['list'] = [
   {
     label: 'Default grey',
     value: 'DEFAULT',
@@ -31,7 +31,7 @@ const actions = [
   {
     label: 'DANGER zone',
     value: 'DANGER_ZONE',
-    bgColor: 'red6',
+    bgColor: 'error',
     textColor: 'white',
   },
 ]
@@ -45,7 +45,6 @@ export const Container = () => {
         id="statusActions"
         list={actions}
         value={selectedAction}
-        // @ts-expect-error onSelect type is too broad and should be with generic type
         onSelect={setSelectedAction}
       />
 

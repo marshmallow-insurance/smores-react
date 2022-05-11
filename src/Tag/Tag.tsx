@@ -2,14 +2,14 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 
 import { Text } from '../Text'
-import { theme } from '../theme'
+import { Color, theme } from '../theme'
 
 export type TagProps = {
   label: string
   className?: string
-  color: string
-  bgColor: string
-  borderColor: string
+  color: Color
+  bgColor: Color
+  borderColor: Color
   typo?: string
 }
 
@@ -28,12 +28,9 @@ export const Tag: FC<TagProps> = ({
   </Wrapper>
 )
 
-interface IWrapper {
-  bgColor: string
-  borderColor: string
-}
+type WrapperProps = Pick<TagProps, 'bgColor' | 'borderColor'>
 
-const Wrapper = styled.div<IWrapper>`
+const Wrapper = styled.div<WrapperProps>`
   background-color: ${({ bgColor }) => theme.colors[bgColor]};
   border-radius: 8px;
   border: 1px solid ${({ borderColor }) => theme.colors[borderColor]};

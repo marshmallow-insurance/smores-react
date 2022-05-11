@@ -1,7 +1,7 @@
-import React, { FC, forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
+import React, { forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
-import { theme } from '../theme'
+import { Color, theme } from '../theme'
 import { linkStyleOverride } from '../Link/Link'
 
 interface IText {
@@ -12,7 +12,7 @@ interface IText {
   /** text-align  */
   align: string
   /** color from the theme  */
-  color: string
+  color: Color
   cursor: string
 }
 
@@ -22,14 +22,14 @@ type Props = {
   className?: string
   typo?: string
   align?: string
-  color?: string
+  color?: Color
   cursor?: string
   title?: string
 }
 
-export type TextProps = Props & LabelHTMLAttributes<HTMLElement>
+export type TextProps = Props & Omit<LabelHTMLAttributes<HTMLElement>, 'color'>
 
-export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
+export const Text = forwardRef<HTMLElement, TextProps>(
   (
     {
       children,

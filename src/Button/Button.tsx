@@ -2,7 +2,7 @@ import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { darken } from 'polished'
 
-import { theme } from '../theme'
+import { Color, theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 import { LegacyButton } from './LegacyButton'
 import { Loader } from '../Loader'
@@ -29,7 +29,7 @@ type Props = {
   children: ReactNode
   id?: string
   className?: string
-  color?: string
+  color?: Color
   block?: boolean
   inverted?: boolean
   disabled?: boolean
@@ -45,7 +45,8 @@ type Props = {
   type?: 'button' | 'submit' | 'reset'
 }
 
-export type ButtonProps = Props & ButtonHTMLAttributes<HTMLButtonElement>
+export type ButtonProps = Props &
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'>
 
 export const Button: FC<ButtonProps> = forwardRef<
   HTMLButtonElement,
@@ -114,10 +115,7 @@ export const Button: FC<ButtonProps> = forwardRef<
       >
         {loading && (
           <LoaderContainer>
-            <Loader
-              color={primary ? 'white' : `${theme.colors.secondary}`}
-              height="16"
-            />
+            <Loader color={primary ? 'white' : 'secondary'} height="16" />
           </LoaderContainer>
         )}
         <ContentContainer icon={icon} $loading={loading}>
