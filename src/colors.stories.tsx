@@ -4,12 +4,12 @@ import styled from 'styled-components'
 import { Box } from './Box'
 import { Divider } from './Divider'
 import { Text } from './Text'
-import { theme } from './theme'
+import { Color, theme } from './theme'
 
-const coreBrand = ['primary', 'secondary', 'white', 'black']
-const brandBackground = ['bgPrimary', 'bgSecondary', 'bgCarbon']
-const neutrals = ['subtext', 'outline', 'background']
-const trafficLight = ['error', 'warning', 'agentWarning', 'success']
+const coreBrand = ['primary', 'secondary', 'white', 'black'] as const
+const brandBackground = ['bgPrimary', 'bgSecondary', 'bgCarbon'] as const
+const neutrals = ['subtext', 'outline', 'background'] as const
+const trafficLight = ['error', 'warning', 'agentWarning', 'success'] as const
 const thirdPartyBrand = [
   'compareTheMarket',
   'confused',
@@ -23,9 +23,9 @@ const thirdPartyBrand = [
   'ravelin',
   'rac',
   'hometree',
-]
+] as const
 
-const ColorCard = ({ colorName }: { colorName: string }) => {
+const ColorCard = ({ colorName }: { colorName: Color }) => {
   const hexValue = theme.colors[colorName]
   return (
     <ColorCardWrapper width="180px">
@@ -48,7 +48,7 @@ const ColorSection = ({
   colors,
 }: {
   title: string
-  colors: string[]
+  colors: Readonly<Color[]>
 }) => {
   return (
     <Box width="100%">
@@ -107,6 +107,6 @@ const ColorCardWrapper = styled(Box)`
   overflow: hidden;
 `
 
-const ColorBox = styled(Box)<{ colorName: string }>`
+const ColorBox = styled(Box)<{ colorName: Color }>`
   background-color: ${({ colorName }) => theme.colors[colorName]};
 `

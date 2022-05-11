@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 
-import { theme } from '../theme'
+import { Color, theme } from '../theme'
 
 /**
  * When adding a new Icon please remember to also add it
@@ -18,7 +18,7 @@ export type IconProps = {
   /** set size of the Icon  */
   size?: number
   /** set color of the Icon */
-  color?: string
+  color?: Color
   /** rotation degrees */
   rotate?: number
   /** margins TOP-RIGHT-BOTTOM-LEFT */

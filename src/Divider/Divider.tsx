@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Box } from '../Box'
-import { theme } from '../theme'
+import { Color, theme } from '../theme'
 
 export type DividerProps = {
   maxWidth?: string
@@ -10,10 +10,10 @@ export type DividerProps = {
   mr?: string
   mb?: string
   ml?: string
-  color?: string
+  color?: Color
 }
 
-const DividerComponent = ({
+export const Divider: FC<DividerProps> = memo(function Divider({
   maxWidth = 'none',
   height = '1px',
   mt = '0px',
@@ -21,22 +21,27 @@ const DividerComponent = ({
   mb = '0px',
   ml = '0px',
   color = 'outline',
-}) => (
-  <Line
-    maxWidth={maxWidth}
-    height={height}
-    mt={mt}
-    mr={mr}
-    mb={mb}
-    ml={ml}
-    color={color}
-  />
-)
+}) {
+  return (
+    <Line
+      maxWidth={maxWidth}
+      height={height}
+      mt={mt}
+      mr={mr}
+      mb={mb}
+      ml={ml}
+      color={color}
+    />
+  )
+})
 
-export const Divider: FC<DividerProps> = memo(DividerComponent)
-
-const Line = styled(Box)`
-  background: ${({ color }) => theme.colors[color ?? '']};
+const Line = styled(Box)<{ color: Color }>`
+  ${({ color }) =>
+    color
+      ? css`
+          background: ${theme.colors[color]};
+        `
+      : ''};
   display: block;
   height: ${({ height }) => height};
   margin-bottom: ${({ mb }) => mb};

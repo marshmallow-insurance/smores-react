@@ -36,7 +36,7 @@ export const Confirmation: FC<ConfirmationProps> = ({
         <TextWrapper>
           {label && <SectionHeadingText tag="h3">{label}</SectionHeadingText>}
           {sublabel && (
-            <Text tag="p" typo="base-small" color={theme.colors.subtext}>
+            <Text tag="p" typo="base-small" color="subtext">
               {sublabel}
             </Text>
           )}

@@ -1,13 +1,13 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
-import { theme } from '../theme'
+import { Color, theme } from '../theme'
 
 export type ActionListItem = {
   label: string
   value: string
-  bgColor?: string
-  textColor?: string
+  bgColor?: Color
+  textColor?: Color
 }
 
 type Props = {

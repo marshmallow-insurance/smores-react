@@ -24,7 +24,7 @@ export const CheckBox: FC<CheckBoxProps> = ({
 }) => (
   <>
     <BoxContainer id={id}>
-      <Text tag="span" typo="base" color={error ? 'red7' : 'secondary'}>
+      <Text tag="span" typo="base" color={error ? 'error' : 'secondary'}>
         {children}
       </Text>
 

@@ -1,11 +1,11 @@
 import React, { FC, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
-import { theme } from '../theme'
+import { Color, theme } from '../theme'
 
 interface IButton {
   /** button color  */
-  color: string
+  color: Color
   /** unique id */
   id?: string
   /** take full 100% width  */
@@ -24,7 +24,7 @@ type Props = {
   children: ReactNode
   id?: string
   className?: string
-  color?: string
+  color?: Color
   block?: boolean
   inverted?: boolean
   disabled?: boolean
@@ -69,15 +69,15 @@ const Container = styled.button<IButton>(
     outline: none;
     cursor: pointer;
     width: ${block ? '100%' : 'auto'};
-    background-color: ${theme.colors[`${color}`]};
+    background-color: ${theme.colors[color]};
     color: ${theme.colors.white};
     font-weight: ${theme.font.weight.medium};
 
     &:hover:not([disabled]) {
-      background-color: ${theme.colors[`${color}`]};
+      background-color: ${theme.colors[color]};
     }
     &:active:not([disabled]) {
-      background-color: ${theme.colors[`${color}`]};
+      background-color: ${theme.colors[color]};
     }
     &:disabled {
       opacity: 0.5;
@@ -88,7 +88,7 @@ const Container = styled.button<IButton>(
     css`
       background-color: transparent;
       border: 1px solid ${outlined ? theme.colors.outline : 'transparent'};
-      color: ${outlined ? theme.colors.secondary : theme.colors[`${color}`]};
+      color: ${outlined ? theme.colors.secondary : theme.colors[color]};
 
       &:hover:not([disabled]) {
         background-color: ${theme.colors.background};

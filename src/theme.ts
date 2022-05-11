@@ -36,6 +36,8 @@ const colors = {
   hometree: '#17171C',
 }
 
+export type Color = keyof typeof colors
+
 const font = {
   weight: {
     normal: 400,

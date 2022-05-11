@@ -5,9 +5,9 @@ import { Text } from '../Text'
 import { Icon } from '../Icon'
 import { List, ActionListItem } from './List'
 
-import { theme } from '../theme'
+import { Color, theme } from '../theme'
 
-type Props = {
+export type ActionDropdownProps = {
   /** ID, usually used for tests  */
   id: string
   /** className attribute to apply classes from props */
@@ -22,7 +22,7 @@ type Props = {
   onSelect: (action: ActionListItem) => void
 }
 
-export const ActionDropdown: FC<Props> = ({
+export const ActionDropdown: FC<ActionDropdownProps> = ({
   id,
   className = '',
   label,
@@ -64,8 +64,8 @@ export const ActionDropdown: FC<Props> = ({
 }
 
 interface ISelected {
-  text: string
-  bg: string
+  text: Color
+  bg: Color
 }
 
 const Label = styled.div<ISelected>(
