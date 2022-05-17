@@ -26,3 +26,12 @@ service:
       category: wiki
       url: https://marshmallow-insurance.github.io/smores-react/?path=/story/action-dropdown--default
       environment: Production
+    - name: Notion Documentation
+      category: wiki
+      url: https://www.notion.so/getmarshmallow/S-mores-3687018a79fb40a3a094d9fd365456c6
+    - name: Figma Web
+      category: wiki
+      url: https://www.figma.com/files/856847062227544562/project/820794/S'Mores-React?fuid=910509198854607819
+    - name: Figma Design System
+      category: wiki
+      url: https://www.figma.com/file/rnQu7stzZse0zw67V2tSy6/DS---Foundations?node-id=1%3A4
