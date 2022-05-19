@@ -195,6 +195,8 @@ const Input = styled.input<ISearchInput>`
 
   &::placeholder {
     color: ${theme.colors.subtext};
+  }
+
   ${({ outlined }) =>
     outlined &&
     `

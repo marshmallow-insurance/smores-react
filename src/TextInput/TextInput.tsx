@@ -1,4 +1,4 @@
-import React, { FormEvent, FC, RefObject } from 'react'
+import React, { FormEvent, RefObject, forwardRef, ForwardedRef } from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
@@ -54,58 +54,62 @@ type TruncateProps =
 
 export type TextInputProps = DefaultProps & TruncateProps
 
-export const TextInput: FC<TextInputProps> = ({
-  id,
-  className = '',
-  type = 'text',
-  placeholder,
-  label,
-  name,
-  value,
-  outlined = false,
-  error = false,
-  errorMsg,
-  trailingIcon,
-  ref,
-  onBlur,
-  onChange,
-  onInputChange,
-  disabled = false,
-}) => (
-  <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
-    {label && (
-      <Box mb={outlined ? '4px' : '0px'}>
-        <Text tag="label" color="subtext" typo="label" htmlFor={id}>
-          {label}
-        </Text>
-      </Box>
-    )}
+export const TextInput = forwardRef(function TextInput(
+  {
+    id,
+    className = '',
+    type = 'text',
+    placeholder,
+    label,
+    name,
+    value,
+    outlined = false,
+    error = false,
+    errorMsg,
+    trailingIcon,
+    onBlur,
+    onChange,
+    onInputChange,
+    disabled = false,
+  }: TextInputProps,
+  ref: ForwardedRef<HTMLInputElement>,
+) {
+  return (
+    <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
+      {label && (
+        <Box mb={outlined ? '4px' : '0px'}>
+          <Text tag="label" color="subtext" typo="label" htmlFor={id}>
+            {label}
+          </Text>
+        </Box>
+      )}
 
-    <Content value={value} outlined={outlined} error={error}>
-      <Input
-        disabled={disabled}
-        type={type}
-        id={id}
-        name={name}
-        ref={ref}
-        placeholder={placeholder}
-        value={value}
-        error={error}
-        outlined={outlined}
-        autoComplete="off"
-        onChange={(e: FormEvent<HTMLInputElement>) => {
-          onChange && onChange(e.currentTarget.value)
-          onInputChange && onInputChange(e)
-        }}
-        onBlur={(e) => {
-          onBlur && onBlur(e)
-        }}
-      />
-      {trailingIcon && <Icon render={trailingIcon} color="subtext" />}
-    </Content>
-    {error && <ErrorBox>{errorMsg}</ErrorBox>}
-  </Container>
-)
+      <Content value={value} outlined={outlined} error={error}>
+        <Input
+          disabled={disabled}
+          type={type}
+          id={id}
+          name={name}
+          ref={ref}
+          placeholder={placeholder}
+          value={value}
+          error={error}
+          outlined={outlined}
+          autoComplete="off"
+          onChange={(e: FormEvent<HTMLInputElement>) => {
+            onChange && onChange(e.currentTarget.value)
+            onInputChange && onInputChange(e)
+          }}
+          onBlur={(e) => {
+            onBlur && onBlur(e)
+          }}
+        />
+        {trailingIcon && <Icon render={trailingIcon} color="subtext" />}
+      </Content>
+      {error && <ErrorBox>{errorMsg}</ErrorBox>}
+    </Container>
+  )
+})
 
 interface IContainer {
   hasLabel: boolean
