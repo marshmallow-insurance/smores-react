@@ -1,6 +1,5 @@
 import React, { FC, useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { v4 as UUID } from 'uuid'
 
 import { Box } from '../Box'
 import { Text } from '../Text'
@@ -103,7 +102,7 @@ export const Pagination: FC<PaginationProps> = ({
         return (
           <PageBox
             active={activePage === i}
-            key={UUID()}
+            key={i}
             onClick={() => movePage(i)}
           >
             <Text
