@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, RefObject } from 'react'
+import React, { FormEvent, ForwardedRef, forwardRef } from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
@@ -12,8 +12,6 @@ type BaseProps = {
   id: string
   /** className attribute to apply classses from props */
   className?: string
-  /** ref attribute for input */
-  ref?: RefObject<HTMLTextAreaElement>
   /** Placeholder */
   placeholder?: string
   /** label displayed above the input  */
@@ -53,57 +51,61 @@ type TruncateProps =
 
 export type TextareaProps = BaseProps & TruncateProps
 
-export const Textarea: FC<TextareaProps> = ({
-  id,
-  name,
-  label,
-  value,
-  onChange,
-  onInputChange,
-  className,
-  resize = 'none',
-  error = false,
-  errorMsg,
-  placeholder,
-  disabled = false,
-  maxLength,
-  onBlur,
-  ref,
-  rows = 4,
-}) => (
-  <Box flex direction="column" className={className}>
-    {label && (
-      <Box mb="4px">
-        <Text tag="label" color="subtext" typo="label" htmlFor={id}>
-          {label}
-        </Text>
-      </Box>
-    )}
+export const Textarea = forwardRef(function Textarea(
+  {
+    id,
+    name,
+    label,
+    value,
+    onChange,
+    onInputChange,
+    className,
+    resize = 'none',
+    error = false,
+    errorMsg,
+    placeholder,
+    disabled = false,
+    maxLength,
+    onBlur,
+    rows = 4,
+  }: TextareaProps,
+  ref: ForwardedRef<HTMLTextAreaElement>,
+) {
+  return (
+    <Box flex direction="column" className={className}>
+      {label && (
+        <Box mb="4px">
+          <Text tag="label" color="subtext" typo="label" htmlFor={id}>
+            {label}
+          </Text>
+        </Box>
+      )}
 
-    <Box flex direction="column">
-      <Field
-        error={error}
-        id={id}
-        name={name}
-        disabled={disabled}
-        resize={resize}
-        placeholder={placeholder}
-        value={value}
-        onChange={(e: FormEvent<HTMLTextAreaElement>) => {
-          onChange && onChange(e.currentTarget.value)
-          onInputChange && onInputChange(e)
-        }}
-        maxLength={maxLength}
-        ref={ref}
-        onBlur={(e) => {
-          onBlur && onBlur(e)
-        }}
-        rows={rows}
-      />
+      <Box flex direction="column">
+        <Field
+          error={error}
+          id={id}
+          name={name}
+          disabled={disabled}
+          resize={resize}
+          placeholder={placeholder}
+          value={value}
+          onChange={(e: FormEvent<HTMLTextAreaElement>) => {
+            onChange && onChange(e.currentTarget.value)
+            onInputChange && onInputChange(e)
+          }}
+          maxLength={maxLength}
+          ref={ref}
+          onBlur={(e) => {
+            onBlur && onBlur(e)
+          }}
+          rows={rows}
+        />
+      </Box>
+      {error && <ErrorBox>{errorMsg}</ErrorBox>}
     </Box>
-    {error && <ErrorBox>{errorMsg}</ErrorBox>}
-  </Box>
-)
+  )
+})
 
 interface ITextarea {
   resize: 'none' | 'both'

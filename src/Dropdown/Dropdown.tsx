@@ -1,4 +1,11 @@
-import React, { FC, useEffect, useState, FormEvent, RefObject } from 'react'
+import React, {
+  useEffect,
+  useState,
+  FormEvent,
+  RefObject,
+  forwardRef,
+  ForwardedRef,
+} from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
@@ -69,25 +76,27 @@ type TruncateProps =
 
 export type DropdownProps = DefaultProps & TruncateProps
 
-export const Dropdown: FC<DropdownProps> = ({
-  id,
-  className = '',
-  ref,
-  label,
-  placeholder,
-  name,
-  value,
-  defaultValue,
-  disabled = false,
-  list,
-  onSelect,
-  outlined = false,
-  error = false,
-  errorMsg = '',
-  onInputChange,
-  onBlur,
-  required = true,
-}) => {
+export const Dropdown = forwardRef(function Dropdown(
+  {
+    id,
+    className = '',
+    label,
+    placeholder,
+    name,
+    value,
+    defaultValue,
+    disabled = false,
+    list,
+    onSelect,
+    outlined = false,
+    error = false,
+    errorMsg = '',
+    onInputChange,
+    onBlur,
+    required = true,
+  }: DropdownProps,
+  ref: ForwardedRef<HTMLSelectElement>,
+) {
   const [key, setKey] = useState('')
   const [hasOptGroups, setHasOptGroups] = useState(false)
   const [dropdownItemsGroups, setDropdownItemsGroups] = useState(
@@ -193,7 +202,7 @@ export const Dropdown: FC<DropdownProps> = ({
       {error && <ErrorBox>{errorMsg}</ErrorBox>}
     </Container>
   )
-}
+})
 
 const Container = styled.div`
   display: flex;
