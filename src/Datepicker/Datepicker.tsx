@@ -1,4 +1,4 @@
-import React, { FC, useState, useMemo } from 'react'
+import React, { FC, useState } from 'react'
 import styled from 'styled-components'
 import {
   format,
@@ -20,6 +20,18 @@ import { theme } from '../theme'
 
 import { DatesList } from './DatesList'
 
+const getAvailableMonths = (startDate: Date, endDate: Date) => {
+  const monthList = eachMonthOfInterval({
+    start: startDate,
+    end: endDate,
+  })
+
+  return monthList.map((monthDate) => ({
+    date: monthDate,
+    label: format(monthDate, 'MMMM'),
+  }))
+}
+
 export type DatepickerProps = {
   disableWeekend?: boolean
   firstDayShift?: boolean
@@ -37,6 +49,7 @@ export const Datepicker: FC<DatepickerProps> = ({
 }) => {
   const startDate = fromDate
   const endDate = addDays(startDate, range)
+  const availableMonths = getAvailableMonths(startDate, endDate)
 
   const [activeDay, setActiveDay] = useState<Date>()
   const [activeMonthIndex, setActiveMonth] = useState(0)
@@ -45,18 +58,6 @@ export const Datepicker: FC<DatepickerProps> = ({
     setActiveDay(date)
     onDateSelect(format(date, 'yyyy-MM-dd'))
   }
-
-  const availableMonths = useMemo(() => {
-    const monthList = eachMonthOfInterval({
-      start: startDate,
-      end: endDate,
-    })
-
-    return monthList.map((monthDate) => ({
-      date: monthDate,
-      label: format(monthDate, 'MMMM'),
-    }))
-  }, [startDate, endDate])
 
   const generateDaysForMonth = (monthDate: Date) => {
     const daysInMonth = getDaysInMonth(monthDate)
