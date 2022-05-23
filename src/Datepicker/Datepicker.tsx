@@ -1,4 +1,4 @@
-import React, { FC, useState, useLayoutEffect } from 'react'
+import React, { FC, useState, useMemo } from 'react'
 import styled from 'styled-components'
 import {
   format,
@@ -41,12 +41,6 @@ export const Datepicker: FC<DatepickerProps> = ({
 }) => {
   const [activeDay, setActiveDay] = useState<Date>()
   const [activeMonth, setActiveMonth] = useState(0)
-  const [listDays, setListDays] = useState<Month[]>([
-    {
-      monthName: '',
-      filteredDays: [],
-    },
-  ])
 
   const handleSelectEvent = (date: Date) => {
     setActiveDay(date)
@@ -95,7 +89,7 @@ export const Datepicker: FC<DatepickerProps> = ({
     }
   }
 
-  const combineAvailableDays = () => {
+  const listDays: Month[] = useMemo(() => {
     const today = fromDate
     const endDay = addDays(today, range)
     const sameMonth = isSameMonth(today, endDay)
@@ -115,12 +109,8 @@ export const Datepicker: FC<DatepickerProps> = ({
       availableDays = [generateDaysForMonth(today, endDay)]
     }
 
-    setListDays(availableDays)
-  }
-
-  useLayoutEffect(() => {
-    combineAvailableDays()
-  }, [activeDay, activeMonth])
+    return availableDays
+  }, [activeDay, activeMonth, firstDayShift])
 
   return (
     <Container id="datepicker">
