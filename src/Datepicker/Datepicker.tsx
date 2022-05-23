@@ -3,17 +3,14 @@ import styled from 'styled-components'
 import {
   format,
   addDays,
-  addMonths,
   getMonth,
   getYear,
+  eachMonthOfInterval,
   isSameDay,
-  isSameMonth,
   isWithinInterval,
-  startOfMonth,
   getDaysInMonth,
   isToday,
   isWeekend,
-  getISODay,
 } from 'date-fns'
 
 import { Box } from '../Box'
@@ -22,7 +19,6 @@ import { Icon } from '../Icon'
 import { theme } from '../theme'
 
 import { DatesList } from './DatesList'
-import { Month } from './types'
 
 export type DatepickerProps = {
   disableWeekend?: boolean
@@ -39,35 +35,34 @@ export const Datepicker: FC<DatepickerProps> = ({
   fromDate = new Date(),
   onDateSelect,
 }) => {
+  const startDate = fromDate
+  const endDate = addDays(startDate, range)
+
   const [activeDay, setActiveDay] = useState<Date>()
-  const [activeMonth, setActiveMonth] = useState(0)
+  const [activeMonthIndex, setActiveMonth] = useState(0)
 
   const handleSelectEvent = (date: Date) => {
     setActiveDay(date)
     onDateSelect(format(date, 'yyyy-MM-dd'))
   }
 
-  const generateDaysForMonth = (startDay: Date, endDay: Date) => {
-    const month = getMonth(startDay)
-    const monthName = format(startDay, 'MMMM')
-    const daysInMonth = getDaysInMonth(startDay)
-    const year = getYear(startDay)
+  const availableMonths = useMemo(() => {
+    const monthList = eachMonthOfInterval({
+      start: startDate,
+      end: endDate,
+    })
+
+    return monthList.map((monthDate) => ({
+      date: monthDate,
+      label: format(monthDate, 'MMMM'),
+    }))
+  }, [startDate, endDate])
+
+  const generateDaysForMonth = (monthDate: Date) => {
+    const daysInMonth = getDaysInMonth(monthDate)
+    const month = getMonth(monthDate)
+    const year = getYear(monthDate)
     const filteredDays = []
-
-    if (firstDayShift) {
-      const date = new Date(year, month, 1)
-      const dayOfTheWeek = getISODay(date)
-      const blankDays = dayOfTheWeek - 1
-
-      for (let i = 0; i < blankDays; i += 1) {
-        filteredDays.push({
-          date,
-          label: '',
-          active: false,
-          disabled: true,
-        })
-      }
-    }
 
     for (let i = 1; i <= daysInMonth; i += 1) {
       const date = new Date(year, month, i)
@@ -78,39 +73,13 @@ export const Datepicker: FC<DatepickerProps> = ({
         active: activeDay ? isSameDay(date, activeDay) : false,
         disabled:
           (!isToday(date) &&
-            !isWithinInterval(date, { start: startDay, end: endDay })) ||
+            !isWithinInterval(date, { start: startDate, end: endDate })) ||
           (disableWeekend && isWeekend(date)),
       })
     }
 
-    return {
-      monthName,
-      filteredDays,
-    }
+    return filteredDays
   }
-
-  const listDays: Month[] = useMemo(() => {
-    const today = fromDate
-    const endDay = addDays(today, range)
-    const sameMonth = isSameMonth(today, endDay)
-
-    let availableDays = []
-
-    // Check if we should generate dates from current for next month
-    if (!sameMonth) {
-      const thisMonth = generateDaysForMonth(today, endDay)
-      const nextMonth = generateDaysForMonth(
-        startOfMonth(addMonths(today, 1)),
-        endDay,
-      )
-
-      availableDays = [thisMonth, nextMonth]
-    } else {
-      availableDays = [generateDaysForMonth(today, endDay)]
-    }
-
-    return availableDays
-  }, [activeDay, activeMonth, firstDayShift])
 
   return (
     <Container id="datepicker">
@@ -121,22 +90,19 @@ export const Datepicker: FC<DatepickerProps> = ({
         direction="row"
       >
         <Circle
-          disabled={listDays[activeMonth].monthName === listDays[0].monthName}
-          onClick={() => setActiveMonth(activeMonth - 1)}
+          disabled={activeMonthIndex === 0}
+          onClick={() => setActiveMonth(activeMonthIndex - 1)}
         >
           <Caret render="caret" color="white" size={24} rotate={90} />
         </Circle>
 
         <Heading tag="h4" typo="desc-base">
-          {listDays[activeMonth].monthName}
+          {availableMonths[activeMonthIndex].label}
         </Heading>
 
         <Circle
-          disabled={
-            listDays[activeMonth].monthName ===
-            listDays[listDays.length - 1].monthName
-          }
-          onClick={() => setActiveMonth(activeMonth + 1)}
+          disabled={activeMonthIndex === availableMonths.length - 1}
+          onClick={() => setActiveMonth(activeMonthIndex + 1)}
         >
           <Caret render="caret" color="white" size={24} rotate={-90} />
         </Circle>
@@ -144,8 +110,9 @@ export const Datepicker: FC<DatepickerProps> = ({
 
       <Box flex alignItems="center" justifyContent="center">
         <DatesList
-          items={listDays[activeMonth].filteredDays}
+          items={generateDaysForMonth(availableMonths[activeMonthIndex].date)}
           handleDateSelect={handleSelectEvent}
+          firstDayShift={firstDayShift}
         />
       </Box>
     </Container>

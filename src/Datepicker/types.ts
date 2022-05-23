@@ -4,8 +4,3 @@ export interface Day {
   active: boolean
   date: Date
 }
-
-export interface Month {
-  monthName: string
-  filteredDays: Day[]
-}
