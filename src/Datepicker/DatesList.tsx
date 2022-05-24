@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import { getISODay } from 'date-fns'
 
 import { theme } from '../theme'
 
@@ -7,23 +8,39 @@ import { Day } from './types'
 
 type Props = {
   items: Day[]
+  firstDayShift: boolean
   handleDateSelect: (date: Date) => void
 }
 
-export const DatesList: FC<Props> = ({ items, handleDateSelect }) => (
-  <Container>
-    {items.map((item: Day, i) => (
-      <ListItem
-        key={i}
-        disabled={item.disabled}
-        className={`ListItem ${item.active ? 'active' : ''}`}
-        onClick={() => handleDateSelect(item.date)}
-      >
-        {item.label}
-      </ListItem>
-    ))}
-  </Container>
-)
+const getBlankDaysCount = (firstDayOfTheMonth: Date) => {
+  const dayOfTheWeek = getISODay(firstDayOfTheMonth)
+  return dayOfTheWeek - 1
+}
+
+export const DatesList: FC<Props> = ({
+  items,
+  handleDateSelect,
+  firstDayShift,
+}) => {
+  return (
+    <Container>
+      {firstDayShift &&
+        Array(getBlankDaysCount(items[0].date))
+          .fill(null)
+          .map((_, index) => <ListItem key={`blankItem-${index}`} disabled />)}
+      {items.map((item: Day, i) => (
+        <ListItem
+          key={i}
+          disabled={item.disabled}
+          className={`ListItem ${item.active ? 'active' : ''}`}
+          onClick={() => handleDateSelect(item.date)}
+        >
+          {item.label}
+        </ListItem>
+      ))}
+    </Container>
+  )
+}
 
 const Container = styled.ul`
   display: grid;
