@@ -1,7 +1,8 @@
-## [2.1.23] - 2022-05-23
+## [2.1.23] - 2022-05-24
 ### Fixed
 - Properly display range of more than 2 months on Datepicker
 - Fix ref prop on input components
+- Set start date of Datepicker to UK timezone
 
 ## [2.1.22] - 2022-05-11
 ### Changed

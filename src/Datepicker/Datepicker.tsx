@@ -19,6 +19,7 @@ import { Icon } from '../Icon'
 import { theme } from '../theme'
 
 import { DatesList } from './DatesList'
+import { convertToUkDate } from '../utils/date'
 
 const getAvailableMonths = (startDate: Date, endDate: Date) => {
   const monthList = eachMonthOfInterval({
@@ -47,7 +48,9 @@ export const Datepicker: FC<DatepickerProps> = ({
   fromDate = new Date(),
   onDateSelect,
 }) => {
-  const startDate = fromDate
+  // We want to make sure that the date is in the UK timezone,
+  // this might need to be revisit when opening up to new countries
+  const startDate = convertToUkDate(fromDate)
   const endDate = addDays(startDate, range)
   const availableMonths = getAvailableMonths(startDate, endDate)
 
