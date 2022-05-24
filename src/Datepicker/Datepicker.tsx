@@ -48,6 +48,8 @@ export const Datepicker: FC<DatepickerProps> = ({
   fromDate = new Date(),
   onDateSelect,
 }) => {
+  // We want to make sure that the date is in the UK timezone,
+  // this might need to be revisit when opening up to new countries
   const startDate = convertToUkDate(fromDate)
   const endDate = addDays(startDate, range)
   const availableMonths = getAvailableMonths(startDate, endDate)
