@@ -19,6 +19,7 @@ import { Icon } from '../Icon'
 import { theme } from '../theme'
 
 import { DatesList } from './DatesList'
+import { convertToUkDate } from '../utils/date'
 
 const getAvailableMonths = (startDate: Date, endDate: Date) => {
   const monthList = eachMonthOfInterval({
@@ -47,7 +48,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   fromDate = new Date(),
   onDateSelect,
 }) => {
-  const startDate = fromDate
+  const startDate = convertToUkDate(fromDate)
   const endDate = addDays(startDate, range)
   const availableMonths = getAvailableMonths(startDate, endDate)
 
