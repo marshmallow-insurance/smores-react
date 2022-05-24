@@ -16,6 +16,7 @@ export type MessageProps = {
   alignIcon?: 'center' | 'flex-start' | 'flex-end'
   backgroundColor?: string
   sizeSmall?: boolean
+  title?: string
 } & BorderProps
 
 export const Message: FC<MessageProps> = ({
@@ -27,6 +28,7 @@ export const Message: FC<MessageProps> = ({
   sizeSmall,
   hasBorder,
   borderColor,
+  title,
 }) => (
   <Wrapper
     className={className}
@@ -40,11 +42,19 @@ export const Message: FC<MessageProps> = ({
       <Icon
         size={sizeSmall ? 24 : 32}
         render={type}
-        color={type === 'warning' ? 'error' : 'secondary'}
+        color={
+          type === 'warning'
+            ? 'error'
+            : type === 'alert'
+            ? 'agentWarning'
+            : 'secondary'
+        }
       />
     </IconWrapper>
-
-    {children}
+    <Box flex direction="column">
+      <Title>{title}</Title>
+      {children}
+    </Box>
   </Wrapper>
 )
 
@@ -73,15 +83,13 @@ const Wrapper = styled.div<IWrapper>(
       ? theme.colors.white
       : theme.colors.background};
     box-sizing: border-box;
-    ${type === 'warning'
-      ? `border: 1px solid ${theme.colors.error};`
-      : hasBorder && `border: 1px solid ${borderColor};`}
+    ${hasBorder && `border: 1px solid ${borderColor};`}
     border-radius: 8px;
     margin-bottom: 24px;
     padding: 16px;
     display: flex;
     font-family: ${theme.font.system};
-    color: ${type === 'warning' ? theme.colors.error : theme.colors.secondary};
+    color: ${theme.colors.secondary};
     font-size: ${sizeSmall ? '12px' : '16px'};
 
     span {
@@ -89,3 +97,11 @@ const Wrapper = styled.div<IWrapper>(
     }
   `,
 )
+
+const Title = styled.h3`
+  font-size: 16px;
+  font-weight: ${theme.font.weight.medium};
+  color: ${theme.colors.secondary};
+  line-height: 20.8px;
+  margin-bottom: 4px;
+`

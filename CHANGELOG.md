@@ -1,3 +1,7 @@
+## [2.1.24] - 2022-05-24
+### Changed
+- Adds new styling for info, alert and warning types in Message component
+
 ## [2.1.23] - 2022-05-24
 ### Fixed
 - Properly display range of more than 2 months on Datepicker
@@ -339,7 +343,8 @@
 ### Changed
 - Updated gap and styles on Row component
 
-[2.1.23]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.21...v2.1.23
+[2.1.24]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.23...v2.1.24
+[2.1.23]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.22...v2.1.23
 [2.1.22]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.21...v2.1.22
 [2.1.21]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.20...v2.1.21
 [2.1.20]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.19...v2.1.20
