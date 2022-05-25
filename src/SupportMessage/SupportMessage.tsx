@@ -1,27 +1,26 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
+import { lighten } from 'polished'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { theme } from '../theme'
 
-type BorderProps =
-  | { hasBorder?: false; borderColor?: never }
-  | { hasBorder: true; borderColor: string }
-
 export type SupportMessageProps = {
   className?: string
-  children: ReactNode
+  children: string
   type: 'info' | 'alert' | 'warning'
   title?: string
   hasBackground?: boolean
-} & BorderProps
+  hasBorder?: boolean
+  borderColor?: string
+}
 
 export const SupportMessage: FC<SupportMessageProps> = ({
   className,
   children,
   type = 'info',
-  hasBorder,
+  hasBorder = false,
   borderColor,
   title,
   hasBackground = true,
@@ -47,14 +46,14 @@ export const SupportMessage: FC<SupportMessageProps> = ({
       />
     </IconWrapper>
     <Box flex direction="column">
-      <Title>{title}</Title>
+      {title && <Title>{title}</Title>}
       {children}
     </Box>
   </Wrapper>
 )
 
 interface IWrapper {
-  type: 'info' | 'alert' | 'warning'
+  type: SupportMessageProps['type']
   hasBorder?: boolean
   borderColor?: string
   hasBackground?: boolean
@@ -73,7 +72,8 @@ const Wrapper = styled.div<IWrapper>(
         ? theme.colors.background
         : type === 'alert'
         ? theme.colors.bgSecondary
-        : '#FBEAEA'
+        : lighten(0.45, theme.colors.error)
+    };
     };`}
     box-sizing: border-box;
     ${hasBorder && `border: 1px solid ${borderColor};`}

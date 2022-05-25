@@ -87,11 +87,11 @@ const ContainerBox = styled(Box)`
   margin-bottom: 16px;
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
   max-width: 600px;
   width: 100%;
 `
 
 const Label = styled(Text)`
   margin-right: 12px;
+  width: 300px;
 `
