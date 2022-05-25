@@ -13,7 +13,6 @@ export type SupportMessageProps = {
   className?: string
   children: ReactNode
   type: 'info' | 'alert' | 'warning'
-  alignIcon?: 'center' | 'flex-start' | 'flex-end'
   title?: string
   hasBackground?: boolean
 } & BorderProps
@@ -22,7 +21,6 @@ export const SupportMessage: FC<SupportMessageProps> = ({
   className,
   children,
   type = 'info',
-  alignIcon = 'center',
   hasBorder,
   borderColor,
   title,
@@ -35,7 +33,7 @@ export const SupportMessage: FC<SupportMessageProps> = ({
     borderColor={borderColor}
     hasBackground={hasBackground}
   >
-    <IconWrapper alignIcon={alignIcon}>
+    <IconWrapper>
       <Icon
         size={24}
         render={type}
@@ -55,10 +53,6 @@ export const SupportMessage: FC<SupportMessageProps> = ({
   </Wrapper>
 )
 
-interface IIconWrapper {
-  alignIcon?: 'center' | 'flex-start' | 'flex-end'
-}
-
 interface IWrapper {
   type: 'info' | 'alert' | 'warning'
   hasBorder?: boolean
@@ -66,8 +60,8 @@ interface IWrapper {
   hasBackground?: boolean
 }
 
-const IconWrapper = styled(Box)<IIconWrapper>`
-  align-self: ${({ alignIcon }) => alignIcon};
+const IconWrapper = styled(Box)`
+  align-self: center;
 `
 
 const Wrapper = styled.div<IWrapper>(
