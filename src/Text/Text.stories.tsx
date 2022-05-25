@@ -91,4 +91,4 @@ WithTitle.args = {
   title: 'a11y title tooltip',
 }
 
-export const TypographyCollection = TypographyTemplate.bind({})
+export const Collection = TypographyTemplate.bind({})
