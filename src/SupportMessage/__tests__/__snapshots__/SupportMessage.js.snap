@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`default renders correctly 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -17,8 +27,8 @@ exports[`default renders correctly 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -50,11 +60,19 @@ exports[`default renders correctly 1`] = `
   display: flex;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   color: #112035;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .c0 span {
   margin: 0 16px 0 0;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #112035;
+  line-height: 20.8px;
+  margin-bottom: 4px;
 }
 
 <div>
@@ -69,7 +87,7 @@ exports[`default renders correctly 1`] = `
         class="c2"
         color="secondary"
         rotate="0"
-        size="32"
+        size="24"
       >
         <svg
           fill="none"
@@ -87,12 +105,30 @@ exports[`default renders correctly 1`] = `
         </svg>
       </span>
     </div>
-    This is an infomation message for the customer!
+    <div
+      class="c3"
+      direction="column"
+    >
+      <h3
+        class="c4"
+      />
+      Support info message for customer
+    </div>
   </div>
 </div>
 `;
 
-exports[`info renders correctly 1`] = `
+exports[`type alert renders correctly 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -109,8 +145,126 @@ exports[`info renders correctly 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.c1 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FAF3EE;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: #112035;
+  font-size: 12px;
+}
+
+.c0 span {
+  margin: 0 16px 0 0;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #112035;
+  line-height: 20.8px;
+  margin-bottom: 4px;
+}
+
+<div>
+  <div
+    class="c0"
+    type="alert"
+  >
+    <div
+      class="c1"
+    >
+      <span
+        class="c2"
+        color="agentWarning"
+        rotate="0"
+        size="24"
+      >
+        <svg
+          fill="none"
+          height="100%"
+          viewBox="0 0 24 24"
+          width="100%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M21 0H3C1.346 0 0 1.346 0 3v13c0 1.654 1.346 3 3 3h4.52l3.699 4.625a1 1 0 001.562 0L16.48 19H21c1.654 0 3-1.346 3-3V3c0-1.654-1.346-3-3-3zM11 6a1 1 0 112 0v4a1 1 0 11-2 0V6zm0 6.99a1 1 0 112 0c0 .552-.447 1.005-1 1.005-.553 0-1-.443-1-.995v-.01zM21 17c.552 0 1-.449 1-1V3c0-.551-.448-1-1-1H3c-.552 0-1 .449-1 1v13c0 .551.448 1 1 1h5a1 1 0 01.781.375L12 21.399l3.219-4.024A1 1 0 0116 17h5z"
+            fill="#FF8B00"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class="c3"
+      direction="column"
+    >
+      <h3
+        class="c4"
+      />
+      Support alert message for customer
+    </div>
+  </div>
+</div>
+`;
+
+exports[`type info with general title renders correctly 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -142,11 +296,19 @@ exports[`info renders correctly 1`] = `
   display: flex;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   color: #112035;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .c0 span {
   margin: 0 16px 0 0;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #112035;
+  line-height: 20.8px;
+  margin-bottom: 4px;
 }
 
 <div>
@@ -161,7 +323,7 @@ exports[`info renders correctly 1`] = `
         class="c2"
         color="secondary"
         rotate="0"
-        size="32"
+        size="24"
       >
         <svg
           fill="none"
@@ -179,12 +341,32 @@ exports[`info renders correctly 1`] = `
         </svg>
       </span>
     </div>
-    This is a infomational message for the customer!
+    <div
+      class="c3"
+      direction="column"
+    >
+      <h3
+        class="c4"
+      >
+        General info title
+      </h3>
+      Support info message for customer
+    </div>
   </div>
 </div>
 `;
 
-exports[`warning renders correctly 1`] = `
+exports[`type warning renders correctly 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -201,8 +383,8 @@ exports[`warning renders correctly 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -223,9 +405,8 @@ exports[`warning renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background-color: #FBEAEA;
   box-sizing: border-box;
-  border: 1px solid #D82C2C;
   border-radius: 8px;
   margin-bottom: 24px;
   padding: 16px;
@@ -234,12 +415,20 @@ exports[`warning renders correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  color: #D82C2C;
-  font-size: 16px;
+  color: #112035;
+  font-size: 12px;
 }
 
 .c0 span {
   margin: 0 16px 0 0;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #112035;
+  line-height: 20.8px;
+  margin-bottom: 4px;
 }
 
 <div>
@@ -254,7 +443,7 @@ exports[`warning renders correctly 1`] = `
         class="c2"
         color="error"
         rotate="0"
-        size="32"
+        size="24"
       >
         <svg
           fill="none"
@@ -270,7 +459,15 @@ exports[`warning renders correctly 1`] = `
         </svg>
       </span>
     </div>
-    This is a warning message for the customer!
+    <div
+      class="c3"
+      direction="column"
+    >
+      <h3
+        class="c4"
+      />
+      Support alert message for customer
+    </div>
   </div>
 </div>
 `;

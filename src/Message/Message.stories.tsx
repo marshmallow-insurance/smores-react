@@ -22,76 +22,23 @@ Info.args = {
 export const Warning = Template.bind({})
 
 Warning.args = {
-  type: 'critical',
+  type: 'warning',
 }
 
-export const InfoBubbleSmallNoBorder = Template.bind({})
+export const WarningBubbleSmall = Template.bind({})
 
-InfoBubbleSmallNoBorder.args = {
-  type: 'info',
-  backgroundColor: 'none',
-  sizeSmall: true,
-}
-
-export const InfoBubbleSmallBorder = Template.bind({})
-
-InfoBubbleSmallBorder.args = {
-  type: 'info',
-  backgroundColor: theme.colors.white,
-  sizeSmall: true,
-  hasBorder: true,
-  borderColor: theme.colors.secondary,
-}
-
-export const InfoBubbleSmallBackground = Template.bind({})
-
-InfoBubbleSmallBackground.args = {
-  type: 'info',
-  backgroundColor: theme.colors.background,
-  sizeSmall: true,
-}
-
-export const InfoBubbleSmallGeneral = Template.bind({})
-
-InfoBubbleSmallGeneral.args = {
-  type: 'info',
-  backgroundColor: theme.colors.background,
-  sizeSmall: true,
-  title: 'General info message',
-}
-
-export const AlertWarningBubbleSmall = Template.bind({})
-
-AlertWarningBubbleSmall.args = {
-  type: 'alert',
+WarningBubbleSmall.args = {
+  type: 'warning',
   backgroundColor: theme.colors.bgSecondary,
   sizeSmall: true,
 }
 
-export const AlertWarningBubbleSmallGeneral = Template.bind({})
+export const InfoBubbleSmall = Template.bind({})
 
-AlertWarningBubbleSmallGeneral.args = {
-  type: 'alert',
+InfoBubbleSmall.args = {
+  type: 'info',
   backgroundColor: theme.colors.bgSecondary,
   sizeSmall: true,
-  title: 'General alert warning',
-}
-
-export const CriticalWarningBubbleSmall = Template.bind({})
-
-CriticalWarningBubbleSmall.args = {
-  type: 'warning',
-  backgroundColor: '#FBEAEA',
-  sizeSmall: true,
-}
-
-export const CriticalWarningBubbleSmallGeneral = Template.bind({})
-
-CriticalWarningBubbleSmallGeneral.args = {
-  type: 'warning',
-  backgroundColor: '#FBEAEA',
-  sizeSmall: true,
-  title: 'General critical warning',
 }
 
 export const CardWithBorder = Template.bind({})

@@ -1,6 +1,6 @@
 ## [2.1.24] - 2022-05-24
-### Changed
-- Adds new styling for info, alert and warning types in Message component
+### Added
+- Creates new Support Message component with types: 'info', 'alert' and 'warning'
 
 ## [2.1.23] - 2022-05-24
 ### Fixed

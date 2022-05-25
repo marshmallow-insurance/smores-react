@@ -9,42 +9,49 @@ type BorderProps =
   | { hasBorder?: false; borderColor?: never }
   | { hasBorder: true; borderColor: string }
 
-export type MessageProps = {
+export type SupportMessageProps = {
   className?: string
   children: ReactNode
-  type?: 'info' | 'warning' | 'warning-bubble' | string
+  type: 'info' | 'alert' | 'warning'
   alignIcon?: 'center' | 'flex-start' | 'flex-end'
-  backgroundColor?: string
-  sizeSmall?: boolean
+  title?: string
+  hasBackground?: boolean
 } & BorderProps
 
-export const Message: FC<MessageProps> = ({
+export const SupportMessage: FC<SupportMessageProps> = ({
   className,
   children,
   type = 'info',
   alignIcon = 'center',
-  backgroundColor,
-  sizeSmall,
   hasBorder,
   borderColor,
+  title,
+  hasBackground = true,
 }) => (
   <Wrapper
     className={className}
     type={type}
-    backgroundColor={backgroundColor}
-    sizeSmall={sizeSmall}
     hasBorder={hasBorder}
     borderColor={borderColor}
+    hasBackground={hasBackground}
   >
     <IconWrapper alignIcon={alignIcon}>
       <Icon
-        size={sizeSmall ? 24 : 32}
+        size={24}
         render={type}
-        color={type === 'warning' ? 'error' : 'secondary'}
+        color={
+          type === 'warning'
+            ? 'error'
+            : type === 'alert'
+            ? 'agentWarning'
+            : 'secondary'
+        }
       />
     </IconWrapper>
-
-    {children}
+    <Box flex direction="column">
+      <Title>{title}</Title>
+      {children}
+    </Box>
   </Wrapper>
 )
 
@@ -53,11 +60,10 @@ interface IIconWrapper {
 }
 
 interface IWrapper {
-  type: 'info' | 'warning' | 'warning-bubble' | string
-  backgroundColor?: string
-  sizeSmall?: boolean
+  type: 'info' | 'alert' | 'warning'
   hasBorder?: boolean
   borderColor?: string
+  hasBackground?: boolean
 }
 
 const IconWrapper = styled(Box)<IIconWrapper>`
@@ -65,26 +71,36 @@ const IconWrapper = styled(Box)<IIconWrapper>`
 `
 
 const Wrapper = styled.div<IWrapper>(
-  ({ type, backgroundColor, sizeSmall, hasBorder, borderColor }) => css`
+  ({ type, hasBorder, borderColor, hasBackground }) => css`
     align-items: center;
-    background-color: ${backgroundColor
-      ? backgroundColor
-      : type === 'warning'
-      ? theme.colors.white
-      : theme.colors.background};
+    ${hasBackground &&
+    `background-color: ${
+      type === 'info'
+        ? theme.colors.background
+        : type === 'alert'
+        ? theme.colors.bgSecondary
+        : '#FBEAEA'
+    };`}
     box-sizing: border-box;
-    ${type === 'warning'
-      ? `border: 1px solid ${theme.colors.error};`
-      : hasBorder && `border: 1px solid ${borderColor};`}
+    ${hasBorder && `border: 1px solid ${borderColor};`}
     border-radius: 8px;
     margin-bottom: 24px;
     padding: 16px;
     display: flex;
     font-family: ${theme.font.system};
-    color: ${type === 'warning' ? theme.colors.error : theme.colors.secondary};
-    font-size: ${sizeSmall ? '12px' : '16px'};
+    color: ${theme.colors.secondary};
+    font-size: 12px;
+
     span {
       margin: 0 16px 0 0;
     }
   `,
 )
+
+const Title = styled.h3`
+  font-size: 16px;
+  font-weight: ${theme.font.weight.medium};
+  color: ${theme.colors.secondary};
+  line-height: 20.8px;
+  margin-bottom: 4px;
+`
