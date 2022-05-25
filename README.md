@@ -31,7 +31,7 @@ $ yarn add @mrshmllw/smores-react
 $ npm install @mrshmllw/smores-react
 ```
 
-## Release
+## Release test for Fg guild
 
 Before starting, make sure that `CHANGELOG.md` is updated according to [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) with the latest release notes. If not, make a PR updating it before continuing.
 
