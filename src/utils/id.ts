@@ -2,13 +2,12 @@ import { useMemo } from 'react'
 
 let idCount = 0
 
-const smoresIdPrefix = 'MM_SMORES'
+export const smoresIdPrefix = 'MM_SMORES'
 
 const createId = (): string => {
   const id = `${smoresIdPrefix}_${idCount}`
   idCount += 1
 
-  console.log('createId', id)
   return id
 }
 
