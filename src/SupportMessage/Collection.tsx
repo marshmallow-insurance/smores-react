@@ -13,9 +13,11 @@ export const CollectionPage: FC = () => {
         <Label tag="span" typo="header-small">
           Type info - No border
         </Label>
-        <SupportMessage type="info" hasBorder={false}>
-          Info support message
-        </SupportMessage>
+        <SupportMessage
+          type="info"
+          hasBorder={false}
+          description="Info support message"
+        />
       </ContainerBox>
 
       <ContainerBox>
@@ -27,57 +29,62 @@ export const CollectionPage: FC = () => {
           hasBorder={true}
           borderColor={theme.colors.secondary}
           hasBackground={false}
-        >
-          Info support message
-        </SupportMessage>
+          description="Info support message"
+        />
       </ContainerBox>
 
       <ContainerBox>
         <Label tag="span" typo="header-small">
           Type info - Default
         </Label>
-        <SupportMessage type="info">Info support message</SupportMessage>
+        <SupportMessage type="info" description="Info support message" />
       </ContainerBox>
 
       <ContainerBox>
         <Label tag="span" typo="header-small">
           Type info - With title
         </Label>
-        <SupportMessage type="info" title="General info title">
-          Info support message
-        </SupportMessage>
+        <SupportMessage
+          type="info"
+          title="General info title"
+          description="Info support message"
+        />
       </ContainerBox>
 
       <ContainerBox>
         <Label tag="span" typo="header-small">
           Type alert - Default
         </Label>
-        <SupportMessage type="alert">Alert support message</SupportMessage>
+        <SupportMessage type="alert" description="Alert support message" />
       </ContainerBox>
 
       <ContainerBox>
         <Label tag="span" typo="header-small">
           Type alert - With title
         </Label>
-        <SupportMessage type="alert" title="General alert title">
-          Alert support message
-        </SupportMessage>
+        <SupportMessage
+          type="alert"
+          title="General alert title"
+          description="Alert support message"
+        />
       </ContainerBox>
 
       <ContainerBox>
         <Label tag="span" typo="header-small">
           Type warning - Default
         </Label>
-        <SupportMessage type="warning">Warning support message</SupportMessage>
+        <SupportMessage type="warning" description="Warning support message" />
       </ContainerBox>
 
       <ContainerBox>
         <Label tag="span" typo="header-small">
           Type warning - With title
         </Label>
-        <SupportMessage type="warning" title="General warning title">
-          Warning support message
-        </SupportMessage>
+        <SupportMessage
+          type="warning"
+          title="General warning title"
+          description="Warning support message"
+        />
       </ContainerBox>
     </Box>
   )
@@ -88,7 +95,6 @@ const ContainerBox = styled(Box)`
   display: flex;
   align-items: baseline;
   max-width: 600px;
-  width: 100%;
 `
 
 const Label = styled(Text)`

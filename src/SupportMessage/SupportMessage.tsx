@@ -4,11 +4,26 @@ import { lighten } from 'polished'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
-import { theme } from '../theme'
+import { theme, Color } from '../theme'
+
+const styles = {
+  info: {
+    iconColor: 'secondary',
+    backgroundColor: theme.colors.background,
+  },
+  alert: {
+    iconColor: 'agentWarning',
+    backgroundColor: theme.colors.bgSecondary,
+  },
+  warning: {
+    iconColor: 'error',
+    backgroundColor: lighten(0.45, theme.colors.error),
+  },
+}
 
 export type SupportMessageProps = {
   className?: string
-  children: string
+  description: string
   type: 'info' | 'alert' | 'warning'
   title?: string
   hasBackground?: boolean
@@ -18,7 +33,7 @@ export type SupportMessageProps = {
 
 export const SupportMessage: FC<SupportMessageProps> = ({
   className,
-  children,
+  description,
   type = 'info',
   hasBorder = false,
   borderColor,
@@ -33,21 +48,11 @@ export const SupportMessage: FC<SupportMessageProps> = ({
     hasBackground={hasBackground}
   >
     <IconWrapper>
-      <Icon
-        size={24}
-        render={type}
-        color={
-          type === 'warning'
-            ? 'error'
-            : type === 'alert'
-            ? 'agentWarning'
-            : 'secondary'
-        }
-      />
+      <Icon size={24} render={type} color={styles[type].iconColor as Color} />
     </IconWrapper>
     <Box flex direction="column">
       {title && <Title>{title}</Title>}
-      {children}
+      {description}
     </Box>
   </Wrapper>
 )
@@ -66,15 +71,7 @@ const IconWrapper = styled(Box)`
 const Wrapper = styled.div<IWrapper>(
   ({ type, hasBorder, borderColor, hasBackground }) => css`
     align-items: center;
-    ${hasBackground &&
-    `background-color: ${
-      type === 'info'
-        ? theme.colors.background
-        : type === 'alert'
-        ? theme.colors.bgSecondary
-        : lighten(0.45, theme.colors.error)
-    };
-    };`}
+    ${hasBackground && `background-color: ${styles[type].backgroundColor}`};
     box-sizing: border-box;
     ${hasBorder && `border: 1px solid ${borderColor};`}
     border-radius: 8px;

@@ -5,7 +5,7 @@ import 'jest-styled-components'
 import { SupportMessage, SupportMessageProps } from '../SupportMessage'
 
 const supportMessageProps: SupportMessageProps = {
-  children: 'Type info support message',
+  description: 'Type info support message',
   type: 'info',
 }
 
