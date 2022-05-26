@@ -11,22 +11,10 @@ export const CollectionPage: FC = () => {
     <Box flex direction="column">
       <ContainerBox>
         <Label tag="span" typo="header-small">
-          Type info - No border
-        </Label>
-        <SupportMessage
-          state="info"
-          hasBorder={false}
-          description="Info support message"
-        />
-      </ContainerBox>
-
-      <ContainerBox>
-        <Label tag="span" typo="header-small">
           Type info - Has border
         </Label>
         <SupportMessage
           state="info"
-          hasBorder={true}
           borderColor={theme.colors.secondary}
           hasBackground={false}
           description="Info support message"
