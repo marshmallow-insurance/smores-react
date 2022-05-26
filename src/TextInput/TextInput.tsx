@@ -1,4 +1,4 @@
-import React, { FormEvent, RefObject, forwardRef, ForwardedRef } from 'react'
+import React, { FormEvent, forwardRef, ForwardedRef } from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
@@ -7,14 +7,11 @@ import { Text } from '../Text'
 import { Icon } from '../Icon'
 
 import { theme } from '../theme'
+import { useUniqueId } from '../utils/id'
 
 type DefaultProps = {
-  /** ID, usually used for tests  */
-  id: string
-  /** className attribute to apply classes from props */
+  id?: string
   className?: string
-  /** ref attribute for input */
-  ref?: RefObject<HTMLInputElement>
   /** Input type for proper browser support */
   type?: 'text' | 'email' | 'password' | 'time' | 'date'
   /** used to render outlined style */
@@ -56,7 +53,7 @@ export type TextInputProps = DefaultProps & TruncateProps
 
 export const TextInput = forwardRef(function TextInput(
   {
-    id,
+    id: idProp,
     className = '',
     type = 'text',
     placeholder,
@@ -74,6 +71,8 @@ export const TextInput = forwardRef(function TextInput(
   }: TextInputProps,
   ref: ForwardedRef<HTMLInputElement>,
 ) {
+  const id = useUniqueId(idProp)
+
   return (
     <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
       {label && (

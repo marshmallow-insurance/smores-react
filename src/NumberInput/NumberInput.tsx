@@ -6,11 +6,10 @@ import { Text } from '../Text'
 import { Icon } from '../Icon'
 
 import { theme } from '../theme'
+import { useUniqueId } from '../utils/id'
 
 export type NumberInputProps = {
-  /** ID, usually used for tests  */
-  id: string
-  /** className attribute to apply classses from props */
+  id?: string
   className?: string
   /** Input type enum for proper browser support */
   type?: 'number' | 'tel'
@@ -53,7 +52,7 @@ export type NumberInputProps = {
 }
 
 export const NumberInput: FC<NumberInputProps> = ({
-  id,
+  id: idProp,
   className,
   type = 'number',
   placeholder,
@@ -75,6 +74,8 @@ export const NumberInput: FC<NumberInputProps> = ({
   disabled = false,
   outlined = false,
 }) => {
+  const id = useUniqueId(idProp)
+
   // Check whether the min/max value exists is within the specified range
   const isInRange = (value: number) => {
     if (min && value < min) {

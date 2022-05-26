@@ -6,6 +6,7 @@ import { Text } from '../Text'
 import { Box } from '../Box'
 import { theme } from '../theme'
 import { Icon } from '../Icon'
+import { useUniqueId } from '../utils/id'
 
 export type SearchInputItem = {
   label: string
@@ -36,8 +37,7 @@ interface IShowIcon extends IUsesOutline {
 }
 
 export type SearchInputProps = {
-  /** ID, usually used for tests  */
-  id: string
+  id?: string
   /** Name of the form control  */
   name?: string
   /** label displayed above the input  */
@@ -57,7 +57,7 @@ export type SearchInputProps = {
 }
 
 export const SearchInput: FC<SearchInputProps> = ({
-  id,
+  id: idProp,
   name = 'search_input',
   label,
   placeholder,
@@ -67,6 +67,7 @@ export const SearchInput: FC<SearchInputProps> = ({
   outlined = false,
   showIcon = false,
 }) => {
+  const id = useUniqueId(idProp)
   const [active, setActive] = useState(false)
   const [list, setList] = useState<SearchInputItem[]>([])
   const [selectedResult, setSelectedResult] = useState('')
