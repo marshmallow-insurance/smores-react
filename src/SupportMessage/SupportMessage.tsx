@@ -24,7 +24,7 @@ const styles = {
 export type SupportMessageProps = {
   className?: string
   description: string
-  type: 'info' | 'alert' | 'warning'
+  state: 'info' | 'alert' | 'warning'
   title?: string
   hasBackground?: boolean
   hasBorder?: boolean
@@ -34,7 +34,7 @@ export type SupportMessageProps = {
 export const SupportMessage: FC<SupportMessageProps> = ({
   className,
   description,
-  type = 'info',
+  state = 'info',
   hasBorder = false,
   borderColor,
   title,
@@ -42,13 +42,13 @@ export const SupportMessage: FC<SupportMessageProps> = ({
 }) => (
   <Wrapper
     className={className}
-    type={type}
+    state={state}
     hasBorder={hasBorder}
     borderColor={borderColor}
     hasBackground={hasBackground}
   >
     <IconWrapper>
-      <Icon size={24} render={type} color={styles[type].iconColor as Color} />
+      <Icon size={24} render={state} color={styles[state].iconColor as Color} />
     </IconWrapper>
     <Box flex direction="column">
       {title && <Title>{title}</Title>}
@@ -58,7 +58,7 @@ export const SupportMessage: FC<SupportMessageProps> = ({
 )
 
 interface IWrapper {
-  type: SupportMessageProps['type']
+  state: SupportMessageProps['state']
   hasBorder?: boolean
   borderColor?: string
   hasBackground?: boolean
@@ -69,9 +69,9 @@ const IconWrapper = styled(Box)`
 `
 
 const Wrapper = styled.div<IWrapper>(
-  ({ type, hasBorder, borderColor, hasBackground }) => css`
+  ({ state, hasBorder, borderColor, hasBackground }) => css`
     align-items: center;
-    ${hasBackground && `background-color: ${styles[type].backgroundColor}`};
+    ${hasBackground && `background-color: ${styles[state].backgroundColor}`};
     box-sizing: border-box;
     ${hasBorder && `border: 1px solid ${borderColor};`}
     border-radius: 8px;

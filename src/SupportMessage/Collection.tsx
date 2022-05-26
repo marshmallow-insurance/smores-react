@@ -14,7 +14,7 @@ export const CollectionPage: FC = () => {
           Type info - No border
         </Label>
         <SupportMessage
-          type="info"
+          state="info"
           hasBorder={false}
           description="Info support message"
         />
@@ -25,7 +25,7 @@ export const CollectionPage: FC = () => {
           Type info - Has border
         </Label>
         <SupportMessage
-          type="info"
+          state="info"
           hasBorder={true}
           borderColor={theme.colors.secondary}
           hasBackground={false}
@@ -37,7 +37,7 @@ export const CollectionPage: FC = () => {
         <Label tag="span" typo="header-small">
           Type info - Default
         </Label>
-        <SupportMessage type="info" description="Info support message" />
+        <SupportMessage state="info" description="Info support message" />
       </ContainerBox>
 
       <ContainerBox>
@@ -45,7 +45,7 @@ export const CollectionPage: FC = () => {
           Type info - With title
         </Label>
         <SupportMessage
-          type="info"
+          state="info"
           title="General info title"
           description="Info support message"
         />
@@ -55,7 +55,7 @@ export const CollectionPage: FC = () => {
         <Label tag="span" typo="header-small">
           Type alert - Default
         </Label>
-        <SupportMessage type="alert" description="Alert support message" />
+        <SupportMessage state="alert" description="Alert support message" />
       </ContainerBox>
 
       <ContainerBox>
@@ -63,7 +63,7 @@ export const CollectionPage: FC = () => {
           Type alert - With title
         </Label>
         <SupportMessage
-          type="alert"
+          state="alert"
           title="General alert title"
           description="Alert support message"
         />
@@ -73,7 +73,7 @@ export const CollectionPage: FC = () => {
         <Label tag="span" typo="header-small">
           Type warning - Default
         </Label>
-        <SupportMessage type="warning" description="Warning support message" />
+        <SupportMessage state="warning" description="Warning support message" />
       </ContainerBox>
 
       <ContainerBox>
@@ -81,7 +81,7 @@ export const CollectionPage: FC = () => {
           Type warning - With title
         </Label>
         <SupportMessage
-          type="warning"
+          state="warning"
           title="General warning title"
           description="Warning support message"
         />
