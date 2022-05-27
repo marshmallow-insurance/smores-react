@@ -14,6 +14,7 @@ import { Icon } from '../Icon'
 import { Box } from '../Box'
 
 import { theme } from '../theme'
+import { useUniqueId } from '../utils/id'
 
 export type DropdownItem = {
   optionGroupLabel?: string
@@ -27,9 +28,7 @@ interface IUsesOutline {
 }
 
 type DefaultProps = {
-  /** ID, usually used for tests  */
-  id: string
-  /** className attribute to apply classes from props */
+  id?: string
   className?: string
   /** ref attribute for select input */
   ref?: RefObject<HTMLSelectElement>
@@ -78,7 +77,7 @@ export type DropdownProps = DefaultProps & TruncateProps
 
 export const Dropdown = forwardRef(function Dropdown(
   {
-    id,
+    id: idProp,
     className = '',
     label,
     placeholder,
@@ -97,6 +96,7 @@ export const Dropdown = forwardRef(function Dropdown(
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
+  const id = useUniqueId(idProp)
   const [key, setKey] = useState('')
   const [hasOptGroups, setHasOptGroups] = useState(false)
   const [dropdownItemsGroups, setDropdownItemsGroups] = useState(

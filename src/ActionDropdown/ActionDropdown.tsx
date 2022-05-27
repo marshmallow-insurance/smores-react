@@ -8,9 +8,7 @@ import { List, ActionListItem } from './List'
 import { Color, theme } from '../theme'
 
 export type ActionDropdownProps = {
-  /** ID, usually used for tests  */
-  id: string
-  /** className attribute to apply classes from props */
+  id?: string
   className?: string
   /** label displayed above the dropdown  */
   label?: string
