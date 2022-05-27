@@ -78,7 +78,7 @@ export const Button: FC<ButtonProps> = forwardRef<
 
   useDeprecatedWarning({
     enabled: isLegacyButton,
-    componentName: 'Button',
+    title: 'Legacy Button',
     message:
       "You're using the legacy Button component. Please use the new Button by providing one of the following props: 'primary', 'secondary', 'tertiary'.",
     componentProps: props,

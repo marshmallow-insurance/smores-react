@@ -17,30 +17,37 @@ const stripUndefinedProps = (props: Record<string, unknown>) => {
 
 type UseDeprecatedWarningParams = {
   enabled: boolean
-  componentName: string
+  title: string
   message: string
-  componentProps: Record<string, any>
+  componentProps?: Record<string, any>
 }
 
 export const useDeprecatedWarning = ({
   enabled,
-  componentName,
+  title,
   message,
   componentProps,
 }: UseDeprecatedWarningParams): void => {
   useEffect(() => {
     if (isLocal && enabled) {
-      console.warn(
-        `%c[Deprecated] Impacted component: ${componentName}`,
+      const logs: any[] = [
+        `%c[Deprecated] ${title}`,
         'font-weight:bold;',
         '\n',
         '\n',
         message,
-        '\n',
-        '\n',
-        'Component props:',
-        stripUndefinedProps(componentProps),
-      )
+      ]
+
+      if (componentProps) {
+        logs.push(
+          '\n',
+          '\n',
+          'Component props:',
+          stripUndefinedProps(componentProps),
+        )
+      }
+
+      console.warn(...logs)
     }
   }, [enabled])
 }
