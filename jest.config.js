@@ -17,5 +17,5 @@ module.exports = {
     '!**/node_modules/**',
     '!src/utils/**/*.{ts,tsx}',
   ],
-  setupFilesAfterEnv: ['./src/setUpTests.ts'],
+  setupFilesAfterEnv: ['./src/setupTests.ts'],
 }

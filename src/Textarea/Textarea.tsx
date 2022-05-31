@@ -6,11 +6,10 @@ import { Text } from '../Text'
 import { Box } from '../Box'
 
 import { theme } from '../theme'
+import { useUniqueId } from '../utils/id'
 
 type BaseProps = {
-  /** ID, usually used for tests  */
-  id: string
-  /** className attribute to apply classses from props */
+  id?: string
   className?: string
   /** Placeholder */
   placeholder?: string
@@ -53,7 +52,7 @@ export type TextareaProps = BaseProps & TruncateProps
 
 export const Textarea = forwardRef(function Textarea(
   {
-    id,
+    id: idProp,
     name,
     label,
     value,
@@ -71,6 +70,7 @@ export const Textarea = forwardRef(function Textarea(
   }: TextareaProps,
   ref: ForwardedRef<HTMLTextAreaElement>,
 ) {
+  const id = useUniqueId(idProp)
   return (
     <Box flex direction="column" className={className}>
       {label && (

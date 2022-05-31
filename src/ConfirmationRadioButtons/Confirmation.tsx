@@ -4,11 +4,12 @@ import { theme } from '../theme'
 import { Box } from '../Box'
 import { Text } from '../Text'
 import { RadioButton, FakeInput } from './RadioButtonStyled'
+import { useUniqueId } from '../utils/id'
 
 export type ConfirmationProps = {
   onChange(value?: boolean): void
   checked?: boolean
-  id: string
+  id?: string
   error?: boolean
   errorMsg?: string
   label?: string
@@ -21,7 +22,7 @@ export type ConfirmationProps = {
 export const Confirmation: FC<ConfirmationProps> = ({
   checked,
   onChange,
-  id,
+  id: idProp,
   error = false,
   errorMsg = '',
   label,
@@ -30,6 +31,7 @@ export const Confirmation: FC<ConfirmationProps> = ({
   yesLabel = 'Yes',
   noLabel = 'No',
 }: ConfirmationProps) => {
+  const id = useUniqueId(idProp)
   return (
     <ConfirmationWrapper>
       {(label || sublabel) && (
