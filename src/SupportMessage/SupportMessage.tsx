@@ -14,7 +14,7 @@ const styles = {
   },
   'info-outline': {
     iconColor: 'secondary',
-    backgroundColor: theme.colors.background,
+    backgroundColor: theme.colors.white,
     icon: 'info',
   },
   alert: {
