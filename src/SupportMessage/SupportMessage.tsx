@@ -10,42 +10,47 @@ const styles = {
   info: {
     iconColor: 'secondary',
     backgroundColor: theme.colors.background,
+    icon: 'info',
+  },
+  'info-outline': {
+    iconColor: 'secondary',
+    backgroundColor: theme.colors.background,
+    icon: 'info',
   },
   alert: {
     iconColor: 'agentWarning',
     backgroundColor: theme.colors.bgSecondary,
+    icon: 'alert',
   },
   warning: {
     iconColor: 'error',
     backgroundColor: lighten(0.45, theme.colors.error),
+    icon: 'warning',
   },
 }
 
 export type SupportMessageProps = {
   className?: string
   description: string
-  state: 'info' | 'alert' | 'warning'
+  type: 'info' | 'info-outline' | 'alert' | 'warning'
   title?: string
-  hasBackground?: boolean
   borderColor?: string
 }
 
 export const SupportMessage: FC<SupportMessageProps> = ({
   className,
   description,
-  state = 'info',
+  type = 'info',
   borderColor,
   title,
-  hasBackground = true,
 }) => (
-  <Wrapper
-    className={className}
-    state={state}
-    borderColor={borderColor}
-    hasBackground={hasBackground}
-  >
+  <Wrapper className={className} type={type} borderColor={borderColor}>
     <IconWrapper>
-      <Icon size={24} render={state} color={styles[state].iconColor as Color} />
+      <Icon
+        size={24}
+        render={styles[type].icon}
+        color={styles[type].iconColor as Color}
+      />
     </IconWrapper>
     <Box flex direction="column">
       {title && <Title>{title}</Title>}
@@ -55,9 +60,8 @@ export const SupportMessage: FC<SupportMessageProps> = ({
 )
 
 interface IWrapper {
-  state: SupportMessageProps['state']
+  type: SupportMessageProps['type']
   borderColor?: string
-  hasBackground?: boolean
 }
 
 const IconWrapper = styled(Box)`
@@ -65,11 +69,11 @@ const IconWrapper = styled(Box)`
 `
 
 const Wrapper = styled.div<IWrapper>(
-  ({ state, borderColor, hasBackground }) => css`
+  ({ type }) => css`
     align-items: center;
-    ${hasBackground && `background-color: ${styles[state].backgroundColor}`};
+    background-color: ${styles[type].backgroundColor};
     box-sizing: border-box;
-    ${borderColor && `border: 1px solid ${borderColor};`}
+    ${type === 'info-outline' && `border: 1px solid ${theme.colors.secondary}`};
     border-radius: 8px;
     margin-bottom: 24px;
     padding: 16px;

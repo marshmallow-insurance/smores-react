@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { Text } from '../Text'
 import { Box } from '../Box'
-import { theme } from '../theme'
 import { SupportMessage } from './SupportMessage'
 
 export const CollectionPage: FC = () => {
@@ -11,12 +10,10 @@ export const CollectionPage: FC = () => {
     <Box flex direction="column">
       <ContainerBox>
         <Label tag="span" typo="header-small">
-          Type info - Has border
+          Type info-outline
         </Label>
         <SupportMessage
-          state="info"
-          borderColor={theme.colors.secondary}
-          hasBackground={false}
+          type="info-outline"
           description="Info support message"
         />
       </ContainerBox>
@@ -25,7 +22,7 @@ export const CollectionPage: FC = () => {
         <Label tag="span" typo="header-small">
           Type info - Default
         </Label>
-        <SupportMessage state="info" description="Info support message" />
+        <SupportMessage type="info" description="Info support message" />
       </ContainerBox>
 
       <ContainerBox>
@@ -33,7 +30,7 @@ export const CollectionPage: FC = () => {
           Type info - With title
         </Label>
         <SupportMessage
-          state="info"
+          type="info"
           title="General info title"
           description="Info support message"
         />
@@ -43,7 +40,7 @@ export const CollectionPage: FC = () => {
         <Label tag="span" typo="header-small">
           Type alert - Default
         </Label>
-        <SupportMessage state="alert" description="Alert support message" />
+        <SupportMessage type="alert" description="Alert support message" />
       </ContainerBox>
 
       <ContainerBox>
@@ -51,7 +48,7 @@ export const CollectionPage: FC = () => {
           Type alert - With title
         </Label>
         <SupportMessage
-          state="alert"
+          type="alert"
           title="General alert title"
           description="Alert support message"
         />
@@ -61,7 +58,7 @@ export const CollectionPage: FC = () => {
         <Label tag="span" typo="header-small">
           Type warning - Default
         </Label>
-        <SupportMessage state="warning" description="Warning support message" />
+        <SupportMessage type="warning" description="Warning support message" />
       </ContainerBox>
 
       <ContainerBox>
@@ -69,7 +66,7 @@ export const CollectionPage: FC = () => {
           Type warning - With title
         </Label>
         <SupportMessage
-          state="warning"
+          type="warning"
           title="General warning title"
           description="Warning support message"
         />

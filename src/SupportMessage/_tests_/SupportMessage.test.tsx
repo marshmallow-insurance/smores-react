@@ -6,7 +6,7 @@ import { SupportMessage, SupportMessageProps } from '../SupportMessage'
 
 const supportMessageProps: SupportMessageProps = {
   description: 'Type info support message',
-  state: 'info',
+  type: 'info',
 }
 
 describe('SupportMessage component', () => {
