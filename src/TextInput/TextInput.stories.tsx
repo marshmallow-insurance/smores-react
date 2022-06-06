@@ -126,6 +126,20 @@ Disabled.args = {
   disabled: true,
 }
 
+export const Required = Template.bind({})
+
+Required.args = {
+  id: 'textInput',
+  name: 'textInput',
+  placeholder: 'Enter name',
+  onChange: noop,
+  onInputChange: noop,
+  onBlur: noop,
+  label: 'Please enter your name',
+  outlined: true,
+  required: true,
+}
+
 const WorkingExampleTemplate = () => <Container />
 
 export const WorkingExample = WorkingExampleTemplate.bind({})
