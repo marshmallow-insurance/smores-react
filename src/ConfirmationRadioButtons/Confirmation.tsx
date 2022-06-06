@@ -17,6 +17,7 @@ export type ConfirmationProps = {
   sublabel?: string | ReactElement
   yesLabel?: string | ReactElement
   noLabel?: string | ReactElement
+  required?: boolean
 }
 
 export const Confirmation: FC<ConfirmationProps> = ({
@@ -30,13 +31,21 @@ export const Confirmation: FC<ConfirmationProps> = ({
   sublabel,
   yesLabel = 'Yes',
   noLabel = 'No',
+  required = false,
 }: ConfirmationProps) => {
   const id = useUniqueId(idProp)
   return (
     <ConfirmationWrapper>
       {(label || sublabel) && (
         <TextWrapper>
-          {label && <SectionHeadingText tag="h3">{label}</SectionHeadingText>}
+          <LabelWrapper>
+            {label && <SectionHeadingText tag="h3">{label}</SectionHeadingText>}
+            {required && (
+              <Text tag="p" typo="base-small" color="error">
+                *
+              </Text>
+            )}
+          </LabelWrapper>
           {sublabel && (
             <Text tag="p" typo="base-small" color="subtext">
               {sublabel}
@@ -127,4 +136,8 @@ const SectionHeadingText = styled(Text)`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
+`
+
+const LabelWrapper = styled.div`
+  display: flex;
 `
