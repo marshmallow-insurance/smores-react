@@ -6,7 +6,20 @@ import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { theme, Color } from '../theme'
 
-const styles = {
+type StylesItem = {
+  iconColor: string
+  backgroundColor: string
+  icon: string
+}
+
+type Styles = {
+  info: StylesItem
+  'info-outline': StylesItem
+  alert: StylesItem
+  warning: StylesItem
+}
+
+const styles: Styles = {
   info: {
     iconColor: 'secondary',
     backgroundColor: theme.colors.background,
@@ -34,17 +47,15 @@ export type SupportMessageProps = {
   description: string
   type: 'info' | 'info-outline' | 'alert' | 'warning'
   title?: string
-  borderColor?: string
 }
 
 export const SupportMessage: FC<SupportMessageProps> = ({
   className,
   description,
   type = 'info',
-  borderColor,
   title,
 }) => (
-  <Wrapper className={className} type={type} borderColor={borderColor}>
+  <Wrapper className={className} type={type}>
     <IconWrapper>
       <Icon
         size={24}
@@ -52,41 +63,37 @@ export const SupportMessage: FC<SupportMessageProps> = ({
         color={styles[type].iconColor as Color}
       />
     </IconWrapper>
-    <Box flex direction="column">
+    <ContentBox flex direction="column">
       {title && <Title>{title}</Title>}
       {description}
-    </Box>
+    </ContentBox>
   </Wrapper>
 )
 
 interface IWrapper {
   type: SupportMessageProps['type']
-  borderColor?: string
 }
 
 const IconWrapper = styled(Box)`
-  align-self: center;
+  align-self: flex-start;
 `
 
 const Wrapper = styled.div<IWrapper>(
   ({ type }) => css`
     align-items: center;
     background-color: ${styles[type].backgroundColor};
-    box-sizing: border-box;
     ${type === 'info-outline' && `border: 1px solid ${theme.colors.secondary}`};
     border-radius: 8px;
-    margin-bottom: 24px;
     padding: 16px;
     display: flex;
-    font-family: ${theme.font.system};
     color: ${theme.colors.secondary};
     font-size: 12px;
-
-    span {
-      margin: 0 16px 0 0;
-    }
   `,
 )
+
+const ContentBox = styled(Box)`
+  margin-left: 16px;
+`
 
 const Title = styled.h3`
   font-size: 16px;

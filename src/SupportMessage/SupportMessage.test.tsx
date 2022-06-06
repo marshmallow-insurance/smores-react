@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import 'jest-styled-components'
 
-import { SupportMessage, SupportMessageProps } from '../SupportMessage'
+import { SupportMessage, SupportMessageProps } from './SupportMessage'
 
 const supportMessageProps: SupportMessageProps = {
   description: 'Type info support message',

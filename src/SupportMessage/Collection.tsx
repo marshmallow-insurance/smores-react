@@ -78,8 +78,7 @@ export const CollectionPage: FC = () => {
 const ContainerBox = styled(Box)`
   margin-bottom: 16px;
   display: flex;
-  align-items: baseline;
-  max-width: 600px;
+  align-items: center;
 `
 
 const Label = styled(Text)`
