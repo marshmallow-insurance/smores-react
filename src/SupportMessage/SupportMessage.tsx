@@ -12,14 +12,7 @@ type StylesItem = {
   icon: string
 }
 
-type Styles = {
-  info: StylesItem
-  'info-outline': StylesItem
-  alert: StylesItem
-  warning: StylesItem
-}
-
-const styles: Styles = {
+const styles: Record<Type, StylesItem> = {
   info: {
     iconColor: 'secondary',
     backgroundColor: theme.colors.background,
