@@ -7,7 +7,7 @@ import { Icon } from '../Icon'
 import { theme, Color } from '../theme'
 
 type StylesItem = {
-  iconColor: string
+  iconColor: Color
   backgroundColor: string
   icon: string
 }
@@ -42,10 +42,12 @@ const styles: Styles = {
   },
 }
 
+type SupportMessageType = 'info' | 'info-outline' | 'alert' | 'warning'
+
 export type SupportMessageProps = {
   className?: string
   description: string
-  type: 'info' | 'info-outline' | 'alert' | 'warning'
+  type: SupportMessageType
   title?: string
 }
 
@@ -60,7 +62,7 @@ export const SupportMessage: FC<SupportMessageProps> = ({
       <Icon
         size={24}
         render={styles[type].icon}
-        color={styles[type].iconColor as Color}
+        color={styles[type].iconColor}
       />
     </IconWrapper>
     <ContentBox flex direction="column">
@@ -71,7 +73,7 @@ export const SupportMessage: FC<SupportMessageProps> = ({
 )
 
 interface IWrapper {
-  type: SupportMessageProps['type']
+  type: SupportMessageType
 }
 
 const IconWrapper = styled(Box)`
@@ -86,16 +88,17 @@ const Wrapper = styled.div<IWrapper>(
     border-radius: 8px;
     padding: 16px;
     display: flex;
-    color: ${theme.colors.secondary};
-    font-size: 12px;
+    width: 100%;
   `,
 )
 
 const ContentBox = styled(Box)`
   margin-left: 16px;
+  color: ${theme.colors.secondary};
+  font-size: 14px;
 `
 
-const Title = styled.h3`
+const Title = styled.p`
   font-size: 16px;
   font-weight: ${theme.font.weight.medium};
   color: ${theme.colors.secondary};

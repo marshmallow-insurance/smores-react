@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { theme } from '../theme'
+import { useDeprecatedWarning } from '../utils/deprecated'
 
 type BorderProps =
   | { hasBorder?: false; borderColor?: never }
@@ -27,26 +28,34 @@ export const Message: FC<MessageProps> = ({
   sizeSmall,
   hasBorder,
   borderColor,
-}) => (
-  <Wrapper
-    className={className}
-    type={type}
-    backgroundColor={backgroundColor}
-    sizeSmall={sizeSmall}
-    hasBorder={hasBorder}
-    borderColor={borderColor}
-  >
-    <IconWrapper alignIcon={alignIcon}>
-      <Icon
-        size={sizeSmall ? 24 : 32}
-        render={type}
-        color={type === 'warning' ? 'error' : 'secondary'}
-      />
-    </IconWrapper>
+}) => {
+  useDeprecatedWarning({
+    enabled: true,
+    title: 'Legacy Message component',
+    message:
+      "You're using the legacy Message component. Please use the new Support Message component.",
+  })
+  return (
+    <Wrapper
+      className={className}
+      type={type}
+      backgroundColor={backgroundColor}
+      sizeSmall={sizeSmall}
+      hasBorder={hasBorder}
+      borderColor={borderColor}
+    >
+      <IconWrapper alignIcon={alignIcon}>
+        <Icon
+          size={sizeSmall ? 24 : 32}
+          render={type}
+          color={type === 'warning' ? 'error' : 'secondary'}
+        />
+      </IconWrapper>
 
-    {children}
-  </Wrapper>
-)
+      {children}
+    </Wrapper>
+  )
+}
 
 interface IIconWrapper {
   alignIcon?: 'center' | 'flex-start' | 'flex-end'

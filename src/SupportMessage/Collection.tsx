@@ -79,9 +79,10 @@ const ContainerBox = styled(Box)`
   margin-bottom: 16px;
   display: flex;
   align-items: center;
+  max-width: 550px;
 `
 
 const Label = styled(Text)`
   margin-right: 12px;
-  width: 300px;
+  width: 600px;
 `
