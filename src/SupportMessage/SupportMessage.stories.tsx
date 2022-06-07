@@ -13,12 +13,12 @@ const Template = (props: SupportMessageProps) => (
 
 export const Default = Template.bind({})
 
-Default.args = {
+const supportMessageArgs: SupportMessageProps = {
   type: 'info',
-  hasBorder: false,
-  hasBackground: true,
-  title: '',
-  borderColor: '',
+  title: undefined,
+  description: 'Some description text',
 }
+
+Default.args = supportMessageArgs
 
 export const Collection = CollectionPage.bind({})
