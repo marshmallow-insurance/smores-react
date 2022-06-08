@@ -16,14 +16,14 @@ const stripUndefinedProps = (props: Record<string, unknown>) => {
 }
 
 type UseDeprecatedWarningParams = {
-  enabled: boolean
+  enabled?: boolean
   title: string
   message: string
   componentProps?: Record<string, any>
 }
 
 export const useDeprecatedWarning = ({
-  enabled,
+  enabled = true,
   title,
   message,
   componentProps,

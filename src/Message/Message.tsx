@@ -19,6 +19,10 @@ export type MessageProps = {
   sizeSmall?: boolean
 } & BorderProps
 
+/**
+ * @deprecated Use Support Message instead
+ */
+
 export const Message: FC<MessageProps> = ({
   className,
   children,
@@ -30,7 +34,6 @@ export const Message: FC<MessageProps> = ({
   borderColor,
 }) => {
   useDeprecatedWarning({
-    enabled: true,
     title: 'Legacy Message component',
     message:
       "You're using the legacy Message component. Please use the new Support Message component.",

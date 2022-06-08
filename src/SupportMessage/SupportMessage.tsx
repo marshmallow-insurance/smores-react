@@ -12,7 +12,7 @@ type StylesItem = {
   icon: string
 }
 
-const styles: Record<Type, StylesItem> = {
+const styles: Record<SupportMessageType, StylesItem> = {
   info: {
     iconColor: 'secondary',
     backgroundColor: theme.colors.background,
