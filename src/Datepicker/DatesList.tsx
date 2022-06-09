@@ -8,7 +8,6 @@ import { Day } from './types'
 
 type Props = {
   items: Day[]
-  firstDayShift: boolean
   handleDateSelect: (date: Date) => void
 }
 
@@ -20,14 +19,12 @@ const getBlankDaysCount = (firstDayOfTheMonth: Date) => {
 export const DatesList: FC<Props> = ({
   items,
   handleDateSelect,
-  firstDayShift,
 }) => {
   return (
     <Container>
-      {firstDayShift &&
-        Array(getBlankDaysCount(items[0].date))
-          .fill(null)
-          .map((_, index) => <ListItem key={`blankItem-${index}`} disabled />)}
+      {Array(getBlankDaysCount(items[0].date))
+        .fill(null)
+        .map((_, index) => <ListItem key={`blankItem-${index}`} disabled />)}
       {items.map((item: Day, i) => (
         <ListItem
           key={i}

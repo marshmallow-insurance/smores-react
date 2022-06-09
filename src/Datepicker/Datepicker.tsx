@@ -35,7 +35,6 @@ const getAvailableMonths = (startDate: Date, endDate: Date) => {
 
 export type DatepickerProps = {
   disableWeekend?: boolean
-  firstDayShift?: boolean
   fromDate?: Date
   range?: number
   onDateSelect: (date: string) => void
@@ -43,7 +42,6 @@ export type DatepickerProps = {
 
 export const Datepicker: FC<DatepickerProps> = ({
   disableWeekend = true,
-  firstDayShift = false,
   range = 14,
   fromDate = new Date(),
   onDateSelect,
@@ -116,7 +114,6 @@ export const Datepicker: FC<DatepickerProps> = ({
         <DatesList
           items={generateDaysForMonth(availableMonths[activeMonthIndex].date)}
           handleDateSelect={handleSelectEvent}
-          firstDayShift={firstDayShift}
         />
       </Box>
     </Container>
