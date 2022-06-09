@@ -1,4 +1,8 @@
 ## [2.1.25] - 2022-05-27
+### Changed
+- Stop always allowing today's date to be picked
+
+## [2.1.25] - 2022-05-27
 ### Added
 - Make `id` optional on form fields
 - Creates new Support Message component with types: 'info', 'info-outline', 'alert' and 'warning'
