@@ -1,11 +1,8 @@
-## [2.1.26] - 2022-06-09
-### Changed
-- Stop always allowing today's date to be picked
-
 ## [2.1.25] - 2022-05-27
 ### Added
 - Make `id` optional on form fields
 - Creates new Support Message component with types: 'info', 'info-outline', 'alert' and 'warning'
+- Stop always allowing today's date to be picked
 
 ## [2.1.24] - 2022-05-25
 ### Added
@@ -352,7 +349,6 @@
 ### Changed
 - Updated gap and styles on Row component
 
-[2.1.26]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.25...v2.1.26
 [2.1.25]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.24...v2.1.25
 [2.1.24]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.23...v2.1.24
 [2.1.23]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.22...v2.1.23
