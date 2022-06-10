@@ -9,7 +9,6 @@ import {
   isSameDay,
   isWithinInterval,
   getDaysInMonth,
-  isToday,
   isWeekend,
 } from 'date-fns'
 
@@ -76,9 +75,8 @@ export const Datepicker: FC<DatepickerProps> = ({
         label: format(date, 'dd'),
         active: activeDay ? isSameDay(date, activeDay) : false,
         disabled:
-          (!isToday(date) &&
-            !isWithinInterval(date, { start: startDate, end: endDate })) ||
-          (disableWeekend && isWeekend(date)),
+          (!isWithinInterval(date, { start: startDate, end: endDate }))
+          || (disableWeekend && isWeekend(date)),
       })
     }
 
