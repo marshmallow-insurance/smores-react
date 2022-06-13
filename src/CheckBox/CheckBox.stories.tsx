@@ -27,3 +27,18 @@ WithErrorLabel.args = {
   error: true,
   errorMsg: 'Something has gone wrong',
 }
+
+export const Required = Template.bind({})
+
+Required.args = {
+  children: 'I agree',
+  required: true,
+}
+
+export const RequiredWithError = Template.bind({})
+
+RequiredWithError.args = {
+  children: 'I disagree',
+  error: true,
+  required: true,
+}

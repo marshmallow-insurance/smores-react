@@ -13,6 +13,7 @@ export type CheckBoxProps = {
   toggle: () => void
   error?: boolean
   errorMsg?: string
+  required?: boolean
 }
 
 export const CheckBox: FC<CheckBoxProps> = ({
@@ -22,32 +23,52 @@ export const CheckBox: FC<CheckBoxProps> = ({
   toggle,
   error,
   errorMsg,
+  required = false,
 }) => {
   const id = useUniqueId(idProp)
+
   return (
     <>
       <BoxContainer id={id}>
-        <Text tag="span" typo="base" color={error ? 'error' : 'secondary'}>
-          {children}
-        </Text>
-
+        <LabelWrapper>
+          <Text tag="span" typo="base" color={getColor(error, required)}>
+            {children}
+          </Text>
+          {required && (
+            <Text tag="p" typo="base-small" color="error">
+              *
+            </Text>
+          )}
+        </LabelWrapper>
         <input type="checkbox" checked={checked} onChange={toggle} />
-        <Checkmark error={error} />
+        <Checkmark error={error} required={required} />
       </BoxContainer>
       {error && errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
     </>
   )
 }
 
-const Checkmark = styled.span<{ error?: boolean }>`
+const getColor = (error: boolean | undefined, required: boolean) => {
+  if (required && error) {
+    return 'error'
+  } else if (required) {
+    return 'secondary'
+  } else if (error) {
+    return 'error'
+  } else {
+    return 'secondary'
+  }
+}
+
+const Checkmark = styled.span<{ error?: boolean; required: boolean }>`
   position: absolute;
   left: 0;
   width: 24px;
   height: 24px;
-  border: ${({ error }) =>
-    error
-      ? `solid 1px ${theme.colors.error}`
-      : `solid 1px ${theme.colors.secondary}`};
+  border: ${({ error, required }) =>
+    required && !error
+      ? `solid 1px ${theme.colors.secondary}`
+      : `solid 1px ${theme.colors.error}`};
   box-sizing: border-box;
   border-radius: 1px;
 
@@ -108,4 +129,8 @@ const ErrorBox = styled.span`
   padding-top: 8px;
   font-size: 12px;
   color: ${theme.colors.error};
+`
+
+const LabelWrapper = styled.div`
+  display: flex;
 `
