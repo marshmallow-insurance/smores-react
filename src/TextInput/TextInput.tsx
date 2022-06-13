@@ -34,6 +34,8 @@ type DefaultProps = {
   trailingIcon?: string
   /** Disabled flag */
   disabled?: boolean
+  /** Required flag */
+  required?: boolean
 }
 
 /** on change or on input required */
@@ -68,6 +70,7 @@ export const TextInput = forwardRef(function TextInput(
     onChange,
     onInputChange,
     disabled = false,
+    required = false,
   }: TextInputProps,
   ref: ForwardedRef<HTMLInputElement>,
 ) {
@@ -80,6 +83,11 @@ export const TextInput = forwardRef(function TextInput(
           <Text tag="label" color="subtext" typo="label" htmlFor={id}>
             {label}
           </Text>
+          {required && (
+            <Text tag="label" color="error" typo="label">
+              *
+            </Text>
+          )}
         </Box>
       )}
 

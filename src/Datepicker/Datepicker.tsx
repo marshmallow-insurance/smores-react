@@ -75,8 +75,8 @@ export const Datepicker: FC<DatepickerProps> = ({
         label: format(date, 'dd'),
         active: activeDay ? isSameDay(date, activeDay) : false,
         disabled:
-          (!isWithinInterval(date, { start: startDate, end: endDate }))
-          || (disableWeekend && isWeekend(date)),
+          !isWithinInterval(date, { start: startDate, end: endDate }) ||
+          (disableWeekend && isWeekend(date)),
       })
     }
 

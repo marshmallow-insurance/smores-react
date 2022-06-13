@@ -58,6 +58,8 @@ type DefaultProps = {
   onBlur?: (e: FormEvent<HTMLSelectElement>) => void
   /** required item */
   required?: boolean
+  /** set required asterisk */
+  showRequiredAsterisk?: boolean
 }
 
 /** on change or on input required */
@@ -93,6 +95,7 @@ export const Dropdown = forwardRef(function Dropdown(
     onInputChange,
     onBlur,
     required = true,
+    showRequiredAsterisk = false,
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
@@ -133,6 +136,11 @@ export const Dropdown = forwardRef(function Dropdown(
           <Text tag="label" color="subtext" typo="label" htmlFor={id}>
             {label}
           </Text>
+          {showRequiredAsterisk && (
+            <Text tag="label" color="error" typo="label">
+              *
+            </Text>
+          )}
         </Box>
       )}
 
