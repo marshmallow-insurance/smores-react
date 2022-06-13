@@ -228,3 +228,14 @@ const DateSelectorExampleTemplate = () => <Container />
 export const DateSelectorExample = DateSelectorExampleTemplate.bind({})
 
 DateSelectorExample.args = {}
+
+export const WithRequiredAsterisk = Template.bind({})
+
+WithRequiredAsterisk.args = {
+  id: 'days',
+  list: days,
+  placeholder: 'Select Day',
+  outlined: true,
+  label: 'Do you like smores?',
+  showRequiredAsterisk: true,
+}
