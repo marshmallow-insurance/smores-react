@@ -1,6 +1,7 @@
 ## [2.1.25] - 2022-05-27
 ### Added
 - Make `id` optional on form fields
+- Add optional `required` property on all input fields
 
 ## [2.1.24] - 2022-05-25
 ### Added
