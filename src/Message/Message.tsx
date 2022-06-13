@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { theme } from '../theme'
+import { useDeprecatedWarning } from '../utils/deprecated'
 
 type BorderProps =
   | { hasBorder?: false; borderColor?: never }
@@ -18,6 +19,10 @@ export type MessageProps = {
   sizeSmall?: boolean
 } & BorderProps
 
+/**
+ * @deprecated Use Support Message instead
+ */
+
 export const Message: FC<MessageProps> = ({
   className,
   children,
@@ -27,26 +32,33 @@ export const Message: FC<MessageProps> = ({
   sizeSmall,
   hasBorder,
   borderColor,
-}) => (
-  <Wrapper
-    className={className}
-    type={type}
-    backgroundColor={backgroundColor}
-    sizeSmall={sizeSmall}
-    hasBorder={hasBorder}
-    borderColor={borderColor}
-  >
-    <IconWrapper alignIcon={alignIcon}>
-      <Icon
-        size={sizeSmall ? 24 : 32}
-        render={type}
-        color={type === 'warning' ? 'error' : 'secondary'}
-      />
-    </IconWrapper>
+}) => {
+  useDeprecatedWarning({
+    title: 'Legacy Message component',
+    message:
+      "You're using the legacy Message component. Please use the new Support Message component.",
+  })
+  return (
+    <Wrapper
+      className={className}
+      type={type}
+      backgroundColor={backgroundColor}
+      sizeSmall={sizeSmall}
+      hasBorder={hasBorder}
+      borderColor={borderColor}
+    >
+      <IconWrapper alignIcon={alignIcon}>
+        <Icon
+          size={sizeSmall ? 24 : 32}
+          render={type}
+          color={type === 'warning' ? 'error' : 'secondary'}
+        />
+      </IconWrapper>
 
-    {children}
-  </Wrapper>
-)
+      {children}
+    </Wrapper>
+  )
+}
 
 interface IIconWrapper {
   alignIcon?: 'center' | 'flex-start' | 'flex-end'
@@ -83,7 +95,6 @@ const Wrapper = styled.div<IWrapper>(
     font-family: ${theme.font.system};
     color: ${type === 'warning' ? theme.colors.error : theme.colors.secondary};
     font-size: ${sizeSmall ? '12px' : '16px'};
-
     span {
       margin: 0 16px 0 0;
     }

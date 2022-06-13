@@ -28,7 +28,7 @@ Warning.args = {
 export const WarningBubbleSmall = Template.bind({})
 
 WarningBubbleSmall.args = {
-  type: 'warning-bubble',
+  type: 'warning',
   backgroundColor: theme.colors.bgSecondary,
   sizeSmall: true,
 }
