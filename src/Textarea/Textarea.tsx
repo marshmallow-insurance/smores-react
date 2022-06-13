@@ -81,6 +81,11 @@ export const Textarea = forwardRef(function Textarea(
           <Text tag="label" color="subtext" typo="label" htmlFor={id}>
             {label}
           </Text>
+          {required && (
+            <Text tag="label" color="error" typo="label">
+              *
+            </Text>
+          )}
         </Box>
       )}
 

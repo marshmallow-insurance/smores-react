@@ -47,6 +47,18 @@ Error.args = {
   errorMsg: 'Something really quite terrible has gone wrong here!',
 }
 
+export const Required = Template.bind({})
+
+Required.args = {
+  id: 'textarea_id',
+  label: 'Textarea label',
+  value: '',
+  onChange: noop,
+  disabled: false,
+  placeholder: 'Here is some placeholder text.',
+  required: true,
+}
+
 const WorkingExampleTemplate = () => <Container />
 
 export const WorkingExample = WorkingExampleTemplate.bind({})
