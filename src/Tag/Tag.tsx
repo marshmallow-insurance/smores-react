@@ -8,9 +8,10 @@ export type TagProps = {
   label: string
   className?: string
   color: Color
-  bgColor: Color
-  borderColor: Color
+  bgColor?: Color
+  borderColor?: Color
   typo?: string
+  bgGradient?: boolean
 }
 
 export const Tag: FC<TagProps> = ({
@@ -20,20 +21,30 @@ export const Tag: FC<TagProps> = ({
   bgColor,
   className,
   typo,
+  bgGradient = false,
 }) => (
-  <Wrapper bgColor={bgColor} className={className} borderColor={borderColor}>
+  <Wrapper
+    bgColor={bgColor}
+    className={className}
+    borderColor={borderColor}
+    bgGradient={bgGradient}
+  >
     <TagText tag="span" typo={typo ?? 'label'} color={color}>
       {label}
     </TagText>
   </Wrapper>
 )
 
-type WrapperProps = Pick<TagProps, 'bgColor' | 'borderColor'>
+type WrapperProps = Pick<TagProps, 'bgColor' | 'borderColor' | 'bgGradient'>
 
 const Wrapper = styled.div<WrapperProps>`
-  background-color: ${({ bgColor }) => theme.colors[bgColor]};
+  background-color: ${({ bgColor }) => bgColor && theme.colors[bgColor]};
+  background: ${({ bgGradient }) =>
+    bgGradient &&
+    `linear-gradient(90deg, rgba(247, 46, 73, 1) 0%, rgba(246, 148, 210, 1) 100%)`};
   border-radius: 8px;
-  border: 1px solid ${({ borderColor }) => theme.colors[borderColor]};
+  border: ${({ borderColor }) =>
+    borderColor && `1px solid ${theme.colors[borderColor]}`};
   box-sizing: border-box;
   display: inline-flex;
   height: 23px;

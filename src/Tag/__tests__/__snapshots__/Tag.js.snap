@@ -23,7 +23,6 @@ exports[`renders 1`] = `
 
 .c0 {
   border-radius: 8px;
-  border: 1px solid;
   box-sizing: border-box;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
