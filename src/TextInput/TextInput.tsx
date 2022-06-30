@@ -4,39 +4,26 @@ import styled from 'styled-components'
 import { theme } from '../theme'
 import { Field } from '../Field'
 
-type DefaultProps = {
-  /** ID, usually used for tests  */
+type Props = {
   id: string
-  /** className attribute to apply classes from props */
   className?: string
-  /** ref attribute for input */
   ref?: RefObject<HTMLInputElement>
-  /** Input type for proper browser support */
   type?: 'text' | 'email' | 'password' | 'time' | 'date'
-  /** used to render outlined style */
   outlined?: boolean
-  /** Placeholder */
   placeholder: string
-  /** label displayed above the input  */
   label?: string
-  /** used for label - input connection */
   name?: string
-  /** input value */
   value: string
-  /** error flag */
   error?: boolean
-  /** error text message */
   errorMsg?: string
-  /** onBlur listener */
   onBlur?: (e: FormEvent<HTMLInputElement>) => void
-  /** used for adding a trailing icon */
   trailingIcon?: string
-  /** Disabled flag */
   disabled?: boolean
+  renderAsTitle?: boolean
 }
 
 /** on change or on input required */
-type TruncateProps =
+type InputProps =
   | {
       /** on change is required and on input optional */
       onChange: (e: string) => void
@@ -48,7 +35,7 @@ type TruncateProps =
       onInputChange: (e: FormEvent<HTMLInputElement>) => void
     }
 
-export type TextInputProps = DefaultProps & TruncateProps
+export type TextInputProps = Props & InputProps
 
 export const TextInput = forwardRef(function TextInput(
   {
@@ -66,11 +53,13 @@ export const TextInput = forwardRef(function TextInput(
     onChange,
     onInputChange,
     disabled = false,
+    renderAsTitle = false,
   }: TextInputProps,
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   return (
     <Field
+      renderAsTitle={renderAsTitle}
       id={id}
       error={error}
       label={label}
