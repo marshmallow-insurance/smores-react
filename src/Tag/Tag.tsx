@@ -13,16 +13,16 @@ export type DefaultProps = {
 
 type GradientProps =
   | {
-      // if bgGradient === false
-      bgColor?: Color
-      borderColor?: Color
-      bgGradient?: false
-    }
-  | {
-      // if bgGradient === true
+      // no gradient
       bgColor: Color
       borderColor: Color
-      bgGradient: true
+      bgGradient?: boolean
+    }
+  | {
+      // with gradient
+      bgColor?: Color
+      borderColor?: Color
+      bgGradient: boolean
     }
 
 export type TagProps = DefaultProps & GradientProps
