@@ -107,7 +107,9 @@ interface Input {
 }
 
 const StyledInput = styled.input<Input>`
-  border: none;
+  border-bottom: 1px solid;
+  border-color: ${({ error }) =>
+    theme.colors[`${error ? 'error' : 'outline'}`]};
   background-color: transparent;
   color: ${({ error }) => theme.colors[`${error ? 'error' : 'secondary'}`]};
   font-size: 16px;

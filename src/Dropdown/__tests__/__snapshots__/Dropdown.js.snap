@@ -37,12 +37,13 @@ exports[`rendersDropdown 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: auto;
+  position: relative;
 }
 
 .c1 {
-  border-bottom: 1px solid;
+  position: relative;
   border-color: #D2D2D2;
-  background-color: #FFFFFF;
+  background-color: transparent;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -53,6 +54,17 @@ exports[`rendersDropdown 1`] = `
 .c1:hover,
 .c1:focus-within {
   border-color: #b9b9b9;
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  right: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .c2 {
@@ -85,17 +97,6 @@ exports[`rendersDropdown 1`] = `
 .c2:checked {
   outline: none;
   border-color: #b9b9b9;
-}
-
-.c3 {
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  right: 0;
-  pointer-events: none;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 <div
@@ -213,12 +214,13 @@ exports[`rendersDropdownWithGroups 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: auto;
+  position: relative;
 }
 
 .c1 {
-  border-bottom: 1px solid;
+  position: relative;
   border-color: #D2D2D2;
-  background-color: #FFFFFF;
+  background-color: transparent;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -229,6 +231,17 @@ exports[`rendersDropdownWithGroups 1`] = `
 .c1:hover,
 .c1:focus-within {
   border-color: #b9b9b9;
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  right: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .c2 {
@@ -261,17 +274,6 @@ exports[`rendersDropdownWithGroups 1`] = `
 .c2:checked {
   outline: none;
   border-color: #b9b9b9;
-}
-
-.c3 {
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  right: 0;
-  pointer-events: none;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 <div

@@ -9,6 +9,7 @@ import { theme } from '../theme'
 
 type Props = {
   children: React.ReactElement
+  showCaret?: boolean
   renderAsTitle?: boolean
   id: string
   error?: boolean // nb this needs to be optional for legacy support - but we will want to enforce in  the future
@@ -33,6 +34,7 @@ export const Field = ({
   errorMsg,
   dropdownKey,
   required,
+  showCaret,
 }: Props) => {
   return (
     <Container>
@@ -59,6 +61,11 @@ export const Field = ({
         key={dropdownKey ?? null}
       >
         {children}
+        {showCaret && (
+          <Caret outlined={outlined}>
+            <Icon render="caret" color="subtext" size={24} />
+          </Caret>
+        )}
       </Content>
       {trailingIcon && <Icon render={trailingIcon} color="subtext" />}
 
@@ -71,6 +78,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: auto;
+  position: relative;
 `
 
 const Content = styled.div<{
@@ -78,6 +86,7 @@ const Content = styled.div<{
   outlined: boolean
   value?: string
 }>`
+  position: relative;
   border-color: ${({ error }) =>
     theme.colors[`${error ? 'error' : 'outline'}`]};
   background-color: ${({ outlined }) =>
@@ -115,4 +124,13 @@ const ErrorBox = styled.span`
 const Title = styled.h3`
   font-weight: bold;
   padding-bottom: 8px;
+`
+
+const Caret = styled.div<{ outlined: boolean }>`
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  right: ${({ outlined }) => (outlined ? '15px' : '0')};
+  pointer-events: none;
+  transform: translateY(-50%);
 `

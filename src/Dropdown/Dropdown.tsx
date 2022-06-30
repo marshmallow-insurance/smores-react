@@ -9,7 +9,6 @@ import React, {
 import { darken } from 'polished'
 import styled from 'styled-components'
 
-import { Icon } from '../Icon'
 import { theme } from '../theme'
 import { Field } from '../Field'
 import { useUniqueId } from '../utils/id'
@@ -106,6 +105,7 @@ export const Dropdown = forwardRef(function Dropdown(
 
   return (
     <Field
+      showCaret
       dropdownKey={key}
       renderAsTitle={renderAsTitle}
       id={id}
@@ -173,9 +173,6 @@ export const Dropdown = forwardRef(function Dropdown(
               ))
             ),
           )}
-          <Caret outlined={outlined}>
-            <Icon render="caret" color="subtext" size={24} />
-          </Caret>
         </StyledSelect>
       </>
     </Field>
@@ -244,13 +241,4 @@ const StyledSelect = styled.select<UsesOutline>`
 `}}
 
   ${({ error, outlined }) => getErrorOutline(outlined, error)};
-`
-
-const Caret = styled.div<UsesOutline>`
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  right: ${({ outlined }) => (outlined ? '15px' : '0')};
-  pointer-events: none;
-  transform: translateY(-50%);
 `
