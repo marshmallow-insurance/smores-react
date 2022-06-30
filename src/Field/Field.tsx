@@ -18,6 +18,7 @@ type Props = {
   trailingIcon?: string
   errorMsg?: string
   dropdownKey?: string // nb only used by dropdown component but required on content in that context
+  required?: boolean // also optional for now to maintain backwards compaibility
 }
 
 export const Field = ({
@@ -31,6 +32,7 @@ export const Field = ({
   trailingIcon,
   errorMsg,
   dropdownKey,
+  required,
 }: Props) => {
   return (
     <Container>
@@ -41,6 +43,11 @@ export const Field = ({
           ) : (
             <Text tag="label" color="subtext" typo="label" htmlFor={id}>
               {label}
+            </Text>
+          )}
+          {required && (
+            <Text tag="label" color="error" typo="label">
+              *
             </Text>
           )}
         </Box>
@@ -71,11 +78,10 @@ const Content = styled.div<{
   outlined: boolean
   value?: string
 }>`
-  border-bottom: 1px solid;
   border-color: ${({ error }) =>
     theme.colors[`${error ? 'error' : 'outline'}`]};
   background-color: ${({ outlined }) =>
-    outlined ? 'transparent' : theme.colors['white']};
+    !outlined ? 'transparent' : theme.colors['white']};
   display: flex;
   height: 32px;
 
@@ -88,7 +94,6 @@ const Content = styled.div<{
   ${({ outlined, error }) =>
     outlined &&
     `
-      border: 2px solid ${error ? theme.colors.error : theme.colors.outline};
       border-radius: 8px;
       height: auto;
     `}
@@ -97,7 +102,7 @@ const Content = styled.div<{
     value &&
     value != '' &&
     `
-      border-color: ${theme.colors.outline};
+    border-color: ${theme.colors.outline};
     `}
 `
 

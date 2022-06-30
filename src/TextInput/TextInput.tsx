@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { theme } from '../theme'
 import { Field } from '../Field'
-import { Text } from '../Text'
 import { useUniqueId } from '../utils/id'
 
 type Props = {
@@ -73,13 +72,9 @@ export const TextInput = forwardRef(function TextInput(
       value={value}
       trailingIcon={trailingIcon}
       errorMsg={errorMsg}
+      required={required}
     >
       <>
-        {required && (
-          <Text tag="label" color="error" typo="label">
-            *
-          </Text>
-        )}
         <StyledInput
           disabled={disabled}
           type={type}

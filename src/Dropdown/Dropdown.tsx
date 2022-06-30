@@ -6,13 +6,12 @@ import React, {
   forwardRef,
   ForwardedRef,
 } from 'react'
-import styled from 'styled-components'
 import { darken } from 'polished'
+import styled from 'styled-components'
 
 import { Icon } from '../Icon'
 import { theme } from '../theme'
 import { Field } from '../Field'
-import { Text } from '../Text'
 import { useUniqueId } from '../utils/id'
 export type DropdownItem = {
   optionGroupLabel?: string
@@ -115,13 +114,9 @@ export const Dropdown = forwardRef(function Dropdown(
       outlined={outlined}
       value={value!}
       errorMsg={errorMsg}
+      required={showRequiredAsterisk}
     >
       <>
-        {showRequiredAsterisk && (
-          <Text tag="label" color="error" typo="label">
-            *
-          </Text>
-        )}
         <StyledSelect
           id={id}
           defaultValue={
@@ -178,11 +173,10 @@ export const Dropdown = forwardRef(function Dropdown(
               ))
             ),
           )}
+          <Caret outlined={outlined}>
+            <Icon render="caret" color="subtext" size={24} />
+          </Caret>
         </StyledSelect>
-
-        <Caret outlined={outlined}>
-          <Icon render="caret" color="subtext" size={24} />
-        </Caret>
       </>
     </Field>
   )
@@ -191,6 +185,16 @@ export const Dropdown = forwardRef(function Dropdown(
 interface UsesOutline {
   outlined?: boolean
   error?: boolean
+}
+
+const getErrorOutline = (outlined?: boolean, error?: boolean) => {
+  if (error && outlined) {
+    return `border: 2px solid ${theme.colors.error}`
+  } else if (error && !outlined) {
+    return `border-bottom: 2px solid ${theme.colors.error}`
+  } else {
+    return
+  }
 }
 
 const StyledSelect = styled.select<UsesOutline>`
@@ -205,16 +209,13 @@ const StyledSelect = styled.select<UsesOutline>`
   font-size: 16px;
   cursor: pointer;
   appearance: none; /* remove default arrow */
-
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
   }
-
   &:not(:focus):invalid {
     color: ${theme.colors.outline};
   }
-
   &:hover,
   &:focus,
   &:focus-visible,
@@ -222,7 +223,6 @@ const StyledSelect = styled.select<UsesOutline>`
     outline: none;
     border-color: ${darken(0.1, theme.colors.outline)};
   }
-
   ${({ outlined }) =>
     outlined &&
     `
@@ -236,15 +236,14 @@ const StyledSelect = styled.select<UsesOutline>`
     border: 2px solid ${theme.colors.outline};
   }
 `}
-
   ${({ value }) =>
     value &&
     value != '' &&
     `
     border: 2px solid ${theme.colors.outline};
-`}
+`}}
 
-${({ error, outlined }) => getErrorOutline(outlined, error)};
+  ${({ error, outlined }) => getErrorOutline(outlined, error)};
 `
 
 const Caret = styled.div<UsesOutline>`
@@ -255,13 +254,3 @@ const Caret = styled.div<UsesOutline>`
   pointer-events: none;
   transform: translateY(-50%);
 `
-
-const getErrorOutline = (outlined?: boolean, error?: boolean) => {
-  if (error && outlined) {
-    return `border: 2px solid ${theme.colors.error}`
-  } else if (error && !outlined) {
-    return `border-bottom: 2px solid ${theme.colors.error}`
-  } else {
-    return
-  }
-}
