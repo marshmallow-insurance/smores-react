@@ -2,33 +2,35 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-bdvvtL sc-crHmcD gBhudd bgyDxr"
+  class="sc-bczRLJ sc-crXcEl fwUwPu cHxJkJ"
 >
   <div
-    class="sc-pVTFL dMzYpF"
+    class="sc-papXJ cWKQiM"
   >
     <div
-      class="sc-jrQzAO fMTcZw"
+      class="sc-jqUVSM vwlpZ"
     >
       <div
-        class="sc-kDTinF bAWwdS"
+        class="sc-kDDrLX DTxVD"
       >
         <div
-          class="sc-bdvvtL bZqKJd"
+          class="sc-bczRLJ fTuaZS"
         >
           <input
-            class="sc-gKclnd hrvJci"
+            class="sc-gKXOVf oNLau"
+            id="MM_SMORES_0"
             type="radio"
-            value=""
+            value="MM_SMORES_0"
           />
           <label
-            class="sc-iCfMLu pbIQX"
+            class="sc-iBkjds gPlNyQ"
+            for="MM_SMORES_0"
           >
             <div
-              class="sc-jRQBWg fjvgrm"
+              class="sc-jSMfEi goqpSd"
             />
             <span
-              class="sc-furwcr kHYiUQ"
+              class="sc-ftvSup fhyIwz"
             >
               Yes
             </span>
@@ -36,26 +38,26 @@ exports[`renders 1`] = `
         </div>
       </div>
       <div
-        class="sc-kDTinF bAWwdS"
+        class="sc-kDDrLX DTxVD"
       >
         <div
-          class="sc-bdvvtL bZqKJd"
+          class="sc-bczRLJ fTuaZS"
         >
           <input
-            class="sc-gKclnd hrvJci"
-            id="undefined-1"
+            class="sc-gKXOVf oNLau"
+            id="MM_SMORES_0-1"
             type="radio"
-            value="undefined-1"
+            value="MM_SMORES_0-1"
           />
           <label
-            class="sc-iCfMLu pbIQX"
-            for="undefined-1"
+            class="sc-iBkjds gPlNyQ"
+            for="MM_SMORES_0-1"
           >
             <div
-              class="sc-jRQBWg fjvgrm"
+              class="sc-jSMfEi goqpSd"
             />
             <span
-              class="sc-furwcr kHYiUQ"
+              class="sc-ftvSup fhyIwz"
             >
               No
             </span>

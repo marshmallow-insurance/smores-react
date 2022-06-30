@@ -4,6 +4,7 @@ import { darken } from 'polished'
 
 import { Color, theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
+import { useDeprecatedWarning } from '../utils/deprecated'
 import { LegacyButton } from './LegacyButton'
 import { Loader } from '../Loader'
 import { Icon as IconComponent } from '../Icon'
@@ -51,87 +52,94 @@ export type ButtonProps = Props &
 export const Button: FC<ButtonProps> = forwardRef<
   HTMLButtonElement,
   ButtonProps
->(
-  (
-    {
-      children,
-      id,
-      className = '',
-      color = 'secondary',
-      block = false,
-      inverted = false,
-      disabled = false,
-      outlined = false,
-      handleClick,
-      loading = false,
-      primary = false,
-      secondary = false,
-      tertiary = false,
-      icon = '',
-      forcedWidth = '',
-      form,
-      type,
-      ...props
-    },
-    ref,
-  ) => {
-    if (!primary && !secondary && !tertiary) {
-      return (
-        <LegacyButton
-          id={id}
-          className={className}
-          color={color}
-          block={block}
-          inverted={inverted}
-          disabled={disabled}
-          outlined={outlined}
-          handleClick={(e) => {
-            handleClick && handleClick(e)
-          }}
-        >
-          {children}
-        </LegacyButton>
-      )
-    }
+>((props, ref) => {
+  const {
+    children,
+    id,
+    className = '',
+    color = 'secondary',
+    block = false,
+    inverted = false,
+    disabled = false,
+    outlined = false,
+    handleClick,
+    loading = false,
+    primary = false,
+    secondary = false,
+    tertiary = false,
+    icon = '',
+    forcedWidth = '',
+    form,
+    type,
+    ...otherProps
+  } = props
 
+  const isLegacyButton = !primary && !secondary && !tertiary
+
+  useDeprecatedWarning({
+    enabled: isLegacyButton,
+    title: 'Legacy Button',
+    message:
+      "You're using the legacy Button component. Please use the new Button by providing one of the following props: 'primary', 'secondary', 'tertiary'.",
+    componentProps: props,
+  })
+
+  if (isLegacyButton) {
     return (
-      <Container
+      <LegacyButton
         id={id}
         className={className}
-        disabled={disabled || loading}
-        onClick={(e) => {
+        color={color}
+        block={block}
+        inverted={inverted}
+        disabled={disabled}
+        outlined={outlined}
+        handleClick={(e) => {
           handleClick && handleClick(e)
         }}
-        isLoading={loading}
-        primary={primary}
-        secondary={secondary}
-        tertiary={tertiary}
-        icon={icon}
-        forcedWidth={forcedWidth}
-        {...(form ? { form } : {})}
-        type={type}
-        {...props}
-        ref={ref}
       >
-        {loading && (
-          <LoaderContainer>
-            <Loader color={primary ? 'white' : 'secondary'} height="16" />
-          </LoaderContainer>
-        )}
-        <ContentContainer icon={icon} $loading={loading}>
-          {icon && (
-            <IconContainer
-              render={icon}
-              size={24}
-              color={primary ? 'white' : 'secondary'}
-            />
-          )}
-          <ChildrenContainer>{children}</ChildrenContainer>
-        </ContentContainer>
-      </Container>
+        {children}
+      </LegacyButton>
     )
-  },
-)
+  }
+
+  return (
+    <Container
+      id={id}
+      className={className}
+      disabled={disabled || loading}
+      onClick={(e) => {
+        handleClick && handleClick(e)
+      }}
+      isLoading={loading}
+      primary={primary}
+      secondary={secondary}
+      tertiary={tertiary}
+      icon={icon}
+      forcedWidth={forcedWidth}
+      {...(form ? { form } : {})}
+      type={type}
+      {...otherProps}
+      ref={ref}
+    >
+      {loading && (
+        <LoaderContainer>
+          <Loader color={primary ? 'white' : 'secondary'} height="16" />
+        </LoaderContainer>
+      )}
+      <ContentContainer icon={icon} $loading={loading}>
+        {icon && (
+          <IconContainer
+            render={icon}
+            size={24}
+            color={primary ? 'white' : 'secondary'}
+          />
+        )}
+        <ChildrenContainer>{children}</ChildrenContainer>
+      </ContentContainer>
+    </Container>
+  )
+})
 
 Button.displayName = 'Button'
 

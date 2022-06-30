@@ -5,13 +5,14 @@ import { focusOutline } from '../utils/focusOutline'
 import { Box } from '../Box'
 
 import { theme } from '../theme'
+import { useUniqueId } from '../utils/id'
 
 interface IFakeInput {
   checked?: boolean
 }
 
 export type RadioButtonProps = {
-  id: string
+  id?: string
   label: string
   checked?: boolean
   value: string
@@ -19,27 +20,31 @@ export type RadioButtonProps = {
 }
 
 export const RadioButton: FC<RadioButtonProps> = ({
-  id,
+  id: idProp,
   label,
   checked,
   value,
   onChange,
-}) => (
-  <Box flex alignItems="center">
-    <RadioInput
-      id={id}
-      type="radio"
-      checked={checked}
-      value={value}
-      onChange={onChange}
-    />
+}) => {
+  const id = useUniqueId(idProp)
 
-    <RadioLabel htmlFor={id}>
-      <FakeInput checked={checked} />
-      <Text>{label}</Text>
-    </RadioLabel>
-  </Box>
-)
+  return (
+    <Box flex alignItems="center">
+      <RadioInput
+        id={id}
+        type="radio"
+        checked={checked}
+        value={value}
+        onChange={onChange}
+      />
+
+      <RadioLabel htmlFor={id}>
+        <FakeInput checked={checked} />
+        <Text>{label}</Text>
+      </RadioLabel>
+    </Box>
+  )
+}
 
 const FakeInput = styled.div<IFakeInput>`
   width: 24px;

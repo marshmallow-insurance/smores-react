@@ -4,9 +4,10 @@ import { focusOutline } from '../utils/focusOutline'
 
 import { Text } from '../Text'
 import { theme } from '../theme'
+import { useUniqueId } from '../utils/id'
 
 export type CheckBoxProps = {
-  id: string
+  id?: string
   checked: boolean
   children: ReactNode
   toggle: () => void
@@ -15,25 +16,28 @@ export type CheckBoxProps = {
 }
 
 export const CheckBox: FC<CheckBoxProps> = ({
-  id,
+  id: idProp,
   checked,
   children,
   toggle,
   error,
   errorMsg,
-}) => (
-  <>
-    <BoxContainer id={id}>
-      <Text tag="span" typo="base" color={error ? 'error' : 'secondary'}>
-        {children}
-      </Text>
+}) => {
+  const id = useUniqueId(idProp)
+  return (
+    <>
+      <BoxContainer id={id}>
+        <Text tag="span" typo="base" color={error ? 'error' : 'secondary'}>
+          {children}
+        </Text>
 
-      <input type="checkbox" checked={checked} onChange={toggle} />
-      <Checkmark error={error} />
-    </BoxContainer>
-    {error && errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
-  </>
-)
+        <input type="checkbox" checked={checked} onChange={toggle} />
+        <Checkmark error={error} />
+      </BoxContainer>
+      {error && errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
+    </>
+  )
+}
 
 const Checkmark = styled.span<{ error?: boolean }>`
   position: absolute;

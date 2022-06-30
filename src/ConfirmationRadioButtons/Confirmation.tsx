@@ -4,11 +4,12 @@ import { theme } from '../theme'
 import { Box } from '../Box'
 import { Text } from '../Text'
 import { RadioButton, FakeInput } from './RadioButtonStyled'
+import { useUniqueId } from '../utils/id'
 
 export type ConfirmationProps = {
   onChange(value?: boolean): void
   checked?: boolean
-  id: string
+  id?: string
   error?: boolean
   errorMsg?: string
   label?: string
@@ -16,12 +17,13 @@ export type ConfirmationProps = {
   sublabel?: string | ReactElement
   yesLabel?: string | ReactElement
   noLabel?: string | ReactElement
+  required?: boolean
 }
 
 export const Confirmation: FC<ConfirmationProps> = ({
   checked,
   onChange,
-  id,
+  id: idProp,
   error = false,
   errorMsg = '',
   label,
@@ -29,12 +31,21 @@ export const Confirmation: FC<ConfirmationProps> = ({
   sublabel,
   yesLabel = 'Yes',
   noLabel = 'No',
+  required = false,
 }: ConfirmationProps) => {
+  const id = useUniqueId(idProp)
   return (
     <ConfirmationWrapper>
       {(label || sublabel) && (
         <TextWrapper>
-          {label && <SectionHeadingText tag="h3">{label}</SectionHeadingText>}
+          <LabelWrapper>
+            {label && <SectionHeadingText tag="h3">{label}</SectionHeadingText>}
+            {required && (
+              <Text tag="p" typo="base-small" color="error">
+                *
+              </Text>
+            )}
+          </LabelWrapper>
           {sublabel && (
             <Text tag="p" typo="base-small" color="subtext">
               {sublabel}
@@ -125,4 +136,8 @@ const SectionHeadingText = styled(Text)`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
+`
+
+const LabelWrapper = styled.div`
+  display: flex;
 `

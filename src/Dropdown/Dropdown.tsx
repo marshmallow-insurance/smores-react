@@ -12,7 +12,8 @@ import { darken } from 'polished'
 import { Icon } from '../Icon'
 import { theme } from '../theme'
 import { Field } from '../Field'
-
+import { Text } from '../Text'
+import { useUniqueId } from '../utils/id'
 export type DropdownItem = {
   optionGroupLabel?: string
   label: string
@@ -20,7 +21,7 @@ export type DropdownItem = {
 }
 
 type DefaultProps = {
-  id: string
+  id?: string
   className?: string
   ref?: RefObject<HTMLSelectElement>
   placeholder?: string
@@ -37,17 +38,15 @@ type DefaultProps = {
   onBlur?: (e: FormEvent<HTMLSelectElement>) => void
   required?: boolean
   renderAsTitle?: boolean
+  showRequiredAsterisk?: boolean
 }
 
-/** on change or on input required */
 type TruncateProps =
   | {
-      /** on change is required and on input optional */
       onSelect: (e: string) => void
       onInputChange?: (e: FormEvent<HTMLSelectElement>) => void
     }
   | {
-      /** on input is required and on change optional */
       onSelect?: (e: string) => void
       onInputChange: (e: FormEvent<HTMLSelectElement>) => void
     }
@@ -56,7 +55,7 @@ export type DropdownProps = DefaultProps & TruncateProps
 
 export const Dropdown = forwardRef(function Dropdown(
   {
-    id,
+    id: idProp,
     label,
     placeholder,
     name,
@@ -72,9 +71,11 @@ export const Dropdown = forwardRef(function Dropdown(
     onBlur,
     required = true,
     renderAsTitle = false,
+    showRequiredAsterisk = false,
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
+  const id = useUniqueId(idProp)
   const [key, setKey] = useState('')
   const [hasOptGroups, setHasOptGroups] = useState(false)
   const [dropdownItemsGroups, setDropdownItemsGroups] = useState(
@@ -116,6 +117,11 @@ export const Dropdown = forwardRef(function Dropdown(
       errorMsg={errorMsg}
     >
       <>
+        {showRequiredAsterisk && (
+          <Text tag="label" color="error" typo="label">
+            *
+          </Text>
+        )}
         <StyledSelect
           id={id}
           defaultValue={

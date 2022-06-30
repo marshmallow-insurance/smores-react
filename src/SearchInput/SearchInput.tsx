@@ -5,6 +5,7 @@ import { darken } from 'polished'
 import { theme } from '../theme'
 import { Icon } from '../Icon'
 import { Field } from '../Field'
+import { useUniqueId } from '../utils/id'
 
 export type SearchInputItem = {
   label: string
@@ -12,7 +13,7 @@ export type SearchInputItem = {
 }
 
 export type SearchInputProps = {
-  id: string
+  id?: string
   name?: string
   label?: string
   placeholder?: string
@@ -25,7 +26,7 @@ export type SearchInputProps = {
 }
 
 export const SearchInput: FC<SearchInputProps> = ({
-  id,
+  id: idProp,
   name = 'search_input',
   label,
   placeholder,
@@ -36,6 +37,7 @@ export const SearchInput: FC<SearchInputProps> = ({
   showIcon = false,
   renderAsTitle = false,
 }) => {
+  const id = useUniqueId(idProp)
   const [active, setActive] = useState(false)
   const [list, setList] = useState<SearchInputItem[]>([])
   const [selectedResult, setSelectedResult] = useState('')
@@ -45,13 +47,11 @@ export const SearchInput: FC<SearchInputProps> = ({
     const value = e.currentTarget.value
 
     if (value) {
-      // start filtering if the input has at least 2 characters
       if (value.length >= 2) {
         const filteredList = searchList.filter((el) =>
           el.label.toLowerCase().includes(value.toLocaleLowerCase()),
         )
 
-        // update the local state with the filtered results
         setActive(true)
         setList(filteredList)
       }

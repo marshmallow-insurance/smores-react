@@ -1,8 +1,10 @@
-import React, { FormEvent, RefObject, forwardRef, ForwardedRef } from 'react'
+import React, { FormEvent, forwardRef, ForwardedRef, RefObject } from 'react'
 import styled from 'styled-components'
 
 import { theme } from '../theme'
 import { Field } from '../Field'
+import { Text } from '../Text'
+import { useUniqueId } from '../utils/id'
 
 type Props = {
   id: string
@@ -20,6 +22,7 @@ type Props = {
   trailingIcon?: string
   disabled?: boolean
   renderAsTitle?: boolean
+  required?: boolean
 }
 
 /** on change or on input required */
@@ -39,7 +42,7 @@ export type TextInputProps = Props & InputProps
 
 export const TextInput = forwardRef(function TextInput(
   {
-    id,
+    id: idProp,
     type = 'text',
     placeholder,
     label,
@@ -53,10 +56,13 @@ export const TextInput = forwardRef(function TextInput(
     onChange,
     onInputChange,
     disabled = false,
+    required = false,
     renderAsTitle = false,
   }: TextInputProps,
   ref: ForwardedRef<HTMLInputElement>,
 ) {
+  const id = useUniqueId(idProp)
+
   return (
     <Field
       renderAsTitle={renderAsTitle}
@@ -68,25 +74,32 @@ export const TextInput = forwardRef(function TextInput(
       trailingIcon={trailingIcon}
       errorMsg={errorMsg}
     >
-      <StyledInput
-        disabled={disabled}
-        type={type}
-        id={id}
-        name={name}
-        ref={ref}
-        placeholder={placeholder}
-        value={value}
-        error={error}
-        outlined={outlined}
-        autoComplete="off"
-        onChange={(e: FormEvent<HTMLInputElement>) => {
-          onChange && onChange(e.currentTarget.value)
-          onInputChange && onInputChange(e)
-        }}
-        onBlur={(e) => {
-          onBlur && onBlur(e)
-        }}
-      />
+      <>
+        {required && (
+          <Text tag="label" color="error" typo="label">
+            *
+          </Text>
+        )}
+        <StyledInput
+          disabled={disabled}
+          type={type}
+          id={id}
+          name={name}
+          ref={ref}
+          placeholder={placeholder}
+          value={value}
+          error={error}
+          outlined={outlined}
+          autoComplete="off"
+          onChange={(e: FormEvent<HTMLInputElement>) => {
+            onChange && onChange(e.currentTarget.value)
+            onInputChange && onInputChange(e)
+          }}
+          onBlur={(e) => {
+            onBlur && onBlur(e)
+          }}
+        />
+      </>
     </Field>
   )
 })

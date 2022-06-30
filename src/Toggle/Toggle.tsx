@@ -6,7 +6,7 @@ import { theme } from '../theme'
 
 type Props = {
   /** unique ID */
-  id: string
+  id?: string
   /** checked flag  */
   checked: boolean
   /** onToggle listener  */

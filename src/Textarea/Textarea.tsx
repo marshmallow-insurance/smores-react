@@ -6,11 +6,10 @@ import { Text } from '../Text'
 import { Box } from '../Box'
 
 import { theme } from '../theme'
+import { useUniqueId } from '../utils/id'
 
 type BaseProps = {
-  /** ID, usually used for tests  */
-  id: string
-  /** className attribute to apply classses from props */
+  id?: string
   className?: string
   /** Placeholder */
   placeholder?: string
@@ -34,6 +33,8 @@ type BaseProps = {
   onBlur?: (e: FormEvent<HTMLTextAreaElement>) => void
   /** number of rows of input */
   rows?: number
+  /** Required flag */
+  required?: boolean
 }
 
 /** on change or on input required */
@@ -53,7 +54,7 @@ export type TextareaProps = BaseProps & TruncateProps
 
 export const Textarea = forwardRef(function Textarea(
   {
-    id,
+    id: idProp,
     name,
     label,
     value,
@@ -68,9 +69,11 @@ export const Textarea = forwardRef(function Textarea(
     maxLength,
     onBlur,
     rows = 4,
+    required = false,
   }: TextareaProps,
   ref: ForwardedRef<HTMLTextAreaElement>,
 ) {
+  const id = useUniqueId(idProp)
   return (
     <Box flex direction="column" className={className}>
       {label && (
@@ -78,6 +81,11 @@ export const Textarea = forwardRef(function Textarea(
           <Text tag="label" color="subtext" typo="label" htmlFor={id}>
             {label}
           </Text>
+          {required && (
+            <Text tag="label" color="error" typo="label">
+              *
+            </Text>
+          )}
         </Box>
       )}
 

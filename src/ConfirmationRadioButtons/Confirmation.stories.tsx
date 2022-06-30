@@ -63,3 +63,13 @@ WithNoLabel.args = {
   checked: undefined,
   yesLabel: 'Yes',
 }
+
+export const Required = Template.bind({})
+
+Required.args = {
+  id: 'radioButton',
+  label: 'Do you like ice cream?',
+  onChange: noop,
+  checked: undefined,
+  required: true,
+}
