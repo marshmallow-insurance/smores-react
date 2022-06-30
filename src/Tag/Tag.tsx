@@ -4,15 +4,28 @@ import styled from 'styled-components'
 import { Text } from '../Text'
 import { Color, theme } from '../theme'
 
-export type TagProps = {
+export type DefaultProps = {
   label: string
   className?: string
   color: Color
-  bgColor?: Color
-  borderColor?: Color
   typo?: string
-  bgGradient?: boolean
 }
+
+type GradientProps =
+  | {
+      // if bgGradient === false
+      bgColor?: Color
+      borderColor?: Color
+      bgGradient?: false
+    }
+  | {
+      // if bgGradient === true
+      bgColor: Color
+      borderColor: Color
+      bgGradient: true
+    }
+
+export type TagProps = DefaultProps & GradientProps
 
 export const Tag: FC<TagProps> = ({
   label,
@@ -47,7 +60,7 @@ const Wrapper = styled.div<WrapperProps>`
     borderColor && `1px solid ${theme.colors[borderColor]}`};
   box-sizing: border-box;
   display: inline-flex;
-  height: 23px;
+  height: ${({ borderColor }) => (borderColor ? '23px' : '25px')};
   padding: 5px 12px;
 `
 
