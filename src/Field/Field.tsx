@@ -21,7 +21,7 @@ type Props = {
 
 export const Field = ({
   children,
-  renderAsTitle = false,
+  renderAsTitle,
   error,
   id,
   label,
