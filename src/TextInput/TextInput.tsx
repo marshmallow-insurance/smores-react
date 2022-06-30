@@ -43,6 +43,7 @@ export const TextInput = forwardRef(function TextInput(
   {
     id: idProp,
     type = 'text',
+    className = '',
     placeholder,
     label,
     name,
@@ -64,6 +65,7 @@ export const TextInput = forwardRef(function TextInput(
 
   return (
     <Field
+      className={className}
       renderAsTitle={renderAsTitle}
       id={id}
       error={error}

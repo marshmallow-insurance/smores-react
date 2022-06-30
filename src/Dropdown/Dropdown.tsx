@@ -55,6 +55,7 @@ export const Dropdown = forwardRef(function Dropdown(
   {
     id: idProp,
     label,
+    className = '',
     placeholder,
     name,
     value,
@@ -106,6 +107,7 @@ export const Dropdown = forwardRef(function Dropdown(
   return (
     <Field
       showCaret
+      className={className}
       dropdownKey={key}
       renderAsTitle={renderAsTitle}
       id={id}

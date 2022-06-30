@@ -11,20 +11,23 @@ type Props = {
   children: React.ReactElement
   showCaret?: boolean
   renderAsTitle?: boolean
+  className?: string
   id: string
   error?: boolean // nb this needs to be optional for legacy support - but we will want to enforce in  the future
   label?: string
-  outlined: boolean
+  outlined?: boolean
   value: string
   trailingIcon?: string
   errorMsg?: string
   dropdownKey?: string // nb only used by dropdown component but required on content in that context
   required?: boolean // also optional for now to maintain backwards compaibility
+  fullHeight?: boolean // used to make text areas full size
 }
 
 export const Field = ({
   children,
   renderAsTitle,
+  className = '',
   error,
   id,
   label,
@@ -35,9 +38,10 @@ export const Field = ({
   dropdownKey,
   required,
   showCaret,
+  fullHeight = false,
 }: Props) => {
   return (
-    <Container>
+    <Container className={className}>
       {label && (
         <Box mb={outlined ? '4px' : '0px'}>
           {renderAsTitle ? (
@@ -55,6 +59,7 @@ export const Field = ({
         </Box>
       )}
       <Content
+        fullHeight={fullHeight}
         value={value}
         outlined={outlined}
         error={error}
@@ -74,10 +79,9 @@ export const Field = ({
   )
 }
 
-const Container = styled.div`
+const Container = styled(Box)<{ className: string }>`
   display: flex;
   flex-direction: column;
-  height: auto;
   position: relative;
 `
 
@@ -85,6 +89,7 @@ const Content = styled.div<{
   error?: boolean
   outlined: boolean
   value?: string
+  fullHeight?: boolean
 }>`
   position: relative;
   border-color: ${({ error }) =>
@@ -92,7 +97,7 @@ const Content = styled.div<{
   background-color: ${({ outlined }) =>
     !outlined ? 'transparent' : theme.colors['white']};
   display: flex;
-  height: 32px;
+  height: ${({ fullHeight }) => (fullHeight ? `100%` : `32px`)};
 
   &:hover,
   &:focus-within {
@@ -100,7 +105,7 @@ const Content = styled.div<{
       error ? theme.colors.error : darken(0.1, theme.colors.outline)};
   }
 
-  ${({ outlined, error }) =>
+  ${({ outlined }) =>
     outlined &&
     `
       border-radius: 8px;

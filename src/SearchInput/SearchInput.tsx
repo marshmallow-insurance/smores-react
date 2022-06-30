@@ -15,6 +15,7 @@ export type SearchInputItem = {
 export type SearchInputProps = {
   id?: string
   name?: string
+  className?: string
   label?: string
   placeholder?: string
   searchList: SearchInputItem[]
@@ -29,6 +30,7 @@ export const SearchInput: FC<SearchInputProps> = ({
   id: idProp,
   name = 'search_input',
   label,
+  className = '',
   placeholder,
   searchList,
   onFound,
@@ -74,6 +76,7 @@ export const SearchInput: FC<SearchInputProps> = ({
 
   return (
     <Field
+      className={className}
       renderAsTitle={renderAsTitle}
       id={id}
       label={label}
