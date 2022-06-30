@@ -36,15 +36,23 @@ exports[`rendersDropdown 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 44px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  height: auto;
 }
 
 .c1 {
-  width: 100%;
-  position: relative;
+  border-bottom: 1px solid;
+  border-color: #D2D2D2;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+}
+
+.c1:hover,
+.c1:focus-within {
+  border-color: #b9b9b9;
 }
 
 .c2 {
@@ -203,15 +211,23 @@ exports[`rendersDropdownWithGroups 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 44px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  height: auto;
 }
 
 .c1 {
-  width: 100%;
-  position: relative;
+  border-bottom: 1px solid;
+  border-color: #D2D2D2;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+}
+
+.c1:hover,
+.c1:focus-within {
+  border-color: #b9b9b9;
 }
 
 .c2 {

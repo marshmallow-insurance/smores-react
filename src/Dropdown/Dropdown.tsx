@@ -9,11 +9,9 @@ import React, {
 import styled from 'styled-components'
 import { darken } from 'polished'
 
-import { Text } from '../Text'
 import { Icon } from '../Icon'
-import { Box } from '../Box'
-
 import { theme } from '../theme'
+import { Field } from '../Field'
 
 export type DropdownItem = {
   optionGroupLabel?: string
@@ -21,44 +19,24 @@ export type DropdownItem = {
   value: string
 }
 
-interface IUsesOutline {
-  outlined?: boolean
-  error?: boolean
-}
-
 type DefaultProps = {
-  /** ID, usually used for tests  */
   id: string
-  /** className attribute to apply classes from props */
   className?: string
-  /** ref attribute for select input */
   ref?: RefObject<HTMLSelectElement>
-  /** Placeholder (initial state) */
   placeholder?: string
-  /** label displayed above the dropdown  */
   label?: string
-  /** used for label - input connection */
   name?: string
-  /** input value */
   value?: string
-  /** Default value */
   defaultValue?: string
-  /** conditionally renders error message below dropdown */
   error?: boolean
-  /** error message to be displayed */
   errorMsg?: string
-  /** Disabled flag */
   disabled?: boolean
-  /** list of items for the dropdown list */
   list: DropdownItem[]
-  /** onSelect handler */
   onSelect: (element: string) => void
-  /** Displays border */
   outlined?: boolean
-  /** onBlur listener */
   onBlur?: (e: FormEvent<HTMLSelectElement>) => void
-  /** required item */
   required?: boolean
+  renderAsTitle?: boolean
 }
 
 /** on change or on input required */
@@ -79,7 +57,6 @@ export type DropdownProps = DefaultProps & TruncateProps
 export const Dropdown = forwardRef(function Dropdown(
   {
     id,
-    className = '',
     label,
     placeholder,
     name,
@@ -94,6 +71,7 @@ export const Dropdown = forwardRef(function Dropdown(
     onInputChange,
     onBlur,
     required = true,
+    renderAsTitle = false,
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
@@ -127,17 +105,18 @@ export const Dropdown = forwardRef(function Dropdown(
   }, [list])
 
   return (
-    <Container className={className}>
-      {label && (
-        <Box mb={outlined ? '4px' : '0px'}>
-          <Text tag="label" color="subtext" typo="label" htmlFor={id}>
-            {label}
-          </Text>
-        </Box>
-      )}
-
-      <Content outlined={outlined} key={key}>
-        <Select
+    <Field
+      dropdownKey={key}
+      renderAsTitle={renderAsTitle}
+      id={id}
+      error={error}
+      label={label}
+      outlined={outlined}
+      value={value!}
+      errorMsg={errorMsg}
+    >
+      <>
+        <StyledSelect
           id={id}
           defaultValue={
             list.length === 1
@@ -193,42 +172,22 @@ export const Dropdown = forwardRef(function Dropdown(
               ))
             ),
           )}
-        </Select>
+        </StyledSelect>
 
         <Caret outlined={outlined}>
           <Icon render="caret" color="subtext" size={24} />
         </Caret>
-      </Content>
-      {error && <ErrorBox>{errorMsg}</ErrorBox>}
-    </Container>
+      </>
+    </Field>
   )
 })
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 44px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-`
-
-const Content = styled.div<IUsesOutline>`
-  width: 100%;
-  position: relative;
-`
-
-const getErrorOutline = (outlined?: boolean, error?: boolean) => {
-  if (error && outlined) {
-    return `border: 2px solid ${theme.colors.error}`
-  } else if (error && !outlined) {
-    return `border-bottom: 2px solid ${theme.colors.error}`
-  } else {
-    return
-  }
+interface UsesOutline {
+  outlined?: boolean
+  error?: boolean
 }
 
-const Select = styled.select<IUsesOutline>`
+const StyledSelect = styled.select<UsesOutline>`
   width: 100%;
   height: 32px;
   padding-right: 24px;
@@ -282,7 +241,7 @@ const Select = styled.select<IUsesOutline>`
 ${({ error, outlined }) => getErrorOutline(outlined, error)};
 `
 
-const Caret = styled.div<IUsesOutline>`
+const Caret = styled.div<UsesOutline>`
   position: absolute;
   top: 50%;
   z-index: 1;
@@ -291,8 +250,12 @@ const Caret = styled.div<IUsesOutline>`
   transform: translateY(-50%);
 `
 
-const ErrorBox = styled.span`
-  margin-top: 7px;
-  font-size: 12px;
-  color: ${theme.colors.error};
-`
+const getErrorOutline = (outlined?: boolean, error?: boolean) => {
+  if (error && outlined) {
+    return `border: 2px solid ${theme.colors.error}`
+  } else if (error && !outlined) {
+    return `border-bottom: 2px solid ${theme.colors.error}`
+  } else {
+    return
+  }
+}

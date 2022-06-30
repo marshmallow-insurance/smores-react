@@ -11,12 +11,13 @@ type Props = {
   children: React.ReactElement
   renderAsTitle?: boolean
   id: string
-  error: boolean
+  error?: boolean // nb this needs to be optional for legacy support - but we will want to enforce in  the future
   label?: string
   outlined: boolean
   value: string
   trailingIcon?: string
   errorMsg?: string
+  dropdownKey?: string // nb only used by dropdown component but required on content in that context
 }
 
 export const Field = ({
@@ -29,6 +30,7 @@ export const Field = ({
   value,
   trailingIcon,
   errorMsg,
+  dropdownKey,
 }: Props) => {
   return (
     <Container>
@@ -43,7 +45,12 @@ export const Field = ({
           )}
         </Box>
       )}
-      <Content value={value} outlined={outlined} error={error}>
+      <Content
+        value={value}
+        outlined={outlined}
+        error={error}
+        key={dropdownKey ?? null}
+      >
         {children}
       </Content>
       {trailingIcon && <Icon render={trailingIcon} color="subtext" />}
@@ -60,7 +67,7 @@ const Container = styled.div`
 `
 
 const Content = styled.div<{
-  error: boolean
+  error?: boolean
   outlined: boolean
   value?: string
 }>`

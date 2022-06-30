@@ -2,58 +2,26 @@ import React, { FC, useState } from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
-import { Text } from '../Text'
-import { Box } from '../Box'
 import { theme } from '../theme'
 import { Icon } from '../Icon'
+import { Field } from '../Field'
 
 export type SearchInputItem = {
   label: string
   value: string
 }
 
-interface IUsesOutline {
-  outlined?: boolean
-}
-
-interface IResultsContainer extends IUsesOutline {
-  show: boolean
-  absolutePosition: boolean
-}
-
-interface ISearchInput extends IUsesOutline {
-  id: string
-  name: string
-  value: string
-  selected: boolean
-  onKeyUp: (e: React.FormEvent<HTMLInputElement>) => void
-  onChange: (e: React.FormEvent<HTMLInputElement>) => void
-}
-
-interface IShowIcon extends IUsesOutline {
-  showIcon?: boolean
-  selected: boolean
-}
-
 export type SearchInputProps = {
-  /** ID, usually used for tests  */
   id: string
-  /** Name of the form control  */
   name?: string
-  /** label displayed above the input  */
   label?: string
-  /** Placeholder (initial state) */
   placeholder?: string
-  /** list of items for the search list */
   searchList: SearchInputItem[]
-  /** onFound listener */
   onFound: (element: string) => void
-  /** Displays search results in a relative position to other elements */
   resultsRelativePosition?: boolean
-  /** Displays border */
   outlined?: boolean
-  /** Displays search icon */
   showIcon?: boolean
+  renderAsTitle?: boolean
 }
 
 export const SearchInput: FC<SearchInputProps> = ({
@@ -66,6 +34,7 @@ export const SearchInput: FC<SearchInputProps> = ({
   resultsRelativePosition = false,
   outlined = false,
   showIcon = false,
+  renderAsTitle = false,
 }) => {
   const [active, setActive] = useState(false)
   const [list, setList] = useState<SearchInputItem[]>([])
@@ -104,59 +73,62 @@ export const SearchInput: FC<SearchInputProps> = ({
   }
 
   return (
-    <Container>
-      {label && (
-        <Box mb={outlined ? '4px' : '0px'}>
-          <Text tag="label" color="subtext" typo="label" htmlFor={id}>
-            {label}
-          </Text>
-        </Box>
-      )}
+    <Field
+      renderAsTitle={renderAsTitle}
+      id={id}
+      label={label}
+      outlined={outlined}
+      value={selectedResult}
+    >
+      <>
+        <StyledInputBox outlined={outlined} selected={selected}>
+          {showIcon && <SearchIcon size={24} render="search" color="subtext" />}
+          <StyledInput
+            id={id}
+            type="text"
+            name={name}
+            placeholder={placeholder}
+            autoComplete="off"
+            value={selectedResult}
+            onKeyUp={search}
+            onChange={updateInputState}
+            outlined={outlined}
+            selected={selected}
+          />
+        </StyledInputBox>
 
-      <InputBox outlined={outlined} selected={selected}>
-        {showIcon && <SearchIcon size={24} render="search" color="subtext" />}
-        <Input
-          id={id}
-          type="text"
-          name={name}
-          placeholder={placeholder}
-          autoComplete="off"
-          value={selectedResult}
-          onKeyUp={search}
-          onChange={updateInputState}
+        <StyledResultsContainer
+          show={active}
+          absolutePosition={!resultsRelativePosition}
           outlined={outlined}
-          selected={selected}
-        />
-      </InputBox>
-
-      <ResultsContainer
-        show={active}
-        absolutePosition={!resultsRelativePosition}
-        outlined={outlined}
-      >
-        <ResultsList outlined={outlined}>
-          {list.length ? (
-            list.map((el, i) => (
-              <li key={i} onClick={() => select(el)}>
-                {el.label}
-              </li>
-            ))
-          ) : (
-            <li>No results</li>
-          )}
-        </ResultsList>
-      </ResultsContainer>
-    </Container>
+        >
+          <ResultsList outlined={outlined}>
+            {list.length ? (
+              list.map((el, i) => (
+                <li key={i} onClick={() => select(el)}>
+                  {el.label}
+                </li>
+              ))
+            ) : (
+              <li>No results</li>
+            )}
+          </ResultsList>
+        </StyledResultsContainer>
+      </>
+    </Field>
   )
 }
 
-const Container = styled.div`
-  position: relative;
-  width: 100%;
-  background: ${theme.colors.white};
-`
+interface UsesOutline {
+  outlined?: boolean
+}
 
-const InputBox = styled.div<IShowIcon>`
+interface InputBox extends UsesOutline {
+  showIcon?: boolean
+  selected: boolean
+}
+
+const StyledInputBox = styled.div<InputBox>`
   display: flex;
   align-items: center;
   border-bottom: ${({ outlined }) =>
@@ -185,7 +157,16 @@ const InputBox = styled.div<IShowIcon>`
     outlined ? `${theme.colors.outline}` : `${theme.colors.secondary}`};
 `
 
-const Input = styled.input<ISearchInput>`
+interface Input extends UsesOutline {
+  id: string
+  name: string
+  value: string
+  selected: boolean
+  onKeyUp: (e: React.FormEvent<HTMLInputElement>) => void
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void
+}
+
+const StyledInput = styled.input<Input>`
   display: block;
   border: none;
   outline: none;
@@ -204,7 +185,12 @@ const Input = styled.input<ISearchInput>`
   `}
 `
 
-const ResultsContainer = styled.div<IResultsContainer>`
+interface ResultsContainer extends UsesOutline {
+  show: boolean
+  absolutePosition: boolean
+}
+
+const StyledResultsContainer = styled.div<ResultsContainer>`
   box-sizing: border-box;
   overflow-y: hidden;
   ${({ absolutePosition }) => absolutePosition && 'position: absolute;'}
@@ -217,7 +203,7 @@ const ResultsContainer = styled.div<IResultsContainer>`
   }
 `
 
-const ResultsList = styled.ul<IUsesOutline>`
+const ResultsList = styled.ul<UsesOutline>`
   position: relative;
   list-style: none;
   overflow-y: auto;
