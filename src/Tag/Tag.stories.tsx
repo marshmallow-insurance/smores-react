@@ -22,3 +22,11 @@ Default.argTypes = {
   as: { table: { disable: true } },
   forwardedAs: { table: { disable: true } },
 }
+
+export const BgGradient = Template.bind({})
+
+BgGradient.args = {
+  label: 'This is a gradient background tag',
+  bgGradient: true,
+  color: 'white',
+}
