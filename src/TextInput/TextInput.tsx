@@ -1,12 +1,8 @@
 import React, { FormEvent, RefObject, forwardRef, ForwardedRef } from 'react'
 import styled from 'styled-components'
-import { darken } from 'polished'
-
-import { Box } from '../Box'
-import { Text } from '../Text'
-import { Icon } from '../Icon'
 
 import { theme } from '../theme'
+import { Field } from '../Field'
 
 type DefaultProps = {
   /** ID, usually used for tests  */
@@ -57,7 +53,6 @@ export type TextInputProps = DefaultProps & TruncateProps
 export const TextInput = forwardRef(function TextInput(
   {
     id,
-    className = '',
     type = 'text',
     placeholder,
     label,
@@ -75,92 +70,46 @@ export const TextInput = forwardRef(function TextInput(
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   return (
-    <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
-      {label && (
-        <Box mb={outlined ? '4px' : '0px'}>
-          <Text tag="label" color="subtext" typo="label" htmlFor={id}>
-            {label}
-          </Text>
-        </Box>
-      )}
-
-      <Content value={value} outlined={outlined} error={error}>
-        <Input
-          disabled={disabled}
-          type={type}
-          id={id}
-          name={name}
-          ref={ref}
-          placeholder={placeholder}
-          value={value}
-          error={error}
-          outlined={outlined}
-          autoComplete="off"
-          onChange={(e: FormEvent<HTMLInputElement>) => {
-            onChange && onChange(e.currentTarget.value)
-            onInputChange && onInputChange(e)
-          }}
-          onBlur={(e) => {
-            onBlur && onBlur(e)
-          }}
-        />
-        {trailingIcon && <Icon render={trailingIcon} color="subtext" />}
-      </Content>
-      {error && <ErrorBox>{errorMsg}</ErrorBox>}
-    </Container>
+    <Field
+      id={id}
+      error={error}
+      label={label}
+      outlined={outlined}
+      value={value}
+      trailingIcon={trailingIcon}
+      errorMsg={errorMsg}
+    >
+      <StyledInput
+        disabled={disabled}
+        type={type}
+        id={id}
+        name={name}
+        ref={ref}
+        placeholder={placeholder}
+        value={value}
+        error={error}
+        outlined={outlined}
+        autoComplete="off"
+        onChange={(e: FormEvent<HTMLInputElement>) => {
+          onChange && onChange(e.currentTarget.value)
+          onInputChange && onInputChange(e)
+        }}
+        onBlur={(e) => {
+          onBlur && onBlur(e)
+        }}
+      />
+    </Field>
   )
 })
 
-interface IContainer {
-  hasLabel: boolean
-  hasError: boolean
-}
-
-const Container = styled.div<IContainer>`
-  display: flex;
-  flex-direction: column;
-  height: auto;
-`
-
-interface IInput {
+interface Input {
   error: boolean
   disabled?: boolean
   value?: string
   outlined?: boolean
 }
 
-const Content = styled.div<IInput>`
-  border-bottom: 1px solid;
-  border-color: ${({ error }) =>
-    theme.colors[`${error ? 'error' : 'outline'}`]};
-  background-color: ${({ outlined }) =>
-    outlined ? 'transparent' : theme.colors['white']};
-  display: flex;
-  height: 32px;
-
-  &:hover,
-  &:focus-within {
-    border-color: ${({ error }) =>
-      error ? theme.colors.error : darken(0.1, theme.colors.outline)};
-  }
-
-  ${({ outlined, error }) =>
-    outlined &&
-    `
-      border: 2px solid ${error ? theme.colors.error : theme.colors.outline};
-      border-radius: 8px;
-      height: auto;
-    `}
-
-  ${({ value }) =>
-    value &&
-    value != '' &&
-    `
-      border-color: ${theme.colors.outline};
-    `}
-`
-
-const Input = styled.input<IInput>`
+const StyledInput = styled.input<Input>`
   border: none;
   background-color: transparent;
   color: ${({ error }) => theme.colors[`${error ? 'error' : 'secondary'}`]};
@@ -174,10 +123,4 @@ const Input = styled.input<IInput>`
   &::placeholder {
     color: ${theme.colors.subtext};
   }
-`
-
-const ErrorBox = styled.span`
-  margin-top: 7px;
-  color: ${theme.colors.error};
-  font-size: 12px;
 `
