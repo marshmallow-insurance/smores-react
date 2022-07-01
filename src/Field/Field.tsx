@@ -13,7 +13,7 @@ type FieldProps = {
   renderAsTitle?: boolean
   className?: string
   id: string
-  error?: boolean // nb this needs to be optional for legacy support - but we will want to enforce in  the future
+  error?: boolean
   label?: string
   outlined?: boolean
   value: string
