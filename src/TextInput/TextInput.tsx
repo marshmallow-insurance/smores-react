@@ -48,8 +48,7 @@ export const TextInput = forwardRef(function TextInput(
     onChange,
     onInputChange,
     disabled = false,
-    required = false,
-    renderAsTitle = false,
+    ...fieldProps
   }: TextInputProps,
   ref: ForwardedRef<HTMLInputElement>,
 ) {
