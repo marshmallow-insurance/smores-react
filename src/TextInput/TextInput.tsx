@@ -43,7 +43,7 @@ export const TextInput = forwardRef(function TextInput(
   {
     id: idProp,
     type = 'text',
-    className = '',
+    className,
     placeholder,
     label,
     name,
