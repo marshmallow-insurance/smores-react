@@ -165,8 +165,6 @@ interface Input extends UsesOutline {
   name: string
   value: string
   selected: boolean
-  onKeyUp: (e: React.FormEvent<HTMLInputElement>) => void
-  onChange: (e: React.FormEvent<HTMLInputElement>) => void
 }
 
 const StyledInput = styled.input<Input>`
