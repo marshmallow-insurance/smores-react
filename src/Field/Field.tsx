@@ -52,7 +52,8 @@ export const Field = ({
             </Text>
           )}
           {required && (
-            <Text tag="label" color="error" typo="label">
+            <Text tag="label" color="error" typo="base">
+              {' '}
               *
             </Text>
           )}
