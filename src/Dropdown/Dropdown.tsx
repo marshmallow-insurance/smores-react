@@ -48,7 +48,7 @@ export const Dropdown = forwardRef(function Dropdown(
   {
     id: idProp,
     label,
-    className = '',
+    className,
     placeholder,
     name,
     value,
