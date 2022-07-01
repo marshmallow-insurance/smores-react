@@ -13,13 +13,14 @@ import { theme } from '../theme'
 import { Field } from '../Field'
 import { useUniqueId } from '../utils/id'
 import { CommonFieldTypes } from 'Field/types/commonFieldTypes'
+
 export type DropdownItem = {
   optionGroupLabel?: string
   label: string
   value: string
 }
 
-interface DefaultProps extends CommonFieldTypes {
+export interface Props extends CommonFieldTypes {
   ref?: RefObject<HTMLSelectElement>
   placeholder?: string
   name?: string
@@ -42,7 +43,7 @@ type TruncateProps =
       onInputChange: (e: FormEvent<HTMLSelectElement>) => void
     }
 
-export type DropdownProps = DefaultProps & TruncateProps
+export type DropdownProps = Props & TruncateProps
 
 export const Dropdown = forwardRef(function Dropdown(
   {
