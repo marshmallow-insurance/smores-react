@@ -35,15 +35,11 @@ export const TextInput = forwardRef(function TextInput(
   {
     id: idProp,
     type = 'text',
-    className,
     placeholder,
-    label,
     name,
     value,
     outlined = false,
     error = false,
-    errorMsg,
-    trailingIcon,
     onBlur,
     onChange,
     onInputChange,
@@ -56,16 +52,11 @@ export const TextInput = forwardRef(function TextInput(
 
   return (
     <Field
-      className={className}
-      renderAsTitle={renderAsTitle}
+      {...fieldProps}
       id={id}
       error={error}
-      label={label}
       outlined={outlined}
       value={value}
-      trailingIcon={trailingIcon}
-      errorMsg={errorMsg}
-      required={required}
     >
       <>
         <StyledInput

@@ -48,8 +48,6 @@ export type DropdownProps = Props & TruncateProps
 export const Dropdown = forwardRef(function Dropdown(
   {
     id: idProp,
-    label,
-    className,
     placeholder,
     name,
     value,
@@ -59,12 +57,11 @@ export const Dropdown = forwardRef(function Dropdown(
     onSelect,
     outlined = false,
     error = false,
-    errorMsg = '',
     onInputChange,
     onBlur,
     required = true,
-    renderAsTitle = false,
-    showRequiredAsterisk = false,
+
+    ...fieldProps
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
@@ -100,17 +97,13 @@ export const Dropdown = forwardRef(function Dropdown(
 
   return (
     <Field
+      {...fieldProps}
       showCaret
-      className={className}
       dropdownKey={key}
-      renderAsTitle={renderAsTitle}
       id={id}
       error={error}
-      label={label}
       outlined={outlined}
       value={value!}
-      errorMsg={errorMsg}
-      required={showRequiredAsterisk}
     >
       <>
         <StyledSelect

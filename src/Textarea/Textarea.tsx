@@ -40,37 +40,23 @@ export const Textarea = forwardRef(function Textarea(
   {
     id: idProp,
     name,
-    className = '',
-    label,
     value,
     onChange,
     onInputChange,
     resize = 'none',
     error = false,
-    errorMsg,
     placeholder,
     disabled = false,
     maxLength,
     onBlur,
     rows = 4,
-    required = false,
-    renderAsTitle = false,
+    ...fieldProps
   }: TextareaProps,
   ref: ForwardedRef<HTMLTextAreaElement>,
 ) {
   const id = useUniqueId(idProp)
   return (
-    <Field
-      className={className}
-      renderAsTitle={renderAsTitle}
-      id={id}
-      error={error}
-      label={label}
-      value={value}
-      errorMsg={errorMsg}
-      required={required}
-      fullHeight
-    >
+    <Field {...fieldProps} id={id} error={error} value={value} fullHeight>
       <StyledTextArea
         error={error}
         id={id}
