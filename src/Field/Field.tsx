@@ -39,7 +39,7 @@ export const Field = ({
   required,
   showCaret,
   fullHeight = false,
-}: Props) => {
+}: FieldProps) => {
   return (
     <Container className={className}>
       {label && (
