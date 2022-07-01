@@ -84,7 +84,6 @@ export const Textarea = forwardRef(function Textarea(
           onInputChange && onInputChange(e)
         }}
         maxLength={maxLength}
-        ref={ref}
         onBlur={(e) => {
           onBlur && onBlur(e)
         }}
