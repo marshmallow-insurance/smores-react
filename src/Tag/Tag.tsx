@@ -60,7 +60,7 @@ const Wrapper = styled.div<WrapperProps>`
     borderColor && `1px solid ${theme.colors[borderColor]}`};
   box-sizing: border-box;
   display: inline-flex;
-  height: '23px';
+  height: 23px;
   padding: 5px 12px;
 `
 
