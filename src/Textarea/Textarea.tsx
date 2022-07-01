@@ -80,13 +80,11 @@ export const Textarea = forwardRef(function Textarea(
         placeholder={placeholder}
         value={value}
         onChange={(e: FormEvent<HTMLTextAreaElement>) => {
-          onChange && onChange(e.currentTarget.value)
-          onInputChange && onInputChange(e)
+          onChange?.(e.currentTarget.value)
+          onInputChange?.(e)
         }}
         maxLength={maxLength}
-        onBlur={(e) => {
-          onBlur && onBlur(e)
-        }}
+        onBlur={onBlur}
         rows={rows}
       />
     </Field>
