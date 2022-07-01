@@ -12,30 +12,23 @@ import styled from 'styled-components'
 import { theme } from '../theme'
 import { Field } from '../Field'
 import { useUniqueId } from '../utils/id'
+import { CommonFieldTypes } from 'Field/types/commonFieldTypes'
 export type DropdownItem = {
   optionGroupLabel?: string
   label: string
   value: string
 }
 
-type DefaultProps = {
-  id?: string
-  className?: string
+interface DefaultProps extends CommonFieldTypes {
   ref?: RefObject<HTMLSelectElement>
   placeholder?: string
-  label?: string
   name?: string
   value?: string
   defaultValue?: string
-  error?: boolean
-  errorMsg?: string
   disabled?: boolean
   list: DropdownItem[]
   onSelect: (element: string) => void
-  outlined?: boolean
   onBlur?: (e: FormEvent<HTMLSelectElement>) => void
-  required?: boolean
-  renderAsTitle?: boolean
   showRequiredAsterisk?: boolean
 }
 

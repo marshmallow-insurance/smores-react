@@ -6,24 +6,21 @@ import { theme } from '../theme'
 import { Icon } from '../Icon'
 import { Field } from '../Field'
 import { useUniqueId } from '../utils/id'
+import { CommonFieldTypes } from 'Field/types/commonFieldTypes'
 
 export type SearchInputItem = {
   label: string
   value: string
 }
 
-export type SearchInputProps = {
-  id?: string
+export interface SearchInputProps extends CommonFieldTypes {
   name?: string
-  className?: string
   label?: string
   placeholder?: string
   searchList: SearchInputItem[]
   onFound: (element: string) => void
   resultsRelativePosition?: boolean
-  outlined?: boolean
   showIcon?: boolean
-  renderAsTitle?: boolean
 }
 
 export const SearchInput: FC<SearchInputProps> = ({

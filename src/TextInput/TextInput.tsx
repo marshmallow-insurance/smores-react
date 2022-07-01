@@ -4,24 +4,17 @@ import styled from 'styled-components'
 import { theme } from '../theme'
 import { Field } from '../Field'
 import { useUniqueId } from '../utils/id'
+import { CommonFieldTypes } from 'Field/types/commonFieldTypes'
 
-type Props = {
-  id: string
-  className?: string
+interface Props extends CommonFieldTypes {
   ref?: RefObject<HTMLInputElement>
   type?: 'text' | 'email' | 'password' | 'time' | 'date'
-  outlined?: boolean
   placeholder: string
-  label?: string
   name?: string
   value: string
-  error?: boolean
-  errorMsg?: string
   onBlur?: (e: FormEvent<HTMLInputElement>) => void
   trailingIcon?: string
   disabled?: boolean
-  renderAsTitle?: boolean
-  required?: boolean
 }
 
 /** on change or on input required */

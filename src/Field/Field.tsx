@@ -6,21 +6,14 @@ import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { Box } from '../Box'
 import { theme } from '../theme'
+import { CommonFieldTypes } from './types/commonFieldTypes'
 
-type FieldProps = {
+interface FieldProps extends CommonFieldTypes {
   children: React.ReactElement
   showCaret?: boolean
-  renderAsTitle?: boolean
-  className?: string
-  id: string
-  error?: boolean
-  label?: string
-  outlined?: boolean
   value: string
   trailingIcon?: string
-  errorMsg?: string
   dropdownKey?: string // nb only used by dropdown component but required on content in that context
-  required?: boolean
   fullHeight?: boolean // used to make text areas full size
 }
 
