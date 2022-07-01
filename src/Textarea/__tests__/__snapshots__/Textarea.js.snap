@@ -21,6 +21,10 @@ exports[`disabled 1`] = `
   color: #636768;
 }
 
+.c1 {
+  margin-bottom: 0px;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -29,13 +33,26 @@ exports[`disabled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c1 {
-  margin-bottom: 4px;
+  position: relative;
 }
 
 .c3 {
+  position: relative;
+  border-color: #D2D2D2;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.c3:hover,
+.c3:focus-within {
+  border-color: #b9b9b9;
+}
+
+.c4 {
   font-size: 16px;
   line-height: 20px;
   background: #FFFFFF;
@@ -52,9 +69,9 @@ exports[`disabled 1`] = `
   outline: none;
 }
 
-.c3:hover,
-.c3:focus,
-.c3:focus-visible {
+.c4:hover,
+.c4:focus,
+.c4:focus-visible {
   border-color: #b9b9b9;
 }
 
@@ -66,7 +83,6 @@ exports[`disabled 1`] = `
 
 <div
   class="c0"
-  direction="column"
 >
   <div
     class="c1"
@@ -82,11 +98,11 @@ exports[`disabled 1`] = `
     </label>
   </div>
   <div
-    class="c0"
-    direction="column"
+    class="c3"
+    value=""
   >
     <textarea
-      class="c3"
+      class="c4"
       disabled=""
       id="textarea_id"
       placeholder="Placeholder text!"
@@ -117,6 +133,10 @@ exports[`renders 1`] = `
   color: #636768;
 }
 
+.c1 {
+  margin-bottom: 0px;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -125,13 +145,26 @@ exports[`renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c1 {
-  margin-bottom: 4px;
+  position: relative;
 }
 
 .c3 {
+  position: relative;
+  border-color: #D2D2D2;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.c3:hover,
+.c3:focus-within {
+  border-color: #b9b9b9;
+}
+
+.c4 {
   font-size: 16px;
   line-height: 20px;
   background: #FFFFFF;
@@ -148,9 +181,9 @@ exports[`renders 1`] = `
   outline: none;
 }
 
-.c3:hover,
-.c3:focus,
-.c3:focus-visible {
+.c4:hover,
+.c4:focus,
+.c4:focus-visible {
   border-color: #b9b9b9;
 }
 
@@ -162,7 +195,6 @@ exports[`renders 1`] = `
 
 <div
   class="c0 Textarea"
-  direction="column"
 >
   <div
     class="c1"
@@ -178,11 +210,11 @@ exports[`renders 1`] = `
     </label>
   </div>
   <div
-    class="c0"
-    direction="column"
+    class="c3"
+    value=""
   >
     <textarea
-      class="c3"
+      class="c4"
       id="textarea_id"
       placeholder="Placeholder text!"
       rows="4"
@@ -212,6 +244,10 @@ exports[`renders with error 1`] = `
   color: #636768;
 }
 
+.c1 {
+  margin-bottom: 0px;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -220,13 +256,32 @@ exports[`renders with error 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c1 {
-  margin-bottom: 4px;
+  position: relative;
 }
 
 .c3 {
+  position: relative;
+  border-color: #D82C2C;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.c3:hover,
+.c3:focus-within {
+  border-color: #D82C2C;
+}
+
+.c5 {
+  margin-top: 7px;
+  color: #D82C2C;
+  font-size: 12px;
+}
+
+.c4 {
   font-size: 16px;
   line-height: 20px;
   background: #FFFFFF;
@@ -243,16 +298,10 @@ exports[`renders with error 1`] = `
   outline: none;
 }
 
-.c3:hover,
-.c3:focus,
-.c3:focus-visible {
+.c4:hover,
+.c4:focus,
+.c4:focus-visible {
   border-color: #D82C2C;
-}
-
-.c4 {
-  margin-top: 7px;
-  font-size: 12px;
-  color: #D82C2C;
 }
 
 @media (min-width:768px) {
@@ -263,7 +312,6 @@ exports[`renders with error 1`] = `
 
 <div
   class="c0"
-  direction="column"
 >
   <div
     class="c1"
@@ -279,18 +327,18 @@ exports[`renders with error 1`] = `
     </label>
   </div>
   <div
-    class="c0"
-    direction="column"
+    class="c3"
+    value=""
   >
     <textarea
-      class="c3"
+      class="c4"
       id="textarea_id"
       placeholder="Placeholder text!"
       rows="4"
     />
   </div>
   <span
-    class="c4"
+    class="c5"
   >
     Something really quite terrible has gone wrong here!
   </span>

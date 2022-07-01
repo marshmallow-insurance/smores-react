@@ -9,13 +9,13 @@ exports[`renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: auto;
+  position: relative;
 }
 
 .c1 {
-  border-bottom: 1px solid;
+  position: relative;
   border-color: #D2D2D2;
-  background-color: #FFFFFF;
+  background-color: transparent;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29,7 +29,8 @@ exports[`renders 1`] = `
 }
 
 .c2 {
-  border: none;
+  border-bottom: 1px solid;
+  border-color: #D2D2D2;
   background-color: transparent;
   color: #112035;
   font-size: 16px;
