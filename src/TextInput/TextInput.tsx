@@ -1,4 +1,4 @@
-import React, { FormEvent, forwardRef, ForwardedRef, RefObject } from 'react'
+import React, { FormEvent, forwardRef, ForwardedRef } from 'react'
 import styled from 'styled-components'
 
 import { theme } from '../theme'
@@ -7,7 +7,6 @@ import { useUniqueId } from '../utils/id'
 import { CommonFieldTypes } from 'Field/types/commonFieldTypes'
 
 interface Props extends CommonFieldTypes {
-  ref?: RefObject<HTMLInputElement>
   type?: 'text' | 'email' | 'password' | 'time' | 'date'
   placeholder: string
   name?: string
