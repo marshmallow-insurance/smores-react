@@ -1,3 +1,7 @@
+## [2.1.28] - 2022-07-01
+### Changed
+- Fix tag height
+
 ## [2.1.27] - 2022-06-30
 ### Added
 - BgGradient prop for Tag component
@@ -358,6 +362,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.1.28]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.27...v2.1.28
 [2.1.27]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.26...v2.1.27
 [2.1.26]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.25...v2.1.26
 [2.1.25]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.24...v2.1.25
