@@ -85,9 +85,7 @@ export const Textarea = forwardRef(function Textarea(
         }}
         maxLength={maxLength}
         ref={ref}
-        onBlur={(e) => {
-          onBlur && onBlur(e)
-        }}
+        onBlur={onBlur}
         rows={rows}
       />
     </Field>
