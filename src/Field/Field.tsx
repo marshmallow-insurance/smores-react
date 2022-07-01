@@ -20,7 +20,7 @@ type Props = {
   trailingIcon?: string
   errorMsg?: string
   dropdownKey?: string // nb only used by dropdown component but required on content in that context
-  required?: boolean // also optional for now to maintain backwards compaibility
+  required?: boolean
   fullHeight?: boolean // used to make text areas full size
 }
 
