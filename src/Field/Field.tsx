@@ -7,7 +7,7 @@ import { Text } from '../Text'
 import { Box } from '../Box'
 import { theme } from '../theme'
 
-type Props = {
+type FieldProps = {
   children: React.ReactElement
   showCaret?: boolean
   renderAsTitle?: boolean
