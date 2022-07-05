@@ -4,10 +4,6 @@
 ### Changed
 - Update the SupportMessage component description type to accept React elements
 - Fix layout issue with the required asterisk in the Confirmation component 
-## [2.2.0] - 2022-07-01
-### Changed
-- Add optional required prop and asterisk to all input components
-
 ## [2.1.28] - 2022-07-01
 ### Changed
 - Fix tag height
