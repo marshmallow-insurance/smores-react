@@ -4,10 +4,6 @@
 ### Changed
 - Update the SupportMessage component description type to accept React elements
 - Fix layout issue with the required asterisk in the Confirmation component 
-## [2.2.0] - 2022-07-01
-### Changed
-- Add optional required prop and asterisk to all input components
-
 ## [2.1.28] - 2022-07-01
 ### Changed
 - Fix tag height
@@ -371,7 +367,7 @@
 
 ### Changed
 - Updated gap and styles on Row component
-[2.2.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.28...v2.3.0
+[2.3.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.28...v2.3.0
 [2.1.28]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.27...v2.1.28
 [2.1.27]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.26...v2.1.27
 [2.1.26]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.25...v2.1.26
