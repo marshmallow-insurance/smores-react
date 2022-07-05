@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react'
 import 'jest-styled-components'
 
 import { SupportMessage, SupportMessageProps } from './SupportMessage'
-import { Text } from '../Text'
 import { Link } from '../Link'
 
 const supportMessageProps: SupportMessageProps = {
@@ -26,12 +25,11 @@ describe('SupportMessage component', () => {
     expect(await findByText('Info title')).toBeInTheDocument()
   })
 
-  it('Renders a Link within a Text component', () => {
+  it('Renders a Link within the description', () => {
     const { container } = render(
-      <Text tag="p">
-        Some text rendered using the Text component and a{' '}
-        <Link href={''}>Link</Link>{' '}
-      </Text>,
+      <>
+        Some text rendered with a <Link href={''}>Link</Link>{' '}
+      </>,
     )
     expect(container.firstChild).toMatchSnapshot()
   })

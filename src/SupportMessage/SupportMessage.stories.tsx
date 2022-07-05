@@ -1,6 +1,5 @@
 import React from 'react'
 import { SupportMessage, SupportMessageProps } from './SupportMessage'
-import { Text } from '../Text'
 import { Link } from '../Link'
 import { CollectionPage } from './Collection'
 
@@ -27,12 +26,11 @@ export const WithCustomDescription = Template.bind({})
 
 WithCustomDescription.args = {
   type: 'info',
-  title: 'A SupportMessage using the Text component',
+  title: 'A SupportMessage using the Link component',
   description: (
-    <Text tag="p">
-      Some text rendered using the Text component and a{' '}
-      <Link href={''}>Link</Link>
-    </Text>
+    <>
+      Some text rendered using a <Link href={''}>Link</Link>
+    </>
   ),
 }
 
