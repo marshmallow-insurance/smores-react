@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, ReactElement } from 'react'
 import styled, { css } from 'styled-components'
 import { lighten } from 'polished'
 
@@ -39,7 +39,7 @@ type SupportMessageType = 'info' | 'info-outline' | 'alert' | 'warning'
 
 export type SupportMessageProps = {
   className?: string
-  description: string
+  description: string | ReactElement
   type: SupportMessageType
   title?: string
 }
