@@ -1,5 +1,6 @@
 import React from 'react'
 import { SupportMessage, SupportMessageProps } from './SupportMessage'
+import { Text } from '../Text'
 import { CollectionPage } from './Collection'
 
 export default {
@@ -20,5 +21,13 @@ const supportMessageArgs: SupportMessageProps = {
 }
 
 Default.args = supportMessageArgs
+
+export const WithComponent = Template.bind({})
+
+WithComponent.args = {
+  type: 'info',
+  title: 'A SupportMessage using the Text component',
+  description: <Text tag="p">Some example text</Text>,
+}
 
 export const Collection = CollectionPage.bind({})

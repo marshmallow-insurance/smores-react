@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react'
 import 'jest-styled-components'
 
 import { SupportMessage, SupportMessageProps } from './SupportMessage'
+import { Text } from '../Text'
 
 const supportMessageProps: SupportMessageProps = {
   description: 'Type info support message',
@@ -22,5 +23,20 @@ describe('SupportMessage component', () => {
 
     expect(await findByText('Type info support message')).toBeInTheDocument()
     expect(await findByText('Info title')).toBeInTheDocument()
+  })
+
+  it('Text component as description renders correctly', async () => {
+    render(
+      <SupportMessage
+        type="info"
+        description={
+          <Text tag="p">Some text rendered using the Text component</Text>
+        }
+      ></SupportMessage>,
+    )
+
+    expect(
+      await findByText('Some text rendered using the Text component'),
+    ).toBeInTheDocument()
   })
 })
