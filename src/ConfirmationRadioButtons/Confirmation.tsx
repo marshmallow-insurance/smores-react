@@ -38,14 +38,12 @@ export const Confirmation: FC<ConfirmationProps> = ({
     <ConfirmationWrapper>
       {(label || sublabel) && (
         <TextWrapper>
-          <LabelWrapper>
-            {label && <SectionHeadingText tag="h3">{label}</SectionHeadingText>}
-            {required && (
-              <Text tag="p" typo="base-small" color="error">
-                *
-              </Text>
-            )}
-          </LabelWrapper>
+          {label && (
+            <SectionHeadingText tag="h3">
+              {label}
+              {required && <Asterisk>*</Asterisk>}
+            </SectionHeadingText>
+          )}
           {sublabel && (
             <Text tag="p" typo="base-small" color="subtext">
               {sublabel}
@@ -138,6 +136,7 @@ const TextWrapper = styled.div`
   flex-direction: column;
 `
 
-const LabelWrapper = styled.div`
-  display: flex;
+const Asterisk = styled.span`
+  font-size: 14px;
+  color: ${theme.colors.error};
 `

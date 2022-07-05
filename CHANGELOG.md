@@ -1,3 +1,7 @@
+## [2.2.0] - 2022-07-05
+- Update the SupportMessage component description type to accept React elements
+- Fix layout issue with the required asterisk in the Confirmation component 
+- Adds Field and Fieldset components
 ## [2.1.28] - 2022-07-01
 ### Changed
 - Fix tag height

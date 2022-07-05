@@ -73,3 +73,14 @@ Required.args = {
   checked: undefined,
   required: true,
 }
+
+export const RequiredWithLongLabel = Template.bind({})
+
+RequiredWithLongLabel.args = {
+  id: 'radioButton',
+  label:
+    'This is a really long label to test the placement of the required asterisk. Do you like ice cream, pie, marshmallows, smores, cupcakes, cookies, and muffins?',
+  onChange: noop,
+  checked: undefined,
+  required: true,
+}
