@@ -26,7 +26,7 @@ describe('SupportMessage component', () => {
     expect(await findByText('Info title')).toBeInTheDocument()
   })
 
-  it('Renders a Link within a Trext component', () => {
+  it('Renders a Link within a Text component', () => {
     const { container } = render(
       <Text tag="p">
         Some text rendered using the Text component and a{' '}

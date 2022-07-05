@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SupportMessage component Renders a Link within a Trext component 1`] = `
+exports[`SupportMessage component Renders a Link within a Text component 1`] = `
 .c2 {
   outline: 0;
   display: -webkit-inline-box;

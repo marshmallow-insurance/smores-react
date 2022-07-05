@@ -23,9 +23,9 @@ const supportMessageArgs: SupportMessageProps = {
 
 Default.args = supportMessageArgs
 
-export const WithComponent = Template.bind({})
+export const WithCustomDescription = Template.bind({})
 
-WithComponent.args = {
+WithCustomDescription.args = {
   type: 'info',
   title: 'A SupportMessage using the Text component',
   description: (
