@@ -1,5 +1,6 @@
 import React from 'react'
 import { SupportMessage, SupportMessageProps } from './SupportMessage'
+import { Link } from '../Link'
 import { CollectionPage } from './Collection'
 
 export default {
@@ -20,5 +21,17 @@ const supportMessageArgs: SupportMessageProps = {
 }
 
 Default.args = supportMessageArgs
+
+export const WithCustomDescription = Template.bind({})
+
+WithCustomDescription.args = {
+  type: 'info',
+  title: 'A SupportMessage using the Link component',
+  description: (
+    <>
+      Some text rendered using a <Link href={''}>Link</Link>
+    </>
+  ),
+}
 
 export const Collection = CollectionPage.bind({})
