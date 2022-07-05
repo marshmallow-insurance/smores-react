@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SupportMessage component Renders a Link within a Trext component 1`] = `
+.c2 {
+  outline: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #FF4E75;
+  background: none;
+  cursor: pointer;
+}
+
+.c2:focus-visible {
+  outline: 2px solid #112035;
+  outline-offset: 2px;
+}
+
+.c2:hover {
+  color: #ff1b4d;
+}
+
+.c2:hover path {
+  fill: #ff1b4d;
+}
+
+.c2:active {
+  color: #112035;
+}
+
+.c2:active path {
+  fill: #112035;
+}
+
+.c0 {
+  font-size: 14px;
+  line-height: 23px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  color: #112035;
+}
+
+.c0 .c1 {
+  color: #112035;
+}
+
+.c0 .c1 path {
+  fill: #112035;
+}
+
+.c0 .c1:hover {
+  color: #05090e;
+}
+
+.c0 .c1:hover path {
+  fill: #05090e;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+<p
+  class="c0"
+  color="secondary"
+  cursor="inherit"
+  title=""
+>
+  Some text rendered using the Text component and a
+   
+  <a
+    class="c1 c2"
+    href=""
+  >
+    Link
+  </a>
+   
+</p>
+`;

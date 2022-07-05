@@ -4,6 +4,7 @@ import 'jest-styled-components'
 
 import { SupportMessage, SupportMessageProps } from './SupportMessage'
 import { Text } from '../Text'
+import { Link } from '../Link'
 
 const supportMessageProps: SupportMessageProps = {
   description: 'Type info support message',
@@ -25,18 +26,13 @@ describe('SupportMessage component', () => {
     expect(await findByText('Info title')).toBeInTheDocument()
   })
 
-  it('Text component as description renders correctly', async () => {
-    render(
-      <SupportMessage
-        type="info"
-        description={
-          <Text tag="p">Some text rendered using the Text component</Text>
-        }
-      ></SupportMessage>,
+  it('Renders a Link within a Trext component', () => {
+    const { container } = render(
+      <Text tag="p">
+        Some text rendered using the Text component and a{' '}
+        <Link href={''}>Link</Link>{' '}
+      </Text>,
     )
-
-    expect(
-      await findByText('Some text rendered using the Text component'),
-    ).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

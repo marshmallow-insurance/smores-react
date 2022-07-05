@@ -1,6 +1,7 @@
 import React from 'react'
 import { SupportMessage, SupportMessageProps } from './SupportMessage'
 import { Text } from '../Text'
+import { Link } from '../Link'
 import { CollectionPage } from './Collection'
 
 export default {
@@ -27,7 +28,12 @@ export const WithComponent = Template.bind({})
 WithComponent.args = {
   type: 'info',
   title: 'A SupportMessage using the Text component',
-  description: <Text tag="p">Some example text</Text>,
+  description: (
+    <Text tag="p">
+      Some text rendered using the Text component and a{' '}
+      <Link href={''}>Link</Link>
+    </Text>
+  ),
 }
 
 export const Collection = CollectionPage.bind({})
