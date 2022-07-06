@@ -29,6 +29,7 @@ exports[`renders 1`] = `
 }
 
 .c2 {
+  border: none;
   border-bottom: 1px solid;
   border-color: #D2D2D2;
   background-color: transparent;
@@ -39,6 +40,11 @@ exports[`renders 1`] = `
   cursor: initial;
   opacity: 1;
   padding: 1px 2px;
+}
+
+.c2:hover,
+.c2:focus-within {
+  border-color: #b9b9b9;
 }
 
 .c2::-webkit-input-placeholder {

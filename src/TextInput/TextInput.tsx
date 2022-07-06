@@ -1,5 +1,6 @@
 import React, { FormEvent, forwardRef, ForwardedRef } from 'react'
 import styled from 'styled-components'
+import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { Field, CommonFieldTypes } from '../Field'
@@ -90,6 +91,7 @@ interface Input {
 }
 
 const StyledInput = styled.input<Input>`
+  border: none;
   border-bottom: 1px solid;
   border-color: ${({ error }) =>
     theme.colors[`${error ? 'error' : 'outline'}`]};
@@ -101,6 +103,18 @@ const StyledInput = styled.input<Input>`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'initial')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   padding: ${({ outlined }) => (outlined ? '17px 14px' : '1px 2px')};
+  &:hover,
+  &:focus-within {
+    border-color: ${({ error }) =>
+      error ? theme.colors.error : darken(0.1, theme.colors.outline)};
+  }
+
+  ${({ outlined }) =>
+    outlined &&
+    `
+      border-radius: 8px;
+      height: auto;
+    `}
 
   &::placeholder {
     color: ${theme.colors.subtext};
