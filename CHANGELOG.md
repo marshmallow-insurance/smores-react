@@ -1,3 +1,7 @@
+## [2.3.2] - 2022-07-06
+### Changed 
+- Fixed render of text input component 
+
 ## [2.3.1] - 2022-07-06
 ### Changed
 - Fixed CommonFieldTypes imports
