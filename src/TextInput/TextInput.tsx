@@ -1,5 +1,6 @@
 import React, { FormEvent, forwardRef, ForwardedRef } from 'react'
 import styled from 'styled-components'
+import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { Field } from '../Field'
@@ -8,6 +9,7 @@ import { CommonFieldTypes } from 'Field/types/commonFieldTypes'
 
 interface Props extends CommonFieldTypes {
   type?: 'text' | 'email' | 'password' | 'time' | 'date'
+  className?: string
   placeholder: string
   name?: string
   value: string
@@ -36,6 +38,7 @@ export const TextInput = forwardRef(function TextInput(
     id: idProp,
     type = 'text',
     placeholder,
+    className,
     name,
     value,
     outlined = false,
@@ -53,6 +56,7 @@ export const TextInput = forwardRef(function TextInput(
   return (
     <Field
       {...fieldProps}
+      className={className}
       id={id}
       error={error}
       outlined={outlined}
@@ -74,7 +78,7 @@ export const TextInput = forwardRef(function TextInput(
             onChange && onChange(e.currentTarget.value)
             onInputChange && onInputChange(e)
           }}
-          onBlur={(e) => {
+          onBlur={(e: any) => {
             onBlur && onBlur(e)
           }}
         />
@@ -91,6 +95,7 @@ interface Input {
 }
 
 const StyledInput = styled.input<Input>`
+  border: none;
   border-bottom: 1px solid;
   border-color: ${({ error }) =>
     theme.colors[`${error ? 'error' : 'outline'}`]};
@@ -102,6 +107,18 @@ const StyledInput = styled.input<Input>`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'initial')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   padding: ${({ outlined }) => (outlined ? '17px 14px' : '1px 2px')};
+  &:hover,
+  &:focus-within {
+    border-color: ${({ error }) =>
+      error ? theme.colors.error : darken(0.1, theme.colors.outline)};
+  }
+
+  ${({ outlined }) =>
+    outlined &&
+    `
+      border-radius: 8px;
+      height: auto;
+    `}
 
   &::placeholder {
     color: ${theme.colors.subtext};
