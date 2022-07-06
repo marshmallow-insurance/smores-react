@@ -1,3 +1,6 @@
+## [2.3.1] - 2022-07-06
+### Changed
+- Fixed CommonFieldTypes imports
 ## [2.3.0] - 2022-07-05
 ### Added
 - Adds Field and Fieldset components
@@ -367,6 +370,8 @@
 
 ### Changed
 - Updated gap and styles on Row component
+
+[2.3.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.0...v2.3.1
 [2.3.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.28...v2.3.0
 [2.1.28]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.27...v2.1.28
 [2.1.27]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.26...v2.1.27

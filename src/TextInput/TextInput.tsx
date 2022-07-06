@@ -2,9 +2,8 @@ import React, { FormEvent, forwardRef, ForwardedRef } from 'react'
 import styled from 'styled-components'
 
 import { theme } from '../theme'
-import { Field } from '../Field'
+import { Field, CommonFieldTypes } from '../Field'
 import { useUniqueId } from '../utils/id'
-import { CommonFieldTypes } from 'Field/types/commonFieldTypes'
 
 interface Props extends CommonFieldTypes {
   type?: 'text' | 'email' | 'password' | 'time' | 'date'
