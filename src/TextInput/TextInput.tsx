@@ -9,7 +9,6 @@ import { CommonFieldTypes } from 'Field/types/commonFieldTypes'
 
 interface Props extends CommonFieldTypes {
   type?: 'text' | 'email' | 'password' | 'time' | 'date'
-  className?: string
   placeholder: string
   name?: string
   value: string
@@ -38,7 +37,6 @@ export const TextInput = forwardRef(function TextInput(
     id: idProp,
     type = 'text',
     placeholder,
-    className,
     name,
     value,
     outlined = false,
@@ -56,7 +54,6 @@ export const TextInput = forwardRef(function TextInput(
   return (
     <Field
       {...fieldProps}
-      className={className}
       id={id}
       error={error}
       outlined={outlined}
