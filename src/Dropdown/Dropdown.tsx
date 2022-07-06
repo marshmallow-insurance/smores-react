@@ -10,9 +10,8 @@ import { darken } from 'polished'
 import styled from 'styled-components'
 
 import { theme } from '../theme'
-import { Field } from '../Field'
+import { Field, CommonFieldTypes } from '../Field'
 import { useUniqueId } from '../utils/id'
-import { CommonFieldTypes } from 'Field/types/commonFieldTypes'
 
 export type DropdownItem = {
   optionGroupLabel?: string
