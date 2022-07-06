@@ -75,7 +75,7 @@ export const TextInput = forwardRef(function TextInput(
             onChange && onChange(e.currentTarget.value)
             onInputChange && onInputChange(e)
           }}
-          onBlur={(e: any) => {
+          onBlur={(e) => {
             onBlur && onBlur(e)
           }}
         />
