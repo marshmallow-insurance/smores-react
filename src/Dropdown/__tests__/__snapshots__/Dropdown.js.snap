@@ -107,7 +107,6 @@ exports[`rendersDropdown 1`] = `
     <select
       class="c2"
       id="MM_SMORES_0"
-      required=""
     >
       <option
         hidden=""
@@ -283,7 +282,6 @@ exports[`rendersDropdownWithGroups 1`] = `
     <select
       class="c2"
       id="MM_SMORES_1"
-      required=""
     >
       <optgroup>
         <option

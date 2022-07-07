@@ -237,5 +237,5 @@ WithRequiredAsterisk.args = {
   placeholder: 'Select Day',
   outlined: true,
   label: 'Do you like smores?',
-  showRequiredAsterisk: true,
+  required: true,
 }

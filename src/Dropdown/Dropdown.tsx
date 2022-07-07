@@ -29,7 +29,6 @@ export interface Props extends CommonFieldTypes {
   list: DropdownItem[]
   onSelect: (element: string) => void
   onBlur?: (e: FormEvent<HTMLSelectElement>) => void
-  showRequiredAsterisk?: boolean
 }
 
 type TruncateProps =
@@ -58,8 +57,6 @@ export const Dropdown = forwardRef(function Dropdown(
     error = false,
     onInputChange,
     onBlur,
-    required = true,
-
     ...fieldProps
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
@@ -119,7 +116,8 @@ export const Dropdown = forwardRef(function Dropdown(
             onSelect && onSelect(e.currentTarget.value)
             onInputChange && onInputChange(e)
           }}
-          required={required}
+          // this turns off the default html validation message
+          required={false}
           outlined={outlined}
           error={error}
           ref={ref}
