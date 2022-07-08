@@ -42,12 +42,7 @@ export const Field = ({
           ) : (
             <Text tag="label" color="subtext" typo="label" htmlFor={id}>
               {label}
-            </Text>
-          )}
-          {required && (
-            <Text tag="label" color="error" typo="base">
-              {' '}
-              *
+              {required && <Asterisk>*</Asterisk>}
             </Text>
           )}
         </Box>
@@ -132,4 +127,9 @@ const Caret = styled.div<{ outlined: boolean }>`
   right: ${({ outlined }) => (outlined ? '15px' : '0')};
   pointer-events: none;
   transform: translateY(-50%);
+`
+
+const Asterisk = styled.span`
+  font-size: 14px;
+  color: ${theme.colors.error};
 `
