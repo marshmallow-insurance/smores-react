@@ -116,8 +116,6 @@ export const Dropdown = forwardRef(function Dropdown(
             onSelect && onSelect(e.currentTarget.value)
             onInputChange && onInputChange(e)
           }}
-          // this turns off the default html validation message
-          required={false}
           outlined={outlined}
           error={error}
           ref={ref}
