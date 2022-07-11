@@ -381,6 +381,7 @@
 
 ### Changed
 - Updated gap and styles on Row component
+[2.3.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.1...v2.3.4
 [2.3.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.1...v2.3.3
 [2.3.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.0...v2.3.1
 [2.3.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1.28...v2.3.0
