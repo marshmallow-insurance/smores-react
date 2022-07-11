@@ -109,6 +109,20 @@ const StyledInput = styled.input<Input>`
       error ? theme.colors.error : darken(0.1, theme.colors.outline)};
   }
 
+  ${({ outlined, error }) =>
+    outlined &&
+    `
+      border: 2px solid ${error ? theme.colors.error : theme.colors.outline};
+      border-radius: 8px;
+      height: auto;
+    `}
+  ${({ value }) =>
+    value &&
+    value != '' &&
+    `
+      border-color: ${theme.colors.outline};
+    `}
+
   ${({ outlined }) =>
     outlined &&
     `
