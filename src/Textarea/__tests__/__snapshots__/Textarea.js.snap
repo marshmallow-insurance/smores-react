@@ -34,6 +34,7 @@ exports[`disabled 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   position: relative;
+  width: 100%;
 }
 
 .c3 {
@@ -146,6 +147,7 @@ exports[`renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   position: relative;
+  width: 100%;
 }
 
 .c3 {
@@ -257,6 +259,7 @@ exports[`renders with error 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   position: relative;
+  width: 100%;
 }
 
 .c3 {

@@ -2,9 +2,10 @@ import React, { FC, useState } from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
+import { Text } from '../Text'
+import { Box } from '../Box'
 import { theme } from '../theme'
 import { Icon } from '../Icon'
-import { Field, CommonFieldTypes } from '../Field'
 import { useUniqueId } from '../utils/id'
 
 export type SearchInputItem = {
@@ -12,13 +13,46 @@ export type SearchInputItem = {
   value: string
 }
 
-export interface SearchInputProps extends CommonFieldTypes {
+interface IUsesOutline {
+  outlined?: boolean
+}
+
+interface IResultsContainer extends IUsesOutline {
+  show: boolean
+  absolutePosition: boolean
+}
+
+interface ISearchInput extends IUsesOutline {
+  id: string
+  name: string
+  value: string
+  selected: boolean
+  onKeyUp: (e: React.FormEvent<HTMLInputElement>) => void
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void
+}
+
+interface IShowIcon extends IUsesOutline {
+  showIcon?: boolean
+  selected: boolean
+}
+
+export type SearchInputProps = {
+  id?: string
+  /** Name of the form control  */
   name?: string
+  /** label displayed above the input  */
   label?: string
+  /** Placeholder (initial state) */
   placeholder?: string
+  /** list of items for the search list */
   searchList: SearchInputItem[]
+  /** onFound listener */
   onFound: (element: string) => void
+  /** Displays search results in a relative position to other elements */
   resultsRelativePosition?: boolean
+  /** Displays border */
+  outlined?: boolean
+  /** Displays search icon */
   showIcon?: boolean
 }
 
@@ -26,14 +60,12 @@ export const SearchInput: FC<SearchInputProps> = ({
   id: idProp,
   name = 'search_input',
   label,
-  className = '',
   placeholder,
   searchList,
   onFound,
   resultsRelativePosition = false,
   outlined = false,
   showIcon = false,
-  renderAsTitle = false,
 }) => {
   const id = useUniqueId(idProp)
   const [active, setActive] = useState(false)
@@ -45,11 +77,13 @@ export const SearchInput: FC<SearchInputProps> = ({
     const value = e.currentTarget.value
 
     if (value) {
+      // start filtering if the input has at least 2 characters
       if (value.length >= 2) {
         const filteredList = searchList.filter((el) =>
           el.label.toLowerCase().includes(value.toLocaleLowerCase()),
         )
 
+        // update the local state with the filtered results
         setActive(true)
         setList(filteredList)
       }
@@ -71,63 +105,59 @@ export const SearchInput: FC<SearchInputProps> = ({
   }
 
   return (
-    <Field
-      className={className}
-      renderAsTitle={renderAsTitle}
-      id={id}
-      label={label}
-      outlined={outlined}
-      value={selectedResult}
-    >
-      <>
-        <StyledInputBox outlined={outlined} selected={selected}>
-          {showIcon && <SearchIcon size={24} render="search" color="subtext" />}
-          <StyledInput
-            id={id}
-            type="text"
-            name={name}
-            placeholder={placeholder}
-            autoComplete="off"
-            value={selectedResult}
-            onKeyUp={search}
-            onChange={updateInputState}
-            outlined={outlined}
-            selected={selected}
-          />
-        </StyledInputBox>
+    <Container>
+      {label && (
+        <Box mb={outlined ? '4px' : '0px'}>
+          <Text tag="label" color="subtext" typo="label" htmlFor={id}>
+            {label}
+          </Text>
+        </Box>
+      )}
 
-        <StyledResultsContainer
-          show={active}
-          absolutePosition={!resultsRelativePosition}
+      <InputBox outlined={outlined} selected={selected}>
+        {showIcon && <SearchIcon size={24} render="search" color="subtext" />}
+        <Input
+          id={id}
+          type="text"
+          name={name}
+          placeholder={placeholder}
+          autoComplete="off"
+          value={selectedResult}
+          onKeyUp={search}
+          onChange={updateInputState}
           outlined={outlined}
-        >
-          <ResultsList outlined={outlined}>
-            {list.length ? (
-              list.map((el, i) => (
-                <li key={i} onClick={() => select(el)}>
-                  {el.label}
-                </li>
-              ))
-            ) : (
-              <li>No results</li>
-            )}
-          </ResultsList>
-        </StyledResultsContainer>
-      </>
-    </Field>
+          selected={selected}
+        />
+      </InputBox>
+
+      <ResultsContainer
+        show={active}
+        absolutePosition={!resultsRelativePosition}
+        outlined={outlined}
+      >
+        <ResultsList outlined={outlined}>
+          {list.length ? (
+            list.map((el, i) => (
+              <li key={i} onClick={() => select(el)}>
+                {el.label}
+              </li>
+            ))
+          ) : (
+            <li>No results</li>
+          )}
+        </ResultsList>
+      </ResultsContainer>
+    </Container>
   )
 }
 
-interface UsesOutline {
-  outlined?: boolean
-}
+const Container = styled.div`
+  position: relative;
+  width: 100%;
+  background: ${theme.colors.white};
+`
 
-interface InputBox extends UsesOutline {
-  showIcon?: boolean
-  selected: boolean
-}
-
-const StyledInputBox = styled.div<InputBox>`
+const InputBox = styled.div<IShowIcon>`
   display: flex;
   align-items: center;
   border-bottom: ${({ outlined }) =>
@@ -156,14 +186,7 @@ const StyledInputBox = styled.div<InputBox>`
     outlined ? `${theme.colors.outline}` : `${theme.colors.secondary}`};
 `
 
-interface Input extends UsesOutline {
-  id: string
-  name: string
-  value: string
-  selected: boolean
-}
-
-const StyledInput = styled.input<Input>`
+const Input = styled.input<ISearchInput>`
   display: block;
   border: none;
   outline: none;
@@ -182,12 +205,7 @@ const StyledInput = styled.input<Input>`
   `}
 `
 
-interface ResultsContainer extends UsesOutline {
-  show: boolean
-  absolutePosition: boolean
-}
-
-const StyledResultsContainer = styled.div<ResultsContainer>`
+const ResultsContainer = styled.div<IResultsContainer>`
   box-sizing: border-box;
   overflow-y: hidden;
   ${({ absolutePosition }) => absolutePosition && 'position: absolute;'}
@@ -200,7 +218,7 @@ const StyledResultsContainer = styled.div<ResultsContainer>`
   }
 `
 
-const ResultsList = styled.ul<UsesOutline>`
+const ResultsList = styled.ul<IUsesOutline>`
   position: relative;
   list-style: none;
   overflow-y: auto;

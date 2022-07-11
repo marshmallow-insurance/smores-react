@@ -72,6 +72,7 @@ const Container = styled(Box)<{ className: string }>`
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
 `
 
 const Content = styled.div<{
