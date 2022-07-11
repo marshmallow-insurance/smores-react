@@ -1,3 +1,7 @@
+
+## [2.3.4] - 2022-07-11
+### Changed 
+- Restore correct outline props for text input element
 ## [2.3.3] - 2022-07-08
 ### Changed 
 - Fixed required property on Dropdown component
