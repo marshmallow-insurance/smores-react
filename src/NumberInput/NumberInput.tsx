@@ -160,7 +160,7 @@ export const NumberInput: FC<NumberInputProps> = ({
   return (
     <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
       {label && (
-        <Box mb={outlined ? '4px' : '0px'}>
+        <Box mb={{ custom: outlined ? 4 : 0 }}>
           <Text tag="label" color="subtext" typo="label" htmlFor={id}>
             {label}&nbsp;{required && <Asterisk>*</Asterisk>}
           </Text>

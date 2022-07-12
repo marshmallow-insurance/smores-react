@@ -36,7 +36,7 @@ export const Field = ({
   return (
     <Container className={className}>
       {label && (
-        <Box mb={outlined ? '4px' : '0px'}>
+        <Box mb={{ custom: outlined ? 4 : 0 }}>
           {renderAsTitle ? (
             <Title>{label}</Title>
           ) : (
