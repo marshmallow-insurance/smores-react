@@ -29,9 +29,9 @@ const ColorCard = ({ colorName }: { colorName: Color }) => {
   const hexValue = theme.colors[colorName]
   return (
     <ColorCardWrapper width="180px">
-      <ColorBox colorName={colorName} width="100%" pt="50%" />
+      <ColorBox colorName={colorName} width="100%" pt={{ custom: '50%' }} />
       <Divider />
-      <Box p="4px 16px">
+      <Box px="16px" py={{ custom: 4 }}>
         <Text tag="span" typo="base">
           {colorName}
         </Text>

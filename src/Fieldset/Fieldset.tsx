@@ -15,7 +15,7 @@ export const Fieldset = ({
 }: FieldSetProps) => {
   return (
     <fieldset>
-      <Box mb={outlined ? '4px' : '0px'}>
+      <Box mb={{ custom: outlined ? 4 : 0 }}>
         <Legend>{label}</Legend>
       </Box>
 
