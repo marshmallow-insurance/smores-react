@@ -1,4 +1,6 @@
-
+## [2.3.5] - 2022-07-11
+### Changed 
+- Width css for Field component
 ## [2.3.4] - 2022-07-11
 ### Changed 
 - Restore correct outline props for text input element
@@ -381,6 +383,8 @@
 
 ### Changed
 - Updated gap and styles on Row component
+
+[2.3.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.4...v2.3.5
 [2.3.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.3...v2.3.4
 [2.3.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.1...v2.3.3
 [2.3.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.0...v2.3.1
