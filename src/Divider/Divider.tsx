@@ -23,10 +23,11 @@ export const Divider: FC<DividerProps> = memo(function Divider({
 
 const Line = styled(Box)<{ color: Color }>`
   ${({ color }) =>
-    color &&
-    css`
-      background: ${theme.colors[color]};
-    `}
+    color
+      ? css`
+          background: ${theme.colors[color]};
+        `
+      : ''}
   display: block;
   height: ${({ height }) => height};
   max-width: ${({ maxWidth }) => maxWidth};
