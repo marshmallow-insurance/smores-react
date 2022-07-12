@@ -40,9 +40,9 @@ export const space = (props: SpaceProps): string => {
   const { m, mx, my, ml, mr, mt, mb, p, px, py, pl, pr, pt, pb } = props
 
   return `
-    ${m !== undefined ? `margin: ${resolveSpacing(m)};` : ''}
+    ${m ? `margin: ${resolveSpacing(m)};` : ''}
     ${
-      mx !== undefined
+      mx
         ? `
       margin-left: ${resolveSpacing(mx)};
       margin-right: ${resolveSpacing(mx)};
@@ -50,20 +50,20 @@ export const space = (props: SpaceProps): string => {
         : ''
     }
     ${
-      my !== undefined
+      my
         ? `
       margin-top: ${resolveSpacing(my)};
       margin-bottom: ${resolveSpacing(my)};
     `
         : ''
     }
-    ${ml !== undefined ? `margin-left: ${resolveSpacing(ml)};` : ''}
-    ${mr !== undefined ? `margin-right: ${resolveSpacing(mr)};` : ''}
-    ${mt !== undefined ? `margin-top: ${resolveSpacing(mt)};` : ''}
-    ${mb !== undefined ? `margin-bottom: ${resolveSpacing(mb)};` : ''}
-    ${p !== undefined ? `padding: ${resolveSpacing(p)};` : ''}
+    ${ml ? `margin-left: ${resolveSpacing(ml)};` : ''}
+    ${mr ? `margin-right: ${resolveSpacing(mr)};` : ''}
+    ${mt ? `margin-top: ${resolveSpacing(mt)};` : ''}
+    ${mb ? `margin-bottom: ${resolveSpacing(mb)};` : ''}
+    ${p ? `padding: ${resolveSpacing(p)};` : ''}
     ${
-      px !== undefined
+      px
         ? `
       padding-left: ${resolveSpacing(px)};
       padding-right: ${resolveSpacing(px)};
@@ -71,16 +71,16 @@ export const space = (props: SpaceProps): string => {
         : ''
     }
     ${
-      py !== undefined
+      py
         ? `
       padding-top: ${resolveSpacing(py)};
       padding-bottom: ${resolveSpacing(py)};
     `
         : ''
     }
-    ${pl !== undefined ? `padding-left: ${resolveSpacing(pl)};` : ''}
-    ${pr !== undefined ? `padding-right: ${resolveSpacing(pr)};` : ''}
-    ${pt !== undefined ? `padding-top: ${resolveSpacing(pt)};` : ''}
-    ${pb !== undefined ? `padding-bottom: ${resolveSpacing(pb)};` : ''}
+    ${pl ? `padding-left: ${resolveSpacing(pl)};` : ''}
+    ${pr ? `padding-right: ${resolveSpacing(pr)};` : ''}
+    ${pt ? `padding-top: ${resolveSpacing(pt)};` : ''}
+    ${pb ? `padding-bottom: ${resolveSpacing(pb)};` : ''}
   `
 }
