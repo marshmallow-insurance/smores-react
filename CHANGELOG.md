@@ -1,3 +1,7 @@
+## [2.4.0] - 2022-07-12
+### Changed 
+- Update to use spacing token for Box's margin and padding props
+
 ## [2.3.5] - 2022-07-11
 ### Changed 
 - Width css for Field component
@@ -384,6 +388,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.3.6]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.5...v2.3.6
 [2.3.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.4...v2.3.5
 [2.3.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.3...v2.3.4
 [2.3.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.1...v2.3.3
