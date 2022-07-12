@@ -1,21 +1,16 @@
-type SpaceFN = (arg: SpaceProps) => string
-
 type Spacing = '8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'
 
 type SpacingProp = Spacing | { custom: number | string }
 
 const resolveSpacing = (value: SpacingProp) => {
   if (typeof value === 'string') {
-    console.log('STRING', value)
     return value
   }
 
   if (typeof value.custom === 'string') {
-    console.log('CUSTOM STRING', value)
     return value.custom
   }
 
-  console.log('CUSTOM NUMBER', value)
   return `${value.custom}px`
 }
 
@@ -41,7 +36,7 @@ export interface PaddingProps {
 
 export type SpaceProps = MarginProps & PaddingProps
 
-export const space: SpaceFN = (props: SpaceProps) => {
+export const space = (props: SpaceProps): string => {
   const { m, mx, my, ml, mr, mt, mb, p, px, py, pl, pr, pt, pb } = props
 
   return `
