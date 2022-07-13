@@ -9,23 +9,6 @@ import { LegacyButton } from './LegacyButton'
 import { Loader } from '../Loader'
 import { Icon as IconComponent } from '../Icon'
 
-interface IButton {
-  /** disabled state */
-  disabled: boolean
-  /** loading state */
-  isLoading: boolean
-  /** primary button styling */
-  primary: boolean
-  /** secondary button styling */
-  secondary: boolean
-  /** tertiary button styling */
-  tertiary: boolean
-  /** icon state */
-  icon: string
-  /** forcedWidth styling */
-  forcedWidth: string
-}
-
 type Props = {
   children: ReactNode
   id?: string
@@ -43,7 +26,6 @@ type Props = {
   icon?: string
   forcedWidth?: string
   form?: string
-  type?: 'button' | 'submit' | 'reset'
 }
 
 export type ButtonProps = Props &
@@ -108,10 +90,8 @@ export const Button: FC<ButtonProps> = forwardRef<
       id={id}
       className={className}
       disabled={disabled || loading}
-      onClick={(e) => {
-        handleClick && handleClick(e)
-      }}
-      isLoading={loading}
+      onClick={handleClick}
+      $loading={loading}
       primary={primary}
       secondary={secondary}
       tertiary={tertiary}
@@ -143,8 +123,17 @@ export const Button: FC<ButtonProps> = forwardRef<
 
 Button.displayName = 'Button'
 
+type IButton = Required<
+  Pick<
+    ButtonProps,
+    'disabled' | 'primary' | 'secondary' | 'tertiary' | 'icon' | 'forcedWidth'
+  >
+> & {
+  $loading: NonNullable<ButtonProps['loading']>
+}
+
 const Container = styled.button<IButton>(
-  ({ disabled, isLoading, primary, secondary, tertiary, forcedWidth }) => css`
+  ({ disabled, $loading, primary, secondary, tertiary, forcedWidth }) => css`
     ${focusOutline()}
     position: relative;
     background-color: ${theme.colors.primary};
@@ -155,7 +144,7 @@ const Container = styled.button<IButton>(
     outline: none;
     border-radius: 8px;
     font-weight: ${theme.font.weight.medium};
-    cursor: ${disabled || isLoading ? 'not-allowed' : 'pointer'};
+    cursor: ${disabled || $loading ? 'not-allowed' : 'pointer'};
     line-height: 100%;
     font-size: 16px;
     opacity: ${disabled ? '0.5' : '1'};
@@ -167,9 +156,9 @@ const Container = styled.button<IButton>(
       border-color: ${theme.colors.primary};
 
       &:hover {
-        background-color: ${!(disabled || isLoading) &&
+        background-color: ${!(disabled || $loading) &&
         darken(0.1, theme.colors.primary)};
-        border-color: ${!(disabled || isLoading) &&
+        border-color: ${!(disabled || $loading) &&
         darken(0.1, theme.colors.primary)};
       }
       &:active {
@@ -183,9 +172,8 @@ const Container = styled.button<IButton>(
       border-color: ${theme.colors.secondary};
 
       &:hover {
-        background-color: ${!(disabled || isLoading) &&
-        theme.colors.background};
-        border: ${!(disabled || isLoading) &&
+        background-color: ${!(disabled || $loading) && theme.colors.background};
+        border: ${!(disabled || $loading) &&
         `2px solid ${theme.colors.secondary}`};
       }
       &:active {
@@ -199,9 +187,9 @@ const Container = styled.button<IButton>(
       border-color: ${theme.colors.background};
 
       &:hover {
-        background-color: ${!(disabled || isLoading) &&
+        background-color: ${!(disabled || $loading) &&
         darken(0.1, theme.colors.background)};
-        border-color: ${!(disabled || isLoading) &&
+        border-color: ${!(disabled || $loading) &&
         darken(0.1, theme.colors.background)};
       }
       &:active {
