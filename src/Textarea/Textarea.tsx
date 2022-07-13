@@ -4,13 +4,12 @@ import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
-import { Field } from '../Field'
+import { CommonFieldTypes, Field } from '../Field'
+import { MarginProps } from '../utils/space'
 
 type BaseProps = {
   id?: string
-  className?: string
   placeholder?: string
-  label?: string
   name?: string
   value: string
   error?: boolean
@@ -20,9 +19,8 @@ type BaseProps = {
   maxLength?: number
   onBlur?: (e: FormEvent<HTMLTextAreaElement>) => void
   rows?: number
-  required?: boolean
-  renderAsTitle?: boolean
-}
+} & CommonFieldTypes &
+  MarginProps
 
 type TruncateProps =
   | {
@@ -58,6 +56,7 @@ export const Textarea = forwardRef(function Textarea(
   return (
     <Field {...fieldProps} id={id} error={error} value={value} fullHeight>
       <StyledTextArea
+        ref={ref}
         error={error}
         id={id}
         name={name}

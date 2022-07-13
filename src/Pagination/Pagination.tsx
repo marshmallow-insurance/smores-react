@@ -6,6 +6,7 @@ import { Text } from '../Text'
 import { Icon } from '../Icon'
 
 import { theme } from '../theme'
+import { MarginProps } from '../utils/space'
 
 const MAX_PAGES = 7
 const MAX_ADDITIONAL_PAGES = Math.ceil(MAX_PAGES / 2)
@@ -17,12 +18,13 @@ export type PaginationProps = {
   partition: number
   /** Handle page change */
   handlePageChange: (page: number) => void
-}
+} & MarginProps
 
 export const Pagination: FC<PaginationProps> = ({
   total,
   partition,
   handlePageChange,
+  ...marginProps
 }) => {
   const [lastPage, setLastPage] = useState(0)
   const [activePage, setActivePage] = useState(1)
@@ -82,7 +84,7 @@ export const Pagination: FC<PaginationProps> = ({
   }
 
   return (
-    <Container flex direction="row">
+    <Container flex direction="row" {...marginProps}>
       {activePage - 1 > 0 && (
         <PageBox onClick={() => movePage(activePage - 1)}>
           <Icon size={24} render="arrow" />

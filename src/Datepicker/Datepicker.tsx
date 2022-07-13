@@ -19,6 +19,7 @@ import { theme } from '../theme'
 
 import { DatesList } from './DatesList'
 import { convertToUkDate } from '../utils/date'
+import { MarginProps } from '../utils/space'
 
 const getAvailableMonths = (startDate: Date, endDate: Date) => {
   const monthList = eachMonthOfInterval({
@@ -38,7 +39,7 @@ export type DatepickerProps = {
   fromDate?: Date
   range?: number
   onDateSelect: (date: string) => void
-}
+} & MarginProps
 
 export const Datepicker: FC<DatepickerProps> = ({
   disableWeekend = true,
@@ -46,6 +47,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   range = 14,
   fromDate = new Date(),
   onDateSelect,
+  ...marginProps
 }) => {
   // We want to make sure that the date is in the UK timezone,
   // this might need to be revisit when opening up to new countries
@@ -84,7 +86,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   }
 
   return (
-    <Container id="datepicker">
+    <Container id="datepicker" {...marginProps}>
       <Header
         flex
         alignItems="center"

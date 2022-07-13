@@ -1,7 +1,9 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
+import { MarginProps } from '../utils/space'
 
 import { Color, theme } from '../theme'
+import { Box } from '../Box'
 
 /**
  * When adding a new Icon please remember to also add it
@@ -21,12 +23,7 @@ export type IconProps = {
   color?: Color
   /** rotation degrees */
   rotate?: number
-  /** margins TOP-RIGHT-BOTTOM-LEFT */
-  mt?: string
-  mr?: string
-  mb?: string
-  ml?: string
-}
+} & MarginProps
 
 export const Icon: FC<IconProps> = ({
   className = '',
@@ -34,20 +31,15 @@ export const Icon: FC<IconProps> = ({
   size = 24,
   color = 'secondary',
   rotate = 0,
-  mt = '0',
-  mr = '0',
-  mb = '0',
-  ml = '0',
+  ...marginProps
 }) => (
   <Container
+    as="span"
     className={className}
     size={size}
     color={color}
     rotate={rotate}
-    mt={mt}
-    mr={mr}
-    mb={mb}
-    ml={ml}
+    {...marginProps}
   >
     {render === 'aa' && (
       <svg
@@ -4179,14 +4171,10 @@ interface IIcon {
   size: number
   color: string
   rotate: number
-  mt: string
-  mr: string
-  mb: string
-  ml: string
 }
 
-const Container = styled.span<IIcon>(
-  ({ size, rotate, mt, mr, mb, ml }) => css`
+const Container = styled(Box)<IIcon>(
+  ({ size, rotate }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4194,9 +4182,5 @@ const Container = styled.span<IIcon>(
     width: ${size}px;
     height: ${size}px;
     transform: rotate(${rotate}deg);
-    margin-top: ${mt};
-    margin-right: ${mr};
-    margin-bottom: ${mb};
-    margin-left: ${ml};
   `,
 )

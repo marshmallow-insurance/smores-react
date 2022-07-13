@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import { focusOutline } from '../utils/focusOutline'
 import { theme } from '../theme'
+import { MarginProps } from '../utils/space'
+import { Box } from '../Box'
 
 type Props = {
   /** unique ID */
@@ -11,18 +13,23 @@ type Props = {
   checked: boolean
   /** onToggle listener  */
   onToggle: () => void
-}
+} & MarginProps
 
-export const Toggle: FC<Props> = ({ checked, onToggle }) => {
+export const Toggle: FC<Props> = ({
+  id,
+  checked,
+  onToggle,
+  ...marginProps
+}) => {
   return (
-    <Switch>
+    <Switch as="label" id={id} {...marginProps}>
       <Checkbox type="checkbox" checked={checked} onChange={onToggle} />
       <Slider />
     </Switch>
   )
 }
 
-const Switch = styled.label`
+const Switch = styled(Box)`
   position: relative;
   display: inline-block;
   width: 50px;

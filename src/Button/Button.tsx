@@ -6,9 +6,10 @@ import { Color, theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 import { useDeprecatedWarning } from '../utils/deprecated'
 import { LegacyButton } from './LegacyButton'
+import { Box } from '../Box'
 import { Loader } from '../Loader'
 import { Icon as IconComponent } from '../Icon'
-import { margin, MarginProps } from '../utils/space'
+import { MarginProps } from '../utils/space'
 
 type Props = {
   children: ReactNode
@@ -89,6 +90,7 @@ export const Button: FC<ButtonProps> = forwardRef<
 
   return (
     <Container
+      as="button"
       id={id}
       className={className}
       disabled={disabled || loading}
@@ -134,10 +136,9 @@ type IButton = Required<
   $loading: NonNullable<ButtonProps['loading']>
 }
 
-const Container = styled.button<IButton>(
+const Container = styled(Box)<IButton>(
   ({ disabled, $loading, primary, secondary, tertiary, forcedWidth }) => css`
     ${focusOutline()}
-    ${margin}
     position: relative;
     background-color: ${theme.colors.primary};
     border: 2px solid;
