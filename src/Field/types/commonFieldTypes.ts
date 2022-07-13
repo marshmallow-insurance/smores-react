@@ -1,4 +1,6 @@
-export interface CommonFieldTypes {
+import { MarginProps } from '../../utils/space'
+
+export interface CommonFieldTypes extends MarginProps {
   label?: string
   id?: string
   error?: boolean

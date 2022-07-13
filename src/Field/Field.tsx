@@ -32,9 +32,10 @@ export const Field = ({
   required,
   showCaret,
   fullHeight = false,
+  ...marginProps
 }: FieldProps) => {
   return (
-    <Container className={className}>
+    <Container className={className} {...marginProps}>
       {label && (
         <Box mb={{ custom: outlined ? 4 : 0 }}>
           {renderAsTitle ? (
