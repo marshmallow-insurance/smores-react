@@ -8,6 +8,7 @@ import { useDeprecatedWarning } from '../utils/deprecated'
 import { LegacyButton } from './LegacyButton'
 import { Loader } from '../Loader'
 import { Icon as IconComponent } from '../Icon'
+import { margin, MarginProps } from '../utils/space'
 
 type Props = {
   children: ReactNode
@@ -29,6 +30,7 @@ type Props = {
 }
 
 export type ButtonProps = Props &
+  MarginProps &
   Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'>
 
 export const Button: FC<ButtonProps> = forwardRef<
@@ -135,6 +137,7 @@ type IButton = Required<
 const Container = styled.button<IButton>(
   ({ disabled, $loading, primary, secondary, tertiary, forcedWidth }) => css`
     ${focusOutline()}
+    ${margin}
     position: relative;
     background-color: ${theme.colors.primary};
     border: 2px solid;

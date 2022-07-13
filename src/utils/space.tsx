@@ -34,10 +34,8 @@ export interface PaddingProps {
   pb?: SpacingProp
 }
 
-export type SpaceProps = MarginProps & PaddingProps
-
-export const space = (props: SpaceProps): string => {
-  const { m, mx, my, ml, mr, mt, mb, p, px, py, pl, pr, pt, pb } = props
+export const margin = (props: MarginProps): string => {
+  const { m, mx, my, ml, mr, mt, mb } = props
 
   return `
     ${m ? `margin: ${resolveSpacing(m)};` : ''}
@@ -61,6 +59,13 @@ export const space = (props: SpaceProps): string => {
     ${mr ? `margin-right: ${resolveSpacing(mr)};` : ''}
     ${mt ? `margin-top: ${resolveSpacing(mt)};` : ''}
     ${mb ? `margin-bottom: ${resolveSpacing(mb)};` : ''}
+  `
+}
+
+export const padding = (props: PaddingProps): string => {
+  const { p, px, py, pl, pr, pt, pb } = props
+
+  return `
     ${p ? `padding: ${resolveSpacing(p)};` : ''}
     ${
       px
