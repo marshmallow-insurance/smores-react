@@ -4,6 +4,7 @@ import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { Field, CommonFieldTypes } from '../Field'
+import { Icon } from '../Icon'
 import { useUniqueId } from '../utils/id'
 
 interface Props extends CommonFieldTypes {
@@ -44,6 +45,7 @@ export const TextInput = forwardRef(function TextInput(
     onChange,
     onInputChange,
     disabled = false,
+    trailingIcon,
     ...fieldProps
   }: TextInputProps,
   ref: ForwardedRef<HTMLInputElement>,
@@ -78,6 +80,7 @@ export const TextInput = forwardRef(function TextInput(
             onBlur && onBlur(e)
           }}
         />
+        {trailingIcon && <StyledIcon render={trailingIcon} color="subtext" />}
       </>
     </Field>
   )
@@ -88,6 +91,7 @@ interface Input {
   disabled?: boolean
   value?: string
   outlined?: boolean
+  trailingIcon?: string
 }
 
 const StyledInput = styled.input<Input>`
@@ -116,11 +120,19 @@ const StyledInput = styled.input<Input>`
       border-radius: 8px;
       height: auto;
     `}
+
   ${({ value }) =>
     value &&
     value != '' &&
     `
       border-color: ${theme.colors.outline};
+    `}
+
+  ${({ trailingIcon }) =>
+    trailingIcon &&
+    trailingIcon != '' &&
+    `
+      padding-right: 24px;
     `}
 
   ${({ outlined }) =>
@@ -133,4 +145,9 @@ const StyledInput = styled.input<Input>`
   &::placeholder {
     color: ${theme.colors.subtext};
   }
+`
+
+const StyledIcon = styled(Icon)`
+  position: relative;
+  left: -24px;
 `

@@ -1,3 +1,6 @@
+## [2.4.1] - 2022-07-15
+### Changed 
+- Added missing trailingIcon to textInput
 ## [2.4.0] - 2022-07-12
 ### Changed 
 - Update to use spacing token for Box's margin and padding props
@@ -388,6 +391,8 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.4.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.0...v2.4.1
+[2.4.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.6...v2.4.0
 [2.3.6]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.5...v2.3.6
 [2.3.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.4...v2.3.5
 [2.3.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.3...v2.3.4
