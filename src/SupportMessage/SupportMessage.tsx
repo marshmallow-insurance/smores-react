@@ -5,6 +5,7 @@ import { lighten } from 'polished'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { theme, Color } from '../theme'
+import { Text } from '../Text'
 
 type StylesItem = {
   iconColor: Color
@@ -58,10 +59,12 @@ export const SupportMessage: FC<SupportMessageProps> = ({
         color={styles[type].iconColor}
       />
     </IconWrapper>
-    <ContentBox flex direction="column">
+    <Box flex direction="column" ml="16px">
       {title && <Title>{title}</Title>}
-      {description}
-    </ContentBox>
+      <Description tag="p" typo="base">
+        {description}
+      </Description>
+    </Box>
   </Wrapper>
 )
 
@@ -85,16 +88,16 @@ const Wrapper = styled.div<IWrapper>(
   `,
 )
 
-const ContentBox = styled(Box)`
-  margin-left: 16px;
-  color: ${theme.colors.secondary};
-  font-size: 14px;
-`
-
 const Title = styled.p`
   font-size: 16px;
   font-weight: ${theme.font.weight.medium};
   color: ${theme.colors.secondary};
   line-height: 20.8px;
   margin-bottom: 4px;
+`
+
+const Description = styled(Text)`
+  color: ${theme.colors.secondary};
+  font-size: 14px;
+  line-height: 20px;
 `
