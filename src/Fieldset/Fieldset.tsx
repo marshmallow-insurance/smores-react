@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Box } from '../Box'
 
 type FieldSetProps = {
-  children: React.ReactChildren
+  children: React.ReactChild
   label: string
   outlined?: boolean
 }
