@@ -222,7 +222,7 @@ const StyledSelect = styled.select<UsesOutline>`
     value != '' &&
     `
     border: 2px solid ${theme.colors.outline};
-`}}
+`}
 
   ${({ error, outlined }) => getErrorOutline(outlined, error)};
 `

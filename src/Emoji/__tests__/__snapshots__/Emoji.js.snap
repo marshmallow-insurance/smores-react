@@ -3,10 +3,6 @@
 exports[`renders 1`] = `
 .c0 {
   font-size: 24px;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
 }
 
 <span

@@ -1,11 +1,13 @@
 import React, { FC, useState } from 'react'
 import styled, { css } from 'styled-components'
 
+import { Box } from '../Box'
 import { Text } from '../Text'
 import { Icon } from '../Icon'
 import { List, ActionListItem } from './List'
 
 import { Color, theme } from '../theme'
+import { MarginProps } from '../utils/space'
 
 export type ActionDropdownProps = {
   id?: string
@@ -18,7 +20,7 @@ export type ActionDropdownProps = {
   list: ActionListItem[]
   /** onSelect handler */
   onSelect: (action: ActionListItem) => void
-}
+} & MarginProps
 
 export const ActionDropdown: FC<ActionDropdownProps> = ({
   id,
@@ -27,6 +29,7 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
   value,
   list,
   onSelect,
+  ...marginProps
 }) => {
   const [open, setOpen] = useState(false)
 
@@ -35,6 +38,7 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
       id={id}
       className={className}
       onClick={() => setOpen((currentOpen) => !currentOpen)}
+      {...marginProps}
     >
       {label && (
         <Text tag="label" color="subtext" typo="label">
@@ -91,7 +95,7 @@ const SelectedOption = styled.span`
   text-overflow: ellipsis;
 `
 
-const Container = styled.div`
+const Container = styled(Box)`
   position: relative;
   display: block;
   width: 210px;

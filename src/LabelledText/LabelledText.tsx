@@ -1,15 +1,21 @@
 import React, { FC, ReactNode } from 'react'
 import styled from 'styled-components'
+import { MarginProps } from '../utils/space'
 
 import { Text } from '../Text'
+import { Box } from '../Box'
 
 export type LabelledTextProps = {
   children: ReactNode
   label: string
-}
+} & MarginProps
 
-export const LabelledText: FC<LabelledTextProps> = ({ label, children }) => (
-  <Container>
+export const LabelledText: FC<LabelledTextProps> = ({
+  label,
+  children,
+  ...marginProps
+}) => (
+  <Container {...marginProps}>
     <Text tag="label" color="subtext" typo="label">
       {label}
     </Text>
@@ -18,7 +24,7 @@ export const LabelledText: FC<LabelledTextProps> = ({ label, children }) => (
   </Container>
 )
 
-const Container = styled.div`
+const Container = styled(Box)`
   display: flex;
   flex-direction: column;
 

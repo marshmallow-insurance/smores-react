@@ -6,6 +6,7 @@ import { Box } from '../Box'
 
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
+import { MarginProps } from '../utils/space'
 
 interface IFakeInput {
   checked?: boolean
@@ -17,7 +18,7 @@ export type RadioButtonProps = {
   checked?: boolean
   value: string
   onChange: (event: ChangeEvent<HTMLInputElement>) => void
-}
+} & MarginProps
 
 export const RadioButton: FC<RadioButtonProps> = ({
   id: idProp,
@@ -25,11 +26,12 @@ export const RadioButton: FC<RadioButtonProps> = ({
   checked,
   value,
   onChange,
+  ...marginProps
 }) => {
   const id = useUniqueId(idProp)
 
   return (
-    <Box flex alignItems="center">
+    <Box flex alignItems="center" {...marginProps}>
       <RadioInput
         id={id}
         type="radio"

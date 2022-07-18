@@ -1,15 +1,17 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import { MarginProps } from '../utils/space'
 
 import { Text } from '../Text'
 import { Color, theme } from '../theme'
+import { Box } from '../Box'
 
 export type DefaultProps = {
   label: string
   className?: string
   color: Color
   typo?: string
-}
+} & MarginProps
 
 type GradientProps =
   | {
@@ -35,12 +37,14 @@ export const Tag: FC<TagProps> = ({
   className,
   typo,
   bgGradient = false,
+  ...marginProps
 }) => (
   <Wrapper
     bgColor={bgColor}
     className={className}
     borderColor={borderColor}
     bgGradient={bgGradient}
+    {...marginProps}
   >
     <TagText tag="span" typo={typo ?? 'label'} color={color}>
       {label}
@@ -50,7 +54,7 @@ export const Tag: FC<TagProps> = ({
 
 type WrapperProps = Pick<TagProps, 'bgColor' | 'borderColor' | 'bgGradient'>
 
-const Wrapper = styled.div<WrapperProps>`
+const Wrapper = styled(Box)<WrapperProps>`
   background-color: ${({ bgColor }) => bgColor && theme.colors[bgColor]};
   background: ${({ bgGradient }) =>
     bgGradient &&

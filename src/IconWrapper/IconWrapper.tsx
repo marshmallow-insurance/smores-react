@@ -1,7 +1,9 @@
 import React, { FC, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
+import { Box } from '../Box'
 import { Icon } from '../Icon'
+import { MarginProps } from '../utils/space'
 
 export type IconWrapperProps = {
   /** className attribute to apply classes from props */
@@ -17,7 +19,7 @@ export type IconWrapperProps = {
   r?: string
   b?: string
   l?: string
-}
+} & MarginProps
 
 export const IconWrapper: FC<IconWrapperProps> = ({
   className = '',
@@ -28,8 +30,9 @@ export const IconWrapper: FC<IconWrapperProps> = ({
   r = 'auto',
   b = 'auto',
   l = 'auto',
+  ...marginProps
 }) => (
-  <Container className={className}>
+  <Container className={className} {...marginProps}>
     {children}
     <IconContainer size={size} t={t} r={r} b={b} l={l}>
       {render === 'included' && (
@@ -42,7 +45,7 @@ export const IconWrapper: FC<IconWrapperProps> = ({
   </Container>
 )
 
-const Container = styled.div`
+const Container = styled(Box)`
   position: relative;
   width: fit-content;
 `
