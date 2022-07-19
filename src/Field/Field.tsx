@@ -39,7 +39,7 @@ export const Field = ({
       {label && (
         <Box mb={{ custom: outlined ? 4 : 0 }}>
           {renderAsTitle ? (
-            <Title>{label}</Title>
+            <Title htmlFor={id}>{label}</Title>
           ) : (
             <Text tag="label" color="subtext" typo="label" htmlFor={id}>
               {label}
@@ -117,7 +117,9 @@ const ErrorBox = styled.span`
   font-size: 12px;
 `
 
-const Title = styled.h3`
+const Title = styled.label`
+  font-size: 16px;
+  line-height: 26px;
   font-weight: bold;
   padding-bottom: 8px;
 `
