@@ -124,9 +124,8 @@ const ErrorBox = styled.span`
 `
 
 const ConfirmationWrapper = styled(Box)`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
 `
 
 const SectionHeadingText = styled(Text)`
@@ -136,6 +135,7 @@ const SectionHeadingText = styled(Text)`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 8px;
 `
 
 const Asterisk = styled.span`
