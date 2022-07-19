@@ -192,7 +192,7 @@ const StyledResultsContainer = styled.div<ResultsContainer>`
   ${({ absolutePosition }) => absolutePosition && 'position: absolute;'}
   width: 100%;
   visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
-  ${({ outlined }) => outlined && 'left: 0px; top: 93%;'};
+  ${({ outlined }) => outlined && 'left: 0px; top: 90%;'};
 
   ul {
     max-height: ${({ show }) => (show ? '192px' : '0px')};

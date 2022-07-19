@@ -87,7 +87,6 @@ const Content = styled.div<{
     theme.colors[`${error ? 'error' : 'outline'}`]};
   background-color: ${({ outlined }) =>
     !outlined ? 'transparent' : theme.colors['white']};
-  display: flex;
   height: ${({ fullHeight }) => (fullHeight ? `100%` : `32px`)};
 
   &:hover,

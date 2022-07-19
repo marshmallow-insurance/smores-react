@@ -40,10 +40,6 @@ exports[`rendersDropdown 1`] = `
   position: relative;
   border-color: #D2D2D2;
   background-color: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   height: 32px;
 }
 
@@ -212,10 +208,6 @@ exports[`rendersDropdownWithGroups 1`] = `
   position: relative;
   border-color: #D2D2D2;
   background-color: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   height: 32px;
 }
 
