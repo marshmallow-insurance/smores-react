@@ -118,9 +118,9 @@ const ErrorBox = styled.span`
 `
 
 const Title = styled.label`
-  font-size: 16px;
+  font-size: 20px;
   line-height: 26px;
-  font-weight: bold;
+  font-weight: 500;
   padding-bottom: 8px;
 `
 
