@@ -2,6 +2,7 @@
 ### Changed 
 - SupportMessage: Handle custom description properly
 - Improve spacing props
+- Migrate NumberInput to use Field component
 
 ## [2.4.2] - 2022-07-19
 ### Changed 

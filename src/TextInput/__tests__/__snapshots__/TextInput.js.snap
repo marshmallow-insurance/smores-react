@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -25,7 +32,7 @@ exports[`renders 1`] = `
   border-color: #b9b9b9;
 }
 
-.c2 {
+.c3 {
   border: none;
   border-bottom: 1px solid;
   border-color: #D2D2D2;
@@ -39,24 +46,24 @@ exports[`renders 1`] = `
   padding: 1px 2px;
 }
 
-.c2:hover,
-.c2:focus-within {
+.c3:hover,
+.c3:focus-within {
   border-color: #b9b9b9;
 }
 
-.c2::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: #636768;
 }
 
-.c2::-moz-placeholder {
+.c3::-moz-placeholder {
   color: #636768;
 }
 
-.c2:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: #636768;
 }
 
-.c2::placeholder {
+.c3::placeholder {
   color: #636768;
 }
 
@@ -67,15 +74,19 @@ exports[`renders 1`] = `
     class="c1"
     value=""
   >
-    <input
-      autocomplete="off"
+    <div
       class="c2"
-      id="textInput"
-      name="textInput"
-      placeholder="Placeholder"
-      type="text"
-      value=""
-    />
+    >
+      <input
+        autocomplete="off"
+        class="c3"
+        id="textInput"
+        name="textInput"
+        placeholder="Placeholder"
+        type="text"
+        value=""
+      />
+    </div>
   </div>
 </div>
 `;

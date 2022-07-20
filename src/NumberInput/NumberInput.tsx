@@ -1,81 +1,71 @@
-import React, { FormEvent, FC, MouseEvent } from 'react'
+import React, { FormEvent, forwardRef, ForwardedRef, MouseEvent } from 'react'
 import styled from 'styled-components'
 
 import { Box } from '../Box'
 import { Text } from '../Text'
 import { Icon } from '../Icon'
+import { Field, CommonFieldTypes } from '../Field'
 
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
-import { MarginProps } from '../utils/space'
 
-export type NumberInputProps = {
-  id?: string
-  className?: string
-  /** Input type enum for proper browser support */
+export interface Props extends CommonFieldTypes {
   type?: 'number' | 'tel'
-  /** Placeholder */
   placeholder: string
-  /** label displayed above the input  */
-  label?: string
-  /** used for label - input connection */
   name?: string
-  /** value of the input */
   value: string
-  /** error flag */
-  error?: boolean
-  /** error text message */
-  errorMsg?: string
-  /** onChange listener */
-  onChange: (e: string | number) => void
-  /** onChange listener */
+  onBlur?: (e: FormEvent<HTMLInputElement>) => void
   trailingIcon?: string
-  /** toggle for the prefix (i.e. currency symbol) */
   prefix?: string
-  /** toggle for the suffix (i.e. miles or kilometre symbol) */
   suffix?: string
-  /** Required flag */
-  required?: boolean
-  /** Minimum allowed number */
   min?: number
-  /** Maximum allowed number */
   max?: number
-  /** Adjust value if entering a number beyond the specified min or max */
   strict?: boolean
-  /** Round currency to two decimal places if true */
   roundCurrency?: boolean
-  /** Increment and decrement the value by the following step count */
   step?: number
-  /** Disabled flag */
   disabled?: boolean
-  /** used to render outlined style */
-  outlined?: boolean
-} & MarginProps
+}
 
-export const NumberInput: FC<NumberInputProps> = ({
-  id: idProp,
-  className,
-  type = 'number',
-  placeholder,
-  label,
-  name,
-  value,
-  error = false,
-  errorMsg,
-  trailingIcon,
-  onChange,
-  prefix,
-  suffix,
-  required,
-  roundCurrency,
-  min = -999999,
-  max = 999999,
-  strict,
-  step = 0,
-  disabled = false,
-  outlined = false,
-  ...marginProps
-}) => {
+/** on change or on input required */
+type InputProps =
+  | {
+      /** on change is required and on input optional */
+      onChange: (e: string | number) => void
+      onInputChange?: (e: FormEvent<HTMLInputElement>) => void
+    }
+  | {
+      /** on input is required and on change optional */
+      onChange?: (e: string | number) => void
+      onInputChange: (e: FormEvent<HTMLInputElement>) => void
+    }
+
+export type NumberInputProps = Props & InputProps
+
+export const NumberInput = forwardRef(function NumberInput(
+  {
+    id: idProp,
+    type = 'number',
+    placeholder,
+    name,
+    value,
+    trailingIcon,
+    onChange,
+    onInputChange,
+    onBlur,
+    prefix,
+    suffix,
+    roundCurrency,
+    min = -999999,
+    max = 999999,
+    strict,
+    step = 0,
+    disabled = false,
+    error = false,
+    outlined = false,
+    ...fieldProps
+  }: NumberInputProps,
+  ref: ForwardedRef<HTMLInputElement>,
+) {
   const id = useUniqueId(idProp)
 
   // Check whether the min/max value exists is within the specified range
@@ -121,6 +111,7 @@ export const NumberInput: FC<NumberInputProps> = ({
   }
 
   const handleChange = (event: string) => {
+    if (onChange === undefined) return
     const EMPTY_INPUT = ''
 
     if (event === EMPTY_INPUT) {
@@ -142,6 +133,7 @@ export const NumberInput: FC<NumberInputProps> = ({
 
   // Increment or decrement the value when clicking the Spinner controls
   const incrementValue = (event: MouseEvent<HTMLButtonElement>) => {
+    if (onChange === undefined) return
     event.preventDefault()
     const currentValue = Number(value) + step
 
@@ -151,6 +143,7 @@ export const NumberInput: FC<NumberInputProps> = ({
   }
 
   const decrementValue = (event: MouseEvent<HTMLButtonElement>) => {
+    if (onChange === undefined) return
     event.preventDefault()
     const currentValue = Number(value) - step
 
@@ -160,56 +153,57 @@ export const NumberInput: FC<NumberInputProps> = ({
   }
 
   return (
-    <Container
-      className={className}
-      hasLabel={!!label}
-      hasError={!!errorMsg}
-      {...marginProps}
+    <Field
+      {...fieldProps}
+      id={id}
+      error={error}
+      outlined={outlined}
+      value={value}
     >
-      {label && (
-        <Box mb={{ custom: outlined ? 4 : 0 }}>
-          <Text tag="label" color="subtext" typo="label" htmlFor={id}>
-            {label}&nbsp;{required && <Asterisk>*</Asterisk>}
-          </Text>
-        </Box>
-      )}
-
-      <Content
-        error={error}
-        disabled={disabled}
-        outlined={outlined}
-        value={value}
-      >
+      <Box flex>
         {prefix && (
-          <SymbolText tag="span" color="secondary">
+          <SymbolText
+            tag="span"
+            color="secondary"
+            outlined={outlined}
+            prefix={prefix}
+          >
             {prefix}
           </SymbolText>
         )}
 
         <Input
+          error={error}
+          outlined={outlined}
           disabled={disabled}
           type={type}
           id={id}
           name={name}
           placeholder={placeholder}
           value={value}
-          error={error}
-          onChange={(event: FormEvent<HTMLInputElement>) =>
-            handleChange(event.currentTarget.value)
-          }
-          required={required}
+          prefix={prefix}
+          onChange={(e: FormEvent<HTMLInputElement>) => {
+            onChange && handleChange(e.currentTarget.value)
+            onInputChange && onInputChange(e)
+          }}
+          onBlur={(e) => {
+            onBlur && onBlur(e)
+          }}
         />
 
         {suffix && (
-          <Box pr="8px">
-            <SymbolText tag="span" color="secondary">
-              {suffix}
-            </SymbolText>
-          </Box>
+          <SymbolText
+            tag="span"
+            color="secondary"
+            outlined={outlined}
+            suffix={suffix}
+          >
+            {suffix}
+          </SymbolText>
         )}
 
-        {step > 0 && (
-          <Spinner>
+        {onChange && step > 0 && (
+          <Spinner outlined={outlined}>
             <SpinnerButton onClick={incrementValue} disabled={disabled}>
               <Icon render="caret" rotate={180} color="subtext" size={24} />
             </SpinnerButton>
@@ -220,73 +214,34 @@ export const NumberInput: FC<NumberInputProps> = ({
           </Spinner>
         )}
 
-        {trailingIcon && <Icon render={trailingIcon} color="subtext" />}
-      </Content>
-      {error && <ErrorBox>{errorMsg}</ErrorBox>}
-    </Container>
+        {trailingIcon && <StyledIcon render={trailingIcon} color="subtext" />}
+      </Box>
+    </Field>
   )
-}
-
-interface IContainer {
-  hasLabel: boolean
-  hasError: boolean
-}
-
-const Container = styled(Box)<IContainer>`
-  font-family: 'Gordita', san-serif;
-  display: flex;
-  flex-direction: column;
-  height: auto;
-`
+})
 
 interface IInput {
   error: boolean
   disabled: boolean
   outlined?: boolean
   value?: string
+  prefix?: string
 }
 
-const Content = styled.div<IInput>`
+const Input = styled.input<IInput>`
+  font-family: 'Circular', san-serif;
+  border: none;
   border-bottom: 1px solid;
   border-color: ${({ error }) =>
     theme.colors[`${error ? 'error' : 'outline'}`]};
-  display: flex;
-  align-items: center;
-  height: 32px;
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
-  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
-
-  &:hover,
-  &:focus-within {
-    border-color: ${({ error }) =>
-      theme.colors[`${error ? 'error' : 'outline'}`]};
-  }
-
-  ${({ outlined }) =>
-    outlined &&
-    `
-    border: 2px solid ${theme.colors.outline};
-    border-radius: 8px;
-    padding: 16px 12px;
-    height: auto;
-  `}
-
-  ${({ value }) =>
-    value &&
-    value !== '' &&
-    `
-      border-color: ${theme.colors.outline};
-    `}
-`
-
-const Input = styled.input<IInput>`
-  font-family: 'Gordita', san-serif;
-  border: none;
   color: ${({ error }) => theme.colors[`${error ? 'error' : 'secondary'}`]};
   font-size: 16px;
   width: 100%;
   outline: none;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
+  padding: ${({ outlined }) => (outlined ? '17px 14px' : '1px 2px')};
+  padding-right: 50px;
 
   &::placeholder {
     color: ${theme.colors.subtext};
@@ -300,29 +255,74 @@ const Input = styled.input<IInput>`
     -webkit-appearance: none;
     margin: 0;
   }
+
+  &:hover,
+  &:focus-within {
+    border-color: ${({ error }) =>
+      theme.colors[`${error ? 'error' : 'outline'}`]};
+  }
+
+  ${({ outlined, error }) =>
+    outlined &&
+    `
+      border: 2px solid ${error ? theme.colors.error : theme.colors.outline};
+      border-radius: 8px;
+      height: auto;
+    `}
+
+  ${({ value }) =>
+    value &&
+    value !== '' &&
+    `
+      border-color: ${theme.colors.outline};
+    `}
+
+    ${({ prefix }) =>
+    prefix &&
+    `
+      padding-left: 12px;
+      left: -10px;
+      position: relative;
+    `}
 `
 
-const ErrorBox = styled.span`
-  margin-top: 7px;
-  color: ${theme.colors.error};
-  font-size: 12px;
+const StyledIcon = styled(Icon)`
+  position: relative;
+  left: -24px;
 `
 
-const SymbolText = styled(Text)`
-  font-family: 'Gordita', san-serif;
+const SymbolText = styled(Text)<{
+  prefix?: string
+  suffix?: string
+  outlined?: boolean
+}>`
+  font-family: 'Circular', san-serif;
   font-size: 16px;
   line-height: 19px;
+  position: relative;
+  z-index: 1;
+
+  ${({ outlined, prefix }) =>
+    outlined &&
+    `
+      top: 20px;
+      left: ${prefix ? '1px' : '0'};
+    `}
+
+  ${({ suffix, outlined }) =>
+    suffix &&
+    `
+      left: ${outlined ? '-25px' : '-10px'};
+    `}
 `
 
-const Asterisk = styled.span`
-  font-size: 14px;
-  color: ${theme.colors.success};
-`
-
-const Spinner = styled.div`
+const Spinner = styled.div<{
+  outlined?: boolean
+}>`
   display: flex;
   position: relative;
-  top: -3px;
+  top: ${({ outlined }) => (outlined ? '17px' : '-3px')};
+  left: -50px;
 `
 
 interface IButton {
