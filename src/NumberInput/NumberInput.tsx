@@ -241,7 +241,7 @@ const Input = styled.input<IInput>`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   padding: ${({ outlined }) => (outlined ? '17px 14px' : '1px 2px')};
-  padding-right: 50px;
+  padding-right: 60px;
 
   &::placeholder {
     color: ${theme.colors.subtext};
@@ -322,7 +322,7 @@ const Spinner = styled.div<{
   display: flex;
   position: relative;
   top: ${({ outlined }) => (outlined ? '17px' : '-3px')};
-  left: -50px;
+  left: -60px;
 `
 
 interface IButton {
