@@ -1,6 +1,7 @@
 ## [2.4.3] - 2022-07-20
 ### Changed 
 - SupportMessage: Handle custom description properly
+- Improve spacing props
 
 ## [2.4.2] - 2022-07-19
 ### Changed 

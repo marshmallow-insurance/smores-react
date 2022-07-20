@@ -1,8 +1,8 @@
 type Spacing = '8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'
 
-type SpacingProp = Spacing | { custom: number | string }
+type SpacingProp = '0' | Spacing | { custom: number | string }
 
-const resolveSpacing = (value: SpacingProp) => {
+const resolveSpacing = (value: SpacingProp | 'auto') => {
   if (typeof value === 'string') {
     return value
   }
@@ -16,7 +16,7 @@ const resolveSpacing = (value: SpacingProp) => {
 
 export interface MarginProps {
   m?: SpacingProp
-  mx?: SpacingProp
+  mx?: SpacingProp | 'auto'
   my?: SpacingProp
   ml?: SpacingProp
   mr?: SpacingProp
