@@ -3,6 +3,7 @@
 - SupportMessage: Handle custom description properly
 ## [2.4.2] - 2022-07-19
 ### Changed 
+- Update Field Component styles to fix SearchInput
 ## [2.4.1] - 2022-07-15
 ### Changed 
 - Added missing trailingIcon to textInput
