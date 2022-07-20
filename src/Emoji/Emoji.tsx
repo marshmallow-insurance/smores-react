@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
+import { MarginProps } from '../utils/space'
+import { Box } from '../Box'
 
 export type EmojiProps = {
   /** className attribute to apply classes from props */
@@ -10,32 +12,22 @@ export type EmojiProps = {
   size?: number
   /** aria-label to identify Emoji */
   label: string
-  /** margins TOP-RIGHT-BOTTOM-LEFT */
-  mt?: string
-  mr?: string
-  mb?: string
-  ml?: string
-}
+} & MarginProps
 
 export const Emoji: FC<EmojiProps> = ({
   className = '',
   symbol,
   size = 12,
   label,
-  mt = '0',
-  mr = '0',
-  mb = '0',
-  ml = '0',
+  ...marginProps
 }) => (
   <Container
+    as="span"
     className={className}
     size={size}
-    mt={mt}
-    mr={mr}
-    mb={mb}
-    ml={ml}
     role="img"
     aria-label={label}
+    {...marginProps}
   >
     {symbol}
   </Container>
@@ -43,18 +35,10 @@ export const Emoji: FC<EmojiProps> = ({
 
 interface IEmoji {
   size: number
-  mt: string
-  mr: string
-  mb: string
-  ml: string
 }
 
-const Container = styled.span<IEmoji>(
-  ({ size, mt, mr, mb, ml }) => css`
+const Container = styled(Box)<IEmoji>(
+  ({ size }) => css`
     font-size: ${size}px;
-    margin-top: ${mt};
-    margin-right: ${mr};
-    margin-bottom: ${mb};
-    margin-left: ${ml};
   `,
 )

@@ -1,7 +1,9 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
+import { Box } from '../Box'
 import { CheckBox } from '../CheckBox'
+import { MarginProps } from '../utils/space'
 
 type Item = {
   id: number
@@ -9,12 +11,16 @@ type Item = {
   checked: boolean
 }
 
-type Props = {
+type CheckBoxGroupProps = {
   list: Item[]
   onToggle: (id: number) => void
-}
+} & MarginProps
 
-export const CheckBoxGroup: FC<Props> = ({ list, onToggle }) => (
+export const CheckBoxGroup: FC<CheckBoxGroupProps> = ({
+  list,
+  onToggle,
+  ...marginProps
+}) => (
   <Container>
     {list.map((item) => (
       <CheckBox
@@ -22,6 +28,7 @@ export const CheckBoxGroup: FC<Props> = ({ list, onToggle }) => (
         id={String(item.id)}
         checked={item.checked}
         toggle={() => onToggle(item.id)}
+        {...marginProps}
       >
         {item.label}
       </CheckBox>
@@ -29,7 +36,7 @@ export const CheckBoxGroup: FC<Props> = ({ list, onToggle }) => (
   </Container>
 )
 
-const Container = styled.div`
+const Container = styled(Box)`
   display: flex;
   flex-direction: column;
   gap: 16px;

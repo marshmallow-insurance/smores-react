@@ -5,13 +5,14 @@ import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { theme } from '../theme'
 import { Text } from '../Text'
+import { MarginProps } from '../utils/space'
 
 export type AccordionProps = {
   title: string
   subTitle?: string
   borderTop?: boolean
   fullBorder?: boolean
-}
+} & MarginProps
 
 export const Accordion: FC<AccordionProps> = ({
   title,
@@ -19,11 +20,12 @@ export const Accordion: FC<AccordionProps> = ({
   borderTop = false,
   subTitle,
   fullBorder = false,
+  ...marginProps
 }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Wrapper borderTop={borderTop} fullBorder={fullBorder}>
+    <Wrapper borderTop={borderTop} fullBorder={fullBorder} {...marginProps}>
       <TopContainer
         flex
         alignItems="center"

@@ -14,7 +14,6 @@ export type SearchInputItem = {
 
 export interface SearchInputProps extends CommonFieldTypes {
   name?: string
-  label?: string
   placeholder?: string
   searchList: SearchInputItem[]
   onFound: (element: string) => void
@@ -25,7 +24,6 @@ export interface SearchInputProps extends CommonFieldTypes {
 export const SearchInput: FC<SearchInputProps> = ({
   id: idProp,
   name = 'search_input',
-  label,
   className = '',
   placeholder,
   searchList,
@@ -34,6 +32,7 @@ export const SearchInput: FC<SearchInputProps> = ({
   outlined = false,
   showIcon = false,
   renderAsTitle = false,
+  ...otherProps
 }) => {
   const id = useUniqueId(idProp)
   const [active, setActive] = useState(false)
@@ -75,9 +74,9 @@ export const SearchInput: FC<SearchInputProps> = ({
       className={className}
       renderAsTitle={renderAsTitle}
       id={id}
-      label={label}
       outlined={outlined}
       value={selectedResult}
+      {...otherProps}
     >
       <>
         <StyledInputBox outlined={outlined} selected={selected}>
@@ -193,7 +192,7 @@ const StyledResultsContainer = styled.div<ResultsContainer>`
   ${({ absolutePosition }) => absolutePosition && 'position: absolute;'}
   width: 100%;
   visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
-  ${({ outlined }) => outlined && 'left: 0px; top: 93%;'};
+  ${({ outlined }) => outlined && 'left: 0px; top: 90%;'};
 
   ul {
     max-height: ${({ show }) => (show ? '192px' : '0px')};

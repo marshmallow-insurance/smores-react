@@ -32,9 +32,10 @@ export const Field = ({
   required,
   showCaret,
   fullHeight = false,
+  ...marginProps
 }: FieldProps) => {
   return (
-    <Container className={className}>
+    <Container className={className} {...marginProps}>
       {label && (
         <Box mb={{ custom: outlined ? 4 : 0 }}>
           {renderAsTitle ? (
@@ -86,7 +87,6 @@ const Content = styled.div<{
     theme.colors[`${error ? 'error' : 'outline'}`]};
   background-color: ${({ outlined }) =>
     !outlined ? 'transparent' : theme.colors['white']};
-  display: flex;
   height: ${({ fullHeight }) => (fullHeight ? `100%` : `32px`)};
 
   &:hover,

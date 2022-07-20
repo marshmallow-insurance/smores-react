@@ -5,6 +5,7 @@ import { Color, theme } from '../theme'
 import { Icon } from '../Icon'
 import { Box } from '../Box'
 import { Text } from '../Text'
+import { MarginProps } from '../utils/space'
 
 export type RowProps = {
   iconLeft?: string
@@ -18,7 +19,7 @@ export type RowProps = {
   borderTop?: boolean
   borderBottom?: boolean
   boldHeading?: boolean
-}
+} & MarginProps
 
 export const Row: FC<RowProps> = ({
   iconLeft,
@@ -32,6 +33,7 @@ export const Row: FC<RowProps> = ({
   borderTop = true,
   borderBottom = true,
   boldHeading,
+  ...marginProps
 }) => {
   const windowWidth = screen.width
 
@@ -44,6 +46,7 @@ export const Row: FC<RowProps> = ({
       iconRight={iconRight}
       onClick={handleClick}
       boldHeading={boldHeading}
+      {...marginProps}
     >
       {iconLeft && (
         <Icon
@@ -82,7 +85,7 @@ interface IContainer {
   boldHeading?: boolean
 }
 
-const Container = styled.div<IContainer>(
+const Container = styled(Box)<IContainer>(
   ({ type, iconLeft, borderTop, borderBottom, boldHeading }) => css`
     border-radius: ${(type === 'first' && `8px 8px 0 0`) ||
     (type === 'curved' && `8px`) ||

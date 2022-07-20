@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components'
 
 import { Color, theme } from '../theme'
 import { linkStyleOverride } from '../Link/Link'
+import { Box } from '../Box'
+import { MarginProps } from '../utils/space'
 
 interface IText {
   /** typography class name to apply predefined styles */
@@ -25,7 +27,7 @@ type Props = {
   color?: Color
   cursor?: string
   title?: string
-}
+} & MarginProps
 
 export type TextProps = Props & Omit<LabelHTMLAttributes<HTMLElement>, 'color'>
 
@@ -62,7 +64,7 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
 
 Text.displayName = 'Text'
 
-const Container = styled.p<IText>(
+const Container = styled(Box)<IText>(
   ({ align, color, cursor, typo }) => css`
     /** PREDEFINED TYPOGRAPHY STYLES */
 

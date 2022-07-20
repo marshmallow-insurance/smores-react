@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
+.c1 {
+  margin-bottom: 0px;
+}
+
 .c2 {
   font-size: 8px;
   line-height: 100%;
@@ -21,10 +25,6 @@ exports[`renders 1`] = `
   color: #636768;
 }
 
-.c1 {
-  margin-bottom: 0px;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -41,10 +41,6 @@ exports[`renders 1`] = `
   position: relative;
   border-color: #D2D2D2;
   background-color: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   height: 32px;
 }
 

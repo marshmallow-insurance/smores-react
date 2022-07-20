@@ -5,6 +5,7 @@ import { Box } from '../Box'
 import { Text } from '../Text'
 import { RadioButton, FakeInput } from './RadioButtonStyled'
 import { useUniqueId } from '../utils/id'
+import { MarginProps } from '../utils/space'
 
 export type ConfirmationProps = {
   onChange(value?: boolean): void
@@ -18,7 +19,7 @@ export type ConfirmationProps = {
   yesLabel?: string | ReactElement
   noLabel?: string | ReactElement
   required?: boolean
-}
+} & MarginProps
 
 export const Confirmation: FC<ConfirmationProps> = ({
   checked,
@@ -32,10 +33,11 @@ export const Confirmation: FC<ConfirmationProps> = ({
   yesLabel = 'Yes',
   noLabel = 'No',
   required = false,
+  ...marginProps
 }: ConfirmationProps) => {
   const id = useUniqueId(idProp)
   return (
-    <ConfirmationWrapper>
+    <ConfirmationWrapper {...marginProps}>
       {(label || sublabel) && (
         <TextWrapper>
           {label && (
@@ -122,9 +124,8 @@ const ErrorBox = styled.span`
 `
 
 const ConfirmationWrapper = styled(Box)`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
 `
 
 const SectionHeadingText = styled(Text)`
@@ -134,6 +135,7 @@ const SectionHeadingText = styled(Text)`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 8px;
 `
 
 const Asterisk = styled.span`

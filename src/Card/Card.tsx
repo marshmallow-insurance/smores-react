@@ -1,14 +1,8 @@
 import React, { FC, ReactNode } from 'react'
 import styled from 'styled-components'
+import { MarginProps } from '../utils/space'
 import { theme } from '../theme'
-
-interface ICard {
-  maxWidth: string
-  marginX: string
-  marginY: string
-  narrow: boolean
-  wide: boolean
-}
+import { Box } from '../Box'
 
 export type CardProps = {
   children: ReactNode
@@ -23,7 +17,7 @@ export type CardProps = {
   narrow?: boolean
   /** Wide padding */
   wide?: boolean
-}
+} & MarginProps
 
 export const Card: FC<CardProps> = ({
   children,
@@ -33,6 +27,7 @@ export const Card: FC<CardProps> = ({
   marginY = '',
   narrow = false,
   wide = false,
+  ...otherProps
 }) => (
   <Container
     className={className}
@@ -41,12 +36,17 @@ export const Card: FC<CardProps> = ({
     marginY={marginY}
     narrow={narrow}
     wide={wide}
+    {...otherProps}
   >
     {children}
   </Container>
 )
 
-const Container = styled.div<ICard>`
+type ICard = Required<
+  Pick<CardProps, 'maxWidth' | 'marginX' | 'marginY' | 'narrow' | 'wide'>
+>
+
+const Container = styled(Box)<ICard>`
   background: ${theme.colors.white};
   border: 1px solid ${theme.colors.outline};
   box-sizing: border-box;

@@ -22,10 +22,6 @@ exports[`rendersDropdown 1`] = `
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
 }
 
 .c0 {
@@ -44,10 +40,6 @@ exports[`rendersDropdown 1`] = `
   position: relative;
   border-color: #D2D2D2;
   background-color: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   height: 32px;
 }
 
@@ -198,10 +190,6 @@ exports[`rendersDropdownWithGroups 1`] = `
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
 }
 
 .c0 {
@@ -220,10 +208,6 @@ exports[`rendersDropdownWithGroups 1`] = `
   position: relative;
   border-color: #D2D2D2;
   background-color: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   height: 32px;
 }
 

@@ -4,8 +4,9 @@ import { lighten } from 'polished'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
-import { theme, Color } from '../theme'
 import { Text } from '../Text'
+import { theme, Color } from '../theme'
+import { margin, MarginProps } from '../utils/space'
 
 type StylesItem = {
   iconColor: Color
@@ -43,15 +44,16 @@ export type SupportMessageProps = {
   description: string | ReactElement
   type: SupportMessageType
   title?: string
-}
+} & MarginProps
 
 export const SupportMessage: FC<SupportMessageProps> = ({
   className,
   description,
   type = 'info',
   title,
+  ...marginProps
 }) => (
-  <Wrapper className={className} type={type}>
+  <Wrapper className={className} type={type} {...marginProps}>
     <IconWrapper>
       <Icon
         size={24}
@@ -78,6 +80,7 @@ const IconWrapper = styled(Box)`
 
 const Wrapper = styled.div<IWrapper>(
   ({ type }) => css`
+    ${margin}
     align-items: center;
     background-color: ${styles[type].backgroundColor};
     ${type === 'info-outline' && `border: 1px solid ${theme.colors.secondary}`};

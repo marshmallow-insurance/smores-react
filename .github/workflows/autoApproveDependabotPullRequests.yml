@@ -1,7 +1,7 @@
 name: Auto approve Dependabot pull requests
 on:
   pull_request_target:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   approve-job:

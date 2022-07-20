@@ -2,12 +2,13 @@ import styled from 'styled-components'
 
 import { flex, FlexProps } from '../utils/flex'
 import { measure, MeasureProps } from '../utils/measure'
-import { space, SpaceProps } from '../utils/space'
+import { margin, padding, MarginProps, PaddingProps } from '../utils/space'
 
-export type BoxProps = SpaceProps & FlexProps & MeasureProps
+export type BoxProps = MarginProps & PaddingProps & FlexProps & MeasureProps
 
 export const Box = styled.div<BoxProps>`
-  ${space};
+  ${margin};
+  ${padding};
   ${flex};
   ${measure};
 `

@@ -2,9 +2,11 @@ import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
+import { Box } from '../Box'
 import { Icon as IconComponent } from '../Icon'
 import { Loader } from '../Loader'
 import { focusOutline } from '../utils/focusOutline'
+import { MarginProps } from '../utils/space'
 
 interface IButton {
   primary: boolean
@@ -22,7 +24,7 @@ type Props = {
   icon?: string
   disabled?: boolean
   loading?: boolean
-}
+} & MarginProps
 
 export type ChipProps = Props & ButtonHTMLAttributes<HTMLButtonElement>
 
@@ -41,6 +43,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
     ref,
   ) => (
     <Container
+      as="button"
       primary={primary}
       secondary={secondary}
       disabled={disabled || loading}
@@ -70,7 +73,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
 
 Chip.displayName = 'Chip'
 
-const Container = styled.button<IButton>(
+const Container = styled(Box)<IButton>(
   ({ primary, secondary, icon, $loading, disabled }) => css`
     ${focusOutline()}
 

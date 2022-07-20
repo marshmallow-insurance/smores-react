@@ -1,7 +1,8 @@
-## [2.4.2] - 2022-07-15
+## [2.4.3] - 2022-07-20
 ### Changed 
 - SupportMessage: Handle custom description properly
-
+## [2.4.2] - 2022-07-19
+### Changed 
 ## [2.4.1] - 2022-07-15
 ### Changed 
 - Added missing trailingIcon to textInput
@@ -395,6 +396,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.4.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.2...v2.4.3
 [2.4.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.1...v2.4.2
 [2.4.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.0...v2.4.1
 [2.4.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.3.6...v2.4.0

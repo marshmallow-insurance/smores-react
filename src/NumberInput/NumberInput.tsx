@@ -7,6 +7,7 @@ import { Icon } from '../Icon'
 
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
+import { MarginProps } from '../utils/space'
 
 export type NumberInputProps = {
   id?: string
@@ -49,7 +50,7 @@ export type NumberInputProps = {
   disabled?: boolean
   /** used to render outlined style */
   outlined?: boolean
-}
+} & MarginProps
 
 export const NumberInput: FC<NumberInputProps> = ({
   id: idProp,
@@ -73,6 +74,7 @@ export const NumberInput: FC<NumberInputProps> = ({
   step = 0,
   disabled = false,
   outlined = false,
+  ...marginProps
 }) => {
   const id = useUniqueId(idProp)
 
@@ -158,7 +160,12 @@ export const NumberInput: FC<NumberInputProps> = ({
   }
 
   return (
-    <Container className={className} hasLabel={!!label} hasError={!!errorMsg}>
+    <Container
+      className={className}
+      hasLabel={!!label}
+      hasError={!!errorMsg}
+      {...marginProps}
+    >
       {label && (
         <Box mb={{ custom: outlined ? 4 : 0 }}>
           <Text tag="label" color="subtext" typo="label" htmlFor={id}>
@@ -225,7 +232,7 @@ interface IContainer {
   hasError: boolean
 }
 
-const Container = styled.div<IContainer>`
+const Container = styled(Box)<IContainer>`
   font-family: 'Gordita', san-serif;
   display: flex;
   flex-direction: column;
