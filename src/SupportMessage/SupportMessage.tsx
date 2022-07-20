@@ -5,7 +5,7 @@ import { lighten } from 'polished'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { theme, Color } from '../theme'
-import { margin, MarginProps } from '../utils/space'
+import { MarginProps } from '../utils/space'
 
 type StylesItem = {
   iconColor: Color
@@ -75,9 +75,8 @@ const IconWrapper = styled(Box)`
   align-self: flex-start;
 `
 
-const Wrapper = styled.div<IWrapper>(
+const Wrapper = styled(Box)<IWrapper>(
   ({ type }) => css`
-    ${margin}
     align-items: center;
     background-color: ${styles[type].backgroundColor};
     ${type === 'info-outline' && `border: 1px solid ${theme.colors.secondary}`};
