@@ -16,15 +16,14 @@ const getBlankDaysCount = (firstDayOfTheMonth: Date) => {
   return dayOfTheWeek - 1
 }
 
-export const DatesList: FC<Props> = ({
-  items,
-  handleDateSelect,
-}) => {
+export const DatesList: FC<Props> = ({ items, handleDateSelect }) => {
   return (
     <Container>
       {Array(getBlankDaysCount(items[0].date))
         .fill(null)
-        .map((_, index) => <ListItem key={`blankItem-${index}`} disabled />)}
+        .map((_, index) => (
+          <ListItem key={`blankItem-${index}`} disabled />
+        ))}
       {items.map((item: Day, i) => (
         <ListItem
           key={i}
