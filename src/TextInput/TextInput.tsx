@@ -4,6 +4,7 @@ import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { Field, CommonFieldTypes } from '../Field'
+import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { useUniqueId } from '../utils/id'
 
@@ -60,7 +61,7 @@ export const TextInput = forwardRef(function TextInput(
       outlined={outlined}
       value={value}
     >
-      <>
+      <Box flex>
         <StyledInput
           disabled={disabled}
           type={type}
@@ -81,7 +82,7 @@ export const TextInput = forwardRef(function TextInput(
           }}
         />
         {trailingIcon && <StyledIcon render={trailingIcon} color="subtext" />}
-      </>
+      </Box>
     </Field>
   )
 })
