@@ -59,6 +59,19 @@ Required.args = {
   required: true,
 }
 
+export const WithTitleAsLabel = Template.bind({})
+
+WithTitleAsLabel.args = {
+  id: 'textarea_id',
+  label: 'Textarea label',
+  value: '',
+  onChange: noop,
+  disabled: false,
+  placeholder: 'Here is some placeholder text.',
+  required: false,
+  renderAsTitle: true,
+}
+
 const WorkingExampleTemplate = () => <Container />
 
 export const WorkingExample = WorkingExampleTemplate.bind({})
