@@ -1,3 +1,8 @@
+## [2.4.4] - 2022-07-22
+### Changed 
+- Export Link component
+- Field component updates
+
 ## [2.4.3] - 2022-07-20
 ### Changed 
 - SupportMessage: Handle custom description properly
@@ -401,6 +406,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.4.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.3...v2.4.4
 [2.4.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.2...v2.4.3
 [2.4.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.1...v2.4.2
 [2.4.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.0...v2.4.1
