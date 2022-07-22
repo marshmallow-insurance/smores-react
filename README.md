@@ -35,10 +35,10 @@ $ npm install @mrshmllw/smores-react
 
 Before starting, make sure that `CHANGELOG.md` is updated according to [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) with the latest release notes. If not, make a PR updating it before continuing.
 
-1. Checkout a new branch from the `Master` branch, update Changelog and _bump_ the project version.
+1. Checkout a new branch from the `main` branch, update Changelog and _bump_ the project version.
 
 ```
-git checkout master
+git checkout main
 git pull
 git checkout -b [branch_name]
 ```
@@ -49,10 +49,10 @@ git checkout -b [branch_name]
 npm version [major | minor | patch] 
 ```
 
-3. When merged, go the the `master` branch, pull and push the new tag to `origin`
+3. When merged, go the the `main` branch, pull and push the new tag to `origin`
 
 ```
-git checkout master
+git checkout main
 git pull
 git push origin --tags
 ```
