@@ -70,7 +70,7 @@ const Wrapper = styled(Box)<Omit<IAccordion, 'isOpen'>>(
 
     ${fullBorder &&
     css`
-      border: 1px solid ${theme.colors.subtext};
+      border: 1px solid ${theme.colors.outline};
       border-radius: 8px;
       margin-bottom: 14px;
       padding: 20px 15px;
