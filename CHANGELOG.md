@@ -1,3 +1,6 @@
+## [2.4.5] - 2022-07-27
+### Changed 
+- Fix border colour on Accordion component
 ## [2.4.4] - 2022-07-22
 ### Changed 
 - Export Link component
@@ -406,6 +409,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.4.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.4...v2.4.5
 [2.4.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.3...v2.4.4
 [2.4.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.2...v2.4.3
 [2.4.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.1...v2.4.2
