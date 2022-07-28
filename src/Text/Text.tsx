@@ -18,6 +18,10 @@ interface IText {
   cursor: string
 }
 
+/**
+ * @deprecated Use only new Typo
+ */
+
 export type DeprecatedTypo =
   | 'header-large'
   | 'header-medium'
@@ -49,7 +53,10 @@ type Props = {
   children: ReactNode
   tag: any
   className?: string
-  typo?: Typo | DeprecatedTypo
+  // Record<never, never> matches any non-null and non-undefined type so
+  // IntelliSense can suggest Typo to autocomplete
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  typo?: Typo | (string & Record<never, never>)
   align?: string
   color?: Color
   cursor?: string
