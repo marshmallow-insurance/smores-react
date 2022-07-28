@@ -39,7 +39,7 @@ export const Field = ({
       {label && (
         <Box mb={{ custom: outlined ? 4 : 0 }}>
           {renderAsTitle ? (
-            <Text tag="label" typo="heading-small" htmlFor={id} mb="8px">
+            <Text tag="label" typo="heading-small" htmlFor={id} mb="16px">
               {label}
             </Text>
           ) : (

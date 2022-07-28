@@ -51,9 +51,9 @@ exports[`renders 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 20px;
   font-weight: 500;
+  line-height: 28px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -124,13 +124,6 @@ exports[`renders 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-}
-
-@media (min-width:768px) {
-  .c6 {
-    font-size: 21px;
-    line-height: 27px;
-  }
 }
 
 @media (max-width:768px) {
