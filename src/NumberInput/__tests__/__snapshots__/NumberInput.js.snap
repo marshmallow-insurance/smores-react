@@ -59,14 +59,10 @@ exports[`renders - currency 1`] = `
 }
 
 .c2 {
-  font-size: 8px;
-  line-height: 100%;
-  font-weight: 700;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 500;
   text-transform: uppercase;
-  -webkit-letter-spacing: 0.75px;
-  -moz-letter-spacing: 0.75px;
-  -ms-letter-spacing: 0.75px;
-  letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -79,9 +75,9 @@ exports[`renders - currency 1`] = `
 }
 
 .c5 {
-  font-size: 14px;
-  line-height: 23px;
+  font-size: 16px;
   font-weight: 400;
+  line-height: 20px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -190,19 +186,6 @@ exports[`renders - currency 1`] = `
   border: 0;
   padding: 0;
   cursor: pointer;
-}
-
-@media (min-width:768px) {
-  .c2 {
-    font-size: 10px;
-  }
-}
-
-@media (min-width:768px) {
-  .c5 {
-    font-size: 16px;
-    line-height: 26px;
-  }
 }
 
 <div
@@ -314,14 +297,10 @@ exports[`renders - disabled 1`] = `
 }
 
 .c2 {
-  font-size: 8px;
-  line-height: 100%;
-  font-weight: 700;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 500;
   text-transform: uppercase;
-  -webkit-letter-spacing: 0.75px;
-  -moz-letter-spacing: 0.75px;
-  -ms-letter-spacing: 0.75px;
-  letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -400,12 +379,6 @@ exports[`renders - disabled 1`] = `
   border-color: #D2D2D2;
 }
 
-@media (min-width:768px) {
-  .c2 {
-    font-size: 10px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -455,6 +428,10 @@ exports[`renders - error 1`] = `
   display: flex;
 }
 
+.c12 {
+  margin-top: 8px;
+}
+
 .c10 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -502,14 +479,10 @@ exports[`renders - error 1`] = `
 }
 
 .c2 {
-  font-size: 8px;
-  line-height: 100%;
-  font-weight: 700;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 500;
   text-transform: uppercase;
-  -webkit-letter-spacing: 0.75px;
-  -moz-letter-spacing: 0.75px;
-  -ms-letter-spacing: 0.75px;
-  letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -522,9 +495,9 @@ exports[`renders - error 1`] = `
 }
 
 .c5 {
-  font-size: 14px;
-  line-height: 23px;
+  font-size: 16px;
   font-weight: 400;
+  line-height: 20px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -534,6 +507,21 @@ exports[`renders - error 1`] = `
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
   color: #112035;
+}
+
+.c13 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  color: #D82C2C;
 }
 
 .c0 {
@@ -559,12 +547,6 @@ exports[`renders - error 1`] = `
 .c3:hover,
 .c3:focus-within {
   border-color: #D82C2C;
-}
-
-.c12 {
-  margin-top: 7px;
-  color: #D82C2C;
-  font-size: 12px;
 }
 
 .c7 {
@@ -639,19 +621,6 @@ exports[`renders - error 1`] = `
   border: 0;
   padding: 0;
   cursor: pointer;
-}
-
-@media (min-width:768px) {
-  .c2 {
-    font-size: 10px;
-  }
-}
-
-@media (min-width:768px) {
-  .c5 {
-    font-size: 16px;
-    line-height: 26px;
-  }
 }
 
 <div
@@ -748,7 +717,10 @@ exports[`renders - error 1`] = `
     </div>
   </div>
   <span
-    class="c12"
+    class="c12 c13"
+    color="error"
+    cursor="inherit"
+    title=""
   >
     Oh gosh, this is an error isn't it!
   </span>
@@ -768,14 +740,10 @@ exports[`renders - number 1`] = `
 }
 
 .c2 {
-  font-size: 8px;
-  line-height: 100%;
-  font-weight: 700;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 500;
   text-transform: uppercase;
-  -webkit-letter-spacing: 0.75px;
-  -moz-letter-spacing: 0.75px;
-  -ms-letter-spacing: 0.75px;
-  letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -785,6 +753,21 @@ exports[`renders - number 1`] = `
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
   color: #636768;
+}
+
+.c3 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: inherit;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  color: #D82C2C;
 }
 
 .c0 {
@@ -809,11 +792,6 @@ exports[`renders - number 1`] = `
 .c4:hover,
 .c4:focus-within {
   border-color: #b9b9b9;
-}
-
-.c3 {
-  font-size: 14px;
-  color: #D82C2C;
 }
 
 .c6 {
@@ -859,12 +837,6 @@ exports[`renders - number 1`] = `
   border-color: #D2D2D2;
 }
 
-@media (min-width:768px) {
-  .c2 {
-    font-size: 10px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -881,6 +853,9 @@ exports[`renders - number 1`] = `
       Number
       <span
         class="c3"
+        color="error"
+        cursor="inherit"
+        title=""
       >
         *
       </span>
@@ -919,14 +894,10 @@ exports[`renders - tel 1`] = `
 }
 
 .c2 {
-  font-size: 8px;
-  line-height: 100%;
-  font-weight: 700;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 500;
   text-transform: uppercase;
-  -webkit-letter-spacing: 0.75px;
-  -moz-letter-spacing: 0.75px;
-  -ms-letter-spacing: 0.75px;
-  letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -939,9 +910,9 @@ exports[`renders - tel 1`] = `
 }
 
 .c5 {
-  font-size: 14px;
-  line-height: 23px;
+  font-size: 16px;
   font-weight: 400;
+  line-height: 20px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -1031,19 +1002,6 @@ exports[`renders - tel 1`] = `
   z-index: 1;
 }
 
-@media (min-width:768px) {
-  .c2 {
-    font-size: 10px;
-  }
-}
-
-@media (min-width:768px) {
-  .c5 {
-    font-size: 16px;
-    line-height: 26px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -1103,14 +1061,10 @@ exports[`renders - with suffix 1`] = `
 }
 
 .c2 {
-  font-size: 8px;
-  line-height: 100%;
-  font-weight: 700;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 500;
   text-transform: uppercase;
-  -webkit-letter-spacing: 0.75px;
-  -moz-letter-spacing: 0.75px;
-  -ms-letter-spacing: 0.75px;
-  letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -1123,9 +1077,9 @@ exports[`renders - with suffix 1`] = `
 }
 
 .c6 {
-  font-size: 14px;
-  line-height: 23px;
+  font-size: 16px;
   font-weight: 400;
+  line-height: 20px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -1213,19 +1167,6 @@ exports[`renders - with suffix 1`] = `
   left: -10px;
 }
 
-@media (min-width:768px) {
-  .c2 {
-    font-size: 10px;
-  }
-}
-
-@media (min-width:768px) {
-  .c6 {
-    font-size: 16px;
-    line-height: 26px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -1306,14 +1247,10 @@ exports[`renders - with trailing icon 1`] = `
 }
 
 .c2 {
-  font-size: 8px;
-  line-height: 100%;
-  font-weight: 700;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 500;
   text-transform: uppercase;
-  -webkit-letter-spacing: 0.75px;
-  -moz-letter-spacing: 0.75px;
-  -ms-letter-spacing: 0.75px;
-  letter-spacing: 0.75px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -1326,9 +1263,9 @@ exports[`renders - with trailing icon 1`] = `
 }
 
 .c5 {
-  font-size: 14px;
-  line-height: 23px;
+  font-size: 16px;
   font-weight: 400;
+  line-height: 20px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -1421,19 +1358,6 @@ exports[`renders - with trailing icon 1`] = `
   line-height: 19px;
   position: relative;
   z-index: 1;
-}
-
-@media (min-width:768px) {
-  .c2 {
-    font-size: 10px;
-  }
-}
-
-@media (min-width:768px) {
-  .c5 {
-    font-size: 16px;
-    line-height: 26px;
-  }
 }
 
 <div

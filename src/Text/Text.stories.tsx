@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Text, TextProps } from './Text'
 import { Box } from '../Box'
+import { Typo } from './Text'
 
 export default {
   title: 'Text',
@@ -9,25 +10,25 @@ export default {
 }
 
 const typos = [
-  'header-large',
-  'header-medium',
-  'header-small',
-  'desc-heavy',
-  'desc-medium',
-  'desc-light',
-  'desc-small',
-  'base',
-  'base-small',
-  'base-xsmall',
+  'hero-alternate',
+  'hero',
+  'heading-large',
+  'heading-medium',
+  'heading-small',
+  'headline-regular',
+  'headline-small',
+  'body-standfirst',
+  'body-regular',
+  'body-small',
+  'caption',
   'label',
-  'label-large',
 ] as const
 
 const Template = (props: TextProps) => (
   <Text {...props}>The quick brown fox jumps over the lazy dog</Text>
 )
 
-const TypoCollection = ({ typos }: { typos: Readonly<string[]> }) => {
+const TypoCollection = ({ typos }: { typos: Readonly<Typo[]> }) => {
   return (
     <Box>
       <Grid>
@@ -47,12 +48,12 @@ const TypoCollection = ({ typos }: { typos: Readonly<string[]> }) => {
             {typo}
           </Text>
           <Text tag="p" typo={typo} color="secondary">
-            Lorem ipsum dolor sit amet
+            They waited patiently for what seemed a very long time.
           </Text>
-          {typo !== 'label' && typo !== 'label-large' && (
+          {!['hero-alternate', 'hero', 'label'].includes(typo) && (
             <Text tag="p" typo={typo} color="secondary">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              eget scelerisque ante, iaculis sodales lorem.
+              They waited patiently for what seemed a very long time. They
+              waited patiently for what seemed a very long time.
             </Text>
           )}
         </Grid>

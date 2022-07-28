@@ -18,11 +18,38 @@ interface IText {
   cursor: string
 }
 
+export type DeprecatedTypo =
+  | 'header-large'
+  | 'header-medium'
+  | 'header-small'
+  | 'desc-heavy'
+  | 'desc-medium'
+  | 'desc-light'
+  | 'desc-small'
+  | 'base'
+  | 'base-small'
+  | 'base-xsmall'
+  | 'label-large'
+
+export type Typo =
+  | 'hero-alternate'
+  | 'hero'
+  | 'heading-large'
+  | 'heading-medium'
+  | 'heading-small'
+  | 'headline-regular'
+  | 'headline-small'
+  | 'body-standfirst'
+  | 'body-regular'
+  | 'body-small'
+  | 'caption'
+  | 'label'
+
 type Props = {
   children: ReactNode
   tag: any
   className?: string
-  typo?: string
+  typo?: Typo | DeprecatedTypo
   align?: string
   color?: Color
   cursor?: string
@@ -35,7 +62,7 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
   (
     {
       children,
-      typo,
+      typo = 'body-regular',
       className = '',
       tag = 'p',
       align = 'left',
@@ -49,7 +76,7 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
     <Container
       as={tag}
       className={className}
-      typo={typo || 'base'}
+      typo={typo}
       align={align}
       color={color}
       cursor={cursor}
@@ -66,9 +93,111 @@ Text.displayName = 'Text'
 
 const Container = styled(Box)<IText>(
   ({ align, color, cursor, typo }) => css`
-    /** PREDEFINED TYPOGRAPHY STYLES */
+    /** TYPOGRAPHY STYLES */
 
-    /* Header Large */
+    ${typo === 'hero-alternate' &&
+    css`
+      font-size: 40px;
+      font-family: 'ClearfaceITC';
+      font-weight: ${theme.font.weight.bold};
+      line-height: 44px;
+
+      @media (min-width: 768px) {
+        font-size: 56px;
+        line-height: 64px;
+      }
+    `}
+
+    ${typo === 'hero' &&
+    css`
+      font-size: 32px;
+      font-weight: ${theme.font.weight.medium};
+      line-height: 40px;
+
+      @media (min-width: 768px) {
+        font-size: 40px;
+        line-height: 44px;
+      }
+    `}
+
+    ${typo === 'heading-large' &&
+    css`
+      font-size: 28px;
+      font-weight: ${theme.font.weight.medium};
+      line-height: 32px;
+
+      @media (min-width: 768px) {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    `}
+
+    ${typo === 'heading-medium' &&
+    css`
+      font-size: 24px;
+      font-weight: ${theme.font.weight.medium};
+      line-height: 32px;
+    `}
+
+    ${typo === 'heading-small' &&
+    css`
+      font-size: 20px;
+      font-weight: ${theme.font.weight.medium};
+      line-height: 28px;
+    `}
+
+     ${typo === 'headline-regular' &&
+    css`
+      font-size: 16px;
+      font-weight: ${theme.font.weight.medium};
+      line-height: 20px;
+    `}
+
+    ${typo === 'headline-small' &&
+    css`
+      font-size: 14px;
+      font-weight: ${theme.font.weight.medium};
+      line-height: 20px;
+    `}
+
+    ${typo === 'body-standfirst' &&
+    css`
+      font-size: 18px;
+      font-weight: ${theme.font.weight.normal};
+      line-height: 24px;
+    `}
+
+    ${typo === 'body-regular' &&
+    css`
+      font-size: 16px;
+      font-weight: ${theme.font.weight.normal};
+      line-height: 20px;
+    `}
+
+    ${typo === 'body-small' &&
+    css`
+      font-size: 14px;
+      font-weight: ${theme.font.weight.normal};
+      line-height: 20px;
+    `}
+
+     ${typo === 'caption' &&
+    css`
+      font-size: 12px;
+      font-weight: ${theme.font.weight.normal};
+      line-height: 16px;
+    `}
+
+    /* Label */
+    ${typo === 'label' &&
+    css`
+      font-size: 10px;
+      line-height: 20px;
+      font-weight: ${theme.font.weight.medium};
+      text-transform: uppercase;
+    `}
+
+    /** DEPRECATED TYPOGRAPHY STYLES */
     ${typo === 'header-large' &&
     css`
       font-size: 24px;
@@ -81,7 +210,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-    /* Header medium */
   ${typo === 'header-medium' &&
     css`
       font-size: 21px;
@@ -94,7 +222,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Header small */
   ${typo === 'header-small' &&
     css`
       font-size: 18px;
@@ -107,7 +234,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Descriptor Heavy */
   ${typo === 'desc-heavy' &&
     css`
       font-size: 14px;
@@ -120,7 +246,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Descriptor Medium */
   ${typo === 'desc-medium' &&
     css`
       font-size: 14px;
@@ -133,7 +258,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Descriptor Light */
   ${typo === 'desc-light' &&
     css`
       font-size: 14px;
@@ -146,7 +270,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Descriptor Small */
   ${typo === 'desc-small' &&
     css`
       font-size: 12px;
@@ -159,7 +282,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Base */
   ${typo === 'base' &&
     css`
       font-size: 14px;
@@ -172,7 +294,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Base Small */
   ${typo === 'base-small' &&
     css`
       font-size: 12px;
@@ -185,7 +306,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Base Extra Small */
   ${typo === 'base-xsmall' &&
     css`
       font-size: 10px;
@@ -197,22 +317,7 @@ const Container = styled(Box)<IText>(
         line-height: 19px;
       }
     `}
-
-  /* Label */
-  ${typo === 'label' &&
-    css`
-      font-size: 8px;
-      line-height: 100%;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.75px;
-
-      @media (min-width: 768px) {
-        font-size: 10px;
-      }
-    `}
   
-  /* Label Large */
   ${typo === 'label-large' &&
     css`
       font-size: 12px;

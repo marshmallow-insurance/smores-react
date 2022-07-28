@@ -39,11 +39,17 @@ export const Field = ({
       {label && (
         <Box mb={{ custom: outlined ? 4 : 0 }}>
           {renderAsTitle ? (
-            <Title htmlFor={id}>{label}</Title>
-          ) : (
-            <Text tag="label" color="subtext" typo="label" htmlFor={id}>
+            <Text tag="label" typo="heading-small" htmlFor={id} mb="8px">
               {label}
-              {required && <Asterisk>*</Asterisk>}
+            </Text>
+          ) : (
+            <Text tag="label" typo="label" color="subtext" htmlFor={id}>
+              {label}
+              {required && (
+                <Text tag="span" typo="body-small" color="error">
+                  *
+                </Text>
+              )}
             </Text>
           )}
         </Box>
@@ -64,7 +70,11 @@ export const Field = ({
       </Content>
       {trailingIcon && <Icon render={trailingIcon} color="subtext" />}
 
-      {error && <ErrorBox>{errorMsg}</ErrorBox>}
+      {error && (
+        <Text tag="span" typo="caption" color="error" mt="8px">
+          {errorMsg}
+        </Text>
+      )}
     </Container>
   )
 }
@@ -110,19 +120,6 @@ const Content = styled.div<{
     `}
 `
 
-const ErrorBox = styled.span`
-  margin-top: 7px;
-  color: ${theme.colors.error};
-  font-size: 12px;
-`
-
-const Title = styled.label`
-  font-size: 20px;
-  line-height: 26px;
-  font-weight: 500;
-  padding-bottom: 8px;
-`
-
 const Caret = styled.div<{ outlined: boolean }>`
   position: absolute;
   top: 50%;
@@ -130,9 +127,4 @@ const Caret = styled.div<{ outlined: boolean }>`
   right: ${({ outlined }) => (outlined ? '15px' : '0')};
   pointer-events: none;
   transform: translateY(-50%);
-`
-
-const Asterisk = styled.span`
-  font-size: 14px;
-  color: ${theme.colors.error};
 `

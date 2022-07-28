@@ -2,9 +2,9 @@
 
 exports[`renders 1`] = `
 .c0 {
-  font-size: 14px;
-  line-height: 23px;
+  font-size: 16px;
   font-weight: 400;
+  line-height: 20px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -14,13 +14,6 @@ exports[`renders 1`] = `
   -ms-letter-spacing: 0.15px;
   letter-spacing: 0.15px;
   color: #112035;
-}
-
-@media (min-width:768px) {
-  .c0 {
-    font-size: 16px;
-    line-height: 26px;
-  }
 }
 
 <p
