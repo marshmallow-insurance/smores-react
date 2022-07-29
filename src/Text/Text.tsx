@@ -199,7 +199,7 @@ const Container = styled(Box)<IText>(
     ${typo === 'label' &&
     css`
       font-size: 10px;
-      line-height: 20px;
+      line-height: 12px;
       font-weight: ${theme.font.weight.medium};
       text-transform: uppercase;
     `}
