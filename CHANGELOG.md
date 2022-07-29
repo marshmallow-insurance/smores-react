@@ -1,3 +1,6 @@
+## [2.5.0] - 2022-07-29
+### Changed 
+- Add disabled state to Confirmation component
 ## [2.4.5] - 2022-07-27
 ### Changed 
 - Fix border colour on Accordion component
@@ -409,6 +412,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.5.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.5...v2.5.0
 [2.4.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.4...v2.4.5
 [2.4.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.3...v2.4.4
 [2.4.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.2...v2.4.3

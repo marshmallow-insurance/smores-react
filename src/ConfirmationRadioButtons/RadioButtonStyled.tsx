@@ -6,6 +6,7 @@ import { Box } from '../Box'
 export interface FakeInput {
   checked?: boolean
   error?: boolean
+  disabled?: boolean
 }
 
 type RadioButtonProps = {
@@ -15,6 +16,7 @@ type RadioButtonProps = {
   value: string
   onChange: (event: ChangeEvent<HTMLInputElement>) => void
   onBlur?: (e: FormEvent<HTMLInputElement>) => void
+  disabled?: boolean
 }
 
 export const RadioButton: FC<RadioButtonProps> = ({
@@ -24,6 +26,7 @@ export const RadioButton: FC<RadioButtonProps> = ({
   value,
   onChange,
   onBlur,
+  disabled = false,
 }: RadioButtonProps) => (
   <Box flex alignItems="center">
     <RadioInput
@@ -35,6 +38,7 @@ export const RadioButton: FC<RadioButtonProps> = ({
       onBlur={(e: FormEvent<HTMLInputElement>) => {
         onBlur && onBlur(e)
       }}
+      disabled={disabled}
     />
     <RadioLabel htmlFor={id}>
       <FakeInput checked={checked} />
