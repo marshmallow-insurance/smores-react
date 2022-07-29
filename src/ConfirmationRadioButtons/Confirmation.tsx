@@ -1,5 +1,5 @@
 import React, { FC, FormEvent, ReactElement } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { theme } from '../theme'
 import { Box } from '../Box'
 import { Text } from '../Text'
@@ -19,6 +19,7 @@ export type ConfirmationProps = {
   yesLabel?: string | ReactElement
   noLabel?: string | ReactElement
   required?: boolean
+  disabled?: boolean
 } & MarginProps
 
 export const Confirmation: FC<ConfirmationProps> = ({
@@ -33,6 +34,7 @@ export const Confirmation: FC<ConfirmationProps> = ({
   yesLabel = 'Yes',
   noLabel = 'No',
   required = false,
+  disabled = false,
   ...marginProps
 }: ConfirmationProps) => {
   const id = useUniqueId(idProp)
@@ -55,7 +57,11 @@ export const Confirmation: FC<ConfirmationProps> = ({
       )}
       <RadioButtonGroupWrapper>
         <RadioButtonGroup>
-          <RadioButtonWrapper checked={checked === true} error={error}>
+          <RadioButtonWrapper
+            checked={checked === true}
+            error={error}
+            disabled={disabled}
+          >
             <RadioButton
               id={id}
               label={yesLabel}
@@ -63,9 +69,14 @@ export const Confirmation: FC<ConfirmationProps> = ({
               onChange={() => onChange(true)}
               value={id}
               onBlur={onBlur}
+              disabled={disabled}
             />
           </RadioButtonWrapper>
-          <RadioButtonWrapper checked={checked === false} error={error}>
+          <RadioButtonWrapper
+            checked={checked === false}
+            error={error}
+            disabled={disabled}
+          >
             <RadioButton
               id={`${id}-1`}
               label={noLabel}
@@ -73,6 +84,7 @@ export const Confirmation: FC<ConfirmationProps> = ({
               onChange={() => onChange(false)}
               value={`${id}-1`}
               onBlur={onBlur}
+              disabled={disabled}
             />
           </RadioButtonWrapper>
         </RadioButtonGroup>
@@ -114,6 +126,12 @@ const RadioButtonWrapper = styled.div<FakeInput>`
   padding-left: 12px;
   border-radius: 5px;
   font-weight: bold;
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      border-color: ${theme.colors.secondary};
+      opacity: 0.5;
+    `}
 `
 
 const ErrorBox = styled.span`

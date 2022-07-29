@@ -84,3 +84,13 @@ RequiredWithLongLabel.args = {
   checked: undefined,
   required: true,
 }
+
+export const Disabled = Template.bind({})
+
+Disabled.args = {
+  id: 'radioButton',
+  label: 'Do you like marshmallows?',
+  onChange: noop,
+  checked: true,
+  disabled: true,
+}
