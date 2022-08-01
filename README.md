@@ -7,8 +7,6 @@
     <img alt="npm-version-badge" src="https://img.shields.io/npm/v/@mrshmllw/smores-react.svg?style=flat-square" /></a>
   <a href="https://github.com/marshmallow-insurance/smores-react/blob/master/LICENSE">
     <img alt="licence-badge" src="https://img.shields.io/github/license/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
-  <a href="https://david-dm.org/marshmallow-insurance/smores-react">
-    <img alt="dependencies-badge" src="https://img.shields.io/david/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
   <a href="https://snyk.io//test/github/marshmallow-insurance/smores-react?targetFile=package.json">
     <img alt="snyk-badge" src="https://img.shields.io/snyk/vulnerabilities/github/marshmallow-insurance/smores-react?style=flat-square" /></a>
   <a href="https://prettier.io/">
