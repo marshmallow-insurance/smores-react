@@ -54,8 +54,6 @@ exports[`renders 1`] = `
   font-size: 20px;
   font-weight: 500;
   line-height: 28px;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;

@@ -6,8 +6,6 @@ exports[`renders 1`] = `
   line-height: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;

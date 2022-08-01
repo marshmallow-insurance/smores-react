@@ -63,8 +63,6 @@ exports[`renders - currency 1`] = `
   line-height: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -78,8 +76,6 @@ exports[`renders - currency 1`] = `
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -301,8 +297,6 @@ exports[`renders - disabled 1`] = `
   line-height: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -483,8 +477,6 @@ exports[`renders - error 1`] = `
   line-height: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -498,8 +490,6 @@ exports[`renders - error 1`] = `
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -513,8 +503,6 @@ exports[`renders - error 1`] = `
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -744,8 +732,6 @@ exports[`renders - number 1`] = `
   line-height: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -759,8 +745,6 @@ exports[`renders - number 1`] = `
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -898,8 +882,6 @@ exports[`renders - tel 1`] = `
   line-height: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -913,8 +895,6 @@ exports[`renders - tel 1`] = `
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -1065,8 +1045,6 @@ exports[`renders - with suffix 1`] = `
   line-height: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -1080,8 +1058,6 @@ exports[`renders - with suffix 1`] = `
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -1251,8 +1227,6 @@ exports[`renders - with trailing icon 1`] = `
   line-height: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -1266,8 +1240,6 @@ exports[`renders - with trailing icon 1`] = `
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;

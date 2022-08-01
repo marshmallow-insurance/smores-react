@@ -334,8 +334,6 @@ const Container = styled(Box)<IText>(
       letter-spacing: 0.75px;
     `}
 
-    margin: 0;
-    padding: 0;
     text-align: ${align};
     cursor: ${cursor};
     letter-spacing: 0.15px;

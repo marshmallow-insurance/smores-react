@@ -10,8 +10,6 @@ exports[`disabled 1`] = `
   line-height: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -109,8 +107,6 @@ exports[`renders 1`] = `
   line-height: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -211,8 +207,6 @@ exports[`renders with error 1`] = `
   line-height: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -226,8 +220,6 @@ exports[`renders with error 1`] = `
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;

@@ -49,8 +49,6 @@ exports[`renders 1`] = `
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -64,8 +62,6 @@ exports[`renders 1`] = `
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
@@ -79,8 +75,6 @@ exports[`renders 1`] = `
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
   -webkit-letter-spacing: 0.15px;
