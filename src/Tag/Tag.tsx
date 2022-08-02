@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import { MarginProps } from '../utils/space'
 
-import { Text, DeprecatedTypo, Typo } from '../Text'
+import { Text } from '../Text'
 import { Color, theme } from '../theme'
 import { Box } from '../Box'
 
@@ -10,7 +10,7 @@ export type DefaultProps = {
   label: string
   className?: string
   color: Color
-  typo?: Typo | DeprecatedTypo
+  typo?: string
 } & MarginProps
 
 type GradientProps =
