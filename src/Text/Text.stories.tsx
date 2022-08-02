@@ -3,26 +3,14 @@ import styled from 'styled-components'
 import { Text, TextProps } from './Text'
 import { Box } from '../Box'
 import { Typo } from './Text'
+import { fontStyleMapping } from './fontMapping'
 
 export default {
   title: 'Text',
   component: Text,
 }
 
-const typos = [
-  'hero-alternate',
-  'hero',
-  'heading-large',
-  'heading-medium',
-  'heading-small',
-  'headline-regular',
-  'headline-small',
-  'body-standfirst',
-  'body-regular',
-  'body-small',
-  'caption',
-  'label',
-] as const
+const typos = Object.keys(fontStyleMapping)
 
 const deprecatedTypos = [
   'header-large',

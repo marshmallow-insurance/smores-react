@@ -1,10 +1,11 @@
 import React, { FC, forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import { Color, theme } from '../theme'
 import { linkStyleOverride } from '../Link/Link'
 import { Box } from '../Box'
 import { MarginProps } from '../utils/space'
+import { fontStyleMapping } from './fontMapping'
 
 interface IText {
   /** typography class name to apply predefined styles */
@@ -98,111 +99,29 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
 
 Text.displayName = 'Text'
 
+const isNewTypo = (value: string): value is Typo => {
+  return Object.keys(fontStyleMapping).includes(value)
+}
+
+const generateTypo = (typo: Typo): FlattenSimpleInterpolation => {
+  let styles
+
+  Object.keys(fontStyleMapping).forEach((font) => {
+    if (typo === font) {
+      styles = fontStyleMapping[font]
+    }
+  })
+
+  return css`
+    ${styles}
+  `
+}
+
 const Container = styled(Box)<IText>(
   ({ align, color, cursor, typo }) => css`
     /** TYPOGRAPHY STYLES */
 
-    ${typo === 'hero-alternate' &&
-    css`
-      font-size: 40px;
-      font-family: 'ClearfaceITC';
-      font-weight: ${theme.font.weight.bold};
-      line-height: 44px;
-
-      @media (min-width: 768px) {
-        font-size: 56px;
-        line-height: 64px;
-      }
-    `}
-
-    ${typo === 'hero' &&
-    css`
-      font-size: 32px;
-      font-weight: ${theme.font.weight.medium};
-      line-height: 40px;
-
-      @media (min-width: 768px) {
-        font-size: 40px;
-        line-height: 44px;
-      }
-    `}
-
-    ${typo === 'heading-large' &&
-    css`
-      font-size: 28px;
-      font-weight: ${theme.font.weight.medium};
-      line-height: 32px;
-
-      @media (min-width: 768px) {
-        font-size: 32px;
-        line-height: 40px;
-      }
-    `}
-
-    ${typo === 'heading-medium' &&
-    css`
-      font-size: 24px;
-      font-weight: ${theme.font.weight.medium};
-      line-height: 32px;
-    `}
-
-    ${typo === 'heading-small' &&
-    css`
-      font-size: 20px;
-      font-weight: ${theme.font.weight.medium};
-      line-height: 28px;
-    `}
-
-     ${typo === 'headline-regular' &&
-    css`
-      font-size: 16px;
-      font-weight: ${theme.font.weight.medium};
-      line-height: 20px;
-    `}
-
-    ${typo === 'headline-small' &&
-    css`
-      font-size: 14px;
-      font-weight: ${theme.font.weight.medium};
-      line-height: 20px;
-    `}
-
-    ${typo === 'body-standfirst' &&
-    css`
-      font-size: 18px;
-      font-weight: ${theme.font.weight.normal};
-      line-height: 24px;
-    `}
-
-    ${typo === 'body-regular' &&
-    css`
-      font-size: 16px;
-      font-weight: ${theme.font.weight.normal};
-      line-height: 20px;
-    `}
-
-    ${typo === 'body-small' &&
-    css`
-      font-size: 14px;
-      font-weight: ${theme.font.weight.normal};
-      line-height: 20px;
-    `}
-
-     ${typo === 'caption' &&
-    css`
-      font-size: 12px;
-      font-weight: ${theme.font.weight.normal};
-      line-height: 16px;
-    `}
-
-    /* Label */
-    ${typo === 'label' &&
-    css`
-      font-size: 10px;
-      line-height: 12px;
-      font-weight: ${theme.font.weight.medium};
-      text-transform: uppercase;
-    `}
+    ${isNewTypo(typo) && generateTypo(typo)}
 
     /** DEPRECATED TYPOGRAPHY STYLES */
     ${typo === 'header-large' &&
