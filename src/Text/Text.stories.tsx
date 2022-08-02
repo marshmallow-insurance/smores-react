@@ -24,11 +24,28 @@ const typos = [
   'label',
 ] as const
 
+const deprecatedTypos = [
+  'header-large',
+  'header-medium',
+  'header-small',
+  'desc-heavy',
+  'desc-medium',
+  'desc-light',
+  'desc-small',
+  'base',
+  'base-small',
+  'base-xsmall',
+]
+
 const Template = (props: TextProps) => (
   <Text {...props}>The quick brown fox jumps over the lazy dog</Text>
 )
 
-const TypoCollection = ({ typos }: { typos: Readonly<Typo[]> }) => {
+const TypoCollection = ({
+  typos,
+}: {
+  typos: Readonly<Typo[]> | Readonly<string[]>
+}) => {
   return (
     <Box>
       <Grid>
@@ -71,6 +88,8 @@ const Grid = styled(Box)`
 
 const TypographyTemplate = () => <TypoCollection typos={typos} />
 
+const DeprecatedTemplate = () => <TypoCollection typos={deprecatedTypos} />
+
 export const Default = Template.bind({})
 
 Default.args = {
@@ -93,3 +112,5 @@ WithTitle.args = {
 }
 
 export const Collection = TypographyTemplate.bind({})
+
+export const DeprecatedTypos = DeprecatedTemplate.bind({})
