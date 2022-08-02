@@ -7,7 +7,7 @@
 - Add disabled state to Confirmation component
 ## [2.4.5] - 2022-07-27
 ### Changed 
-- Updated typography deprecating old styles
+- Fix border colour on Accordion component
 
 ## [2.4.4] - 2022-07-22
 ### Changed 
