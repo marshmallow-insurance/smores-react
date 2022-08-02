@@ -8,10 +8,6 @@ exports[`renders 1`] = `
   text-transform: uppercase;
   text-align: left;
   cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
   color: #D82C2C;
 }
 

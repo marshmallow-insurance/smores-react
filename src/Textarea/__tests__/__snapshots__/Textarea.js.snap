@@ -12,10 +12,6 @@ exports[`disabled 1`] = `
   text-transform: uppercase;
   text-align: left;
   cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
   color: #636768;
 }
 
@@ -109,10 +105,6 @@ exports[`renders 1`] = `
   text-transform: uppercase;
   text-align: left;
   cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
   color: #636768;
 }
 
@@ -209,10 +201,6 @@ exports[`renders with error 1`] = `
   text-transform: uppercase;
   text-align: left;
   cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
   color: #636768;
 }
 
@@ -222,10 +210,6 @@ exports[`renders with error 1`] = `
   line-height: 16px;
   text-align: left;
   cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
   color: #D82C2C;
 }
 

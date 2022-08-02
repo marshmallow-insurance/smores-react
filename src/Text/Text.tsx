@@ -1,5 +1,5 @@
 import React, { FC, forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { Color, theme } from '../theme'
 import { linkStyleOverride } from '../Link/Link'
@@ -103,25 +103,11 @@ const isNewTypo = (value: string): value is Typo => {
   return Object.keys(fontStyleMapping).includes(value)
 }
 
-const generateTypo = (typo: Typo): FlattenSimpleInterpolation => {
-  let styles
-
-  Object.keys(fontStyleMapping).forEach((font) => {
-    if (typo === font) {
-      styles = fontStyleMapping[font]
-    }
-  })
-
-  return css`
-    ${styles}
-  `
-}
-
 const Container = styled(Box)<IText>(
   ({ align, color, cursor, typo }) => css`
     /** TYPOGRAPHY STYLES */
 
-    ${isNewTypo(typo) && generateTypo(typo)}
+    ${isNewTypo(typo) && fontStyleMapping[typo]}
 
     /** DEPRECATED TYPOGRAPHY STYLES */
     ${typo === 'header-large' &&
@@ -255,7 +241,6 @@ const Container = styled(Box)<IText>(
 
     text-align: ${align};
     cursor: ${cursor};
-    letter-spacing: 0.15px;
     color: ${theme.colors[color]};
     ${linkStyleOverride({ color: theme.colors[color] })}
   `,

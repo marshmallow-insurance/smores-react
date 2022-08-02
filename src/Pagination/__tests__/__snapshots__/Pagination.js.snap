@@ -51,10 +51,6 @@ exports[`renders 1`] = `
   font-weight: 500;
   text-align: left;
   cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
   color: #112035;
 }
 
@@ -64,10 +60,6 @@ exports[`renders 1`] = `
   font-weight: 400;
   text-align: left;
   cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
   color: #112035;
 }
 
@@ -77,10 +69,6 @@ exports[`renders 1`] = `
   line-height: 20px;
   text-align: left;
   cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
   color: #112035;
 }
 
