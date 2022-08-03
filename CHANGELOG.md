@@ -1,10 +1,7 @@
-## [2.6.1] - 2022-08-03
-### Changed 
-- Refer-a-friend Icon to take colour prop
-
 ## [2.6.0] - 2022-08-02
 ### Changed 
 - Updated typography deprecating old styles
+- Updated refer-a-friend Icon to take colour prop
 
 ## [2.5.0] - 2022-07-29
 ### Changed 
@@ -421,7 +418,6 @@
 ### Changed
 - Updated gap and styles on Row component
 
-[2.6.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.6.0...v2.6.1
 [2.6.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.5.0...v2.6.0
 [2.5.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.5...v2.5.0
 [2.4.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.4...v2.4.5
