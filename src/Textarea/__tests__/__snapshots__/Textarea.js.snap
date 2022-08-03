@@ -79,9 +79,6 @@ exports[`disabled 1`] = `
     </label>
   </div>
   <div
-    class=""
-  />
-  <div
     class="c3"
     value=""
   >
@@ -174,9 +171,6 @@ exports[`renders 1`] = `
       Textarea label
     </label>
   </div>
-  <div
-    class=""
-  />
   <div
     class="c3"
     value=""
@@ -282,9 +276,6 @@ exports[`renders with error 1`] = `
       Textarea label
     </label>
   </div>
-  <div
-    class=""
-  />
   <div
     class="c3"
     value=""

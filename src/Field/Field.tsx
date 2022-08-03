@@ -56,13 +56,15 @@ export const Field = ({
           )}
         </Box>
       )}
-      <Box>
-        {assistiveText && (
-          <Text tag="p" typo="body" color="subtext">
+
+      {assistiveText && (
+        <Box>
+          <Text tag="p" color="subtext">
             {assistiveText}
           </Text>
-        )}
-      </Box>
+        </Box>
+      )}
+
       <Content
         fullHeight={fullHeight}
         value={value}
