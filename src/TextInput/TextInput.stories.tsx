@@ -140,6 +140,21 @@ Required.args = {
   required: true,
 }
 
+export const AssistiveText = Template.bind({})
+
+AssistiveText.args = {
+  id: 'textInput',
+  name: 'textInput',
+  placeholder: 'Enter name',
+  onChange: noop,
+  onInputChange: noop,
+  onBlur: noop,
+  label: 'Please enter your name',
+  outlined: true,
+  required: true,
+  assistiveText: 'Some more information...',
+}
+
 const WorkingExampleTemplate = () => <Container />
 
 export const WorkingExample = WorkingExampleTemplate.bind({})
