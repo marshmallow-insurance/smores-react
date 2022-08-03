@@ -2,13 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import { Text, TextProps } from './Text'
 import { Box } from '../Box'
+import { Typo } from './Text'
+import { fontStyleMapping } from './fontMapping'
 
 export default {
   title: 'Text',
   component: Text,
 }
 
-const typos = [
+const typos = Object.keys(fontStyleMapping)
+
+const deprecatedTypos = [
   'header-large',
   'header-medium',
   'header-small',
@@ -19,15 +23,17 @@ const typos = [
   'base',
   'base-small',
   'base-xsmall',
-  'label',
-  'label-large',
-] as const
+]
 
 const Template = (props: TextProps) => (
   <Text {...props}>The quick brown fox jumps over the lazy dog</Text>
 )
 
-const TypoCollection = ({ typos }: { typos: Readonly<string[]> }) => {
+const TypoCollection = ({
+  typos,
+}: {
+  typos: Readonly<Typo[]> | Readonly<string[]>
+}) => {
   return (
     <Box>
       <Grid>
@@ -47,12 +53,12 @@ const TypoCollection = ({ typos }: { typos: Readonly<string[]> }) => {
             {typo}
           </Text>
           <Text tag="p" typo={typo} color="secondary">
-            Lorem ipsum dolor sit amet
+            They waited patiently for what seemed a very long time.
           </Text>
-          {typo !== 'label' && typo !== 'label-large' && (
+          {!['hero-alternate', 'hero', 'label'].includes(typo) && (
             <Text tag="p" typo={typo} color="secondary">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              eget scelerisque ante, iaculis sodales lorem.
+              They waited patiently for what seemed a very long time. They
+              waited patiently for what seemed a very long time.
             </Text>
           )}
         </Grid>
@@ -69,6 +75,8 @@ const Grid = styled(Box)`
 `
 
 const TypographyTemplate = () => <TypoCollection typos={typos} />
+
+const DeprecatedTemplate = () => <TypoCollection typos={deprecatedTypos} />
 
 export const Default = Template.bind({})
 
@@ -92,3 +100,5 @@ WithTitle.args = {
 }
 
 export const Collection = TypographyTemplate.bind({})
+
+export const DeprecatedTypos = DeprecatedTemplate.bind({})

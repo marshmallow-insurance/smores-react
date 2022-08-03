@@ -98,7 +98,7 @@ export const Datepicker: FC<DatepickerProps> = ({
           <Caret render="caret" color="white" size={24} rotate={90} />
         </Circle>
 
-        <Heading tag="h4" typo="desc-base">
+        <Heading tag="h4" typo="body-regular">
           {availableMonths[activeMonthIndex].label}
         </Heading>
 

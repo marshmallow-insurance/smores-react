@@ -35,7 +35,9 @@ export const Accordion: FC<AccordionProps> = ({
         isOpen={isOpen}
       >
         <TitleContainer>
-          <Title>{title}</Title>
+          <Text tag="h2" typo="headline-regular">
+            {title}
+          </Text>
           {subTitle && (
             <Text tag="label" color="subtext" typo="label">
               {subTitle}
@@ -97,13 +99,6 @@ const TopContainer = styled(Box)<IAccordion>(
     `}
   `,
 )
-
-const Title = styled.h2`
-  color: ${theme.colors.secondary};
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: ${theme.font.weight.medium};
-`
 
 const CaretIcon = styled(Icon)<IAccordion>(
   ({ isOpen }) => css`

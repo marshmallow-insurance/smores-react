@@ -13,6 +13,7 @@ const linkArgs = {
   href: 'https://www.google.com',
   openInNewTab: true,
   children: 'Google link',
+  typo: 'regular',
 }
 
 export const Playground = Link.bind({})

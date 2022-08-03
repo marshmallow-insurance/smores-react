@@ -5,6 +5,7 @@ import { Color, theme } from '../theme'
 import { linkStyleOverride } from '../Link/Link'
 import { Box } from '../Box'
 import { MarginProps } from '../utils/space'
+import { fontStyleMapping } from './fontMapping'
 
 interface IText {
   /** typography class name to apply predefined styles */
@@ -18,11 +19,45 @@ interface IText {
   cursor: string
 }
 
+/**
+ * @deprecated Use only new Typo
+ */
+
+export type DeprecatedTypo =
+  | 'header-large'
+  | 'header-medium'
+  | 'header-small'
+  | 'desc-heavy'
+  | 'desc-medium'
+  | 'desc-light'
+  | 'desc-small'
+  | 'base'
+  | 'base-small'
+  | 'base-xsmall'
+  | 'label-large'
+
+export type Typo =
+  | 'hero-alternate'
+  | 'hero'
+  | 'heading-large'
+  | 'heading-medium'
+  | 'heading-small'
+  | 'headline-regular'
+  | 'headline-small'
+  | 'body-standfirst'
+  | 'body-regular'
+  | 'body-small'
+  | 'caption'
+  | 'label'
+
 type Props = {
   children: ReactNode
   tag: any
   className?: string
-  typo?: string
+  // Record<never, never> matches any non-null and non-undefined type so
+  // IntelliSense can suggest Typo to autocomplete
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  typo?: Typo | (string & Record<never, never>)
   align?: string
   color?: Color
   cursor?: string
@@ -35,7 +70,7 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
   (
     {
       children,
-      typo,
+      typo = 'body-regular',
       className = '',
       tag = 'p',
       align = 'left',
@@ -49,7 +84,7 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
     <Container
       as={tag}
       className={className}
-      typo={typo || 'base'}
+      typo={typo}
       align={align}
       color={color}
       cursor={cursor}
@@ -64,11 +99,17 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
 
 Text.displayName = 'Text'
 
+const isNewTypo = (value: string): value is Typo => {
+  return Object.keys(fontStyleMapping).includes(value)
+}
+
 const Container = styled(Box)<IText>(
   ({ align, color, cursor, typo }) => css`
-    /** PREDEFINED TYPOGRAPHY STYLES */
+    /** TYPOGRAPHY STYLES */
 
-    /* Header Large */
+    ${isNewTypo(typo) && fontStyleMapping[typo]}
+
+    /** DEPRECATED TYPOGRAPHY STYLES */
     ${typo === 'header-large' &&
     css`
       font-size: 24px;
@@ -81,7 +122,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-    /* Header medium */
   ${typo === 'header-medium' &&
     css`
       font-size: 21px;
@@ -94,7 +134,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Header small */
   ${typo === 'header-small' &&
     css`
       font-size: 18px;
@@ -107,7 +146,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Descriptor Heavy */
   ${typo === 'desc-heavy' &&
     css`
       font-size: 14px;
@@ -120,7 +158,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Descriptor Medium */
   ${typo === 'desc-medium' &&
     css`
       font-size: 14px;
@@ -133,7 +170,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Descriptor Light */
   ${typo === 'desc-light' &&
     css`
       font-size: 14px;
@@ -146,7 +182,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Descriptor Small */
   ${typo === 'desc-small' &&
     css`
       font-size: 12px;
@@ -159,7 +194,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Base */
   ${typo === 'base' &&
     css`
       font-size: 14px;
@@ -172,7 +206,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Base Small */
   ${typo === 'base-small' &&
     css`
       font-size: 12px;
@@ -185,7 +218,6 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  /* Base Extra Small */
   ${typo === 'base-xsmall' &&
     css`
       font-size: 10px;
@@ -197,22 +229,7 @@ const Container = styled(Box)<IText>(
         line-height: 19px;
       }
     `}
-
-  /* Label */
-  ${typo === 'label' &&
-    css`
-      font-size: 8px;
-      line-height: 100%;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.75px;
-
-      @media (min-width: 768px) {
-        font-size: 10px;
-      }
-    `}
   
-  /* Label Large */
   ${typo === 'label-large' &&
     css`
       font-size: 12px;
@@ -222,11 +239,8 @@ const Container = styled(Box)<IText>(
       letter-spacing: 0.75px;
     `}
 
-    margin: 0;
-    padding: 0;
     text-align: ${align};
     cursor: ${cursor};
-    letter-spacing: 0.15px;
     color: ${theme.colors[color]};
     ${linkStyleOverride({ color: theme.colors[color] })}
   `,

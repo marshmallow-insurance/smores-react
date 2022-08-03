@@ -52,7 +52,7 @@ export const Modal: FC<ModalProps> = ({
           {icon !== '' && (
             <Icon render={icon} size={42} color="secondary" mb="16px" />
           )}
-          <Text tag="h2" typo="header-small" align="left">
+          <Text tag="h2" typo="heading-small" align="left">
             {title}
           </Text>
         </TitleElements>

@@ -6,6 +6,8 @@ import { focusOutline } from '../utils/focusOutline'
 import { theme } from '../theme'
 import { Icon } from '../Icon'
 
+type LinkTypo = 'regular' | 'small'
+
 export type LinkProps = {
   className?: string
   href: string
@@ -13,6 +15,7 @@ export type LinkProps = {
   openInNewTab?: boolean
   children?: ReactNode
   download?: boolean
+  typo?: LinkTypo
 }
 
 export const Link: FC<LinkProps> = ({
@@ -22,6 +25,7 @@ export const Link: FC<LinkProps> = ({
   openInNewTab,
   download,
   children,
+  typo = 'regular',
 }) => {
   return (
     <LinkWrapper
@@ -29,6 +33,7 @@ export const Link: FC<LinkProps> = ({
       className={className}
       onClick={onClick}
       download={download}
+      typo={typo}
       {...(openInNewTab && {
         rel: 'noopener noreferrer',
         target: '_blank',
@@ -36,42 +41,59 @@ export const Link: FC<LinkProps> = ({
     >
       {children}
       {openInNewTab && (
-        <StyledIcon render="new-window" size={12} color="primary" />
+        <StyledIcon
+          render="new-window"
+          size={typo === 'regular' ? 14 : 12}
+          color="primary"
+        />
       )}
     </LinkWrapper>
   )
 }
 
-const LinkWrapper = styled.a`
-  ${focusOutline()}
-  display: inline-flex;
-  flex-direction: row;
+const LinkWrapper = styled.a<{ typo: LinkTypo }>(
+  ({ typo }) =>
+    css`
+      ${focusOutline()}
+      display: inline-flex;
+      flex-direction: row;
 
-  font-size: 14px;
-  font-weight: ${theme.font.weight.medium};
-  line-height: 14px;
-  text-decoration: underline;
-  color: ${theme.colors.primary};
+      ${typo === 'regular' &&
+      css`
+        font-size: 16px;
+        line-height: 20px;
+      `}
 
-  background: none;
-  cursor: pointer;
+      ${typo === 'small' &&
+      css`
+        font-size: 14px;
+        line-height: 20px;
+      `}
 
-  &:hover {
-    color: ${darken(0.1, theme.colors.primary)};
+      font-weight: ${theme.font.weight.medium};
+      text-decoration: underline;
+      color: ${theme.colors.primary};
 
-    path {
-      fill: ${darken(0.1, theme.colors.primary)};
-    }
-  }
+      background: none;
+      cursor: pointer;
 
-  &:active {
-    color: ${theme.colors.secondary};
+      &:hover {
+        color: ${darken(0.1, theme.colors.primary)};
 
-    path {
-      fill: ${theme.colors.secondary};
-    }
-  }
-`
+        path {
+          fill: ${darken(0.1, theme.colors.primary)};
+        }
+      }
+
+      &:active {
+        color: ${theme.colors.secondary};
+
+        path {
+          fill: ${theme.colors.secondary};
+        }
+      }
+    `,
+)
 
 /**
  * Internal utility to override styling in other components (see Text)

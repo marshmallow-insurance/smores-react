@@ -51,17 +51,11 @@ exports[`renders 1`] = `
 }
 
 .c6 {
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 20px;
   font-weight: 500;
-  margin: 0;
-  padding: 0;
+  line-height: 28px;
   text-align: left;
   cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
   color: #112035;
 }
 
@@ -124,13 +118,6 @@ exports[`renders 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-}
-
-@media (min-width:768px) {
-  .c6 {
-    font-size: 21px;
-    line-height: 27px;
-  }
 }
 
 @media (max-width:768px) {

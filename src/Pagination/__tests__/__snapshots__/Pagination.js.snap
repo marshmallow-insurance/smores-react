@@ -49,14 +49,8 @@ exports[`renders 1`] = `
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
   color: #112035;
 }
 
@@ -64,29 +58,17 @@ exports[`renders 1`] = `
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
-  margin: 0;
-  padding: 0;
   text-align: left;
   cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
   color: #112035;
 }
 
 .c7 {
-  font-size: 14px;
-  line-height: 23px;
+  font-size: 16px;
   font-weight: 400;
-  margin: 0;
-  padding: 0;
+  line-height: 20px;
   text-align: left;
   cursor: inherit;
-  -webkit-letter-spacing: 0.15px;
-  -moz-letter-spacing: 0.15px;
-  -ms-letter-spacing: 0.15px;
-  letter-spacing: 0.15px;
   color: #112035;
 }
 
@@ -146,13 +128,6 @@ exports[`renders 1`] = `
   .c5 {
     font-size: 16px;
     line-height: 23px;
-  }
-}
-
-@media (min-width:768px) {
-  .c7 {
-    font-size: 16px;
-    line-height: 26px;
   }
 }
 

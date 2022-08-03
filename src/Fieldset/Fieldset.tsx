@@ -1,8 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import { MarginProps } from '../utils/space'
 import { Box } from '../Box'
+import { Text } from '../Text'
 
 type FieldSetProps = {
   children: React.ReactChild
@@ -19,16 +19,12 @@ export const Fieldset = ({
   return (
     <Box as="fieldset" {...marginProps}>
       <Box mb={{ custom: outlined ? 4 : 0 }}>
-        <Legend>{label}</Legend>
+        <Text tag="legend" typo="heading-small" mb="16px">
+          {label}
+        </Text>
       </Box>
 
       {children}
     </Box>
   )
 }
-
-const Legend = styled.legend`
-  font-size: 16px;
-  font-weight: bold;
-  padding-bottom: 8px;
-`
