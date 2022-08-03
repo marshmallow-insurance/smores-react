@@ -1,6 +1,7 @@
 ## [2.6.0] - 2022-08-02
 ### Changed 
 - Updated typography deprecating old styles
+- Updated refer-a-friend Icon to take colour prop
 
 ## [2.5.0] - 2022-07-29
 ### Changed 
