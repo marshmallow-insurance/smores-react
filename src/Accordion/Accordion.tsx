@@ -23,7 +23,7 @@ export const Accordion: FC<AccordionProps> = ({
   ...marginProps
 }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const px = fullBorder ? '24px' : '0'
+  const px = fullBorder ? '16px' : '0'
 
   return (
     <Wrapper borderTop={borderTop} fullBorder={fullBorder} {...marginProps}>
@@ -32,7 +32,7 @@ export const Accordion: FC<AccordionProps> = ({
         alignItems="center"
         justifyContent="space-between"
         onClick={() => setIsOpen(!isOpen)}
-        py="16px"
+        py={fullBorder ? { custom: 20 } : '16px'}
         px={px}
       >
         <TitleContainer>
