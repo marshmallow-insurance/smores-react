@@ -23,6 +23,7 @@ export const Accordion: FC<AccordionProps> = ({
   ...marginProps
 }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const px = fullBorder ? '24px' : '0'
 
   return (
     <Wrapper borderTop={borderTop} fullBorder={fullBorder} {...marginProps}>
@@ -31,8 +32,8 @@ export const Accordion: FC<AccordionProps> = ({
         alignItems="center"
         justifyContent="space-between"
         onClick={() => setIsOpen(!isOpen)}
-        fullBorder={fullBorder}
-        isOpen={isOpen}
+        py="16px"
+        px={px}
       >
         <TitleContainer>
           <Text tag="h2" typo="headline-regular">
@@ -53,7 +54,11 @@ export const Accordion: FC<AccordionProps> = ({
           borderTop={borderTop}
         />
       </TopContainer>
-      {isOpen && <>{children}</>}
+      {isOpen && (
+        <Box pt="12px" pb="16px" px={px}>
+          {children}
+        </Box>
+      )}
     </Wrapper>
   )
 }
@@ -67,15 +72,13 @@ interface IAccordion {
 const Wrapper = styled(Box)<Omit<IAccordion, 'isOpen'>>(
   ({ borderTop, fullBorder }) => css`
     border-bottom: 1px solid ${theme.colors.outline};
-    padding: 16px 0;
-    border-top: ${borderTop && `1px solid ${theme.colors.outline}`};
+    ${borderTop && `border-top: 1px solid ${theme.colors.outline};`}
 
     ${fullBorder &&
     css`
       border: 1px solid ${theme.colors.outline};
       border-radius: 8px;
       margin-bottom: 14px;
-      padding: 20px 15px;
     `}
   `,
 )
@@ -84,21 +87,9 @@ const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
 `
-const TopContainer = styled(Box)<IAccordion>(
-  ({ isOpen, fullBorder }) => css`
-    cursor: pointer;
-
-    ${fullBorder &&
-    css`
-      padding: 0px;
-    `}
-
-    ${isOpen &&
-    css`
-      margin-bottom: 14px;
-    `}
-  `,
-)
+const TopContainer = styled(Box)`
+  cursor: pointer;
+`
 
 const CaretIcon = styled(Icon)<IAccordion>(
   ({ isOpen }) => css`
