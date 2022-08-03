@@ -58,11 +58,9 @@ export const Field = ({
       )}
 
       {assistiveText && (
-        <Box>
-          <Text tag="p" color="subtext">
-            {assistiveText}
-          </Text>
-        </Box>
+        <Text tag="p" color="subtext">
+          {assistiveText}
+        </Text>
       )}
 
       <Content
