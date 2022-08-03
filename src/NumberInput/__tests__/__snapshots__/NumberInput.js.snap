@@ -193,6 +193,9 @@ exports[`renders - currency 1`] = `
     </label>
   </div>
   <div
+    class=""
+  />
+  <div
     class="c3"
     value="50"
   >
@@ -377,6 +380,9 @@ exports[`renders - disabled 1`] = `
       Currency
     </label>
   </div>
+  <div
+    class=""
+  />
   <div
     class="c3"
     value=""
@@ -604,6 +610,9 @@ exports[`renders - error 1`] = `
     </label>
   </div>
   <div
+    class=""
+  />
+  <div
     class="c3"
     value="200"
   >
@@ -814,6 +823,9 @@ exports[`renders - number 1`] = `
     </label>
   </div>
   <div
+    class=""
+  />
+  <div
     class="c4"
     value=""
   >
@@ -958,6 +970,9 @@ exports[`renders - tel 1`] = `
       Telephone number
     </label>
   </div>
+  <div
+    class=""
+  />
   <div
     class="c3"
     value=""
@@ -1111,6 +1126,9 @@ exports[`renders - with suffix 1`] = `
       Currency
     </label>
   </div>
+  <div
+    class=""
+  />
   <div
     class="c3"
     value=""
@@ -1292,6 +1310,9 @@ exports[`renders - with trailing icon 1`] = `
       Currency
     </label>
   </div>
+  <div
+    class=""
+  />
   <div
     class="c3"
     value=""

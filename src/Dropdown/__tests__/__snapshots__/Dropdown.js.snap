@@ -95,6 +95,9 @@ exports[`rendersDropdown 1`] = `
   class="c0"
 >
   <div
+    class=""
+  />
+  <div
     class="c1"
   >
     <select
@@ -262,6 +265,9 @@ exports[`rendersDropdownWithGroups 1`] = `
 <div
   class="c0"
 >
+  <div
+    class=""
+  />
   <div
     class="c1"
   >

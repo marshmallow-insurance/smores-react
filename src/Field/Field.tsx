@@ -15,6 +15,7 @@ interface FieldProps extends CommonFieldTypes {
   trailingIcon?: string
   dropdownKey?: string // nb only used by dropdown component but required on content in that context
   fullHeight?: boolean // used to make text areas full size
+  assistiveText?: string
 }
 
 export const Field = ({
@@ -32,6 +33,7 @@ export const Field = ({
   required,
   showCaret,
   fullHeight = false,
+  assistiveText,
   ...marginProps
 }: FieldProps) => {
   return (
@@ -54,6 +56,13 @@ export const Field = ({
           )}
         </Box>
       )}
+      <Box>
+        {assistiveText && (
+          <Text tag="p" typo="body" color="subtext">
+            {assistiveText}
+          </Text>
+        )}
+      </Box>
       <Content
         fullHeight={fullHeight}
         value={value}
