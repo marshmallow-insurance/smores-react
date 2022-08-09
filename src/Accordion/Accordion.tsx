@@ -12,7 +12,7 @@ export type AccordionProps = {
   subTitle?: string
   borderTop?: boolean
   fullBorder?: boolean
-  onToggle?: VoidFunction
+  onToggle?: (isOpen: boolean) => void
 } & MarginProps
 
 export const Accordion: FC<AccordionProps> = ({
@@ -28,8 +28,9 @@ export const Accordion: FC<AccordionProps> = ({
   const px = fullBorder ? '16px' : '0'
 
   const handleToggle = () => {
-    onToggle?.()
-    setIsOpen(!isOpen)
+    const nextOpenState = !isOpen
+    onToggle?.(nextOpenState)
+    setIsOpen(nextOpenState)
   }
 
   return (
