@@ -41,9 +41,17 @@ export const Field = ({
       {label && (
         <Box mb={{ custom: outlined ? 4 : 0 }}>
           {renderAsTitle ? (
-            <Text tag="label" typo="heading-small" htmlFor={id} mb="16px">
-              {label}
-            </Text>
+            <Box mb="16px">
+              <Text tag="label" typo="heading-small" htmlFor={id}>
+                {label}
+              </Text>
+
+              {assistiveText && (
+                <Text tag="p" color="subtext">
+                  {assistiveText}
+                </Text>
+              )}
+            </Box>
           ) : (
             <Text tag="label" typo="label" color="subtext" htmlFor={id}>
               {label}
@@ -55,12 +63,6 @@ export const Field = ({
             </Text>
           )}
         </Box>
-      )}
-
-      {assistiveText && (
-        <Text tag="p" color="subtext">
-          {assistiveText}
-        </Text>
       )}
 
       <Content
