@@ -12,11 +12,13 @@ export type AccordionProps = {
   subTitle?: string
   borderTop?: boolean
   fullBorder?: boolean
+  onToggle?: VoidFunction
 } & MarginProps
 
 export const Accordion: FC<AccordionProps> = ({
   title,
   children,
+  onToggle,
   borderTop = false,
   subTitle,
   fullBorder = false,
@@ -25,13 +27,18 @@ export const Accordion: FC<AccordionProps> = ({
   const [isOpen, setIsOpen] = useState(false)
   const px = fullBorder ? '16px' : '0'
 
+  const handleToggle = () => {
+    onToggle?.()
+    setIsOpen(!isOpen)
+  }
+
   return (
     <Wrapper borderTop={borderTop} fullBorder={fullBorder} {...marginProps}>
       <TopContainer
         flex
         alignItems="center"
         justifyContent="space-between"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={handleToggle}
         py={fullBorder ? { custom: 20 } : '16px'}
         px={px}
       >
