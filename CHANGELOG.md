@@ -2,6 +2,7 @@
 ### Changed
 - Add `onToggle` to Accordion
 - Update interactive area of Accordion
+- Adds assistive text prop to field component
 
 ## [2.6.0] - 2022-08-02
 ### Changed 
