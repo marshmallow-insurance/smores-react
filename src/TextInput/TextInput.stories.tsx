@@ -153,6 +153,7 @@ AssistiveText.args = {
   outlined: true,
   required: true,
   assistiveText: 'Some more information...',
+  renderAsTitle: true,
 }
 
 const WorkingExampleTemplate = () => <Container />

@@ -39,10 +39,15 @@ export const Field = ({
   return (
     <Container className={className} {...marginProps}>
       {label && (
-        <Box mb={{ custom: outlined ? 4 : 0 }}>
+        <>
           {renderAsTitle ? (
             <Box mb="16px">
-              <Text tag="label" typo="heading-small" htmlFor={id}>
+              <Text
+                tag="label"
+                typo="heading-small"
+                htmlFor={id}
+                mb={{ custom: 4 }}
+              >
                 {label}
               </Text>
 
@@ -53,16 +58,18 @@ export const Field = ({
               )}
             </Box>
           ) : (
-            <Text tag="label" typo="label" color="subtext" htmlFor={id}>
-              {label}
-              {required && (
-                <Text tag="span" typo="body-small" color="error">
-                  *
-                </Text>
-              )}
-            </Text>
+            <Box mb={{ custom: outlined ? 4 : 0 }}>
+              <Text tag="label" typo="label" color="subtext" htmlFor={id}>
+                {label}
+                {required && (
+                  <Text tag="span" typo="body-small" color="error">
+                    *
+                  </Text>
+                )}
+              </Text>
+            </Box>
           )}
-        </Box>
+        </>
       )}
 
       <Content
