@@ -9,4 +9,5 @@ export interface CommonFieldTypes extends MarginProps {
   renderAsTitle?: boolean
   className?: string
   outlined?: boolean
+  assistiveText?: string
 }

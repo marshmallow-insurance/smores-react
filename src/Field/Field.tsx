@@ -15,6 +15,7 @@ interface FieldProps extends CommonFieldTypes {
   trailingIcon?: string
   dropdownKey?: string // nb only used by dropdown component but required on content in that context
   fullHeight?: boolean // used to make text areas full size
+  assistiveText?: string
 }
 
 export const Field = ({
@@ -32,28 +33,45 @@ export const Field = ({
   required,
   showCaret,
   fullHeight = false,
+  assistiveText,
   ...marginProps
 }: FieldProps) => {
   return (
     <Container className={className} {...marginProps}>
       {label && (
-        <Box mb={{ custom: outlined ? 4 : 0 }}>
+        <>
           {renderAsTitle ? (
-            <Text tag="label" typo="heading-small" htmlFor={id} mb="16px">
-              {label}
-            </Text>
-          ) : (
-            <Text tag="label" typo="label" color="subtext" htmlFor={id}>
-              {label}
-              {required && (
-                <Text tag="span" typo="body-small" color="error">
-                  *
+            <Box mb="16px">
+              <Text
+                tag="label"
+                typo="heading-small"
+                htmlFor={id}
+                mb={assistiveText ? { custom: 4 } : undefined}
+              >
+                {label}
+              </Text>
+
+              {assistiveText && (
+                <Text tag="p" color="subtext">
+                  {assistiveText}
                 </Text>
               )}
-            </Text>
+            </Box>
+          ) : (
+            <Box mb={{ custom: outlined ? 4 : 0 }}>
+              <Text tag="label" typo="label" color="subtext" htmlFor={id}>
+                {label}
+                {required && (
+                  <Text tag="span" typo="body-small" color="error">
+                    *
+                  </Text>
+                )}
+              </Text>
+            </Box>
           )}
-        </Box>
+        </>
       )}
+
       <Content
         fullHeight={fullHeight}
         value={value}
