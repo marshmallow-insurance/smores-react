@@ -46,7 +46,7 @@ export const Field = ({
                 tag="label"
                 typo="heading-small"
                 htmlFor={id}
-                mb={{ custom: 4 }}
+                mb={assistiveText ? { custom: 4 } : undefined}
               >
                 {label}
               </Text>
