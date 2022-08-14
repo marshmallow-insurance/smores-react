@@ -70,7 +70,7 @@ const Checkmark = styled.span<{ error?: boolean }>`
 const BoxContainer = styled.label`
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   padding-left: 32px;
   user-select: none;
   cursor: pointer;
