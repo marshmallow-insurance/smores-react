@@ -5,9 +5,9 @@
 ```ts
 tag:        any;    /* HTML tag    */
 className?: string;
-typo?:      string; /* typography  */
+typo?:      Typo | (string & Record<never, never>); /* typography  */
 align?:     string; /* text-align  */
-color?:     string; /* from theme */
+color?:     Color; /* from theme */
 cursor?:    string;
 ```
 
@@ -17,7 +17,7 @@ cursor?:    string;
 import {Text} from '@mrshmllw/smores-react';
 
 const App = () => (
-  <Text tag='h2' typo='header' color='secondary'>Hey you</Text>
+  <Text tag='h2' typo='hero-alternate' color='secondary'>Hey you</Text>
 );
 ```
 
@@ -25,15 +25,14 @@ const App = () => (
 
 | name | size mobile (px) | size desktop (px) | weight |
 |------|:-----------:|:------------:|-------------|
-| header-large | 24 | 42 | medium |
-| header-medium | 21 | 32 | medium |
-| header-small | 18 | 21 | medium |
-| desc-heavy | 14 | 16 | bold |
-| desc-medium | 14 | 16 | medium |
-| desc-light | 14 | 16 | normal |
-| desc-small | 12 | 14 | normal |
-| **base** | **14** | **16** | **normal** |
-| base-small | 12 | 14 | normal |
-| base-xsmall | 10 | 12 | normal |
-| label | 8 | 10 | bold |
-| label-large | 10 | 12 | bold |
+| hero-alternate | 40 | 56 | bold |
+| hero | 32 | 40 | medium |
+| heading-large | 28 | 32 | medium |
+| heading-medium | 24 | 24 | medium |
+| heading-small | 20 | 20 | medium |
+| headline-regular | 16 | 16 | medium |
+| headline-small | 14 | 14 | medium |
+| **body-regular** | **16** | **16** | **normal** |
+| body-small | 14 | 14 | normal |
+| caption | 12 | 12 | normal |
+| label | 10 | 10 | medium |
