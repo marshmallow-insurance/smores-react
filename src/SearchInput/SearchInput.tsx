@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, useState } from 'react'
+import React, { FC, FocusEvent, useState } from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
@@ -19,7 +19,7 @@ export interface SearchInputProps extends CommonFieldTypes {
   onFound: (element: string) => void
   resultsRelativePosition?: boolean
   showIcon?: boolean
-  onBlur?: (e: FormEvent<HTMLInputElement>) => void
+  onBlur?: (e: FocusEvent<HTMLInputElement>) => void
 }
 
 export const SearchInput: FC<SearchInputProps> = ({
@@ -94,9 +94,7 @@ export const SearchInput: FC<SearchInputProps> = ({
             onChange={updateInputState}
             outlined={outlined}
             selected={selected}
-            onBlur={(e) => {
-              onBlur && onBlur(e)
-            }}
+            onBlur={onBlur}
           />
         </StyledInputBox>
 

@@ -1,4 +1,4 @@
-import React, { FormEvent, ForwardedRef, forwardRef } from 'react'
+import React, { FocusEvent, FormEvent, ForwardedRef, forwardRef } from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
@@ -17,7 +17,7 @@ type BaseProps = {
   resize?: 'none' | 'both'
   disabled?: boolean
   maxLength?: number
-  onBlur?: (e: FormEvent<HTMLTextAreaElement>) => void
+  onBlur?: (e: FocusEvent<HTMLTextAreaElement>) => void
   rows?: number
 } & CommonFieldTypes &
   MarginProps

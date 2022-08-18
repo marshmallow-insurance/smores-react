@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, ReactElement } from 'react'
+import React, { FC, FocusEvent, ReactElement } from 'react'
 import styled, { css } from 'styled-components'
 import { theme } from '../theme'
 import { Box } from '../Box'
@@ -14,7 +14,7 @@ export type ConfirmationProps = {
   error?: boolean
   errorMsg?: string
   label?: string
-  onBlur?: (e: FormEvent<HTMLInputElement>) => void
+  onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   sublabel?: string | ReactElement
   yesLabel?: string | ReactElement
   noLabel?: string | ReactElement
