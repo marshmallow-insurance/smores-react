@@ -1,3 +1,7 @@
+## [2.6.2] - 2022-08-18
+### Changed
+- Add `onBlur` to SearchInput
+
 ## [2.6.1] - 2022-08-09
 ### Changed
 - Add `onToggle` to Accordion
@@ -424,6 +428,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.6.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.6.1...v2.6.2
 [2.6.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.6.0...v2.6.1
 [2.6.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.5.0...v2.6.0
 [2.5.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.4.5...v2.5.0
