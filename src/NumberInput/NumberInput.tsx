@@ -1,4 +1,10 @@
-import React, { FormEvent, forwardRef, ForwardedRef, MouseEvent } from 'react'
+import React, {
+  FocusEvent,
+  FormEvent,
+  forwardRef,
+  ForwardedRef,
+  MouseEvent,
+} from 'react'
 import styled from 'styled-components'
 
 import { Box } from '../Box'
@@ -14,7 +20,7 @@ export interface Props extends CommonFieldTypes {
   placeholder: string
   name?: string
   value: string
-  onBlur?: (e: FormEvent<HTMLInputElement>) => void
+  onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   trailingIcon?: string
   prefix?: string
   suffix?: string
@@ -186,9 +192,7 @@ export const NumberInput = forwardRef(function NumberInput(
             onChange && handleChange(e.currentTarget.value)
             onInputChange && onInputChange(e)
           }}
-          onBlur={(e) => {
-            onBlur && onBlur(e)
-          }}
+          onBlur={onBlur}
         />
 
         {suffix && (

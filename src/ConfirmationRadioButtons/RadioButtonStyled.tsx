@@ -1,4 +1,4 @@
-import React, { FC, ChangeEvent, FormEvent, ReactElement } from 'react'
+import React, { FC, ChangeEvent, FocusEvent, ReactElement } from 'react'
 import styled from 'styled-components'
 import { theme } from '../theme'
 import { Box } from '../Box'
@@ -15,7 +15,7 @@ type RadioButtonProps = {
   checked?: boolean
   value: string
   onChange: (event: ChangeEvent<HTMLInputElement>) => void
-  onBlur?: (e: FormEvent<HTMLInputElement>) => void
+  onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   disabled?: boolean
 }
 
@@ -35,9 +35,7 @@ export const RadioButton: FC<RadioButtonProps> = ({
       checked={checked}
       value={value}
       onChange={onChange}
-      onBlur={(e: FormEvent<HTMLInputElement>) => {
-        onBlur && onBlur(e)
-      }}
+      onBlur={onBlur}
       disabled={disabled}
     />
     <RadioLabel htmlFor={id}>

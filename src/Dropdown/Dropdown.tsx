@@ -1,6 +1,7 @@
 import React, {
   useEffect,
   useState,
+  FocusEvent,
   FormEvent,
   RefObject,
   forwardRef,
@@ -28,7 +29,7 @@ export interface Props extends CommonFieldTypes {
   disabled?: boolean
   list: DropdownItem[]
   onSelect: (element: string) => void
-  onBlur?: (e: FormEvent<HTMLSelectElement>) => void
+  onBlur?: (e: FocusEvent<HTMLSelectElement>) => void
 }
 
 type TruncateProps =
@@ -119,9 +120,7 @@ export const Dropdown = forwardRef(function Dropdown(
           outlined={outlined}
           error={error}
           ref={ref}
-          onBlur={(e) => {
-            onBlur && onBlur(e)
-          }}
+          onBlur={onBlur}
           name={name}
           value={value}
         >

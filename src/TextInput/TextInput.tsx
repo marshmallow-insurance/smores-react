@@ -1,4 +1,4 @@
-import React, { FormEvent, forwardRef, ForwardedRef } from 'react'
+import React, { FocusEvent, FormEvent, forwardRef, ForwardedRef } from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
@@ -13,7 +13,7 @@ interface Props extends CommonFieldTypes {
   placeholder: string
   name?: string
   value: string
-  onBlur?: (e: FormEvent<HTMLInputElement>) => void
+  onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   trailingIcon?: string
   disabled?: boolean
 }
@@ -77,9 +77,7 @@ export const TextInput = forwardRef(function TextInput(
             onChange && onChange(e.currentTarget.value)
             onInputChange && onInputChange(e)
           }}
-          onBlur={(e) => {
-            onBlur && onBlur(e)
-          }}
+          onBlur={onBlur}
         />
         {trailingIcon && <StyledIcon render={trailingIcon} color="subtext" />}
       </Box>
