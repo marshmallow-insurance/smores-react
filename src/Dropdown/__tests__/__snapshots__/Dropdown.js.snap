@@ -48,17 +48,6 @@ exports[`rendersDropdown 1`] = `
   border-color: #b9b9b9;
 }
 
-.c3 {
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  right: 0;
-  pointer-events: none;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
 .c2 {
   width: 100%;
   height: 32px;
@@ -89,6 +78,17 @@ exports[`rendersDropdown 1`] = `
 .c2:checked {
   outline: none;
   border-color: #b9b9b9;
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  right: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 <div
@@ -216,17 +216,6 @@ exports[`rendersDropdownWithGroups 1`] = `
   border-color: #b9b9b9;
 }
 
-.c3 {
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  right: 0;
-  pointer-events: none;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
 .c2 {
   width: 100%;
   height: 32px;
@@ -257,6 +246,17 @@ exports[`rendersDropdownWithGroups 1`] = `
 .c2:checked {
   outline: none;
   border-color: #b9b9b9;
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  right: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 <div

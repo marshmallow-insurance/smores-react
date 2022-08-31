@@ -1,15 +1,14 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
-import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { Box } from '../Box'
 import { theme } from '../theme'
 import { CommonFieldTypes } from './types/commonFieldTypes'
 
 interface FieldProps extends CommonFieldTypes {
-  children: React.ReactElement
+  children: ReactNode
   showCaret?: boolean
   value: string
   trailingIcon?: string
@@ -27,7 +26,6 @@ export const Field = ({
   label,
   outlined = false,
   value,
-  trailingIcon,
   errorMsg,
   dropdownKey,
   required,
@@ -80,13 +78,7 @@ export const Field = ({
         key={dropdownKey ?? null}
       >
         {children}
-        {showCaret && (
-          <Caret outlined={outlined}>
-            <Icon render="caret" color="subtext" size={24} />
-          </Caret>
-        )}
       </Content>
-      {trailingIcon && <Icon render={trailingIcon} color="subtext" />}
 
       {error && (
         <Text tag="span" typo="caption" color="error" mt="8px">
@@ -136,13 +128,4 @@ const Content = styled.div<{
     `
     border-color: ${theme.colors.outline};
     `}
-`
-
-const Caret = styled.div<{ outlined: boolean }>`
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  right: ${({ outlined }) => (outlined ? '15px' : '0')};
-  pointer-events: none;
-  transform: translateY(-50%);
 `

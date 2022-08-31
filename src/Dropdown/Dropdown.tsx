@@ -11,6 +11,7 @@ import { darken } from 'polished'
 import styled from 'styled-components'
 
 import { theme } from '../theme'
+import { Icon } from '../Icon'
 import { Field, CommonFieldTypes } from '../Field'
 import { useUniqueId } from '../utils/id'
 
@@ -95,69 +96,66 @@ export const Dropdown = forwardRef(function Dropdown(
   return (
     <Field
       {...fieldProps}
-      showCaret
       dropdownKey={key}
       id={id}
       error={error}
       outlined={outlined}
       value={value!}
     >
-      <>
-        <StyledSelect
-          id={id}
-          defaultValue={
-            list.length === 1
-              ? String(list[0].value)
-              : defaultValue
-              ? defaultValue
-              : placeholder
-          }
-          disabled={disabled || list.length < 1}
-          onChange={(e: FormEvent<HTMLSelectElement>) => {
-            onSelect && onSelect(e.currentTarget.value)
-            onInputChange && onInputChange(e)
-          }}
-          outlined={outlined}
-          error={error}
-          ref={ref}
-          onBlur={onBlur}
-          name={name}
-          value={value}
-        >
-          {hasOptGroups ? (
-            <optgroup label={placeholder}>
-              <option value="" hidden>
-                {placeholder}
-              </option>
-            </optgroup>
-          ) : (
+      <StyledSelect
+        id={id}
+        defaultValue={
+          list.length === 1
+            ? String(list[0].value)
+            : defaultValue
+            ? defaultValue
+            : placeholder
+        }
+        disabled={disabled || list.length < 1}
+        onChange={(e: FormEvent<HTMLSelectElement>) => {
+          onSelect && onSelect(e.currentTarget.value)
+          onInputChange && onInputChange(e)
+        }}
+        outlined={outlined}
+        error={error}
+        ref={ref}
+        onBlur={onBlur}
+        name={name}
+        value={value}
+      >
+        {hasOptGroups ? (
+          <optgroup label={placeholder}>
             <option value="" hidden>
               {placeholder}
             </option>
-          )}
+          </optgroup>
+        ) : (
+          <option value="" hidden>
+            {placeholder}
+          </option>
+        )}
 
-          {dropdownItemsGroups.map((groupItems, i) =>
-            hasOptGroups ? (
-              <optgroup
-                key={i}
-                label={groupItems[0].optionGroupLabel ?? 'Other'}
-              >
-                {groupItems.map((el, j) => (
-                  <option key={`${i}-${j}`} value={el.value}>
-                    {el.label}
-                  </option>
-                ))}
-              </optgroup>
-            ) : (
-              groupItems.map((el, j) => (
-                <option key={j} value={el.value}>
+        {dropdownItemsGroups.map((groupItems, i) =>
+          hasOptGroups ? (
+            <optgroup key={i} label={groupItems[0].optionGroupLabel ?? 'Other'}>
+              {groupItems.map((el, j) => (
+                <option key={`${i}-${j}`} value={el.value}>
                   {el.label}
                 </option>
-              ))
-            ),
-          )}
-        </StyledSelect>
-      </>
+              ))}
+            </optgroup>
+          ) : (
+            groupItems.map((el, j) => (
+              <option key={j} value={el.value}>
+                {el.label}
+              </option>
+            ))
+          ),
+        )}
+      </StyledSelect>
+      <Caret outlined={outlined}>
+        <Icon render="caret" color="subtext" size={24} />
+      </Caret>
     </Field>
   )
 })
@@ -224,4 +222,13 @@ const StyledSelect = styled.select<UsesOutline>`
 `}
 
   ${({ error, outlined }) => getErrorOutline(outlined, error)};
+`
+
+const Caret = styled.div<{ outlined: boolean }>`
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  right: ${({ outlined }) => (outlined ? '15px' : '0')};
+  pointer-events: none;
+  transform: translateY(-50%);
 `
