@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { darken } from 'polished'
 
 import { Text } from '../Text'
 import { Box } from '../Box'
@@ -69,7 +68,6 @@ export const Field = ({
       <Content
         fullHeight={fullHeight}
         outlined={outlined}
-        error={error}
         key={dropdownKey ?? null}
       >
         {children}
@@ -92,27 +90,17 @@ const Container = styled(Box)<{ className: string }>`
 `
 
 const Content = styled.div<{
-  error?: boolean
   outlined: boolean
   fullHeight?: boolean
 }>`
   position: relative;
-  border-color: ${({ error }) =>
-    theme.colors[`${error ? 'error' : 'outline'}`]};
   background-color: ${({ outlined }) =>
     !outlined ? 'transparent' : theme.colors['white']};
   height: ${({ fullHeight }) => (fullHeight ? `100%` : `32px`)};
 
-  &:hover,
-  &:focus-within {
-    border-color: ${({ error }) =>
-      error ? theme.colors.error : darken(0.1, theme.colors.outline)};
-  }
-
   ${({ outlined }) =>
     outlined &&
     `
-      border-radius: 8px;
       height: auto;
     `}
 `

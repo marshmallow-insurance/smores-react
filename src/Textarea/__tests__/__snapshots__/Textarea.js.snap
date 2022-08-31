@@ -29,14 +29,8 @@ exports[`disabled 1`] = `
 
 .c3 {
   position: relative;
-  border-color: #D2D2D2;
   background-color: transparent;
   height: 100%;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
 }
 
 .c4 {
@@ -121,14 +115,8 @@ exports[`renders 1`] = `
 
 .c3 {
   position: relative;
-  border-color: #D2D2D2;
   background-color: transparent;
   height: 100%;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
 }
 
 .c4 {
@@ -225,14 +213,8 @@ exports[`renders with error 1`] = `
 
 .c3 {
   position: relative;
-  border-color: #D82C2C;
   background-color: transparent;
   height: 100%;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #D82C2C;
 }
 
 .c4 {

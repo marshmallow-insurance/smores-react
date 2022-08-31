@@ -91,14 +91,8 @@ exports[`renders - currency 1`] = `
 
 .c3 {
   position: relative;
-  border-color: #D2D2D2;
   background-color: transparent;
   height: 32px;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
 }
 
 .c7 {
@@ -306,14 +300,8 @@ exports[`renders - disabled 1`] = `
 
 .c3 {
   position: relative;
-  border-color: #D2D2D2;
   background-color: transparent;
   height: 32px;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
 }
 
 .c5 {
@@ -499,14 +487,8 @@ exports[`renders - error 1`] = `
 
 .c3 {
   position: relative;
-  border-color: #D82C2C;
   background-color: transparent;
   height: 32px;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #D82C2C;
 }
 
 .c7 {
@@ -731,14 +713,8 @@ exports[`renders - number 1`] = `
 
 .c4 {
   position: relative;
-  border-color: #D2D2D2;
   background-color: transparent;
   height: 32px;
-}
-
-.c4:hover,
-.c4:focus-within {
-  border-color: #b9b9b9;
 }
 
 .c6 {
@@ -872,14 +848,8 @@ exports[`renders - tel 1`] = `
 
 .c3 {
   position: relative;
-  border-color: #D2D2D2;
   background-color: transparent;
   height: 32px;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
 }
 
 .c7 {
@@ -1026,14 +996,8 @@ exports[`renders - with suffix 1`] = `
 
 .c3 {
   position: relative;
-  border-color: #D2D2D2;
   background-color: transparent;
   height: 32px;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
 }
 
 .c5 {
@@ -1199,14 +1163,8 @@ exports[`renders - with trailing icon 1`] = `
 
 .c3 {
   position: relative;
-  border-color: #D2D2D2;
   background-color: transparent;
   height: 32px;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
 }
 
 .c7 {
