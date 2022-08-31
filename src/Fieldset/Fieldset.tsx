@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import { MarginProps } from '../utils/space'
 import { Box } from '../Box'
 import { Text } from '../Text'
 
 type FieldSetProps = {
-  children: React.ReactChild
+  children: ReactNode
   label: string
   outlined?: boolean
 } & MarginProps

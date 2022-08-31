@@ -28,18 +28,6 @@ exports[`disabled 1`] = `
 }
 
 .c3 {
-  position: relative;
-  border-color: #D2D2D2;
-  background-color: transparent;
-  height: 100%;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
-}
-
-.c4 {
   font-size: 16px;
   line-height: 20px;
   background: #FFFFFF;
@@ -56,9 +44,9 @@ exports[`disabled 1`] = `
   outline: none;
 }
 
-.c4:hover,
-.c4:focus,
-.c4:focus-visible {
+.c3:hover,
+.c3:focus,
+.c3:focus-visible {
   border-color: #b9b9b9;
 }
 
@@ -79,11 +67,10 @@ exports[`disabled 1`] = `
     </label>
   </div>
   <div
-    class="c3"
-    value=""
+    class=""
   >
     <textarea
-      class="c4"
+      class="c3"
       disabled=""
       id="textarea_id"
       placeholder="Placeholder text!"
@@ -121,18 +108,6 @@ exports[`renders 1`] = `
 }
 
 .c3 {
-  position: relative;
-  border-color: #D2D2D2;
-  background-color: transparent;
-  height: 100%;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
-}
-
-.c4 {
   font-size: 16px;
   line-height: 20px;
   background: #FFFFFF;
@@ -149,9 +124,9 @@ exports[`renders 1`] = `
   outline: none;
 }
 
-.c4:hover,
-.c4:focus,
-.c4:focus-visible {
+.c3:hover,
+.c3:focus,
+.c3:focus-visible {
   border-color: #b9b9b9;
 }
 
@@ -172,11 +147,10 @@ exports[`renders 1`] = `
     </label>
   </div>
   <div
-    class="c3"
-    value=""
+    class=""
   >
     <textarea
-      class="c4"
+      class="c3"
       id="textarea_id"
       placeholder="Placeholder text!"
       rows="4"
@@ -190,7 +164,7 @@ exports[`renders with error 1`] = `
   margin-bottom: 0px;
 }
 
-.c5 {
+.c4 {
   margin-top: 8px;
 }
 
@@ -204,7 +178,7 @@ exports[`renders with error 1`] = `
   color: #636768;
 }
 
-.c6 {
+.c5 {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
@@ -226,18 +200,6 @@ exports[`renders with error 1`] = `
 }
 
 .c3 {
-  position: relative;
-  border-color: #D82C2C;
-  background-color: transparent;
-  height: 100%;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #D82C2C;
-}
-
-.c4 {
   font-size: 16px;
   line-height: 20px;
   background: #FFFFFF;
@@ -254,9 +216,9 @@ exports[`renders with error 1`] = `
   outline: none;
 }
 
-.c4:hover,
-.c4:focus,
-.c4:focus-visible {
+.c3:hover,
+.c3:focus,
+.c3:focus-visible {
   border-color: #D82C2C;
 }
 
@@ -277,18 +239,17 @@ exports[`renders with error 1`] = `
     </label>
   </div>
   <div
-    class="c3"
-    value=""
+    class=""
   >
     <textarea
-      class="c4"
+      class="c3"
       id="textarea_id"
       placeholder="Placeholder text!"
       rows="4"
     />
   </div>
   <span
-    class="c5 c6"
+    class="c4 c5"
     color="error"
     cursor="inherit"
     title=""

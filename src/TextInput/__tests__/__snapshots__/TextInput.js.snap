@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -20,19 +20,7 @@ exports[`renders 1`] = `
   width: 100%;
 }
 
-.c1 {
-  position: relative;
-  border-color: #D2D2D2;
-  background-color: transparent;
-  height: 32px;
-}
-
-.c1:hover,
-.c1:focus-within {
-  border-color: #b9b9b9;
-}
-
-.c3 {
+.c2 {
   border: none;
   border-bottom: 1px solid;
   border-color: #D2D2D2;
@@ -46,24 +34,24 @@ exports[`renders 1`] = `
   padding: 1px 2px;
 }
 
-.c3:hover,
-.c3:focus-within {
+.c2:hover,
+.c2:focus-within {
   border-color: #b9b9b9;
 }
 
-.c3::-webkit-input-placeholder {
+.c2::-webkit-input-placeholder {
   color: #636768;
 }
 
-.c3::-moz-placeholder {
+.c2::-moz-placeholder {
   color: #636768;
 }
 
-.c3:-ms-input-placeholder {
+.c2:-ms-input-placeholder {
   color: #636768;
 }
 
-.c3::placeholder {
+.c2::placeholder {
   color: #636768;
 }
 
@@ -71,15 +59,14 @@ exports[`renders 1`] = `
   class="c0"
 >
   <div
-    class="c1"
-    value=""
+    class=""
   >
     <div
-      class="c2"
+      class="c1"
     >
       <input
         autocomplete="off"
-        class="c3"
+        class="c2"
         id="textInput"
         name="textInput"
         placeholder="Placeholder"

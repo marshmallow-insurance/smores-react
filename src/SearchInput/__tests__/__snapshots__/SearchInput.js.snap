@@ -28,18 +28,6 @@ exports[`renders 1`] = `
 }
 
 .c3 {
-  position: relative;
-  border-color: #D2D2D2;
-  background-color: transparent;
-  height: 32px;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
-}
-
-.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -53,13 +41,13 @@ exports[`renders 1`] = `
   color: #112035;
 }
 
-.c4:hover,
-.c4:focus,
-.c4:focus-within {
+.c3:hover,
+.c3:focus,
+.c3:focus-within {
   border-color: #b9b9b9;
 }
 
-.c5 {
+.c4 {
   display: block;
   border: none;
   outline: none;
@@ -68,23 +56,23 @@ exports[`renders 1`] = `
   box-sizing: border-box;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #636768;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #636768;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #636768;
 }
 
-.c5::placeholder {
+.c4::placeholder {
   color: #636768;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   overflow-y: hidden;
   position: absolute;
@@ -92,11 +80,11 @@ exports[`renders 1`] = `
   visibility: hidden;
 }
 
-.c6 ul {
+.c5 ul {
   max-height: 0px;
 }
 
-.c7 {
+.c6 {
   position: relative;
   list-style: none;
   overflow-y: auto;
@@ -109,7 +97,7 @@ exports[`renders 1`] = `
   z-index: 1000;
 }
 
-.c7 li {
+.c6 li {
   padding: 16px 14px;
   box-sizing: border-box;
   font-size: 16px;
@@ -117,7 +105,7 @@ exports[`renders 1`] = `
   cursor: pointer;
 }
 
-.c7 li:hover {
+.c6 li:hover {
   background-color: #F4F4F4;
 }
 
@@ -138,15 +126,14 @@ exports[`renders 1`] = `
     </label>
   </div>
   <div
-    class="c3"
-    value=""
+    class=""
   >
     <div
-      class="c4"
+      class="c3"
     >
       <input
         autocomplete="off"
-        class="c5"
+        class="c4"
         id="days"
         name="search_input"
         type="text"
@@ -154,10 +141,10 @@ exports[`renders 1`] = `
       />
     </div>
     <div
-      class="c6"
+      class="c5"
     >
       <ul
-        class="c7"
+        class="c6"
       >
         <li>
           No results

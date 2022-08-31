@@ -3,7 +3,6 @@ import React, {
   useState,
   FocusEvent,
   FormEvent,
-  RefObject,
   forwardRef,
   ForwardedRef,
 } from 'react'
@@ -11,6 +10,7 @@ import { darken } from 'polished'
 import styled from 'styled-components'
 
 import { theme } from '../theme'
+import { Icon } from '../Icon'
 import { Field, CommonFieldTypes } from '../Field'
 import { useUniqueId } from '../utils/id'
 
@@ -21,7 +21,6 @@ export type DropdownItem = {
 }
 
 export interface Props extends CommonFieldTypes {
-  ref?: RefObject<HTMLSelectElement>
   placeholder?: string
   name?: string
   value?: string
@@ -63,7 +62,6 @@ export const Dropdown = forwardRef(function Dropdown(
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
   const id = useUniqueId(idProp)
-  const [key, setKey] = useState('')
   const [hasOptGroups, setHasOptGroups] = useState(false)
   const [dropdownItemsGroups, setDropdownItemsGroups] = useState(
     [] as DropdownItem[][],
@@ -73,9 +71,6 @@ export const Dropdown = forwardRef(function Dropdown(
     if (list.length === 1) {
       onSelect(list[0].value)
     }
-
-    // update 'key' props in order to deselect the active option if a new list passed
-    list.length > 1 ? setKey(`${list[0].value}-${list.length}`) : ''
 
     setHasOptGroups(!!list.find((item) => !!item.optionGroupLabel))
 
@@ -93,16 +88,8 @@ export const Dropdown = forwardRef(function Dropdown(
   }, [list])
 
   return (
-    <Field
-      {...fieldProps}
-      showCaret
-      dropdownKey={key}
-      id={id}
-      error={error}
-      outlined={outlined}
-      value={value!}
-    >
-      <>
+    <Field {...fieldProps} id={id} error={error} outlined={outlined}>
+      <DropdownContainer>
         <StyledSelect
           id={id}
           defaultValue={
@@ -157,7 +144,10 @@ export const Dropdown = forwardRef(function Dropdown(
             ),
           )}
         </StyledSelect>
-      </>
+        <Caret outlined={outlined}>
+          <Icon render="caret" color="subtext" size={24} />
+        </Caret>
+      </DropdownContainer>
     </Field>
   )
 })
@@ -224,4 +214,17 @@ const StyledSelect = styled.select<UsesOutline>`
 `}
 
   ${({ error, outlined }) => getErrorOutline(outlined, error)};
+`
+
+const DropdownContainer = styled.div`
+  position: relative;
+`
+
+const Caret = styled.div<{ outlined: boolean }>`
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  right: ${({ outlined }) => (outlined ? '15px' : '0')};
+  pointer-events: none;
+  transform: translateY(-50%);
 `

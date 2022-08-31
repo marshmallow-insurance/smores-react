@@ -5,14 +5,14 @@ exports[`renders - currency 1`] = `
   margin-bottom: 0px;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -35,7 +35,7 @@ exports[`renders - currency 1`] = `
   transform: rotate(180deg);
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -68,7 +68,7 @@ exports[`renders - currency 1`] = `
   color: #636768;
 }
 
-.c5 {
+.c4 {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -89,20 +89,7 @@ exports[`renders - currency 1`] = `
   width: 100%;
 }
 
-.c3 {
-  position: relative;
-  border-color: #D2D2D2;
-  background-color: transparent;
-  height: 32px;
-  border-color: #D2D2D2;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
-}
-
-.c7 {
+.c6 {
   font-family: 'Circular',san-serif;
   border: none;
   border-bottom: 1px solid;
@@ -122,34 +109,34 @@ exports[`renders - currency 1`] = `
   position: relative;
 }
 
-.c7::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #636768;
 }
 
-.c7::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #636768;
 }
 
-.c7:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #636768;
 }
 
-.c7::placeholder {
+.c6::placeholder {
   color: #636768;
 }
 
-.c7::-webkit-outer-spin-button,
-.c7::-webkit-inner-spin-button {
+.c6::-webkit-outer-spin-button,
+.c6::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c7:hover,
-.c7:focus-within {
+.c6:hover,
+.c6:focus-within {
   border-color: #D2D2D2;
 }
 
-.c6 {
+.c5 {
   font-family: 'Circular',san-serif;
   font-size: 16px;
   line-height: 19px;
@@ -157,7 +144,7 @@ exports[`renders - currency 1`] = `
   z-index: 1;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -167,7 +154,7 @@ exports[`renders - currency 1`] = `
   left: -60px;
 }
 
-.c9 {
+.c8 {
   width: 24px;
   height: 24px;
   background-color: transparent;
@@ -193,14 +180,13 @@ exports[`renders - currency 1`] = `
     </label>
   </div>
   <div
-    class="c3"
-    value="50"
+    class=""
   >
     <div
-      class="c4"
+      class="c3"
     >
       <span
-        class="c5 c6"
+        class="c4 c5"
         color="secondary"
         cursor="inherit"
         prefix="$"
@@ -209,7 +195,7 @@ exports[`renders - currency 1`] = `
         $
       </span>
       <input
-        class="c7"
+        class="c6"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
@@ -218,13 +204,13 @@ exports[`renders - currency 1`] = `
         value="50"
       />
       <div
-        class="c8"
+        class="c7"
       >
         <button
-          class="c9"
+          class="c8"
         >
           <span
-            class="c10"
+            class="c9"
             color="subtext"
             rotate="180"
             size="24"
@@ -244,10 +230,10 @@ exports[`renders - currency 1`] = `
           </span>
         </button>
         <button
-          class="c9"
+          class="c8"
         >
           <span
-            class="c11"
+            class="c10"
             color="subtext"
             rotate="0"
             size="24"
@@ -277,7 +263,7 @@ exports[`renders - disabled 1`] = `
   margin-bottom: 0px;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -306,19 +292,7 @@ exports[`renders - disabled 1`] = `
   width: 100%;
 }
 
-.c3 {
-  position: relative;
-  border-color: #D2D2D2;
-  background-color: transparent;
-  height: 32px;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
-}
-
-.c5 {
+.c4 {
   font-family: 'Circular',san-serif;
   border: none;
   border-bottom: 1px solid;
@@ -334,30 +308,30 @@ exports[`renders - disabled 1`] = `
   -moz-appearance: textfield;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #636768;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #636768;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #636768;
 }
 
-.c5::placeholder {
+.c4::placeholder {
   color: #636768;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
+.c4::-webkit-outer-spin-button,
+.c4::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c5:hover,
-.c5:focus-within {
+.c4:hover,
+.c4:focus-within {
   border-color: #D2D2D2;
 }
 
@@ -378,14 +352,13 @@ exports[`renders - disabled 1`] = `
     </label>
   </div>
   <div
-    class="c3"
-    value=""
+    class=""
   >
     <div
-      class="c4"
+      class="c3"
     >
       <input
-        class="c5"
+        class="c4"
         disabled=""
         id="currencyInput"
         name="currencyInput"
@@ -403,18 +376,18 @@ exports[`renders - error 1`] = `
   margin-bottom: 0px;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c12 {
+.c11 {
   margin-top: 8px;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -437,7 +410,7 @@ exports[`renders - error 1`] = `
   transform: rotate(180deg);
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -470,7 +443,7 @@ exports[`renders - error 1`] = `
   color: #636768;
 }
 
-.c5 {
+.c4 {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -479,7 +452,7 @@ exports[`renders - error 1`] = `
   color: #112035;
 }
 
-.c13 {
+.c12 {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
@@ -500,20 +473,7 @@ exports[`renders - error 1`] = `
   width: 100%;
 }
 
-.c3 {
-  position: relative;
-  border-color: #D82C2C;
-  background-color: transparent;
-  height: 32px;
-  border-color: #D2D2D2;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #D82C2C;
-}
-
-.c7 {
+.c6 {
   font-family: 'Circular',san-serif;
   border: none;
   border-bottom: 1px solid;
@@ -533,34 +493,34 @@ exports[`renders - error 1`] = `
   position: relative;
 }
 
-.c7::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #636768;
 }
 
-.c7::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #636768;
 }
 
-.c7:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #636768;
 }
 
-.c7::placeholder {
+.c6::placeholder {
   color: #636768;
 }
 
-.c7::-webkit-outer-spin-button,
-.c7::-webkit-inner-spin-button {
+.c6::-webkit-outer-spin-button,
+.c6::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c7:hover,
-.c7:focus-within {
+.c6:hover,
+.c6:focus-within {
   border-color: #D82C2C;
 }
 
-.c6 {
+.c5 {
   font-family: 'Circular',san-serif;
   font-size: 16px;
   line-height: 19px;
@@ -568,7 +528,7 @@ exports[`renders - error 1`] = `
   z-index: 1;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -578,7 +538,7 @@ exports[`renders - error 1`] = `
   left: -60px;
 }
 
-.c9 {
+.c8 {
   width: 24px;
   height: 24px;
   background-color: transparent;
@@ -604,14 +564,13 @@ exports[`renders - error 1`] = `
     </label>
   </div>
   <div
-    class="c3"
-    value="200"
+    class=""
   >
     <div
-      class="c4"
+      class="c3"
     >
       <span
-        class="c5 c6"
+        class="c4 c5"
         color="secondary"
         cursor="inherit"
         prefix="$"
@@ -620,7 +579,7 @@ exports[`renders - error 1`] = `
         $
       </span>
       <input
-        class="c7"
+        class="c6"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
@@ -629,13 +588,13 @@ exports[`renders - error 1`] = `
         value="200"
       />
       <div
-        class="c8"
+        class="c7"
       >
         <button
-          class="c9"
+          class="c8"
         >
           <span
-            class="c10"
+            class="c9"
             color="subtext"
             rotate="180"
             size="24"
@@ -655,10 +614,10 @@ exports[`renders - error 1`] = `
           </span>
         </button>
         <button
-          class="c9"
+          class="c8"
         >
           <span
-            class="c11"
+            class="c10"
             color="subtext"
             rotate="0"
             size="24"
@@ -681,7 +640,7 @@ exports[`renders - error 1`] = `
     </div>
   </div>
   <span
-    class="c12 c13"
+    class="c11 c12"
     color="error"
     cursor="inherit"
     title=""
@@ -696,7 +655,7 @@ exports[`renders - number 1`] = `
   margin-bottom: 0px;
 }
 
-.c5 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -734,315 +693,6 @@ exports[`renders - number 1`] = `
   width: 100%;
 }
 
-.c4 {
-  position: relative;
-  border-color: #D2D2D2;
-  background-color: transparent;
-  height: 32px;
-}
-
-.c4:hover,
-.c4:focus-within {
-  border-color: #b9b9b9;
-}
-
-.c6 {
-  font-family: 'Circular',san-serif;
-  border: none;
-  border-bottom: 1px solid;
-  border-color: #D2D2D2;
-  color: #112035;
-  font-size: 16px;
-  width: 100%;
-  outline: none;
-  cursor: pointer;
-  opacity: 1;
-  padding: 1px 2px;
-  padding-right: 60px;
-  -moz-appearance: textfield;
-}
-
-.c6::-webkit-input-placeholder {
-  color: #636768;
-}
-
-.c6::-moz-placeholder {
-  color: #636768;
-}
-
-.c6:-ms-input-placeholder {
-  color: #636768;
-}
-
-.c6::placeholder {
-  color: #636768;
-}
-
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c6:hover,
-.c6:focus-within {
-  border-color: #D2D2D2;
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-  >
-    <label
-      class="c2"
-      color="subtext"
-      cursor="inherit"
-      for="numberInput"
-      title=""
-    >
-      Number
-      <span
-        class="c3"
-        color="error"
-        cursor="inherit"
-        title=""
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    class="c4"
-    value=""
-  >
-    <div
-      class="c5"
-    >
-      <input
-        class="c6"
-        id="numberInput"
-        name="numberInput"
-        placeholder="0.00"
-        type="number"
-        value=""
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders - tel 1`] = `
-.c1 {
-  margin-bottom: 0px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c2 {
-  font-size: 10px;
-  line-height: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  text-align: left;
-  cursor: inherit;
-  color: #636768;
-}
-
-.c5 {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: left;
-  cursor: inherit;
-  color: #112035;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-}
-
-.c3 {
-  position: relative;
-  border-color: #D2D2D2;
-  background-color: transparent;
-  height: 32px;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
-}
-
-.c7 {
-  font-family: 'Circular',san-serif;
-  border: none;
-  border-bottom: 1px solid;
-  border-color: #D2D2D2;
-  color: #112035;
-  font-size: 16px;
-  width: 100%;
-  outline: none;
-  cursor: pointer;
-  opacity: 1;
-  padding: 1px 2px;
-  padding-right: 60px;
-  -moz-appearance: textfield;
-  padding-left: 12px;
-  left: -10px;
-  position: relative;
-}
-
-.c7::-webkit-input-placeholder {
-  color: #636768;
-}
-
-.c7::-moz-placeholder {
-  color: #636768;
-}
-
-.c7:-ms-input-placeholder {
-  color: #636768;
-}
-
-.c7::placeholder {
-  color: #636768;
-}
-
-.c7::-webkit-outer-spin-button,
-.c7::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c7:hover,
-.c7:focus-within {
-  border-color: #D2D2D2;
-}
-
-.c6 {
-  font-family: 'Circular',san-serif;
-  font-size: 16px;
-  line-height: 19px;
-  position: relative;
-  z-index: 1;
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-  >
-    <label
-      class="c2"
-      color="subtext"
-      cursor="inherit"
-      for="tel"
-      title=""
-    >
-      Telephone number
-    </label>
-  </div>
-  <div
-    class="c3"
-    value=""
-  >
-    <div
-      class="c4"
-    >
-      <span
-        class="c5 c6"
-        color="secondary"
-        cursor="inherit"
-        prefix="+44"
-        title=""
-      >
-        +44
-      </span>
-      <input
-        class="c7"
-        id="tel"
-        name="telephoneNumber"
-        placeholder="07446875876"
-        prefix="+44"
-        type="tel"
-        value=""
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders - with suffix 1`] = `
-.c1 {
-  margin-bottom: 0px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c2 {
-  font-size: 10px;
-  line-height: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  text-align: left;
-  cursor: inherit;
-  color: #636768;
-}
-
-.c6 {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: left;
-  cursor: inherit;
-  color: #112035;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-}
-
-.c3 {
-  position: relative;
-  border-color: #D2D2D2;
-  background-color: transparent;
-  height: 32px;
-}
-
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
-}
-
 .c5 {
   font-family: 'Circular',san-serif;
   border: none;
@@ -1086,13 +736,144 @@ exports[`renders - with suffix 1`] = `
   border-color: #D2D2D2;
 }
 
-.c7 {
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <label
+      class="c2"
+      color="subtext"
+      cursor="inherit"
+      for="numberInput"
+      title=""
+    >
+      Number
+      <span
+        class="c3"
+        color="error"
+        cursor="inherit"
+        title=""
+      >
+        *
+      </span>
+    </label>
+  </div>
+  <div
+    class=""
+  >
+    <div
+      class="c4"
+    >
+      <input
+        class="c5"
+        id="numberInput"
+        name="numberInput"
+        placeholder="0.00"
+        type="number"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders - tel 1`] = `
+.c1 {
+  margin-bottom: 0px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: inherit;
+  color: #636768;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  cursor: inherit;
+  color: #112035;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
+  font-family: 'Circular',san-serif;
+  border: none;
+  border-bottom: 1px solid;
+  border-color: #D2D2D2;
+  color: #112035;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  opacity: 1;
+  padding: 1px 2px;
+  padding-right: 60px;
+  -moz-appearance: textfield;
+  padding-left: 12px;
+  left: -10px;
+  position: relative;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #636768;
+}
+
+.c6::-moz-placeholder {
+  color: #636768;
+}
+
+.c6:-ms-input-placeholder {
+  color: #636768;
+}
+
+.c6::placeholder {
+  color: #636768;
+}
+
+.c6::-webkit-outer-spin-button,
+.c6::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c6:hover,
+.c6:focus-within {
+  border-color: #D2D2D2;
+}
+
+.c5 {
   font-family: 'Circular',san-serif;
   font-size: 16px;
   line-height: 19px;
   position: relative;
   z-index: 1;
-  left: -10px;
 }
 
 <div
@@ -1105,73 +886,51 @@ exports[`renders - with suffix 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
-      for="currencyInput"
+      for="tel"
       title=""
     >
-      Currency
+      Telephone number
     </label>
   </div>
   <div
-    class="c3"
-    value=""
+    class=""
   >
     <div
-      class="c4"
+      class="c3"
     >
-      <input
-        class="c5"
-        id="currencyInput"
-        name="currencyInput"
-        placeholder="100.00"
-        type="number"
-        value=""
-      />
       <span
-        class="c6 c7"
+        class="c4 c5"
         color="secondary"
         cursor="inherit"
+        prefix="+44"
         title=""
       >
-        miles
+        +44
       </span>
+      <input
+        class="c6"
+        id="tel"
+        name="telephoneNumber"
+        placeholder="07446875876"
+        prefix="+44"
+        type="tel"
+        value=""
+      />
     </div>
   </div>
 </div>
 `;
 
-exports[`renders - with trailing icon 1`] = `
+exports[`renders - with suffix 1`] = `
 .c1 {
   margin-bottom: 0px;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
 }
 
 .c2 {
@@ -1205,19 +964,168 @@ exports[`renders - with trailing icon 1`] = `
   width: 100%;
 }
 
-.c3 {
-  position: relative;
+.c4 {
+  font-family: 'Circular',san-serif;
+  border: none;
+  border-bottom: 1px solid;
   border-color: #D2D2D2;
-  background-color: transparent;
-  height: 32px;
+  color: #112035;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  opacity: 1;
+  padding: 1px 2px;
+  padding-right: 60px;
+  -moz-appearance: textfield;
 }
 
-.c3:hover,
-.c3:focus-within {
-  border-color: #b9b9b9;
+.c4::-webkit-input-placeholder {
+  color: #636768;
+}
+
+.c4::-moz-placeholder {
+  color: #636768;
+}
+
+.c4:-ms-input-placeholder {
+  color: #636768;
+}
+
+.c4::placeholder {
+  color: #636768;
+}
+
+.c4::-webkit-outer-spin-button,
+.c4::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c4:hover,
+.c4:focus-within {
+  border-color: #D2D2D2;
+}
+
+.c6 {
+  font-family: 'Circular',san-serif;
+  font-size: 16px;
+  line-height: 19px;
+  position: relative;
+  z-index: 1;
+  left: -10px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <label
+      class="c2"
+      color="subtext"
+      cursor="inherit"
+      for="currencyInput"
+      title=""
+    >
+      Currency
+    </label>
+  </div>
+  <div
+    class=""
+  >
+    <div
+      class="c3"
+    >
+      <input
+        class="c4"
+        id="currencyInput"
+        name="currencyInput"
+        placeholder="100.00"
+        type="number"
+        value=""
+      />
+      <span
+        class="c5 c6"
+        color="secondary"
+        cursor="inherit"
+        title=""
+      >
+        miles
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders - with trailing icon 1`] = `
+.c1 {
+  margin-bottom: 0px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c2 {
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: inherit;
+  color: #636768;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  cursor: inherit;
+  color: #112035;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
   font-family: 'Circular',san-serif;
   border: none;
   border-bottom: 1px solid;
@@ -1236,39 +1144,39 @@ exports[`renders - with trailing icon 1`] = `
   position: relative;
 }
 
-.c7::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #636768;
 }
 
-.c7::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #636768;
 }
 
-.c7:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #636768;
 }
 
-.c7::placeholder {
+.c6::placeholder {
   color: #636768;
 }
 
-.c7::-webkit-outer-spin-button,
-.c7::-webkit-inner-spin-button {
+.c6::-webkit-outer-spin-button,
+.c6::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c7:hover,
-.c7:focus-within {
+.c6:hover,
+.c6:focus-within {
   border-color: #D2D2D2;
 }
 
-.c9 {
+.c8 {
   position: relative;
   left: -24px;
 }
 
-.c6 {
+.c5 {
   font-family: 'Circular',san-serif;
   font-size: 16px;
   line-height: 19px;
@@ -1293,14 +1201,13 @@ exports[`renders - with trailing icon 1`] = `
     </label>
   </div>
   <div
-    class="c3"
-    value=""
+    class=""
   >
     <div
-      class="c4"
+      class="c3"
     >
       <span
-        class="c5 c6"
+        class="c4 c5"
         color="secondary"
         cursor="inherit"
         prefix="$"
@@ -1309,7 +1216,7 @@ exports[`renders - with trailing icon 1`] = `
         $
       </span>
       <input
-        class="c7"
+        class="c6"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
@@ -1318,7 +1225,7 @@ exports[`renders - with trailing icon 1`] = `
         value=""
       />
       <span
-        class="c8 c9"
+        class="c7 c8"
         color="subtext"
         rotate="0"
         size="24"

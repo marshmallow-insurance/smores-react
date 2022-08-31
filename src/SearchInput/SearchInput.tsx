@@ -77,7 +77,6 @@ export const SearchInput: FC<SearchInputProps> = ({
       renderAsTitle={renderAsTitle}
       id={id}
       outlined={outlined}
-      value={selectedResult}
       {...otherProps}
     >
       <>
@@ -137,6 +136,7 @@ const StyledInputBox = styled.div<InputBox>`
   ${({ outlined }) =>
     outlined &&
     `
+    background-color: ${theme.colors.white};
     border: 2px solid ${theme.colors.outline};
     border-radius: 8px;
     height: auto;
