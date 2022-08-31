@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { darken } from 'polished'
 
 import { theme } from '../theme'
-import { Field, CommonFieldTypes } from '../Field'
+import { Field, CommonFieldTypes } from '../fields/Field'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { useUniqueId } from '../utils/id'

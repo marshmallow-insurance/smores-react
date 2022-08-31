@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
 
-import { MarginProps } from '../utils/space'
-import { Box } from '../Box'
-import { Text } from '../Text'
+import { MarginProps } from '../../utils/space'
+import { Box } from '../../Box'
+import { Text } from '../../Text'
 
 type FieldSetProps = {
   children: ReactNode

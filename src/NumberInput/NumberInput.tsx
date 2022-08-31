@@ -10,7 +10,7 @@ import styled from 'styled-components'
 import { Box } from '../Box'
 import { Text } from '../Text'
 import { Icon } from '../Icon'
-import { Field, CommonFieldTypes } from '../Field'
+import { Field, CommonFieldTypes } from '../fields/Field'
 
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'

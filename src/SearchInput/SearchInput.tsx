@@ -4,7 +4,7 @@ import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { Icon } from '../Icon'
-import { Field, CommonFieldTypes } from '../Field'
+import { Field, CommonFieldTypes } from '../fields/Field'
 import { useUniqueId } from '../utils/id'
 
 export type SearchInputItem = {

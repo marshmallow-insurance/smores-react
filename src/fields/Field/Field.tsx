@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 
-import { Text } from '../Text'
-import { Box } from '../Box'
+import { Text } from '../../Text'
+import { Box } from '../../Box'
 import { CommonFieldTypes } from './types/commonFieldTypes'
 
 interface FieldProps extends CommonFieldTypes {
