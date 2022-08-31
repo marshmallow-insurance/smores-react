@@ -3,7 +3,6 @@ import React, {
   useState,
   FocusEvent,
   FormEvent,
-  RefObject,
   forwardRef,
   ForwardedRef,
 } from 'react'
@@ -22,7 +21,6 @@ export type DropdownItem = {
 }
 
 export interface Props extends CommonFieldTypes {
-  ref?: RefObject<HTMLSelectElement>
   placeholder?: string
   name?: string
   value?: string
