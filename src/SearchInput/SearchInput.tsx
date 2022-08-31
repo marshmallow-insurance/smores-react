@@ -77,7 +77,6 @@ export const SearchInput: FC<SearchInputProps> = ({
       renderAsTitle={renderAsTitle}
       id={id}
       outlined={outlined}
-      value={selectedResult}
       {...otherProps}
     >
       <>

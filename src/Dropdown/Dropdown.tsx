@@ -100,7 +100,6 @@ export const Dropdown = forwardRef(function Dropdown(
       id={id}
       error={error}
       outlined={outlined}
-      value={value!}
     >
       <StyledSelect
         id={id}

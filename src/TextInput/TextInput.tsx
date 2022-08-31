@@ -54,13 +54,7 @@ export const TextInput = forwardRef(function TextInput(
   const id = useUniqueId(idProp)
 
   return (
-    <Field
-      {...fieldProps}
-      id={id}
-      error={error}
-      outlined={outlined}
-      value={value}
-    >
+    <Field {...fieldProps} id={id} error={error} outlined={outlined}>
       <Box flex>
         <StyledInput
           disabled={disabled}

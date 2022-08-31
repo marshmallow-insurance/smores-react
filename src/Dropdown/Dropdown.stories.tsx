@@ -163,6 +163,7 @@ WithOutline.args = {
   id: 'days',
   list: days,
   placeholder: 'Select Day',
+  value: 'sunday',
   outlined: true,
 }
 

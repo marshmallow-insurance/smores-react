@@ -80,7 +80,6 @@ exports[`disabled 1`] = `
   </div>
   <div
     class="c3"
-    value=""
   >
     <textarea
       class="c4"
@@ -173,7 +172,6 @@ exports[`renders 1`] = `
   </div>
   <div
     class="c3"
-    value=""
   >
     <textarea
       class="c4"
@@ -278,7 +276,6 @@ exports[`renders with error 1`] = `
   </div>
   <div
     class="c3"
-    value=""
   >
     <textarea
       class="c4"
