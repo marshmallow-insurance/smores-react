@@ -9,7 +9,6 @@ import { CommonFieldTypes } from './types/commonFieldTypes'
 
 interface FieldProps extends CommonFieldTypes {
   children: ReactNode
-  showCaret?: boolean
   value: string
   trailingIcon?: string
   dropdownKey?: string // nb only used by dropdown component but required on content in that context
@@ -29,7 +28,6 @@ export const Field = ({
   errorMsg,
   dropdownKey,
   required,
-  showCaret,
   fullHeight = false,
   assistiveText,
   ...marginProps
