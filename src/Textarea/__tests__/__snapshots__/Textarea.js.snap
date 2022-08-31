@@ -29,7 +29,6 @@ exports[`disabled 1`] = `
 
 .c3 {
   position: relative;
-  background-color: transparent;
   height: 100%;
 }
 
@@ -115,7 +114,6 @@ exports[`renders 1`] = `
 
 .c3 {
   position: relative;
-  background-color: transparent;
   height: 100%;
 }
 
@@ -213,7 +211,6 @@ exports[`renders with error 1`] = `
 
 .c3 {
   position: relative;
-  background-color: transparent;
   height: 100%;
 }
 

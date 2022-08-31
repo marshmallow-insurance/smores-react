@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { Text } from '../Text'
 import { Box } from '../Box'
-import { theme } from '../theme'
 import { CommonFieldTypes } from './types/commonFieldTypes'
 
 interface FieldProps extends CommonFieldTypes {
@@ -94,8 +93,6 @@ const Content = styled.div<{
   fullHeight?: boolean
 }>`
   position: relative;
-  background-color: ${({ outlined }) =>
-    !outlined ? 'transparent' : theme.colors['white']};
   height: ${({ fullHeight }) => (fullHeight ? `100%` : `32px`)};
 
   ${({ outlined }) =>

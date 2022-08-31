@@ -91,7 +91,6 @@ exports[`renders - currency 1`] = `
 
 .c3 {
   position: relative;
-  background-color: transparent;
   height: 32px;
 }
 
@@ -300,7 +299,6 @@ exports[`renders - disabled 1`] = `
 
 .c3 {
   position: relative;
-  background-color: transparent;
   height: 32px;
 }
 
@@ -487,7 +485,6 @@ exports[`renders - error 1`] = `
 
 .c3 {
   position: relative;
-  background-color: transparent;
   height: 32px;
 }
 
@@ -713,7 +710,6 @@ exports[`renders - number 1`] = `
 
 .c4 {
   position: relative;
-  background-color: transparent;
   height: 32px;
 }
 
@@ -848,7 +844,6 @@ exports[`renders - tel 1`] = `
 
 .c3 {
   position: relative;
-  background-color: transparent;
   height: 32px;
 }
 
@@ -996,7 +991,6 @@ exports[`renders - with suffix 1`] = `
 
 .c3 {
   position: relative;
-  background-color: transparent;
   height: 32px;
 }
 
@@ -1163,7 +1157,6 @@ exports[`renders - with trailing icon 1`] = `
 
 .c3 {
   position: relative;
-  background-color: transparent;
   height: 32px;
 }
 
