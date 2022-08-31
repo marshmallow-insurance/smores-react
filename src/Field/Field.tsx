@@ -7,9 +7,6 @@ import { CommonFieldTypes } from './types/commonFieldTypes'
 
 interface FieldProps extends CommonFieldTypes {
   children: ReactNode
-  trailingIcon?: string
-  dropdownKey?: string // nb only used by dropdown component but required on content in that context
-  fullHeight?: boolean // used to make text areas full size
   assistiveText?: string
 }
 
@@ -22,9 +19,7 @@ export const Field = ({
   label,
   outlined = false,
   errorMsg,
-  dropdownKey,
   required,
-  fullHeight = false,
   assistiveText,
   ...marginProps
 }: FieldProps) => {
@@ -64,13 +59,7 @@ export const Field = ({
         </>
       )}
 
-      <Content
-        fullHeight={fullHeight}
-        outlined={outlined}
-        key={dropdownKey ?? null}
-      >
-        {children}
-      </Content>
+      <Box>{children}</Box>
 
       {error && (
         <Text tag="span" typo="caption" color="error" mt="8px">
@@ -86,18 +75,4 @@ const Container = styled(Box)<{ className: string }>`
   flex-direction: column;
   position: relative;
   width: 100%;
-`
-
-const Content = styled.div<{
-  outlined: boolean
-  fullHeight?: boolean
-}>`
-  position: relative;
-  height: ${({ fullHeight }) => (fullHeight ? `100%` : `32px`)};
-
-  ${({ outlined }) =>
-    outlined &&
-    `
-      height: auto;
-    `}
 `

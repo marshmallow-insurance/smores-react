@@ -36,11 +36,6 @@ exports[`rendersDropdown 1`] = `
   width: 100%;
 }
 
-.c1 {
-  position: relative;
-  height: 32px;
-}
-
 .c2 {
   width: 100%;
   height: 32px;
@@ -73,6 +68,10 @@ exports[`rendersDropdown 1`] = `
   border-color: #b9b9b9;
 }
 
+.c1 {
+  position: relative;
+}
+
 .c3 {
   position: absolute;
   top: 50%;
@@ -88,74 +87,78 @@ exports[`rendersDropdown 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class=""
   >
-    <select
-      class="c2"
-      id="MM_SMORES_0"
-    >
-      <option
-        hidden=""
-        value=""
-      />
-      <option
-        value="MONDAY"
-      >
-        Monday
-      </option>
-      <option
-        value="TUESDAY"
-      >
-        Tuesday
-      </option>
-      <option
-        value="WEDNESDAY"
-      >
-        Wednesday
-      </option>
-      <option
-        value="THURSDAY"
-      >
-        Thursday
-      </option>
-      <option
-        value="FRIDAY"
-      >
-        Friday
-      </option>
-      <option
-        value="SATURDAY"
-      >
-        Saturday
-      </option>
-      <option
-        value="SUNDAY"
-      >
-        Sunday
-      </option>
-    </select>
     <div
-      class="c3"
+      class="c1"
     >
-      <span
-        class="c4"
-        color="subtext"
-        rotate="0"
-        size="24"
+      <select
+        class="c2"
+        id="MM_SMORES_0"
       >
-        <svg
-          fill="none"
-          height="100%"
-          viewBox="0 0 24 24"
-          width="100%"
-          xmlns="http://www.w3.org/2000/svg"
+        <option
+          hidden=""
+          value=""
+        />
+        <option
+          value="MONDAY"
         >
-          <path
-            d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
-            fill="#636768"
-          />
-        </svg>
-      </span>
+          Monday
+        </option>
+        <option
+          value="TUESDAY"
+        >
+          Tuesday
+        </option>
+        <option
+          value="WEDNESDAY"
+        >
+          Wednesday
+        </option>
+        <option
+          value="THURSDAY"
+        >
+          Thursday
+        </option>
+        <option
+          value="FRIDAY"
+        >
+          Friday
+        </option>
+        <option
+          value="SATURDAY"
+        >
+          Saturday
+        </option>
+        <option
+          value="SUNDAY"
+        >
+          Sunday
+        </option>
+      </select>
+      <div
+        class="c3"
+      >
+        <span
+          class="c4"
+          color="subtext"
+          rotate="0"
+          size="24"
+        >
+          <svg
+            fill="none"
+            height="100%"
+            viewBox="0 0 24 24"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+              fill="#636768"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -197,11 +200,6 @@ exports[`rendersDropdownWithGroups 1`] = `
   width: 100%;
 }
 
-.c1 {
-  position: relative;
-  height: 32px;
-}
-
 .c2 {
   width: 100%;
   height: 32px;
@@ -234,6 +232,10 @@ exports[`rendersDropdownWithGroups 1`] = `
   border-color: #b9b9b9;
 }
 
+.c1 {
+  position: relative;
+}
+
 .c3 {
   position: absolute;
   top: 50%;
@@ -249,84 +251,88 @@ exports[`rendersDropdownWithGroups 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class=""
   >
-    <select
-      class="c2"
-      id="MM_SMORES_1"
-    >
-      <optgroup>
-        <option
-          hidden=""
-          value=""
-        />
-      </optgroup>
-      <optgroup
-        label="Weekday"
-      >
-        <option
-          value="MONDAY"
-        >
-          Monday
-        </option>
-        <option
-          value="TUESDAY"
-        >
-          Tuesday
-        </option>
-        <option
-          value="WEDNESDAY"
-        >
-          Wednesday
-        </option>
-        <option
-          value="THURSDAY"
-        >
-          Thursday
-        </option>
-        <option
-          value="FRIDAY"
-        >
-          Friday
-        </option>
-      </optgroup>
-      <optgroup
-        label="Weekend"
-      >
-        <option
-          value="SATURDAY"
-        >
-          Saturday
-        </option>
-        <option
-          value="SUNDAY"
-        >
-          Sunday
-        </option>
-      </optgroup>
-    </select>
     <div
-      class="c3"
+      class="c1"
     >
-      <span
-        class="c4"
-        color="subtext"
-        rotate="0"
-        size="24"
+      <select
+        class="c2"
+        id="MM_SMORES_1"
       >
-        <svg
-          fill="none"
-          height="100%"
-          viewBox="0 0 24 24"
-          width="100%"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
-            fill="#636768"
+        <optgroup>
+          <option
+            hidden=""
+            value=""
           />
-        </svg>
-      </span>
+        </optgroup>
+        <optgroup
+          label="Weekday"
+        >
+          <option
+            value="MONDAY"
+          >
+            Monday
+          </option>
+          <option
+            value="TUESDAY"
+          >
+            Tuesday
+          </option>
+          <option
+            value="WEDNESDAY"
+          >
+            Wednesday
+          </option>
+          <option
+            value="THURSDAY"
+          >
+            Thursday
+          </option>
+          <option
+            value="FRIDAY"
+          >
+            Friday
+          </option>
+        </optgroup>
+        <optgroup
+          label="Weekend"
+        >
+          <option
+            value="SATURDAY"
+          >
+            Saturday
+          </option>
+          <option
+            value="SUNDAY"
+          >
+            Sunday
+          </option>
+        </optgroup>
+      </select>
+      <div
+        class="c3"
+      >
+        <span
+          class="c4"
+          color="subtext"
+          rotate="0"
+          size="24"
+        >
+          <svg
+            fill="none"
+            height="100%"
+            viewBox="0 0 24 24"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+              fill="#636768"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
   </div>
 </div>
