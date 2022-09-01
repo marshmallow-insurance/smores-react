@@ -7,10 +7,6 @@ export default {
   argTypes: { onChange: { action: 'clicked' } },
 }
 
-const Template = (props: RadioGroupProps) => <RadioGroup {...props} />
-
-export const Default = Template.bind({})
-
 const options = [
   { label: 'Social', value: 'social' },
   { label: 'Social and commuting', value: 'social/commuting' },
@@ -21,9 +17,22 @@ const options = [
   { label: 'It’s a commercial vehicle', value: 'commercial' },
 ]
 
-Default.args = {
+const defaultArgs: RadioGroupProps = {
   label: 'What do you use it for?',
   onChange: (value: string) => console.log(value),
   value: options[0].value,
   options,
+}
+
+const Template = (props: RadioGroupProps) => <RadioGroup {...props} />
+
+export const Default = Template.bind({})
+
+Default.args = defaultArgs
+
+export const Vertical = Template.bind({})
+
+Vertical.args = {
+  ...defaultArgs,
+  displayType: 'vertical-card',
 }

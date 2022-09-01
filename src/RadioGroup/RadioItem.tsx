@@ -1,10 +1,11 @@
 import React, { FC } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
 import { theme } from '../theme'
 
 import { RadioElement } from './RadioElement'
+import { DisplayType } from './types'
 
 type RadioItemProps = {
   name: string
@@ -12,6 +13,7 @@ type RadioItemProps = {
   label: string
   checked: boolean
   onChange: (value: string) => void
+  displayType: DisplayType
 }
 
 export const RadioItem: FC<RadioItemProps> = ({
@@ -20,10 +22,11 @@ export const RadioItem: FC<RadioItemProps> = ({
   value,
   checked,
   onChange,
+  displayType,
 }) => {
   const id = useUniqueId()
   return (
-    <Wrapper htmlFor={id}>
+    <Wrapper htmlFor={id} checked={checked} displayType={displayType}>
       <RadioElement
         name={name}
         id={id}
@@ -37,10 +40,19 @@ export const RadioItem: FC<RadioItemProps> = ({
   )
 }
 
-const Wrapper = styled.label`
+const Wrapper = styled.label<Pick<RadioItemProps, 'displayType' | 'checked'>>`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  ${({ displayType, checked }) =>
+    (displayType === 'horizontal-card' || displayType === 'vertical-card') &&
+    css`
+      border-radius: 8px;
+      background-color: ${theme.colors[checked ? 'white' : 'background']};
+      padding: ${checked ? '10px' : '12px'};
+      ${checked && `border: 2px solid ${theme.colors.secondary};`}
+    `}
 `
 
 const RadioText = styled.span`
