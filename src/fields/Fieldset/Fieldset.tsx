@@ -4,7 +4,7 @@ import { MarginProps } from '../../utils/space'
 import { Box } from '../../Box'
 import { Text } from '../../Text'
 
-type FieldSetProps = {
+export type FieldsetProps = {
   children: ReactNode
   label: string
   outlined?: boolean
@@ -15,7 +15,7 @@ export const Fieldset = ({
   label,
   outlined = false,
   ...marginProps
-}: FieldSetProps) => {
+}: FieldsetProps) => {
   return (
     <Box as="fieldset" {...marginProps}>
       <Box mb={{ custom: outlined ? 4 : 0 }}>
