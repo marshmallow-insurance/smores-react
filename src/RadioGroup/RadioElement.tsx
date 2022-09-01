@@ -26,6 +26,10 @@ export const RadioElement: FC<RadioElementProps> = ({
   isError,
   ...marginProps
 }) => {
+  console.log({
+    name,
+    isError,
+  })
   return (
     <>
       <StyledInput
@@ -36,7 +40,7 @@ export const RadioElement: FC<RadioElementProps> = ({
         checked={checked}
         onChange={() => onChange(value)}
       />
-      <RadioCircle isError={isError} {...marginProps} />
+      <RadioCircle isError={isError} checked={checked} {...marginProps} />
     </>
   )
 }
@@ -47,7 +51,7 @@ const StyledInput = styled.input`
 
 const RADIO_SIZE = 24
 
-const RadioCircle = styled(Box)<{ isError: boolean }>`
+const RadioCircle = styled(Box)<{ isError: boolean; checked: boolean }>`
   flex-shrink: 0;
   width: ${RADIO_SIZE}px;
   height: ${RADIO_SIZE}px;
@@ -60,11 +64,11 @@ const RadioCircle = styled(Box)<{ isError: boolean }>`
     border: 2px solid ${theme.colors.secondary};
   }
 
-  ${StyledInput}:checked + & {
-    border: 8px solid
-      ${({ isError }) =>
-        isError ? theme.colors.error : theme.colors.secondary};
-  }
+  ${({ checked, isError }) =>
+    checked &&
+    `border: 8px solid ${
+      isError ? theme.colors.error : theme.colors.secondary
+    };`}
 
   ${focusOutline({ selector: `${StyledInput}:focus-visible + &` })}
 `
