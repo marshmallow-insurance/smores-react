@@ -13,7 +13,6 @@ const defaultArgs: FieldsetProps = {
   assistiveText: 'Some assistive text to help the user',
   renderAsTitle: true,
   required: false,
-  outlined: true,
 }
 
 const Template = (props: FieldsetProps) => (
