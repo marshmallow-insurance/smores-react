@@ -7,6 +7,7 @@ import { Fieldset } from '../fields/Fieldset'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { RadioItem } from './RadioItem'
 import { DisplayType } from './types'
+import { ITEM_GAP } from './constants'
 
 export type RadioGroupProps = {
   options: Array<{
@@ -23,13 +24,15 @@ export const RadioGroup: FC<RadioGroupProps> = ({
   onChange,
   value,
   displayType = 'normal',
+  renderAsTitle = false,
+  error = false,
   ...fieldProps
 }) => {
   const name = useUniqueId()
 
   return (
-    <Fieldset renderAsTitle={false} {...fieldProps}>
-      <RadioItemList>
+    <Fieldset renderAsTitle={renderAsTitle} error={error} {...fieldProps}>
+      <RadioItemList displayType={displayType}>
         {options.map((option) => (
           <RadioItem
             key={option.value}
@@ -39,6 +42,7 @@ export const RadioGroup: FC<RadioGroupProps> = ({
             checked={option.value === value}
             onChange={onChange}
             displayType={displayType}
+            isError={error}
           />
         ))}
       </RadioItemList>
@@ -46,8 +50,18 @@ export const RadioGroup: FC<RadioGroupProps> = ({
   )
 }
 
-const RadioItemList = styled.div`
+const RadioItemList = styled.div<Pick<RadioGroupProps, 'displayType'>>`
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  gap: ${ITEM_GAP}px;
+
+  ${({ displayType }) => {
+    if (displayType === 'horizontal-card') {
+      return `
+        flex-direction: row;
+        flex-wrap: wrap;
+      `
+    }
+
+    return `flex-direction: column;`
+  }}
 `

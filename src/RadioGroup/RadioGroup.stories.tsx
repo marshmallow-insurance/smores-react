@@ -36,3 +36,19 @@ Vertical.args = {
   ...defaultArgs,
   displayType: 'vertical-card',
 }
+
+export const Horizontal = Template.bind({})
+
+Horizontal.args = {
+  ...defaultArgs,
+  displayType: 'horizontal-card',
+}
+
+export const WithError = Template.bind({})
+
+WithError.args = {
+  ...defaultArgs,
+  error: true,
+  errorMsg: 'something',
+  displayType: 'horizontal-card',
+}
