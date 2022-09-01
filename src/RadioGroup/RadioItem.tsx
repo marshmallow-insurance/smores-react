@@ -1,8 +1,10 @@
 import React, { FC } from 'react'
-import { useUniqueId } from '../utils/id'
-import { RadioElement } from './RadioElement'
 import styled from 'styled-components'
+
+import { useUniqueId } from '../utils/id'
 import { theme } from '../theme'
+
+import { RadioElement } from './RadioElement'
 
 type RadioItemProps = {
   name: string

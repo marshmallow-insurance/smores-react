@@ -1,7 +1,9 @@
 import React, { FC } from 'react'
-import { useUniqueId } from '../utils/id'
-import { RadioItem } from './RadioItem'
 import styled from 'styled-components'
+
+import { useUniqueId } from '../utils/id'
+
+import { RadioItem } from './RadioItem'
 
 export type RadioGroupProps = {
   options: Array<{

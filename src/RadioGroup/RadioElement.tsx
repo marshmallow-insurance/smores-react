@@ -1,10 +1,12 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { MarginProps } from '../utils/space'
+
 import { theme } from '../theme'
-import { Box } from '../Box'
+import { MarginProps } from '../utils/space'
 import { visuallyHidden } from '../utils/visuallyHidden'
 import { focusOutline } from '../utils/focusOutline'
+
+import { Box } from '../Box'
 
 type RadioElementProps = {
   name: string
