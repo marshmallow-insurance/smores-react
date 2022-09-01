@@ -34,6 +34,7 @@ exports[`rendersDropdown 1`] = `
   flex-direction: column;
   position: relative;
   width: 100%;
+  border: 0;
 }
 
 .c2 {
@@ -83,8 +84,9 @@ exports[`rendersDropdown 1`] = `
   transform: translateY(-50%);
 }
 
-<div
+<fieldset
   class="c0"
+  id="MM_SMORES_0"
 >
   <div
     class=""
@@ -161,7 +163,7 @@ exports[`rendersDropdown 1`] = `
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`rendersDropdownWithGroups 1`] = `
@@ -198,6 +200,7 @@ exports[`rendersDropdownWithGroups 1`] = `
   flex-direction: column;
   position: relative;
   width: 100%;
+  border: 0;
 }
 
 .c2 {
@@ -247,8 +250,9 @@ exports[`rendersDropdownWithGroups 1`] = `
   transform: translateY(-50%);
 }
 
-<div
+<fieldset
   class="c0"
+  id="MM_SMORES_1"
 >
   <div
     class=""
@@ -335,5 +339,5 @@ exports[`rendersDropdownWithGroups 1`] = `
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;

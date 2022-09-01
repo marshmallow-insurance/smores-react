@@ -87,6 +87,7 @@ exports[`renders - currency 1`] = `
   flex-direction: column;
   position: relative;
   width: 100%;
+  border: 0;
 }
 
 .c6 {
@@ -163,8 +164,9 @@ exports[`renders - currency 1`] = `
   cursor: pointer;
 }
 
-<div
+<fieldset
   class="c0"
+  id="currencyInput"
 >
   <div
     class="c1"
@@ -173,7 +175,6 @@ exports[`renders - currency 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
-      for="currencyInput"
       title=""
     >
       Currency
@@ -255,7 +256,7 @@ exports[`renders - currency 1`] = `
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`renders - disabled 1`] = `
@@ -290,6 +291,7 @@ exports[`renders - disabled 1`] = `
   flex-direction: column;
   position: relative;
   width: 100%;
+  border: 0;
 }
 
 .c4 {
@@ -335,8 +337,9 @@ exports[`renders - disabled 1`] = `
   border-color: #D2D2D2;
 }
 
-<div
+<fieldset
   class="c0"
+  id="currencyInput"
 >
   <div
     class="c1"
@@ -345,7 +348,6 @@ exports[`renders - disabled 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
-      for="currencyInput"
       title=""
     >
       Currency
@@ -368,7 +370,7 @@ exports[`renders - disabled 1`] = `
       />
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`renders - error 1`] = `
@@ -471,6 +473,7 @@ exports[`renders - error 1`] = `
   flex-direction: column;
   position: relative;
   width: 100%;
+  border: 0;
 }
 
 .c6 {
@@ -547,8 +550,9 @@ exports[`renders - error 1`] = `
   cursor: pointer;
 }
 
-<div
+<fieldset
   class="c0"
+  id="currencyInput"
 >
   <div
     class="c1"
@@ -557,7 +561,6 @@ exports[`renders - error 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
-      for="currencyInput"
       title=""
     >
       Currency
@@ -647,7 +650,7 @@ exports[`renders - error 1`] = `
   >
     Oh gosh, this is an error isn't it!
   </span>
-</div>
+</fieldset>
 `;
 
 exports[`renders - number 1`] = `
@@ -691,6 +694,7 @@ exports[`renders - number 1`] = `
   flex-direction: column;
   position: relative;
   width: 100%;
+  border: 0;
 }
 
 .c5 {
@@ -736,8 +740,9 @@ exports[`renders - number 1`] = `
   border-color: #D2D2D2;
 }
 
-<div
+<fieldset
   class="c0"
+  id="numberInput"
 >
   <div
     class="c1"
@@ -746,7 +751,6 @@ exports[`renders - number 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
-      for="numberInput"
       title=""
     >
       Number
@@ -776,7 +780,7 @@ exports[`renders - number 1`] = `
       />
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`renders - tel 1`] = `
@@ -820,6 +824,7 @@ exports[`renders - tel 1`] = `
   flex-direction: column;
   position: relative;
   width: 100%;
+  border: 0;
 }
 
 .c6 {
@@ -876,8 +881,9 @@ exports[`renders - tel 1`] = `
   z-index: 1;
 }
 
-<div
+<fieldset
   class="c0"
+  id="tel"
 >
   <div
     class="c1"
@@ -886,7 +892,6 @@ exports[`renders - tel 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
-      for="tel"
       title=""
     >
       Telephone number
@@ -918,7 +923,7 @@ exports[`renders - tel 1`] = `
       />
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`renders - with suffix 1`] = `
@@ -962,6 +967,7 @@ exports[`renders - with suffix 1`] = `
   flex-direction: column;
   position: relative;
   width: 100%;
+  border: 0;
 }
 
 .c4 {
@@ -1016,8 +1022,9 @@ exports[`renders - with suffix 1`] = `
   left: -10px;
 }
 
-<div
+<fieldset
   class="c0"
+  id="currencyInput"
 >
   <div
     class="c1"
@@ -1026,7 +1033,6 @@ exports[`renders - with suffix 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
-      for="currencyInput"
       title=""
     >
       Currency
@@ -1056,7 +1062,7 @@ exports[`renders - with suffix 1`] = `
       </span>
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`renders - with trailing icon 1`] = `
@@ -1123,6 +1129,7 @@ exports[`renders - with trailing icon 1`] = `
   flex-direction: column;
   position: relative;
   width: 100%;
+  border: 0;
 }
 
 .c6 {
@@ -1184,8 +1191,9 @@ exports[`renders - with trailing icon 1`] = `
   z-index: 1;
 }
 
-<div
+<fieldset
   class="c0"
+  id="currencyInput"
 >
   <div
     class="c1"
@@ -1194,7 +1202,6 @@ exports[`renders - with trailing icon 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
-      for="currencyInput"
       title=""
     >
       Currency
@@ -1245,5 +1252,5 @@ exports[`renders - with trailing icon 1`] = `
       </span>
     </div>
   </div>
-</div>
+</fieldset>
 `;

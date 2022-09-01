@@ -1,30 +1,19 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 import { MarginProps } from '../../utils/space'
-import { Box } from '../../Box'
-import { Text } from '../../Text'
+import { InternalCommonFieldProps } from '../commonFieldTypes'
+import { InternalField } from '../components/InternalField'
 
-export type FieldsetProps = {
-  children: ReactNode
-  label: string
-  outlined?: boolean
-} & MarginProps
+export type FieldsetProps = InternalCommonFieldProps & MarginProps
 
 export const Fieldset = ({
   children,
-  label,
-  outlined = false,
-  ...marginProps
+  renderAsTitle = true,
+  ...fieldProps
 }: FieldsetProps) => {
   return (
-    <Box as="fieldset" {...marginProps}>
-      <Box mb={{ custom: outlined ? 4 : 0 }}>
-        <Text tag="legend" typo="heading-small" mb="16px">
-          {label}
-        </Text>
-      </Box>
-
+    <InternalField renderAsTitle={renderAsTitle} {...fieldProps}>
       {children}
-    </Box>
+    </InternalField>
   )
 }

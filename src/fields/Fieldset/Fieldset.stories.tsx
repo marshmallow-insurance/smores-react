@@ -6,23 +6,37 @@ import { Fieldset, FieldsetProps } from './Fieldset'
 export default {
   title: 'Fieldset',
   component: Fieldset,
-  argTypes: { onChange: { action: 'changed' } },
 }
 
-const Template = (props: FieldsetProps) => {
-  return (
-    <Fieldset {...props}>
-      <Placeholder />
-    </Fieldset>
-  )
+const defaultArgs: FieldsetProps = {
+  label: 'Fieldset label',
+  assistiveText: 'Some assistive text to help the user',
+  renderAsTitle: true,
+  required: false,
+  outlined: false,
 }
+
+const Template = (props: FieldsetProps) => (
+  <Fieldset {...props}>
+    <Placeholder />
+  </Fieldset>
+)
 
 export const Default = Template.bind({})
 
-Default.args = {
-  id: 'total_amount',
-  label: 'Total Amount',
-  name: 'totalAmount',
-  placeholder: '0',
-  outlined: false,
+Default.args = defaultArgs
+
+export const WithError = Template.bind({})
+
+WithError.args = {
+  ...defaultArgs,
+  error: true,
+  errorMsg: 'This is an error message describing what is wrong',
+}
+
+export const WithSmallLabel = Template.bind({})
+
+WithSmallLabel.args = {
+  ...defaultArgs,
+  renderAsTitle: false,
 }

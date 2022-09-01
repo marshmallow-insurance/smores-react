@@ -4,7 +4,7 @@ import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
-import { CommonFieldTypes, Field } from '../fields/Field'
+import { CommonFieldProps, Field } from '../fields/Field'
 import { MarginProps } from '../utils/space'
 
 type BaseProps = {
@@ -19,7 +19,7 @@ type BaseProps = {
   maxLength?: number
   onBlur?: (e: FocusEvent<HTMLTextAreaElement>) => void
   rows?: number
-} & CommonFieldTypes &
+} & CommonFieldProps &
   MarginProps
 
 type TruncateProps =

@@ -18,6 +18,7 @@ exports[`renders 1`] = `
   flex-direction: column;
   position: relative;
   width: 100%;
+  border: 0;
 }
 
 .c2 {
@@ -55,8 +56,9 @@ exports[`renders 1`] = `
   color: #636768;
 }
 
-<div
+<fieldset
   class="c0"
+  id="textInput"
 >
   <div
     class=""
@@ -75,5 +77,5 @@ exports[`renders 1`] = `
       />
     </div>
   </div>
-</div>
+</fieldset>
 `;

@@ -4,7 +4,7 @@ import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { Icon } from '../Icon'
-import { Field, CommonFieldTypes } from '../fields/Field'
+import { Field, CommonFieldProps } from '../fields/Field'
 import { useUniqueId } from '../utils/id'
 
 export type SearchInputItem = {
@@ -12,7 +12,7 @@ export type SearchInputItem = {
   value: string
 }
 
-export interface SearchInputProps extends CommonFieldTypes {
+export interface SearchInputProps extends CommonFieldProps {
   name?: string
   placeholder?: string
   searchList: SearchInputItem[]
@@ -20,6 +20,7 @@ export interface SearchInputProps extends CommonFieldTypes {
   resultsRelativePosition?: boolean
   showIcon?: boolean
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
+  outlined?: boolean
 }
 
 export const SearchInput: FC<SearchInputProps> = ({

@@ -3,9 +3,9 @@ import styled from 'styled-components'
 
 import { Text } from '../../Text'
 import { Box } from '../../Box'
-import { CommonFieldTypes } from '../Field/types/commonFieldTypes'
+import { InternalCommonFieldProps } from '../commonFieldTypes'
 
-interface InternalFieldProps extends CommonFieldTypes {
+interface InternalFieldProps extends InternalCommonFieldProps {
   children: ReactNode
   className?: string
   assistiveText?: string
@@ -82,4 +82,7 @@ const Container = styled(Box)`
   flex-direction: column;
   position: relative;
   width: 100%;
+
+  // In case, the element is a 'fieldset', we remove the border
+  border: 0;
 `
