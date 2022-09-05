@@ -26,10 +26,6 @@ export const RadioElement: FC<RadioElementProps> = ({
   isError,
   ...marginProps
 }) => {
-  console.log({
-    name,
-    isError,
-  })
   return (
     <>
       <StyledInput
