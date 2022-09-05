@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { RadioGroup, RadioGroupProps } from './RadioGroup'
 
 export default {
@@ -22,6 +22,7 @@ const defaultArgs: RadioGroupProps = {
   onChange: (value: string) => console.log(value),
   value: options[0].value,
   options,
+  displayType: 'normal',
 }
 
 const Template = (props: RadioGroupProps) => <RadioGroup {...props} />
@@ -52,3 +53,19 @@ WithError.args = {
   errorMsg: 'something',
   displayType: 'horizontal-card',
 }
+
+const InteractiveStory = (props: RadioGroupProps) => {
+  const [value, setValue] = useState('')
+
+  return (
+    <RadioGroup
+      {...props}
+      onChange={(nextValue) => setValue(nextValue)}
+      value={value}
+    />
+  )
+}
+
+export const Interactive = InteractiveStory.bind({})
+
+Interactive.args = defaultArgs
