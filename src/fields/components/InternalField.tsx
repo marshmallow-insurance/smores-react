@@ -1,52 +1,59 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 
-import { Text } from '../Text'
-import { Box } from '../Box'
-import { CommonFieldTypes } from './types/commonFieldTypes'
+import { Text } from '../../Text'
+import { Box } from '../../Box'
+import { InternalCommonFieldProps } from '../commonFieldTypes'
 
-interface FieldProps extends CommonFieldTypes {
+interface InternalFieldProps extends InternalCommonFieldProps {
   children: ReactNode
+  className?: string
   assistiveText?: string
+  htmlFor?: string
+  fieldType?: 'field' | 'fieldset'
 }
 
-export const Field = ({
+export const InternalField = ({
   children,
+  fieldType,
   renderAsTitle,
-  className = '',
-  error,
-  id,
+  htmlFor,
+  className,
   label,
+  assistiveText,
   outlined = false,
+  error,
   errorMsg,
   required,
-  assistiveText,
   ...marginProps
-}: FieldProps) => {
+}: InternalFieldProps) => {
   return (
-    <Container className={className} {...marginProps}>
+    <Container
+      as={fieldType === 'field' ? 'div' : 'fieldset'}
+      className={className}
+      {...marginProps}
+    >
       {label && (
         <>
           {renderAsTitle ? (
             <Box mb="16px">
               <Text
-                tag="label"
+                tag={fieldType === 'field' ? 'label' : 'legend'}
                 typo="heading-small"
-                htmlFor={id}
-                mb={assistiveText ? { custom: 4 } : undefined}
+                htmlFor={htmlFor}
               >
                 {label}
               </Text>
 
               {assistiveText && (
-                <Text tag="p" color="subtext">
+                <Text tag="p" color="subtext" mt={{ custom: 4 }}>
                   {assistiveText}
                 </Text>
               )}
             </Box>
           ) : (
             <Box mb={{ custom: outlined ? 4 : 0 }}>
-              <Text tag="label" typo="label" color="subtext" htmlFor={id}>
+              <Text tag="label" typo="label" color="subtext" htmlFor={htmlFor}>
                 {label}
                 {required && (
                   <Text tag="span" typo="body-small" color="error">
@@ -70,9 +77,12 @@ export const Field = ({
   )
 }
 
-const Container = styled(Box)<{ className: string }>`
+const Container = styled(Box)`
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
+
+  // In case, the element is a 'fieldset', we remove the border
+  border: 0;
 `

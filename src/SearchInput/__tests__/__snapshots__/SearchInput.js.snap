@@ -25,6 +25,7 @@ exports[`renders 1`] = `
   flex-direction: column;
   position: relative;
   width: 100%;
+  border: 0;
 }
 
 .c3 {
@@ -109,8 +110,9 @@ exports[`renders 1`] = `
   background-color: #F4F4F4;
 }
 
-<div
+<fieldset
   class="c0"
+  id="days"
 >
   <div
     class="c1"
@@ -119,7 +121,6 @@ exports[`renders 1`] = `
       class="c2"
       color="subtext"
       cursor="inherit"
-      for="days"
       title=""
     >
       Days
@@ -152,5 +153,5 @@ exports[`renders 1`] = `
       </ul>
     </div>
   </div>
-</div>
+</fieldset>
 `;

@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { darken } from 'polished'
 
 import { theme } from '../theme'
-import { Field, CommonFieldTypes } from '../Field'
+import { Field, CommonFieldProps } from '../fields/Field'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { useUniqueId } from '../utils/id'
 
-interface Props extends CommonFieldTypes {
+interface Props extends CommonFieldProps {
   type?: 'text' | 'email' | 'password' | 'time' | 'date'
   placeholder: string
   name?: string
@@ -16,6 +16,7 @@ interface Props extends CommonFieldTypes {
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   trailingIcon?: string
   disabled?: boolean
+  outlined?: boolean
 }
 
 /** on change or on input required */

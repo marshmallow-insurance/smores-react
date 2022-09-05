@@ -11,7 +11,7 @@ import styled from 'styled-components'
 
 import { theme } from '../theme'
 import { Icon } from '../Icon'
-import { Field, CommonFieldTypes } from '../Field'
+import { Field, CommonFieldProps } from '../fields/Field'
 import { useUniqueId } from '../utils/id'
 
 export type DropdownItem = {
@@ -20,12 +20,13 @@ export type DropdownItem = {
   value: string
 }
 
-export interface Props extends CommonFieldTypes {
+export interface Props extends CommonFieldProps {
   placeholder?: string
   name?: string
   value?: string
   defaultValue?: string
   disabled?: boolean
+  outlined?: boolean
   list: DropdownItem[]
   onSelect: (element: string) => void
   onBlur?: (e: FocusEvent<HTMLSelectElement>) => void

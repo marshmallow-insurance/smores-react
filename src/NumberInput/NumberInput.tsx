@@ -10,12 +10,12 @@ import styled from 'styled-components'
 import { Box } from '../Box'
 import { Text } from '../Text'
 import { Icon } from '../Icon'
-import { Field, CommonFieldTypes } from '../Field'
+import { Field, CommonFieldProps } from '../fields/Field'
 
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 
-export interface Props extends CommonFieldTypes {
+export interface Props extends CommonFieldProps {
   type?: 'number' | 'tel'
   placeholder: string
   name?: string
@@ -30,6 +30,7 @@ export interface Props extends CommonFieldTypes {
   roundCurrency?: boolean
   step?: number
   disabled?: boolean
+  outlined?: boolean
 }
 
 /** on change or on input required */
