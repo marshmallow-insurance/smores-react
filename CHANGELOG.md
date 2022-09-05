@@ -1,5 +1,8 @@
 ## [2.6.3] - 2022-08-19
+### Added
+- New `RadioGroup` component
 ### Changed
+- Remove useless prop from `Fieldset`
 - Make `tag` prop optional on `Text`
 
 ## [2.6.2] - 2022-08-18
