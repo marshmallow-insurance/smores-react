@@ -56,9 +56,14 @@ const RadioCircle = styled(Box)<{ isError: boolean; checked: boolean }>`
   border: 2px solid
     ${({ isError }) => (isError ? theme.colors.error : theme.colors.subtext)};
 
-  &:hover {
-    border: 2px solid ${theme.colors.secondary};
-  }
+  ${({ checked, isError }) =>
+    !checked &&
+    !isError &&
+    `
+    &:hover {
+      border: 2px solid ${theme.colors.secondary};
+    }
+  `}
 
   ${({ checked, isError }) =>
     checked &&
