@@ -47,7 +47,7 @@ export const RadioItem: FC<RadioItemProps> = ({
 const Wrapper = styled.label<Pick<RadioItemProps, 'displayType' | 'checked'>>`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
 
   ${({ displayType, checked }) =>
     css`
@@ -80,4 +80,5 @@ const RadioText = styled.span<{ isError: boolean }>`
   font-weight: ${theme.font.weight.medium};
   color: ${({ isError }) =>
     isError ? theme.colors.error : theme.colors.secondary};
+  margin-top: 4px;
 `
