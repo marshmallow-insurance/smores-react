@@ -93,6 +93,7 @@ exports[`renders 1`] = `
   box-sizing: border-box;
   border-radius: 8px;
   padding: 24px;
+  width: 100%;
   max-width: 460px;
   position: fixed;
   max-height: calc(100vh - 64px);
