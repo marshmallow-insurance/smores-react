@@ -1,3 +1,8 @@
+## [2.7.1] - 2022-09-06
+### Changed
+- Fix `Modal` width
+- Fix field's label spacing
+
 ## [2.7.0] - 2022-09-06
 ### Added
 - New `RadioGroup` component
