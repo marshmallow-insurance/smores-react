@@ -100,6 +100,7 @@ const Container = styled.div<IModalContainer>(
     box-sizing: border-box;
     border-radius: 8px;
     padding: 24px;
+    width: 100%;
     max-width: ${width};
     position: fixed;
     max-height: calc(100vh - 64px);
