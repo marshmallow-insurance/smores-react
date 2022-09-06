@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import { theme } from '../theme'
@@ -7,17 +7,18 @@ import { visuallyHidden } from '../utils/visuallyHidden'
 import { focusOutline } from '../utils/focusOutline'
 
 import { Box } from '../Box'
+import { BaseValueType } from './types'
 
-type RadioElementProps = {
+type RadioElementProps<Value extends BaseValueType> = {
   name: string
   id: string
-  value: string
+  value: Value
   checked: boolean
-  onChange: (value: string) => void
+  onChange: (value: Value) => void
   isError: boolean
 } & MarginProps
 
-export const RadioElement: FC<RadioElementProps> = ({
+export const RadioElement = <Value extends BaseValueType>({
   name,
   id,
   value,
@@ -25,14 +26,14 @@ export const RadioElement: FC<RadioElementProps> = ({
   onChange,
   isError,
   ...marginProps
-}) => {
+}: RadioElementProps<Value>) => {
   return (
     <>
       <StyledInput
         type="radio"
         name={name}
         id={id}
-        value={value}
+        value={`${value}`}
         checked={checked}
         onChange={() => onChange(value)}
       />

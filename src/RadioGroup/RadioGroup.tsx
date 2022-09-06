@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
@@ -6,20 +6,20 @@ import { useUniqueId } from '../utils/id'
 import { Fieldset } from '../fields/Fieldset'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { RadioItem } from './RadioItem'
-import { DisplayType } from './types'
+import { BaseValueType, DisplayType } from './types'
 import { ITEM_GAP } from './constants'
 
-export type RadioGroupProps = {
+export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   options: Array<{
     label: string
-    value: string
+    value: Value
   }>
-  onChange: (value: string) => void
-  value: string
+  onChange: (value: Value) => void
+  value: Value
   displayType?: DisplayType
 } & CommonFieldProps
 
-export const RadioGroup: FC<RadioGroupProps> = ({
+export const RadioGroup = <Value extends BaseValueType>({
   options,
   onChange,
   value,
@@ -27,7 +27,7 @@ export const RadioGroup: FC<RadioGroupProps> = ({
   renderAsTitle = false,
   error = false,
   ...fieldProps
-}) => {
+}: RadioGroupProps<Value>) => {
   const name = useUniqueId()
 
   return (
@@ -35,7 +35,7 @@ export const RadioGroup: FC<RadioGroupProps> = ({
       <RadioItemList displayType={displayType}>
         {options.map((option) => (
           <RadioItem
-            key={option.value}
+            key={`${option.value}`}
             name={name}
             label={option.label}
             value={option.value}

@@ -54,7 +54,7 @@ WithError.args = {
   displayType: 'horizontal-card',
 }
 
-const InteractiveStory = (props: RadioGroupProps) => {
+const InteractiveStory = (props: RadioGroupProps<string>) => {
   const [value, setValue] = useState('')
 
   return (

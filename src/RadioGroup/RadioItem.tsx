@@ -1,24 +1,24 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styled, { css } from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
 import { theme } from '../theme'
 
 import { RadioElement } from './RadioElement'
-import { DisplayType } from './types'
+import { BaseValueType, DisplayType } from './types'
 import { ITEM_GAP } from './constants'
 
-type RadioItemProps = {
+type RadioItemProps<Value extends BaseValueType = BaseValueType> = {
   name: string
-  value: string
+  value: Value
   label: string
   checked: boolean
-  onChange: (value: string) => void
+  onChange: (value: Value) => void
   displayType: DisplayType
   isError: boolean
 }
 
-export const RadioItem: FC<RadioItemProps> = ({
+export const RadioItem = <Value extends BaseValueType>({
   name,
   label,
   value,
@@ -26,7 +26,7 @@ export const RadioItem: FC<RadioItemProps> = ({
   onChange,
   displayType,
   isError,
-}) => {
+}: RadioItemProps<Value>) => {
   const id = useUniqueId()
   return (
     <Wrapper htmlFor={id} checked={checked} displayType={displayType}>
