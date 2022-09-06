@@ -1,4 +1,4 @@
-## [2.6.3] - 2022-08-19
+## [2.7.0] - 2022-09-06
 ### Added
 - New `RadioGroup` component
 ### Changed
