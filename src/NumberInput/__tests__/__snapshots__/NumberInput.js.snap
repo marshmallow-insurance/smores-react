@@ -168,18 +168,14 @@ exports[`renders - currency 1`] = `
   class="c0"
   id="currencyInput"
 >
-  <div
-    class="c1"
+  <label
+    class="c1 c2"
+    color="subtext"
+    cursor="inherit"
+    title=""
   >
-    <label
-      class="c2"
-      color="subtext"
-      cursor="inherit"
-      title=""
-    >
-      Currency
-    </label>
-  </div>
+    Currency
+  </label>
   <div
     class=""
   >
@@ -341,18 +337,14 @@ exports[`renders - disabled 1`] = `
   class="c0"
   id="currencyInput"
 >
-  <div
-    class="c1"
+  <label
+    class="c1 c2"
+    color="subtext"
+    cursor="inherit"
+    title=""
   >
-    <label
-      class="c2"
-      color="subtext"
-      cursor="inherit"
-      title=""
-    >
-      Currency
-    </label>
-  </div>
+    Currency
+  </label>
   <div
     class=""
   >
@@ -554,18 +546,14 @@ exports[`renders - error 1`] = `
   class="c0"
   id="currencyInput"
 >
-  <div
-    class="c1"
+  <label
+    class="c1 c2"
+    color="subtext"
+    cursor="inherit"
+    title=""
   >
-    <label
-      class="c2"
-      color="subtext"
-      cursor="inherit"
-      title=""
-    >
-      Currency
-    </label>
-  </div>
+    Currency
+  </label>
   <div
     class=""
   >
@@ -744,26 +732,22 @@ exports[`renders - number 1`] = `
   class="c0"
   id="numberInput"
 >
-  <div
-    class="c1"
+  <label
+    class="c1 c2"
+    color="subtext"
+    cursor="inherit"
+    title=""
   >
-    <label
-      class="c2"
-      color="subtext"
+    Number
+    <span
+      class="c3"
+      color="error"
       cursor="inherit"
       title=""
     >
-      Number
-      <span
-        class="c3"
-        color="error"
-        cursor="inherit"
-        title=""
-      >
-        *
-      </span>
-    </label>
-  </div>
+      *
+    </span>
+  </label>
   <div
     class=""
   >
@@ -885,18 +869,14 @@ exports[`renders - tel 1`] = `
   class="c0"
   id="tel"
 >
-  <div
-    class="c1"
+  <label
+    class="c1 c2"
+    color="subtext"
+    cursor="inherit"
+    title=""
   >
-    <label
-      class="c2"
-      color="subtext"
-      cursor="inherit"
-      title=""
-    >
-      Telephone number
-    </label>
-  </div>
+    Telephone number
+  </label>
   <div
     class=""
   >
@@ -1026,18 +1006,14 @@ exports[`renders - with suffix 1`] = `
   class="c0"
   id="currencyInput"
 >
-  <div
-    class="c1"
+  <label
+    class="c1 c2"
+    color="subtext"
+    cursor="inherit"
+    title=""
   >
-    <label
-      class="c2"
-      color="subtext"
-      cursor="inherit"
-      title=""
-    >
-      Currency
-    </label>
-  </div>
+    Currency
+  </label>
   <div
     class=""
   >
@@ -1195,18 +1171,14 @@ exports[`renders - with trailing icon 1`] = `
   class="c0"
   id="currencyInput"
 >
-  <div
-    class="c1"
+  <label
+    class="c1 c2"
+    color="subtext"
+    cursor="inherit"
+    title=""
   >
-    <label
-      class="c2"
-      color="subtext"
-      cursor="inherit"
-      title=""
-    >
-      Currency
-    </label>
-  </div>
+    Currency
+  </label>
   <div
     class=""
   >

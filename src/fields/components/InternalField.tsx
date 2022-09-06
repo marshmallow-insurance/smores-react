@@ -52,16 +52,20 @@ export const InternalField = ({
               )}
             </Box>
           ) : (
-            <Box mb={{ custom: outlined ? 4 : 0 }}>
-              <Text tag="label" typo="label" color="subtext" htmlFor={htmlFor}>
-                {label}
-                {required && (
-                  <Text tag="span" typo="body-small" color="error">
-                    *
-                  </Text>
-                )}
-              </Text>
-            </Box>
+            <Text
+              tag="label"
+              typo="label"
+              color="subtext"
+              htmlFor={htmlFor}
+              mb={{ custom: outlined ? 4 : 0 }}
+            >
+              {label}
+              {required && (
+                <Text tag="span" typo="body-small" color="error">
+                  *
+                </Text>
+              )}
+            </Text>
           )}
         </>
       )}
