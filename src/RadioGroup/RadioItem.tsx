@@ -1,10 +1,12 @@
 import React, { FC } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
 import { theme } from '../theme'
 
 import { RadioElement } from './RadioElement'
+import { DisplayType } from './types'
+import { ITEM_GAP } from './constants'
 
 type RadioItemProps = {
   name: string
@@ -12,6 +14,8 @@ type RadioItemProps = {
   label: string
   checked: boolean
   onChange: (value: string) => void
+  displayType: DisplayType
+  isError: boolean
 }
 
 export const RadioItem: FC<RadioItemProps> = ({
@@ -20,32 +24,61 @@ export const RadioItem: FC<RadioItemProps> = ({
   value,
   checked,
   onChange,
+  displayType,
+  isError,
 }) => {
   const id = useUniqueId()
   return (
-    <Wrapper htmlFor={id}>
+    <Wrapper htmlFor={id} checked={checked} displayType={displayType}>
       <RadioElement
         name={name}
         id={id}
         value={value}
         checked={checked}
         onChange={onChange}
+        isError={isError}
         mr="8px"
       />
-      <RadioText>{label}</RadioText>
+      <RadioText isError={isError}>{label}</RadioText>
     </Wrapper>
   )
 }
 
-const Wrapper = styled.label`
+const Wrapper = styled.label<Pick<RadioItemProps, 'displayType' | 'checked'>>`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+
+  ${({ displayType, checked }) =>
+    css`
+      ${(displayType === 'horizontal-card' ||
+        displayType === 'vertical-card') &&
+      css`
+        border-radius: 8px;
+        background-color: ${theme.colors[checked ? 'white' : 'background']};
+        padding: ${checked ? '10px' : '12px'};
+        ${checked && `border: 2px solid ${theme.colors.secondary};`}
+      `}
+      ${displayType === 'horizontal-card' &&
+      css`
+        width: 100%;
+
+        @media (min-width: 420px) {
+          width: calc(50% - ${ITEM_GAP / 2}px);
+        }
+
+        @media (min-width: 768px) {
+          width: 240px;
+        }
+      `}
+    `}
 `
 
-const RadioText = styled.span`
+const RadioText = styled.span<{ isError: boolean }>`
   line-height: 16px;
   font-size: 16px;
   font-weight: ${theme.font.weight.medium};
-  color: ${theme.colors.secondary};
+  color: ${({ isError }) =>
+    isError ? theme.colors.error : theme.colors.secondary};
+  margin-top: 4px;
 `
