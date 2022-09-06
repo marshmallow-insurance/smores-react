@@ -114,18 +114,14 @@ exports[`renders 1`] = `
   class="c0"
   id="days"
 >
-  <div
-    class="c1"
+  <label
+    class="c1 c2"
+    color="subtext"
+    cursor="inherit"
+    title=""
   >
-    <label
-      class="c2"
-      color="subtext"
-      cursor="inherit"
-      title=""
-    >
-      Days
-    </label>
-  </div>
+    Days
+  </label>
   <div
     class=""
   >

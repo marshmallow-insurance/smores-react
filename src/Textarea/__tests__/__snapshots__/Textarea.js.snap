@@ -55,18 +55,14 @@ exports[`disabled 1`] = `
   class="c0"
   id="textarea_id"
 >
-  <div
-    class="c1"
+  <label
+    class="c1 c2"
+    color="subtext"
+    cursor="inherit"
+    title=""
   >
-    <label
-      class="c2"
-      color="subtext"
-      cursor="inherit"
-      title=""
-    >
-      Textarea label
-    </label>
-  </div>
+    Textarea label
+  </label>
   <div
     class=""
   >
@@ -136,18 +132,14 @@ exports[`renders 1`] = `
   class="c0 Textarea"
   id="textarea_id"
 >
-  <div
-    class="c1"
+  <label
+    class="c1 c2"
+    color="subtext"
+    cursor="inherit"
+    title=""
   >
-    <label
-      class="c2"
-      color="subtext"
-      cursor="inherit"
-      title=""
-    >
-      Textarea label
-    </label>
-  </div>
+    Textarea label
+  </label>
   <div
     class=""
   >
@@ -229,18 +221,14 @@ exports[`renders with error 1`] = `
   class="c0"
   id="textarea_id"
 >
-  <div
-    class="c1"
+  <label
+    class="c1 c2"
+    color="subtext"
+    cursor="inherit"
+    title=""
   >
-    <label
-      class="c2"
-      color="subtext"
-      cursor="inherit"
-      title=""
-    >
-      Textarea label
-    </label>
-  </div>
+    Textarea label
+  </label>
   <div
     class=""
   >
