@@ -1,5 +1,6 @@
-## [2.7.1] - 2022-09-06
+## [2.7.1] - 2022-09-07
 ### Changed
+- Add `visual` to `RadioGroup` option
 - Fix `Modal` width
 - Fix field's label spacing
 
@@ -440,7 +441,8 @@
 ### Changed
 - Updated gap and styles on Row component
 
-[2.6.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.6.2...v2.6.3
+[2.7.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.7.0...v2.7.1
+[2.7.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.6.2...v2.7.0
 [2.6.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.6.1...v2.6.2
 [2.6.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.6.0...v2.6.1
 [2.6.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.5.0...v2.6.0

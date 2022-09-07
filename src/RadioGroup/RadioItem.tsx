@@ -7,9 +7,11 @@ import { theme } from '../theme'
 import { RadioElement } from './RadioElement'
 import { BaseValueType, DisplayType } from './types'
 import { ITEM_GAP } from './constants'
+import { Box } from '../Box'
 
 type RadioItemProps<Value extends BaseValueType = BaseValueType> = {
   name: string
+  visual?: string
   value: Value
   label: string
   checked: boolean
@@ -20,6 +22,7 @@ type RadioItemProps<Value extends BaseValueType = BaseValueType> = {
 
 export const RadioItem = <Value extends BaseValueType>({
   name,
+  visual,
   label,
   value,
   checked,
@@ -30,24 +33,45 @@ export const RadioItem = <Value extends BaseValueType>({
   const id = useUniqueId()
   return (
     <Wrapper htmlFor={id} checked={checked} displayType={displayType}>
-      <RadioElement
-        name={name}
-        id={id}
-        value={value}
-        checked={checked}
-        onChange={onChange}
-        isError={isError}
-        mr="8px"
-      />
-      <RadioText isError={isError}>{label}</RadioText>
+      {visual && (
+        <VisualWrapper>
+          <Visual visualUrl={visual} />
+        </VisualWrapper>
+      )}
+      <Box flex direction="row" alignItems="flex-start">
+        <RadioElement
+          name={name}
+          id={id}
+          value={value}
+          checked={checked}
+          onChange={onChange}
+          isError={isError}
+          mr="8px"
+        />
+        <RadioText isError={isError}>{label}</RadioText>
+      </Box>
     </Wrapper>
   )
 }
 
+const VisualWrapper = styled.div`
+  width: 100%;
+  max-width: 120px;
+  margin: 0 auto 8px;
+`
+
+const Visual = styled.div<{ visualUrl: string }>`
+  width: 100%;
+  padding-top: 100%;
+  background-image: url('${(p) => p.visualUrl}');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+`
+
 const Wrapper = styled.label<Pick<RadioItemProps, 'displayType' | 'checked'>>`
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
 
   ${({ displayType, checked }) =>
     css`

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { RadioGroup, RadioGroupProps } from './RadioGroup'
+import visualSvg from './assets/radio-visual.svg'
 
 export default {
   title: 'RadioGroup',
@@ -24,6 +25,22 @@ const defaultArgs: RadioGroupProps = {
   options,
   displayType: 'normal',
 }
+
+const InteractiveStory = (props: RadioGroupProps<string>) => {
+  const [value, setValue] = useState('')
+
+  return (
+    <RadioGroup
+      {...props}
+      onChange={(nextValue) => setValue(nextValue)}
+      value={value}
+    />
+  )
+}
+
+export const Interactive = InteractiveStory.bind({})
+
+Interactive.args = defaultArgs
 
 const Template = (props: RadioGroupProps) => <RadioGroup {...props} />
 
@@ -54,18 +71,10 @@ WithError.args = {
   displayType: 'horizontal-card',
 }
 
-const InteractiveStory = (props: RadioGroupProps<string>) => {
-  const [value, setValue] = useState('')
+export const WithVisual = Template.bind({})
 
-  return (
-    <RadioGroup
-      {...props}
-      onChange={(nextValue) => setValue(nextValue)}
-      value={value}
-    />
-  )
+WithVisual.args = {
+  ...defaultArgs,
+  options: options.map((option) => ({ ...option, visual: visualSvg })),
+  displayType: 'horizontal-card',
 }
-
-export const Interactive = InteractiveStory.bind({})
-
-Interactive.args = defaultArgs
