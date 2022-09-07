@@ -11,6 +11,7 @@ import { ITEM_GAP } from './constants'
 
 export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   options: Array<{
+    visual?: string
     label: string
     value: Value
   }>
@@ -37,6 +38,7 @@ export const RadioGroup = <Value extends BaseValueType>({
           <RadioItem
             key={`${option.value}`}
             name={name}
+            visual={option.visual}
             label={option.label}
             value={option.value}
             checked={option.value === value}
