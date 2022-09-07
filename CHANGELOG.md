@@ -1,3 +1,7 @@
+## [2.7.2] - 2022-09-08
+### Changed
+- Add `null` as a possible value for `RadioGroup`
+
 ## [2.7.1] - 2022-09-07
 ### Changed
 - Add `visual` to `RadioGroup` option
