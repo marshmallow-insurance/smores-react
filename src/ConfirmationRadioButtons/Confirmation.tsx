@@ -6,6 +6,7 @@ import { Text } from '../Text'
 import { RadioButton, FakeInput } from './RadioButtonStyled'
 import { useUniqueId } from '../utils/id'
 import { MarginProps } from '../utils/space'
+import { useDeprecatedWarning } from '../utils/deprecated'
 
 export type ConfirmationProps = {
   onChange(value?: boolean): void
@@ -22,21 +23,30 @@ export type ConfirmationProps = {
   disabled?: boolean
 } & MarginProps
 
-export const Confirmation: FC<ConfirmationProps> = ({
-  checked,
-  onChange,
-  id: idProp,
-  error = false,
-  errorMsg = '',
-  label,
-  onBlur,
-  sublabel,
-  yesLabel = 'Yes',
-  noLabel = 'No',
-  required = false,
-  disabled = false,
-  ...marginProps
-}: ConfirmationProps) => {
+export const Confirmation: FC<ConfirmationProps> = (props) => {
+  const {
+    checked,
+    onChange,
+    id: idProp,
+    error = false,
+    errorMsg = '',
+    label,
+    onBlur,
+    sublabel,
+    yesLabel = 'Yes',
+    noLabel = 'No',
+    required = false,
+    disabled = false,
+    ...marginProps
+  } = props
+
+  useDeprecatedWarning({
+    title: 'Confirmation',
+    message:
+      'The Confirmation component has been deprecated. Please use the new RadioGroup component instead.',
+    componentProps: props,
+  })
+
   const id = useUniqueId(idProp)
   return (
     <ConfirmationWrapper {...marginProps}>

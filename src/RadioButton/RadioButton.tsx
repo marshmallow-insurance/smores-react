@@ -7,6 +7,7 @@ import { Box } from '../Box'
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 import { MarginProps } from '../utils/space'
+import { useDeprecatedWarning } from '../utils/deprecated'
 
 interface IFakeInput {
   checked?: boolean
@@ -20,14 +21,16 @@ export type RadioButtonProps = {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void
 } & MarginProps
 
-export const RadioButton: FC<RadioButtonProps> = ({
-  id: idProp,
-  label,
-  checked,
-  value,
-  onChange,
-  ...marginProps
-}) => {
+export const RadioButton: FC<RadioButtonProps> = (props) => {
+  const { id: idProp, label, checked, value, onChange, ...marginProps } = props
+
+  useDeprecatedWarning({
+    title: 'RadioButton',
+    message:
+      'The RadioButton component has been deprecated. Please use the new RadioGroup component instead.',
+    componentProps: props,
+  })
+
   const id = useUniqueId(idProp)
 
   return (
