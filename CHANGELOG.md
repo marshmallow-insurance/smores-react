@@ -1,5 +1,6 @@
 ## [2.7.2] - 2022-09-08
 ### Changed
+- Update `RadioGroup`'s option width for `horizontal-card`
 - Add `null` as a possible value for `RadioGroup`
 
 ## [2.7.1] - 2022-09-07
