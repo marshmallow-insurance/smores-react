@@ -1,5 +1,6 @@
 ## [2.7.2] - 2022-09-08
 ### Changed
+- Add deprecated message for `Confirmation` and `RadioButton`
 - Update `RadioGroup`'s option width for `horizontal-card`
 - Add `null` as a possible value for `RadioGroup`
 
