@@ -92,7 +92,7 @@ const Wrapper = styled.label<Pick<RadioItemProps, 'displayType' | 'checked'>>`
         }
 
         @media (min-width: 768px) {
-          width: 200px;
+          width: 201px;
         }
       `}
     `}
