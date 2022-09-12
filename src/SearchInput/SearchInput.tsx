@@ -43,33 +43,43 @@ export const SearchInput: FC<SearchInputProps> = ({
   const [selectedOption, setSelectedOption] = useState<SearchInputItem | null>(
     null,
   )
-  const [searchQuery, setSearchQuery] = useState('')
+  const [searchQuery, setSearchQuery] = useState<string | null>(null)
+
+  const filteredList = useMemo(() => {
+    if (searchQuery === null || searchQuery === '') {
+      return searchList
+    }
+
+    return searchList.filter(({ label }) =>
+      label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
+    )
+  }, [searchQuery])
+
+  const isSelected = selectedOption !== null
+  const displayedInputText =
+    searchQuery !== null ? searchQuery : selectedOption?.label || ''
+
+  const updateSearchQuery = (query: string | null) => {
+    setSearchQuery(query)
+
+    if (query === null) {
+      setShowOptions(false)
+    } else {
+      setShowOptions(2 <= query.length)
+    }
+  }
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const nextValue = event.currentTarget.value
-    setSearchQuery(nextValue)
-    setShowOptions(2 <= nextValue.length)
+    updateSearchQuery(nextValue)
   }
 
   const handleSelect = (nextOption: SearchInputItem): void => {
-    setShowOptions(false)
-    setSearchQuery('')
+    updateSearchQuery(null)
 
     setSelectedOption(nextOption)
     onFound(nextOption.value)
   }
-
-  const filteredList = useMemo(
-    () =>
-      searchList.filter(({ label }) =>
-        label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
-      ),
-    [searchQuery],
-  )
-
-  const isSelected = selectedOption !== null
-  const displayedInputText =
-    searchQuery !== '' ? searchQuery : selectedOption?.label || ''
 
   return (
     <Field
