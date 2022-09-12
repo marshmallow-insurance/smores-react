@@ -1,4 +1,4 @@
-import React, { FC, FocusEvent, useState } from 'react'
+import React, { ChangeEvent, FC, FocusEvent, useState } from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
@@ -6,6 +6,7 @@ import { theme } from '../theme'
 import { Icon } from '../Icon'
 import { Field, CommonFieldProps } from '../fields/Field'
 import { useUniqueId } from '../utils/id'
+import { SearchOptions } from './SearchOptions'
 
 export type SearchInputItem = {
   label: string
@@ -40,7 +41,7 @@ export const SearchInput: FC<SearchInputProps> = ({
   const id = useUniqueId(idProp)
   const [showOptions, setShowOptions] = useState(false)
   const [list, setList] = useState<SearchInputItem[]>([])
-  const [selectedResult, setSelectedResult] = useState('')
+  const [displayedInputText, setDisplayedInputText] = useState('')
   const [selected, setSelected] = useState(false)
 
   const search = (e: React.FormEvent<HTMLInputElement>): void => {
@@ -60,15 +61,25 @@ export const SearchInput: FC<SearchInputProps> = ({
     }
   }
 
-  const updateInputState = (e: React.FormEvent<HTMLInputElement>): void => {
-    const value = e.currentTarget.value
-    setSelectedResult(value)
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    const nextValue = e.currentTarget.value
+
+    setDisplayedInputText(nextValue)
+
+    if (2 <= nextValue.length) {
+      const filteredList = searchList.filter((el) =>
+        el.label.toLowerCase().includes(nextValue.toLocaleLowerCase()),
+      )
+
+      setShowOptions(true)
+      setList(filteredList)
+    }
   }
 
-  const select = (selectedItem: SearchInputItem): void => {
+  const handleSelect = (nextOption: SearchInputItem): void => {
     setShowOptions(false)
-    setSelectedResult(selectedItem.label)
-    onFound(selectedItem.value)
+    setDisplayedInputText(nextOption.label)
+    onFound(nextOption.value)
     setSelected(true)
   }
 
@@ -88,9 +99,9 @@ export const SearchInput: FC<SearchInputProps> = ({
           name={name}
           placeholder={placeholder}
           autoComplete="off"
-          value={selectedResult}
+          value={displayedInputText}
           onKeyUp={search}
-          onChange={updateInputState}
+          onChange={handleInputChange}
           outlined={outlined}
           selected={selected}
           onBlur={onBlur}
@@ -98,22 +109,12 @@ export const SearchInput: FC<SearchInputProps> = ({
       </StyledInputBox>
 
       {showOptions && (
-        <StyledResultsContainer
-          absolutePosition={!resultsRelativePosition}
+        <SearchOptions
+          list={list}
+          onSelect={handleSelect}
           outlined={outlined}
-        >
-          <ResultsList outlined={outlined}>
-            {list.length ? (
-              list.map((el, i) => (
-                <li key={i} onClick={() => select(el)}>
-                  {el.label}
-                </li>
-              ))
-            ) : (
-              <li>No results</li>
-            )}
-          </ResultsList>
-        </StyledResultsContainer>
+          positionRelative={resultsRelativePosition}
+        />
       )}
     </Field>
   )
@@ -182,53 +183,6 @@ const StyledInput = styled.input<Input>`
     `
     height: auto;
   `}
-`
-
-interface ResultsContainer extends UsesOutline {
-  absolutePosition: boolean
-}
-
-const StyledResultsContainer = styled.div<ResultsContainer>`
-  box-sizing: border-box;
-  overflow-y: hidden;
-  ${({ absolutePosition }) => absolutePosition && 'position: absolute;'}
-  width: 100%;
-  ${({ outlined }) => outlined && 'left: 0px; top: 90%;'};
-
-  ul {
-    max-height: 192px;
-  }
-`
-
-const ResultsList = styled.ul<UsesOutline>`
-  position: relative;
-  list-style: none;
-  overflow-y: auto;
-  padding: 0;
-  margin: 0;
-  background-color: ${theme.colors.white};
-  border: 1px solid ${theme.colors.outline};
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  z-index: 1000;
-
-  ${({ outlined }) =>
-    outlined &&
-    `
-    border: 2px solid ${theme.colors.outline};
-  `}
-
-  li {
-    padding: 16px 14px;
-    box-sizing: border-box;
-    font-size: 16px;
-    color: ${theme.colors.secondary};
-    cursor: pointer;
-
-    &:hover {
-      background-color: ${theme.colors.background};
-    }
-  }
 `
 
 const SearchIcon = styled(Icon)`
