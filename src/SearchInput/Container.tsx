@@ -39,7 +39,7 @@ export const Container: FC<SearchInputProps> = ({ outlined, showIcon }) => {
       label="Days"
       placeholder="Search days"
       searchList={list}
-      onFound={() => console.log('found')}
+      onFound={(val) => console.log('found', val)}
       outlined={outlined}
       showIcon={showIcon}
     />
