@@ -40,9 +40,7 @@ export const SearchInput: FC<SearchInputProps> = ({
 }) => {
   const id = useUniqueId(idProp)
   const [showOptions, setShowOptions] = useState(false)
-  const [selectedOption, setSelectedOption] = useState<SearchInputItem | null>(
-    null,
-  )
+  const [selectedValue, setSelectedValue] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState<string | null>(null)
 
   const filteredList = useMemo(() => {
@@ -55,9 +53,22 @@ export const SearchInput: FC<SearchInputProps> = ({
     )
   }, [searchQuery])
 
-  const isSelected = selectedOption !== null
-  const displayedInputText =
-    searchQuery !== null ? searchQuery : selectedOption?.label || ''
+  const getDisplayedInputText = () => {
+    if (searchQuery !== null) {
+      return searchQuery
+    }
+
+    if (selectedValue !== null) {
+      return (
+        searchList.find((option) => option.value === selectedValue)?.label || ''
+      )
+    }
+
+    return ''
+  }
+
+  const isSelected = selectedValue !== null
+  const displayedInputText = getDisplayedInputText()
 
   const updateSearchQuery = (query: string | null) => {
     setSearchQuery(query)
@@ -74,11 +85,11 @@ export const SearchInput: FC<SearchInputProps> = ({
     updateSearchQuery(nextValue)
   }
 
-  const handleSelect = (nextOption: SearchInputItem): void => {
+  const handleSelect = (nextValue: string): void => {
     updateSearchQuery(null)
 
-    setSelectedOption(nextOption)
-    onFound(nextOption.value)
+    setSelectedValue(nextValue)
+    onFound(nextValue)
   }
 
   return (
