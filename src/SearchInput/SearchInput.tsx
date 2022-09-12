@@ -38,25 +38,25 @@ export const SearchInput: FC<SearchInputProps> = ({
   ...otherProps
 }) => {
   const id = useUniqueId(idProp)
-  const [active, setActive] = useState(false)
+  const [showOptions, setShowOptions] = useState(false)
   const [list, setList] = useState<SearchInputItem[]>([])
   const [selectedResult, setSelectedResult] = useState('')
   const [selected, setSelected] = useState(false)
 
   const search = (e: React.FormEvent<HTMLInputElement>): void => {
-    const value = e.currentTarget.value
+    const nextValue = e.currentTarget.value
 
-    if (value) {
-      if (value.length >= 2) {
+    if (nextValue) {
+      if (nextValue.length >= 2) {
         const filteredList = searchList.filter((el) =>
-          el.label.toLowerCase().includes(value.toLocaleLowerCase()),
+          el.label.toLowerCase().includes(nextValue.toLocaleLowerCase()),
         )
 
-        setActive(true)
+        setShowOptions(true)
         setList(filteredList)
       }
     } else {
-      setActive(false)
+      setShowOptions(false)
     }
   }
 
@@ -66,7 +66,7 @@ export const SearchInput: FC<SearchInputProps> = ({
   }
 
   const select = (selectedItem: SearchInputItem): void => {
-    setActive(false)
+    setShowOptions(false)
     setSelectedResult(selectedItem.label)
     onFound(selectedItem.value)
     setSelected(true)
@@ -80,26 +80,25 @@ export const SearchInput: FC<SearchInputProps> = ({
       outlined={outlined}
       {...otherProps}
     >
-      <>
-        <StyledInputBox outlined={outlined} selected={selected}>
-          {showIcon && <SearchIcon size={24} render="search" color="subtext" />}
-          <StyledInput
-            id={id}
-            type="text"
-            name={name}
-            placeholder={placeholder}
-            autoComplete="off"
-            value={selectedResult}
-            onKeyUp={search}
-            onChange={updateInputState}
-            outlined={outlined}
-            selected={selected}
-            onBlur={onBlur}
-          />
-        </StyledInputBox>
+      <StyledInputBox outlined={outlined} selected={selected}>
+        {showIcon && <SearchIcon size={24} render="search" color="subtext" />}
+        <StyledInput
+          id={id}
+          type="text"
+          name={name}
+          placeholder={placeholder}
+          autoComplete="off"
+          value={selectedResult}
+          onKeyUp={search}
+          onChange={updateInputState}
+          outlined={outlined}
+          selected={selected}
+          onBlur={onBlur}
+        />
+      </StyledInputBox>
 
+      {showOptions && (
         <StyledResultsContainer
-          show={active}
           absolutePosition={!resultsRelativePosition}
           outlined={outlined}
         >
@@ -115,7 +114,7 @@ export const SearchInput: FC<SearchInputProps> = ({
             )}
           </ResultsList>
         </StyledResultsContainer>
-      </>
+      )}
     </Field>
   )
 }
@@ -186,7 +185,6 @@ const StyledInput = styled.input<Input>`
 `
 
 interface ResultsContainer extends UsesOutline {
-  show: boolean
   absolutePosition: boolean
 }
 
@@ -195,11 +193,10 @@ const StyledResultsContainer = styled.div<ResultsContainer>`
   overflow-y: hidden;
   ${({ absolutePosition }) => absolutePosition && 'position: absolute;'}
   width: 100%;
-  visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
   ${({ outlined }) => outlined && 'left: 0px; top: 90%;'};
 
   ul {
-    max-height: ${({ show }) => (show ? '192px' : '0px')};
+    max-height: 192px;
   }
 `
 
