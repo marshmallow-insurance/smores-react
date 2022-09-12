@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, FocusEvent, useState } from 'react'
+import React, { ChangeEvent, FC, FocusEvent, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
@@ -40,48 +40,36 @@ export const SearchInput: FC<SearchInputProps> = ({
 }) => {
   const id = useUniqueId(idProp)
   const [showOptions, setShowOptions] = useState(false)
-  const [list, setList] = useState<SearchInputItem[]>([])
-  const [displayedInputText, setDisplayedInputText] = useState('')
-  const [selected, setSelected] = useState(false)
+  const [selectedOption, setSelectedOption] = useState<SearchInputItem | null>(
+    null,
+  )
+  const [searchQuery, setSearchQuery] = useState('')
 
-  const search = (e: React.FormEvent<HTMLInputElement>): void => {
-    const nextValue = e.currentTarget.value
-
-    if (nextValue) {
-      if (nextValue.length >= 2) {
-        const filteredList = searchList.filter((el) =>
-          el.label.toLowerCase().includes(nextValue.toLocaleLowerCase()),
-        )
-
-        setShowOptions(true)
-        setList(filteredList)
-      }
-    } else {
-      setShowOptions(false)
-    }
-  }
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    const nextValue = e.currentTarget.value
-
-    setDisplayedInputText(nextValue)
-
-    if (2 <= nextValue.length) {
-      const filteredList = searchList.filter((el) =>
-        el.label.toLowerCase().includes(nextValue.toLocaleLowerCase()),
-      )
-
-      setShowOptions(true)
-      setList(filteredList)
-    }
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    const nextValue = event.currentTarget.value
+    setSearchQuery(nextValue)
+    setShowOptions(2 <= nextValue.length)
   }
 
   const handleSelect = (nextOption: SearchInputItem): void => {
     setShowOptions(false)
-    setDisplayedInputText(nextOption.label)
+    setSearchQuery('')
+
+    setSelectedOption(nextOption)
     onFound(nextOption.value)
-    setSelected(true)
   }
+
+  const filteredList = useMemo(
+    () =>
+      searchList.filter(({ label }) =>
+        label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
+      ),
+    [searchQuery],
+  )
+
+  const isSelected = selectedOption !== null
+  const displayedInputText =
+    searchQuery !== '' ? searchQuery : selectedOption?.label || ''
 
   return (
     <Field
@@ -91,7 +79,7 @@ export const SearchInput: FC<SearchInputProps> = ({
       outlined={outlined}
       {...otherProps}
     >
-      <StyledInputBox outlined={outlined} selected={selected}>
+      <StyledInputBox outlined={outlined} selected={isSelected}>
         {showIcon && <SearchIcon size={24} render="search" color="subtext" />}
         <StyledInput
           id={id}
@@ -100,17 +88,16 @@ export const SearchInput: FC<SearchInputProps> = ({
           placeholder={placeholder}
           autoComplete="off"
           value={displayedInputText}
-          onKeyUp={search}
           onChange={handleInputChange}
           outlined={outlined}
-          selected={selected}
+          selected={isSelected}
           onBlur={onBlur}
         />
       </StyledInputBox>
 
       {showOptions && (
         <SearchOptions
-          list={list}
+          displayedList={filteredList}
           onSelect={handleSelect}
           outlined={outlined}
           positionRelative={resultsRelativePosition}
