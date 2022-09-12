@@ -1,6 +1,7 @@
 ## [2.8.0] - 2022-09-13
-### Changed
+### Added
 - Export `Field` component
+### Changed
 - Add `value` prop to `SearchInput`
 
 ## [2.7.2] - 2022-09-08
