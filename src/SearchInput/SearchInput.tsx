@@ -6,6 +6,7 @@ import { theme } from '../theme'
 import { Icon } from '../Icon'
 import { Field, CommonFieldProps } from '../fields/Field'
 import { useUniqueId } from '../utils/id'
+import { useControllableState } from '../utils/useControlledState'
 import { SearchOptions } from './SearchOptions'
 
 export type SearchInputItem = {
@@ -22,6 +23,7 @@ export interface SearchInputProps extends CommonFieldProps {
   showIcon?: boolean
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   outlined?: boolean
+  value?: string
 }
 
 export const SearchInput: FC<SearchInputProps> = ({
@@ -36,11 +38,18 @@ export const SearchInput: FC<SearchInputProps> = ({
   showIcon = false,
   renderAsTitle = false,
   onBlur,
+  value,
   ...otherProps
 }) => {
   const id = useUniqueId(idProp)
   const [showOptions, setShowOptions] = useState(false)
-  const [selectedValue, setSelectedValue] = useState<string | null>(null)
+  const [selectedValue, setSelectedValue] = useControllableState<string | null>(
+    {
+      initialState: null,
+      stateProp: value,
+    },
+  )
+
   const [searchQuery, setSearchQuery] = useState<string | null>(null)
 
   const filteredList = useMemo(() => {
