@@ -1,5 +1,6 @@
-## [2.7.3] - 2022-09-12
+## [2.8.0] - 2022-09-13
 ### Changed
+- Export `Field` component
 - Add `value` prop to `SearchInput`
 
 ## [2.7.2] - 2022-09-08
@@ -451,7 +452,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
-[2.7.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.7.2...v2.7.3
+[2.8.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.7.2...v2.8.0
 [2.7.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.7.1...v2.7.2
 [2.7.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.7.0...v2.7.1
 [2.7.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.6.2...v2.7.0
