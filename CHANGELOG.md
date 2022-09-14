@@ -1,3 +1,7 @@
+## [2.8.1] - 2022-09-14
+### Changed
+- Pass `htmlFor` to the label for input and select
+
 ## [2.8.0] - 2022-09-13
 ### Added
 - Export `Field` component
@@ -453,6 +457,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.8.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.0...v2.8.1
 [2.8.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.7.2...v2.8.0
 [2.7.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.7.1...v2.7.2
 [2.7.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.7.0...v2.7.1
