@@ -105,7 +105,7 @@ export const SearchInput: FC<SearchInputProps> = ({
     <Field
       className={className}
       renderAsTitle={renderAsTitle}
-      id={id}
+      htmlFor={id}
       outlined={outlined}
       {...otherProps}
     >

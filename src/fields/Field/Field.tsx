@@ -4,11 +4,16 @@ import { CommonFieldProps } from '../commonFieldTypes'
 import { InternalField } from '../components/InternalField'
 
 interface FieldProps extends CommonFieldProps {
+  htmlFor?: string
   children: ReactNode
   assistiveText?: string
   outlined?: boolean
 }
 
 export const Field = ({ children, ...fieldProps }: FieldProps) => {
-  return <InternalField {...fieldProps}>{children}</InternalField>
+  return (
+    <InternalField fieldType="field" {...fieldProps}>
+      {children}
+    </InternalField>
+  )
 }

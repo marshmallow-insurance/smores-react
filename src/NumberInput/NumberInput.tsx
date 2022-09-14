@@ -160,7 +160,7 @@ export const NumberInput = forwardRef(function NumberInput(
   }
 
   return (
-    <Field {...fieldProps} id={id} error={error} outlined={outlined}>
+    <Field {...fieldProps} htmlFor={id} error={error} outlined={outlined}>
       <Box flex>
         {prefix && (
           <SymbolText
