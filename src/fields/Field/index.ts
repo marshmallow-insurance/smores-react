@@ -1,4 +1,1 @@
-import { CommonFieldProps } from '../commonFieldTypes'
-export { Field } from './Field'
-
-export type { CommonFieldProps }
+export { Field, FieldProps } from './Field'
