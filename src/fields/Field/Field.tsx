@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react'
 import { CommonFieldProps } from '../commonFieldTypes'
 import { InternalField } from '../components/InternalField'
 
-interface FieldProps extends CommonFieldProps {
+export interface FieldProps extends CommonFieldProps {
   htmlFor?: string
   children: ReactNode
   assistiveText?: string

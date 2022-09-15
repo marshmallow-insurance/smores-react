@@ -4,7 +4,8 @@ import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
-import { CommonFieldProps, Field } from '../fields/Field'
+import { Field } from '../fields/Field'
+import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { MarginProps } from '../utils/space'
 
 type BaseProps = {

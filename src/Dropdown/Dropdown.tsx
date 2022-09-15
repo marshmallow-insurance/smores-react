@@ -11,7 +11,8 @@ import styled from 'styled-components'
 
 import { theme } from '../theme'
 import { Icon } from '../Icon'
-import { Field, CommonFieldProps } from '../fields/Field'
+import { Field } from '../fields/Field'
+import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { useUniqueId } from '../utils/id'
 
 export type DropdownItem = {
