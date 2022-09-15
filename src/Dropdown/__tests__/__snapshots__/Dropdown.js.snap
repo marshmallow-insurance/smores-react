@@ -84,9 +84,8 @@ exports[`rendersDropdown 1`] = `
   transform: translateY(-50%);
 }
 
-<fieldset
+<div
   class="c0"
-  id="MM_SMORES_0"
 >
   <div
     class=""
@@ -163,7 +162,7 @@ exports[`rendersDropdown 1`] = `
       </div>
     </div>
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`rendersDropdownWithGroups 1`] = `
@@ -250,9 +249,8 @@ exports[`rendersDropdownWithGroups 1`] = `
   transform: translateY(-50%);
 }
 
-<fieldset
+<div
   class="c0"
-  id="MM_SMORES_1"
 >
   <div
     class=""
@@ -339,5 +337,5 @@ exports[`rendersDropdownWithGroups 1`] = `
       </div>
     </div>
   </div>
-</fieldset>
+</div>
 `;

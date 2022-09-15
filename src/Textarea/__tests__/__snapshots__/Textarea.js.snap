@@ -51,7 +51,7 @@ exports[`disabled 1`] = `
   border-color: #b9b9b9;
 }
 
-<fieldset
+<div
   class="c0"
   id="textarea_id"
 >
@@ -74,7 +74,7 @@ exports[`disabled 1`] = `
       rows="4"
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`renders 1`] = `
@@ -128,7 +128,7 @@ exports[`renders 1`] = `
   border-color: #b9b9b9;
 }
 
-<fieldset
+<div
   class="c0 Textarea"
   id="textarea_id"
 >
@@ -150,7 +150,7 @@ exports[`renders 1`] = `
       rows="4"
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`renders with error 1`] = `
@@ -217,7 +217,7 @@ exports[`renders with error 1`] = `
   border-color: #D82C2C;
 }
 
-<fieldset
+<div
   class="c0"
   id="textarea_id"
 >
@@ -247,5 +247,5 @@ exports[`renders with error 1`] = `
   >
     Something really quite terrible has gone wrong here!
   </span>
-</fieldset>
+</div>
 `;

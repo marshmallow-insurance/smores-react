@@ -89,7 +89,7 @@ export const Dropdown = forwardRef(function Dropdown(
   }, [list])
 
   return (
-    <Field {...fieldProps} id={id} error={error} outlined={outlined}>
+    <Field {...fieldProps} htmlFor={id} error={error} outlined={outlined}>
       <DropdownContainer>
         <StyledSelect
           id={id}

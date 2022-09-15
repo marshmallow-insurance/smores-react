@@ -164,14 +164,14 @@ exports[`renders - currency 1`] = `
   cursor: pointer;
 }
 
-<fieldset
+<div
   class="c0"
-  id="currencyInput"
 >
   <label
     class="c1 c2"
     color="subtext"
     cursor="inherit"
+    for="currencyInput"
     title=""
   >
     Currency
@@ -252,7 +252,7 @@ exports[`renders - currency 1`] = `
       </div>
     </div>
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`renders - disabled 1`] = `
@@ -333,14 +333,14 @@ exports[`renders - disabled 1`] = `
   border-color: #D2D2D2;
 }
 
-<fieldset
+<div
   class="c0"
-  id="currencyInput"
 >
   <label
     class="c1 c2"
     color="subtext"
     cursor="inherit"
+    for="currencyInput"
     title=""
   >
     Currency
@@ -362,7 +362,7 @@ exports[`renders - disabled 1`] = `
       />
     </div>
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`renders - error 1`] = `
@@ -542,14 +542,14 @@ exports[`renders - error 1`] = `
   cursor: pointer;
 }
 
-<fieldset
+<div
   class="c0"
-  id="currencyInput"
 >
   <label
     class="c1 c2"
     color="subtext"
     cursor="inherit"
+    for="currencyInput"
     title=""
   >
     Currency
@@ -638,7 +638,7 @@ exports[`renders - error 1`] = `
   >
     Oh gosh, this is an error isn't it!
   </span>
-</fieldset>
+</div>
 `;
 
 exports[`renders - number 1`] = `
@@ -728,14 +728,14 @@ exports[`renders - number 1`] = `
   border-color: #D2D2D2;
 }
 
-<fieldset
+<div
   class="c0"
-  id="numberInput"
 >
   <label
     class="c1 c2"
     color="subtext"
     cursor="inherit"
+    for="numberInput"
     title=""
   >
     Number
@@ -764,7 +764,7 @@ exports[`renders - number 1`] = `
       />
     </div>
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`renders - tel 1`] = `
@@ -865,14 +865,14 @@ exports[`renders - tel 1`] = `
   z-index: 1;
 }
 
-<fieldset
+<div
   class="c0"
-  id="tel"
 >
   <label
     class="c1 c2"
     color="subtext"
     cursor="inherit"
+    for="tel"
     title=""
   >
     Telephone number
@@ -903,7 +903,7 @@ exports[`renders - tel 1`] = `
       />
     </div>
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`renders - with suffix 1`] = `
@@ -1002,14 +1002,14 @@ exports[`renders - with suffix 1`] = `
   left: -10px;
 }
 
-<fieldset
+<div
   class="c0"
-  id="currencyInput"
 >
   <label
     class="c1 c2"
     color="subtext"
     cursor="inherit"
+    for="currencyInput"
     title=""
   >
     Currency
@@ -1038,7 +1038,7 @@ exports[`renders - with suffix 1`] = `
       </span>
     </div>
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`renders - with trailing icon 1`] = `
@@ -1167,14 +1167,14 @@ exports[`renders - with trailing icon 1`] = `
   z-index: 1;
 }
 
-<fieldset
+<div
   class="c0"
-  id="currencyInput"
 >
   <label
     class="c1 c2"
     color="subtext"
     cursor="inherit"
+    for="currencyInput"
     title=""
   >
     Currency
@@ -1224,5 +1224,5 @@ exports[`renders - with trailing icon 1`] = `
       </span>
     </div>
   </div>
-</fieldset>
+</div>
 `;

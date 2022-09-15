@@ -9,10 +9,17 @@ export type FieldsetProps = CommonFieldProps & MarginProps
 export const Fieldset = ({
   children,
   renderAsTitle = true,
+  id,
   ...fieldProps
 }: FieldsetProps) => {
   return (
-    <InternalField renderAsTitle={renderAsTitle} outlined {...fieldProps}>
+    <InternalField
+      htmlFor={id}
+      fieldType="fieldset"
+      renderAsTitle={renderAsTitle}
+      outlined
+      {...fieldProps}
+    >
       {children}
     </InternalField>
   )

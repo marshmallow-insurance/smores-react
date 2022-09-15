@@ -56,9 +56,8 @@ exports[`renders 1`] = `
   color: #636768;
 }
 
-<fieldset
+<div
   class="c0"
-  id="textInput"
 >
   <div
     class=""
@@ -77,5 +76,5 @@ exports[`renders 1`] = `
       />
     </div>
   </div>
-</fieldset>
+</div>
 `;

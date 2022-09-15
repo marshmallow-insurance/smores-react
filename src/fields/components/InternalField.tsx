@@ -10,7 +10,7 @@ interface InternalFieldProps extends InternalCommonFieldProps {
   className?: string
   assistiveText?: string
   htmlFor?: string
-  fieldType?: 'field' | 'fieldset'
+  fieldType: 'field' | 'fieldset'
 }
 
 export const InternalField = ({
@@ -27,6 +27,7 @@ export const InternalField = ({
   required,
   ...marginProps
 }: InternalFieldProps) => {
+  const labelTag = fieldType === 'field' ? 'label' : 'legend'
   return (
     <Container
       as={fieldType === 'field' ? 'div' : 'fieldset'}
@@ -37,11 +38,7 @@ export const InternalField = ({
         <>
           {renderAsTitle ? (
             <Box mb="16px">
-              <Text
-                tag={fieldType === 'field' ? 'label' : 'legend'}
-                typo="heading-small"
-                htmlFor={htmlFor}
-              >
+              <Text tag={labelTag} typo="heading-small" htmlFor={htmlFor}>
                 {label}
               </Text>
 
@@ -53,7 +50,7 @@ export const InternalField = ({
             </Box>
           ) : (
             <Text
-              tag="label"
+              tag={labelTag}
               typo="label"
               color="subtext"
               htmlFor={htmlFor}
