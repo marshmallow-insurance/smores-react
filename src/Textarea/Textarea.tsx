@@ -55,7 +55,7 @@ export const Textarea = forwardRef(function Textarea(
 ) {
   const id = useUniqueId(idProp)
   return (
-    <Field {...fieldProps} id={id} error={error}>
+    <Field {...fieldProps} htmlFor={id} error={error}>
       <StyledTextArea
         ref={ref}
         error={error}
