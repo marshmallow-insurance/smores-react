@@ -1,4 +1,4 @@
-## [2.8.3] - 2022-09-15
+## [2.8.3] - 2022-09-16
 ### Changed
 - Pass `htmlFor` to the label for textarea
 
