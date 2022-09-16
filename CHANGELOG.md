@@ -1,3 +1,7 @@
+## [2.8.3] - 2022-09-15
+### Changed
+- Pass `htmlFor` to the label for textarea
+
 ## [2.8.2] - 2022-09-15
 ### Changed
 - Export `FieldProps`
@@ -461,6 +465,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.8.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.2...v2.8.3
 [2.8.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.1...v2.8.2
 [2.8.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.0...v2.8.1
 [2.8.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.7.2...v2.8.0
