@@ -1,6 +1,6 @@
 ## [2.8.4] - 2022-09-21
 ### Changed
-- Fix `defaultValue`/`value` behaviour
+- Fix Dropdown's defaultValue/value props behaviour
 
 ## [2.8.3] - 2022-09-16
 ### Changed
