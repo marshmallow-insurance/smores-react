@@ -1,3 +1,7 @@
+## [2.8.4] - 2022-09-21
+### Changed
+- Fix Dropdown's defaultValue/value props behaviour
+
 ## [2.8.3] - 2022-09-16
 ### Changed
 - Pass `htmlFor` to the label for textarea
@@ -465,6 +469,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.8.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.3...v2.8.4
 [2.8.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.2...v2.8.3
 [2.8.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.1...v2.8.2
 [2.8.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.0...v2.8.1
@@ -577,6 +582,3 @@
 [0.60.1]: https://github.com/marshmallow-insurance/smores-react/compare/v0.60.0...v0.60.1
 [0.60.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.59.0...v0.60.0
 [0.59.0]: https://github.com/marshmallow-insurance/smores-react/compare/v0.58.0...v0.59.0
-
-
-
