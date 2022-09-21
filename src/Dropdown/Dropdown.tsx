@@ -14,6 +14,7 @@ import { Icon } from '../Icon'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { useUniqueId } from '../utils/id'
+import { useControllableState } from '../utils/useControlledState'
 
 export type DropdownItem = {
   optionGroupLabel?: string
@@ -50,7 +51,7 @@ export const Dropdown = forwardRef(function Dropdown(
     id: idProp,
     placeholder,
     name,
-    value,
+    value: valueProp,
     defaultValue,
     disabled = false,
     list,
@@ -63,6 +64,10 @@ export const Dropdown = forwardRef(function Dropdown(
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
+  const [value, setValue] = useControllableState({
+    initialState: defaultValue,
+    stateProp: valueProp,
+  })
   const id = useUniqueId(idProp)
   const [hasOptGroups, setHasOptGroups] = useState(false)
   const [dropdownItemsGroups, setDropdownItemsGroups] = useState(
@@ -94,17 +99,13 @@ export const Dropdown = forwardRef(function Dropdown(
       <DropdownContainer>
         <StyledSelect
           id={id}
-          defaultValue={
-            list.length === 1
-              ? String(list[0].value)
-              : defaultValue
-              ? defaultValue
-              : placeholder
-          }
           disabled={disabled || list.length < 1}
-          onChange={(e: FormEvent<HTMLSelectElement>) => {
-            onSelect && onSelect(e.currentTarget.value)
-            onInputChange && onInputChange(e)
+          onChange={(event) => {
+            const value = event.currentTarget.value
+
+            onSelect?.(value)
+            onInputChange?.(event)
+            setValue(value)
           }}
           outlined={outlined}
           error={error}
@@ -198,23 +199,16 @@ const StyledSelect = styled.select<UsesOutline>`
   ${({ outlined }) =>
     outlined &&
     `
-  border: 2px solid ${theme.colors.outline};
-  border-radius: 8px;
-  padding: 16px 12px;
-  box-sizing: border-box;
-  height: auto;
-  &:hover,
-  &:focus-within {
-    border: 2px solid ${theme.colors.outline};
-  }
-`}
-  ${({ value }) =>
-    value &&
-    value != '' &&
-    `
-    border: 2px solid ${theme.colors.outline};
-`}
-
+      border: 2px solid ${theme.colors.outline};
+      border-radius: 8px;
+      padding: 16px 12px;
+      box-sizing: border-box;
+      height: auto;
+      &:hover,
+      &:focus-within {
+        border: 2px solid ${theme.colors.outline};
+      }
+    `}
   ${({ error, outlined }) => getErrorOutline(outlined, error)};
 `
 
