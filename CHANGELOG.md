@@ -1,5 +1,6 @@
-## [2.8.4] - 2022-09-21
+## [2.8.4] - 2022-09-28
 ### Changed
+- Remove Dropdown internal `useEffect`
 - Fix Dropdown's defaultValue/value props behaviour
 
 ## [2.8.3] - 2022-09-16
