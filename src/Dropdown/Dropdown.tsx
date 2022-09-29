@@ -1,10 +1,9 @@
 import React, {
-  useEffect,
-  useState,
   FocusEvent,
   FormEvent,
   forwardRef,
   ForwardedRef,
+  useMemo,
 } from 'react'
 import { darken } from 'polished'
 import styled from 'styled-components'
@@ -69,18 +68,9 @@ export const Dropdown = forwardRef(function Dropdown(
     stateProp: valueProp,
   })
   const id = useUniqueId(idProp)
-  const [hasOptGroups, setHasOptGroups] = useState(false)
-  const [dropdownItemsGroups, setDropdownItemsGroups] = useState(
-    [] as DropdownItem[][],
-  )
+  const hasOptGroups = list.findIndex((item) => !!item.optionGroupLabel) !== -1
 
-  useEffect(() => {
-    if (list.length === 1) {
-      onSelect(list[0].value)
-    }
-
-    setHasOptGroups(!!list.find((item) => !!item.optionGroupLabel))
-
+  const dropdownItemsGroups = useMemo(() => {
     const itemsPerGroupLabel = new Map<string, DropdownItem[]>()
 
     list.forEach((item) => {
@@ -91,7 +81,7 @@ export const Dropdown = forwardRef(function Dropdown(
       itemsPerGroupLabel.set(key, group)
     })
 
-    setDropdownItemsGroups(Array.from(itemsPerGroupLabel.values()))
+    return Array.from(itemsPerGroupLabel.values())
   }, [list])
 
   return (
