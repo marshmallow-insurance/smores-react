@@ -2,6 +2,7 @@
 ### Changed
 - Remove Dropdown internal `useEffect`
 - Fix Dropdown's defaultValue/value props behaviour
+- Add type to DatePicker buttons
 
 ## [2.8.3] - 2022-09-16
 ### Changed
