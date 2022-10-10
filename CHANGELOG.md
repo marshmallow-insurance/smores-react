@@ -1,3 +1,7 @@
+## [2.8.5] - 2022-10-10
+## Added
+- Data attribute ID's for DatePicker items and Radio Items
+
 ## [2.8.4] - 2022-09-28
 ### Changed
 - Remove Dropdown internal `useEffect`
@@ -471,6 +475,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.8.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.4...v2.8.5
 [2.8.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.3...v2.8.4
 [2.8.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.2...v2.8.3
 [2.8.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.1...v2.8.2

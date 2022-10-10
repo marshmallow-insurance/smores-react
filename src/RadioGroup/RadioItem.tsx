@@ -32,7 +32,12 @@ export const RadioItem = <Value extends BaseValueType>({
 }: RadioItemProps<Value>) => {
   const id = useUniqueId()
   return (
-    <Wrapper htmlFor={id} checked={checked} displayType={displayType}>
+    <Wrapper
+      htmlFor={id}
+      checked={checked}
+      displayType={displayType}
+      date-testid={value}
+    >
       {visual && (
         <VisualWrapper>
           <Visual visualUrl={visual} />
