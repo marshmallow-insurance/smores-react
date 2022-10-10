@@ -36,7 +36,7 @@ export const RadioItem = <Value extends BaseValueType>({
       htmlFor={id}
       checked={checked}
       displayType={displayType}
-      date-testid={value}
+      data-testid={value}
     >
       {visual && (
         <VisualWrapper>
