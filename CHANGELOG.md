@@ -1,5 +1,6 @@
-## [2.8.5] - 2022-10-10
-## Added
+## [2.9.0] - 2022-10-11
+### Changed
+- Update SearchInput logic to select correct item when value is the same
 - Data attribute ID's for DatePicker items and Radio Items
 
 ## [2.8.4] - 2022-09-28
@@ -475,7 +476,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
-[2.8.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.4...v2.8.5
+[2.9.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.4...v2.9.0
 [2.8.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.3...v2.8.4
 [2.8.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.2...v2.8.3
 [2.8.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.1...v2.8.2

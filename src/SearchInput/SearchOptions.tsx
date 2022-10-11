@@ -9,7 +9,7 @@ type Option = {
 
 type SearchOptionsProps = {
   displayedList: Array<Option>
-  onSelect: (option: string) => void
+  onSelect: (option: Option) => void
   positionRelative: boolean
   outlined: boolean
 }
@@ -28,7 +28,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
       <ResultsList outlined={outlined}>
         {displayedList.length ? (
           displayedList.map((el, i) => (
-            <li key={i} onClick={() => onSelect(el.value)}>
+            <li key={i} onClick={() => onSelect(el)}>
               {el.label}
             </li>
           ))
