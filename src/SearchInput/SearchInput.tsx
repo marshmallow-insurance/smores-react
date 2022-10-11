@@ -70,7 +70,10 @@ export const SearchInput: FC<SearchInputProps> = ({
 
     if (selectedValue !== null) {
       return (
-        searchList.find((option) => option.value === selectedValue)?.label || ''
+        searchList.find(
+          (option) =>
+            option.label === selectedValue || option.value === selectedValue,
+        )?.label || ''
       )
     }
 
@@ -95,11 +98,11 @@ export const SearchInput: FC<SearchInputProps> = ({
     updateSearchQuery(nextValue)
   }
 
-  const handleSelect = (nextValue: string): void => {
+  const handleSelect = (nextValue: SearchInputItem): void => {
     updateSearchQuery(null)
 
-    setSelectedValue(nextValue)
-    onFound(nextValue)
+    setSelectedValue(nextValue.label)
+    onFound(nextValue.value)
   }
 
   return (
