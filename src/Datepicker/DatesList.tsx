@@ -30,6 +30,7 @@ export const DatesList: FC<Props> = ({ items, handleDateSelect }) => {
           disabled={item.disabled}
           className={`ListItem ${item.active ? 'active' : ''}`}
           onClick={() => handleDateSelect(item.date)}
+          data-testid={item.label}
         >
           {item.label}
         </ListItem>
