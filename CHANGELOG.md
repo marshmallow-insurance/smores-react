@@ -1,3 +1,7 @@
+## [2.9.1] - 2022-10-12
+### Added
+- Cursor pointer for RadioItem
+
 ## [2.9.0] - 2022-10-11
 ### Changed
 - Update SearchInput logic to select correct item when value is the same
@@ -476,6 +480,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.9.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.9.0...v2.9.1
 [2.9.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.4...v2.9.0
 [2.8.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.3...v2.8.4
 [2.8.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.2...v2.8.3
