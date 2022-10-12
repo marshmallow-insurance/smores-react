@@ -77,6 +77,7 @@ const Visual = styled.div<{ visualUrl: string }>`
 const Wrapper = styled.label<Pick<RadioItemProps, 'displayType' | 'checked'>>`
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 
   ${({ displayType, checked }) =>
     css`
