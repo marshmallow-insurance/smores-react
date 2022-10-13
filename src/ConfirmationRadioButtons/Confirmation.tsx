@@ -124,7 +124,7 @@ const getColor = (checked?: boolean, error?: boolean) => {
   }
 }
 
-const RadioButtonWrapper = styled.div<FakeInput>`
+const RadioButtonWrapper = styled.label<FakeInput>`
   background-color: ${({ checked }: FakeInput) =>
     !checked && `${theme.colors.background}`};
   border: ${({ checked, error }: FakeInput) => getColor(checked, error)};
@@ -136,6 +136,7 @@ const RadioButtonWrapper = styled.div<FakeInput>`
   padding-left: 12px;
   border-radius: 5px;
   font-weight: bold;
+  cursor: pointer;
   ${({ disabled }) =>
     disabled &&
     css`

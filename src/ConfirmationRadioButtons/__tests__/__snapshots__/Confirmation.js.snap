@@ -2,68 +2,68 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-bczRLJ sc-crXcEl jxUsZa fEhkOw"
+  class="sc-bcXHqe sc-eDWCr cUdbRP gyclDD"
 >
   <div
-    class="sc-papXJ cWKQiM"
+    class="sc-jrcTuL JGmuq"
   >
     <div
-      class="sc-jqUVSM vwlpZ"
+      class="sc-kDvujY fPYfon"
     >
-      <div
-        class="sc-kDDrLX fgvukO"
+      <label
+        class="sc-ipEyDJ jMnYyV"
       >
-        <div
-          class="sc-bczRLJ epPYCS"
+        <label
+          class="sc-iBYQkv fJJcWA"
         >
           <input
-            class="sc-gKXOVf oNLau"
+            class="sc-gKPRtg igZFAz"
             id="MM_SMORES_0"
             type="radio"
             value="MM_SMORES_0"
           />
           <label
-            class="sc-iBkjds gPlNyQ"
+            class="sc-ftTHYK iSpTMq"
             for="MM_SMORES_0"
           >
             <div
-              class="sc-jSMfEi goqpSd"
+              class="sc-jSUZER eUjTpd"
             />
             <span
-              class="sc-ftvSup fhyIwz"
+              class="sc-pyfCe cLsYor"
             >
               Yes
             </span>
           </label>
-        </div>
-      </div>
-      <div
-        class="sc-kDDrLX fgvukO"
+        </label>
+      </label>
+      <label
+        class="sc-ipEyDJ jMnYyV"
       >
-        <div
-          class="sc-bczRLJ epPYCS"
+        <label
+          class="sc-iBYQkv fJJcWA"
         >
           <input
-            class="sc-gKXOVf oNLau"
+            class="sc-gKPRtg igZFAz"
             id="MM_SMORES_0-1"
             type="radio"
             value="MM_SMORES_0-1"
           />
           <label
-            class="sc-iBkjds gPlNyQ"
+            class="sc-ftTHYK iSpTMq"
             for="MM_SMORES_0-1"
           >
             <div
-              class="sc-jSMfEi goqpSd"
+              class="sc-jSUZER eUjTpd"
             />
             <span
-              class="sc-ftvSup fhyIwz"
+              class="sc-pyfCe cLsYor"
             >
               No
             </span>
           </label>
-        </div>
-      </div>
+        </label>
+      </label>
     </div>
   </div>
 </div>

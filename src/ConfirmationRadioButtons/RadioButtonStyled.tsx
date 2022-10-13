@@ -1,7 +1,6 @@
 import React, { FC, ChangeEvent, FocusEvent, ReactElement } from 'react'
 import styled from 'styled-components'
 import { theme } from '../theme'
-import { Box } from '../Box'
 
 export interface FakeInput {
   checked?: boolean
@@ -28,7 +27,7 @@ export const RadioButton: FC<RadioButtonProps> = ({
   onBlur,
   disabled = false,
 }: RadioButtonProps) => (
-  <Box flex alignItems="center">
+  <InputContainer>
     <RadioInput
       id={id}
       type="radio"
@@ -42,7 +41,7 @@ export const RadioButton: FC<RadioButtonProps> = ({
       <FakeInput checked={checked} />
       <Text>{label}</Text>
     </RadioLabel>
-  </Box>
+  </InputContainer>
 )
 
 const FakeInput = styled.div<FakeInput>`
@@ -62,6 +61,11 @@ const RadioInput = styled.input`
   opacity: 0;
   height: 0;
   width: 0;
+`
+
+const InputContainer = styled.label`
+  display: flex
+  alignItems: center;
 `
 
 const RadioLabel = styled.label`
