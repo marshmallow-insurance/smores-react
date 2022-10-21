@@ -24,7 +24,7 @@ export type DropdownItem = {
 export interface Props extends CommonFieldProps {
   placeholder?: string
   name?: string
-  value?: string
+  value?: string | null
   defaultValue?: string
   disabled?: boolean
   outlined?: boolean
@@ -102,7 +102,7 @@ export const Dropdown = forwardRef(function Dropdown(
           ref={ref}
           onBlur={onBlur}
           name={name}
-          value={value}
+          value={value ? value : ''}
         >
           {hasOptGroups ? (
             <optgroup label={placeholder}>

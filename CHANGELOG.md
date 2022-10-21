@@ -1,3 +1,7 @@
+## [2.9.2] - 2022-10-21
+### Changed
+- In Dropdown changed value prop to take null
+
 ## [2.9.1] - 2022-10-12
 ### Added
 - Cursor pointer for RadioItem
@@ -480,6 +484,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.9.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.9.1...v2.9.2
 [2.9.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.9.0...v2.9.1
 [2.9.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.4...v2.9.0
 [2.8.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.3...v2.8.4
