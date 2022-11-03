@@ -1,0 +1,8 @@
+version: 3
+
+project:
+  id: smores-react
+  name: smores-react
+  url: https://github.com/marshmallow-insurance/smores-react
+  team: frontend
+  policy: Frontend Security Policy
