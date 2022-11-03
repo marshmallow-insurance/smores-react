@@ -20,16 +20,9 @@ jobs:
           npm ci
           npm run build-storybook
       - name: Fossa dependency analysis 🐛
+        uses: fossas/fossa-action@main
         with:
-          FOSSA_API_KEY: ${{ secrets.FOSSA_API_KEY }}
-        run: |
-          curl "https://raw.githubusercontent.com/fossas/fossa-cli/master/install-latest.sh" -o "install-fossa-cli-latest.sh"
-          chmod +x ./install-fossa-cli-latest.sh 
-          ./install-fossa-cli-latest.sh
-          sudo apt-get install -y yq
-          
-          curl -X 'POST' 'https://app.fossa.com/api/teams' -H "Authorization: Bearer $FOSSA_API_KEY" -H 'accept: application/json' -H 'Content-Type: application/json' -d '{ "name": "'"$TEAM_NAME"'" }'
-          fossa analyze --team $(yq .service.owner opslevel.yml) --project smores-react --project-url https://github.com/marshmallow-insurance/smores-react --policy "Frontend Security Policy"
+          api-key: ${{ secrets.FOSSA_API_KEY }}
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
