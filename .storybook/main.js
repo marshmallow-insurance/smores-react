@@ -4,6 +4,12 @@ module.exports = {
     '@storybook/addon-essentials',
     'storybook-addon-performance/register',
   ],
+  core: {
+    builder: 'webpack5',
+  },
+  features: {
+    storyStoreV7: true,
+  },
   // This is needed until storybook will release a fix
   // because it's breaking the build
   //https://github.com/styleguidist/react-docgen-typescript/issues/356
