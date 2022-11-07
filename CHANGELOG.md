@@ -1,3 +1,6 @@
+## [2.9.3] - 2022-11-07
+### Changed
+- Added option to make SupportMessage interactive
 ## [2.9.2] - 2022-10-21
 ### Changed
 - In Dropdown changed value prop to take null
@@ -484,6 +487,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.9.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.9.2...v2.9.3
 [2.9.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.9.1...v2.9.2
 [2.9.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.9.0...v2.9.1
 [2.9.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.8.4...v2.9.0

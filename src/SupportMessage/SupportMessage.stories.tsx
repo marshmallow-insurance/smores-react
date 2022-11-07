@@ -34,4 +34,13 @@ WithCustomDescription.args = {
   ),
 }
 
+export const Clickable = Template.bind({})
+
+Clickable.args = {
+  type: 'info',
+  title: 'An interactive SupportMessage',
+  description: 'Click me!',
+  onClick: () => alert('Clicked!'),
+}
+
 export const Collection = CollectionPage.bind({})

@@ -53,6 +53,17 @@ export const CollectionPage: FC = () => {
                 description={description}
               />
             </Box>
+            <Box flex mt="8px">
+              <Label tag="span" typo="header-small">
+                Clickable
+              </Label>
+              <SupportMessage
+                type={type}
+                title={title}
+                description={description}
+                onClick={() => alert('Clicked!')}
+              />
+            </Box>
           </Box>
         )
       })}
