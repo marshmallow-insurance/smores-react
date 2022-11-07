@@ -73,7 +73,7 @@ export const SupportMessage: FC<SupportMessageProps> = ({
         color={styles[type].iconColor}
       />
     </IconWrapper>
-    <Box flex direction="column" ml="16px">
+    <Box flex direction="column" mx="16px">
       {title && <Title>{title}</Title>}
       <Description tag="p">{description}</Description>
     </Box>
