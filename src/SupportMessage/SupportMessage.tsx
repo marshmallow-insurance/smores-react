@@ -79,7 +79,7 @@ export const SupportMessage: FC<SupportMessageProps> = ({
     </Box>
     {onClick && (
       <Box ml={{ custom: 'auto' }}>
-        <Icon size={24} render="caret" color="subtext" rotate={270} />
+        <Icon size={16} render="caret" color="subtext" rotate={270} />
       </Box>
     )}
   </Wrapper>
