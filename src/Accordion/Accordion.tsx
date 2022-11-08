@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, ReactNode, useState } from 'react'
 import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
@@ -13,6 +13,7 @@ export type AccordionProps = {
   borderTop?: boolean
   fullBorder?: boolean
   onToggle?: (isOpen: boolean) => void
+  children: ReactNode
 } & MarginProps
 
 export const Accordion: FC<AccordionProps> = ({
