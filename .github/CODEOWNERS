@@ -15,4 +15,4 @@
 # This should make it easy to add new rules without breaking existing ones.
 
 # Global - These owners will be the default owners for everything in the repo.
-*           @ellajay @fleonard @habin-isa @josianed @mickaelzhang
+*           @marshmallow-insurance/frontend
