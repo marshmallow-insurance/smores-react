@@ -1,6 +1,5 @@
 import { addDecorator } from '@storybook/react'
 import { StrictMode } from 'react'
-import { withPerformance } from 'storybook-addon-performance'
 import { createGlobalStyle } from 'styled-components'
 
 import { ResetCss } from './ResetCss'
@@ -53,7 +52,6 @@ const GlobalStyle = createGlobalStyle`
 `
 
 export const decorators = [
-  withPerformance,
   (Story) => (
     <>
       <ResetCss />
