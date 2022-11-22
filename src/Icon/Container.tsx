@@ -458,8 +458,16 @@ export const Container = () => {
         <Icon render="mastercard" />
       </Wrapper>
       <Wrapper>
+        <span>maximise</span>
+        <Icon render="maximise" />
+      </Wrapper>
+      <Wrapper>
         <span>medical</span>
         <Icon render="medical" />
+      </Wrapper>
+      <Wrapper>
+        <span>minimise</span>
+        <Icon render="minimise" />
       </Wrapper>
       <Wrapper>
         <span>minus-circle</span>
