@@ -17,6 +17,8 @@ service:
       value: home
     - key: product-region
       value: uk
+    - key: type
+      value: library
   repositories:
     - name: https://github.com/marshmallow-insurance/smores-react
       path: '/'
