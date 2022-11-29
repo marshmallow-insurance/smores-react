@@ -1,4 +1,4 @@
-## [2.10.2] - 2022-11-29
+## [2.11.0] - 2022-11-29
 ### Added
 - Minimise and Maximise Icons
 
