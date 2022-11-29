@@ -2682,6 +2682,24 @@ export const Icon: FC<IconProps> = ({
         />
       </svg>
     )}
+    {render === 'maximise' && (
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g fill="#000" fillRule="evenodd" clipPath="url(#a)" clipRule="evenodd">
+          <path d="M0 1a1 1 0 0 1 1-1h6a1 1 0 0 1 0 2H2v5a1 1 0 0 1-2 0V1ZM16 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V2h-5a1 1 0 0 1-1-1ZM23 16a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-6a1 1 0 1 1 0-2h5v-5a1 1 0 0 1 1-1ZM1 16a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1Z" />
+        </g>
+        <defs>
+          <clipPath id="a">
+            <path fill="#fff" d="M0 0h24v24H0z" />
+          </clipPath>
+        </defs>
+      </svg>
+    )}
     {render === 'medical' && (
       <svg
         width="100%"
@@ -2693,6 +2711,20 @@ export const Icon: FC<IconProps> = ({
         <path
           d="M16 13h-3v-3a1 1 0 00-2 0v3H8a1 1 0 000 2h3v3a1 1 0 002 0v-3h3a1 1 0 000-2zm-4-7.005c.552 0 1-.453 1-1.005a1 1 0 00-2 0V5c0 .552.448.995 1 .995zM19 3h-2.432A4.988 4.988 0 0012 0a4.988 4.988 0 00-4.568 3H5C3.346 3 2 4.346 2 6v15c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3V6c0-1.654-1.346-3-3-3zm1 18c0 .551-.449 1-1 1H5c-.551 0-1-.449-1-1V6c0-.551.449-1 1-1h3.142a1 1 0 00.968-.75A2.991 2.991 0 0112 2c1.359 0 2.547.926 2.891 2.251a1 1 0 00.968.749H19c.551 0 1 .449 1 1v15z"
           fill={theme.colors[color]}
+        />
+      </svg>
+    )}
+    {render === 'minimise' && (
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 0a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H1a1 1 0 0 1 0-2h5V1a1 1 0 0 1 1-1ZM17 0a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2h-6a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1ZM16 17a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2h-5v5a1 1 0 1 1-2 0v-6ZM0 17a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-5H1a1 1 0 0 1-1-1Z"
+          fill="#112035"
         />
       </svg>
     )}
