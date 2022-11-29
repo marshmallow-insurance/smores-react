@@ -1,3 +1,7 @@
+## [2.10.1] - 2022-11-23
+### Added
+- Basket Icon
+
 ## [2.10.0] - 2022-11-09
 ### Changed
 - Updated React to v18

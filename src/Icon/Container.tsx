@@ -86,6 +86,10 @@ export const Container = () => {
         <Icon render="bank" />
       </Wrapper>
       <Wrapper>
+        <span>basket</span>
+        <Icon render="basket" />
+      </Wrapper>
+      <Wrapper>
         <span>bicycle</span>
         <Icon render="bicycle" />
       </Wrapper>
