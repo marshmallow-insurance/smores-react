@@ -1,3 +1,7 @@
+## [2.10.2] - 2022-11-29
+### Added
+- Minimise and Maximise Icons
+
 ## [2.10.1] - 2022-11-23
 ### Added
 - Basket Icon
