@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef, ReactElement } from 'react'
 import styled from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
@@ -20,7 +20,7 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   displayType?: DisplayType
 } & CommonFieldProps
 
-export const RadioGroup = <Value extends BaseValueType>({
+const RadioGroupComponent = <Value extends BaseValueType>({
   options,
   onChange,
   value,
@@ -51,6 +51,12 @@ export const RadioGroup = <Value extends BaseValueType>({
     </Fieldset>
   )
 }
+
+export const RadioGroup = forwardRef(RadioGroupComponent) as <
+  Value extends BaseValueType = BaseValueType,
+>(
+  p: RadioGroupProps<Value> & React.RefAttributes<HTMLInputElement>,
+) => ReactElement | null
 
 const RadioItemList = styled.div<Pick<RadioGroupProps, 'displayType'>>`
   display: flex;

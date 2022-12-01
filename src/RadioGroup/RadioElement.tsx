@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 
 import { theme } from '../theme'
@@ -9,38 +9,40 @@ import { focusOutline } from '../utils/focusOutline'
 import { Box } from '../Box'
 import { BaseValueType } from './types'
 
-type RadioElementProps<Value extends BaseValueType> = {
+type RadioElementProps = {
   name: string
   id: string
-  value: Value
+  value: BaseValueType
   checked: boolean
-  onChange: (value: Value) => void
+  onChange: (value: BaseValueType) => void
   isError: boolean
 } & MarginProps
 
-export const RadioElement = <Value extends BaseValueType>({
-  name,
-  id,
-  value,
-  checked,
-  onChange,
-  isError,
-  ...marginProps
-}: RadioElementProps<Value>) => {
-  return (
-    <>
-      <StyledInput
-        type="radio"
-        name={name}
-        id={id}
-        value={`${value}`}
-        checked={checked}
-        onChange={() => onChange(value)}
-      />
-      <RadioCircle isError={isError} checked={checked} {...marginProps} />
-    </>
-  )
-}
+export const RadioElement = forwardRef<HTMLInputElement, RadioElementProps>(
+  function RadioElement({
+    name,
+    id,
+    value,
+    checked,
+    onChange,
+    isError,
+    ...marginProps
+  }) {
+    return (
+      <>
+        <StyledInput
+          type="radio"
+          name={name}
+          id={id}
+          value={`${value}`}
+          checked={checked}
+          onChange={() => onChange(value)}
+        />
+        <RadioCircle isError={isError} checked={checked} {...marginProps} />
+      </>
+    )
+  },
+)
 
 const StyledInput = styled.input`
   ${visuallyHidden}

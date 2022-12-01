@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React, { forwardRef, ReactNode } from 'react'
 import styled from 'styled-components'
 import { focusOutline } from '../utils/focusOutline'
 
@@ -15,29 +15,32 @@ export type CheckBoxProps = {
   errorMsg?: string
 }
 
-export const CheckBox: FC<CheckBoxProps> = ({
-  id: idProp,
-  checked,
-  children,
-  toggle,
-  error,
-  errorMsg,
-}) => {
-  const id = useUniqueId(idProp)
-  return (
-    <>
-      <BoxContainer id={id}>
-        <Text tag="span" typo="base" color={error ? 'error' : 'secondary'}>
-          {children}
-        </Text>
+export const CheckBox = forwardRef<HTMLInputElement, CheckBoxProps>(
+  function CheckBox(
+    { id: idProp, checked, children, toggle, error, errorMsg },
+    ref,
+  ) {
+    const id = useUniqueId(idProp)
+    return (
+      <>
+        <BoxContainer id={id}>
+          <Text tag="span" typo="base" color={error ? 'error' : 'secondary'}>
+            {children}
+          </Text>
 
-        <input type="checkbox" checked={checked} onChange={toggle} />
-        <Checkmark error={error} />
-      </BoxContainer>
-      {error && errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
-    </>
-  )
-}
+          <input
+            ref={ref}
+            type="checkbox"
+            checked={checked}
+            onChange={toggle}
+          />
+          <Checkmark error={error} />
+        </BoxContainer>
+        {error && errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
+      </>
+    )
+  },
+)
 
 const Checkmark = styled.span<{ error?: boolean }>`
   position: absolute;

@@ -1,3 +1,7 @@
+## [2.12.0] - 2022-12-01
+### Added
+- Add `ref` to `CheckBox`, `RadioGroup` and `SearchInput`
+
 ## [2.11.0] - 2022-11-29
 ### Added
 - Minimise and Maximise Icons

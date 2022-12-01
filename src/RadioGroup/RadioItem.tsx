@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
@@ -9,55 +9,52 @@ import { BaseValueType, DisplayType } from './types'
 import { ITEM_GAP } from './constants'
 import { Box } from '../Box'
 
-type RadioItemProps<Value extends BaseValueType = BaseValueType> = {
+type RadioItemProps = {
   name: string
   visual?: string
-  value: Value
+  value: BaseValueType
   label: string
   checked: boolean
-  onChange: (value: Value) => void
+  onChange: (value: BaseValueType) => void
   displayType: DisplayType
   isError: boolean
 }
 
-export const RadioItem = <Value extends BaseValueType>({
-  name,
-  visual,
-  label,
-  value,
-  checked,
-  onChange,
-  displayType,
-  isError,
-}: RadioItemProps<Value>) => {
-  const id = useUniqueId()
-  return (
-    <Wrapper
-      htmlFor={id}
-      checked={checked}
-      displayType={displayType}
-      data-testid={value}
-    >
-      {visual && (
-        <VisualWrapper>
-          <Visual visualUrl={visual} />
-        </VisualWrapper>
-      )}
-      <Box flex direction="row" alignItems="flex-start">
-        <RadioElement
-          name={name}
-          id={id}
-          value={value}
-          checked={checked}
-          onChange={onChange}
-          isError={isError}
-          mr="8px"
-        />
-        <RadioText isError={isError}>{label}</RadioText>
-      </Box>
-    </Wrapper>
-  )
-}
+export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
+  function RadioItem(
+    { name, visual, label, value, checked, onChange, displayType, isError },
+    ref,
+  ) {
+    const id = useUniqueId()
+    return (
+      <Wrapper
+        htmlFor={id}
+        checked={checked}
+        displayType={displayType}
+        data-testid={value}
+      >
+        {visual && (
+          <VisualWrapper>
+            <Visual visualUrl={visual} />
+          </VisualWrapper>
+        )}
+        <Box flex direction="row" alignItems="flex-start">
+          <RadioElement
+            ref={ref}
+            name={name}
+            id={id}
+            value={value}
+            checked={checked}
+            onChange={onChange}
+            isError={isError}
+            mr="8px"
+          />
+          <RadioText isError={isError}>{label}</RadioText>
+        </Box>
+      </Wrapper>
+    )
+  },
+)
 
 const VisualWrapper = styled.div`
   width: 100%;
