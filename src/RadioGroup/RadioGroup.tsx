@@ -1,4 +1,11 @@
-import React, { forwardRef, ReactElement } from 'react'
+import React, {
+  ForwardedRef,
+  forwardRef,
+  ReactElement,
+  RefObject,
+  useImperativeHandle,
+  useRef,
+} from 'react'
 import styled from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
@@ -20,33 +27,61 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   displayType?: DisplayType
 } & CommonFieldProps
 
-const RadioGroupComponent = <Value extends BaseValueType>({
-  options,
-  onChange,
-  value,
-  displayType = 'normal',
-  renderAsTitle = false,
-  error = false,
-  ...fieldProps
-}: RadioGroupProps<Value>) => {
+export type RadioGroupElement = {
+  focus: VoidFunction
+}
+
+const RadioGroupComponent = <Value extends BaseValueType>(
+  {
+    options,
+    onChange,
+    value,
+    displayType = 'normal',
+    renderAsTitle = false,
+    error = false,
+    ...fieldProps
+  }: RadioGroupProps<Value>,
+  ref: ForwardedRef<RadioGroupElement>,
+) => {
   const name = useUniqueId()
+
+  const optionRefs = useRef<RefObject<HTMLInputElement>[]>([])
+  useImperativeHandle(ref, () => {
+    return {
+      focus: () => {
+        const selectedIndex = options.findIndex((item) => item.value === value)
+
+        const elementToFocus = selectedIndex === -1 ? 0 : selectedIndex
+        optionRefs.current[elementToFocus].current?.focus()
+      },
+    }
+  })
 
   return (
     <Fieldset renderAsTitle={renderAsTitle} error={error} {...fieldProps}>
       <RadioItemList displayType={displayType}>
-        {options.map((option) => (
-          <RadioItem
-            key={`${option.value}`}
-            name={name}
-            visual={option.visual}
-            label={option.label}
-            value={option.value}
-            checked={option.value === value}
-            onChange={onChange}
-            displayType={displayType}
-            isError={error}
-          />
-        ))}
+        {options.map((option, index) => {
+          const isSelected = option.value === value
+
+          return (
+            <RadioItem
+              ref={(radioOptionRef) => {
+                optionRefs.current[index] = {
+                  current: radioOptionRef,
+                }
+              }}
+              key={`${option.value}`}
+              name={name}
+              visual={option.visual}
+              label={option.label}
+              value={option.value}
+              checked={isSelected}
+              onChange={onChange}
+              displayType={displayType}
+              isError={error}
+            />
+          )
+        })}
       </RadioItemList>
     </Fieldset>
   )

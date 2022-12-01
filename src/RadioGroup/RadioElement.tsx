@@ -19,18 +19,14 @@ type RadioElementProps = {
 } & MarginProps
 
 export const RadioElement = forwardRef<HTMLInputElement, RadioElementProps>(
-  function RadioElement({
-    name,
-    id,
-    value,
-    checked,
-    onChange,
-    isError,
-    ...marginProps
-  }) {
+  function RadioElement(
+    { name, id, value, checked, onChange, isError, ...marginProps },
+    ref,
+  ) {
     return (
       <>
         <StyledInput
+          ref={ref}
           type="radio"
           name={name}
           id={id}

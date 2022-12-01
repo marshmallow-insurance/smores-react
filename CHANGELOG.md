@@ -1,3 +1,7 @@
+## [2.12.1] - 2022-12-01
+### Changed
+- Fix `RadioGroup`'s `ref`
+
 ## [2.12.0] - 2022-12-01
 ### Added
 - Add `ref` to `CheckBox`, `RadioGroup` and `SearchInput`
