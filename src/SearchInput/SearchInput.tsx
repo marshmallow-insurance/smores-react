@@ -1,4 +1,10 @@
-import React, { ChangeEvent, FC, FocusEvent, useMemo, useState } from 'react'
+import React, {
+  ChangeEvent,
+  FocusEvent,
+  forwardRef,
+  useMemo,
+  useState,
+} from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'
 
@@ -27,119 +33,125 @@ export interface SearchInputProps extends CommonFieldProps {
   value?: string
 }
 
-export const SearchInput: FC<SearchInputProps> = ({
-  id: idProp,
-  name = 'search_input',
-  className = '',
-  placeholder,
-  searchList,
-  onFound,
-  resultsRelativePosition = false,
-  outlined = false,
-  showIcon = false,
-  renderAsTitle = false,
-  onBlur,
-  value,
-  ...otherProps
-}) => {
-  const id = useUniqueId(idProp)
-  const [showOptions, setShowOptions] = useState(false)
-  const [selectedValue, setSelectedValue] = useControllableState<string | null>(
+export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
+  function SearchInput(
     {
+      id: idProp,
+      name = 'search_input',
+      className = '',
+      placeholder,
+      searchList,
+      onFound,
+      resultsRelativePosition = false,
+      outlined = false,
+      showIcon = false,
+      renderAsTitle = false,
+      onBlur,
+      value,
+      ...otherProps
+    },
+    ref,
+  ) {
+    const id = useUniqueId(idProp)
+    const [showOptions, setShowOptions] = useState(false)
+    const [selectedValue, setSelectedValue] = useControllableState<
+      string | null
+    >({
       initialState: null,
       stateProp: value,
-    },
-  )
+    })
 
-  const [searchQuery, setSearchQuery] = useState<string | null>(null)
+    const [searchQuery, setSearchQuery] = useState<string | null>(null)
 
-  const filteredList = useMemo(() => {
-    if (searchQuery === null || searchQuery === '') {
-      return searchList
-    }
+    const filteredList = useMemo(() => {
+      if (searchQuery === null || searchQuery === '') {
+        return searchList
+      }
 
-    return searchList.filter(({ label }) =>
-      label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
-    )
-  }, [searchQuery])
-
-  const getDisplayedInputText = () => {
-    if (searchQuery !== null) {
-      return searchQuery
-    }
-
-    if (selectedValue !== null) {
-      return (
-        searchList.find(
-          (option) =>
-            option.label === selectedValue || option.value === selectedValue,
-        )?.label || ''
+      return searchList.filter(({ label }) =>
+        label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
+    }, [searchQuery])
+
+    const getDisplayedInputText = () => {
+      if (searchQuery !== null) {
+        return searchQuery
+      }
+
+      if (selectedValue !== null) {
+        return (
+          searchList.find(
+            (option) =>
+              option.label === selectedValue || option.value === selectedValue,
+          )?.label || ''
+        )
+      }
+
+      return ''
     }
 
-    return ''
-  }
+    const isSelected = selectedValue !== null
+    const displayedInputText = getDisplayedInputText()
 
-  const isSelected = selectedValue !== null
-  const displayedInputText = getDisplayedInputText()
+    const updateSearchQuery = (query: string | null) => {
+      setSearchQuery(query)
 
-  const updateSearchQuery = (query: string | null) => {
-    setSearchQuery(query)
-
-    if (query === null) {
-      setShowOptions(false)
-    } else {
-      setShowOptions(2 <= query.length)
+      if (query === null) {
+        setShowOptions(false)
+      } else {
+        setShowOptions(2 <= query.length)
+      }
     }
-  }
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    const nextValue = event.currentTarget.value
-    updateSearchQuery(nextValue)
-  }
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+      const nextValue = event.currentTarget.value
+      updateSearchQuery(nextValue)
+    }
 
-  const handleSelect = (nextValue: SearchInputItem): void => {
-    updateSearchQuery(null)
+    const handleSelect = (nextValue: SearchInputItem): void => {
+      updateSearchQuery(null)
 
-    setSelectedValue(nextValue.label)
-    onFound(nextValue.value)
-  }
+      setSelectedValue(nextValue.label)
+      onFound(nextValue.value)
+    }
 
-  return (
-    <Field
-      className={className}
-      renderAsTitle={renderAsTitle}
-      htmlFor={id}
-      outlined={outlined}
-      {...otherProps}
-    >
-      <StyledInputBox outlined={outlined} selected={isSelected}>
-        {showIcon && <SearchIcon size={24} render="search" color="subtext" />}
-        <StyledInput
-          id={id}
-          type="text"
-          name={name}
-          placeholder={placeholder}
-          autoComplete="off"
-          value={displayedInputText}
-          onChange={handleInputChange}
-          outlined={outlined}
-          selected={isSelected}
-          onBlur={onBlur}
-        />
-      </StyledInputBox>
+    return (
+      <Field
+        className={className}
+        renderAsTitle={renderAsTitle}
+        htmlFor={id}
+        outlined={outlined}
+        {...otherProps}
+      >
+        <StyledInputBox outlined={outlined} selected={isSelected}>
+          {showIcon && <SearchIcon size={24} render="search" color="subtext" />}
+          <StyledInput
+            ref={ref}
+            id={id}
+            type="text"
+            name={name}
+            placeholder={placeholder}
+            autoComplete="off"
+            value={displayedInputText}
+            onChange={handleInputChange}
+            outlined={outlined}
+            selected={isSelected}
+            onBlur={onBlur}
+          />
+        </StyledInputBox>
 
-      {showOptions && (
-        <SearchOptions
-          displayedList={filteredList}
-          onSelect={handleSelect}
-          outlined={outlined}
-          positionRelative={resultsRelativePosition}
-        />
-      )}
-    </Field>
-  )
-}
+        {showOptions && (
+          <SearchOptions
+            displayedList={filteredList}
+            onSelect={handleSelect}
+            outlined={outlined}
+            positionRelative={resultsRelativePosition}
+          />
+        )}
+      </Field>
+    )
+  },
+)
 
 interface UsesOutline {
   outlined?: boolean
