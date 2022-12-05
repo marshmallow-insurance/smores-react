@@ -3,7 +3,6 @@ version: 1
 service:
   name: smores-react
   lifecycle: generally_available
-  tier: tier_1
   product: S'mores
   owner: frontend
   language: Typescript
