@@ -150,13 +150,8 @@ interface UsesOutline {
   error?: boolean
 }
 
-const borderColor = ({ outlined, error }: UsesOutline) => {
-  if (error) {
-    return theme.colors.error
-  }
-
-  return theme.colors.outline
-}
+const borderColor = ({ error }: UsesOutline) =>
+  error ? theme.colors.error : theme.colors.outline
 
 const resetSelect = css`
   border: none;
