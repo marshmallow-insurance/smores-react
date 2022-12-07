@@ -6,7 +6,7 @@ import React, {
   useMemo,
 } from 'react'
 import { darken } from 'polished'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
 import { Icon } from '../Icon'
@@ -150,56 +150,52 @@ interface UsesOutline {
   error?: boolean
 }
 
-const getErrorOutline = (outlined?: boolean, error?: boolean) => {
-  if (error && outlined) {
-    return `border: 2px solid ${theme.colors.error}`
-  } else if (error && !outlined) {
-    return `border-bottom: 2px solid ${theme.colors.error}`
-  } else {
-    return
-  }
-}
+const borderColor = ({ error }: UsesOutline) =>
+  error ? theme.colors.error : theme.colors.outline
 
-const StyledSelect = styled.select<UsesOutline>`
-  width: 100%;
-  height: 32px;
-  padding-right: 24px;
-  background-color: ${theme.colors.white};
+const resetSelect = css`
   border: none;
-  border-bottom: ${({ outlined }) =>
-    !outlined && `1px solid ${theme.colors.outline}`};
   border-radius: 0;
   font-size: 16px;
-  cursor: pointer;
   appearance: none; /* remove default arrow */
+  outline: none;
+`
+
+const StyledSelect = styled.select<UsesOutline>`
+  ${resetSelect}
+  width: 100%;
+  height: 32px;
+
+  cursor: pointer;
+  background-color: ${theme.colors.white};
+
+  ${({ outlined }) => {
+    if (outlined) {
+      return css`
+        border-radius: 8px;
+        padding: 16px 12px;
+        border: 2px solid ${borderColor};
+        height: auto;
+      `
+    }
+
+    return css`
+      padding-right: 24px;
+      border-bottom: 1px solid ${borderColor};
+    `
+  }}
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
   }
-  &:not(:focus):invalid {
-    color: ${theme.colors.outline};
-  }
+
   &:hover,
   &:focus,
   &:focus-visible,
   &:checked {
-    outline: none;
-    border-color: ${darken(0.1, theme.colors.outline)};
+    border-color: ${(p) => darken(0.1, borderColor(p))};
   }
-  ${({ outlined }) =>
-    outlined &&
-    `
-      border: 2px solid ${theme.colors.outline};
-      border-radius: 8px;
-      padding: 16px 12px;
-      box-sizing: border-box;
-      height: auto;
-      &:hover,
-      &:focus-within {
-        border: 2px solid ${theme.colors.outline};
-      }
-    `}
-  ${({ error, outlined }) => getErrorOutline(outlined, error)};
 `
 
 const DropdownContainer = styled.div`

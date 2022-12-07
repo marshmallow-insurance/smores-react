@@ -1,3 +1,7 @@
+## [2.12.2] - 2022-12-06
+### Changed
+- Improve `Dropdown` styling
+
 ## [2.12.1] - 2022-12-01
 ### Changed
 - Fix `RadioGroup`'s `ref`
