@@ -20,6 +20,7 @@ import { theme } from '../theme'
 import { DatesList } from './DatesList'
 import { convertToUkDate } from '../utils/date'
 import { MarginProps } from '../utils/space'
+import { useControllableState } from '../utils/useControlledState'
 
 const getAvailableMonths = (startDate: Date, endDate: Date) => {
   const monthList = eachMonthOfInterval({
@@ -38,6 +39,8 @@ export type DatepickerProps = {
   fromDate?: Date
   range?: number
   onDateSelect: (date: string) => void
+  onChange?: (value: Date) => void
+  value?: Date
 } & MarginProps
 
 export const Datepicker: FC<DatepickerProps> = ({
@@ -45,6 +48,8 @@ export const Datepicker: FC<DatepickerProps> = ({
   range = 14,
   fromDate = new Date(),
   onDateSelect,
+  onChange,
+  value,
   ...marginProps
 }) => {
   // We want to make sure that the date is in the UK timezone,
@@ -53,11 +58,15 @@ export const Datepicker: FC<DatepickerProps> = ({
   const endDate = addDays(startDate, range)
   const availableMonths = getAvailableMonths(startDate, endDate)
 
-  const [activeDay, setActiveDay] = useState<Date>()
+  const [activeDay, setActiveDay] = useControllableState({
+    initialState: undefined,
+    stateProp: value,
+  })
   const [activeMonthIndex, setActiveMonth] = useState(0)
 
   const handleSelectEvent = (date: Date) => {
     setActiveDay(date)
+    onChange?.(date)
     onDateSelect(format(date, 'yyyy-MM-dd'))
   }
 

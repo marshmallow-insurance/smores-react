@@ -1,3 +1,7 @@
+## [2.12.3] - 2022-12-21
+### Changed
+- Make `DatePicker` controllable
+
 ## [2.12.2] - 2022-12-06
 ### Changed
 - Improve `Dropdown` styling
@@ -510,7 +514,12 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.12.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.12.2...v2.12.3
+[2.12.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.12.1...v2.12.2
+[2.12.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.12.0...v2.12.1
+[2.12.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.11.0...v2.12.0
 [2.11.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.10.0...v2.11.0
+[2.10.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.10.0...v2.10.1
 [2.10.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.9.3...v2.10.0
 [2.9.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.9.2...v2.9.3
 [2.9.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.9.1...v2.9.2
