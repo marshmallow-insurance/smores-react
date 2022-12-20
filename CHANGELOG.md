@@ -1,3 +1,7 @@
+## [2.12.3] - 2022-12-21
+### Changed
+- Make `DatePicker` controllable
+
 ## [2.12.2] - 2022-12-06
 ### Changed
 - Improve `Dropdown` styling
