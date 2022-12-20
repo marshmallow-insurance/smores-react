@@ -58,7 +58,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   const endDate = addDays(startDate, range)
   const availableMonths = getAvailableMonths(startDate, endDate)
 
-  const [activeDay, setActiveDay] = useControllableState<Date | undefined>({
+  const [activeDay, setActiveDay] = useControllableState({
     initialState: undefined,
     stateProp: value,
   })
