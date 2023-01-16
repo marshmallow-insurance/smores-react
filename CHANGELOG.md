@@ -1,3 +1,7 @@
+## [2.12.4] - 2023-01-13
+### Changed
+- Removed BG from claim-line icon
+
 ## [2.12.3] - 2022-12-21
 ### Changed
 - Make `DatePicker` controllable
