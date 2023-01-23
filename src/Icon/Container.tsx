@@ -194,6 +194,10 @@ export const Container = () => {
         <Icon render="clock" />
       </Wrapper>
       <Wrapper>
+        <span>close-panel</span>
+        <Icon render="close-panel" />
+      </Wrapper>
+      <Wrapper>
         <span>confused</span>
         <Icon render="confused" />
       </Wrapper>
@@ -512,6 +516,10 @@ export const Container = () => {
       <Wrapper>
         <span>onfido</span>
         <Icon render="onfido" />
+      </Wrapper>
+      <Wrapper>
+        <span>open-panel</span>
+        <Icon render="open-panel" />
       </Wrapper>
       <Wrapper>
         <span>other</span>
