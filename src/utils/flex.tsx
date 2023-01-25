@@ -23,6 +23,8 @@ export interface FlexProps {
     | 'space-between'
     | 'stretch'
   gap?: SpacingProp
+  rowGap?: SpacingProp
+  columnGap?: SpacingProp
 }
 
 export const flex: FlexFN = (props: FlexProps) => {
@@ -34,6 +36,9 @@ export const flex: FlexFN = (props: FlexProps) => {
     justifyContent,
     alignItems,
     alignContent,
+    gap,
+    columnGap,
+    rowGap,
   } = props
 
   return `
@@ -44,5 +49,8 @@ export const flex: FlexFN = (props: FlexProps) => {
     ${justifyContent ? `justify-content: ${justifyContent};` : ''}
     ${alignItems ? `align-items: ${alignItems};` : ''}
     ${alignContent ? `align-content: ${alignContent};` : ''}
+    ${gap ? `gap: ${gap};` : ''}
+    ${columnGap ? `column-gap: ${columnGap};` : ''}
+    ${rowGap ? `row-gap: ${rowGap};` : ''}
   `
 }
