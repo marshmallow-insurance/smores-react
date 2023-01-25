@@ -2,7 +2,7 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-bcXHqe sc-csuSiG cUdbRP klgXyE"
+  class="sc-bcXHqe sc-csuSiG jbKgRJ klgXyE"
 >
   <div
     class="sc-pyfCe eslRox"
@@ -14,7 +14,7 @@ exports[`renders 1`] = `
         class="sc-kDvujY gzLPBv"
       >
         <div
-          class="sc-bcXHqe bcTwYT"
+          class="sc-bcXHqe jfxBfl"
         >
           <input
             class="sc-gKPRtg igZFAz"
@@ -41,7 +41,7 @@ exports[`renders 1`] = `
         class="sc-kDvujY gzLPBv"
       >
         <div
-          class="sc-bcXHqe bcTwYT"
+          class="sc-bcXHqe jfxBfl"
         >
           <input
             class="sc-gKPRtg igZFAz"
