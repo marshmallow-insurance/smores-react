@@ -28,15 +28,13 @@ Default.args = {
 
 const ResponsiveTemplate = () => {
   return (
-    <Box flex direction={{ small: 'column', medium: 'row' }}>
+    <Box flex direction={{ small: 'column', medium: 'row' }} gap="12px">
       <Box
         p="64px"
         py={{ medium: '12px' }}
         pt="32px"
         pb={{ large: { custom: 140 } }}
         style={{ backgroundColor: theme.colors.background }}
-        mb={{ small: '12px', medium: '0' }}
-        mr={{ medium: '12px' }}
       >
         <Text>Some lovely content.</Text>
       </Box>

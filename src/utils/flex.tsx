@@ -29,6 +29,7 @@ export interface FlexProps {
     | 'space-around'
     | 'space-between'
     | 'stretch'
+  >
   gap?: SpacingProp
   rowGap?: SpacingProp
   columnGap?: SpacingProp
