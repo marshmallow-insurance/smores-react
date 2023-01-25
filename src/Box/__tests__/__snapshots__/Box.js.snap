@@ -6,9 +6,6 @@ exports[`renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 @media (min-width:0px) {
@@ -20,6 +17,14 @@ exports[`renders 1`] = `
 @media (min-width:0px) {
   .c0 {
     padding-bottom: 16px;
+  }
+}
+
+@media (min-width:0px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 }
 
