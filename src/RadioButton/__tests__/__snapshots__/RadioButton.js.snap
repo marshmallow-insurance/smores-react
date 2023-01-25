@@ -6,10 +6,6 @@ exports[`renders - checked 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .c5 {
@@ -53,6 +49,15 @@ exports[`renders - checked 1`] = `
   bottom: -5px;
 }
 
+@media (min-width:0px) {
+  .c0 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
 <div
   class="c0"
 >
@@ -85,10 +90,6 @@ exports[`renders - unchecked 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .c5 {
@@ -130,6 +131,15 @@ exports[`renders - unchecked 1`] = `
 .c6 {
   position: relative;
   bottom: -5px;
+}
+
+@media (min-width:0px) {
+  .c0 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
 }
 
 <div

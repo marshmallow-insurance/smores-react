@@ -2,15 +2,30 @@
 
 exports[`renders 1`] = `
 .c0 {
-  margin-top: 32px;
-  padding-bottom: 16px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+}
+
+@media (min-width:0px) {
+  .c0 {
+    margin-top: 32px;
+  }
+}
+
+@media (min-width:0px) {
+  .c0 {
+    padding-bottom: 16px;
+  }
+}
+
+@media (min-width:0px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 }
 
 <div
