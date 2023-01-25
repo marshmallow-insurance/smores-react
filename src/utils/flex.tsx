@@ -30,9 +30,9 @@ export interface FlexProps {
     | 'space-between'
     | 'stretch'
   >
-  gap?: SpacingProp
-  rowGap?: SpacingProp
-  columnGap?: SpacingProp
+  gap?: ResponsiveProp<SpacingProp>
+  rowGap?: ResponsiveProp<SpacingProp>
+  columnGap?: ResponsiveProp<SpacingProp>
 }
 
 export const flex: FlexFN = (props: FlexProps) => {
@@ -82,8 +82,12 @@ export const flex: FlexFN = (props: FlexProps) => {
           )
         : ''
     }
-    ${gap ? `gap: ${gap};` : ''}
-    ${columnGap ? `column-gap: ${columnGap};` : ''}
-    ${rowGap ? `row-gap: ${rowGap};` : ''}
+    ${gap ? resolveResponsiveProp(gap, (value) => `gap: ${value};`) : ''}
+    ${
+      columnGap
+        ? resolveResponsiveProp(gap, (value) => `column-gap: ${value};`)
+        : ''
+    }
+    ${rowGap ? resolveResponsiveProp(gap, (value) => `row-gap: ${value};`) : ''}
   `
 }
