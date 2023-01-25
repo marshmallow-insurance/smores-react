@@ -1,5 +1,5 @@
 import { resolveResponsiveProp, ResponsiveProp } from './responsiveProp'
-import { SpacingProp } from './space'
+import { resolveSpacing, SpacingProp } from './space'
 
 type FlexFN = (arg: FlexProps) => string
 
@@ -82,12 +82,29 @@ export const flex: FlexFN = (props: FlexProps) => {
           )
         : ''
     }
-    ${gap ? resolveResponsiveProp(gap, (value) => `gap: ${value};`) : ''}
     ${
-      columnGap
-        ? resolveResponsiveProp(gap, (value) => `column-gap: ${value};`)
+      gap
+        ? resolveResponsiveProp(
+            gap,
+            (value) => `gap: ${resolveSpacing(value)};`,
+          )
         : ''
     }
-    ${rowGap ? resolveResponsiveProp(gap, (value) => `row-gap: ${value};`) : ''}
+    ${
+      columnGap
+        ? resolveResponsiveProp(
+            columnGap,
+            (value) => `column-gap: ${resolveSpacing(value)};`,
+          )
+        : ''
+    }
+    ${
+      rowGap
+        ? resolveResponsiveProp(
+            rowGap,
+            (value) => `row-gap: ${resolveSpacing(value)};`,
+          )
+        : ''
+    }
   `
 }

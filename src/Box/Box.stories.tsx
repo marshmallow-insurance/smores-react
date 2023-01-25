@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Text } from '../Text'
+import { Icon } from '../Icon'
 import { Box, BoxProps } from './Box'
 import { theme } from '../theme'
 
@@ -33,9 +34,16 @@ const Card = () => (
     pb={{ small: '24px', medium: '32px' }}
     style={{ backgroundColor: theme.colors.background, borderRadius: 8 }}
   >
-    <Text typo="heading-small" mb="8px">
-      Card content.
-    </Text>
+    <Box
+      flex
+      direction={{ small: 'column', medium: 'row' }}
+      gap={{ small: { custom: 2 }, medium: '8px' }}
+      alignItems={{ medium: 'center' }}
+      mb="8px"
+    >
+      <Icon render="help-aboutus" size={24} />
+      <Text typo="heading-small">Card content.</Text>
+    </Box>
     <Text color="subtext">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industrys standard dummy text ever since the

@@ -4,7 +4,7 @@ type Spacing = '8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'
 
 export type SpacingProp = '0' | Spacing | { custom: number | string }
 
-const resolveSpacing = (value: SpacingProp | 'auto') => {
+export const resolveSpacing = (value: SpacingProp | 'auto') => {
   if (typeof value === 'string') {
     return value
   }
