@@ -27,6 +27,12 @@ Default.args = {
   p: '16px',
 }
 
+Default.argTypes = {
+  theme: { table: { disable: true } },
+  as: { table: { disable: true } },
+  forwardedAs: { table: { disable: true } },
+}
+
 const Card = () => (
   <Box
     px={{ small: '12px', medium: '24px' }}
@@ -67,9 +73,3 @@ const ResponsiveTemplate = () => {
 }
 
 export const ResponsiveProps = ResponsiveTemplate.bind({})
-
-Default.argTypes = {
-  theme: { table: { disable: true } },
-  as: { table: { disable: true } },
-  forwardedAs: { table: { disable: true } },
-}
