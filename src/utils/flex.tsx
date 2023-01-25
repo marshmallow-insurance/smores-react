@@ -1,4 +1,5 @@
 import { resolveResponsiveProp, ResponsiveProp } from './responsiveProp'
+import { SpacingProp } from './space'
 
 type FlexFN = (arg: FlexProps) => string
 
@@ -28,7 +29,9 @@ export interface FlexProps {
     | 'space-around'
     | 'space-between'
     | 'stretch'
-  >
+  gap?: SpacingProp
+  rowGap?: SpacingProp
+  columnGap?: SpacingProp
 }
 
 export const flex: FlexFN = (props: FlexProps) => {
@@ -40,6 +43,9 @@ export const flex: FlexFN = (props: FlexProps) => {
     justifyContent,
     alignItems,
     alignContent,
+    gap,
+    columnGap,
+    rowGap,
   } = props
 
   return `
@@ -75,5 +81,8 @@ export const flex: FlexFN = (props: FlexProps) => {
           )
         : ''
     }
+    ${gap ? `gap: ${gap};` : ''}
+    ${columnGap ? `column-gap: ${columnGap};` : ''}
+    ${rowGap ? `row-gap: ${rowGap};` : ''}
   `
 }

@@ -1,3 +1,7 @@
+## [2.13.0] - 2023-01-25
+### Changed
+- Add `gap`, `columnGap` and `rowGap` prop to `Box`
+
 ## [2.12.6] - 2023-01-23
 ### Changed
 - Add open and close panel icons
