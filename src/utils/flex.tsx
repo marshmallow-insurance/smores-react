@@ -1,3 +1,5 @@
+import { SpacingProp } from './space'
+
 type FlexFN = (arg: FlexProps) => string
 
 export interface FlexProps {
@@ -20,6 +22,7 @@ export interface FlexProps {
     | 'space-around'
     | 'space-between'
     | 'stretch'
+  gap?: SpacingProp
 }
 
 export const flex: FlexFN = (props: FlexProps) => {
