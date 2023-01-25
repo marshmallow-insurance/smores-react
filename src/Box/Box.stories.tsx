@@ -26,25 +26,34 @@ Default.args = {
   p: '16px',
 }
 
+const Card = () => (
+  <Box
+    px={{ small: '12px', medium: '24px' }}
+    pt={{ small: '8px', medium: '16px' }}
+    pb={{ small: '24px', medium: '32px' }}
+    style={{ backgroundColor: theme.colors.background, borderRadius: 8 }}
+  >
+    <Text typo="heading-small" mb="8px">
+      Card content.
+    </Text>
+    <Text color="subtext">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industrys standard dummy text ever since the
+      1500s.
+    </Text>
+  </Box>
+)
+
 const ResponsiveTemplate = () => {
   return (
     <Box
       flex
       direction={{ small: 'column', medium: 'row' }}
-      gap={{ small: '8px', medium: '16px' }}
+      gap={{ small: '12px', medium: '16px' }}
     >
-      <Box
-        p="64px"
-        py={{ medium: '12px' }}
-        pt="32px"
-        pb={{ large: { custom: 140 } }}
-        style={{ backgroundColor: theme.colors.background }}
-      >
-        <Text>Some lovely content.</Text>
-      </Box>
-      <Box p="16px" style={{ backgroundColor: theme.colors.background }}>
-        <Text>Some lovely content.</Text>
-      </Box>
+      <Card />
+      <Card />
+      <Card />
     </Box>
   )
 }
