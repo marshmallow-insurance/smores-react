@@ -28,7 +28,11 @@ Default.args = {
 
 const ResponsiveTemplate = () => {
   return (
-    <Box flex direction={{ small: 'column', medium: 'row' }} gap="12px">
+    <Box
+      flex
+      direction={{ small: 'column', medium: 'row' }}
+      gap={{ small: '8px', medium: '16px' }}
+    >
       <Box
         p="64px"
         py={{ medium: '12px' }}
