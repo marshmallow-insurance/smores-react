@@ -1,3 +1,5 @@
+import { resolveResponsiveProp, ResponsiveProp } from './responsiveProp'
+
 type Spacing = '8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'
 
 type SpacingProp = '0' | Spacing | { custom: number | string }
@@ -15,50 +17,91 @@ const resolveSpacing = (value: SpacingProp | 'auto') => {
 }
 
 export interface MarginProps {
-  m?: SpacingProp
-  mx?: SpacingProp | 'auto'
-  my?: SpacingProp
-  ml?: SpacingProp
-  mr?: SpacingProp
-  mt?: SpacingProp
-  mb?: SpacingProp
+  m?: ResponsiveProp<SpacingProp>
+  mx?: ResponsiveProp<SpacingProp | 'auto'>
+  my?: ResponsiveProp<SpacingProp>
+  ml?: ResponsiveProp<SpacingProp>
+  mr?: ResponsiveProp<SpacingProp>
+  mt?: ResponsiveProp<SpacingProp>
+  mb?: ResponsiveProp<SpacingProp>
 }
 
 export interface PaddingProps {
-  p?: SpacingProp
-  px?: SpacingProp
-  py?: SpacingProp
-  pl?: SpacingProp
-  pr?: SpacingProp
-  pt?: SpacingProp
-  pb?: SpacingProp
+  p?: ResponsiveProp<SpacingProp>
+  px?: ResponsiveProp<SpacingProp>
+  py?: ResponsiveProp<SpacingProp>
+  pl?: ResponsiveProp<SpacingProp>
+  pr?: ResponsiveProp<SpacingProp>
+  pt?: ResponsiveProp<SpacingProp>
+  pb?: ResponsiveProp<SpacingProp>
 }
 
 export const margin = (props: MarginProps): string => {
   const { m, mx, my, ml, mr, mt, mb } = props
 
   return `
-    ${m ? `margin: ${resolveSpacing(m)};` : ''}
+    ${
+      m
+        ? resolveResponsiveProp(
+            m,
+            (value) => `margin: ${resolveSpacing(value)};`,
+          )
+        : ''
+    }
     ${
       mx
-        ? `
-      margin-left: ${resolveSpacing(mx)};
-      margin-right: ${resolveSpacing(mx)};
-    `
+        ? resolveResponsiveProp(
+            mx,
+            (value) => `
+        margin-left: ${resolveSpacing(value)};
+        margin-right: ${resolveSpacing(value)};
+      `,
+          )
         : ''
     }
     ${
       my
-        ? `
-      margin-top: ${resolveSpacing(my)};
-      margin-bottom: ${resolveSpacing(my)};
-    `
+        ? resolveResponsiveProp(
+            my,
+            (value) => `
+        margin-top: ${resolveSpacing(value)};
+        margin-bottom: ${resolveSpacing(value)};
+      `,
+          )
         : ''
     }
-    ${ml ? `margin-left: ${resolveSpacing(ml)};` : ''}
-    ${mr ? `margin-right: ${resolveSpacing(mr)};` : ''}
-    ${mt ? `margin-top: ${resolveSpacing(mt)};` : ''}
-    ${mb ? `margin-bottom: ${resolveSpacing(mb)};` : ''}
+    ${
+      ml
+        ? resolveResponsiveProp(
+            ml,
+            (value) => `margin-left: ${resolveSpacing(value)};`,
+          )
+        : ''
+    }
+    ${
+      mr
+        ? resolveResponsiveProp(
+            mr,
+            (value) => `margin-right: ${resolveSpacing(value)};`,
+          )
+        : ''
+    }
+    ${
+      mt
+        ? resolveResponsiveProp(
+            mt,
+            (value) => `margin-top: ${resolveSpacing(value)};`,
+          )
+        : ''
+    }
+    ${
+      mb
+        ? resolveResponsiveProp(
+            mb,
+            (value) => `margin-bottom: ${resolveSpacing(value)};`,
+          )
+        : ''
+    }
   `
 }
 
@@ -66,26 +109,67 @@ export const padding = (props: PaddingProps): string => {
   const { p, px, py, pl, pr, pt, pb } = props
 
   return `
-    ${p ? `padding: ${resolveSpacing(p)};` : ''}
+    ${
+      p
+        ? resolveResponsiveProp(
+            p,
+            (value) => `padding: ${resolveSpacing(value)};`,
+          )
+        : ''
+    }
     ${
       px
-        ? `
-      padding-left: ${resolveSpacing(px)};
-      padding-right: ${resolveSpacing(px)};
-    `
+        ? resolveResponsiveProp(
+            px,
+            (value) => `
+        padding-left: ${resolveSpacing(value)};
+        padding-right: ${resolveSpacing(value)};
+      `,
+          )
         : ''
     }
     ${
       py
-        ? `
-      padding-top: ${resolveSpacing(py)};
-      padding-bottom: ${resolveSpacing(py)};
-    `
+        ? resolveResponsiveProp(
+            py,
+            (value) => `
+        padding-top: ${resolveSpacing(value)};
+        padding-bottom: ${resolveSpacing(value)};
+      `,
+          )
         : ''
     }
-    ${pl ? `padding-left: ${resolveSpacing(pl)};` : ''}
-    ${pr ? `padding-right: ${resolveSpacing(pr)};` : ''}
-    ${pt ? `padding-top: ${resolveSpacing(pt)};` : ''}
-    ${pb ? `padding-bottom: ${resolveSpacing(pb)};` : ''}
+    ${
+      pl
+        ? resolveResponsiveProp(
+            pl,
+            (value) => `padding-left: ${resolveSpacing(value)};`,
+          )
+        : ''
+    }
+    ${
+      pr
+        ? resolveResponsiveProp(
+            pr,
+            (value) => `padding-right: ${resolveSpacing(value)};`,
+          )
+        : ''
+    }
+    ${
+      pt
+        ? resolveResponsiveProp(
+            pt,
+            (value) => `padding-top: ${resolveSpacing(value)};`,
+          )
+        : ''
+    }
+    ${
+      pb
+        ? resolveResponsiveProp(
+            pb,
+            (value) => `padding-bottom: ${resolveSpacing(value)};`,
+          )
+        : ''
+    }
   `
 }

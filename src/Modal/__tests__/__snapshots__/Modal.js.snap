@@ -2,7 +2,6 @@
 
 exports[`renders 1`] = `
 .c3 {
-  margin-bottom: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -119,6 +118,12 @@ exports[`renders 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+}
+
+@media (min-width:0px) {
+  .c3 {
+    margin-bottom: 8px;
+  }
 }
 
 @media (max-width:768px) {

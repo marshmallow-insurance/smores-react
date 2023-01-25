@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders - currency 1`] = `
-.c1 {
-  margin-bottom: 0px;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -164,6 +160,12 @@ exports[`renders - currency 1`] = `
   cursor: pointer;
 }
 
+@media (min-width:0px) {
+  .c1 {
+    margin-bottom: 0px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -256,10 +258,6 @@ exports[`renders - currency 1`] = `
 `;
 
 exports[`renders - disabled 1`] = `
-.c1 {
-  margin-bottom: 0px;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -333,6 +331,12 @@ exports[`renders - disabled 1`] = `
   border-color: #D2D2D2;
 }
 
+@media (min-width:0px) {
+  .c1 {
+    margin-bottom: 0px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -366,19 +370,11 @@ exports[`renders - disabled 1`] = `
 `;
 
 exports[`renders - error 1`] = `
-.c1 {
-  margin-bottom: 0px;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c11 {
-  margin-top: 8px;
 }
 
 .c9 {
@@ -542,6 +538,18 @@ exports[`renders - error 1`] = `
   cursor: pointer;
 }
 
+@media (min-width:0px) {
+  .c1 {
+    margin-bottom: 0px;
+  }
+}
+
+@media (min-width:0px) {
+  .c11 {
+    margin-top: 8px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -642,10 +650,6 @@ exports[`renders - error 1`] = `
 `;
 
 exports[`renders - number 1`] = `
-.c1 {
-  margin-bottom: 0px;
-}
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -728,6 +732,12 @@ exports[`renders - number 1`] = `
   border-color: #D2D2D2;
 }
 
+@media (min-width:0px) {
+  .c1 {
+    margin-bottom: 0px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -768,10 +778,6 @@ exports[`renders - number 1`] = `
 `;
 
 exports[`renders - tel 1`] = `
-.c1 {
-  margin-bottom: 0px;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -865,6 +871,12 @@ exports[`renders - tel 1`] = `
   z-index: 1;
 }
 
+@media (min-width:0px) {
+  .c1 {
+    margin-bottom: 0px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -907,10 +919,6 @@ exports[`renders - tel 1`] = `
 `;
 
 exports[`renders - with suffix 1`] = `
-.c1 {
-  margin-bottom: 0px;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1002,6 +1010,12 @@ exports[`renders - with suffix 1`] = `
   left: -10px;
 }
 
+@media (min-width:0px) {
+  .c1 {
+    margin-bottom: 0px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -1042,10 +1056,6 @@ exports[`renders - with suffix 1`] = `
 `;
 
 exports[`renders - with trailing icon 1`] = `
-.c1 {
-  margin-bottom: 0px;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1165,6 +1175,12 @@ exports[`renders - with trailing icon 1`] = `
   line-height: 19px;
   position: relative;
   z-index: 1;
+}
+
+@media (min-width:0px) {
+  .c1 {
+    margin-bottom: 0px;
+  }
 }
 
 <div
