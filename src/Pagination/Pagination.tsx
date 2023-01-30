@@ -18,15 +18,15 @@ export type PaginationProps = {
   partition: number
   /** Handle page change */
   handlePageChange: (page: number) => void
-  /** Set page number */
-  page?: number
+  /** Sets current page number */
+  currentPage?: number
 } & MarginProps
 
 export const Pagination: FC<PaginationProps> = ({
   total,
   partition,
   handlePageChange,
-  page,
+  currentPage,
   ...marginProps
 }) => {
   const [lastPage, setLastPage] = useState(0)
@@ -39,12 +39,12 @@ export const Pagination: FC<PaginationProps> = ({
   useEffect(() => {
     // This is a rather hacky fix, in theory it should be listening to total, but because the total comes from the same endpoint as the data, it forces a reset to 1 every time
     // Using lastPage seems to bypass that
-    if (page) {
-      setActivePage(page)
+    if (currentPage) {
+      setActivePage(currentPage)
     } else {
       setActivePage(1)
     }
-  }, [lastPage, page])
+  }, [lastPage, currentPage])
 
   useEffect(() => {
     const numberOfPages = Math.ceil(total / partition)
