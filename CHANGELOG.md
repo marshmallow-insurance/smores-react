@@ -1,3 +1,7 @@
+## [2.14.0] - 2023-01-30
+### Changed
+- Added optional currentPage prop for pagination
+
 ## [2.13.0] - 2023-01-25
 ### Changed
 - Add `gap`, `columnGap` and `rowGap` prop to `Box`
@@ -531,6 +535,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.14.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.13.0...v2.14.0
 [2.13.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.12.6...v2.13.0
 [2.12.6]: https://github.com/marshmallow-insurance/smores-react/compare/v2.12.5...v2.12.6
 [2.12.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.12.4...v2.12.5
