@@ -18,7 +18,7 @@ export type PaginationProps = {
   partition: number
   /** Handle page change */
   handlePageChange: (page: number) => void
-  /** Set active page from component */
+  /** Set page number */
   page?: number
 } & MarginProps
 
