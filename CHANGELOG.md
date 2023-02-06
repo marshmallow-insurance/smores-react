@@ -1,3 +1,7 @@
+## [2.15.0] - 2023-02-06
+### Changed
+- Added custom hooks
+
 ## [2.14.1] - 2023-01-31
 ### Changed
 - Export Spacing Type
@@ -539,6 +543,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.15.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.14.1...v2.15.0
 [2.14.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.14.0...v2.14.1
 [2.14.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.13.0...v2.14.0
 [2.13.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.12.6...v2.13.0
