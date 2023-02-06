@@ -1,4 +1,4 @@
-import { useEventListener } from 'hooks/useEventListener'
+import { useEventListener } from '../useEventListener'
 import { RefObject, useCallback, useRef } from 'react'
 import { GenericEventCallback } from 'types'
 
