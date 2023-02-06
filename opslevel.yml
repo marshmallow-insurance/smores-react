@@ -5,7 +5,7 @@ service:
   lifecycle: generally_available
   product: S'mores
   owner: frontend
-  language: Typescript
+  language: TypeScript
   framework: React
   description:
     React component library that conform to Marshmallow's Design System.
