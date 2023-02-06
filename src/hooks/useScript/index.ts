@@ -5,7 +5,7 @@ export const useScript = ({
   async = true,
 }: {
   url: string
-  async: boolean
+  async?: boolean
 }) => {
   useEffect(() => {
     const script = document.createElement('script')
