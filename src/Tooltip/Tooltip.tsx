@@ -9,6 +9,7 @@ export interface TooltipProps {
   title: string
   content: string | ReactNode
   position: TooltipPosition
+  underline?: boolean
 }
 
 export const Tooltip: FC<TooltipProps> = ({
@@ -16,16 +17,19 @@ export const Tooltip: FC<TooltipProps> = ({
   title,
   content,
   position,
+  underline = false,
 }) => {
   return (
-    <Container>
+    <Container underline={underline}>
       <span>{children}</span>
       <Tip className="tooltip" position={position}>
-        <Text tag="h5" typo="headline-small" color="secondary">
+        <Text tag="h5" typo="desc-medium" color="secondary">
           {title}
         </Text>
         {(typeof content === 'string' && (
-          <Text color="subtext">{content}</Text>
+          <Text typo="desc-light" color="secondary">
+            {content}
+          </Text>
         )) ||
           content}
       </Tip>

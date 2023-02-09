@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box } from '../Box'
+import { Text } from '../Text'
 import { Tooltip, TooltipProps } from './Tooltip'
 
 export default {
@@ -8,9 +9,9 @@ export default {
 }
 
 const Template = (props: TooltipProps) => (
-  <Box py={'32px'} flex>
+  <Box px={{ custom: 250 }} py={{ custom: 150 }} flex>
     <Tooltip {...props}>
-      <Box flex>This is some text</Box>
+      <Box>Harry Hill</Box>
     </Tooltip>
   </Box>
 )
@@ -18,25 +19,34 @@ const Template = (props: TooltipProps) => (
 export const Default = Template.bind({})
 
 Default.args = {
-  title: 'Tooltip Title',
+  title: 'Harry Hill',
   content:
     'Tooltip content, this is some text, maybe even more text if you feel like it.',
   position: 'right',
+  underline: true,
 }
 
 export const ReactNodeExample = Template.bind({})
 
 const tooltipContent = (
-  <div>
-    <p>20 Cherry Blossom Lane,</p>
-    <p>Aintree,</p>
-    <p>Manchester,</p>
-    <p>T: 07123456789</p>
-  </div>
+  <>
+    <Text typo="desc-light" color="secondary">
+      20 Cherry Blossom Lane,
+    </Text>
+    <Text typo="desc-light" color="secondary">
+      Aintree,
+    </Text>
+    <Text typo="desc-light" color="secondary">
+      Manchester,
+    </Text>
+    <Text typo="desc-light" color="secondary">
+      T: 07123456789
+    </Text>
+  </>
 )
 
 ReactNodeExample.args = {
   title: 'React node example',
-  content: tooltipContent,
   position: 'right',
+  content: tooltipContent,
 }

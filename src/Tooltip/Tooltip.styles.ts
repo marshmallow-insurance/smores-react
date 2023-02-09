@@ -2,11 +2,17 @@ import styled, { css } from 'styled-components'
 import { theme } from '../theme'
 import { TooltipPosition } from './Tooltip'
 
-export const Container = styled.div`
+export const Container = styled.div<{ underline: boolean }>`
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${({ underline }) =>
+    underline &&
+    css`
+      border-bottom: 1px dashed ${theme.colors.primary};
+    `}
 
   > span:hover + .tooltip {
     opacity: 1;
@@ -57,9 +63,9 @@ export const Tip = styled.div<{ position: TooltipPosition }>`
   margin: auto;
   background: ${theme.colors.background};
   width: 240px;
-  padding: 8px;
+  padding: 16px 12px 20px;
   border-radius: 8px;
-  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.08);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 
