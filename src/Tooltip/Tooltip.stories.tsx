@@ -22,7 +22,8 @@ Default.args = {
   title: 'Harry Hill',
   content:
     'Tooltip content, this is some text, maybe even more text if you feel like it.',
-  position: 'right',
+  position: 'top',
+  size: 'small',
   underline: true,
 }
 

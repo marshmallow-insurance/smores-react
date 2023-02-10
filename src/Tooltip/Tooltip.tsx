@@ -1,8 +1,10 @@
 import React, { FC, ReactNode } from 'react'
+import styled, { css } from 'styled-components'
 import { Text } from '../Text'
-import { Container, Tip } from './Tooltip.styles'
+import { theme } from '../theme'
 
-export type TooltipPosition = 'top' | 'bottom' | 'left' | 'right'
+type TooltipPosition = 'top' | 'bottom' | 'left' | 'right'
+type TooltipSize = 'small' | 'large'
 
 export interface TooltipProps {
   children: ReactNode
@@ -10,14 +12,16 @@ export interface TooltipProps {
   content: string | ReactNode
   position: TooltipPosition
   underline?: boolean
+  size?: TooltipSize
 }
 
 export const Tooltip: FC<TooltipProps> = ({
   children,
   title,
   content,
-  position,
+  position = 'top',
   underline = false,
+  size = 'small',
 }) => {
   return (
     <Container underline={underline}>
