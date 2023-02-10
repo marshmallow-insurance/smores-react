@@ -1,4 +1,11 @@
-import React, { FC, ReactNode } from 'react'
+import React, {
+  FC,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import styled, { css } from 'styled-components'
 import { Text } from '../Text'
 import { theme } from '../theme'
@@ -28,15 +35,59 @@ export const Tooltip: FC<TooltipProps> = ({
   arrowPosition = 'center',
   shadow = false,
 }) => {
+  const tipContainer = useRef<HTMLDivElement>(null)
+  const [tooltipPosition, setTooltipPosition] = useState<Position>(position)
+
+  const checkInbounds = (element: DOMRect) =>
+    element.top >= 0 &&
+    element.left >= 0 &&
+    element.bottom <= window.innerHeight &&
+    element.right <= window.innerWidth
+
+  const handleTipViewport = useCallback(() => {
+    const dimensions = tipContainer.current?.getBoundingClientRect()
+
+    if (!dimensions) return
+    if (checkInbounds(dimensions)) return
+
+    switch (tooltipPosition) {
+      case 'top':
+        setTooltipPosition('bottom')
+        break
+      case 'bottom':
+        setTooltipPosition('top')
+        return
+      case 'left':
+        setTooltipPosition('right')
+        return
+      case 'right':
+        setTooltipPosition('left')
+        return
+      default:
+        setTooltipPosition('top')
+        return
+    }
+  }, [tipContainer, tooltipPosition])
+
+  useEffect(() => {
+    window.addEventListener('resize', handleTipViewport)
+    window.addEventListener('scroll', handleTipViewport)
+    return () => {
+      window.removeEventListener('resize', handleTipViewport)
+      window.removeEventListener('scroll', handleTipViewport)
+    }
+  }, [handleTipViewport])
+
   return (
     <Container underline={underline}>
       <span>{children}</span>
       <Tip
         className="tooltip"
-        position={position}
+        position={tooltipPosition}
         size={size}
         arrowPosition={arrowPosition}
         shadow={shadow}
+        ref={tipContainer}
       >
         {title && (
           <Text tag="h5" typo="desc-medium" color="secondary">
