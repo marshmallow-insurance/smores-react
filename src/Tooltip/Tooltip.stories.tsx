@@ -25,6 +25,8 @@ Default.args = {
   position: 'top',
   size: 'small',
   underline: true,
+  arrowPosition: 'center',
+  shadow: true,
 }
 
 export const ReactNodeExample = Template.bind({})
@@ -50,4 +52,8 @@ ReactNodeExample.args = {
   title: 'React node example',
   position: 'right',
   content: tooltipContent,
+  size: 'large',
+  underline: true,
+  arrowPosition: 'center',
+  shadow: false,
 }

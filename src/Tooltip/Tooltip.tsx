@@ -3,16 +3,19 @@ import styled, { css } from 'styled-components'
 import { Text } from '../Text'
 import { theme } from '../theme'
 
-type TooltipPosition = 'top' | 'bottom' | 'left' | 'right'
-type TooltipSize = 'small' | 'large'
+type Position = 'top' | 'bottom' | 'left' | 'right'
+type Size = 'small' | 'large'
+type ArrowPosition = 'left' | 'right' | 'center' | 'top' | 'bottom'
 
 export interface TooltipProps {
   children: ReactNode
   title?: string
   content: string | ReactNode
-  position: TooltipPosition
+  position: Position
   underline?: boolean
-  size?: TooltipSize
+  size?: Size
+  arrowPosition?: ArrowPosition
+  shadow?: boolean
 }
 
 export const Tooltip: FC<TooltipProps> = ({
@@ -22,11 +25,19 @@ export const Tooltip: FC<TooltipProps> = ({
   position = 'top',
   underline = false,
   size = 'small',
+  arrowPosition = 'center',
+  shadow = false,
 }) => {
   return (
     <Container underline={underline}>
       <span>{children}</span>
-      <Tip className="tooltip" position={position} size={size}>
+      <Tip
+        className="tooltip"
+        position={position}
+        size={size}
+        arrowPosition={arrowPosition}
+        shadow={shadow}
+      >
         {title && (
           <Text tag="h5" typo="desc-medium" color="secondary">
             {title}
@@ -60,53 +71,125 @@ export const Container = styled.div<{ underline: boolean }>`
   }
 `
 
-const padding = 8
+const arrowPaddingSize = 18
+const arrowInset = 26
+const arrowCenterPosition = 'calc(50% - 12px)'
+const arrowPadding = `calc(100% + ${arrowPaddingSize}px);`
+const calculateTipPosition = `calc(50% - ${
+  arrowPaddingSize / 2 + arrowInset
+}px);`
 
-const top = css`
-  bottom: calc(100% + ${padding}px);
+const handleTipPosition = (arrowPosition: ArrowPosition) => {
+  switch (arrowPosition) {
+    case 'left':
+      return css`
+        left: ${calculateTipPosition};
+      `
+    case 'right':
+      return css`
+        right: ${calculateTipPosition};
+      `
+    case 'top':
+      return css`
+        top: ${calculateTipPosition};
+      `
+    case 'bottom':
+      return css`
+        bottom: ${calculateTipPosition};
+      `
+    default:
+      return 'calc(100% + 18px)'
+  }
+}
+
+const handleHorizontalArrowPosition = (arrowPosition: ArrowPosition) => {
+  switch (arrowPosition) {
+    case 'left':
+      return css`
+        left: ${arrowInset}px;
+      `
+    case 'right':
+      return css`
+        right: ${arrowInset}px;
+      `
+    default:
+      return css`
+        left: ${arrowCenterPosition};
+      `
+  }
+}
+
+const handleVerticalArrowPosition = (arrowPosition: ArrowPosition) => {
+  switch (arrowPosition) {
+    case 'top':
+      return css`
+        top: ${arrowInset}px;
+      `
+    case 'bottom':
+      return css`
+        bottom: ${arrowInset}px;
+      `
+    default:
+      return css`
+        top: ${arrowCenterPosition};
+      `
+  }
+}
+
+const top = css<{ arrowPosition: ArrowPosition }>`
+  bottom: ${arrowPadding};
+  ${({ arrowPosition }) => handleTipPosition(arrowPosition)};
+
   &:before {
-    bottom: -9px;
-    left: calc(50% - 6px);
+    bottom: -15px;
     transform: rotate(-90deg);
+    ${({ arrowPosition }) => handleHorizontalArrowPosition(arrowPosition)}
   }
 `
 
-const bottom = css`
-  top: calc(100% + ${padding}px);
+const bottom = css<{ arrowPosition: ArrowPosition }>`
+  top: ${arrowPadding};
+  ${({ arrowPosition }) => handleTipPosition(arrowPosition)};
 
   &:before {
-    top: -9px;
-    left: calc(50% - 6px);
+    top: -15px;
     transform: rotate(90deg);
+    ${({ arrowPosition }) => handleHorizontalArrowPosition(arrowPosition)}
   }
 `
 
-const left = css`
-  right: calc(100% + ${padding}px);
+const left = css<{ arrowPosition: ArrowPosition }>`
+  right: ${arrowPadding};
 
+  ${({ arrowPosition }) => handleTipPosition(arrowPosition)};
   &:before {
-    top: calc(50% - 6px);
-    right: -6px;
+    right: -12px;
     transform: rotate(180deg);
+    ${({ arrowPosition }) => handleVerticalArrowPosition(arrowPosition)}
   }
 `
-const right = css`
-  left: calc(100% + ${padding}px);
+const right = css<{ arrowPosition: ArrowPosition }>`
+  left: ${arrowPadding};
 
+  ${({ arrowPosition }) => handleTipPosition(arrowPosition)};
   &:before {
-    top: calc(50% - 6px);
-    left: -6px;
+    ${({ arrowPosition }) => handleVerticalArrowPosition(arrowPosition)}
+    left: -12px;
   }
 `
 
-export const Tip = styled.div<{ position: TooltipPosition; size: TooltipSize }>`
+export const Tip = styled.div<{
+  position: Position
+  size: Size
+  arrowPosition: ArrowPosition
+  shadow: boolean
+}>`
   position: absolute;
   margin: auto;
   background: ${theme.colors.background};
   width: ${({ size }) => (size === 'small' ? '201px' : '237px')};
   padding: 16px 12px 20px;
   border-radius: 8px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 
@@ -118,11 +201,16 @@ export const Tip = styled.div<{ position: TooltipPosition; size: TooltipSize }>`
   ${({ position }) => position === 'bottom' && bottom}
 	${({ position }) => position === 'left' && left}
 	${({ position }) => position === 'right' && right}
+	${({ shadow }) =>
+    shadow &&
+    css`
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    `}
 
   &:before {
     content: '';
     border-style: solid;
-    border-width: 6px 6px 6px 0;
+    border-width: 12px 12px 12px 0;
     border-color: transparent ${theme.colors.background} transparent transparent;
     position: absolute;
   }
