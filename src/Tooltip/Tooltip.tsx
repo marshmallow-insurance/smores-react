@@ -214,7 +214,7 @@ const left = css<{ arrowPosition: ArrowPosition }>`
 
   ${({ arrowPosition }) => handleTipPosition(arrowPosition)};
   &:before {
-    right: -12px;
+    right: -11px;
     transform: rotate(180deg);
     ${({ arrowPosition }) => handleVerticalArrowPosition(arrowPosition)}
   }
@@ -225,20 +225,19 @@ const right = css<{ arrowPosition: ArrowPosition }>`
   ${({ arrowPosition }) => handleTipPosition(arrowPosition)};
   &:before {
     ${({ arrowPosition }) => handleVerticalArrowPosition(arrowPosition)}
-    left: -12px;
+    left: -11px;
   }
 `
 
 export const Tip = styled.div<{
   position: Position
-  size: Size
   arrowPosition: ArrowPosition
   shadow: boolean
 }>`
   position: absolute;
   margin: auto;
   background: ${theme.colors.background};
-  width: ${({ size }) => (size === 'small' ? '201px' : '237px')};
+  white-space: nowrap;
   padding: 16px 12px 20px;
   border-radius: 8px;
   opacity: 0;

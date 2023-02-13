@@ -25,7 +25,7 @@ Default.args = {
   position: 'top',
   size: 'small',
   underline: true,
-  arrowPosition: 'center',
+  arrowPosition: 'left',
   shadow: true,
 }
 
@@ -50,10 +50,10 @@ const tooltipContent = (
 
 ReactNodeExample.args = {
   title: 'React node example',
-  position: 'right',
+  position: 'top',
   content: tooltipContent,
   size: 'large',
   underline: true,
-  arrowPosition: 'center',
+  arrowPosition: 'left',
   shadow: false,
 }
