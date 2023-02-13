@@ -1,3 +1,6 @@
+## [2.16.0] - 2023-02-13
+### Changed
+- Added Tooltip
 ## [2.15.0] - 2023-02-06
 ### Changed
 - Added custom hooks
@@ -543,6 +546,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.16.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.15.0...v2.16.0
 [2.15.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.14.1...v2.15.0
 [2.14.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.14.0...v2.14.1
 [2.14.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.13.0...v2.14.0
