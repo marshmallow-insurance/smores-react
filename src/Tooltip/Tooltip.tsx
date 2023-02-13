@@ -45,12 +45,12 @@ export const Tooltip: FC<TooltipProps> = ({
     element.right <= window.innerWidth
 
   const handleTipViewport = useCallback(() => {
-    const shouldChangeXAxis: boolean =
+    const shouldChangeXAxis =
       tooltipPosition === 'left' || tooltipPosition === 'right'
-    const shouldChangeYAxis: boolean =
+    const shouldChangeYAxis =
       tooltipPosition === 'top' || tooltipPosition === 'bottom'
 
-    const handleArrowAxisChange = (): void => {
+    const handleArrowAxisChange = () => {
       if (arrowPosition === 'left') {
         setArrowPosition('top')
       }
