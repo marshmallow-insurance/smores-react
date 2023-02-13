@@ -7,12 +7,12 @@ import React, {
   useState,
 } from 'react'
 import styled, { css } from 'styled-components'
+import { useEventListener } from '../hooks'
 import { Text } from '../Text'
 import { theme } from '../theme'
 
 type Position = 'top' | 'bottom' | 'left' | 'right'
-type Size = 'small' | 'large'
-type ArrowPosition = 'left' | 'right' | 'center' | 'top' | 'bottom'
+type ArrowPosition = Position | 'center'
 
 export interface TooltipProps {
   children: ReactNode
@@ -20,8 +20,7 @@ export interface TooltipProps {
   content: string | ReactNode
   position: Position
   underline?: boolean
-  size?: Size
-  arrowPosition?: ArrowPosition
+  defaultArrowPosition?: ArrowPosition
   shadow?: boolean
 }
 
@@ -29,54 +28,96 @@ export const Tooltip: FC<TooltipProps> = ({
   children,
   title,
   content,
-  position = 'top',
   underline = false,
-  size = 'small',
-  arrowPosition = 'center',
+  defaultArrowPosition = 'center',
   shadow = false,
 }) => {
   const tipContainer = useRef<HTMLDivElement>(null)
-  const [tooltipPosition, setTooltipPosition] = useState<Position>(position)
+  const documentRef = useRef<Document>(document)
+  const [tooltipPosition, setTooltipPosition] = useState<Position>('top')
+  const [arrowPosition, setArrowPosition] =
+    useState<ArrowPosition>(defaultArrowPosition)
 
-  const checkInbounds = (element: DOMRect) =>
+  const checkInbounds = (element: DOMRect): boolean =>
     element.top >= 0 &&
     element.left >= 0 &&
     element.bottom <= window.innerHeight &&
     element.right <= window.innerWidth
 
   const handleTipViewport = useCallback(() => {
+    const shouldChangeXAxis: boolean =
+      tooltipPosition === 'left' || tooltipPosition === 'right'
+    const shouldChangeYAxis: boolean =
+      tooltipPosition === 'top' || tooltipPosition === 'bottom'
+
+    const handleArrowAxisChange = (): void => {
+      if (arrowPosition === 'left') {
+        setArrowPosition('top')
+      }
+      if (arrowPosition === 'right') {
+        setArrowPosition('bottom')
+      }
+
+      if (arrowPosition === 'top') {
+        setArrowPosition('left')
+      }
+      if (arrowPosition === 'bottom') {
+        setArrowPosition('right')
+      }
+    }
+
     const dimensions = tipContainer.current?.getBoundingClientRect()
 
     if (!dimensions) return
     if (checkInbounds(dimensions)) return
 
-    switch (tooltipPosition) {
-      case 'top':
-        setTooltipPosition('bottom')
-        break
-      case 'bottom':
-        setTooltipPosition('top')
-        return
-      case 'left':
-        setTooltipPosition('right')
-        return
-      case 'right':
-        setTooltipPosition('left')
-        return
-      default:
-        setTooltipPosition('top')
-        return
+    // If in bounds but not defaulted to top; default
+    if (dimensions.top >= 0 && tooltipPosition !== 'top') {
+      setArrowPosition(defaultArrowPosition)
+      setTooltipPosition('top')
+      return
     }
-  }, [tipContainer, tooltipPosition])
+    // if top out of bounds
+    if (dimensions.top < 0) {
+      shouldChangeXAxis && handleArrowAxisChange()
+      setTooltipPosition('bottom')
+      return
+    }
+    // if right out of bounds
+    if (dimensions.right > window.innerWidth) {
+      shouldChangeYAxis && handleArrowAxisChange()
+      setTooltipPosition('left')
+      return
+    }
+    // if left out of bounds
+    if (dimensions.left < 0) {
+      shouldChangeYAxis && handleArrowAxisChange()
+      setTooltipPosition('right')
+      return
+    }
+    // If bottom out of bounds
+    if (dimensions.bottom > window.innerHeight) {
+      shouldChangeXAxis && handleArrowAxisChange()
+      setTooltipPosition('top')
+      return
+    }
+  }, [tipContainer, tooltipPosition, arrowPosition])
 
   useEffect(() => {
-    window.addEventListener('resize', handleTipViewport)
-    window.addEventListener('scroll', handleTipViewport)
-    return () => {
-      window.removeEventListener('resize', handleTipViewport)
-      window.removeEventListener('scroll', handleTipViewport)
-    }
-  }, [handleTipViewport])
+    handleTipViewport()
+  }, [])
+
+  useEventListener({
+    eventName: 'resize',
+    callback: handleTipViewport,
+    ref: documentRef,
+  })
+
+  useEventListener({
+    eventName: 'scroll',
+    callback: handleTipViewport,
+    ref: documentRef,
+  })
 
   return (
     <Container underline={underline}>
@@ -84,7 +125,6 @@ export const Tooltip: FC<TooltipProps> = ({
       <Tip
         className="tooltip"
         position={tooltipPosition}
-        size={size}
         arrowPosition={arrowPosition}
         shadow={shadow}
         ref={tipContainer}
