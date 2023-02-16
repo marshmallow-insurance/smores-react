@@ -1,3 +1,6 @@
+## [2.17.1] - 2023-02-16
+### Changed
+- Add `Tooltip` to `index.ts` exports 
 ## [2.17.0] - 2023-02-16
 ### Changed
 - Added optional default position to `Accordion` component
