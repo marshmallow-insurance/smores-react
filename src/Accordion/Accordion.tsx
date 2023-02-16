@@ -14,18 +14,20 @@ export type AccordionProps = {
   fullBorder?: boolean
   onToggle?: (isOpen: boolean) => void
   children: ReactNode
+  defaultIsOpen?: boolean
 } & MarginProps
 
 export const Accordion: FC<AccordionProps> = ({
   title,
   children,
   onToggle,
+  defaultIsOpen = false,
   borderTop = false,
   subTitle,
   fullBorder = false,
   ...marginProps
 }) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(defaultIsOpen)
   const px = fullBorder ? '16px' : '0'
 
   const handleToggle = () => {
