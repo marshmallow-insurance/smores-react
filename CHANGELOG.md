@@ -1,3 +1,6 @@
+## [2.17.0] - 2023-02-16
+### Changed
+- Added optional default position to `Accordion` component
 ## [2.16.0] - 2023-02-13
 ### Changed
 - Added Tooltip
