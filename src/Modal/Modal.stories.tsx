@@ -12,18 +12,6 @@ export default {
   argTypes: { handleClick: { action: 'Callback - `handleClick`' } },
 }
 
-export const Playground = Modal.bind({})
-
-Playground.args = {
-  icon: 'info',
-  title: 'What is Lorem Ipsum?',
-  showModal: true,
-  drawer: true,
-  cross: true,
-  width: '640px',
-  children: placeholderText,
-}
-
 const Template = (props: ModalProps) => {
   const [showModal, setShowModal] = useState(false)
 
