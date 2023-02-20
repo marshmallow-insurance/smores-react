@@ -40,42 +40,38 @@ export const Modal: FC<ModalProps> = ({
   cross = true,
   width,
   containerClass,
-}) => (
-  <>
-    {
-      createPortal(
-        <Wrapper showModal={showModal}>
-          <Overlay />
-          <Container
-            drawer={drawer}
-            width={width || '460px'}
-            className={containerClass}
-          >
-            <Box flex alignItems="flex-start" justifyContent="space-between" mb="8px">
-              <TitleElements flex direction="column">
-                {icon !== '' && (
-                  <Icon render={icon} size={42} color="secondary" mb="16px" />
-                )}
-                <Text tag="h2" typo="heading-small" align="left">
-                  {title}
-                </Text>
-              </TitleElements>
-              {cross && (
-                <IconContainer onClick={handleClick}>
-                  <Icon render="cross" color="secondary" size={32} />
-                </IconContainer>
-              )}
-            </Box>
-            <Box flex direction="column">
-              {children}
-            </Box>
-          </Container>
-        </Wrapper>
-        , document.body
-      )
-    }
-  </>
-)
+}) => {
+  return createPortal(
+    <Wrapper showModal={showModal}>
+      <Overlay />
+      <Container
+        drawer={drawer}
+        width={width || '460px'}
+        className={containerClass}
+      >
+        <Box flex alignItems="flex-start" justifyContent="space-between" mb="8px">
+          <TitleElements flex direction="column">
+            {icon !== '' && (
+              <Icon render={icon} size={42} color="secondary" mb="16px" />
+            )}
+            <Text tag="h2" typo="heading-small" align="left">
+              {title}
+            </Text>
+          </TitleElements>
+          {cross && (
+            <IconContainer onClick={handleClick}>
+              <Icon render="cross" color="secondary" size={32} />
+            </IconContainer>
+          )}
+        </Box>
+        <Box flex direction="column">
+          {children}
+        </Box>
+      </Container>
+    </Wrapper>
+    , document.body
+  )
+}
 
 const Wrapper = styled(Box)<IModalWrapper>(
   ({ showModal }) => css`
