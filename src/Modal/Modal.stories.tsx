@@ -3,25 +3,10 @@ import { Button } from '../Button'
 import { Box } from '../Box'
 import { Modal, ModalProps } from './Modal'
 
-const placeholderText =
-  "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet."
-
 export default {
   title: 'Modal',
   component: Modal,
   argTypes: { handleClick: { action: 'Callback - `handleClick`' } },
-}
-
-export const Playground = Modal.bind({})
-
-Playground.args = {
-  icon: 'info',
-  title: 'What is Lorem Ipsum?',
-  showModal: true,
-  drawer: true,
-  cross: true,
-  width: '640px',
-  children: placeholderText,
 }
 
 const Template = (props: ModalProps) => {
@@ -52,18 +37,4 @@ Interactive.args = {
   drawer: true,
   cross: true,
   width: '640px',
-}
-
-export const WithLongContent = Modal.bind({})
-
-WithLongContent.args = {
-  icon: 'info',
-  title: 'What is Lorem Ipsum?',
-  showModal: true,
-  drawer: true,
-  cross: true,
-  width: '640px',
-  children: Array.from(Array(10))
-    .map((_, i) => placeholderText)
-    .join('\n'),
 }

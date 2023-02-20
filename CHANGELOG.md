@@ -1,3 +1,6 @@
+## [2.17.2] - 2023-02-20
+### Changed
+- Properly centre `Modal`, close on overlay click
 ## [2.17.1] - 2023-02-16
 ### Changed
 - Add `Tooltip` to `index.ts` exports 
@@ -552,6 +555,9 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.17.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.1...v2.16.2
+[2.17.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.0...v2.17.1
+[2.17.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.16.0...v2.17.0
 [2.16.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.15.0...v2.16.0
 [2.15.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.14.1...v2.15.0
 [2.14.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.14.0...v2.14.1
