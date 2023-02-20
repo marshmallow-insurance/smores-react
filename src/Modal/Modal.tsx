@@ -43,7 +43,7 @@ export const Modal: FC<ModalProps> = ({
 }) => {
   return createPortal(
     <Wrapper showModal={showModal}>
-      <Overlay />
+      <Overlay  onClick={handleClick} />
       <Container
         drawer={drawer}
         width={width || '460px'}
