@@ -1,3 +1,6 @@
+## [2.17.3] - 2023-02-20
+### Changed
+- Dynamic portal container for Modal
 ## [2.17.2] - 2023-02-20
 ### Changed
 - Properly centre `Modal`, close on overlay click
@@ -555,7 +558,8 @@
 ### Changed
 - Updated gap and styles on Row component
 
-[2.17.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.1...v2.16.2
+[2.17.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.2...v2.17.3
+[2.17.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.1...v2.17.2
 [2.17.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.0...v2.17.1
 [2.17.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.16.0...v2.17.0
 [2.16.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.15.0...v2.16.0
