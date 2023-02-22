@@ -8,14 +8,6 @@ updates:
       timezone: Europe/London
     open-pull-requests-limit: 99
     reviewers:
-      - ellajay
-      - habin-isa
-      - fleonard
-      - jsudufour
-      - mickaelzhang
+      - marshmallow-insurance/frontend
     assignees:
-      - ellajay
-      - habin-isa
-      - fleonard
-      - jsudufour
-      - mickaelzhang
+      - marshmallow-insurance/frontend
