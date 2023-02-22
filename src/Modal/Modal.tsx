@@ -28,6 +28,7 @@ export type ModalProps = {
   cross?: boolean
   width?: string
   containerClass?: string
+  portalContainer: Element | DocumentFragment
 }
 
 export const Modal: FC<ModalProps> = ({
@@ -40,16 +41,22 @@ export const Modal: FC<ModalProps> = ({
   cross = true,
   width,
   containerClass,
+  portalContainer = document.body,
 }) => {
   return createPortal(
     <Wrapper showModal={showModal}>
-      <Overlay  onClick={handleClick} />
+      <Overlay onClick={handleClick} />
       <Container
         drawer={drawer}
         width={width || '460px'}
         className={containerClass}
       >
-        <Box flex alignItems="flex-start" justifyContent="space-between" mb="8px">
+        <Box
+          flex
+          alignItems="flex-start"
+          justifyContent="space-between"
+          mb="8px"
+        >
           <TitleElements flex direction="column">
             {icon !== '' && (
               <Icon render={icon} size={42} color="secondary" mb="16px" />
@@ -68,8 +75,8 @@ export const Modal: FC<ModalProps> = ({
           {children}
         </Box>
       </Container>
-    </Wrapper>
-    , document.body
+    </Wrapper>,
+    portalContainer,
   )
 }
 
