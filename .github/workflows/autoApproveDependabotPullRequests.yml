@@ -21,7 +21,7 @@ jobs:
               version-update:semver-minor) should_run=true ;;
               *) should_run=false ;;
           esac
-          echo ::set-output name=should_run::$should_run
+          echo should_run=$should_run >> $GITHUB_OUTPUT
       - name: Approve Pull Request
         if: steps.should-run.outputs.should_run == 'true'
         uses: hmarr/auto-approve-action@5d04a5ca6da9aeb8ca9f31a5239b96fc3e003029
