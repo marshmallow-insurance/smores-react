@@ -28,7 +28,7 @@ export type ModalProps = {
   cross?: boolean
   width?: string
   containerClass?: string
-  portalContainer: Element | DocumentFragment
+  portalContainer?: Element | DocumentFragment
 }
 
 export const Modal: FC<ModalProps> = ({
@@ -97,6 +97,7 @@ const Wrapper = styled(Box)<IModalWrapper>(
 const Overlay = styled.div`
   position: fixed;
   background: ${theme.colors.secondary};
+  cursor: pointer;
   opacity: 0.4;
   top: 0;
   bottom: 0;

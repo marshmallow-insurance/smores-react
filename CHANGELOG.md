@@ -1,4 +1,8 @@
-## [2.17.3] - 2023-02-20
+
+## [2.17.4] - 2023-02-22
+### Changed
+- Update Modal props
+## [2.17.3] - 2023-02-22
 ### Changed
 - Dynamic portal container for Modal
 ## [2.17.2] - 2023-02-20
@@ -558,6 +562,8 @@
 ### Changed
 - Updated gap and styles on Row component
 
+
+[2.17.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.3...v2.17.4
 [2.17.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.2...v2.17.3
 [2.17.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.1...v2.17.2
 [2.17.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.0...v2.17.1
