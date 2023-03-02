@@ -1,4 +1,6 @@
-
+## [2.17.5] - 2023-02-22
+### Changed
+- fix Field component error display
 ## [2.17.4] - 2023-02-22
 ### Changed
 - Update Modal props
