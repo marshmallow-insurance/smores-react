@@ -55,19 +55,17 @@ export const Modal: FC<ModalProps> = ({
   useEffect(() => {
     if (modalRef.current === null) return
 
-    console.log(!hasOpened.current && showModal)
-
-    if (!hasOpened.current && showModal) {
+    if (!hasOpened.current) {
       hasOpened.current = true
       setOpened(true)
     }
-  }, [showModal])
+  }, [])
 
   return createPortal(
     <Wrapper
       showModal={showModal}
       ref={modalRef}
-      className={opened ? 'active' : ''}
+      className={opened ? 'opened' : ''}
     >
       <Overlay showModal={showModal} onClick={handleClick} />
       <Container
