@@ -55,11 +55,11 @@ export const Modal: FC<ModalProps> = ({
   useEffect(() => {
     if (modalRef.current === null) return
 
-    if (!hasOpened.current) {
+    if (!hasOpened.current && showModal) {
       hasOpened.current = true
       setOpened(true)
     }
-  }, [])
+  }, [showModal])
 
   return createPortal(
     <Wrapper
