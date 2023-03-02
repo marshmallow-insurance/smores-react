@@ -1,8 +1,8 @@
-
+## [2.17.6] - 2023-03-02
+- fix Field component error display
 ## [2.17.5] - 2023-02-27
 ### Added
 - Add body scroll block hook to prevent scrolling behind modals
-
 ## [2.17.4] - 2023-02-22
 ### Changed
 - Update Modal props
@@ -567,6 +567,7 @@
 - Updated gap and styles on Row component
 
 
+[2.17.6]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.5...v2.17.6
 [2.17.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.4...v2.17.5
 [2.17.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.3...v2.17.4
 [2.17.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.2...v2.17.3
