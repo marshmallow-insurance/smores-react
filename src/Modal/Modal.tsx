@@ -117,7 +117,7 @@ const Wrapper = styled(Box)<IModalWrapper>(
     transform: scale(0);
     animation: ${showModal ? '' : 'quickScaleDown 0s .5s linear forwards'};
 
-    &.active {
+    &.opened {
       transform: scale(1);
     }
 
