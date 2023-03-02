@@ -69,7 +69,7 @@ export const InternalField = ({
 
       <Box>{children}</Box>
 
-      {error && (
+      {error && errorMsg && (
         <Text tag="span" typo="caption" color="error" mt="8px">
           {errorMsg}
         </Text>
