@@ -16,7 +16,7 @@ const Template = (props: ModalProps) => {
     setShowModal(!showModal)
   }
   return (
-    <Box>
+    <Box height="900px">
       <Modal {...props} handleClick={handleClick} showModal={showModal}>
         [A modal window] creates a mode that disables the main window, but keeps
         it visible with the modal window as a child window in front of it.

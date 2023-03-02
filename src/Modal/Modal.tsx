@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode, useRef } from 'react'
 import styled, { css } from 'styled-components'
 import { theme } from '../theme'
 import { createPortal } from 'react-dom'
@@ -6,6 +6,7 @@ import { createPortal } from 'react-dom'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
+import useBodyScrollLock from './useBodyScrollLock'
 
 interface IModalWrapper {
   // showModal state
@@ -43,8 +44,12 @@ export const Modal: FC<ModalProps> = ({
   containerClass,
   portalContainer = document.body,
 }) => {
+  const modalRef = useRef<HTMLDivElement>(null)
+
+  useBodyScrollLock({ node: modalRef.current, showModal })
+
   return createPortal(
-    <Wrapper showModal={showModal}>
+    <Wrapper showModal={showModal} ref={modalRef}>
       <Overlay onClick={handleClick} />
       <Container
         drawer={drawer}
