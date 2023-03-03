@@ -1,5 +1,10 @@
 ## [2.17.6] - 2023-03-02
+### Added
+- Added new animation for Modal
+
+### Changed
 - fix Field component error display
+
 ## [2.17.5] - 2023-02-27
 ### Added
 - Add body scroll block hook to prevent scrolling behind modals
