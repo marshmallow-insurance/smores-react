@@ -1,3 +1,7 @@
+## [2.17.7] - 2023-03-06
+### Added
+- Added new icons for car add-on
+
 ## [2.17.6] - 2023-03-02
 ### Added
 - Added new animation for Modal
@@ -572,6 +576,7 @@
 - Updated gap and styles on Row component
 
 
+[2.17.7]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.6...v2.17.7
 [2.17.6]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.5...v2.17.6
 [2.17.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.4...v2.17.5
 [2.17.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.3...v2.17.4
