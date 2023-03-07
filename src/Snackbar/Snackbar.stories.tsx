@@ -17,7 +17,7 @@ const ChildComponent: FC = () => {
         primary
         onClick={() => {
           addSnackbar({
-            leadingIcon: 'cross',
+            leadingIcon: 'tick',
             message: 'Hello there general Kenobi',
             canManuallyClose: true,
           })
