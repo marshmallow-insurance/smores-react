@@ -1,3 +1,6 @@
+## [2.17.9] - 2023-03-07
+### Added
+- New Snackbar component
 ## [2.17.8] - 2023-03-07
 ### Changed
 - Removed modal animation
