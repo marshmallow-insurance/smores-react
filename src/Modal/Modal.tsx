@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, useEffect, useRef, useState } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import { theme } from '../theme'
 import { createPortal } from 'react-dom'
 
@@ -103,113 +103,92 @@ export const Modal: FC<ModalProps> = ({
   )
 }
 
-const Wrapper = styled(Box)<IModalWrapper>(
-  ({ showModal }) => css`
-    display: flex;
-    position: absolute;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    transform: scale(0);
-    animation: ${showModal ? '' : 'quickScaleDown 0s .5s linear forwards'};
+const fadeIn = keyframes`
+ 0% { opacity:0; }
+ 100% { opacity: 0.4; }
+`
+const fadeInAnimation = css`
+  ${fadeIn} .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+`
+const fadeOut = keyframes`
+ 0% { opacity: 0.4; }
+ 100% { opacity:0; }
+`
+const fadeOutAnimation = css`
+  ${fadeOut} .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+`
+const scaleUp = keyframes`
+ 0% { transform: scale(0.8) translateY(1000px); opacity: 0; }
+ 100% { transform: scale(1) translateY(0px); opacity: 1; }
+`
+const scaleUpAnimation = css`
+  ${scaleUp} .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+`
+const scaleDown = keyframes`
+ 0% { transform: scale(1) translateY(0px); opacity: 1; }
+ 100% { transform: scale(0.8) translateY(1000px); opacity: 0; }
+`
+const scaleDownAnimation = css`
+  ${scaleDown} .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards
+`
+const quickScaleDown = keyframes`
+ 0% {  transform: scale(1); }
+ 99.9% {  transform: scale(1); }
+ 100% {  transform: scale(); }
+`
+const quickScaleDownAnimation = css`
+  ${quickScaleDown} 0s .5s linear forwards
+`
 
-    &.opened {
-      transform: scale(1);
-    }
+const Wrapper = styled(Box)<IModalWrapper>`
+  display: flex;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+  animation: ${({ showModal }) => (showModal ? '' : quickScaleDownAnimation)};
 
-    @keyframes fadeIn {
-      0% {
-        opacity 0;
-      }
-      100% {
-        opacity: 0.4;
-      }
-    }
+  &.opened {
+    transform: scale(1);
+  }
+`
 
-    @keyframes fadeOut {
-      0% {
-        opacity: 0.4;
-      }
-      100% {
-        opacity 0;
-      }
-    }
+const Overlay = styled.div<IModalWrapper>`
+  position: fixed;
+  background: ${theme.colors.secondary};
+  cursor: pointer;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: ${({ showModal }) =>
+    showModal ? fadeInAnimation : fadeOutAnimation};
+`
 
-    @keyframes scaleUp {
-      0% {
-        transform: scale(0.8) translateY(1000px);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1) translateY(0px);
-        opacity: 1;
-      }
-    }
+const Container = styled.div<IModalContainer>`
+  background: ${theme.colors.white};
+  border: 1px solid ${theme.colors.outline};
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  max-width: ${({ width }) => width};
+  position: fixed;
+  max-height: calc(100vh - 64px);
+  overflow: auto;
+  opacity: 0;
 
-    @keyframes scaleDown {
-      0% {
-        transform: scale(1) translateY(0px);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(0.8) translateY(1000px);
-        opacity: 0;
-      }
-    }
+  animation: ${({ showModal }) =>
+    showModal ? scaleUpAnimation : scaleDownAnimation};
 
-    @keyframes quickScaleDown {
-      0% {
-        transform: scale(1);
-      }
-      99.9% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(0);
-      }
-    }
-  `,
-)
-
-const Overlay = styled.div<IModalWrapper>(
-  ({ showModal }) => css`
-    position: fixed;
-    background: ${theme.colors.secondary};
-    cursor: pointer;
-    opacity: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    animation: ${showModal
-      ? `fadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards`
-      : `fadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards`};
-  `,
-)
-
-const Container = styled.div<IModalContainer>(
-  ({ drawer, width, showModal }) => css`
-    background: ${theme.colors.white};
-    border: 1px solid ${theme.colors.outline};
-    box-sizing: border-box;
-    border-radius: 8px;
-    padding: 24px;
-    width: 100%;
-    max-width: ${width};
-    position: fixed;
-    max-height: calc(100vh - 64px);
-    overflow: auto;
-    opacity: 0;
-
-    animation: ${showModal
-      ? `scaleUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;`
-      : `scaleDown .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards`};
-
-    ${drawer === true &&
+  ${({ drawer }) =>
+    drawer === true &&
     css`
       @media (max-width: 768px) {
         max-width: none;
@@ -223,8 +202,7 @@ const Container = styled.div<IModalContainer>(
         bottom: 0;
       }
     `}
-  `,
-)
+`
 
 const IconContainer = styled.div`
   cursor: pointer;
