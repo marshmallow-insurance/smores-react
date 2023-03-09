@@ -1,4 +1,4 @@
-## [2.17.9] - 2023-03-07
+## [2.18.0] - 2023-03-07
 ### Added
 - New Snackbar component
 ## [2.17.8] - 2023-03-07
@@ -578,6 +578,7 @@
 - Updated gap and styles on Row component
 
 
+[2.18.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.8...v2.18.0
 [2.17.8]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.7...v2.17.8
 [2.17.7]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.6...v2.17.7
 [2.17.6]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.5...v2.17.6
