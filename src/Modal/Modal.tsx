@@ -105,13 +105,13 @@ export const Modal: FC<ModalProps> = ({
 
 const fadeIn = keyframes`
  0% { opacity:0; }
- 100% { opacity: 0.4; }
+ 100% { opacity: 0.4; visibility: visible; }
 `
 const fadeInAnimation = css`
   ${fadeIn} .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 `
 const fadeOut = keyframes`
- 0% { opacity: 0.4; }
+ 0% { opacity: 0.4; visibility: visible; }
  100% { opacity:0; }
 `
 const fadeOutAnimation = css`
@@ -119,13 +119,13 @@ const fadeOutAnimation = css`
 `
 const scaleUp = keyframes`
  0% { transform: scale(0.8) translateY(1000px); opacity: 0; }
- 100% { transform: scale(1) translateY(0px); opacity: 1; }
+ 100% { transform: scale(1) translateY(0px); opacity: 1; visibility: visible;  }
 `
 const scaleUpAnimation = css`
   ${scaleUp} .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 `
 const scaleDown = keyframes`
- 0% { transform: scale(1) translateY(0px); opacity: 1; }
+ 0% { transform: scale(1) translateY(0px); opacity: 1; visibility: visible; }
  100% { transform: scale(0.8) translateY(1000px); opacity: 0; }
 `
 const scaleDownAnimation = css`
@@ -134,7 +134,7 @@ const scaleDownAnimation = css`
 const quickScaleDown = keyframes`
  0% {  transform: scale(1); }
  99.9% {  transform: scale(1); }
- 100% {  transform: scale(); }
+ 100% {  transform: scale(0); }
 `
 const quickScaleDownAnimation = css`
   ${quickScaleDown} 0s .5s linear forwards
@@ -163,6 +163,7 @@ const Overlay = styled.div<IModalWrapper>`
   background: ${theme.colors.secondary};
   cursor: pointer;
   opacity: 0;
+  visibility: hidden;
   top: 0;
   bottom: 0;
   left: 0;
@@ -183,6 +184,7 @@ const Container = styled.div<IModalContainer>`
   max-height: calc(100vh - 64px);
   overflow: auto;
   opacity: 0;
+  visibility: hidden;
 
   animation: ${({ showModal }) =>
     showModal ? scaleUpAnimation : scaleDownAnimation};
