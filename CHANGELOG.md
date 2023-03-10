@@ -1,3 +1,7 @@
+## [2.18.1] - 2023-03-10
+### Added
+- Adding icons phone-outline, edit-contact, edit-outline, filter
+
 ## [2.18.0] - 2023-03-07
 ### Added
 - New Snackbar component
@@ -577,7 +581,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
-
+[2.18.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.0...v2.18.1
 [2.18.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.8...v2.18.0
 [2.17.8]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.7...v2.17.8
 [2.17.7]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.6...v2.17.7

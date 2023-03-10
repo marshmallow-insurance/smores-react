@@ -250,6 +250,14 @@ export const Container = () => {
         <Icon render="edit" />
       </Wrapper>
       <Wrapper>
+        <span>edit-contact</span>
+        <Icon render="edit-contact" />
+      </Wrapper>
+      <Wrapper>
+        <span>edit-outline</span>
+        <Icon render="edit-outline" />
+      </Wrapper>
+      <Wrapper>
         <span>email-filled</span>
         <Icon render="email-filled" />
       </Wrapper>
@@ -292,6 +300,10 @@ export const Container = () => {
       <Wrapper>
         <span>file</span>
         <Icon render="file" />
+      </Wrapper>
+      <Wrapper>
+        <span>filter</span>
+        <Icon render="filter" />
       </Wrapper>
       <Wrapper>
         <span>fire</span>
@@ -548,6 +560,10 @@ export const Container = () => {
       <Wrapper>
         <span>phone-filled</span>
         <Icon render="phone-filled" />
+      </Wrapper>
+      <Wrapper>
+        <span>phone-outline</span>
+        <Icon render="phone-outline" />
       </Wrapper>
       <Wrapper>
         <span>photo</span>
