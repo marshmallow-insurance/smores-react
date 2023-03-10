@@ -1,4 +1,4 @@
-## [2.18.0] - 2023-03-10
+## [2.18.1] - 2023-03-10
 ### Added
 - Adding icons phone-outline, edit-contact, edit-outline, filter
 
