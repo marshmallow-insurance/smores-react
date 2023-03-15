@@ -1,3 +1,6 @@
+## [2.18.2] - 2023-03-15
+### Changed
+- Fixed modal scrolling on mobile
 ## [2.18.1] - 2023-03-10
 ### Added
 - Adding icons phone-outline, edit-contact, edit-outline, filter
@@ -581,6 +584,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.18.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.1810...v2.18.2
 [2.18.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.0...v2.18.1
 [2.18.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.8...v2.18.0
 [2.17.8]: https://github.com/marshmallow-insurance/smores-react/compare/v2.17.7...v2.17.8
