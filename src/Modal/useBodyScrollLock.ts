@@ -20,7 +20,10 @@ export default function useBodyScrollLock({
     if (node === null) return
 
     if (showModal) {
-      disableBodyScroll(node, { reserveScrollBarGap: true })
+      disableBodyScroll(node, {
+        reserveScrollBarGap: true,
+        allowTouchMove: () => true,
+      })
     } else {
       enableBodyScroll(node)
     }
