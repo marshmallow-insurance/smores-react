@@ -2803,7 +2803,7 @@ export const Icon: FC<IconProps> = ({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g fill="#000" fillRule="evenodd" clipPath="url(#a)" clipRule="evenodd">
+        <g fill={theme.colors[color]} fillRule="evenodd" clipPath="url(#a)" clipRule="evenodd">
           <path d="M0 1a1 1 0 0 1 1-1h6a1 1 0 0 1 0 2H2v5a1 1 0 0 1-2 0V1ZM16 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V2h-5a1 1 0 0 1-1-1ZM23 16a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-6a1 1 0 1 1 0-2h5v-5a1 1 0 0 1 1-1ZM1 16a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1Z" />
         </g>
         <defs>
@@ -2837,7 +2837,7 @@ export const Icon: FC<IconProps> = ({
       >
         <path
           d="M7 0a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H1a1 1 0 0 1 0-2h5V1a1 1 0 0 1 1-1ZM17 0a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2h-6a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1ZM16 17a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2h-5v5a1 1 0 1 1-2 0v-6ZM0 17a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-5H1a1 1 0 0 1-1-1Z"
-          fill="#112035"
+          fill={theme.colors[color]}
         />
       </svg>
     )}
