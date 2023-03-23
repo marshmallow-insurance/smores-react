@@ -1,3 +1,7 @@
+## [2.18.3] - 2023-03-23
+### Changed
+- Fixed fill colour in minimise and maximise icons
+
 ## [2.18.2] - 2023-03-15
 ### Changed
 - Fixed modal scrolling on mobile
