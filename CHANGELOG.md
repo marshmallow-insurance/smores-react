@@ -1,3 +1,7 @@
+## [2.18.4] - 2023-03-28
+### Changed
+- Set the z-index on the snackbar container
+
 ## [2.18.3] - 2023-03-23
 ### Changed
 - Fixed fill colour in minimise and maximise icons
@@ -5,6 +9,7 @@
 ## [2.18.2] - 2023-03-15
 ### Changed
 - Fixed modal scrolling on mobile
+
 ## [2.18.1] - 2023-03-10
 ### Added
 - Adding icons phone-outline, edit-contact, edit-outline, filter
@@ -12,6 +17,7 @@
 ## [2.18.0] - 2023-03-07
 ### Added
 - New Snackbar component
+
 ## [2.17.8] - 2023-03-07
 ### Changed
 - Removed modal animation
