@@ -1,3 +1,6 @@
+## [2.18.5] - 2023-03-28
+### Changed
+- Add new 'notes' icon 
 ## [2.18.4] - 2023-03-28
 ### Changed
 - Set the z-index on the snackbar container
@@ -594,6 +597,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.18.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.4...v2.18.5
 [2.18.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.3...v2.18.4
 [2.18.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.2...v2.18.3
 [2.18.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.1...v2.18.2
