@@ -522,6 +522,10 @@ export const Container = () => {
         <Icon render="no-excess" />
       </Wrapper>
       <Wrapper>
+        <span>notes</span>
+        <Icon render="notes" />
+      </Wrapper>
+      <Wrapper>
         <span>notification</span>
         <Icon render="notification" />
       </Wrapper>
