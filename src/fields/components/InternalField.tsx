@@ -1,9 +1,10 @@
 import React, { ReactNode } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { Text } from '../../Text'
 import { Box } from '../../Box'
 import { InternalCommonFieldProps } from '../commonFieldTypes'
+import { Icon } from '../../Icon'
 
 interface InternalFieldProps extends InternalCommonFieldProps {
   children: ReactNode
@@ -25,9 +26,12 @@ export const InternalField = ({
   error,
   errorMsg,
   required,
+  status,
+  showStatus,
   ...marginProps
 }: InternalFieldProps) => {
   const labelTag = fieldType === 'field' ? 'label' : 'legend'
+
   return (
     <Container
       as={fieldType === 'field' ? 'div' : 'fieldset'}
@@ -74,9 +78,34 @@ export const InternalField = ({
           {errorMsg}
         </Text>
       )}
+
+      {/* When status is null, a container is rendered to avoid layout shift */}
+      {!(error && errorMsg) && showStatus && status !== undefined && (
+        <StatusWrapper displayStatus={!!status} mt={'8px'}>
+          <Icon render="included" size={16} color="success" />
+          <Text typo="caption" color="success">
+            Complete
+          </Text>
+        </StatusWrapper>
+      )}
     </Container>
   )
 }
+
+const StatusWrapper = styled(Box)<{ displayStatus: boolean }>`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 0;
+  overflow: hidden;
+
+  ${({ displayStatus }) =>
+    displayStatus &&
+    css`
+      transition: width 0.6s ease-in;
+      width: 100%;
+    `}
+`
 
 const Container = styled(Box)`
   display: flex;

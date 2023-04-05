@@ -1,3 +1,8 @@
+## [2.18.5] - UNRELEASED
+### Added
+- InternalField takes showStatus and status props
+- Internal field renders complete status
+
 ## [2.18.4] - 2023-03-28
 ### Changed
 - Set the z-index on the snackbar container
