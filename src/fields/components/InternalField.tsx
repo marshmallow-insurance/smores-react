@@ -3,8 +3,9 @@ import styled, { css } from 'styled-components'
 
 import { Text } from '../../Text'
 import { Box } from '../../Box'
-import { InternalCommonFieldProps } from '../commonFieldTypes'
+import { InternalCommonFieldProps, Status } from '../commonFieldTypes'
 import { Icon } from '../../Icon'
+import { Color } from 'theme'
 
 interface InternalFieldProps extends InternalCommonFieldProps {
   children: ReactNode
@@ -12,6 +13,16 @@ interface InternalFieldProps extends InternalCommonFieldProps {
   assistiveText?: string
   htmlFor?: string
   fieldType: 'field' | 'fieldset'
+}
+
+export const statusContents: {
+  [key in Status]: {
+    icon: string
+    color: Color
+    textContent: string
+  }
+} = {
+  complete: { icon: 'included', color: 'success', textContent: 'Complete' },
 }
 
 export const InternalField = ({
@@ -27,7 +38,6 @@ export const InternalField = ({
   errorMsg,
   required,
   status,
-  showStatus,
   ...marginProps
 }: InternalFieldProps) => {
   const labelTag = fieldType === 'field' ? 'label' : 'legend'
@@ -79,10 +89,17 @@ export const InternalField = ({
         </Text>
       )}
 
-      {/* When status is null, a container is rendered to avoid layout shift */}
-      {!(error && errorMsg) && showStatus && status !== undefined && (
-        <StatusWrapper displayStatus={!!status} mt={'8px'}>
-          <Icon render="included" size={16} color="success" />
+      {status && (
+        <StatusWrapper
+          displayStatus={status.showStatus}
+          isError={!!(error && errorMsg)}
+          mt="8px"
+        >
+          <Icon
+            render={statusContents[status.type].icon}
+            size={16}
+            color={statusContents[status.type].color}
+          />
           <Text typo="caption" color="success">
             Complete
           </Text>
@@ -92,11 +109,11 @@ export const InternalField = ({
   )
 }
 
-const StatusWrapper = styled(Box)<{ displayStatus: boolean }>`
+const StatusWrapper = styled(Box)<{ displayStatus: boolean; isError: boolean }>`
   display: flex;
   align-items: center;
-  gap: 4px;
   width: 0;
+  gap: 4px;
   overflow: hidden;
 
   ${({ displayStatus }) =>
@@ -104,6 +121,13 @@ const StatusWrapper = styled(Box)<{ displayStatus: boolean }>`
     css`
       transition: width 0.6s ease-in;
       width: 100%;
+    `}
+
+  /* This enables animation to appear when previous state is error */
+  ${({ isError }) =>
+    isError &&
+    css`
+      height: 0;
     `}
 `
 
