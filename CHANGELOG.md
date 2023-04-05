@@ -1,7 +1,6 @@
 ## [2.18.6] - UNRELEASED
 ### Added
-- InternalField takes showStatus and status props
-- Internal field renders complete status
+- Add status prop to InternalField
 
 ## [2.18.5] - 2023-03-28
 ### Changed

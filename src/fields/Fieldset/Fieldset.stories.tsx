@@ -44,6 +44,8 @@ export const WithStatus = Template.bind({})
 
 WithStatus.args = {
   ...defaultArgs,
-  showStatus: true,
-  status: 'complete',
+  status: {
+    status: 'complete',
+    showStatus: true,
+  },
 }
