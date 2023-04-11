@@ -3,9 +3,8 @@ import styled, { css } from 'styled-components'
 
 import { Text } from '../../Text'
 import { Box } from '../../Box'
-import { InternalCommonFieldProps, Status } from '../commonFieldTypes'
+import { InternalCommonFieldProps } from '../commonFieldTypes'
 import { Icon } from '../../Icon'
-import { Color } from 'theme'
 
 interface InternalFieldProps extends InternalCommonFieldProps {
   children: ReactNode
@@ -13,16 +12,6 @@ interface InternalFieldProps extends InternalCommonFieldProps {
   assistiveText?: string
   htmlFor?: string
   fieldType: 'field' | 'fieldset'
-}
-
-export const statusContents: {
-  [key in Status]: {
-    icon: string
-    color: Color
-    textContent: string
-  }
-} = {
-  complete: { icon: 'included', color: 'success', textContent: 'Complete' },
 }
 
 export const InternalField = ({
@@ -37,7 +26,7 @@ export const InternalField = ({
   error,
   errorMsg,
   required,
-  status,
+  showCompletedStatus,
   ...marginProps
 }: InternalFieldProps) => {
   const labelTag = fieldType === 'field' ? 'label' : 'legend'
@@ -89,19 +78,15 @@ export const InternalField = ({
         </Text>
       )}
 
-      {status && (
+      {showCompletedStatus !== undefined && (
         <StatusWrapper
-          displayStatus={status.showStatus}
+          displayStatus={showCompletedStatus}
           isError={!!(error && errorMsg)}
           mt="8px"
         >
-          <Icon
-            render={statusContents[status.type].icon}
-            size={16}
-            color={statusContents[status.type].color}
-          />
+          <Icon render="included" size={16} color="success" />
           <Text typo="caption" color="success">
-            {statusContents[status.type].textContent}
+            Complete
           </Text>
         </StatusWrapper>
       )}
