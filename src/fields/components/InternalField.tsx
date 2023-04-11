@@ -101,7 +101,7 @@ export const InternalField = ({
             color={statusContents[status.type].color}
           />
           <Text typo="caption" color="success">
-            Complete
+            {statusContents[status.type].textContent}
           </Text>
         </StatusWrapper>
       )}
