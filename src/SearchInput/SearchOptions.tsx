@@ -1,3 +1,4 @@
+import { Box } from '../Box'
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { theme } from '../theme'
@@ -21,22 +22,24 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   positionRelative,
 }) => {
   return (
-    <StyledResultsContainer
-      positionRelative={positionRelative}
-      outlined={outlined}
-    >
-      <ResultsList outlined={outlined}>
-        {displayedList.length ? (
-          displayedList.map((el, i) => (
-            <li key={i} onClick={() => onSelect(el)}>
-              {el.label}
-            </li>
-          ))
-        ) : (
-          <li>No results</li>
-        )}
-      </ResultsList>
-    </StyledResultsContainer>
+    <BoxWithPositionRelative>
+      <StyledResultsContainer
+        positionRelative={positionRelative}
+        outlined={outlined}
+      >
+        <ResultsList outlined={outlined}>
+          {displayedList.length ? (
+            displayedList.map((el, i) => (
+              <li key={i} onClick={() => onSelect(el)}>
+                {el.label}
+              </li>
+            ))
+          ) : (
+            <li>No results</li>
+          )}
+        </ResultsList>
+      </StyledResultsContainer>
+    </BoxWithPositionRelative>
   )
 }
 
@@ -47,7 +50,7 @@ const StyledResultsContainer = styled.div<
   overflow-y: hidden;
   ${({ positionRelative }) => !positionRelative && 'position: absolute;'}
   width: 100%;
-  ${({ outlined }) => outlined && 'left: 0px; top: 90%;'};
+  ${({ outlined }) => outlined && 'left: 0px; top: -8px;'};
 
   ul {
     max-height: 192px;
@@ -83,4 +86,8 @@ const ResultsList = styled.ul<Pick<SearchOptionsProps, 'outlined'>>`
       background-color: ${theme.colors.background};
     }
   }
+`
+
+const BoxWithPositionRelative = styled(Box)`
+  position: relative;
 `
