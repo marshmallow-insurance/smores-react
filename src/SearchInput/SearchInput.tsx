@@ -136,7 +136,13 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             onChange={handleInputChange}
             outlined={outlined}
             selected={isSelected}
-            onBlur={onBlur}
+            onBlur={(e) => {
+              if (displayedInputText === '') {
+                setSearchQuery(null)
+              }
+
+              onBlur?.(e)
+            }}
           />
         </StyledInputBox>
 
