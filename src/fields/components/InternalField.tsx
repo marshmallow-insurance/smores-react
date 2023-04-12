@@ -26,7 +26,7 @@ export const InternalField = ({
   error,
   errorMsg,
   required,
-  showCompletedStatus,
+  completed,
   ...marginProps
 }: InternalFieldProps) => {
   const labelTag = fieldType === 'field' ? 'label' : 'legend'
@@ -78,27 +78,29 @@ export const InternalField = ({
         </Text>
       )}
 
-      {showCompletedStatus !== undefined && (
-        <StatusWrapper
-          displayStatus={showCompletedStatus}
+      {/* When completed is false, whitespace is rendered */}
+      {completed !== undefined && (
+        <AnimationWrapper
+          displayStatus={completed}
           isError={!!(error && errorMsg)}
-          mt="8px"
         >
-          <Icon render="included" size={16} color="success" />
-          <Text typo="caption" color="success">
-            Complete
-          </Text>
-        </StatusWrapper>
+          <StatusWrapper mt={'8px'}>
+            <Icon render="included" size={16} color="success" />
+            <Text typo="caption" color="success">
+              Complete
+            </Text>
+          </StatusWrapper>
+        </AnimationWrapper>
       )}
     </Container>
   )
 }
 
-const StatusWrapper = styled(Box)<{ displayStatus: boolean; isError: boolean }>`
-  display: flex;
-  align-items: center;
+const AnimationWrapper = styled(Box)<{
+  displayStatus: boolean
+  isError: boolean
+}>`
   width: 0;
-  gap: 4px;
   overflow: hidden;
 
   ${({ displayStatus }) =>
@@ -114,6 +116,12 @@ const StatusWrapper = styled(Box)<{ displayStatus: boolean; isError: boolean }>`
     css`
       height: 0;
     `}
+`
+
+const StatusWrapper = styled(Box)`
+  display: flex;
+  align-items: center;
+  gap: 4px;
 `
 
 const Container = styled(Box)`
