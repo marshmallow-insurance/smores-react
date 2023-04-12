@@ -1,6 +1,6 @@
-## [2.18.6] - UNRELEASED
+## [2.18.6] - 2023-04-12
 ### Added
-- Add status prop to InternalField
+- Add completed prop to InternalField
 - Fix gap between SearchOptions and input in SearchField when error or status
 - Fix SearchInput shows selectedValue when user deletes input and clicks aways
 
