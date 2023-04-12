@@ -11,6 +11,7 @@ export interface CommonFieldProps extends MarginProps {
   required?: boolean
   error?: boolean
   errorMsg?: string
+  completed?: boolean
 }
 
 export interface InternalCommonFieldProps extends CommonFieldProps {

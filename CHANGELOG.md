@@ -1,3 +1,9 @@
+## [2.18.6] - 2023-04-12
+### Added
+- Add completed prop to InternalField
+- Fix gap between SearchOptions and input in SearchField when error or status
+- Fix SearchInput shows selectedValue when user deletes input and clicks aways
+
 ## [2.18.5] - 2023-03-28
 ### Changed
 - Add new 'notes' icon 

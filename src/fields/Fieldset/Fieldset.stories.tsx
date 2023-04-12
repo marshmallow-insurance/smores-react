@@ -39,3 +39,10 @@ WithSmallLabel.args = {
   ...defaultArgs,
   renderAsTitle: false,
 }
+
+export const WithCompletedStatus = Template.bind({})
+
+WithCompletedStatus.args = {
+  ...defaultArgs,
+  showCompletedStatus: true,
+}
