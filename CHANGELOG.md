@@ -1,3 +1,6 @@
+## [2.19.0] - 2023-04-24
+### Added
+- Upgraded Storybook to v7
 ## [2.18.6] - 2023-04-12
 ### Added
 - Add completed prop to InternalField
@@ -603,6 +606,8 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.19.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.6...v2.19.0
+[2.18.6]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.5...v2.18.6
 [2.18.5]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.4...v2.18.5
 [2.18.4]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.3...v2.18.4
 [2.18.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.2...v2.18.3

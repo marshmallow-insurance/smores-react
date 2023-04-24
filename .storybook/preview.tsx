@@ -1,5 +1,5 @@
-import { addDecorator } from '@storybook/react'
-import { StrictMode } from 'react'
+import React from 'react'
+import { Preview } from '@storybook/react'
 import { createGlobalStyle } from 'styled-components'
 
 import { ResetCss } from './ResetCss'
@@ -51,12 +51,16 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const decorators = [
-  (Story) => (
-    <>
-      <ResetCss />
-      <GlobalStyle />
-      <Story />
-    </>
-  ),
-]
+const preview: Preview = {
+  decorators: [
+    (Story) => (
+      <>
+        <ResetCss />
+        <GlobalStyle />
+        <Story />
+      </>
+    ),
+  ],
+}
+
+export default preview
