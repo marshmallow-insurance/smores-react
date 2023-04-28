@@ -40,7 +40,7 @@ export const SnackbarItem: FC<Props> = ({
           {showCloseIcon ? (
             <Icon render="cross" size={16} color="white" />
           ) : (
-            <UnderlinedText typo="desc-medium" color="white">
+            <UnderlinedText tag="span" typo="desc-medium" color="white">
               Dismiss
             </UnderlinedText>
           )}
