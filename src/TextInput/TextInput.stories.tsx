@@ -1,5 +1,6 @@
 import React from 'react'
 import { TextInput, TextInputProps } from './TextInput'
+import { SupportMessage } from '../SupportMessage'
 import { Container } from './Container'
 import { noop } from '../utils/noop'
 
@@ -154,6 +155,21 @@ AssistiveText.args = {
   required: true,
   assistiveText: 'Some more information...',
   renderAsTitle: true,
+}
+
+export const WithReactElementError = Template.bind({})
+
+WithReactElementError.args = {
+  id: 'textInput',
+  name: 'textInput',
+  outlined: true,
+  label: 'with Support Message as Error',
+  placeholder: 'Placeholder text',
+  onChange: noop,
+  onInputChange: noop,
+  onBlur: noop,
+  error: true,
+  errorMsg: <SupportMessage type="warning" description="error!!" />,
 }
 
 const WorkingExampleTemplate = () => <Container />

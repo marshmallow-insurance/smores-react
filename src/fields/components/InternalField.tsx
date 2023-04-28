@@ -72,11 +72,15 @@ export const InternalField = ({
 
       <Box>{children}</Box>
 
-      {error && errorMsg && (
-        <Text tag="span" typo="caption" color="error" mt="8px">
-          {errorMsg}
-        </Text>
-      )}
+      {error &&
+        errorMsg &&
+        (typeof errorMsg === 'string' ? (
+          <Text tag="span" typo="caption" color="error" mt="8px">
+            {errorMsg}
+          </Text>
+        ) : (
+          <Box mt="8px">{errorMsg}</Box>
+        ))}
 
       {/* When completed is false, whitespace is rendered */}
       {completed !== undefined && (

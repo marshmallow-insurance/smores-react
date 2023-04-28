@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, ReactElement } from 'react'
 import { MarginProps } from '../utils/space'
 
 export interface CommonFieldProps extends MarginProps {
@@ -10,7 +10,7 @@ export interface CommonFieldProps extends MarginProps {
   assistiveText?: string
   required?: boolean
   error?: boolean
-  errorMsg?: string
+  errorMsg?: string | ReactElement
   completed?: boolean
 }
 

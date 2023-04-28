@@ -1,6 +1,7 @@
 ## [2.19.1] - 2023-04-27
 ### Changed
 - Fixed snackbar button content to use a `span` tag
+- Added the ability to use ReactElements as error messages in form fields
 ## [2.19.0] - 2023-04-24
 ### Added
 - Upgraded Storybook to v7
