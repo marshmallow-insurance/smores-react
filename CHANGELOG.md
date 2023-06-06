@@ -1,3 +1,7 @@
+## [2.19.2] - 2023-06-06
+### Changed
+- Added showDayLabels prop to Datepicker component
+- Fixed tooltip to only show on text hover
 ## [2.19.1] - 2023-04-27
 ### Changed
 - Fixed snackbar button content to use a `span` tag
@@ -610,6 +614,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[2.19.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.1...v2.19.2
 [2.19.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.0...v2.19.1
 [2.19.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.6...v2.19.0
 [2.18.6]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.5...v2.18.6

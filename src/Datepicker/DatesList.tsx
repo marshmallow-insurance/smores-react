@@ -5,9 +5,11 @@ import { getISODay } from 'date-fns'
 import { theme } from '../theme'
 
 import { Day } from './types'
+import { Text } from '../Text'
 
 type Props = {
   items: Day[]
+  showDayLabels: boolean
   handleDateSelect: (date: Date) => void
 }
 
@@ -16,9 +18,23 @@ const getBlankDaysCount = (firstDayOfTheMonth: Date) => {
   return dayOfTheWeek - 1
 }
 
-export const DatesList: FC<Props> = ({ items, handleDateSelect }) => {
+const daysOfTheWeek = ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun']
+
+export const DatesList: FC<Props> = ({
+  items,
+  handleDateSelect,
+  showDayLabels,
+}) => {
   return (
     <Container>
+      {showDayLabels &&
+        daysOfTheWeek.map((day) => {
+          return (
+            <Text key={day} color="subtext" typo="label" mb="24px">
+              {day}
+            </Text>
+          )
+        })}
       {Array(getBlankDaysCount(items[0].date))
         .fill(null)
         .map((_, index) => (
@@ -40,6 +56,7 @@ export const DatesList: FC<Props> = ({ items, handleDateSelect }) => {
 }
 
 const Container = styled.ul`
+  justify-items: center;
   display: grid;
   grid-column-gap: 4px;
   grid-row-gap: 8px;

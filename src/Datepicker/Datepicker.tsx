@@ -35,6 +35,7 @@ const getAvailableMonths = (startDate: Date, endDate: Date) => {
 }
 
 export type DatepickerProps = {
+  showDayLabels?: boolean
   disableWeekend?: boolean
   fromDate?: Date
   range?: number
@@ -44,6 +45,7 @@ export type DatepickerProps = {
 } & MarginProps
 
 export const Datepicker: FC<DatepickerProps> = ({
+  showDayLabels = false,
   disableWeekend = true,
   range = 14,
   fromDate = new Date(),
@@ -124,6 +126,7 @@ export const Datepicker: FC<DatepickerProps> = ({
       <Box flex alignItems="center" justifyContent="center">
         <DatesList
           items={generateDaysForMonth(availableMonths[activeMonthIndex].date)}
+          showDayLabels={showDayLabels}
           handleDateSelect={handleSelectEvent}
         />
       </Box>
