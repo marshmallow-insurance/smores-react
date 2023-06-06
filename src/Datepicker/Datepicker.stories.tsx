@@ -12,6 +12,7 @@ const Template = (props: DatepickerProps) => <Datepicker {...props} />
 export const Default = Template.bind({})
 
 Default.args = {
+  showDayLabels: false,
   disableWeekend: false,
   firstDayShift: true,
   range: 31,

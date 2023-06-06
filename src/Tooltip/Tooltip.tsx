@@ -34,6 +34,7 @@ export const Tooltip: FC<TooltipProps> = ({
 }) => {
   const tipContainer = useRef<HTMLDivElement>(null)
   const documentRef = useRef<Document>(document)
+  const [showTip, setShowTip] = useState<boolean>(false)
   const [tooltipPosition, setTooltipPosition] = useState<Position>('top')
   const [arrowPosition, setArrowPosition] =
     useState<ArrowPosition>(defaultArrowPosition)
@@ -121,9 +122,16 @@ export const Tooltip: FC<TooltipProps> = ({
 
   return (
     <Container underline={underline}>
-      <span>{children}</span>
+      <Text
+        cursor="pointer"
+        onMouseEnter={() => setShowTip(true)}
+        onMouseLeave={() => setShowTip(false)}
+      >
+        {children}
+      </Text>
       <Tip
         className="tooltip"
+        showTip={showTip}
         position={tooltipPosition}
         arrowPosition={arrowPosition}
         shadow={shadow}
@@ -270,6 +278,7 @@ const right = css<{ arrowPosition: ArrowPosition }>`
 `
 
 export const Tip = styled.div<{
+  showTip: boolean
   position: Position
   arrowPosition: ArrowPosition
   shadow: boolean
@@ -280,12 +289,10 @@ export const Tip = styled.div<{
   white-space: nowrap;
   padding: 16px 12px 20px;
   border-radius: 8px;
-  opacity: 0;
+  opacity: ${({ showTip }) => (showTip ? '1' : '0')};
   transition: opacity 0.2s ease-in-out;
-
-  &:hover {
-    opacity: 1;
-  }
+  pointer-events: none;
+  cursor: default;
 
   ${({ position }) => position === 'top' && top}
   ${({ position }) => position === 'bottom' && bottom}
