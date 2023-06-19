@@ -26,7 +26,7 @@ exports[`renders 1`] = `
   border-bottom: 1px solid;
   border-color: #D2D2D2;
   background-color: transparent;
-  color: #112035;
+  color: #292924;
   font-size: 16px;
   width: 100%;
   outline: none;

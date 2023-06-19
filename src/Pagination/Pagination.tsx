@@ -168,7 +168,7 @@ const Container = styled(Box)`
 `
 
 const PageBox = styled(Box)<IPageBox>`
-  background: ${({ active }) => (active ? theme.colors.background : 'none')};
+  background: ${({ active }) => (active ? theme.colors.coconut : 'none')};
   cursor: pointer;
   display: flex;
   justify-content: center;

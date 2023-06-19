@@ -138,12 +138,12 @@ export const Tooltip: FC<TooltipProps> = ({
         ref={tipContainer}
       >
         {title && (
-          <Text tag="h5" typo="desc-medium" color="secondary">
+          <Text tag="h5" typo="desc-medium" color="liquorice">
             {title}
           </Text>
         )}
         {(typeof content === 'string' && (
-          <Text typo="desc-light" color="secondary">
+          <Text typo="desc-light" color="liquorice">
             {content}
           </Text>
         )) ||
@@ -162,7 +162,7 @@ export const Container = styled.div<{ underline: boolean }>`
   ${({ underline }) =>
     underline &&
     css`
-      border-bottom: 1px dashed ${theme.colors.primary};
+      border-bottom: 1px dashed ${theme.colors.marshmallowPink};
     `}
 
   > span:hover + .tooltip {
@@ -285,7 +285,7 @@ export const Tip = styled.div<{
 }>`
   position: absolute;
   margin: auto;
-  background: ${theme.colors.background};
+  background: ${theme.colors.coconut};
   white-space: nowrap;
   padding: 16px 12px 20px;
   border-radius: 8px;
@@ -308,7 +308,7 @@ export const Tip = styled.div<{
     content: '';
     border-style: solid;
     border-width: 12px 12px 12px 0;
-    border-color: transparent ${theme.colors.background} transparent transparent;
+    border-color: transparent ${theme.colors.coconut} transparent transparent;
     position: absolute;
   }
 `

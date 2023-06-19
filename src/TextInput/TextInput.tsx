@@ -75,7 +75,7 @@ export const TextInput = forwardRef(function TextInput(
           }}
           onBlur={onBlur}
         />
-        {trailingIcon && <StyledIcon render={trailingIcon} color="subtext" />}
+        {trailingIcon && <StyledIcon render={trailingIcon} color="sesame" />}
       </Box>
     </Field>
   )
@@ -93,9 +93,10 @@ const StyledInput = styled.input<Input>`
   border: none;
   border-bottom: 1px solid;
   border-color: ${({ error }) =>
-    theme.colors[`${error ? 'error' : 'outline'}`]};
+    theme.colors[`${error ? 'strawberry' : 'chia'}`]};
   background-color: transparent;
-  color: ${({ error }) => theme.colors[`${error ? 'error' : 'secondary'}`]};
+  color: ${({ error }) =>
+    theme.colors[`${error ? 'strawberry' : 'liquorice'}`]};
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -105,14 +106,14 @@ const StyledInput = styled.input<Input>`
   &:hover,
   &:focus-within {
     border-color: ${({ error }) =>
-      error ? theme.colors.error : darken(0.1, theme.colors.outline)};
+      error ? theme.colors.strawberry : darken(0.1, theme.colors.chia)};
   }
 
   ${({ outlined, error }) =>
     outlined &&
     `
-      background-color: ${theme.colors.white};
-      border: 2px solid ${error ? theme.colors.error : theme.colors.outline};
+      background-color: ${theme.colors.cream};
+      border: 2px solid ${error ? theme.colors.strawberry : theme.colors.chia};
       border-radius: 8px;
       height: auto;
     `}
@@ -121,7 +122,7 @@ const StyledInput = styled.input<Input>`
     value &&
     value != '' &&
     `
-      border-color: ${theme.colors.outline};
+      border-color: ${theme.colors.chia};
     `}
 
   ${({ trailingIcon }) =>
@@ -139,7 +140,7 @@ const StyledInput = styled.input<Input>`
     `}
 
   &::placeholder {
-    color: ${theme.colors.subtext};
+    color: ${theme.colors.sesame};
   }
 `
 

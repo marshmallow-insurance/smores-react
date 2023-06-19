@@ -54,14 +54,14 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
       ref={ref}
     >
       {loading ? (
-        <Loader color={primary ? 'white' : 'primary'} height="16" />
+        <Loader color={primary ? 'cream' : 'marshmallowPink'} height="16" />
       ) : (
         <>
           {icon && (
             <IconComponent
               render={icon}
               size={20}
-              color={primary ? 'white' : 'primary'}
+              color={primary ? 'cream' : 'marshmallowPink'}
             />
           )}
           <ChildrenContainer>{children}</ChildrenContainer>
@@ -78,10 +78,10 @@ const Container = styled(Box)<IButton>(
     ${focusOutline()}
 
     align-items: center;
-    background-color: ${theme.colors.primary};
+    background-color: ${theme.colors.marshmallowPink};
     border-radius: 100px;
-    border: 2px solid ${theme.colors.primary};
-    color: ${theme.colors.white};
+    border: 2px solid ${theme.colors.marshmallowPink};
+    color: ${theme.colors.cream};
     display: flex;
     font-size: 16px;
     justify-content: ${icon ? 'space-evenly' : 'center'};
@@ -94,15 +94,16 @@ const Container = styled(Box)<IButton>(
     ${primary &&
     css`
       &:hover {
-        background-color: ${(disabled || $loading) && theme.colors.primary};
+        background-color: ${(disabled || $loading) &&
+        theme.colors.marshmallowPink};
       }
     `}
     ${secondary &&
     css`
-      color: ${theme.colors.primary};
-      background-color: ${theme.colors.white};
+      color: ${theme.colors.marshmallowPink};
+      background-color: ${theme.colors.cream};
       &:hover {
-        background-color: ${!(disabled || $loading) && theme.colors.background};
+        background-color: ${!(disabled || $loading) && theme.colors.coconut};
       }
     `};
   `,

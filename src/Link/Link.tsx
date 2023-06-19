@@ -44,7 +44,7 @@ export const Link: FC<LinkProps> = ({
         <StyledIcon
           render="new-window"
           size={typo === 'regular' ? 14 : 12}
-          color="primary"
+          color="marshmallowPink"
         />
       )}
     </LinkWrapper>
@@ -72,24 +72,24 @@ const LinkWrapper = styled.a<{ typo: LinkTypo }>(
 
       font-weight: ${theme.font.weight.medium};
       text-decoration: underline;
-      color: ${theme.colors.primary};
+      color: ${theme.colors.marshmallowPink};
 
       background: none;
       cursor: pointer;
 
       &:hover {
-        color: ${darken(0.1, theme.colors.primary)};
+        color: ${darken(0.1, theme.colors.marshmallowPink)};
 
         path {
-          fill: ${darken(0.1, theme.colors.primary)};
+          fill: ${darken(0.1, theme.colors.marshmallowPink)};
         }
       }
 
       &:active {
-        color: ${theme.colors.secondary};
+        color: ${theme.colors.liquorice};
 
         path {
-          fill: ${theme.colors.secondary};
+          fill: ${theme.colors.liquorice};
         }
       }
     `,

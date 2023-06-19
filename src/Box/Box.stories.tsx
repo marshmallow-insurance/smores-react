@@ -38,7 +38,7 @@ const Card = () => (
     px={{ small: '12px', medium: '24px' }}
     pt={{ small: '8px', medium: '16px' }}
     pb={{ small: '24px', medium: '32px' }}
-    style={{ backgroundColor: theme.colors.background, borderRadius: 8 }}
+    style={{ backgroundColor: theme.colors.coconut, borderRadius: 8 }}
   >
     <Box
       flex
@@ -50,7 +50,7 @@ const Card = () => (
       <Icon render="help-aboutus" size={24} />
       <Text typo="heading-small">Card content.</Text>
     </Box>
-    <Text color="subtext">
+    <Text color="sesame">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industrys standard dummy text ever since the
       1500s.

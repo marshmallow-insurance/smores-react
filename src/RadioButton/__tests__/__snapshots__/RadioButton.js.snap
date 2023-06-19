@@ -14,7 +14,7 @@ exports[`renders - checked 1`] = `
   border-radius: 50%;
   background-color: #FFFFFF;
   margin-right: 10px;
-  border: 8px solid #00875A;
+  border: 8px solid #008933;
 }
 
 .c3 {
@@ -22,7 +22,7 @@ exports[`renders - checked 1`] = `
   text-transform: none;
   font-size: 16px;
   line-height: 17px;
-  color: #112035;
+  color: #292924;
   margin-bottom: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -40,7 +40,7 @@ exports[`renders - checked 1`] = `
 }
 
 .c1:focus-visible ~ .c2 .c4 {
-  outline: 2px solid #112035;
+  outline: 2px solid #292924;
   outline-offset: 2px;
 }
 
@@ -106,7 +106,7 @@ exports[`renders - unchecked 1`] = `
   text-transform: none;
   font-size: 16px;
   line-height: 17px;
-  color: #112035;
+  color: #292924;
   margin-bottom: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -124,7 +124,7 @@ exports[`renders - unchecked 1`] = `
 }
 
 .c1:focus-visible ~ .c2 .c4 {
-  outline: 2px solid #112035;
+  outline: 2px solid #292924;
   outline-offset: 2px;
 }
 

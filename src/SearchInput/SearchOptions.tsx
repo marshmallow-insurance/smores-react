@@ -63,8 +63,8 @@ const ResultsList = styled.ul<Pick<SearchOptionsProps, 'outlined'>>`
   overflow-y: auto;
   padding: 0;
   margin: 0;
-  background-color: ${theme.colors.white};
-  border: 1px solid ${theme.colors.outline};
+  background-color: ${theme.colors.cream};
+  border: 1px solid ${theme.colors.chia};
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   z-index: 1000;
@@ -72,18 +72,18 @@ const ResultsList = styled.ul<Pick<SearchOptionsProps, 'outlined'>>`
   ${({ outlined }) =>
     outlined &&
     `
-    border: 2px solid ${theme.colors.outline};
+    border: 2px solid ${theme.colors.chia};
   `}
 
   li {
     padding: 16px 14px;
     box-sizing: border-box;
     font-size: 16px;
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.liquorice};
     cursor: pointer;
 
     &:hover {
-      background-color: ${theme.colors.background};
+      background-color: ${theme.colors.coconut};
     }
   }
 `

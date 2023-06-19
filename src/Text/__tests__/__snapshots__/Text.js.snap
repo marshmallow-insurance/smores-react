@@ -7,12 +7,12 @@ exports[`renders 1`] = `
   line-height: 20px;
   text-align: left;
   cursor: inherit;
-  color: #112035;
+  color: #292924;
 }
 
 <p
   class="c0"
-  color="secondary"
+  color="liquorice"
   cursor="inherit"
   title=""
 >

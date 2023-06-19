@@ -138,7 +138,7 @@ export const Dropdown = forwardRef(function Dropdown(
           )}
         </StyledSelect>
         <Caret outlined={outlined}>
-          <Icon render="caret" color="subtext" size={24} />
+          <Icon render="caret" color="sesame" size={24} />
         </Caret>
       </DropdownContainer>
     </Field>
@@ -151,7 +151,7 @@ interface UsesOutline {
 }
 
 const borderColor = ({ error }: UsesOutline) =>
-  error ? theme.colors.error : theme.colors.outline
+  error ? theme.colors.strawberry : theme.colors.chia
 
 const resetSelect = css`
   border: none;
@@ -167,7 +167,7 @@ const StyledSelect = styled.select<UsesOutline>`
   height: 32px;
 
   cursor: pointer;
-  background-color: ${theme.colors.white};
+  background-color: ${theme.colors.cream};
 
   ${({ outlined }) => {
     if (outlined) {

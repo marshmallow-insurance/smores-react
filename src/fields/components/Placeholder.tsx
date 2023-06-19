@@ -16,8 +16,8 @@ export const Placeholder = () => {
 }
 
 const Wrapper = styled(Box)`
-  background-color: ${theme.colors.background};
-  border: 2px solid ${theme.colors.outline};
+  background-color: ${theme.colors.coconut};
+  border: 2px solid ${theme.colors.chia};
   height: 40px;
   width: auto;
 `
@@ -29,5 +29,5 @@ const Svg = styled.svg`
 
 const Line = styled.line`
   stroke-width: 2px;
-  stroke: ${theme.colors.outline};
+  stroke: ${theme.colors.chia};
 `

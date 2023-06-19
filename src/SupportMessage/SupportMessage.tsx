@@ -18,31 +18,31 @@ type StylesItem = {
 
 const styles: Record<SupportMessageType, StylesItem> = {
   info: {
-    iconColor: 'secondary',
-    backgroundColor: theme.colors.background,
-    borderColor: theme.colors.background,
-    hoverBackgroundColor: darken(0.1, theme.colors.background),
+    iconColor: 'liquorice',
+    backgroundColor: theme.colors.coconut,
+    borderColor: theme.colors.coconut,
+    hoverBackgroundColor: darken(0.1, theme.colors.coconut),
     icon: 'info',
   },
   'info-outline': {
-    iconColor: 'secondary',
-    backgroundColor: theme.colors.white,
-    borderColor: theme.colors.outline,
-    hoverBackgroundColor: theme.colors.outline,
+    iconColor: 'liquorice',
+    backgroundColor: theme.colors.cream,
+    borderColor: theme.colors.chia,
+    hoverBackgroundColor: theme.colors.chia,
     icon: 'info',
   },
   alert: {
-    iconColor: 'agentWarning',
-    backgroundColor: theme.colors.bgSecondary,
-    borderColor: theme.colors.agentWarning,
-    hoverBackgroundColor: darken(0.1, theme.colors.bgSecondary),
+    iconColor: 'tangerine',
+    backgroundColor: theme.colors.coconut,
+    borderColor: theme.colors.tangerine,
+    hoverBackgroundColor: darken(0.1, theme.colors.coconut),
     icon: 'alert',
   },
   warning: {
-    iconColor: 'error',
-    backgroundColor: lighten(0.45, theme.colors.error),
-    borderColor: theme.colors.error,
-    hoverBackgroundColor: lighten(0.35, theme.colors.error),
+    iconColor: 'strawberry',
+    backgroundColor: lighten(0.45, theme.colors.strawberry),
+    borderColor: theme.colors.strawberry,
+    hoverBackgroundColor: lighten(0.35, theme.colors.strawberry),
     icon: 'warning',
   },
 }
@@ -79,7 +79,7 @@ export const SupportMessage: FC<SupportMessageProps> = ({
     </Box>
     {onClick && (
       <Box ml={{ custom: 'auto' }}>
-        <Icon size={16} render="caret" color="subtext" rotate={270} />
+        <Icon size={16} render="caret" color="sesame" rotate={270} />
       </Box>
     )}
   </Wrapper>
@@ -115,13 +115,13 @@ const Wrapper = styled(Box)<IWrapper>(
 const Title = styled.p`
   font-size: 16px;
   font-weight: ${theme.font.weight.medium};
-  color: ${theme.colors.secondary};
+  color: ${theme.colors.liquorice};
   line-height: 20.8px;
   margin-bottom: 4px;
 `
 
 const Description = styled(Text)`
-  color: ${theme.colors.secondary};
+  color: ${theme.colors.liquorice};
   font-size: 14px;
   line-height: 20px;
 `

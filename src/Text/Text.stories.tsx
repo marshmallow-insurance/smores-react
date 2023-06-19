@@ -49,14 +49,14 @@ const TypoCollection = ({
       </Grid>
       {typos.map((typo) => (
         <Grid key={typo}>
-          <Text tag="p" typo="base" color="subtext">
+          <Text tag="p" typo="base" color="sesame">
             {typo}
           </Text>
-          <Text tag="p" typo={typo} color="secondary">
+          <Text tag="p" typo={typo} color="liquorice">
             They waited patiently for what seemed a very long time.
           </Text>
           {!['hero-alternate', 'hero', 'label'].includes(typo) && (
-            <Text tag="p" typo={typo} color="secondary">
+            <Text tag="p" typo={typo} color="liquorice">
               They waited patiently for what seemed a very long time. They
               waited patiently for what seemed a very long time.
             </Text>
@@ -89,7 +89,7 @@ export const Label = Template.bind({})
 Label.args = {
   tag: 'label',
   typo: 'label',
-  color: 'secondary',
+  color: 'liquorice',
 }
 
 export const WithTitle = Template.bind({})

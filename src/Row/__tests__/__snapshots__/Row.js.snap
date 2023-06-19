@@ -7,7 +7,7 @@ exports[`default renders correctly 1`] = `
   font-weight: 400;
   text-align: left;
   cursor: inherit;
-  color: #112035;
+  color: #292924;
 }
 
 .c2 {
@@ -66,7 +66,7 @@ exports[`default renders correctly 1`] = `
     >
       <h1
         class="c1"
-        color="secondary"
+        color="liquorice"
         cursor="inherit"
         title=""
       >
@@ -74,7 +74,7 @@ exports[`default renders correctly 1`] = `
       </h1>
       <p
         class="c2"
-        color="subtext"
+        color="sesame"
         cursor="inherit"
         title=""
       />

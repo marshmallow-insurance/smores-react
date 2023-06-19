@@ -49,12 +49,12 @@ const FakeInput = styled.div<FakeInput>`
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: ${theme.colors.white};
+  background-color: ${theme.colors.cream};
   margin-right: 10px;
   border: ${({ checked }: FakeInput) =>
     checked
-      ? `8px solid ${theme.colors.secondary}`
-      : `1px solid ${theme.colors.secondary}`};
+      ? `8px solid ${theme.colors.liquorice}`
+      : `1px solid ${theme.colors.liquorice}`};
 `
 
 const RadioInput = styled.input`
@@ -69,7 +69,7 @@ const RadioLabel = styled.label`
   text-transform: none;
   font-size: 16px;
   line-height: 17px;
-  color: ${theme.colors.secondary};
+  color: ${theme.colors.liquorice};
   margin-bottom: 0;
   display: flex;
   cursor: pointer;

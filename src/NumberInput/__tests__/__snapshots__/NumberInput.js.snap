@@ -70,7 +70,7 @@ exports[`renders - currency 1`] = `
   line-height: 20px;
   text-align: left;
   cursor: inherit;
-  color: #112035;
+  color: #292924;
 }
 
 .c0 {
@@ -91,7 +91,7 @@ exports[`renders - currency 1`] = `
   border: none;
   border-bottom: 1px solid;
   border-color: #D2D2D2;
-  color: #112035;
+  color: #D2D2D2;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -171,7 +171,7 @@ exports[`renders - currency 1`] = `
 >
   <label
     class="c1 c2"
-    color="subtext"
+    color="sesame"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -186,7 +186,7 @@ exports[`renders - currency 1`] = `
     >
       <span
         class="c4 c5"
-        color="secondary"
+        color="liquorice"
         cursor="inherit"
         prefix="$"
         title=""
@@ -210,7 +210,7 @@ exports[`renders - currency 1`] = `
         >
           <span
             class="c9"
-            color="subtext"
+            color="sesame"
             rotate="180"
             size="24"
           >
@@ -233,7 +233,7 @@ exports[`renders - currency 1`] = `
         >
           <span
             class="c10"
-            color="subtext"
+            color="sesame"
             rotate="0"
             size="24"
           >
@@ -293,7 +293,7 @@ exports[`renders - disabled 1`] = `
   border: none;
   border-bottom: 1px solid;
   border-color: #D2D2D2;
-  color: #112035;
+  color: #D2D2D2;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -342,7 +342,7 @@ exports[`renders - disabled 1`] = `
 >
   <label
     class="c1 c2"
-    color="subtext"
+    color="sesame"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -439,7 +439,7 @@ exports[`renders - error 1`] = `
   line-height: 20px;
   text-align: left;
   cursor: inherit;
-  color: #112035;
+  color: #292924;
 }
 
 .c12 {
@@ -448,7 +448,7 @@ exports[`renders - error 1`] = `
   line-height: 16px;
   text-align: left;
   cursor: inherit;
-  color: #D82C2C;
+  color: #DF2929;
 }
 
 .c0 {
@@ -468,8 +468,8 @@ exports[`renders - error 1`] = `
   font-family: 'Circular',san-serif;
   border: none;
   border-bottom: 1px solid;
-  border-color: #D82C2C;
-  color: #D82C2C;
+  border-color: #DF2929;
+  color: #DF2929;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -508,7 +508,7 @@ exports[`renders - error 1`] = `
 
 .c6:hover,
 .c6:focus-within {
-  border-color: #D82C2C;
+  border-color: #DF2929;
 }
 
 .c5 {
@@ -555,7 +555,7 @@ exports[`renders - error 1`] = `
 >
   <label
     class="c1 c2"
-    color="subtext"
+    color="sesame"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -570,7 +570,7 @@ exports[`renders - error 1`] = `
     >
       <span
         class="c4 c5"
-        color="secondary"
+        color="liquorice"
         cursor="inherit"
         prefix="$"
         title=""
@@ -594,7 +594,7 @@ exports[`renders - error 1`] = `
         >
           <span
             class="c9"
-            color="subtext"
+            color="sesame"
             rotate="180"
             size="24"
           >
@@ -617,7 +617,7 @@ exports[`renders - error 1`] = `
         >
           <span
             class="c10"
-            color="subtext"
+            color="sesame"
             rotate="0"
             size="24"
           >
@@ -640,7 +640,7 @@ exports[`renders - error 1`] = `
   </div>
   <span
     class="c11 c12"
-    color="error"
+    color="strawberry"
     cursor="inherit"
     title=""
   >
@@ -673,7 +673,7 @@ exports[`renders - number 1`] = `
   line-height: 20px;
   text-align: left;
   cursor: inherit;
-  color: #D82C2C;
+  color: #DF2929;
 }
 
 .c0 {
@@ -694,7 +694,7 @@ exports[`renders - number 1`] = `
   border: none;
   border-bottom: 1px solid;
   border-color: #D2D2D2;
-  color: #112035;
+  color: #D2D2D2;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -743,7 +743,7 @@ exports[`renders - number 1`] = `
 >
   <label
     class="c1 c2"
-    color="subtext"
+    color="sesame"
     cursor="inherit"
     for="numberInput"
     title=""
@@ -751,7 +751,7 @@ exports[`renders - number 1`] = `
     Number
     <span
       class="c3"
-      color="error"
+      color="strawberry"
       cursor="inherit"
       title=""
     >
@@ -801,7 +801,7 @@ exports[`renders - tel 1`] = `
   line-height: 20px;
   text-align: left;
   cursor: inherit;
-  color: #112035;
+  color: #292924;
 }
 
 .c0 {
@@ -822,7 +822,7 @@ exports[`renders - tel 1`] = `
   border: none;
   border-bottom: 1px solid;
   border-color: #D2D2D2;
-  color: #112035;
+  color: #D2D2D2;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -882,7 +882,7 @@ exports[`renders - tel 1`] = `
 >
   <label
     class="c1 c2"
-    color="subtext"
+    color="sesame"
     cursor="inherit"
     for="tel"
     title=""
@@ -897,7 +897,7 @@ exports[`renders - tel 1`] = `
     >
       <span
         class="c4 c5"
-        color="secondary"
+        color="liquorice"
         cursor="inherit"
         prefix="+44"
         title=""
@@ -942,7 +942,7 @@ exports[`renders - with suffix 1`] = `
   line-height: 20px;
   text-align: left;
   cursor: inherit;
-  color: #112035;
+  color: #292924;
 }
 
 .c0 {
@@ -963,7 +963,7 @@ exports[`renders - with suffix 1`] = `
   border: none;
   border-bottom: 1px solid;
   border-color: #D2D2D2;
-  color: #112035;
+  color: #D2D2D2;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -1021,7 +1021,7 @@ exports[`renders - with suffix 1`] = `
 >
   <label
     class="c1 c2"
-    color="subtext"
+    color="sesame"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -1044,7 +1044,7 @@ exports[`renders - with suffix 1`] = `
       />
       <span
         class="c5 c6"
-        color="secondary"
+        color="liquorice"
         cursor="inherit"
         title=""
       >
@@ -1102,7 +1102,7 @@ exports[`renders - with trailing icon 1`] = `
   line-height: 20px;
   text-align: left;
   cursor: inherit;
-  color: #112035;
+  color: #292924;
 }
 
 .c0 {
@@ -1123,7 +1123,7 @@ exports[`renders - with trailing icon 1`] = `
   border: none;
   border-bottom: 1px solid;
   border-color: #D2D2D2;
-  color: #112035;
+  color: #D2D2D2;
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -1188,7 +1188,7 @@ exports[`renders - with trailing icon 1`] = `
 >
   <label
     class="c1 c2"
-    color="subtext"
+    color="sesame"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -1203,7 +1203,7 @@ exports[`renders - with trailing icon 1`] = `
     >
       <span
         class="c4 c5"
-        color="secondary"
+        color="liquorice"
         cursor="inherit"
         prefix="$"
         title=""
@@ -1221,7 +1221,7 @@ exports[`renders - with trailing icon 1`] = `
       />
       <span
         class="c7 c8"
-        color="subtext"
+        color="sesame"
         rotate="0"
         size="24"
       >

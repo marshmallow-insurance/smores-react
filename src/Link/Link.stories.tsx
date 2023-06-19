@@ -20,7 +20,7 @@ export const Playground = Link.bind({})
 Playground.args = linkArgs
 
 const ParagraphDemo = (props: LinkProps) => (
-  <Text tag="p" color="success">
+  <Text tag="p" color="apple">
     Lorem Ipsum is simply dummy text of the printing and typesetting industry,
     more details <Link {...props} />. Lorem Ipsum has been the industrys
     standard dummy text ever since the 1500s.

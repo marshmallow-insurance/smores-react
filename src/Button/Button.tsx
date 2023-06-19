@@ -42,7 +42,7 @@ export const Button: FC<ButtonProps> = forwardRef<
     children,
     id,
     className = '',
-    color = 'secondary',
+    color = 'liquorice',
     block = false,
     inverted = false,
     disabled = false,
@@ -108,7 +108,7 @@ export const Button: FC<ButtonProps> = forwardRef<
     >
       {loading && (
         <LoaderContainer>
-          <Loader color={primary ? 'white' : 'secondary'} height="16" />
+          <Loader color={primary ? 'cream' : 'liquorice'} height="16" />
         </LoaderContainer>
       )}
       <ContentContainer icon={icon} $loading={loading}>
@@ -116,7 +116,7 @@ export const Button: FC<ButtonProps> = forwardRef<
           <IconContainer
             render={icon}
             size={24}
-            color={primary ? 'white' : 'secondary'}
+            color={primary ? 'cream' : 'liquorice'}
           />
         )}
         <ChildrenContainer>{children}</ChildrenContainer>
@@ -140,10 +140,10 @@ const Container = styled(Box)<IButton>(
   ({ disabled, $loading, primary, secondary, tertiary, forcedWidth }) => css`
     ${focusOutline()}
     position: relative;
-    background-color: ${theme.colors.primary};
+    background-color: ${theme.colors.marshmallowPink};
     border: 2px solid;
     box-shadow: none;
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.liquorice};
     padding: 0 20px;
     outline: none;
     border-radius: 8px;
@@ -156,49 +156,49 @@ const Container = styled(Box)<IButton>(
 
     ${primary &&
     css`
-      color: ${theme.colors.white};
-      border-color: ${theme.colors.primary};
+      color: ${theme.colors.cream};
+      border-color: ${theme.colors.marshmallowPink};
 
       &:hover {
         background-color: ${!(disabled || $loading) &&
-        darken(0.1, theme.colors.primary)};
+        darken(0.1, theme.colors.marshmallowPink)};
         border-color: ${!(disabled || $loading) &&
-        darken(0.1, theme.colors.primary)};
+        darken(0.1, theme.colors.marshmallowPink)};
       }
       &:active {
-        background-color: ${darken(0.1, theme.colors.primary)};
-        border-color: ${darken(0.1, theme.colors.primary)};
+        background-color: ${darken(0.1, theme.colors.marshmallowPink)};
+        border-color: ${darken(0.1, theme.colors.marshmallowPink)};
       }
     `}
     ${secondary &&
     css`
-      background-color: ${theme.colors.white};
-      border-color: ${theme.colors.secondary};
+      background-color: ${theme.colors.cream};
+      border-color: ${theme.colors.liquorice};
 
       &:hover {
-        background-color: ${!(disabled || $loading) && theme.colors.background};
+        background-color: ${!(disabled || $loading) && theme.colors.coconut};
         border: ${!(disabled || $loading) &&
-        `2px solid ${theme.colors.secondary}`};
+        `2px solid ${theme.colors.liquorice}`};
       }
       &:active {
-        background-color: ${theme.colors.background};
-        border: 2px solid ${theme.colors.secondary};
+        background-color: ${theme.colors.coconut};
+        border: 2px solid ${theme.colors.liquorice};
       }
     `}
   ${tertiary &&
     css`
-      background-color: ${theme.colors.background};
-      border-color: ${theme.colors.background};
+      background-color: ${theme.colors.coconut};
+      border-color: ${theme.colors.coconut};
 
       &:hover {
         background-color: ${!(disabled || $loading) &&
-        darken(0.1, theme.colors.background)};
+        darken(0.1, theme.colors.coconut)};
         border-color: ${!(disabled || $loading) &&
-        darken(0.1, theme.colors.background)};
+        darken(0.1, theme.colors.coconut)};
       }
       &:active {
-        background-color: ${darken(0.1, theme.colors.background)};
-        border-color: ${darken(0.1, theme.colors.background)};
+        background-color: ${darken(0.1, theme.colors.coconut)};
+        border-color: ${darken(0.1, theme.colors.coconut)};
       }
     `}
   `,

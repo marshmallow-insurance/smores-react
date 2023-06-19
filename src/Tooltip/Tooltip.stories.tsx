@@ -33,16 +33,16 @@ export const ReactNodeExample = Template.bind({})
 
 const tooltipContent = (
   <>
-    <Text typo="desc-light" color="secondary">
+    <Text typo="desc-light" color="liquorice">
       20 Cherry Blossom Lane,
     </Text>
-    <Text typo="desc-light" color="secondary">
+    <Text typo="desc-light" color="liquorice">
       Aintree,
     </Text>
-    <Text typo="desc-light" color="secondary">
+    <Text typo="desc-light" color="liquorice">
       Manchester,
     </Text>
-    <Text typo="desc-light" color="secondary">
+    <Text typo="desc-light" color="liquorice">
       T: 07123456789
     </Text>
   </>

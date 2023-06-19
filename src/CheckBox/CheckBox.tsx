@@ -24,7 +24,11 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckBoxProps>(
     return (
       <>
         <BoxContainer id={id}>
-          <Text tag="span" typo="base" color={error ? 'error' : 'secondary'}>
+          <Text
+            tag="span"
+            typo="base"
+            color={error ? 'strawberry' : 'liquorice'}
+          >
             {children}
           </Text>
 
@@ -49,8 +53,8 @@ const Checkmark = styled.span<{ error?: boolean }>`
   height: 24px;
   border: ${({ error }) =>
     error
-      ? `solid 1px ${theme.colors.error}`
-      : `solid 1px ${theme.colors.secondary}`};
+      ? `solid 1px ${theme.colors.strawberry}`
+      : `solid 1px ${theme.colors.liquorice}`};
   box-sizing: border-box;
   border-radius: 1px;
 
@@ -84,8 +88,8 @@ const BoxContainer = styled.label`
     cursor: pointer;
 
     &:checked ~ ${Checkmark} {
-      background-color: ${theme.colors.secondary};
-      border: solid 1px ${theme.colors.secondary};
+      background-color: ${theme.colors.liquorice};
+      border: solid 1px ${theme.colors.liquorice};
     }
 
     &:checked ~ ${Checkmark}:after {
@@ -97,8 +101,8 @@ const BoxContainer = styled.label`
 
   &:hover {
     ${Checkmark} {
-      background-color: ${theme.colors.background};
-      border: solid 1px ${theme.colors.secondary};
+      background-color: ${theme.colors.coconut};
+      border: solid 1px ${theme.colors.liquorice};
     }
   }
 
@@ -110,5 +114,5 @@ const BoxContainer = styled.label`
 const ErrorBox = styled.span`
   padding-top: 8px;
   font-size: 12px;
-  color: ${theme.colors.error};
+  color: ${theme.colors.strawberry};
 `

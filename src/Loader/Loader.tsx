@@ -8,7 +8,10 @@ export type LoaderProps = {
   color?: Color
 }
 
-export const Loader: FC<LoaderProps> = ({ height, color = 'primary' }) => (
+export const Loader: FC<LoaderProps> = ({
+  height,
+  color = 'marshmallowPink',
+}) => (
   <LoaderSvg viewBox="0 0 60 32" height={height} color={color}>
     <g transform="translate(30,18.5455) translate(-30,-9)">
       {/* tslint:disable-next-line:max-line-length */}

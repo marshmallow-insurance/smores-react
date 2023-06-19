@@ -59,7 +59,7 @@ export const Row: FC<RowProps> = ({
         <Text tag="h1" typo="base">
           {heading}
         </Text>
-        <Text tag="p" typo="desc-small" color="subtext">
+        <Text tag="p" typo="desc-small" color="sesame">
           {subHeading}
         </Text>
       </Box>
@@ -91,7 +91,7 @@ const Container = styled(Box)<IContainer>(
     (type === 'curved' && `8px`) ||
     (type === 'last' && `0 0 8px 8px`) ||
     0};
-    border: 1px solid ${theme.colors.outline};
+    border: 1px solid ${theme.colors.chia};
     display: grid;
     grid-template-columns: ${iconLeft ? `24px auto 24px` : `auto 24px`};
     padding: 16px;

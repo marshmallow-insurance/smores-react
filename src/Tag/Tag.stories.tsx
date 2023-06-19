@@ -12,9 +12,9 @@ export const Default = Template.bind({})
 
 Default.args = {
   label: 'This is a tag',
-  bgColor: 'success',
-  borderColor: 'success',
-  color: 'white',
+  bgColor: 'apple',
+  borderColor: 'apple',
+  color: 'cream',
 }
 
 Default.argTypes = {
@@ -28,5 +28,5 @@ export const BgGradient = Template.bind({})
 BgGradient.args = {
   label: 'This is a gradient background tag',
   bgGradient: true,
-  color: 'white',
+  color: 'cream',
 }

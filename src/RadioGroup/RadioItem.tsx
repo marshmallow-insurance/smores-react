@@ -82,9 +82,9 @@ const Wrapper = styled.label<Pick<RadioItemProps, 'displayType' | 'checked'>>`
         displayType === 'vertical-card') &&
       css`
         border-radius: 8px;
-        background-color: ${theme.colors[checked ? 'white' : 'background']};
+        background-color: ${theme.colors[checked ? 'cream' : 'coconut']};
         padding: ${checked ? '10px' : '12px'};
-        ${checked && `border: 2px solid ${theme.colors.secondary};`}
+        ${checked && `border: 2px solid ${theme.colors.liquorice};`}
       `}
       ${displayType === 'horizontal-card' &&
       css`
@@ -106,6 +106,6 @@ const RadioText = styled.span<{ isError: boolean }>`
   font-size: 16px;
   font-weight: ${theme.font.weight.medium};
   color: ${({ isError }) =>
-    isError ? theme.colors.error : theme.colors.secondary};
+    isError ? theme.colors.strawberry : theme.colors.liquorice};
   margin-top: 4px;
 `

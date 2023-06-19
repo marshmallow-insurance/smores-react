@@ -46,7 +46,7 @@ export const InternalField = ({
               </Text>
 
               {assistiveText && (
-                <Text tag="p" color="subtext" mt={{ custom: 4 }}>
+                <Text tag="p" color="sesame" mt={{ custom: 4 }}>
                   {assistiveText}
                 </Text>
               )}
@@ -55,13 +55,13 @@ export const InternalField = ({
             <Text
               tag={labelTag}
               typo="label"
-              color="subtext"
+              color="sesame"
               htmlFor={htmlFor}
               mb={{ custom: outlined ? 4 : 0 }}
             >
               {label}
               {required && (
-                <Text tag="span" typo="body-small" color="error">
+                <Text tag="span" typo="body-small" color="strawberry">
                   *
                 </Text>
               )}
@@ -75,7 +75,7 @@ export const InternalField = ({
       {error &&
         errorMsg &&
         (typeof errorMsg === 'string' ? (
-          <Text tag="span" typo="caption" color="error" mt="8px">
+          <Text tag="span" typo="caption" color="strawberry" mt="8px">
             {errorMsg}
           </Text>
         ) : (
@@ -89,8 +89,8 @@ export const InternalField = ({
           isError={!!(error && errorMsg)}
         >
           <StatusWrapper mt={'8px'}>
-            <Icon render="included" size={16} color="success" />
-            <Text typo="caption" color="success">
+            <Icon render="included" size={16} color="apple" />
+            <Text typo="caption" color="apple">
               Complete
             </Text>
           </StatusWrapper>

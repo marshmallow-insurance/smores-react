@@ -2,35 +2,35 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-beqWaB sc-csCMJt hZdgMF elNvL"
+  class="sc-aXZVg sc-jlZhew byxNQM kGjRME"
 >
   <div
-    class="sc-qRumB kmYkCq"
+    class="sc-jXbUNg bLgcdW"
   >
     <div
-      class="sc-jsMahE eJedlX"
+      class="sc-dhKdcB exaemo"
     >
       <div
-        class="sc-kFuwaP fWMRfB"
+        class="sc-kpDqfm lfeHFA"
       >
         <div
-          class="sc-beqWaB lqcuN"
+          class="sc-aXZVg giPgVs"
         >
           <input
-            class="sc-gLDzan eaAEBD"
+            class="sc-gsFSXq ivVvPU"
             id="MM_SMORES_0"
             type="radio"
             value="MM_SMORES_0"
           />
           <label
-            class="sc-iAEyYk bYWiT"
+            class="sc-kAyceB BngMp"
             for="MM_SMORES_0"
           >
             <div
-              class="sc-jTrPJq gTDXGg"
+              class="sc-iGgWBj cykRRW"
             />
             <span
-              class="sc-fsQiph bjlGpU"
+              class="sc-imWYAI bwUMjG"
             >
               Yes
             </span>
@@ -38,26 +38,26 @@ exports[`renders 1`] = `
         </div>
       </div>
       <div
-        class="sc-kFuwaP fWMRfB"
+        class="sc-kpDqfm lfeHFA"
       >
         <div
-          class="sc-beqWaB lqcuN"
+          class="sc-aXZVg giPgVs"
         >
           <input
-            class="sc-gLDzan eaAEBD"
+            class="sc-gsFSXq ivVvPU"
             id="MM_SMORES_0-1"
             type="radio"
             value="MM_SMORES_0-1"
           />
           <label
-            class="sc-iAEyYk bYWiT"
+            class="sc-kAyceB BngMp"
             for="MM_SMORES_0-1"
           >
             <div
-              class="sc-jTrPJq gTDXGg"
+              class="sc-iGgWBj cykRRW"
             />
             <span
-              class="sc-fsQiph bjlGpU"
+              class="sc-imWYAI bwUMjG"
             >
               No
             </span>

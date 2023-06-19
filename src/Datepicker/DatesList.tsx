@@ -30,7 +30,7 @@ export const DatesList: FC<Props> = ({
       {showDayLabels &&
         daysOfTheWeek.map((day) => {
           return (
-            <Text key={day} color="subtext" typo="label" mb="24px">
+            <Text key={day} color="sesame" typo="label" mb="24px">
               {day}
             </Text>
           )
@@ -89,19 +89,19 @@ const ListItem = styled.li<IListItem>`
   font-weight: ${theme.font.weight.medium};
   font-size: 14px;
   line-height: 15px;
-  color: ${theme.colors.secondary};
+  color: ${theme.colors.liquorice};
   background-color: transparent;
   pointer-events: ${({ disabled }) => (disabled ? 'none' : '')};
   opacity: ${({ disabled }) => (disabled ? '0.2' : '1')};
   cursor: pointer;
 
   &:hover:not(.active) {
-    background-color: ${theme.colors.background};
+    background-color: ${theme.colors.coconut};
   }
 
   &.active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.secondary};
+    color: ${theme.colors.cream};
+    background-color: ${theme.colors.liquorice};
     cursor: default;
   }
 `

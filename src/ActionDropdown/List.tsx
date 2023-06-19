@@ -40,11 +40,11 @@ const ListItem = styled.li`
   box-sizing: border-box;
   font-size: 14px;
   cursor: pointer;
-  color: ${theme.colors.secondary};
-  border-bottom: 1px solid ${theme.colors.outline};
+  color: ${theme.colors.liquorice};
+  border-bottom: 1px solid ${theme.colors.chia};
 
   &:hover {
-    background-color: ${theme.colors.background};
+    background-color: ${theme.colors.coconut};
   }
 
   &:last-child {

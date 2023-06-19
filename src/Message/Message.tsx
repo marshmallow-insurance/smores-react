@@ -51,7 +51,7 @@ export const Message: FC<MessageProps> = ({
         <Icon
           size={sizeSmall ? 24 : 32}
           render={type}
-          color={type === 'warning' ? 'error' : 'secondary'}
+          color={type === 'warning' ? 'strawberry' : 'liquorice'}
         />
       </IconWrapper>
 
@@ -82,18 +82,20 @@ const Wrapper = styled.div<IWrapper>(
     background-color: ${backgroundColor
       ? backgroundColor
       : type === 'warning'
-      ? theme.colors.white
-      : theme.colors.background};
+      ? theme.colors.cream
+      : theme.colors.coconut};
     box-sizing: border-box;
     ${type === 'warning'
-      ? `border: 1px solid ${theme.colors.error};`
+      ? `border: 1px solid ${theme.colors.strawberry};`
       : hasBorder && `border: 1px solid ${borderColor};`}
     border-radius: 8px;
     margin-bottom: 24px;
     padding: 16px;
     display: flex;
     font-family: ${theme.font.system};
-    color: ${type === 'warning' ? theme.colors.error : theme.colors.secondary};
+    color: ${type === 'warning'
+      ? theme.colors.strawberry
+      : theme.colors.liquorice};
     font-size: ${sizeSmall ? '12px' : '16px'};
     span {
       margin: 0 16px 0 0;

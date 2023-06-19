@@ -87,31 +87,31 @@ interface TextArea {
 const StyledTextArea = styled.textarea<TextArea>`
   font-size: 16px;
   line-height: 20px;
-  background: ${theme.colors.white};
-  border: 2px solid ${theme.colors.outline};
+  background: ${theme.colors.cream};
+  border: 2px solid ${theme.colors.chia};
   box-sizing: border-box;
   border-radius: 8px;
   width: 100%;
   padding: 16px;
-  color: ${theme.colors.secondary};
+  color: ${theme.colors.liquorice};
   resize: ${({ resize }) => resize};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'text')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   border-color: ${({ error }) =>
-    theme.colors[`${error ? 'error' : 'outline'}`]};
+    theme.colors[`${error ? 'strawberry' : 'chia'}`]};
   outline: none;
 
   &:hover,
   &:focus,
   &:focus-visible {
     border-color: ${({ error }) =>
-      error ? theme.colors.error : darken(0.1, theme.colors.outline)};
+      error ? theme.colors.strawberry : darken(0.1, theme.colors.chia)};
   }
 
   ${({ value }) =>
     value &&
     value != '' &&
     `
-      border-color: ${theme.colors.outline};
+      border-color: ${theme.colors.chia};
     `}
 `

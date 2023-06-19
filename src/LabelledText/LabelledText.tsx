@@ -16,7 +16,7 @@ export const LabelledText: FC<LabelledTextProps> = ({
   ...marginProps
 }) => (
   <Container {...marginProps}>
-    <Text tag="label" color="subtext" typo="label">
+    <Text tag="label" color="sesame" typo="label">
       {label}
     </Text>
 

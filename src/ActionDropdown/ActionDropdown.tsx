@@ -41,19 +41,19 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
       {...marginProps}
     >
       {label && (
-        <Text tag="label" color="subtext" typo="label">
+        <Text tag="label" color="sesame" typo="label">
           {label}
         </Text>
       )}
 
       <Label
-        text={value.textColor ?? 'secondary'}
-        bg={value.bgColor ?? 'subtext'}
+        text={value.textColor ?? 'liquorice'}
+        bg={value.bgColor ?? 'sesame'}
       >
         <SelectedOption>{value.label}</SelectedOption>
         <Icon
           render="caret"
-          color={value.textColor ?? 'subtext'}
+          color={value.textColor ?? 'sesame'}
           size={24}
           rotate={open ? 180 : 0}
         />
@@ -118,8 +118,8 @@ const OuterContainer = styled.div<IOpen>(
     margin-top: 8px;
     display: ${open ? 'block' : 'none'};
     max-height: ${open ? '235px' : '48px'};
-    background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.outline};
+    background-color: ${theme.colors.cream};
+    border: 1px solid ${theme.colors.chia};
     overflow-y: ${open ? 'auto' : 'hidden'};
     z-index: 2;
     transition: all 0.2s ease-in-out;

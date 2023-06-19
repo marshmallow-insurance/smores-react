@@ -107,7 +107,7 @@ export const Datepicker: FC<DatepickerProps> = ({
           disabled={activeMonthIndex === 0}
           onClick={() => setActiveMonth(activeMonthIndex - 1)}
         >
-          <Caret render="caret" color="white" size={24} rotate={90} />
+          <Caret render="caret" color="cream" size={24} rotate={90} />
         </Circle>
 
         <Heading tag="h4" typo="body-regular">
@@ -119,7 +119,7 @@ export const Datepicker: FC<DatepickerProps> = ({
           disabled={activeMonthIndex === availableMonths.length - 1}
           onClick={() => setActiveMonth(activeMonthIndex + 1)}
         >
-          <Caret render="caret" color="white" size={24} rotate={-90} />
+          <Caret render="caret" color="cream" size={24} rotate={-90} />
         </Circle>
       </Header>
 
@@ -138,17 +138,17 @@ const Container = styled(Box)`
   font-family: ${theme.font.system};
   display: inline-block;
   box-sizing: border-box;
-  background-color: ${theme.colors.white};
+  background-color: ${theme.colors.cream};
   outline: none;
   border-radius: 8px;
-  box-shadow: inset 0 0 0 1px ${theme.colors.outline};
+  box-shadow: inset 0 0 0 1px ${theme.colors.chia};
 `
 
 const Header = styled(Box)`
-  color: ${theme.colors.secondary};
+  color: ${theme.colors.liquorice};
   user-select: none;
   padding: 16px;
-  border-bottom: 1px solid ${theme.colors.outline};
+  border-bottom: 1px solid ${theme.colors.chia};
 
   span {
     font-size: 16px;
@@ -169,7 +169,7 @@ const Caret = styled(Icon)`
 `
 
 const Circle = styled.button`
-  background-color: ${theme.colors.secondary};
+  background-color: ${theme.colors.liquorice};
   height: 32px;
   width: 32px;
   border-radius: 50%;

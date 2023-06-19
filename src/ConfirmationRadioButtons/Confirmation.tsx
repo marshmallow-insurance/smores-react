@@ -59,7 +59,7 @@ export const Confirmation: FC<ConfirmationProps> = (props) => {
             </SectionHeadingText>
           )}
           {sublabel && (
-            <Text tag="p" typo="base-small" color="subtext">
+            <Text tag="p" typo="base-small" color="sesame">
               {sublabel}
             </Text>
           )}
@@ -116,9 +116,9 @@ const RadioButtonGroup = styled.div`
 
 const getColor = (checked?: boolean, error?: boolean) => {
   if (error) {
-    return `2px solid ${theme.colors.error}`
+    return `2px solid ${theme.colors.strawberry}`
   } else if (checked) {
-    return `2px solid ${theme.colors.secondary}`
+    return `2px solid ${theme.colors.liquorice}`
   } else {
     return 'none'
   }
@@ -126,7 +126,7 @@ const getColor = (checked?: boolean, error?: boolean) => {
 
 const RadioButtonWrapper = styled.div<FakeInput>`
   background-color: ${({ checked }: FakeInput) =>
-    !checked && `${theme.colors.background}`};
+    !checked && `${theme.colors.coconut}`};
   border: ${({ checked, error }: FakeInput) => getColor(checked, error)};
   margin-right: 10px;
   width: 139px;
@@ -139,7 +139,7 @@ const RadioButtonWrapper = styled.div<FakeInput>`
   ${({ disabled }) =>
     disabled &&
     css`
-      border-color: ${theme.colors.secondary};
+      border-color: ${theme.colors.liquorice};
       opacity: 0.5;
     `}
 `
@@ -148,7 +148,7 @@ const ErrorBox = styled.span`
   margin-top: 7px;
   margin-left: 12px;
   font-size: 12px;
-  color: ${theme.colors.error};
+  color: ${theme.colors.strawberry};
 `
 
 const ConfirmationWrapper = styled(Box)`
@@ -168,5 +168,5 @@ const TextWrapper = styled.div`
 
 const Asterisk = styled.span`
   font-size: 14px;
-  color: ${theme.colors.error};
+  color: ${theme.colors.strawberry};
 `

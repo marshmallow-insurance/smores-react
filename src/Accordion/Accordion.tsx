@@ -51,7 +51,7 @@ export const Accordion: FC<AccordionProps> = ({
             {title}
           </Text>
           {subTitle && (
-            <Text tag="label" color="subtext" typo="label">
+            <Text tag="label" color="sesame" typo="label">
               {subTitle}
             </Text>
           )}
@@ -60,7 +60,7 @@ export const Accordion: FC<AccordionProps> = ({
         <CaretIcon
           render="caret"
           size={24}
-          color="secondary"
+          color="liquorice"
           isOpen={isOpen}
           borderTop={borderTop}
         />
@@ -82,12 +82,12 @@ interface IAccordion {
 
 const Wrapper = styled(Box)<Omit<IAccordion, 'isOpen'>>(
   ({ borderTop, fullBorder }) => css`
-    border-bottom: 1px solid ${theme.colors.outline};
-    ${borderTop && `border-top: 1px solid ${theme.colors.outline};`}
+    border-bottom: 1px solid ${theme.colors.chia};
+    ${borderTop && `border-top: 1px solid ${theme.colors.chia};`}
 
     ${fullBorder &&
     css`
-      border: 1px solid ${theme.colors.outline};
+      border: 1px solid ${theme.colors.chia};
       border-radius: 8px;
       margin-bottom: 14px;
     `}

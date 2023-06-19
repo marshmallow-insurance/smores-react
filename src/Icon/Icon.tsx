@@ -29,7 +29,7 @@ export const Icon: FC<IconProps> = ({
   className = '',
   render,
   size = 24,
-  color = 'secondary',
+  color = 'liquorice',
   rotate = 0,
   ...marginProps
 }) => (

@@ -166,7 +166,7 @@ export const NumberInput = forwardRef(function NumberInput(
         {prefix && (
           <SymbolText
             tag="span"
-            color="secondary"
+            color="liquorice"
             outlined={outlined}
             prefix={prefix}
           >
@@ -194,7 +194,7 @@ export const NumberInput = forwardRef(function NumberInput(
         {suffix && (
           <SymbolText
             tag="span"
-            color="secondary"
+            color="liquorice"
             outlined={outlined}
             suffix={suffix}
           >
@@ -205,16 +205,16 @@ export const NumberInput = forwardRef(function NumberInput(
         {onChange && step > 0 && (
           <Spinner outlined={outlined}>
             <SpinnerButton onClick={incrementValue} disabled={disabled}>
-              <Icon render="caret" rotate={180} color="subtext" size={24} />
+              <Icon render="caret" rotate={180} color="sesame" size={24} />
             </SpinnerButton>
 
             <SpinnerButton onClick={decrementValue} disabled={disabled}>
-              <Icon render="caret" color="subtext" size={24} />
+              <Icon render="caret" color="sesame" size={24} />
             </SpinnerButton>
           </Spinner>
         )}
 
-        {trailingIcon && <StyledIcon render={trailingIcon} color="subtext" />}
+        {trailingIcon && <StyledIcon render={trailingIcon} color="sesame" />}
       </Box>
     </Field>
   )
@@ -233,8 +233,8 @@ const Input = styled.input<IInput>`
   border: none;
   border-bottom: 1px solid;
   border-color: ${({ error }) =>
-    theme.colors[`${error ? 'error' : 'outline'}`]};
-  color: ${({ error }) => theme.colors[`${error ? 'error' : 'secondary'}`]};
+    theme.colors[`${error ? 'strawberry' : 'chia'}`]};
+  color: ${({ error }) => theme.colors[`${error ? 'strawberry' : 'chia'}`]};
   font-size: 16px;
   width: 100%;
   outline: none;
@@ -244,7 +244,7 @@ const Input = styled.input<IInput>`
   padding-right: 60px;
 
   &::placeholder {
-    color: ${theme.colors.subtext};
+    color: ${theme.colors.sesame};
   }
 
   /* Remove the spinner on Firefox and Webkit browsers */
@@ -259,13 +259,13 @@ const Input = styled.input<IInput>`
   &:hover,
   &:focus-within {
     border-color: ${({ error }) =>
-      theme.colors[`${error ? 'error' : 'outline'}`]};
+      theme.colors[`${error ? 'strawberry' : 'chia'}`]};
   }
 
   ${({ outlined, error }) =>
     outlined &&
     `
-      border: 2px solid ${error ? theme.colors.error : theme.colors.outline};
+      border: 2px solid ${error ? theme.colors.strawberry : theme.colors.chia};
       border-radius: 8px;
       height: auto;
     `}
@@ -274,7 +274,7 @@ const Input = styled.input<IInput>`
     value &&
     value !== '' &&
     `
-      border-color: ${theme.colors.outline};
+      border-color: ${theme.colors.chia};
     `}
 
     ${({ prefix }) =>

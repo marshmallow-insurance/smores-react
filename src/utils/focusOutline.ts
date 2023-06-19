@@ -7,7 +7,7 @@ export const focusOutline = ({
   outline: 0;
 
   ${selector} {
-    outline: 2px solid ${theme.colors.secondary};
+    outline: 2px solid ${theme.colors.liquorice};
     outline-offset: 2px;
   }
 `

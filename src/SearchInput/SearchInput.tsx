@@ -124,7 +124,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         {...otherProps}
       >
         <StyledInputBox outlined={outlined} selected={isSelected}>
-          {showIcon && <SearchIcon size={24} render="search" color="subtext" />}
+          {showIcon && <SearchIcon size={24} render="search" color="sesame" />}
           <StyledInput
             ref={ref}
             id={id}
@@ -172,12 +172,12 @@ const StyledInputBox = styled.div<InputBox>`
   display: flex;
   align-items: center;
   border-bottom: ${({ outlined }) =>
-    outlined ? 'none' : `1px solid ${theme.colors.outline}`};
+    outlined ? 'none' : `1px solid ${theme.colors.chia}`};
   ${({ outlined }) =>
     outlined &&
     `
-    background-color: ${theme.colors.white};
-    border: 2px solid ${theme.colors.outline};
+    background-color: ${theme.colors.cream};
+    border: 2px solid ${theme.colors.chia};
     border-radius: 8px;
     height: auto;
   `}
@@ -186,16 +186,16 @@ const StyledInputBox = styled.div<InputBox>`
   &:hover,
   &:focus,
   &:focus-within {
-    border-color: ${darken(0.1, theme.colors.outline)};
+    border-color: ${darken(0.1, theme.colors.chia)};
   }
 
   ${({ selected }) =>
     selected &&
     `
-    border-color: ${theme.colors.outline};
+    border-color: ${theme.colors.chia};
   `}
   color: ${({ outlined }) =>
-    outlined ? `${theme.colors.outline}` : `${theme.colors.secondary}`};
+    outlined ? `${theme.colors.chia}` : `${theme.colors.liquorice}`};
 `
 
 interface Input extends UsesOutline {
@@ -214,7 +214,7 @@ const StyledInput = styled.input<Input>`
   box-sizing: border-box;
 
   &::placeholder {
-    color: ${theme.colors.subtext};
+    color: ${theme.colors.sesame};
   }
 
   ${({ outlined }) =>
