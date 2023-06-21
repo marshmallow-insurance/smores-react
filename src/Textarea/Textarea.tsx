@@ -86,13 +86,14 @@ interface TextArea {
 
 const StyledTextArea = styled.textarea<TextArea>`
   font-size: 16px;
+  font: inherit;
   line-height: 20px;
   background: ${theme.colors.cream};
   border: 2px solid ${theme.colors.chia};
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 12px;
   width: 100%;
-  padding: 16px;
+  padding: 18px 14px;
   color: ${theme.colors.liquorice};
   resize: ${({ resize }) => resize};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'text')};

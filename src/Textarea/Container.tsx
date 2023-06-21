@@ -13,6 +13,7 @@ export const Container = () => {
         value={value}
         resize="both"
         onChange={setValue}
+        assistiveText="This is some assistive text"
         disabled={false}
         error={value.length > 255}
         errorMsg={`Your text is ${value.length} characters long. The maximum is 255 characters. Please make it shorter`}
