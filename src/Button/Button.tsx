@@ -2,7 +2,6 @@ import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
-import { focusOutline } from '../utils/focusOutline'
 import { useDeprecatedWarning } from '../utils/deprecated'
 import { Box } from '../Box'
 import { Loader } from '../Loader'
@@ -20,7 +19,9 @@ type Props = {
   secondary?: boolean
   tertiary?: boolean
   fallback?: boolean
+  textBtn?: boolean
   icon?: string
+  trailingIcon?: boolean
   forcedWidth?: string
   form?: string
 }
@@ -44,7 +45,9 @@ export const Button: FC<ButtonProps> = forwardRef<
     secondary = false,
     tertiary = false,
     fallback = false,
+    textBtn = false,
     icon = '',
+    trailingIcon = false,
     forcedWidth = '',
     form,
     type,
@@ -71,7 +74,9 @@ export const Button: FC<ButtonProps> = forwardRef<
       secondary={secondary}
       tertiary={tertiary}
       fallback={fallback}
+      textBtn={textBtn}
       icon={icon}
+      trailingIcon={trailingIcon}
       forcedWidth={forcedWidth}
       {...(form ? { form } : {})}
       type={type}
@@ -84,8 +89,23 @@ export const Button: FC<ButtonProps> = forwardRef<
         </LoaderContainer>
       )}
       <ContentContainer icon={icon} $loading={loading}>
-        {icon && <IconContainer render={icon} size={24} color={'liquorice'} />}
+        {!trailingIcon && icon && (
+          <IconContainer
+            trailingIcon={trailingIcon}
+            render={icon}
+            size={24}
+            color={'liquorice'}
+          />
+        )}
         <ChildrenContainer>{children}</ChildrenContainer>
+        {trailingIcon && icon && textBtn && (
+          <IconContainer
+            trailingIcon={trailingIcon}
+            render={icon}
+            size={24}
+            color={'liquorice'}
+          />
+        )}
       </ContentContainer>
     </Container>
   )
@@ -103,6 +123,8 @@ type IButton = Required<
     | 'icon'
     | 'forcedWidth'
     | 'fallback'
+    | 'textBtn'
+    | 'trailingIcon'
   >
 > & {
   $loading: NonNullable<ButtonProps['loading']>
@@ -117,8 +139,8 @@ const Container = styled(Box)<IButton>(
     tertiary,
     forcedWidth,
     fallback,
+    textBtn,
   }) => css`
-    ${focusOutline()}
     position: relative;
     background-color: ${theme.colors.marshmallowPink};
     box-shadow: none;
@@ -166,6 +188,21 @@ const Container = styled(Box)<IButton>(
         background-color: ${theme.colors.mascarpone};
       }
     `}
+  ${textBtn &&
+    css`
+      background-color: transparent;
+      padding: 0;
+      border-radius: 0;
+      text-decoration: underline;
+
+      &:hover {
+        background-color: ${!(disabled || $loading) && theme.colors.fairyFloss};
+      }
+      &:active {
+        background-color: transparent;
+        color: ${theme.colors.sesame};
+      }
+    `}
   `,
 )
 
@@ -189,9 +226,11 @@ const ContentContainer = styled.div<
   opacity: ${({ $loading }) => ($loading ? '0' : '1')};
 `
 
-const IconContainer = styled(IconComponent)`
-  margin-right: 10px;
-`
+const IconContainer = styled(IconComponent)<Pick<ButtonProps, 'trailingIcon'>>(
+  ({ trailingIcon }) => css`
+    margin: ${trailingIcon ? '0 0 0 10px' : '0 10px 0 0'};
+  `,
+)
 
 const ChildrenContainer = styled.div`
   padding: 16px 0;

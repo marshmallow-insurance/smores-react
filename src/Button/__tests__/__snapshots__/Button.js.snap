@@ -2,7 +2,6 @@
 
 exports[`renders 1`] = `
 .c0 {
-  outline: 0;
   position: relative;
   background-color: #FF88C8;
   box-shadow: none;
@@ -16,11 +15,6 @@ exports[`renders 1`] = `
   font-size: 16px;
   opacity: 1;
   width: auto;
-}
-
-.c0:focus-visible {
-  outline: 2px solid #292924;
-  outline-offset: 2px;
 }
 
 .c1 {
