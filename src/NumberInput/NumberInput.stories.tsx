@@ -54,7 +54,6 @@ Currency.args = {
   label: 'Currency',
   name: 'currencyAmount',
   placeholder: '0.00',
-  prefix: '$',
   roundCurrency: true,
   required: true,
   onChange: noop,
@@ -69,7 +68,6 @@ Distance.args = {
   label: 'Distance',
   name: 'distanceNumber',
   placeholder: '0',
-  suffix: 'km',
   required: true,
   onChange: noop,
   step: 100,
@@ -83,10 +81,11 @@ Telephone.args = {
   label: 'Telephone number',
   name: 'telephoneNumber',
   placeholder: '7123 456789',
-  prefix: '+44',
   required: true,
   onChange: noop,
   outlined: false,
+  frontIcon: 'search',
+  trailingIcon: 'search',
 }
 
 export const Disabled = Template.bind({})
@@ -96,23 +95,12 @@ Disabled.args = {
   label: 'Telephone number',
   name: 'telephoneNumber',
   placeholder: '7123 456789',
-  prefix: '+44',
   required: true,
   onChange: noop,
+  frontIcon: 'search',
+  trailingIcon: 'search',
   disabled: true,
   outlined: false,
-}
-
-export const WithOutline = Template.bind({})
-
-WithOutline.args = {
-  id: 'outlined',
-  label: 'with outline',
-  name: 'outlined',
-  required: false,
-  onChange: noop,
-  disabled: false,
-  outlined: true,
 }
 
 const WorkingExampleTemplate = () => <Container />

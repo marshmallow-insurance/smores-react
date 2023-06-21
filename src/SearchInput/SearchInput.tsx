@@ -120,10 +120,9 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         className={className}
         renderAsTitle={renderAsTitle}
         htmlFor={id}
-        outlined={outlined}
         {...otherProps}
       >
-        <StyledInputBox outlined={outlined} selected={isSelected}>
+        <StyledInputBox selected={isSelected}>
           {showIcon && <SearchIcon size={24} render="search" color="sesame" />}
           <StyledInput
             ref={ref}
@@ -134,13 +133,11 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             autoComplete="off"
             value={displayedInputText}
             onChange={handleInputChange}
-            outlined={outlined}
             selected={isSelected}
             onBlur={(e) => {
               if (displayedInputText === '') {
                 setSearchQuery(null)
               }
-
               onBlur?.(e)
             }}
           />
@@ -159,11 +156,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
   },
 )
 
-interface UsesOutline {
-  outlined?: boolean
-}
-
-interface InputBox extends UsesOutline {
+interface InputBox {
   showIcon?: boolean
   selected: boolean
 }
@@ -171,16 +164,11 @@ interface InputBox extends UsesOutline {
 const StyledInputBox = styled.div<InputBox>`
   display: flex;
   align-items: center;
-  border-bottom: ${({ outlined }) =>
-    outlined ? 'none' : `1px solid ${theme.colors.chia}`};
-  ${({ outlined }) =>
-    outlined &&
-    `
-    background-color: ${theme.colors.cream};
-    border: 2px solid ${theme.colors.chia};
-    border-radius: 8px;
-    height: auto;
-  `}
+  background-color: ${theme.colors.cream};
+  border: 2px solid ${theme.colors.chia};
+  color: ${theme.colors.chia};
+  border-radius: 12px;
+  height: auto;
   padding: ${({ showIcon }) => (showIcon ? '14px 10px' : '16px 12px')};
 
   &:hover,
@@ -194,11 +182,9 @@ const StyledInputBox = styled.div<InputBox>`
     `
     border-color: ${theme.colors.chia};
   `}
-  color: ${({ outlined }) =>
-    outlined ? `${theme.colors.chia}` : `${theme.colors.liquorice}`};
 `
 
-interface Input extends UsesOutline {
+interface Input {
   id: string
   name: string
   value: string
@@ -212,16 +198,11 @@ const StyledInput = styled.input<Input>`
   font-size: 16px;
   width: 100%;
   box-sizing: border-box;
+  height: auto;
 
   &::placeholder {
     color: ${theme.colors.sesame};
   }
-
-  ${({ outlined }) =>
-    outlined &&
-    `
-    height: auto;
-  `}
 `
 
 const SearchIcon = styled(Icon)`

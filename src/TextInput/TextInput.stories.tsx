@@ -137,6 +137,8 @@ Required.args = {
   onInputChange: noop,
   onBlur: noop,
   label: 'Please enter your name',
+  frontIcon: 'search',
+  trailingIcon: 'search',
   outlined: true,
   required: true,
 }
@@ -151,6 +153,8 @@ AssistiveText.args = {
   onInputChange: noop,
   onBlur: noop,
   label: 'Please enter your name',
+  frontIcon: 'search',
+  trailingIcon: 'search',
   outlined: true,
   required: true,
   assistiveText: 'Some more information...',

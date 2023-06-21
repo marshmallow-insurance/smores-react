@@ -22,7 +22,6 @@ export const InternalField = ({
   className,
   label,
   assistiveText,
-  outlined = false,
   error,
   errorMsg,
   required,
@@ -44,20 +43,14 @@ export const InternalField = ({
               <Text tag={labelTag} typo="heading-small" htmlFor={htmlFor}>
                 {label}
               </Text>
-
-              {assistiveText && (
-                <Text tag="p" color="sesame" mt={{ custom: 4 }}>
-                  {assistiveText}
-                </Text>
-              )}
             </Box>
           ) : (
             <Text
               tag={labelTag}
               typo="label"
-              color="sesame"
+              color={error ? 'strawberry' : 'sesame'}
               htmlFor={htmlFor}
-              mb={{ custom: outlined ? 4 : 0 }}
+              mb={{ custom: 4 }}
             >
               {label}
               {required && (
@@ -71,6 +64,16 @@ export const InternalField = ({
       )}
 
       <Box>{children}</Box>
+      {assistiveText && (
+        <Text
+          tag={labelTag}
+          typo="caption"
+          color={error ? 'strawberry' : 'sesame'}
+          mt={{ custom: 4 }}
+        >
+          {assistiveText}
+        </Text>
+      )}
 
       {error &&
         errorMsg &&

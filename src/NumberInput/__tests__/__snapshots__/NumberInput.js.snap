@@ -8,7 +8,7 @@ exports[`renders - currency 1`] = `
   display: flex;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -31,7 +31,7 @@ exports[`renders - currency 1`] = `
   transform: rotate(180deg);
 }
 
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64,15 +64,6 @@ exports[`renders - currency 1`] = `
   color: #636768;
 }
 
-.c4 {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: left;
-  cursor: inherit;
-  color: #292924;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -86,72 +77,63 @@ exports[`renders - currency 1`] = `
   border: 0;
 }
 
-.c6 {
-  font-family: 'Circular',san-serif;
+.c4 {
   border: none;
-  border-bottom: 1px solid;
   border-color: #D2D2D2;
-  color: #D2D2D2;
+  background-color: transparent;
+  color: #292924;
   font-size: 16px;
   width: 100%;
   outline: none;
-  cursor: pointer;
+  cursor: initial;
   opacity: 1;
-  padding: 1px 2px;
-  padding-right: 60px;
-  -moz-appearance: textfield;
+  padding: 18px 14px;
+  background-color: #FFFFFF;
+  border: 2px solid #D2D2D2;
+  border-radius: 12px;
+  height: auto;
   border-color: #D2D2D2;
-  padding-left: 12px;
-  left: -10px;
-  position: relative;
+  -moz-appearance: textfield;
 }
 
-.c6::-webkit-input-placeholder {
-  color: #636768;
+.c4:hover,
+.c4:focus-within {
+  border-color: #b9b9b9;
 }
 
-.c6::-moz-placeholder {
-  color: #636768;
-}
-
-.c6:-ms-input-placeholder {
-  color: #636768;
-}
-
-.c6::placeholder {
-  color: #636768;
-}
-
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c4::-webkit-outer-spin-button,
+.c4::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c6:hover,
-.c6:focus-within {
-  border-color: #D2D2D2;
+.c4::-webkit-input-placeholder {
+  color: #636768;
+}
+
+.c4::-moz-placeholder {
+  color: #636768;
+}
+
+.c4:-ms-input-placeholder {
+  color: #636768;
+}
+
+.c4::placeholder {
+  color: #636768;
 }
 
 .c5 {
-  font-family: 'Circular',san-serif;
-  font-size: 16px;
-  line-height: 19px;
   position: relative;
-  z-index: 1;
-}
-
-.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  top: -3px;
-  left: -60px;
+  right: 58px;
+  margin-right: -58px;
 }
 
-.c8 {
+.c6 {
   width: 24px;
   height: 24px;
   background-color: transparent;
@@ -162,12 +144,31 @@ exports[`renders - currency 1`] = `
 
 @media (min-width:0px) {
   .c1 {
-    margin-bottom: 0px;
+    margin-bottom: 4px;
+  }
+}
+
+@media (min-width:0px) {
+  .c3 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width:0px) {
+  .c3 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 
 <div
   class="c0"
+  prefix="$"
 >
   <label
     class="c1 c2"
@@ -184,32 +185,23 @@ exports[`renders - currency 1`] = `
     <div
       class="c3"
     >
-      <span
-        class="c4 c5"
-        color="liquorice"
-        cursor="inherit"
-        prefix="$"
-        title=""
-      >
-        $
-      </span>
       <input
-        class="c6"
+        class="c4"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
-        prefix="$"
+        step="10"
         type="number"
         value="50"
       />
       <div
-        class="c7"
+        class="c5"
       >
         <button
-          class="c8"
+          class="c6"
         >
           <span
-            class="c9"
+            class="c7"
             color="sesame"
             rotate="180"
             size="24"
@@ -229,10 +221,10 @@ exports[`renders - currency 1`] = `
           </span>
         </button>
         <button
-          class="c8"
+          class="c6"
         >
           <span
-            class="c10"
+            class="c8"
             color="sesame"
             rotate="0"
             size="24"
@@ -289,19 +281,32 @@ exports[`renders - disabled 1`] = `
 }
 
 .c4 {
-  font-family: 'Circular',san-serif;
   border: none;
-  border-bottom: 1px solid;
   border-color: #D2D2D2;
-  color: #D2D2D2;
+  background-color: transparent;
+  color: #292924;
   font-size: 16px;
   width: 100%;
   outline: none;
   cursor: not-allowed;
   opacity: 0.5;
-  padding: 1px 2px;
-  padding-right: 60px;
+  padding: 18px 14px;
+  background-color: #FFFFFF;
+  border: 2px solid #D2D2D2;
+  border-radius: 12px;
+  height: auto;
   -moz-appearance: textfield;
+}
+
+.c4:hover,
+.c4:focus-within {
+  border-color: #b9b9b9;
+}
+
+.c4::-webkit-outer-spin-button,
+.c4::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -320,20 +325,27 @@ exports[`renders - disabled 1`] = `
   color: #636768;
 }
 
-.c4::-webkit-outer-spin-button,
-.c4::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c4:hover,
-.c4:focus-within {
-  border-color: #D2D2D2;
+@media (min-width:0px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
 }
 
 @media (min-width:0px) {
-  .c1 {
-    margin-bottom: 0px;
+  .c3 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width:0px) {
+  .c3 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 
@@ -361,6 +373,7 @@ exports[`renders - disabled 1`] = `
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
+        step="0"
         type="number"
         value=""
       />
@@ -377,7 +390,7 @@ exports[`renders - error 1`] = `
   display: flex;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -400,7 +413,7 @@ exports[`renders - error 1`] = `
   transform: rotate(180deg);
 }
 
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -430,19 +443,10 @@ exports[`renders - error 1`] = `
   text-transform: uppercase;
   text-align: left;
   cursor: inherit;
-  color: #636768;
+  color: #DF2929;
 }
 
-.c4 {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: left;
-  cursor: inherit;
-  color: #292924;
-}
-
-.c12 {
+.c10 {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
@@ -464,72 +468,63 @@ exports[`renders - error 1`] = `
   border: 0;
 }
 
-.c6 {
-  font-family: 'Circular',san-serif;
+.c4 {
   border: none;
-  border-bottom: 1px solid;
   border-color: #DF2929;
+  background-color: transparent;
   color: #DF2929;
   font-size: 16px;
   width: 100%;
   outline: none;
-  cursor: pointer;
+  cursor: initial;
   opacity: 1;
-  padding: 1px 2px;
-  padding-right: 60px;
-  -moz-appearance: textfield;
+  padding: 18px 14px;
+  background-color: #FFFFFF;
+  border: 2px solid #DF2929;
+  border-radius: 12px;
+  height: auto;
   border-color: #D2D2D2;
-  padding-left: 12px;
-  left: -10px;
-  position: relative;
+  -moz-appearance: textfield;
 }
 
-.c6::-webkit-input-placeholder {
-  color: #636768;
+.c4:hover,
+.c4:focus-within {
+  border-color: #DF2929;
 }
 
-.c6::-moz-placeholder {
-  color: #636768;
-}
-
-.c6:-ms-input-placeholder {
-  color: #636768;
-}
-
-.c6::placeholder {
-  color: #636768;
-}
-
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c4::-webkit-outer-spin-button,
+.c4::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c6:hover,
-.c6:focus-within {
-  border-color: #DF2929;
+.c4::-webkit-input-placeholder {
+  color: #636768;
+}
+
+.c4::-moz-placeholder {
+  color: #636768;
+}
+
+.c4:-ms-input-placeholder {
+  color: #636768;
+}
+
+.c4::placeholder {
+  color: #636768;
 }
 
 .c5 {
-  font-family: 'Circular',san-serif;
-  font-size: 16px;
-  line-height: 19px;
   position: relative;
-  z-index: 1;
-}
-
-.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  top: -3px;
-  left: -60px;
+  right: 58px;
+  margin-right: -58px;
 }
 
-.c8 {
+.c6 {
   width: 24px;
   height: 24px;
   background-color: transparent;
@@ -540,22 +535,41 @@ exports[`renders - error 1`] = `
 
 @media (min-width:0px) {
   .c1 {
-    margin-bottom: 0px;
+    margin-bottom: 4px;
   }
 }
 
 @media (min-width:0px) {
-  .c11 {
+  .c3 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width:0px) {
+  .c3 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:0px) {
+  .c9 {
     margin-top: 8px;
   }
 }
 
 <div
   class="c0"
+  prefix="$"
 >
   <label
     class="c1 c2"
-    color="sesame"
+    color="strawberry"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -568,32 +582,23 @@ exports[`renders - error 1`] = `
     <div
       class="c3"
     >
-      <span
-        class="c4 c5"
-        color="liquorice"
-        cursor="inherit"
-        prefix="$"
-        title=""
-      >
-        $
-      </span>
       <input
-        class="c6"
+        class="c4"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
-        prefix="$"
+        step="10"
         type="number"
         value="200"
       />
       <div
-        class="c7"
+        class="c5"
       >
         <button
-          class="c8"
+          class="c6"
         >
           <span
-            class="c9"
+            class="c7"
             color="sesame"
             rotate="180"
             size="24"
@@ -613,10 +618,10 @@ exports[`renders - error 1`] = `
           </span>
         </button>
         <button
-          class="c8"
+          class="c6"
         >
           <span
-            class="c10"
+            class="c8"
             color="sesame"
             rotate="0"
             size="24"
@@ -639,7 +644,7 @@ exports[`renders - error 1`] = `
     </div>
   </div>
   <span
-    class="c11 c12"
+    class="c9 c10"
     color="strawberry"
     cursor="inherit"
     title=""
@@ -690,19 +695,32 @@ exports[`renders - number 1`] = `
 }
 
 .c5 {
-  font-family: 'Circular',san-serif;
   border: none;
-  border-bottom: 1px solid;
   border-color: #D2D2D2;
-  color: #D2D2D2;
+  background-color: transparent;
+  color: #292924;
   font-size: 16px;
   width: 100%;
   outline: none;
-  cursor: pointer;
+  cursor: initial;
   opacity: 1;
-  padding: 1px 2px;
-  padding-right: 60px;
+  padding: 18px 14px;
+  background-color: #FFFFFF;
+  border: 2px solid #D2D2D2;
+  border-radius: 12px;
+  height: auto;
   -moz-appearance: textfield;
+}
+
+.c5:hover,
+.c5:focus-within {
+  border-color: #b9b9b9;
+}
+
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c5::-webkit-input-placeholder {
@@ -721,20 +739,27 @@ exports[`renders - number 1`] = `
   color: #636768;
 }
 
-.c5::-webkit-outer-spin-button,
-.c5::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c5:hover,
-.c5:focus-within {
-  border-color: #D2D2D2;
+@media (min-width:0px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
 }
 
 @media (min-width:0px) {
-  .c1 {
-    margin-bottom: 0px;
+  .c4 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width:0px) {
+  .c4 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 
@@ -769,6 +794,7 @@ exports[`renders - number 1`] = `
         id="numberInput"
         name="numberInput"
         placeholder="0.00"
+        step="0"
         type="number"
         value=""
       />
@@ -795,15 +821,6 @@ exports[`renders - tel 1`] = `
   color: #636768;
 }
 
-.c4 {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: left;
-  cursor: inherit;
-  color: #292924;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -817,68 +834,78 @@ exports[`renders - tel 1`] = `
   border: 0;
 }
 
-.c6 {
-  font-family: 'Circular',san-serif;
+.c4 {
   border: none;
-  border-bottom: 1px solid;
   border-color: #D2D2D2;
-  color: #D2D2D2;
+  background-color: transparent;
+  color: #292924;
   font-size: 16px;
   width: 100%;
   outline: none;
-  cursor: pointer;
+  cursor: initial;
   opacity: 1;
-  padding: 1px 2px;
-  padding-right: 60px;
+  padding: 18px 14px;
+  background-color: #FFFFFF;
+  border: 2px solid #D2D2D2;
+  border-radius: 12px;
+  height: auto;
   -moz-appearance: textfield;
-  padding-left: 12px;
-  left: -10px;
-  position: relative;
 }
 
-.c6::-webkit-input-placeholder {
-  color: #636768;
+.c4:hover,
+.c4:focus-within {
+  border-color: #b9b9b9;
 }
 
-.c6::-moz-placeholder {
-  color: #636768;
-}
-
-.c6:-ms-input-placeholder {
-  color: #636768;
-}
-
-.c6::placeholder {
-  color: #636768;
-}
-
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c4::-webkit-outer-spin-button,
+.c4::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c6:hover,
-.c6:focus-within {
-  border-color: #D2D2D2;
+.c4::-webkit-input-placeholder {
+  color: #636768;
 }
 
-.c5 {
-  font-family: 'Circular',san-serif;
-  font-size: 16px;
-  line-height: 19px;
-  position: relative;
-  z-index: 1;
+.c4::-moz-placeholder {
+  color: #636768;
+}
+
+.c4:-ms-input-placeholder {
+  color: #636768;
+}
+
+.c4::placeholder {
+  color: #636768;
 }
 
 @media (min-width:0px) {
   .c1 {
-    margin-bottom: 0px;
+    margin-bottom: 4px;
+  }
+}
+
+@media (min-width:0px) {
+  .c3 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width:0px) {
+  .c3 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 
 <div
   class="c0"
+  prefix="+44"
 >
   <label
     class="c1 c2"
@@ -895,21 +922,12 @@ exports[`renders - tel 1`] = `
     <div
       class="c3"
     >
-      <span
-        class="c4 c5"
-        color="liquorice"
-        cursor="inherit"
-        prefix="+44"
-        title=""
-      >
-        +44
-      </span>
       <input
-        class="c6"
+        class="c4"
         id="tel"
         name="telephoneNumber"
         placeholder="07446875876"
-        prefix="+44"
+        step="0"
         type="tel"
         value=""
       />
@@ -936,15 +954,6 @@ exports[`renders - with suffix 1`] = `
   color: #636768;
 }
 
-.c5 {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: left;
-  cursor: inherit;
-  color: #292924;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -959,19 +968,32 @@ exports[`renders - with suffix 1`] = `
 }
 
 .c4 {
-  font-family: 'Circular',san-serif;
   border: none;
-  border-bottom: 1px solid;
   border-color: #D2D2D2;
-  color: #D2D2D2;
+  background-color: transparent;
+  color: #292924;
   font-size: 16px;
   width: 100%;
   outline: none;
-  cursor: pointer;
+  cursor: initial;
   opacity: 1;
-  padding: 1px 2px;
-  padding-right: 60px;
+  padding: 18px 14px;
+  background-color: #FFFFFF;
+  border: 2px solid #D2D2D2;
+  border-radius: 12px;
+  height: auto;
   -moz-appearance: textfield;
+}
+
+.c4:hover,
+.c4:focus-within {
+  border-color: #b9b9b9;
+}
+
+.c4::-webkit-outer-spin-button,
+.c4::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -990,29 +1012,27 @@ exports[`renders - with suffix 1`] = `
   color: #636768;
 }
 
-.c4::-webkit-outer-spin-button,
-.c4::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c4:hover,
-.c4:focus-within {
-  border-color: #D2D2D2;
-}
-
-.c6 {
-  font-family: 'Circular',san-serif;
-  font-size: 16px;
-  line-height: 19px;
-  position: relative;
-  z-index: 1;
-  left: -10px;
+@media (min-width:0px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
 }
 
 @media (min-width:0px) {
-  .c1 {
-    margin-bottom: 0px;
+  .c3 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width:0px) {
+  .c3 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 
@@ -1039,17 +1059,10 @@ exports[`renders - with suffix 1`] = `
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
+        step="0"
         type="number"
         value=""
       />
-      <span
-        class="c5 c6"
-        color="liquorice"
-        cursor="inherit"
-        title=""
-      >
-        miles
-      </span>
     </div>
   </div>
 </div>
@@ -1063,7 +1076,7 @@ exports[`renders - with trailing icon 1`] = `
   display: flex;
 }
 
-.c7 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1096,15 +1109,6 @@ exports[`renders - with trailing icon 1`] = `
   color: #636768;
 }
 
-.c4 {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: left;
-  cursor: inherit;
-  color: #292924;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1118,73 +1122,84 @@ exports[`renders - with trailing icon 1`] = `
   border: 0;
 }
 
-.c6 {
-  font-family: 'Circular',san-serif;
+.c4 {
   border: none;
-  border-bottom: 1px solid;
   border-color: #D2D2D2;
-  color: #D2D2D2;
+  background-color: transparent;
+  color: #292924;
   font-size: 16px;
   width: 100%;
   outline: none;
-  cursor: pointer;
+  cursor: initial;
   opacity: 1;
-  padding: 1px 2px;
-  padding-right: 60px;
+  padding: 18px 14px;
+  background-color: #FFFFFF;
+  border: 2px solid #D2D2D2;
+  border-radius: 12px;
+  height: auto;
   -moz-appearance: textfield;
-  padding-left: 12px;
-  left: -10px;
-  position: relative;
 }
 
-.c6::-webkit-input-placeholder {
-  color: #636768;
+.c4:hover,
+.c4:focus-within {
+  border-color: #b9b9b9;
 }
 
-.c6::-moz-placeholder {
-  color: #636768;
-}
-
-.c6:-ms-input-placeholder {
-  color: #636768;
-}
-
-.c6::placeholder {
-  color: #636768;
-}
-
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
+.c4::-webkit-outer-spin-button,
+.c4::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.c6:hover,
-.c6:focus-within {
-  border-color: #D2D2D2;
+.c4::-webkit-input-placeholder {
+  color: #636768;
 }
 
-.c8 {
-  position: relative;
-  left: -24px;
+.c4::-moz-placeholder {
+  color: #636768;
 }
 
-.c5 {
-  font-family: 'Circular',san-serif;
-  font-size: 16px;
-  line-height: 19px;
+.c4:-ms-input-placeholder {
+  color: #636768;
+}
+
+.c4::placeholder {
+  color: #636768;
+}
+
+.c6 {
   position: relative;
-  z-index: 1;
+  right: 36px;
+  margin-right: -36px;
 }
 
 @media (min-width:0px) {
   .c1 {
-    margin-bottom: 0px;
+    margin-bottom: 4px;
+  }
+}
+
+@media (min-width:0px) {
+  .c3 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width:0px) {
+  .c3 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 
 <div
   class="c0"
+  prefix="$"
 >
   <label
     class="c1 c2"
@@ -1201,26 +1216,17 @@ exports[`renders - with trailing icon 1`] = `
     <div
       class="c3"
     >
-      <span
-        class="c4 c5"
-        color="liquorice"
-        cursor="inherit"
-        prefix="$"
-        title=""
-      >
-        $
-      </span>
       <input
-        class="c6"
+        class="c4"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
-        prefix="$"
+        step="0"
         type="number"
         value=""
       />
       <span
-        class="c7 c8"
+        class="c5 c6"
         color="sesame"
         rotate="0"
         size="24"

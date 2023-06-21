@@ -1,13 +1,14 @@
 import React, { FocusEvent, FormEvent, forwardRef, ForwardedRef } from 'react'
-import styled from 'styled-components'
-import { darken } from 'polished'
 
-import { theme } from '../theme'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { Box } from '../Box'
-import { Icon } from '../Icon'
 import { useUniqueId } from '../utils/id'
+import {
+  Input,
+  StyledFrontIcon,
+  StyledTrailingIcon,
+} from '../fields/components/CommonInput'
 
 interface Props extends CommonFieldProps {
   type?: 'text' | 'email' | 'password' | 'time' | 'date'
@@ -15,8 +16,12 @@ interface Props extends CommonFieldProps {
   name?: string
   value: string
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
+  frontIcon?: string
   trailingIcon?: string
   disabled?: boolean
+  /**
+   * @deprecated this no longer does anything, remove when found
+   */
   outlined?: boolean
 }
 
@@ -42,12 +47,12 @@ export const TextInput = forwardRef(function TextInput(
     placeholder,
     name,
     value,
-    outlined = false,
     error = false,
     onBlur,
     onChange,
     onInputChange,
     disabled = false,
+    frontIcon,
     trailingIcon,
     ...fieldProps
   }: TextInputProps,
@@ -56,9 +61,10 @@ export const TextInput = forwardRef(function TextInput(
   const id = useUniqueId(idProp)
 
   return (
-    <Field {...fieldProps} htmlFor={id} error={error} outlined={outlined}>
-      <Box flex>
-        <StyledInput
+    <Field {...fieldProps} htmlFor={id} error={error}>
+      <Box flex alignItems="center" justifyContent="flex-start">
+        {frontIcon && <StyledFrontIcon render={frontIcon} color="sesame" />}
+        <Input
           disabled={disabled}
           type={type}
           id={id}
@@ -67,7 +73,7 @@ export const TextInput = forwardRef(function TextInput(
           placeholder={placeholder}
           value={value}
           error={error}
-          outlined={outlined}
+          frontIcon={frontIcon}
           autoComplete="off"
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && onChange(e.currentTarget.value)
@@ -75,76 +81,10 @@ export const TextInput = forwardRef(function TextInput(
           }}
           onBlur={onBlur}
         />
-        {trailingIcon && <StyledIcon render={trailingIcon} color="sesame" />}
+        {trailingIcon && (
+          <StyledTrailingIcon render={trailingIcon} color="sesame" />
+        )}
       </Box>
     </Field>
   )
 })
-
-interface Input {
-  error: boolean
-  disabled?: boolean
-  value?: string
-  outlined?: boolean
-  trailingIcon?: string
-}
-
-const StyledInput = styled.input<Input>`
-  border: none;
-  border-bottom: 1px solid;
-  border-color: ${({ error }) =>
-    theme.colors[`${error ? 'strawberry' : 'chia'}`]};
-  background-color: transparent;
-  color: ${({ error }) =>
-    theme.colors[`${error ? 'strawberry' : 'liquorice'}`]};
-  font-size: 16px;
-  width: 100%;
-  outline: none;
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'initial')};
-  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
-  padding: ${({ outlined }) => (outlined ? '17px 14px' : '1px 2px')};
-  &:hover,
-  &:focus-within {
-    border-color: ${({ error }) =>
-      error ? theme.colors.strawberry : darken(0.1, theme.colors.chia)};
-  }
-
-  ${({ outlined, error }) =>
-    outlined &&
-    `
-      background-color: ${theme.colors.cream};
-      border: 2px solid ${error ? theme.colors.strawberry : theme.colors.chia};
-      border-radius: 8px;
-      height: auto;
-    `}
-
-  ${({ value }) =>
-    value &&
-    value != '' &&
-    `
-      border-color: ${theme.colors.chia};
-    `}
-
-  ${({ trailingIcon }) =>
-    trailingIcon &&
-    trailingIcon != '' &&
-    `
-      padding-right: 24px;
-    `}
-
-  ${({ outlined }) =>
-    outlined &&
-    `
-      border-radius: 8px;
-      height: auto;
-    `}
-
-  &::placeholder {
-    color: ${theme.colors.sesame};
-  }
-`
-
-const StyledIcon = styled(Icon)`
-  position: relative;
-  left: -24px;
-`

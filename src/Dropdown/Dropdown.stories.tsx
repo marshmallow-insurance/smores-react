@@ -218,6 +218,7 @@ WithErrorWithGroups.args = {
   list: daysWithGroups,
   placeholder: 'Select',
   outlined: false,
+  frontIcon: 'search',
   error: true,
   errorMsg: 'This field is required',
   label: 'Select day',
