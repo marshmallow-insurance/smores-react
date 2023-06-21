@@ -2,34 +2,61 @@
 
 exports[`renders 1`] = `
 .c0 {
+  outline: 0;
   position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  padding: 18px 16px 14px;
+  background-color: #FF88C8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
   outline: none;
-  cursor: pointer;
-  width: auto;
-  color: #FFFFFF;
+  border-radius: 10000px;
   font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
 }
 
-.c0:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
 }
 
-@media (min-width:768px) {
-  .c0 {
-    padding: 16px 16px 15px;
-    font-size: 16px;
-  }
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 <button
   class="c0"
   color="green"
-/>
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    />
+  </div>
+</button>
 `;
