@@ -157,6 +157,7 @@ AssistiveText.args = {
   trailingIcon: 'search',
   outlined: true,
   required: true,
+  fallbackBg: true,
   assistiveText: 'Some more information...',
   renderAsTitle: true,
 }

@@ -79,8 +79,6 @@ exports[`renders - currency 1`] = `
 
 .c4 {
   border: none;
-  border-color: #D2D2D2;
-  background-color: transparent;
   color: #292924;
   font-size: 16px;
   width: 100%;
@@ -89,16 +87,15 @@ exports[`renders - currency 1`] = `
   opacity: 1;
   padding: 18px 14px;
   background-color: #FFFFFF;
-  border: 2px solid #D2D2D2;
+  border: 2px solid #DAD2C4;
   border-radius: 12px;
   height: auto;
-  border-color: #D2D2D2;
   -moz-appearance: textfield;
 }
 
 .c4:hover,
 .c4:focus-within {
-  border-color: #b9b9b9;
+  border-color: #A1957C;
 }
 
 .c4::-webkit-outer-spin-button,
@@ -282,8 +279,6 @@ exports[`renders - disabled 1`] = `
 
 .c4 {
   border: none;
-  border-color: #D2D2D2;
-  background-color: transparent;
   color: #292924;
   font-size: 16px;
   width: 100%;
@@ -292,7 +287,7 @@ exports[`renders - disabled 1`] = `
   opacity: 0.5;
   padding: 18px 14px;
   background-color: #FFFFFF;
-  border: 2px solid #D2D2D2;
+  border: 2px solid #DAD2C4;
   border-radius: 12px;
   height: auto;
   -moz-appearance: textfield;
@@ -300,7 +295,7 @@ exports[`renders - disabled 1`] = `
 
 .c4:hover,
 .c4:focus-within {
-  border-color: #b9b9b9;
+  border-color: #A1957C;
 }
 
 .c4::-webkit-outer-spin-button,
@@ -470,8 +465,6 @@ exports[`renders - error 1`] = `
 
 .c4 {
   border: none;
-  border-color: #DF2929;
-  background-color: transparent;
   color: #DF2929;
   font-size: 16px;
   width: 100%;
@@ -483,7 +476,6 @@ exports[`renders - error 1`] = `
   border: 2px solid #DF2929;
   border-radius: 12px;
   height: auto;
-  border-color: #D2D2D2;
   -moz-appearance: textfield;
 }
 
@@ -696,8 +688,6 @@ exports[`renders - number 1`] = `
 
 .c5 {
   border: none;
-  border-color: #D2D2D2;
-  background-color: transparent;
   color: #292924;
   font-size: 16px;
   width: 100%;
@@ -706,7 +696,7 @@ exports[`renders - number 1`] = `
   opacity: 1;
   padding: 18px 14px;
   background-color: #FFFFFF;
-  border: 2px solid #D2D2D2;
+  border: 2px solid #DAD2C4;
   border-radius: 12px;
   height: auto;
   -moz-appearance: textfield;
@@ -714,7 +704,7 @@ exports[`renders - number 1`] = `
 
 .c5:hover,
 .c5:focus-within {
-  border-color: #b9b9b9;
+  border-color: #A1957C;
 }
 
 .c5::-webkit-outer-spin-button,
@@ -836,8 +826,6 @@ exports[`renders - tel 1`] = `
 
 .c4 {
   border: none;
-  border-color: #D2D2D2;
-  background-color: transparent;
   color: #292924;
   font-size: 16px;
   width: 100%;
@@ -846,7 +834,7 @@ exports[`renders - tel 1`] = `
   opacity: 1;
   padding: 18px 14px;
   background-color: #FFFFFF;
-  border: 2px solid #D2D2D2;
+  border: 2px solid #DAD2C4;
   border-radius: 12px;
   height: auto;
   -moz-appearance: textfield;
@@ -854,7 +842,7 @@ exports[`renders - tel 1`] = `
 
 .c4:hover,
 .c4:focus-within {
-  border-color: #b9b9b9;
+  border-color: #A1957C;
 }
 
 .c4::-webkit-outer-spin-button,
@@ -969,8 +957,6 @@ exports[`renders - with suffix 1`] = `
 
 .c4 {
   border: none;
-  border-color: #D2D2D2;
-  background-color: transparent;
   color: #292924;
   font-size: 16px;
   width: 100%;
@@ -979,7 +965,7 @@ exports[`renders - with suffix 1`] = `
   opacity: 1;
   padding: 18px 14px;
   background-color: #FFFFFF;
-  border: 2px solid #D2D2D2;
+  border: 2px solid #DAD2C4;
   border-radius: 12px;
   height: auto;
   -moz-appearance: textfield;
@@ -987,7 +973,7 @@ exports[`renders - with suffix 1`] = `
 
 .c4:hover,
 .c4:focus-within {
-  border-color: #b9b9b9;
+  border-color: #A1957C;
 }
 
 .c4::-webkit-outer-spin-button,
@@ -1124,8 +1110,6 @@ exports[`renders - with trailing icon 1`] = `
 
 .c4 {
   border: none;
-  border-color: #D2D2D2;
-  background-color: transparent;
   color: #292924;
   font-size: 16px;
   width: 100%;
@@ -1134,7 +1118,7 @@ exports[`renders - with trailing icon 1`] = `
   opacity: 1;
   padding: 18px 14px;
   background-color: #FFFFFF;
-  border: 2px solid #D2D2D2;
+  border: 2px solid #DAD2C4;
   border-radius: 12px;
   height: auto;
   -moz-appearance: textfield;
@@ -1142,7 +1126,7 @@ exports[`renders - with trailing icon 1`] = `
 
 .c4:hover,
 .c4:focus-within {
-  border-color: #b9b9b9;
+  border-color: #A1957C;
 }
 
 .c4::-webkit-outer-spin-button,

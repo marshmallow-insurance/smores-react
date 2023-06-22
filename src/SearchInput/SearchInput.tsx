@@ -6,7 +6,6 @@ import React, {
   useState,
 } from 'react'
 import styled from 'styled-components'
-import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { Icon } from '../Icon'
@@ -26,10 +25,8 @@ export interface SearchInputProps extends CommonFieldProps {
   placeholder?: string
   searchList: SearchInputItem[]
   onFound: (element: string) => void
-  resultsRelativePosition?: boolean
   showIcon?: boolean
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
-  outlined?: boolean
   value?: string
 }
 
@@ -42,8 +39,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       placeholder,
       searchList,
       onFound,
-      resultsRelativePosition = false,
-      outlined = false,
       showIcon = false,
       renderAsTitle = false,
       onBlur,
@@ -144,12 +139,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         </StyledInputBox>
 
         {showOptions && (
-          <SearchOptions
-            displayedList={filteredList}
-            onSelect={handleSelect}
-            outlined={outlined}
-            positionRelative={resultsRelativePosition}
-          />
+          <SearchOptions displayedList={filteredList} onSelect={handleSelect} />
         )}
       </Field>
     )
@@ -165,22 +155,23 @@ const StyledInputBox = styled.div<InputBox>`
   display: flex;
   align-items: center;
   background-color: ${theme.colors.cream};
-  border: 2px solid ${theme.colors.chia};
-  color: ${theme.colors.chia};
+  border: 2px solid ${theme.colors.oatmeal};
+  color: ${theme.colors.liquorice};
   border-radius: 12px;
+  padding: 17px 14px;
   height: auto;
-  padding: ${({ showIcon }) => (showIcon ? '14px 10px' : '16px 12px')};
+  box-sizing: border-box;
 
   &:hover,
   &:focus,
   &:focus-within {
-    border-color: ${darken(0.1, theme.colors.chia)};
+    border-color: ${theme.colors.marzipan};
   }
 
   ${({ selected }) =>
     selected &&
     `
-    border-color: ${theme.colors.chia};
+    border-color: ${theme.colors.marzipan};
   `}
 `
 

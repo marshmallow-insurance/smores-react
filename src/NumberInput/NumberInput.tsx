@@ -30,9 +30,6 @@ export interface Props extends CommonFieldProps {
   strict?: boolean
   roundCurrency?: boolean
   step?: number
-  frontIcon?: string
-  trailingIcon?: string
-  disabled?: boolean
   /**
    * @deprecated this no longer does anything, remove when found
    */
@@ -73,6 +70,7 @@ export const NumberInput = forwardRef(function NumberInput(
     error = false,
     frontIcon,
     trailingIcon,
+    fallbackBg,
     ...fieldProps
   }: NumberInputProps,
   ref: ForwardedRef<HTMLInputElement>,
@@ -183,6 +181,7 @@ export const NumberInput = forwardRef(function NumberInput(
           value={value}
           frontIcon={frontIcon}
           step={step}
+          fallbackBg={fallbackBg}
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && handleChange(e.currentTarget.value)
             onInputChange && onInputChange(e)

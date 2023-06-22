@@ -44,7 +44,7 @@ const ListItem = styled.li`
   color: ${theme.colors.liquorice};
 
   &:hover {
-    background-color: ${darken(0.1, theme.colors.coconut)};
+    background-color: ${darken(0.1, theme.colors.custard)};
   }
 
   &:last-child {

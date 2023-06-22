@@ -16,9 +16,6 @@ interface Props extends CommonFieldProps {
   name?: string
   value: string
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
-  frontIcon?: string
-  trailingIcon?: string
-  disabled?: boolean
   /**
    * @deprecated this no longer does anything, remove when found
    */
@@ -54,6 +51,7 @@ export const TextInput = forwardRef(function TextInput(
     disabled = false,
     frontIcon,
     trailingIcon,
+    fallbackBg,
     ...fieldProps
   }: TextInputProps,
   ref: ForwardedRef<HTMLInputElement>,
@@ -80,6 +78,7 @@ export const TextInput = forwardRef(function TextInput(
           value={value}
           error={error}
           frontIcon={frontIcon}
+          fallbackBg={fallbackBg}
           autoComplete="off"
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && onChange(e.currentTarget.value)

@@ -1,5 +1,4 @@
 import { Icon } from '../../Icon'
-import { darken } from 'polished'
 import styled from 'styled-components'
 import { theme } from '../../theme'
 
@@ -10,6 +9,7 @@ interface IInput {
   value?: string
   frontIcon?: string
   trailingIcon?: string
+  fallbackBg?: boolean
 }
 
 interface SIcon {
@@ -18,9 +18,6 @@ interface SIcon {
 
 export const Input = styled.input<IInput>`
   border: none;
-  border-color: ${({ error }) =>
-    theme.colors[`${error ? 'strawberry' : 'chia'}`]};
-  background-color: transparent;
   color: ${({ error }) =>
     theme.colors[`${error ? 'strawberry' : 'liquorice'}`]};
   font-size: 16px;
@@ -32,20 +29,14 @@ export const Input = styled.input<IInput>`
   &:hover,
   &:focus-within {
     border-color: ${({ error }) =>
-      error ? theme.colors.strawberry : darken(0.1, theme.colors.chia)};
+      error ? theme.colors.strawberry : theme.colors.marzipan};
   }
-  background-color: ${theme.colors.cream};
+  background-color: ${({ fallbackBg }) =>
+    fallbackBg ? theme.colors.custard : theme.colors.cream};
   border: 2px solid
-    ${({ error }) => (error ? theme.colors.strawberry : theme.colors.chia)};
+    ${({ error }) => (error ? theme.colors.strawberry : theme.colors.oatmeal)};
   border-radius: 12px;
   height: auto;
-
-  ${({ value }) =>
-    value &&
-    value != '' &&
-    `
-      border-color: ${theme.colors.chia};
-    `}
 
   ${({ frontIcon }) =>
     frontIcon &&
@@ -81,6 +72,7 @@ export const StyledFrontIcon = styled(Icon)<SIcon>`
   margin-left: -24px;
   z-index: 1;
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
+  color: ${theme.colors.liquorice};
 `
 
 export const StyledTrailingIcon = styled(Icon)<SIcon>`

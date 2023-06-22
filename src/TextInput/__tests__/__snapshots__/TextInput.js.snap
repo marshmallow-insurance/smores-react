@@ -23,8 +23,6 @@ exports[`renders 1`] = `
 
 .c2 {
   border: none;
-  border-color: #D2D2D2;
-  background-color: transparent;
   color: #292924;
   font-size: 16px;
   width: 100%;
@@ -33,7 +31,7 @@ exports[`renders 1`] = `
   opacity: 1;
   padding: 18px 14px;
   background-color: #FFFFFF;
-  border: 2px solid #D2D2D2;
+  border: 2px solid #DAD2C4;
   border-radius: 12px;
   height: auto;
   -moz-appearance: textfield;
@@ -41,7 +39,7 @@ exports[`renders 1`] = `
 
 .c2:hover,
 .c2:focus-within {
-  border-color: #b9b9b9;
+  border-color: #A1957C;
 }
 
 .c2::-webkit-outer-spin-button,
