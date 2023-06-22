@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import { theme } from '../../theme'
 
 interface IInput {
-  error: boolean
-  disabled: boolean
+  error?: boolean
+  disabled?: boolean
+  selected?: boolean
   step?: number
   value?: string
   frontIcon?: string
@@ -13,7 +14,7 @@ interface IInput {
 }
 
 interface SIcon {
-  disabled: boolean
+  disabled?: boolean
 }
 
 export const Input = styled.input<IInput>`
@@ -35,6 +36,7 @@ export const Input = styled.input<IInput>`
     fallback ? theme.colors.custard : theme.colors.cream};
   border: 2px solid
     ${({ error }) => (error ? theme.colors.strawberry : theme.colors.oatmeal)};
+
   border-radius: 12px;
   height: auto;
 

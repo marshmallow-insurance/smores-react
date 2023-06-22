@@ -5,15 +5,13 @@ import React, {
   useMemo,
   useState,
 } from 'react'
-import styled from 'styled-components'
-
-import { theme } from '../theme'
-import { Icon } from '../Icon'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 import { SearchOptions } from './SearchOptions'
+import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
+import { Box } from '../Box'
 
 export type SearchInputItem = {
   label: string
@@ -38,11 +36,12 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       className = '',
       placeholder,
       searchList,
-      onFound,
       showIcon = false,
       renderAsTitle = false,
-      onBlur,
       value,
+      onBlur,
+      onFound,
+      fallback,
       ...otherProps
     },
     ref,
@@ -117,14 +116,15 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         htmlFor={id}
         {...otherProps}
       >
-        <StyledInputBox selected={isSelected}>
-          {showIcon && <SearchIcon size={24} render="search" color="sesame" />}
-          <StyledInput
-            ref={ref}
+        <Box flex alignItems="center" justifyContent="flex-start">
+          {showIcon && <StyledFrontIcon render="search" color="sesame" />}
+          <Input
             id={id}
-            type="text"
             name={name}
+            ref={ref}
             placeholder={placeholder}
+            frontIcon={showIcon ? 'present' : ''}
+            fallback={fallback}
             autoComplete="off"
             value={displayedInputText}
             onChange={handleInputChange}
@@ -136,7 +136,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               onBlur?.(e)
             }}
           />
-        </StyledInputBox>
+        </Box>
 
         {showOptions && (
           <SearchOptions displayedList={filteredList} onSelect={handleSelect} />
@@ -145,57 +145,3 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     )
   },
 )
-
-interface InputBox {
-  showIcon?: boolean
-  selected: boolean
-}
-
-const StyledInputBox = styled.div<InputBox>`
-  display: flex;
-  align-items: center;
-  background-color: ${theme.colors.cream};
-  border: 2px solid ${theme.colors.oatmeal};
-  color: ${theme.colors.liquorice};
-  border-radius: 12px;
-  padding: 17px 14px;
-  height: auto;
-  box-sizing: border-box;
-
-  &:hover,
-  &:focus,
-  &:focus-within {
-    border-color: ${theme.colors.marzipan};
-  }
-
-  ${({ selected }) =>
-    selected &&
-    `
-    border-color: ${theme.colors.marzipan};
-  `}
-`
-
-interface Input {
-  id: string
-  name: string
-  value: string
-  selected: boolean
-}
-
-const StyledInput = styled.input<Input>`
-  display: block;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
-  height: auto;
-
-  &::placeholder {
-    color: ${theme.colors.sesame};
-  }
-`
-
-const SearchIcon = styled(Icon)`
-  margin-right: 8px;
-`
