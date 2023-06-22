@@ -32,6 +32,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
         checked={checked}
         displayType={displayType}
         data-testid={value}
+        isError={isError}
       >
         {visual && (
           <VisualWrapper>
@@ -71,20 +72,29 @@ const Visual = styled.div<{ visualUrl: string }>`
   background-position: center;
 `
 
-const Wrapper = styled.label<Pick<RadioItemProps, 'displayType' | 'checked'>>`
+const Wrapper = styled.label<
+  Pick<RadioItemProps, 'displayType' | 'checked' | 'isError'>
+>`
   display: flex;
   flex-direction: column;
   cursor: pointer;
 
-  ${({ displayType, checked }) =>
+  ${({ displayType, checked, isError }) =>
     css`
       ${(displayType === 'horizontal-card' ||
         displayType === 'vertical-card') &&
       css`
         border-radius: 8px;
-        background-color: ${theme.colors[checked ? 'cream' : 'coconut']};
+        background-color: ${theme.colors.custard};
         padding: ${checked ? '10px' : '12px'};
-        ${checked && `border: 2px solid ${theme.colors.liquorice};`}
+        border: ${checked &&
+        (isError
+          ? `2px solid ${theme.colors.strawberry}`
+          : `2px solid ${theme.colors.liquorice}`)};
+
+        &:hover {
+          background-color: ${theme.colors.oatmeal};
+        }
       `}
       ${displayType === 'horizontal-card' &&
       css`
