@@ -53,7 +53,7 @@ const thirdPartyBrand = [
 const ColorCard = ({ colorName }: { colorName: Color }) => {
   const hexValue = theme.colors[colorName]
   return (
-    <ColorCardWrapper width="180px">
+    <ColorCardWrapper width="224px">
       <ColorBox colorName={colorName} width="100%" pt={{ custom: '50%' }} />
       <Divider />
       <Box px="16px" py={{ custom: 4 }}>
