@@ -14,7 +14,7 @@ export interface CommonFieldProps extends MarginProps {
   completed?: boolean
   frontIcon?: string
   trailingIcon?: string
-  alternateBg?: boolean
+  fallback?: boolean
   disabled?: boolean
 }
 

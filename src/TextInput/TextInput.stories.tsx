@@ -23,13 +23,13 @@ Default.args = {
   onBlur: noop,
 }
 
-export const DefaultalternateBg = Template.bind({})
+export const Defaultfallback = Template.bind({})
 
-DefaultalternateBg.args = {
+Defaultfallback.args = {
   id: 'textInput',
   name: 'textInput',
   placeholder: 'Placeholder text',
-  alternateBg: true,
+  fallback: true,
   onChange: noop,
   onInputChange: noop,
   onBlur: noop,
@@ -87,9 +87,9 @@ Disabled.args = {
   disabled: true,
 }
 
-export const DisabledalternateBg = Template.bind({})
+export const Disabledfallback = Template.bind({})
 
-DisabledalternateBg.args = {
+Disabledfallback.args = {
   id: 'textInput',
   name: 'textInput',
   placeholder: 'Placeholder text',
@@ -97,7 +97,7 @@ DisabledalternateBg.args = {
   onInputChange: noop,
   onBlur: noop,
   label: 'label',
-  alternateBg: true,
+  fallback: true,
   disabled: true,
 }
 

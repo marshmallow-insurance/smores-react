@@ -87,12 +87,12 @@ Default.args = {
   placeholder: 'Select Day',
 }
 
-export const DefaultalternateBg = Template.bind({})
+export const Defaultfallback = Template.bind({})
 
-DefaultalternateBg.args = {
+Defaultfallback.args = {
   id: 'days',
   list: days,
-  alternateBg: true,
+  fallback: true,
   placeholder: 'Select Day',
 }
 
@@ -122,12 +122,12 @@ Disabled.args = {
   disabled: true,
 }
 
-export const DisabledalternateBg = Template.bind({})
+export const Disabledfallback = Template.bind({})
 
-DisabledalternateBg.args = {
+Disabledfallback.args = {
   id: 'days',
   list: days,
-  alternateBg: true,
+  fallback: true,
   placeholder: 'Select Day',
 }
 

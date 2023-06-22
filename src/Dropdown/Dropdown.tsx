@@ -30,7 +30,7 @@ export interface Props extends CommonFieldProps {
   disabled?: boolean
   list: DropdownItem[]
   frontIcon?: string
-  alternateBg?: boolean
+  fallback?: boolean
   onSelect: (element: string) => void
   onBlur?: (e: FocusEvent<HTMLSelectElement>) => void
 }
@@ -61,7 +61,7 @@ export const Dropdown = forwardRef(function Dropdown(
     onInputChange,
     onBlur,
     frontIcon,
-    alternateBg,
+    fallback,
     ...fieldProps
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
@@ -112,7 +112,7 @@ export const Dropdown = forwardRef(function Dropdown(
           onBlur={onBlur}
           name={name}
           frontIcon={frontIcon}
-          alternateBg={alternateBg}
+          fallback={fallback}
           value={value ? value : ''}
         >
           {hasOptGroups ? (
@@ -167,7 +167,7 @@ const resetSelect = css`
 interface SSelect {
   error: boolean
   frontIcon?: string
-  alternateBg?: boolean
+  fallback?: boolean
 }
 
 const StyledSelect = styled.select<SSelect>`
@@ -176,8 +176,8 @@ const StyledSelect = styled.select<SSelect>`
   height: 32px;
 
   cursor: pointer;
-  background-color: ${({ alternateBg }) =>
-    alternateBg ? theme.colors.custard : theme.colors.cream};
+  background-color: ${({ fallback }) =>
+    fallback ? theme.colors.custard : theme.colors.cream};
 
   border-radius: 12px;
   padding: 18px 14px;

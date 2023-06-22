@@ -21,16 +21,16 @@ Default.args = {
   onChange: noop,
 }
 
-export const DefaultalternateBg = Template.bind({})
+export const Defaultfallback = Template.bind({})
 
-DefaultalternateBg.args = {
+Defaultfallback.args = {
   id: 'telephone',
   label: 'Telephone number',
   name: 'telephoneNumber',
   placeholder: '7123 456789',
   required: true,
   onChange: noop,
-  alternateBg: true,
+  fallback: true,
 }
 
 export const Required = Template.bind({})
@@ -69,16 +69,16 @@ Disabled.args = {
   disabled: true,
 }
 
-export const DisabledalternateBg = Template.bind({})
+export const Disabledfallback = Template.bind({})
 
-DisabledalternateBg.args = {
+Disabledfallback.args = {
   id: 'telephone',
   label: 'Telephone number',
   name: 'telephoneNumber',
   placeholder: '7123 456789',
   required: true,
   onChange: noop,
-  alternateBg: true,
+  fallback: true,
   disabled: true,
 }
 

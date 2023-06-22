@@ -70,7 +70,7 @@ export const NumberInput = forwardRef(function NumberInput(
     error = false,
     frontIcon,
     trailingIcon,
-    alternateBg,
+    fallback,
     ...fieldProps
   }: NumberInputProps,
   ref: ForwardedRef<HTMLInputElement>,
@@ -181,7 +181,7 @@ export const NumberInput = forwardRef(function NumberInput(
           value={value}
           frontIcon={frontIcon}
           step={step}
-          alternateBg={alternateBg}
+          fallback={fallback}
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && handleChange(e.currentTarget.value)
             onInputChange && onInputChange(e)
