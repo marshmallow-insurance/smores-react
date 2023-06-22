@@ -19,7 +19,18 @@ Default.args = {
   name: 'totalAmount',
   placeholder: '0',
   onChange: noop,
-  outlined: false,
+}
+
+export const DefaultFallbackBG = Template.bind({})
+
+DefaultFallbackBG.args = {
+  id: 'telephone',
+  label: 'Telephone number',
+  name: 'telephoneNumber',
+  placeholder: '7123 456789',
+  required: true,
+  onChange: noop,
+  fallbackBg: true,
 }
 
 export const Required = Template.bind({})
@@ -31,7 +42,6 @@ Required.args = {
   placeholder: '0',
   onChange: noop,
   required: true,
-  outlined: false,
 }
 
 export const Error = Template.bind({})
@@ -42,9 +52,9 @@ Error.args = {
   name: 'totalAmount',
   placeholder: '0',
   onChange: noop,
+  required: true,
   error: true,
   errorMsg: 'Oh boy, something went wrong!',
-  outlined: false,
 }
 
 export const Disabled = Template.bind({})
@@ -57,36 +67,54 @@ Disabled.args = {
   required: true,
   onChange: noop,
   disabled: true,
-  outlined: false,
 }
 
-export const FrontIcon = Template.bind({})
+export const DisabledFallbackBG = Template.bind({})
 
-FrontIcon.args = {
+DisabledFallbackBG.args = {
+  id: 'telephone',
+  label: 'Telephone number',
+  name: 'telephoneNumber',
+  placeholder: '7123 456789',
+  required: true,
+  onChange: noop,
+  fallbackBg: true,
+  disabled: true,
+}
+
+export const WithFrontIcon = Template.bind({})
+
+WithFrontIcon.args = {
   id: 'telephone',
   label: 'Telephone number',
   name: 'telephoneNumber',
   frontIcon: 'search',
   placeholder: '+44 7123 456789',
-  fallbackBg: true,
   required: true,
   onChange: noop,
-  disabled: true,
-  outlined: false,
 }
 
-export const TrailingIcon = Template.bind({})
+export const WithTrailingIcon = Template.bind({})
 
-TrailingIcon.args = {
+WithTrailingIcon.args = {
   id: 'telephone',
   label: 'Telephone number',
   name: 'telephoneNumber',
   trailingIcon: 'iphone',
   placeholder: '+44 7123 456789',
-  fallbackBg: true,
   required: true,
   onChange: noop,
-  outlined: false,
+}
+
+export const Stepper = Template.bind({})
+
+Stepper.args = {
+  id: 'total_amount',
+  label: 'Total Amount',
+  name: 'totalAmount',
+  placeholder: '0',
+  step: 10,
+  onChange: noop,
 }
 
 const WorkingExampleTemplate = () => <Container />

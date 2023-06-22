@@ -5,7 +5,6 @@ import React, {
   ForwardedRef,
   useMemo,
 } from 'react'
-import { darken } from 'polished'
 import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
@@ -31,6 +30,7 @@ export interface Props extends CommonFieldProps {
   disabled?: boolean
   list: DropdownItem[]
   frontIcon?: string
+  fallbackBg?: boolean
   onSelect: (element: string) => void
   onBlur?: (e: FocusEvent<HTMLSelectElement>) => void
 }
@@ -61,6 +61,7 @@ export const Dropdown = forwardRef(function Dropdown(
     onInputChange,
     onBlur,
     frontIcon,
+    fallbackBg,
     ...fieldProps
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
@@ -111,6 +112,7 @@ export const Dropdown = forwardRef(function Dropdown(
           onBlur={onBlur}
           name={name}
           frontIcon={frontIcon}
+          fallbackBg={fallbackBg}
           value={value ? value : ''}
         >
           {hasOptGroups ? (
@@ -147,7 +149,7 @@ export const Dropdown = forwardRef(function Dropdown(
           )}
         </StyledSelect>
         <Caret>
-          <Icon render="caret" color="sesame" size={24} />
+          <Icon render="caret" color="marzipan" size={24} />
         </Caret>
       </Box>
     </Field>
@@ -165,6 +167,7 @@ const resetSelect = css`
 interface SSelect {
   error: boolean
   frontIcon?: string
+  fallbackBg?: boolean
 }
 
 const StyledSelect = styled.select<SSelect>`
@@ -173,12 +176,13 @@ const StyledSelect = styled.select<SSelect>`
   height: 32px;
 
   cursor: pointer;
-  background-color: ${theme.colors.cream};
+  background-color: ${({ fallbackBg }) =>
+    fallbackBg ? theme.colors.custard : theme.colors.cream};
 
   border-radius: 12px;
   padding: 18px 14px;
   border: 2px solid
-    ${({ error }) => (error ? theme.colors.strawberry : theme.colors.chia)};
+    ${({ error }) => (error ? theme.colors.strawberry : theme.colors.oatmeal)};
   height: auto;
 
   ${({ frontIcon }) =>
@@ -198,7 +202,7 @@ const StyledSelect = styled.select<SSelect>`
   &:focus-visible,
   &:checked {
     border-color: ${(error) =>
-      darken(0.1, error ? theme.colors.strawberry : theme.colors.chia)};
+      error ? theme.colors.strawberry : theme.colors.marzipan};
   }
 `
 
@@ -207,4 +211,5 @@ const Caret = styled.div`
   z-index: 1;
   right: 15px;
   pointer-events: none;
+  color: ${theme.colors.marzipan};
 `

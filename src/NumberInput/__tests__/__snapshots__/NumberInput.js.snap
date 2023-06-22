@@ -1062,29 +1062,6 @@ exports[`renders - with trailing icon 1`] = `
   display: flex;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
 .c2 {
   font-size: 10px;
   line-height: 12px;
@@ -1151,13 +1128,6 @@ exports[`renders - with trailing icon 1`] = `
   color: #636768;
 }
 
-.c6 {
-  position: relative;
-  right: 36px;
-  margin-right: -36px;
-  opacity: 1;
-}
-
 @media (min-width:0px) {
   .c1 {
     margin-bottom: 4px;
@@ -1210,25 +1180,6 @@ exports[`renders - with trailing icon 1`] = `
         type="number"
         value=""
       />
-      <span
-        class="c5 c6"
-        color="sesame"
-        rotate="0"
-        size="24"
-      >
-        <svg
-          fill="none"
-          height="100%"
-          viewBox="0 0 24 24"
-          width="100%"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10a1 1 0 100-2c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8c0 1.103-.897 2-2 2s-2-.897-2-2c0-2.206-1.794-4-4-4s-4 1.794-4 4 1.794 4 4 4c1.2 0 2.266-.542 3-1.382.734.84 1.8 1.382 3 1.382 2.206 0 4-1.794 4-4 0-5.514-4.486-10-10-10zm0 12c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"
-            fill="#636768"
-          />
-        </svg>
-      </span>
     </div>
   </div>
 </div>

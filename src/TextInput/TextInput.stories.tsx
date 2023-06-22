@@ -23,16 +23,16 @@ Default.args = {
   onBlur: noop,
 }
 
-export const TypeEmail = Template.bind({})
+export const DefaultFallbackBG = Template.bind({})
 
-TypeEmail.args = {
+DefaultFallbackBG.args = {
   id: 'textInput',
   name: 'textInput',
   placeholder: 'Placeholder text',
+  fallbackBg: true,
   onChange: noop,
   onInputChange: noop,
   onBlur: noop,
-  type: 'email',
 }
 
 export const TypePassword = Template.bind({})
@@ -47,71 +47,31 @@ TypePassword.args = {
   type: 'password',
 }
 
-export const Error = Template.bind({})
+export const Required = Template.bind({})
 
-Error.args = {
+Required.args = {
+  id: 'textInput',
+  name: 'textInput',
+  placeholder: 'Enter name',
+  onChange: noop,
+  onInputChange: noop,
+  onBlur: noop,
+  label: 'Please enter your name',
+  required: true,
+}
+
+export const WithError = Template.bind({})
+
+WithError.args = {
   id: 'textInput',
   name: 'textInput',
   placeholder: 'Placeholder text',
   onChange: noop,
   onInputChange: noop,
   onBlur: noop,
+  required: true,
   error: true,
   errorMsg: 'Oh boy, something went wrong!',
-}
-
-export const WithOutline = Template.bind({})
-
-WithOutline.args = {
-  id: 'textInput',
-  name: 'textInput',
-  outlined: true,
-  label: 'with outline',
-  placeholder: 'Placeholder text',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-}
-
-export const WithOutlineError = Template.bind({})
-
-WithOutlineError.args = {
-  id: 'textInput',
-  name: 'textInput',
-  outlined: true,
-  label: 'with outline',
-  placeholder: 'Placeholder text',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-  error: true,
-  errorMsg: 'Oh boy, something went wrong!',
-}
-
-export const WithLabel = Template.bind({})
-
-WithLabel.args = {
-  id: 'textInput',
-  name: 'textInput',
-  placeholder: 'Placeholder text',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-  label: 'label',
-  outlined: false,
-}
-
-export const WithIcon = Template.bind({})
-
-WithIcon.args = {
-  id: 'textInput',
-  name: 'textInput',
-  placeholder: 'Placeholder text',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-  label: 'label',
-  trailingIcon: 'at',
 }
 
 export const Disabled = Template.bind({})
@@ -127,25 +87,62 @@ Disabled.args = {
   disabled: true,
 }
 
-export const Required = Template.bind({})
+export const DisabledFallbackBG = Template.bind({})
 
-Required.args = {
+DisabledFallbackBG.args = {
   id: 'textInput',
   name: 'textInput',
-  placeholder: 'Enter name',
+  placeholder: 'Placeholder text',
   onChange: noop,
   onInputChange: noop,
   onBlur: noop,
-  label: 'Please enter your name',
-  frontIcon: 'search',
-  trailingIcon: 'search',
-  outlined: true,
-  required: true,
+  label: 'label',
+  fallbackBg: true,
+  disabled: true,
 }
 
-export const AssistiveText = Template.bind({})
+export const WithLabel = Template.bind({})
 
-AssistiveText.args = {
+WithLabel.args = {
+  id: 'textInput',
+  name: 'textInput',
+  placeholder: 'Placeholder text',
+  onChange: noop,
+  onInputChange: noop,
+  onBlur: noop,
+  label: 'label',
+  outlined: false,
+}
+
+export const WithFrontIcon = Template.bind({})
+
+WithFrontIcon.args = {
+  id: 'textInput',
+  name: 'textInput',
+  placeholder: 'Placeholder text',
+  onChange: noop,
+  onInputChange: noop,
+  onBlur: noop,
+  label: 'label',
+  frontIcon: 'at',
+}
+
+export const WithTrailingIcon = Template.bind({})
+
+WithTrailingIcon.args = {
+  id: 'textInput',
+  name: 'textInput',
+  placeholder: 'Placeholder text',
+  onChange: noop,
+  onInputChange: noop,
+  onBlur: noop,
+  label: 'label',
+  trailingIcon: 'at',
+}
+
+export const LabelAsTitle = Template.bind({})
+
+LabelAsTitle.args = {
   id: 'textInput',
   name: 'textInput',
   placeholder: 'Enter name',
@@ -153,11 +150,7 @@ AssistiveText.args = {
   onInputChange: noop,
   onBlur: noop,
   label: 'Please enter your name',
-  frontIcon: 'search',
-  trailingIcon: 'search',
-  outlined: true,
   required: true,
-  fallbackBg: true,
   assistiveText: 'Some more information...',
   renderAsTitle: true,
 }
@@ -167,7 +160,6 @@ export const WithReactElementError = Template.bind({})
 WithReactElementError.args = {
   id: 'textInput',
   name: 'textInput',
-  outlined: true,
   label: 'with Support Message as Error',
   placeholder: 'Placeholder text',
   onChange: noop,

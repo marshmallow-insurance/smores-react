@@ -87,6 +87,15 @@ Default.args = {
   placeholder: 'Select Day',
 }
 
+export const DefaultFallbackBG = Template.bind({})
+
+DefaultFallbackBG.args = {
+  id: 'days',
+  list: days,
+  fallbackBg: true,
+  placeholder: 'Select Day',
+}
+
 export const DefaultWithGroups = Template.bind({})
 
 DefaultWithGroups.args = {
@@ -102,17 +111,6 @@ WithLabel.args = {
   list: days,
   placeholder: 'Select Day',
   label: 'Day',
-  outlined: false,
-}
-
-export const WithLabelWithGroups = Template.bind({})
-
-WithLabelWithGroups.args = {
-  id: 'days',
-  list: daysWithGroups,
-  placeholder: 'Select Day',
-  label: 'Day',
-  outlined: false,
 }
 
 export const Disabled = Template.bind({})
@@ -124,13 +122,13 @@ Disabled.args = {
   disabled: true,
 }
 
-export const DisabledWithGroups = Template.bind({})
+export const DisabledFallbackBG = Template.bind({})
 
-DisabledWithGroups.args = {
+DisabledFallbackBG.args = {
   id: 'days',
-  list: daysWithGroups,
+  list: days,
+  fallbackBg: true,
   placeholder: 'Select Day',
-  disabled: true,
 }
 
 export const SingleListItem = Template.bind({})
@@ -138,14 +136,6 @@ export const SingleListItem = Template.bind({})
 SingleListItem.args = {
   id: 'days',
   list: days.slice(0, 1),
-  placeholder: 'Select Day',
-}
-
-export const SingleListItemWithGroups = Template.bind({})
-
-SingleListItemWithGroups.args = {
-  id: 'days',
-  list: daysWithGroups.slice(0, 1),
   placeholder: 'Select Day',
 }
 
@@ -157,68 +147,13 @@ EmptyList.args = {
   placeholder: 'Select Day',
 }
 
-export const WithOutline = Template.bind({})
-
-WithOutline.args = {
-  id: 'days',
-  list: days,
-  placeholder: 'Select Day',
-  outlined: true,
-}
-
-export const WithOutlineWithGroups = Template.bind({})
-
-WithOutlineWithGroups.args = {
-  id: 'days',
-  list: daysWithGroups,
-  placeholder: 'Select Day',
-  outlined: true,
-}
-
-export const OutlineWithError = Template.bind({})
-
-OutlineWithError.args = {
-  id: 'days',
-  list: days,
-  placeholder: 'Select',
-  outlined: true,
-  error: true,
-  errorMsg: 'This field is required',
-  label: 'Select day',
-}
-
-export const OutlineWithErrorWithGroups = Template.bind({})
-
-OutlineWithErrorWithGroups.args = {
-  id: 'days',
-  list: daysWithGroups,
-  placeholder: 'Select',
-  outlined: true,
-  error: true,
-  errorMsg: 'This field is required',
-  label: 'Select day',
-}
-
 export const WithError = Template.bind({})
 
 WithError.args = {
   id: 'days',
   list: days,
   placeholder: 'Select',
-  outlined: false,
-  error: true,
-  errorMsg: 'This field is required',
-  label: 'Select day',
-}
 
-export const WithErrorWithGroups = Template.bind({})
-
-WithErrorWithGroups.args = {
-  id: 'days',
-  list: daysWithGroups,
-  placeholder: 'Select',
-  outlined: false,
-  frontIcon: 'search',
   error: true,
   errorMsg: 'This field is required',
   label: 'Select day',
@@ -236,7 +171,7 @@ WithRequiredAsterisk.args = {
   id: 'days',
   list: days,
   placeholder: 'Select Day',
-  outlined: true,
+
   label: 'Do you like smores?',
   required: true,
 }
