@@ -47,47 +47,6 @@ Error.args = {
   outlined: false,
 }
 
-export const Currency = Template.bind({})
-
-Currency.args = {
-  id: 'currency',
-  label: 'Currency',
-  name: 'currencyAmount',
-  placeholder: '0.00',
-  roundCurrency: true,
-  required: true,
-  onChange: noop,
-  step: 10,
-  outlined: false,
-}
-
-export const Distance = Template.bind({})
-
-Distance.args = {
-  id: 'distance',
-  label: 'Distance',
-  name: 'distanceNumber',
-  placeholder: '0',
-  required: true,
-  onChange: noop,
-  step: 100,
-  outlined: false,
-}
-
-export const Telephone = Template.bind({})
-
-Telephone.args = {
-  id: 'telephone',
-  label: 'Telephone number',
-  name: 'telephoneNumber',
-  placeholder: '7123 456789',
-  required: true,
-  onChange: noop,
-  outlined: false,
-  frontIcon: 'search',
-  trailingIcon: 'search',
-}
-
 export const Disabled = Template.bind({})
 
 Disabled.args = {
@@ -97,9 +56,34 @@ Disabled.args = {
   placeholder: '7123 456789',
   required: true,
   onChange: noop,
-  frontIcon: 'search',
-  trailingIcon: 'search',
   disabled: true,
+  outlined: false,
+}
+
+export const FrontIcon = Template.bind({})
+
+FrontIcon.args = {
+  id: 'telephone',
+  label: 'Telephone number',
+  name: 'telephoneNumber',
+  frontIcon: 'search',
+  placeholder: '+44 7123 456789',
+  required: true,
+  onChange: noop,
+  disabled: true,
+  outlined: false,
+}
+
+export const TrailingIcon = Template.bind({})
+
+TrailingIcon.args = {
+  id: 'telephone',
+  label: 'Telephone number',
+  name: 'telephoneNumber',
+  trailingIcon: 'iphone',
+  placeholder: '+44 7123 456789',
+  required: true,
+  onChange: noop,
   outlined: false,
 }
 

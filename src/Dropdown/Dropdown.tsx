@@ -89,7 +89,13 @@ export const Dropdown = forwardRef(function Dropdown(
   return (
     <Field {...fieldProps} htmlFor={id} error={error}>
       <Box flex alignItems="center">
-        {frontIcon && <StyledFrontIcon render={frontIcon} color="sesame" />}
+        {frontIcon && (
+          <StyledFrontIcon
+            disabled={disabled}
+            render={frontIcon}
+            color="sesame"
+          />
+        )}
         <StyledSelect
           id={id}
           disabled={disabled || list.length < 1}

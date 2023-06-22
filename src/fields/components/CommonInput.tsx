@@ -12,6 +12,10 @@ interface IInput {
   trailingIcon?: string
 }
 
+interface SIcon {
+  disabled: boolean
+}
+
 export const Input = styled.input<IInput>`
   border: none;
   border-color: ${({ error }) =>
@@ -71,15 +75,17 @@ export const Input = styled.input<IInput>`
   }
 `
 
-export const StyledFrontIcon = styled(Icon)`
+export const StyledFrontIcon = styled(Icon)<SIcon>`
   position: relative;
   left: 36px;
   margin-left: -24px;
   z-index: 1;
+  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
 `
 
-export const StyledTrailingIcon = styled(Icon)`
+export const StyledTrailingIcon = styled(Icon)<SIcon>`
   position: relative;
   right: 36px;
   margin-right: -36px;
+  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
 `

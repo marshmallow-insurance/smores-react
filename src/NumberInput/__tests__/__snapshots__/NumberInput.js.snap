@@ -1171,6 +1171,7 @@ exports[`renders - with trailing icon 1`] = `
   position: relative;
   right: 36px;
   margin-right: -36px;
+  opacity: 1;
 }
 
 @media (min-width:0px) {
