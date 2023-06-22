@@ -23,9 +23,9 @@ Default.args = {
   onBlur: noop,
 }
 
-export const Defaultfallback = Template.bind({})
+export const DefaultFallback = Template.bind({})
 
-Defaultfallback.args = {
+DefaultFallback.args = {
   id: 'textInput',
   name: 'textInput',
   placeholder: 'Placeholder text',
@@ -87,9 +87,9 @@ Disabled.args = {
   disabled: true,
 }
 
-export const Disabledfallback = Template.bind({})
+export const DisabledFallback = Template.bind({})
 
-Disabledfallback.args = {
+DisabledFallback.args = {
   id: 'textInput',
   name: 'textInput',
   placeholder: 'Placeholder text',

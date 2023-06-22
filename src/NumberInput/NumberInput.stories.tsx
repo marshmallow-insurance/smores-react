@@ -21,9 +21,9 @@ Default.args = {
   onChange: noop,
 }
 
-export const Defaultfallback = Template.bind({})
+export const DefaultFallback = Template.bind({})
 
-Defaultfallback.args = {
+DefaultFallback.args = {
   id: 'telephone',
   label: 'Telephone number',
   name: 'telephoneNumber',
@@ -69,9 +69,9 @@ Disabled.args = {
   disabled: true,
 }
 
-export const Disabledfallback = Template.bind({})
+export const DisabledFallback = Template.bind({})
 
-Disabledfallback.args = {
+DisabledFallback.args = {
   id: 'telephone',
   label: 'Telephone number',
   name: 'telephoneNumber',
