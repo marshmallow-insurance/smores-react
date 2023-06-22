@@ -17,7 +17,6 @@ export const Fieldset = ({
       htmlFor={id}
       fieldType="fieldset"
       renderAsTitle={renderAsTitle}
-      outlined
       {...fieldProps}
     >
       {children}

@@ -15,5 +15,4 @@ export const ShowIcon = Template.bind({})
 
 ShowIcon.args = {
   showIcon: true,
-  outlined: true,
 }

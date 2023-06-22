@@ -3,10 +3,10 @@ import styled, { css } from 'styled-components'
 
 import { Text } from '../../Text'
 import { Box } from '../../Box'
-import { InternalCommonFieldProps } from '../commonFieldTypes'
+import { CommonFieldProps } from '../commonFieldTypes'
 import { Icon } from '../../Icon'
 
-interface InternalFieldProps extends InternalCommonFieldProps {
+interface InternalFieldProps extends CommonFieldProps {
   children: ReactNode
   className?: string
   assistiveText?: string

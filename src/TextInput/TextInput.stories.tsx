@@ -111,7 +111,6 @@ WithLabel.args = {
   onInputChange: noop,
   onBlur: noop,
   label: 'label',
-  outlined: false,
 }
 
 export const WithFrontIcon = Template.bind({})

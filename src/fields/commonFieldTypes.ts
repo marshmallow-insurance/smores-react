@@ -17,7 +17,3 @@ export interface CommonFieldProps extends MarginProps {
   fallback?: boolean
   disabled?: boolean
 }
-
-export interface InternalCommonFieldProps extends CommonFieldProps {
-  outlined?: boolean
-}

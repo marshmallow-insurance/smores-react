@@ -31,6 +31,10 @@ export interface Props extends CommonFieldProps {
   list: DropdownItem[]
   frontIcon?: string
   fallback?: boolean
+  /**
+   * @deprecated this no longer does anything, remove when found
+   */
+  outlined?: boolean
   onSelect: (element: string) => void
   onBlur?: (e: FocusEvent<HTMLSelectElement>) => void
 }
