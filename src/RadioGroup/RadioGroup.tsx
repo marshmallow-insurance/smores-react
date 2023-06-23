@@ -25,6 +25,7 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   onChange: (value: Value) => void
   value: Value
   displayType?: DisplayType
+  fallback?: boolean
 } & CommonFieldProps
 
 export type RadioGroupElement = {
@@ -39,6 +40,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
     displayType = 'normal',
     renderAsTitle = false,
     error = false,
+    fallback = false,
     ...fieldProps
   }: RadioGroupProps<Value>,
   ref: ForwardedRef<RadioGroupElement>,
@@ -79,6 +81,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
               onChange={onChange}
               displayType={displayType}
               isError={error}
+              fallback={fallback}
             />
           )
         })}

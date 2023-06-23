@@ -18,11 +18,22 @@ type RadioItemProps = {
   onChange: (value: BaseValueType) => void
   displayType: DisplayType
   isError: boolean
+  fallback?: boolean
 }
 
 export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
   function RadioItem(
-    { name, visual, label, value, checked, onChange, displayType, isError },
+    {
+      name,
+      visual,
+      label,
+      value,
+      checked,
+      onChange,
+      displayType,
+      isError,
+      fallback,
+    },
     ref,
   ) {
     const id = useUniqueId()
@@ -33,6 +44,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
         displayType={displayType}
         data-testid={value}
         isError={isError}
+        fallback={fallback}
       >
         {visual && (
           <VisualWrapper>
@@ -73,19 +85,21 @@ const Visual = styled.div<{ visualUrl: string }>`
 `
 
 const Wrapper = styled.label<
-  Pick<RadioItemProps, 'displayType' | 'checked' | 'isError'>
+  Pick<RadioItemProps, 'displayType' | 'checked' | 'isError' | 'fallback'>
 >`
   display: flex;
   flex-direction: column;
   cursor: pointer;
 
-  ${({ displayType, checked, isError }) =>
+  ${({ displayType, checked, isError, fallback }) =>
     css`
       ${(displayType === 'horizontal-card' ||
         displayType === 'vertical-card') &&
       css`
-        border-radius: 8px;
-        background-color: ${theme.colors.custard};
+        border-radius: 12px;
+        background-color: ${fallback
+          ? theme.colors.cream
+          : theme.colors.custard};
         padding: ${checked ? '10px' : '12px'};
         border: ${checked &&
         (isError
@@ -93,7 +107,9 @@ const Wrapper = styled.label<
           : `2px solid ${theme.colors.liquorice}`)};
 
         &:hover {
-          background-color: ${theme.colors.oatmeal};
+          background-color: ${fallback
+            ? theme.colors.coconut
+            : theme.colors.oatmeal};
         }
       `}
       ${displayType === 'horizontal-card' &&
