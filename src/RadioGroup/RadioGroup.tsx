@@ -21,6 +21,7 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
     visual?: string
     label: string
     value: Value
+    bodyCopy?: string
   }>
   onChange: (value: Value) => void
   value: Value
@@ -82,6 +83,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
               displayType={displayType}
               isError={error}
               fallback={fallback}
+              bodyCopy={option.bodyCopy}
             />
           )
         })}

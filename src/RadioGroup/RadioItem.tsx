@@ -5,6 +5,7 @@ import { useUniqueId } from '../utils/id'
 import { theme } from '../theme'
 
 import { RadioElement } from './RadioElement'
+import { Text } from '../Text'
 import { BaseValueType, DisplayType } from './types'
 import { ITEM_GAP } from './constants'
 import { Box } from '../Box'
@@ -19,6 +20,7 @@ type RadioItemProps = {
   displayType: DisplayType
   isError: boolean
   fallback?: boolean
+  bodyCopy?: string
 }
 
 export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
@@ -33,6 +35,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
       displayType,
       isError,
       fallback,
+      bodyCopy,
     },
     ref,
   ) {
@@ -51,7 +54,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             <Visual visualUrl={visual} />
           </VisualWrapper>
         )}
-        <Box flex direction="row" alignItems="flex-start">
+        <Row>
           <RadioElement
             ref={ref}
             name={name}
@@ -62,8 +65,15 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             isError={isError}
             mr="8px"
           />
-          <RadioText isError={isError}>{label}</RadioText>
-        </Box>
+          <Box>
+            <RadioText isError={isError}>{label}</RadioText>
+            {bodyCopy && (
+              <Box>
+                <Text typo="caption">{bodyCopy}</Text>
+              </Box>
+            )}
+          </Box>
+        </Row>
       </Wrapper>
     )
   },
@@ -115,6 +125,7 @@ const Wrapper = styled.label<
       ${displayType === 'horizontal-card' &&
       css`
         width: 100%;
+        justify-content: center;
 
         @media (min-width: 420px) {
           width: calc(50% - ${ITEM_GAP / 2}px);
@@ -134,4 +145,10 @@ const RadioText = styled.span<{ isError: boolean }>`
   color: ${({ isError }) =>
     isError ? theme.colors.strawberry : theme.colors.liquorice};
   margin-top: 4px;
+`
+
+const Row = styled(Box)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `
