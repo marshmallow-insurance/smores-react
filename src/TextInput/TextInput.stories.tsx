@@ -144,7 +144,7 @@ export const LabelAsTitle = Template.bind({})
 LabelAsTitle.args = {
   id: 'textInput',
   name: 'textInput',
-  placeholder: 'Enter name',
+  placeholder: 'Placeholder text',
   onChange: noop,
   onInputChange: noop,
   onBlur: noop,

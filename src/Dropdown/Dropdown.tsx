@@ -205,7 +205,7 @@ const StyledSelect = styled.select<SSelect>`
   &:focus,
   &:focus-visible,
   &:checked {
-    border-color: ${(error) =>
+    border-color: ${({ error }) =>
       error ? theme.colors.strawberry : theme.colors.marzipan};
   }
 `

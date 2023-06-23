@@ -84,7 +84,7 @@ export const Default = Template.bind({})
 Default.args = {
   id: 'days',
   list: days,
-  placeholder: 'Select Day',
+  placeholder: 'Placeholder',
 }
 
 export const DefaultFallback = Template.bind({})
@@ -93,7 +93,7 @@ DefaultFallback.args = {
   id: 'days',
   list: days,
   fallback: true,
-  placeholder: 'Select Day',
+  placeholder: 'Placeholder',
 }
 
 export const DefaultWithGroups = Template.bind({})
@@ -101,7 +101,7 @@ export const DefaultWithGroups = Template.bind({})
 DefaultWithGroups.args = {
   id: 'days',
   list: daysWithGroups,
-  placeholder: 'Select Day',
+  placeholder: 'Placeholder',
 }
 
 export const WithLabel = Template.bind({})
@@ -109,7 +109,7 @@ export const WithLabel = Template.bind({})
 WithLabel.args = {
   id: 'days',
   list: days,
-  placeholder: 'Select Day',
+  placeholder: 'Placeholder',
   label: 'Day',
 }
 
@@ -118,7 +118,7 @@ export const Disabled = Template.bind({})
 Disabled.args = {
   id: 'days',
   list: days,
-  placeholder: 'Select Day',
+  placeholder: 'Placeholder',
   disabled: true,
 }
 
@@ -128,7 +128,7 @@ DisabledFallback.args = {
   id: 'days',
   list: days,
   fallback: true,
-  placeholder: 'Select Day',
+  placeholder: 'Placeholder',
 }
 
 export const SingleListItem = Template.bind({})
@@ -136,7 +136,7 @@ export const SingleListItem = Template.bind({})
 SingleListItem.args = {
   id: 'days',
   list: days.slice(0, 1),
-  placeholder: 'Select Day',
+  placeholder: 'Placeholder',
 }
 
 export const EmptyList = Template.bind({})
@@ -144,7 +144,7 @@ export const EmptyList = Template.bind({})
 EmptyList.args = {
   id: 'days',
   list: [],
-  placeholder: 'Select Day',
+  placeholder: 'Placeholder',
 }
 
 export const WithError = Template.bind({})
@@ -152,11 +152,11 @@ export const WithError = Template.bind({})
 WithError.args = {
   id: 'days',
   list: days,
-  placeholder: 'Select',
+  placeholder: 'Placeholder',
 
   error: true,
   errorMsg: 'This field is required',
-  label: 'Select day',
+  label: 'Placeholder',
 }
 
 const DateSelectorExampleTemplate = () => <Container />
@@ -170,7 +170,7 @@ export const WithRequiredAsterisk = Template.bind({})
 WithRequiredAsterisk.args = {
   id: 'days',
   list: days,
-  placeholder: 'Select Day',
+  placeholder: 'Placeholder',
 
   label: 'Do you like smores?',
   required: true,
