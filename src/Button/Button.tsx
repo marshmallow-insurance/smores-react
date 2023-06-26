@@ -2,7 +2,6 @@ import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
-import { useDeprecatedWarning } from '../utils/deprecated'
 import { Box } from '../Box'
 import { Loader } from '../Loader'
 import { Icon as IconComponent } from '../Icon'
@@ -17,7 +16,6 @@ type Props = {
   loading?: boolean
   primary?: boolean
   secondary?: boolean
-  tertiary?: boolean
   fallback?: boolean
   textBtn?: boolean
   icon?: string
@@ -43,7 +41,6 @@ export const Button: FC<ButtonProps> = forwardRef<
     loading = false,
     primary = false,
     secondary = false,
-    tertiary = false,
     fallback = false,
     textBtn = false,
     icon = '',
@@ -53,14 +50,6 @@ export const Button: FC<ButtonProps> = forwardRef<
     type,
     ...otherProps
   } = props
-
-  useDeprecatedWarning({
-    enabled: tertiary,
-    title: 'Tertiary prop usage',
-    message:
-      "You're using the tertiary prop which is now deprecated. Please use the new 'fallback' prop instead, or 'primary' or 'secondary' as appropriate.",
-    componentProps: props,
-  })
 
   return (
     <Container
@@ -72,7 +61,6 @@ export const Button: FC<ButtonProps> = forwardRef<
       $loading={loading}
       primary={primary}
       secondary={secondary}
-      tertiary={tertiary}
       fallback={fallback}
       textBtn={textBtn}
       icon={icon}
@@ -119,7 +107,6 @@ type IButton = Required<
     | 'disabled'
     | 'primary'
     | 'secondary'
-    | 'tertiary'
     | 'icon'
     | 'forcedWidth'
     | 'fallback'
@@ -136,7 +123,6 @@ const Container = styled(Box)<IButton>(
     $loading,
     primary,
     secondary,
-    tertiary,
     forcedWidth,
     fallback,
     textBtn,
@@ -177,7 +163,7 @@ const Container = styled(Box)<IButton>(
         background-color: ${theme.colors.custard};
       }
     `}
-  ${(tertiary || fallback) &&
+  ${fallback &&
     css`
       background-color: ${theme.colors.cream};
 
