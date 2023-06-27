@@ -54,7 +54,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             <Visual visualUrl={visual} />
           </VisualWrapper>
         )}
-        <Row>
+        <Box flex alignItems="center">
           <RadioElement
             ref={ref}
             name={name}
@@ -73,7 +73,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
               </Box>
             )}
           </Box>
-        </Row>
+        </Box>
       </Wrapper>
     )
   },
@@ -145,10 +145,4 @@ const RadioText = styled.span<{ isError: boolean }>`
   color: ${({ isError }) =>
     isError ? theme.colors.strawberry : theme.colors.liquorice};
   margin-top: 4px;
-`
-
-const Row = styled(Box)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 `
