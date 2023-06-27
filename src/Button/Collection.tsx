@@ -8,7 +8,8 @@ import { Button, ButtonProps } from './Button'
 const buttonList: Array<ButtonProps> = [
   { primary: true, children: 'Save' },
   { secondary: true, children: 'Edit' },
-  { tertiary: true, children: 'Cancel' },
+  { fallback: true, children: 'Cancel' },
+  { textBtn: true, children: 'View' },
 ]
 
 export const CollectionPage: FC = () => {
