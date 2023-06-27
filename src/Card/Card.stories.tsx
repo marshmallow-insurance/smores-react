@@ -1,41 +1,122 @@
 import React from 'react'
 import { Card, CardProps } from './Card'
 import { Text } from '../Text'
+import placeHolderSvg from './assets/placeHolderImage.svg'
+import { Tag } from '../Tag'
+import { Button } from '../Button'
+import { Icon } from '../Icon'
+import { Link } from '../Link'
 
 export default {
   title: 'Card',
   component: Card,
 }
 
-const Template = (props: CardProps) => (
-  <Card {...props}>
-    <Text tag="h1">Card with default padding</Text>
-  </Card>
-)
+const Template = (props: CardProps) => <Card {...props} />
 
 export const Default = Template.bind({})
 
-export const MaxWidth = Template.bind({})
-
-MaxWidth.args = {
-  maxWidth: '250px',
+Default.args = {
+  title: 'Card title',
+  body: 'Card description',
+  leadingIcon: 'copy',
+  maxWidth: '300px',
 }
 
-export const NarrowPadding = Template.bind({})
+export const DefaultFallback = Template.bind({})
 
-NarrowPadding.args = {
-  narrow: true,
+DefaultFallback.args = {
+  title: 'Card title',
+  body: 'Card description',
+  leadingIcon: 'copy',
+  maxWidth: '300px',
+  fallback: true,
 }
 
-export const WidePadding = Template.bind({})
+export const GenericChildCard = Template.bind({})
 
-WidePadding.args = {
-  wide: true,
+GenericChildCard.args = {
+  children: <Text tag="h1">Children here</Text>,
 }
 
-export const Margins = Template.bind({})
+export const GenericCard = Template.bind({})
 
-Margins.args = {
-  marginX: '50px',
-  marginY: '30px',
+GenericCard.args = {
+  title: 'Card title',
+  body: 'Card description',
+  leadingIcon: 'copy',
+  maxWidth: '300px',
+}
+
+export const CardWithRightAction = Template.bind({})
+
+CardWithRightAction.args = {
+  title: 'Card title',
+  body: 'Card description',
+  leadingIcon: 'copy',
+  maxWidth: '300px',
+  rightAction: <Icon render="caret" color="marzipan" rotate={-90} />,
+}
+
+export const CardWithRightActionLink = Template.bind({})
+
+CardWithRightActionLink.args = {
+  title: 'Card title',
+  body: 'Card description',
+  leadingIcon: 'copy',
+  maxWidth: '300px',
+  rightAction: (
+    <Link href="" typo="regular">
+      Action
+    </Link>
+  ),
+}
+
+export const CardWithButton = Template.bind({})
+
+CardWithButton.args = {
+  title: 'Card title',
+  body: 'Card description',
+  leadingIcon: 'copy',
+  maxWidth: '300px',
+  buttonAction: (
+    <Button primary={true} forcedWidth="100%">
+      Default
+    </Button>
+  ),
+}
+
+export const CardWithImage = Template.bind({})
+
+CardWithImage.args = {
+  title: 'Card title',
+  body: 'Card description',
+  leadingIcon: 'copy',
+  maxWidth: '300px',
+  visualHeight: '120px',
+  visual: placeHolderSvg,
+}
+
+export const CardWithImageWithTag = Template.bind({})
+
+CardWithImageWithTag.args = {
+  title: 'Card title',
+  body: 'Card description',
+  leadingIcon: 'copy',
+  maxWidth: '300px',
+  visualHeight: '180px',
+  tag: (
+    <Tag
+      label="default tag"
+      bgColor="marzipan"
+      color="cream"
+      bgGradient={false}
+    />
+  ),
+  buttonAction: (
+    <Button primary={true} forcedWidth="100%">
+      Default
+    </Button>
+  ),
+  visual: placeHolderSvg,
 }
