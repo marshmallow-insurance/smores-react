@@ -16,10 +16,6 @@ interface Props extends CommonFieldProps {
   name?: string
   value: string
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
-  /**
-   * @deprecated this no longer does anything, remove when found
-   */
-  outlined?: boolean
 }
 
 /** on change or on input required */

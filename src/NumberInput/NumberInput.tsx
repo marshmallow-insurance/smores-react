@@ -30,10 +30,6 @@ export interface Props extends CommonFieldProps {
   strict?: boolean
   roundCurrency?: boolean
   step?: number
-  /**
-   * @deprecated this no longer does anything, remove when found
-   */
-  outlined?: boolean
 }
 
 /** on change or on input required */
