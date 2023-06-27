@@ -1,6 +1,6 @@
 import React, { FC, MouseEventHandler, ReactElement } from 'react'
 import styled, { css } from 'styled-components'
-import { darken, lighten } from 'polished'
+import { darken } from 'polished'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
@@ -11,7 +11,6 @@ import { MarginProps } from '../utils/space'
 type StylesItem = {
   iconColor: Color
   backgroundColor: string
-  borderColor: string
   hoverBackgroundColor: string
   icon: string
 }
@@ -19,35 +18,37 @@ type StylesItem = {
 const styles: Record<SupportMessageType, StylesItem> = {
   info: {
     iconColor: 'liquorice',
-    backgroundColor: theme.colors.coconut,
-    borderColor: theme.colors.coconut,
-    hoverBackgroundColor: darken(0.1, theme.colors.coconut),
+    backgroundColor: theme.colors.custard,
+    hoverBackgroundColor: darken(0.1, theme.colors.custard),
     icon: 'info',
   },
-  'info-outline': {
+  fallback: {
     iconColor: 'liquorice',
-    backgroundColor: theme.colors.cream,
-    borderColor: theme.colors.chia,
-    hoverBackgroundColor: theme.colors.chia,
+    backgroundColor: theme.colors.coconut,
+    hoverBackgroundColor: darken(0.1, theme.colors.coconut),
     icon: 'info',
   },
   alert: {
     iconColor: 'tangerine',
-    backgroundColor: theme.colors.coconut,
-    borderColor: theme.colors.tangerine,
-    hoverBackgroundColor: darken(0.1, theme.colors.coconut),
+    backgroundColor: theme.colors.sherbert,
+    hoverBackgroundColor: darken(0.1, theme.colors.sherbert),
     icon: 'alert',
   },
   warning: {
     iconColor: 'strawberry',
-    backgroundColor: lighten(0.45, theme.colors.strawberry),
-    borderColor: theme.colors.strawberry,
-    hoverBackgroundColor: lighten(0.35, theme.colors.strawberry),
+    backgroundColor: theme.colors.watermelon,
+    hoverBackgroundColor: darken(0.1, theme.colors.watermelon),
     icon: 'warning',
+  },
+  success: {
+    iconColor: 'apple',
+    backgroundColor: theme.colors.mint,
+    hoverBackgroundColor: darken(0.1, theme.colors.mint),
+    icon: 'included',
   },
 }
 
-type SupportMessageType = 'info' | 'info-outline' | 'alert' | 'warning'
+type SupportMessageType = 'info' | 'fallback' | 'alert' | 'warning' | 'success'
 
 export type SupportMessageProps = {
   className?: string
@@ -68,18 +69,18 @@ export const SupportMessage: FC<SupportMessageProps> = ({
   <Wrapper className={className} type={type} onClick={onClick} {...marginProps}>
     <IconWrapper>
       <Icon
-        size={24}
+        size={20}
         render={styles[type].icon}
         color={styles[type].iconColor}
       />
     </IconWrapper>
-    <Box flex direction="column" mx="16px">
+    <Box flex direction="column" mx="8px">
       {title && <Title>{title}</Title>}
       <Description tag="p">{description}</Description>
     </Box>
     {onClick && (
       <Box ml={{ custom: 'auto' }}>
-        <Icon size={16} render="caret" color="sesame" rotate={270} />
+        <Icon size={16} render="caret" color="marzipan" rotate={270} />
       </Box>
     )}
   </Wrapper>
@@ -98,10 +99,9 @@ const Wrapper = styled(Box)<IWrapper>(
   ({ type, onClick }) => css`
     align-items: center;
     background-color: ${styles[type].backgroundColor};
-    border: 1px solid ${styles[type].borderColor};
-    border-radius: 8px;
+    border-radius: 16px;
     ${onClick && `cursor: pointer`};
-    padding: 16px;
+    padding: 12px;
     display: flex;
     width: 100%;
 
