@@ -31,6 +31,7 @@ exports[`renders 1`] = `
   height: 48px;
   border-radius: 100%;
   background-color: none;
+  cursor: default;
 }
 
 <div
