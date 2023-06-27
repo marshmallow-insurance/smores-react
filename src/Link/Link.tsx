@@ -18,7 +18,7 @@ export type LinkProps = {
   typo?: LinkTypo
   highlight?: boolean
   iconToRender?: string
-  trailingIcon?: boolean
+  isTrailingIcon?: boolean
 }
 
 export const Link: FC<LinkProps> = ({
@@ -31,7 +31,7 @@ export const Link: FC<LinkProps> = ({
   typo = 'regular',
   highlight = false,
   iconToRender = openInNewTab ? 'new-window' : '',
-  trailingIcon = true,
+  isTrailingIcon = true,
 }) => {
   return (
     <LinkWrapper
@@ -46,7 +46,7 @@ export const Link: FC<LinkProps> = ({
         target: '_blank',
       })}
     >
-      {iconToRender && !trailingIcon && (
+      {iconToRender && !isTrailingIcon && (
         <Icon
           mt={{ custom: '3px' }}
           mr={{ custom: '4px' }}
@@ -56,7 +56,7 @@ export const Link: FC<LinkProps> = ({
         />
       )}
       {children}
-      {iconToRender && trailingIcon && (
+      {iconToRender && isTrailingIcon && (
         <Icon
           mt={{ custom: '3px' }}
           ml={{ custom: '4px' }}
