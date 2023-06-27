@@ -62,6 +62,18 @@ Horizontal.args = {
   displayType: 'horizontal-card',
 }
 
+export const WithBodyCopy = Template.bind({})
+
+WithBodyCopy.args = {
+  ...defaultArgs,
+  displayType: 'vertical-card',
+  options: options.map((option) => ({
+    ...option,
+    bodyCopy:
+      'E.g. shopping, travel and driving to see friends. Does not include travelling to and from work.',
+  })),
+}
+
 export const WithError = Template.bind({})
 
 WithError.args = {
