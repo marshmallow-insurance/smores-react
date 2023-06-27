@@ -84,7 +84,7 @@ export const BannerItem: FC<Props> = ({
           {message}
         </Text>
       </Box>
-      <Box>
+      <Box flex alignItems="center">
         {canManuallyClose && (
           <GenericButton
             onClick={() => deleteBanner(id)}
@@ -104,7 +104,7 @@ export const BannerItem: FC<Props> = ({
             <Box flex alignItems="center">
               {showExploreText && (
                 <UnderlinedText
-                  mx="12px"
+                  ml="12px"
                   tag="span"
                   typo="desc-medium"
                   color={textColor}
@@ -113,7 +113,13 @@ export const BannerItem: FC<Props> = ({
                 </UnderlinedText>
               )}
               {showExploreIcon && (
-                <Icon render="arrow" size={24} color={iconColor} rotate={180} />
+                <Icon
+                  render="arrow"
+                  ml="12px"
+                  size={24}
+                  color={iconColor}
+                  rotate={180}
+                />
               )}
             </Box>
           </GenericButton>
