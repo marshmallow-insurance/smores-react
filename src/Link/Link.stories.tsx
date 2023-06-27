@@ -19,6 +19,19 @@ const linkArgs = {
 export const Playground = Link.bind({})
 Playground.args = linkArgs
 
+export const Highlighted = Link.bind({})
+Highlighted.args = {
+  ...linkArgs,
+  highlight: true,
+}
+
+export const LeadingIcon = Link.bind({})
+LeadingIcon.args = {
+  ...linkArgs,
+  iconToRender: 'new-window',
+  trailingIcon: false,
+}
+
 const ParagraphDemo = (props: LinkProps) => (
   <Text tag="p" color="apple">
     Lorem Ipsum is simply dummy text of the printing and typesetting industry,

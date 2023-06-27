@@ -5,6 +5,7 @@ import { useUniqueId } from '../utils/id'
 import { theme } from '../theme'
 
 import { RadioElement } from './RadioElement'
+import { Text } from '../Text'
 import { BaseValueType, DisplayType } from './types'
 import { ITEM_GAP } from './constants'
 import { Box } from '../Box'
@@ -18,11 +19,24 @@ type RadioItemProps = {
   onChange: (value: BaseValueType) => void
   displayType: DisplayType
   isError: boolean
+  fallback?: boolean
+  bodyCopy?: string
 }
 
 export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
   function RadioItem(
-    { name, visual, label, value, checked, onChange, displayType, isError },
+    {
+      name,
+      visual,
+      label,
+      value,
+      checked,
+      onChange,
+      displayType,
+      isError,
+      fallback,
+      bodyCopy,
+    },
     ref,
   ) {
     const id = useUniqueId()
@@ -32,13 +46,15 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
         checked={checked}
         displayType={displayType}
         data-testid={value}
+        isError={isError}
+        fallback={fallback}
       >
         {visual && (
           <VisualWrapper>
             <Visual visualUrl={visual} />
           </VisualWrapper>
         )}
-        <Box flex direction="row" alignItems="flex-start">
+        <Box flex alignItems="center">
           <RadioElement
             ref={ref}
             name={name}
@@ -49,7 +65,14 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             isError={isError}
             mr="8px"
           />
-          <RadioText isError={isError}>{label}</RadioText>
+          <Box>
+            <RadioText isError={isError}>{label}</RadioText>
+            {bodyCopy && (
+              <Box>
+                <Text typo="caption">{bodyCopy}</Text>
+              </Box>
+            )}
+          </Box>
         </Box>
       </Wrapper>
     )
@@ -71,24 +94,38 @@ const Visual = styled.div<{ visualUrl: string }>`
   background-position: center;
 `
 
-const Wrapper = styled.label<Pick<RadioItemProps, 'displayType' | 'checked'>>`
+const Wrapper = styled.label<
+  Pick<RadioItemProps, 'displayType' | 'checked' | 'isError' | 'fallback'>
+>`
   display: flex;
   flex-direction: column;
   cursor: pointer;
 
-  ${({ displayType, checked }) =>
+  ${({ displayType, checked, isError, fallback }) =>
     css`
       ${(displayType === 'horizontal-card' ||
         displayType === 'vertical-card') &&
       css`
-        border-radius: 8px;
-        background-color: ${theme.colors[checked ? 'cream' : 'coconut']};
+        border-radius: 12px;
+        background-color: ${fallback
+          ? theme.colors.cream
+          : theme.colors.custard};
         padding: ${checked ? '10px' : '12px'};
-        ${checked && `border: 2px solid ${theme.colors.liquorice};`}
+        border: ${checked &&
+        (isError
+          ? `2px solid ${theme.colors.strawberry}`
+          : `2px solid ${theme.colors.liquorice}`)};
+
+        &:hover {
+          background-color: ${fallback
+            ? theme.colors.coconut
+            : theme.colors.oatmeal};
+        }
       `}
       ${displayType === 'horizontal-card' &&
       css`
         width: 100%;
+        justify-content: center;
 
         @media (min-width: 420px) {
           width: calc(50% - ${ITEM_GAP / 2}px);

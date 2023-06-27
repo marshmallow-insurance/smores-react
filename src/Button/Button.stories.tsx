@@ -21,7 +21,7 @@ export const Playground = Template.bind({})
 Playground.args = {
   primary: true,
   secondary: false,
-  tertiary: false,
+  fallback: false,
   disabled: false,
   loading: false,
   icon: '',
