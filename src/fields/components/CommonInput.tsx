@@ -82,4 +82,5 @@ export const StyledTrailingIcon = styled(Icon)<SIcon>`
   right: 36px;
   margin-right: -36px;
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
+  color: ${theme.colors.liquorice};
 `
