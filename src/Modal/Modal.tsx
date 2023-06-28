@@ -4,9 +4,9 @@ import { theme } from '../theme'
 import { createPortal } from 'react-dom'
 
 import { Box } from '../Box'
-import { Icon } from '../Icon'
 import { Text } from '../Text'
 import useBodyScrollLock from './useBodyScrollLock'
+import { IconStrict } from '../IconStrict'
 
 interface IModalWrapper {
   // showModal state
@@ -34,7 +34,6 @@ export type ModalProps = {
 
 export const Modal: FC<ModalProps> = ({
   title = '',
-  icon = '',
   children,
   showModal = false,
   handleClick,
@@ -63,17 +62,17 @@ export const Modal: FC<ModalProps> = ({
           mb="8px"
         >
           <TitleElements flex direction="column">
-            {icon !== '' && (
-              <Icon render={icon} size={42} color="liquorice" mb="16px" />
-            )}
             <Text tag="h2" typo="heading-small" align="left">
               {title}
             </Text>
           </TitleElements>
           {cross && (
-            <IconContainer onClick={handleClick}>
-              <Icon render="cross" color="liquorice" size={32} />
-            </IconContainer>
+            <IconStrict
+              render="cross"
+              backgroundColor="mascarpone"
+              handleClick={handleClick}
+              size={36}
+            />
           )}
         </Box>
         <Box flex direction="column">
@@ -112,10 +111,9 @@ const Overlay = styled.div`
 
 const Container = styled.div<IModalContainer>(
   ({ drawer, width }) => css`
-    background: ${theme.colors.cream};
-    border: 1px solid ${theme.colors.chia};
+    background: ${theme.colors.coconut};
     box-sizing: border-box;
-    border-radius: 8px;
+    border-radius: 16px;
     padding: 24px;
     width: 100%;
     max-width: ${width};
@@ -139,21 +137,6 @@ const Container = styled.div<IModalContainer>(
     `}
   `,
 )
-
-const IconContainer = styled.div`
-  cursor: pointer;
-  background: ${theme.colors.coconut};
-  border-radius: 32px;
-  margin-right: 8px;
-
-  &:hover {
-    background: ${theme.colors.coconut};
-  }
-
-  svg {
-    padding: 3px;
-  }
-`
 
 const TitleElements = styled(Box)`
   align-self: center;

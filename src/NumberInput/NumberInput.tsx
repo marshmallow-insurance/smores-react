@@ -196,7 +196,7 @@ export const NumberInput = forwardRef(function NumberInput(
             </SpinnerButton>
           </Spinner>
         )}
-        {trailingIcon && step > 0 && (
+        {trailingIcon && !step && (
           <StyledTrailingIcon
             disabled={disabled}
             render={trailingIcon}
