@@ -70,11 +70,9 @@ exports[`renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 24px;
 }
 
 .c1 > div {
-  width: 24px;
   margin-right: 4px;
 }
 
@@ -94,7 +92,8 @@ exports[`renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 50%;
-  height: 100%;
+  width: 24px;
+  height: 24px;
 }
 
 .c4 {
@@ -109,7 +108,8 @@ exports[`renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 50%;
-  height: 100%;
+  width: 24px;
+  height: 24px;
 }
 
 .c8 {

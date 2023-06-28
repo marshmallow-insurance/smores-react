@@ -93,8 +93,8 @@ export const Pagination: FC<PaginationProps> = ({
   return (
     <Container flex direction="row" {...marginProps}>
       {activePage - 1 > 0 && (
-        <IconBox onClick={() => movePage(activePage - 1)}>
-          <Icon size={24} render="arrow" />
+        <IconBox firstPage={true} onClick={() => movePage(activePage - 1)}>
+          <Icon size={18} render="arrow" />
         </IconBox>
       )}
       <PageBox active={activePage === 1} onClick={() => movePage(1)}>
@@ -152,13 +152,12 @@ export const Pagination: FC<PaginationProps> = ({
 
 interface IPageBox {
   active?: boolean
+  firstPage?: boolean
 }
 
 const Container = styled(Box)`
   align-items: center;
-  height: 24px;
   > div {
-    width: 24px;
     margin-right: 4px;
 
     &:last-child {
@@ -174,7 +173,8 @@ const PageBox = styled(Box)<IPageBox>`
   display: flex;
   justify-content: center;
   border-radius: 50%;
-  height: 100%;
+  width: 24px;
+  height: 24px;
 `
 
 const IconBox = styled(Box)<IPageBox>`
