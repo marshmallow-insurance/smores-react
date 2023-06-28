@@ -8,14 +8,7 @@ exports[`renders 1`] = `
   display: flex;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -56,7 +49,7 @@ exports[`renders 1`] = `
   color: #292924;
 }
 
-.c7 {
+.c6 {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -72,11 +65,11 @@ exports[`renders 1`] = `
   align-items: center;
 }
 
-.c1 > div {
+.c1 > button {
   margin-right: 4px;
 }
 
-.c1 > div:last-child {
+.c1 > button:last-child {
   margin-right: 0;
 }
 
@@ -96,6 +89,20 @@ exports[`renders 1`] = `
   height: 24px;
 }
 
+.c2:hover {
+  background-color: #F8F2EA;
+}
+
+.c2:active {
+  background-color: #F1E9DC;
+}
+
+.c2:focus,
+.c2:focus-visible,
+.c2:checked {
+  background-color: #F1E9DC;
+}
+
 .c4 {
   background: #FFFFFF;
   cursor: pointer;
@@ -112,7 +119,21 @@ exports[`renders 1`] = `
   height: 24px;
 }
 
-.c8 {
+.c4:hover {
+  background-color: #F8F2EA;
+}
+
+.c4:active {
+  background-color: #F1E9DC;
+}
+
+.c4:focus,
+.c4:focus-visible,
+.c4:checked {
+  background-color: #F1E9DC;
+}
+
+.c7 {
   cursor: pointer;
 }
 
@@ -121,15 +142,6 @@ exports[`renders 1`] = `
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-  }
-}
-
-@media (min-width:0px) {
-  .c6 {
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
   }
 }
 
@@ -151,7 +163,7 @@ exports[`renders 1`] = `
   class="c0 c1"
   direction="row"
 >
-  <div
+  <button
     class="c2"
   >
     <p
@@ -162,8 +174,8 @@ exports[`renders 1`] = `
     >
       1
     </p>
-  </div>
-  <div
+  </button>
+  <button
     class="c4"
   >
     <p
@@ -174,8 +186,8 @@ exports[`renders 1`] = `
     >
       2
     </p>
-  </div>
-  <div
+  </button>
+  <button
     class="c4"
   >
     <p
@@ -186,8 +198,8 @@ exports[`renders 1`] = `
     >
       3
     </p>
-  </div>
-  <div
+  </button>
+  <button
     class="c4"
   >
     <p
@@ -198,8 +210,8 @@ exports[`renders 1`] = `
     >
       4
     </p>
-  </div>
-  <div
+  </button>
+  <button
     class="c4"
   >
     <p
@@ -210,20 +222,20 @@ exports[`renders 1`] = `
     >
       5
     </p>
-  </div>
-  <div
-    class="c6 c4"
+  </button>
+  <button
+    class="c4"
   >
     <p
-      class="c7"
+      class="c6"
       color="liquorice"
       cursor="inherit"
       title=""
     >
       ...
     </p>
-  </div>
-  <div
+  </button>
+  <button
     class="c4"
   >
     <p
@@ -234,12 +246,12 @@ exports[`renders 1`] = `
     >
       11
     </p>
-  </div>
-  <div
-    class="c8"
+  </button>
+  <button
+    class="c7"
   >
     <span
-      class="c9"
+      class="c8"
       color="liquorice"
       rotate="180"
       size="18"
@@ -257,6 +269,6 @@ exports[`renders 1`] = `
         />
       </svg>
     </span>
-  </div>
+  </button>
 </div>
 `;

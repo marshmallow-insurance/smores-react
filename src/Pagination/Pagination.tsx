@@ -103,7 +103,7 @@ export const Pagination: FC<PaginationProps> = ({
         </Text>
       </PageBox>
       {showFirstDots && (
-        <PageBox flex justifyContent="center">
+        <PageBox>
           <Text tag="p">...</Text>
         </PageBox>
       )}
@@ -124,7 +124,7 @@ export const Pagination: FC<PaginationProps> = ({
         )
       })}
       {showLastDots && (
-        <PageBox flex justifyContent="center">
+        <PageBox>
           <Text tag="p">...</Text>
         </PageBox>
       )}
@@ -157,7 +157,7 @@ interface IPageBox {
 
 const Container = styled(Box)`
   align-items: center;
-  > div {
+  > button {
     margin-right: 4px;
 
     &:last-child {
@@ -166,7 +166,7 @@ const Container = styled(Box)`
   }
 `
 
-const PageBox = styled(Box)<IPageBox>`
+const PageBox = styled.button<IPageBox>`
   background: ${({ active }) =>
     active ? theme.colors.custard : theme.colors.cream};
   cursor: pointer;
@@ -175,8 +175,20 @@ const PageBox = styled(Box)<IPageBox>`
   border-radius: 50%;
   width: 24px;
   height: 24px;
+
+  &:hover {
+    background-color: ${theme.colors.mascarpone};
+  }
+  &:active {
+    background-color: ${theme.colors.custard};
+  }
+  &:focus,
+  &:focus-visible,
+  &:checked {
+    background-color: ${theme.colors.custard};
+  }
 `
 
-const IconBox = styled(Box)<IPageBox>`
+const IconBox = styled.button<IPageBox>`
   cursor: pointer;
 `
