@@ -11,6 +11,12 @@ const actions: ActionDropdownProps['list'] = [
     textColor: 'liquorice',
   },
   {
+    label: 'Brand',
+    value: 'ACTION',
+    bgColor: 'marshmallowPink',
+    textColor: 'liquorice',
+  },
+  {
     label: 'Medium',
     value: 'MEDIUM',
     bgColor: 'lemon',

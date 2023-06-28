@@ -12,8 +12,8 @@ export interface CommonFieldProps extends MarginProps {
   error?: boolean
   errorMsg?: string | ReactElement
   completed?: boolean
-}
-
-export interface InternalCommonFieldProps extends CommonFieldProps {
-  outlined?: boolean
+  frontIcon?: string
+  trailingIcon?: string
+  fallback?: boolean
+  disabled?: boolean
 }

@@ -5,7 +5,6 @@ import React, {
   ForwardedRef,
   useMemo,
 } from 'react'
-import { darken } from 'polished'
 import styled, { css } from 'styled-components'
 
 import { theme } from '../theme'
@@ -14,6 +13,8 @@ import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
+import { Box } from '../Box'
+import { StyledFrontIcon } from '../fields/components/CommonInput'
 
 export type DropdownItem = {
   optionGroupLabel?: string
@@ -27,8 +28,9 @@ export interface Props extends CommonFieldProps {
   value?: string | null
   defaultValue?: string
   disabled?: boolean
-  outlined?: boolean
   list: DropdownItem[]
+  frontIcon?: string
+  fallback?: boolean
   onSelect: (element: string) => void
   onBlur?: (e: FocusEvent<HTMLSelectElement>) => void
 }
@@ -55,10 +57,11 @@ export const Dropdown = forwardRef(function Dropdown(
     disabled = false,
     list,
     onSelect,
-    outlined = false,
     error = false,
     onInputChange,
     onBlur,
+    frontIcon,
+    fallback,
     ...fieldProps
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
@@ -85,8 +88,15 @@ export const Dropdown = forwardRef(function Dropdown(
   }, [list])
 
   return (
-    <Field {...fieldProps} htmlFor={id} error={error} outlined={outlined}>
-      <DropdownContainer>
+    <Field {...fieldProps} htmlFor={id} error={error}>
+      <Box flex alignItems="center">
+        {frontIcon && (
+          <StyledFrontIcon
+            disabled={disabled}
+            render={frontIcon}
+            color="sesame"
+          />
+        )}
         <StyledSelect
           id={id}
           disabled={disabled || list.length < 1}
@@ -97,11 +107,12 @@ export const Dropdown = forwardRef(function Dropdown(
             onInputChange?.(event)
             setValue(value)
           }}
-          outlined={outlined}
           error={error}
           ref={ref}
           onBlur={onBlur}
           name={name}
+          frontIcon={frontIcon}
+          fallback={fallback}
           value={value ? value : ''}
         >
           {hasOptGroups ? (
@@ -137,21 +148,13 @@ export const Dropdown = forwardRef(function Dropdown(
             ),
           )}
         </StyledSelect>
-        <Caret outlined={outlined}>
-          <Icon render="caret" color="sesame" size={24} />
+        <Caret>
+          <Icon render="caret" color="marzipan" size={24} />
         </Caret>
-      </DropdownContainer>
+      </Box>
     </Field>
   )
 })
-
-interface UsesOutline {
-  outlined?: boolean
-  error?: boolean
-}
-
-const borderColor = ({ error }: UsesOutline) =>
-  error ? theme.colors.strawberry : theme.colors.chia
 
 const resetSelect = css`
   border: none;
@@ -161,29 +164,33 @@ const resetSelect = css`
   outline: none;
 `
 
-const StyledSelect = styled.select<UsesOutline>`
+interface SSelect {
+  error: boolean
+  frontIcon?: string
+  fallback?: boolean
+}
+
+const StyledSelect = styled.select<SSelect>`
   ${resetSelect}
   width: 100%;
   height: 32px;
 
   cursor: pointer;
-  background-color: ${theme.colors.cream};
+  background-color: ${({ fallback }) =>
+    fallback ? theme.colors.custard : theme.colors.cream};
 
-  ${({ outlined }) => {
-    if (outlined) {
-      return css`
-        border-radius: 8px;
-        padding: 16px 12px;
-        border: 2px solid ${borderColor};
-        height: auto;
-      `
-    }
+  border-radius: 12px;
+  padding: 18px 14px;
+  border: 2px solid
+    ${({ error }) => (error ? theme.colors.strawberry : theme.colors.oatmeal)};
+  height: auto;
 
-    return css`
-      padding-right: 24px;
-      border-bottom: 1px solid ${borderColor};
+  ${({ frontIcon }) =>
+    frontIcon &&
+    frontIcon != '' &&
     `
-  }}
+      padding-left: 42px;
+    `}
 
   &:disabled {
     cursor: not-allowed;
@@ -194,19 +201,15 @@ const StyledSelect = styled.select<UsesOutline>`
   &:focus,
   &:focus-visible,
   &:checked {
-    border-color: ${(p) => darken(0.1, borderColor(p))};
+    border-color: ${({ error }) =>
+      error ? theme.colors.strawberry : theme.colors.marzipan};
   }
 `
 
-const DropdownContainer = styled.div`
-  position: relative;
-`
-
-const Caret = styled.div<{ outlined: boolean }>`
+const Caret = styled.div`
   position: absolute;
-  top: 50%;
   z-index: 1;
-  right: ${({ outlined }) => (outlined ? '15px' : '0')};
+  right: 15px;
   pointer-events: none;
-  transform: translateY(-50%);
+  color: ${theme.colors.marzipan};
 `
