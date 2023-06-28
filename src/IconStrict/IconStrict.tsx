@@ -16,6 +16,8 @@ export type IconStrictProps = {
   iconColor?: Color
   /** set background colour */
   backgroundColor?: Color
+  /** function to handle click */
+  handleClick?: () => void
   /** rotation degrees */
   rotate?: number
 } & MarginProps
@@ -46,6 +48,7 @@ export const IconStrict: FC<IconStrictProps> = ({
   iconColor,
   backgroundColor,
   rotate,
+  handleClick,
   ...marginProps
 }) => (
   <IconContainer
@@ -53,6 +56,7 @@ export const IconStrict: FC<IconStrictProps> = ({
     size={size}
     {...marginProps}
     backgroundColor={backgroundColor}
+    onClick={handleClick}
   >
     <Icon
       render={render}
@@ -68,10 +72,11 @@ export const IconStrict: FC<IconStrictProps> = ({
 interface IIconStrict {
   size: 16 | 24 | 36 | 48
   backgroundColor?: Color
+  onClick?: () => void
 }
 
 const IconContainer = styled.div<IIconStrict>(
-  ({ size, backgroundColor }) => css`
+  ({ size, backgroundColor, onClick }) => css`
     padding: ${backgroundColor ? `${iconSizes[size].padding}px` : 0};
     width: 100%;
     max-width: ${size}px;
@@ -80,5 +85,6 @@ const IconContainer = styled.div<IIconStrict>(
     background-color: ${backgroundColor
       ? theme.colors[backgroundColor]
       : 'none'};
+    cursor: ${onClick ? 'pointer' : 'default'};
   `,
 )

@@ -31,3 +31,11 @@ WithoutBackground.args = {
   size: 48,
   render: 'info',
 }
+
+export const WithClickHandler = Template.bind({})
+WithClickHandler.args = {
+  size: 48,
+  render: 'info',
+  handleClick: () => alert('clicked'),
+  backgroundColor: 'mascarpone',
+}
