@@ -93,9 +93,9 @@ export const Pagination: FC<PaginationProps> = ({
   return (
     <Container flex direction="row" {...marginProps}>
       {activePage - 1 > 0 && (
-        <PageBox onClick={() => movePage(activePage - 1)}>
+        <IconBox onClick={() => movePage(activePage - 1)}>
           <Icon size={24} render="arrow" />
-        </PageBox>
+        </IconBox>
       )}
       <PageBox active={activePage === 1} onClick={() => movePage(1)}>
         <Text typo={activePage === 1 ? 'desc-medium' : 'desc-light'} tag="p">
@@ -103,9 +103,9 @@ export const Pagination: FC<PaginationProps> = ({
         </Text>
       </PageBox>
       {showFirstDots && (
-        <Box flex justifyContent="center">
+        <PageBox flex justifyContent="center">
           <Text tag="p">...</Text>
-        </Box>
+        </PageBox>
       )}
       {shownPages.map((i) => {
         return (
@@ -124,9 +124,9 @@ export const Pagination: FC<PaginationProps> = ({
         )
       })}
       {showLastDots && (
-        <Box flex justifyContent="center">
+        <PageBox flex justifyContent="center">
           <Text tag="p">...</Text>
-        </Box>
+        </PageBox>
       )}
       {Boolean(lastPage) && (
         <PageBox
@@ -142,9 +142,9 @@ export const Pagination: FC<PaginationProps> = ({
         </PageBox>
       )}
       {activePage + 1 <= lastPage && (
-        <PageBox onClick={() => movePage(activePage + 1)}>
+        <IconBox onClick={() => movePage(activePage + 1)}>
           <Icon size={18} render="arrow" rotate={180} />
-        </PageBox>
+        </IconBox>
       )}
     </Container>
   )
@@ -168,9 +168,15 @@ const Container = styled(Box)`
 `
 
 const PageBox = styled(Box)<IPageBox>`
-  background: ${({ active }) => (active ? theme.colors.coconut : 'none')};
+  background: ${({ active }) =>
+    active ? theme.colors.custard : theme.colors.cream};
   cursor: pointer;
   display: flex;
   justify-content: center;
   border-radius: 50%;
+  height: 100%;
+`
+
+const IconBox = styled(Box)<IPageBox>`
+  cursor: pointer;
 `
