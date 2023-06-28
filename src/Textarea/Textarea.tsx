@@ -1,6 +1,5 @@
 import React, { FocusEvent, FormEvent, ForwardedRef, forwardRef } from 'react'
 import styled from 'styled-components'
-import { darken } from 'polished'
 
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
@@ -20,6 +19,7 @@ type BaseProps = {
   maxLength?: number
   onBlur?: (e: FocusEvent<HTMLTextAreaElement>) => void
   rows?: number
+  fallback?: boolean
 } & CommonFieldProps &
   MarginProps
 
@@ -49,6 +49,7 @@ export const Textarea = forwardRef(function Textarea(
     maxLength,
     onBlur,
     rows = 4,
+    fallback,
     ...fieldProps
   }: TextareaProps,
   ref: ForwardedRef<HTMLTextAreaElement>,
@@ -63,6 +64,7 @@ export const Textarea = forwardRef(function Textarea(
         name={name}
         disabled={disabled}
         resize={resize}
+        fallback={fallback}
         placeholder={placeholder}
         value={value}
         onChange={(e: FormEvent<HTMLTextAreaElement>) => {
@@ -82,36 +84,32 @@ interface TextArea {
   disabled: boolean
   error: boolean
   value: string
+  fallback?: boolean
 }
 
 const StyledTextArea = styled.textarea<TextArea>`
   font-size: 16px;
+  font: inherit;
   line-height: 20px;
-  background: ${theme.colors.cream};
-  border: 2px solid ${theme.colors.chia};
+  background: ${({ fallback }) =>
+    fallback ? theme.colors.custard : theme.colors.cream};
+  border: 2px solid ${theme.colors.oatmeal};
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 12px;
   width: 100%;
-  padding: 16px;
+  padding: 18px 14px;
   color: ${theme.colors.liquorice};
   resize: ${({ resize }) => resize};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'text')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   border-color: ${({ error }) =>
-    theme.colors[`${error ? 'strawberry' : 'chia'}`]};
+    theme.colors[`${error ? 'strawberry' : 'oatmeal'}`]};
   outline: none;
 
   &:hover,
   &:focus,
   &:focus-visible {
     border-color: ${({ error }) =>
-      error ? theme.colors.strawberry : darken(0.1, theme.colors.chia)};
+      error ? theme.colors.strawberry : theme.colors.marzipan};
   }
-
-  ${({ value }) =>
-    value &&
-    value != '' &&
-    `
-      border-color: ${theme.colors.chia};
-    `}
 `

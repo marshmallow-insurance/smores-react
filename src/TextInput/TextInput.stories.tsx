@@ -1,8 +1,8 @@
 import React from 'react'
 import { TextInput, TextInputProps } from './TextInput'
-import { SupportMessage } from '../SupportMessage'
 import { Container } from './Container'
 import { noop } from '../utils/noop'
+import { CollectionPage } from './Collection'
 
 export default {
   title: 'Text Input',
@@ -23,16 +23,16 @@ Default.args = {
   onBlur: noop,
 }
 
-export const TypeEmail = Template.bind({})
+export const DefaultFallback = Template.bind({})
 
-TypeEmail.args = {
+DefaultFallback.args = {
   id: 'textInput',
   name: 'textInput',
   placeholder: 'Placeholder text',
+  fallback: true,
   onChange: noop,
   onInputChange: noop,
   onBlur: noop,
-  type: 'email',
 }
 
 export const TypePassword = Template.bind({})
@@ -47,130 +47,7 @@ TypePassword.args = {
   type: 'password',
 }
 
-export const Error = Template.bind({})
-
-Error.args = {
-  id: 'textInput',
-  name: 'textInput',
-  placeholder: 'Placeholder text',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-  error: true,
-  errorMsg: 'Oh boy, something went wrong!',
-}
-
-export const WithOutline = Template.bind({})
-
-WithOutline.args = {
-  id: 'textInput',
-  name: 'textInput',
-  outlined: true,
-  label: 'with outline',
-  placeholder: 'Placeholder text',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-}
-
-export const WithOutlineError = Template.bind({})
-
-WithOutlineError.args = {
-  id: 'textInput',
-  name: 'textInput',
-  outlined: true,
-  label: 'with outline',
-  placeholder: 'Placeholder text',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-  error: true,
-  errorMsg: 'Oh boy, something went wrong!',
-}
-
-export const WithLabel = Template.bind({})
-
-WithLabel.args = {
-  id: 'textInput',
-  name: 'textInput',
-  placeholder: 'Placeholder text',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-  label: 'label',
-  outlined: false,
-}
-
-export const WithIcon = Template.bind({})
-
-WithIcon.args = {
-  id: 'textInput',
-  name: 'textInput',
-  placeholder: 'Placeholder text',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-  label: 'label',
-  trailingIcon: 'at',
-}
-
-export const Disabled = Template.bind({})
-
-Disabled.args = {
-  id: 'textInput',
-  name: 'textInput',
-  placeholder: 'Placeholder text',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-  label: 'label',
-  disabled: true,
-}
-
-export const Required = Template.bind({})
-
-Required.args = {
-  id: 'textInput',
-  name: 'textInput',
-  placeholder: 'Enter name',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-  label: 'Please enter your name',
-  outlined: true,
-  required: true,
-}
-
-export const AssistiveText = Template.bind({})
-
-AssistiveText.args = {
-  id: 'textInput',
-  name: 'textInput',
-  placeholder: 'Enter name',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-  label: 'Please enter your name',
-  outlined: true,
-  required: true,
-  assistiveText: 'Some more information...',
-  renderAsTitle: true,
-}
-
-export const WithReactElementError = Template.bind({})
-
-WithReactElementError.args = {
-  id: 'textInput',
-  name: 'textInput',
-  outlined: true,
-  label: 'with Support Message as Error',
-  placeholder: 'Placeholder text',
-  onChange: noop,
-  onInputChange: noop,
-  onBlur: noop,
-  error: true,
-  errorMsg: <SupportMessage type="warning" description="error!!" />,
-}
+export const Collection = CollectionPage.bind({})
 
 const WorkingExampleTemplate = () => <Container />
 

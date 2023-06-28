@@ -11,15 +11,8 @@ const Template = (props: SearchInputProps) => <Container {...props} />
 
 export const Default = Template.bind({})
 
-export const Outlined = Template.bind({})
-
-Outlined.args = {
-  outlined: true,
-}
-
 export const ShowIcon = Template.bind({})
 
 ShowIcon.args = {
   showIcon: true,
-  outlined: true,
 }

@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 
 import { Color, theme } from '../theme'
+import { darken } from 'polished'
 
 export type ActionListItem = {
   label: string
@@ -41,10 +42,9 @@ const ListItem = styled.li`
   font-size: 14px;
   cursor: pointer;
   color: ${theme.colors.liquorice};
-  border-bottom: 1px solid ${theme.colors.chia};
 
   &:hover {
-    background-color: ${theme.colors.coconut};
+    background-color: ${darken(0.1, theme.colors.custard)};
   }
 
   &:last-child {

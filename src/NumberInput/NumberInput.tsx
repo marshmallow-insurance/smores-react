@@ -8,30 +8,28 @@ import React, {
 import styled from 'styled-components'
 
 import { Box } from '../Box'
-import { Text } from '../Text'
 import { Icon } from '../Icon'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 
-import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
+import {
+  Input,
+  StyledFrontIcon,
+  StyledTrailingIcon,
+} from '../fields/components/CommonInput'
 
 export interface Props extends CommonFieldProps {
-  type?: 'number' | 'tel'
+  type?: 'number'
   placeholder: string
   name?: string
   value: string
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
-  trailingIcon?: string
-  prefix?: string
-  suffix?: string
   min?: number
   max?: number
   strict?: boolean
   roundCurrency?: boolean
   step?: number
-  disabled?: boolean
-  outlined?: boolean
 }
 
 /** on change or on input required */
@@ -56,12 +54,9 @@ export const NumberInput = forwardRef(function NumberInput(
     placeholder,
     name,
     value,
-    trailingIcon,
     onChange,
     onInputChange,
     onBlur,
-    prefix,
-    suffix,
     roundCurrency,
     min = -999999,
     max = 999999,
@@ -69,7 +64,9 @@ export const NumberInput = forwardRef(function NumberInput(
     step = 0,
     disabled = false,
     error = false,
-    outlined = false,
+    frontIcon,
+    trailingIcon,
+    fallback,
     ...fieldProps
   }: NumberInputProps,
   ref: ForwardedRef<HTMLInputElement>,
@@ -138,7 +135,6 @@ export const NumberInput = forwardRef(function NumberInput(
       }
     }
   }
-
   // Increment or decrement the value when clicking the Spinner controls
   const incrementValue = (event: MouseEvent<HTMLButtonElement>) => {
     if (onChange === undefined) return
@@ -161,29 +157,27 @@ export const NumberInput = forwardRef(function NumberInput(
   }
 
   return (
-    <Field {...fieldProps} htmlFor={id} error={error} outlined={outlined}>
-      <Box flex>
-        {prefix && (
-          <SymbolText
-            tag="span"
-            color="liquorice"
-            outlined={outlined}
-            prefix={prefix}
-          >
-            {prefix}
-          </SymbolText>
+    <Field {...fieldProps} htmlFor={id} error={error}>
+      <Box flex alignItems="center" justifyContent="flex-start">
+        {frontIcon && (
+          <StyledFrontIcon
+            disabled={disabled}
+            render={frontIcon}
+            color="sesame"
+          />
         )}
-
         <Input
+          ref={ref}
           error={error}
-          outlined={outlined}
           disabled={disabled}
           type={type}
           id={id}
           name={name}
           placeholder={placeholder}
           value={value}
-          prefix={prefix}
+          frontIcon={frontIcon}
+          step={step}
+          fallback={fallback}
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && handleChange(e.currentTarget.value)
             onInputChange && onInputChange(e)
@@ -191,19 +185,8 @@ export const NumberInput = forwardRef(function NumberInput(
           onBlur={onBlur}
         />
 
-        {suffix && (
-          <SymbolText
-            tag="span"
-            color="liquorice"
-            outlined={outlined}
-            suffix={suffix}
-          >
-            {suffix}
-          </SymbolText>
-        )}
-
         {onChange && step > 0 && (
-          <Spinner outlined={outlined}>
+          <Spinner>
             <SpinnerButton onClick={incrementValue} disabled={disabled}>
               <Icon render="caret" rotate={180} color="sesame" size={24} />
             </SpinnerButton>
@@ -213,116 +196,23 @@ export const NumberInput = forwardRef(function NumberInput(
             </SpinnerButton>
           </Spinner>
         )}
-
-        {trailingIcon && <StyledIcon render={trailingIcon} color="sesame" />}
+        {trailingIcon && !step && (
+          <StyledTrailingIcon
+            disabled={disabled}
+            render={trailingIcon}
+            color="sesame"
+          />
+        )}
       </Box>
     </Field>
   )
 })
 
-interface IInput {
-  error: boolean
-  disabled: boolean
-  outlined?: boolean
-  value?: string
-  prefix?: string
-}
-
-const Input = styled.input<IInput>`
-  font-family: 'Circular', san-serif;
-  border: none;
-  border-bottom: 1px solid;
-  border-color: ${({ error }) =>
-    theme.colors[`${error ? 'strawberry' : 'chia'}`]};
-  color: ${({ error }) => theme.colors[`${error ? 'strawberry' : 'chia'}`]};
-  font-size: 16px;
-  width: 100%;
-  outline: none;
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
-  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
-  padding: ${({ outlined }) => (outlined ? '17px 14px' : '1px 2px')};
-  padding-right: 60px;
-
-  &::placeholder {
-    color: ${theme.colors.sesame};
-  }
-
-  /* Remove the spinner on Firefox and Webkit browsers */
-  -moz-appearance: textfield;
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  &:hover,
-  &:focus-within {
-    border-color: ${({ error }) =>
-      theme.colors[`${error ? 'strawberry' : 'chia'}`]};
-  }
-
-  ${({ outlined, error }) =>
-    outlined &&
-    `
-      border: 2px solid ${error ? theme.colors.strawberry : theme.colors.chia};
-      border-radius: 8px;
-      height: auto;
-    `}
-
-  ${({ value }) =>
-    value &&
-    value !== '' &&
-    `
-      border-color: ${theme.colors.chia};
-    `}
-
-    ${({ prefix }) =>
-    prefix &&
-    `
-      padding-left: 12px;
-      left: -10px;
-      position: relative;
-    `}
-`
-
-const StyledIcon = styled(Icon)`
+const Spinner = styled.div`
   position: relative;
-  left: -24px;
-`
-
-const SymbolText = styled(Text)<{
-  prefix?: string
-  suffix?: string
-  outlined?: boolean
-}>`
-  font-family: 'Circular', san-serif;
-  font-size: 16px;
-  line-height: 19px;
-  position: relative;
-  z-index: 1;
-
-  ${({ outlined, prefix }) =>
-    outlined &&
-    `
-      top: 20px;
-      left: ${prefix ? '1px' : '0'};
-    `}
-
-  ${({ suffix, outlined }) =>
-    suffix &&
-    `
-      left: ${outlined ? '-25px' : '-10px'};
-    `}
-`
-
-const Spinner = styled.div<{
-  outlined?: boolean
-}>`
   display: flex;
-  position: relative;
-  top: ${({ outlined }) => (outlined ? '17px' : '-3px')};
-  left: -60px;
+  right: 58px;
+  margin-right: -58px;
 `
 
 interface IButton {
