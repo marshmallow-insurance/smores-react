@@ -1,5 +1,6 @@
 import React from 'react'
 import { Accordion, AccordionProps } from './Accordion'
+import { CollectionPage } from './Collection'
 
 export default {
   title: 'Accordion',
@@ -14,14 +15,4 @@ const Template = (props: AccordionProps) => (
 
 export const Default = Template.bind({})
 
-export const SubTitle = Template.bind({})
-
-SubTitle.args = {
-  subTitle: 'subTitle',
-}
-
-export const FullBorder = Template.bind({})
-
-FullBorder.args = {
-  fullBorder: true,
-}
+export const Collection = CollectionPage.bind({})
