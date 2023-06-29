@@ -7,6 +7,7 @@ import { Icon } from '../Icon'
 
 import { theme } from '../theme'
 import { MarginProps } from '../utils/space'
+import { focusOutlineStyle } from '../utils/focusOutline'
 
 const MAX_PAGES = 7
 const MAX_ADDITIONAL_PAGES = Math.ceil(MAX_PAGES / 2)
@@ -93,7 +94,15 @@ export const Pagination: FC<PaginationProps> = ({
   return (
     <Container flex direction="row" {...marginProps}>
       {activePage - 1 > 0 && (
-        <IconBox firstPage={true} onClick={() => movePage(activePage - 1)}>
+        <IconBox
+          firstPage={true}
+          onClick={() => movePage(activePage - 1)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              movePage(activePage - 1)
+            }
+          }}
+        >
           <Icon size={18} render="arrow" />
         </IconBox>
       )}
@@ -113,6 +122,11 @@ export const Pagination: FC<PaginationProps> = ({
             active={activePage === i}
             key={i}
             onClick={() => movePage(i)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                movePage(i)
+              }
+            }}
           >
             <Text
               typo={activePage === i ? 'desc-medium' : 'desc-light'}
@@ -132,6 +146,11 @@ export const Pagination: FC<PaginationProps> = ({
         <PageBox
           active={activePage === lastPage}
           onClick={() => movePage(lastPage)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              movePage(lastPage)
+            }
+          }}
         >
           <Text
             typo={activePage === lastPage ? 'desc-medium' : 'desc-light'}
@@ -142,7 +161,14 @@ export const Pagination: FC<PaginationProps> = ({
         </PageBox>
       )}
       {activePage + 1 <= lastPage && (
-        <IconBox onClick={() => movePage(activePage + 1)}>
+        <IconBox
+          onClick={() => movePage(activePage + 1)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              movePage(activePage + 1)
+            }
+          }}
+        >
           <Icon size={18} render="arrow" rotate={180} />
         </IconBox>
       )}
@@ -182,13 +208,12 @@ const PageBox = styled.button<IPageBox>`
   &:active {
     background-color: ${theme.colors.custard};
   }
-  &:focus,
-  &:focus-visible,
-  &:checked {
-    background-color: ${theme.colors.custard};
-  }
+
+  ${focusOutlineStyle}
 `
 
 const IconBox = styled.button<IPageBox>`
   cursor: pointer;
+
+  ${focusOutlineStyle}
 `

@@ -97,10 +97,9 @@ exports[`renders 1`] = `
   background-color: #F1E9DC;
 }
 
-.c2:focus,
-.c2:focus-visible,
-.c2:checked {
-  background-color: #F1E9DC;
+.c2:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
 }
 
 .c4 {
@@ -127,14 +126,18 @@ exports[`renders 1`] = `
   background-color: #F1E9DC;
 }
 
-.c4:focus,
-.c4:focus-visible,
-.c4:checked {
-  background-color: #F1E9DC;
+.c4:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
 }
 
 .c7 {
   cursor: pointer;
+}
+
+.c7:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
 }
 
 @media (min-width:0px) {
