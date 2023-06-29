@@ -6,6 +6,7 @@ import { theme } from '../theme'
 
 import { Day } from './types'
 import { Text } from '../Text'
+import { focusOutlineStyle } from '../utils/focusOutline'
 
 type Props = {
   items: Day[]
@@ -46,6 +47,11 @@ export const DatesList: FC<Props> = ({
           disabled={item.disabled}
           className={`ListItem ${item.active ? 'active' : ''}`}
           onClick={() => handleDateSelect(item.date)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleDateSelect(item.date)
+            }
+          }}
           data-testid={item.label}
         >
           {item.label}
@@ -78,11 +84,11 @@ interface IListItem {
   disabled?: boolean
 }
 
-const ListItem = styled.li<IListItem>`
+const ListItem = styled.button<IListItem>`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: 8px;
   width: 32px;
   height: 32px;
   border: 1px solid transparent;
@@ -96,12 +102,15 @@ const ListItem = styled.li<IListItem>`
   cursor: pointer;
 
   &:hover:not(.active) {
-    background-color: ${theme.colors.coconut};
+    color: ${theme.colors.custard};
+    background-color: ${theme.colors.liquorice};
   }
 
   &.active {
-    color: ${theme.colors.cream};
+    color: ${theme.colors.custard};
     background-color: ${theme.colors.liquorice};
     cursor: default;
   }
+
+  ${focusOutlineStyle}
 `
