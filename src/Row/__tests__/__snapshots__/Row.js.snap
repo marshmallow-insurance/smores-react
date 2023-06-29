@@ -21,7 +21,9 @@ exports[`default renders correctly 1`] = `
 
 .c0 {
   border-radius: 0;
-  border: 1px solid #D2D2D2;
+  border-top: 1px solid #DAD2C4;
+  border-bottom: 1px solid #DAD2C4;
+  background-color: #F1E9DC;
   display: grid;
   grid-template-columns: auto 24px;
   padding: 16px;
