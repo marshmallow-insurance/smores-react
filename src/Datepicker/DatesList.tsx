@@ -39,13 +39,13 @@ export const DatesList: FC<Props> = ({
       {Array(getBlankDaysCount(items[0].date))
         .fill(null)
         .map((_, index) => (
-          <ListItem key={`blankItem-${index}`} disabled />
+          <ListButton key={`blankItem-${index}`} disabled />
         ))}
       {items.map((item: Day, i) => (
-        <ListItem
+        <ListButton
           key={i}
           disabled={item.disabled}
-          className={`ListItem ${item.active ? 'active' : ''}`}
+          className={`ListButton ${item.active ? 'active' : ''}`}
           onClick={() => handleDateSelect(item.date)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
@@ -55,13 +55,13 @@ export const DatesList: FC<Props> = ({
           data-testid={item.label}
         >
           {item.label}
-        </ListItem>
+        </ListButton>
       ))}
     </Container>
   )
 }
 
-const Container = styled.ul`
+const Container = styled.div`
   justify-items: center;
   display: grid;
   grid-column-gap: 4px;
@@ -80,11 +80,11 @@ const Container = styled.ul`
   }
 `
 
-interface IListItem {
+interface IListButton {
   disabled?: boolean
 }
 
-const ListItem = styled.button<IListItem>`
+const ListButton = styled.button<IListButton>`
   display: flex;
   align-items: center;
   justify-content: center;
