@@ -29,6 +29,25 @@ Default.args = {
   shadow: true,
 }
 
+export const LongTextExample = Template.bind({})
+
+const longTextExample = (
+  <Text typo="desc-light" color="liquorice">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </Text>
+)
+
+LongTextExample.args = {
+  title: 'Long text example',
+  position: 'top',
+  content: longTextExample,
+  size: 'large',
+  underline: true,
+  arrowPosition: 'left',
+  shadow: false,
+}
+
 export const ReactNodeExample = Template.bind({})
 
 const tooltipContent = (
@@ -52,29 +71,6 @@ ReactNodeExample.args = {
   title: 'React node example',
   position: 'top',
   content: tooltipContent,
-  size: 'large',
-  underline: true,
-  arrowPosition: 'left',
-  shadow: false,
-}
-
-export const VeryCustomExample = Template.bind({})
-
-const customExampleContent = (
-  <Text typo="desc-light" color="liquorice">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </Text>
-)
-
-VeryCustomExample.args = {
-  title: 'React node example',
-  position: 'top',
-  content: customExampleContent,
   size: 'large',
   underline: true,
   arrowPosition: 'left',
