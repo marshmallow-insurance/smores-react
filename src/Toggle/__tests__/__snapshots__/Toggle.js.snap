@@ -4,7 +4,7 @@ exports[`renders 1`] = `
 .c0 {
   position: relative;
   display: inline-block;
-  width: 50px;
+  width: 56px;
   height: 32px;
 }
 
@@ -21,13 +21,16 @@ exports[`renders 1`] = `
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #FBF8F5;
-  border: 1px solid;
-  border-color: #FBF8F5;
+  background-color: #DAD2C4;
+  border: none;
   border-radius: 28px;
-  -webkit-transition: 0.2s background-color border-color;
-  transition: 0.2s background-color border-color;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
   outline: none;
+}
+
+.c3:hover {
+  background-color: #A1957C;
 }
 
 .c3:before {
@@ -35,9 +38,9 @@ exports[`renders 1`] = `
   content: '';
   height: 24px;
   width: 24px;
-  left: 3px;
-  bottom: 3px;
-  background-color: #FFFFFF;
+  left: 4px;
+  bottom: 4px;
+  background-color: #F8F2EA;
   -webkit-transition: 0.2s -webkit-transform;
   -webkit-transition: 0.2s transform;
   transition: 0.2s transform;
@@ -54,15 +57,14 @@ exports[`renders 1`] = `
 }
 
 .c1:checked + .c2 {
-  background-color: #008933;
-  border: 1px solid;
-  border-color: #008933;
+  background-color: #292924;
+  border: none;
 }
 
 .c1:checked + .c2:before {
-  -webkit-transform: translateX(18px);
-  -ms-transform: translateX(18px);
-  transform: translateX(18px);
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
 }
 
 <label
