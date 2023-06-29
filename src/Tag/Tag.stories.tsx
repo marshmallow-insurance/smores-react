@@ -1,5 +1,6 @@
 import React from 'react'
 import { Tag, TagProps } from './Tag'
+import { CollectionPage } from './Collection'
 
 export default {
   title: 'Tag',
@@ -30,3 +31,5 @@ BgGradient.args = {
   bgGradient: true,
   color: 'cream',
 }
+
+export const Collection = CollectionPage.bind({})
