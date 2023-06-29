@@ -16,21 +16,21 @@ type ArrowPosition = Position | 'center'
 
 export interface TooltipProps {
   children: ReactNode
-  title?: string
   content: string | ReactNode
   position: Position
+  maxWidth?: number
+  title?: string
   underline?: boolean
   defaultArrowPosition?: ArrowPosition
-  shadow?: boolean
 }
 
 export const Tooltip: FC<TooltipProps> = ({
   children,
   title,
   content,
+  maxWidth = 500,
   underline = false,
   defaultArrowPosition = 'center',
-  shadow = false,
 }) => {
   const tipContainer = useRef<HTMLDivElement>(null)
   const documentRef = useRef<Document>(document)
@@ -134,8 +134,8 @@ export const Tooltip: FC<TooltipProps> = ({
         showTip={showTip}
         position={tooltipPosition}
         arrowPosition={arrowPosition}
-        shadow={shadow}
         ref={tipContainer}
+        maxWidth={maxWidth}
       >
         {title && (
           <Text tag="h5" typo="desc-medium" color="liquorice">
@@ -281,34 +281,36 @@ export const Tip = styled.div<{
   showTip: boolean
   position: Position
   arrowPosition: ArrowPosition
-  shadow: boolean
+  maxWidth?: number
 }>`
   position: absolute;
   margin: auto;
-  background: ${theme.colors.coconut};
-  white-space: nowrap;
+  background: ${theme.colors.custard};
   padding: 16px 12px 20px;
-  border-radius: 8px;
+  border-radius: 16px;
+  max-width: 450px;
   opacity: ${({ showTip }) => (showTip ? '1' : '0')};
   transition: opacity 0.2s ease-in-out;
   pointer-events: none;
   cursor: default;
 
+  left: 50%;
+  transform: translateX(-50%);
+
+  // this is the trick that will make sure the content can go up to maxWidth
+  margin-right: ${({ maxWidth }) => maxWidth && -maxWidth / 2 + 'px'};
+  max-width: ${({ maxWidth }) => maxWidth && maxWidth + 'px'};
+
   ${({ position }) => position === 'top' && top}
   ${({ position }) => position === 'bottom' && bottom}
 	${({ position }) => position === 'left' && left}
 	${({ position }) => position === 'right' && right}
-	${({ shadow }) =>
-    shadow &&
-    css`
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    `}
 
   &:before {
     content: '';
     border-style: solid;
     border-width: 12px 12px 12px 0;
-    border-color: transparent ${theme.colors.coconut} transparent transparent;
+    border-color: transparent ${theme.colors.custard} transparent transparent;
     position: absolute;
   }
 `
