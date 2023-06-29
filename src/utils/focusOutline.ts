@@ -11,3 +11,10 @@ export const focusOutline = ({
     outline-offset: 2px;
   }
 `
+
+export const focusOutlineStyle = css`
+  &:focus-visible {
+    outline: 2px solid ${theme.colors.liquorice};
+    outline-offset: 2px;
+  }
+`

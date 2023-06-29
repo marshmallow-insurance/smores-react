@@ -1,5 +1,8 @@
 import React from 'react'
 import { Pagination, PaginationProps } from './Pagination'
+import { Box } from '../Box'
+import styled from 'styled-components'
+import { theme } from '../theme'
 
 export default {
   title: 'Pagination',
@@ -7,7 +10,15 @@ export default {
   argTypes: { handlePageChange: { action: 'pageChanged' } },
 }
 
-const Template = (props: PaginationProps) => <Pagination {...props} />
+const BgWrapper = styled(Box)`
+  background: ${theme.colors.coconut};
+`
+
+const Template = (props: PaginationProps & { showBg: boolean }) => (
+  <BgWrapper height="100px" flex alignItems="center">
+    <Pagination mx="32px" {...props} />
+  </BgWrapper>
+)
 
 export const Default = Template.bind({})
 
