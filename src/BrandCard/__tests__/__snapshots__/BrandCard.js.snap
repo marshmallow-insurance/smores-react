@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -8,17 +15,10 @@ exports[`renders 1`] = `
   display: flex;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .c0 {
-  background: #F1E9DC;
+  background: #DBE1B0;
   box-sizing: border-box;
-  border-radius: 16px;
+  border-radius: 16px 16px 0px 0px;
   padding: 16px;
   position: relative;
   overflow: hidden;
@@ -26,12 +26,12 @@ exports[`renders 1`] = `
 
 @media (min-width:0px) {
   .c1 {
-    padding: 0px;
+    margin-top: 16px;
   }
 }
 
 @media (min-width:0px) {
-  .c2 {
+  .c1 {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -40,26 +40,20 @@ exports[`renders 1`] = `
 }
 
 @media (min-width:0px) {
+  .c1 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:0px) {
   .c2 {
     -webkit-align-items: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-  }
-}
-
-@media (min-width:0px) {
-  .c3 {
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-}
-
-@media (min-width:0px) {
-  .c4 {
-    margin-top: 0px;
   }
 }
 
@@ -73,17 +67,8 @@ exports[`renders 1`] = `
       class="c2"
     >
       <div
-        class="c3"
-      >
-        <div
-          class=""
-        />
-      </div>
-    </div>
-    <div
-      class="c4"
-    >
-      Text inside
+        class=""
+      />
     </div>
   </div>
 </div>

@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
-.c1 {
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
   font-size: 10px;
   line-height: 12px;
   font-weight: 500;
@@ -11,29 +18,45 @@ exports[`renders 1`] = `
   color: #DF2929;
 }
 
-.c0 {
-  border-radius: 8px;
+.c1 {
+  border-radius: 6px;
+  padding: 4px 8px;
   box-sizing: border-box;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  height: 23px;
-  padding: 5px 12px;
 }
 
-.c2 {
+.c3 {
   font-size: 10px;
   font-weight: 500;
   line-height: 12px;
   text-transform: uppercase;
 }
 
+@media (min-width:0px) {
+  .c0 {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width:0px) {
+  .c0 {
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+  }
+}
+
 <div
-  class="c0"
+  class="c0 c1"
 >
   <span
-    class="c1 c2"
+    class="c2 c3"
     color="strawberry"
     cursor="inherit"
     title=""
