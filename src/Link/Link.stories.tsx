@@ -29,7 +29,7 @@ export const LeadingIcon = Link.bind({})
 LeadingIcon.args = {
   ...linkArgs,
   iconToRender: 'new-window',
-  trailingIcon: false,
+  isTrailingIcon: false,
 }
 
 const ParagraphDemo = (props: LinkProps) => (
