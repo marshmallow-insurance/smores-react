@@ -58,19 +58,34 @@ const Checkmark = styled.span<{ error?: boolean }>`
   box-sizing: border-box;
   border-radius: 1px;
 
+  &:before {
+    content: '';
+    position: absolute;
+    display: none;
+    top: 9px;
+    left: 5px;
+    width: 3px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: ${theme.colors.cream};
+    -webkit-transform: rotate(316deg);
+    -ms-transform: rotate(316deg);
+    transform: rotate(316deg);
+  }
+
   &:after {
     content: '';
     position: absolute;
     display: none;
     top: 3px;
-    left: 7px;
-    width: 5px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+    left: 11px;
+    width: 3px;
+    height: 15px;
+    border-radius: 4px;
+    background-color: ${theme.colors.cream};
+    -webkit-transform: rotate(43deg);
+    -ms-transform: rotate(43deg);
+    transform: rotate(43deg);
   }
 `
 
@@ -92,6 +107,10 @@ const BoxContainer = styled.label`
       border: solid 1px ${theme.colors.liquorice};
     }
 
+    &:checked ~ ${Checkmark}:before {
+      display: block;
+    }
+
     &:checked ~ ${Checkmark}:after {
       display: block;
     }
@@ -108,6 +127,10 @@ const BoxContainer = styled.label`
 
   @media (min-width: 768px) {
     padding-left: 32px;
+  }
+
+  span {
+    border-radius: 4px;
   }
 `
 
