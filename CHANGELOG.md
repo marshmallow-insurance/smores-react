@@ -1,3 +1,9 @@
+## [2.19.3] - 2023-07-04
+### Changed
+- Added End date to Datepicker
+- Added ability to show years on Datepicker
+- Added ability to open the date picker on the selected date or current month
+- Updated snackbar to always be on top with z-index
 ## [2.19.2] - 2023-06-06
 ### Changed
 - Added showDayLabels prop to Datepicker component
