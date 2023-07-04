@@ -10,6 +10,7 @@ import {
   isWithinInterval,
   getDaysInMonth,
   isWeekend,
+  isSameMonth,
 } from 'date-fns'
 
 import { Box } from '../Box'
@@ -38,6 +39,9 @@ export type DatepickerProps = {
   showDayLabels?: boolean
   disableWeekend?: boolean
   fromDate?: Date
+  endingDate?: Date
+  showYear?: boolean
+  showSelectedDate?: boolean
   range?: number
   onDateSelect: (date: string) => void
   onChange?: (value: Date) => void
@@ -49,6 +53,9 @@ export const Datepicker: FC<DatepickerProps> = ({
   disableWeekend = true,
   range = 14,
   fromDate = new Date(),
+  endingDate,
+  showYear = false,
+  showSelectedDate = false,
   onDateSelect,
   onChange,
   value,
@@ -57,14 +64,22 @@ export const Datepicker: FC<DatepickerProps> = ({
   // We want to make sure that the date is in the UK timezone,
   // this might need to be revisit when opening up to new countries
   const startDate = convertToUkDate(fromDate)
-  const endDate = addDays(startDate, range)
+  const endDate = endingDate ? endingDate : addDays(startDate, range)
   const availableMonths = getAvailableMonths(startDate, endDate)
+
+  const selectedDate = value ?? new Date()
 
   const [activeDay, setActiveDay] = useControllableState({
     initialState: undefined,
     stateProp: value,
   })
-  const [activeMonthIndex, setActiveMonth] = useState(0)
+  const [activeMonthIndex, setActiveMonth] = useState(
+    showSelectedDate
+      ? availableMonths.findIndex((month) =>
+          isSameMonth(month.date, selectedDate),
+        )
+      : 0,
+  )
 
   const handleSelectEvent = (date: Date) => {
     setActiveDay(date)
@@ -111,7 +126,8 @@ export const Datepicker: FC<DatepickerProps> = ({
         </Circle>
 
         <Heading tag="h4" typo="body-regular">
-          {availableMonths[activeMonthIndex].label}
+          {availableMonths[activeMonthIndex].label}{' '}
+          {showYear && `- ${getYear(availableMonths[activeMonthIndex].date)}`}
         </Heading>
 
         <Circle
