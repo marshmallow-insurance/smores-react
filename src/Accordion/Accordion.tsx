@@ -91,12 +91,12 @@ interface IAccordion {
 
 const Wrapper = styled(Box)<Omit<IAccordion, 'isOpen'>>(
   ({ borderTop, fullBorder, filledBackground }) => css`
-    border-bottom: 1px solid ${theme.colors.marzipan};
-    ${borderTop && `border-top: 1px solid ${theme.colors.marzipan};`}
+    border-bottom: 1px solid ${theme.colors.oatmeal};
+    ${borderTop && `border-top: 1px solid ${theme.colors.oatmeal};`}
 
     ${fullBorder &&
     css`
-      border: 1px solid ${theme.colors.marzipan};
+      border: 1px solid ${theme.colors.oatmeal};
       border-radius: 16px;
     `}
 

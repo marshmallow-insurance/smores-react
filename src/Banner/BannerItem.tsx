@@ -55,8 +55,10 @@ export const BannerItem: FC<Props> = ({
   canManuallyClose,
   showCloseIcon,
   deleteBanner,
+  noTimeout,
 }) => {
   const autoCloseBaner = () => {
+    if (noTimeout) return
     if (type !== 'critical') return deleteBanner(id)
     else {
       return
