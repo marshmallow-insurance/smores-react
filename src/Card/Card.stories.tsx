@@ -105,14 +105,7 @@ CardWithImageWithTag.args = {
   leadingIcon: 'copy',
   maxWidth: '300px',
   visualHeight: '180px',
-  tag: (
-    <Tag
-      label="default tag"
-      bgColor="marzipan"
-      color="cream"
-      bgGradient={false}
-    />
-  ),
+  tag: <Tag label="default tag" bgColor="marzipan" color="cream" />,
   buttonAction: (
     <Button primary={true} forcedWidth="100%">
       Default
