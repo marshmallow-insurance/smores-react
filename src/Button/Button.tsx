@@ -19,6 +19,7 @@ type Props = {
   fallback?: boolean
   textBtn?: boolean
   icon?: string
+  iconSize?: number
   trailingIcon?: boolean
   forcedWidth?: string
   form?: string
@@ -46,6 +47,7 @@ export const Button: FC<ButtonProps> = forwardRef<
     icon = '',
     trailingIcon = false,
     forcedWidth = '',
+    iconSize = 24,
     form,
     type,
     ...otherProps
@@ -81,17 +83,20 @@ export const Button: FC<ButtonProps> = forwardRef<
           <IconContainer
             trailingIcon={trailingIcon}
             render={icon}
-            size={24}
+            size={iconSize}
             color={'liquorice'}
           />
         )}
-        <ChildrenContainer>{children}</ChildrenContainer>
+        <ChildrenContainer className="childrenContainer">
+          {children}
+        </ChildrenContainer>
         {trailingIcon && icon && textBtn && (
           <IconContainer
             trailingIcon={trailingIcon}
             render={icon}
-            size={24}
+            size={iconSize}
             color={'liquorice'}
+            className="iconContainer"
           />
         )}
       </ContentContainer>

@@ -3,14 +3,9 @@ import styled from 'styled-components'
 
 import { Text } from '../Text'
 import { Box } from '../Box'
-import { Button, ButtonProps } from './Button'
+import { SmallButton } from './SmallButton'
 
-export const buttonList: Array<ButtonProps> = [
-  { primary: true, children: 'Save' },
-  { secondary: true, children: 'Edit' },
-  { fallback: true, children: 'Cancel' },
-  { textBtn: true, children: 'View' },
-]
+import { buttonList } from '../Button/Collection'
 
 export const CollectionPage: FC = () => {
   return (
@@ -18,34 +13,34 @@ export const CollectionPage: FC = () => {
       <Section label="Default">
         <Row label="Default">
           {buttonList.map((props, index) => (
-            <Button key={index} {...props} />
+            <SmallButton key={index} {...props} />
           ))}
         </Row>
         <Row label="Loading">
           {buttonList.map((props, index) => (
-            <Button key={index} {...props} loading />
+            <SmallButton key={index} {...props} loading />
           ))}
         </Row>
         <Row label="Disabled">
           {buttonList.map((props, index) => (
-            <Button key={index} {...props} disabled />
+            <SmallButton key={index} {...props} disabled />
           ))}
         </Row>
       </Section>
       <Section label="With icon">
         <Row label="Default">
           {buttonList.map((props, index) => (
-            <Button key={index} {...props} icon="info" />
+            <SmallButton key={index} {...props} icon="info" />
           ))}
         </Row>
         <Row label="Loading">
           {buttonList.map((props, index) => (
-            <Button key={index} {...props} loading icon="info" />
+            <SmallButton key={index} {...props} loading icon="info" />
           ))}
         </Row>
         <Row label="Disabled">
           {buttonList.map((props, index) => (
-            <Button key={index} {...props} disabled icon="info" />
+            <SmallButton key={index} {...props} disabled icon="info" />
           ))}
         </Row>
       </Section>
