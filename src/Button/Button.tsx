@@ -18,6 +18,7 @@ type Props = {
   secondary?: boolean
   fallback?: boolean
   textBtn?: boolean
+  smallButton?: boolean
   icon?: string
   trailingIcon?: boolean
   forcedWidth?: string
@@ -43,6 +44,7 @@ export const Button: FC<ButtonProps> = forwardRef<
     secondary = false,
     fallback = false,
     textBtn = false,
+    smallButton = false,
     icon = '',
     trailingIcon = false,
     forcedWidth = '',
@@ -63,6 +65,7 @@ export const Button: FC<ButtonProps> = forwardRef<
       secondary={secondary}
       fallback={fallback}
       textBtn={textBtn}
+      smallButton={smallButton}
       icon={icon}
       trailingIcon={trailingIcon}
       forcedWidth={forcedWidth}
@@ -81,17 +84,20 @@ export const Button: FC<ButtonProps> = forwardRef<
           <IconContainer
             trailingIcon={trailingIcon}
             render={icon}
-            size={24}
+            size={smallButton ? 16 : 24}
             color={'liquorice'}
           />
         )}
-        <ChildrenContainer>{children}</ChildrenContainer>
+        <ChildrenContainer className="childrenContainer">
+          {children}
+        </ChildrenContainer>
         {trailingIcon && icon && textBtn && (
           <IconContainer
             trailingIcon={trailingIcon}
             render={icon}
-            size={24}
+            size={smallButton ? 16 : 24}
             color={'liquorice'}
+            className="iconContainer"
           />
         )}
       </ContentContainer>
@@ -112,6 +118,7 @@ type IButton = Required<
     | 'fallback'
     | 'textBtn'
     | 'trailingIcon'
+    | 'smallButton'
   >
 > & {
   $loading: NonNullable<ButtonProps['loading']>
@@ -126,6 +133,7 @@ const Container = styled(Box)<IButton>(
     forcedWidth,
     fallback,
     textBtn,
+    smallButton,
   }) => css`
     position: relative;
     background-color: ${theme.colors.marshmallowPink};
@@ -187,6 +195,20 @@ const Container = styled(Box)<IButton>(
       &:active {
         background-color: transparent;
         color: ${theme.colors.sesame};
+      }
+    `}
+  ${smallButton &&
+    css`
+      padding: 0 10px;
+      min-width: 54px;
+      font-size: 14px;
+
+      .childrenContainer {
+        padding: 9px 0;
+      }
+
+      span {
+        margin: 0 5px 0 0;
       }
     `}
   `,
