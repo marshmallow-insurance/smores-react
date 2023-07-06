@@ -10,6 +10,7 @@ export const buttonList: Array<ButtonProps> = [
   { secondary: true, children: 'Edit' },
   { fallback: true, children: 'Cancel' },
   { textBtn: true, children: 'View' },
+  { smallButton: true, children: 'Small' },
 ]
 
 export const CollectionPage: FC = () => {
@@ -33,6 +34,23 @@ export const CollectionPage: FC = () => {
         </Row>
       </Section>
       <Section label="With icon">
+        <Row label="Default">
+          {buttonList.map((props, index) => (
+            <Button key={index} {...props} icon="info" />
+          ))}
+        </Row>
+        <Row label="Loading">
+          {buttonList.map((props, index) => (
+            <Button key={index} {...props} loading icon="info" />
+          ))}
+        </Row>
+        <Row label="Disabled">
+          {buttonList.map((props, index) => (
+            <Button key={index} {...props} disabled icon="info" />
+          ))}
+        </Row>
+      </Section>
+      <Section label="Small Button">
         <Row label="Default">
           {buttonList.map((props, index) => (
             <Button key={index} {...props} icon="info" />
