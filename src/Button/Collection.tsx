@@ -50,23 +50,6 @@ export const CollectionPage: FC = () => {
           ))}
         </Row>
       </Section>
-      <Section label="Small Button">
-        <Row label="Default">
-          {buttonList.map((props, index) => (
-            <Button key={index} {...props} icon="info" />
-          ))}
-        </Row>
-        <Row label="Loading">
-          {buttonList.map((props, index) => (
-            <Button key={index} {...props} loading icon="info" />
-          ))}
-        </Row>
-        <Row label="Disabled">
-          {buttonList.map((props, index) => (
-            <Button key={index} {...props} disabled icon="info" />
-          ))}
-        </Row>
-      </Section>
     </Wrapper>
   )
 }
