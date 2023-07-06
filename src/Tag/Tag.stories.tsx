@@ -13,8 +13,8 @@ export const Default = Template.bind({})
 
 Default.args = {
   label: 'This is a tag',
-  bgColor: 'apple',
-  borderColor: 'apple',
+  bgColor: 'feijoa',
+  borderColor: 'feijoa',
   color: 'cream',
 }
 
@@ -22,14 +22,6 @@ Default.argTypes = {
   theme: { table: { disable: true } },
   as: { table: { disable: true } },
   forwardedAs: { table: { disable: true } },
-}
-
-export const BgGradient = Template.bind({})
-
-BgGradient.args = {
-  label: 'This is a gradient background tag',
-  bgGradient: true,
-  color: 'cream',
 }
 
 export const Collection = CollectionPage.bind({})

@@ -10,6 +10,7 @@ export interface Banner {
   leadingIcon?: string
   canManuallyClose?: boolean
   showCloseIcon?: boolean
+  noTimeout?: boolean
 }
 
 export type CreateBanner = Omit<Banner, 'id'>
