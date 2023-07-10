@@ -13,7 +13,7 @@ export type DividerProps = {
 export const Divider: FC<DividerProps> = memo(function Divider({
   maxWidth = 'none',
   height = '1px',
-  color = 'outline',
+  color = 'chia',
   ...marginProps
 }) {
   return (

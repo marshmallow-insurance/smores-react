@@ -7,6 +7,7 @@ import { Icon } from '../Icon'
 
 import { theme } from '../theme'
 import { MarginProps } from '../utils/space'
+import { focusOutlineStyle } from '../utils/focusOutline'
 
 const MAX_PAGES = 7
 const MAX_ADDITIONAL_PAGES = Math.ceil(MAX_PAGES / 2)
@@ -93,9 +94,17 @@ export const Pagination: FC<PaginationProps> = ({
   return (
     <Container flex direction="row" {...marginProps}>
       {activePage - 1 > 0 && (
-        <PageBox onClick={() => movePage(activePage - 1)}>
-          <Icon size={24} render="arrow" />
-        </PageBox>
+        <IconBox
+          firstPage={true}
+          onClick={() => movePage(activePage - 1)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              movePage(activePage - 1)
+            }
+          }}
+        >
+          <Icon size={18} render="arrow" />
+        </IconBox>
       )}
       <PageBox active={activePage === 1} onClick={() => movePage(1)}>
         <Text typo={activePage === 1 ? 'desc-medium' : 'desc-light'} tag="p">
@@ -103,9 +112,9 @@ export const Pagination: FC<PaginationProps> = ({
         </Text>
       </PageBox>
       {showFirstDots && (
-        <Box flex justifyContent="center">
+        <PageBox>
           <Text tag="p">...</Text>
-        </Box>
+        </PageBox>
       )}
       {shownPages.map((i) => {
         return (
@@ -113,6 +122,11 @@ export const Pagination: FC<PaginationProps> = ({
             active={activePage === i}
             key={i}
             onClick={() => movePage(i)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                movePage(i)
+              }
+            }}
           >
             <Text
               typo={activePage === i ? 'desc-medium' : 'desc-light'}
@@ -124,14 +138,19 @@ export const Pagination: FC<PaginationProps> = ({
         )
       })}
       {showLastDots && (
-        <Box flex justifyContent="center">
+        <PageBox>
           <Text tag="p">...</Text>
-        </Box>
+        </PageBox>
       )}
       {Boolean(lastPage) && (
         <PageBox
           active={activePage === lastPage}
           onClick={() => movePage(lastPage)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              movePage(lastPage)
+            }
+          }}
         >
           <Text
             typo={activePage === lastPage ? 'desc-medium' : 'desc-light'}
@@ -142,9 +161,16 @@ export const Pagination: FC<PaginationProps> = ({
         </PageBox>
       )}
       {activePage + 1 <= lastPage && (
-        <PageBox onClick={() => movePage(activePage + 1)}>
+        <IconBox
+          onClick={() => movePage(activePage + 1)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              movePage(activePage + 1)
+            }
+          }}
+        >
           <Icon size={18} render="arrow" rotate={180} />
-        </PageBox>
+        </IconBox>
       )}
     </Container>
   )
@@ -152,13 +178,12 @@ export const Pagination: FC<PaginationProps> = ({
 
 interface IPageBox {
   active?: boolean
+  firstPage?: boolean
 }
 
 const Container = styled(Box)`
   align-items: center;
-  height: 24px;
-  > div {
-    width: 24px;
+  > button {
     margin-right: 4px;
 
     &:last-child {
@@ -167,10 +192,28 @@ const Container = styled(Box)`
   }
 `
 
-const PageBox = styled(Box)<IPageBox>`
-  background: ${({ active }) => (active ? theme.colors.background : 'none')};
+const PageBox = styled.button<IPageBox>`
+  background: ${({ active }) =>
+    active ? theme.colors.custard : theme.colors.cream};
   cursor: pointer;
   display: flex;
   justify-content: center;
   border-radius: 50%;
+  width: 24px;
+  height: 24px;
+
+  &:hover {
+    background-color: ${theme.colors.mascarpone};
+  }
+  &:active {
+    background-color: ${theme.colors.custard};
+  }
+
+  ${focusOutlineStyle}
+`
+
+const IconBox = styled.button<IPageBox>`
+  cursor: pointer;
+
+  ${focusOutlineStyle}
 `

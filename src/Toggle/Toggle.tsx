@@ -23,7 +23,16 @@ export const Toggle: FC<Props> = ({
 }) => {
   return (
     <Switch as="label" id={id} {...marginProps}>
-      <Checkbox type="checkbox" checked={checked} onChange={onToggle} />
+      <Checkbox
+        type="checkbox"
+        checked={checked}
+        onChange={onToggle}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            onToggle()
+          }
+        }}
+      />
       <Slider />
     </Switch>
   )
@@ -32,7 +41,7 @@ export const Toggle: FC<Props> = ({
 const Switch = styled(Box)`
   position: relative;
   display: inline-block;
-  width: 50px;
+  width: 56px;
   height: 32px;
 
   input {
@@ -49,21 +58,24 @@ const Slider = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${theme.colors.bgPrimary};
-  border: 1px solid;
-  border-color: ${theme.colors.bgPrimary};
+  background-color: ${theme.colors.oatmeal};
+  border: none;
   border-radius: 28px;
-  transition: 0.2s background-color border-color;
+  transition: 0.2s background-color;
   outline: none;
+
+  &:hover {
+    background-color: ${theme.colors.marzipan};
+  }
 
   &:before {
     position: absolute;
     content: '';
     height: 24px;
     width: 24px;
-    left: 3px;
-    bottom: 3px;
-    background-color: ${theme.colors.white};
+    left: 4px;
+    bottom: 4px;
+    background-color: ${theme.colors.mascarpone};
     transition: 0.2s transform;
     border-radius: 50%;
   }
@@ -73,12 +85,11 @@ const Checkbox = styled.input`
   ${focusOutline({ selector: `&:focus-visible + ${Slider}` })}
 
   &:checked + ${Slider} {
-    background-color: ${theme.colors.success};
-    border: 1px solid;
-    border-color: ${theme.colors.success};
+    background-color: ${theme.colors.liquorice};
+    border: none;
   }
 
   &:checked + ${Slider}:before {
-    transform: translateX(18px);
+    transform: translateX(24px);
   }
 `

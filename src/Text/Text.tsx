@@ -74,7 +74,7 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
       className = '',
       tag = 'p',
       align = 'left',
-      color = 'secondary',
+      color = 'liquorice',
       cursor = 'inherit',
       title = '',
       ...props

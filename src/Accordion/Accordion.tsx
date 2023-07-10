@@ -10,6 +10,7 @@ import { MarginProps } from '../utils/space'
 export type AccordionProps = {
   title: string
   subTitle?: string
+  filledBackground?: boolean
   borderTop?: boolean
   fullBorder?: boolean
   onToggle?: (isOpen: boolean) => void
@@ -21,6 +22,7 @@ export const Accordion: FC<AccordionProps> = ({
   title,
   children,
   onToggle,
+  filledBackground,
   defaultIsOpen = false,
   borderTop = false,
   subTitle,
@@ -37,21 +39,27 @@ export const Accordion: FC<AccordionProps> = ({
   }
 
   return (
-    <Wrapper borderTop={borderTop} fullBorder={fullBorder} {...marginProps}>
+    <Wrapper
+      borderTop={borderTop}
+      fullBorder={fullBorder}
+      {...marginProps}
+      filledBackground={filledBackground}
+    >
       <TopContainer
         flex
         alignItems="center"
         justifyContent="space-between"
         onClick={handleToggle}
-        py={fullBorder ? { custom: 20 } : '16px'}
-        px={px}
+        py="16px"
+        pr="16px"
+        pl={px}
       >
         <TitleContainer>
-          <Text tag="h2" typo="headline-regular">
+          <Text tag="h2" typo="headline-regular" color="liquorice">
             {title}
           </Text>
           {subTitle && (
-            <Text tag="label" color="subtext" typo="label">
+            <Text tag="label" color="liquorice" typo="label" mt={{ custom: 4 }}>
               {subTitle}
             </Text>
           )}
@@ -60,7 +68,7 @@ export const Accordion: FC<AccordionProps> = ({
         <CaretIcon
           render="caret"
           size={24}
-          color="secondary"
+          color="marzipan"
           isOpen={isOpen}
           borderTop={borderTop}
         />
@@ -78,18 +86,23 @@ interface IAccordion {
   isOpen: boolean
   borderTop?: boolean
   fullBorder?: boolean
+  filledBackground?: boolean
 }
 
 const Wrapper = styled(Box)<Omit<IAccordion, 'isOpen'>>(
-  ({ borderTop, fullBorder }) => css`
-    border-bottom: 1px solid ${theme.colors.outline};
-    ${borderTop && `border-top: 1px solid ${theme.colors.outline};`}
+  ({ borderTop, fullBorder, filledBackground }) => css`
+    border-bottom: 1px solid ${theme.colors.oatmeal};
+    ${borderTop && `border-top: 1px solid ${theme.colors.oatmeal};`}
 
     ${fullBorder &&
     css`
-      border: 1px solid ${theme.colors.outline};
-      border-radius: 8px;
-      margin-bottom: 14px;
+      border: 1px solid ${theme.colors.oatmeal};
+      border-radius: 16px;
+    `}
+
+    ${filledBackground &&
+    css`
+      background: ${theme.colors.custard};
     `}
   `,
 )

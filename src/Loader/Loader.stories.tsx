@@ -14,9 +14,9 @@ Default.args = {
   height: 32,
 }
 
-export const BigAndBlue = Template.bind({})
+export const BigLoader = Template.bind({})
 
-BigAndBlue.args = {
+BigLoader.args = {
   height: 54,
-  color: 'secondary',
+  color: 'liquorice',
 }

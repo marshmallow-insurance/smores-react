@@ -5,10 +5,12 @@ import { Text } from '../Text'
 import { Box } from '../Box'
 import { Button, ButtonProps } from './Button'
 
-const buttonList: Array<ButtonProps> = [
+export const buttonList: Array<ButtonProps> = [
   { primary: true, children: 'Save' },
   { secondary: true, children: 'Edit' },
-  { tertiary: true, children: 'Cancel' },
+  { fallback: true, children: 'Cancel' },
+  { textBtn: true, children: 'View' },
+  { smallButton: true, children: 'Small' },
 ]
 
 export const CollectionPage: FC = () => {

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Tag, TagProps } from './Tag'
+import { CollectionPage } from './Collection'
 
 export default {
   title: 'Tag',
@@ -12,9 +13,9 @@ export const Default = Template.bind({})
 
 Default.args = {
   label: 'This is a tag',
-  bgColor: 'success',
-  borderColor: 'success',
-  color: 'white',
+  bgColor: 'feijoa',
+  borderColor: 'feijoa',
+  color: 'cream',
 }
 
 Default.argTypes = {
@@ -23,10 +24,4 @@ Default.argTypes = {
   forwardedAs: { table: { disable: true } },
 }
 
-export const BgGradient = Template.bind({})
-
-BgGradient.args = {
-  label: 'This is a gradient background tag',
-  bgGradient: true,
-  color: 'white',
-}
+export const Collection = CollectionPage.bind({})

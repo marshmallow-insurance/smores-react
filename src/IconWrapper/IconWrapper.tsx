@@ -36,10 +36,10 @@ export const IconWrapper: FC<IconWrapperProps> = ({
     {children}
     <IconContainer size={size} t={t} r={r} b={b} l={l}>
       {render === 'included' && (
-        <Icon render="included" size={size} color="success" />
+        <Icon render="included" size={size} color="apple" />
       )}
       {render === 'excluded' && (
-        <Icon render="excluded" size={size} color="error" />
+        <Icon render="excluded" size={size} color="strawberry" />
       )}
     </IconContainer>
   </Container>

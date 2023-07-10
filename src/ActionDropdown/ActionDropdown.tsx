@@ -41,19 +41,19 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
       {...marginProps}
     >
       {label && (
-        <Text tag="label" color="subtext" typo="label">
+        <Text tag="label" color="sesame" typo="label">
           {label}
         </Text>
       )}
 
       <Label
-        text={value.textColor ?? 'secondary'}
-        bg={value.bgColor ?? 'subtext'}
+        text={value.textColor ?? 'liquorice'}
+        bg={value.bgColor ?? 'sesame'}
       >
         <SelectedOption>{value.label}</SelectedOption>
         <Icon
           render="caret"
-          color={value.textColor ?? 'subtext'}
+          color={value.textColor ?? 'sesame'}
           size={24}
           rotate={open ? 180 : 0}
         />
@@ -81,7 +81,7 @@ const Label = styled.div<ISelected>(
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 64px;
     padding: 16px 16px 14px;
     box-sizing: border-box;
     user-select: none;
@@ -90,6 +90,7 @@ const Label = styled.div<ISelected>(
 
 const SelectedOption = styled.span`
   font-size: 14px;
+  font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -114,12 +115,11 @@ const OuterContainer = styled.div<IOpen>(
   ({ open }) => css`
     position: absolute;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-top: 8px;
     display: ${open ? 'block' : 'none'};
     max-height: ${open ? '235px' : '48px'};
-    background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.outline};
+    background-color: ${theme.colors.custard};
     overflow-y: ${open ? 'auto' : 'hidden'};
     z-index: 2;
     transition: all 0.2s ease-in-out;

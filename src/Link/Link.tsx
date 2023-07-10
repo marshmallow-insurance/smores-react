@@ -16,6 +16,9 @@ export type LinkProps = {
   children?: ReactNode
   download?: boolean
   typo?: LinkTypo
+  highlight?: boolean
+  iconToRender?: string
+  isTrailingIcon?: boolean
 }
 
 export const Link: FC<LinkProps> = ({
@@ -26,6 +29,9 @@ export const Link: FC<LinkProps> = ({
   download,
   children,
   typo = 'regular',
+  highlight = false,
+  iconToRender = openInNewTab ? 'new-window' : '',
+  isTrailingIcon = true,
 }) => {
   return (
     <LinkWrapper
@@ -34,25 +40,37 @@ export const Link: FC<LinkProps> = ({
       onClick={onClick}
       download={download}
       typo={typo}
+      highlight={highlight}
       {...(openInNewTab && {
         rel: 'noopener noreferrer',
         target: '_blank',
       })}
     >
-      {children}
-      {openInNewTab && (
-        <StyledIcon
-          render="new-window"
+      {iconToRender && !isTrailingIcon && (
+        <Icon
+          mt={{ custom: '3px' }}
+          mr={{ custom: '4px' }}
+          render={iconToRender}
           size={typo === 'regular' ? 14 : 12}
-          color="primary"
+          color={highlight ? 'lollipop' : 'liquorice'}
+        />
+      )}
+      {children}
+      {iconToRender && isTrailingIcon && (
+        <Icon
+          mt={{ custom: '3px' }}
+          ml={{ custom: '4px' }}
+          render={iconToRender}
+          size={typo === 'regular' ? 14 : 12}
+          color={highlight ? 'lollipop' : 'liquorice'}
         />
       )}
     </LinkWrapper>
   )
 }
 
-const LinkWrapper = styled.a<{ typo: LinkTypo }>(
-  ({ typo }) =>
+const LinkWrapper = styled.a<{ typo: LinkTypo; highlight: boolean }>(
+  ({ typo, highlight }) =>
     css`
       ${focusOutline()}
       display: inline-flex;
@@ -72,24 +90,24 @@ const LinkWrapper = styled.a<{ typo: LinkTypo }>(
 
       font-weight: ${theme.font.weight.medium};
       text-decoration: underline;
-      color: ${theme.colors.primary};
+      color: ${highlight ? theme.colors.lollipop : theme.colors.liquorice};
 
       background: none;
       cursor: pointer;
 
       &:hover {
-        color: ${darken(0.1, theme.colors.primary)};
+        color: ${theme.colors.sesame};
 
         path {
-          fill: ${darken(0.1, theme.colors.primary)};
+          fill: ${theme.colors.sesame};
         }
       }
 
       &:active {
-        color: ${theme.colors.secondary};
+        color: ${theme.colors.liquorice};
 
         path {
-          fill: ${theme.colors.secondary};
+          fill: ${theme.colors.liquorice};
         }
       }
     `,
@@ -115,9 +133,4 @@ export const linkStyleOverride = ({ color }: { color: string }) => css`
       }
     }
   }
-`
-
-const StyledIcon = styled(Icon)`
-  margin-left: 4px;
-  margin-top: 3px;
 `

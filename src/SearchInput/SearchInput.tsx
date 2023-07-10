@@ -5,16 +5,13 @@ import React, {
   useMemo,
   useState,
 } from 'react'
-import styled from 'styled-components'
-import { darken } from 'polished'
-
-import { theme } from '../theme'
-import { Icon } from '../Icon'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 import { SearchOptions } from './SearchOptions'
+import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
+import { Box } from '../Box'
 
 export type SearchInputItem = {
   label: string
@@ -26,10 +23,8 @@ export interface SearchInputProps extends CommonFieldProps {
   placeholder?: string
   searchList: SearchInputItem[]
   onFound: (element: string) => void
-  resultsRelativePosition?: boolean
   showIcon?: boolean
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
-  outlined?: boolean
   value?: string
 }
 
@@ -41,13 +36,12 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       className = '',
       placeholder,
       searchList,
-      onFound,
-      resultsRelativePosition = false,
-      outlined = false,
       showIcon = false,
       renderAsTitle = false,
-      onBlur,
       value,
+      onBlur,
+      onFound,
+      fallback,
       ...otherProps
     },
     ref,
@@ -120,110 +114,34 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         className={className}
         renderAsTitle={renderAsTitle}
         htmlFor={id}
-        outlined={outlined}
         {...otherProps}
       >
-        <StyledInputBox outlined={outlined} selected={isSelected}>
-          {showIcon && <SearchIcon size={24} render="search" color="subtext" />}
-          <StyledInput
-            ref={ref}
+        <Box flex alignItems="center" justifyContent="flex-start">
+          {showIcon && <StyledFrontIcon render="search" color="sesame" />}
+          <Input
             id={id}
-            type="text"
             name={name}
+            ref={ref}
             placeholder={placeholder}
+            frontIcon={showIcon ? 'present' : ''}
+            fallback={fallback}
             autoComplete="off"
             value={displayedInputText}
             onChange={handleInputChange}
-            outlined={outlined}
             selected={isSelected}
             onBlur={(e) => {
               if (displayedInputText === '') {
                 setSearchQuery(null)
               }
-
               onBlur?.(e)
             }}
           />
-        </StyledInputBox>
+        </Box>
 
         {showOptions && (
-          <SearchOptions
-            displayedList={filteredList}
-            onSelect={handleSelect}
-            outlined={outlined}
-            positionRelative={resultsRelativePosition}
-          />
+          <SearchOptions displayedList={filteredList} onSelect={handleSelect} />
         )}
       </Field>
     )
   },
 )
-
-interface UsesOutline {
-  outlined?: boolean
-}
-
-interface InputBox extends UsesOutline {
-  showIcon?: boolean
-  selected: boolean
-}
-
-const StyledInputBox = styled.div<InputBox>`
-  display: flex;
-  align-items: center;
-  border-bottom: ${({ outlined }) =>
-    outlined ? 'none' : `1px solid ${theme.colors.outline}`};
-  ${({ outlined }) =>
-    outlined &&
-    `
-    background-color: ${theme.colors.white};
-    border: 2px solid ${theme.colors.outline};
-    border-radius: 8px;
-    height: auto;
-  `}
-  padding: ${({ showIcon }) => (showIcon ? '14px 10px' : '16px 12px')};
-
-  &:hover,
-  &:focus,
-  &:focus-within {
-    border-color: ${darken(0.1, theme.colors.outline)};
-  }
-
-  ${({ selected }) =>
-    selected &&
-    `
-    border-color: ${theme.colors.outline};
-  `}
-  color: ${({ outlined }) =>
-    outlined ? `${theme.colors.outline}` : `${theme.colors.secondary}`};
-`
-
-interface Input extends UsesOutline {
-  id: string
-  name: string
-  value: string
-  selected: boolean
-}
-
-const StyledInput = styled.input<Input>`
-  display: block;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
-
-  &::placeholder {
-    color: ${theme.colors.subtext};
-  }
-
-  ${({ outlined }) =>
-    outlined &&
-    `
-    height: auto;
-  `}
-`
-
-const SearchIcon = styled(Icon)`
-  margin-right: 8px;
-`

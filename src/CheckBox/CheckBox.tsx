@@ -24,7 +24,11 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckBoxProps>(
     return (
       <>
         <BoxContainer id={id}>
-          <Text tag="span" typo="base" color={error ? 'error' : 'secondary'}>
+          <Text
+            tag="span"
+            typo="base"
+            color={error ? 'strawberry' : 'liquorice'}
+          >
             {children}
           </Text>
 
@@ -49,24 +53,39 @@ const Checkmark = styled.span<{ error?: boolean }>`
   height: 24px;
   border: ${({ error }) =>
     error
-      ? `solid 1px ${theme.colors.error}`
-      : `solid 1px ${theme.colors.secondary}`};
+      ? `solid 1px ${theme.colors.strawberry}`
+      : `solid 1px ${theme.colors.liquorice}`};
   box-sizing: border-box;
   border-radius: 1px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: none;
+    top: 9px;
+    left: 5px;
+    width: 3px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: ${theme.colors.cream};
+    -webkit-transform: rotate(316deg);
+    -ms-transform: rotate(316deg);
+    transform: rotate(316deg);
+  }
 
   &:after {
     content: '';
     position: absolute;
     display: none;
     top: 3px;
-    left: 7px;
-    width: 5px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+    left: 11px;
+    width: 3px;
+    height: 15px;
+    border-radius: 4px;
+    background-color: ${theme.colors.cream};
+    -webkit-transform: rotate(43deg);
+    -ms-transform: rotate(43deg);
+    transform: rotate(43deg);
   }
 `
 
@@ -84,8 +103,12 @@ const BoxContainer = styled.label`
     cursor: pointer;
 
     &:checked ~ ${Checkmark} {
-      background-color: ${theme.colors.secondary};
-      border: solid 1px ${theme.colors.secondary};
+      background-color: ${theme.colors.liquorice};
+      border: solid 1px ${theme.colors.liquorice};
+    }
+
+    &:checked ~ ${Checkmark}:before {
+      display: block;
     }
 
     &:checked ~ ${Checkmark}:after {
@@ -97,18 +120,22 @@ const BoxContainer = styled.label`
 
   &:hover {
     ${Checkmark} {
-      background-color: ${theme.colors.background};
-      border: solid 1px ${theme.colors.secondary};
+      background-color: ${theme.colors.coconut};
+      border: solid 1px ${theme.colors.liquorice};
     }
   }
 
   @media (min-width: 768px) {
     padding-left: 32px;
   }
+
+  span {
+    border-radius: 4px;
+  }
 `
 
 const ErrorBox = styled.span`
   padding-top: 8px;
   font-size: 12px;
-  color: ${theme.colors.error};
+  color: ${theme.colors.strawberry};
 `

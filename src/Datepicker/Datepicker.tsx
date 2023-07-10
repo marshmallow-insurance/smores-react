@@ -22,6 +22,7 @@ import { DatesList } from './DatesList'
 import { convertToUkDate } from '../utils/date'
 import { MarginProps } from '../utils/space'
 import { useControllableState } from '../utils/useControlledState'
+import { focusOutlineStyle } from '../utils/focusOutline'
 
 const getAvailableMonths = (startDate: Date, endDate: Date) => {
   const monthList = eachMonthOfInterval({
@@ -121,8 +122,13 @@ export const Datepicker: FC<DatepickerProps> = ({
           type="button"
           disabled={activeMonthIndex === 0}
           onClick={() => setActiveMonth(activeMonthIndex - 1)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              setActiveMonth(activeMonthIndex - 1)
+            }
+          }}
         >
-          <Caret render="caret" color="white" size={24} rotate={90} />
+          <Icon render="caret" color="cream" size={18} rotate={90} />
         </Circle>
 
         <Heading tag="h4" typo="body-regular">
@@ -134,8 +140,13 @@ export const Datepicker: FC<DatepickerProps> = ({
           type="button"
           disabled={activeMonthIndex === availableMonths.length - 1}
           onClick={() => setActiveMonth(activeMonthIndex + 1)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              setActiveMonth(activeMonthIndex + 1)
+            }
+          }}
         >
-          <Caret render="caret" color="white" size={24} rotate={-90} />
+          <Icon render="caret" color="cream" size={18} rotate={-90} />
         </Circle>
       </Header>
 
@@ -154,17 +165,16 @@ const Container = styled(Box)`
   font-family: ${theme.font.system};
   display: inline-block;
   box-sizing: border-box;
-  background-color: ${theme.colors.white};
+  background-color: ${theme.colors.custard};
   outline: none;
-  border-radius: 8px;
-  box-shadow: inset 0 0 0 1px ${theme.colors.outline};
+  border-radius: 16px;
 `
 
 const Header = styled(Box)`
-  color: ${theme.colors.secondary};
+  color: ${theme.colors.liquorice};
   user-select: none;
   padding: 16px;
-  border-bottom: 1px solid ${theme.colors.outline};
+  border-bottom: 1px solid ${theme.colors.oatmeal};
 
   span {
     font-size: 16px;
@@ -178,16 +188,13 @@ const Heading = styled(Text)`
   font-weight: ${theme.font.weight.medium};
 `
 
-const Caret = styled(Icon)`
-  position: relative;
-  top: 0;
-  left: 4px;
-`
-
 const Circle = styled.button`
-  background-color: ${theme.colors.secondary};
+  background-color: ${theme.colors.liquorice};
   height: 32px;
   width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   border: none;
   padding: 0 !important;
@@ -197,4 +204,6 @@ const Circle = styled.button`
     opacity: 0.5;
     cursor: default;
   }
+
+  ${focusOutlineStyle}
 `

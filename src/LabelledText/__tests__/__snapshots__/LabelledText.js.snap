@@ -30,7 +30,7 @@ exports[`renders 1`] = `
 >
   <label
     class="c1"
-    color="subtext"
+    color="sesame"
     cursor="inherit"
     title=""
   >

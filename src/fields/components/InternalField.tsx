@@ -3,10 +3,10 @@ import styled, { css } from 'styled-components'
 
 import { Text } from '../../Text'
 import { Box } from '../../Box'
-import { InternalCommonFieldProps } from '../commonFieldTypes'
+import { CommonFieldProps } from '../commonFieldTypes'
 import { Icon } from '../../Icon'
 
-interface InternalFieldProps extends InternalCommonFieldProps {
+interface InternalFieldProps extends CommonFieldProps {
   children: ReactNode
   className?: string
   assistiveText?: string
@@ -22,7 +22,6 @@ export const InternalField = ({
   className,
   label,
   assistiveText,
-  outlined = false,
   error,
   errorMsg,
   required,
@@ -44,24 +43,18 @@ export const InternalField = ({
               <Text tag={labelTag} typo="heading-small" htmlFor={htmlFor}>
                 {label}
               </Text>
-
-              {assistiveText && (
-                <Text tag="p" color="subtext" mt={{ custom: 4 }}>
-                  {assistiveText}
-                </Text>
-              )}
             </Box>
           ) : (
             <Text
               tag={labelTag}
               typo="label"
-              color="subtext"
+              color={error ? 'strawberry' : 'sesame'}
               htmlFor={htmlFor}
-              mb={{ custom: outlined ? 4 : 0 }}
+              mb={{ custom: 4 }}
             >
               {label}
               {required && (
-                <Text tag="span" typo="body-small" color="error">
+                <Text tag="span" typo="body-small" color="strawberry">
                   *
                 </Text>
               )}
@@ -71,11 +64,21 @@ export const InternalField = ({
       )}
 
       <Box>{children}</Box>
+      {assistiveText && (
+        <Text
+          tag={labelTag}
+          typo="caption"
+          color={error ? 'strawberry' : 'sesame'}
+          mt={{ custom: 4 }}
+        >
+          {assistiveText}
+        </Text>
+      )}
 
       {error &&
         errorMsg &&
         (typeof errorMsg === 'string' ? (
-          <Text tag="span" typo="caption" color="error" mt="8px">
+          <Text tag="span" typo="caption" color="strawberry" mt="8px">
             {errorMsg}
           </Text>
         ) : (
@@ -89,8 +92,8 @@ export const InternalField = ({
           isError={!!(error && errorMsg)}
         >
           <StatusWrapper mt={'8px'}>
-            <Icon render="included" size={16} color="success" />
-            <Text typo="caption" color="success">
+            <Icon render="included" size={16} color="apple" />
+            <Text typo="caption" color="apple">
               Complete
             </Text>
           </StatusWrapper>

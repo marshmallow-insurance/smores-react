@@ -1,24 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
-.c0 {
-  background: #FFFFFF;
-  border: 1px solid #D2D2D2;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 3px rgba(0,0,0,0.08);
-  border-radius: 8px;
-  padding: 24px;
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-@media (min-width:768px) {
-  .c0 {
-    padding: 32px;
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
+  background: #F1E9DC;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width:0px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media (min-width:0px) {
+  .c2 {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width:0px) {
+  .c2 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:0px) {
+  .c3 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:0px) {
+  .c4 {
+    margin-top: 0px;
   }
 }
 
 <div
   class="c0"
 >
-  Text inside
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class=""
+        />
+      </div>
+    </div>
+    <div
+      class="c4"
+    >
+      Text inside
+    </div>
+  </div>
 </div>
 `;

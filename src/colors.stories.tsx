@@ -6,10 +6,35 @@ import { Divider } from './Divider'
 import { Text } from './Text'
 import { Color, theme } from './theme'
 
-const coreBrand = ['primary', 'secondary', 'white', 'black'] as const
-const brandBackground = ['bgPrimary', 'bgSecondary', 'bgCarbon'] as const
-const neutrals = ['subtext', 'outline', 'background'] as const
-const trafficLight = ['error', 'warning', 'agentWarning', 'success'] as const
+const corePrimary = [
+  'lollipop',
+  'marshmallowPink',
+  'bubblegum',
+  'fairyFloss',
+] as const
+const coreSecondary = ['boba', 'liquorice', 'sesame', 'chia'] as const
+const coreTertiary = ['custard', 'mascarpone', 'coconut', 'cream'] as const
+const brandSecondary = [
+  'spearmint',
+  'feijoa',
+  'blueberry',
+  'macaroon',
+  'pistachio',
+  'matcha',
+  'caramel',
+  'peanut',
+  'marzipan',
+  'oatmeal',
+] as const
+const trafficLight = [
+  'strawberry',
+  'watermelon',
+  'apple',
+  'mint',
+  'lemon',
+  'sherbert',
+  'tangerine',
+] as const
 const thirdPartyBrand = [
   'compareTheMarket',
   'confused',
@@ -28,14 +53,14 @@ const thirdPartyBrand = [
 const ColorCard = ({ colorName }: { colorName: Color }) => {
   const hexValue = theme.colors[colorName]
   return (
-    <ColorCardWrapper width="180px">
+    <ColorCardWrapper width="224px">
       <ColorBox colorName={colorName} width="100%" pt={{ custom: '50%' }} />
       <Divider />
       <Box px="16px" py={{ custom: 4 }}>
         <Text tag="span" typo="base">
           {colorName}
         </Text>
-        <Text tag="span" typo="base-xsmall" color="subtext">
+        <Text tag="span" typo="base-xsmall" color="sesame">
           {hexValue}
         </Text>
       </Box>
@@ -69,9 +94,10 @@ const ColorSection = ({
 const ColorsPage = () => {
   return (
     <PageWrapper>
-      <ColorSection title="Core brand" colors={coreBrand} />
-      <ColorSection title="Brand background" colors={brandBackground} />
-      <ColorSection title="Neutrals" colors={neutrals} />
+      <ColorSection title="Core primary" colors={corePrimary} />
+      <ColorSection title="Core secondary" colors={coreSecondary} />
+      <ColorSection title="Core tertiary" colors={coreTertiary} />
+      <ColorSection title="Brand secondary" colors={brandSecondary} />
       <ColorSection title="Traffic light" colors={trafficLight} />
       <ColorSection title="Third party brand" colors={thirdPartyBrand} />
     </PageWrapper>
@@ -101,8 +127,8 @@ const PageWrapper = styled(Box)`
 `
 
 const ColorCardWrapper = styled(Box)`
-  background-color: ${theme.colors.white};
-  border: 1px solid ${theme.colors.outline};
+  background-color: ${theme.colors.cream};
+  border: 1px solid ${theme.colors.chia};
   border-radius: 8px;
   overflow: hidden;
 `

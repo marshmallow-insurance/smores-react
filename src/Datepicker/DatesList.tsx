@@ -6,6 +6,7 @@ import { theme } from '../theme'
 
 import { Day } from './types'
 import { Text } from '../Text'
+import { focusOutlineStyle } from '../utils/focusOutline'
 
 type Props = {
   items: Day[]
@@ -30,7 +31,7 @@ export const DatesList: FC<Props> = ({
       {showDayLabels &&
         daysOfTheWeek.map((day) => {
           return (
-            <Text key={day} color="subtext" typo="label" mb="24px">
+            <Text key={day} color="sesame" typo="label" mb="24px">
               {day}
             </Text>
           )
@@ -38,24 +39,29 @@ export const DatesList: FC<Props> = ({
       {Array(getBlankDaysCount(items[0].date))
         .fill(null)
         .map((_, index) => (
-          <ListItem key={`blankItem-${index}`} disabled />
+          <ListButton key={`blankItem-${index}`} disabled />
         ))}
       {items.map((item: Day, i) => (
-        <ListItem
+        <ListButton
           key={i}
           disabled={item.disabled}
-          className={`ListItem ${item.active ? 'active' : ''}`}
+          className={`ListButton ${item.active ? 'active' : ''}`}
           onClick={() => handleDateSelect(item.date)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleDateSelect(item.date)
+            }
+          }}
           data-testid={item.label}
         >
           {item.label}
-        </ListItem>
+        </ListButton>
       ))}
     </Container>
   )
 }
 
-const Container = styled.ul`
+const Container = styled.div`
   justify-items: center;
   display: grid;
   grid-column-gap: 4px;
@@ -74,34 +80,37 @@ const Container = styled.ul`
   }
 `
 
-interface IListItem {
+interface IListButton {
   disabled?: boolean
 }
 
-const ListItem = styled.li<IListItem>`
+const ListButton = styled.button<IListButton>`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: 8px;
   width: 32px;
   height: 32px;
   border: 1px solid transparent;
   font-weight: ${theme.font.weight.medium};
   font-size: 14px;
   line-height: 15px;
-  color: ${theme.colors.secondary};
+  color: ${theme.colors.liquorice};
   background-color: transparent;
   pointer-events: ${({ disabled }) => (disabled ? 'none' : '')};
   opacity: ${({ disabled }) => (disabled ? '0.2' : '1')};
   cursor: pointer;
 
   &:hover:not(.active) {
-    background-color: ${theme.colors.background};
+    color: ${theme.colors.custard};
+    background-color: ${theme.colors.liquorice};
   }
 
   &.active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.secondary};
+    color: ${theme.colors.custard};
+    background-color: ${theme.colors.liquorice};
     cursor: default;
   }
+
+  ${focusOutlineStyle}
 `

@@ -8,13 +8,6 @@ exports[`renders 1`] = `
   display: flex;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -44,7 +37,7 @@ exports[`renders 1`] = `
   font-weight: 500;
   text-align: left;
   cursor: inherit;
-  color: #112035;
+  color: #292924;
 }
 
 .c5 {
@@ -53,16 +46,16 @@ exports[`renders 1`] = `
   font-weight: 400;
   text-align: left;
   cursor: inherit;
-  color: #112035;
+  color: #292924;
 }
 
-.c7 {
+.c6 {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
   cursor: inherit;
-  color: #112035;
+  color: #292924;
 }
 
 .c1 {
@@ -70,20 +63,18 @@ exports[`renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 24px;
 }
 
-.c1 > div {
-  width: 24px;
+.c1 > button {
   margin-right: 4px;
 }
 
-.c1 > div:last-child {
+.c1 > button:last-child {
   margin-right: 0;
 }
 
 .c2 {
-  background: #F4F4F4;
+  background: #F1E9DC;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -94,10 +85,25 @@ exports[`renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.c2:hover {
+  background-color: #F8F2EA;
+}
+
+.c2:active {
+  background-color: #F1E9DC;
+}
+
+.c2:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
 }
 
 .c4 {
-  background: none;
+  background: #FFFFFF;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
@@ -108,6 +114,30 @@ exports[`renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.c4:hover {
+  background-color: #F8F2EA;
+}
+
+.c4:active {
+  background-color: #F1E9DC;
+}
+
+.c4:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c7 {
+  cursor: pointer;
+}
+
+.c7:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
 }
 
 @media (min-width:0px) {
@@ -115,15 +145,6 @@ exports[`renders 1`] = `
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-  }
-}
-
-@media (min-width:0px) {
-  .c6 {
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
   }
 }
 
@@ -145,96 +166,96 @@ exports[`renders 1`] = `
   class="c0 c1"
   direction="row"
 >
-  <div
+  <button
     class="c2"
   >
     <p
       class="c3"
-      color="secondary"
+      color="liquorice"
       cursor="inherit"
       title=""
     >
       1
     </p>
-  </div>
-  <div
+  </button>
+  <button
     class="c4"
   >
     <p
       class="c5"
-      color="secondary"
+      color="liquorice"
       cursor="inherit"
       title=""
     >
       2
     </p>
-  </div>
-  <div
+  </button>
+  <button
     class="c4"
   >
     <p
       class="c5"
-      color="secondary"
+      color="liquorice"
       cursor="inherit"
       title=""
     >
       3
     </p>
-  </div>
-  <div
+  </button>
+  <button
     class="c4"
   >
     <p
       class="c5"
-      color="secondary"
+      color="liquorice"
       cursor="inherit"
       title=""
     >
       4
     </p>
-  </div>
-  <div
+  </button>
+  <button
     class="c4"
   >
     <p
       class="c5"
-      color="secondary"
+      color="liquorice"
       cursor="inherit"
       title=""
     >
       5
     </p>
-  </div>
-  <div
-    class="c6"
+  </button>
+  <button
+    class="c4"
   >
     <p
-      class="c7"
-      color="secondary"
+      class="c6"
+      color="liquorice"
       cursor="inherit"
       title=""
     >
       ...
     </p>
-  </div>
-  <div
+  </button>
+  <button
     class="c4"
   >
     <p
       class="c5"
-      color="secondary"
+      color="liquorice"
       cursor="inherit"
       title=""
     >
       11
     </p>
-  </div>
-  <div
-    class="c4"
+  </button>
+  <button
+    class="c7"
   >
     <span
       class="c8"
-      color="secondary"
+      color="liquorice"
       rotate="180"
       size="18"
     >
@@ -247,10 +268,10 @@ exports[`renders 1`] = `
       >
         <path
           d="M2.087 12.401c.014.033.042.058.06.089a.99.99 0 00.177.238c.008.007.01.018.018.025l8 7a1 1 0 101.316-1.505L5.661 13H21a1 1 0 100-2H5.661l5.997-5.248a1 1 0 10-1.316-1.504l-8 7c-.008.007-.011.018-.018.025a.99.99 0 00-.177.238c-.018.031-.045.056-.06.089a.97.97 0 000 .801z"
-          fill="#112035"
+          fill="#292924"
         />
       </svg>
     </span>
-  </div>
+  </button>
 </div>
 `;

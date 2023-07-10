@@ -12,7 +12,7 @@ const variationList: SupportMessageProps[] = [
     description: 'Information needs to be communicated to the user.',
   },
   {
-    type: 'info-outline',
+    type: 'fallback',
     title: 'Additional information',
     description: 'Information needs to be communicated to the user.',
   },
@@ -23,6 +23,11 @@ const variationList: SupportMessageProps[] = [
   },
   {
     type: 'warning',
+    title: 'Error encountered',
+    description: "An error has occurred, here's feedback on how to proceed.",
+  },
+  {
+    type: 'success',
     title: 'Error encountered',
     description: "An error has occurred, here's feedback on how to proceed.",
   },

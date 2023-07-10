@@ -6,7 +6,7 @@ import { Tag } from '../Tag'
 
 test('renders', () => {
   const { container } = render(
-    <Tag label="Cancelled - Refunded Manually" color="error" />,
+    <Tag label="Cancelled - Refunded Manually" color="strawberry" />,
   )
   expect(container.firstChild).toMatchSnapshot()
 })

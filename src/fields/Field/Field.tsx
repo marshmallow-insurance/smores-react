@@ -7,7 +7,6 @@ export interface FieldProps extends CommonFieldProps {
   htmlFor?: string
   children: ReactNode
   assistiveText?: string
-  outlined?: boolean
 }
 
 export const Field = ({ children, ...fieldProps }: FieldProps) => {

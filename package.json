@@ -23,6 +23,7 @@
     "test:coverage": "jest --coverage --silent",
     "test:watch": "jest --watch --silent",
     "test": "jest --silent",
+    "updateSnaps": "jest --updateSnapshot",
     "snyk-protect": "snyk-protect",
     "prepare": "npm run snyk-protect && husky install",
     "pre-commit-lint": "npm run check-types && lint-staged",

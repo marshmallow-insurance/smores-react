@@ -26,9 +26,9 @@ export const SnackbarItem: FC<Props> = ({
     <SnackItem p="16px" key={id} mt="16px" flex justifyContent="space-between">
       <Box flex alignItems="center">
         {leadingIcon && (
-          <Icon mr="12px" render={leadingIcon} size={24} color="white" />
+          <Icon mr="12px" render={leadingIcon} size={24} color="mascarpone" />
         )}
-        <Text typo="desc-small" color="white">
+        <Text typo="desc-small" color="mascarpone">
           {message}
         </Text>
       </Box>
@@ -38,9 +38,9 @@ export const SnackbarItem: FC<Props> = ({
           aria-label={`close snackbar ${message}`}
         >
           {showCloseIcon ? (
-            <Icon render="cross" size={16} color="white" />
+            <Icon render="cross" size={16} color="mascarpone" />
           ) : (
-            <UnderlinedText tag="span" typo="desc-medium" color="white">
+            <UnderlinedText tag="span" typo="desc-medium" color="mascarpone">
               Dismiss
             </UnderlinedText>
           )}
@@ -51,8 +51,8 @@ export const SnackbarItem: FC<Props> = ({
 }
 
 const SnackItem = styled(Box)`
-  border-radius: 10px;
-  background-color: ${theme.colors.secondary};
+  border-radius: 16px;
+  background-color: ${theme.colors.liquorice};
 `
 
 const CloseButton = styled.button`

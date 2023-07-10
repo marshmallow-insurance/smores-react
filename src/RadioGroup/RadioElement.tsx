@@ -51,23 +51,24 @@ const RadioCircle = styled(Box)<{ isError: boolean; checked: boolean }>`
   width: ${RADIO_SIZE}px;
   height: ${RADIO_SIZE}px;
   border-radius: ${RADIO_SIZE}px;
-  background-color: ${theme.colors.white};
+  background-color: ${theme.colors.cream};
   border: 2px solid
-    ${({ isError }) => (isError ? theme.colors.error : theme.colors.subtext)};
+    ${({ isError }) =>
+      isError ? theme.colors.strawberry : theme.colors.sesame};
 
   ${({ checked, isError }) =>
     !checked &&
     !isError &&
     `
     &:hover {
-      border: 2px solid ${theme.colors.secondary};
+      border: 2px solid ${theme.colors.liquorice};
     }
   `}
 
   ${({ checked, isError }) =>
     checked &&
     `border: 8px solid ${
-      isError ? theme.colors.error : theme.colors.secondary
+      isError ? theme.colors.strawberry : theme.colors.liquorice
     };`}
 
   ${focusOutline({ selector: `${StyledInput}:focus-visible + &` })}

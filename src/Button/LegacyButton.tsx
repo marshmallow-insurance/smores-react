@@ -36,7 +36,7 @@ export const LegacyButton: FC<Props> = ({
   children,
   id,
   className = '',
-  color = 'secondary',
+  color = 'liquorice',
   block = false,
   inverted = false,
   disabled = false,
@@ -70,7 +70,7 @@ const Container = styled.button<IButton>(
     cursor: pointer;
     width: ${block ? '100%' : 'auto'};
     background-color: ${theme.colors[color]};
-    color: ${theme.colors.white};
+    color: ${theme.colors.cream};
     font-weight: ${theme.font.weight.medium};
 
     &:hover:not([disabled]) {
@@ -87,14 +87,14 @@ const Container = styled.button<IButton>(
     ${(inverted || outlined) &&
     css`
       background-color: transparent;
-      border: 1px solid ${outlined ? theme.colors.outline : 'transparent'};
-      color: ${outlined ? theme.colors.secondary : theme.colors[color]};
+      border: 1px solid ${outlined ? theme.colors.chia : 'transparent'};
+      color: ${outlined ? theme.colors.liquorice : theme.colors[color]};
 
       &:hover:not([disabled]) {
-        background-color: ${theme.colors.background};
+        background-color: ${theme.colors.coconut};
       }
       &:active:not([disabled]) {
-        background-color: ${theme.colors.background};
+        background-color: ${theme.colors.coconut};
       }
     `};
 

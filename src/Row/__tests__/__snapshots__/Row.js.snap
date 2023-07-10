@@ -7,7 +7,7 @@ exports[`default renders correctly 1`] = `
   font-weight: 400;
   text-align: left;
   cursor: inherit;
-  color: #112035;
+  color: #292924;
 }
 
 .c2 {
@@ -21,7 +21,9 @@ exports[`default renders correctly 1`] = `
 
 .c0 {
   border-radius: 0;
-  border: 1px solid #D2D2D2;
+  border-top: 1px solid #DAD2C4;
+  border-bottom: 1px solid #DAD2C4;
+  background-color: #F1E9DC;
   display: grid;
   grid-template-columns: auto 24px;
   padding: 16px;
@@ -66,7 +68,7 @@ exports[`default renders correctly 1`] = `
     >
       <h1
         class="c1"
-        color="secondary"
+        color="liquorice"
         cursor="inherit"
         title=""
       >
@@ -74,7 +76,7 @@ exports[`default renders correctly 1`] = `
       </h1>
       <p
         class="c2"
-        color="subtext"
+        color="sesame"
         cursor="inherit"
         title=""
       />

@@ -15,7 +15,7 @@ rotate?:  number; /* degrees */
 import {Icon} from '@mrshmllw/smores-react';
 
 const App = () => (
-  <Icon render='edit' color="primary" size={24} />
+  <Icon render='edit' color="marshmallowPink" size={24} />
 );
 ```
 

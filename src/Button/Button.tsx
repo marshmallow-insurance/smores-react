@@ -1,11 +1,7 @@
 import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import { darken } from 'polished'
 
-import { Color, theme } from '../theme'
-import { focusOutline } from '../utils/focusOutline'
-import { useDeprecatedWarning } from '../utils/deprecated'
-import { LegacyButton } from './LegacyButton'
+import { theme } from '../theme'
 import { Box } from '../Box'
 import { Loader } from '../Loader'
 import { Icon as IconComponent } from '../Icon'
@@ -15,17 +11,16 @@ type Props = {
   children: ReactNode
   id?: string
   className?: string
-  color?: Color
-  block?: boolean
-  inverted?: boolean
   disabled?: boolean
-  outlined?: boolean
   handleClick?: (e: React.FormEvent<HTMLButtonElement>) => void
   loading?: boolean
   primary?: boolean
   secondary?: boolean
-  tertiary?: boolean
+  fallback?: boolean
+  textBtn?: boolean
+  smallButton?: boolean
   icon?: string
+  trailingIcon?: boolean
   forcedWidth?: string
   form?: string
 }
@@ -42,64 +37,37 @@ export const Button: FC<ButtonProps> = forwardRef<
     children,
     id,
     className = '',
-    color = 'secondary',
-    block = false,
-    inverted = false,
     disabled = false,
-    outlined = false,
     handleClick,
     loading = false,
     primary = false,
     secondary = false,
-    tertiary = false,
+    fallback = false,
+    textBtn = false,
+    smallButton = false,
     icon = '',
+    trailingIcon = false,
     forcedWidth = '',
     form,
     type,
     ...otherProps
   } = props
 
-  const isLegacyButton = !primary && !secondary && !tertiary
-
-  useDeprecatedWarning({
-    enabled: isLegacyButton,
-    title: 'Legacy Button',
-    message:
-      "You're using the legacy Button component. Please use the new Button by providing one of the following props: 'primary', 'secondary', 'tertiary'.",
-    componentProps: props,
-  })
-
-  if (isLegacyButton) {
-    return (
-      <LegacyButton
-        id={id}
-        className={className}
-        color={color}
-        block={block}
-        inverted={inverted}
-        disabled={disabled}
-        outlined={outlined}
-        handleClick={(e) => {
-          handleClick && handleClick(e)
-        }}
-      >
-        {children}
-      </LegacyButton>
-    )
-  }
-
   return (
     <Container
       as="button"
       id={id}
       className={className}
-      disabled={disabled || loading}
+      disabled={disabled}
       onClick={handleClick}
       $loading={loading}
       primary={primary}
       secondary={secondary}
-      tertiary={tertiary}
+      fallback={fallback}
+      textBtn={textBtn}
+      smallButton={smallButton}
       icon={icon}
+      trailingIcon={trailingIcon}
       forcedWidth={forcedWidth}
       {...(form ? { form } : {})}
       type={type}
@@ -108,18 +76,30 @@ export const Button: FC<ButtonProps> = forwardRef<
     >
       {loading && (
         <LoaderContainer>
-          <Loader color={primary ? 'white' : 'secondary'} height="16" />
+          <Loader color={'liquorice'} height="16" />
         </LoaderContainer>
       )}
       <ContentContainer icon={icon} $loading={loading}>
-        {icon && (
+        {!trailingIcon && icon && (
           <IconContainer
+            trailingIcon={trailingIcon}
             render={icon}
-            size={24}
-            color={primary ? 'white' : 'secondary'}
+            size={smallButton ? 16 : 24}
+            color={'liquorice'}
           />
         )}
-        <ChildrenContainer>{children}</ChildrenContainer>
+        <ChildrenContainer className="childrenContainer">
+          {children}
+        </ChildrenContainer>
+        {trailingIcon && icon && textBtn && (
+          <IconContainer
+            trailingIcon={trailingIcon}
+            render={icon}
+            size={smallButton ? 16 : 24}
+            color={'liquorice'}
+            className="iconContainer"
+          />
+        )}
       </ContentContainer>
     </Container>
   )
@@ -130,23 +110,38 @@ Button.displayName = 'Button'
 type IButton = Required<
   Pick<
     ButtonProps,
-    'disabled' | 'primary' | 'secondary' | 'tertiary' | 'icon' | 'forcedWidth'
+    | 'disabled'
+    | 'primary'
+    | 'secondary'
+    | 'icon'
+    | 'forcedWidth'
+    | 'fallback'
+    | 'textBtn'
+    | 'trailingIcon'
+    | 'smallButton'
   >
 > & {
   $loading: NonNullable<ButtonProps['loading']>
 }
 
 const Container = styled(Box)<IButton>(
-  ({ disabled, $loading, primary, secondary, tertiary, forcedWidth }) => css`
-    ${focusOutline()}
+  ({
+    disabled,
+    $loading,
+    primary,
+    secondary,
+    forcedWidth,
+    fallback,
+    textBtn,
+    smallButton,
+  }) => css`
     position: relative;
-    background-color: ${theme.colors.primary};
-    border: 2px solid;
+    background-color: ${theme.colors.marshmallowPink};
     box-shadow: none;
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.liquorice};
     padding: 0 20px;
     outline: none;
-    border-radius: 8px;
+    border-radius: 10000px;
     font-weight: ${theme.font.weight.medium};
     cursor: ${disabled || $loading ? 'not-allowed' : 'pointer'};
     line-height: 100%;
@@ -156,49 +151,64 @@ const Container = styled(Box)<IButton>(
 
     ${primary &&
     css`
-      color: ${theme.colors.white};
-      border-color: ${theme.colors.primary};
+      color: ${theme.colors.liquorice};
 
       &:hover {
-        background-color: ${!(disabled || $loading) &&
-        darken(0.1, theme.colors.primary)};
-        border-color: ${!(disabled || $loading) &&
-        darken(0.1, theme.colors.primary)};
+        background-color: ${!(disabled || $loading) && theme.colors.bubblegum};
       }
       &:active {
-        background-color: ${darken(0.1, theme.colors.primary)};
-        border-color: ${darken(0.1, theme.colors.primary)};
+        background-color: ${theme.colors.lollipop};
       }
     `}
     ${secondary &&
     css`
-      background-color: ${theme.colors.white};
-      border-color: ${theme.colors.secondary};
+      background-color: ${theme.colors.oatmeal};
 
       &:hover {
-        background-color: ${!(disabled || $loading) && theme.colors.background};
-        border: ${!(disabled || $loading) &&
-        `2px solid ${theme.colors.secondary}`};
+        background-color: ${!(disabled || $loading) && theme.colors.mascarpone};
       }
       &:active {
-        background-color: ${theme.colors.background};
-        border: 2px solid ${theme.colors.secondary};
+        background-color: ${theme.colors.custard};
       }
     `}
-  ${tertiary &&
+  ${fallback &&
     css`
-      background-color: ${theme.colors.background};
-      border-color: ${theme.colors.background};
+      background-color: ${theme.colors.cream};
 
       &:hover {
-        background-color: ${!(disabled || $loading) &&
-        darken(0.1, theme.colors.background)};
-        border-color: ${!(disabled || $loading) &&
-        darken(0.1, theme.colors.background)};
+        background-color: ${!(disabled || $loading) && theme.colors.coconut};
       }
       &:active {
-        background-color: ${darken(0.1, theme.colors.background)};
-        border-color: ${darken(0.1, theme.colors.background)};
+        background-color: ${theme.colors.mascarpone};
+      }
+    `}
+  ${textBtn &&
+    css`
+      background-color: transparent;
+      padding: 0;
+      border-radius: 0;
+      text-decoration: underline;
+
+      &:hover {
+        background-color: ${!(disabled || $loading) && theme.colors.fairyFloss};
+      }
+      &:active {
+        background-color: transparent;
+        color: ${theme.colors.sesame};
+      }
+    `}
+  ${smallButton &&
+    css`
+      padding: 0 10px;
+      min-width: 54px;
+      font-size: 14px;
+
+      .childrenContainer {
+        padding: 9px 0;
+      }
+
+      span {
+        margin: 0 5px 0 0;
       }
     `}
   `,
@@ -224,9 +234,11 @@ const ContentContainer = styled.div<
   opacity: ${({ $loading }) => ($loading ? '0' : '1')};
 `
 
-const IconContainer = styled(IconComponent)`
-  margin-right: 10px;
-`
+const IconContainer = styled(IconComponent)<Pick<ButtonProps, 'trailingIcon'>>(
+  ({ trailingIcon }) => css`
+    margin: ${trailingIcon ? '0 0 0 10px' : '0 10px 0 0'};
+  `,
+)
 
 const ChildrenContainer = styled.div`
   padding: 16px 0;

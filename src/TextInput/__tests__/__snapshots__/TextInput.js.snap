@@ -23,21 +23,29 @@ exports[`renders 1`] = `
 
 .c2 {
   border: none;
-  border-bottom: 1px solid;
-  border-color: #D2D2D2;
-  background-color: transparent;
-  color: #112035;
+  color: #292924;
   font-size: 16px;
   width: 100%;
   outline: none;
   cursor: initial;
   opacity: 1;
-  padding: 1px 2px;
+  padding: 18px 14px;
+  background-color: #FFFFFF;
+  border: 2px solid #DAD2C4;
+  border-radius: 12px;
+  height: auto;
+  -moz-appearance: textfield;
 }
 
 .c2:hover,
 .c2:focus-within {
-  border-color: #b9b9b9;
+  border-color: #A1957C;
+}
+
+.c2::-webkit-outer-spin-button,
+.c2::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c2::-webkit-input-placeholder {
@@ -54,6 +62,24 @@ exports[`renders 1`] = `
 
 .c2::placeholder {
   color: #636768;
+}
+
+@media (min-width:0px) {
+  .c1 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width:0px) {
+  .c1 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
 }
 
 <div

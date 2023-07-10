@@ -14,7 +14,7 @@ export const Default = Template.bind({})
 Default.args = {
   render: 'info',
   size: 32,
-  color: 'secondary',
+  color: 'liquorice',
   rotate: '0',
   mt: '0',
   mr: '0',
@@ -28,7 +28,7 @@ export const Collection = CollectionTemplate.bind({})
 
 Collection.args = {
   size: 24,
-  color: 'secondary',
+  color: 'liquorice',
   rotate: '0',
   mt: '0',
   mr: '0',

@@ -7,32 +7,38 @@ const actions: ActionDropdownProps['list'] = [
   {
     label: 'Default grey',
     value: 'DEFAULT',
-    bgColor: 'background',
-    textColor: 'secondary',
+    bgColor: 'coconut',
+    textColor: 'liquorice',
+  },
+  {
+    label: 'Brand',
+    value: 'ACTION',
+    bgColor: 'marshmallowPink',
+    textColor: 'liquorice',
   },
   {
     label: 'Medium',
     value: 'MEDIUM',
-    bgColor: 'warning',
-    textColor: 'secondary',
+    bgColor: 'lemon',
+    textColor: 'liquorice',
   },
   {
     label: 'High alert',
     value: 'HIGH_ALERT',
-    bgColor: 'agentWarning',
-    textColor: 'white',
+    bgColor: 'tangerine',
+    textColor: 'cream',
   },
   {
     label: 'Good zone',
     value: 'GOOD_ZONE',
-    bgColor: 'success',
-    textColor: 'white',
+    bgColor: 'apple',
+    textColor: 'cream',
   },
   {
     label: 'DANGER zone',
     value: 'DANGER_ZONE',
-    bgColor: 'error',
-    textColor: 'white',
+    bgColor: 'strawberry',
+    textColor: 'cream',
   },
 ]
 

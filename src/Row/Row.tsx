@@ -23,9 +23,9 @@ export type RowProps = {
 
 export const Row: FC<RowProps> = ({
   iconLeft,
-  iconLeftColor,
+  iconLeftColor = 'liquorice',
   iconRight,
-  iconRightColor,
+  iconRightColor = 'marzipan',
   handleClick,
   heading,
   subHeading,
@@ -59,7 +59,7 @@ export const Row: FC<RowProps> = ({
         <Text tag="h1" typo="base">
           {heading}
         </Text>
-        <Text tag="p" typo="desc-small" color="subtext">
+        <Text tag="p" typo="desc-small" color="sesame">
           {subHeading}
         </Text>
       </Box>
@@ -87,18 +87,24 @@ interface IContainer {
 
 const Container = styled(Box)<IContainer>(
   ({ type, iconLeft, borderTop, borderBottom, boldHeading }) => css`
-    border-radius: ${(type === 'first' && `8px 8px 0 0`) ||
-    (type === 'curved' && `8px`) ||
-    (type === 'last' && `0 0 8px 8px`) ||
+    border-radius: ${(type === 'first' && `16px 16px 0 0`) ||
+    (type === 'curved' && `16px`) ||
+    (type === 'last' && `0 0 16px 16px`) ||
     0};
-    border: 1px solid ${theme.colors.outline};
+
+    border-top: ${borderTop && type !== 'curved' && type !== 'first'
+      ? `1px solid ${theme.colors.oatmeal}`
+      : 'none'};
+    border-bottom: ${borderBottom && type !== 'curved' && type !== 'last'
+      ? `1px solid ${theme.colors.oatmeal}`
+      : 'none'};
+
+    background-color: ${theme.colors.custard};
     display: grid;
     grid-template-columns: ${iconLeft ? `24px auto 24px` : `auto 24px`};
     padding: 16px;
     grid-gap: 16px;
     align-items: center;
-    border-top: ${!borderTop && `none`};
-    border-bottom: ${!borderBottom && `none`};
 
     cursor: pointer;
 

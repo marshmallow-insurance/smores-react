@@ -13,7 +13,7 @@ export const Default = Template.bind({})
 
 Default.args = {
   iconLeft: 'info',
-  iconLeftColor: 'secondary',
+  iconLeftColor: 'liquorice',
   iconRight: 'caret',
   iconRightColor: 'subtext',
   heading: 'A lovely heading',
