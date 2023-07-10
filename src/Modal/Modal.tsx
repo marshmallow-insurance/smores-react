@@ -69,7 +69,7 @@ export const Modal: FC<ModalProps> = ({
           {cross && (
             <IconStrict
               render="cross"
-              backgroundColor="mascarpone"
+              backgroundColor="oatmeal"
               handleClick={handleClick}
               size={36}
             />

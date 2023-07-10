@@ -54,14 +54,14 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
       ref={ref}
     >
       {loading ? (
-        <Loader color={primary ? 'cream' : 'marshmallowPink'} height="16" />
+        <Loader color={primary ? 'liquorice' : 'cream'} height="16" />
       ) : (
         <>
           {icon && (
             <IconComponent
               render={icon}
               size={20}
-              color={primary ? 'cream' : 'marshmallowPink'}
+              color={primary ? 'liquorice' : 'cream'}
             />
           )}
           <ChildrenContainer>{children}</ChildrenContainer>
@@ -78,32 +78,37 @@ const Container = styled(Box)<IButton>(
     ${focusOutline()}
 
     align-items: center;
-    background-color: ${theme.colors.marshmallowPink};
+    background-color: ${theme.colors.oatmeal};
     border-radius: 100px;
-    border: 2px solid ${theme.colors.marshmallowPink};
-    color: ${theme.colors.cream};
+    border: 2px solid ${theme.colors.oatmeal};
+    color: ${theme.colors.liquorice};
     display: flex;
     font-size: 16px;
     justify-content: ${icon ? 'space-evenly' : 'center'};
     line-height: 100%;
     padding: 8px 16px 8px ${icon ? '8px' : '16px'};
     width: 98px;
+    min-height: 40px;
     cursor: ${disabled || $loading ? 'not-allowed' : 'pointer'};
     opacity: ${disabled ? '0.5' : '1'};
 
     ${primary &&
     css`
       &:hover {
-        background-color: ${(disabled || $loading) &&
-        theme.colors.marshmallowPink};
+        border: ${!(disabled || $loading) &&
+        `2px solid ${theme.colors.mascarpone}`};
+        background-color: ${!(disabled || $loading) && theme.colors.mascarpone};
       }
     `}
     ${secondary &&
     css`
-      color: ${theme.colors.marshmallowPink};
-      background-color: ${theme.colors.cream};
+      color: ${theme.colors.cream};
+      background-color: ${theme.colors.liquorice};
+      border: 2px solid ${theme.colors.liquorice};
       &:hover {
-        background-color: ${!(disabled || $loading) && theme.colors.coconut};
+        border: ${!(disabled || $loading) &&
+        `2px solid ${theme.colors.sesame}`};
+        background-color: ${!(disabled || $loading) && theme.colors.sesame};
       }
     `};
   `,

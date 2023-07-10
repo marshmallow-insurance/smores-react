@@ -41,7 +41,7 @@ exports[`renders 1`] = `
 }
 
 .c0 {
-  border-bottom: 1px solid #A1957C;
+  border-bottom: 1px solid #DAD2C4;
 }
 
 .c3 {

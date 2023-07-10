@@ -27,8 +27,8 @@ export const FontStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: 'ClearfaceITC';
-    src: url('https://uploads-ssl.webflow.com/5baa461315ee32413d16236d/60acf786bae02f4552bcb0d1_ITC%20-%20ClearfaceITCPro-Heavy.woff2') format('woff2');
+    font-family: 'MarshmallowYouth';
+    src: url('https://assets.marshmallow.com/fonts/MarshmallowYouth-Bold.woff2') format('woff2');
     font-weight: ${theme.font.weight.bold};
     font-style: normal;
   }

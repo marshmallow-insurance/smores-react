@@ -1,3 +1,10 @@
+## [3.0.0] - 2023-07-10
+### Changed
+- Rebranded all of the components 
+- Added new Brand Card component
+- Added Banner component
+- Added Icon Strict component
+- Added new small Button style
 ## [2.19.3] - 2023-07-04
 ### Changed
 - Added End date to Datepicker
@@ -620,6 +627,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.0.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.2...v3.0.0
 [2.19.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.1...v2.19.2
 [2.19.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.0...v2.19.1
 [2.19.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.6...v2.19.0

@@ -4,7 +4,7 @@ import { Typo } from './Text'
 export const fontStyleMapping: Record<Typo, string> = {
   'hero-alternate': `
     font-size: 40px;
-    font-family: 'ClearfaceITC';
+    font-family: 'MarshmallowYouth';
     font-weight: ${theme.font.weight.bold};
     line-height: 44px;
 

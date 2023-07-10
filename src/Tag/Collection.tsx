@@ -14,19 +14,19 @@ const tagList: {
 }[] = [
   {
     title: 'default',
-    color: 'mascarpone',
-    bgColor: 'marzipan',
+    color: 'cream',
+    bgColor: 'feijoa',
     label: 'default',
   },
   {
     title: 'fallback',
     color: 'liquorice',
     bgColor: 'coconut',
-    label: 'default',
+    label: 'default (fallback)',
   },
   {
     title: 'inactive',
-    color: 'mascarpone',
+    color: 'cream',
     bgColor: 'sesame',
     label: 'disabled',
   },
@@ -38,7 +38,7 @@ const tagList: {
   },
   {
     title: 'success',
-    color: 'mascarpone',
+    color: 'cream',
     bgColor: 'apple',
     label: 'included',
   },
@@ -52,11 +52,11 @@ const tagList: {
     title: 'agentWarning',
     color: 'liquorice',
     bgColor: 'tangerine',
-    label: 'warning',
+    label: 'agent warning',
   },
   {
     title: 'error',
-    color: 'mascarpone',
+    color: 'cream',
     bgColor: 'strawberry',
     label: 'error',
   },

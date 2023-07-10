@@ -82,6 +82,22 @@ const ChildComponent: FC = () => {
           Critical banner
         </Button>
       </Row>
+      <Row label="Success (do not auto close)">
+        <Button
+          primary
+          onClick={() => {
+            addBanner({
+              type: 'success',
+              topOffset: '64px',
+              leadingIcon: 'circle-tick',
+              message: 'Marshmallow Miles discount applied (no timeout)',
+              noTimeout: true,
+            })
+          }}
+        >
+          Success banner (no timeout)
+        </Button>
+      </Row>
     </Box>
   )
 }

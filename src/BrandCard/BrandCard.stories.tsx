@@ -30,14 +30,7 @@ BrandCardWithImageWithTag.args = {
   maxWidth: '350px',
   bgColor: 'matcha',
   visualHeight: '180px',
-  tag: (
-    <Tag
-      label="default tag"
-      bgColor="fairyFloss"
-      color="liquorice"
-      bgGradient={false}
-    />
-  ),
+  tag: <Tag label="default tag" bgColor="fairyFloss" color="liquorice" />,
   buttonAction: <Button fallback={true}>Tell me more</Button>,
   visual: placeHolderSvg,
 }
@@ -64,14 +57,7 @@ BrandCardWithImageBelow.args = {
   alignVisual: 'left',
   visualBottom: true,
   bgColor: 'peanut',
-  tag: (
-    <Tag
-      label="default tag"
-      bgColor="fairyFloss"
-      color="liquorice"
-      bgGradient={false}
-    />
-  ),
+  tag: <Tag label="new" bgColor="fairyFloss" color="liquorice" />,
   buttonAction: <Button fallback={true}>Tell me more</Button>,
   visual: placeHolderSvg,
 }
