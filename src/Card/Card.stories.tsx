@@ -48,6 +48,16 @@ GenericCard.args = {
   maxWidth: '300px',
 }
 
+export const CardWithOnClickAction = Template.bind({})
+
+CardWithOnClickAction.args = {
+  title: 'Card title',
+  body: 'Card description',
+  leadingIcon: 'copy',
+  maxWidth: '300px',
+  cardOnClickAction: () => alert('clicked'),
+}
+
 export const CardWithRightAction = Template.bind({})
 
 CardWithRightAction.args = {

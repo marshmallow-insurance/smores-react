@@ -1,10 +1,12 @@
-import React, { FC, ReactNode } from 'react'
-import styled from 'styled-components'
+import React, { FC, MouseEventHandler, ReactNode } from 'react'
+import styled, { css } from 'styled-components'
 import { MarginProps } from '../utils/space'
 import { theme } from '../theme'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
+import { darken } from 'polished'
+import { focusOutlineStyle } from '../utils/focusOutline'
 
 export type CardProps = {
   children?: ReactNode
@@ -20,6 +22,8 @@ export type CardProps = {
   visualHeight?: string
   /** card tag */
   tag?: ReactNode
+  /** action for a fully clickable card */
+  cardOnClickAction?: MouseEventHandler<HTMLDivElement>
   /** action to the right of the card, chevron, chip or link text */
   rightAction?: ReactNode
   /** primary button */
@@ -46,6 +50,7 @@ export const Card: FC<CardProps> = ({
   body,
   visual,
   tag,
+  cardOnClickAction,
   rightAction,
   buttonAction,
   fallback = false,
@@ -59,6 +64,9 @@ export const Card: FC<CardProps> = ({
   ...otherProps
 }) => {
   const addChildMargin = (!!leadingIcon || !!title || !!body) && children
+
+  const isNotClickable = !cardOnClickAction
+
   return (
     <Container
       className={className}
@@ -69,6 +77,9 @@ export const Card: FC<CardProps> = ({
       wide={wide}
       visual={visual}
       fallback={fallback}
+      isNotClickable={isNotClickable}
+      onClick={cardOnClickAction}
+      tabIndex={isNotClickable ? undefined : 0}
       {...otherProps}
     >
       {tag && visual && <TagWrapper>{tag}</TagWrapper>}
@@ -116,7 +127,7 @@ type ICard = Required<
     'maxWidth' | 'marginX' | 'marginY' | 'narrow' | 'wide' | 'fallback'
   >
 > &
-  Partial<Pick<CardProps, 'visual'>>
+  Partial<Pick<CardProps, 'visual'> & { isNotClickable: boolean }>
 
 const Container = styled(Box)<ICard>`
   background: ${({ fallback }) =>
@@ -133,6 +144,20 @@ const Container = styled(Box)<ICard>`
   padding: ${({ visual }) => (visual ? '0px' : '16px')};
   position: relative;
   overflow: hidden;
+
+  ${({ isNotClickable, fallback }) =>
+    !isNotClickable &&
+    css`
+      cursor: pointer;
+      &:hover {
+        background: ${darken(
+          0.1,
+          fallback ? theme.colors.cream : theme.colors.custard,
+        )};
+      }
+
+      ${focusOutlineStyle}
+    `};
 `
 
 const TagWrapper = styled(Box)`

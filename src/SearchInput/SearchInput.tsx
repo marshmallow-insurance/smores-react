@@ -26,6 +26,7 @@ export interface SearchInputProps extends CommonFieldProps {
   showIcon?: boolean
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   value?: string
+  resultsRelativePosition?: boolean
 }
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
@@ -42,6 +43,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       onBlur,
       onFound,
       fallback,
+      resultsRelativePosition = false,
       ...otherProps
     },
     ref,
@@ -139,7 +141,11 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         </Box>
 
         {showOptions && (
-          <SearchOptions displayedList={filteredList} onSelect={handleSelect} />
+          <SearchOptions
+            displayedList={filteredList}
+            onSelect={handleSelect}
+            positionRelative={resultsRelativePosition}
+          />
         )}
       </Field>
     )
