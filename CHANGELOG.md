@@ -1,3 +1,8 @@
+## [3.0.1] - 2023-07-28
+### Changed
+- Adds variation for a clickable Card
+- fixes bugs around removing assistive text under renderAsTitle
+- re-adds positionRelative prop to SearchInput
 ## [3.0.0] - 2023-07-10
 ### Changed
 - Rebranded all of the components 
@@ -627,6 +632,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.0.1]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.2...v3.0.0
 [2.19.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.1...v2.19.2
 [2.19.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.0...v2.19.1
