@@ -3,6 +3,9 @@
 - Adds variation for a clickable Card
 - fixes bugs around removing assistive text under renderAsTitle
 - re-adds positionRelative prop to SearchInput
+- Update fallback prop to fallbackStyle
+- Delete LegacyButton
+- Update hero-alternate font sizes
 ## [3.0.0] - 2023-07-10
 ### Changed
 - Rebranded all of the components 
