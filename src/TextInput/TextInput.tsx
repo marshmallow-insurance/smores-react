@@ -47,7 +47,7 @@ export const TextInput = forwardRef(function TextInput(
     disabled = false,
     frontIcon,
     trailingIcon,
-    fallback,
+    fallbackStyle,
     ...fieldProps
   }: TextInputProps,
   ref: ForwardedRef<HTMLInputElement>,
@@ -74,7 +74,7 @@ export const TextInput = forwardRef(function TextInput(
           value={value}
           error={error}
           frontIcon={frontIcon}
-          fallback={fallback}
+          fallbackStyle={fallbackStyle}
           autoComplete="off"
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && onChange(e.currentTarget.value)

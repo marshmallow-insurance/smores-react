@@ -29,7 +29,7 @@ export type CardProps = {
   /** primary button */
   buttonAction?: ReactNode
   /** fallback color scheme */
-  fallback?: boolean
+  fallbackStyle?: boolean
   className?: string
   /** margin */
   maxWidth?: string
@@ -53,7 +53,7 @@ export const Card: FC<CardProps> = ({
   cardOnClickAction,
   rightAction,
   buttonAction,
-  fallback = false,
+  fallbackStyle = false,
   visualHeight = '',
   className = '',
   maxWidth = '',
@@ -76,7 +76,7 @@ export const Card: FC<CardProps> = ({
       narrow={narrow}
       wide={wide}
       visual={visual}
-      fallback={fallback}
+      fallbackStyle={fallbackStyle}
       isNotClickable={isNotClickable}
       onClick={cardOnClickAction}
       tabIndex={isNotClickable ? undefined : 0}
@@ -124,14 +124,14 @@ export const Card: FC<CardProps> = ({
 type ICard = Required<
   Pick<
     CardProps,
-    'maxWidth' | 'marginX' | 'marginY' | 'narrow' | 'wide' | 'fallback'
+    'maxWidth' | 'marginX' | 'marginY' | 'narrow' | 'wide' | 'fallbackStyle'
   >
 > &
   Partial<Pick<CardProps, 'visual'> & { isNotClickable: boolean }>
 
 const Container = styled(Box)<ICard>`
-  background: ${({ fallback }) =>
-    fallback ? theme.colors.cream : theme.colors.custard};
+  background: ${({ fallbackStyle }) =>
+    fallbackStyle ? theme.colors.cream : theme.colors.custard};
   box-sizing: border-box;
   border-radius: 16px;
 
@@ -145,14 +145,14 @@ const Container = styled(Box)<ICard>`
   position: relative;
   overflow: hidden;
 
-  ${({ isNotClickable, fallback }) =>
+  ${({ isNotClickable, fallbackStyle }) =>
     !isNotClickable &&
     css`
       cursor: pointer;
       &:hover {
         background: ${darken(
           0.1,
-          fallback ? theme.colors.cream : theme.colors.custard,
+          fallbackStyle ? theme.colors.cream : theme.colors.custard,
         )};
       }
 

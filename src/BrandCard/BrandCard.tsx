@@ -24,7 +24,7 @@ export type BrandCardProps = {
   /** primary button */
   buttonAction?: ReactNode
   /** fallback color scheme */
-  fallback?: boolean
+  fallbackStyle?: boolean
   /** margin */
   maxWidth?: string
 } & MarginProps
@@ -38,7 +38,7 @@ export const BrandCard: FC<BrandCardProps> = ({
   visualBottom,
   tag,
   buttonAction,
-  fallback = false,
+  fallbackStyle = false,
   bgColour = 'matcha',
   maxWidth = '',
   ...otherProps
@@ -47,7 +47,7 @@ export const BrandCard: FC<BrandCardProps> = ({
     <Container
       maxWidth={maxWidth}
       visual={visual}
-      fallback={fallback}
+      fallbackStyle={fallbackStyle}
       bgColor={bgColour}
       {...otherProps}
     >
@@ -93,11 +93,11 @@ export const BrandCard: FC<BrandCardProps> = ({
 
 const Container = styled(Box)<{
   visual?: string
-  fallback: boolean
+  fallbackStyle?: boolean
   bgColor: Color
 }>`
-  background: ${({ fallback, bgColor }) =>
-    fallback ? theme.colors.cream : theme.colors[bgColor]};
+  background: ${({ fallbackStyle, bgColor }) =>
+    fallbackStyle ? theme.colors.cream : theme.colors[bgColor]};
   box-sizing: border-box;
   border-radius: 16px 16px 0px 0px;
 

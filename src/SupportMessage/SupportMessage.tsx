@@ -22,7 +22,7 @@ const styles: Record<SupportMessageType, StylesItem> = {
     hoverBackgroundColor: darken(0.1, theme.colors.custard),
     icon: 'info',
   },
-  fallback: {
+  fallbackStyle: {
     iconColor: 'liquorice',
     backgroundColor: theme.colors.coconut,
     hoverBackgroundColor: darken(0.1, theme.colors.coconut),
@@ -48,7 +48,12 @@ const styles: Record<SupportMessageType, StylesItem> = {
   },
 }
 
-type SupportMessageType = 'info' | 'fallback' | 'alert' | 'warning' | 'success'
+type SupportMessageType =
+  | 'info'
+  | 'fallbackStyle'
+  | 'alert'
+  | 'warning'
+  | 'success'
 
 export type SupportMessageProps = {
   className?: string

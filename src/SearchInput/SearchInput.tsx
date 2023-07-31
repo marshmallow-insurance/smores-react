@@ -42,7 +42,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       value,
       onBlur,
       onFound,
-      fallback,
+      fallbackStyle,
       resultsRelativePosition = false,
       ...otherProps
     },
@@ -126,7 +126,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             ref={ref}
             placeholder={placeholder}
             frontIcon={showIcon ? 'present' : ''}
-            fallback={fallback}
+            fallbackStyle={fallbackStyle}
             autoComplete="off"
             value={displayedInputText}
             onChange={handleInputChange}

@@ -30,7 +30,7 @@ DefaultFallback.args = {
   body: 'Card description',
   leadingIcon: 'copy',
   maxWidth: '300px',
-  fallback: true,
+  fallbackStyle: true,
 }
 
 export const GenericChildCard = Template.bind({})
