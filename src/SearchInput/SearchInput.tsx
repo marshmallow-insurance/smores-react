@@ -26,6 +26,7 @@ export interface SearchInputProps extends CommonFieldProps {
   showIcon?: boolean
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   value?: string
+  resultsRelativePosition?: boolean
 }
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
@@ -41,7 +42,8 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       value,
       onBlur,
       onFound,
-      fallback,
+      fallbackStyle,
+      resultsRelativePosition = false,
       ...otherProps
     },
     ref,
@@ -124,7 +126,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             ref={ref}
             placeholder={placeholder}
             frontIcon={showIcon ? 'present' : ''}
-            fallback={fallback}
+            fallbackStyle={fallbackStyle}
             autoComplete="off"
             value={displayedInputText}
             onChange={handleInputChange}
@@ -139,7 +141,11 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         </Box>
 
         {showOptions && (
-          <SearchOptions displayedList={filteredList} onSelect={handleSelect} />
+          <SearchOptions
+            displayedList={filteredList}
+            onSelect={handleSelect}
+            positionRelative={resultsRelativePosition}
+          />
         )}
       </Field>
     )

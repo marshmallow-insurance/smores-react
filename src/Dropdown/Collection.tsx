@@ -75,7 +75,7 @@ export const CollectionPage: FC = () => {
                   label={label}
                   placeholder={placeholder}
                   list={list}
-                  fallback={true}
+                  fallbackStyle={true}
                   error={false}
                   errorMsg={errorMsg}
                   onSelect={onSelect}
@@ -100,7 +100,7 @@ export const CollectionPage: FC = () => {
                   placeholder={placeholder}
                   frontIcon="iphone"
                   list={list}
-                  fallback={true}
+                  fallbackStyle={true}
                   error={false}
                   errorMsg={errorMsg}
                   onSelect={onSelect}
@@ -173,7 +173,7 @@ export const CollectionPage: FC = () => {
                   placeholder={placeholder}
                   assistiveText="Some assistive text"
                   list={list}
-                  fallback={true}
+                  fallbackStyle={true}
                   error={true}
                   errorMsg={errorMsg}
                   onSelect={onSelect}
