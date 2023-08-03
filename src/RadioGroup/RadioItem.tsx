@@ -9,10 +9,12 @@ import { Text } from '../Text'
 import { BaseValueType, DisplayType } from './types'
 import { ITEM_GAP } from './constants'
 import { Box } from '../Box'
+import { Icon } from '../Icon'
 
 type RadioItemProps = {
   name: string
   visual?: string
+  iconVisual?: string
   value: BaseValueType
   label: string
   checked: boolean
@@ -28,6 +30,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
     {
       name,
       visual,
+      iconVisual,
       label,
       value,
       checked,
@@ -49,10 +52,15 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
         isError={isError}
         fallbackStyle={fallbackStyle}
       >
-        {visual && (
+        {visual && !iconVisual && (
           <VisualWrapper>
             <Visual visualUrl={visual} />
           </VisualWrapper>
+        )}
+        {!visual && iconVisual && (
+          <IconWrapper>
+            <Icon render={iconVisual} size={24} />
+          </IconWrapper>
         )}
         <Box flex alignItems="center">
           <RadioElement
@@ -83,6 +91,12 @@ const VisualWrapper = styled.div`
   width: 100%;
   max-width: 120px;
   margin: 0 auto 8px;
+`
+
+const IconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-bottom: 12px;
 `
 
 const Visual = styled.div<{ visualUrl: string }>`
