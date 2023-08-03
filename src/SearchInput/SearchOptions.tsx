@@ -12,15 +12,17 @@ type Option = {
 type SearchOptionsProps = {
   displayedList: Array<Option>
   onSelect: (option: Option) => void
+  positionRelative: boolean
 }
 
 export const SearchOptions: FC<SearchOptionsProps> = ({
   displayedList,
   onSelect,
+  positionRelative,
 }) => {
   return (
     <BoxWithPositionRelative>
-      <StyledResultsContainer>
+      <StyledResultsContainer positionRelative={positionRelative}>
         <ResultsList>
           {displayedList.length ? (
             displayedList.map((el, i) => (
@@ -37,10 +39,12 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   )
 }
 
-const StyledResultsContainer = styled.div`
+const StyledResultsContainer = styled.div<
+  Pick<SearchOptionsProps, 'positionRelative'>
+>`
   box-sizing: border-box;
   overflow-y: hidden;
-  position: absolute;
+  ${({ positionRelative }) => !positionRelative && 'position: absolute;'}
   width: 100%;
   left: 0px;
   top: -8px;

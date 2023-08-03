@@ -54,7 +54,7 @@ export const DefaultFallback = Template.bind({})
 DefaultFallback.args = {
   id: 'days',
   list: days,
-  fallback: true,
+  fallbackStyle: true,
   placeholder: 'Placeholder',
 }
 

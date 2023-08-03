@@ -31,7 +31,7 @@ DefaultFallback.args = {
   placeholder: '7123 456789',
   required: true,
   onChange: noop,
-  fallback: true,
+  fallbackStyle: true,
 }
 
 export const Collection = CollectionPage.bind({})

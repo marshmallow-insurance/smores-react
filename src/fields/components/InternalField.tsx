@@ -43,6 +43,12 @@ export const InternalField = ({
               <Text tag={labelTag} typo="heading-small" htmlFor={htmlFor}>
                 {label}
               </Text>
+
+              {assistiveText && (
+                <Text tag="p" color="sesame" mt={{ custom: 4 }}>
+                  {assistiveText}
+                </Text>
+              )}
             </Box>
           ) : (
             <Text
@@ -64,7 +70,7 @@ export const InternalField = ({
       )}
 
       <Box>{children}</Box>
-      {assistiveText && (
+      {fieldType === 'field' && assistiveText && !renderAsTitle && (
         <Text
           tag={labelTag}
           typo="caption"

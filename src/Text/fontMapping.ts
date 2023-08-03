@@ -6,11 +6,11 @@ export const fontStyleMapping: Record<Typo, string> = {
     font-size: 40px;
     font-family: 'MarshmallowYouth';
     font-weight: ${theme.font.weight.bold};
-    line-height: 44px;
+    line-height: 40px;
 
     @media (min-width: 768px) {
       font-size: 56px;
-      line-height: 64px;
+      line-height: 52px;
     }
   `,
   hero: `

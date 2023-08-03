@@ -1,10 +1,12 @@
-import React, { FC, ReactNode } from 'react'
-import styled from 'styled-components'
+import React, { FC, MouseEventHandler, ReactNode } from 'react'
+import styled, { css } from 'styled-components'
 import { MarginProps } from '../utils/space'
 import { theme } from '../theme'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
+import { darken } from 'polished'
+import { focusOutlineStyle } from '../utils/focusOutline'
 
 export type CardProps = {
   children?: ReactNode
@@ -20,12 +22,14 @@ export type CardProps = {
   visualHeight?: string
   /** card tag */
   tag?: ReactNode
+  /** action for a fully clickable card */
+  cardOnClickAction?: MouseEventHandler<HTMLDivElement>
   /** action to the right of the card, chevron, chip or link text */
   rightAction?: ReactNode
   /** primary button */
   buttonAction?: ReactNode
   /** fallback color scheme */
-  fallback?: boolean
+  fallbackStyle?: boolean
   className?: string
   /** margin */
   maxWidth?: string
@@ -46,9 +50,10 @@ export const Card: FC<CardProps> = ({
   body,
   visual,
   tag,
+  cardOnClickAction,
   rightAction,
   buttonAction,
-  fallback = false,
+  fallbackStyle = false,
   visualHeight = '',
   className = '',
   maxWidth = '',
@@ -59,6 +64,9 @@ export const Card: FC<CardProps> = ({
   ...otherProps
 }) => {
   const addChildMargin = (!!leadingIcon || !!title || !!body) && children
+
+  const isNotClickable = !cardOnClickAction
+
   return (
     <Container
       className={className}
@@ -68,7 +76,10 @@ export const Card: FC<CardProps> = ({
       narrow={narrow}
       wide={wide}
       visual={visual}
-      fallback={fallback}
+      fallbackStyle={fallbackStyle}
+      isNotClickable={isNotClickable}
+      onClick={cardOnClickAction}
+      tabIndex={isNotClickable ? undefined : 0}
       {...otherProps}
     >
       {tag && visual && <TagWrapper>{tag}</TagWrapper>}
@@ -113,14 +124,14 @@ export const Card: FC<CardProps> = ({
 type ICard = Required<
   Pick<
     CardProps,
-    'maxWidth' | 'marginX' | 'marginY' | 'narrow' | 'wide' | 'fallback'
+    'maxWidth' | 'marginX' | 'marginY' | 'narrow' | 'wide' | 'fallbackStyle'
   >
 > &
-  Partial<Pick<CardProps, 'visual'>>
+  Partial<Pick<CardProps, 'visual'> & { isNotClickable: boolean }>
 
 const Container = styled(Box)<ICard>`
-  background: ${({ fallback }) =>
-    fallback ? theme.colors.cream : theme.colors.custard};
+  background: ${({ fallbackStyle }) =>
+    fallbackStyle ? theme.colors.cream : theme.colors.custard};
   box-sizing: border-box;
   border-radius: 16px;
 
@@ -133,6 +144,20 @@ const Container = styled(Box)<ICard>`
   padding: ${({ visual }) => (visual ? '0px' : '16px')};
   position: relative;
   overflow: hidden;
+
+  ${({ isNotClickable, fallbackStyle }) =>
+    !isNotClickable &&
+    css`
+      cursor: pointer;
+      &:hover {
+        background: ${darken(
+          0.1,
+          fallbackStyle ? theme.colors.cream : theme.colors.custard,
+        )};
+      }
+
+      ${focusOutlineStyle}
+    `};
 `
 
 const TagWrapper = styled(Box)`

@@ -8,7 +8,7 @@ import { Button, ButtonProps } from './Button'
 export const buttonList: Array<ButtonProps> = [
   { primary: true, children: 'Save' },
   { secondary: true, children: 'Edit' },
-  { fallback: true, children: 'Cancel' },
+  { fallbackStyle: true, children: 'Cancel' },
   { textBtn: true, children: 'View' },
   { smallButton: true, children: 'Small' },
 ]

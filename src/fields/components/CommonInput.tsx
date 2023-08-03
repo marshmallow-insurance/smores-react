@@ -10,7 +10,7 @@ interface IInput {
   value?: string
   frontIcon?: string
   trailingIcon?: string
-  fallback?: boolean
+  fallbackStyle?: boolean
 }
 
 interface SIcon {
@@ -32,8 +32,8 @@ export const Input = styled.input<IInput>`
     border-color: ${({ error }) =>
       error ? theme.colors.strawberry : theme.colors.marzipan};
   }
-  background-color: ${({ fallback }) =>
-    fallback ? theme.colors.custard : theme.colors.cream};
+  background-color: ${({ fallbackStyle }) =>
+    fallbackStyle ? theme.colors.custard : theme.colors.cream};
   border: 2px solid
     ${({ error }) => (error ? theme.colors.strawberry : theme.colors.oatmeal)};
 
