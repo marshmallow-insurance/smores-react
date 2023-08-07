@@ -29,7 +29,7 @@ DefaultFallback.args = {
   id: 'textInput',
   name: 'textInput',
   placeholder: 'Placeholder text',
-  fallback: true,
+  fallbackStyle: true,
   onChange: noop,
   onInputChange: noop,
   onBlur: noop,

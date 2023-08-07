@@ -13,12 +13,14 @@ import { useUniqueId } from '../utils/id'
 import { Fieldset } from '../fields/Fieldset'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { RadioItem } from './RadioItem'
-import { BaseValueType, DisplayType } from './types'
+import { BaseValueType, DisplayType, IconPosition } from './types'
 import { ITEM_GAP } from './constants'
 
 export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   options: Array<{
     visual?: string
+    icon?: string
+    iconPosition?: IconPosition
     label: string
     value: Value
     bodyCopy?: string
@@ -26,7 +28,7 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   onChange: (value: Value) => void
   value: Value
   displayType?: DisplayType
-  fallback?: boolean
+  fallbackStyle?: boolean
 } & CommonFieldProps
 
 export type RadioGroupElement = {
@@ -41,7 +43,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
     displayType = 'normal',
     renderAsTitle = false,
     error = false,
-    fallback = false,
+    fallbackStyle = false,
     ...fieldProps
   }: RadioGroupProps<Value>,
   ref: ForwardedRef<RadioGroupElement>,
@@ -76,13 +78,15 @@ const RadioGroupComponent = <Value extends BaseValueType>(
               key={`${option.value}`}
               name={name}
               visual={option.visual}
+              icon={option.icon}
+              iconPosition={option.iconPosition}
               label={option.label}
               value={option.value}
               checked={isSelected}
               onChange={onChange}
               displayType={displayType}
               isError={error}
-              fallback={fallback}
+              fallbackStyle={fallbackStyle}
               bodyCopy={option.bodyCopy}
             />
           )

@@ -49,7 +49,7 @@ export const CollectionPage: FC = () => {
                 label={label}
                 value=""
                 placeholder={placeholder}
-                fallback={true}
+                fallbackStyle={true}
                 error={false}
                 errorMsg={errorMsg}
                 // @ts-expect-error onChange type is too broad and should be handled differently
@@ -196,7 +196,7 @@ export const CollectionPage: FC = () => {
                 required={true}
                 value=""
                 placeholder={placeholder}
-                fallback={true}
+                fallbackStyle={true}
                 error={true}
                 errorMsg={errorMsg}
                 // @ts-expect-error onChange type is too broad and should be handled differently

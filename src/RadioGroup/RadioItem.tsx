@@ -6,20 +6,23 @@ import { theme } from '../theme'
 
 import { RadioElement } from './RadioElement'
 import { Text } from '../Text'
-import { BaseValueType, DisplayType } from './types'
+import { BaseValueType, DisplayType, IconPosition } from './types'
 import { ITEM_GAP } from './constants'
 import { Box } from '../Box'
+import { Icon } from '../Icon'
 
 type RadioItemProps = {
   name: string
   visual?: string
+  icon?: string
+  iconPosition?: IconPosition
   value: BaseValueType
   label: string
   checked: boolean
   onChange: (value: BaseValueType) => void
   displayType: DisplayType
   isError: boolean
-  fallback?: boolean
+  fallbackStyle?: boolean
   bodyCopy?: string
 }
 
@@ -28,13 +31,15 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
     {
       name,
       visual,
+      icon,
+      iconPosition = 'center',
       label,
       value,
       checked,
       onChange,
       displayType,
       isError,
-      fallback,
+      fallbackStyle,
       bodyCopy,
     },
     ref,
@@ -47,12 +52,17 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
         displayType={displayType}
         data-testid={value}
         isError={isError}
-        fallback={fallback}
+        fallbackStyle={fallbackStyle}
       >
-        {visual && (
+        {visual && !icon && (
           <VisualWrapper>
             <Visual visualUrl={visual} />
           </VisualWrapper>
+        )}
+        {!visual && icon && (
+          <IconWrapper iconPosition={iconPosition}>
+            <Icon render={icon} size={24} />
+          </IconWrapper>
         )}
         <Box flex alignItems="center">
           <RadioElement
@@ -85,6 +95,23 @@ const VisualWrapper = styled.div`
   margin: 0 auto 8px;
 `
 
+const IconWrapper = styled.div<{ iconPosition?: IconPosition }>`
+  display: flex;
+  padding-bottom: 12px;
+
+  ${({ iconPosition }) =>
+    iconPosition === 'center' &&
+    css`
+      justify-content: center;
+    `}
+
+  ${({ iconPosition }) =>
+    iconPosition === 'start' &&
+    css`
+      justify-content: flex-start;
+    `}
+`
+
 const Visual = styled.div<{ visualUrl: string }>`
   width: 100%;
   padding-top: 100%;
@@ -95,47 +122,45 @@ const Visual = styled.div<{ visualUrl: string }>`
 `
 
 const Wrapper = styled.label<
-  Pick<RadioItemProps, 'displayType' | 'checked' | 'isError' | 'fallback'>
+  Pick<RadioItemProps, 'displayType' | 'checked' | 'isError' | 'fallbackStyle'>
 >`
   display: flex;
   flex-direction: column;
   cursor: pointer;
 
-  ${({ displayType, checked, isError, fallback }) =>
+  ${({ displayType, checked, isError, fallbackStyle }) => css`
+    ${(displayType === 'horizontal-card' || displayType === 'vertical-card') &&
     css`
-      ${(displayType === 'horizontal-card' ||
-        displayType === 'vertical-card') &&
-      css`
-        border-radius: 12px;
-        background-color: ${fallback
-          ? theme.colors.cream
-          : theme.colors.custard};
-        padding: ${checked ? '10px' : '12px'};
-        border: ${checked &&
-        (isError
-          ? `2px solid ${theme.colors.strawberry}`
-          : `2px solid ${theme.colors.liquorice}`)};
+      border-radius: 12px;
+      background-color: ${fallbackStyle
+        ? theme.colors.cream
+        : theme.colors.custard};
+      padding: ${checked ? '10px' : '12px'};
+      border: ${checked &&
+      (isError
+        ? `2px solid ${theme.colors.strawberry}`
+        : `2px solid ${theme.colors.liquorice}`)};
 
-        &:hover {
-          background-color: ${fallback
-            ? theme.colors.coconut
-            : theme.colors.oatmeal};
-        }
-      `}
-      ${displayType === 'horizontal-card' &&
-      css`
-        width: 100%;
-        justify-content: center;
-
-        @media (min-width: 420px) {
-          width: calc(50% - ${ITEM_GAP / 2}px);
-        }
-
-        @media (min-width: 768px) {
-          width: 201px;
-        }
-      `}
+      &:hover {
+        background-color: ${fallbackStyle
+          ? theme.colors.coconut
+          : theme.colors.oatmeal};
+      }
     `}
+    ${displayType === 'horizontal-card' &&
+    css`
+      width: 100%;
+      justify-content: center;
+
+      @media (min-width: 420px) {
+        width: calc(50% - ${ITEM_GAP / 2}px);
+      }
+
+      @media (min-width: 768px) {
+        width: 201px;
+      }
+    `}
+  `}
 `
 
 const RadioText = styled.span<{ isError: boolean }>`

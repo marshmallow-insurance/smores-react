@@ -12,7 +12,7 @@ const variationList: SupportMessageProps[] = [
     description: 'Information needs to be communicated to the user.',
   },
   {
-    type: 'fallback',
+    type: 'fallbackStyle',
     title: 'Additional information',
     description: 'Information needs to be communicated to the user.',
   },

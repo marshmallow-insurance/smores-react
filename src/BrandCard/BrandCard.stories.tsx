@@ -31,7 +31,7 @@ BrandCardWithImageWithTag.args = {
   bgColor: 'matcha',
   visualHeight: '180px',
   tag: <Tag label="default tag" bgColor="fairyFloss" color="liquorice" />,
-  buttonAction: <Button fallback={true}>Tell me more</Button>,
+  buttonAction: <Button fallbackStyle>Tell me more</Button>,
   visual: placeHolderSvg,
 }
 
@@ -43,7 +43,7 @@ BrandCardAlignImageRight.args = {
   bgColor: 'matcha',
   alignVisual: 'right',
   visualHeight: '180px',
-  buttonAction: <Button fallback={true}>Tell me more</Button>,
+  buttonAction: <Button fallbackStyle>Tell me more</Button>,
   visual: placeHolderSvg,
 }
 
@@ -58,6 +58,6 @@ BrandCardWithImageBelow.args = {
   visualBottom: true,
   bgColor: 'peanut',
   tag: <Tag label="new" bgColor="fairyFloss" color="liquorice" />,
-  buttonAction: <Button fallback={true}>Tell me more</Button>,
+  buttonAction: <Button fallbackStyle>Tell me more</Button>,
   visual: placeHolderSvg,
 }
