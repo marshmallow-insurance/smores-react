@@ -13,12 +13,14 @@ import { useUniqueId } from '../utils/id'
 import { Fieldset } from '../fields/Fieldset'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { RadioItem } from './RadioItem'
-import { BaseValueType, DisplayType } from './types'
+import { BaseValueType, DisplayType, IconPosition } from './types'
 import { ITEM_GAP } from './constants'
 
 export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   options: Array<{
     visual?: string
+    icon?: string
+    iconPosition?: IconPosition
     label: string
     value: Value
     bodyCopy?: string
@@ -76,6 +78,8 @@ const RadioGroupComponent = <Value extends BaseValueType>(
               key={`${option.value}`}
               name={name}
               visual={option.visual}
+              icon={option.icon}
+              iconPosition={option.iconPosition}
               label={option.label}
               value={option.value}
               checked={isSelected}

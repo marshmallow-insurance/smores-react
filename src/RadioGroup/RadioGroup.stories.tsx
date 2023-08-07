@@ -90,3 +90,15 @@ WithVisual.args = {
   options: options.map((option) => ({ ...option, visual: visualSvg })),
   displayType: 'horizontal-card',
 }
+
+export const Withicon = Template.bind({})
+
+Withicon.args = {
+  ...defaultArgs,
+  options: options.map((option) => ({
+    ...option,
+    icon: 'card',
+    iconPosition: 'center',
+  })),
+  displayType: 'horizontal-card',
+}
