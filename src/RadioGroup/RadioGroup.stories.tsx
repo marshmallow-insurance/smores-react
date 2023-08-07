@@ -91,10 +91,14 @@ WithVisual.args = {
   displayType: 'horizontal-card',
 }
 
-export const WithIconVisual = Template.bind({})
+export const Withicon = Template.bind({})
 
-WithIconVisual.args = {
+Withicon.args = {
   ...defaultArgs,
-  options: options.map((option) => ({ ...option, iconVisual: 'card' })),
+  options: options.map((option) => ({
+    ...option,
+    icon: 'card',
+    iconPosition: 'center',
+  })),
   displayType: 'horizontal-card',
 }

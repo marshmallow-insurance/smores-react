@@ -6,7 +6,7 @@ import { theme } from '../theme'
 
 import { RadioElement } from './RadioElement'
 import { Text } from '../Text'
-import { BaseValueType, DisplayType } from './types'
+import { BaseValueType, DisplayType, IconPosition } from './types'
 import { ITEM_GAP } from './constants'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
@@ -14,7 +14,8 @@ import { Icon } from '../Icon'
 type RadioItemProps = {
   name: string
   visual?: string
-  iconVisual?: string
+  icon?: string
+  iconPosition?: IconPosition
   value: BaseValueType
   label: string
   checked: boolean
@@ -30,7 +31,8 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
     {
       name,
       visual,
-      iconVisual,
+      icon,
+      iconPosition = 'center',
       label,
       value,
       checked,
@@ -52,14 +54,14 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
         isError={isError}
         fallbackStyle={fallbackStyle}
       >
-        {visual && !iconVisual && (
+        {visual && !icon && (
           <VisualWrapper>
             <Visual visualUrl={visual} />
           </VisualWrapper>
         )}
-        {!visual && iconVisual && (
-          <IconWrapper>
-            <Icon render={iconVisual} size={24} />
+        {!visual && icon && (
+          <IconWrapper iconPosition={iconPosition}>
+            <Icon render={icon} size={24} />
           </IconWrapper>
         )}
         <Box flex alignItems="center">
@@ -93,10 +95,21 @@ const VisualWrapper = styled.div`
   margin: 0 auto 8px;
 `
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.div<{ iconPosition?: IconPosition }>`
   display: flex;
-  justify-content: center;
   padding-bottom: 12px;
+
+  ${({ iconPosition }) =>
+    iconPosition === 'center' &&
+    css`
+      justify-content: center;
+    `}
+
+  ${({ iconPosition }) =>
+    iconPosition === 'start' &&
+    css`
+      justify-content: flex-start;
+    `}
 `
 
 const Visual = styled.div<{ visualUrl: string }>`

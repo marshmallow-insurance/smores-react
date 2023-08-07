@@ -1,6 +1,7 @@
 ## [3.0.2] - 2023-08-03
 ### Changed
-- adds iconVisual prop to RadioGroup component
+- adds icon prop to RadioGroup component
+- adds iconPosition prop to RadioGroup component too
 ## [3.0.1] - 2023-07-28
 ### Changed
 - Adds variation for a clickable Card
