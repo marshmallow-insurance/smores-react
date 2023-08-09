@@ -1,3 +1,6 @@
+## [3.0.3] - 2023-08-03
+### Changed
+- exports Banner, BrandCard, & IconStrict
 ## [3.0.2] - 2023-08-03
 ### Changed
 - adds icon prop to RadioGroup component
@@ -639,6 +642,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.0.3]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.2...v3.0.0
