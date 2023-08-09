@@ -19,7 +19,7 @@ type BaseProps = {
   maxLength?: number
   onBlur?: (e: FocusEvent<HTMLTextAreaElement>) => void
   rows?: number
-  fallback?: boolean
+  fallbackStyle?: boolean
 } & CommonFieldProps &
   MarginProps
 
@@ -49,7 +49,7 @@ export const Textarea = forwardRef(function Textarea(
     maxLength,
     onBlur,
     rows = 4,
-    fallback,
+    fallbackStyle,
     ...fieldProps
   }: TextareaProps,
   ref: ForwardedRef<HTMLTextAreaElement>,
@@ -64,7 +64,7 @@ export const Textarea = forwardRef(function Textarea(
         name={name}
         disabled={disabled}
         resize={resize}
-        fallback={fallback}
+        fallbackStyle={fallbackStyle}
         placeholder={placeholder}
         value={value}
         onChange={(e: FormEvent<HTMLTextAreaElement>) => {
@@ -84,15 +84,15 @@ interface TextArea {
   disabled: boolean
   error: boolean
   value: string
-  fallback?: boolean
+  fallbackStyle?: boolean
 }
 
 const StyledTextArea = styled.textarea<TextArea>`
   font-size: 16px;
   font: inherit;
   line-height: 20px;
-  background: ${({ fallback }) =>
-    fallback ? theme.colors.custard : theme.colors.cream};
+  background: ${({ fallbackStyle }) =>
+    fallbackStyle ? theme.colors.custard : theme.colors.cream};
   border: 2px solid ${theme.colors.oatmeal};
   box-sizing: border-box;
   border-radius: 12px;

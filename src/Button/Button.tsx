@@ -16,7 +16,7 @@ type Props = {
   loading?: boolean
   primary?: boolean
   secondary?: boolean
-  fallback?: boolean
+  fallbackStyle?: boolean
   textBtn?: boolean
   smallButton?: boolean
   icon?: string
@@ -42,7 +42,7 @@ export const Button: FC<ButtonProps> = forwardRef<
     loading = false,
     primary = false,
     secondary = false,
-    fallback = false,
+    fallbackStyle = false,
     textBtn = false,
     smallButton = false,
     icon = '',
@@ -63,7 +63,7 @@ export const Button: FC<ButtonProps> = forwardRef<
       $loading={loading}
       primary={primary}
       secondary={secondary}
-      fallback={fallback}
+      fallbackStyle={fallbackStyle}
       textBtn={textBtn}
       smallButton={smallButton}
       icon={icon}
@@ -115,7 +115,7 @@ type IButton = Required<
     | 'secondary'
     | 'icon'
     | 'forcedWidth'
-    | 'fallback'
+    | 'fallbackStyle'
     | 'textBtn'
     | 'trailingIcon'
     | 'smallButton'
@@ -131,7 +131,7 @@ const Container = styled(Box)<IButton>(
     primary,
     secondary,
     forcedWidth,
-    fallback,
+    fallbackStyle,
     textBtn,
     smallButton,
   }) => css`
@@ -171,7 +171,7 @@ const Container = styled(Box)<IButton>(
         background-color: ${theme.colors.custard};
       }
     `}
-  ${fallback &&
+  ${fallbackStyle &&
     css`
       background-color: ${theme.colors.cream};
 

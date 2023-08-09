@@ -48,7 +48,7 @@ export const CollectionPage: FC = () => {
                 label={label}
                 value=""
                 placeholder={placeholder}
-                fallback={true}
+                fallbackStyle={true}
                 error={false}
                 errorMsg={errorMsg}
                 onChange={setValue}
@@ -172,7 +172,7 @@ export const CollectionPage: FC = () => {
                 required={true}
                 value=""
                 placeholder={placeholder}
-                fallback={true}
+                fallbackStyle={true}
                 error={true}
                 errorMsg={errorMsg}
                 onChange={setValue}
