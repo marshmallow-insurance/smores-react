@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .c2 {
   font-size: 10px;
   line-height: 12px;
@@ -21,6 +14,7 @@ exports[`renders 1`] = `
 .c1 {
   border-radius: 6px;
   padding: 4px 8px;
+  height: 22px;
   box-sizing: border-box;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -29,6 +23,14 @@ exports[`renders 1`] = `
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 10px;
   font-weight: 500;
   line-height: 12px;

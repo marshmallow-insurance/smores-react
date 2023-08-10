@@ -1,3 +1,7 @@
+## [3.0.4] - 2023-10-03
+### Changed
+- sets Tag component to have fixed height
+- adjusts Checkbox border to have 2px border
 ## [3.0.3] - 2023-08-03
 ### Changed
 - exports Banner, BrandCard, & IconStrict
@@ -642,6 +646,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.0.4]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.3...v3.0.4
 [3.0.3]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.0...v3.0.1
