@@ -101,6 +101,7 @@ const BoxContainer = styled.label`
     position: absolute;
     opacity: 0;
     cursor: pointer;
+    background-color: ${theme.colors.cream};
 
     &:checked ~ ${Checkmark} {
       background-color: ${theme.colors.liquorice};
@@ -130,7 +131,7 @@ const BoxContainer = styled.label`
   }
 
   span {
-    border-radius: 4px;
+    border-radius: 6px;
   }
 `
 
