@@ -2,6 +2,7 @@
 ### Changed
 - sets Tag component to have fixed height
 - adjusts Checkbox border to have 2px border
+- adds heading-alternate style to Text
 ## [3.0.3] - 2023-08-03
 ### Changed
 - exports Banner, BrandCard, & IconStrict
