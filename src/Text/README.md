@@ -27,6 +27,7 @@ const App = () => (
 |------|:-----------:|:------------:|-------------|
 | hero-alternate | 40 | 56 | bold |
 | hero | 32 | 40 | medium |
+| heading-alternate | 40 | 40 | bold |
 | heading-large | 28 | 32 | medium |
 | heading-medium | 24 | 24 | medium |
 | heading-small | 20 | 20 | medium |

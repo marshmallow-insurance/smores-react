@@ -39,6 +39,7 @@ export type DeprecatedTypo =
 export type Typo =
   | 'hero-alternate'
   | 'hero'
+  | 'heading-alternate'
   | 'heading-large'
   | 'heading-medium'
   | 'heading-small'
