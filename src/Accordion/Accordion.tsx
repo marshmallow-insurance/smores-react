@@ -12,7 +12,9 @@ export type AccordionProps = {
   subTitle?: string
   filledBackground?: boolean
   borderTop?: boolean
+  borderColor?: 'oatmeal' | 'custard' | 'cream'
   fullBorder?: boolean
+  backgroundColor?: 'oatmeal' | 'custard' | 'cream'
   onToggle?: (isOpen: boolean) => void
   children: ReactNode
   defaultIsOpen?: boolean
@@ -25,6 +27,8 @@ export const Accordion: FC<AccordionProps> = ({
   filledBackground,
   defaultIsOpen = false,
   borderTop = false,
+  borderColor = 'oatmeal',
+  backgroundColor = 'custard',
   subTitle,
   fullBorder = false,
   ...marginProps
@@ -42,8 +46,10 @@ export const Accordion: FC<AccordionProps> = ({
     <Wrapper
       borderTop={borderTop}
       fullBorder={fullBorder}
-      {...marginProps}
       filledBackground={filledBackground}
+      borderColor={borderColor}
+      backgroundColor={backgroundColor}
+      {...marginProps}
     >
       <TopContainer
         flex
@@ -87,22 +93,30 @@ interface IAccordion {
   borderTop?: boolean
   fullBorder?: boolean
   filledBackground?: boolean
+  borderColor?: 'oatmeal' | 'custard' | 'cream'
+  backgroundColor?: 'oatmeal' | 'custard' | 'cream'
 }
 
 const Wrapper = styled(Box)<Omit<IAccordion, 'isOpen'>>(
-  ({ borderTop, fullBorder, filledBackground }) => css`
-    border-bottom: 1px solid ${theme.colors.oatmeal};
-    ${borderTop && `border-top: 1px solid ${theme.colors.oatmeal};`}
+  ({
+    borderTop,
+    fullBorder,
+    filledBackground,
+    borderColor = 'oatmeal',
+    backgroundColor = 'custard',
+  }) => css`
+    border-bottom: 1px solid ${theme.colors[borderColor]};
+    ${borderTop && `border-top: 1px solid ${theme.colors[borderColor]};`}
 
     ${fullBorder &&
     css`
-      border: 1px solid ${theme.colors.oatmeal};
+      border: 1px solid ${theme.colors[borderColor]};
       border-radius: 16px;
     `}
 
     ${filledBackground &&
     css`
-      background: ${theme.colors.custard};
+      background-color: ${theme.colors[backgroundColor]};
     `}
   `,
 )

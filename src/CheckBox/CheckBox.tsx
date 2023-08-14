@@ -53,8 +53,8 @@ const Checkmark = styled.span<{ error?: boolean }>`
   height: 24px;
   border: ${({ error }) =>
     error
-      ? `solid 1px ${theme.colors.strawberry}`
-      : `solid 1px ${theme.colors.liquorice}`};
+      ? `solid 2px ${theme.colors.strawberry}`
+      : `solid 2px ${theme.colors.liquorice}`};
   box-sizing: border-box;
   border-radius: 1px;
 
@@ -101,10 +101,11 @@ const BoxContainer = styled.label`
     position: absolute;
     opacity: 0;
     cursor: pointer;
+    background-color: ${theme.colors.cream};
 
     &:checked ~ ${Checkmark} {
       background-color: ${theme.colors.liquorice};
-      border: solid 1px ${theme.colors.liquorice};
+      border: solid 2px ${theme.colors.liquorice};
     }
 
     &:checked ~ ${Checkmark}:before {
@@ -121,7 +122,7 @@ const BoxContainer = styled.label`
   &:hover {
     ${Checkmark} {
       background-color: ${theme.colors.coconut};
-      border: solid 1px ${theme.colors.liquorice};
+      border: solid 2px ${theme.colors.liquorice};
     }
   }
 
@@ -130,7 +131,7 @@ const BoxContainer = styled.label`
   }
 
   span {
-    border-radius: 4px;
+    border-radius: 6px;
   }
 `
 

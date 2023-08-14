@@ -27,7 +27,6 @@ export const Tag: FC<TagProps> = ({
     className={className}
     borderColor={borderColor}
     {...marginProps}
-    flex
     alignContent="center"
     justifyContent="center"
   >
@@ -47,11 +46,15 @@ const Wrapper = styled(Box)<WrapperProps>`
   border-radius: 6px;
   padding: 4px 8px;
 
+  height: 22px;
+
   box-sizing: border-box;
   display: inline-flex;
 `
 
 const TagText = styled(Text)`
+  display: flex;
+  align-items: center;
   font-size: 10px;
   font-weight: 500;
   line-height: 12px;

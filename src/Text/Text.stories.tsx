@@ -55,7 +55,9 @@ const TypoCollection = ({
           <Text tag="p" typo={typo} color="liquorice">
             They waited patiently for what seemed a very long time.
           </Text>
-          {!['hero-alternate', 'hero', 'label'].includes(typo) && (
+          {!['hero-alternate', 'hero', 'heading-alternate', 'label'].includes(
+            typo,
+          ) && (
             <Text tag="p" typo={typo} color="liquorice">
               They waited patiently for what seemed a very long time. They
               waited patiently for what seemed a very long time.

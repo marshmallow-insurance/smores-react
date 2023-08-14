@@ -23,6 +23,11 @@ export const fontStyleMapping: Record<Typo, string> = {
       line-height: 44px;
     }
   `,
+  'heading-alternate': `
+    font-size: 40px;
+    font-weight: ${theme.font.weight.bold};
+    line-height: 40px;
+  `,
   'heading-large': `
     font-size: 28px;
     font-weight: ${theme.font.weight.medium};
