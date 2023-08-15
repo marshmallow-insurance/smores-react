@@ -1,3 +1,7 @@
+## [3.0.5] - 2023-08-15
+### Changed
+- Update heading-alternate font family
+- Update default Divider colour to oatmeal
 ## [3.0.4] - 2023-10-03
 ### Changed
 - sets Tag component to have fixed height
@@ -648,6 +652,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.0.5]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.4...v3.0.5
 [3.0.4]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.3...v3.0.4
 [3.0.3]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.1...v3.0.2
