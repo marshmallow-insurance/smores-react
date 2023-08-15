@@ -25,6 +25,7 @@ export const fontStyleMapping: Record<Typo, string> = {
   `,
   'heading-alternate': `
     font-size: 40px;
+    font-family: 'MarshmallowYouth';
     font-weight: ${theme.font.weight.bold};
     line-height: 40px;
   `,
