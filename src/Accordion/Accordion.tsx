@@ -12,9 +12,9 @@ export type AccordionProps = {
   subTitle?: string
   filledBackground?: boolean
   borderTop?: boolean
-  borderColor?: 'oatmeal' | 'custard' | 'cream'
+  borderColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut'
   fullBorder?: boolean
-  backgroundColor?: 'oatmeal' | 'custard' | 'cream'
+  backgroundColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut'
   onToggle?: (isOpen: boolean) => void
   children: ReactNode
   defaultIsOpen?: boolean
@@ -93,8 +93,8 @@ interface IAccordion {
   borderTop?: boolean
   fullBorder?: boolean
   filledBackground?: boolean
-  borderColor?: 'oatmeal' | 'custard' | 'cream'
-  backgroundColor?: 'oatmeal' | 'custard' | 'cream'
+  borderColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut'
+  backgroundColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut'
 }
 
 const Wrapper = styled(Box)<Omit<IAccordion, 'isOpen'>>(
