@@ -1,3 +1,8 @@
+## [3.0.6] - 2023-08-17
+### Changed
+- Allow accordion background colours
+- Specify button type for Datepicker day buttons
+
 ## [3.0.5] - 2023-08-15
 ### Changed
 - Update heading-alternate font family
@@ -652,6 +657,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.0.6]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.5...v3.0.6
 [3.0.5]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.4...v3.0.5
 [3.0.4]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.3...v3.0.4
 [3.0.3]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.2...v3.0.3
