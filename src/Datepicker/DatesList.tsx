@@ -44,6 +44,7 @@ export const DatesList: FC<Props> = ({
       {items.map((item: Day, i) => (
         <ListButton
           key={i}
+          type="button"
           disabled={item.disabled}
           className={`ListButton ${item.active ? 'active' : ''}`}
           onClick={() => handleDateSelect(item.date)}
