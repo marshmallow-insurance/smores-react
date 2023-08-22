@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   testEnvironment: 'jest-environment-jsdom',
   modulePathIgnorePatterns: ['<rootDir>/dist'],
   coverageThreshold: {
