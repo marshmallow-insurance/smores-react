@@ -1,1 +1,1 @@
-export { Field, FieldProps } from './Field'
+export { Field } from './Field'
