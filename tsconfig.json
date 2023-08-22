@@ -1,9 +1,18 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "module": "es2015",
-    "target": "es6",
-    "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "module": "esnext",
+    "target": "esnext",
+    "lib": [
+      "es5",
+      "es6",
+      "es7",
+      "es2017",
+      "es2019",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "types": ["react", "node"],
     "sourceMap": true,
     "allowJs": true,
