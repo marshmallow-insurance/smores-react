@@ -30,4 +30,3 @@ jobs:
           branch: gh-pages
           folder: storybook-static
           clean: true
-          jekyll: false
