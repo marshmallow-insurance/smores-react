@@ -1,6 +1,7 @@
 ## [3.1.1] - 2023-09-07
 ### Changed
 - adds Logo component
+- adds fallbackStyle to Tooltip
 
 ## [3.1.0] - 2023-08-22
 ### Changed
