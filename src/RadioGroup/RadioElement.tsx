@@ -1,10 +1,10 @@
-import React, { forwardRef } from 'react'
+import React, { FocusEvent, forwardRef } from 'react'
 import styled from 'styled-components'
 
 import { theme } from '../theme'
+import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 import { visuallyHidden } from '../utils/visuallyHidden'
-import { focusOutline } from '../utils/focusOutline'
 
 import { Box } from '../Box'
 import { BaseValueType } from './types'
@@ -15,12 +15,13 @@ type RadioElementProps = {
   value: BaseValueType
   checked: boolean
   onChange: (value: BaseValueType) => void
+  onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   isError: boolean
 } & MarginProps
 
 export const RadioElement = forwardRef<HTMLInputElement, RadioElementProps>(
   function RadioElement(
-    { name, id, value, checked, onChange, isError, ...marginProps },
+    { name, id, value, checked, onChange, onBlur, isError, ...marginProps },
     ref,
   ) {
     return (
@@ -33,6 +34,7 @@ export const RadioElement = forwardRef<HTMLInputElement, RadioElementProps>(
           value={`${value}`}
           checked={checked}
           onChange={() => onChange(value)}
+          onBlur={onBlur}
         />
         <RadioCircle isError={isError} checked={checked} {...marginProps} />
       </>

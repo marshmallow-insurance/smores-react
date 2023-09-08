@@ -3,6 +3,7 @@
 - adds Logo component
 - adds fallbackStyle to Tooltip
 - adds resultsBorder to search input
+- adds onBlur to radio group
 
 ## [3.1.0] - 2023-08-22
 ### Changed
