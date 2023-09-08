@@ -2,6 +2,7 @@
 ### Changed
 - adds Logo component
 - adds fallbackStyle to Tooltip
+- adds resultsBorder to search input
 
 ## [3.1.0] - 2023-08-22
 ### Changed

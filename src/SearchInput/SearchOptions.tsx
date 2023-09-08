@@ -1,8 +1,8 @@
-import { Box } from '../Box'
-import React, { FC } from 'react'
-import styled from 'styled-components'
-import { theme } from '../theme'
 import { darken } from 'polished'
+import React, { FC } from 'react'
+import styled, { css } from 'styled-components'
+import { Box } from '../Box'
+import { theme } from '../theme'
 
 type Option = {
   label: string
@@ -13,17 +13,19 @@ type SearchOptionsProps = {
   displayedList: Array<Option>
   onSelect: (option: Option) => void
   positionRelative: boolean
+  resultsBorder: boolean
 }
 
 export const SearchOptions: FC<SearchOptionsProps> = ({
   displayedList,
   onSelect,
   positionRelative,
+  resultsBorder,
 }) => {
   return (
     <BoxWithPositionRelative>
       <StyledResultsContainer positionRelative={positionRelative}>
-        <ResultsList>
+        <ResultsList resultsBorder={resultsBorder}>
           {displayedList.length ? (
             displayedList.map((el, i) => (
               <li key={i} onClick={() => onSelect(el)}>
@@ -54,7 +56,7 @@ const StyledResultsContainer = styled.div<
   }
 `
 
-const ResultsList = styled.ul`
+const ResultsList = styled.ul<Pick<SearchOptionsProps, 'resultsBorder'>>`
   position: relative;
   list-style: none;
   overflow-y: auto;
@@ -64,6 +66,11 @@ const ResultsList = styled.ul`
   border-radius: 12px;
   margin-top: 14px;
   z-index: 1000;
+  ${({ resultsBorder }) =>
+    resultsBorder &&
+    css`
+      border: 2px solid ${theme.colors.oatmeal};
+    `}
 
   li {
     padding: 16px 14px;
@@ -71,6 +78,13 @@ const ResultsList = styled.ul`
     font-size: 16px;
     color: ${theme.colors.liquorice};
     cursor: pointer;
+
+    ${({ resultsBorder }) =>
+      resultsBorder && `border-bottom: 2px solid ${theme.colors.oatmeal};`}
+
+    &:last-child {
+      ${({ resultsBorder }) => resultsBorder && `border-bottom:none`}
+    }
 
     &:hover {
       background-color: ${darken(0.1, theme.colors.custard)};
