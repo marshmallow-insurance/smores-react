@@ -173,7 +173,7 @@ const Container = styled(Box)<{ fallbackStyle: boolean }>`
   ${({ fallbackStyle }) => {
     return fallbackStyle
       ? css`
-          background-color: ${theme.colors.coconut};
+          background-color: ${theme.colors.cream};
         `
       : css`
           background-color: ${theme.colors.custard};
