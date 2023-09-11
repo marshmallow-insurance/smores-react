@@ -1,28 +1,28 @@
-import React, { FC, useState } from 'react'
-import styled from 'styled-components'
 import {
-  format,
   addDays,
+  eachMonthOfInterval,
+  format,
+  getDaysInMonth,
   getMonth,
   getYear,
-  eachMonthOfInterval,
   isSameDay,
-  isWithinInterval,
-  getDaysInMonth,
-  isWeekend,
   isSameMonth,
+  isWeekend,
+  isWithinInterval,
 } from 'date-fns'
+import React, { FC, useState } from 'react'
+import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
-import { Text } from '../Text'
 import { Icon } from '../Icon'
+import { Text } from '../Text'
 import { theme } from '../theme'
 
-import { DatesList } from './DatesList'
 import { convertToUkDate } from '../utils/date'
+import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 import { useControllableState } from '../utils/useControlledState'
-import { focusOutlineStyle } from '../utils/focusOutline'
+import { DatesList } from './DatesList'
 
 const getAvailableMonths = (startDate: Date, endDate: Date) => {
   const monthList = eachMonthOfInterval({
@@ -47,6 +47,7 @@ export type DatepickerProps = {
   onDateSelect: (date: string) => void
   onChange?: (value: Date) => void
   value?: Date
+  fallbackStyle?: boolean
 } & MarginProps
 
 export const Datepicker: FC<DatepickerProps> = ({
@@ -60,6 +61,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   onDateSelect,
   onChange,
   value,
+  fallbackStyle = false,
   ...marginProps
 }) => {
   // We want to make sure that the date is in the UK timezone,
@@ -111,7 +113,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   }
 
   return (
-    <Container id="datepicker" {...marginProps}>
+    <Container id="datepicker" {...marginProps} fallbackStyle={fallbackStyle}>
       <Header
         flex
         alignItems="center"
@@ -161,13 +163,22 @@ export const Datepicker: FC<DatepickerProps> = ({
   )
 }
 
-const Container = styled(Box)`
+const Container = styled(Box)<{ fallbackStyle: boolean }>`
   font-family: ${theme.font.system};
   display: inline-block;
   box-sizing: border-box;
-  background-color: ${theme.colors.custard};
   outline: none;
   border-radius: 16px;
+
+  ${({ fallbackStyle }) => {
+    return fallbackStyle
+      ? css`
+          background-color: ${theme.colors.coconut};
+        `
+      : css`
+          background-color: ${theme.colors.custard};
+        `
+  }}
 `
 
 const Header = styled(Box)`
