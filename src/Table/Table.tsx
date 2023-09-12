@@ -5,22 +5,18 @@ import { StyledTable } from './components/commonComponents'
 import { TableColumn } from './types'
 
 /**
- * Key features
- * header (done via config, pass in matching columnId)
- * fixedHeader
- * filterByHeaderId
- * headerIdWidth (otherwise responsive)(?)
- * subTables (?) - issues, header width, needs its own subHeader?
- * subTableColor
- * allowOverflow
- * rows (done via passing in data, match the columnId)
- * rowActions
- * hideRowActions
- * expandRow
- * pagination - issues, routing, want to have lots of control (?)
- * overrideSection sections with ReactNode
+ * Key features & Progess
  *
+ * columnWidth - semi done
+ * striped - not done
+ * rowColor - not done
+ * tableColor - not done
+ * rowActions - not done
+ * hideRowActions - not done
  *
+ * subTables (?) - semi done (probably remove from mvp)
+ * subTableColor - not done
+ * expandRow (?) - (can this be done with subTable work), semi - done
  */
 export interface TableProps<T> {
   columns: TableColumn<T>[]
