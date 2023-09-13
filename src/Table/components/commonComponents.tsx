@@ -1,24 +1,21 @@
 import styled, { css } from 'styled-components'
 import { fontStyleMapping } from '../../Text/fontMapping'
 import { theme } from '../../theme'
+import { TableStylesProps } from '../types'
 
-export const StyledTable = styled.table<{ subTable?: boolean }>`
+export const StyledTable = styled.table<TableStylesProps>`
   width: 100%;
   border-collapse: collapse;
   overflow: auto;
 `
 
-export const StyledHeaderCell = styled.th<{
-  fixedHeader?: boolean
-  subTable?: boolean
-}>`
+export const StyledHeaderCell = styled.th<TableStylesProps>`
   background: ${theme.colors.coconut};
   position: ${({ fixedHeader }) => (fixedHeader ? 'sticky' : 'auto')};
   top: 0;
   z-index: 2;
-  height: 48px;
   text-align: left;
-  min-width: 200px;
+  padding: 12px;
   ${fontStyleMapping['label']};
 
   ${({ subTable }) =>
@@ -26,20 +23,24 @@ export const StyledHeaderCell = styled.th<{
     css`
       background: ${theme.colors.chia};
     `}
-`
 
-export const StyledCell = styled.td<{ subTable?: boolean }>`
-  height: 80px;
-  ${({ subTable }) =>
-    subTable &&
+  ${({ minWidth }) =>
+    minWidth &&
     css`
-      padding-left: 48px;
-      height: 64px;
-      margin: 12px;
+      min-width: ${minWidth};
     `}
 `
 
-export const StyledRow = styled.tr<{ subTable?: boolean }>`
+export const StyledCell = styled.td<TableStylesProps>`
+  padding: 12px;
+  ${({ subTable }) =>
+    subTable &&
+    css`
+      padding: 12px;
+    `}
+`
+
+export const StyledRow = styled.tr<TableStylesProps>`
   background: ${theme.colors.custard};
   border-bottom: 1px solid ${theme.colors.oatmeal};
 
@@ -47,5 +48,13 @@ export const StyledRow = styled.tr<{ subTable?: boolean }>`
     subTable &&
     css`
       background: ${theme.colors.cream};
+    `}
+
+  ${({ striped }) =>
+    striped &&
+    css`
+      &:nth-child(even) {
+        background: ${theme.colors.coconut};
+      }
     `}
 `

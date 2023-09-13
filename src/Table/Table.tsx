@@ -2,14 +2,11 @@ import React from 'react'
 import { TableHeader } from './components/TableHeader'
 import { TableRow } from './components/TableRow'
 import { StyledTable } from './components/commonComponents'
-import { TableColumn } from './types'
+import { TableProps } from './types'
 
 /**
  * Key features & Progess
  *
- * columnWidth - semi done
- * striped - not done
- * rowColor - not done
  * tableColor - not done
  * rowActions - not done
  * hideRowActions - not done
@@ -18,28 +15,25 @@ import { TableColumn } from './types'
  * subTableColor - not done
  * expandRow (?) - (can this be done with subTable work), semi - done
  */
-export interface TableProps<T> {
-  columns: TableColumn<T>[]
-  data: T[]
-  noHeader?: boolean
-  fixedHeader?: boolean
-  subTable?: boolean
-}
+
 export const Table = <T,>({
   columns,
   data,
   noHeader = false,
   fixedHeader = true,
-  subTable,
+  striped,
+  expandableRows,
+  expandableRowsComponent,
+  expandableRowsComponentProps,
 }: TableProps<T>) => {
   return (
-    <StyledTable subTable={subTable}>
+    <StyledTable expandableRows={expandableRows}>
       {!noHeader && (
         <thead>
           <TableHeader
             columns={columns}
             fixedHeader={fixedHeader}
-            subTable={subTable}
+            expandableRows={expandableRows}
           />
         </thead>
       )}
@@ -50,7 +44,10 @@ export const Table = <T,>({
             rowData={row}
             rowIndex={rowIndex}
             columns={columns}
-            subTable={subTable}
+            expandableRows={expandableRows}
+            expandableRowsComponent={expandableRowsComponent}
+            expandableRowsComponentProps={expandableRowsComponentProps}
+            striped={striped}
           />
         ))}
       </tbody>

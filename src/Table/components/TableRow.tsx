@@ -1,21 +1,17 @@
 import React, { useState } from 'react'
-import { Table } from '../Table'
-import { TableColumn } from '../types'
-import { TableCell } from './TableCell'
+import { TableRowProps } from '../types'
+import { ExpanderRow } from './ExpanderRow'
 import { StyledCell, StyledRow } from './commonComponents'
-
-interface TableRowProps<T> {
-  rowData: T
-  rowIndex: number
-  columns: TableColumn<T>[]
-  subTable?: boolean
-}
 
 export const TableRow = <T,>({
   rowData,
   rowIndex,
   columns,
   subTable,
+  striped,
+  expandableRows,
+  expandableRowsComponent,
+  expandableRowsComponentProps,
 }: TableRowProps<T>) => {
   const [expandedRows, setExpandedRows] = useState<number[]>([])
 
@@ -32,39 +28,32 @@ export const TableRow = <T,>({
       <StyledRow
         onClick={() => toggleRowExpansion(rowIndex)}
         subTable={subTable}
+        striped={striped}
       >
         {columns.map((column, columnIndex) => {
           let cellContent: React.ReactNode
           if (column.cell) {
             cellContent = column.cell(rowData, rowIndex, column, rowIndex)
-          } else if (column.selector) {
-            const selectorResult = column.selector(rowData)
-            if (
-              typeof selectorResult === 'string' ||
-              typeof selectorResult === 'number' ||
-              typeof selectorResult === 'boolean' ||
-              React.isValidElement(selectorResult)
-            ) {
-              cellContent = selectorResult
-            } else if (typeof selectorResult === 'bigint') {
-              cellContent = selectorResult.toString()
-            }
           }
 
-          return <TableCell key={columnIndex} content={cellContent} />
+          return <StyledCell key={columnIndex}>{cellContent}</StyledCell>
         })}
       </StyledRow>
-      {rowData.subRowData && expandedRows.includes(rowIndex) && (
-        <StyledRow key={`${rowIndex}-subTable`} subTable={true}>
-          <StyledCell colSpan={columns.length} subTable={true}>
-            <Table
-              data={rowData.subRowData}
-              columns={columns}
-              subTable={true}
-            />
-          </StyledCell>
-        </StyledRow>
-      )}
+
+      {expandableRows &&
+        expandableRowsComponent &&
+        expandedRows.includes(rowIndex) &&
+        rowData && (
+          <StyledRow key={`${rowIndex}-subTable`} subTable={true}>
+            <StyledCell colSpan={columns.length} subTable={true}>
+              <ExpanderRow
+                data={rowData}
+                ExpanderComponent={expandableRowsComponent}
+                expanderComponentProps={expandableRowsComponentProps}
+              />
+            </StyledCell>
+          </StyledRow>
+        )}
     </>
   )
 }

@@ -7,8 +7,8 @@ import React, {
   useState,
 } from 'react'
 import styled, { css } from 'styled-components'
-import { useEventListener } from '../hooks'
 import { Text } from '../Text'
+import { useEventListener } from '../hooks'
 import { theme } from '../theme'
 
 type Position = 'top' | 'bottom' | 'left' | 'right'
@@ -293,6 +293,7 @@ export const Tip = styled.div<{
   transition: opacity 0.2s ease-in-out;
   pointer-events: none;
   cursor: default;
+  z-index: 10;
 
   left: 50%;
   transform: translateX(-50%);
