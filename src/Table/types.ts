@@ -10,6 +10,7 @@ export type TableStylesProps = {
   headerColor?: Color
   rowColor?: Color
   minWidth?: string
+  rowPadding?: string
 }
 
 export type Primitive = string | number | boolean | bigint
@@ -57,9 +58,13 @@ interface CommonTableProps<T> {
   headerColor?: Color
   rowColor?: Color
   subTable?: ReactElement
-  subRows?: { rows: (rowData: T) => ReactElement; showOnExpand?: boolean }
+  subRows?: {
+    rows: (rowData: T) => ReactElement | ReactElement[]
+    showOnExpand?: boolean
+  }
   rowActions?: RowAction<T>[]
   rowActionsMinWidth?: string
+  rowPadding?: string
 }
 
 export interface TableProps<T> extends CommonTableProps<T> {

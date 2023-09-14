@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { ReactElement, ReactNode, useState } from 'react'
+import { isMappedReactElement, isReactElement } from '../helpers'
 import { TableRowProps } from '../types'
 import { RowActions } from './RowActions'
 import { StyledCell, StyledRow } from './commonComponents'
@@ -12,6 +13,7 @@ export const TableRow = <T,>({
   striped,
   rowActions,
   rowColor,
+  rowPadding,
   expandable,
 }: TableRowProps<T>) => {
   const [expandedRows, setExpandedRows] = useState<number[]>([])
@@ -24,16 +26,22 @@ export const TableRow = <T,>({
     )
   }
 
+  const subRowsData = subRows?.rows(rowData)
+
   return (
     <>
       <StyledRow striped={striped} rowColor={rowColor}>
         {columns.map((column, columnIndex) => {
-          let cellContent: React.ReactNode
+          let cellContent: ReactNode
           if (column.cell) {
             cellContent = column.cell(rowData, rowIndex, column, rowIndex)
           }
 
-          return <StyledCell key={columnIndex}>{cellContent}</StyledCell>
+          return (
+            <StyledCell key={columnIndex} rowPadding={rowPadding}>
+              {cellContent}
+            </StyledCell>
+          )
         })}
 
         {rowActions && (
@@ -47,11 +55,27 @@ export const TableRow = <T,>({
         )}
       </StyledRow>
 
-      {subRows && subRows.rows(rowData)}
+      {subRows &&
+        subRowsData &&
+        isReactElement(subRowsData) &&
+        React.cloneElement(subRowsData as ReactElement, {
+          rowPadding: rowPadding,
+        })}
+
+      {subRows &&
+        subRowsData &&
+        isMappedReactElement(subRowsData) &&
+        (subRowsData as ReactElement[]).map((row) =>
+          React.cloneElement(row, {
+            rowPadding: rowPadding,
+          }),
+        )}
 
       {subTable && expandedRows.includes(rowIndex) && (
         <StyledCell colSpan={rowActions ? columns.length + 1 : columns.length}>
-          {subTable}
+          {React.cloneElement(subTable, {
+            rowPadding: rowPadding,
+          })}
         </StyledCell>
       )}
     </>

@@ -4,6 +4,7 @@ import { Box } from '../../Box'
 import { Button } from '../../Button'
 import { IconStrict } from '../../IconStrict'
 import { focusOutlineStyle } from '../../utils/focusOutline'
+import { isReactElement } from '../helpers'
 import { RowActionsProps } from '../types'
 import { StyledCell } from './commonComponents'
 
@@ -14,13 +15,9 @@ export const RowActions = <T,>({
   isExpanded,
   toggleExpansion,
 }: RowActionsProps<T>) => {
-  const isReactElement = (obj: unknown): obj is React.ReactElement => {
-    return React.isValidElement(obj)
-  }
-
   return (
     <StyledCell rowActions={Boolean(rowActions)}>
-      <Box flex alignItems="center">
+      <Box flex alignItems="center" justifyContent="flex-end">
         {rowActions?.map((action, actionIndex) => {
           if (!action.showCondition || action.showCondition(rowData)) {
             return (
@@ -75,7 +72,7 @@ const Wrapper = styled(Box)`
 
 const CaretIcon = styled(IconStrict)<{ isOpen?: boolean }>(
   ({ isOpen }) => `
-    transform: ${isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
-    transition: transform 0.6s ease;
+    transform: ${isOpen ? 'rotate(90deg)' : 'rotate(0deg)'};
+    transition: transform 0.3s ease;
   `,
 )

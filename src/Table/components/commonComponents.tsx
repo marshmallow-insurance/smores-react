@@ -8,6 +8,7 @@ export const StyledTable = styled.table<TableStylesProps>`
   border-collapse: collapse;
   overflow: auto;
   background: ${theme.colors.coconut};
+  border-spacing: 30px;
 `
 
 export const StyledHeaderCell = styled.th<TableStylesProps>`
@@ -17,7 +18,7 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
   z-index: 2;
   text-align: left;
   vertical-align: bottom;
-  padding: 12px;
+  padding: 8px;
   ${fontStyleMapping['label']};
 
   ${({ headerColor }) =>
@@ -34,16 +35,20 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
 `
 
 export const StyledCell = styled.td<TableStylesProps>`
-  padding: 12px;
+  padding: 8px;
+  vertical-align: middle;
 
   ${({ rowActions }) =>
     rowActions &&
     css`
       position: sticky;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
       right: 0;
+    `};
+
+  ${({ rowPadding }) =>
+    rowPadding &&
+    css`
+      padding: ${rowPadding};
     `};
 `
 

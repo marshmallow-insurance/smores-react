@@ -21,6 +21,7 @@ import { TableProps } from './types'
  * @property {boolean} [subRows.showOnExpand=false] - If true, the sub rows will only be shown when the row is expanded.
  * @property {RowAction<T>[]} [rowActions] - Array of actions that can be performed on each row.
  * @property {string} [rowActionsMinWidth] - The minimum width for the row actions column.
+ * @property {string} [rowPadding] - The padding for each row, essentially the height
  */
 export const Table = <T,>({
   columns,
@@ -34,6 +35,7 @@ export const Table = <T,>({
   striped,
   rowActions,
   rowActionsMinWidth,
+  rowPadding,
 }: TableProps<T>) => {
   return (
     <StyledTable>
@@ -59,6 +61,7 @@ export const Table = <T,>({
             subTable={subTable}
             subRows={subRows}
             rowColor={rowColor}
+            rowPadding={rowPadding}
             expandable={expandable}
           />
         ))}

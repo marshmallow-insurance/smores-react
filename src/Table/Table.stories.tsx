@@ -59,4 +59,5 @@ Default.args = {
   rowColor: 'custard',
   headerColor: 'mascarpone',
   rowActions: rowActions,
+  rowPadding: '4px',
 }
