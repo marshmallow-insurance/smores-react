@@ -1,10 +1,27 @@
-## [3.1.1] - 2023-09-07
+## [3.1.5] - 2023-09-15
 ### Changed
 - adds Logo component
 - adds fallbackStyle to Tooltip
 - adds resultsBorder to search input
 - adds onBlur to radio group
 - adds fallbackStyle to Datepicker
+
+## [3.1.4] - 2023-09-14
+### Changed
+- revert jest-config & babel-config back to modules
+
+## [3.1.3] - 2023-09-14
+### Changed
+- undoing type: module in package.json
+
+## [3.1.2] - 2023-09-14
+### Changed
+- re-exporting removed props
+
+
+## [3.1.1] - 2023-09-14
+### Changed
+- adds tel type to TextField input 
 
 ## [3.1.0] - 2023-08-22
 ### Changed
@@ -669,8 +686,13 @@
 ### Changed
 - Updated gap and styles on Row component
 
+
+[3.1.5]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.4...v3.1.5
+[3.1.4]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.3...v3.1.4
+[3.1.3]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.2...v3.1.3
+[3.1.2]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.1...v3.1.2
 [3.1.1]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.0...v3.1.1
-[3.1.0]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.6...v3.1.0
+[3.1.0]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.6...v3.1.1
 [3.0.6]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.5...v3.0.6
 [3.0.5]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.4...v3.0.5
 [3.0.4]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.3...v3.0.4
