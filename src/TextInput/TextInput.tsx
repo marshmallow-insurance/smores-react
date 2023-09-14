@@ -11,7 +11,7 @@ import {
 } from '../fields/components/CommonInput'
 
 interface Props extends CommonFieldProps {
-  type?: 'text' | 'email' | 'password' | 'time' | 'date'
+  type?: 'text' | 'email' | 'password' | 'time' | 'date' | 'tel'
   placeholder: string
   name?: string
   value: string
