@@ -27,6 +27,11 @@ export const TableRow = <T,>({
   }
 
   const subRowsData = subRows?.rows(rowData)
+  const subTableData = subTable?.table(rowData)
+  const showSubRowsOnExpand =
+    subRows?.showOnExpand && subRows?.showOnExpand(rowData)
+  const showSubTableOnExpand =
+    subTable?.showOnExpand && subTable?.showOnExpand(rowData)
 
   return (
     <>
@@ -55,8 +60,41 @@ export const TableRow = <T,>({
         )}
       </StyledRow>
 
+      {expandedRows.includes(rowIndex) && (
+        <>
+          {subRows &&
+            subRowsData &&
+            showSubRowsOnExpand &&
+            isReactElement(subRowsData) &&
+            React.cloneElement(subRowsData as ReactElement, {
+              rowPadding: rowPadding,
+            })}
+
+          {subRows &&
+            subRowsData &&
+            showSubRowsOnExpand &&
+            isMappedReactElement(subRowsData) &&
+            (subRowsData as ReactElement[]).map((row) =>
+              React.cloneElement(row, {
+                rowPadding: rowPadding,
+              }),
+            )}
+
+          {subTable && showSubTableOnExpand && subTableData && (
+            <StyledCell
+              colSpan={rowActions ? columns.length + 1 : columns.length}
+            >
+              {React.cloneElement(subTableData, {
+                rowPadding: rowPadding,
+              })}
+            </StyledCell>
+          )}
+        </>
+      )}
+
       {subRows &&
         subRowsData &&
+        !showSubRowsOnExpand &&
         isReactElement(subRowsData) &&
         React.cloneElement(subRowsData as ReactElement, {
           rowPadding: rowPadding,
@@ -64,6 +102,7 @@ export const TableRow = <T,>({
 
       {subRows &&
         subRowsData &&
+        !showSubRowsOnExpand &&
         isMappedReactElement(subRowsData) &&
         (subRowsData as ReactElement[]).map((row) =>
           React.cloneElement(row, {
@@ -71,9 +110,9 @@ export const TableRow = <T,>({
           }),
         )}
 
-      {subTable && expandedRows.includes(rowIndex) && (
+      {subTable && subTableData && !showSubTableOnExpand && (
         <StyledCell colSpan={rowActions ? columns.length + 1 : columns.length}>
-          {React.cloneElement(subTable, {
+          {React.cloneElement(subTableData, {
             rowPadding: rowPadding,
           })}
         </StyledCell>

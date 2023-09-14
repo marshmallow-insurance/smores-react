@@ -57,10 +57,13 @@ interface CommonTableProps<T> {
   expandable?: (rowData: T) => boolean
   headerColor?: Color
   rowColor?: Color
-  subTable?: ReactElement
+  subTable?: {
+    table: (rowData: T) => ReactElement
+    showOnExpand?: (rowData: T) => boolean
+  }
   subRows?: {
     rows: (rowData: T) => ReactElement | ReactElement[]
-    showOnExpand?: boolean
+    showOnExpand?: (rowData: T) => boolean
   }
   rowActions?: RowAction<T>[]
   rowActionsMinWidth?: string

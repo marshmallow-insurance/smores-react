@@ -29,16 +29,21 @@ Default.args = {
   columns: columns,
   data,
   expandable: () => true,
-  subTable: (
-    <Table
-      columns={columnsV2}
-      data={data}
-      headerColor="mascarpone"
-      rowColor="matcha"
-      fixedHeader={false}
-      rowActions={rowActions}
-    />
-  ),
+  subTable: {
+    table: () => {
+      return (
+        <Table
+          columns={columnsV2}
+          data={data}
+          headerColor="mascarpone"
+          rowColor="matcha"
+          fixedHeader={false}
+          rowActions={rowActions}
+        />
+      )
+    },
+    showOnExpand: () => true,
+  },
   subRows: {
     rows: (row: DataRow) => {
       if (!row.subRowData) return
@@ -55,6 +60,7 @@ Default.args = {
         )
       })
     },
+    showOnExpand: () => false,
   },
   rowColor: 'custard',
   headerColor: 'mascarpone',
