@@ -16,8 +16,8 @@ export type Primitive = string | number | boolean | bigint
 
 export type RowAction<T> = {
   //NOTE: what can i rename this too?
-  onClick: (rowData: T) => void
   label?: ReactElement
+  onClick: (rowData: T) => void
   iconButton?: Pick<
     IconStrictProps,
     'size' | 'render' | 'iconColor' | 'backgroundColor'
