@@ -198,7 +198,8 @@ EverythingTable.args = {
             rowIndex={rowIndex}
             rowData={row}
             columns={columns}
-            rowColor="chia"
+            rowColor="cream"
+            rowBorderColor="chia"
             rowActions={rowActions}
           />
         )
