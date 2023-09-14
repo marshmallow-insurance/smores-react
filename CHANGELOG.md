@@ -1,3 +1,7 @@
+## [3.1.1] - 2023-09-14
+### Changed
+- adds tel type to TextField input 
+
 ## [3.1.0] - 2023-08-22
 ### Changed
 - converts use of storybook webpack to use vite webpack
