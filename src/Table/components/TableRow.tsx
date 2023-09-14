@@ -10,9 +10,10 @@ export const TableRow = <T,>({
   columns,
   subRows,
   subTable,
-  striped,
+  stripedColor,
   rowActions,
   rowColor,
+  rowBorderColor,
   rowPadding,
   showActions,
   expandable,
@@ -39,7 +40,11 @@ export const TableRow = <T,>({
 
   return (
     <>
-      <StyledRow striped={striped} rowColor={rowColor}>
+      <StyledRow
+        stripedColor={stripedColor}
+        rowColor={rowColor}
+        rowBorderColor={rowBorderColor}
+      >
         {columns.map((column, columnIndex) => {
           let cellContent: ReactNode
           if (column.cell) {

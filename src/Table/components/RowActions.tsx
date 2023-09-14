@@ -22,7 +22,7 @@ export const RowActions = <T,>({
           rowActions?.map((action, actionIndex) => {
             if (!action.showCondition || action.showCondition(rowData)) {
               return (
-                <Wrapper flex key={actionIndex} mr="8px">
+                <Wrapper flex key={actionIndex}>
                   {isReactElement(action.label) &&
                     React.cloneElement(action.label, {
                       onClick: () => action.onClick(rowData),
@@ -64,6 +64,11 @@ export const RowActions = <T,>({
 
 const Wrapper = styled(Box)`
   white-space: nowrap;
+  margin-right: 8px;
+
+  &: last-child {
+    margin-right: 0px;
+  }
 
   .reactElementRowAction {
     cursor: pointer;

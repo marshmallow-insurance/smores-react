@@ -5,10 +5,11 @@ import { Color } from '../theme'
 
 export type TableStylesProps = {
   fixedHeader?: boolean
-  striped?: boolean
+  stripedColor?: Color
   stickyCell?: boolean
   headerColor?: Color
   rowColor?: Color
+  rowBorderColor?: Color
   minWidth?: string
   rowPadding?: string
 }
@@ -53,10 +54,11 @@ export interface TableColumn<T> {
 interface CommonTableProps<T> {
   columns: TableColumn<T>[]
   fixedHeader?: boolean
-  striped?: boolean
+  stripedColor?: Color
   expandable?: (rowData: T) => boolean
   headerColor?: Color
   rowColor?: Color
+  rowBorderColor?: Color
   subTable?: {
     table: (rowData: T) => ReactElement
     showOnExpand?: (rowData: T) => boolean

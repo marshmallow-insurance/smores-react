@@ -26,46 +26,10 @@ const Wrapper = styled(Box)`
 export const Default = Template.bind({})
 
 Default.args = {
+  rowPadding: '12px',
   columns: columns,
   data,
-  expandable: () => true,
-  subTable: {
-    table: () => {
-      return (
-        <Table
-          columns={columnsV2}
-          data={data}
-          headerColor="mascarpone"
-          rowColor="matcha"
-          fixedHeader={false}
-          rowActions={rowActions}
-        />
-      )
-    },
-    showOnExpand: () => true,
-  },
-  subRows: {
-    rows: (row: DataRow) => {
-      if (!row.subRowData) return
-      return row.subRowData.map((row, rowIndex) => {
-        return (
-          <TableRow
-            key={rowIndex}
-            rowIndex={rowIndex}
-            rowData={row}
-            columns={columns}
-            rowColor="chia"
-            rowActions={rowActions}
-          />
-        )
-      })
-    },
-    showOnExpand: () => false,
-  },
-  rowColor: 'custard',
-  headerColor: 'mascarpone',
-  rowActions: rowActions,
-  rowPadding: '4px',
+  fixedHeader: true,
 }
 
 export const BasicTable = Template.bind({})
@@ -158,6 +122,7 @@ SubTable.args = {
   rowPadding: '12px',
   columns: columns.slice(0, 4),
   data,
+  stripedColor: 'cream',
   expandable: () => true,
   subTable: {
     table: () => {
@@ -174,4 +139,75 @@ SubTable.args = {
     },
     showOnExpand: () => true,
   },
+}
+
+export const RowActions = Template.bind({})
+
+RowActions.args = {
+  rowPadding: '12px',
+  columns: columns.slice(0, 4),
+  data,
+  stripedColor: 'cream',
+  expandable: () => true,
+  subTable: {
+    table: () => {
+      return (
+        <Table
+          columns={columnsV2}
+          data={data}
+          headerColor="mascarpone"
+          rowColor="matcha"
+          fixedHeader={false}
+          rowActions={rowActions}
+        />
+      )
+    },
+    showOnExpand: () => true,
+  },
+  rowActions: rowActions,
+}
+
+export const EverythingTable = Template.bind({})
+
+EverythingTable.args = {
+  columns: columns,
+  data,
+  expandable: () => true,
+  subTable: {
+    table: () => {
+      return (
+        <Table
+          columns={columnsV2}
+          data={data}
+          headerColor="mascarpone"
+          rowColor="matcha"
+          fixedHeader={false}
+          rowActions={rowActions}
+        />
+      )
+    },
+    showOnExpand: () => true,
+  },
+  subRows: {
+    rows: (row: DataRow) => {
+      if (!row.subRowData) return
+      return row.subRowData.map((row, rowIndex) => {
+        return (
+          <TableRow
+            key={rowIndex}
+            rowIndex={rowIndex}
+            rowData={row}
+            columns={columns}
+            rowColor="chia"
+            rowActions={rowActions}
+          />
+        )
+      })
+    },
+    showOnExpand: () => false,
+  },
+  rowColor: 'custard',
+  headerColor: 'mascarpone',
+  rowActions: rowActions,
+  rowPadding: '4px',
 }

@@ -54,7 +54,12 @@ export const StyledCell = styled.td<TableStylesProps>`
 
 export const StyledRow = styled.tr<TableStylesProps>`
   background: ${theme.colors.custard};
-  border-bottom: 1px solid ${theme.colors.oatmeal};
+
+  ${({ rowBorderColor }) =>
+    rowBorderColor &&
+    css`
+      border-bottom: 1px solid ${theme.colors[rowBorderColor]};
+    `}
 
   ${({ rowColor }) =>
     rowColor &&
@@ -62,11 +67,11 @@ export const StyledRow = styled.tr<TableStylesProps>`
       background: ${theme.colors[rowColor]};
     `}
 
-  ${({ striped }) =>
-    striped &&
+  ${({ stripedColor }) =>
+    stripedColor &&
     css`
       &:nth-child(even) {
-        background: ${theme.colors.coconut};
+        background: ${theme.colors[stripedColor]};
       }
     `}
 `

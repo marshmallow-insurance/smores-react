@@ -121,16 +121,23 @@ export const rowActions = [
   },
   {
     iconButton: {
-      render: 'car',
-      backgroundColor: 'coconut',
+      render: 'info',
+      backgroundColor: 'peanut',
       size: 36,
     },
-    onClick: () => exampleOnClick('car icon'),
+    onClick: () => exampleOnClick('info icon'),
     showCondition: (row: DataRow) => row.id === 1,
   },
   {
-    label: <Text typo="hero-alternate">text</Text>,
-    onClick: () => exampleOnClick('hero-alternate text'),
+    label: (
+      <Tag
+        bgColor="marshmallowPink"
+        borderColor="marshmallowPink"
+        color="liquorice"
+        label="anything"
+      />
+    ),
+    onClick: () => exampleOnClick('tag text'),
     showCondition: (row: DataRow) => row.id === 4,
   },
 ] as RowAction<DataRow>[]

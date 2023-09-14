@@ -9,15 +9,22 @@ import { TableProps } from './types'
  *
  * Caveats:
  * - subRows should always have the same columns as the Parent table.
+ * - stripedColor wont be applied to subRows or subTables.
+ * - rowActions will always need an onClick, this will be automatically passed onto the ReactNode you place & will be selectable
+ *
+ * Improvements:
+ * - It would be nice if we expandable logic inside this component, e.g the presence of certain props would automatically add this
+ * -
  *
  * @template T - The type of data the table displays.
  * @property {T[]} data - Array of data to be displayed in the table.
  * @property {TableColumn<T>[]} columns - Array of columns to display in the table.
  * @property {boolean} [fixedHeader=false] - If true, the table header will be fixed/sticky.
- * @property {boolean} [striped=false] - If true, the table rows will have alternating colors.
  * @property {function(T): boolean} [expandable] - A function to determine if a row is expandable.
- * @property {Color} [headerColor] - The color for the table header.
- * @property {Color} [rowColor] - The default color for each table row.
+ * @property {Color} [stripedColor] - If present, the table rows will have alternating colors.
+ * @property {Color} [headerColor='mascarpone'] - The color for the table header.
+ * @property {Color} [rowColor='custard'] - The default color for each table row.
+ * @property {Color} [rowBorderColor='oatmeal'] - The default color for each table row border.
  * @property {ReactElement} [subTable] - A React element to show when a row is expanded.
  * @property {Object} [subRows] - Settings for sub rows.
  * @property {function(T): ReactElement} subRows.rows - Function that returns a React element for the sub row.
@@ -33,9 +40,10 @@ export const Table = <T,>({
   expandable,
   subTable,
   subRows,
-  headerColor,
-  rowColor,
-  striped,
+  headerColor = 'mascarpone',
+  rowColor = 'custard',
+  stripedColor,
+  rowBorderColor = 'oatmeal',
   rowActions,
   rowActionsMinWidth,
   rowPadding,
@@ -61,10 +69,11 @@ export const Table = <T,>({
             rowIndex={rowIndex}
             columns={columns}
             rowActions={rowActions}
-            striped={striped}
+            stripedColor={stripedColor}
             subTable={subTable}
             subRows={subRows}
             rowColor={rowColor}
+            rowBorderColor={rowBorderColor}
             rowPadding={rowPadding}
             expandable={expandable}
           />
