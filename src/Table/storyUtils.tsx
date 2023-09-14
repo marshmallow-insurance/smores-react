@@ -14,6 +14,9 @@ export interface DataRow {
   subRowData?: DataRow[]
 }
 
+const exampleOnClick = (element: string) =>
+  alert(`onClick from ${element} is working`)
+
 export const data: DataRow[] = [
   {
     id: 1,
@@ -196,7 +199,7 @@ export const rowActions = [
       primary: true,
       smallButton: true,
     },
-    onClick: () => alert('this onClick is working'),
+    onClick: () => exampleOnClick('generic button'),
     showCondition: (row: DataRow) => row.id === 7,
   },
   {
@@ -205,12 +208,12 @@ export const rowActions = [
       backgroundColor: 'coconut',
       size: 36,
     },
-    onClick: () => alert('this onClick is working'),
+    onClick: () => exampleOnClick('car icon'),
     showCondition: (row: DataRow) => row.id === 1,
   },
   {
     label: <Text typo="hero-alternate">text</Text>,
-    onClick: () => alert('this onClick is working'),
+    onClick: () => exampleOnClick('hero-alternate text'),
     showCondition: (row: DataRow) => row.id === 4,
   },
 ] as RowAction<DataRow>[]
@@ -222,7 +225,15 @@ export const columns = [
     minWidth: '100px',
   },
   {
-    name: <Button textBtn>name btn</Button>,
+    name: (
+      <Button
+        primary
+        smallButton
+        onClick={() => exampleOnClick('column button')}
+      >
+        name btn
+      </Button>
+    ),
     cell: (row: DataRow) => row.name,
     minWidth: '100px',
   },
@@ -262,6 +273,7 @@ export const columns = [
     cell: (row: DataRow) => (
       <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
     ),
+    minWidth: '150px',
   },
   {
     name: 'another extra column',

@@ -16,6 +16,7 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
   top: 0;
   z-index: 2;
   text-align: left;
+  vertical-align: bottom;
   padding: 12px;
   ${fontStyleMapping['label']};
 
