@@ -12,8 +12,10 @@ export default {
   component: Table,
 }
 
-const Template = (props: TableProps<DataRow>) => (
-  <Wrapper height="400px" width="600px" mb="64px">
+const Template = (props: TableProps<DataRow>) => <Table {...props} />
+
+const TemplateWithWrapper = (props: TableProps<DataRow>) => (
+  <Wrapper height="400px" mb="64px">
     <Table {...props} />
   </Wrapper>
 )
@@ -40,7 +42,7 @@ BasicTable.args = {
   data,
 }
 
-export const OverflowTable = Template.bind({})
+export const OverflowTable = TemplateWithWrapper.bind({})
 
 OverflowTable.args = {
   rowPadding: '12px',
@@ -48,7 +50,7 @@ OverflowTable.args = {
   data,
 }
 
-export const StaticHeader = Template.bind({})
+export const StaticHeader = TemplateWithWrapper.bind({})
 
 StaticHeader.args = {
   rowPadding: '12px',
@@ -167,7 +169,7 @@ RowActions.args = {
   rowActions: rowActions,
 }
 
-export const EverythingTable = Template.bind({})
+export const EverythingTable = TemplateWithWrapper.bind({})
 
 EverythingTable.args = {
   columns: columns,

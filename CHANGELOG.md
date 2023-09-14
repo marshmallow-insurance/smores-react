@@ -1,4 +1,4 @@
-## [3.1.3] - 2023-09-14
+## [3.1.2] - 2023-09-14
 ### Changed
 - adds Table component
 - adds focusOutline to Button & IconStrict
