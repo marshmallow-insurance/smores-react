@@ -1,7 +1,11 @@
-## [3.1.1] - 2023-08-22
+## [3.1.3] - 2023-09-14
 ### Changed
 - adds Table component
 - adds focusOutline to Button & IconStrict
+
+## [3.1.1] - 2023-09-14
+### Changed
+- adds tel type to TextField input 
 
 ## [3.1.0] - 2023-08-22
 ### Changed
@@ -666,6 +670,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.1.2]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.1...v3.1.2
 [3.1.1]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.0...v3.1.1
 [3.1.0]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.6...v3.1.0
 [3.0.6]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.5...v3.0.6
