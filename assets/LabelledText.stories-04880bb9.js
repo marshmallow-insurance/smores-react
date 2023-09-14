@@ -1,9 +1,0 @@
-import{j as i,a as p,s as m}from"./styled-components.browser.esm-7270970d.js";import{T as d}from"./Text-b0b7d73b.js";import{B as c}from"./Box-c55ea5dd.js";import"./index-7c191284.js";import"./theme-9a9bdd1b.js";import"./polished.esm-21e06810.js";import"./focusOutline-b985b9a2.js";import"./Icon-aa08702e.js";const r=({label:a,children:s,...n})=>i(u,{...n,children:[p(d,{tag:"label",color:"sesame",typo:"label",children:a}),s]}),u=m(c)`
-  display: flex;
-  flex-direction: column;
-
-  label {
-    margin-bottom: 8px;
-  }
-`;try{r.displayName="LabelledText",r.__docgenInfo={description:"",displayName:"LabelledText",props:{label:{defaultValue:null,description:"",name:"label",required:!0,type:{name:"string"}},m:{defaultValue:null,description:"",name:"m",required:!1,type:{name:"ResponsiveProp<SpacingProp>"}},mx:{defaultValue:null,description:"",name:"mx",required:!1,type:{name:'ResponsiveProp<SpacingProp | "auto">'}},my:{defaultValue:null,description:"",name:"my",required:!1,type:{name:"ResponsiveProp<SpacingProp>"}},ml:{defaultValue:null,description:"",name:"ml",required:!1,type:{name:"ResponsiveProp<SpacingProp>"}},mr:{defaultValue:null,description:"",name:"mr",required:!1,type:{name:"ResponsiveProp<SpacingProp>"}},mt:{defaultValue:null,description:"",name:"mt",required:!1,type:{name:"ResponsiveProp<SpacingProp>"}},mb:{defaultValue:null,description:"",name:"mb",required:!1,type:{name:"ResponsiveProp<SpacingProp>"}}}}}catch{}const L={title:"LabelledText",component:r},f=a=>p(r,{...a,children:"Hideo Kojima"}),e=f.bind({});e.args={label:"Name"};var l,o,t;e.parameters={...e.parameters,docs:{...(l=e.parameters)==null?void 0:l.docs,source:{originalSource:"(props: LabelledTextProps) => <LabelledText {...props}>Hideo Kojima</LabelledText>",...(t=(o=e.parameters)==null?void 0:o.docs)==null?void 0:t.source}}};const S=["Default"];export{e as Default,S as __namedExportsOrder,L as default};
-//# sourceMappingURL=LabelledText.stories-04880bb9.js.map
