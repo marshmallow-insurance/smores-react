@@ -1,3 +1,7 @@
+## [3.1.3] - 2023-09-14
+### Changed
+- undoing type: module in package.json
+
 ## [3.1.2] - 2023-09-14
 ### Changed
 - re-exporting removed props
