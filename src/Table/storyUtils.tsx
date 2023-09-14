@@ -3,7 +3,6 @@ import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Tag } from '../Tag'
 import { Text } from '../Text'
-import { Tooltip } from '../Tooltip'
 import { RowAction } from './types'
 
 export interface DataRow {
@@ -187,9 +186,7 @@ export const columns = [
   {
     name: 'evolves',
     cell: (row: DataRow) => (
-      <Tooltip content="This pokemon evolves" position="top">
-        <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
-      </Tooltip>
+      <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
     ),
   },
   {
