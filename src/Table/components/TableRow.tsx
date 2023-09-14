@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import { TableRowProps } from '../types'
-import { ExpanderRow } from './ExpanderRow'
+import { RowActions } from './RowActions'
 import { StyledCell, StyledRow } from './commonComponents'
 
 export const TableRow = <T,>({
   rowData,
   rowIndex,
   columns,
+  subRows,
   subTable,
   striped,
-  expandableRows,
-  expandableRowsComponent,
-  expandableRowsComponentProps,
+  rowActions,
+  rowColor,
+  expandable,
 }: TableRowProps<T>) => {
   const [expandedRows, setExpandedRows] = useState<number[]>([])
 
@@ -25,11 +26,7 @@ export const TableRow = <T,>({
 
   return (
     <>
-      <StyledRow
-        onClick={() => toggleRowExpansion(rowIndex)}
-        subTable={subTable}
-        striped={striped}
-      >
+      <StyledRow striped={striped} rowColor={rowColor}>
         {columns.map((column, columnIndex) => {
           let cellContent: React.ReactNode
           if (column.cell) {
@@ -38,22 +35,25 @@ export const TableRow = <T,>({
 
           return <StyledCell key={columnIndex}>{cellContent}</StyledCell>
         })}
+
+        {rowActions && (
+          <RowActions
+            expandable={expandable}
+            rowActions={rowActions}
+            rowData={rowData}
+            isExpanded={expandedRows.includes(rowIndex)}
+            toggleExpansion={() => toggleRowExpansion(rowIndex)}
+          />
+        )}
       </StyledRow>
 
-      {expandableRows &&
-        expandableRowsComponent &&
-        expandedRows.includes(rowIndex) &&
-        rowData && (
-          <StyledRow key={`${rowIndex}-subTable`} subTable={true}>
-            <StyledCell colSpan={columns.length} subTable={true}>
-              <ExpanderRow
-                data={rowData}
-                ExpanderComponent={expandableRowsComponent}
-                expanderComponentProps={expandableRowsComponentProps}
-              />
-            </StyledCell>
-          </StyledRow>
-        )}
+      {subRows && subRows.rows(rowData)}
+
+      {subTable && expandedRows.includes(rowIndex) && (
+        <StyledCell colSpan={rowActions ? columns.length + 1 : columns.length}>
+          {subTable}
+        </StyledCell>
+      )}
     </>
   )
 }

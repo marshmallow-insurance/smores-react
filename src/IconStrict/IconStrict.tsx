@@ -1,9 +1,11 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 
+import { darken } from 'polished'
 import { Icon } from '../Icon'
-import { MarginProps } from '../utils/space'
 import { Color, theme } from '../theme'
+import { focusOutlineStyle } from '../utils/focusOutline'
+import { MarginProps } from '../utils/space'
 
 export type IconStrictProps = {
   /** className attribute to apply classes from props */
@@ -57,6 +59,13 @@ export const IconStrict: FC<IconStrictProps> = ({
     {...marginProps}
     backgroundColor={backgroundColor}
     onClick={handleClick}
+    tabIndex={handleClick ? 0 : undefined}
+    onKeyDown={(e) => {
+      if (!handleClick) return
+      if (e.key === 'Enter') {
+        handleClick()
+      }
+    }}
   >
     <Icon
       render={render}
@@ -86,5 +95,17 @@ const IconContainer = styled.div<IIconStrict>(
       ? theme.colors[backgroundColor]
       : 'none'};
     cursor: ${onClick ? 'pointer' : 'default'};
+
+    ${onClick &&
+    `
+    &:hover {
+      background-color: ${
+        backgroundColor ? darken(0.1, theme.colors[backgroundColor]) : 'none'
+      };
+    }
+      
+    `}
+
+    ${focusOutlineStyle}
   `,
 )

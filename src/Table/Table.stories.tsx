@@ -1,13 +1,15 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Box } from '../Box'
 import { Button } from '../Button'
 import { Tag } from '../Tag'
 import { Text } from '../Text'
 import { Tooltip } from '../Tooltip'
+import { theme } from '../theme'
 import { Table } from './Table'
 import { TableRow } from './components/TableRow'
 import { DataRow, data } from './storyUtils'
-import { ExpanderComponentProps, TableProps } from './types'
+import { TableProps } from './types'
 
 export default {
   title: 'Table',
@@ -15,10 +17,15 @@ export default {
 }
 
 const Template = (props: TableProps<DataRow>) => (
-  <Box height="400px">
+  <Wrapper height="400px" width="600px" mb="64px">
     <Table {...props} />
-  </Box>
+  </Wrapper>
 )
+
+const Wrapper = styled(Box)`
+  background: ${theme.colors.blueberry};
+  overflow: scroll;
+`
 
 export const Default = Template.bind({})
 
@@ -29,7 +36,7 @@ const columns = [
     minWidth: '100px',
   },
   {
-    name: 'name',
+    name: <Button textBtn>name btn</Button>,
     cell: (row: DataRow) => row.name,
     minWidth: '100px',
   },
@@ -107,41 +114,153 @@ const columns = [
   },
 ]
 
-export const ExpandableRowComponent: React.FC<
-  ExpanderComponentProps<DataRow>
-> = ({ data }) => {
-  if (!data.subRowData) return null
-  return (
-    <>
-      <TableRow rowData={data} rowIndex={1} columns={columns} />
-      <Table
-        columns={[
-          {
-            name: 'another extra column',
-            cell: (row: DataRow) => (
-              <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
-            ),
-            minWidth: '200px',
-          },
-          {
-            name: 'another extra column',
-            cell: (row: DataRow) => (
-              <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
-            ),
-            minWidth: '200px',
-          },
-        ]}
-        data={data.subRowData}
-        fixedHeader={false}
-      />
-    </>
-  )
-}
-
 Default.args = {
   columns,
   data,
-  noHeader: false,
-  expandableRows: true,
-  expandableRowsComponent: ExpandableRowComponent,
+  expandable: () => true,
+  subTable: (
+    <Table
+      columns={[
+        {
+          name: 'ability',
+          cell: (row: DataRow) => (
+            <Text typo="headline-small">{row.ability}</Text>
+          ),
+        },
+        {
+          name: 'evolves',
+          cell: (row: DataRow) => (
+            <Tooltip content="This pokemon evolves" position="top">
+              <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
+            </Tooltip>
+          ),
+        },
+        {
+          name: 'ability',
+          cell: (row: DataRow) => (
+            <Text typo="headline-small">{row.ability}</Text>
+          ),
+        },
+        {
+          name: 'evolves',
+          cell: (row: DataRow) => (
+            <Tooltip content="This pokemon evolves" position="top">
+              <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
+            </Tooltip>
+          ),
+        },
+        {
+          name: 'ability',
+          cell: (row: DataRow) => (
+            <Text typo="headline-small">{row.ability}</Text>
+          ),
+        },
+        {
+          name: 'evolves',
+          cell: (row: DataRow) => (
+            <Tooltip content="This pokemon evolves" position="top">
+              <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
+            </Tooltip>
+          ),
+        },
+      ]}
+      data={data}
+      headerColor="mascarpone"
+      rowColor="matcha"
+      fixedHeader={false}
+      rowActions={[
+        {
+          genericButton: {
+            children: 'generic button',
+            primary: true,
+            smallButton: true,
+          },
+          onClick: () => alert('this onClick is working'),
+          showCondition: (row: DataRow) => row.id === 7,
+        },
+        {
+          iconButton: {
+            render: 'car',
+            backgroundColor: 'coconut',
+            size: 36,
+          },
+          onClick: () => alert('this onClick is working'),
+          showCondition: (row: DataRow) => row.id === 1,
+        },
+        {
+          label: <Text typo="hero-alternate">text</Text>,
+          onClick: () => alert('this onClick is working'),
+          showCondition: (row: DataRow) => row.id === 4,
+        },
+      ]}
+    />
+  ),
+  subRows: {
+    rows: (row: DataRow) => {
+      if (!row.subRowData) return
+      return row.subRowData.map((row, rowIndex) => {
+        return (
+          <TableRow
+            key={rowIndex}
+            rowIndex={rowIndex}
+            rowData={row}
+            columns={columns}
+            rowColor="chia"
+            rowActions={[
+              {
+                genericButton: {
+                  children: 'generic button',
+                  primary: true,
+                  smallButton: true,
+                },
+                onClick: () => alert('this onClick is working'),
+                showCondition: (row: DataRow) => row.id === 7,
+              },
+              {
+                iconButton: {
+                  render: 'car',
+                  backgroundColor: 'coconut',
+                  size: 36,
+                },
+                onClick: () => alert('this onClick is working'),
+                showCondition: (row: DataRow) => row.id === 1,
+              },
+              {
+                label: <Text typo="hero-alternate">text</Text>,
+                onClick: () => alert('this onClick is working'),
+                showCondition: (row: DataRow) => row.id === 4,
+              },
+            ]}
+          />
+        )
+      })
+    },
+  },
+  rowColor: 'custard',
+  headerColor: 'mascarpone',
+  rowActions: [
+    {
+      genericButton: {
+        children: 'generic button',
+        primary: true,
+        smallButton: true,
+      },
+      onClick: () => alert('this onClick is working'),
+      showCondition: (row: DataRow) => row.id === 7,
+    },
+    {
+      iconButton: {
+        render: 'car',
+        backgroundColor: 'coconut',
+        size: 36,
+      },
+      onClick: () => alert('this onClick is working'),
+      showCondition: (row: DataRow) => row.id === 1,
+    },
+    {
+      label: <Text typo="hero-alternate">text</Text>,
+      onClick: () => alert('this onClick is working'),
+      showCondition: (row: DataRow) => row.id === 4,
+    },
+  ],
 }

@@ -5,20 +5,32 @@ import { StyledHeaderCell, StyledRow } from './commonComponents'
 export const TableHeader = <T,>({
   columns,
   fixedHeader,
-  subTable,
+  headerColor,
+  rowActions,
+  rowActionsMinWidth,
 }: TableHeaderProps<T>) => {
   return (
-    <StyledRow subTable={subTable}>
+    <StyledRow>
       {columns.map((column, columnIndex) => (
         <StyledHeaderCell
           key={columnIndex}
           fixedHeader={fixedHeader}
-          subTable={subTable}
           minWidth={column.minWidth}
+          headerColor={headerColor}
         >
           {column.name}
         </StyledHeaderCell>
       ))}
+      {rowActions && (
+        <StyledHeaderCell
+          fixedHeader={fixedHeader}
+          rowActions={true}
+          minWidth={rowActionsMinWidth}
+          headerColor={headerColor}
+        >
+          Actions
+        </StyledHeaderCell>
+      )}
     </StyledRow>
   )
 }

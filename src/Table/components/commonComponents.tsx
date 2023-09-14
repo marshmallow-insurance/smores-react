@@ -7,6 +7,7 @@ export const StyledTable = styled.table<TableStylesProps>`
   width: 100%;
   border-collapse: collapse;
   overflow: auto;
+  background: ${theme.colors.coconut};
 `
 
 export const StyledHeaderCell = styled.th<TableStylesProps>`
@@ -18,10 +19,10 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
   padding: 12px;
   ${fontStyleMapping['label']};
 
-  ${({ subTable }) =>
-    subTable &&
+  ${({ headerColor }) =>
+    headerColor &&
     css`
-      background: ${theme.colors.chia};
+      background: ${theme.colors[headerColor]};
     `}
 
   ${({ minWidth }) =>
@@ -33,21 +34,26 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
 
 export const StyledCell = styled.td<TableStylesProps>`
   padding: 12px;
-  ${({ subTable }) =>
-    subTable &&
+
+  ${({ rowActions }) =>
+    rowActions &&
     css`
-      padding: 12px;
-    `}
+      position: sticky;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      right: 0;
+    `};
 `
 
 export const StyledRow = styled.tr<TableStylesProps>`
   background: ${theme.colors.custard};
   border-bottom: 1px solid ${theme.colors.oatmeal};
 
-  ${({ subTable }) =>
-    subTable &&
+  ${({ rowColor }) =>
+    rowColor &&
     css`
-      background: ${theme.colors.cream};
+      background: ${theme.colors[rowColor]};
     `}
 
   ${({ striped }) =>
