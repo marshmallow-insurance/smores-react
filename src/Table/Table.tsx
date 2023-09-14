@@ -7,6 +7,9 @@ import { TableProps } from './types'
 /**
  * A table component that displays data with various features such as expandable rows, striped rows, and fixed headers.
  *
+ * Caveats:
+ * - subRows should always have the same columns as the Parent table.
+ *
  * @template T - The type of data the table displays.
  * @property {T[]} data - Array of data to be displayed in the table.
  * @property {TableColumn<T>[]} columns - Array of columns to display in the table.
@@ -46,6 +49,7 @@ export const Table = <T,>({
           subTable={subTable}
           headerColor={headerColor}
           rowActions={rowActions}
+          expandable={expandable}
           rowActionsMinWidth={rowActionsMinWidth}
         />
       </thead>

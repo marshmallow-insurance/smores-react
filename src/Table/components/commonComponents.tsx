@@ -38,8 +38,8 @@ export const StyledCell = styled.td<TableStylesProps>`
   padding: 8px;
   vertical-align: middle;
 
-  ${({ rowActions }) =>
-    rowActions &&
+  ${({ stickyCell }) =>
+    stickyCell &&
     css`
       position: sticky;
       right: 0;

@@ -6,7 +6,7 @@ import { Color } from '../theme'
 export type TableStylesProps = {
   fixedHeader?: boolean
   striped?: boolean
-  rowActions?: boolean
+  stickyCell?: boolean
   headerColor?: Color
   rowColor?: Color
   minWidth?: string
@@ -77,6 +77,7 @@ export interface TableProps<T> extends CommonTableProps<T> {
 export interface TableRowProps<T> extends CommonTableProps<T> {
   rowData: T
   rowIndex: number
+  showActions?: boolean
 }
 
 export interface RowActionsProps<T> {

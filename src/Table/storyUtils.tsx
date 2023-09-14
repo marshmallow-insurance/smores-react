@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '../Button'
+import { Icon } from '../Icon'
 import { Tag } from '../Tag'
 import { Text } from '../Text'
 import { Tooltip } from '../Tooltip'
@@ -106,90 +107,6 @@ export const data: DataRow[] = [
     ability: 'Intimidate',
     evolves: true,
   },
-  {
-    id: 27,
-    name: 'Sandshrew',
-    type: 'Ground',
-    ability: 'Sand Veil',
-    evolves: true,
-  },
-  {
-    id: 29,
-    name: 'Nidoran♀',
-    type: 'Poison',
-    ability: 'Poison Point',
-    evolves: true,
-  },
-  {
-    id: 32,
-    name: 'Nidoran♂',
-    type: 'Poison',
-    ability: 'Poison Point',
-    evolves: true,
-  },
-  {
-    id: 35,
-    name: 'Clefairy',
-    type: 'Fairy',
-    ability: 'Magic Guard',
-    evolves: true,
-  },
-  {
-    id: 37,
-    name: 'Vulpix',
-    type: 'Fire',
-    ability: 'Flash Fire',
-    evolves: true,
-  },
-  {
-    id: 39,
-    name: 'Jigglypuff',
-    type: 'Normal/Fairy',
-    ability: 'Cute Charm',
-    evolves: true,
-  },
-  {
-    id: 43,
-    name: 'Oddish',
-    type: 'Grass/Poison',
-    ability: 'Chlorophyll',
-    evolves: true,
-  },
-  {
-    id: 46,
-    name: 'Paras',
-    type: 'Bug/Grass',
-    ability: 'Dry Skin',
-    evolves: true,
-  },
-  {
-    id: 48,
-    name: 'Venonat',
-    type: 'Bug/Poison',
-    ability: 'Compound Eyes',
-    evolves: true,
-  },
-  {
-    id: 50,
-    name: 'Diglett',
-    type: 'Ground',
-    ability: 'Sand Force',
-    evolves: true,
-  },
-  {
-    id: 52,
-    name: 'Meowth',
-    type: 'Normal',
-    ability: 'Pickup',
-    evolves: true,
-  },
-  {
-    id: 54,
-    name: 'Psyduck',
-    type: 'Water',
-    ability: 'Cloud Nine',
-    evolves: true,
-  },
 ]
 
 export const rowActions = [
@@ -269,84 +186,55 @@ export const columns = [
     ),
   },
   {
-    name: 'exta column',
-    cell: (row: DataRow) => (
-      <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
-    ),
+    name: 'e.g1',
+    cell: () => 'example data',
     minWidth: '150px',
   },
   {
-    name: 'another extra column',
-    cell: (row: DataRow) => (
-      <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
-    ),
-    minWidth: '200px',
+    name: 'e.g2',
+    cell: () => 'example data2',
+    minWidth: '150px',
   },
   {
-    name: 'another extra column',
-    cell: (row: DataRow) => (
-      <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
-    ),
-    minWidth: '200px',
+    name: 'e.g3',
+    cell: () => 'example data3',
+    minWidth: '150px',
   },
   {
-    name: 'another extra column',
-    cell: (row: DataRow) => (
-      <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
-    ),
-    minWidth: '200px',
+    name: 'e.g4',
+    cell: () => 'example data4',
+    minWidth: '150px',
   },
   {
-    name: 'another extra column',
-    cell: (row: DataRow) => (
-      <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
-    ),
-    minWidth: '200px',
-  },
-  {
-    name: 'another extra column',
-    cell: (row: DataRow) => (
-      <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
-    ),
-    minWidth: '200px',
+    name: 'e.g5',
+    cell: () => 'example data5',
+    minWidth: '150px',
   },
 ]
 
 export const columnsV2 = [
   {
-    name: 'ability',
-    cell: (row: DataRow) => <Text typo="headline-small">{row.ability}</Text>,
+    name: 'name',
+    cell: (row: DataRow) => <Text typo="headline-small">{row.name}</Text>,
   },
   {
     name: 'evolves',
-    cell: (row: DataRow) => (
-      <Tooltip content="This pokemon evolves" position="top">
-        <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
-      </Tooltip>
-    ),
-  },
-  {
-    name: 'ability',
-    cell: (row: DataRow) => <Text typo="headline-small">{row.ability}</Text>,
-  },
-  {
-    name: 'evolves',
-    cell: (row: DataRow) => (
-      <Tooltip content="This pokemon evolves" position="top">
-        <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
-      </Tooltip>
-    ),
+    cell: () => <Icon render="plus-circle" size={16} />,
   },
   {
     name: 'ability',
     cell: (row: DataRow) => <Text typo="headline-small">{row.ability}</Text>,
   },
   {
-    name: 'evolves',
-    cell: (row: DataRow) => (
-      <Tooltip content="This pokemon evolves" position="top">
-        <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
-      </Tooltip>
-    ),
+    name: 'e.g1',
+    cell: () => 'example data',
+  },
+  {
+    name: 'e.g2',
+    cell: () => 'example data2',
+  },
+  {
+    name: 'e.g3',
+    cell: () => 'example data3',
   },
 ]

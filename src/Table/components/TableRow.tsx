@@ -14,6 +14,7 @@ export const TableRow = <T,>({
   rowActions,
   rowColor,
   rowPadding,
+  showActions,
   expandable,
 }: TableRowProps<T>) => {
   const [expandedRows, setExpandedRows] = useState<number[]>([])
@@ -33,6 +34,9 @@ export const TableRow = <T,>({
   const showSubTableOnExpand =
     subTable?.showOnExpand && subTable?.showOnExpand(rowData)
 
+  const showActionsCell = expandable || rowActions
+  const expandSubProp = showActionsCell ? columns.length + 1 : columns.length
+
   return (
     <>
       <StyledRow striped={striped} rowColor={rowColor}>
@@ -49,7 +53,7 @@ export const TableRow = <T,>({
           )
         })}
 
-        {rowActions && (
+        {(showActionsCell || showActions) && (
           <RowActions
             expandable={expandable}
             rowActions={rowActions}
@@ -77,13 +81,12 @@ export const TableRow = <T,>({
             (subRowsData as ReactElement[]).map((row) =>
               React.cloneElement(row, {
                 rowPadding: rowPadding,
+                showActions: showActionsCell,
               }),
             )}
 
           {subTable && showSubTableOnExpand && subTableData && (
-            <StyledCell
-              colSpan={rowActions ? columns.length + 1 : columns.length}
-            >
+            <StyledCell colSpan={expandSubProp}>
               {React.cloneElement(subTableData, {
                 rowPadding: rowPadding,
               })}
@@ -111,7 +114,7 @@ export const TableRow = <T,>({
         )}
 
       {subTable && subTableData && !showSubTableOnExpand && (
-        <StyledCell colSpan={rowActions ? columns.length + 1 : columns.length}>
+        <StyledCell colSpan={expandSubProp}>
           {React.cloneElement(subTableData, {
             rowPadding: rowPadding,
           })}

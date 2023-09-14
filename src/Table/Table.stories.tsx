@@ -67,3 +67,111 @@ Default.args = {
   rowActions: rowActions,
   rowPadding: '4px',
 }
+
+export const BasicTable = Template.bind({})
+
+BasicTable.args = {
+  rowPadding: '12px',
+  columns: columns.slice(0, 3),
+  data,
+}
+
+export const OverflowTable = Template.bind({})
+
+OverflowTable.args = {
+  rowPadding: '12px',
+  columns: columns,
+  data,
+}
+
+export const StaticHeader = Template.bind({})
+
+StaticHeader.args = {
+  rowPadding: '12px',
+  columns: columns,
+  data,
+  fixedHeader: false,
+}
+
+export const RowPadding = Template.bind({})
+
+RowPadding.args = {
+  rowPadding: '0px',
+  columns: columns.slice(0, 4),
+  data,
+}
+
+export const SubRows = Template.bind({})
+
+SubRows.args = {
+  rowPadding: '12px',
+  columns: columns.slice(0, 4),
+  data,
+  subRows: {
+    rows: (row: DataRow) => {
+      if (!row.subRowData) return
+      return row.subRowData.map((row, rowIndex) => {
+        return (
+          <TableRow
+            key={rowIndex}
+            rowIndex={rowIndex}
+            rowData={row}
+            columns={columns.slice(0, 4)}
+            rowColor="chia"
+          />
+        )
+      })
+    },
+    showOnExpand: () => false,
+  },
+}
+
+export const SubRowsShowOnExpand = Template.bind({})
+
+SubRowsShowOnExpand.args = {
+  rowPadding: '12px',
+  columns: columns.slice(0, 4),
+  data,
+  expandable: () => true,
+  subRows: {
+    rows: (row: DataRow) => {
+      if (!row.subRowData) return
+      return row.subRowData.map((row, rowIndex) => {
+        return (
+          <TableRow
+            key={rowIndex}
+            rowIndex={rowIndex}
+            rowData={row}
+            columns={columns.slice(0, 4)}
+            rowColor="chia"
+          />
+        )
+      })
+    },
+    showOnExpand: () => true,
+  },
+}
+
+export const SubTable = Template.bind({})
+
+SubTable.args = {
+  rowPadding: '12px',
+  columns: columns.slice(0, 4),
+  data,
+  expandable: () => true,
+  subTable: {
+    table: () => {
+      return (
+        <Table
+          columns={columnsV2}
+          data={data}
+          headerColor="mascarpone"
+          rowColor="matcha"
+          fixedHeader={false}
+          rowActions={rowActions}
+        />
+      )
+    },
+    showOnExpand: () => true,
+  },
+}

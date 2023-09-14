@@ -16,37 +16,38 @@ export const RowActions = <T,>({
   toggleExpansion,
 }: RowActionsProps<T>) => {
   return (
-    <StyledCell rowActions={Boolean(rowActions)}>
+    <StyledCell stickyCell={Boolean(rowActions) || Boolean(expandable)}>
       <Box flex alignItems="center" justifyContent="flex-end">
-        {rowActions?.map((action, actionIndex) => {
-          if (!action.showCondition || action.showCondition(rowData)) {
-            return (
-              <Wrapper flex key={actionIndex} mr="8px">
-                {isReactElement(action.label) &&
-                  React.cloneElement(action.label, {
-                    onClick: () => action.onClick(rowData),
-                    tabIndex: 0,
-                    className: 'reactElementRowAction',
-                  })}
-                {action.genericButton && !isReactElement(action.label) && (
-                  <Button
-                    {...action.genericButton}
-                    handleClick={() => action.onClick(rowData)}
-                  >
-                    {action.genericButton.children}
-                  </Button>
-                )}
-                {action.iconButton && (
-                  <IconStrict
-                    {...action.iconButton}
-                    handleClick={() => action.onClick(rowData)}
-                  />
-                )}
-              </Wrapper>
-            )
-          }
-          return null
-        })}
+        {rowActions &&
+          rowActions?.map((action, actionIndex) => {
+            if (!action.showCondition || action.showCondition(rowData)) {
+              return (
+                <Wrapper flex key={actionIndex} mr="8px">
+                  {isReactElement(action.label) &&
+                    React.cloneElement(action.label, {
+                      onClick: () => action.onClick(rowData),
+                      tabIndex: 0,
+                      className: 'reactElementRowAction',
+                    })}
+                  {action.genericButton && !isReactElement(action.label) && (
+                    <Button
+                      {...action.genericButton}
+                      handleClick={() => action.onClick(rowData)}
+                    >
+                      {action.genericButton.children}
+                    </Button>
+                  )}
+                  {action.iconButton && (
+                    <IconStrict
+                      {...action.iconButton}
+                      handleClick={() => action.onClick(rowData)}
+                    />
+                  )}
+                </Wrapper>
+              )
+            }
+            return null
+          })}
         {expandable && expandable(rowData) && (
           <CaretIcon
             render="caret"
