@@ -69,6 +69,11 @@ export const TableRow = <T,>({
         )}
       </StyledRow>
 
+      {/**
+       * This could be extracted out and cleaned up
+       * this section is for expanded rows only
+       * Items rendered here wont show unless expanded
+       */}
       {expandedRows.includes(rowIndex) && (
         <>
           {subRows &&
@@ -100,6 +105,12 @@ export const TableRow = <T,>({
         </>
       )}
 
+      {/**
+       * This could be extracted out and cleaned up
+       * this section is for rendering things under a row,
+       * without the need to expand.
+       * Items rendered here wont show when expanded
+       */}
       {subRows &&
         subRowsData &&
         !showSubRowsOnExpand &&

@@ -11,6 +11,7 @@ import { TableProps } from './types'
  * - subRows should always have the same columns as the Parent table.
  * - stripedColor wont be applied to subRows or subTables.
  * - rowActions will always need an onClick, this will be automatically passed onto the ReactNode you place & will be selectable
+ * - rows will scale depending on the cell content size
  *
  * Improvements:
  * - It would be nice if we expandable logic inside this component, e.g the presence of certain props would automatically add this

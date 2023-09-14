@@ -37,6 +37,7 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
 export const StyledCell = styled.td<TableStylesProps>`
   padding: 8px;
   vertical-align: middle;
+  white-space: nowrap;
 
   ${({ stickyCell }) =>
     stickyCell &&
