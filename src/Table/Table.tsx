@@ -22,6 +22,7 @@ import { TableProps } from './types'
  * @property {T[]} data - Array of data to be displayed in the table.
  * @property {TableColumn<T>[]} columns - Array of columns to display in the table.
  * @property {boolean} [fixedHeader=false] - If true, the table header will be fixed/sticky.
+ * @property {string} [headerHeight] - Sets the height of the header.
  * @property {function(T): boolean} [expandable] - A function to determine if a row is expandable.
  * @property {Color} [stripedColor] - If present, the table rows will have alternating colors.
  * @property {Color} [headerColor='mascarpone'] - The color for the table header.
@@ -33,8 +34,8 @@ import { TableProps } from './types'
  * @property {boolean} [subRows.showOnExpand=false] - If true, the sub rows will only be shown when the row is expanded.
  * @property {RowAction<T>[]} [rowActions] - Array of actions that can be performed on each row.
  * @property {string} [rowActionsMinWidth] - The minimum width for the row actions column.
- * @property {string} [rowPadding] - The padding for each row, essentially the height
- * @property {string} [noDataContent] - The text to show when there is no available data to map through
+ * @property {string} [rowPadding] - The padding for each row, essentially the height.
+ * @property {string} [noDataContent] - The text to show when there is no available data to map through.
  */
 export const Table = <T extends object>({
   columns,
