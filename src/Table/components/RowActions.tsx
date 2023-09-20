@@ -8,7 +8,7 @@ import { isReactElement } from '../helpers'
 import { RowActionsProps } from '../types'
 import { StyledCell } from './commonComponents'
 
-export const RowActions = <T,>({
+export const RowActions = <T extends object>({
   rowData,
   rowActions,
   expandable,
@@ -66,7 +66,7 @@ const Wrapper = styled(Box)`
   white-space: nowrap;
   margin-right: 8px;
 
-  &: last-child {
+  &:last-child {
     margin-right: 0px;
   }
 

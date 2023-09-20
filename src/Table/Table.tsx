@@ -34,7 +34,7 @@ import { TableProps } from './types'
  * @property {string} [rowActionsMinWidth] - The minimum width for the row actions column.
  * @property {string} [rowPadding] - The padding for each row, essentially the height
  */
-export const Table = <T,>({
+export const Table = <T extends object>({
   columns,
   data,
   fixedHeader = true,

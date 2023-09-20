@@ -4,7 +4,7 @@ import { TableRowProps } from '../types'
 import { RowActions } from './RowActions'
 import { StyledCell, StyledRow } from './commonComponents'
 
-export const TableRow = <T,>({
+export const TableRow = <T extends object>({
   rowData,
   rowIndex,
   columns,
