@@ -20,6 +20,8 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
   text-align: left;
   vertical-align: bottom;
   ${fontStyleMapping['label']};
+  padding-left: 8px;
+  padding-right: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
 
@@ -51,6 +53,8 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
 export const StyledCell = styled.td<TableStylesProps>`
   vertical-align: middle;
   overflow: hidden;
+  padding-left: 8px;
+  padding-right: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
 
