@@ -19,8 +19,9 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
   z-index: 2;
   text-align: left;
   vertical-align: bottom;
-  padding: 8px;
   ${fontStyleMapping['label']};
+  padding-top: 8px;
+  padding-bottom: 8px;
 
   ${({ headerColor }) =>
     headerColor &&
@@ -48,7 +49,6 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
 `
 
 export const StyledCell = styled.td<TableStylesProps>`
-  padding: 8px;
   vertical-align: middle;
   overflow: hidden;
 
@@ -75,7 +75,8 @@ export const StyledCell = styled.td<TableStylesProps>`
   ${({ rowPadding }) =>
     rowPadding &&
     css`
-      padding: ${rowPadding};
+      padding-top: ${rowPadding};
+      padding-bottom: ${rowPadding};
     `};
 
   ${({ maxWidth }) =>
