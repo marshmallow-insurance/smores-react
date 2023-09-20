@@ -1,10 +1,11 @@
-import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
+import React, { ButtonHTMLAttributes, FC, ReactNode, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
-import { theme } from '../theme'
 import { Box } from '../Box'
-import { Loader } from '../Loader'
 import { Icon as IconComponent } from '../Icon'
+import { Loader } from '../Loader'
+import { theme } from '../theme'
+import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
 type Props = {
@@ -148,6 +149,8 @@ const Container = styled(Box)<IButton>(
     font-size: 16px;
     opacity: ${disabled ? '0.5' : '1'};
     width: ${forcedWidth ? forcedWidth : 'auto'};
+
+    ${focusOutlineStyle}
 
     ${primary &&
     css`

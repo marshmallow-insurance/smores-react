@@ -1,3 +1,8 @@
+## [3.1.6] - 2023-09-20
+### Changed
+- adds Table component
+- adds focusOutline to Button & IconStrict
+
 ## [3.1.5] - 2023-09-15
 ### Changed
 - adds Logo component
@@ -686,7 +691,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
-
+[3.1.6]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.5...v3.1.6
 [3.1.5]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.4...v3.1.5
 [3.1.4]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.3...v3.1.4
 [3.1.3]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.2...v3.1.3

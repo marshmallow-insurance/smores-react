@@ -34,6 +34,11 @@ exports[`renders 1`] = `
   cursor: default;
 }
 
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
 <div
   class="c0"
   size="48"

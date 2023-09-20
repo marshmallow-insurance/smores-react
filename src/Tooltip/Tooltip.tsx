@@ -301,6 +301,7 @@ export const Tip = styled.div<{
   transition: opacity 0.2s ease-in-out;
   pointer-events: none;
   cursor: default;
+  z-index: 10;
 
   left: 50%;
   transform: translateX(-50%);
