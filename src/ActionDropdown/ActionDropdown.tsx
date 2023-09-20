@@ -2,9 +2,9 @@ import React, { FC, useState } from 'react'
 import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
-import { Text } from '../Text'
 import { Icon } from '../Icon'
-import { List, ActionListItem } from './List'
+import { Text } from '../Text'
+import { ActionListItem, List } from './List'
 
 import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
@@ -121,7 +121,7 @@ const OuterContainer = styled.div<IOpen>(
     max-height: ${open ? '235px' : '48px'};
     background-color: ${theme.colors.custard};
     overflow-y: ${open ? 'auto' : 'hidden'};
-    z-index: 2;
+    z-index: 4;
     transition: all 0.2s ease-in-out;
   `,
 )

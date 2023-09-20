@@ -106,7 +106,7 @@ exports[`renders 1`] = `
   max-height: 48px;
   background-color: #F1E9DC;
   overflow-y: hidden;
-  z-index: 2;
+  z-index: 4;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
