@@ -5,13 +5,13 @@ import React, {
   useMemo,
   useState,
 } from 'react'
+import { Box } from '../Box'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
+import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 import { SearchOptions } from './SearchOptions'
-import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
-import { Box } from '../Box'
 
 export type SearchInputItem = {
   label: string
@@ -27,6 +27,7 @@ export interface SearchInputProps extends CommonFieldProps {
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   value?: string
   resultsRelativePosition?: boolean
+  resultsBorder?: boolean
 }
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
@@ -44,6 +45,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       onFound,
       fallbackStyle,
       resultsRelativePosition = false,
+      resultsBorder = true,
       ...otherProps
     },
     ref,
@@ -145,6 +147,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             displayedList={filteredList}
             onSelect={handleSelect}
             positionRelative={resultsRelativePosition}
+            resultsBorder={resultsBorder}
           />
         )}
       </Field>

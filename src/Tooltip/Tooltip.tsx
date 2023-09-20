@@ -21,6 +21,7 @@ export interface TooltipProps {
   maxWidth?: number
   title?: string
   underline?: boolean
+  fallbackStyle?: boolean
   defaultArrowPosition?: ArrowPosition
 }
 
@@ -30,6 +31,7 @@ export const Tooltip: FC<TooltipProps> = ({
   content,
   maxWidth = 500,
   underline = false,
+  fallbackStyle = false,
   defaultArrowPosition = 'center',
 }) => {
   const tipContainer = useRef<HTMLDivElement>(null)
@@ -136,14 +138,19 @@ export const Tooltip: FC<TooltipProps> = ({
         arrowPosition={arrowPosition}
         ref={tipContainer}
         maxWidth={maxWidth}
+        fallbackStyle={fallbackStyle}
       >
         {title && (
-          <Text tag="h5" typo="desc-medium" color="liquorice">
+          <Text
+            tag="h5"
+            typo="desc-medium"
+            color={fallbackStyle ? 'cream' : 'liquorice'}
+          >
             {title}
           </Text>
         )}
         {(typeof content === 'string' && (
-          <Text typo="desc-light" color="liquorice">
+          <Text typo="desc-light" color={fallbackStyle ? 'cream' : 'liquorice'}>
             {content}
           </Text>
         )) ||
@@ -282,6 +289,7 @@ export const Tip = styled.div<{
   position: Position
   arrowPosition: ArrowPosition
   maxWidth?: number
+  fallbackStyle?: boolean
 }>`
   position: absolute;
   margin: auto;
@@ -314,4 +322,13 @@ export const Tip = styled.div<{
     border-color: transparent ${theme.colors.custard} transparent transparent;
     position: absolute;
   }
+
+  ${({ fallbackStyle }) =>
+    fallbackStyle &&
+    css`
+      background: ${theme.colors.feijoa};
+      &:before {
+        border-color: transparent ${theme.colors.feijoa} transparent transparent;
+      }
+    `};
 `
