@@ -51,6 +51,8 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
 export const StyledCell = styled.td<TableStylesProps>`
   vertical-align: middle;
   overflow: hidden;
+  padding-top: 8px;
+  padding-bottom: 8px;
 
   ${({ noWrapContent }) =>
     noWrapContent &&
