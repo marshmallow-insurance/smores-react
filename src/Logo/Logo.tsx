@@ -2,8 +2,25 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Box } from '../Box'
 
+const typeColorScheme = {
+  positive1: {
+    text: '#292924',
+    logo: { body: '#FF88C8', eyes: '#F8F2EA', pupils: '#292924' },
+  },
+  positive2: {
+    text: '#292924',
+    logo: { body: '#292924', eyes: '#F8F2EA', pupils: '#292924' },
+  },
+  negative1: {
+    text: '#F8F2EA',
+    logo: { body: '#FF88C8', eyes: '#F8F2EA', pupils: '#292924' },
+  },
+}
+
+type LogoType = keyof typeof typeColorScheme
+
 export type LogoProps = {
-  type?: 'positive1' | 'positive2' | 'negative1'
+  type?: LogoType
   showText?: boolean
   small?: boolean
 }
@@ -15,20 +32,7 @@ export const Logo: FC<LogoProps> = ({
 }) => {
   const viewBox = showText ? '0 0 608 66' : '0 0 84 66'
   const size = small ? '16px' : '32px'
-  const typeColorScheme = {
-    positive1: {
-      text: '#292924',
-      logo: { body: '#FF88C8', eyes: '#F8F2EA', pupils: '#292924' },
-    },
-    positive2: {
-      text: '#292924',
-      logo: { body: '#292924', eyes: '#F8F2EA', pupils: '#292924' },
-    },
-    negative1: {
-      text: '#F8F2EA',
-      logo: { body: '#FF88C8', eyes: '#F8F2EA', pupils: '#292924' },
-    },
-  }
+
   const getTypeColorScheme = typeColorScheme[type]
 
   return (
