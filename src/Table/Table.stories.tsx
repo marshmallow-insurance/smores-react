@@ -29,7 +29,7 @@ export const Default = Template.bind({})
 
 Default.args = {
   rowPadding: '12px',
-  columns: columns,
+  columns: columns.slice(0, 6),
   data,
   fixedHeader: true,
 }
@@ -42,6 +42,14 @@ BasicTable.args = {
   data,
 }
 
+export const TrucateContent = Template.bind({})
+
+TrucateContent.args = {
+  rowPadding: '12px',
+  columns: columns,
+  data,
+}
+
 export const OverflowTable = TemplateWithWrapper.bind({})
 
 OverflowTable.args = {
@@ -50,10 +58,44 @@ OverflowTable.args = {
   data,
 }
 
+export const NoDataTable = TemplateWithWrapper.bind({})
+
+NoDataTable.args = {
+  rowPadding: '12px',
+  columns: columns.slice(0, 4),
+  data: [],
+}
+
+const BorderBox = styled(Box)`
+  border: 1px dashed ${theme.colors.oatmeal};
+`
+export const CustomNoDataTable = TemplateWithWrapper.bind({})
+
+CustomNoDataTable.args = {
+  rowPadding: '0px',
+  columns: columns.slice(0, 5),
+  data: [],
+  noDataContent: (
+    <BorderBox flex justifyContent="center" my="24px" p="48px">
+      No data
+    </BorderBox>
+  ),
+}
+
 export const StaticHeader = TemplateWithWrapper.bind({})
 
 StaticHeader.args = {
   rowPadding: '12px',
+  columns: columns,
+  data,
+  fixedHeader: false,
+}
+
+export const ReallyLargeHeader = TemplateWithWrapper.bind({})
+
+ReallyLargeHeader.args = {
+  rowPadding: '12px',
+  headerHeight: '120px',
   columns: columns,
   data,
   fixedHeader: false,
@@ -98,7 +140,7 @@ SubRowsShowOnExpand.args = {
   rowPadding: '12px',
   columns: columns.slice(0, 4),
   data,
-  expandable: () => true,
+  expandable: (row: DataRow) => !!row.subRowData,
   subRows: {
     rows: (row: DataRow) => {
       if (!row.subRowData) return

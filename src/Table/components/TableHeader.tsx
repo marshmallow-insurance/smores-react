@@ -7,6 +7,7 @@ export const TableHeader = <T extends object>({
   fixedHeader,
   headerColor,
   rowActions,
+  headerHeight,
   expandable,
   rowActionsMinWidth,
 }: TableHeaderProps<T>) => {
@@ -16,7 +17,9 @@ export const TableHeader = <T extends object>({
         <StyledHeaderCell
           key={columnIndex}
           fixedHeader={fixedHeader}
+          headerHeight={headerHeight}
           minWidth={column.minWidth}
+          maxWidth={column.maxWidth}
           headerColor={headerColor}
         >
           {column.name}

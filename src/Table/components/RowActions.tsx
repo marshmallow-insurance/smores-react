@@ -23,13 +23,13 @@ export const RowActions = <T extends object>({
             if (!action.showCondition || action.showCondition(rowData)) {
               return (
                 <Wrapper flex key={actionIndex}>
-                  {isReactElement(action.label) &&
-                    React.cloneElement(action.label, {
+                  {isReactElement(action.element) &&
+                    React.cloneElement(action.element, {
                       onClick: () => action.onClick(rowData),
                       tabIndex: 0,
                       className: 'reactElementRowAction',
                     })}
-                  {action.genericButton && !isReactElement(action.label) && (
+                  {action.genericButton && !isReactElement(action.element) && (
                     <Button
                       {...action.genericButton}
                       handleClick={() => action.onClick(rowData)}

@@ -1,7 +1,8 @@
 import React from 'react'
+import { Text } from '../Text'
 import { TableHeader } from './components/TableHeader'
 import { TableRow } from './components/TableRow'
-import { StyledTable } from './components/commonComponents'
+import { StyledCell, StyledTable } from './components/commonComponents'
 import { TableProps } from './types'
 
 /**
@@ -33,6 +34,7 @@ import { TableProps } from './types'
  * @property {RowAction<T>[]} [rowActions] - Array of actions that can be performed on each row.
  * @property {string} [rowActionsMinWidth] - The minimum width for the row actions column.
  * @property {string} [rowPadding] - The padding for each row, essentially the height
+ * @property {string} [noDataContent] - The text to show when there is no available data to map through
  */
 export const Table = <T extends object>({
   columns,
@@ -41,6 +43,7 @@ export const Table = <T extends object>({
   expandable,
   subTable,
   subRows,
+  headerHeight,
   headerColor = 'mascarpone',
   rowColor = 'custard',
   stripedColor,
@@ -48,13 +51,17 @@ export const Table = <T extends object>({
   rowActions,
   rowActionsMinWidth,
   rowPadding,
+  noDataContent,
 }: TableProps<T>) => {
+  const showActionsCell = expandable || rowActions
+  const expandSubProp = showActionsCell ? columns.length + 1 : columns.length
   return (
     <StyledTable>
       <thead>
         <TableHeader
           columns={columns}
           fixedHeader={fixedHeader}
+          headerHeight={headerHeight}
           subTable={subTable}
           headerColor={headerColor}
           rowActions={rowActions}
@@ -63,22 +70,32 @@ export const Table = <T extends object>({
         />
       </thead>
       <tbody>
-        {data.map((row, rowIndex) => (
-          <TableRow
-            key={rowIndex}
-            rowData={row}
-            rowIndex={rowIndex}
-            columns={columns}
-            rowActions={rowActions}
-            stripedColor={stripedColor}
-            subTable={subTable}
-            subRows={subRows}
-            rowColor={rowColor}
-            rowBorderColor={rowBorderColor}
-            rowPadding={rowPadding}
-            expandable={expandable}
-          />
-        ))}
+        {data.length === 0 && (
+          <StyledCell colSpan={expandSubProp} rowPadding={rowPadding}>
+            {noDataContent ? (
+              noDataContent
+            ) : (
+              <Text align="center">No available data</Text>
+            )}
+          </StyledCell>
+        )}
+        {data.length !== 0 &&
+          data.map((row, rowIndex) => (
+            <TableRow
+              key={rowIndex}
+              rowData={row}
+              rowIndex={rowIndex}
+              columns={columns}
+              rowActions={rowActions}
+              stripedColor={stripedColor}
+              subTable={subTable}
+              subRows={subRows}
+              rowColor={rowColor}
+              rowBorderColor={rowBorderColor}
+              rowPadding={rowPadding}
+              expandable={expandable}
+            />
+          ))}
       </tbody>
     </StyledTable>
   )
