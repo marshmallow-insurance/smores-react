@@ -1,3 +1,11 @@
+## [3.1.5] - 2023-09-15
+### Changed
+- adds Logo component
+- adds fallbackStyle to Tooltip
+- adds resultsBorder to search input
+- adds onBlur to radio group
+- adds fallbackStyle to Datepicker
+
 ## [3.1.4] - 2023-09-14
 ### Changed
 - revert jest-config & babel-config back to modules
@@ -678,6 +686,8 @@
 ### Changed
 - Updated gap and styles on Row component
 
+
+[3.1.5]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.4...v3.1.5
 [3.1.4]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.3...v3.1.4
 [3.1.3]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.2...v3.1.3
 [3.1.2]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.1...v3.1.2

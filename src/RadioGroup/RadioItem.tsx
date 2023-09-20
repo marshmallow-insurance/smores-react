@@ -1,15 +1,15 @@
-import React, { forwardRef } from 'react'
+import React, { FocusEvent, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
-import { useUniqueId } from '../utils/id'
 import { theme } from '../theme'
+import { useUniqueId } from '../utils/id'
 
-import { RadioElement } from './RadioElement'
-import { Text } from '../Text'
-import { BaseValueType, DisplayType, IconPosition } from './types'
-import { ITEM_GAP } from './constants'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+import { Text } from '../Text'
+import { RadioElement } from './RadioElement'
+import { ITEM_GAP } from './constants'
+import { BaseValueType, DisplayType, IconPosition } from './types'
 
 type RadioItemProps = {
   name: string
@@ -20,6 +20,7 @@ type RadioItemProps = {
   label: string
   checked: boolean
   onChange: (value: BaseValueType) => void
+  onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   displayType: DisplayType
   isError: boolean
   fallbackStyle?: boolean
@@ -37,6 +38,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
       value,
       checked,
       onChange,
+      onBlur,
       displayType,
       isError,
       fallbackStyle,
@@ -72,6 +74,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             value={value}
             checked={checked}
             onChange={onChange}
+            onBlur={onBlur}
             isError={isError}
             mr="8px"
           />

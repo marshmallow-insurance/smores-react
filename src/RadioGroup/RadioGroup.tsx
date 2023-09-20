@@ -1,4 +1,5 @@
 import React, {
+  FocusEvent,
   ForwardedRef,
   forwardRef,
   ReactElement,
@@ -10,11 +11,11 @@ import styled from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
 
-import { Fieldset } from '../fields/Fieldset'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
+import { Fieldset } from '../fields/Fieldset'
+import { ITEM_GAP } from './constants'
 import { RadioItem } from './RadioItem'
 import { BaseValueType, DisplayType, IconPosition } from './types'
-import { ITEM_GAP } from './constants'
 
 export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   options: Array<{
@@ -26,6 +27,7 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
     bodyCopy?: string
   }>
   onChange: (value: Value) => void
+  onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   value: Value
   displayType?: DisplayType
   fallbackStyle?: boolean
@@ -39,6 +41,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
   {
     options,
     onChange,
+    onBlur,
     value,
     displayType = 'normal',
     renderAsTitle = false,
@@ -84,6 +87,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
               value={option.value}
               checked={isSelected}
               onChange={onChange}
+              onBlur={onBlur}
               displayType={displayType}
               isError={error}
               fallbackStyle={fallbackStyle}

@@ -17,4 +17,5 @@ Default.args = {
   firstDayShift: true,
   range: 31,
   fromDate: new Date('2021/07/14'),
+  fallbackStyle: false,
 }

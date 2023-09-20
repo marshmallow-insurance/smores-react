@@ -26,7 +26,7 @@ Default.args = {
   size: 'small',
   underline: true,
   arrowPosition: 'left',
-  shadow: true,
+  fallbackStyle: false,
 }
 
 export const LongTextExample = Template.bind({})
