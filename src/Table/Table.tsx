@@ -50,8 +50,8 @@ export const Table = <T extends object>({
   stripedColor,
   rowBorderColor = 'oatmeal',
   rowActions,
-  rowActionsMinWidth,
   rowPadding,
+  columnPadding,
   noDataContent,
 }: TableProps<T>) => {
   const showActionsCell = expandable || rowActions
@@ -66,13 +66,17 @@ export const Table = <T extends object>({
           subTable={subTable}
           headerColor={headerColor}
           rowActions={rowActions}
+          columnPadding={columnPadding}
           expandable={expandable}
-          rowActionsMinWidth={rowActionsMinWidth}
         />
       </thead>
       <tbody>
         {data.length === 0 && (
-          <StyledCell colSpan={expandSubProp} rowPadding={rowPadding}>
+          <StyledCell
+            colSpan={expandSubProp}
+            rowPadding={rowPadding}
+            columnPadding={columnPadding}
+          >
             {noDataContent ? (
               noDataContent
             ) : (
@@ -94,6 +98,7 @@ export const Table = <T extends object>({
               rowColor={rowColor}
               rowBorderColor={rowBorderColor}
               rowPadding={rowPadding}
+              columnPadding={columnPadding}
               expandable={expandable}
             />
           ))}

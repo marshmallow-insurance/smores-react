@@ -48,6 +48,13 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
     css`
       min-width: ${minWidth};
     `}
+    
+  ${({ columnPadding }) =>
+    columnPadding &&
+    css`
+      padding-left: ${columnPadding};
+      padding-right: ${columnPadding};
+    `};
 `
 
 export const StyledCell = styled.td<TableStylesProps>`
@@ -91,10 +98,23 @@ export const StyledCell = styled.td<TableStylesProps>`
       padding-bottom: ${rowPadding};
     `};
 
+  ${({ columnPadding }) =>
+    columnPadding &&
+    css`
+      padding-left: ${columnPadding};
+      padding-right: ${columnPadding};
+    `};
+
   ${({ maxWidth }) =>
     maxWidth &&
     css`
       max-width: ${maxWidth};
+    `}
+
+  ${({ rowActionsBgColor }) =>
+    rowActionsBgColor &&
+    css`
+      background: ${theme.colors[rowActionsBgColor]};
     `}
 `
 

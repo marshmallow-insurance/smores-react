@@ -15,6 +15,7 @@ export const TableRow = <T extends object>({
   rowColor,
   rowBorderColor,
   rowPadding,
+  columnPadding,
   showActions,
   expandable,
 }: TableRowProps<T>) => {
@@ -55,6 +56,7 @@ export const TableRow = <T extends object>({
             <StyledCell
               key={columnIndex}
               rowPadding={rowPadding}
+              columnPadding={columnPadding}
               minWidth={column.minWidth}
               maxWidth={column.maxWidth}
               noWrapContent={column.noWrapContent}
@@ -90,6 +92,7 @@ export const TableRow = <T extends object>({
             isReactElement(subRowsData) &&
             React.cloneElement(subRowsData as ReactElement, {
               rowPadding: rowPadding,
+              columnPadding: columnPadding,
             })}
 
           {subRows &&
@@ -107,6 +110,7 @@ export const TableRow = <T extends object>({
             <StyledCell colSpan={expandSubProp}>
               {React.cloneElement(subTableData, {
                 rowPadding: rowPadding,
+                columnPadding: columnPadding,
               })}
             </StyledCell>
           )}
@@ -125,6 +129,7 @@ export const TableRow = <T extends object>({
         isReactElement(subRowsData) &&
         React.cloneElement(subRowsData as ReactElement, {
           rowPadding: rowPadding,
+          columnPadding: columnPadding,
         })}
 
       {subRows &&
@@ -134,6 +139,7 @@ export const TableRow = <T extends object>({
         (subRowsData as ReactElement[]).map((row) =>
           React.cloneElement(row, {
             rowPadding: rowPadding,
+            columnPadding: columnPadding,
           }),
         )}
 
@@ -141,6 +147,7 @@ export const TableRow = <T extends object>({
         <StyledCell colSpan={expandSubProp}>
           {React.cloneElement(subTableData, {
             rowPadding: rowPadding,
+            columnPadding: columnPadding,
           })}
         </StyledCell>
       )}

@@ -16,10 +16,13 @@ export const RowActions = <T extends object>({
   toggleExpansion,
 }: RowActionsProps<T>) => {
   return (
-    <StyledCell stickyCell={Boolean(rowActions) || Boolean(expandable)}>
+    <StyledCell
+      stickyCell={Boolean(rowActions) || Boolean(expandable)}
+      rowActionsBgColor={rowActions?.bgColor}
+    >
       <Box flex alignItems="center" justifyContent="flex-end">
         {rowActions &&
-          rowActions?.map((action, actionIndex) => {
+          rowActions.actions?.map((action, actionIndex) => {
             if (!action.showCondition || action.showCondition(rowData)) {
               return (
                 <Wrapper flex key={actionIndex}>
