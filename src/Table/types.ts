@@ -1,24 +1,27 @@
-import { ReactElement } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
 import { Color } from '../theme'
 
 export type TableStylesProps = {
   fixedHeader?: boolean
+  headerHeight?: string
   stripedColor?: Color
   stickyCell?: boolean
   headerColor?: Color
   rowColor?: Color
   rowBorderColor?: Color
   minWidth?: string
+  maxWidth?: string
+  noWrapContent?: boolean
+  truncateContent?: boolean
   rowPadding?: string
 }
 
 export type Primitive = string | number | boolean | bigint
 
 export type RowAction<T> = {
-  //NOTE: what can i rename this too?
-  label?: ReactElement
+  element?: ReactElement
   onClick: (rowData: T) => void
   iconButton?: Pick<
     IconStrictProps,
@@ -48,11 +51,15 @@ type RowCellRenderer<T> = (
 export interface TableColumn<T> {
   name?: string | number | React.ReactNode
   minWidth?: string
+  maxWidth?: string
+  noWrapContent?: boolean
+  truncateContent?: boolean
   cell?: RowCellRenderer<T>
 }
 
 interface CommonTableProps<T> {
   columns: TableColumn<T>[]
+  headerHeight?: string
   fixedHeader?: boolean
   stripedColor?: Color
   expandable?: (rowData: T) => boolean
@@ -74,6 +81,7 @@ interface CommonTableProps<T> {
 
 export interface TableProps<T> extends CommonTableProps<T> {
   data: T[]
+  noDataContent?: ReactNode
 }
 
 export interface TableRowProps<T> extends CommonTableProps<T> {

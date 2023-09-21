@@ -188,6 +188,8 @@ export const columns = [
     cell: (row: DataRow) => (
       <Button textBtn={row.evolves}>{row.evolves.toString()}</Button>
     ),
+    minWidth: '100px',
+    maxWidth: '100px',
   },
   {
     name: 'e.g1',
@@ -206,8 +208,9 @@ export const columns = [
   },
   {
     name: 'e.g4',
-    cell: () => 'example data4',
-    minWidth: '150px',
+    cell: () => 'really super long text that should be cut off',
+    maxWidth: '200px',
+    truncateContent: true,
   },
   {
     name: 'e.g5',

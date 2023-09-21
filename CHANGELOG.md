@@ -1,3 +1,7 @@
+## [3.1.7] - 2023-09-20
+### Changed
+- adds headerHeight, maxWidth, noDataContent, truncateContent, noWrapContent props to Table
+
 ## [3.1.6] - 2023-09-20
 ### Changed
 - adds Table component
@@ -691,6 +695,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.1.7]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.6...v3.1.7
 [3.1.6]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.5...v3.1.6
 [3.1.5]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.4...v3.1.5
 [3.1.4]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.3...v3.1.4

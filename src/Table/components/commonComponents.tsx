@@ -5,6 +5,7 @@ import { TableStylesProps } from '../types'
 
 export const StyledTable = styled.table<TableStylesProps>`
   width: 100%;
+  height: 100%;
   border-collapse: collapse;
   overflow: auto;
   background: ${theme.colors.coconut};
@@ -18,13 +19,28 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
   z-index: 2;
   text-align: left;
   vertical-align: bottom;
-  padding: 8px;
   ${fontStyleMapping['label']};
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 
   ${({ headerColor }) =>
     headerColor &&
     css`
       background: ${theme.colors[headerColor]};
+    `}
+
+  ${({ headerHeight }) =>
+    headerHeight &&
+    css`
+      height: ${headerHeight};
+    `}
+
+  ${({ maxWidth }) =>
+    maxWidth &&
+    css`
+      max-width: ${maxWidth};
     `}
 
   ${({ minWidth }) =>
@@ -35,9 +51,25 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
 `
 
 export const StyledCell = styled.td<TableStylesProps>`
-  padding: 8px;
   vertical-align: middle;
-  white-space: nowrap;
+  overflow: hidden;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  ${({ noWrapContent }) =>
+    noWrapContent &&
+    css`
+      white-space: nowrap;
+    `};
+
+  ${({ truncateContent }) =>
+    truncateContent &&
+    css`
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    `};
 
   ${({ stickyCell }) =>
     stickyCell &&
@@ -49,8 +81,15 @@ export const StyledCell = styled.td<TableStylesProps>`
   ${({ rowPadding }) =>
     rowPadding &&
     css`
-      padding: ${rowPadding};
+      padding-top: ${rowPadding};
+      padding-bottom: ${rowPadding};
     `};
+
+  ${({ maxWidth }) =>
+    maxWidth &&
+    css`
+      max-width: ${maxWidth};
+    `}
 `
 
 export const StyledRow = styled.tr<TableStylesProps>`

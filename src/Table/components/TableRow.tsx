@@ -52,7 +52,14 @@ export const TableRow = <T extends object>({
           }
 
           return (
-            <StyledCell key={columnIndex} rowPadding={rowPadding}>
+            <StyledCell
+              key={columnIndex}
+              rowPadding={rowPadding}
+              minWidth={column.minWidth}
+              maxWidth={column.maxWidth}
+              noWrapContent={column.noWrapContent}
+              truncateContent={column.truncateContent}
+            >
               {cellContent}
             </StyledCell>
           )
