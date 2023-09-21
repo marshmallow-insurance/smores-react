@@ -208,7 +208,7 @@ RowActions.args = {
     },
     showOnExpand: () => true,
   },
-  rowActions: { actions: rowActions },
+  rowActions: { actions: rowActions, bgColor: 'strawberry' },
 }
 
 export const EverythingTable = TemplateWithWrapper.bind({})

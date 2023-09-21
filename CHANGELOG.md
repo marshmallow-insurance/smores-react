@@ -1,6 +1,8 @@
 ## [3.1.8] - 2023-09-21
 ### Changed
 - adds hideOverflow prop to Table, allowing for tooltips to be used
+- adds columnPadding prop
+- moves rowActions prop to its own objects, with bgColor and minWidth
 
 ## [3.1.7] - 2023-09-20
 ### Changed
