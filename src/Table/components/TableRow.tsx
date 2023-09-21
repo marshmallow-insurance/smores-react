@@ -59,6 +59,7 @@ export const TableRow = <T extends object>({
               maxWidth={column.maxWidth}
               noWrapContent={column.noWrapContent}
               truncateContent={column.truncateContent}
+              hideOverflow={column.hideOverflow}
             >
               {cellContent}
             </StyledCell>

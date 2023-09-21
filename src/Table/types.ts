@@ -16,6 +16,7 @@ export type TableStylesProps = {
   noWrapContent?: boolean
   truncateContent?: boolean
   rowPadding?: string
+  hideOverflow?: boolean
 }
 
 export type Primitive = string | number | boolean | bigint
@@ -54,6 +55,7 @@ export interface TableColumn<T> {
   maxWidth?: string
   noWrapContent?: boolean
   truncateContent?: boolean
+  hideOverflow?: boolean
   cell?: RowCellRenderer<T>
 }
 
