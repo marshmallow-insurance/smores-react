@@ -48,15 +48,27 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
     css`
       min-width: ${minWidth};
     `}
+    
+  ${({ columnPadding }) =>
+    columnPadding &&
+    css`
+      padding-left: ${columnPadding};
+      padding-right: ${columnPadding};
+    `};
 `
 
 export const StyledCell = styled.td<TableStylesProps>`
   vertical-align: middle;
-  overflow: hidden;
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
+
+  ${({ hideOverflow }) =>
+    hideOverflow &&
+    css`
+      overflow: hidden;
+    `};
 
   ${({ noWrapContent }) =>
     noWrapContent &&
@@ -67,6 +79,7 @@ export const StyledCell = styled.td<TableStylesProps>`
   ${({ truncateContent }) =>
     truncateContent &&
     css`
+      overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
     `};
@@ -85,10 +98,23 @@ export const StyledCell = styled.td<TableStylesProps>`
       padding-bottom: ${rowPadding};
     `};
 
+  ${({ columnPadding }) =>
+    columnPadding &&
+    css`
+      padding-left: ${columnPadding};
+      padding-right: ${columnPadding};
+    `};
+
   ${({ maxWidth }) =>
     maxWidth &&
     css`
       max-width: ${maxWidth};
+    `}
+
+  ${({ rowActionsBgColor }) =>
+    rowActionsBgColor &&
+    css`
+      background: ${theme.colors[rowActionsBgColor]};
     `}
 `
 

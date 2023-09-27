@@ -177,7 +177,7 @@ SubTable.args = {
           headerColor="mascarpone"
           rowColor="matcha"
           fixedHeader={false}
-          rowActions={rowActions}
+          rowActions={{ actions: rowActions }}
         />
       )
     },
@@ -202,13 +202,13 @@ RowActions.args = {
           headerColor="mascarpone"
           rowColor="matcha"
           fixedHeader={false}
-          rowActions={rowActions}
+          rowActions={{ actions: rowActions }}
         />
       )
     },
     showOnExpand: () => true,
   },
-  rowActions: rowActions,
+  rowActions: { actions: rowActions, bgColor: 'strawberry' },
 }
 
 export const EverythingTable = TemplateWithWrapper.bind({})
@@ -226,7 +226,7 @@ EverythingTable.args = {
           headerColor="mascarpone"
           rowColor="matcha"
           fixedHeader={false}
-          rowActions={rowActions}
+          rowActions={{ actions: rowActions }}
         />
       )
     },
@@ -244,7 +244,7 @@ EverythingTable.args = {
             columns={columns}
             rowColor="cream"
             rowBorderColor="chia"
-            rowActions={rowActions}
+            rowActions={{ actions: rowActions }}
           />
         )
       })
@@ -253,6 +253,9 @@ EverythingTable.args = {
   },
   rowColor: 'custard',
   headerColor: 'mascarpone',
-  rowActions: rowActions,
+  rowActions: {
+    actions: rowActions,
+    bgColor: 'custard',
+  },
   rowPadding: '4px',
 }

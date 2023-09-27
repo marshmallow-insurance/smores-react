@@ -11,11 +11,14 @@ export type TableStylesProps = {
   headerColor?: Color
   rowColor?: Color
   rowBorderColor?: Color
+  rowActionsBgColor?: Color
   minWidth?: string
   maxWidth?: string
   noWrapContent?: boolean
   truncateContent?: boolean
   rowPadding?: string
+  columnPadding?: string
+  hideOverflow?: boolean
 }
 
 export type Primitive = string | number | boolean | bigint
@@ -41,6 +44,12 @@ export type RowAction<T> = {
   showCondition?: (rowData: T) => boolean
 }
 
+export type RowActions<T> = {
+  actions: RowAction<T>[]
+  minWidth?: string
+  bgColor?: Color
+}
+
 type RowCellRenderer<T> = (
   row: T,
   rowIndex: number,
@@ -54,6 +63,7 @@ export interface TableColumn<T> {
   maxWidth?: string
   noWrapContent?: boolean
   truncateContent?: boolean
+  hideOverflow?: boolean
   cell?: RowCellRenderer<T>
 }
 
@@ -74,9 +84,9 @@ interface CommonTableProps<T> {
     rows: (rowData: T) => ReactElement | ReactElement[]
     showOnExpand?: (rowData: T) => boolean
   }
-  rowActions?: RowAction<T>[]
-  rowActionsMinWidth?: string
+  rowActions?: RowActions<T>
   rowPadding?: string
+  columnPadding?: string
 }
 
 export interface TableProps<T> extends CommonTableProps<T> {

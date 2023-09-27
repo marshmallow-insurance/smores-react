@@ -1,3 +1,9 @@
+## [3.1.8] - 2023-09-21
+### Changed
+- adds hideOverflow prop to Table, allowing for tooltips to be used
+- adds columnPadding prop
+- moves rowActions prop to its own objects, with bgColor and minWidth
+
 ## [3.1.7] - 2023-09-20
 ### Changed
 - adds headerHeight, maxWidth, noDataContent, truncateContent, noWrapContent props to Table
@@ -695,6 +701,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.1.8]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.7...v3.1.8
 [3.1.7]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.6...v3.1.7
 [3.1.6]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.5...v3.1.6
 [3.1.5]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.4...v3.1.5
