@@ -1,3 +1,8 @@
+## [3.1.9] - 2023-09-28
+### Changed
+- adds clickableRow prop to Table
+- updates Table caveats & prop info
+
 ## [3.1.8] - 2023-09-21
 ### Changed
 - adds hideOverflow prop to Table, allowing for tooltips to be used
@@ -701,6 +706,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.1.9]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.8...v3.1.9
 [3.1.8]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.7...v3.1.8
 [3.1.7]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.6...v3.1.7
 [3.1.6]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.5...v3.1.6
