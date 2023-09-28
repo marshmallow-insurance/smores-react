@@ -1,6 +1,8 @@
+import { darken } from 'polished'
 import styled, { css } from 'styled-components'
 import { fontStyleMapping } from '../../Text/fontMapping'
 import { theme } from '../../theme'
+import { focusOutlineStyle } from '../../utils/focusOutline'
 import { TableStylesProps } from '../types'
 
 export const StyledTable = styled.table<TableStylesProps>`
@@ -138,6 +140,19 @@ export const StyledRow = styled.tr<TableStylesProps>`
     css`
       &:nth-child(even) {
         background: ${theme.colors[stripedColor]};
+      }
+    `}
+
+    ${({ clickableRow, rowColor }) =>
+    clickableRow &&
+    css`
+      cursor: pointer;
+      &:hover {
+        background: ${darken(0.1, theme.colors[rowColor ?? 'custard'])};
+      }
+      &:focus-visible {
+        ${focusOutlineStyle}
+        background: ${darken(0.1, theme.colors[rowColor ?? 'custard'])};
       }
     `}
 `

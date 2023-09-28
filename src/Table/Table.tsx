@@ -13,6 +13,7 @@ import { TableProps } from './types'
  * - stripedColor wont be applied to subRows or subTables.
  * - rowActions will always need an onClick, this will be automatically passed onto the ReactNode you place & will be selectable
  * - rows will scale depending on the cell content size
+ * - using clickableRow with clickable cells, ensure you use e.stopPropagation in your cells onClick
  *
  * Improvements:
  * - It would be nice if we expandable logic inside this component, e.g the presence of certain props would automatically add this
@@ -33,8 +34,9 @@ import { TableProps } from './types'
  * @property {function(T): ReactElement} subRows.rows - Function that returns a React element for the sub row.
  * @property {boolean} [subRows.showOnExpand=false] - If true, the sub rows will only be shown when the row is expanded.
  * @property {RowAction<T>[]} [rowActions] - Array of actions that can be performed on each row.
- * @property {string} [rowActionsMinWidth] - The minimum width for the row actions column.
- * @property {string} [rowPadding] - The padding for each row, essentially the height.
+ * @property {function<T>: void} [clickableRow] - Function to apply to a row, to make the entire row clickable, useful for navigation.
+ * @property {string} [rowPadding] - The Y padding for each row.
+ * @property {string} [columnPadding] - The X padding for each row.
  * @property {string} [noDataContent] - The text to show when there is no available data to map through.
  */
 export const Table = <T extends object>({
@@ -50,6 +52,7 @@ export const Table = <T extends object>({
   stripedColor,
   rowBorderColor = 'oatmeal',
   rowActions,
+  clickableRow,
   rowPadding,
   columnPadding,
   noDataContent,
@@ -100,6 +103,7 @@ export const Table = <T extends object>({
               rowPadding={rowPadding}
               columnPadding={columnPadding}
               expandable={expandable}
+              clickableRow={clickableRow}
             />
           ))}
       </tbody>

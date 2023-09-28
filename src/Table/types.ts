@@ -19,6 +19,7 @@ export type TableStylesProps = {
   rowPadding?: string
   columnPadding?: string
   hideOverflow?: boolean
+  clickableRow?: boolean
 }
 
 export type Primitive = string | number | boolean | bigint
@@ -84,6 +85,7 @@ interface CommonTableProps<T> {
     rows: (rowData: T) => ReactElement | ReactElement[]
     showOnExpand?: (rowData: T) => boolean
   }
+  clickableRow?: (rowData: T) => void
   rowActions?: RowActions<T>
   rowPadding?: string
   columnPadding?: string

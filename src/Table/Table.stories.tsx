@@ -193,6 +193,8 @@ RowActions.args = {
   data,
   stripedColor: 'cream',
   expandable: () => true,
+  clickableRow: (row: DataRow) =>
+    alert(`onClick from ${row.ability} is working`),
   subTable: {
     table: () => {
       return (
@@ -208,7 +210,7 @@ RowActions.args = {
     },
     showOnExpand: () => true,
   },
-  rowActions: { actions: rowActions, bgColor: 'strawberry' },
+  rowActions: { actions: rowActions, bgColor: 'matcha' },
 }
 
 export const EverythingTable = TemplateWithWrapper.bind({})
@@ -221,6 +223,9 @@ EverythingTable.args = {
     table: () => {
       return (
         <Table
+          clickableRow={(row: DataRow) =>
+            alert(`onClick from ${row.ability} is working`)
+          }
           columns={columnsV2}
           data={data}
           headerColor="mascarpone"

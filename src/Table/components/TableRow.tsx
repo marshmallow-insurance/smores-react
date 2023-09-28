@@ -18,6 +18,7 @@ export const TableRow = <T extends object>({
   columnPadding,
   showActions,
   expandable,
+  clickableRow,
 }: TableRowProps<T>) => {
   const [expandedRows, setExpandedRows] = useState<number[]>([])
 
@@ -45,6 +46,9 @@ export const TableRow = <T extends object>({
         stripedColor={stripedColor}
         rowColor={rowColor}
         rowBorderColor={rowBorderColor}
+        clickableRow={!!clickableRow}
+        onClick={() => clickableRow && clickableRow(rowData)}
+        tabIndex={clickableRow && 0}
       >
         {columns.map((column, columnIndex) => {
           let cellContent: ReactNode

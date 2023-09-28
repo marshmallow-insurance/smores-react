@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
 import { Button } from '../../Button'
@@ -15,6 +15,14 @@ export const RowActions = <T extends object>({
   isExpanded,
   toggleExpansion,
 }: RowActionsProps<T>) => {
+  const handleAction = (
+    e: MouseEvent | FormEvent<HTMLButtonElement>,
+    action: (rowData: T) => void,
+  ) => {
+    e.stopPropagation()
+    action(rowData)
+  }
+
   return (
     <StyledCell
       stickyCell={Boolean(rowActions) || Boolean(expandable)}
@@ -28,14 +36,18 @@ export const RowActions = <T extends object>({
                 <Wrapper flex key={actionIndex}>
                   {isReactElement(action.element) &&
                     React.cloneElement(action.element, {
-                      onClick: () => action.onClick(rowData),
+                      onClick: (e: MouseEvent) => {
+                        handleAction(e, action.onClick)
+                      },
                       tabIndex: 0,
                       className: 'reactElementRowAction',
                     })}
                   {action.genericButton && !isReactElement(action.element) && (
                     <Button
                       {...action.genericButton}
-                      handleClick={() => action.onClick(rowData)}
+                      handleClick={(e) => {
+                        handleAction(e, action.onClick)
+                      }}
                     >
                       {action.genericButton.children}
                     </Button>
@@ -43,7 +55,9 @@ export const RowActions = <T extends object>({
                   {action.iconButton && (
                     <IconStrict
                       {...action.iconButton}
-                      handleClick={() => action.onClick(rowData)}
+                      handleClick={(e) => {
+                        handleAction(e, action.onClick)
+                      }}
                     />
                   )}
                 </Wrapper>
@@ -54,7 +68,10 @@ export const RowActions = <T extends object>({
         {expandable && expandable(rowData) && (
           <CaretIcon
             render="caret"
-            handleClick={() => toggleExpansion()}
+            handleClick={(e) => {
+              e.stopPropagation()
+              toggleExpansion()
+            }}
             size={36}
             isOpen={isExpanded}
             backgroundColor="cream"

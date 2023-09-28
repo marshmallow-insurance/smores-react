@@ -234,7 +234,11 @@ export const columnsV2 = [
   },
   {
     name: 'e.g1',
-    cell: () => 'example data',
+    cell: () => (
+      <Button primary smallButton onClick={() => exampleOnClick('e.g1 button')}>
+        e.g1
+      </Button>
+    ),
   },
   {
     name: 'e.g2',

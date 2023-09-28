@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, FormEvent } from 'react'
 import styled, { css } from 'styled-components'
 
 import { darken } from 'polished'
@@ -19,7 +19,7 @@ export type IconStrictProps = {
   /** set background colour */
   backgroundColor?: Color
   /** function to handle click */
-  handleClick?: () => void
+  handleClick?: (e: FormEvent<HTMLButtonElement>) => void
   /** rotation degrees */
   rotate?: number
 } & MarginProps
@@ -54,16 +54,16 @@ export const IconStrict: FC<IconStrictProps> = ({
   ...marginProps
 }) => (
   <IconContainer
+    as={handleClick ? 'button' : 'div'}
     className={className}
     size={size}
     {...marginProps}
     backgroundColor={backgroundColor}
     onClick={handleClick}
-    tabIndex={handleClick ? 0 : undefined}
-    onKeyDown={(e) => {
+    onKeyDown={(e: { key: string }) => {
       if (!handleClick) return
       if (e.key === 'Enter') {
-        handleClick()
+        handleClick
       }
     }}
   >
@@ -81,7 +81,7 @@ export const IconStrict: FC<IconStrictProps> = ({
 interface IIconStrict {
   size: 16 | 24 | 36 | 48
   backgroundColor?: Color
-  onClick?: () => void
+  onClick?: (e: FormEvent<HTMLButtonElement>) => void
 }
 
 const IconContainer = styled.div<IIconStrict>(
