@@ -1,4 +1,4 @@
-## [3.1.9] - 2023-09-28
+## [3.1.10] - 2023-09-28
 ### Changed
 - fixes clipping of Tooltip if parent has overflow: hidden;
 - moves Tooltip underline prop to Text component to prevent height issues
