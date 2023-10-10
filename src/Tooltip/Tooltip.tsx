@@ -292,7 +292,6 @@ const right = css<{ arrowPosition: ArrowPosition }>`
 `
 
 const TipWrapper = styled.div`
-  outline: 1px solid green;
   position: fixed;
   pointer-events: none;
 `
