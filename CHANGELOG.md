@@ -1,5 +1,10 @@
 ## [3.1.9] - 2023-09-28
 ### Changed
+- fixes clipping of Tooltip if parent has overflow: hidden;
+- moves Tooltip underline prop to Text component to prevent height issues
+
+## [3.1.9] - 2023-09-28
+### Changed
 - adds clickableRow prop to Table
 - updates Table caveats & prop info
 
@@ -706,6 +711,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.1.10]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.9...v3.1.10
 [3.1.9]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.8...v3.1.9
 [3.1.8]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.7...v3.1.8
 [3.1.7]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.6...v3.1.7
