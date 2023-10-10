@@ -1,6 +1,8 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Box } from '../Box'
 import { Text } from '../Text'
+import { theme } from '../theme'
 import { Tooltip, TooltipProps } from './Tooltip'
 
 export default {
@@ -15,6 +17,21 @@ const Template = (props: TooltipProps) => (
     </Tooltip>
   </Box>
 )
+
+const OverflowHiddenTemplate = (props: TooltipProps) => (
+  <OverflowHiddenBox flex justifyContent="center">
+    <Tooltip {...props}>
+      <Box>Harry Hill</Box>
+    </Tooltip>
+  </OverflowHiddenBox>
+)
+
+const OverflowHiddenBox = styled(Box)`
+  height: 200px;
+  width: 200px;
+  margin-top: 200px;
+  background: ${theme.colors.blueberry};
+`
 
 export const Default = Template.bind({})
 
@@ -75,4 +92,15 @@ ReactNodeExample.args = {
   underline: true,
   arrowPosition: 'left',
   shadow: false,
+}
+
+export const OverflowExample = OverflowHiddenTemplate.bind({})
+
+OverflowExample.args = {
+  title: 'React node example',
+  position: 'top',
+  content: tooltipContent,
+  size: 'large',
+  arrowPosition: 'left',
+  underline: true,
 }

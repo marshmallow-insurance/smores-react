@@ -123,58 +123,65 @@ export const Tooltip: FC<TooltipProps> = ({
   })
 
   return (
-    <Container underline={underline}>
-      <Text
+    <Container>
+      <UnderLinedText
+        underline={underline}
         cursor="pointer"
         onMouseEnter={() => setShowTip(true)}
         onMouseLeave={() => setShowTip(false)}
       >
         {children}
-      </Text>
-      <Tip
-        className="tooltip"
-        showTip={showTip}
-        position={tooltipPosition}
-        arrowPosition={arrowPosition}
-        ref={tipContainer}
-        maxWidth={maxWidth}
-        fallbackStyle={fallbackStyle}
-      >
-        {title && (
-          <Text
-            tag="h5"
-            typo="desc-medium"
-            color={fallbackStyle ? 'cream' : 'liquorice'}
-          >
-            {title}
-          </Text>
-        )}
-        {(typeof content === 'string' && (
-          <Text typo="desc-light" color={fallbackStyle ? 'cream' : 'liquorice'}>
-            {content}
-          </Text>
-        )) ||
-          content}
-      </Tip>
+      </UnderLinedText>
+      <TipWrapper>
+        <Tip
+          className="tooltip"
+          showTip={showTip}
+          position={tooltipPosition}
+          arrowPosition={arrowPosition}
+          ref={tipContainer}
+          maxWidth={maxWidth}
+          fallbackStyle={fallbackStyle}
+        >
+          {title && (
+            <Text
+              tag="h5"
+              typo="desc-medium"
+              color={fallbackStyle ? 'cream' : 'liquorice'}
+            >
+              {title}
+            </Text>
+          )}
+          {(typeof content === 'string' && (
+            <Text
+              typo="desc-light"
+              color={fallbackStyle ? 'cream' : 'liquorice'}
+            >
+              {content}
+            </Text>
+          )) ||
+            content}
+        </Tip>
+      </TipWrapper>
     </Container>
   )
 }
 
-export const Container = styled.div<{ underline: boolean }>`
-  position: relative;
+export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 
+  > span:hover + .tooltip {
+    opacity: 1;
+  }
+`
+
+const UnderLinedText = styled(Text)<{ underline: boolean }>`
   ${({ underline }) =>
     underline &&
     css`
       border-bottom: 1px dashed ${theme.colors.marshmallowPink};
     `}
-
-  > span:hover + .tooltip {
-    opacity: 1;
-  }
 `
 
 const arrowPaddingSize = 18
@@ -282,6 +289,12 @@ const right = css<{ arrowPosition: ArrowPosition }>`
     ${({ arrowPosition }) => handleVerticalArrowPosition(arrowPosition)}
     left: -11px;
   }
+`
+
+const TipWrapper = styled.div`
+  outline: 1px solid green;
+  position: fixed;
+  pointer-events: none;
 `
 
 export const Tip = styled.div<{
