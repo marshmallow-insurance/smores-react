@@ -19,10 +19,13 @@ const Template = (props: TooltipProps) => (
 )
 
 const OverflowHiddenTemplate = (props: TooltipProps) => (
-  <OverflowHiddenBox flex justifyContent="center">
+  <OverflowHiddenBox>
     <Tooltip {...props}>
       <Box>Harry Hill</Box>
     </Tooltip>
+    <ClippedText mt="12px">
+      I am some super long text, that should be clipped
+    </ClippedText>
   </OverflowHiddenBox>
 )
 
@@ -30,7 +33,12 @@ const OverflowHiddenBox = styled(Box)`
   height: 200px;
   width: 200px;
   margin-top: 200px;
+  overflow: hidden;
   background: ${theme.colors.blueberry};
+`
+
+const ClippedText = styled(Text)`
+  white-space: nowrap;
 `
 
 export const Default = Template.bind({})
