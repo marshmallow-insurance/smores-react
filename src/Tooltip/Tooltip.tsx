@@ -1,4 +1,11 @@
-import React, { FC, ReactNode, useEffect, useRef, useState } from 'react'
+import React, {
+  FC,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { createPortal } from 'react-dom'
 import styled, { css } from 'styled-components'
 import { v4 as uuidv4 } from 'uuid'
@@ -38,34 +45,48 @@ export const Tooltip: FC<TooltipProps> = ({
 
   const randomId = uuidv4()
 
-  const checkInbounds = (element: DOMRect): Position | null => {
-    if (element.bottom > window.innerHeight) return 'bottom'
-    if (element.top < 0) return 'top'
-    if (element.left < 0) return 'left'
-    if (element.right > window.innerWidth) return 'right'
-    return null
-  }
+  const checkInbounds = (element: DOMRect): boolean =>
+    element.top >= 0 &&
+    element.left >= 0 &&
+    element.bottom <= window.innerHeight &&
+    element.right <= window.innerWidth
 
-  const handleTipViewport = () => {
-    if (!tipContainer.current) return null
+  const handleTipViewport = useCallback(() => {
+    const dimensions = tipContainer.current?.getBoundingClientRect()
 
-    const impactedSide = checkInbounds(
-      tipContainer.current.getBoundingClientRect(),
-    )
+    if (!dimensions) return
+    if (checkInbounds(dimensions)) return
 
-    if (impactedSide === 'top' && position === 'top') {
-      return setTooltipPosition('bottom')
+    // If in bounds but not defaulted to top; default
+    if (dimensions.top >= 0 && tooltipPosition !== 'top') {
+      setTooltipPosition('top')
+      return
     }
-    if (impactedSide === 'right' && position === 'right') {
-      return setTooltipPosition('left')
+    // if top out of bounds
+    if (dimensions.top < 0) {
+      setTooltipPosition('bottom')
+      return
     }
-    if (impactedSide === 'left' && position === 'left') {
-      return setTooltipPosition('right')
+    // if right out of bounds
+    if (dimensions.right > window.innerWidth) {
+      setTooltipPosition('left')
+      return
     }
-    if (impactedSide === 'bottom' && position === 'bottom') {
-      return setTooltipPosition('top')
+    // if left out of bounds
+    if (dimensions.left < 0) {
+      setTooltipPosition('right')
+      return
     }
-  }
+    // If bottom out of bounds
+    if (dimensions.bottom > window.innerHeight) {
+      setTooltipPosition('top')
+      return
+    }
+  }, [tipContainer, tooltipPosition])
+
+  useEffect(() => {
+    handleTipViewport()
+  }, [])
 
   useEffect(() => {
     setChildEl(document.getElementById(randomId))
