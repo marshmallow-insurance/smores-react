@@ -199,11 +199,11 @@ export const columns = [
       <Box flex justifyContent="flex-start">
         <Tooltip
           tooltipId={row.id.toString()}
-          content="some tooltip content"
+          content={<Text color="cream">{row.ability}</Text>}
           position="top"
           fallbackStyle
         >
-          example data
+          what ability?
         </Tooltip>
       </Box>
     ),

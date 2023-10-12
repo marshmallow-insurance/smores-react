@@ -1,4 +1,4 @@
-## [3.1.11] - 2023-10-12
+## [3.2.0] - 2023-10-12
 ### Changed
 - actually fixes the Tooltip clipping if parent has overflow: hidden;
 - converts Tooltip component to be renderd using React.createPortal 
