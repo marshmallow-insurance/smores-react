@@ -201,6 +201,7 @@ export const columns = [
           content={<Text color="cream">{row.ability}</Text>}
           position="top"
           fallbackStyle
+          underline
         >
           what ability?
         </Tooltip>
