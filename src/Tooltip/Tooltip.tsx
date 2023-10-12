@@ -1,6 +1,7 @@
 import React, { FC, ReactNode, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import styled, { css } from 'styled-components'
+import { v4 as uuidv4 } from 'uuid'
 import { Text } from '../Text'
 import { useEventListener } from '../hooks'
 import { theme } from '../theme'
@@ -10,7 +11,6 @@ type Position = 'top' | 'bottom' | 'left' | 'right'
 type ArrowPosition = Position | 'center'
 
 export interface TooltipProps {
-  tooltipId: string
   children: ReactNode
   content: string | ReactNode
   position: Position
@@ -21,7 +21,6 @@ export interface TooltipProps {
 }
 
 export const Tooltip: FC<TooltipProps> = ({
-  tooltipId,
   children,
   title,
   content,
@@ -36,6 +35,8 @@ export const Tooltip: FC<TooltipProps> = ({
   const [tooltipPosition, setTooltipPosition] = useState<Position>(position)
   const [childEl, setChildEl] = useState<HTMLElement | null>(null)
   const [tooltipCoords, setTooltipCoords] = useState({ top: 0, left: 0 })
+
+  const randomId = uuidv4()
 
   const checkInbounds = (element: DOMRect): Position | null => {
     if (element.bottom > window.innerHeight) return 'bottom'
@@ -67,8 +68,8 @@ export const Tooltip: FC<TooltipProps> = ({
   }
 
   useEffect(() => {
-    setChildEl(document.getElementById(tooltipId))
-  }, [tooltipId])
+    setChildEl(document.getElementById(randomId))
+  }, [])
 
   useEffect(() => {
     setTooltipPosition(position)
@@ -155,7 +156,7 @@ export const Tooltip: FC<TooltipProps> = ({
   return (
     <Container>
       <UnderlinedText
-        id={tooltipId}
+        id={randomId}
         underline={underline}
         cursor="pointer"
         onMouseEnter={() => setShowTip(true)}

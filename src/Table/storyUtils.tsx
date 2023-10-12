@@ -198,7 +198,6 @@ export const columns = [
     cell: (row: DataRow) => (
       <Box flex justifyContent="flex-start">
         <Tooltip
-          tooltipId={row.id.toString()}
           content={<Text color="cream">{row.ability}</Text>}
           position="top"
           fallbackStyle

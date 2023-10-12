@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { v4 as uuidv4 } from 'uuid'
 import { Box } from '../Box'
 import { Text } from '../Text'
 import { theme } from '../theme'
@@ -13,7 +12,7 @@ export default {
 
 const Template = (props: TooltipProps) => (
   <Box px={{ custom: 250 }} py={{ custom: 150 }} flex>
-    <Tooltip {...props} tooltipId={uuidv4() + Math.random()}>
+    <Tooltip {...props}>
       <Box>Harry Hill</Box>
     </Tooltip>
   </Box>
@@ -21,7 +20,7 @@ const Template = (props: TooltipProps) => (
 
 const OverflowHiddenTemplate = (props: TooltipProps) => (
   <OverflowHiddenBox my="64px">
-    <Tooltip {...props} tooltipId={uuidv4() + Math.random()}>
+    <Tooltip {...props}>
       <Box>Harry Hill</Box>
     </Tooltip>
 
@@ -30,7 +29,7 @@ const OverflowHiddenTemplate = (props: TooltipProps) => (
     </ClippedText>
 
     <Box my="64px">
-      <Tooltip {...props} tooltipId={uuidv4() + Math.random()}>
+      <Tooltip {...props}>
         <Box>Harry Hill</Box>
       </Tooltip>
     </Box>

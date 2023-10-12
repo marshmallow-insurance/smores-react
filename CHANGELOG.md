@@ -3,9 +3,6 @@
 - actually fixes the Tooltip clipping if parent has overflow: hidden;
 - converts Tooltip component to be renderd using React.createPortal 
 - calculates position of Tooltip based on its positioning element 
-- adds tooltipId prop to the tooltip, this is needed on every case of the tooltip
-and must be unique in every case, otherwise tooltips will be rendered to the same 
-tooltipId, causing them not to appear as if they have not rendered
 
 ## [3.1.10] - 2023-10-10
 ### Changed
