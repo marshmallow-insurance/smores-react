@@ -86,9 +86,6 @@ export const Tooltip: FC<TooltipProps> = ({
 
   useEffect(() => {
     handleTipViewport()
-  }, [])
-
-  useEffect(() => {
     setChildEl(document.getElementById(randomId))
   }, [])
 
