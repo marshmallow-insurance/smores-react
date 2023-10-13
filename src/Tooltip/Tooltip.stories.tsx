@@ -19,21 +19,27 @@ const Template = (props: TooltipProps) => (
 )
 
 const OverflowHiddenTemplate = (props: TooltipProps) => (
-  <OverflowHiddenBox>
+  <OverflowHiddenBox my="64px">
     <Tooltip {...props}>
       <Box>Harry Hill</Box>
     </Tooltip>
+
     <ClippedText mt="12px">
       I am some super long text, that should be clipped
     </ClippedText>
+
+    <Box my="64px">
+      <Tooltip {...props}>
+        <Box>Harry Hill</Box>
+      </Tooltip>
+    </Box>
   </OverflowHiddenBox>
 )
 
 const OverflowHiddenBox = styled(Box)`
-  height: 200px;
+  height: 100px;
   width: 200px;
-  margin-top: 200px;
-  overflow: hidden;
+  overflow: scroll;
   background: ${theme.colors.blueberry};
 `
 
@@ -47,10 +53,8 @@ Default.args = {
   title: 'Harry Hill',
   content:
     'Tooltip content, this is some text, maybe even more text if you feel like it.',
-  position: 'top',
   size: 'small',
   underline: true,
-  arrowPosition: 'left',
   fallbackStyle: false,
 }
 
@@ -65,18 +69,16 @@ const longTextExample = (
 
 LongTextExample.args = {
   title: 'Long text example',
-  position: 'top',
   content: longTextExample,
   size: 'large',
   underline: true,
-  arrowPosition: 'left',
   shadow: false,
 }
 
 export const ReactNodeExample = Template.bind({})
 
 const tooltipContent = (
-  <>
+  <Box>
     <Text typo="desc-light" color="liquorice">
       20 Cherry Blossom Lane,
     </Text>
@@ -89,16 +91,14 @@ const tooltipContent = (
     <Text typo="desc-light" color="liquorice">
       T: 07123456789
     </Text>
-  </>
+  </Box>
 )
 
 ReactNodeExample.args = {
   title: 'React node example',
-  position: 'top',
   content: tooltipContent,
   size: 'large',
   underline: true,
-  arrowPosition: 'left',
   shadow: false,
 }
 
@@ -106,9 +106,7 @@ export const OverflowExample = OverflowHiddenTemplate.bind({})
 
 OverflowExample.args = {
   title: 'React node example',
-  position: 'top',
   content: tooltipContent,
   size: 'large',
-  arrowPosition: 'left',
   underline: true,
 }

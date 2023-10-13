@@ -1,8 +1,10 @@
 import React from 'react'
+import { Box } from '../Box'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Tag } from '../Tag'
 import { Text } from '../Text'
+import { Tooltip } from '../Tooltip'
 import { RowAction } from './types'
 
 export interface DataRow {
@@ -193,7 +195,18 @@ export const columns = [
   },
   {
     name: 'e.g1',
-    cell: () => 'example data',
+    cell: (row: DataRow) => (
+      <Box flex justifyContent="flex-start">
+        <Tooltip
+          content={<Text color="cream">{row.ability}</Text>}
+          defaultArrowPosition="top"
+          fallbackStyle
+          underline
+        >
+          what ability?
+        </Tooltip>
+      </Box>
+    ),
     minWidth: '150px',
   },
   {
