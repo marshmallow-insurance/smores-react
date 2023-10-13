@@ -1,3 +1,8 @@
+## [3.1.12] - 2023-10-13
+### Changed
+- rename Tooltip prop
+
+
 ## [3.1.11] - 2023-10-12
 ### Changed
 - actually fixes the Tooltip clipping if parent has overflow: hidden;
@@ -717,6 +722,8 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.1.12]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.11...v3.1.12
+[3.1.11]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.10...v3.1.11
 [3.1.10]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.9...v3.1.10
 [3.1.9]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.8...v3.1.9
 [3.1.8]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.7...v3.1.8

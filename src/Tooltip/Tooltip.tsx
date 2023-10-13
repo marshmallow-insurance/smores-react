@@ -20,7 +20,7 @@ type ArrowPosition = Position | 'center'
 export interface TooltipProps {
   children: ReactNode
   content: string | ReactNode
-  defaultArrowPosition: Position
+  position: Position
   maxWidth?: number
   title?: string
   underline?: boolean
@@ -31,7 +31,7 @@ export const Tooltip: FC<TooltipProps> = ({
   children,
   title,
   content,
-  defaultArrowPosition = 'top',
+  position = 'top',
   maxWidth = 500,
   underline = false,
   fallbackStyle = false,
@@ -39,8 +39,7 @@ export const Tooltip: FC<TooltipProps> = ({
   const documentRef = useRef<Document>(document)
   const tipContainer = useRef<HTMLDivElement>(null)
   const [showTip, setShowTip] = useState<boolean>(false)
-  const [tooltipPosition, setTooltipPosition] =
-    useState<Position>(defaultArrowPosition)
+  const [tooltipPosition, setTooltipPosition] = useState<Position>(position)
   const [childEl, setChildEl] = useState<HTMLElement | null>(null)
   const [tooltipCoords, setTooltipCoords] = useState({ top: 0, left: 0 })
 
@@ -91,8 +90,8 @@ export const Tooltip: FC<TooltipProps> = ({
   }, [])
 
   useEffect(() => {
-    setTooltipPosition(defaultArrowPosition)
-  }, [defaultArrowPosition])
+    setTooltipPosition(position)
+  }, [position])
 
   const arrowSize = 18
 
@@ -152,7 +151,7 @@ export const Tooltip: FC<TooltipProps> = ({
       setTooltipCoords(calculateTooltipPosition())
     }
   }, [
-    defaultArrowPosition,
+    position,
     window.scrollY,
     tipContainer.current,
     childEl,
@@ -188,7 +187,7 @@ export const Tooltip: FC<TooltipProps> = ({
           <Tip
             className="tooltip"
             showTip={showTip}
-            position={defaultArrowPosition}
+            position={position}
             arrowPosition={tooltipPosition}
             ref={tipContainer}
             maxWidth={maxWidth}
