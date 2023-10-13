@@ -244,6 +244,7 @@ const UnderlinedText = styled(Text)<{ underline: boolean }>`
 
 const arrowInset = 26
 const arrowCenterPosition = 'calc(50% - 6px)'
+const arrowVerticalCenter = 'calc(50% - 12px)'
 
 const handleHorizontalArrowPosition = (arrowPosition: ArrowPosition) => {
   switch (arrowPosition) {
@@ -274,7 +275,7 @@ const handleVerticalArrowPosition = (arrowPosition: ArrowPosition) => {
       `
     default:
       return css`
-        top: ${arrowCenterPosition};
+        top: ${arrowVerticalCenter};
       `
   }
 }
