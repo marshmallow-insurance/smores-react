@@ -199,7 +199,7 @@ export const columns = [
       <Box flex justifyContent="flex-start">
         <Tooltip
           content={<Text color="cream">{row.ability}</Text>}
-          position="top"
+          defaultArrowPosition="top"
           fallbackStyle
           underline
         >
