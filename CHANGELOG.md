@@ -1,3 +1,7 @@
+## [3.1.13] - 2023-10-24
+### Changed
+- fixes button state so it is disabled when loading
+
 ## [3.1.12] - 2023-10-13
 ### Changed
 - rename Tooltip prop
@@ -722,6 +726,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
+[3.1.13]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.12...v3.1.13
 [3.1.12]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.11...v3.1.12
 [3.1.11]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.10...v3.1.11
 [3.1.10]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.9...v3.1.10
