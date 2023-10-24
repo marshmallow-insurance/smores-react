@@ -1,3 +1,7 @@
+## [3.1.2] - 2023-10-24
+### Changed
+- reverts to pre-rebrand button behaviour so that it is disabled by default when loading
+
 ## [3.1.1] - 2023-09-14
 ### Changed
 - adds tel type to TextField input 
