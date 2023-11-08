@@ -22,8 +22,6 @@ export default {
   },
 }
 
-console.log('availableColoursArray: ', availableColoursArray)
-
 const Template = (props: MarshformGeneratorProps) => (
   <MarshformGenerator {...props} />
 )
