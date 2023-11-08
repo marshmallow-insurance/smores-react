@@ -101,8 +101,29 @@ const randomEmotion = () => {
   ] as Emotion
 }
 
-const randomEmotionPosition = () => {
+const randomEmotionPosition = (shape: Marshform) => {
   const emotionPositionArray = ['top', 'bottom', 'left', 'right', 'center']
+  const pointerPositionArray = ['top', 'left', 'right', 'center']
+  const warningPositionArray = ['center', 'bottom']
+  const semiCirclePositionArray = ['center', 'bottom', 'top']
+  if(shape === "eggTimer") {
+    return emotionPositionArray[Math.floor(Math.random() * 2)] as EmotionPosition
+  }
+  if(shape === "crest") {
+    return emotionPositionArray[Math.floor(Math.random() * 3)+2] as EmotionPosition
+  }
+  if(shape === "warning") {
+    return warningPositionArray[Math.floor(Math.random() * 2)] as EmotionPosition
+  }
+  if(shape === "house") {
+    return emotionPositionArray[Math.floor(Math.random() * 4) + 1] as EmotionPosition
+  }
+  if(shape === "semiCircle") {
+    return semiCirclePositionArray[Math.floor(Math.random() * 3)] as EmotionPosition
+  }
+  if(shape === "pointer") {
+    return pointerPositionArray[Math.floor(Math.random() * 4)] as EmotionPosition
+  }
   return emotionPositionArray[
     Math.floor(Math.random() * emotionPositionArray.length)
   ] as EmotionPosition
@@ -196,7 +217,6 @@ export const MarshformGenerator: FC<MarshformGeneratorProps> = ({
   const marshforms = Array.from({ length: marshformTiers }).map(() =>
     randomShape(),
   )
-  console.log('marshforms: ', marshforms)
 
   const marshformWidths = calculateWidths(width, marshforms)
   const marshformColours = dedupeRandomColours()
@@ -217,7 +237,7 @@ export const MarshformGenerator: FC<MarshformGeneratorProps> = ({
                 : undefined
             }
             emotionPosition={
-              emotionTier === 3 ? randomEmotionPosition() : undefined
+              emotionTier === 3 ? randomEmotionPosition(marshforms[3]) : undefined
             }
           />
         )}
@@ -234,7 +254,7 @@ export const MarshformGenerator: FC<MarshformGeneratorProps> = ({
                 : undefined
             }
             emotionPosition={
-              emotionTier === 2 ? randomEmotionPosition() : undefined
+              emotionTier === 2 ? randomEmotionPosition(marshforms[2]) : undefined
             }
           />
         )}
@@ -251,7 +271,7 @@ export const MarshformGenerator: FC<MarshformGeneratorProps> = ({
                 : undefined
             }
             emotionPosition={
-              emotionTier === 1 ? randomEmotionPosition() : undefined
+              emotionTier === 1 ? randomEmotionPosition(marshforms[1]) : undefined
             }
           />
         )}
@@ -267,7 +287,7 @@ export const MarshformGenerator: FC<MarshformGeneratorProps> = ({
               : undefined
           }
           emotionPosition={
-            emotionTier === 0 ? randomEmotionPosition() : undefined
+            emotionTier === 0 || marshformTiers === 1 ? randomEmotionPosition(marshforms[0]) : undefined
           }
         />
       </Box>

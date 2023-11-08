@@ -22,7 +22,7 @@ export const EmotionWrapper: FC<EmotionWrapperProps> = ({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 72 32"
-          width={width > 72 ? 72 : width * 0.5}
+          width={width < 40 ? 40 : width * 0.5}
           fill="none"
         >
           <g clipPath="url(#a)">
@@ -54,7 +54,7 @@ export const EmotionWrapper: FC<EmotionWrapperProps> = ({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 72 32"
-          width={width > 72 ? 72 : width * 0.5}
+          width={width < 40 ? 40 : width * 0.5}
           fill="none"
         >
           <g clipPath="url(#a)">
@@ -86,7 +86,7 @@ export const EmotionWrapper: FC<EmotionWrapperProps> = ({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 72 16"
-          width={width > 72 ? 72 : width * 0.5}
+          width={width < 40 ? 40 : width * 0.5}
           fill="none"
         >
           <g clipPath="url(#a)">
@@ -123,7 +123,7 @@ export const EmotionWrapper: FC<EmotionWrapperProps> = ({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 82 24"
-          width={width > 72 ? 72 : width * 0.5}
+          width={width < 40 ? 40 : width * 0.5}
           fill="none"
         >
           <g clipPath="url(#a)">
@@ -160,7 +160,7 @@ export const EmotionWrapper: FC<EmotionWrapperProps> = ({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 47 16"
-          width={width > 72 ? 72 : width * 0.5}
+          width={width < 40 ? 40 : width * 0.5}
           fill="none"
         >
           <g clipPath="url(#a)">
@@ -182,7 +182,7 @@ export const EmotionWrapper: FC<EmotionWrapperProps> = ({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 77 32"
-          width={width > 72 ? 72 : width * 0.5}
+          width={width < 40 ? 40 : width * 0.5}
           fill="none"
         >
           <g clipPath="url(#a)">
@@ -203,7 +203,7 @@ export const EmotionWrapper: FC<EmotionWrapperProps> = ({
       {emotion === 'happy' && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width={width > 72 ? 72 : width * 0.5}
+          width={width < 40 ? 40 : width * 0.5}
           viewBox="0 0 92 21"
           fill="none"
         >
@@ -241,7 +241,7 @@ export const EmotionWrapper: FC<EmotionWrapperProps> = ({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 72 16"
-          width={width > 72 ? 72 : width * 0.5}
+          width={width < 40 ? 40 : width * 0.5}
           fill="none"
         >
           <g clipPath="url(#a)">
@@ -263,7 +263,7 @@ export const EmotionWrapper: FC<EmotionWrapperProps> = ({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 72 10"
-          width={width > 72 ? 72 : width * 0.5}
+          width={width < 40 ? 40 : width * 0.5}
           fill="none"
         >
           <g clipPath="url(#a)">
@@ -289,7 +289,7 @@ export const EmotionWrapper: FC<EmotionWrapperProps> = ({
       {emotion === 'disappointed' && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width={width > 72 ? 72 : width * 0.5}
+          width={width < 40 ? 40 : width * 0.5}
           viewBox="0 0 92 21"
           fill="none"
         >
