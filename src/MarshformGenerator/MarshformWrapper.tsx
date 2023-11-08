@@ -20,6 +20,7 @@ export const MarshformWrapper: FC<Props> = ({
   emotion,
   emotionPosition,
 }) => {
+  console.log(emotionPosition)
   return (
     <Container>
       {emotion && (
