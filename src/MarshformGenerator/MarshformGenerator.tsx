@@ -148,33 +148,6 @@ export const availableColoursArray = [
   'marshmallowPink',
 ]
 
-export const dedupeRandomColours = () => {
-  const colourArray = [
-    'blueberry',
-    'caramel',
-    'spearmint',
-    'pistachio',
-    'marzipan',
-    'marshmallowPink',
-  ]
-  const colour1 = colourArray[
-    Math.floor(Math.random() * colourArray.length)
-  ] as MarshformColor
-  colourArray.splice(colourArray.indexOf(colour1), 1)
-  const colour2 = colourArray[
-    Math.floor(Math.random() * colourArray.length)
-  ] as MarshformColor
-  colourArray.splice(colourArray.indexOf(colour2), 1)
-  const colour3 = colourArray[
-    Math.floor(Math.random() * colourArray.length)
-  ] as MarshformColor
-  colourArray.splice(colourArray.indexOf(colour3), 1)
-  const colour4 = colourArray[
-    Math.floor(Math.random() * colourArray.length)
-  ] as MarshformColor
-  return [colour1, colour2, colour3, colour4]
-}
-
 export const MarshformGenerator: FC<MarshformGeneratorProps> = ({
   width = 200,
   emotion,
@@ -196,7 +169,61 @@ export const MarshformGenerator: FC<MarshformGeneratorProps> = ({
   const marshforms = Array.from({ length: marshformTiers }).map(() =>
     randomShape(),
   )
-  console.log('marshforms: ', marshforms)
+
+  // if there are any selected colours, dedupe them from the random colours
+  const dedupeSelectedColours = () => {
+    const colourArray = [
+      'blueberry',
+      'caramel',
+      'spearmint',
+      'pistachio',
+      'marzipan',
+      'marshmallowPink',
+    ]
+
+    const dedupedSelectedColours = colourArray.filter(
+      (color) =>
+        color !== firstColor &&
+        color !== secondColor &&
+        color !== thirdColor &&
+        color !== fourthColor,
+    )
+
+    return dedupedSelectedColours
+  }
+
+  const dedupeRandomColours = () => {
+    const colourArray = dedupeSelectedColours()
+
+    const colour1 =
+      firstColor ??
+      (colourArray[
+        Math.floor(Math.random() * colourArray.length)
+      ] as MarshformColor)
+    if (colourArray.includes(colour1))
+      colourArray.splice(colourArray.indexOf(colour1), 1)
+    const colour2 =
+      secondColor ??
+      (colourArray[
+        Math.floor(Math.random() * colourArray.length)
+      ] as MarshformColor)
+    if (colourArray.includes(colour2))
+      colourArray.splice(colourArray.indexOf(colour2), 1)
+    const colour3 =
+      thirdColor ??
+      (colourArray[
+        Math.floor(Math.random() * colourArray.length)
+      ] as MarshformColor)
+    if (colourArray.includes(colour3))
+      colourArray.splice(colourArray.indexOf(colour3), 1)
+    const colour4 =
+      fourthColor ??
+      (colourArray[
+        Math.floor(Math.random() * colourArray.length)
+      ] as MarshformColor)
+
+    return [colour1, colour2, colour3, colour4]
+  }
 
   const marshformWidths = calculateWidths(width, marshforms)
   const marshformColours = dedupeRandomColours()
@@ -208,7 +235,7 @@ export const MarshformGenerator: FC<MarshformGeneratorProps> = ({
           <MarshformWrapper
             width={marshformWidths[3]}
             shape={fourthShape ?? marshforms[3]}
-            color={fourthColor ?? marshformColours[3]}
+            color={marshformColours[3]}
             emotion={
               emotionTier === 3
                 ? emotion
@@ -225,7 +252,7 @@ export const MarshformGenerator: FC<MarshformGeneratorProps> = ({
           <MarshformWrapper
             width={marshformWidths[2]}
             shape={thirdShape ?? marshforms[2]}
-            color={thirdColor ?? marshformColours[2]}
+            color={marshformColours[2]}
             emotion={
               emotionTier === 2
                 ? emotion
@@ -242,7 +269,7 @@ export const MarshformGenerator: FC<MarshformGeneratorProps> = ({
           <MarshformWrapper
             width={marshformWidths[1]}
             shape={secondShape ?? marshforms[1]}
-            color={secondColor ?? marshformColours[1]}
+            color={marshformColours[1]}
             emotion={
               emotionTier === 1
                 ? emotion
@@ -258,7 +285,7 @@ export const MarshformGenerator: FC<MarshformGeneratorProps> = ({
         <MarshformWrapper
           width={marshformTiers === 1 ? width : marshformWidths[0]}
           shape={firstShape ?? marshforms[0]}
-          color={firstColor ?? marshformColours[0]}
+          color={marshformColours[0]}
           emotion={
             emotionTier === 0
               ? emotion
