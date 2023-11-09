@@ -47,7 +47,7 @@ const MarshformProperties: { [key in Marshform]: { scale: number } } = {
   crest: { scale: 1 },
   bumper: { scale: 1 },
   semiCircle: { scale: 1 },
-  document: { scale: 2 },
+  document: { scale: 1.5 },
   losenge: { scale: 1 },
   warning: { scale: 1 },
   circle: { scale: 1 },
@@ -58,7 +58,7 @@ const MarshformProperties: { [key in Marshform]: { scale: number } } = {
   van: { scale: 1 },
   car: { scale: 1 },
   house: { scale: 1 },
-  eggTimer: { scale: 2 },
+  eggTimer: { scale: 1.5 },
 }
 
 export interface MarshformGeneratorProps {
@@ -165,7 +165,7 @@ const randomShape = (): Marshform => {
 const calculateWidths = (width: number, shapes: Marshform[]) => {
   const randomScales = shapes
     .map((shape) => Math.random() * MarshformProperties[shape].scale)
-    .map((scale) => (scale < 0.3 ? 0.3 : scale))
+    .map((scale) => (scale < 0.3 ? 0.5 : scale))
   const biggestScale = Math.max(...randomScales)
   const ratio = width / biggestScale
 
