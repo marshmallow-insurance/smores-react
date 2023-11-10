@@ -1,4 +1,4 @@
-## [3.1.14] - 2023-11-10
+## [3.2.0] - 2023-11-10
 ### Changed
 - adds the ability for InternalField to take assistive text with links
 
@@ -730,7 +730,7 @@
 ### Changed
 - Updated gap and styles on Row component
 
-[3.1.14]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.13...v3.1.14
+[3.2.0]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.13...v3.2.0
 [3.1.13]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.12...v3.1.13
 [3.1.12]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.11...v3.1.12
 [3.1.11]: https://github.com/marshmallow-insurance/smores-react/compare/v3.1.10...v3.1.11
