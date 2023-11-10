@@ -7,7 +7,7 @@ export interface CommonFieldProps extends MarginProps {
   children?: ReactNode
   label?: string
   renderAsTitle?: boolean
-  assistiveText?: string
+  assistiveText?: string | ReactElement
   required?: boolean
   error?: boolean
   errorMsg?: string | ReactElement
