@@ -9,7 +9,6 @@ import { Icon } from '../../Icon'
 interface InternalFieldProps extends CommonFieldProps {
   children: ReactNode
   className?: string
-  assistiveText?: string
   htmlFor?: string
   fieldType: 'field' | 'fieldset'
 }

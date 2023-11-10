@@ -6,7 +6,6 @@ import { InternalField } from '../components/InternalField'
 export interface FieldProps extends CommonFieldProps {
   htmlFor?: string
   children: ReactNode
-  assistiveText?: string
 }
 
 export const Field = ({ children, ...fieldProps }: FieldProps) => {
