@@ -23,6 +23,6 @@ jobs:
         run: npm ci
 
       - name: Run Semantic Release (Test Mode)
-        run: npx semantic-release --dry-run
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
