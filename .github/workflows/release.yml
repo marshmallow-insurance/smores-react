@@ -2,18 +2,27 @@ name: release
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - test-semantic-releases
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
 
-      - name: Release 🚀
-        uses: docker://antonyurchenko/git-release:latest
+      - name: Setup Node 👾
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Semantic Release (Test Mode)
+        run: npx semantic-release --dry-run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_NAME_PREFIX: 'Smores '
