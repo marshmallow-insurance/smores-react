@@ -1,6 +1,6 @@
 name: Bump and Publish
 
-workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
   bump-and-publish:
