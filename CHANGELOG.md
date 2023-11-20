@@ -1,3 +1,11 @@
+## [3.3.1](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.0...v3.3.1) (2023-11-20)
+
+
+### Bug Fixes
+
+* minor temp delete readme ([2a2ca0b](https://github.com/marshmallow-insurance/smores-react/commit/2a2ca0beedd1a7492915de3b71073383c22ab6cd))
+* undo changelog delete ([#3237](https://github.com/marshmallow-insurance/smores-react/issues/3237)) ([ead8e61](https://github.com/marshmallow-insurance/smores-react/commit/ead8e614ab5bb7f17acb7df2f11514773ddf8115))
+
 ## [3.2.0] - 2023-11-10
 ### Changed
 - adds the ability for InternalField to take assistive text with links
