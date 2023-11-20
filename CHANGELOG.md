@@ -1,3 +1,12 @@
+## [3.3.2](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.1...v3.3.2) (2023-11-20)
+
+
+### Bug Fixes
+
+* add temp workflow trigger ([adf282f](https://github.com/marshmallow-insurance/smores-react/commit/adf282f5737940835019f7c6ca6a18aae0aca789))
+* adjusting changelog ([80c5b39](https://github.com/marshmallow-insurance/smores-react/commit/80c5b39bd7709413d65063ac2f268a67a85e2412))
+* adjusting to use manual workflow on GHA ([3100b73](https://github.com/marshmallow-insurance/smores-react/commit/3100b73dc39106fa3c5d4a178b02591f63e6650c))
+
 ## [3.3.1](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.0...v3.3.1) (2023-11-20)
 
 
