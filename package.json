@@ -18,6 +18,8 @@
     "deploy-storybook": "storybook-to-ghpages",
     "prepublishOnly": "tsc",
     "publish-npm": "npm publish --access public",
+    "preview-release": "semantic-release --dry-run",
+    "release": "semantic-release",
     "start": "npm run storybook",
     "storybook": "storybook dev -p 6006",
     "test:coverage": "jest --coverage --silent",
