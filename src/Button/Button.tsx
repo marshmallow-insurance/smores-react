@@ -185,6 +185,20 @@ const Container = styled(Box)<IButton>(
         background-color: ${theme.colors.mascarpone};
       }
     `}
+  ${smallButton &&
+    css`
+      padding: 0 10px;
+      min-width: 54px;
+      font-size: 14px;
+
+      .childrenContainer {
+        padding: 9px 0;
+      }
+
+      span {
+        margin: 0 5px 0 0;
+      }
+    `}
   ${textBtn &&
     css`
       background-color: transparent;
@@ -198,20 +212,6 @@ const Container = styled(Box)<IButton>(
       &:active {
         background-color: transparent;
         color: ${theme.colors.sesame};
-      }
-    `}
-  ${smallButton &&
-    css`
-      padding: 0 10px;
-      min-width: 54px;
-      font-size: 14px;
-
-      .childrenContainer {
-        padding: 9px 0;
-      }
-
-      span {
-        margin: 0 5px 0 0;
       }
     `}
   `,
