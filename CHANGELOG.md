@@ -1,3 +1,10 @@
+## [3.3.3](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.2...v3.3.3) (2023-11-20)
+
+
+### Bug Fixes
+
+* undo change to readme ([70460f8](https://github.com/marshmallow-insurance/smores-react/commit/70460f809312d12e7588cf13fe944f703c9329c0))
+
 ## [3.3.2](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.1...v3.3.2) (2023-11-20)
 
 
