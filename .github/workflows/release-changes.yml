@@ -19,12 +19,10 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install and Build 🔧
+      - name: Install Dependecies 🔧
         run: |
           npm ci
-          npm run build-storybook
-
-      - name: Semantic Release
+      - name: Generate CHANGELOG.md & Bump Version
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
