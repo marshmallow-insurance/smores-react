@@ -1,0 +1,14 @@
+name: release changes
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Semantic Release
+        run: npx semantic-release
