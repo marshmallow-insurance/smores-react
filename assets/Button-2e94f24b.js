@@ -45,6 +45,19 @@ import{j as h,a as i,s,A as n}from"./styled-components.browser.esm-1fe49baf.js";
         background-color: ${o.colors.mascarpone};
       }
     `}
+  ${r&&n`
+      padding: 0 10px;
+      min-width: 54px;
+      font-size: 14px;
+
+      .childrenContainer {
+        padding: 9px 0;
+      }
+
+      span {
+        margin: 0 5px 0 0;
+      }
+    `}
   ${m&&n`
       background-color: transparent;
       padding: 0;
@@ -57,19 +70,6 @@ import{j as h,a as i,s,A as n}from"./styled-components.browser.esm-1fe49baf.js";
       &:active {
         background-color: transparent;
         color: ${o.colors.sesame};
-      }
-    `}
-  ${r&&n`
-      padding: 0 10px;
-      min-width: 54px;
-      font-size: 14px;
-
-      .childrenContainer {
-        padding: 9px 0;
-      }
-
-      span {
-        margin: 0 5px 0 0;
       }
     `}
   `),_=s.div`
@@ -92,4 +92,4 @@ import{j as h,a as i,s,A as n}from"./styled-components.browser.esm-1fe49baf.js";
   padding: 16px 0;
   flex-grow: 1;
 `;try{y.displayName="Button",y.__docgenInfo={description:"",displayName:"Button",props:{id:{defaultValue:null,description:"",name:"id",required:!1,type:{name:"string"}},className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},disabled:{defaultValue:null,description:"",name:"disabled",required:!1,type:{name:"boolean"}},handleClick:{defaultValue:null,description:"",name:"handleClick",required:!1,type:{name:"((e: FormEvent<HTMLButtonElement>) => void)"}},loading:{defaultValue:null,description:"",name:"loading",required:!1,type:{name:"boolean"}},primary:{defaultValue:null,description:"",name:"primary",required:!1,type:{name:"boolean"}},secondary:{defaultValue:null,description:"",name:"secondary",required:!1,type:{name:"boolean"}},fallbackStyle:{defaultValue:null,description:"",name:"fallbackStyle",required:!1,type:{name:"boolean"}},textBtn:{defaultValue:null,description:"",name:"textBtn",required:!1,type:{name:"boolean"}},smallButton:{defaultValue:null,description:"",name:"smallButton",required:!1,type:{name:"boolean"}},icon:{defaultValue:null,description:"",name:"icon",required:!1,type:{name:"string"}},trailingIcon:{defaultValue:null,description:"",name:"trailingIcon",required:!1,type:{name:"boolean"}},forcedWidth:{defaultValue:null,description:"",name:"forcedWidth",required:!1,type:{name:"string"}},form:{defaultValue:null,description:"",name:"form",required:!1,type:{name:"string"}},m:{defaultValue:null,description:"",name:"m",required:!1,type:{name:"ResponsiveProp<SpacingProp>"}},mx:{defaultValue:null,description:"",name:"mx",required:!1,type:{name:'ResponsiveProp<SpacingProp | "auto">'}},my:{defaultValue:null,description:"",name:"my",required:!1,type:{name:"ResponsiveProp<SpacingProp>"}},ml:{defaultValue:null,description:"",name:"ml",required:!1,type:{name:"ResponsiveProp<SpacingProp>"}},mr:{defaultValue:null,description:"",name:"mr",required:!1,type:{name:"ResponsiveProp<SpacingProp>"}},mt:{defaultValue:null,description:"",name:"mt",required:!1,type:{name:"ResponsiveProp<SpacingProp>"}},mb:{defaultValue:null,description:"",name:"mb",required:!1,type:{name:"ResponsiveProp<SpacingProp>"}}}}}catch{}export{y as B};
-//# sourceMappingURL=Button-c230e7a9.js.map
+//# sourceMappingURL=Button-2e94f24b.js.map
