@@ -1,9 +1,10 @@
 name: release changes
 
 on:
+  push:
+    branches: 
+      - forcing-semantic-versions-tag
   workflow_dispatch:
-  pull_request:
-    types: [opened, synchronize, reopened]
 
 jobs:
   semantic-release:
