@@ -161,7 +161,18 @@ yalc remove --all
 import React from 'react';
 import {Text, Button} from '@mrshmllw/smores-react';
 
-
+const App = () => (
+  <>
+    <Text>Hey you</Text>
+    <Button
+      color="green"
+      onClick={() => console.log('thanks for clicking :)')}
+    >
+      Click me!
+    </Button>
+  </>
+);
+```
 
 ## License
 
