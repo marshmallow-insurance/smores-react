@@ -23,7 +23,7 @@ jobs:
       - name: Install Dependecies 🔧
         run: |
           npm ci
-      - name: Generate CHANGELOG.md & Bump Version
+      - name: Generate CHANGELOG.md & Bump & Release to NPM 🦫
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
