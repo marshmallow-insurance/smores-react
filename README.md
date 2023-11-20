@@ -155,24 +155,7 @@ yalc remove --all
 * [Toggle](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Toggle)
 * [Tooltip](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Tooltip)
 
-## Usage
 
-```js
-import React from 'react';
-import {Text, Button} from '@mrshmllw/smores-react';
-
-const App = () => (
-  <>
-    <Text>Hey you</Text>
-    <Button
-      color="green"
-      onClick={() => console.log('thanks for clicking :)')}
-    >
-      Click me!
-    </Button>
-  </>
-);
-```
 
 ## License
 
