@@ -1,4 +1,4 @@
-name: bump and publish
+name: Bump and Publish
 
 workflow_dispatch:
 
