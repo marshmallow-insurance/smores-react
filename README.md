@@ -44,13 +44,6 @@ Before releasing, you may want to see the changes that will be included in the n
 1. Checkout `main` and pull
 2. Run `npm run preview-release`, this will show both the updated CHANGELOG.md & the next version.
 
-#### Releasing & Publishing
-When you're happy with your changes, you can release & publish your changes to NPM in one fell swoop by:
-
-1. Goto the [smores-repo](https://github.com/marshmallow-insurance/smores-react) and make sure you are on the `main` branch.
-2. Click `Actions`
-3. Click `Bump and Publish` and press `Run workflow`
-4. Wait for this to finish! 
 
 Note: this workflow will fail if the package version is already on the latest, so you dont have to worry about deploying the same changes multiple times.
 
