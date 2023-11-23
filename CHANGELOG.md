@@ -757,6 +757,7 @@
 [3.0.2]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/marshmallow-insurance/smores-react/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.2...v3.0.0
+[2.19.3]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.2...v2.19.3
 [2.19.2]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.1...v2.19.2
 [2.19.1]: https://github.com/marshmallow-insurance/smores-react/compare/v2.19.0...v2.19.1
 [2.19.0]: https://github.com/marshmallow-insurance/smores-react/compare/v2.18.6...v2.19.0
