@@ -26,43 +26,33 @@ $ yarn add @mrshmllw/smores-react
 $ npm install @mrshmllw/smores-react
 ```
 
+## Making changes
+
+When making changes and creating PR's we use [semantic-releases](https://www.npmjs.com/package/semantic-release) which make use of [conventional-commits](https://www.conventionalcommits.org/en/v1.0.0/). 
+
+So to ensure our CHANGELOG.md is updated automatically and gets the changes we have made, we just need to name our PR's following this convention: e.g
+
+1. patch - fix(OPTIONAL bugfix-reference): some bugfix
+2. minor - feat(OPTIONAL feature-reference): some feature
+3. major - BREAKING CHANGE: some breaking change
+
 ## Release
 
-Before starting, make sure that `CHANGELOG.md` is updated according to [keepachangelog.com](https://keepachangelog.com/en/1.0.0/) with the latest release notes. If not, make a PR updating it before continuing.
+#### Preview
+Before releasing, you may want to see the changes that will be included in the next version deployed on NPM, you can do so by:
 
-1. Checkout a new branch from the `main` branch, update Changelog and _bump_ the project version.
+1. Checkout `main` and pull
+2. Run `npm run preview-release`, this will show both the updated CHANGELOG.md & the next version.
 
-```
-git checkout main
-git pull
-git checkout -b [branch_name]
-```
+#### Releasing & Publishing
+When you're happy with your changes, you can release & publish your changes to NPM in one fell swoop by:
 
-2. Bump the version according to [semver.org](https://semver.org/) and create a PR
+1. Goto the [smores-repo](https://github.com/marshmallow-insurance/smores-react) and make sure you are on the `main` branch.
+2. Click `Actions`
+3. Click `Bump and Publish` and press `Run workflow`
+4. Wait for this to finish! 
 
-```
-npm version [major | minor | patch] 
-```
-
-3. When merged, go the the `main` branch, pull and push the new tag to `origin`
-
-```
-git checkout main
-git pull
-git push origin --tags
-```
-
-Wait for the build to be successful (green tick in GitHub Actions workflow) before next step
-
-4. Login and publish to NPM
-
-```
-npm login
-> enter your username and password
-> enter your email address
-> complete two factor authentication
-npm publish
-```
+Note: this workflow will fail if the package version is already on the latest, so you dont have to worry about deploying the same changes multiple times.
 
 ## Running Smores in dev mode 
 To run Smores in dev mode follow the below instructions on installing and using Yalc to link up your project repo with Smores.
