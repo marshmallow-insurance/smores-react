@@ -155,7 +155,7 @@ const App = () => (
   <>
     <Text>Hey you</Text>
     <Button
-      color='red'
+      color="green"
       onClick={() => console.log('thanks for clicking :)')}
     >
       Click me!
