@@ -93,6 +93,17 @@ export const CollectionPage: FC = () => {
                   onSelect={onSelect}
                 />
               </Row>
+              <Row label="Disabled Fallback">
+                <Dropdown
+                  id={id}
+                  label={label}
+                  placeholder={placeholder}
+                  list={list}
+                  disabled={true}
+                  onSelect={onSelect}
+                  fallbackStyle
+                />
+              </Row>
               <Row label="Leading Icon">
                 <Dropdown
                   id={id}

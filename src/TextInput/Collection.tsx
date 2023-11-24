@@ -88,6 +88,17 @@ export const CollectionPage: FC = () => {
                   onChange={setValue}
                 />
               </Row>
+              <Row label="Disabled Fallback">
+                <TextInput
+                  id={id}
+                  label={label}
+                  value=""
+                  placeholder={placeholder}
+                  disabled={true}
+                  onChange={setValue}
+                  fallbackStyle
+                />
+              </Row>
               <Row label="Required">
                 <TextInput
                   id={id}

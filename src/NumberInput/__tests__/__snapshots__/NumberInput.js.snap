@@ -293,11 +293,6 @@ exports[`renders - disabled 1`] = `
   -moz-appearance: textfield;
 }
 
-.c4:hover,
-.c4:focus-within {
-  border-color: #A1957C;
-}
-
 .c4::-webkit-outer-spin-button,
 .c4::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -477,11 +472,6 @@ exports[`renders - error 1`] = `
   border-radius: 12px;
   height: auto;
   -moz-appearance: textfield;
-}
-
-.c4:hover,
-.c4:focus-within {
-  border-color: #DF2929;
 }
 
 .c4::-webkit-outer-spin-button,

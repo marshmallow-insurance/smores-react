@@ -197,13 +197,17 @@ const StyledSelect = styled.select<SSelect>`
     opacity: 0.5;
   }
 
-  &:hover,
-  &:focus,
-  &:focus-visible,
-  &:checked {
-    border-color: ${({ error }) =>
-      error ? theme.colors.strawberry : theme.colors.marzipan};
-  }
+  ${({ error }) =>
+    !error &&
+    css`
+      :not(:disabled) {
+        &:hover,
+        &:focus,
+        &:focus-visible,
+        &:checked {
+          border-color: ${theme.colors.marzipan}
+      }
+    `}
 `
 
 const Caret = styled.div`
