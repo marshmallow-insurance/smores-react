@@ -1,5 +1,5 @@
 import { Icon } from '../../Icon'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { theme } from '../../theme'
 
 interface IInput {
@@ -27,15 +27,20 @@ export const Input = styled.input<IInput>`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'initial')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   padding: 18px 14px;
-  &:hover,
-  &:focus-within {
-    border-color: ${({ error }) =>
-      error ? theme.colors.strawberry : theme.colors.marzipan};
-  }
   background-color: ${({ fallbackStyle }) =>
     fallbackStyle ? theme.colors.custard : theme.colors.cream};
   border: 2px solid
     ${({ error }) => (error ? theme.colors.strawberry : theme.colors.oatmeal)};
+
+  ${({ disabled, error }) =>
+    !disabled &&
+    !error &&
+    css`
+      &:hover,
+      &:focus-within {
+        border-color: ${theme.colors.marzipan};
+      }
+    `}
 
   border-radius: 12px;
   height: auto;
