@@ -1,3 +1,16 @@
+## [3.3.1](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.0...v3.3.1) (2023-11-28)
+
+
+### Bug Fixes
+
+* **actions:** add git author details to env variables ([#3267](https://github.com/marshmallow-insurance/smores-react/issues/3267)) ([78f125b](https://github.com/marshmallow-insurance/smores-react/commit/78f125b884f656a3870184fdb8b12f40e37934f3))
+* add repositoryUrl to releaserc ([#3259](https://github.com/marshmallow-insurance/smores-react/issues/3259)) ([658c51e](https://github.com/marshmallow-insurance/smores-react/commit/658c51e1286dcf179df3e1dd4d88dd4a4f492ec5))
+* adjusting Bump_and_Publish workflow ([#3260](https://github.com/marshmallow-insurance/smores-react/issues/3260)) ([c0eb644](https://github.com/marshmallow-insurance/smores-react/commit/c0eb644291cd84468e9306e133cdedb451ada7fb))
+* adjusting repository url ([#3262](https://github.com/marshmallow-insurance/smores-react/issues/3262)) ([f16a07e](https://github.com/marshmallow-insurance/smores-react/commit/f16a07ed3dad62f5590340ef56c4b46d025349b4))
+* update missing changelog version ([#3257](https://github.com/marshmallow-insurance/smores-react/issues/3257)) ([96573e5](https://github.com/marshmallow-insurance/smores-react/commit/96573e52724fcda48e497e8d021f26eb54920a8f))
+* **workflow:** github token for bump and publish ([#3271](https://github.com/marshmallow-insurance/smores-react/issues/3271)) ([4d6e138](https://github.com/marshmallow-insurance/smores-react/commit/4d6e138b71434439e306c94db0075bf4e4aff53b))
+* **workflow:** rever to MARSHMALLOW_CI_PAT ([#3272](https://github.com/marshmallow-insurance/smores-react/issues/3272)) ([0f7f342](https://github.com/marshmallow-insurance/smores-react/commit/0f7f342cd123609697c58fbc2b2b20a0de60a7e4))
+
 ## [3.2.1] - 2023-11-10
 ### Changed
 - fixes the padding for when text button is combined with a small button (removes padding)
