@@ -54,6 +54,10 @@ When you're happy with your changes, you can release & publish your changes to N
 
 Note: this workflow will fail if the package version is already on the latest, so you dont have to worry about deploying the same changes multiple times.
 
+###### Tokens
+
+The `MARSHMALLOW_CI_PAT` has been created from the internal @marshmallow-ci GH account, it does expire next year, so will need regenerating once it does.
+
 ## Running Smores in dev mode 
 To run Smores in dev mode follow the below instructions on installing and using Yalc to link up your project repo with Smores.
 
