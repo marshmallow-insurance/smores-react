@@ -56,7 +56,7 @@ Note: this workflow will fail if the package version is already on the latest, s
 
 ###### Tokens
 
-The `MARSHMALLOW_CI_PAT` has been created from the internal @marshmallow-ci GH account, it does expire next year, so will need regenerating once it does.
+The `MARSHMALLOW_CI_PAT` has been created from the internal @marshmallow-ci GH account, it expires `27/11/2024` so will need regenerating once it does.
 
 ## Running Smores in dev mode 
 To run Smores in dev mode follow the below instructions on installing and using Yalc to link up your project repo with Smores.
