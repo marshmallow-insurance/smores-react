@@ -57,7 +57,7 @@ exports[`renders 1`] = `
 }
 
 .c1:checked + .c2 {
-  background-color: #292924;
+  background-color: #838E49;
   border: none;
 }
 

@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
-import { focusOutline } from '../utils/focusOutline'
-import { theme } from '../theme'
-import { MarginProps } from '../utils/space'
 import { Box } from '../Box'
+import { theme } from '../theme'
+import { focusOutline } from '../utils/focusOutline'
+import { MarginProps } from '../utils/space'
 
 type Props = {
   /** unique ID */
@@ -85,7 +85,7 @@ const Checkbox = styled.input`
   ${focusOutline({ selector: `&:focus-visible + ${Slider}` })}
 
   &:checked + ${Slider} {
-    background-color: ${theme.colors.liquorice};
+    background-color: ${theme.colors.pistachio};
     border: none;
   }
 
