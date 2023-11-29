@@ -1,3 +1,15 @@
+## [3.3.2](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.1...v3.3.2) (2023-11-29)
+
+
+### Bug Fixes
+
+* add in release-notes-generator ([#3282](https://github.com/marshmallow-insurance/smores-react/issues/3282)) ([60a4ac4](https://github.com/marshmallow-insurance/smores-react/commit/60a4ac4ef5128a68412b98496674230e87ea484f))
+
+
+### Styles
+
+* convert Toggle active state to pistachio ([#3281](https://github.com/marshmallow-insurance/smores-react/issues/3281)) ([e06432a](https://github.com/marshmallow-insurance/smores-react/commit/e06432abb473483d40d4edf1e9301e47fcaca85c))
+
 ## [3.3.1](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.0...v3.3.1) (2023-11-28)
 
 
