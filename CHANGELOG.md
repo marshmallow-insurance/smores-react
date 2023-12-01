@@ -1,3 +1,10 @@
+## [3.3.3](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.2...v3.3.3) (2023-12-01)
+
+
+### Bug Fixes
+
+* add semantic-release GH-release plugin ([#3300](https://github.com/marshmallow-insurance/smores-react/issues/3300)) ([518ae7b](https://github.com/marshmallow-insurance/smores-react/commit/518ae7b1960d4c21ad32f2926e3798104d907e72))
+
 ## [3.3.2](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.1...v3.3.2) (2023-11-29)
 
 
