@@ -40,6 +40,12 @@
         }
       }
     ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": ["dist"]
+      }
+    ],
     "@semantic-release/changelog",
     {
       "path": "@semantic-release/npm",
