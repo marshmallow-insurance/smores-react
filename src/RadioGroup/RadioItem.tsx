@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 
+import { Icons } from 'Icon/iconsTypes'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
@@ -14,7 +15,7 @@ import { BaseValueType, DisplayType, IconPosition } from './types'
 type RadioItemProps = {
   name: string
   visual?: string
-  icon?: string
+  icon?: Icons
   iconPosition?: IconPosition
   value: BaseValueType
   label: string

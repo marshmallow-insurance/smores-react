@@ -1,18 +1,19 @@
+import { darken } from 'polished'
 import React, { FC, MouseEventHandler, ReactElement } from 'react'
 import styled, { css } from 'styled-components'
-import { darken } from 'polished'
 
+import { Icons } from 'Icon/iconsTypes'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
-import { theme, Color } from '../theme'
+import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
 
 type StylesItem = {
   iconColor: Color
   backgroundColor: string
   hoverBackgroundColor: string
-  icon: string
+  icon: Icons
 }
 
 const styles: Record<SupportMessageType, StylesItem> = {

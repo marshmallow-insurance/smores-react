@@ -1,11 +1,11 @@
 import React from 'react'
-import { Card, CardProps } from './Card'
-import { Text } from '../Text'
-import placeHolderSvg from './assets/placeHolderImage.svg'
-import { Tag } from '../Tag'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Link } from '../Link'
+import { Tag } from '../Tag'
+import { Text } from '../Text'
+import { Card, CardProps } from './Card'
+import placeHolderSvg from './assets/placeHolderImage.svg?react'
 
 export default {
   title: 'Card',
