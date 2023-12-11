@@ -1,20 +1,21 @@
 import React, {
   FocusEvent,
   FormEvent,
-  forwardRef,
   ForwardedRef,
+  forwardRef,
   useMemo,
 } from 'react'
 import styled, { css } from 'styled-components'
 
-import { theme } from '../theme'
+import { Icons } from 'Icon/iconsTypes'
+import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
+import { StyledFrontIcon } from '../fields/components/CommonInput'
+import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
-import { Box } from '../Box'
-import { StyledFrontIcon } from '../fields/components/CommonInput'
 
 export type DropdownItem = {
   optionGroupLabel?: string
@@ -29,7 +30,7 @@ export interface Props extends CommonFieldProps {
   defaultValue?: string
   disabled?: boolean
   list: DropdownItem[]
-  frontIcon?: string
+  frontIcon?: Icons
   fallbackStyle?: boolean
   onSelect: (element: string) => void
   onBlur?: (e: FocusEvent<HTMLSelectElement>) => void

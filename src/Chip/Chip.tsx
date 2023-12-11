@@ -1,17 +1,18 @@
-import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
+import React, { ButtonHTMLAttributes, FC, ReactNode, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
-import { theme } from '../theme'
+import { Icons } from 'Icon/iconsTypes'
 import { Box } from '../Box'
 import { Icon as IconComponent } from '../Icon'
 import { Loader } from '../Loader'
+import { theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
 interface IButton {
   primary: boolean
   secondary: boolean
-  icon: string
+  icon?: Icons
   $loading: boolean
   disabled: boolean
 }
@@ -21,7 +22,7 @@ type Props = {
   handleClick: (e: React.FormEvent<HTMLButtonElement>) => void
   primary?: boolean
   secondary?: boolean
-  icon?: string
+  icon?: Icons
   disabled?: boolean
   loading?: boolean
 } & MarginProps
@@ -37,7 +38,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
       secondary = false,
       disabled = false,
       loading = false,
-      icon = '',
+      icon,
       ...props
     },
     ref,

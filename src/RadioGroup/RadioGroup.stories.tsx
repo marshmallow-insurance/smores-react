@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { RadioGroup, RadioGroupProps } from './RadioGroup'
-import visualSvg from './assets/radio-visual.svg'
+import visualSvg from './assets/radio-visual.svg?react'
 
 export default {
   title: 'RadioGroup',
