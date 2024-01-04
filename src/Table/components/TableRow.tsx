@@ -1,5 +1,6 @@
 import React, { ReactElement, ReactNode, useState } from 'react'
-import { isMappedReactElement, isReactElement } from '../helpers'
+import { isReactElement } from '../../utils/isReactElement'
+import { isMappedReactElement } from '../helpers'
 import { TableRowProps } from '../types'
 import { RowActions } from './RowActions'
 import { StyledCell, StyledRow } from './commonComponents'

@@ -1,7 +1,8 @@
 import React from 'react'
-import { SupportMessage, SupportMessageProps } from './SupportMessage'
+import { Box } from '../Box'
 import { Link } from '../Link'
 import { CollectionPage } from './Collection'
+import { SupportMessage, SupportMessageProps } from './SupportMessage'
 
 export default {
   title: 'SupportMessage',
@@ -28,9 +29,9 @@ WithCustomDescription.args = {
   type: 'info',
   title: 'A SupportMessage using the Link component',
   description: (
-    <>
+    <Box>
       Some text rendered using a <Link href={''}>Link</Link>
-    </>
+    </Box>
   ),
 }
 

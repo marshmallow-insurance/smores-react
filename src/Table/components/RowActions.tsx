@@ -4,7 +4,7 @@ import { Box } from '../../Box'
 import { Button } from '../../Button'
 import { IconStrict } from '../../IconStrict'
 import { focusOutlineStyle } from '../../utils/focusOutline'
-import { isReactElement } from '../helpers'
+import { isReactElement } from '../../utils/isReactElement'
 import { RowActionsProps } from '../types'
 import { StyledCell } from './commonComponents'
 
