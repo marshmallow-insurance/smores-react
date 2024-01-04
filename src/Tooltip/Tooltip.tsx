@@ -174,14 +174,14 @@ export const Tooltip: FC<TooltipProps> = ({
 
   return (
     <Container>
-      <UnderlinedText
+      <UnderlinedChild
         id={randomId}
         underline={underline}
         onMouseEnter={() => setShowTip(true)}
         onMouseLeave={() => setShowTip(false)}
       >
         {children}
-      </UnderlinedText>
+      </UnderlinedChild>
       {childEl &&
         createPortal(
           <Tip
@@ -233,7 +233,7 @@ export const Container = styled.div`
   }
 `
 
-const UnderlinedText = styled(Box)<{ underline: boolean }>`
+const UnderlinedChild = styled(Box)<{ underline: boolean }>`
   cursor: pointer;
   ${({ underline }) =>
     underline &&
