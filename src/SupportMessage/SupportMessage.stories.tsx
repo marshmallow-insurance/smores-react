@@ -28,7 +28,7 @@ WithCustomDescription.args = {
   type: 'info',
   title: 'A SupportMessage using the Link component',
   description: (
-    <Box>
+    <div>
       Some text rendered using a <Link href={''}>Link</Link>
     </Box>
   ),
