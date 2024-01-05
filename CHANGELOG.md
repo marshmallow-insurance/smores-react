@@ -1,3 +1,10 @@
+## [3.3.5](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.4...v3.3.5) (2024-01-05)
+
+
+### Bug Fixes
+
+* labelMargin optional ([#3375](https://github.com/marshmallow-insurance/smores-react/issues/3375)) ([6ae1765](https://github.com/marshmallow-insurance/smores-react/commit/6ae1765753a6b0c9df96d4d7f927b2f2efcb05fc))
+
 ## [3.3.4](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.3...v3.3.4) (2024-01-05)
 
 
