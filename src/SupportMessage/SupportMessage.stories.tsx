@@ -30,7 +30,7 @@ WithCustomDescription.args = {
   description: (
     <div>
       Some text rendered using a <Link href={''}>Link</Link>
-    </Box>
+    </div>
   ),
 }
 
