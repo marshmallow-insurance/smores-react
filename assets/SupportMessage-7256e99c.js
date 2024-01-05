@@ -1,25 +1,29 @@
-import{a as p,j as o,s as t,A as g}from"./styled-components.browser.esm-eb1c464b.js";import{c as n}from"./polished.esm-b6220ab2.js";import{B as l}from"./Box-f9b8808b.js";import{I as d}from"./Icon-d84521c2.js";import{T as y}from"./Text-147cfb8f.js";import{t as e}from"./theme-9a9bdd1b.js";const i={info:{iconColor:"liquorice",backgroundColor:e.colors.custard,hoverBackgroundColor:n(.1,e.colors.custard),icon:"info"},fallbackStyle:{iconColor:"liquorice",backgroundColor:e.colors.coconut,hoverBackgroundColor:n(.1,e.colors.coconut),icon:"info"},alert:{iconColor:"tangerine",backgroundColor:e.colors.sherbert,hoverBackgroundColor:n(.1,e.colors.sherbert),icon:"alert"},warning:{iconColor:"strawberry",backgroundColor:e.colors.watermelon,hoverBackgroundColor:n(.1,e.colors.watermelon),icon:"warning"},success:{iconColor:"apple",backgroundColor:e.colors.mint,hoverBackgroundColor:n(.1,e.colors.mint),icon:"included"}},m=({className:r,description:a,onClick:c,type:s="info",title:u,...f})=>p(v,{className:r,type:s,onClick:c,...f,children:[o(h,{children:o(d,{size:20,render:i[s].icon,color:i[s].iconColor})}),p(l,{flex:!0,direction:"column",mx:"8px",children:[u&&o(x,{children:u}),o(C,{tag:"p",children:a})]}),c&&o(l,{ml:{custom:"auto"},children:o(d,{size:16,render:"caret",color:"marzipan",rotate:270})})]}),h=t(l)`
+import{a as p,j as o,s as i,A as g}from"./styled-components.browser.esm-eb1c464b.js";import{c as l}from"./polished.esm-b6220ab2.js";import{B as a}from"./Box-f9b8808b.js";import{I as d}from"./Icon-d84521c2.js";import{T as h}from"./Text-147cfb8f.js";import{t as e}from"./theme-9a9bdd1b.js";import{i as y}from"./isReactElement-6788246b.js";const t={info:{iconColor:"liquorice",backgroundColor:e.colors.custard,hoverBackgroundColor:l(.1,e.colors.custard),icon:"info"},fallbackStyle:{iconColor:"liquorice",backgroundColor:e.colors.coconut,hoverBackgroundColor:l(.1,e.colors.coconut),icon:"info"},alert:{iconColor:"tangerine",backgroundColor:e.colors.sherbert,hoverBackgroundColor:l(.1,e.colors.sherbert),icon:"alert"},warning:{iconColor:"strawberry",backgroundColor:e.colors.watermelon,hoverBackgroundColor:l(.1,e.colors.watermelon),icon:"warning"},success:{iconColor:"apple",backgroundColor:e.colors.mint,hoverBackgroundColor:l(.1,e.colors.mint),icon:"included"}},m=({className:n,description:r,onClick:s,type:c="info",title:u,...f})=>p(x,{className:n,type:c,onClick:s,...f,children:[o(v,{children:o(d,{size:20,render:t[c].icon,color:t[c].iconColor})}),p(a,{flex:!0,direction:"column",mx:"8px",children:[u&&o(C,{children:u}),y(r)?o(b,{children:r}):o(k,{tag:"p",children:r})]}),s&&o(a,{ml:{custom:"auto"},children:o(d,{size:16,render:"caret",color:"marzipan",rotate:270})})]}),v=i(a)`
   align-self: flex-start;
-`,v=t(l)(({type:r,onClick:a})=>g`
+`,x=i(a)(({type:n,onClick:r})=>g`
     align-items: center;
-    background-color: ${i[r].backgroundColor};
+    background-color: ${t[n].backgroundColor};
     border-radius: 16px;
-    ${a&&"cursor: pointer"};
+    ${r&&"cursor: pointer"};
     padding: 12px;
     display: flex;
     width: 100%;
 
     &:hover,
     &:active {
-      ${a&&`background-color: ${i[r].hoverBackgroundColor};`};
+      ${r&&`background-color: ${t[n].hoverBackgroundColor};`};
     }
-  `),x=t.p`
+  `),C=i.p`
   font-size: 16px;
   font-weight: ${e.font.weight.medium};
   color: ${e.colors.liquorice};
   line-height: 20.8px;
   margin-bottom: 4px;
-`,C=t(y)`
+`,b=i(a)`
+  color: ${e.colors.liquorice};
+  font-size: 14px;
+  line-height: 20px;
+`,k=i(h)`
   color: ${e.colors.liquorice};
   font-size: 14px;
   line-height: 20px;
