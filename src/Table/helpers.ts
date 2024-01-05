@@ -1,9 +1,5 @@
 import { ReactElement, isValidElement } from 'react'
 
-export const isReactElement = (obj: unknown): obj is ReactElement => {
-  return isValidElement(obj)
-}
-
 export const isMappedReactElement = (obj: unknown): obj is ReactElement[] => {
   if (!Array.isArray(obj)) return false
   if (!obj[0]) return false

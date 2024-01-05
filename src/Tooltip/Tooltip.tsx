@@ -9,6 +9,7 @@ import React, {
 import { createPortal } from 'react-dom'
 import styled, { css } from 'styled-components'
 import { v4 as uuidv4 } from 'uuid'
+import { Box } from '../Box'
 import { Text } from '../Text'
 import { useEventListener } from '../hooks'
 import { theme } from '../theme'
@@ -173,15 +174,14 @@ export const Tooltip: FC<TooltipProps> = ({
 
   return (
     <Container>
-      <UnderlinedText
+      <UnderlinedChild
         id={randomId}
         underline={underline}
-        cursor="pointer"
         onMouseEnter={() => setShowTip(true)}
         onMouseLeave={() => setShowTip(false)}
       >
         {children}
-      </UnderlinedText>
+      </UnderlinedChild>
       {childEl &&
         createPortal(
           <Tip
@@ -233,7 +233,8 @@ export const Container = styled.div`
   }
 `
 
-const UnderlinedText = styled(Text)<{ underline: boolean }>`
+const UnderlinedChild = styled(Box)<{ underline: boolean }>`
+  cursor: pointer;
   ${({ underline }) =>
     underline &&
     css`
