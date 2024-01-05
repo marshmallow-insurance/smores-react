@@ -8,7 +8,7 @@ import { Text } from '../Text'
 export type LabelledTextProps = {
   children: ReactNode
   label: string
-  labelMargin: 2 | 4 | 8
+  labelMargin?: 2 | 4 | 8
 } & MarginProps
 
 export const LabelledText: FC<LabelledTextProps> = ({
