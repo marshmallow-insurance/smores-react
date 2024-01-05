@@ -1,5 +1,4 @@
 import React from 'react'
-import { Box } from '../Box'
 import { Link } from '../Link'
 import { CollectionPage } from './Collection'
 import { SupportMessage, SupportMessageProps } from './SupportMessage'
