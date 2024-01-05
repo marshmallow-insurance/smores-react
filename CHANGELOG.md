@@ -1,3 +1,10 @@
+## [3.3.4](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.3...v3.3.4) (2024-01-05)
+
+
+### Bug Fixes
+
+* validateDomNesting warnings in SupportMessage & Tooltip ([#3374](https://github.com/marshmallow-insurance/smores-react/issues/3374)) ([e29f180](https://github.com/marshmallow-insurance/smores-react/commit/e29f18092ce3dcf0f5b3eff1e84d6aa011f5423b))
+
 ## [3.3.3](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.2...v3.3.3) (2023-12-01)
 
 
