@@ -3,9 +3,8 @@ import styled, { css } from 'styled-components'
 import { MarginProps } from '../utils/space'
 
 import { Box } from '../Box'
-import { Color, theme } from '../theme'
-import { iconList } from './iconsList'
-import { Icons } from './iconsTypes'
+import { Color } from '../theme'
+import { Icons, iconList } from './iconsList'
 
 /**
  * When adding a new Icon please remember to also add it
@@ -48,7 +47,7 @@ export const Icon: FC<IconProps> = ({
       color={color}
       {...marginProps}
     >
-      <IconComponent color={theme.colors[color] as Color} />
+      <IconComponent />
     </Container>
   )
 }
@@ -60,7 +59,7 @@ interface IIcon {
 }
 
 const Container = styled(Box)<IIcon>(
-  ({ size, rotate }) => css`
+  ({ size, rotate, color }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,5 +67,8 @@ const Container = styled(Box)<IIcon>(
     width: ${size}px;
     height: ${size}px;
     transform: rotate(${rotate}deg);
+    svg {
+      color: ${color};
+    }
   `,
 )

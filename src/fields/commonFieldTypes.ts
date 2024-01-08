@@ -1,4 +1,4 @@
-import { Icons } from 'Icon/iconsTypes'
+import { Icons } from 'Icon/iconsList'
 import { ReactElement, ReactNode } from 'react'
 import { MarginProps } from '../utils/space'
 

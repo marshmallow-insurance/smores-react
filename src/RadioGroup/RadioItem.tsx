@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 
-import { Icons } from 'Icon/iconsTypes'
+import { Icons } from 'Icon/iconsList'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'

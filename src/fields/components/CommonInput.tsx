@@ -1,4 +1,4 @@
-import { Icons } from 'Icon/iconsTypes'
+import { Icons } from 'Icon/iconsList'
 import styled, { css } from 'styled-components'
 import { Icon } from '../../Icon'
 import { theme } from '../../theme'

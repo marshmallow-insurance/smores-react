@@ -1,4 +1,4 @@
-import { Icons } from 'Icon/iconsTypes'
+import { Icons } from 'Icon/iconsList'
 import { darken } from 'polished'
 import React, { FC, MouseEventHandler, ReactNode } from 'react'
 import styled, { css } from 'styled-components'

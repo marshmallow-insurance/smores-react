@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Icon } from './Icon'
-import { iconList } from './iconsList'
-import { Icons } from './iconsTypes'
+import { Icons, iconList } from './iconsList'
 
 export const Container = () => {
   return (

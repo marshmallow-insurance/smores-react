@@ -11,7 +11,7 @@ import styled from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
 
-import { Icons } from 'Icon/iconsTypes'
+import { Icons } from 'Icon/iconsList'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { Fieldset } from '../fields/Fieldset'
 import { ITEM_GAP } from './constants'

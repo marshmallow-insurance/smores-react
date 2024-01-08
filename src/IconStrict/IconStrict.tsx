@@ -1,7 +1,7 @@
 import React, { FC, FormEvent } from 'react'
 import styled, { css } from 'styled-components'
 
-import { Icons } from 'Icon/iconsTypes'
+import { Icons } from 'Icon/iconsList'
 import { darken } from 'polished'
 import { Icon } from '../Icon'
 import { Color, theme } from '../theme'
