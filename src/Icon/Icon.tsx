@@ -3,15 +3,8 @@ import styled, { css } from 'styled-components'
 import { MarginProps } from '../utils/space'
 
 import { Box } from '../Box'
-import { Color } from '../theme'
+import { Color, theme } from '../theme'
 import { Icons, iconList } from './iconsList'
-
-/**
- * When adding a new Icon please remember to also add it
- * to the Container.jsx to keep our Icons Collection up to date.
- *
- * Icons in the collection are alphabetically ordered.
- */
 
 export type IconProps = {
   /** className attribute to apply classes from props */
@@ -68,7 +61,7 @@ const Container = styled(Box)<IIcon>(
     height: ${size}px;
     transform: rotate(${rotate}deg);
     svg {
-      color: ${color};
+      color: ${theme.colors[color]} !important;
     }
   `,
 )

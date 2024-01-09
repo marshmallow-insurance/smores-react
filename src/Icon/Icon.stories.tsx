@@ -1,6 +1,6 @@
 import React from 'react'
-import { Icon, IconProps } from './Icon'
 import { Container } from './Container'
+import { Icon, IconProps } from './Icon'
 
 export default {
   title: 'Icon',
