@@ -26,7 +26,7 @@
     "jsx": "react",
     "declaration": true,
     "moduleResolution": "Bundler",
-    "rootDir": "./",
+    "rootDir": "src",
     "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
