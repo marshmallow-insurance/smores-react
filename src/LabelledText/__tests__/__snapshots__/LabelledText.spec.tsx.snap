@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders 1`] = `
+<div
+  class="sc-aXZVg sc-dcJsrY byxNQM Pikoa"
+>
+  <label
+    class="sc-aXZVg sc-fqkvVR byxNQM loBhWK"
+    color="sesame"
+    cursor="inherit"
+    title=""
+  >
+    Name
+  </label>
+  Hideo Kojima
+</div>
+`;

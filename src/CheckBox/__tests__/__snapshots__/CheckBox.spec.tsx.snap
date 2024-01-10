@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders 1`] = `
+<label
+  class="sc-iGgWBj jrrdRB"
+  id="MM_SMORES_0"
+>
+  <span
+    class="sc-aXZVg sc-fqkvVR byxNQM exYCmj"
+    color="liquorice"
+    cursor="inherit"
+    title=""
+  >
+    CheckBox Test
+  </span>
+  <input
+    type="checkbox"
+  />
+  <span
+    class="sc-dcJsrY xXSKE"
+  />
+</label>
+`;

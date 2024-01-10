@@ -13,14 +13,20 @@
       "dom.iterable",
       "esnext"
     ],
-    "types": ["react", "node", "vite-plugin-svgr/client"],
+    "types": [
+      "react",
+      "node",
+      "vite/client",
+      "vite-plugin-svgr/client",
+      "vitest/globals"
+    ],
     "sourceMap": true,
     "allowJs": true,
     "checkJs": false,
     "jsx": "react",
     "declaration": true,
-    "moduleResolution": "node",
-    "rootDir": "src",
+    "moduleResolution": "Bundler",
+    "rootDir": "./",
     "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
@@ -31,6 +37,6 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true
   },
-  "include": ["src/**/*", "src/global.d.ts"],
+  "include": ["src/**/*", "src/global.d.ts", "vitest.config.ts"],
   "exclude": ["node_modules", "dist", "scripts"]
 }

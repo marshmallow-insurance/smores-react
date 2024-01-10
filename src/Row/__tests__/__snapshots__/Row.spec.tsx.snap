@@ -1,0 +1,28 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`default renders correctly 1`] = `
+<div>
+  <div
+    class="sc-aXZVg sc-dcJsrY byxNQM ePEAQO"
+  >
+    <div
+      class="sc-aXZVg byxNQM"
+    >
+      <h1
+        class="sc-aXZVg sc-fqkvVR byxNQM exYCmj"
+        color="liquorice"
+        cursor="inherit"
+        title=""
+      >
+        This is a Row with a heading
+      </h1>
+      <p
+        class="sc-aXZVg sc-fqkvVR byxNQM hhTrXw"
+        color="sesame"
+        cursor="inherit"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;

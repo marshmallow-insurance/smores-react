@@ -1,4 +1,4 @@
-import { renderHook, cleanup } from '@testing-library/react'
+import { cleanup, renderHook } from '@testing-library/react'
 import { useScript } from '.'
 
 describe('useScript', () => {
@@ -16,6 +16,6 @@ describe('useScript', () => {
 
   it('should append the script with the correct url to the body', () => {
     const script = document.querySelector('script[src="test"]')
-    return expect(script).toBeInTheDocument()
+    return expect(script).toBeTruthy()
   })
 })
