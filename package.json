@@ -1,7 +1,10 @@
 {
   "name": "@mrshmllw/smores-react",
   "version": "3.3.3",
+  "type": "module",
   "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "description": "Collection of React components used by Marshmallow Technology",
   "keywords": [
     "react",
@@ -13,10 +16,11 @@
     "dist"
   ],
   "scripts": {
+    "build": "vite build",
     "build-storybook": "storybook build -c .storybook -s public",
     "check-types": "tsc --noEmit",
     "deploy-storybook": "storybook-to-ghpages",
-    "prepublishOnly": "tsc",
+    "prepublishOnly": "vite build",
     "preview-release": "semantic-release --dry-run",
     "start": "npm run storybook",
     "storybook": "storybook dev -p 6006",
@@ -73,6 +77,7 @@
     "storybook": "^7.0.6",
     "styled-components": "^5.2.1",
     "typescript": "^5.0.2",
+    "vite-plugin-dts": "^3.7.0",
     "vite-plugin-svgr": "^4.2.0",
     "vitest": "^1.1.3"
   },

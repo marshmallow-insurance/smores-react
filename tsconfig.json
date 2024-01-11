@@ -16,7 +16,6 @@
     "types": [
       "react",
       "node",
-      "vite/client",
       "vite-plugin-svgr/client",
       "vitest/globals"
     ],
@@ -26,7 +25,6 @@
     "jsx": "react",
     "declaration": true,
     "moduleResolution": "Bundler",
-    "rootDir": "src",
     "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
@@ -37,6 +35,6 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true
   },
-  "include": ["src/**/*", "src/global.d.ts", "vitest.config.ts"],
+  "include": ["src/**/*", "vite.config.ts", "vitest.config.ts"],
   "exclude": ["node_modules", "dist", "scripts"]
 }
