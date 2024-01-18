@@ -24,6 +24,7 @@ export type DropdownItem = {
 
 export interface Props extends CommonFieldProps {
   placeholder?: string
+  showPlaceholderAsValue?: boolean
   name?: string
   value?: string | null
   defaultValue?: string
@@ -51,6 +52,7 @@ export const Dropdown = forwardRef(function Dropdown(
   {
     id: idProp,
     placeholder,
+    showPlaceholderAsValue = false,
     name,
     value: valueProp,
     defaultValue,
@@ -117,12 +119,22 @@ export const Dropdown = forwardRef(function Dropdown(
         >
           {hasOptGroups ? (
             <optgroup label={placeholder}>
-              <option value="" hidden>
+              <option
+                value=""
+                {...(placeholder && showPlaceholderAsValue
+                  ? {}
+                  : { hidden: true })}
+              >
                 {placeholder}
               </option>
             </optgroup>
           ) : (
-            <option value="" hidden>
+            <option
+              value=""
+              {...(placeholder && showPlaceholderAsValue
+                ? {}
+                : { hidden: true })}
+            >
               {placeholder}
             </option>
           )}
