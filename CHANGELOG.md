@@ -1,3 +1,10 @@
+## [3.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.5...v3.4.0) (2024-01-19)
+
+
+### Features
+
+* **dropdown:** allow placeholder to be used as empty value ([#3413](https://github.com/marshmallow-insurance/smores-react/issues/3413)) ([d524052](https://github.com/marshmallow-insurance/smores-react/commit/d5240523251c3da73b6954b75f1c1360732fee6f))
+
 ## [3.3.5](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.4...v3.3.5) (2024-01-05)
 
 
