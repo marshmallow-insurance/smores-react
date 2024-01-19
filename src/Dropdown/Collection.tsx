@@ -125,18 +125,32 @@ export const CollectionPage: FC = () => {
                   onSelect={onSelect}
                 />
               </Row>
-              <Row label="Placeholder as value">
+              <Row label="show default option">
                 <Dropdown
                   id={id}
                   label={label}
                   list={list}
                   placeholder={placeholder}
-                  showPlaceholderAsValue
+                  showDefaultOption
                   error={false}
                   errorMsg={errorMsg}
                   onSelect={onSelect}
                 />
               </Row>
+              <Row label="show default option with custom option label">
+                <Dropdown
+                  id={id}
+                  label={label}
+                  list={list}
+                  placeholder={placeholder}
+                  showDefaultOption
+                  customDefaultOption="Select a day"
+                  error={false}
+                  errorMsg={errorMsg}
+                  onSelect={onSelect}
+                />
+              </Row>
+
               <Row label="Leading Icon">
                 <Dropdown
                   id={id}
