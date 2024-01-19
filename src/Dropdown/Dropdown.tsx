@@ -121,20 +121,13 @@ export const Dropdown = forwardRef(function Dropdown(
             <optgroup label={placeholder}>
               <option
                 value=""
-                {...(placeholder && showPlaceholderAsValue
-                  ? {}
-                  : { hidden: true })}
+                hidden={!(placeholder && showPlaceholderAsValue)}
               >
                 {placeholder}
               </option>
             </optgroup>
           ) : (
-            <option
-              value=""
-              {...(placeholder && showPlaceholderAsValue
-                ? {}
-                : { hidden: true })}
-            >
+            <option value="" hidden={!(placeholder && showPlaceholderAsValue)}>
               {placeholder}
             </option>
           )}
