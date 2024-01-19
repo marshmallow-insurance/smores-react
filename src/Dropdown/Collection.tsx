@@ -104,6 +104,53 @@ export const CollectionPage: FC = () => {
                   fallbackStyle
                 />
               </Row>
+              <Row label="Placeholder">
+                <Dropdown
+                  id={id}
+                  label={label}
+                  placeholder={placeholder}
+                  list={list}
+                  error={false}
+                  errorMsg={errorMsg}
+                  onSelect={onSelect}
+                />
+              </Row>
+              <Row label="No placeholder">
+                <Dropdown
+                  id={id}
+                  label={label}
+                  list={list}
+                  error={false}
+                  errorMsg={errorMsg}
+                  onSelect={onSelect}
+                />
+              </Row>
+              <Row label="show default option">
+                <Dropdown
+                  id={id}
+                  label={label}
+                  list={list}
+                  placeholder={placeholder}
+                  showDefaultOption
+                  error={false}
+                  errorMsg={errorMsg}
+                  onSelect={onSelect}
+                />
+              </Row>
+              <Row label="show default option with custom option label">
+                <Dropdown
+                  id={id}
+                  label={label}
+                  list={list}
+                  placeholder={placeholder}
+                  showDefaultOption
+                  customDefaultOption="Select a day"
+                  error={false}
+                  errorMsg={errorMsg}
+                  onSelect={onSelect}
+                />
+              </Row>
+
               <Row label="Leading Icon">
                 <Dropdown
                   id={id}

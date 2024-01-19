@@ -24,6 +24,8 @@ export type DropdownItem = {
 
 export interface Props extends CommonFieldProps {
   placeholder?: string
+  showDefaultOption?: boolean
+  customDefaultOption?: string
   name?: string
   value?: string | null
   defaultValue?: string
@@ -51,6 +53,8 @@ export const Dropdown = forwardRef(function Dropdown(
   {
     id: idProp,
     placeholder,
+    showDefaultOption = false,
+    customDefaultOption,
     name,
     value: valueProp,
     defaultValue,
@@ -87,6 +91,13 @@ export const Dropdown = forwardRef(function Dropdown(
     return Array.from(itemsPerGroupLabel.values())
   }, [list])
 
+  const defaultOptionLabel = () => {
+    if (!showDefaultOption) {
+      return placeholder
+    }
+    return customDefaultOption ?? 'Select an option'
+  }
+
   return (
     <Field {...fieldProps} htmlFor={id} error={error}>
       <Box flex alignItems="center">
@@ -116,14 +127,14 @@ export const Dropdown = forwardRef(function Dropdown(
           value={value ? value : ''}
         >
           {hasOptGroups ? (
-            <optgroup label={placeholder}>
-              <option value="" hidden>
-                {placeholder}
+            <optgroup label={defaultOptionLabel()}>
+              <option value="" hidden={!showDefaultOption}>
+                {defaultOptionLabel()}
               </option>
             </optgroup>
           ) : (
-            <option value="" hidden>
-              {placeholder}
+            <option value="" hidden={!showDefaultOption}>
+              {defaultOptionLabel()}
             </option>
           )}
 
