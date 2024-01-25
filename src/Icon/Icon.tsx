@@ -1093,6 +1093,23 @@ export const Icon: FC<IconProps> = ({
         />
       </svg>
     )}
+    {render === 'clipboard' && (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="none"
+      >
+        <path
+          fill="#000"
+          d="M12.8 2.133h-2.133V1.067C10.667.477 10.19 0 9.601 0H6.4c-.59 0-1.067.478-1.067 1.067v1.066H3.2a1.6 1.6 0 0 0-1.6 1.6V14.4A1.6 1.6 0 0 0 3.2 16h9.6a1.6 1.6 0 0 0 1.6-1.6V3.733a1.6 1.6 0 0 0-1.6-1.6ZM6.4 1.067h3.2v1.066H6.4V1.067ZM13.334 14.4a.533.533 0 0 1-.533.533H3.2a.534.534 0 0 1-.533-.533V3.733c0-.294.239-.533.533-.533h1.6v.533c0 .59.479 1.067 1.067 1.067h4.267c.589 0 1.067-.478 1.067-1.067V3.2h1.6c.293 0 .532.239.532.533V14.4Z"
+        />
+        <path
+          fill="#000"
+          d="M11.2 6.4H4.8a.534.534 0 0 0 0 1.067h6.4a.533.533 0 1 0 0-1.067ZM11.2 8.533H4.8a.533.533 0 1 0 0 1.067h6.4a.533.533 0 1 0 0-1.067ZM11.2 10.667H4.8a.533.533 0 1 0 0 1.066h6.4a.533.533 0 1 0 0-1.066Z"
+        />
+      </svg>
+    )}
     {render === 'clock' && (
       <svg
         width="100%"
@@ -1118,6 +1135,20 @@ export const Icon: FC<IconProps> = ({
         <path
           d="M0 3.5h15M0 11.5h15M1 7.5h7M3 9.5l-2.286-2L3 5.5"
           stroke={theme.colors[color]}
+        />
+      </svg>
+    )}
+    {render === 'collapse' && (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="100%"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path
+          fill="white"
+          d="M1.707 23.707 9 16.414V21a1 1 0 1 0 2 0v-7a.997.997 0 0 0-1-1H3a1 1 0 1 0 0 2h4.586L.293 22.293a.999.999 0 1 0 1.414 1.414Zm11.37-13.325A1.003 1.003 0 0 0 14 11h7a1 1 0 0 0 0-2h-4.586l7.293-7.293A.999.999 0 1 0 22.293.293L15 7.586V3a1 1 0 0 0-2 0v7c0 .13.027.26.077.382Z"
         />
       </svg>
     )}
@@ -2273,6 +2304,26 @@ export const Icon: FC<IconProps> = ({
         />
       </svg>
     )}
+    {render === 'inbox' && (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="100%"
+        viewBox="0 0 14 14"
+        fill="none"
+      >
+        <g
+          stroke="#292924"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          strokeWidth="1.333"
+        >
+          <path d="M1 7v4.667C1 12.403 1.597 13 2.333 13h9.334c.736 0 1.333-.597 1.333-1.333V7" />
+          <path d="M4.333 6.333 7 9l2.667-2.667M7 9V1" />
+        </g>
+      </svg>
+    )}
     {render === 'included' && (
       <svg
         width="100%"
@@ -2816,6 +2867,21 @@ export const Icon: FC<IconProps> = ({
             <path fill="#fff" d="M0 0h24v24H0z" />
           </clipPath>
         </defs>
+      </svg>
+    )}
+    {render === 'maximise-window' && (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="none"
+      >
+        <path
+          fill="#fff"
+          fillRule="evenodd"
+          d="M15 3H1v12h14V3ZM0 3V0h16v16H0V3Z"
+          clipRule="evenodd"
+        />
       </svg>
     )}
     {render === 'medical' && (
