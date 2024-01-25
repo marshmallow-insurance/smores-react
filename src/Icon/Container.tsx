@@ -186,6 +186,10 @@ export const Container = () => {
         <Icon render="claim-line" />
       </Wrapper>
       <Wrapper>
+        <span>clipboard</span>
+        <Icon render="clipboard" />
+      </Wrapper>
+      <Wrapper>
         <span>clipboard-check</span>
         <Icon render="clipboard-check" />
       </Wrapper>
@@ -196,6 +200,10 @@ export const Container = () => {
       <Wrapper>
         <span>close-panel</span>
         <Icon render="close-panel" />
+      </Wrapper>
+      <Wrapper>
+        <span>collapse</span>
+        <Icon render="collapse" />
       </Wrapper>
       <Wrapper>
         <span>confused</span>
@@ -382,6 +390,10 @@ export const Container = () => {
         <Icon render="house" />
       </Wrapper>
       <Wrapper>
+        <span>inbox</span>
+        <Icon render="inbox" />
+      </Wrapper>
+      <Wrapper>
         <span>included</span>
         <Icon render="included" />
       </Wrapper>
@@ -480,6 +492,10 @@ export const Container = () => {
       <Wrapper>
         <span>maximise</span>
         <Icon render="maximise" />
+      </Wrapper>
+      <Wrapper>
+        <span>maximise-window</span>
+        <Icon render="maximise-window" />
       </Wrapper>
       <Wrapper>
         <span>medical</span>
