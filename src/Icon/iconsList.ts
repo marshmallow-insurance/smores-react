@@ -43,9 +43,11 @@ import CircleTick from './svgAssets/CircleTick.svg?react'
 import City from './svgAssets/City.svg?react'
 import Claim from './svgAssets/Claim.svg?react'
 import ClaimLine from './svgAssets/ClaimLine.svg?react'
+import Clipboard from './svgAssets/Clipboard.svg?react'
 import ClipboardCheck from './svgAssets/ClipboardCheck.svg?react'
 import Clock from './svgAssets/Clock.svg?react'
 import ClosePanel from './svgAssets/ClosePanel.svg?react'
+import Collapse from './svgAssets/Collapse.svg?react'
 import Confused from './svgAssets/Confused.svg?react'
 import ConfusedBlue from './svgAssets/ConfusedBlue.svg?react'
 import ContactEmail from './svgAssets/ContactEmail.svg?react'
@@ -93,6 +95,7 @@ import HomeExcluded from './svgAssets/HomeExcluded.svg?react'
 import House from './svgAssets/House.svg?react'
 import HouseTree from './svgAssets/HouseTree.svg?react'
 import Id from './svgAssets/Id.svg?react'
+import Inbox from './svgAssets/Inbox.svg?react'
 import Included from './svgAssets/Included.svg?react'
 import Info from './svgAssets/Info.svg?react'
 import Injury from './svgAssets/Injury.svg?react'
@@ -117,6 +120,7 @@ import ManagePolicy from './svgAssets/ManagePolicy.svg?react'
 import Marshmallow from './svgAssets/Marshmallow.svg?react'
 import Mastercard from './svgAssets/Mastercard.svg?react'
 import Maximise from './svgAssets/Maximise.svg?react'
+import MaximiseWindow from './svgAssets/MaximiseWindow.svg?react'
 import Medical from './svgAssets/Medical.svg?react'
 import Minimise from './svgAssets/Minimise.svg?react'
 import Minus from './svgAssets/Minus.svg?react'
@@ -257,6 +261,7 @@ export const iconList = {
   'log-out': LogOut,
   'manage-drivers': ManageDrivers,
   'manage-policy': ManagePolicy,
+  'maximise-window': MaximiseWindow,
   'minus-circle': MinusCircle,
   'money-bag': MoneyBag,
   'money-heart': MoneyHeart,
@@ -320,7 +325,9 @@ export const iconList = {
   checkout: Checkout,
   city: City,
   claim: Claim,
+  clipboard: Clipboard,
   clock: Clock,
+  collpase: Collapse,
   confused: Confused,
   copy: Copy,
   crop: Crop,
@@ -344,6 +351,7 @@ export const iconList = {
   gpay: Gpay,
   house: House,
   id: Id,
+  inbox: Inbox,
   included: Included,
   info: Info,
   injury: Injury,
