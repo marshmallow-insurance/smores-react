@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     svgrPlugin(),
     dts({
+      tsconfigPath: 'tsconfig.build.json',
       entryRoot: './src',
       insertTypesEntry: true,
     }),
