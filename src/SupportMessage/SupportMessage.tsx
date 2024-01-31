@@ -7,6 +7,7 @@ import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { Color, theme } from '../theme'
+import { isReactElement } from '../utils/isReactElement'
 import { MarginProps } from '../utils/space'
 
 type StylesItem = {
@@ -71,26 +72,37 @@ export const SupportMessage: FC<SupportMessageProps> = ({
   type = 'info',
   title,
   ...marginProps
-}) => (
-  <Wrapper className={className} type={type} onClick={onClick} {...marginProps}>
-    <IconWrapper>
-      <Icon
-        size={20}
-        render={styles[type].icon}
-        color={styles[type].iconColor}
-      />
-    </IconWrapper>
-    <Box flex direction="column" mx="8px">
-      {title && <Title>{title}</Title>}
-      <Description tag="p">{description}</Description>
-    </Box>
-    {onClick && (
-      <Box ml={{ custom: 'auto' }}>
-        <Icon size={16} render="caret" color="marzipan" rotate={270} />
+}) => {
+  return (
+    <Wrapper
+      className={className}
+      type={type}
+      onClick={onClick}
+      {...marginProps}
+    >
+      <IconWrapper>
+        <Icon
+          size={20}
+          render={styles[type].icon}
+          color={styles[type].iconColor}
+        />
+      </IconWrapper>
+      <Box flex direction="column" mx="8px">
+        {title && <Title>{title}</Title>}
+        {isReactElement(description) ? (
+          <DescriptionBox>{description}</DescriptionBox>
+        ) : (
+          <Description tag="p">{description}</Description>
+        )}
       </Box>
-    )}
-  </Wrapper>
-)
+      {onClick && (
+        <Box ml={{ custom: 'auto' }}>
+          <Icon size={16} render="caret" color="marzipan" rotate={270} />
+        </Box>
+      )}
+    </Wrapper>
+  )
+}
 
 interface IWrapper {
   type: SupportMessageType
@@ -124,6 +136,12 @@ const Title = styled.p`
   color: ${theme.colors.liquorice};
   line-height: 20.8px;
   margin-bottom: 4px;
+`
+
+const DescriptionBox = styled(Box)`
+  color: ${theme.colors.liquorice};
+  font-size: 14px;
+  line-height: 20px;
 `
 
 const Description = styled(Text)`
