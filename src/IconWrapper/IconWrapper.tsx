@@ -1,9 +1,9 @@
 import React, { FC, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
-import { Icons } from 'Icon/iconsList'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+import { Icons } from '../Icon/iconsList'
 import { MarginProps } from '../utils/space'
 
 export type IconWrapperProps = {

@@ -11,9 +11,9 @@ import styled from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
 
-import { Icons } from 'Icon/iconsList'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { Fieldset } from '../fields/Fieldset'
+import { Icons } from '../Icon/iconsList'
 import { ITEM_GAP } from './constants'
 import { RadioItem } from './RadioItem'
 import { BaseValueType, DisplayType, IconPosition } from './types'
