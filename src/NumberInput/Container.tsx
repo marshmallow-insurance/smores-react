@@ -19,7 +19,6 @@ export const Container = () => {
         min={-100}
         max={180}
         step={10}
-        strict
         roundCurrency
         required
       />
