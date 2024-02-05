@@ -1,3 +1,10 @@
+## [3.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v3.4.0...v3.5.0) (2024-02-01)
+
+
+### Features
+
+* add icons used in CMS ([#3431](https://github.com/marshmallow-insurance/smores-react/issues/3431)) ([c3ff724](https://github.com/marshmallow-insurance/smores-react/commit/c3ff724f2989d516fa8ad8470a6e2d1e210ecb9b))
+
 ## [3.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.5...v3.4.0) (2024-01-19)
 
 
