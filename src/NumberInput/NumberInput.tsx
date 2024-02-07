@@ -153,6 +153,7 @@ export const NumberInput = forwardRef(function NumberInput(
         <Input
           ref={ref}
           error={error}
+          inputMode="numeric"
           disabled={disabled}
           type={type}
           id={id}
