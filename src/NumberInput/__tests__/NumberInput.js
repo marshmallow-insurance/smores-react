@@ -49,7 +49,6 @@ test('renders - currency', () => {
       onChange={str => {}}
       placeholder="100.00"
       prefix="$"
-      strict={true}
       min={0}
       max={100}
       step={10}
