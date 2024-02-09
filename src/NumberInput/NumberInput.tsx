@@ -27,6 +27,7 @@ export interface Props extends CommonFieldProps {
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   min?: number
   max?: number
+  strict?: boolean
   roundCurrency?: boolean
   step?: number
 }
@@ -59,6 +60,7 @@ export const NumberInput = forwardRef(function NumberInput(
     roundCurrency,
     min = -999999,
     max = 999999,
+    strict,
     step = 0,
     disabled = false,
     error = false,
@@ -89,21 +91,28 @@ export const NumberInput = forwardRef(function NumberInput(
     return Math.round(event * 100) / 100
   }
 
-  const formatCurrency = (event: string) => {
-    const decimalIndex = event.indexOf('.')
-    if (decimalIndex >= 0 && event.length > decimalIndex + 1) {
-      const fractionalString = event.substring(decimalIndex + 1).substring(0, 2)
-      return `${event.substring(0, decimalIndex)}.${fractionalString}`
-    } else {
+  const handleStrictValue = (event: number): number => {
+    if (isInRange(event)) {
       return event
     }
-  }
 
-  const applyMinMax = (value: string) => {
-    const number = Number(value)
-    if(min && number < min) return min
-    if(max && number > max) return max
-    return value
+    // Get the difference between the max (or min) and the current value
+    const dMax = max - event
+    const dMin = min - event
+
+    // if the difference is zero return the min value
+    if (!dMax) {
+      return min
+    }
+
+    // if the difference is zero return the max value
+    if (!dMin) {
+      return max
+    }
+
+    // Convert all negative numbers to positive numbers (-90 becomes 90) then,
+    // if the converted max diff is less than the min diff, return the max (eg. 100), otherwise return the min (eg. 0)
+    return Math.abs(dMax) < Math.abs(dMin) ? max : min
   }
 
   const handleChange = (event: string) => {
@@ -113,10 +122,17 @@ export const NumberInput = forwardRef(function NumberInput(
     if (event === EMPTY_INPUT) {
       onChange(event)
     } else {
-      const value = roundCurrency ? formatCurrency(event) : event
-      const normalisedValue = applyMinMax(value)
+      const formattedEvent = Number(event)
 
-      onChange(normalisedValue)
+      const amount = roundCurrency
+        ? roundNumber(formattedEvent)
+        : formattedEvent
+
+      if (strict) {
+        onChange(handleStrictValue(amount))
+      } else {
+        onChange(amount)
+      }
     }
   }
   // Increment or decrement the value when clicking the Spinner controls
@@ -153,7 +169,6 @@ export const NumberInput = forwardRef(function NumberInput(
         <Input
           ref={ref}
           error={error}
-          inputMode="numeric"
           disabled={disabled}
           type={type}
           id={id}
