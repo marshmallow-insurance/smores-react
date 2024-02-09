@@ -1,3 +1,10 @@
+## [3.5.1](https://github.com/marshmallow-insurance/smores-react/compare/v3.5.0...v3.5.1) (2024-02-09)
+
+
+### Bug Fixes
+
+* fix NumberInput for currencies ([#3467](https://github.com/marshmallow-insurance/smores-react/issues/3467)) ([cbf9d96](https://github.com/marshmallow-insurance/smores-react/commit/cbf9d96e7ef0aeb7bca8c225c92c01f96a392375))
+
 ## [3.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v3.4.0...v3.5.0) (2024-02-01)
 
 
