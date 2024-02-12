@@ -1,7 +1,8 @@
-import React from 'react'
 import { Preview } from '@storybook/react'
-import { createGlobalStyle } from 'styled-components'
+import React from 'react'
+import { StyleSheetManager, createGlobalStyle } from 'styled-components'
 
+import isPropValid from '@emotion/is-prop-valid'
 import { ResetCss } from './ResetCss'
 
 const GlobalStyle = createGlobalStyle`
@@ -55,12 +56,23 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <>
-        <ResetCss />
-        <GlobalStyle />
-        <Story />
+        <StyleSheetManager shouldForwardProp={shouldForwardProp}>
+          <ResetCss />
+          <GlobalStyle />
+          <Story />
+        </StyleSheetManager>
       </>
     ),
   ],
+}
+
+function shouldForwardProp(propName, target) {
+  if (typeof target === 'string') {
+    // For HTML elements, forward the prop if it is a valid HTML attribute
+    return isPropValid(propName)
+  }
+  // For other elements, forward all props
+  return true
 }
 
 export default preview
