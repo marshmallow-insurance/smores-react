@@ -61,32 +61,32 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
   const id = useUniqueId(idProp)
   const frontIcon = "pound-regular"
 
-  const formatCurrency = (event: string) => {
-    const decimalIndex = event.indexOf('.')
-    if (decimalIndex >= 0 && event.length > decimalIndex + 1) {
-      const fractionalString = event.substring(decimalIndex + 1).substring(0, 2)
-      return `${event.substring(0, decimalIndex)}.${fractionalString}`
+  const formatCurrency = (value: string) => {
+    const decimalIndex = value.indexOf('.')
+    if (decimalIndex >= 0 && value.length > decimalIndex + 1) {
+      const fractionalString = value.substring(decimalIndex + 1).substring(0, 2)
+      return `${value.substring(0, decimalIndex)}.${fractionalString}`
     } else {
-      return event
+      return value
     }
   }
 
-  const applyMinMax = (event: string) => {
-    const value = Number(event)
-    if(min && value < min) return min.toString()
-    if(max && value > max) return max.toString()
-    return event
+  const applyMinMax = (value: string) => {
+    const numberValue = Number(value)
+    if(min && numberValue < min) return min.toString()
+    if(max && numberValue > max) return max.toString()
+    return value
   }
 
-  const handleChange = (event: string) => {
+  const handleChange = (value: string) => {
     if (onChange === undefined) return
     const EMPTY_INPUT = ''
 
-    if (event === EMPTY_INPUT) {
-      onChange(event)
+    if (value === EMPTY_INPUT) {
+      onChange(value)
     } else {
-      const value = formatCurrency(event)
-      const normalisedValue = applyMinMax(value)
+      const amount = formatCurrency(value)
+      const normalisedValue = applyMinMax(amount)
 
       onChange(normalisedValue)
     }

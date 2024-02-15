@@ -27,14 +27,6 @@ export interface Props extends CommonFieldProps {
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   min?: number
   max?: number
-  /**
-   * @deprecated This prop is no longer necessary and will be removed soon
-   */
-  strict?: boolean
-  /**
-   * @deprecated Please use the CurrencyInput component
-   */
-  roundCurrency?: boolean
   step?: number
 }
 
@@ -63,7 +55,6 @@ export const NumberInput = forwardRef(function NumberInput(
     onChange,
     onInputChange,
     onBlur,
-    roundCurrency,
     min = -999999,
     max = 999999,
     step = 0,
@@ -109,8 +100,7 @@ export const NumberInput = forwardRef(function NumberInput(
     if (event === EMPTY_INPUT) {
       onChange(event)
     } else {
-      const formattedEvent = Number(event)
-      const amount = roundCurrency ? roundNumber(formattedEvent) : formattedEvent
+      const amount = Number(event)
       const normalisedValue = applyMinMax(amount)
 
       onChange(normalisedValue)

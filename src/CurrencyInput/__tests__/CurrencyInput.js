@@ -3,7 +3,6 @@ import {render} from '@testing-library/react';
 import 'jest-styled-components';
 
 import {CurrencyInput} from '../CurrencyInput';
-import { CurrencyInput } from 'CurrencyInput/CurrencyInput';
 
 test('renders - number', () => {
   const {container} = render(
