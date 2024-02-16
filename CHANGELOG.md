@@ -1,3 +1,16 @@
+## [4.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v3.5.2...v4.0.0) (2024-02-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* deprecate props in NumberInput and add CurrencyInput component
+
+* update test
+
+* remove deprecated parameters, update var names
+
+* breaking change: deprecate props in NumberInput and add CurrencyInput… (#3484) ([4b53e84](https://github.com/marshmallow-insurance/smores-react/commit/4b53e8458b8d68b49f261140fe9404435c92d834)), closes [#3484](https://github.com/marshmallow-insurance/smores-react/issues/3484)
+
 ## [3.5.2](https://github.com/marshmallow-insurance/smores-react/compare/v3.5.1...v3.5.2) (2024-02-09)
 
 ## [3.5.1](https://github.com/marshmallow-insurance/smores-react/compare/v3.5.0...v3.5.1) (2024-02-09)
