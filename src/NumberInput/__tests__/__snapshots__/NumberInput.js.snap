@@ -165,7 +165,6 @@ exports[`renders - currency 1`] = `
 
 <div
   class="c0"
-  prefix="$"
 >
   <label
     class="c1 c2"
@@ -547,7 +546,6 @@ exports[`renders - error 1`] = `
 
 <div
   class="c0"
-  prefix="$"
 >
   <label
     class="c1 c2"

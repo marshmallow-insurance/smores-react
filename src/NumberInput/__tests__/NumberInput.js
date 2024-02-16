@@ -48,12 +48,9 @@ test('renders - currency', () => {
       value="50"
       onChange={str => {}}
       placeholder="100.00"
-      prefix="$"
-      strict={true}
       min={0}
       max={100}
       step={10}
-      roundCurrency={true}
     />,
   );
   expect(container.firstChild).toMatchSnapshot();
@@ -69,12 +66,9 @@ test('renders - error', () => {
       value="200"
       onChange={str => {}}
       placeholder="100.00"
-      prefix="$"
-      strict={true}
       min={0}
       max={100}
       step={10}
-      roundCurrency={false}
       error={true}
       errorMsg="Oh gosh, this is an error isn't it!"
     />,
