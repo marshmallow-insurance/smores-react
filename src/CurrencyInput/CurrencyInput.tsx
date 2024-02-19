@@ -1,24 +1,17 @@
-import React, {
-  FocusEvent,
-  FormEvent,
-  forwardRef,
-  ForwardedRef,
-} from 'react'
+import React, { FocusEvent, FormEvent, forwardRef, ForwardedRef } from 'react'
 
 import { Box } from '../Box'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 
 import { useUniqueId } from '../utils/id'
-import {
-  Input,
-  StyledFrontIcon,
-} from '../fields/components/CommonInput'
+import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
 
 export interface Props extends CommonFieldProps {
   placeholder: string
   name?: string
   value: string
+  decimalNumber?: boolean
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   min?: number
   max?: number
@@ -45,6 +38,7 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
     placeholder,
     name,
     value,
+    decimalNumber = true,
     onChange,
     onInputChange,
     onBlur,
@@ -52,17 +46,21 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
     max,
     disabled = false,
     error = false,
-    trailingIcon,
     fallbackStyle,
     ...fieldProps
   }: CurrencyInputProps,
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   const id = useUniqueId(idProp)
-  const frontIcon = "pound-regular"
+  const frontIcon = 'pound-regular'
 
   const formatCurrency = (value: string) => {
     const decimalIndex = value.indexOf('.')
+
+    if (!decimalNumber) {
+      return Math.trunc(Number(value)).toString()
+    }
+
     if (decimalIndex >= 0 && value.length > decimalIndex + 1) {
       const fractionalString = value.substring(decimalIndex + 1).substring(0, 2)
       return `${value.substring(0, decimalIndex)}.${fractionalString}`
@@ -73,8 +71,8 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
 
   const applyMinMax = (value: string) => {
     const numberValue = Number(value)
-    if(min && numberValue < min) return min.toString()
-    if(max && numberValue > max) return max.toString()
+    if (min && numberValue < min) return min.toString()
+    if (max && numberValue > max) return max.toString()
     return value
   }
 
