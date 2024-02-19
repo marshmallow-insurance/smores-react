@@ -20,6 +20,35 @@ const Template = (props: TooltipProps) => (
   </Box>
 )
 
+const OverflowHiddenTemplate = (props: TooltipProps) => (
+  <OverflowHiddenBox my="64px">
+    <Tooltip {...props}>
+      <Box>Harry Hill</Box>
+    </Tooltip>
+
+    <ClippedText mt="12px">
+      I am some super long text, that should be clipped
+    </ClippedText>
+
+    <Box my="64px">
+      <Tooltip {...props}>
+        <Box>Harry Hill</Box>
+      </Tooltip>
+    </Box>
+  </OverflowHiddenBox>
+)
+
+const OverflowHiddenBox = styled(Box)`
+  height: 100px;
+  width: 200px;
+  overflow: scroll;
+  background: ${theme.colors.blueberry};
+`
+
+const ClippedText = styled(Text)`
+  white-space: nowrap;
+`
+
 export const Default = Template.bind({})
 
 Default.args = {
@@ -74,35 +103,6 @@ ReactNodeExample.args = {
   underline: true,
   shadow: false,
 }
-
-const OverflowHiddenTemplate = (props: TooltipProps) => (
-  <OverflowHiddenBox my="64px">
-    <Tooltip {...props}>
-      <Box>Harry Hill</Box>
-    </Tooltip>
-
-    <ClippedText mt="12px">
-      I am some super long text, that should be clipped
-    </ClippedText>
-
-    <Box my="64px">
-      <Tooltip {...props}>
-        <Box>Harry Hill</Box>
-      </Tooltip>
-    </Box>
-  </OverflowHiddenBox>
-)
-
-const OverflowHiddenBox = styled(Box)`
-  height: 100px;
-  width: 200px;
-  overflow: scroll;
-  background: ${theme.colors.blueberry};
-`
-
-const ClippedText = styled(Text)`
-  white-space: nowrap;
-`
 
 export const OverflowExample = OverflowHiddenTemplate.bind({})
 
