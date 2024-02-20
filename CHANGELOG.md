@@ -1,3 +1,11 @@
+## [4.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v4.0.0...v4.0.1) (2024-02-20)
+
+
+### Bug Fixes
+
+* add zIndex & portalContainer props to tooltip ([#3508](https://github.com/marshmallow-insurance/smores-react/issues/3508)) ([a904cf2](https://github.com/marshmallow-insurance/smores-react/commit/a904cf2ae4a8a3c8d1ef440d7a802b65e15a47c0))
+* **currencyInput:** allow non decimal inputs ([#3507](https://github.com/marshmallow-insurance/smores-react/issues/3507)) ([46d75ad](https://github.com/marshmallow-insurance/smores-react/commit/46d75adcef763b501852a3e45150e16f9b23b835))
+
 ## [4.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v3.5.2...v4.0.0) (2024-02-16)
 
 
