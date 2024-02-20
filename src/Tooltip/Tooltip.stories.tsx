@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Box } from '../Box'
+import { Button } from '../Button'
+import { Modal } from '../Modal'
 import { Text } from '../Text'
 import { theme } from '../theme'
 import { Tooltip, TooltipProps } from './Tooltip'
@@ -106,6 +108,36 @@ export const OverflowExample = OverflowHiddenTemplate.bind({})
 
 OverflowExample.args = {
   title: 'React node example',
+  content: tooltipContent,
+  size: 'large',
+  underline: true,
+}
+
+const ModalTemplate = (props: TooltipProps) => {
+  const [showModal, setShowModal] = useState(false)
+
+  const handleClick = () => {
+    setShowModal(!showModal)
+  }
+
+  return (
+    <Box height="900px">
+      <Modal handleClick={handleClick} showModal={showModal}>
+        <Tooltip {...props} zIndex={1000}>
+          <Box>Harry Hill</Box>
+        </Tooltip>
+      </Modal>
+      <Button primary handleClick={handleClick}>
+        Show Modal with Mobile Drawer
+      </Button>
+    </Box>
+  )
+}
+
+export const ModalExample = ModalTemplate.bind({})
+
+ModalExample.args = {
+  title: 'Modal example',
   content: tooltipContent,
   size: 'large',
   underline: true,
