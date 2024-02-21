@@ -1,3 +1,33 @@
+## [4.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v4.0.0...v4.0.1) (2024-02-20)
+
+
+### Bug Fixes
+
+* add zIndex & portalContainer props to tooltip ([#3508](https://github.com/marshmallow-insurance/smores-react/issues/3508)) ([a904cf2](https://github.com/marshmallow-insurance/smores-react/commit/a904cf2ae4a8a3c8d1ef440d7a802b65e15a47c0))
+* **currencyInput:** allow non decimal inputs ([#3507](https://github.com/marshmallow-insurance/smores-react/issues/3507)) ([46d75ad](https://github.com/marshmallow-insurance/smores-react/commit/46d75adcef763b501852a3e45150e16f9b23b835))
+
+## [4.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v3.5.2...v4.0.0) (2024-02-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* deprecate props in NumberInput and add CurrencyInput component
+
+* update test
+
+* remove deprecated parameters, update var names
+
+* breaking change: deprecate props in NumberInput and add CurrencyInput… (#3484) ([4b53e84](https://github.com/marshmallow-insurance/smores-react/commit/4b53e8458b8d68b49f261140fe9404435c92d834)), closes [#3484](https://github.com/marshmallow-insurance/smores-react/issues/3484)
+
+## [3.5.2](https://github.com/marshmallow-insurance/smores-react/compare/v3.5.1...v3.5.2) (2024-02-09)
+
+## [3.5.1](https://github.com/marshmallow-insurance/smores-react/compare/v3.5.0...v3.5.1) (2024-02-09)
+
+
+### Bug Fixes
+
+* fix NumberInput for currencies ([#3467](https://github.com/marshmallow-insurance/smores-react/issues/3467)) ([cbf9d96](https://github.com/marshmallow-insurance/smores-react/commit/cbf9d96e7ef0aeb7bca8c225c92c01f96a392375))
+
 ## [3.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v3.4.0...v3.5.0) (2024-02-01)
 
 

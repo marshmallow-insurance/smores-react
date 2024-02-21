@@ -1,23 +1,21 @@
 import React, { useState } from 'react'
 
-import { NumberInput } from './NumberInput'
+import { CurrencyInput } from './CurrencyInput'
 
-export const Container = () => {
+export const Example = () => {
   const [value, setValue] = useState('')
 
   return (
     <form>
-      <NumberInput
+      <CurrencyInput
         id="numberInput"
         label="Amount paid"
         name="numberInput"
-        // @ts-expect-error onChange type is too broad and should be handled differently
-        onChange={setValue}
+        onChange={(e) => setValue(e)}
         placeholder="100.00"
         value={value}
-        min={-100}
-        max={180}
-        step={10}
+        min={-200}
+        max={200}
         required
       />
     </form>
