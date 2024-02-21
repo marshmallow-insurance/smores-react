@@ -75,7 +75,7 @@ export const SupportMessage: FC<SupportMessageProps> = ({
   return (
     <Wrapper
       className={className}
-      type={type}
+      $type={type}
       onClick={onClick}
       {...marginProps}
     >
@@ -104,7 +104,7 @@ export const SupportMessage: FC<SupportMessageProps> = ({
 }
 
 interface IWrapper {
-  type: SupportMessageType
+  $type: SupportMessageType
   onClick?: MouseEventHandler
 }
 
@@ -113,9 +113,9 @@ const IconWrapper = styled(Box)`
 `
 
 const Wrapper = styled(Box)<IWrapper>(
-  ({ type, onClick }) => css`
+  ({ $type, onClick }) => css`
     align-items: center;
-    background-color: ${styles[type].backgroundColor};
+    background-color: ${styles[$type].backgroundColor};
     border-radius: 16px;
     ${onClick && `cursor: pointer`};
     padding: 12px;
@@ -124,7 +124,7 @@ const Wrapper = styled(Box)<IWrapper>(
 
     &:hover,
     &:active {
-      ${onClick && `background-color: ${styles[type].hoverBackgroundColor};`};
+      ${onClick && `background-color: ${styles[$type].hoverBackgroundColor};`};
     }
   `,
 )

@@ -1,8 +1,8 @@
 import React from 'react'
+import { Button } from '../Button'
+import { Tag } from '../Tag'
 import { BrandCard, BrandCardProps } from './BrandCard'
 import placeHolderSvg from './assets/placeHolderImage.svg'
-import { Tag } from '../Tag'
-import { Button } from '../Button'
 
 export default {
   title: 'BrandCard',

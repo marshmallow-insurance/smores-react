@@ -1,17 +1,17 @@
-import React, { FC, ReactNode, ButtonHTMLAttributes, forwardRef } from 'react'
+import React, { ButtonHTMLAttributes, FC, ReactNode, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
-import { theme } from '../theme'
 import { Box } from '../Box'
 import { Icon as IconComponent } from '../Icon'
 import { Loader } from '../Loader'
+import { theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
 interface IButton {
-  primary: boolean
-  secondary: boolean
-  icon: string
+  $primary: boolean
+  $secondary: boolean
+  $icon: string
   $loading: boolean
   disabled: boolean
 }
@@ -43,13 +43,13 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
     ref,
   ) => (
     <Container
-      as="button"
-      primary={primary}
-      secondary={secondary}
+      forwardedAs="button"
+      $primary={primary}
+      $secondary={secondary}
       disabled={disabled || loading}
       $loading={loading}
       onClick={handleClick}
-      icon={icon}
+      $icon={icon}
       {...props}
       ref={ref}
     >
@@ -74,7 +74,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
 Chip.displayName = 'Chip'
 
 const Container = styled(Box)<IButton>(
-  ({ primary, secondary, icon, $loading, disabled }) => css`
+  ({ $primary, $secondary, $icon, $loading, disabled }) => css`
     ${focusOutline()}
 
     align-items: center;
@@ -84,15 +84,15 @@ const Container = styled(Box)<IButton>(
     color: ${theme.colors.liquorice};
     display: flex;
     font-size: 16px;
-    justify-content: ${icon ? 'space-evenly' : 'center'};
+    justify-content: ${$icon ? 'space-evenly' : 'center'};
     line-height: 100%;
-    padding: 8px 16px 8px ${icon ? '8px' : '16px'};
+    padding: 8px 16px 8px ${$icon ? '8px' : '16px'};
     width: 98px;
     min-height: 40px;
     cursor: ${disabled || $loading ? 'not-allowed' : 'pointer'};
     opacity: ${disabled ? '0.5' : '1'};
 
-    ${primary &&
+    ${$primary &&
     css`
       &:hover {
         border: ${!(disabled || $loading) &&
@@ -100,7 +100,7 @@ const Container = styled(Box)<IButton>(
         background-color: ${!(disabled || $loading) && theme.colors.mascarpone};
       }
     `}
-    ${secondary &&
+    ${$secondary &&
     css`
       color: ${theme.colors.cream};
       background-color: ${theme.colors.liquorice};

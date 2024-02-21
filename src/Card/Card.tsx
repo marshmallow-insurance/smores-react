@@ -1,12 +1,13 @@
+import { darken } from 'polished'
 import React, { FC, MouseEventHandler, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
-import { MarginProps } from '../utils/space'
-import { theme } from '../theme'
+import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
-import { darken } from 'polished'
+import { theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
+import { MarginProps } from '../utils/space'
 
 export type CardProps = {
   children?: ReactNode
@@ -70,22 +71,22 @@ export const Card: FC<CardProps> = ({
   return (
     <Container
       className={className}
-      maxWidth={maxWidth}
-      marginX={marginX}
-      marginY={marginY}
-      narrow={narrow}
-      wide={wide}
-      visual={visual}
-      fallbackStyle={fallbackStyle}
-      isNotClickable={isNotClickable}
+      $maxWidth={maxWidth}
+      $marginX={marginX}
+      $marginY={marginY}
+      $narrow={narrow}
+      $wide={wide}
+      $visual={visual}
+      $fallbackStyle={fallbackStyle}
+      $isNotClickable={isNotClickable}
       onClick={cardOnClickAction}
       tabIndex={isNotClickable ? undefined : 0}
       {...otherProps}
     >
       {tag && visual && <TagWrapper>{tag}</TagWrapper>}
       {visual && (
-        <VisualWrapper visualHeight={visualHeight}>
-          <Visual visualUrl={visual} visualHeight={visualHeight} />
+        <VisualWrapper $visualHeight={visualHeight}>
+          <Visual $visualUrl={visual} $visualHeight={visualHeight} />
         </VisualWrapper>
       )}
       <Box p={visual ? '16px' : { custom: '0px' }}>
@@ -121,38 +122,42 @@ export const Card: FC<CardProps> = ({
   )
 }
 
-type ICard = Required<
-  Pick<
-    CardProps,
-    'maxWidth' | 'marginX' | 'marginY' | 'narrow' | 'wide' | 'fallbackStyle'
+type ICard = TransientProps<
+  Required<
+    Pick<
+      CardProps,
+      'maxWidth' | 'marginX' | 'marginY' | 'narrow' | 'wide' | 'fallbackStyle'
+    >
   >
 > &
-  Partial<Pick<CardProps, 'visual'> & { isNotClickable: boolean }>
+  Partial<TransientProps<Pick<CardProps, 'visual'>>> & {
+    $isNotClickable?: boolean
+  }
 
 const Container = styled(Box)<ICard>`
-  background: ${({ fallbackStyle }) =>
-    fallbackStyle ? theme.colors.cream : theme.colors.custard};
+  background: ${({ $fallbackStyle }) =>
+    $fallbackStyle ? theme.colors.cream : theme.colors.custard};
   box-sizing: border-box;
   border-radius: 16px;
 
-  max-width: ${(p) => p.maxWidth};
-  margin-top: ${(p) => p.marginY};
-  margin-right: ${(p) => p.marginX};
-  margin-bottom: ${(p) => p.marginY};
-  margin-left: ${(p) => p.marginX};
+  max-width: ${(p) => p.$maxWidth};
+  margin-top: ${(p) => p.$marginY};
+  margin-right: ${(p) => p.$marginX};
+  margin-bottom: ${(p) => p.$marginY};
+  margin-left: ${(p) => p.$marginX};
 
-  padding: ${({ visual }) => (visual ? '0px' : '16px')};
+  padding: ${({ $visual }) => ($visual ? '0px' : '16px')};
   position: relative;
   overflow: hidden;
 
-  ${({ isNotClickable, fallbackStyle }) =>
-    !isNotClickable &&
+  ${({ $isNotClickable, $fallbackStyle }) =>
+    !$isNotClickable &&
     css`
       cursor: pointer;
       &:hover {
         background: ${darken(
           0.1,
-          fallbackStyle ? theme.colors.cream : theme.colors.custard,
+          $fallbackStyle ? theme.colors.cream : theme.colors.custard,
         )};
       }
 
@@ -166,20 +171,20 @@ const TagWrapper = styled(Box)`
   right: 12px;
 `
 
-const VisualWrapper = styled(Box)<{ visualHeight: string }>`
+const VisualWrapper = styled(Box)<{ $visualHeight: string }>`
   width: 100%;
   margin-top: -16px;
 
-  ${({ visualHeight }) => visualHeight && `height: ${visualHeight};`}
+  ${({ $visualHeight }) => $visualHeight && `height: ${$visualHeight};`}
 `
 
-const Visual = styled(Box)<{ visualUrl: string; visualHeight: string }>`
+const Visual = styled(Box)<{ $visualUrl: string; $visualHeight: string }>`
   width: 100%;
-  background-image: url('${(p) => p.visualUrl}');
+  background-image: url('${(p) => p.$visualUrl}');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 
-  ${({ visualHeight }) =>
-    visualHeight ? `height: ${visualHeight};` : 'padding-top: 100%;'}
+  ${({ $visualHeight }) =>
+    $visualHeight ? `height: ${$visualHeight};` : 'padding-top: 100%;'}
 `

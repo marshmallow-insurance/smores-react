@@ -2,9 +2,10 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import { MarginProps } from '../utils/space'
 
+import { TransientProps } from 'utils/utilTypes'
+import { Box } from '../Box'
 import { Text } from '../Text'
 import { Color, theme } from '../theme'
-import { Box } from '../Box'
 
 export type TagProps = {
   label: string
@@ -23,9 +24,9 @@ export const Tag: FC<TagProps> = ({
   ...marginProps
 }) => (
   <Wrapper
-    bgColor={bgColor}
+    $bgColor={bgColor}
     className={className}
-    borderColor={borderColor}
+    $borderColor={borderColor}
     {...marginProps}
     alignContent="center"
     justifyContent="center"
@@ -36,12 +37,12 @@ export const Tag: FC<TagProps> = ({
   </Wrapper>
 )
 
-type WrapperProps = Pick<TagProps, 'bgColor' | 'borderColor'>
+type WrapperProps = TransientProps<Pick<TagProps, 'bgColor' | 'borderColor'>>
 
 const Wrapper = styled(Box)<WrapperProps>`
-  background-color: ${({ bgColor }) => bgColor && theme.colors[bgColor]};
-  border: ${({ borderColor }) =>
-    borderColor && `1px solid ${theme.colors[borderColor]}`};
+  background-color: ${({ $bgColor }) => $bgColor && theme.colors[$bgColor]};
+  border: ${({ $borderColor }) =>
+    $borderColor && `1px solid ${theme.colors[$borderColor]}`};
 
   border-radius: 6px;
   padding: 4px 8px;

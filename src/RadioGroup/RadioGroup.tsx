@@ -11,6 +11,7 @@ import styled from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
 
+import { TransientProps } from 'utils/utilTypes'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { Fieldset } from '../fields/Fieldset'
 import { ITEM_GAP } from './constants'
@@ -67,7 +68,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
 
   return (
     <Fieldset renderAsTitle={renderAsTitle} error={error} {...fieldProps}>
-      <RadioItemList displayType={displayType}>
+      <RadioItemList $displayType={displayType}>
         {options.map((option, index) => {
           const isSelected = option.value === value
 
@@ -106,12 +107,14 @@ export const RadioGroup = forwardRef(RadioGroupComponent) as <
   p: RadioGroupProps<Value> & React.RefAttributes<HTMLInputElement>,
 ) => ReactElement | null
 
-const RadioItemList = styled.div<Pick<RadioGroupProps, 'displayType'>>`
+const RadioItemList = styled.div<
+  TransientProps<Pick<RadioGroupProps, 'displayType'>>
+>`
   display: flex;
   gap: ${ITEM_GAP}px;
 
-  ${({ displayType }) => {
-    if (displayType === 'horizontal-card') {
+  ${({ $displayType }) => {
+    if ($displayType === 'horizontal-card') {
       return `
         flex-direction: row;
         flex-wrap: wrap;

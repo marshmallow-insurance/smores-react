@@ -1,7 +1,8 @@
 import { resolveResponsiveProp, ResponsiveProp } from './responsiveProp'
 import { resolveSpacing, SpacingProp } from './space'
+import { TransientProps } from './utilTypes'
 
-type FlexFN = (arg: FlexProps) => string
+type FlexFN = (arg: TransientFlexProps) => string
 
 export interface FlexProps {
   direction?: ResponsiveProp<
@@ -35,73 +36,78 @@ export interface FlexProps {
   columnGap?: ResponsiveProp<SpacingProp>
 }
 
-export const flex: FlexFN = (props: FlexProps) => {
+export type TransientFlexProps = TransientProps<FlexProps>
+
+export const flex: FlexFN = (props: TransientFlexProps) => {
   const {
-    flex,
-    direction,
-    wrap,
-    flow,
-    justifyContent,
-    alignItems,
-    alignContent,
-    gap,
-    columnGap,
-    rowGap,
+    $flex,
+    $direction,
+    $wrap,
+    $flow,
+    $justifyContent,
+    $alignItems,
+    $alignContent,
+    $gap,
+    $columnGap,
+    $rowGap,
   } = props
 
   return `
-    ${flex ? `display: flex;` : ''}
+    ${$flex ? `display: flex;` : ''}
     ${
-      direction
+      $direction
         ? resolveResponsiveProp(
-            direction,
+            $direction,
             (value) => `flex-direction: ${value};`,
           )
         : ''
     }
-    ${wrap ? `flex-wrap: ${wrap};` : ''}
-    ${flow ? `flex-flow: ${flow};` : ''}
+    ${$wrap ? `flex-wrap: ${$wrap};` : ''}
+    ${$flow ? `flex-flow: ${$flow};` : ''}
     ${
-      justifyContent
+      $justifyContent
         ? resolveResponsiveProp(
-            justifyContent,
+            $justifyContent,
             (value) => `justify-content: ${value};`,
           )
         : ''
     }
     ${
-      alignItems
-        ? resolveResponsiveProp(alignItems, (value) => `align-items: ${value};`)
+      $alignItems
+        ? resolveResponsiveProp(
+            $alignItems,
+            (value) => `align-items: ${value};`,
+          )
         : ''
     }
     ${
-      alignContent
+      $alignContent
         ? resolveResponsiveProp(
-            alignContent,
+            $alignContent,
             (value) => `align-content: ${value};`,
           )
         : ''
     }
     ${
-      gap
+      $gap
         ? resolveResponsiveProp(
-            gap,
+            $gap,
             (value) => `gap: ${resolveSpacing(value)};`,
           )
         : ''
     }
     ${
-      columnGap
+      $columnGap
         ? resolveResponsiveProp(
-            columnGap,
+            $columnGap,
             (value) => `column-gap: ${resolveSpacing(value)};`,
           )
         : ''
     }
     ${
-      rowGap
+      $rowGap
         ? resolveResponsiveProp(
-            rowGap,
+            $rowGap,
             (value) => `row-gap: ${resolveSpacing(value)};`,
           )
         : ''

@@ -54,11 +54,11 @@ export const IconStrict: FC<IconStrictProps> = ({
   ...marginProps
 }) => (
   <IconContainer
-    as={handleClick ? 'button' : 'div'}
+    forwardedAs={handleClick ? 'button' : 'div'}
     className={className}
-    size={size}
+    $size={size}
     {...marginProps}
-    backgroundColor={backgroundColor}
+    $backgroundColor={backgroundColor}
     onClick={handleClick}
     onKeyDown={(e: { key: string }) => {
       if (!handleClick) return
@@ -79,20 +79,20 @@ export const IconStrict: FC<IconStrictProps> = ({
 )
 
 interface IIconStrict {
-  size: 16 | 24 | 36 | 48
-  backgroundColor?: Color
+  $size: 16 | 24 | 36 | 48
+  $backgroundColor?: Color
   onClick?: (e: FormEvent<HTMLButtonElement>) => void
 }
 
 const IconContainer = styled.div<IIconStrict>(
-  ({ size, backgroundColor, onClick }) => css`
-    padding: ${backgroundColor ? `${iconSizes[size].padding}px` : 0};
+  ({ $size, $backgroundColor, onClick }) => css`
+    padding: ${$backgroundColor ? `${iconSizes[$size].padding}px` : 0};
     width: 100%;
-    max-width: ${size}px;
-    height: ${size}px;
+    max-width: ${$size}px;
+    height: ${$size}px;
     border-radius: 100%;
-    background-color: ${backgroundColor
-      ? theme.colors[backgroundColor]
+    background-color: ${$backgroundColor
+      ? theme.colors[$backgroundColor]
       : 'none'};
     cursor: ${onClick ? 'pointer' : 'default'};
 
@@ -100,7 +100,7 @@ const IconContainer = styled.div<IIconStrict>(
     `
     &:hover {
       background-color: ${
-        backgroundColor ? darken(0.1, theme.colors[backgroundColor]) : 'none'
+        $backgroundColor ? darken(0.1, theme.colors[$backgroundColor]) : 'none'
       };
     }
       

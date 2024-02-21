@@ -1,8 +1,8 @@
 import React from 'react'
-import { TextInput, TextInputProps } from './TextInput'
-import { Container } from './Container'
 import { noop } from '../utils/noop'
 import { CollectionPage } from './Collection'
+import { Container } from './Container'
+import { TextInput, TextInputProps } from './TextInput'
 
 export default {
   title: 'Text Input',
@@ -15,7 +15,6 @@ const Template = (props: TextInputProps) => <TextInput {...props} />
 export const Default = Template.bind({})
 
 Default.args = {
-  id: 'textInput',
   name: 'textInput',
   placeholder: 'Placeholder text',
   onChange: noop,
@@ -26,7 +25,7 @@ Default.args = {
 export const DefaultFallback = Template.bind({})
 
 DefaultFallback.args = {
-  id: 'textInput',
+  id: 'textInput2',
   name: 'textInput',
   placeholder: 'Placeholder text',
   fallbackStyle: true,
@@ -38,7 +37,7 @@ DefaultFallback.args = {
 export const TypePassword = Template.bind({})
 
 TypePassword.args = {
-  id: 'textInput',
+  id: 'textInput3',
   name: 'textInput',
   placeholder: 'Placeholder text',
   onChange: noop,

@@ -1,11 +1,12 @@
 import { darken } from 'polished'
 import styled, { css } from 'styled-components'
+import { TransientProps } from 'utils/utilTypes'
 import { fontStyleMapping } from '../../Text/fontMapping'
 import { theme } from '../../theme'
 import { focusOutlineStyle } from '../../utils/focusOutline'
 import { TableStylesProps } from '../types'
 
-export const StyledTable = styled.table<TableStylesProps>`
+export const StyledTable = styled.table`
   width: 100%;
   height: 100%;
   border-collapse: collapse;
@@ -14,9 +15,9 @@ export const StyledTable = styled.table<TableStylesProps>`
   border-spacing: 30px;
 `
 
-export const StyledHeaderCell = styled.th<TableStylesProps>`
+export const StyledHeaderCell = styled.th<TransientProps<TableStylesProps>>`
   background: ${theme.colors.coconut};
-  position: ${({ fixedHeader }) => (fixedHeader ? 'sticky' : 'auto')};
+  position: ${({ $fixedHeader }) => ($fixedHeader ? 'sticky' : 'auto')};
   top: 0;
   z-index: 2;
   text-align: left;
@@ -27,132 +28,132 @@ export const StyledHeaderCell = styled.th<TableStylesProps>`
   padding-top: 8px;
   padding-bottom: 8px;
 
-  ${({ headerColor }) =>
-    headerColor &&
+  ${({ $headerColor }) =>
+    $headerColor &&
     css`
-      background: ${theme.colors[headerColor]};
+      background: ${theme.colors[$headerColor]};
     `}
 
-  ${({ headerHeight }) =>
-    headerHeight &&
+  ${({ $headerHeight }) =>
+    $headerHeight &&
     css`
-      height: ${headerHeight};
+      height: ${$headerHeight};
     `}
 
-  ${({ maxWidth }) =>
-    maxWidth &&
+  ${({ $maxWidth }) =>
+    $maxWidth &&
     css`
-      max-width: ${maxWidth};
+      max-width: ${$maxWidth};
     `}
 
-  ${({ minWidth }) =>
-    minWidth &&
+  ${({ $minWidth }) =>
+    $minWidth &&
     css`
-      min-width: ${minWidth};
+      min-width: ${$minWidth};
     `}
     
-  ${({ columnPadding }) =>
-    columnPadding &&
+  ${({ $columnPadding }) =>
+    $columnPadding &&
     css`
-      padding-left: ${columnPadding};
-      padding-right: ${columnPadding};
+      padding-left: ${$columnPadding};
+      padding-right: ${$columnPadding};
     `};
 `
 
-export const StyledCell = styled.td<TableStylesProps>`
+export const StyledCell = styled.td<TransientProps<TableStylesProps>>`
   vertical-align: middle;
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
 
-  ${({ hideOverflow }) =>
-    hideOverflow &&
+  ${({ $hideOverflow }) =>
+    $hideOverflow &&
     css`
       overflow: hidden;
     `};
 
-  ${({ noWrapContent }) =>
-    noWrapContent &&
+  ${({ $noWrapContent }) =>
+    $noWrapContent &&
     css`
       white-space: nowrap;
     `};
 
-  ${({ truncateContent }) =>
-    truncateContent &&
+  ${({ $truncateContent }) =>
+    $truncateContent &&
     css`
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
     `};
 
-  ${({ stickyCell }) =>
-    stickyCell &&
+  ${({ $stickyCell }) =>
+    $stickyCell &&
     css`
       position: sticky;
       right: 0;
     `};
 
-  ${({ rowPadding }) =>
-    rowPadding &&
+  ${({ $rowPadding }) =>
+    $rowPadding &&
     css`
-      padding-top: ${rowPadding};
-      padding-bottom: ${rowPadding};
+      padding-top: ${$rowPadding};
+      padding-bottom: ${$rowPadding};
     `};
 
-  ${({ columnPadding }) =>
-    columnPadding &&
+  ${({ $columnPadding }) =>
+    $columnPadding &&
     css`
-      padding-left: ${columnPadding};
-      padding-right: ${columnPadding};
+      padding-left: ${$columnPadding};
+      padding-right: ${$columnPadding};
     `};
 
-  ${({ maxWidth }) =>
-    maxWidth &&
+  ${({ $maxWidth }) =>
+    $maxWidth &&
     css`
-      max-width: ${maxWidth};
+      max-width: ${$maxWidth};
     `}
 
-  ${({ rowActionsBgColor }) =>
-    rowActionsBgColor &&
+  ${({ $rowActionsBgColor }) =>
+    $rowActionsBgColor &&
     css`
-      background: ${theme.colors[rowActionsBgColor]};
+      background: ${theme.colors[$rowActionsBgColor]};
     `}
 `
 
-export const StyledRow = styled.tr<TableStylesProps>`
+export const StyledRow = styled.tr<TransientProps<TableStylesProps>>`
   background: ${theme.colors.custard};
 
-  ${({ rowBorderColor }) =>
-    rowBorderColor &&
+  ${({ $rowBorderColor }) =>
+    $rowBorderColor &&
     css`
-      border-bottom: 1px solid ${theme.colors[rowBorderColor]};
+      border-bottom: 1px solid ${theme.colors[$rowBorderColor]};
     `}
 
-  ${({ rowColor }) =>
-    rowColor &&
+  ${({ $rowColor }) =>
+    $rowColor &&
     css`
-      background: ${theme.colors[rowColor]};
+      background: ${theme.colors[$rowColor]};
     `}
 
-  ${({ stripedColor }) =>
-    stripedColor &&
+  ${({ $stripedColor }) =>
+    $stripedColor &&
     css`
       &:nth-child(even) {
-        background: ${theme.colors[stripedColor]};
+        background: ${theme.colors[$stripedColor]};
       }
     `}
 
-    ${({ clickableRow, rowColor }) =>
-    clickableRow &&
+    ${({ $clickableRow, $rowColor }) =>
+    $clickableRow &&
     css`
       cursor: pointer;
       &:hover {
-        background: ${darken(0.1, theme.colors[rowColor ?? 'custard'])};
+        background: ${darken(0.1, theme.colors[$rowColor ?? 'custard'])};
       }
       &:focus-visible {
         ${focusOutlineStyle}
-        background: ${darken(0.1, theme.colors[rowColor ?? 'custard'])};
+        background: ${darken(0.1, theme.colors[$rowColor ?? 'custard'])};
       }
     `}
 `

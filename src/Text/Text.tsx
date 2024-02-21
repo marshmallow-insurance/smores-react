@@ -1,22 +1,20 @@
 import React, { FC, forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
-import { Color, theme } from '../theme'
-import { linkStyleOverride } from '../Link/Link'
 import { Box } from '../Box'
+import { linkStyleOverride } from '../Link/Link'
+import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
 import { fontStyleMapping } from './fontMapping'
 
 interface IText {
   /** typography class name to apply predefined styles */
-  typo: string
-  /** HTML tag  */
-  as: any
+  $typo: string
   /** text-align  */
-  align: string
+  $align: string
   /** color from the theme  */
   color: Color
-  cursor: string
+  $cursor: string
 }
 
 /**
@@ -53,6 +51,7 @@ export type Typo =
 
 type Props = {
   children: ReactNode
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tag?: any
   className?: string
   // Record<never, never> matches any non-null and non-undefined type so
@@ -83,10 +82,10 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
     ref,
   ) => (
     <Container
-      as={tag}
+      forwardedAs={tag}
       className={className}
-      typo={typo}
-      align={align}
+      $typo={typo}
+      $align={align}
       color={color}
       cursor={cursor}
       title={title}
@@ -105,13 +104,13 @@ const isNewTypo = (value: string): value is Typo => {
 }
 
 const Container = styled(Box)<IText>(
-  ({ align, color, cursor, typo }) => css`
+  ({ $align, color, $cursor, $typo }) => css`
     /** TYPOGRAPHY STYLES */
 
-    ${isNewTypo(typo) && fontStyleMapping[typo]}
+    ${isNewTypo($typo) && fontStyleMapping[$typo]}
 
     /** DEPRECATED TYPOGRAPHY STYLES */
-    ${typo === 'header-large' &&
+    ${$typo === 'header-large' &&
     css`
       font-size: 24px;
       line-height: 31px;
@@ -123,7 +122,7 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  ${typo === 'header-medium' &&
+  ${$typo === 'header-medium' &&
     css`
       font-size: 21px;
       line-height: 27px;
@@ -135,7 +134,7 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  ${typo === 'header-small' &&
+  ${$typo === 'header-small' &&
     css`
       font-size: 18px;
       line-height: 23px;
@@ -147,7 +146,7 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  ${typo === 'desc-heavy' &&
+  ${$typo === 'desc-heavy' &&
     css`
       font-size: 14px;
       line-height: 20px;
@@ -159,7 +158,7 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  ${typo === 'desc-medium' &&
+  ${$typo === 'desc-medium' &&
     css`
       font-size: 14px;
       line-height: 20px;
@@ -171,7 +170,7 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  ${typo === 'desc-light' &&
+  ${$typo === 'desc-light' &&
     css`
       font-size: 14px;
       line-height: 20px;
@@ -183,7 +182,7 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  ${typo === 'desc-small' &&
+  ${$typo === 'desc-small' &&
     css`
       font-size: 12px;
       line-height: 16px;
@@ -195,7 +194,7 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  ${typo === 'base' &&
+  ${$typo === 'base' &&
     css`
       font-size: 14px;
       line-height: 23px;
@@ -207,7 +206,7 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  ${typo === 'base-small' &&
+  ${$typo === 'base-small' &&
     css`
       font-size: 12px;
       line-height: 20px;
@@ -219,7 +218,7 @@ const Container = styled(Box)<IText>(
       }
     `}
 
-  ${typo === 'base-xsmall' &&
+  ${$typo === 'base-xsmall' &&
     css`
       font-size: 10px;
       line-height: 16px;
@@ -231,7 +230,7 @@ const Container = styled(Box)<IText>(
       }
     `}
   
-  ${typo === 'label-large' &&
+  ${$typo === 'label-large' &&
     css`
       font-size: 12px;
       line-height: 100%;
@@ -240,8 +239,8 @@ const Container = styled(Box)<IText>(
       letter-spacing: 0.75px;
     `}
 
-    text-align: ${align};
-    cursor: ${cursor};
+    text-align: ${$align};
+    cursor: ${$cursor};
     color: ${theme.colors[color]};
     ${linkStyleOverride({ color: theme.colors[color] })}
   `,

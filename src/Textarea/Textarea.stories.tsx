@@ -56,7 +56,6 @@ Required.args = {
   onChange: noop,
   disabled: false,
   maxLength: 200,
-  showCharacterCount: true,
   placeholder: 'Here is some placeholder text.',
   required: true,
 }

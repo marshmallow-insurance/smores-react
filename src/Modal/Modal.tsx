@@ -1,22 +1,22 @@
 import React, { FC, ReactNode, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import styled, { css } from 'styled-components'
 import { theme } from '../theme'
-import { createPortal } from 'react-dom'
 
 import { Box } from '../Box'
+import { IconStrict } from '../IconStrict'
 import { Text } from '../Text'
 import useBodyScrollLock from './useBodyScrollLock'
-import { IconStrict } from '../IconStrict'
 
 interface IModalWrapper {
   // showModal state
-  showModal: boolean
+  $showModal: boolean
 }
 interface IModalContainer {
   // drawer state
-  drawer: boolean
+  $drawer: boolean
   // modal width
-  width: string
+  $width: string
 }
 
 export type ModalProps = {
@@ -48,11 +48,11 @@ export const Modal: FC<ModalProps> = ({
   useBodyScrollLock({ node: modalRef.current, showModal })
 
   return createPortal(
-    <Wrapper showModal={showModal} ref={modalRef}>
+    <Wrapper $showModal={showModal} ref={modalRef}>
       <Overlay onClick={handleClick} />
       <Container
-        drawer={drawer}
-        width={width || '460px'}
+        $drawer={drawer}
+        $width={width || '460px'}
         className={containerClass}
       >
         <Box
@@ -85,8 +85,8 @@ export const Modal: FC<ModalProps> = ({
 }
 
 const Wrapper = styled(Box)<IModalWrapper>(
-  ({ showModal }) => css`
-    display: ${showModal ? 'flex' : 'none'};
+  ({ $showModal }) => css`
+    display: ${$showModal ? 'flex' : 'none'};
     position: absolute;
     z-index: 999;
     top: 0;
@@ -110,18 +110,18 @@ const Overlay = styled.div`
 `
 
 const Container = styled.div<IModalContainer>(
-  ({ drawer, width }) => css`
+  ({ $drawer, $width }) => css`
     background: ${theme.colors.coconut};
     box-sizing: border-box;
     border-radius: 16px;
     padding: 24px;
     width: 100%;
-    max-width: ${width};
+    max-width: ${$width};
     position: fixed;
     max-height: calc(100vh - 64px);
     overflow: auto;
 
-    ${drawer === true &&
+    ${$drawer === true &&
     css`
       @media (max-width: 768px) {
         max-width: none;

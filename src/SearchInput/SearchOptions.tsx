@@ -1,6 +1,7 @@
 import { darken } from 'polished'
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
+import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { theme } from '../theme'
 
@@ -24,8 +25,8 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
 }) => {
   return (
     <BoxWithPositionRelative>
-      <StyledResultsContainer positionRelative={positionRelative}>
-        <ResultsList resultsBorder={resultsBorder}>
+      <StyledResultsContainer $positionRelative={positionRelative}>
+        <ResultsList $resultsBorder={resultsBorder}>
           {displayedList.length ? (
             displayedList.map((el, i) => (
               <li key={i} onClick={() => onSelect(el)}>
@@ -42,11 +43,11 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
 }
 
 const StyledResultsContainer = styled.div<
-  Pick<SearchOptionsProps, 'positionRelative'>
+  TransientProps<Pick<SearchOptionsProps, 'positionRelative'>>
 >`
   box-sizing: border-box;
   overflow-y: hidden;
-  ${({ positionRelative }) => !positionRelative && 'position: absolute;'}
+  ${({ $positionRelative }) => !$positionRelative && 'position: absolute;'}
   width: 100%;
   left: 0px;
   top: -8px;
@@ -56,7 +57,9 @@ const StyledResultsContainer = styled.div<
   }
 `
 
-const ResultsList = styled.ul<Pick<SearchOptionsProps, 'resultsBorder'>>`
+const ResultsList = styled.ul<
+  TransientProps<Pick<SearchOptionsProps, 'resultsBorder'>>
+>`
   position: relative;
   list-style: none;
   overflow-y: auto;
@@ -66,8 +69,8 @@ const ResultsList = styled.ul<Pick<SearchOptionsProps, 'resultsBorder'>>`
   border-radius: 12px;
   margin-top: 14px;
   z-index: 1000;
-  ${({ resultsBorder }) =>
-    resultsBorder &&
+  ${({ $resultsBorder }) =>
+    $resultsBorder &&
     css`
       border: 2px solid ${theme.colors.oatmeal};
     `}
@@ -79,11 +82,11 @@ const ResultsList = styled.ul<Pick<SearchOptionsProps, 'resultsBorder'>>`
     color: ${theme.colors.liquorice};
     cursor: pointer;
 
-    ${({ resultsBorder }) =>
-      resultsBorder && `border-bottom: 2px solid ${theme.colors.oatmeal};`}
+    ${({ $resultsBorder }) =>
+      $resultsBorder && `border-bottom: 2px solid ${theme.colors.oatmeal};`}
 
     &:last-child {
-      ${({ resultsBorder }) => resultsBorder && `border-bottom:none`}
+      ${({ $resultsBorder }) => $resultsBorder && `border-bottom:none`}
     }
 
     &:hover {

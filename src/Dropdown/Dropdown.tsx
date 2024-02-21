@@ -1,20 +1,20 @@
 import React, {
   FocusEvent,
   FormEvent,
-  forwardRef,
   ForwardedRef,
+  forwardRef,
   useMemo,
 } from 'react'
 import styled, { css } from 'styled-components'
 
-import { theme } from '../theme'
+import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
+import { StyledFrontIcon } from '../fields/components/CommonInput'
+import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
-import { Box } from '../Box'
-import { StyledFrontIcon } from '../fields/components/CommonInput'
 
 export type DropdownItem = {
   optionGroupLabel?: string
@@ -92,7 +92,7 @@ export const Dropdown = forwardRef(function Dropdown(
       <Box flex alignItems="center">
         {frontIcon && (
           <StyledFrontIcon
-            disabled={disabled}
+            $disabled={disabled}
             render={frontIcon}
             color="sesame"
           />
@@ -107,12 +107,12 @@ export const Dropdown = forwardRef(function Dropdown(
             onInputChange?.(event)
             setValue(value)
           }}
-          error={error}
+          $error={error}
           ref={ref}
           onBlur={onBlur}
           name={name}
-          frontIcon={frontIcon}
-          fallbackStyle={fallbackStyle}
+          $frontIcon={frontIcon}
+          $fallbackStyle={fallbackStyle}
           value={value ? value : ''}
         >
           {hasOptGroups ? (
@@ -165,9 +165,9 @@ const resetSelect = css`
 `
 
 interface SSelect {
-  error: boolean
-  frontIcon?: string
-  fallbackStyle?: boolean
+  $error: boolean
+  $frontIcon?: string
+  $fallbackStyle?: boolean
 }
 
 const StyledSelect = styled.select<SSelect>`
@@ -176,18 +176,18 @@ const StyledSelect = styled.select<SSelect>`
   height: 32px;
 
   cursor: pointer;
-  background-color: ${({ fallbackStyle }) =>
-    fallbackStyle ? theme.colors.custard : theme.colors.cream};
+  background-color: ${({ $fallbackStyle }) =>
+    $fallbackStyle ? theme.colors.custard : theme.colors.cream};
 
   border-radius: 12px;
   padding: 18px 14px;
   border: 2px solid
-    ${({ error }) => (error ? theme.colors.strawberry : theme.colors.oatmeal)};
+    ${({ $error }) => ($error ? theme.colors.strawberry : theme.colors.oatmeal)};
   height: auto;
 
-  ${({ frontIcon }) =>
-    frontIcon &&
-    frontIcon != '' &&
+  ${({ $frontIcon }) =>
+    $frontIcon &&
+    $frontIcon != '' &&
     `
       padding-left: 42px;
     `}
@@ -197,8 +197,8 @@ const StyledSelect = styled.select<SSelect>`
     opacity: 0.5;
   }
 
-  ${({ error }) =>
-    !error &&
+  ${({ $error }) =>
+    !$error &&
     css`
       :not(:disabled) {
         &:hover,

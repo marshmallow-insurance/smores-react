@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 
-import { Color, theme } from '../theme'
-import { Icon } from '../Icon'
 import { Box } from '../Box'
+import { Icon } from '../Icon'
 import { Text } from '../Text'
+import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
 
 export type RowProps = {
@@ -39,13 +39,13 @@ export const Row: FC<RowProps> = ({
 
   return (
     <Container
-      type={type}
-      iconLeft={iconLeft}
-      borderTop={borderTop}
-      borderBottom={borderBottom}
-      iconRight={iconRight}
+      $type={type}
+      $iconLeft={iconLeft}
+      $borderTop={borderTop}
+      $borderBottom={borderBottom}
+      $iconRight={iconRight}
       onClick={handleClick}
-      boldHeading={boldHeading}
+      $boldHeading={boldHeading}
       {...marginProps}
     >
       {iconLeft && (
@@ -77,31 +77,31 @@ export const Row: FC<RowProps> = ({
 }
 
 interface IContainer {
-  type?: 'first' | 'last' | 'curved'
-  iconLeft?: string
-  iconRight?: string
-  borderTop: boolean
-  borderBottom: boolean
-  boldHeading?: boolean
+  $type?: 'first' | 'last' | 'curved'
+  $iconLeft?: string
+  $iconRight?: string
+  $borderTop: boolean
+  $borderBottom: boolean
+  $boldHeading?: boolean
 }
 
 const Container = styled(Box)<IContainer>(
-  ({ type, iconLeft, borderTop, borderBottom, boldHeading }) => css`
-    border-radius: ${(type === 'first' && `16px 16px 0 0`) ||
-    (type === 'curved' && `16px`) ||
-    (type === 'last' && `0 0 16px 16px`) ||
+  ({ $type, $iconLeft, $borderTop, $borderBottom, $boldHeading }) => css`
+    border-radius: ${($type === 'first' && `16px 16px 0 0`) ||
+    ($type === 'curved' && `16px`) ||
+    ($type === 'last' && `0 0 16px 16px`) ||
     0};
 
-    border-top: ${borderTop && type !== 'curved' && type !== 'first'
+    border-top: ${$borderTop && $type !== 'curved' && $type !== 'first'
       ? `1px solid ${theme.colors.oatmeal}`
       : 'none'};
-    border-bottom: ${borderBottom && type !== 'curved' && type !== 'last'
+    border-bottom: ${$borderBottom && $type !== 'curved' && $type !== 'last'
       ? `1px solid ${theme.colors.oatmeal}`
       : 'none'};
 
     background-color: ${theme.colors.custard};
     display: grid;
-    grid-template-columns: ${iconLeft ? `24px auto 24px` : `auto 24px`};
+    grid-template-columns: ${$iconLeft ? `24px auto 24px` : `auto 24px`};
     padding: 16px;
     grid-gap: 16px;
     align-items: center;
@@ -109,7 +109,7 @@ const Container = styled(Box)<IContainer>(
     cursor: pointer;
 
     h1 {
-      font-weight: ${boldHeading && 500};
+      font-weight: ${$boldHeading && 500};
     }
 
     .iconRight {

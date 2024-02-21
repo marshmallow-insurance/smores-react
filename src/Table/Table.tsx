@@ -77,8 +77,8 @@ export const Table = <T extends object>({
         {data.length === 0 && (
           <StyledCell
             colSpan={expandSubProp}
-            rowPadding={rowPadding}
-            columnPadding={columnPadding}
+            $rowPadding={rowPadding}
+            $columnPadding={columnPadding}
           >
             {noDataContent ? (
               noDataContent

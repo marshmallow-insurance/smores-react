@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
-import { MarginProps } from '../utils/space'
 import { Box } from '../Box'
+import { MarginProps } from '../utils/space'
 
 export type EmojiProps = {
   /** className attribute to apply classes from props */
@@ -24,7 +24,7 @@ export const Emoji: FC<EmojiProps> = ({
   <Container
     as="span"
     className={className}
-    size={size}
+    $size={size}
     role="img"
     aria-label={label}
     {...marginProps}
@@ -34,11 +34,11 @@ export const Emoji: FC<EmojiProps> = ({
 )
 
 interface IEmoji {
-  size: number
+  $size: number
 }
 
 const Container = styled(Box)<IEmoji>(
-  ({ size }) => css`
-    font-size: ${size}px;
+  ({ $size }) => css`
+    font-size: ${$size}px;
   `,
 )

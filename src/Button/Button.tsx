@@ -1,6 +1,7 @@
 import React, { ButtonHTMLAttributes, FC, ReactNode, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
+import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Icon as IconComponent } from '../Icon'
 import { Loader } from '../Loader'
@@ -56,20 +57,20 @@ export const Button: FC<ButtonProps> = forwardRef<
 
   return (
     <Container
-      as="button"
+      forwardedAs="button"
       id={id}
       className={className}
       disabled={disabled || loading}
       onClick={handleClick}
       $loading={loading}
-      primary={primary}
-      secondary={secondary}
-      fallbackStyle={fallbackStyle}
-      textBtn={textBtn}
-      smallButton={smallButton}
-      icon={icon}
-      trailingIcon={trailingIcon}
-      forcedWidth={forcedWidth}
+      $primary={primary}
+      $secondary={secondary}
+      $fallbackStyle={fallbackStyle}
+      $textBtn={textBtn}
+      $smallButton={smallButton}
+      $icon={icon}
+      $trailingIcon={trailingIcon}
+      $forcedWidth={forcedWidth}
       {...(form ? { form } : {})}
       type={type}
       {...otherProps}
@@ -80,10 +81,10 @@ export const Button: FC<ButtonProps> = forwardRef<
           <Loader color={'liquorice'} height="16" />
         </LoaderContainer>
       )}
-      <ContentContainer icon={icon} $loading={loading}>
+      <ContentContainer $icon={icon} $loading={loading}>
         {!trailingIcon && icon && (
           <IconContainer
-            trailingIcon={trailingIcon}
+            $trailingIcon={trailingIcon}
             render={icon}
             size={smallButton ? 16 : 24}
             color={'liquorice'}
@@ -94,7 +95,7 @@ export const Button: FC<ButtonProps> = forwardRef<
         </ChildrenContainer>
         {trailingIcon && icon && textBtn && (
           <IconContainer
-            trailingIcon={trailingIcon}
+            $trailingIcon={trailingIcon}
             render={icon}
             size={smallButton ? 16 : 24}
             color={'liquorice'}
@@ -108,33 +109,35 @@ export const Button: FC<ButtonProps> = forwardRef<
 
 Button.displayName = 'Button'
 
-type IButton = Required<
-  Pick<
-    ButtonProps,
-    | 'disabled'
-    | 'primary'
-    | 'secondary'
-    | 'icon'
-    | 'forcedWidth'
-    | 'fallbackStyle'
-    | 'textBtn'
-    | 'trailingIcon'
-    | 'smallButton'
+type IButton = TransientProps<
+  Required<
+    Pick<
+      ButtonProps,
+      | 'primary'
+      | 'secondary'
+      | 'icon'
+      | 'forcedWidth'
+      | 'fallbackStyle'
+      | 'textBtn'
+      | 'trailingIcon'
+      | 'smallButton'
+    >
   >
 > & {
   $loading: NonNullable<ButtonProps['loading']>
+  disabled: boolean
 }
 
 const Container = styled(Box)<IButton>(
   ({
     disabled,
     $loading,
-    primary,
-    secondary,
-    forcedWidth,
-    fallbackStyle,
-    textBtn,
-    smallButton,
+    $primary,
+    $secondary,
+    $forcedWidth,
+    $fallbackStyle,
+    $textBtn,
+    $smallButton,
   }) => css`
     position: relative;
     background-color: ${theme.colors.marshmallowPink};
@@ -148,11 +151,11 @@ const Container = styled(Box)<IButton>(
     line-height: 100%;
     font-size: 16px;
     opacity: ${disabled ? '0.5' : '1'};
-    width: ${forcedWidth ? forcedWidth : 'auto'};
+    width: ${$forcedWidth ? $forcedWidth : 'auto'};
 
     ${focusOutlineStyle}
 
-    ${primary &&
+    ${$primary &&
     css`
       color: ${theme.colors.liquorice};
 
@@ -163,7 +166,7 @@ const Container = styled(Box)<IButton>(
         background-color: ${theme.colors.lollipop};
       }
     `}
-    ${secondary &&
+    ${$secondary &&
     css`
       background-color: ${theme.colors.oatmeal};
 
@@ -174,7 +177,7 @@ const Container = styled(Box)<IButton>(
         background-color: ${theme.colors.custard};
       }
     `}
-  ${fallbackStyle &&
+  ${$fallbackStyle &&
     css`
       background-color: ${theme.colors.cream};
 
@@ -185,7 +188,7 @@ const Container = styled(Box)<IButton>(
         background-color: ${theme.colors.mascarpone};
       }
     `}
-  ${smallButton &&
+  ${$smallButton &&
     css`
       padding: 0 10px;
       min-width: 54px;
@@ -199,7 +202,7 @@ const Container = styled(Box)<IButton>(
         margin: 0 5px 0 0;
       }
     `}
-  ${textBtn &&
+  ${$textBtn &&
     css`
       background-color: transparent;
       padding: 0;
@@ -228,18 +231,18 @@ const LoaderContainer = styled.div`
   justify-content: center;
 `
 
-const ContentContainer = styled.div<
-  Pick<ButtonProps, 'icon'> & { $loading: boolean }
->`
+const ContentContainer = styled.div<{ $loading: boolean; $icon: string }>`
   display: flex;
   align-items: center;
-  justify-content: ${({ icon }) => (icon ? 'space-evenly' : 'center')};
+  justify-content: ${({ $icon }) => ($icon ? 'space-evenly' : 'center')};
   opacity: ${({ $loading }) => ($loading ? '0' : '1')};
 `
 
-const IconContainer = styled(IconComponent)<Pick<ButtonProps, 'trailingIcon'>>(
-  ({ trailingIcon }) => css`
-    margin: ${trailingIcon ? '0 0 0 10px' : '0 10px 0 0'};
+const IconContainer = styled(IconComponent)<
+  TransientProps<Pick<ButtonProps, 'trailingIcon'>>
+>(
+  ({ $trailingIcon }) => css`
+    margin: ${$trailingIcon ? '0 0 0 10px' : '0 10px 0 0'};
   `,
 )
 

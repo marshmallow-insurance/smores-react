@@ -2,8 +2,8 @@ import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 import { MarginProps } from '../utils/space'
 
-import { Color, theme } from '../theme'
 import { Box } from '../Box'
+import { Color, theme } from '../theme'
 
 /**
  * When adding a new Icon please remember to also add it
@@ -34,11 +34,11 @@ export const Icon: FC<IconProps> = ({
   ...marginProps
 }) => (
   <Container
-    as="span"
+    forwardedAs="span"
     className={className}
-    size={size}
-    color={color}
-    rotate={rotate}
+    $size={size}
+    $color={color}
+    $rotate={rotate}
     {...marginProps}
   >
     {render === 'aa' && (
@@ -4373,19 +4373,19 @@ export const Icon: FC<IconProps> = ({
 )
 
 interface IIcon {
-  size: number
-  color: string
-  rotate: number
+  $size: number
+  $color: string
+  $rotate: number
 }
 
 const Container = styled(Box)<IIcon>(
-  ({ size, rotate }) => css`
+  ({ $size, $rotate }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: ${size}px;
-    height: ${size}px;
-    transform: rotate(${rotate}deg);
+    width: ${$size}px;
+    height: ${$size}px;
+    transform: rotate(${$rotate}deg);
   `,
 )
