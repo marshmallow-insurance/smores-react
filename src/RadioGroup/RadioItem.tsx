@@ -6,6 +6,7 @@ import { useUniqueId } from '../utils/id'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+
 import { Text } from '../Text'
 import { RadioElement } from './RadioElement'
 import { ITEM_GAP } from './constants'

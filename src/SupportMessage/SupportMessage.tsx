@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+
 import { Text } from '../Text'
 import { Color, theme } from '../theme'
 import { isReactElement } from '../utils/isReactElement'

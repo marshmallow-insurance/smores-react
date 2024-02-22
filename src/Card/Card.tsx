@@ -1,12 +1,13 @@
+import { darken } from 'polished'
 import React, { FC, MouseEventHandler, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
-import { MarginProps } from '../utils/space'
-import { theme } from '../theme'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+
 import { Text } from '../Text'
-import { darken } from 'polished'
+import { theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
+import { MarginProps } from '../utils/space'
 
 export type CardProps = {
   children?: ReactNode

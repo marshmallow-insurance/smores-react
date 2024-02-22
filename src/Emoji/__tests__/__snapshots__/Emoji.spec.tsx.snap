@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders 1`] = `
+<span
+  aria-label="wink"
+  class="sc-aXZVg sc-gEvEer byxNQM bvbrpa"
+  role="img"
+  size="24"
+>
+  😉
+</span>
+`;

@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+
 import { MarginProps } from '../utils/space'
 
 export type IconWrapperProps = {

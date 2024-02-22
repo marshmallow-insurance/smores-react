@@ -131,7 +131,6 @@ yalc remove --all
 * [Link](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Link)
 * [Loader](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Loader)
 * [Logo](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Logo)
-* [Message](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Message) (deprecated - use Support Message instead)
 * [Modal](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Modal)
 * [NumberInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/NumberInput)
 * [Pagination](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Pagination)

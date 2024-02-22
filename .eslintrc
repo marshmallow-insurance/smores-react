@@ -8,17 +8,19 @@
     }
   },
   "env": {
-    "jest/globals": true,
     "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "eslint-config-prettier",
-    "plugin:jest/recommended",
-    "plugin:jest/style"
   ],
-  "plugins": ["jest", "react-hooks"],
+  "plugins": ["react-hooks"],
   "rules": {
     "strict": ["error", "never"],
     "react-hooks/rules-of-hooks": "error",
