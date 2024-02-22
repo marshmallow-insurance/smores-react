@@ -1,6 +1,6 @@
-import { Icons } from 'Icon/iconsList'
 import styled, { css } from 'styled-components'
 import { Icon } from '../../Icon'
+import { Icons } from '../../Icon/iconsList'
 import { theme } from '../../theme'
 
 interface IInput {

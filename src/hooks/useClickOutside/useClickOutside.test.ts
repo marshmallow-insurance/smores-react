@@ -1,13 +1,13 @@
-import { renderHook, cleanup, act } from '@testing-library/react'
-import { fireEvent } from '@testing-library/react'
+import { act, cleanup, fireEvent, renderHook } from '@testing-library/react'
+import { Mock } from 'vitest'
 import { useOnClickOutside } from '.'
 
 describe('useClickOutside', () => {
   let element: HTMLElement
-  let cb: jest.Mock
+  let cb: Mock
 
   beforeEach(() => {
-    cb = jest.fn()
+    cb = vi.fn()
     element = document.createElement('div')
     document.body.appendChild(element)
     renderHook(() =>

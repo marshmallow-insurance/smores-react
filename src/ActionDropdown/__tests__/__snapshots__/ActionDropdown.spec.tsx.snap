@@ -1,0 +1,54 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders 1`] = `
+<div
+  class="sc-aXZVg sc-imWYAI byxNQM jjptng"
+>
+  <div
+    class="sc-gsFSXq khmXdG"
+  >
+    <span
+      class="sc-kAyceB aTvxf"
+    >
+      High alert
+    </span>
+    <span
+      class="sc-aXZVg sc-gEvEer byxNQM ewaSeA"
+      color="cream"
+      rotate="0"
+      size="24"
+    >
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 24 24"
+        width="100%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="sc-jXbUNg gLearK"
+  >
+    <ul
+      class="sc-dcJsrY dXzEFE"
+    >
+      <li
+        class="sc-iGgWBj eIEbnX"
+      >
+        High alert
+      </li>
+      <li
+        class="sc-iGgWBj eIEbnX"
+      >
+        Good zone
+      </li>
+    </ul>
+  </div>
+</div>
+`;

@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 import { Icons } from 'Icon/iconsList'
 import { Box } from '../Box'
 import { Icon as IconComponent } from '../Icon'
+
 import { Loader } from '../Loader'
 import { theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'

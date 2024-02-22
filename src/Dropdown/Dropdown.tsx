@@ -7,9 +7,10 @@ import React, {
 } from 'react'
 import styled, { css } from 'styled-components'
 
-import { Icons } from 'Icon/iconsList'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+import { Icons } from '../Icon/iconsList'
+
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { StyledFrontIcon } from '../fields/components/CommonInput'

@@ -1,9 +1,10 @@
-import { Icons } from 'Icon/iconsList'
 import { darken } from 'polished'
 import React, { FC, MouseEventHandler, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+import { Icons } from '../Icon/iconsList'
+
 import { Text } from '../Text'
 import { theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'

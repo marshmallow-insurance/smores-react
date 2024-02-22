@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders 1`] = `
+<button
+  class="sc-aXZVg sc-gsFSXq byxNQM bBeXqr"
+>
+  <div
+    class="sc-imWYAI jFLsfh"
+  >
+    <div
+      class="sc-dhKdcB gSrets childrenContainer"
+    >
+      Test
+    </div>
+  </div>
+</button>
+`;
