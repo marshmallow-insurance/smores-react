@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders 1`] = `
+<div
+  class="sc-aXZVg sc-dcJsrY byxNQM gyETFp"
+>
+  <div
+    class="sc-aXZVg sc-gsFSXq byxNQM oWIVQ"
+  >
+    <div
+      class="sc-aXZVg sc-kAyceB byxNQM jumUrD"
+    />
+  </div>
+  <div
+    class="sc-aXZVg ipJMoi"
+  >
+    <div
+      class="sc-aXZVg giPgVs"
+    >
+      <div
+        class="sc-aXZVg byxNQM"
+      >
+        <p
+          class="sc-aXZVg sc-fqkvVR byxNQM cmeJqK"
+          color="liquorice"
+          cursor="inherit"
+          title=""
+        >
+          Some example title
+        </p>
+        <p
+          class="sc-aXZVg sc-fqkvVR byxNQM eIOPip"
+          color="liquorice"
+          cursor="inherit"
+          title=""
+        >
+          Some example body
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,60 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders 1`] = `
+<div
+  class="sc-aXZVg sc-eqUAAy byxNQM fHVhUG"
+>
+  <span
+    class="sc-aXZVg sc-gEvEer byxNQM eCTqKS"
+    color="liquorice"
+    rotate="0"
+    size="24"
+  >
+    <svg
+      fill="none"
+      height="100%"
+      viewBox="0 0 24 24"
+      width="100%"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M12 12a1 1 0 100 2 1 1 0 000-2zm-3 1a3 3 0 116 0 3 3 0 01-6 0z"
+        fill="#112035"
+        fill-rule="evenodd"
+      />
+      <path
+        clip-rule="evenodd"
+        d="M12.95 13.309a1 1 0 011.261-.642l4.755 1.545a1 1 0 11-.618 1.902l-4.755-1.545a1 1 0 01-.642-1.26zM16.702 6.528a1 1 0 01.221 1.397l-2.938 4.045a1 1 0 01-1.618-1.176l2.938-4.045a1 1 0 011.397-.221zM7.298 6.528a1 1 0 011.397.221l2.938 4.045a1 1 0 01-1.618 1.176L7.077 7.925a1 1 0 01.221-1.397zM11.05 13.309a1 1 0 01-.643 1.26l-4.755 1.545a1 1 0 01-.618-1.902l4.755-1.545a1 1 0 011.26.642z"
+        fill="#112035"
+        fill-rule="evenodd"
+      />
+      <path
+        clip-rule="evenodd"
+        d="M17.707 11.146a6 6 0 00-11.413 3.708 5.973 5.973 0 001.42 2.347 1 1 0 01-1.428 1.4 7.974 7.974 0 01-1.894-3.129m13.315-4.326a6.002 6.002 0 01-1.421 6.056 1 1 0 101.43 1.398 8 8 0 10-13.324-3.128"
+        fill="#112035"
+        fill-rule="evenodd"
+      />
+      <path
+        d="M1 22h22"
+        stroke="#112035"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+        stroke-width="2"
+      />
+      <path
+        clip-rule="evenodd"
+        d="M0 13C0 6.373 5.373 1 12 1s12 5.373 12 12c0 4.065-2.027 7.65-5.113 9.818a1 1 0 01-.575.182H5.687a1 1 0 01-.575-.182C2.027 20.65 0 17.065 0 13zM12 3C6.477 3 2 7.477 2 13a9.977 9.977 0 004.012 8h11.976A9.975 9.975 0 0022 13c0-5.523-4.477-10-10-10z"
+        fill="#112035"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </span>
+  <div
+    class="sc-fqkvVR jEHhDv"
+    r="auto"
+    size="16"
+  />
+</div>
+`;
