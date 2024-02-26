@@ -21,7 +21,6 @@
     "check-types": "tsc --noEmit",
     "deploy-storybook": "storybook-to-ghpages",
     "prepublishOnly": "vite build",
-    "preview-release": "semantic-release --dry-run",
     "start": "npm run storybook",
     "storybook": "storybook dev -p 6006",
     "test:coverage": "vitest --coverage --silent",
