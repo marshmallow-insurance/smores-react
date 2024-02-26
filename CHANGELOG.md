@@ -1,3 +1,30 @@
+## [6.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v5.0.0...v6.0.0) (2024-02-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* re-factor Icon component
+
+* updating config to support svg React Components
+
+* creating new Icon files
+
+* creating iconList.ts and iconTypes.ts files
+
+* updating the actual Icon component and stories
+
+* adjusting icon: string types to use the new infered Icons string literals type
+
+* adjust README and also mark this PR as BREAKING CHANGE
+
+* addressing comments
+
+* correctly infer color
+
+* undo icon changes, so this can be merged first
+
+* breaking change: refactor Icon component (#3326) ([2346753](https://github.com/marshmallow-insurance/smores-react/commit/23467538db18afc2378d99a577e91f1cbc6601da)), closes [#3326](https://github.com/marshmallow-insurance/smores-react/issues/3326)
+
 ## [5.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v4.0.1...v5.0.0) (2024-02-26)
 
 
