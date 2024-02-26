@@ -1,8 +1,9 @@
+import { Icons } from 'Icon/iconsList';
 export interface Snackbar {
     id: string;
     message: string;
     autoCloseTime?: 4 | 5 | 6 | 7 | 8 | 9 | 10;
-    leadingIcon?: string;
+    leadingIcon?: Icons;
     canManuallyClose?: boolean;
     showCloseIcon?: boolean;
 }

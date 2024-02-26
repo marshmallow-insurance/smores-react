@@ -1,4 +1,5 @@
 import React, { ButtonHTMLAttributes, FC, ReactNode } from 'react';
+import { Icons } from 'Icon/iconsList';
 import { MarginProps } from '../utils/space';
 type Props = {
     children: ReactNode;
@@ -12,7 +13,7 @@ type Props = {
     fallbackStyle?: boolean;
     textBtn?: boolean;
     smallButton?: boolean;
-    icon?: string;
+    icon?: Icons;
     trailingIcon?: boolean;
     forcedWidth?: string;
     form?: string;

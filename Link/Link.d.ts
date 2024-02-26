@@ -1,4 +1,5 @@
 import { FC, MouseEventHandler, ReactNode } from 'react';
+import { Icons } from 'Icon/iconsList';
 type LinkTypo = 'regular' | 'small';
 export type LinkProps = {
     className?: string;
@@ -9,7 +10,7 @@ export type LinkProps = {
     download?: boolean;
     typo?: LinkTypo;
     highlight?: boolean;
-    iconToRender?: string;
+    iconToRender?: Icons;
     isTrailingIcon?: boolean;
 };
 export declare const Link: FC<LinkProps>;

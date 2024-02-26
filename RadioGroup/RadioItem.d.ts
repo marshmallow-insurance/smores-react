@@ -1,9 +1,10 @@
 import React, { FocusEvent } from 'react';
+import { Icons } from 'Icon/iconsList';
 import { BaseValueType, DisplayType, IconPosition } from './types';
 type RadioItemProps = {
     name: string;
     visual?: string;
-    icon?: string;
+    icon?: Icons;
     iconPosition?: IconPosition;
     value: BaseValueType;
     label: string;

@@ -1,3 +1,4 @@
+import { Icons } from 'Icon/iconsList';
 export interface Banner {
     id: string;
     message: string;
@@ -7,7 +8,7 @@ export interface Banner {
     showExploreText?: boolean;
     showExploreIcon?: boolean;
     autoCloseTime?: 4 | 5 | 6 | 7 | 8 | 9 | 10;
-    leadingIcon?: string;
+    leadingIcon?: Icons;
     canManuallyClose?: boolean;
     showCloseIcon?: boolean;
     noTimeout?: boolean;

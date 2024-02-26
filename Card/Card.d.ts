@@ -1,9 +1,10 @@
 import { FC, MouseEventHandler, ReactNode } from 'react';
+import { Icons } from '../Icon/iconsList';
 import { MarginProps } from '../utils/space';
 export type CardProps = {
     children?: ReactNode;
     /** leading card icon */
-    leadingIcon?: string;
+    leadingIcon?: Icons;
     /** generic card title */
     title?: string;
     /** generic card body */

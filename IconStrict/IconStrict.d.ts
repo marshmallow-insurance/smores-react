@@ -1,4 +1,5 @@
 import { FC, FormEvent } from 'react';
+import { Icons } from 'Icon/iconsList';
 import { Color } from '../theme';
 import { MarginProps } from '../utils/space';
 export type IconStrictProps = {
@@ -7,7 +8,7 @@ export type IconStrictProps = {
     /** set size of the Icon (including background) */
     size?: 16 | 24 | 36 | 48;
     /** specify what Icon to render  */
-    render: string;
+    render: Icons;
     /** set icon colour */
     iconColor?: Color;
     /** set background colour */

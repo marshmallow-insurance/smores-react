@@ -1,4 +1,5 @@
 import React, { FocusEvent, FormEvent } from 'react';
+import { Icons } from '../Icon/iconsList';
 import { CommonFieldProps } from '../fields/commonFieldTypes';
 export type DropdownItem = {
     optionGroupLabel?: string;
@@ -14,7 +15,7 @@ export interface Props extends CommonFieldProps {
     defaultValue?: string;
     disabled?: boolean;
     list: DropdownItem[];
-    frontIcon?: string;
+    frontIcon?: Icons;
     fallbackStyle?: boolean;
     onSelect: (element: string) => void;
     onBlur?: (e: FocusEvent<HTMLSelectElement>) => void;

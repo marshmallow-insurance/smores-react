@@ -1,11 +1,12 @@
 import React, { ButtonHTMLAttributes, FC, ReactNode } from 'react';
+import { Icons } from '../Icon/iconsList';
 import { MarginProps } from '../utils/space';
 type Props = {
     children: ReactNode;
     handleClick: (e: React.FormEvent<HTMLButtonElement>) => void;
     primary?: boolean;
     secondary?: boolean;
-    icon?: string;
+    icon?: Icons;
     disabled?: boolean;
     loading?: boolean;
 } & MarginProps;

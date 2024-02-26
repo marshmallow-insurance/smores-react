@@ -1,12 +1,13 @@
 /// <reference types="react" />
+import { Icons } from '../../Icon/iconsList';
 interface IInput {
     error?: boolean;
     disabled?: boolean;
     selected?: boolean;
     step?: number;
     value?: string;
-    frontIcon?: string;
-    trailingIcon?: string;
+    frontIcon?: Icons;
+    trailingIcon?: Icons;
     fallbackStyle?: boolean;
 }
 interface SIcon {

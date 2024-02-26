@@ -1,10 +1,11 @@
 import { FC } from 'react';
+import { Icons } from 'Icon/iconsList';
 import { Color } from '../theme';
 import { MarginProps } from '../utils/space';
 export type RowProps = {
-    iconLeft?: string;
+    iconLeft?: Icons;
     iconLeftColor?: Color;
-    iconRight?: string;
+    iconRight?: Icons;
     iconRightColor?: Color;
     handleClick?: () => void;
     heading: string;
