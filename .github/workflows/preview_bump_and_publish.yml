@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Dependecies 🔧
+      - name: Install Dependencies 🔧
         run: |
           npm ci
       - name: Generate preview CHANGELOG.md
