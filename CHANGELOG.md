@@ -1,3 +1,10 @@
+## [6.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.0...v6.0.1) (2024-02-26)
+
+
+### Bug Fixes
+
+* typeErr from rollup of default import of styled-comp ([#3519](https://github.com/marshmallow-insurance/smores-react/issues/3519)) ([2b05b67](https://github.com/marshmallow-insurance/smores-react/commit/2b05b67b604c7591a486c57ee483815edfdfab70))
+
 ## [6.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v5.0.0...v6.0.0) (2024-02-26)
 
 
