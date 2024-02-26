@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components'
 import { Icon } from '../../Icon'
+import styled, { css } from 'styled-components'
 import { theme } from '../../theme'
 
 interface IInput {
@@ -47,12 +47,14 @@ export const Input = styled.input<IInput>`
 
   ${({ frontIcon }) =>
     frontIcon &&
+    frontIcon != '' &&
     `
       padding-left: 42px;
     `}
 
   ${({ trailingIcon }) =>
     trailingIcon &&
+    trailingIcon != '' &&
     `
       padding-right: 42px;
     `}

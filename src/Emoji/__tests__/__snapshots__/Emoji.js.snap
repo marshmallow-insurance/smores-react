@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c0 {
+  font-size: 24px;
+}
+
+<span
+  aria-label="wink"
+  class="c0"
+  role="img"
+  size="24"
+>
+  😉
+</span>
+`;

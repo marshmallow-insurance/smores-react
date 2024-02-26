@@ -1,8 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`renders 1`] = `
-<div
-  class="sc-aXZVg kcyPjZ"
-  direction="column"
-/>
-`;

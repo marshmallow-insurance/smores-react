@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
 import { Icon as IconComponent } from '../Icon'
-
 import { Loader } from '../Loader'
 import { theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
@@ -47,7 +46,7 @@ export const Button: FC<ButtonProps> = forwardRef<
     fallbackStyle = false,
     textBtn = false,
     smallButton = false,
-    icon,
+    icon = '',
     trailingIcon = false,
     forcedWidth = '',
     form,
@@ -115,6 +114,7 @@ type IButton = Required<
     | 'disabled'
     | 'primary'
     | 'secondary'
+    | 'icon'
     | 'forcedWidth'
     | 'fallbackStyle'
     | 'textBtn'
@@ -123,7 +123,6 @@ type IButton = Required<
   >
 > & {
   $loading: NonNullable<ButtonProps['loading']>
-  icon?: string
 }
 
 const Container = styled(Box)<IButton>(

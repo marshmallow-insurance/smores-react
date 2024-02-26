@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c0 {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c2 {
+  position: absolute;
+  width: 100%;
+  max-width: 16px;
+  height: 16px;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+<div
+  class="c0"
+>
+  <span
+    class="c1"
+    color="liquorice"
+    rotate="0"
+    size="24"
+  >
+    <svg
+      fill="none"
+      height="100%"
+      viewBox="0 0 24 24"
+      width="100%"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M12 12a1 1 0 100 2 1 1 0 000-2zm-3 1a3 3 0 116 0 3 3 0 01-6 0z"
+        fill="#112035"
+        fill-rule="evenodd"
+      />
+      <path
+        clip-rule="evenodd"
+        d="M12.95 13.309a1 1 0 011.261-.642l4.755 1.545a1 1 0 11-.618 1.902l-4.755-1.545a1 1 0 01-.642-1.26zM16.702 6.528a1 1 0 01.221 1.397l-2.938 4.045a1 1 0 01-1.618-1.176l2.938-4.045a1 1 0 011.397-.221zM7.298 6.528a1 1 0 011.397.221l2.938 4.045a1 1 0 01-1.618 1.176L7.077 7.925a1 1 0 01.221-1.397zM11.05 13.309a1 1 0 01-.643 1.26l-4.755 1.545a1 1 0 01-.618-1.902l4.755-1.545a1 1 0 011.26.642z"
+        fill="#112035"
+        fill-rule="evenodd"
+      />
+      <path
+        clip-rule="evenodd"
+        d="M17.707 11.146a6 6 0 00-11.413 3.708 5.973 5.973 0 001.42 2.347 1 1 0 01-1.428 1.4 7.974 7.974 0 01-1.894-3.129m13.315-4.326a6.002 6.002 0 01-1.421 6.056 1 1 0 101.43 1.398 8 8 0 10-13.324-3.128"
+        fill="#112035"
+        fill-rule="evenodd"
+      />
+      <path
+        d="M1 22h22"
+        stroke="#112035"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+        stroke-width="2"
+      />
+      <path
+        clip-rule="evenodd"
+        d="M0 13C0 6.373 5.373 1 12 1s12 5.373 12 12c0 4.065-2.027 7.65-5.113 9.818a1 1 0 01-.575.182H5.687a1 1 0 01-.575-.182C2.027 20.65 0 17.065 0 13zM12 3C6.477 3 2 7.477 2 13a9.977 9.977 0 004.012 8h11.976A9.975 9.975 0 0022 13c0-5.523-4.477-10-10-10z"
+        fill="#112035"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </span>
+  <div
+    class="c2"
+    r="auto"
+    size="16"
+  >
+    <span
+      class="c3"
+      color="apple"
+      rotate="0"
+      size="16"
+    >
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 24 24"
+        width="100%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+          fill="#008933"
+          fill-rule="evenodd"
+        />
+        <path
+          d="M18.4808 6.924C18.1605 6.6585 17.6895 6.70275 17.424 7.02L10.3552 15.5025L6.41625 12.8768C6.0705 12.6458 5.6055 12.7395 5.376 13.0845C5.14575 13.4288 5.23875 13.8953 5.58375 14.1248L10.0837 17.1248C10.2112 17.2088 10.356 17.25 10.4992 17.25C10.7152 17.25 10.9282 17.157 11.0767 16.98L18.5768 7.98C18.8415 7.662 18.798 7.18875 18.4808 6.924V6.924Z"
+          fill="white"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;

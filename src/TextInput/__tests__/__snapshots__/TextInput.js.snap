@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border: 0;
+}
+
+.c2 {
+  border: none;
+  color: #292924;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  cursor: initial;
+  opacity: 1;
+  padding: 18px 14px;
+  background-color: #FFFFFF;
+  border: 2px solid #DAD2C4;
+  border-radius: 12px;
+  height: auto;
+  -moz-appearance: textfield;
+}
+
+.c2:hover,
+.c2:focus-within {
+  border-color: #A1957C;
+}
+
+.c2::-webkit-outer-spin-button,
+.c2::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #636768;
+}
+
+.c2::-moz-placeholder {
+  color: #636768;
+}
+
+.c2:-ms-input-placeholder {
+  color: #636768;
+}
+
+.c2::placeholder {
+  color: #636768;
+}
+
+@media (min-width:0px) {
+  .c1 {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width:0px) {
+  .c1 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class=""
+  >
+    <div
+      class="c1"
+    >
+      <input
+        autocomplete="off"
+        class="c2"
+        id="textInput"
+        name="textInput"
+        placeholder="Placeholder"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,5 +1,4 @@
-import { ReactElement, ReactNode } from 'react'
-
+import { ReactNode, ReactElement } from 'react'
 import { MarginProps } from '../utils/space'
 
 export interface CommonFieldProps extends MarginProps {

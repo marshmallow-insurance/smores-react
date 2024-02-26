@@ -1,7 +1,7 @@
 {
   "*.+(js|ts|tsx)": [
     "eslint",
-    "vitest related --run"
+    "jest --findRelatedTests --passWithNoTests"
   ],
   "**/*.+(js|json|ts|tsx)": [
     "prettier --write"

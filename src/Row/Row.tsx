@@ -1,11 +1,10 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 
-import { Box } from '../Box'
-import { Icon } from '../Icon'
-
-import { Text } from '../Text'
 import { Color, theme } from '../theme'
+import { Icon } from '../Icon'
+import { Box } from '../Box'
+import { Text } from '../Text'
 import { MarginProps } from '../utils/space'
 
 export type RowProps = {

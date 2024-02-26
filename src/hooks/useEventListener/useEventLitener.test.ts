@@ -1,13 +1,13 @@
-import { act, fireEvent, renderHook } from '@testing-library/react'
-import { Mock, vi } from 'vitest'
+import { renderHook, cleanup, act } from '@testing-library/react'
+import { fireEvent } from '@testing-library/react'
 import { useEventListener } from '.'
 
 describe('useEventListener', () => {
   let element: HTMLElement
-  let cb: Mock
+  let cb: jest.Mock
   describe('click', () => {
     beforeEach(() => {
-      cb = vi.fn()
+      cb = jest.fn()
       element = document.createElement('div')
       document.body.appendChild(element)
       renderHook(() =>
@@ -20,8 +20,8 @@ describe('useEventListener', () => {
     })
 
     afterEach(() => {
-      vi.clearAllMocks()
-      vi.resetAllMocks()
+      element.remove()
+      cleanup()
     })
 
     it('should call the callback when clicking', () => {

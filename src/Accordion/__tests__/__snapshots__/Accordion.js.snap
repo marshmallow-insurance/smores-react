@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  cursor: inherit;
+  color: #292924;
+}
+
+.c0 {
+  border-bottom: 1px solid #DAD2C4;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  cursor: pointer;
+}
+
+.c6 {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.6s ease;
+  -webkit-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
+}
+
+@media (min-width:0px) {
+  .c1 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+@media (min-width:0px) {
+  .c1 {
+    padding-left: 0;
+  }
+}
+
+@media (min-width:0px) {
+  .c1 {
+    padding-right: 16px;
+  }
+}
+
+@media (min-width:0px) {
+  .c1 {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width:0px) {
+  .c1 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <div
+      class="c3"
+    >
+      <h2
+        class="c4"
+        color="liquorice"
+        cursor="inherit"
+        title=""
+      >
+        How it works
+      </h2>
+    </div>
+    <span
+      class="c5 c6"
+      color="marzipan"
+      rotate="0"
+      size="24"
+    >
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 24 24"
+        width="100%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+          fill="#A1957C"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;

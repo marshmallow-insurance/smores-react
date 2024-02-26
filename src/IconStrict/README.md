@@ -4,7 +4,7 @@
 
 ```ts
 className?: string;
-render:   Icons; /* icon set */
+render:   string; /* icon set */
 size?:    number; /* icon dimentions */
 iconColor?:   string; /* from theme */
 backgroundColor?: string; /* from theme */

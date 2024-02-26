@@ -1,11 +1,10 @@
-import { darken } from 'polished'
 import React, { FC, MouseEventHandler, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
+import { darken } from 'polished'
 
-import { Icon } from '../Icon'
-
-import { theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
+import { theme } from '../theme'
+import { Icon } from '../Icon'
 
 type LinkTypo = 'regular' | 'small'
 
@@ -31,7 +30,7 @@ export const Link: FC<LinkProps> = ({
   children,
   typo = 'regular',
   highlight = false,
-  iconToRender = openInNewTab ? 'new-window' : undefined,
+  iconToRender = openInNewTab ? 'new-window' : '',
   isTrailingIcon = true,
 }) => {
   return (
@@ -71,46 +70,47 @@ export const Link: FC<LinkProps> = ({
 }
 
 const LinkWrapper = styled.a<{ typo: LinkTypo; highlight: boolean }>(
-  ({ typo, highlight }) => css`
-    ${focusOutline()}
-    display: inline-flex;
-    flex-direction: row;
-
-    ${typo === 'regular' &&
+  ({ typo, highlight }) =>
     css`
-      font-size: 16px;
-      line-height: 20px;
-    `}
+      ${focusOutline()}
+      display: inline-flex;
+      flex-direction: row;
 
-    ${typo === 'small' &&
-    css`
-      font-size: 14px;
-      line-height: 20px;
-    `}
+      ${typo === 'regular' &&
+      css`
+        font-size: 16px;
+        line-height: 20px;
+      `}
+
+      ${typo === 'small' &&
+      css`
+        font-size: 14px;
+        line-height: 20px;
+      `}
 
       font-weight: ${theme.font.weight.medium};
-    text-decoration: underline;
-    color: ${highlight ? theme.colors.lollipop : theme.colors.liquorice};
+      text-decoration: underline;
+      color: ${highlight ? theme.colors.lollipop : theme.colors.liquorice};
 
-    background: none;
-    cursor: pointer;
+      background: none;
+      cursor: pointer;
 
-    &:hover {
-      color: ${theme.colors.sesame};
+      &:hover {
+        color: ${theme.colors.sesame};
 
-      path {
-        fill: ${theme.colors.sesame};
+        path {
+          fill: ${theme.colors.sesame};
+        }
       }
-    }
 
-    &:active {
-      color: ${theme.colors.liquorice};
+      &:active {
+        color: ${theme.colors.liquorice};
 
-      path {
-        fill: ${theme.colors.liquorice};
+        path {
+          fill: ${theme.colors.liquorice};
+        }
       }
-    }
-  `,
+    `,
 )
 
 /**

@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components'
 
 import { darken } from 'polished'
 import { Icon } from '../Icon'
-
 import { Color, theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
