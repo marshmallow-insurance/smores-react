@@ -1,6 +1,6 @@
 {
   "name": "@mrshmllw/smores-react",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

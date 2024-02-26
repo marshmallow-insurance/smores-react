@@ -1,3 +1,21 @@
+## [5.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v4.0.1...v5.0.0) (2024-02-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* trigger breaking change release
+
+* adding preview yml script
+
+* typo
+
+* breaking change: trigger vite bundling & vitest breaking changes release (#3518) ([fcf9933](https://github.com/marshmallow-insurance/smores-react/commit/fcf993390b9249c172fc0da64180cd7c859f3c95)), closes [#3518](https://github.com/marshmallow-insurance/smores-react/issues/3518)
+
+
+### Features
+
+* makes placeholder option disabled ([#3505](https://github.com/marshmallow-insurance/smores-react/issues/3505)) ([84f0d9d](https://github.com/marshmallow-insurance/smores-react/commit/84f0d9d052529ce6a80689fc493c486c3365b5a4))
+
 ## [4.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v4.0.0...v4.0.1) (2024-02-20)
 
 
