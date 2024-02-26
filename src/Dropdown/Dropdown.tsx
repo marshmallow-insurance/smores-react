@@ -130,12 +130,12 @@ export const Dropdown = forwardRef(function Dropdown(
         >
           {hasOptGroups ? (
             <optgroup label={defaultOptionLabel()}>
-              <option value="" hidden={!showDefaultOption}>
+              <option value="" hidden={!showDefaultOption} disabled>
                 {defaultOptionLabel()}
               </option>
             </optgroup>
           ) : (
-            <option value="" hidden={!showDefaultOption}>
+            <option value="" hidden={!showDefaultOption} disabled>
               {defaultOptionLabel()}
             </option>
           )}

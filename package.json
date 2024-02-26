@@ -1,6 +1,6 @@
 {
   "name": "@mrshmllw/smores-react",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -21,7 +21,6 @@
     "check-types": "tsc --noEmit",
     "deploy-storybook": "storybook-to-ghpages",
     "prepublishOnly": "vite build",
-    "preview-release": "semantic-release --dry-run",
     "start": "npm run storybook",
     "storybook": "storybook dev -p 6006",
     "test:coverage": "vitest --coverage --silent",

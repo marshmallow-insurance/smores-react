@@ -1,4 +1,4 @@
-name: Bump and Publish
+name: Preview Bump and Publish
 
 on: 
   workflow_dispatch:
@@ -7,7 +7,7 @@ permissions:
   contents: write 
 
 jobs:
-  bump-and-publish:
+  preview-bump-and-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -23,8 +23,8 @@ jobs:
       - name: Install Dependencies 🔧
         run: |
           npm ci
-      - name: Generate CHANGELOG.md & Bump & Release to NPM 🦫
+      - name: Generate preview CHANGELOG.md
         env:
           GITHUB_TOKEN: ${{ secrets.MARSHMALLOW_CI_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: npx semantic-release --dry-run
