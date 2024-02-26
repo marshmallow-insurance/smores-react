@@ -1,5 +1,5 @@
 import { ReactElement, ReactNode } from 'react'
-
+import { Icons } from '../Icon/iconsList'
 import { MarginProps } from '../utils/space'
 
 export interface CommonFieldProps extends MarginProps {
@@ -13,8 +13,8 @@ export interface CommonFieldProps extends MarginProps {
   error?: boolean
   errorMsg?: string | ReactElement
   completed?: boolean
-  frontIcon?: string
-  trailingIcon?: string
+  frontIcon?: Icons
+  trailingIcon?: Icons
   fallbackStyle?: boolean
   disabled?: boolean
 }

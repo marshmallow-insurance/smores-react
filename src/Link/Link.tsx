@@ -2,8 +2,8 @@ import { darken } from 'polished'
 import React, { FC, MouseEventHandler, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
+import { Icons } from 'Icon/iconsList'
 import { Icon } from '../Icon'
-
 import { theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 
@@ -18,7 +18,7 @@ export type LinkProps = {
   download?: boolean
   typo?: LinkTypo
   highlight?: boolean
-  iconToRender?: string
+  iconToRender?: Icons
   isTrailingIcon?: boolean
 }
 

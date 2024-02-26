@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Icon } from '../../Icon'
+import { Icons } from '../../Icon/iconsList'
 import { theme } from '../../theme'
 
 interface IInput {
@@ -8,8 +9,8 @@ interface IInput {
   selected?: boolean
   step?: number
   value?: string
-  frontIcon?: string
-  trailingIcon?: string
+  frontIcon?: Icons
+  trailingIcon?: Icons
   fallbackStyle?: boolean
 }
 

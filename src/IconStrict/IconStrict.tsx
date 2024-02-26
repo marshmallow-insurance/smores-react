@@ -1,6 +1,7 @@
 import React, { FC, FormEvent } from 'react'
 import styled, { css } from 'styled-components'
 
+import { Icons } from 'Icon/iconsList'
 import { darken } from 'polished'
 import { Icon } from '../Icon'
 
@@ -14,7 +15,7 @@ export type IconStrictProps = {
   /** set size of the Icon (including background) */
   size?: 16 | 24 | 36 | 48
   /** specify what Icon to render  */
-  render: string
+  render: Icons
   /** set icon colour */
   iconColor?: Color
   /** set background colour */

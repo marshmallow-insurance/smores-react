@@ -2,6 +2,7 @@ import { darken } from 'polished'
 import React, { FC, MouseEventHandler, ReactElement } from 'react'
 import styled, { css } from 'styled-components'
 
+import { Icons } from 'Icon/iconsList'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 
@@ -14,7 +15,7 @@ type StylesItem = {
   iconColor: Color
   backgroundColor: string
   hoverBackgroundColor: string
-  icon: string
+  icon: Icons
 }
 
 const styles: Record<SupportMessageType, StylesItem> = {

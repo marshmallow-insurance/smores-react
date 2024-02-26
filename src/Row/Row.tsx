@@ -1,17 +1,17 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 
+import { Icons } from 'Icon/iconsList'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
-
 import { Text } from '../Text'
 import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
 
 export type RowProps = {
-  iconLeft?: string
+  iconLeft?: Icons
   iconLeftColor?: Color
-  iconRight?: string
+  iconRight?: Icons
   iconRightColor?: Color
   handleClick?: () => void
   heading: string

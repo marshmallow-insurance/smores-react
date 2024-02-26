@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
 import { Icon as IconComponent } from '../Icon'
+import { Icons } from '../Icon/iconsList'
 
 import { Loader } from '../Loader'
 import { theme } from '../theme'
@@ -12,7 +13,7 @@ import { MarginProps } from '../utils/space'
 interface IButton {
   primary: boolean
   secondary: boolean
-  icon?: string
+  icon?: Icons
   $loading: boolean
   disabled: boolean
 }
@@ -22,7 +23,7 @@ type Props = {
   handleClick: (e: React.FormEvent<HTMLButtonElement>) => void
   primary?: boolean
   secondary?: boolean
-  icon?: string
+  icon?: Icons
   disabled?: boolean
   loading?: boolean
 } & MarginProps

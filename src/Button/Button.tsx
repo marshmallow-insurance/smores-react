@@ -1,6 +1,7 @@
 import React, { ButtonHTMLAttributes, FC, ReactNode, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
+import { Icons } from 'Icon/iconsList'
 import { Box } from '../Box'
 import { Icon as IconComponent } from '../Icon'
 
@@ -21,7 +22,7 @@ type Props = {
   fallbackStyle?: boolean
   textBtn?: boolean
   smallButton?: boolean
-  icon?: string
+  icon?: Icons
   trailingIcon?: boolean
   forcedWidth?: string
   form?: string
@@ -123,7 +124,7 @@ type IButton = Required<
   >
 > & {
   $loading: NonNullable<ButtonProps['loading']>
-  icon?: string
+  icon?: Icons
 }
 
 const Container = styled(Box)<IButton>(

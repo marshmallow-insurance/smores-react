@@ -3,6 +3,7 @@ import React, { FC, MouseEventHandler, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+import { Icons } from '../Icon/iconsList'
 
 import { Text } from '../Text'
 import { theme } from '../theme'
@@ -12,7 +13,7 @@ import { MarginProps } from '../utils/space'
 export type CardProps = {
   children?: ReactNode
   /** leading card icon */
-  leadingIcon?: string
+  leadingIcon?: Icons
   /** generic card title */
   title?: string
   /** generic card body */
