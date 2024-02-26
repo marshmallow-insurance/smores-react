@@ -1,0 +1,1 @@
+import{r as t}from"./index-BBkUAzwr.js";const c=(e,r)=>{const s=t.useRef(e);t.useEffect(()=>{s.current=e},[e]),t.useEffect(()=>{const u=setTimeout(()=>s.current(),r);return()=>clearTimeout(u)},[r])};export{c as u};

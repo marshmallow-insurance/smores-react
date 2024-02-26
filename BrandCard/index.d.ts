@@ -1,0 +1,1 @@
+export { BrandCard } from './BrandCard';

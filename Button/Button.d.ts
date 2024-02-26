@@ -1,0 +1,22 @@
+import React, { ButtonHTMLAttributes, FC, ReactNode } from 'react';
+import { MarginProps } from '../utils/space';
+type Props = {
+    children: ReactNode;
+    id?: string;
+    className?: string;
+    disabled?: boolean;
+    handleClick?: (e: React.FormEvent<HTMLButtonElement>) => void;
+    loading?: boolean;
+    primary?: boolean;
+    secondary?: boolean;
+    fallbackStyle?: boolean;
+    textBtn?: boolean;
+    smallButton?: boolean;
+    icon?: string;
+    trailingIcon?: boolean;
+    forcedWidth?: string;
+    form?: string;
+};
+export type ButtonProps = Props & MarginProps & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'>;
+export declare const Button: FC<ButtonProps>;
+export {};
