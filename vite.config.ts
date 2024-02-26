@@ -23,6 +23,9 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
+        format: 'cjs',
+        sourcemap: true,
+        interop: 'auto',
         inlineDynamicImports: false,
         preserveModules: true,
       },
