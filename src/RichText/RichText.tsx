@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, ForwardedRef, forwardRef } from 'react'
 import { MarginProps } from '../utils/space'
 import { Box } from '../Box'
 import domPurify from 'dompurify'
@@ -10,7 +10,13 @@ export interface RichTextProps extends MarginProps {
   htmlString: string
 }
 
-export const RichText: FC<RichTextProps> = ({ htmlString, ...props }) => {
+export const RichText = forwardRef(function RichText(
+  {
+    htmlString,
+    ...props
+  }: RichTextProps,
+  ref: ForwardedRef<HTMLDivElement>,
+) {
   const sanitisedHtml = domPurify.sanitize(htmlString)
 
   if (!domPurify.isSupported) {
@@ -25,10 +31,10 @@ export const RichText: FC<RichTextProps> = ({ htmlString, ...props }) => {
     )
   } else {
     return (
-      <HtmlBox {...props} dangerouslySetInnerHTML={{ __html: sanitisedHtml }} />
+      <HtmlBox ref={ref} {...props} dangerouslySetInnerHTML={{ __html: sanitisedHtml }} />
     )
   }
-}
+})
 
 const WarningText = styled(Box)`
   background-color: ${theme.colors.sherbert};
@@ -44,5 +50,9 @@ const WarningText = styled(Box)`
 const HtmlBox = styled(Box)`
   * {
     all: revert;
+    white-space: break-spaces;
   }
+
+  overflow-x: hidden;
+  word-wrap:break-word;
 `

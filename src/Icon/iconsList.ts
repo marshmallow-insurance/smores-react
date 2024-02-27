@@ -23,6 +23,7 @@ import Breakdown from './svgAssets/Breakdown.svg?react'
 import BreakdownAlt from './svgAssets/BreakdownAlt.svg?react'
 import Briefcase from './svgAssets/Briefcase.svg?react'
 import Burger from './svgAssets/Burger.svg?react'
+import Bullets from './svgAssets/Bullets.svg?react'
 import Calendar from './svgAssets/Calendar.svg?react'
 import Camera from './svgAssets/Camera.svg?react'
 import Cancel from './svgAssets/Cancel.svg?react'
@@ -314,6 +315,7 @@ export const iconList = {
   breakdown: Breakdown,
   briefcase: Briefcase,
   burger: Burger,
+  bullets: Bullets,
   calendar: Calendar,
   camera: Camera,
   cancel: Cancel,
