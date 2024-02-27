@@ -1,3 +1,10 @@
+## [6.0.2](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.1...v6.0.2) (2024-02-27)
+
+
+### Bug Fixes
+
+* revert vite bundle changes & use tsc  ([#3523](https://github.com/marshmallow-insurance/smores-react/issues/3523)) ([22f2555](https://github.com/marshmallow-insurance/smores-react/commit/22f255517274e92853e838bde9fc210572ced1e8))
+
 ## [6.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.0...v6.0.1) (2024-02-26)
 
 
