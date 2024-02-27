@@ -1,3 +1,10 @@
+## [6.0.3](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.2...v6.0.3) (2024-02-27)
+
+
+### Bug Fixes
+
+* add root-dir ([#3524](https://github.com/marshmallow-insurance/smores-react/issues/3524)) ([4bc100c](https://github.com/marshmallow-insurance/smores-react/commit/4bc100c3c0b3506f0988760b3b5a5f02861d90d1))
+
 ## [6.0.2](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.1...v6.0.2) (2024-02-27)
 
 
