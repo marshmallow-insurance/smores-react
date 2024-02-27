@@ -16,7 +16,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc --p ./tsconfig.build.json",
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && tsc --p ./tsconfig.build.json",
     "build-storybook": "storybook build -c .storybook -s public",
     "check-types": "tsc --noEmit",
     "deploy-storybook": "storybook-to-ghpages",
@@ -68,6 +69,7 @@
     "prettier": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "^5.0.5",
     "semantic-release": "^22.0.8",
     "storybook": "^7.0.6",
     "styled-components": "^5.2.1",

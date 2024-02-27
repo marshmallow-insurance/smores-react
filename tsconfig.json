@@ -20,6 +20,7 @@
     "jsx": "react",
     "declaration": true,
     "moduleResolution": "Bundler",
+    "rootDir": "src",
     "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
@@ -30,6 +31,6 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true
   },
-  "include": ["src/**/*", "src/global.d.ts", "vitest.config.ts"],
+  "include": ["src/**/*", "src/global.d.ts"],
   "exclude": ["node_modules", "dist", "scripts"]
 }
