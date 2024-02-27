@@ -13,7 +13,7 @@
       "dom.iterable",
       "esnext"
     ],
-    "types": ["react", "node", "vite-plugin-svgr/client", "vitest/globals"],
+    "types": ["react", "node", "vitest/globals"],
     "sourceMap": true,
     "allowJs": true,
     "checkJs": false,
@@ -30,6 +30,6 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true
   },
-  "include": ["src/**/*", "vite.config.ts", "vitest.config.ts"],
+  "include": ["src/**/*", "src/global.d.ts", "vitest.config.ts"],
   "exclude": ["node_modules", "dist", "scripts"]
 }

@@ -5,7 +5,7 @@ import { Link } from '../../Link'
 import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { Card, CardProps } from '../Card'
-import placeHolderSvg from './placeHolderImage.svg?react'
+import placeHolderSvg from './placeHolderImage.svg'
 
 export default {
   title: 'Card',
