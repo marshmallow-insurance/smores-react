@@ -32,53 +32,44 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({ htmlString, ...props }
       if (!e.altKey && !e.ctrlKey && !e.metaKey && !disallowedKeys.includes(e.key)) {
         const root = e.nativeEvent.target as HTMLDivElement
         const rootClone = root.cloneNode(true)
-        const cloneNodes = Array.from(rootClone.childNodes) as Element[]
+        let cloneNodes = Array.from(rootClone.childNodes) as Element[]
         const domNodes = Array.from(root.children)
         const selection = window.getSelection()
-        const caretElement = selection?.focusNode?.parentElement
+        const caretElement = selection?.focusNode
 
         if (selection && caretElement) {
           const charOffset = selection.focusOffset
+          const lineOffset = domNodes.indexOf(caretElement.nodeName === 'P' ? caretElement : caretElement.parentElement)
 
-          const newNodes = domNodes.map((node, index) => {
-            if (node === selection?.focusNode?.parentElement) {
-              const content = cloneNodes[index].innerHTML
-              if (e.key === 'Backspace') {
-                if(charOffset > 0) {
-                  cloneNodes[index].innerHTML = content.substring(0, charOffset-1) + content.substring(charOffset)
-                  return cloneNodes[index].outerHTML
-                } else {
-                  return cloneNodes[index].outerHTML
-                }
-              }
-              if (e.key === 'Enter') {
-                const newLine = content.substring(charOffset)
-                cloneNodes[index].innerHTML = content.substring(0, charOffset) || ' '
-                return cloneNodes[index].outerHTML + `<p>${newLine || ' '}</p>`
-              } else {
-                cloneNodes[index].innerHTML = content.substring(0, charOffset) + e.key + content.substring(charOffset)
-                console.log(cloneNodes[index], cloneNodes[index].outerHTML)
-                return cloneNodes[index].outerHTML
-              }
+          if (e.key === 'Enter') {
+            console.log(cloneNodes.map(c => c))
+            console.log(lineOffset)
+            const newLineText = cloneNodes[lineOffset].innerHTML.length > 0 ? cloneNodes[lineOffset].innerHTML.substring(charOffset) : ''
+            cloneNodes[lineOffset].innerHTML = cloneNodes[lineOffset].innerHTML.substring(0, charOffset)
+            const newLineElement = document.createElement('p')
+            newLineElement.appendChild(document.createTextNode(newLineText))
+            cloneNodes = [...cloneNodes.slice(0, lineOffset + 1), newLineElement, ...cloneNodes.slice(lineOffset + 1)]
+            setSelectionOffset({ lineOffset: lineOffset + 1, charOffset: 0 })
+          } else if (e.key === 'Backspace') {
+            if (charOffset > 0) {
+              cloneNodes[lineOffset].innerHTML = cloneNodes[lineOffset].innerHTML.substring(0, charOffset - 1) + cloneNodes[lineOffset].innerHTML.substring(charOffset)
+              setSelectionOffset({ lineOffset: lineOffset, charOffset: charOffset - 1 })
             } else {
-              return node.outerHTML
+              if (lineOffset !== 0) {
+                const prevOffset = cloneNodes[lineOffset - 1].innerHTML.length
+                cloneNodes[lineOffset - 1].innerHTML = cloneNodes[lineOffset - 1].innerHTML + cloneNodes[lineOffset].innerHTML
+                cloneNodes.splice(lineOffset, 1)
+                setSelectionOffset({ lineOffset: lineOffset - 1, charOffset: prevOffset })
+              }
             }
-          })
-          console.log(newNodes)
-          updateCaret(e.key, domNodes.indexOf(caretElement), charOffset)
-          setText(newNodes.reduce((a, b) => a + b))
+          } else {
+            cloneNodes[lineOffset].innerHTML = cloneNodes[lineOffset].innerHTML.substring(0, charOffset) + e.key + cloneNodes[lineOffset].innerHTML.substring(charOffset)
+            setSelectionOffset({ lineOffset: lineOffset, charOffset: charOffset + 1 })
+          }
+
+          setText(cloneNodes.map(node => node.outerHTML).reduce((a, b) => a + b))
         }
       }
-    }
-  }
-
-  const updateCaret = (key: string, currentLineOffset: number, currentCharOffset: number) => {
-    if(key === 'Enter') {
-      setSelectionOffset({lineOffset: currentLineOffset + 1, charOffset: 0})
-    } else if(key === 'Backspace') {
-      setSelectionOffset({lineOffset: currentLineOffset, charOffset: currentCharOffset > 0 ? currentCharOffset - 1 : 0})
-    } else {
-      setSelectionOffset({lineOffset: currentLineOffset, charOffset: currentCharOffset + 1})
     }
   }
 
@@ -86,7 +77,7 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({ htmlString, ...props }
     const selection = window.getSelection()
     if (selection && elemRef.current) {
       const range = document.createRange()
-      range.setStart(elemRef.current.children[selectionOffset.lineOffset].firstChild as Node, selectionOffset.charOffset)
+      range.setStart(elemRef.current.children[selectionOffset.lineOffset].firstChild || elemRef.current.children[selectionOffset.lineOffset] as Node, selectionOffset.charOffset)
       range.collapse(true)
 
       selection.removeAllRanges()
@@ -120,6 +111,13 @@ const Editor = styled(Box)`
   border-radius: 16px;
   border: 2px solid ${theme.colors.oatmeal};
   padding: 16px;
+
+  p:after {
+    content:"";
+    display:inline-block;
+    width:0px;
+    /* outline:2px solid red; // debug */
+  }
 `
 
 const EditableRichText = styled(RichText)`

@@ -50,9 +50,5 @@ const WarningText = styled(Box)`
 const HtmlBox = styled(Box)`
   * {
     all: revert;
-    white-space: break-spaces;
   }
-
-  overflow-x: hidden;
-  word-wrap:break-word;
 `
