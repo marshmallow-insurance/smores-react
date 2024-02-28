@@ -1,9 +1,9 @@
 import React, { ButtonHTMLAttributes, FC, ReactNode, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
-import { Icons } from 'Icon/iconsList'
 import { Box } from '../Box'
 import { Icon as IconComponent } from '../Icon'
+import { Icons } from '../Icon/iconsList'
 
 import { Loader } from '../Loader'
 import { theme } from '../theme'
