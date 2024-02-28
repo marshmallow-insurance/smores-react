@@ -4,9 +4,9 @@ import styled, { css } from 'styled-components'
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 
-import { Icons } from 'Icon/iconsList'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+import { Icons } from '../Icon/iconsList'
 
 import { Text } from '../Text'
 import { RadioElement } from './RadioElement'

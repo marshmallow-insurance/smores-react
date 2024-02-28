@@ -1,4 +1,4 @@
-import { Icons } from 'Icon/iconsList'
+import { Icons } from '../Icon/iconsList'
 
 export interface Snackbar {
   id: string

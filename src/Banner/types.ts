@@ -1,4 +1,4 @@
-import { Icons } from 'Icon/iconsList'
+import { Icons } from '../Icon/iconsList'
 
 export interface Banner {
   id: string
