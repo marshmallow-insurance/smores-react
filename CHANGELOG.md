@@ -1,3 +1,10 @@
+## [6.0.4](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.3...v6.0.4) (2024-02-28)
+
+
+### Bug Fixes
+
+* remove type:module from package,json ([#3527](https://github.com/marshmallow-insurance/smores-react/issues/3527)) ([bf367b0](https://github.com/marshmallow-insurance/smores-react/commit/bf367b081f720d3adf64ca61cc165ff83349df0e))
+
 ## [6.0.3](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.2...v6.0.3) (2024-02-27)
 
 
