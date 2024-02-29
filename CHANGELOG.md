@@ -1,3 +1,10 @@
+## [6.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.4...v6.1.0) (2024-02-29)
+
+
+### Features
+
+* add rich text viewer ([#3520](https://github.com/marshmallow-insurance/smores-react/issues/3520)) ([be27f61](https://github.com/marshmallow-insurance/smores-react/commit/be27f61c69154dadfa89e358f207c51a12853fa7))
+
 ## [6.0.4](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.3...v6.0.4) (2024-02-28)
 
 
