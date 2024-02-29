@@ -1,10 +1,7 @@
 {
   "name": "@mrshmllw/smores-react",
-  "version": "6.0.1",
-  "type": "module",
+  "version": "6.0.4",
   "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "description": "Collection of React components used by Marshmallow Technology",
   "keywords": [
     "react",
@@ -16,11 +13,12 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && tsc --p ./tsconfig.build.json",
     "build-storybook": "storybook build -c .storybook -s public",
     "check-types": "tsc --noEmit",
     "deploy-storybook": "storybook-to-ghpages",
-    "prepublishOnly": "vite build",
+    "prepublishOnly": "npm run build",
     "start": "npm run storybook",
     "storybook": "storybook dev -p 6006",
     "test:coverage": "vitest --coverage --silent",
@@ -34,6 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "@babel/eslint-parser": "^7.23.10",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
@@ -55,14 +54,9 @@
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@types/styled-components": "^5.1.3",
-    "@types/svgo": "^3.0.0",
     "@types/testing-library__react": "^10.2.0",
-    "@types/uuid": "^9.0.5",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.2.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^9.1.0",
     "conventional-changelog-conventionalcommits": "^7.0.2",
     "eslint": "^7.9.0",
     "eslint-config-prettier": "^9.0.0",
@@ -73,22 +67,18 @@
     "prettier": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "^5.0.5",
     "semantic-release": "^22.0.8",
     "storybook": "^7.0.6",
     "styled-components": "^5.2.1",
     "typescript": "^5.0.2",
-    "vite": "^5.0.12",
-    "vite-plugin-dts": "^3.7.0",
-    "vite-plugin-svgr": "^4.2.0",
     "vitest": "^1.2.2"
   },
   "dependencies": {
     "body-scroll-lock": "^4.0.0-beta.0",
     "date-fns": "^2.16.1",
-    "polished": "^4.1.3",
     "dompurify": "^3.0.9",
-    "vite": "^4.5.1",
-    "vite-plugin-svgr": "^4.2.0"
+    "polished": "^4.1.3"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17 || ^18",
