@@ -76,7 +76,6 @@
     "vitest": "^1.2.2"
   },
   "dependencies": {
-    "@types/dompurify": "^3.0.5",
     "body-scroll-lock": "^4.0.0-beta.0",
     "date-fns": "^2.16.1",
     "dompurify": "^3.0.9",
