@@ -12,22 +12,48 @@ import { AutoLinkNode, LinkNode } from "@lexical/link";
 import { ListNode, ListItemNode } from "@lexical/list";
 import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
 import ToolbarPlugin from './plugins/ToolbarPlugin'
-import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
-import {ListPlugin} from '@lexical/react/LexicalListPlugin';
+import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
+import { ListPlugin } from '@lexical/react/LexicalListPlugin';
 import { MarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPlugin";
 import { TRANSFORMERS } from "@lexical/markdown";
 import { HeadingNode, QuoteNode } from "@lexical/rich-text";
 import { CodeHighlightNode, CodeNode } from "@lexical/code";
+import { $generateNodesFromDOM } from '@lexical/html';
+import { $createParagraphNode, $getRoot, LexicalEditor } from 'lexical'
+import DOMPurify from 'dompurify'
 
 export interface RichTextEditorProps extends MarginProps {
-  htmlString: string
+  defaultValue?: string
 }
 
-export const RichTextEditor: FC<RichTextEditorProps> = ({ htmlString, ...props }) => {
+export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, ...props }) => {
+
+  const defaultEditorState = (editor: LexicalEditor) => {
+    const sanitisedValue = defaultValue ? DOMPurify.sanitize(defaultValue) : ''
+    const parser = new DOMParser();
+    const dom = parser.parseFromString(sanitisedValue, 'text/html');
+    console.log(dom)
+    const nodes = $generateNodesFromDOM(editor, dom);
+    const root = $getRoot();
+    root.clear();
+
+    nodes
+      .filter(node => node.__type !== "linebreak")
+      .map(node => {
+        if (node.__type === "text") {
+          const paragraphNode = $createParagraphNode()
+          paragraphNode.append(node)
+          return paragraphNode
+        }
+        return node
+      })
+      .forEach(node => root.append(node))
+  }
 
   const initialConfig = {
+    editorState: defaultEditorState,
     namespace: 'MyEditor',
-    onError: () => { },
+    onError: (e: Error) => console.log(e),
     nodes: [
       AutoLinkNode,
       LinkNode,
