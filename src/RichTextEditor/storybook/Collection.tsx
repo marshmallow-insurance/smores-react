@@ -19,6 +19,14 @@ export const CollectionPage: FC = () => {
             }
           />
         </Row>
+        <Row label="Small Editor">
+          <RichTextEditor
+            defaultValue={
+              `<p>small</p>`
+            }
+            height="84px"
+          />
+        </Row>
       </Box>
     </Box>
   )

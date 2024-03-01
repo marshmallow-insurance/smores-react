@@ -24,9 +24,11 @@ import DOMPurify from 'dompurify'
 
 export interface RichTextEditorProps extends MarginProps {
   defaultValue?: string
+  maxHeight?: string
+  height?: string
 }
 
-export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, ...props }) => {
+export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, height, maxHeight = "300px", ...props }) => {
 
   const defaultEditorState = (editor: LexicalEditor) => {
     const sanitisedValue = defaultValue ? DOMPurify.sanitize(defaultValue) : ''
@@ -67,8 +69,8 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, ...props
   }
 
   return (
-    <Container>
-      <Editor>
+    <Container {...props}>
+      <Editor $maxHeight={maxHeight} $height={height}>
         <LexicalComposer initialConfig={initialConfig}>
           <ToolbarPlugin />
           <RichTextPlugin
@@ -87,16 +89,18 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, ...props
   )
 }
 
-const Editor = styled(Box)`
+const Editor = styled(Box)<{$maxHeight: string, $height?: string}>`
   .editor-input {
     margin-top: 12px;
     background-color: ${theme.colors.cream};
     border-radius: 12px;
     border: 2px solid ${theme.colors.oatmeal};
     padding: 16px;
-    max-height: 300px;
     overflow: scroll;
     outline-color: ${theme.colors.marzipan};
+    max-height: ${({$maxHeight}) => $maxHeight};
+    ${({$height}) => $height && `height: ${$height}`};
+    min-height: 84px;
 
     * {
       all: revert;
