@@ -1,3 +1,31 @@
+## [6.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.4...v6.1.0) (2024-02-29)
+
+
+### Features
+
+* add rich text viewer ([#3520](https://github.com/marshmallow-insurance/smores-react/issues/3520)) ([be27f61](https://github.com/marshmallow-insurance/smores-react/commit/be27f61c69154dadfa89e358f207c51a12853fa7))
+
+## [6.0.4](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.3...v6.0.4) (2024-02-28)
+
+
+### Bug Fixes
+
+* remove type:module from package,json ([#3527](https://github.com/marshmallow-insurance/smores-react/issues/3527)) ([bf367b0](https://github.com/marshmallow-insurance/smores-react/commit/bf367b081f720d3adf64ca61cc165ff83349df0e))
+
+## [6.0.3](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.2...v6.0.3) (2024-02-27)
+
+
+### Bug Fixes
+
+* add root-dir ([#3524](https://github.com/marshmallow-insurance/smores-react/issues/3524)) ([4bc100c](https://github.com/marshmallow-insurance/smores-react/commit/4bc100c3c0b3506f0988760b3b5a5f02861d90d1))
+
+## [6.0.2](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.1...v6.0.2) (2024-02-27)
+
+
+### Bug Fixes
+
+* revert vite bundle changes & use tsc  ([#3523](https://github.com/marshmallow-insurance/smores-react/issues/3523)) ([22f2555](https://github.com/marshmallow-insurance/smores-react/commit/22f255517274e92853e838bde9fc210572ced1e8))
+
 ## [6.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.0...v6.0.1) (2024-02-26)
 
 
