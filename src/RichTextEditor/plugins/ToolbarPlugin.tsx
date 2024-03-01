@@ -270,6 +270,7 @@ const LinkInput = styled.input`
   padding-left: 12px;
   padding-right: 12px;
   font-size: 16px;
+  min-width: 0;
 
   :hover {
     outline: 2px solid ${theme.colors.bubblegum};

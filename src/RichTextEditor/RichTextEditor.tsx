@@ -89,11 +89,15 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, ...props
 
 const Editor = styled(Box)`
   .editor-input {
-    margin-top: 16px;
+    margin-top: 12px;
     background-color: ${theme.colors.cream};
     border-radius: 12px;
     border: 2px solid ${theme.colors.oatmeal};
     padding: 16px;
+    max-height: 300px;
+    overflow: scroll;
+    outline-color: ${theme.colors.marzipan};
+
     * {
       all: revert;
       outline: none;
