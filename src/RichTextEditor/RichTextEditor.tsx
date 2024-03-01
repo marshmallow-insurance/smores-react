@@ -21,20 +21,20 @@ import { CodeHighlightNode, CodeNode } from "@lexical/code";
 import { $generateNodesFromDOM } from '@lexical/html';
 import { $createParagraphNode, $getRoot, LexicalEditor } from 'lexical'
 import DOMPurify from 'dompurify'
+import { EditorUpdatePlugin } from './plugins/EditorUpdatePlugin'
 
 export interface RichTextEditorProps extends MarginProps {
   defaultValue?: string
   maxHeight?: string
   height?: string
+  onChange: (e: string) => void
 }
 
-export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, height, maxHeight = "300px", ...props }) => {
+export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, height, maxHeight = "300px", onChange, ...props }) => {
 
   const defaultEditorState = (editor: LexicalEditor) => {
-    const sanitisedValue = defaultValue ? DOMPurify.sanitize(defaultValue) : ''
     const parser = new DOMParser();
-    const dom = parser.parseFromString(sanitisedValue, 'text/html');
-    console.log(dom)
+    const dom = parser.parseFromString(defaultValue ? DOMPurify.sanitize(defaultValue) : '<p></p>', 'text/html');
     const nodes = $generateNodesFromDOM(editor, dom);
     const root = $getRoot();
     root.clear();
@@ -54,7 +54,7 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, height, 
 
   const initialConfig = {
     editorState: defaultEditorState,
-    namespace: 'MyEditor',
+    namespace: 'MarshmallowRichTextEditor',
     onError: (e: Error) => console.log(e),
     nodes: [
       AutoLinkNode,
@@ -83,6 +83,7 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, height, 
           <HistoryPlugin />
           <CustomAutoLinkPlugin />
           <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
+          <EditorUpdatePlugin onChange={onChange} />
         </LexicalComposer>
       </Editor>
     </Container>

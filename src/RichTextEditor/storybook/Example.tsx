@@ -5,6 +5,7 @@ import { RichTextEditor } from '../RichTextEditor'
 export const Example = () => {
   return (
     <RichTextEditor
+      onChange={(e) => console.log(e)}
       maxHeight='1000px'
       defaultValue={`
         <h1>H1 Header</h1>

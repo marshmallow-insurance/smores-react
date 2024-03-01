@@ -13,8 +13,10 @@ const Template = (props: RichTextEditorProps) => <RichTextEditor {...props} />
 export const Default = Template.bind({})
 
 Default.args = {
-  defaultValue:
-    '<h1>Header</h1><h2>Subheading</h2><p>A paragraph of text with a <a href="https://liamp.uk">link</a></p>',
+  defaultValue: '<h1>Header</h1><h2>Subheading</h2><p>A paragraph of text with a <a href="https://liamp.uk">link</a></p>',
+  onChange: () => {},
+  height: "300px",
+  maxHeight: "300px"
 }
 
 export const Collection = CollectionPage.bind({})
