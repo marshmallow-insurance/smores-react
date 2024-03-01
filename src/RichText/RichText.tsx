@@ -1,4 +1,4 @@
-import React, { FC, ForwardedRef, forwardRef } from 'react'
+import React, { ForwardedRef, forwardRef } from 'react'
 import { MarginProps } from '../utils/space'
 import { Box } from '../Box'
 import domPurify from 'dompurify'
