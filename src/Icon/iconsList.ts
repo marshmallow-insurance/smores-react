@@ -22,6 +22,7 @@ import Boost from './iconFiles/Boost'
 import Breakdown from './iconFiles/Breakdown'
 import BreakdownAlt from './iconFiles/BreakdownAlt'
 import Briefcase from './iconFiles/Briefcase'
+import Bullets from './iconFiles/Bullets'
 import Burger from './iconFiles/Burger'
 import Calendar from './iconFiles/Calendar'
 import Camera from './iconFiles/Camera'
@@ -314,6 +315,7 @@ export const iconList = {
   breakdown: Breakdown,
   briefcase: Briefcase,
   burger: Burger,
+  bullets: Bullets,
   calendar: Calendar,
   camera: Camera,
   cancel: Cancel,
