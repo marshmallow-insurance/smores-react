@@ -156,7 +156,7 @@ export default function ToolbarPlugin() {
         onClick={() => {
           editor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold");
         }}
-        active={isBold}
+        $active={isBold}
       >
         B
       </Bold>
@@ -164,15 +164,15 @@ export default function ToolbarPlugin() {
         onClick={() => {
           editor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic");
         }}
-        active={isItalic}
+        $active={isItalic}
       >
         i
       </Italic>
-      <EditorButton active={blockType === "ul"} onClick={() => formatBulletList()}>
+      <EditorButton $active={blockType === "ul"} onClick={() => formatBulletList()}>
         <Icon render="bullets" />
       </EditorButton>
 
-      <Link active={isLink} onClick={() => !isLink ? editor.dispatchCommand(TOGGLE_LINK_COMMAND, "https://") : editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)}>
+      <Link $active={isLink} onClick={() => !isLink ? editor.dispatchCommand(TOGGLE_LINK_COMMAND, "https://") : editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)}>
         <Box ml={{ custom: "-4px" }}>
           <Icon render="link" />
         </Box>
@@ -191,7 +191,7 @@ export default function ToolbarPlugin() {
 }
 
 
-const EditorButton = styled(Box) <{ active: boolean }>`
+const EditorButton = styled(Box) <{ $active: boolean }>`
   height: 40px;
   width: 40px;
   line-height: 50px;
@@ -204,14 +204,14 @@ const EditorButton = styled(Box) <{ active: boolean }>`
   cursor: pointer;
   background-color: ${theme.colors.custard};
 
-  ${({ active }) => active && `
+  ${({ $active }) => $active && `
     background-color: ${theme.colors.fairyFloss};
   `}
 
   :hover {
     filter: brightness(0.95);
 
-    ${({ active }) => active && `
+    ${({ $active }) => $active && `
       background-color: ${theme.colors.fairyFloss};
     `}
   }
@@ -235,13 +235,13 @@ const Toolbar = styled(Box)`
 
 const Link = styled(EditorButton)`
   transition: width .3s;
-  ${({ active }) => active && `width: 360px;`}
+  ${({ $active }) => $active && `width: 360px;`}
   justify-content: left;
   overflow: hidden;
   gap: 12px;
   padding-right: 5px;
 
-  ${({ active }) => active && `
+  ${({ $active }) => $active && `
     background-color: ${theme.colors.fairyFloss};
 
     :hover {
