@@ -27,10 +27,11 @@ export interface RichTextEditorProps extends MarginProps {
   defaultValue?: string
   maxHeight?: string
   height?: string
+  outline?: boolean
   onChange: (e: string) => void
 }
 
-export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, height, maxHeight = "300px", onChange, ...props }) => {
+export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, height, outline, maxHeight = "300px", onChange, ...props }) => {
 
   const defaultEditorState = (editor: LexicalEditor) => {
     const parser = new DOMParser();
@@ -69,7 +70,7 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({ defaultValue, height, 
   }
 
   return (
-    <Container {...props}>
+    <Container $outline={outline} {...props}>
       <Editor $maxHeight={maxHeight} $height={height}>
         <LexicalComposer initialConfig={initialConfig}>
           <ToolbarPlugin />
@@ -110,8 +111,9 @@ const Editor = styled(Box)<{$maxHeight: string, $height?: string}>`
   }
 `
 
-const Container = styled(Box)`
+const Container = styled(Box)<{$outline: boolean}>`
   background-color: ${theme.colors.coconut};
   border-radius: 16px;
   padding: 12px;
+  ${({$outline}) => $outline && `border: 2px solid ${theme.colors.oatmeal}`}
 `
