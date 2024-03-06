@@ -136,6 +136,8 @@ yalc remove --all
 * [Pagination](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Pagination)
 * [RadioButton](https://github.com/marshmallow-insurance/smores-react/tree/master/src/RadioButton)
 * [RadioGroup](https://github.com/marshmallow-insurance/smores-react/tree/master/src/RadioGroup)
+* [RichText](https://github.com/marshmallow-insurance/smores-react/tree/master/src/RichText)
+* [RichTextEditor](https://github.com/marshmallow-insurance/smores-react/tree/master/src/RichTextEditor)
 * [Row](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Row)
 * [SearchInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/SearchInput)
 * [Snackbar](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Snackbar)
