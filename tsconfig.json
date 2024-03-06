@@ -28,7 +28,8 @@
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*", "src/global.d.ts", "vitest.config.ts"],
   "exclude": ["node_modules", "dist", "scripts"]
