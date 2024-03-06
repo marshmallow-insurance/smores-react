@@ -1,7 +1,6 @@
 name: build, check types and test
 on:
-  pull_request_target:
-    branches: [ main ]
+  pull_request:
 
 jobs:
   build-and-deploy:
