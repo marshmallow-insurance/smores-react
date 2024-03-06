@@ -203,6 +203,7 @@ const EditorButton = styled(Box) <{ $active: boolean }>`
   font-size: 24px;
   cursor: pointer;
   background-color: ${theme.colors.custard};
+  flex-shrink: 0;
 
   ${({ $active }) => $active && `
     background-color: ${theme.colors.fairyFloss};
@@ -240,6 +241,7 @@ const Link = styled(EditorButton)`
   overflow: hidden;
   gap: 12px;
   padding-right: 5px;
+  flex-shrink: 1;
 
   ${({ $active }) => $active && `
     background-color: ${theme.colors.fairyFloss};
