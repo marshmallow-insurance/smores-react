@@ -1,3 +1,10 @@
+## [6.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v6.1.0...v6.2.0) (2024-03-06)
+
+
+### Features
+
+* add rich text viewer and editor to index.ts ([#3543](https://github.com/marshmallow-insurance/smores-react/issues/3543)) ([e57783b](https://github.com/marshmallow-insurance/smores-react/commit/e57783b3f72da5e7f4b407d81591bae3a27588cc))
+
 ## [6.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.4...v6.1.0) (2024-02-29)
 
 
