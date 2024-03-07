@@ -1,7 +1,7 @@
 {
   "branches": ["main",
     {
-      "name": "fluff-*",
+      "name": "crumbs-*",
       "prerelease": true
     }
   ],

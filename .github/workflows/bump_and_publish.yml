@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Check branch
         run: |
-          if [[ "$GITHUB_REF" != "refs/heads/main" && "$GITHUB_REF" != refs/heads/fluff-* ]]; then
-            echo "This job can only run on the main branch or branches starting with fluff-"
+          if [[ "$GITHUB_REF" != "refs/heads/main" && "$GITHUB_REF" != refs/heads/crumbs-* ]]; then
+            echo "This job can only run on the main branch or branches starting with crumbs-"
             exit 1
           fi
         shell: bash
