@@ -3,8 +3,8 @@ name: Preview Bump and Publish
 on:
   workflow_dispatch:
     branches:
-    - main
-    - beta-*
+      - main
+      - beta-*
 
 permissions:
   contents: write 
