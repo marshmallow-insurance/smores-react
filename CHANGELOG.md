@@ -1,3 +1,11 @@
+## [6.2.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.0...v6.2.1) (2024-03-07)
+
+
+### Bug Fixes
+
+* add pr build action and fix rte types ([#3547](https://github.com/marshmallow-insurance/smores-react/issues/3547)) ([b24c927](https://github.com/marshmallow-insurance/smores-react/commit/b24c927da3fe4b35c0b46f8f2083c3598bf90d27))
+* release @lexica/react package.json change and RichTextEditor outline prop ([#3546](https://github.com/marshmallow-insurance/smores-react/issues/3546)) ([106e554](https://github.com/marshmallow-insurance/smores-react/commit/106e5545a6d225e525dedb2eec503096ae50a390))
+
 ## [6.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v6.1.0...v6.2.0) (2024-03-06)
 
 
