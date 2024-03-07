@@ -1,5 +1,10 @@
 {
-  "branches": ["main"],
+  "branches": ["main",
+    {
+      "name": "beta-*",
+      "prerelease": true
+    }
+  ],
   "repositoryUrl": "https://github.com/marshmallow-insurance/smores-react.git",
   "plugins": [
     [

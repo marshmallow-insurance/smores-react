@@ -1,6 +1,9 @@
 name: Preview Bump and Publish
 
 on: 
+  branches:
+    - main
+    - beta-*
   workflow_dispatch:
 
 permissions:

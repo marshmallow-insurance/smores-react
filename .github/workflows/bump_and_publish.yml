@@ -1,6 +1,9 @@
 name: Bump and Publish
 
-on: 
+on:
+  branches:
+    - main
+    - beta-*
   workflow_dispatch:
 
 permissions:
