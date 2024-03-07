@@ -1,3 +1,10 @@
+## [6.2.2-crumbs-test-pre-release.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.1...v6.2.2-crumbs-test-pre-release.1) (2024-03-07)
+
+
+### Bug Fixes
+
+* test smores pre release ([526894b](https://github.com/marshmallow-insurance/smores-react/commit/526894b9df9f401a4df4c3654902384d31b107a0))
+
 ## [6.2.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.0...v6.2.1) (2024-03-07)
 
 
