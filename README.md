@@ -41,18 +41,32 @@ So to ensure our CHANGELOG.md is updated automatically and gets the changes we h
 #### Preview
 Before releasing, you may want to see the changes that will be included in the next version deployed on NPM, you can do so by:
 
-1. Checkout `main` and pull
-2. Run `npm run preview-release`, this will show both the updated CHANGELOG.md & the next version.
+1. Goto our [github workflows](https://github.com/marshmallow-insurance/smores-react/actions)
+2. Click `Preview Bump and Publish`
+3. Press `Run workflow` and select the `main` branch.
+4. Wait for the `Generate preview CHANGELOG.md` and look at the results!
 
 #### Releasing & Publishing
 When you're happy with your changes, you can release & publish your changes to NPM in one fell swoop by:
 
-1. Goto the [smores-repo](https://github.com/marshmallow-insurance/smores-react) and make sure you are on the `main` branch.
-2. Click `Actions`
-3. Click `Bump and Publish` and press `Run workflow`
-4. Wait for this to finish! 
+1. Goto our [github workflows](https://github.com/marshmallow-insurance/smores-react/actions)
+2. Click `Bump and Publish`
+3. Press `Run workflow` and select the `main` branch.
+4. Wait for release!
 
 Note: this workflow will fail if the package version is already on the latest, so you dont have to worry about deploying the same changes multiple times.
+
+#### Pre-Releases
+Not too different to your usual workflow!
+
+1. Checkout a new branch with the prefix `crumbs-<your-branch-name>`
+2. Open a PR and create your changes as normal using semantic-commits!
+3. Goto our [github workflows](https://github.com/marshmallow-insurance/smores-react/actions)
+4. Click `Bump and Publish` or `Preview Bump and Publish`
+5. Press `Run workflow` and select `crumbs-<your-branch-name>` branch.
+6. Wait for release!
+7. This can be done multiple times and it will increment your pre-release package version!
+8. When you're happy with the changes, simply squash and merge the PR and release `main`!
 
 ###### Tokens
 
