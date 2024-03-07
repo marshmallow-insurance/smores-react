@@ -176,7 +176,7 @@ export default function ToolbarPlugin() {
         <Box ml={{ custom: "-4px" }}>
           <Icon render="link" />
         </Box>
-        <LinkInput ref={urlInputRef} placeholder='Enter url' value={linkURL} onChange={e => {
+        <LinkInput tabIndex={-1} ref={urlInputRef} placeholder='Enter url' value={linkURL} onChange={e => {
           editor.dispatchCommand(TOGGLE_LINK_COMMAND, e.target.value)
         }} onClick={e => e.stopPropagation()} />
         <Box onClick={e => {
