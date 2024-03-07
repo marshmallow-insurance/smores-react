@@ -52,7 +52,7 @@ const Row: FC<{ label: string; children?: ReactNode }> = ({
         </Text>
       </Box>
       <Children>
-      {children}
+        {children}
       </Children>
     </RowWrapper>
   )
