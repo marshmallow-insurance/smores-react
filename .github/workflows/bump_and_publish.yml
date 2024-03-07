@@ -1,6 +1,6 @@
 name: Bump and Publish
 
-on:
+on: 
   workflow_dispatch:
 
 permissions:
@@ -17,14 +17,17 @@ jobs:
             exit 1
           fi
         shell: bash
+        
       - name: Checkout 🛎️
         uses: actions/checkout@v3
         with:
           persist-credentials: false
+
       - name: Setup Node 👾
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+
       - name: Install Dependencies 🔧
         run: |
           npm ci
