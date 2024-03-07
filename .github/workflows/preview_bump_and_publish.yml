@@ -1,6 +1,6 @@
 name: Preview Bump and Publish
 
-on: 
+on:
   workflow_dispatch:
     branches:
     - main
