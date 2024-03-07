@@ -12,12 +12,12 @@ jobs:
     steps:
       - name: Check branch
         run: |
-          if [[ "$GITHUB_REF" != "refs/heads/main" && "$GITHUB_REF" != refs/heads/beta-* ]]; then
-            echo "This job can only run on the main branch or branches starting with beta-"
+          if [[ "$GITHUB_REF" != "refs/heads/main" && "$GITHUB_REF" != refs/heads/alpha-* ]]; then
+            echo "This job can only run on the main branch or branches starting with alpha-"
             exit 1
           fi
         shell: bash
-        
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
