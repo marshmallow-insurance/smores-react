@@ -13,7 +13,7 @@
     <img alt="prettier-badge" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" /></a>
 </p>
 
-# Smores React
+# Smores React Test
 
 `smores-react` is a collection of [React](https://facebook.github.io/react/)
 components that conform to Marshmallow's Design System - "_S'mores_".
