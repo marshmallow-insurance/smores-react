@@ -6,7 +6,7 @@ exports[`renders 1`] = `
   direction="row"
 >
   <button
-    class="sc-iGgWBj cWFBbm"
+    class="sc-iGgWBj jjBWwA"
   >
     <p
       class="sc-aXZVg sc-fqkvVR byxNQM dmcJhI"
@@ -18,7 +18,7 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-iGgWBj bKlexW"
+    class="sc-iGgWBj hRPnPA"
   >
     <p
       class="sc-aXZVg sc-fqkvVR byxNQM glAOgN"
@@ -30,7 +30,7 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-iGgWBj bKlexW"
+    class="sc-iGgWBj hRPnPA"
   >
     <p
       class="sc-aXZVg sc-fqkvVR byxNQM glAOgN"
@@ -42,7 +42,7 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-iGgWBj bKlexW"
+    class="sc-iGgWBj hRPnPA"
   >
     <p
       class="sc-aXZVg sc-fqkvVR byxNQM glAOgN"
@@ -54,7 +54,7 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-iGgWBj bKlexW"
+    class="sc-iGgWBj hRPnPA"
   >
     <p
       class="sc-aXZVg sc-fqkvVR byxNQM glAOgN"
@@ -66,7 +66,7 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-iGgWBj bKlexW"
+    class="sc-iGgWBj hRPnPA"
   >
     <p
       class="sc-aXZVg sc-fqkvVR byxNQM eIOPip"
@@ -78,7 +78,7 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-iGgWBj bKlexW"
+    class="sc-iGgWBj hRPnPA"
   >
     <p
       class="sc-aXZVg sc-fqkvVR byxNQM glAOgN"
