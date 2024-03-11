@@ -196,7 +196,6 @@ const PageBox = styled.button<IPageBox>`
   background: ${({ active }) => active ? theme.colors.custard : theme.colors.cream};
   cursor: pointer;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
   border-radius: 24px;
   width: fit-content;
