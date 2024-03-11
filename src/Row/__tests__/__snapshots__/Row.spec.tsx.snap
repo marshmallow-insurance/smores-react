@@ -3,22 +3,20 @@
 exports[`default renders correctly 1`] = `
 <div>
   <div
-    class="sc-aXZVg sc-dcJsrY byxNQM ePEAQO"
+    class="sc-beySPh kknHUq sc-eDLKkx cfptNn"
   >
     <div
-      class="sc-aXZVg byxNQM"
+      class="sc-beySPh kknHUq"
     >
       <h1
-        class="sc-aXZVg sc-fqkvVR byxNQM exYCmj"
-        color="liquorice"
+        class="sc-beySPh kknHUq sc-hLQSwg eFDPTb"
         cursor="inherit"
         title=""
       >
         This is a Row with a heading
       </h1>
       <p
-        class="sc-aXZVg sc-fqkvVR byxNQM hhTrXw"
-        color="sesame"
+        class="sc-beySPh kknHUq sc-hLQSwg bVlVKw"
         cursor="inherit"
         title=""
       />

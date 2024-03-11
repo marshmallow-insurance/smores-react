@@ -1,11 +1,12 @@
-import { Box } from '../Box'
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
+import { TransientProps } from 'utils/utilTypes'
+import { Box } from '../Box'
 import { Icon } from '../Icon'
-import { Color, theme } from '../theme'
 import { Text } from '../Text'
-import { Banner } from './types'
 import { useTimeout } from '../hooks'
+import { Color, theme } from '../theme'
+import { Banner } from './types'
 
 type StylesItem = {
   iconColor: Color
@@ -76,7 +77,7 @@ export const BannerItem: FC<Props> = ({
       key={id}
       flex
       justifyContent="space-between"
-      type={type}
+      $type={type}
     >
       <Box flex alignItems="center">
         {leadingIcon && (
@@ -131,10 +132,10 @@ export const BannerItem: FC<Props> = ({
   )
 }
 
-const BannerWrapper = styled(Box)<{ type: BannerType }>(
-  ({ type }) => css`
+const BannerWrapper = styled(Box)<TransientProps<Pick<Banner, 'type'>>>(
+  ({ $type }) => css`
     border-radius: 0px 0px 16px 16px;
-    background-color: ${styles[type].backgroundColor};
+    background-color: ${styles[$type].backgroundColor};
   `,
 )
 

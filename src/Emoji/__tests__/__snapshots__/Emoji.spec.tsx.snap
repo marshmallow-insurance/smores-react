@@ -3,9 +3,8 @@
 exports[`renders 1`] = `
 <span
   aria-label="wink"
-  class="sc-aXZVg sc-gEvEer byxNQM bvbrpa"
+  class="sc-beySPh kknHUq sc-guDLey hzMujr"
   role="img"
-  size="24"
 >
   😉
 </span>

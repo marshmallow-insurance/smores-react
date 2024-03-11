@@ -1,10 +1,11 @@
 import React, { FC, ReactNode, useState } from 'react'
 import styled, { css } from 'styled-components'
 
+import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
-import { theme } from '../theme'
 import { Text } from '../Text'
+import { theme } from '../theme'
 import { MarginProps } from '../utils/space'
 
 export type AccordionProps = {
@@ -44,11 +45,11 @@ export const Accordion: FC<AccordionProps> = ({
 
   return (
     <Wrapper
-      borderTop={borderTop}
-      fullBorder={fullBorder}
-      filledBackground={filledBackground}
-      borderColor={borderColor}
-      backgroundColor={backgroundColor}
+      $borderTop={borderTop}
+      $fullBorder={fullBorder}
+      $filledBackground={filledBackground}
+      $borderColor={borderColor}
+      $backgroundColor={backgroundColor}
       {...marginProps}
     >
       <TopContainer
@@ -75,8 +76,8 @@ export const Accordion: FC<AccordionProps> = ({
           render="caret"
           size={24}
           color="marzipan"
-          isOpen={isOpen}
-          borderTop={borderTop}
+          $isOpen={isOpen}
+          $borderTop={borderTop}
         />
       </TopContainer>
       {isOpen && (
@@ -88,35 +89,37 @@ export const Accordion: FC<AccordionProps> = ({
   )
 }
 
-interface IAccordion {
-  isOpen: boolean
-  borderTop?: boolean
-  fullBorder?: boolean
-  filledBackground?: boolean
-  borderColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut'
-  backgroundColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut'
-}
-
-const Wrapper = styled(Box)<Omit<IAccordion, 'isOpen'>>(
+const Wrapper = styled(Box)<
+  TransientProps<
+    Pick<
+      AccordionProps,
+      | 'borderTop'
+      | 'fullBorder'
+      | 'filledBackground'
+      | 'borderColor'
+      | 'backgroundColor'
+    >
+  >
+>(
   ({
-    borderTop,
-    fullBorder,
-    filledBackground,
-    borderColor = 'oatmeal',
-    backgroundColor = 'custard',
+    $borderTop,
+    $fullBorder,
+    $filledBackground,
+    $borderColor = 'oatmeal',
+    $backgroundColor = 'custard',
   }) => css`
-    border-bottom: 1px solid ${theme.colors[borderColor]};
-    ${borderTop && `border-top: 1px solid ${theme.colors[borderColor]};`}
+    border-bottom: 1px solid ${theme.colors[$borderColor]};
+    ${$borderTop && `border-top: 1px solid ${theme.colors[$borderColor]};`}
 
-    ${fullBorder &&
+    ${$fullBorder &&
     css`
-      border: 1px solid ${theme.colors[borderColor]};
+      border: 1px solid ${theme.colors[$borderColor]};
       border-radius: 16px;
     `}
 
-    ${filledBackground &&
+    ${$filledBackground &&
     css`
-      background-color: ${theme.colors[backgroundColor]};
+      background-color: ${theme.colors[$backgroundColor]};
     `}
   `,
 )
@@ -129,9 +132,11 @@ const TopContainer = styled(Box)`
   cursor: pointer;
 `
 
-const CaretIcon = styled(Icon)<IAccordion>(
-  ({ isOpen }) => css`
-    transform: ${isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
+const CaretIcon = styled(Icon)<
+  TransientProps<Pick<AccordionProps, 'borderTop'>> & { $isOpen: boolean }
+>(
+  ({ $isOpen }) => css`
+    transform: ${$isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
     transition: transform 0.6s ease;
   `,
 )

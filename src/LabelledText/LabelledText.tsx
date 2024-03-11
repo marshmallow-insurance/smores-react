@@ -8,7 +8,7 @@ import { Text } from '../Text'
 export type LabelledTextProps = {
   children: ReactNode
   label: string
-  labelMargin?: 2 | 4 | 8
+  labelMargin?: 2 | 4 | 8 | number
 } & MarginProps
 
 export const LabelledText: FC<LabelledTextProps> = ({
@@ -17,7 +17,7 @@ export const LabelledText: FC<LabelledTextProps> = ({
   labelMargin = 8,
   ...marginProps
 }) => (
-  <Container {...marginProps} labelMargin={labelMargin + 'px'}>
+  <Container {...marginProps} $labelMargin={labelMargin + 'px'}>
     <Text tag="label" color="sesame" typo="label">
       {label}
     </Text>
@@ -26,11 +26,11 @@ export const LabelledText: FC<LabelledTextProps> = ({
   </Container>
 )
 
-const Container = styled(Box)<{ labelMargin: string }>`
+const Container = styled(Box)<{ $labelMargin: string }>`
   display: flex;
   flex-direction: column;
 
   label {
-    margin-bottom: ${({ labelMargin }) => labelMargin};
+    margin-bottom: ${({ $labelMargin }) => $labelMargin};
   }
 `

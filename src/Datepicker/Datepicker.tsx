@@ -113,7 +113,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   }
 
   return (
-    <Container id="datepicker" {...marginProps} fallbackStyle={fallbackStyle}>
+    <Container id="datepicker" {...marginProps} $fallbackStyle={fallbackStyle}>
       <Header
         flex
         alignItems="center"
@@ -163,15 +163,15 @@ export const Datepicker: FC<DatepickerProps> = ({
   )
 }
 
-const Container = styled(Box)<{ fallbackStyle: boolean }>`
+const Container = styled(Box)<{ $fallbackStyle: boolean }>`
   font-family: ${theme.font.system};
   display: inline-block;
   box-sizing: border-box;
   outline: none;
   border-radius: 16px;
 
-  ${({ fallbackStyle }) => {
-    return fallbackStyle
+  ${({ $fallbackStyle }) => {
+    return $fallbackStyle
       ? css`
           background-color: ${theme.colors.cream};
         `

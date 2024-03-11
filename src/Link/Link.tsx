@@ -40,8 +40,8 @@ export const Link: FC<LinkProps> = ({
       className={className}
       onClick={onClick}
       download={download}
-      typo={typo}
-      highlight={highlight}
+      $typo={typo}
+      $highlight={highlight}
       {...(openInNewTab && {
         rel: 'noopener noreferrer',
         target: '_blank',
@@ -70,19 +70,19 @@ export const Link: FC<LinkProps> = ({
   )
 }
 
-const LinkWrapper = styled.a<{ typo: LinkTypo; highlight: boolean }>(
-  ({ typo, highlight }) => css`
+const LinkWrapper = styled.a<{ $typo: LinkTypo; $highlight: boolean }>(
+  ({ $typo, $highlight }) => css`
     ${focusOutline()}
     display: inline-flex;
     flex-direction: row;
 
-    ${typo === 'regular' &&
+    ${$typo === 'regular' &&
     css`
       font-size: 16px;
       line-height: 20px;
     `}
 
-    ${typo === 'small' &&
+    ${$typo === 'small' &&
     css`
       font-size: 14px;
       line-height: 20px;
@@ -90,7 +90,7 @@ const LinkWrapper = styled.a<{ typo: LinkTypo; highlight: boolean }>(
 
       font-weight: ${theme.font.weight.medium};
     text-decoration: underline;
-    color: ${highlight ? theme.colors.lollipop : theme.colors.liquorice};
+    color: ${$highlight ? theme.colors.lollipop : theme.colors.liquorice};
 
     background: none;
     cursor: pointer;

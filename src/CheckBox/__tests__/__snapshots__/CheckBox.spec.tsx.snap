@@ -2,12 +2,11 @@
 
 exports[`renders 1`] = `
 <label
-  class="sc-iGgWBj jrrdRB"
+  class="sc-jTQCzO ekdcIV"
   id="MM_SMORES_0"
 >
   <span
-    class="sc-aXZVg sc-fqkvVR byxNQM exYCmj"
-    color="liquorice"
+    class="sc-beySPh kknHUq sc-hLQSwg eFDPTb"
     cursor="inherit"
     title=""
   >
@@ -17,7 +16,7 @@ exports[`renders 1`] = `
     type="checkbox"
   />
   <span
-    class="sc-dcJsrY xXSKE"
+    class="sc-eDLKkx cVHwVf"
   />
 </label>
 `;

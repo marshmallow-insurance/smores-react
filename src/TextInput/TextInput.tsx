@@ -1,14 +1,14 @@
-import React, { FocusEvent, FormEvent, forwardRef, ForwardedRef } from 'react'
+import React, { FocusEvent, FormEvent, ForwardedRef, forwardRef } from 'react'
 
+import { Box } from '../Box'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
-import { Box } from '../Box'
-import { useUniqueId } from '../utils/id'
 import {
   Input,
   StyledFrontIcon,
   StyledTrailingIcon,
 } from '../fields/components/CommonInput'
+import { useUniqueId } from '../utils/id'
 
 interface Props extends CommonFieldProps {
   type?: 'text' | 'email' | 'password' | 'time' | 'date' | 'tel'
@@ -59,7 +59,7 @@ export const TextInput = forwardRef(function TextInput(
       <Box flex alignItems="center" justifyContent="flex-start">
         {frontIcon && (
           <StyledFrontIcon
-            disabled={disabled}
+            $disabled={disabled}
             render={frontIcon}
             color="sesame"
           />
@@ -72,9 +72,9 @@ export const TextInput = forwardRef(function TextInput(
           ref={ref}
           placeholder={placeholder}
           value={value}
-          error={error}
-          frontIcon={frontIcon}
-          fallbackStyle={fallbackStyle}
+          $error={error}
+          $frontIcon={frontIcon}
+          $fallbackStyle={fallbackStyle}
           autoComplete="off"
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && onChange(e.currentTarget.value)
@@ -84,7 +84,7 @@ export const TextInput = forwardRef(function TextInput(
         />
         {trailingIcon && (
           <StyledTrailingIcon
-            disabled={disabled}
+            $disabled={disabled}
             render={trailingIcon}
             color="sesame"
           />
