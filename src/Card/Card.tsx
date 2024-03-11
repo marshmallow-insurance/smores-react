@@ -4,6 +4,8 @@ import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+import { Icons } from '../Icon/iconsList'
+
 import { Text } from '../Text'
 import { theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
@@ -12,7 +14,7 @@ import { MarginProps } from '../utils/space'
 export type CardProps = {
   children?: ReactNode
   /** leading card icon */
-  leadingIcon?: string
+  leadingIcon?: Icons
   /** generic card title */
   title?: string
   /** generic card body */

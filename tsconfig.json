@@ -13,14 +13,13 @@
       "dom.iterable",
       "esnext"
     ],
-    "types": ["react", "node"],
+    "types": ["react", "node", "vitest/globals"],
     "sourceMap": true,
     "allowJs": true,
     "checkJs": false,
     "jsx": "react",
     "declaration": true,
-    "moduleResolution": "node",
-    "rootDir": "src",
+    "moduleResolution": "Bundler",
     "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
@@ -29,8 +28,9 @@
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "skipLibCheck": true
   },
-  "include": ["src/**/*", "src/global.d.ts"],
+  "include": ["src/**/*", "src/global.d.ts", "vitest.config.ts"],
   "exclude": ["node_modules", "dist", "scripts"]
 }

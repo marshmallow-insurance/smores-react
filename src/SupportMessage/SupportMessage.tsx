@@ -4,6 +4,8 @@ import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+import { Icons } from '../Icon/iconsList'
+
 import { Text } from '../Text'
 import { Color, theme } from '../theme'
 import { isReactElement } from '../utils/isReactElement'
@@ -13,7 +15,7 @@ type StylesItem = {
   iconColor: Color
   backgroundColor: string
   hoverBackgroundColor: string
-  icon: string
+  icon: Icons
 }
 
 const styles: Record<SupportMessageType, StylesItem> = {

@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+import { Icons } from '../Icon/iconsList'
+
 import { MarginProps } from '../utils/space'
 
 export type IconWrapperProps = {
@@ -11,7 +13,7 @@ export type IconWrapperProps = {
   /* */
   children: ReactNode
   /** specify what Icon to render  */
-  render: string
+  render: Icons
   /** set size of the Icon  */
   size?: number
   /** TOP-RIGHT-BOTTOM-LEFT position of the Icon */

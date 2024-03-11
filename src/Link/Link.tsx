@@ -3,6 +3,7 @@ import React, { FC, MouseEventHandler, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
 import { Icon } from '../Icon'
+import { Icons } from '../Icon/iconsList'
 import { theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 
@@ -17,7 +18,7 @@ export type LinkProps = {
   download?: boolean
   typo?: LinkTypo
   highlight?: boolean
-  iconToRender?: string
+  iconToRender?: Icons
   isTrailingIcon?: boolean
 }
 
@@ -30,7 +31,7 @@ export const Link: FC<LinkProps> = ({
   children,
   typo = 'regular',
   highlight = false,
-  iconToRender = openInNewTab ? 'new-window' : '',
+  iconToRender = openInNewTab ? 'new-window' : undefined,
   isTrailingIcon = true,
 }) => {
   return (

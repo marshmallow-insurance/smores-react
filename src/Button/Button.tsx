@@ -4,6 +4,8 @@ import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Icon as IconComponent } from '../Icon'
+import { Icons } from '../Icon/iconsList'
+
 import { Loader } from '../Loader'
 import { theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
@@ -21,7 +23,7 @@ type Props = {
   fallbackStyle?: boolean
   textBtn?: boolean
   smallButton?: boolean
-  icon?: string
+  icon?: Icons
   trailingIcon?: boolean
   forcedWidth?: string
   form?: string
@@ -47,7 +49,7 @@ export const Button: FC<ButtonProps> = forwardRef<
     fallbackStyle = false,
     textBtn = false,
     smallButton = false,
-    icon = '',
+    icon,
     trailingIcon = false,
     forcedWidth = '',
     form,
@@ -68,7 +70,6 @@ export const Button: FC<ButtonProps> = forwardRef<
       $fallbackStyle={fallbackStyle}
       $textBtn={textBtn}
       $smallButton={smallButton}
-      $icon={icon}
       $trailingIcon={trailingIcon}
       $forcedWidth={forcedWidth}
       {...(form ? { form } : {})}
@@ -115,7 +116,6 @@ type IButton = TransientProps<
       ButtonProps,
       | 'primary'
       | 'secondary'
-      | 'icon'
       | 'forcedWidth'
       | 'fallbackStyle'
       | 'textBtn'
@@ -231,7 +231,7 @@ const LoaderContainer = styled.div`
   justify-content: center;
 `
 
-const ContentContainer = styled.div<{ $loading: boolean; $icon: string }>`
+const ContentContainer = styled.div<{ $loading: boolean; $icon?: Icons }>`
   display: flex;
   align-items: center;
   justify-content: ${({ $icon }) => ($icon ? 'space-evenly' : 'center')};

@@ -26,6 +26,8 @@ export interface TooltipProps {
   title?: string
   underline?: boolean
   fallbackStyle?: boolean
+  zIndex?: number
+  portalContainer?: Element | DocumentFragment
 }
 
 export const Tooltip: FC<TooltipProps> = ({
@@ -36,6 +38,8 @@ export const Tooltip: FC<TooltipProps> = ({
   maxWidth = 500,
   underline = false,
   fallbackStyle = false,
+  zIndex = 10,
+  portalContainer = document.body,
 }) => {
   const documentRef = useRef<Document>(document)
   const tipContainer = useRef<HTMLDivElement>(null)
@@ -192,6 +196,7 @@ export const Tooltip: FC<TooltipProps> = ({
             ref={tipContainer}
             $maxWidth={maxWidth}
             $fallbackStyle={fallbackStyle}
+            $zIndex={zIndex}
             style={{
               position: 'absolute',
               top: `${tooltipCoords.top}px`,
@@ -217,7 +222,7 @@ export const Tooltip: FC<TooltipProps> = ({
             )) ||
               content}
           </Tip>,
-          document.body,
+          portalContainer,
         )}
     </Container>
   )
@@ -317,6 +322,7 @@ export const Tip = styled.div<{
   $arrowPosition: ArrowPosition
   $maxWidth?: number
   $fallbackStyle?: boolean
+  $zIndex: number
 }>`
   position: absolute;
   margin: auto;
@@ -328,7 +334,7 @@ export const Tip = styled.div<{
   transition: opacity 0.2s ease-in-out;
   pointer-events: none;
   cursor: default;
-  z-index: 10;
+  z-index: ${({ zIndex }) => (zIndex ? zIndex : '10')};
 
   // this is the trick that will make sure the content can go up to maxWidth
   margin-right: ${({ $maxWidth }) => $maxWidth && -$maxWidth / 2 + 'px'};

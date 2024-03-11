@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders 1`] = `
+<p
+  class="sc-aXZVg sc-fqkvVR byxNQM eIOPip"
+  color="liquorice"
+  cursor="inherit"
+  title=""
+>
+  The quick brown fox jumps over the lazy dog
+</p>
+`;
