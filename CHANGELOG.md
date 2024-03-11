@@ -1,3 +1,142 @@
+## [6.2.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.0...v6.2.1) (2024-03-07)
+
+
+### Bug Fixes
+
+* add pr build action and fix rte types ([#3547](https://github.com/marshmallow-insurance/smores-react/issues/3547)) ([b24c927](https://github.com/marshmallow-insurance/smores-react/commit/b24c927da3fe4b35c0b46f8f2083c3598bf90d27))
+* release @lexica/react package.json change and RichTextEditor outline prop ([#3546](https://github.com/marshmallow-insurance/smores-react/issues/3546)) ([106e554](https://github.com/marshmallow-insurance/smores-react/commit/106e5545a6d225e525dedb2eec503096ae50a390))
+
+## [6.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v6.1.0...v6.2.0) (2024-03-06)
+
+
+### Features
+
+* add rich text viewer and editor to index.ts ([#3543](https://github.com/marshmallow-insurance/smores-react/issues/3543)) ([e57783b](https://github.com/marshmallow-insurance/smores-react/commit/e57783b3f72da5e7f4b407d81591bae3a27588cc))
+
+## [6.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.4...v6.1.0) (2024-02-29)
+
+
+### Features
+
+* add rich text viewer ([#3520](https://github.com/marshmallow-insurance/smores-react/issues/3520)) ([be27f61](https://github.com/marshmallow-insurance/smores-react/commit/be27f61c69154dadfa89e358f207c51a12853fa7))
+
+## [6.0.4](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.3...v6.0.4) (2024-02-28)
+
+
+### Bug Fixes
+
+* remove type:module from package,json ([#3527](https://github.com/marshmallow-insurance/smores-react/issues/3527)) ([bf367b0](https://github.com/marshmallow-insurance/smores-react/commit/bf367b081f720d3adf64ca61cc165ff83349df0e))
+
+## [6.0.3](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.2...v6.0.3) (2024-02-27)
+
+
+### Bug Fixes
+
+* add root-dir ([#3524](https://github.com/marshmallow-insurance/smores-react/issues/3524)) ([4bc100c](https://github.com/marshmallow-insurance/smores-react/commit/4bc100c3c0b3506f0988760b3b5a5f02861d90d1))
+
+## [6.0.2](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.1...v6.0.2) (2024-02-27)
+
+
+### Bug Fixes
+
+* revert vite bundle changes & use tsc  ([#3523](https://github.com/marshmallow-insurance/smores-react/issues/3523)) ([22f2555](https://github.com/marshmallow-insurance/smores-react/commit/22f255517274e92853e838bde9fc210572ced1e8))
+
+## [6.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.0.0...v6.0.1) (2024-02-26)
+
+
+### Bug Fixes
+
+* typeErr from rollup of default import of styled-comp ([#3519](https://github.com/marshmallow-insurance/smores-react/issues/3519)) ([2b05b67](https://github.com/marshmallow-insurance/smores-react/commit/2b05b67b604c7591a486c57ee483815edfdfab70))
+
+## [6.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v5.0.0...v6.0.0) (2024-02-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* re-factor Icon component
+
+* updating config to support svg React Components
+
+* creating new Icon files
+
+* creating iconList.ts and iconTypes.ts files
+
+* updating the actual Icon component and stories
+
+* adjusting icon: string types to use the new infered Icons string literals type
+
+* adjust README and also mark this PR as BREAKING CHANGE
+
+* addressing comments
+
+* correctly infer color
+
+* undo icon changes, so this can be merged first
+
+* breaking change: refactor Icon component (#3326) ([2346753](https://github.com/marshmallow-insurance/smores-react/commit/23467538db18afc2378d99a577e91f1cbc6601da)), closes [#3326](https://github.com/marshmallow-insurance/smores-react/issues/3326)
+
+## [5.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v4.0.1...v5.0.0) (2024-02-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* trigger breaking change release
+
+* adding preview yml script
+
+* typo
+
+* breaking change: trigger vite bundling & vitest breaking changes release (#3518) ([fcf9933](https://github.com/marshmallow-insurance/smores-react/commit/fcf993390b9249c172fc0da64180cd7c859f3c95)), closes [#3518](https://github.com/marshmallow-insurance/smores-react/issues/3518)
+
+
+### Features
+
+* makes placeholder option disabled ([#3505](https://github.com/marshmallow-insurance/smores-react/issues/3505)) ([84f0d9d](https://github.com/marshmallow-insurance/smores-react/commit/84f0d9d052529ce6a80689fc493c486c3365b5a4))
+
+## [4.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v4.0.0...v4.0.1) (2024-02-20)
+
+
+### Bug Fixes
+
+* add zIndex & portalContainer props to tooltip ([#3508](https://github.com/marshmallow-insurance/smores-react/issues/3508)) ([a904cf2](https://github.com/marshmallow-insurance/smores-react/commit/a904cf2ae4a8a3c8d1ef440d7a802b65e15a47c0))
+* **currencyInput:** allow non decimal inputs ([#3507](https://github.com/marshmallow-insurance/smores-react/issues/3507)) ([46d75ad](https://github.com/marshmallow-insurance/smores-react/commit/46d75adcef763b501852a3e45150e16f9b23b835))
+
+## [4.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v3.5.2...v4.0.0) (2024-02-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* deprecate props in NumberInput and add CurrencyInput component
+
+* update test
+
+* remove deprecated parameters, update var names
+
+* breaking change: deprecate props in NumberInput and add CurrencyInput… (#3484) ([4b53e84](https://github.com/marshmallow-insurance/smores-react/commit/4b53e8458b8d68b49f261140fe9404435c92d834)), closes [#3484](https://github.com/marshmallow-insurance/smores-react/issues/3484)
+
+## [3.5.2](https://github.com/marshmallow-insurance/smores-react/compare/v3.5.1...v3.5.2) (2024-02-09)
+
+## [3.5.1](https://github.com/marshmallow-insurance/smores-react/compare/v3.5.0...v3.5.1) (2024-02-09)
+
+
+### Bug Fixes
+
+* fix NumberInput for currencies ([#3467](https://github.com/marshmallow-insurance/smores-react/issues/3467)) ([cbf9d96](https://github.com/marshmallow-insurance/smores-react/commit/cbf9d96e7ef0aeb7bca8c225c92c01f96a392375))
+
+## [3.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v3.4.0...v3.5.0) (2024-02-01)
+
+
+### Features
+
+* add icons used in CMS ([#3431](https://github.com/marshmallow-insurance/smores-react/issues/3431)) ([c3ff724](https://github.com/marshmallow-insurance/smores-react/commit/c3ff724f2989d516fa8ad8470a6e2d1e210ecb9b))
+
+## [3.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.5...v3.4.0) (2024-01-19)
+
+
+### Features
+
+* **dropdown:** allow placeholder to be used as empty value ([#3413](https://github.com/marshmallow-insurance/smores-react/issues/3413)) ([d524052](https://github.com/marshmallow-insurance/smores-react/commit/d5240523251c3da73b6954b75f1c1360732fee6f))
+
 ## [3.3.5](https://github.com/marshmallow-insurance/smores-react/compare/v3.3.4...v3.3.5) (2024-01-05)
 
 

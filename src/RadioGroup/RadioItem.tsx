@@ -6,6 +6,8 @@ import { useUniqueId } from '../utils/id'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
+import { Icons } from '../Icon/iconsList'
+
 import { Text } from '../Text'
 import { RadioElement } from './RadioElement'
 import { ITEM_GAP } from './constants'
@@ -14,7 +16,7 @@ import { BaseValueType, DisplayType, IconPosition } from './types'
 type RadioItemProps = {
   name: string
   visual?: string
-  icon?: string
+  icon?: Icons
   iconPosition?: IconPosition
   value: BaseValueType
   label: string

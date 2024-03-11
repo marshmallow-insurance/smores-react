@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components'
 
 import { darken } from 'polished'
 import { Icon } from '../Icon'
+import { Icons } from '../Icon/iconsList'
+
 import { Color, theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
@@ -13,7 +15,7 @@ export type IconStrictProps = {
   /** set size of the Icon (including background) */
   size?: 16 | 24 | 36 | 48
   /** specify what Icon to render  */
-  render: string
+  render: Icons
   /** set icon colour */
   iconColor?: Color
   /** set background colour */

@@ -13,6 +13,8 @@ import { useUniqueId } from '../utils/id'
 
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { Fieldset } from '../fields/Fieldset'
+import { Icons } from '../Icon/iconsList'
+
 import { ITEM_GAP } from './constants'
 import { RadioItem } from './RadioItem'
 import { BaseValueType, DisplayType, IconPosition } from './types'
@@ -20,7 +22,7 @@ import { BaseValueType, DisplayType, IconPosition } from './types'
 export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   options: Array<{
     visual?: string
-    icon?: string
+    icon?: Icons
     iconPosition?: IconPosition
     label: string
     value: Value

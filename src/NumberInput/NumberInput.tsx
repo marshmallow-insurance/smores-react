@@ -27,8 +27,6 @@ export interface Props extends CommonFieldProps {
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   min?: number
   max?: number
-  strict?: boolean
-  roundCurrency?: boolean
   step?: number
 }
 
@@ -57,10 +55,8 @@ export const NumberInput = forwardRef(function NumberInput(
     onChange,
     onInputChange,
     onBlur,
-    roundCurrency,
     min = -999999,
     max = 999999,
-    strict,
     step = 0,
     disabled = false,
     error = false,
@@ -91,28 +87,10 @@ export const NumberInput = forwardRef(function NumberInput(
     return Math.round(event * 100) / 100
   }
 
-  const handleStrictValue = (event: number): number => {
-    if (isInRange(event)) {
-      return event
-    }
-
-    // Get the difference between the max (or min) and the current value
-    const dMax = max - event
-    const dMin = min - event
-
-    // if the difference is zero return the min value
-    if (!dMax) {
-      return min
-    }
-
-    // if the difference is zero return the max value
-    if (!dMin) {
-      return max
-    }
-
-    // Convert all negative numbers to positive numbers (-90 becomes 90) then,
-    // if the converted max diff is less than the min diff, return the max (eg. 100), otherwise return the min (eg. 0)
-    return Math.abs(dMax) < Math.abs(dMin) ? max : min
+  const applyMinMax = (value: number) => {
+    if(min && value < min) return min
+    if(max && value > max) return max
+    return value
   }
 
   const handleChange = (event: string) => {
@@ -122,17 +100,10 @@ export const NumberInput = forwardRef(function NumberInput(
     if (event === EMPTY_INPUT) {
       onChange(event)
     } else {
-      const formattedEvent = Number(event)
+      const amount = Number(event)
+      const normalisedValue = applyMinMax(amount)
 
-      const amount = roundCurrency
-        ? roundNumber(formattedEvent)
-        : formattedEvent
-
-      if (strict) {
-        onChange(handleStrictValue(amount))
-      } else {
-        onChange(amount)
-      }
+      onChange(normalisedValue)
     }
   }
   // Increment or decrement the value when clicking the Spinner controls
