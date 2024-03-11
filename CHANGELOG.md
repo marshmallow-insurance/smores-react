@@ -1,3 +1,19 @@
+## [7.0.0-crumbs-sc-v6.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.1...v7.0.0-crumbs-sc-v6.1) (2024-03-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade styled-components
+
+* add <StyledSheetManager /> to preview.tsx
+* using transientProps
+
+* update tests
+
+* as to forwardedAs
+
+* beaking change: using transient props (#3557) ([506eb03](https://github.com/marshmallow-insurance/smores-react/commit/506eb03e11afc72d0bbd31e007d26809b7312ab5)), closes [#3557](https://github.com/marshmallow-insurance/smores-react/issues/3557)
+
 ## [6.2.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.0...v6.2.1) (2024-03-07)
 
 
