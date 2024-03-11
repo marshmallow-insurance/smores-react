@@ -22,7 +22,7 @@ export const Emoji: FC<EmojiProps> = ({
   ...marginProps
 }) => (
   <Container
-    as="span"
+    forwardedAs="span"
     className={className}
     $size={size}
     role="img"

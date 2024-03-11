@@ -5,7 +5,10 @@ exports[`renders 1`] = `
   class="sc-beySPh kknHUq sc-dmyCSP eLhZrL"
 >
   <span
-    class="sc-guDLey hBTcav"
+    class="sc-beySPh kknHUq sc-guDLey hBTcav"
+    color="liquorice"
+    rotate="0"
+    size="24"
   >
     <svg
       fill="none"

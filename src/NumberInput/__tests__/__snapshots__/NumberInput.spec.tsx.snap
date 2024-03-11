@@ -34,7 +34,10 @@ exports[`renders - currency 1`] = `
           class="sc-kFCroH dfvsKA"
         >
           <span
-            class="sc-guDLey jCIMiq"
+            class="sc-beySPh kknHUq sc-guDLey jCIMiq"
+            color="sesame"
+            rotate="180"
+            size="24"
           >
             <svg
               fill="none"
@@ -54,7 +57,10 @@ exports[`renders - currency 1`] = `
           class="sc-kFCroH dfvsKA"
         >
           <span
-            class="sc-guDLey bBcdgr"
+            class="sc-beySPh kknHUq sc-guDLey bBcdgr"
+            color="sesame"
+            rotate="0"
+            size="24"
           >
             <svg
               fill="none"
@@ -143,7 +149,10 @@ exports[`renders - error 1`] = `
           class="sc-kFCroH dfvsKA"
         >
           <span
-            class="sc-guDLey jCIMiq"
+            class="sc-beySPh kknHUq sc-guDLey jCIMiq"
+            color="sesame"
+            rotate="180"
+            size="24"
           >
             <svg
               fill="none"
@@ -163,7 +172,10 @@ exports[`renders - error 1`] = `
           class="sc-kFCroH dfvsKA"
         >
           <span
-            class="sc-guDLey bBcdgr"
+            class="sc-beySPh kknHUq sc-guDLey bBcdgr"
+            color="sesame"
+            rotate="0"
+            size="24"
           >
             <svg
               fill="none"
@@ -291,7 +303,10 @@ exports[`renders - with trailing icon 1`] = `
         value=""
       />
       <span
-        class="sc-guDLey bBcdgr sc-qZrbh dhHnRB"
+        class="sc-beySPh kknHUq sc-guDLey bBcdgr sc-qZrbh dhHnRB"
+        color="sesame"
+        rotate="0"
+        size="24"
       >
         <svg
           fill="none"

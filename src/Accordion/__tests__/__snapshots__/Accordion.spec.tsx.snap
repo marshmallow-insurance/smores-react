@@ -19,7 +19,10 @@ exports[`renders 1`] = `
       </h2>
     </div>
     <span
-      class="sc-guDLey gQQncJ sc-iBdnpw djvwdx"
+      class="sc-beySPh kknHUq sc-guDLey gQQncJ sc-iBdnpw djvwdx"
+      color="marzipan"
+      rotate="0"
+      size="24"
     >
       <svg
         fill="none"

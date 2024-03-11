@@ -33,11 +33,11 @@ export const Icon: FC<IconProps> = ({
 
   return (
     <Container
-      as="span"
+      forwardedAs="span"
       className={className}
-      $size={size}
-      $rotate={rotate}
-      $color={color}
+      size={size}
+      rotate={rotate}
+      color={color}
       {...marginProps}
     >
       <IconComponent />
@@ -45,23 +45,23 @@ export const Icon: FC<IconProps> = ({
   )
 }
 
-interface IIcon {
-  $size: number
-  $color: Color
-  $rotate: number
+interface IIcon extends MarginProps {
+  size: number
+  color: Color
+  rotate: number
 }
 
 const Container = styled(Box)<IIcon>(
-  ({ $size, $rotate, $color }) => css`
+  ({ size, rotate, color }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: ${$size}px;
-    height: ${$size}px;
-    transform: rotate(${$rotate}deg);
+    width: ${size}px;
+    height: ${size}px;
+    transform: rotate(${rotate}deg);
     svg {
-      color: ${theme.colors[$color]} !important;
+      color: ${theme.colors[color]} !important;
     }
   `,
 )

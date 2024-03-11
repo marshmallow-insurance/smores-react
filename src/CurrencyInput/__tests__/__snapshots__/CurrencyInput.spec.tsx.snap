@@ -19,7 +19,10 @@ exports[`renders - disabled 1`] = `
       class="sc-beySPh dxKTfv"
     >
       <span
-        class="sc-guDLey bBcdgr sc-fsYfdN hoMIGE"
+        class="sc-beySPh kknHUq sc-guDLey bBcdgr sc-fsYfdN hoMIGE"
+        color="sesame"
+        rotate="0"
+        size="24"
       >
         <svg
           fill="none"
@@ -67,7 +70,10 @@ exports[`renders - error 1`] = `
       class="sc-beySPh dxKTfv"
     >
       <span
-        class="sc-guDLey bBcdgr sc-fsYfdN fyDMOK"
+        class="sc-beySPh kknHUq sc-guDLey bBcdgr sc-fsYfdN fyDMOK"
+        color="sesame"
+        rotate="0"
+        size="24"
       >
         <svg
           fill="none"
@@ -128,7 +134,10 @@ exports[`renders - number 1`] = `
       class="sc-beySPh dxKTfv"
     >
       <span
-        class="sc-guDLey bBcdgr sc-fsYfdN fyDMOK"
+        class="sc-beySPh kknHUq sc-guDLey bBcdgr sc-fsYfdN fyDMOK"
+        color="sesame"
+        rotate="0"
+        size="24"
       >
         <svg
           fill="none"

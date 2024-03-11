@@ -13,7 +13,10 @@ exports[`renders 1`] = `
       High alert
     </span>
     <span
-      class="sc-guDLey bbIbXV"
+      class="sc-beySPh kknHUq sc-guDLey bbIbXV"
+      color="cream"
+      rotate="0"
+      size="24"
     >
       <svg
         fill="none"
