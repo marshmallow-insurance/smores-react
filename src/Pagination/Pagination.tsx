@@ -196,9 +196,11 @@ const PageBox = styled.button<IPageBox>`
   cursor: pointer;
   display: flex;
   justify-content: center;
-  border-radius: 50%;
-  width: 24px;
+  border-radius: 24px;
+  width: fit-content;
+  padding: 0px 4px;
   height: 24px;
+  min-width: 24px;
 
   &:hover {
     background-color: ${theme.colors.mascarpone};
