@@ -2,11 +2,10 @@
 
 exports[`renders - currency 1`] = `
 <div
-  class="sc-aXZVg sc-gsFSXq byxNQM cZVmFI"
+  class="sc-beySPh kknHUq sc-gLLuof bXJti"
 >
   <label
-    class="sc-aXZVg sc-fqkvVR beCtdt loBhWK"
-    color="sesame"
+    class="sc-beySPh cuSjOj sc-hLQSwg gLOShS"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -14,13 +13,13 @@ exports[`renders - currency 1`] = `
     Currency
   </label>
   <div
-    class="sc-aXZVg byxNQM"
+    class="sc-beySPh kknHUq"
   >
     <div
-      class="sc-aXZVg cowLnB"
+      class="sc-beySPh dxKTfv"
     >
       <input
-        class="sc-kAyceB jUthIA"
+        class="sc-iBdnpw fBNtKn"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
@@ -29,16 +28,13 @@ exports[`renders - currency 1`] = `
         value="50"
       />
       <div
-        class="sc-dhKdcB kGinMW"
+        class="sc-jsEeTM CPgAR"
       >
         <button
-          class="sc-kpDqfm jCCwmF"
+          class="sc-kFCroH dfvsKA"
         >
           <span
-            class="sc-aXZVg sc-gEvEer byxNQM GSklT"
-            color="sesame"
-            rotate="180"
-            size="24"
+            class="sc-guDLey jCIMiq"
           >
             <svg
               fill="none"
@@ -55,13 +51,10 @@ exports[`renders - currency 1`] = `
           </span>
         </button>
         <button
-          class="sc-kpDqfm jCCwmF"
+          class="sc-kFCroH dfvsKA"
         >
           <span
-            class="sc-aXZVg sc-gEvEer byxNQM cGryoi"
-            color="sesame"
-            rotate="0"
-            size="24"
+            class="sc-guDLey bBcdgr"
           >
             <svg
               fill="none"
@@ -85,11 +78,10 @@ exports[`renders - currency 1`] = `
 
 exports[`renders - disabled 1`] = `
 <div
-  class="sc-aXZVg sc-gsFSXq byxNQM cZVmFI"
+  class="sc-beySPh kknHUq sc-gLLuof bXJti"
 >
   <label
-    class="sc-aXZVg sc-fqkvVR beCtdt loBhWK"
-    color="sesame"
+    class="sc-beySPh cuSjOj sc-hLQSwg gLOShS"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -97,13 +89,13 @@ exports[`renders - disabled 1`] = `
     Currency
   </label>
   <div
-    class="sc-aXZVg byxNQM"
+    class="sc-beySPh kknHUq"
   >
     <div
-      class="sc-aXZVg cowLnB"
+      class="sc-beySPh dxKTfv"
     >
       <input
-        class="sc-kAyceB bXTces"
+        class="sc-iBdnpw fLnzFH"
         disabled=""
         id="currencyInput"
         name="currencyInput"
@@ -119,11 +111,10 @@ exports[`renders - disabled 1`] = `
 
 exports[`renders - error 1`] = `
 <div
-  class="sc-aXZVg sc-gsFSXq byxNQM cZVmFI"
+  class="sc-beySPh kknHUq sc-gLLuof bXJti"
 >
   <label
-    class="sc-aXZVg sc-fqkvVR beCtdt ikzCDy"
-    color="strawberry"
+    class="sc-beySPh cuSjOj sc-hLQSwg cibKFK"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -131,13 +122,13 @@ exports[`renders - error 1`] = `
     Currency
   </label>
   <div
-    class="sc-aXZVg byxNQM"
+    class="sc-beySPh kknHUq"
   >
     <div
-      class="sc-aXZVg cowLnB"
+      class="sc-beySPh dxKTfv"
     >
       <input
-        class="sc-kAyceB ccPNWu"
+        class="sc-iBdnpw fAPQpp"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
@@ -146,16 +137,13 @@ exports[`renders - error 1`] = `
         value="200"
       />
       <div
-        class="sc-dhKdcB kGinMW"
+        class="sc-jsEeTM CPgAR"
       >
         <button
-          class="sc-kpDqfm jCCwmF"
+          class="sc-kFCroH dfvsKA"
         >
           <span
-            class="sc-aXZVg sc-gEvEer byxNQM GSklT"
-            color="sesame"
-            rotate="180"
-            size="24"
+            class="sc-guDLey jCIMiq"
           >
             <svg
               fill="none"
@@ -172,13 +160,10 @@ exports[`renders - error 1`] = `
           </span>
         </button>
         <button
-          class="sc-kpDqfm jCCwmF"
+          class="sc-kFCroH dfvsKA"
         >
           <span
-            class="sc-aXZVg sc-gEvEer byxNQM cGryoi"
-            color="sesame"
-            rotate="0"
-            size="24"
+            class="sc-guDLey bBcdgr"
           >
             <svg
               fill="none"
@@ -198,8 +183,7 @@ exports[`renders - error 1`] = `
     </div>
   </div>
   <span
-    class="sc-aXZVg sc-fqkvVR cMpUSh eXBKnw"
-    color="strawberry"
+    class="sc-beySPh jBbmPD sc-hLQSwg dApRvc"
     cursor="inherit"
     title=""
   >
@@ -210,19 +194,17 @@ exports[`renders - error 1`] = `
 
 exports[`renders - number 1`] = `
 <div
-  class="sc-aXZVg sc-gsFSXq byxNQM cZVmFI"
+  class="sc-beySPh kknHUq sc-gLLuof bXJti"
 >
   <label
-    class="sc-aXZVg sc-fqkvVR beCtdt loBhWK"
-    color="sesame"
+    class="sc-beySPh cuSjOj sc-hLQSwg gLOShS"
     cursor="inherit"
     for="numberInput"
     title=""
   >
     Number
     <span
-      class="sc-aXZVg sc-fqkvVR byxNQM gsSbBT"
-      color="strawberry"
+      class="sc-beySPh kknHUq sc-hLQSwg hjlRnH"
       cursor="inherit"
       title=""
     >
@@ -230,13 +212,13 @@ exports[`renders - number 1`] = `
     </span>
   </label>
   <div
-    class="sc-aXZVg byxNQM"
+    class="sc-beySPh kknHUq"
   >
     <div
-      class="sc-aXZVg cowLnB"
+      class="sc-beySPh dxKTfv"
     >
       <input
-        class="sc-kAyceB jUthIA"
+        class="sc-iBdnpw fBNtKn"
         id="numberInput"
         name="numberInput"
         placeholder="0.00"
@@ -251,11 +233,10 @@ exports[`renders - number 1`] = `
 
 exports[`renders - with suffix 1`] = `
 <div
-  class="sc-aXZVg sc-gsFSXq byxNQM cZVmFI"
+  class="sc-beySPh kknHUq sc-gLLuof bXJti"
 >
   <label
-    class="sc-aXZVg sc-fqkvVR beCtdt loBhWK"
-    color="sesame"
+    class="sc-beySPh cuSjOj sc-hLQSwg gLOShS"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -263,13 +244,13 @@ exports[`renders - with suffix 1`] = `
     Currency
   </label>
   <div
-    class="sc-aXZVg byxNQM"
+    class="sc-beySPh kknHUq"
   >
     <div
-      class="sc-aXZVg cowLnB"
+      class="sc-beySPh dxKTfv"
     >
       <input
-        class="sc-kAyceB jUthIA"
+        class="sc-iBdnpw fBNtKn"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
@@ -284,11 +265,10 @@ exports[`renders - with suffix 1`] = `
 
 exports[`renders - with trailing icon 1`] = `
 <div
-  class="sc-aXZVg sc-gsFSXq byxNQM cZVmFI"
+  class="sc-beySPh kknHUq sc-gLLuof bXJti"
 >
   <label
-    class="sc-aXZVg sc-fqkvVR beCtdt loBhWK"
-    color="sesame"
+    class="sc-beySPh cuSjOj sc-hLQSwg gLOShS"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -296,13 +276,13 @@ exports[`renders - with trailing icon 1`] = `
     Currency
   </label>
   <div
-    class="sc-aXZVg byxNQM"
+    class="sc-beySPh kknHUq"
   >
     <div
-      class="sc-aXZVg cowLnB"
+      class="sc-beySPh dxKTfv"
     >
       <input
-        class="sc-kAyceB jUthIA"
+        class="sc-iBdnpw fBNtKn"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
@@ -311,10 +291,7 @@ exports[`renders - with trailing icon 1`] = `
         value=""
       />
       <span
-        class="sc-aXZVg sc-gEvEer byxNQM cGryoi sc-jXbUNg ipLGXW"
-        color="sesame"
-        rotate="0"
-        size="24"
+        class="sc-guDLey bBcdgr sc-qZrbh dhHnRB"
       >
         <svg
           fill="none"

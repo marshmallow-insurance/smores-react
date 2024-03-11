@@ -2,14 +2,11 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-eqUAAy fgLnsd"
-  size="48"
+  as="div"
+  class="sc-dmyCSP ckTvOA"
 >
   <span
-    class="sc-aXZVg sc-gEvEer byxNQM fBEccK"
-    color="liquorice"
-    rotate="0"
-    size="48"
+    class="sc-guDLey feUBTH"
   >
     <svg
       fill="none"

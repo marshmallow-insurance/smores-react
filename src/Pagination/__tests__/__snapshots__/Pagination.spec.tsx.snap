@@ -2,15 +2,13 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-aXZVg sc-dcJsrY hPilDs gOnbei"
-  direction="row"
+  class="sc-beySPh jZkyWa sc-eDLKkx gQHIBf"
 >
   <button
-    class="sc-iGgWBj cWFBbm"
+    class="sc-jTQCzO kbWkqx"
   >
     <p
-      class="sc-aXZVg sc-fqkvVR byxNQM dmcJhI"
-      color="liquorice"
+      class="sc-beySPh kknHUq sc-hLQSwg fzWpyI"
       cursor="inherit"
       title=""
     >
@@ -18,11 +16,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-iGgWBj bKlexW"
+    class="sc-jTQCzO RrUKR"
   >
     <p
-      class="sc-aXZVg sc-fqkvVR byxNQM glAOgN"
-      color="liquorice"
+      class="sc-beySPh kknHUq sc-hLQSwg fNlbWd"
       cursor="inherit"
       title=""
     >
@@ -30,11 +27,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-iGgWBj bKlexW"
+    class="sc-jTQCzO RrUKR"
   >
     <p
-      class="sc-aXZVg sc-fqkvVR byxNQM glAOgN"
-      color="liquorice"
+      class="sc-beySPh kknHUq sc-hLQSwg fNlbWd"
       cursor="inherit"
       title=""
     >
@@ -42,11 +38,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-iGgWBj bKlexW"
+    class="sc-jTQCzO RrUKR"
   >
     <p
-      class="sc-aXZVg sc-fqkvVR byxNQM glAOgN"
-      color="liquorice"
+      class="sc-beySPh kknHUq sc-hLQSwg fNlbWd"
       cursor="inherit"
       title=""
     >
@@ -54,11 +49,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-iGgWBj bKlexW"
+    class="sc-jTQCzO RrUKR"
   >
     <p
-      class="sc-aXZVg sc-fqkvVR byxNQM glAOgN"
-      color="liquorice"
+      class="sc-beySPh kknHUq sc-hLQSwg fNlbWd"
       cursor="inherit"
       title=""
     >
@@ -66,11 +60,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-iGgWBj bKlexW"
+    class="sc-jTQCzO RrUKR"
   >
     <p
-      class="sc-aXZVg sc-fqkvVR byxNQM eIOPip"
-      color="liquorice"
+      class="sc-beySPh kknHUq sc-hLQSwg cWaFhx"
       cursor="inherit"
       title=""
     >
@@ -78,11 +71,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-iGgWBj bKlexW"
+    class="sc-jTQCzO RrUKR"
   >
     <p
-      class="sc-aXZVg sc-fqkvVR byxNQM glAOgN"
-      color="liquorice"
+      class="sc-beySPh kknHUq sc-hLQSwg fNlbWd"
       cursor="inherit"
       title=""
     >
@@ -90,13 +82,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-gsFSXq lghVWf"
+    class="sc-gLLuof hvLIA-d"
   >
     <span
-      class="sc-aXZVg sc-gEvEer byxNQM euKfNj"
-      color="liquorice"
-      rotate="180"
-      size="18"
+      class="sc-guDLey cnBNpG"
     >
       <svg
         fill="none"

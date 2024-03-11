@@ -2,21 +2,18 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-aXZVg sc-imWYAI byxNQM jjptng"
+  class="sc-beySPh kknHUq sc-fsYfdN jtAsSb"
 >
   <div
-    class="sc-gsFSXq khmXdG"
+    class="sc-gLLuof jvPrkU"
   >
     <span
-      class="sc-kAyceB aTvxf"
+      class="sc-iBdnpw kATtoX"
     >
       High alert
     </span>
     <span
-      class="sc-aXZVg sc-gEvEer byxNQM ewaSeA"
-      color="cream"
-      rotate="0"
-      size="24"
+      class="sc-guDLey bbIbXV"
     >
       <svg
         fill="none"
@@ -33,18 +30,18 @@ exports[`renders 1`] = `
     </span>
   </div>
   <div
-    class="sc-jXbUNg gLearK"
+    class="sc-qZrbh jqrVDk"
   >
     <ul
-      class="sc-dcJsrY dXzEFE"
+      class="sc-eDLKkx ioODIl"
     >
       <li
-        class="sc-iGgWBj eIEbnX"
+        class="sc-jTQCzO dikSDd"
       >
         High alert
       </li>
       <li
-        class="sc-iGgWBj eIEbnX"
+        class="sc-jTQCzO dikSDd"
       >
         Good zone
       </li>

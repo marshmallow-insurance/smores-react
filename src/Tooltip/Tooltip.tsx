@@ -334,7 +334,7 @@ export const Tip = styled.div<{
   transition: opacity 0.2s ease-in-out;
   pointer-events: none;
   cursor: default;
-  z-index: ${({ zIndex }) => (zIndex ? zIndex : '10')};
+  z-index: ${({ $zIndex }) => ($zIndex ? $zIndex : '10')};
 
   // this is the trick that will make sure the content can go up to maxWidth
   margin-right: ${({ $maxWidth }) => $maxWidth && -$maxWidth / 2 + 'px'};

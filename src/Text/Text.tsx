@@ -13,7 +13,7 @@ interface IText {
   /** text-align  */
   $align: string
   /** color from the theme  */
-  color: Color
+  $color: Color
   $cursor: string
 }
 
@@ -86,7 +86,7 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
       className={className}
       $typo={typo}
       $align={align}
-      color={color}
+      $color={color}
       cursor={cursor}
       title={title}
       {...props}
@@ -104,7 +104,7 @@ const isNewTypo = (value: string): value is Typo => {
 }
 
 const Container = styled(Box)<IText>(
-  ({ $align, color, $cursor, $typo }) => css`
+  ({ $align, $color, $cursor, $typo }) => css`
     /** TYPOGRAPHY STYLES */
 
     ${isNewTypo($typo) && fontStyleMapping[$typo]}
@@ -241,7 +241,7 @@ const Container = styled(Box)<IText>(
 
     text-align: ${$align};
     cursor: ${$cursor};
-    color: ${theme.colors[color]};
-    ${linkStyleOverride({ color: theme.colors[color] })}
+    color: ${theme.colors[$color]};
+    ${linkStyleOverride({ color: theme.colors[$color] })}
   `,
 )

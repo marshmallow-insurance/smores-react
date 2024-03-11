@@ -2,15 +2,15 @@
 
 exports[`renders 1`] = `
 <label
-  class="sc-aXZVg sc-gEvEer byxNQM jwXIYA"
+  class="sc-beySPh kknHUq sc-guDLey ilLHSR"
   id="toggle"
 >
   <input
-    class="sc-fqkvVR egoFiG"
+    class="sc-hLQSwg bAQxzw"
     type="checkbox"
   />
   <span
-    class="sc-eqUAAy kvquKw"
+    class="sc-dmyCSP jNYRfm"
   />
 </label>
 `;
