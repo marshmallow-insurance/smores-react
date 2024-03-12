@@ -30,5 +30,5 @@ service:
     penetration_testing: false
     public_repository: true
     product: core
-    region: uk
+    region: all
     type: library
