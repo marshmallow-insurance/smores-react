@@ -28,7 +28,7 @@ service:
       url: https://www.figma.com/file/rnQu7stzZse0zw67V2tSy6/DS---Foundations?node-id=1%3A4
   properties:
     penetration_testing: false
-    public_repository: false
-    product: home
+    public_repository: true
+    product: core
     region: uk
     type: library
