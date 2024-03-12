@@ -7,17 +7,7 @@ service:
   owner: frontend
   language: TypeScript
   framework: React
-  description:
-    React component library that conform to Marshmallow's Design System.
-  tags:
-    - key: product
-      value: auto
-    - key: product
-      value: home
-    - key: product-region
-      value: uk
-    - key: type
-      value: library
+  description: React component library that conform to Marshmallow's Design System.
   repositories:
     - name: https://github.com/marshmallow-insurance/smores-react
       path: '/'
@@ -36,3 +26,9 @@ service:
     - name: Figma Design System
       category: wiki
       url: https://www.figma.com/file/rnQu7stzZse0zw67V2tSy6/DS---Foundations?node-id=1%3A4
+  properties:
+    penetration_testing: false
+    public_repository: false
+    product: home
+    region: uk
+    type: library
