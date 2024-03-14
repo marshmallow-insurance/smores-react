@@ -10,6 +10,7 @@ export const TableHeader = <T extends object>({
   headerHeight,
   columnPadding,
   expandable,
+  hasKeyline,
 }: TableHeaderProps<T>) => {
   return (
     <StyledRow>
@@ -22,6 +23,7 @@ export const TableHeader = <T extends object>({
           maxWidth={column.maxWidth}
           headerColor={headerColor}
           columnPadding={columnPadding}
+          hasKeyline={hasKeyline}
         >
           {column.name}
         </StyledHeaderCell>
@@ -33,6 +35,7 @@ export const TableHeader = <T extends object>({
           minWidth={rowActions?.minWidth}
           headerColor={headerColor}
           columnPadding={columnPadding}
+          hasKeyline={hasKeyline}
         >
           Actions
         </StyledHeaderCell>

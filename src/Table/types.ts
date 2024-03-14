@@ -4,6 +4,7 @@ import { IconStrictProps } from '../IconStrict'
 import { Color } from '../theme'
 
 export type TableStylesProps = {
+  hasKeyline?: boolean
   fixedHeader?: boolean
   headerHeight?: string
   stripedColor?: Color
@@ -72,6 +73,7 @@ interface CommonTableProps<T> {
   columns: TableColumn<T>[]
   headerHeight?: string
   fixedHeader?: boolean
+  hasKeyline?: boolean
   stripedColor?: Color
   expandable?: (rowData: T) => boolean
   headerColor?: Color
@@ -94,6 +96,7 @@ interface CommonTableProps<T> {
 export interface TableProps<T> extends CommonTableProps<T> {
   data: T[]
   noDataContent?: ReactNode
+  hasHeaderKeyline?: boolean
 }
 
 export interface TableRowProps<T> extends CommonTableProps<T> {

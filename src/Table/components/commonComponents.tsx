@@ -16,6 +16,8 @@ export const StyledTable = styled.table<TableStylesProps>`
 
 export const StyledHeaderCell = styled.th<TableStylesProps>`
   background: ${theme.colors.coconut};
+  border-bottom: ${({ hasKeyline }) =>
+    hasKeyline ? `1px solid ${theme.colors.liquorice}` : 'none'};
   position: ${({ fixedHeader }) => (fixedHeader ? 'sticky' : 'auto')};
   top: 0;
   z-index: 2;

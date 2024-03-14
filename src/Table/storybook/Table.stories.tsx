@@ -32,6 +32,7 @@ Default.args = {
   columns: columns.slice(0, 6),
   data,
   fixedHeader: true,
+  hasHeaderKeyline: true,
 }
 
 export const BasicTable = Template.bind({})
