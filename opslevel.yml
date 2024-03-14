@@ -9,7 +9,7 @@ service:
   framework: React
   description: React component library that conform to Marshmallow's Design System.
   repositories:
-    - name: https://github.com/marshmallow-insurance/smores-react
+    - name: marshmallow-insurance/smores-react
       path: '/'
       provider: github
   tools:
