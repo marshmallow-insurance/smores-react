@@ -23,7 +23,7 @@ const Template = (props: PaginationProps & { showBg: boolean }) => (
 export const Default = Template.bind({})
 
 Default.args = {
-  total: 7,
+  total: 123,
   partition: 1,
 }
 
