@@ -1,3 +1,10 @@
+## [6.2.2](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.1...v6.2.2) (2024-03-18)
+
+
+### Bug Fixes
+
+* handle 3 digits on pagination component ([#3558](https://github.com/marshmallow-insurance/smores-react/issues/3558)) ([9ee0c1b](https://github.com/marshmallow-insurance/
+
 ## [7.0.0-crumbs-sc-v6.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.1...v7.0.0-crumbs-sc-v6.1) (2024-03-11)
 
 
