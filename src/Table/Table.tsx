@@ -73,7 +73,7 @@ export const Table = <T extends object>({
           rowActions={rowActions}
           columnPadding={columnPadding}
           expandable={expandable}
-          hasKeyline={hasHeaderKeyline}
+          $hasKeyline={hasHeaderKeyline}
         />
       </thead>
       <tbody>

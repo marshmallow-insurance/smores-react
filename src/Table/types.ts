@@ -4,7 +4,7 @@ import { IconStrictProps } from '../IconStrict'
 import { Color } from '../theme'
 
 export type TableStylesProps = {
-  hasKeyline?: boolean
+  $hasKeyline?: boolean
   fixedHeader?: boolean
   headerHeight?: string
   stripedColor?: Color
@@ -73,7 +73,7 @@ interface CommonTableProps<T> {
   columns: TableColumn<T>[]
   headerHeight?: string
   fixedHeader?: boolean
-  hasKeyline?: boolean
+  $hasKeyline?: boolean
   stripedColor?: Color
   expandable?: (rowData: T) => boolean
   headerColor?: Color
