@@ -73,7 +73,7 @@ interface CommonTableProps<T> {
   columns: TableColumn<T>[]
   headerHeight?: string
   fixedHeader?: boolean
-  $hasKeyline?: boolean
+  hasKeyline?: boolean
   stripedColor?: Color
   expandable?: (rowData: T) => boolean
   headerColor?: Color
@@ -96,7 +96,6 @@ interface CommonTableProps<T> {
 export interface TableProps<T> extends CommonTableProps<T> {
   data: T[]
   noDataContent?: ReactNode
-  hasHeaderKeyline?: boolean
 }
 
 export interface TableRowProps<T> extends CommonTableProps<T> {

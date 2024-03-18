@@ -22,7 +22,7 @@ import { TableProps } from './types'
  * @template T - The type of data the table displays.
  * @property {T[]} data - Array of data to be displayed in the table.
  * @property {TableColumn<T>[]} columns - Array of columns to display in the table.
- * @property {boolean} [hasHeaderKeyline=false] - If true, the table header will have a key line.
+ * @property {boolean} [hasKeyline=false] - If true, the table header will have a key line.
  * @property {boolean} [fixedHeader=false] - If true, the table header will be fixed/sticky.
  * @property {string} [headerHeight] - Sets the height of the header.
  * @property {function(T): boolean} [expandable] - A function to determine if a row is expandable.
@@ -44,7 +44,7 @@ export const Table = <T extends object>({
   columns,
   data,
   fixedHeader = true,
-  hasHeaderKeyline = false,
+  hasKeyline = false,
   expandable,
   subTable,
   subRows,
@@ -73,7 +73,7 @@ export const Table = <T extends object>({
           rowActions={rowActions}
           columnPadding={columnPadding}
           expandable={expandable}
-          $hasKeyline={hasHeaderKeyline}
+          hasKeyline={hasKeyline}
         />
       </thead>
       <tbody>
