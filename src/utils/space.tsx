@@ -1,4 +1,5 @@
 import { resolveResponsiveProp, ResponsiveProp } from './responsiveProp'
+import { TransientProps } from './utilTypes'
 
 type Spacing = '8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'
 
@@ -36,22 +37,25 @@ export interface PaddingProps {
   pb?: ResponsiveProp<SpacingProp>
 }
 
-export const margin = (props: MarginProps): string => {
-  const { m, mx, my, ml, mr, mt, mb } = props
+export type TransientMarginProps = TransientProps<MarginProps>
+export type TransientPaddingProps = TransientProps<PaddingProps>
+
+export const margin = (props: TransientMarginProps): string => {
+  const { $m, $mx, $my, $ml, $mr, $mt, $mb } = props
 
   return `
     ${
-      m
+      $m
         ? resolveResponsiveProp(
-            m,
+            $m,
             (value) => `margin: ${resolveSpacing(value)};`,
           )
         : ''
     }
     ${
-      mx
+      $mx
         ? resolveResponsiveProp(
-            mx,
+            $mx,
             (value) => `
         margin-left: ${resolveSpacing(value)};
         margin-right: ${resolveSpacing(value)};
@@ -60,9 +64,9 @@ export const margin = (props: MarginProps): string => {
         : ''
     }
     ${
-      my
+      $my
         ? resolveResponsiveProp(
-            my,
+            $my,
             (value) => `
         margin-top: ${resolveSpacing(value)};
         margin-bottom: ${resolveSpacing(value)};
@@ -71,33 +75,33 @@ export const margin = (props: MarginProps): string => {
         : ''
     }
     ${
-      ml
+      $ml
         ? resolveResponsiveProp(
-            ml,
+            $ml,
             (value) => `margin-left: ${resolveSpacing(value)};`,
           )
         : ''
     }
     ${
-      mr
+      $mr
         ? resolveResponsiveProp(
-            mr,
+            $mr,
             (value) => `margin-right: ${resolveSpacing(value)};`,
           )
         : ''
     }
     ${
-      mt
+      $mt
         ? resolveResponsiveProp(
-            mt,
+            $mt,
             (value) => `margin-top: ${resolveSpacing(value)};`,
           )
         : ''
     }
     ${
-      mb
+      $mb
         ? resolveResponsiveProp(
-            mb,
+            $mb,
             (value) => `margin-bottom: ${resolveSpacing(value)};`,
           )
         : ''
@@ -105,22 +109,22 @@ export const margin = (props: MarginProps): string => {
   `
 }
 
-export const padding = (props: PaddingProps): string => {
-  const { p, px, py, pl, pr, pt, pb } = props
+export const padding = (props: TransientPaddingProps): string => {
+  const { $p, $px, $py, $pl, $pr, $pt, $pb } = props
 
   return `
     ${
-      p
+      $p
         ? resolveResponsiveProp(
-            p,
+            $p,
             (value) => `padding: ${resolveSpacing(value)};`,
           )
         : ''
     }
     ${
-      px
+      $px
         ? resolveResponsiveProp(
-            px,
+            $px,
             (value) => `
         padding-left: ${resolveSpacing(value)};
         padding-right: ${resolveSpacing(value)};
@@ -129,9 +133,9 @@ export const padding = (props: PaddingProps): string => {
         : ''
     }
     ${
-      py
+      $py
         ? resolveResponsiveProp(
-            py,
+            $py,
             (value) => `
         padding-top: ${resolveSpacing(value)};
         padding-bottom: ${resolveSpacing(value)};
@@ -140,33 +144,33 @@ export const padding = (props: PaddingProps): string => {
         : ''
     }
     ${
-      pl
+      $pl
         ? resolveResponsiveProp(
-            pl,
+            $pl,
             (value) => `padding-left: ${resolveSpacing(value)};`,
           )
         : ''
     }
     ${
-      pr
+      $pr
         ? resolveResponsiveProp(
-            pr,
+            $pr,
             (value) => `padding-right: ${resolveSpacing(value)};`,
           )
         : ''
     }
     ${
-      pt
+      $pt
         ? resolveResponsiveProp(
-            pt,
+            $pt,
             (value) => `padding-top: ${resolveSpacing(value)};`,
           )
         : ''
     }
     ${
-      pb
+      $pb
         ? resolveResponsiveProp(
-            pb,
+            $pb,
             (value) => `padding-bottom: ${resolveSpacing(value)};`,
           )
         : ''

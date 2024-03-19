@@ -43,7 +43,7 @@ interface ISvg {
 }
 
 const LoaderSvg = styled.svg<ISvg>`
-  height: ${(p) => p.height};
+  $height: ${(p) => p.height};
 
   path {
     fill: ${(p) => theme.colors[p.color]};
@@ -271,16 +271,19 @@ const LoaderSvg = styled.svg<ISvg>`
 `
 
 const MarshOne = styled.path`
-  animation: Marshmallow1_t 1.6s linear infinite both,
+  animation:
+    Marshmallow1_t 1.6s linear infinite both,
     Marshmallow1_d 1.6s linear infinite both;
 `
 
 const MarshTwo = styled.path`
-  animation: Marshmallow2_t 1.6s linear infinite both,
+  animation:
+    Marshmallow2_t 1.6s linear infinite both,
     Marshmallow2_d 1.6s linear infinite both;
 `
 
 const MarshThree = styled.path`
-  animation: Marshmallow3_t 1.6s linear infinite both,
+  animation:
+    Marshmallow3_t 1.6s linear infinite both,
     Marshmallow3_d 1.6s linear infinite both;
 `

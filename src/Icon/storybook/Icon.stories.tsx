@@ -16,10 +16,10 @@ Default.args = {
   size: 32,
   color: 'liquorice',
   rotate: '0',
-  mt: '0',
-  mr: '0',
-  mb: '0',
-  ml: '0',
+  mt: '8px',
+  mr: '8px',
+  mb: '8px',
+  ml: '8px',
 }
 
 const CollectionTemplate = () => <Container />
@@ -30,8 +30,8 @@ Collection.args = {
   size: 24,
   color: 'liquorice',
   rotate: '0',
-  mt: '0',
-  mr: '0',
-  mb: '',
-  ml: '0',
+  mt: '8px',
+  mr: '8px',
+  mb: '8px',
+  ml: '8px',
 }

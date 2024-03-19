@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
-import { Text } from '../../Text'
 import { Box } from '../../Box'
-import { CommonFieldProps } from '../commonFieldTypes'
 import { Icon } from '../../Icon'
+import { Text } from '../../Text'
+import { CommonFieldProps } from '../commonFieldTypes'
 
 interface InternalFieldProps extends CommonFieldProps {
   children: ReactNode
@@ -31,7 +31,7 @@ export const InternalField = ({
 
   return (
     <Container
-      as={fieldType === 'field' ? 'div' : 'fieldset'}
+      forwardedAs={fieldType === 'field' ? 'div' : 'fieldset'}
       className={className}
       {...marginProps}
     >
@@ -93,8 +93,8 @@ export const InternalField = ({
       {/* When completed is false, whitespace is rendered */}
       {completed !== undefined && (
         <AnimationWrapper
-          displayStatus={completed}
-          isError={!!(error && errorMsg)}
+          $displayStatus={completed}
+          $isError={!!(error && errorMsg)}
         >
           <StatusWrapper mt={'8px'}>
             <Icon render="included" size={16} color="apple" />
@@ -109,22 +109,22 @@ export const InternalField = ({
 }
 
 const AnimationWrapper = styled(Box)<{
-  displayStatus: boolean
-  isError: boolean
+  $displayStatus: boolean
+  $isError: boolean
 }>`
   width: 0;
   overflow: hidden;
 
-  ${({ displayStatus }) =>
-    displayStatus &&
+  ${({ $displayStatus }) =>
+    $displayStatus &&
     css`
       transition: width 0.6s ease-in;
       width: 100%;
     `}
 
   /* This enables animation to appear when previous state is error */
-  ${({ isError }) =>
-    isError &&
+  ${({ $isError }) =>
+    $isError &&
     css`
       height: 0;
     `}

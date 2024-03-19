@@ -4,38 +4,38 @@ import { Icons } from '../../Icon/iconsList'
 import { theme } from '../../theme'
 
 interface IInput {
-  error?: boolean
+  $error?: boolean
   disabled?: boolean
   selected?: boolean
   step?: number
   value?: string
-  frontIcon?: Icons
-  trailingIcon?: Icons
-  fallbackStyle?: boolean
+  $frontIcon?: Icons
+  $trailingIcon?: Icons
+  $fallbackStyle?: boolean
 }
 
 interface SIcon {
-  disabled?: boolean
+  $disabled?: boolean
 }
 
 export const Input = styled.input<IInput>`
   border: none;
-  color: ${({ error }) =>
-    theme.colors[`${error ? 'strawberry' : 'liquorice'}`]};
+  color: ${({ $error }) =>
+    theme.colors[`${$error ? 'strawberry' : 'liquorice'}`]};
   font-size: 16px;
   width: 100%;
   outline: none;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'initial')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   padding: 18px 14px;
-  background-color: ${({ fallbackStyle }) =>
-    fallbackStyle ? theme.colors.custard : theme.colors.cream};
+  background-color: ${({ $fallbackStyle }) =>
+    $fallbackStyle ? theme.colors.custard : theme.colors.cream};
   border: 2px solid
-    ${({ error }) => (error ? theme.colors.strawberry : theme.colors.oatmeal)};
+    ${({ $error }) => ($error ? theme.colors.strawberry : theme.colors.oatmeal)};
 
-  ${({ disabled, error }) =>
+  ${({ disabled, $error }) =>
     !disabled &&
-    !error &&
+    !$error &&
     css`
       &:hover,
       &:focus-within {
@@ -46,14 +46,14 @@ export const Input = styled.input<IInput>`
   border-radius: 12px;
   height: auto;
 
-  ${({ frontIcon }) =>
-    frontIcon &&
+  ${({ $frontIcon }) =>
+    $frontIcon &&
     `
       padding-left: 42px;
     `}
 
-  ${({ trailingIcon }) =>
-    trailingIcon &&
+  ${({ $trailingIcon }) =>
+    $trailingIcon &&
     `
       padding-right: 42px;
     `}
@@ -77,7 +77,7 @@ export const StyledFrontIcon = styled(Icon)<SIcon>`
   left: 36px;
   margin-left: -24px;
   z-index: 1;
-  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
+  opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
   color: ${theme.colors.liquorice};
 `
 
@@ -85,6 +85,6 @@ export const StyledTrailingIcon = styled(Icon)<SIcon>`
   position: relative;
   right: 36px;
   margin-right: -36px;
-  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
+  opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
   color: ${theme.colors.liquorice};
 `

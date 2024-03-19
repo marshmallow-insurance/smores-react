@@ -2,12 +2,12 @@ import React, { FC, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import { Box } from '../Box'
-import { Text } from '../Text'
 import { Icon } from '../Icon'
+import { Text } from '../Text'
 
 import { theme } from '../theme'
-import { MarginProps } from '../utils/space'
 import { focusOutlineStyle } from '../utils/focusOutline'
+import { MarginProps } from '../utils/space'
 
 const MAX_PAGES = 7
 const MAX_ADDITIONAL_PAGES = Math.ceil(MAX_PAGES / 2)
@@ -95,7 +95,6 @@ export const Pagination: FC<PaginationProps> = ({
     <Container flex direction="row" {...marginProps}>
       {activePage - 1 > 0 && (
         <IconBox
-          firstPage={true}
           onClick={() => movePage(activePage - 1)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
@@ -106,7 +105,7 @@ export const Pagination: FC<PaginationProps> = ({
           <Icon size={18} render="arrow" />
         </IconBox>
       )}
-      <PageBox active={activePage === 1} onClick={() => movePage(1)}>
+      <PageBox $active={activePage === 1} onClick={() => movePage(1)}>
         <Text typo={activePage === 1 ? 'desc-medium' : 'desc-light'} tag="p">
           1
         </Text>
@@ -119,7 +118,7 @@ export const Pagination: FC<PaginationProps> = ({
       {shownPages.map((i) => {
         return (
           <PageBox
-            active={activePage === i}
+            $active={activePage === i}
             key={i}
             onClick={() => movePage(i)}
             onKeyDown={(e) => {
@@ -144,7 +143,7 @@ export const Pagination: FC<PaginationProps> = ({
       )}
       {Boolean(lastPage) && (
         <PageBox
-          active={activePage === lastPage}
+          $active={activePage === lastPage}
           onClick={() => movePage(lastPage)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
@@ -177,8 +176,7 @@ export const Pagination: FC<PaginationProps> = ({
 }
 
 interface IPageBox {
-  active?: boolean
-  firstPage?: boolean
+  $active?: boolean
 }
 
 const Container = styled(Box)`
@@ -193,7 +191,8 @@ const Container = styled(Box)`
 `
 
 const PageBox = styled.button<IPageBox>`
-  background: ${({ active }) => active ? theme.colors.custard : theme.colors.cream};
+  background: ${({ $active }) =>
+    $active ? theme.colors.custard : theme.colors.cream};
   cursor: pointer;
   display: flex;
   justify-content: center;

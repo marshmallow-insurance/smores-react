@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 
+import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Icons } from '../Icon/iconsList'
@@ -53,18 +54,18 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
       <Wrapper
         htmlFor={id}
         checked={checked}
-        displayType={displayType}
+        $displayType={displayType}
         data-testid={value}
-        isError={isError}
-        fallbackStyle={fallbackStyle}
+        $isError={isError}
+        $fallbackStyle={fallbackStyle}
       >
         {visual && !icon && (
           <VisualWrapper>
-            <Visual visualUrl={visual} />
+            <Visual $visualUrl={visual} />
           </VisualWrapper>
         )}
         {!visual && icon && (
-          <IconWrapper iconPosition={iconPosition}>
+          <IconWrapper $iconPosition={iconPosition}>
             <Icon render={icon} size={24} />
           </IconWrapper>
         )}
@@ -81,7 +82,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             mr="8px"
           />
           <Box>
-            <RadioText isError={isError}>{label}</RadioText>
+            <RadioText $isError={isError}>{label}</RadioText>
             {bodyCopy && (
               <Box>
                 <Text typo="caption">{bodyCopy}</Text>
@@ -100,59 +101,62 @@ const VisualWrapper = styled.div`
   margin: 0 auto 8px;
 `
 
-const IconWrapper = styled.div<{ iconPosition?: IconPosition }>`
+const IconWrapper = styled.div<{ $iconPosition?: IconPosition }>`
   display: flex;
   padding-bottom: 12px;
 
-  ${({ iconPosition }) =>
-    iconPosition === 'center' &&
+  ${({ $iconPosition }) =>
+    $iconPosition === 'center' &&
     css`
       justify-content: center;
     `}
 
-  ${({ iconPosition }) =>
-    iconPosition === 'start' &&
+  ${({ $iconPosition }) =>
+    $iconPosition === 'start' &&
     css`
       justify-content: flex-start;
     `}
 `
 
-const Visual = styled.div<{ visualUrl: string }>`
+const Visual = styled.div<{ $visualUrl: string }>`
   width: 100%;
   padding-top: 100%;
-  background-image: url('${(p) => p.visualUrl}');
+  background-image: url('${(p) => p.$visualUrl}');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 `
 
 const Wrapper = styled.label<
-  Pick<RadioItemProps, 'displayType' | 'checked' | 'isError' | 'fallbackStyle'>
+  TransientProps<
+    Pick<RadioItemProps, 'displayType' | 'isError' | 'fallbackStyle'>
+  > & { checked: boolean }
 >`
   display: flex;
   flex-direction: column;
   cursor: pointer;
 
-  ${({ displayType, checked, isError, fallbackStyle }) => css`
-    ${(displayType === 'horizontal-card' || displayType === 'vertical-card') &&
+  ${({ $displayType, checked, $isError, $fallbackStyle }) => css`
+    ${($displayType === 'horizontal-card' ||
+      $displayType === 'vertical-card') &&
     css`
       border-radius: 12px;
-      background-color: ${fallbackStyle
+      background-color: ${$fallbackStyle
         ? theme.colors.cream
         : theme.colors.custard};
       padding: ${checked ? '10px' : '12px'};
       border: ${checked &&
-      (isError
+      ($isError
         ? `2px solid ${theme.colors.strawberry}`
         : `2px solid ${theme.colors.liquorice}`)};
 
       &:hover {
-        background-color: ${fallbackStyle
+        background-color: ${$fallbackStyle
           ? theme.colors.coconut
           : theme.colors.oatmeal};
       }
     `}
-    ${displayType === 'horizontal-card' &&
+    ${$displayType === 'horizontal-card' &&
     css`
       width: 100%;
       justify-content: center;
@@ -168,11 +172,11 @@ const Wrapper = styled.label<
   `}
 `
 
-const RadioText = styled.span<{ isError: boolean }>`
+const RadioText = styled.span<{ $isError: boolean }>`
   line-height: 16px;
   font-size: 16px;
   font-weight: ${theme.font.weight.medium};
-  color: ${({ isError }) =>
-    isError ? theme.colors.strawberry : theme.colors.liquorice};
+  color: ${({ $isError }) =>
+    $isError ? theme.colors.strawberry : theme.colors.liquorice};
   margin-top: 4px;
 `

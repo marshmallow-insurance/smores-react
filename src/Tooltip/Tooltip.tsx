@@ -180,7 +180,7 @@ export const Tooltip: FC<TooltipProps> = ({
     <Container>
       <UnderlinedChild
         id={randomId}
-        underline={underline}
+        $underline={underline}
         onMouseEnter={() => setShowTip(true)}
         onMouseLeave={() => setShowTip(false)}
       >
@@ -190,13 +190,13 @@ export const Tooltip: FC<TooltipProps> = ({
         createPortal(
           <Tip
             className="tooltip"
-            showTip={showTip}
-            position={position}
-            arrowPosition={tooltipPosition}
+            $showTip={showTip}
+            $position={position}
+            $arrowPosition={tooltipPosition}
             ref={tipContainer}
-            maxWidth={maxWidth}
-            fallbackStyle={fallbackStyle}
-            zIndex={zIndex}
+            $maxWidth={maxWidth}
+            $fallbackStyle={fallbackStyle}
+            $zIndex={zIndex}
             style={{
               position: 'absolute',
               top: `${tooltipCoords.top}px`,
@@ -238,10 +238,10 @@ export const Container = styled.div`
   }
 `
 
-const UnderlinedChild = styled(Box)<{ underline: boolean }>`
+const UnderlinedChild = styled(Box)<{ $underline: boolean }>`
   cursor: pointer;
-  ${({ underline }) =>
-    underline &&
+  ${({ $underline }) =>
+    $underline &&
     css`
       border-bottom: 1px dashed ${theme.colors.marshmallowPink};
     `}
@@ -285,44 +285,44 @@ const handleVerticalArrowPosition = (arrowPosition: ArrowPosition) => {
   }
 }
 
-const top = css<{ arrowPosition: ArrowPosition }>`
+const top = css<{ $arrowPosition: ArrowPosition }>`
   &:before {
     bottom: -15px;
     transform: rotate(-90deg);
-    ${({ arrowPosition }) => handleHorizontalArrowPosition(arrowPosition)}
+    ${({ $arrowPosition }) => handleHorizontalArrowPosition($arrowPosition)}
   }
 `
 
-const bottom = css<{ arrowPosition: ArrowPosition }>`
+const bottom = css<{ $arrowPosition: ArrowPosition }>`
   &:before {
     top: -15px;
     transform: rotate(90deg);
-    ${({ arrowPosition }) => handleHorizontalArrowPosition(arrowPosition)}
+    ${({ $arrowPosition }) => handleHorizontalArrowPosition($arrowPosition)}
   }
 `
 
-const left = css<{ arrowPosition: ArrowPosition }>`
+const left = css<{ $arrowPosition: ArrowPosition }>`
   &:before {
     right: -11px;
     transform: rotate(180deg);
-    ${({ arrowPosition }) => handleVerticalArrowPosition(arrowPosition)}
+    ${({ $arrowPosition }) => handleVerticalArrowPosition($arrowPosition)}
   }
 `
 
-const right = css<{ arrowPosition: ArrowPosition }>`
+const right = css<{ $arrowPosition: ArrowPosition }>`
   &:before {
     left: -11px;
-    ${({ arrowPosition }) => handleVerticalArrowPosition(arrowPosition)}
+    ${({ $arrowPosition }) => handleVerticalArrowPosition($arrowPosition)}
   }
 `
 
 export const Tip = styled.div<{
-  showTip: boolean
-  position: Position
-  arrowPosition: ArrowPosition
-  maxWidth?: number
-  fallbackStyle?: boolean
-  zIndex: number
+  $showTip: boolean
+  $position: Position
+  $arrowPosition: ArrowPosition
+  $maxWidth?: number
+  $fallbackStyle?: boolean
+  $zIndex: number
 }>`
   position: absolute;
   margin: auto;
@@ -330,20 +330,20 @@ export const Tip = styled.div<{
   padding: 16px 12px 20px;
   border-radius: 16px;
   max-width: 450px;
-  opacity: ${({ showTip }) => (showTip ? '1' : '0')};
+  opacity: ${({ $showTip }) => ($showTip ? '1' : '0')};
   transition: opacity 0.2s ease-in-out;
   pointer-events: none;
   cursor: default;
-  z-index: ${({ zIndex }) => (zIndex ? zIndex : '10')};
+  z-index: ${({ $zIndex }) => ($zIndex ? $zIndex : '10')};
 
   // this is the trick that will make sure the content can go up to maxWidth
-  margin-right: ${({ maxWidth }) => maxWidth && -maxWidth / 2 + 'px'};
-  max-width: ${({ maxWidth }) => maxWidth && maxWidth + 'px'};
+  margin-right: ${({ $maxWidth }) => $maxWidth && -$maxWidth / 2 + 'px'};
+  max-width: ${({ $maxWidth }) => $maxWidth && $maxWidth + 'px'};
 
-  ${({ arrowPosition }) => arrowPosition === 'top' && top}
-  ${({ arrowPosition }) => arrowPosition === 'bottom' && bottom}
-	${({ arrowPosition }) => arrowPosition === 'left' && left}
-	${({ arrowPosition }) => arrowPosition === 'right' && right}
+  ${({ $arrowPosition }) => $arrowPosition === 'top' && top}
+  ${({ $arrowPosition }) => $arrowPosition === 'bottom' && bottom}
+	${({ $arrowPosition }) => $arrowPosition === 'left' && left}
+	${({ $arrowPosition }) => $arrowPosition === 'right' && right}
 
   &:before {
     content: '';
@@ -353,8 +353,8 @@ export const Tip = styled.div<{
     position: absolute;
   }
 
-  ${({ fallbackStyle }) =>
-    fallbackStyle &&
+  ${({ $fallbackStyle }) =>
+    $fallbackStyle &&
     css`
       background: ${theme.colors.feijoa};
       &:before {

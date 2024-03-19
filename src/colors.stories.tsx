@@ -54,7 +54,7 @@ const ColorCard = ({ colorName }: { colorName: Color }) => {
   const hexValue = theme.colors[colorName]
   return (
     <ColorCardWrapper width="224px">
-      <ColorBox colorName={colorName} width="100%" pt={{ custom: '50%' }} />
+      <ColorBox $colorName={colorName} width="100%" pt={{ custom: '50%' }} />
       <Divider />
       <Box px="16px" py={{ custom: 4 }}>
         <Text tag="span" typo="base">
@@ -133,6 +133,6 @@ const ColorCardWrapper = styled(Box)`
   overflow: hidden;
 `
 
-const ColorBox = styled(Box)<{ colorName: Color }>`
-  background-color: ${({ colorName }) => theme.colors[colorName]};
+const ColorBox = styled(Box)<{ $colorName: Color }>`
+  background-color: ${({ $colorName }) => theme.colors[$colorName]};
 `

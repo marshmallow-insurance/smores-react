@@ -4,7 +4,7 @@ import { IconStrictProps } from '../IconStrict'
 import { Color } from '../theme'
 
 export type TableStylesProps = {
-  $hasKeyline?: boolean
+  hasKeyline?: boolean
   fixedHeader?: boolean
   headerHeight?: string
   stripedColor?: Color

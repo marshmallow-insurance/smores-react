@@ -1,5 +1,5 @@
-import React from 'react'
 import { Preview } from '@storybook/react'
+import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
 import { ResetCss } from './ResetCss'

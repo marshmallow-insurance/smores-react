@@ -33,7 +33,7 @@ export const Icon: FC<IconProps> = ({
 
   return (
     <Container
-      as="span"
+      forwardedAs="span"
       className={className}
       size={size}
       rotate={rotate}
@@ -45,7 +45,7 @@ export const Icon: FC<IconProps> = ({
   )
 }
 
-interface IIcon {
+interface IIcon extends MarginProps {
   size: number
   color: Color
   rotate: number

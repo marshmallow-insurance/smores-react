@@ -25,8 +25,8 @@ export const RowActions = <T extends object>({
 
   return (
     <StyledCell
-      stickyCell={Boolean(rowActions) || Boolean(expandable)}
-      rowActionsBgColor={rowActions?.bgColor}
+      $stickyCell={Boolean(rowActions) || Boolean(expandable)}
+      $rowActionsBgColor={rowActions?.bgColor}
     >
       <Box flex alignItems="center" justifyContent="flex-end">
         {rowActions &&
@@ -73,7 +73,7 @@ export const RowActions = <T extends object>({
               toggleExpansion()
             }}
             size={36}
-            isOpen={isExpanded}
+            $isOpen={isExpanded}
             backgroundColor="cream"
           />
         )}
@@ -96,9 +96,9 @@ const Wrapper = styled(Box)`
   }
 `
 
-const CaretIcon = styled(IconStrict)<{ isOpen?: boolean }>(
-  ({ isOpen }) => `
-    transform: ${isOpen ? 'rotate(90deg)' : 'rotate(0deg)'};
+const CaretIcon = styled(IconStrict)<{ $isOpen?: boolean }>(
+  ({ $isOpen }) => `
+    transform: ${$isOpen ? 'rotate(90deg)' : 'rotate(0deg)'};
     transition: transform 0.3s ease;
   `,
 )

@@ -2,35 +2,33 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-aXZVg sc-dcJsrY byxNQM gyETFp"
+  class="sc-beySPh kknHUq sc-eDLKkx dpwazC"
 >
   <div
-    class="sc-aXZVg sc-gsFSXq byxNQM oWIVQ"
+    class="sc-beySPh kknHUq sc-gLLuof iUmYIw"
   >
     <div
-      class="sc-aXZVg sc-kAyceB byxNQM jumUrD"
+      class="sc-beySPh kknHUq sc-iBdnpw hCpalD"
     />
   </div>
   <div
-    class="sc-aXZVg ipJMoi"
+    class="sc-beySPh efxwRk"
   >
     <div
-      class="sc-aXZVg giPgVs"
+      class="sc-beySPh kBoXEW"
     >
       <div
-        class="sc-aXZVg byxNQM"
+        class="sc-beySPh kknHUq"
       >
         <p
-          class="sc-aXZVg sc-fqkvVR byxNQM cmeJqK"
-          color="liquorice"
+          class="sc-beySPh kknHUq sc-hLQSwg cVkwUG"
           cursor="inherit"
           title=""
         >
           Some example title
         </p>
         <p
-          class="sc-aXZVg sc-fqkvVR byxNQM eIOPip"
-          color="liquorice"
+          class="sc-beySPh kknHUq sc-hLQSwg cWaFhx"
           cursor="inherit"
           title=""
         >
