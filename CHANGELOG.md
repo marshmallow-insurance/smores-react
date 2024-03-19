@@ -1,3 +1,10 @@
+## [6.2.3](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.2...v6.2.3) (2024-03-19)
+
+
+### Bug Fixes
+
+* **storyUtils:** to have release pr ([#3592](https://github.com/marshmallow-insurance/smores-react/issues/3592)) ([3c4c57e](https://github.com/marshmallow-insurance/smores-react/commit/3c4c57e7688e9148af5f88629a021a1eb3b6a3ba))
+
 ## [6.2.2](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.1...v6.2.2) (2024-03-18)
 
 
