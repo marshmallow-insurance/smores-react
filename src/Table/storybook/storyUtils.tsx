@@ -59,7 +59,7 @@ export const data: DataRow[] = [
     subRowData: [
       {
         id: 1,
-        name: 'Bulbasaur',
+        name: 'Ivysaur',
         type: 'Grass/Poison',
         ability: 'Overgrow',
         evolves: true,

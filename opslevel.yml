@@ -8,6 +8,7 @@ service:
   language: TypeScript
   framework: React
   description: React component library that conform to Marshmallow's Design System.
+  tier: essential
   repositories:
     - name: marshmallow-insurance/smores-react
       path: '/'
