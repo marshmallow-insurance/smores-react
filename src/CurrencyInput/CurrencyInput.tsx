@@ -1,11 +1,17 @@
-import React, { FocusEvent, FormEvent, forwardRef, ForwardedRef } from 'react'
+import React, {
+  FocusEvent,
+  FormEvent,
+  ForwardedRef,
+  WheelEvent,
+  forwardRef,
+} from 'react'
 
 import { Box } from '../Box'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 
-import { useUniqueId } from '../utils/id'
 import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
+import { useUniqueId } from '../utils/id'
 
 export interface Props extends CommonFieldProps {
   placeholder: string
@@ -113,6 +119,7 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
             onChange && handleChange(e.currentTarget.value)
             onInputChange && onInputChange(e)
           }}
+          onWheel={(e: WheelEvent<HTMLInputElement>) => e.currentTarget.blur()}
           onBlur={onBlur}
         />
       </Box>
