@@ -1,3 +1,10 @@
+## [7.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v7.0.0...v7.0.1) (2024-03-20)
+
+
+### Bug Fixes
+
+* prevent scroll on number input ([#3606](https://github.com/marshmallow-insurance/smores-react/issues/3606)) ([02d232e](https://github.com/marshmallow-insurance/smores-react/commit/02d232ec7bebd075e075e12c54c98efb5456df57))
+
 ## [7.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.3...v7.0.0) (2024-03-19)
 
 
