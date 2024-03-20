@@ -44,7 +44,7 @@
     "@snyk/protect": "^1.881.0",
     "@storybook/addon-essentials": "^7.0.6",
     "@storybook/builder-vite": "^7.0.6",
-    "@storybook/react": "^7.0.6",
+    "@storybook/react": "^8.0.2",
     "@storybook/react-vite": "^7.0.6",
     "@storybook/storybook-deployer": "^2.8.16",
     "@testing-library/react": "^14.0.0",
