@@ -2,24 +2,24 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-aXZVg sc-dcJsrY byxNQM CPfPK"
+  class="sc-beySPh kknHUq sc-eDLKkx lbxwAH"
 >
   <div
-    class="sc-aXZVg ctmUBA"
+    class="sc-beySPh lnWCea"
   >
     <div
-      class="sc-aXZVg erSZXY"
+      class="sc-beySPh iSAsCG"
     >
       <div
-        class="sc-aXZVg giPgVs"
+        class="sc-beySPh kBoXEW"
       >
         <div
-          class="sc-aXZVg byxNQM"
+          class="sc-beySPh kknHUq"
         />
       </div>
     </div>
     <div
-      class="sc-aXZVg jBfWKp"
+      class="sc-beySPh ceQHL"
     >
       Text inside
     </div>

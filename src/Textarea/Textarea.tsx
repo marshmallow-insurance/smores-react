@@ -1,10 +1,10 @@
 import React, { FocusEvent, FormEvent, ForwardedRef, forwardRef } from 'react'
 import styled from 'styled-components'
 
-import { theme } from '../theme'
-import { useUniqueId } from '../utils/id'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
+import { theme } from '../theme'
+import { useUniqueId } from '../utils/id'
 import { MarginProps } from '../utils/space'
 
 type BaseProps = {
@@ -59,12 +59,12 @@ export const Textarea = forwardRef(function Textarea(
     <Field {...fieldProps} htmlFor={id} error={error}>
       <StyledTextArea
         ref={ref}
-        error={error}
+        $error={error}
         id={id}
         name={name}
         disabled={disabled}
-        resize={resize}
-        fallbackStyle={fallbackStyle}
+        $resize={resize}
+        $fallbackStyle={fallbackStyle}
         placeholder={placeholder}
         value={value}
         onChange={(e: FormEvent<HTMLTextAreaElement>) => {
@@ -80,36 +80,35 @@ export const Textarea = forwardRef(function Textarea(
 })
 
 interface TextArea {
-  resize: 'none' | 'both'
+  $resize: 'none' | 'both'
   disabled: boolean
-  error: boolean
-  value: string
-  fallbackStyle?: boolean
+  $error: boolean
+  $fallbackStyle?: boolean
 }
 
 const StyledTextArea = styled.textarea<TextArea>`
   font-size: 16px;
   font: inherit;
   line-height: 20px;
-  background: ${({ fallbackStyle }) =>
-    fallbackStyle ? theme.colors.custard : theme.colors.cream};
+  background: ${({ $fallbackStyle }) =>
+    $fallbackStyle ? theme.colors.custard : theme.colors.cream};
   border: 2px solid ${theme.colors.oatmeal};
   box-sizing: border-box;
   border-radius: 12px;
   width: 100%;
   padding: 18px 14px;
   color: ${theme.colors.liquorice};
-  resize: ${({ resize }) => resize};
+  resize: ${({ $resize }) => $resize};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'text')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
-  border-color: ${({ error }) =>
-    theme.colors[`${error ? 'strawberry' : 'oatmeal'}`]};
+  border-color: ${({ $error }) =>
+    theme.colors[`${$error ? 'strawberry' : 'oatmeal'}`]};
   outline: none;
 
   &:hover,
   &:focus,
   &:focus-visible {
-    border-color: ${({ error }) =>
-      error ? theme.colors.strawberry : theme.colors.marzipan};
+    border-color: ${({ $error }) =>
+      $error ? theme.colors.strawberry : theme.colors.marzipan};
   }
 `

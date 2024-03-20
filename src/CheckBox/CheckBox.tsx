@@ -38,7 +38,7 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckBoxProps>(
             checked={checked}
             onChange={toggle}
           />
-          <Checkmark error={error} />
+          <Checkmark $error={error} />
         </BoxContainer>
         {error && errorMsg && <ErrorBox>{errorMsg}</ErrorBox>}
       </>
@@ -46,13 +46,13 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckBoxProps>(
   },
 )
 
-const Checkmark = styled.span<{ error?: boolean }>`
+const Checkmark = styled.span<{ $error?: boolean }>`
   position: absolute;
   left: 0;
   width: 24px;
   height: 24px;
-  border: ${({ error }) =>
-    error
+  border: ${({ $error }) =>
+    $error
       ? `solid 2px ${theme.colors.strawberry}`
       : `solid 2px ${theme.colors.liquorice}`};
   box-sizing: border-box;

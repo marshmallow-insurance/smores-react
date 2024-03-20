@@ -1,3 +1,77 @@
+## [7.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.3...v7.0.0) (2024-03-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* styled components v6
+
+* add emotion dependency
+* upgrade styled-components
+
+* add <StyledSheetManager /> to preview.tsx
+* using transientProps
+
+* update tests
+
+* as to forwardedAs
+
+* fix: rename BrandCard bgColour prop to bgColor
+
+* chore(release): 7.0.0-crumbs-sc-v6.1 [skip ci]
+
+## [7.0.0-crumbs-sc-v6.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.1...v7.0.0-crumbs-sc-v6.1) (2024-03-11)
+
+### ⚠ BREAKING CHANGES
+
+* upgrade styled-components
+
+* add <StyledSheetManager /> to preview.tsx
+* using transientProps
+
+* update tests
+
+* as to forwardedAs
+
+* fix: BrandCard bgColour prop to bgColor
+
+* breaking change: styled components v6 (#3555) ([b37baa5](https://github.com/marshmallow-insurance/smores-react/commit/b37baa5468a31692e6e878ee9b5078a8fba35f59)), closes [#3555](https://github.com/marshmallow-insurance/smores-react/issues/3555) [#3557](https://github.com/marshmallow-insurance/smores-react/issues/3557) [#3557](https://github.com/marshmallow-insurance/smores-react/issues/3557) [#3558](https://github.com/marshmallow-insurance/smores-react/issues/3558)
+
+## [6.2.3](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.2...v6.2.3) (2024-03-19)
+
+
+### Bug Fixes
+
+* **storyUtils:** to have release pr ([#3592](https://github.com/marshmallow-insurance/smores-react/issues/3592)) ([3c4c57e](https://github.com/marshmallow-insurance/smores-react/commit/3c4c57e7688e9148af5f88629a021a1eb3b6a3ba))
+
+## [6.2.2](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.1...v6.2.2) (2024-03-18)
+
+
+### Bug Fixes
+
+* handle 3 digits on pagination component ([#3558](https://github.com/marshmallow-insurance/smores-react/issues/3558)) ([9ee0c1b](https://github.com/marshmallow-insurance/smores-react/commit/9ee0c1b1196330d28a1c50f4ec13b062c23c3405))
+
+## [7.0.0-crumbs-sc-v6.2](https://github.com/marshmallow-insurance/smores-react/compare/v7.0.0-crumbs-sc-v6.1...v7.0.0-crumbs-sc-v6.2) (2024-03-13)
+
+### Bug Fixes
+
+* handle 3 digits on pagination component ([#3558](https://github.com/marshmallow-insurance/smores-react/issues/3558)) ([9ee0c1b](https://github.com/marshmallow-insurance/smores-react/commit/9ee0c1b1196330d28a1c50f4ec13b062c23c3405))
+
+## [7.0.0-crumbs-sc-v6.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.1...v7.0.0-crumbs-sc-v6.1) (2024-03-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade styled-components
+
+* add <StyledSheetManager /> to preview.tsx
+* using transientProps
+
+* update tests
+
+* as to forwardedAs
+
+* beaking change: using transient props (#3557) ([506eb03](https://github.com/marshmallow-insurance/smores-react/commit/506eb03e11afc72d0bbd31e007d26809b7312ab5)), closes [#3557](https://github.com/marshmallow-insurance/smores-react/issues/3557)
+
 ## [6.2.1](https://github.com/marshmallow-insurance/smores-react/compare/v6.2.0...v6.2.1) (2024-03-07)
 
 

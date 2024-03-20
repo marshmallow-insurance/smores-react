@@ -9,7 +9,7 @@ test('renders', () => {
       title="Some example title"
       body="Some example body"
       visual="imgUrl"
-      bgColour="tangerine"
+      bgColor="tangerine"
     />,
   )
   expect(container.firstChild).toMatchSnapshot()

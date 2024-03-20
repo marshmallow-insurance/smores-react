@@ -44,10 +44,10 @@ export const TableRow = <T extends object>({
   return (
     <>
       <StyledRow
-        stripedColor={stripedColor}
-        rowColor={rowColor}
-        rowBorderColor={rowBorderColor}
-        clickableRow={!!clickableRow}
+        $stripedColor={stripedColor}
+        $rowColor={rowColor}
+        $rowBorderColor={rowBorderColor}
+        $clickableRow={!!clickableRow}
         onClick={() => clickableRow && clickableRow(rowData)}
         tabIndex={clickableRow && 0}
       >
@@ -60,13 +60,13 @@ export const TableRow = <T extends object>({
           return (
             <StyledCell
               key={columnIndex}
-              rowPadding={rowPadding}
-              columnPadding={columnPadding}
-              minWidth={column.minWidth}
-              maxWidth={column.maxWidth}
-              noWrapContent={column.noWrapContent}
-              truncateContent={column.truncateContent}
-              hideOverflow={column.hideOverflow}
+              $rowPadding={rowPadding}
+              $columnPadding={columnPadding}
+              $minWidth={column.minWidth}
+              $maxWidth={column.maxWidth}
+              $noWrapContent={column.noWrapContent}
+              $truncateContent={column.truncateContent}
+              $hideOverflow={column.hideOverflow}
             >
               {cellContent}
             </StyledCell>

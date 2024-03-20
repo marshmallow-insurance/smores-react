@@ -1,9 +1,9 @@
 import React, {
   FocusEvent,
   FormEvent,
-  forwardRef,
   ForwardedRef,
   MouseEvent,
+  forwardRef,
 } from 'react'
 import styled from 'styled-components'
 
@@ -12,12 +12,12 @@ import { Icon } from '../Icon'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 
-import { useUniqueId } from '../utils/id'
 import {
   Input,
   StyledFrontIcon,
   StyledTrailingIcon,
 } from '../fields/components/CommonInput'
+import { useUniqueId } from '../utils/id'
 
 export interface Props extends CommonFieldProps {
   type?: 'number'
@@ -132,23 +132,23 @@ export const NumberInput = forwardRef(function NumberInput(
       <Box flex alignItems="center" justifyContent="flex-start">
         {frontIcon && (
           <StyledFrontIcon
-            disabled={disabled}
+            $disabled={disabled}
             render={frontIcon}
             color="sesame"
           />
         )}
         <Input
           ref={ref}
-          error={error}
+          $error={error}
           disabled={disabled}
           type={type}
           id={id}
           name={name}
           placeholder={placeholder}
           value={value}
-          frontIcon={frontIcon}
+          $frontIcon={frontIcon}
           step={step}
-          fallbackStyle={fallbackStyle}
+          $fallbackStyle={fallbackStyle}
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && handleChange(e.currentTarget.value)
             onInputChange && onInputChange(e)
@@ -169,7 +169,7 @@ export const NumberInput = forwardRef(function NumberInput(
         )}
         {trailingIcon && !step && (
           <StyledTrailingIcon
-            disabled={disabled}
+            $disabled={disabled}
             render={trailingIcon}
             color="sesame"
           />

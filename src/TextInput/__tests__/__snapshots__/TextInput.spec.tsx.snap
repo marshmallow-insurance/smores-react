@@ -2,17 +2,17 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-aXZVg sc-gsFSXq byxNQM cZVmFI"
+  class="sc-beySPh kknHUq sc-gLLuof bXJti"
 >
   <div
-    class="sc-aXZVg byxNQM"
+    class="sc-beySPh kknHUq"
   >
     <div
-      class="sc-aXZVg cowLnB"
+      class="sc-beySPh dxKTfv"
     >
       <input
         autocomplete="off"
-        class="sc-kAyceB jUthIA"
+        class="sc-iBdnpw fBNtKn"
         id="textInput"
         name="textInput"
         placeholder="Placeholder"

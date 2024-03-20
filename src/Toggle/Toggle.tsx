@@ -22,7 +22,7 @@ export const Toggle: FC<Props> = ({
   ...marginProps
 }) => {
   return (
-    <Switch as="label" id={id} {...marginProps}>
+    <Switch forwardedAs="label" id={id} {...marginProps}>
       <Checkbox
         type="checkbox"
         checked={checked}

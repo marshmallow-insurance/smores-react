@@ -14,8 +14,4 @@ Default.args = {
   symbol: '😉',
   size: 32,
   label: 'wink',
-  mt: '0',
-  mr: '0',
-  mb: '0',
-  ml: '0',
 }

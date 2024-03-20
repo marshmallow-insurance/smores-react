@@ -35,15 +35,15 @@ export const CollectionPage: FC = () => {
   return (
     <Box flex direction="column">
       {variationList.map(
-        ({ id, placeholder, errorMsg, label, assistiveText }) => {
+        ({ placeholder, errorMsg, label, assistiveText }, index) => {
           return (
-            <Box key={id} flex direction="column" mb="32px">
+            <Box key={index} flex direction="column" mb="32px">
               <Title tag="span" typo="header-medium">
                 TextInput variations
               </Title>
               <Row label="Generic">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   value=""
                   placeholder={placeholder}
@@ -54,7 +54,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="With label as title">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   value=""
                   renderAsTitle
@@ -66,7 +66,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="Fallback">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   value=""
                   placeholder={placeholder}
@@ -78,7 +78,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="Disabled">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   value=""
                   placeholder={placeholder}
@@ -90,7 +90,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="Disabled Fallback">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   value=""
                   placeholder={placeholder}
@@ -101,7 +101,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="Required">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   value=""
                   required={true}
@@ -113,7 +113,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="Leading Icon">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   frontIcon="search"
                   value=""
@@ -125,7 +125,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="Trailing Icon">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   trailingIcon="car"
                   value=""
@@ -137,7 +137,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="Assistive text">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   value=""
                   placeholder={placeholder}
@@ -149,7 +149,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="With label as title and assistive text with link">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   value=""
                   renderAsTitle
@@ -163,7 +163,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="Completed">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   value=""
                   placeholder={placeholder}
@@ -175,7 +175,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="As title">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   value=""
                   renderAsTitle={true}
@@ -187,7 +187,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="Error">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   value=""
                   required={true}
@@ -200,7 +200,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="React element error">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   required={true}
                   value=""
@@ -214,7 +214,7 @@ export const CollectionPage: FC = () => {
               </Row>
               <Row label="Fallback Error">
                 <TextInput
-                  id={id}
+                  id={Math.random() * 30 + ''}
                   label={label}
                   required={true}
                   value=""

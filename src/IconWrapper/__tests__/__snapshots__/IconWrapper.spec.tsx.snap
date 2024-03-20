@@ -2,10 +2,10 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-aXZVg sc-eqUAAy byxNQM fHVhUG"
+  class="sc-beySPh kknHUq sc-dmyCSP eLhZrL"
 >
   <span
-    class="sc-aXZVg sc-gEvEer byxNQM iOafxW"
+    class="sc-beySPh kknHUq sc-guDLey hBTcav"
     color="liquorice"
     rotate="0"
     size="24"
@@ -52,9 +52,7 @@ exports[`renders 1`] = `
     </svg>
   </span>
   <div
-    class="sc-fqkvVR jEHhDv"
-    r="auto"
-    size="16"
+    class="sc-hLQSwg kEDHpm"
   />
 </div>
 `;

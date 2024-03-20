@@ -100,21 +100,21 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
     <Field {...fieldProps} htmlFor={id} error={error}>
       <Box flex alignItems="center" justifyContent="flex-start">
         <StyledFrontIcon
-          disabled={disabled}
+          $disabled={disabled}
           render={frontIcon}
           color="sesame"
         />
         <Input
           ref={ref}
-          error={error}
+          $error={error}
           disabled={disabled}
           type="number"
           id={id}
           name={name}
           placeholder={placeholder}
           value={value}
-          frontIcon={frontIcon}
-          fallbackStyle={fallbackStyle}
+          $frontIcon={frontIcon}
+          $fallbackStyle={fallbackStyle}
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && handleChange(e.currentTarget.value)
             onInputChange && onInputChange(e)

@@ -1,4 +1,6 @@
-type MeasureFN = (arg: MeasureProps) => string
+import { TransientProps } from './utilTypes'
+
+type MeasureFN = (arg: TransientMeasureProps) => string
 
 export interface MeasureProps {
   width?: string
@@ -9,15 +11,18 @@ export interface MeasureProps {
   minHeight?: string
 }
 
-export const measure: MeasureFN = (props: MeasureProps) => {
-  const { width, height, maxWidth, minWidth, minHeight, maxHeight } = props
+export type TransientMeasureProps = TransientProps<MeasureProps>
+
+export const measure: MeasureFN = (props: TransientMeasureProps) => {
+  const { $width, $height, $maxWidth, $minWidth, $minHeight, $maxHeight } =
+    props
 
   return `
-    ${width ? `width: ${width};` : ''}
-    ${maxWidth ? `max-width: ${maxWidth};` : ''}
-    ${minWidth ? `min-width: ${minWidth};` : ''}
-    ${height ? `height: ${height};` : ''}
-    ${minHeight ? `min-height: ${minHeight};` : ''}
-    ${maxHeight ? `max-height: ${maxHeight};` : ''}
+    ${$width ? `width: ${$width};` : ''}
+    ${$maxWidth ? `max-width: ${$maxWidth};` : ''}
+    ${$minWidth ? `min-width: ${$minWidth};` : ''}
+    ${$height ? `height: ${$height};` : ''}
+    ${$minHeight ? `min-height: ${$minHeight};` : ''}
+    ${$maxHeight ? `max-height: ${$maxHeight};` : ''}
   `
 }

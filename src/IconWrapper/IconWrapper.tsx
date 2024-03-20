@@ -36,7 +36,7 @@ export const IconWrapper: FC<IconWrapperProps> = ({
 }) => (
   <Container className={className} {...marginProps}>
     {children}
-    <IconContainer size={size} t={t} r={r} b={b} l={l}>
+    <IconContainer $size={size} $t={t} $r={r} $b={b} $l={l}>
       {render === 'included' && (
         <Icon render="included" size={size} color="apple" />
       )}
@@ -53,22 +53,22 @@ const Container = styled(Box)`
 `
 
 interface IIcon {
-  size: number
-  t: string
-  r: string
-  b: string
-  l: string
+  $size: number
+  $t: string
+  $r: string
+  $b: string
+  $l: string
 }
 
 const IconContainer = styled.div<IIcon>(
-  ({ size, t, r, b, l }) => css`
+  ({ $size, $t, $r, $b, $l }) => css`
     position: absolute;
     width: 100%;
-    max-width: ${size}px;
-    height: ${size}px;
-    top: ${t};
-    right: ${r};
-    bottom: ${b};
-    left: ${l};
+    max-width: ${$size}px;
+    height: ${$size}px;
+    top: ${$t};
+    right: ${$r};
+    bottom: ${$b};
+    left: ${$l};
   `,
 )

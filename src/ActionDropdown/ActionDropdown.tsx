@@ -47,8 +47,8 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
       )}
 
       <Label
-        text={value.textColor ?? 'liquorice'}
-        bg={value.bgColor ?? 'sesame'}
+        $text={value.textColor ?? 'liquorice'}
+        $bg={value.bgColor ?? 'sesame'}
       >
         <SelectedOption>{value.label}</SelectedOption>
         <Icon
@@ -66,14 +66,14 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
 }
 
 interface ISelected {
-  text: Color
-  bg: Color
+  $text: Color
+  $bg: Color
 }
 
 const Label = styled.div<ISelected>(
-  ({ text, bg }) => css`
-    color: ${theme.colors[text]};
-    background-color: ${theme.colors[bg]};
+  ({ $text, $bg }) => css`
+    color: ${theme.colors[$text]};
+    background-color: ${theme.colors[$bg]};
     position: relative;
     width: 100%;
     height: 48px;
