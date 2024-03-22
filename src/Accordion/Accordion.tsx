@@ -8,7 +8,7 @@ import { Text } from '../Text'
 import { theme } from '../theme'
 import { MarginProps } from '../utils/space'
 
-export type AccordionProps = {
+export interface AccordionProps extends MarginProps {
   title: string
   subTitle?: string
   filledBackground?: boolean
@@ -19,7 +19,7 @@ export type AccordionProps = {
   onToggle?: (isOpen: boolean) => void
   children: ReactNode
   defaultIsOpen?: boolean
-} & MarginProps
+}
 
 export const Accordion: FC<AccordionProps> = ({
   title,

@@ -11,14 +11,15 @@ import {
   padding,
 } from '../utils/space'
 
-export type BoxProps = MarginProps &
-  PaddingProps &
-  FlexProps &
-  MeasureProps &
-  HTMLAttributes<HTMLElement> & {
-    as?: ElementType
-    forwardedAs?: ElementType
-  }
+export interface BoxProps
+  extends MarginProps,
+    PaddingProps,
+    FlexProps,
+    MeasureProps,
+    HTMLAttributes<HTMLElement> {
+  as?: ElementType
+  forwardedAs?: ElementType
+}
 
 export type TransientBoxProps = TransientMarginProps &
   TransientPaddingProps &

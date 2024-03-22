@@ -6,14 +6,14 @@ import { theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
-type Props = {
+interface Props extends MarginProps {
   /** unique ID */
   id?: string
   /** checked flag  */
   checked: boolean
   /** onToggle listener  */
   onToggle: () => void
-} & MarginProps
+}
 
 export const Toggle: FC<Props> = ({
   id,

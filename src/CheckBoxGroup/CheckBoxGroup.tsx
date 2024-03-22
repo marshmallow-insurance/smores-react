@@ -11,10 +11,10 @@ type Item = {
   checked: boolean
 }
 
-type CheckBoxGroupProps = {
+interface CheckBoxGroupProps extends MarginProps {
   list: Item[]
   onToggle: (id: number) => void
-} & MarginProps
+}
 
 export const CheckBoxGroup: FC<CheckBoxGroupProps> = ({
   list,

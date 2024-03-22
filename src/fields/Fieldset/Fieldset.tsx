@@ -4,7 +4,7 @@ import { MarginProps } from '../../utils/space'
 import { CommonFieldProps } from '../commonFieldTypes'
 import { InternalField } from '../components/InternalField'
 
-export type FieldsetProps = CommonFieldProps & MarginProps
+export interface FieldsetProps extends CommonFieldProps, MarginProps {}
 
 export const Fieldset = ({
   children,

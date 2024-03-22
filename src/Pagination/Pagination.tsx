@@ -12,7 +12,7 @@ import { MarginProps } from '../utils/space'
 const MAX_PAGES = 7
 const MAX_ADDITIONAL_PAGES = Math.ceil(MAX_PAGES / 2)
 
-export type PaginationProps = {
+export interface PaginationProps extends MarginProps {
   /** Total number of records  */
   total: number
   /** Number of records per page  */
@@ -21,7 +21,7 @@ export type PaginationProps = {
   handlePageChange: (page: number) => void
   /** Sets current page number */
   currentPage?: number
-} & MarginProps
+}
 
 export const Pagination: FC<PaginationProps> = ({
   total,

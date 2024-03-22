@@ -7,13 +7,13 @@ import { Box } from '../Box'
 import { Text } from '../Text'
 import { Color, theme } from '../theme'
 
-export type TagProps = {
+export interface TagProps extends MarginProps {
   label: string
   color: Color
   bgColor: Color
   borderColor?: Color
   className?: string
-} & MarginProps
+}
 
 export const Tag: FC<TagProps> = ({
   label,

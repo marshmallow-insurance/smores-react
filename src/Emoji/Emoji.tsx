@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { Box } from '../Box'
 import { MarginProps } from '../utils/space'
 
-export type EmojiProps = {
+export interface EmojiProps extends MarginProps {
   /** className attribute to apply classes from props */
   className?: string
   /** Emoji symbol */
@@ -12,7 +12,7 @@ export type EmojiProps = {
   size?: number
   /** aria-label to identify Emoji */
   label: string
-} & MarginProps
+}
 
 export const Emoji: FC<EmojiProps> = ({
   className = '',

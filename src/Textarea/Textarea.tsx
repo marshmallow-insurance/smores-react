@@ -7,7 +7,7 @@ import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 import { MarginProps } from '../utils/space'
 
-type BaseProps = {
+interface BaseProps extends CommonFieldProps, MarginProps {
   id?: string
   placeholder?: string
   name?: string
@@ -20,8 +20,7 @@ type BaseProps = {
   onBlur?: (e: FocusEvent<HTMLTextAreaElement>) => void
   rows?: number
   fallbackStyle?: boolean
-} & CommonFieldProps &
-  MarginProps
+}
 
 type TruncateProps =
   | {

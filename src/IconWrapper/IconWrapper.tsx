@@ -7,7 +7,7 @@ import { Icons } from '../Icon/iconsList'
 
 import { MarginProps } from '../utils/space'
 
-export type IconWrapperProps = {
+export interface IconWrapperProps extends MarginProps {
   /** className attribute to apply classes from props */
   className?: string
   /* */
@@ -21,7 +21,7 @@ export type IconWrapperProps = {
   r?: string
   b?: string
   l?: string
-} & MarginProps
+}
 
 export const IconWrapper: FC<IconWrapperProps> = ({
   className = '',

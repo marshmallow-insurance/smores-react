@@ -9,7 +9,7 @@ import { ActionListItem, List } from './List'
 import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
 
-export type ActionDropdownProps = {
+export interface ActionDropdownProps extends MarginProps {
   id?: string
   className?: string
   /** label displayed above the dropdown  */
@@ -20,7 +20,7 @@ export type ActionDropdownProps = {
   list: ActionListItem[]
   /** onSelect handler */
   onSelect: (action: ActionListItem) => void
-} & MarginProps
+}
 
 export const ActionDropdown: FC<ActionDropdownProps> = ({
   id,

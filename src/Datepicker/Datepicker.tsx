@@ -36,7 +36,7 @@ const getAvailableMonths = (startDate: Date, endDate: Date) => {
   }))
 }
 
-export type DatepickerProps = {
+export interface DatepickerProps extends MarginProps {
   showDayLabels?: boolean
   disableWeekend?: boolean
   fromDate?: Date
@@ -48,7 +48,7 @@ export type DatepickerProps = {
   onChange?: (value: Date) => void
   value?: Date
   fallbackStyle?: boolean
-} & MarginProps
+}
 
 export const Datepicker: FC<DatepickerProps> = ({
   showDayLabels = false,

@@ -49,7 +49,7 @@ export type Typo =
   | 'caption'
   | 'label'
 
-type Props = {
+interface Props extends MarginProps {
   children: ReactNode
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tag?: any
@@ -62,9 +62,11 @@ type Props = {
   color?: Color
   cursor?: string
   title?: string
-} & MarginProps
+}
 
-export type TextProps = Props & Omit<LabelHTMLAttributes<HTMLElement>, 'color'>
+export interface TextProps
+  extends Props,
+    Omit<LabelHTMLAttributes<HTMLElement>, 'color' | 'children'> {}
 
 export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
   (

@@ -18,7 +18,7 @@ interface IButton {
   disabled: boolean
 }
 
-type Props = {
+interface Props extends MarginProps {
   children: ReactNode
   handleClick: (e: React.FormEvent<HTMLButtonElement>) => void
   primary?: boolean
@@ -26,9 +26,11 @@ type Props = {
   icon?: Icons
   disabled?: boolean
   loading?: boolean
-} & MarginProps
+}
 
-export type ChipProps = Props & ButtonHTMLAttributes<HTMLButtonElement>
+export interface ChipProps
+  extends Props,
+    Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {}
 
 export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
   (
