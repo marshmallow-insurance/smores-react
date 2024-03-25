@@ -31,6 +31,11 @@
     "experimentalDecorators": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*", "src/global.d.ts", "vitest.config.ts"],
+  "include": [
+    "src/**/*",
+    "src/global.d.ts",
+    "vite.config.ts",
+    "vitest.config.ts"
+  ],
   "exclude": ["node_modules", "dist", "scripts"]
 }

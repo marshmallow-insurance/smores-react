@@ -17,6 +17,7 @@
     "node_modules",
     "dist",
     "scripts",
+    "vite.config.ts",
     "vitest.config.ts"
   ]
 }
