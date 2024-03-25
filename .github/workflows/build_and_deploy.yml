@@ -19,6 +19,11 @@ jobs:
         run: |
           npm ci
           npm run build-storybook
+      - name: Preview Publish 🦫
+        env:
+          GITHUB_TOKEN: ${{ secrets.MARSHMALLOW_CI_PAT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release --dry-run
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
