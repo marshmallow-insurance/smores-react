@@ -22,7 +22,3 @@ jobs:
       - name: Test 🧪
         run: |
           npm run test
-      - name: Fossa dependency analysis 🐛
-        uses: fossas/fossa-action@main
-        with:
-          api-key: ${{ secrets.FOSSA_API_KEY }}
