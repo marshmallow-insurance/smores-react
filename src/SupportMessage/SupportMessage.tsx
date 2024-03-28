@@ -58,13 +58,13 @@ type SupportMessageType =
   | 'warning'
   | 'success'
 
-export type SupportMessageProps = {
+export interface SupportMessageProps extends MarginProps {
   className?: string
   description: string | ReactElement
   onClick?: MouseEventHandler
   type: SupportMessageType
   title?: string
-} & MarginProps
+}
 
 export const SupportMessage: FC<SupportMessageProps> = ({
   className,

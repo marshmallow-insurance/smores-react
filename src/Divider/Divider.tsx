@@ -5,11 +5,11 @@ import { Box } from '../Box'
 import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
 
-export type DividerProps = {
+export interface DividerProps extends MarginProps {
   maxWidth?: string
   height?: string
   color?: Color
-} & MarginProps
+}
 
 export const Divider: FC<DividerProps> = memo(function Divider({
   maxWidth = 'none',

@@ -11,7 +11,7 @@ import { theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
-export type CardProps = {
+export interface CardProps extends MarginProps {
   children?: ReactNode
   /** leading card icon */
   leadingIcon?: Icons
@@ -44,7 +44,7 @@ export type CardProps = {
   narrow?: boolean
   /** Wide padding */
   wide?: boolean
-} & MarginProps
+}
 
 export const Card: FC<CardProps> = ({
   children,

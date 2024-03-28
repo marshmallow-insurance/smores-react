@@ -20,7 +20,8 @@ import { ITEM_GAP } from './constants'
 import { RadioItem } from './RadioItem'
 import { BaseValueType, DisplayType, IconPosition } from './types'
 
-export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
+export interface RadioGroupProps<Value extends BaseValueType = BaseValueType>
+  extends CommonFieldProps {
   options: Array<{
     visual?: string
     icon?: Icons
@@ -34,7 +35,7 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   value: Value
   displayType?: DisplayType
   fallbackStyle?: boolean
-} & CommonFieldProps
+}
 
 export type RadioGroupElement = {
   focus: VoidFunction
