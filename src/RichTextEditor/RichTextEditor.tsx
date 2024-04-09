@@ -20,7 +20,7 @@ import {
   LexicalNode,
   RootNode,
 } from 'lexical'
-import React, { FC, useState } from 'react'
+import React, { FC, useCallback, useState } from 'react'
 import styled from 'styled-components'
 import { Box } from '../Box'
 import { theme } from '../theme'
@@ -61,18 +61,20 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({
 }) => {
   const [editorState, setEditorState] = useState<null | LexicalEditor>(null)
 
-  editorState &&
-    editorState.update(() => {
-      const parser = new DOMParser()
-      const dom = parser.parseFromString(
-        value ? DOMPurify.sanitize(value) : '<p></p>',
-        'text/html',
-      )
-      const root = $getRoot()
-      root.clear()
-      const nodes = $generateNodesFromDOM(editorState, dom)
-      appendNodes(root, nodes)
-    })
+  useCallback(() => {
+    editorState &&
+      editorState.update(() => {
+        const parser = new DOMParser()
+        const dom = parser.parseFromString(
+          value ? DOMPurify.sanitize(value) : '<p></p>',
+          'text/html',
+        )
+        const root = $getRoot()
+        root.clear()
+        const nodes = $generateNodesFromDOM(editorState, dom)
+        appendNodes(root, nodes)
+      })
+  }, [value])()
 
   const defaultEditorState = (editor: LexicalEditor) => {
     setEditorState(editor)
