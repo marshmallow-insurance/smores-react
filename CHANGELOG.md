@@ -1,3 +1,16 @@
+## [9.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v8.0.0...v9.0.0) (2024-04-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* allow update default value for rich text editor
+
+* extract duplicated logic
+
+* fix: rich text editor update bug
+
+* Fix rich text editor update (#3655) ([148be83](https://github.com/marshmallow-insurance/smores-react/commit/148be83fc44368919a4fb51ce5039ad1eb48d470)), closes [#3655](https://github.com/marshmallow-insurance/smores-react/issues/3655)
+
 ## [8.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v7.0.1...v8.0.0) (2024-04-09)
 
 
