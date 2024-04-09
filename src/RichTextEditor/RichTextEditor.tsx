@@ -13,7 +13,13 @@ import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPl
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { HeadingNode, QuoteNode } from '@lexical/rich-text'
 import DOMPurify from 'dompurify'
-import { $createParagraphNode, $getRoot, LexicalEditor } from 'lexical'
+import {
+  $createParagraphNode,
+  $getRoot,
+  LexicalEditor,
+  LexicalNode,
+  RootNode,
+} from 'lexical'
 import React, { FC, useState } from 'react'
 import styled from 'styled-components'
 import { Box } from '../Box'
@@ -29,6 +35,20 @@ export interface RichTextEditorProps extends MarginProps {
   height?: string
   outline?: boolean
   onChange: (e: string) => void
+}
+
+const appendNodes = (root: RootNode, nodes: LexicalNode[]) => {
+  nodes
+    .filter((node) => node.__type !== 'linebreak')
+    .map((node) => {
+      if (node.__type === 'text') {
+        const paragraphNode = $createParagraphNode()
+        paragraphNode.append(node)
+        return paragraphNode
+      }
+      return node
+    })
+    .forEach((node) => root.append(node))
 }
 
 export const RichTextEditor: FC<RichTextEditorProps> = ({
@@ -51,18 +71,7 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({
       const root = $getRoot()
       root.clear()
       const nodes = $generateNodesFromDOM(editorState, dom)
-
-      nodes
-        .filter((node) => node.__type !== 'linebreak')
-        .map((node) => {
-          if (node.__type === 'text') {
-            const paragraphNode = $createParagraphNode()
-            paragraphNode.append(node)
-            return paragraphNode
-          }
-          return node
-        })
-        .forEach((node) => root.append(node))
+      appendNodes(root, nodes)
     })
 
   const defaultEditorState = (editor: LexicalEditor) => {
@@ -76,17 +85,7 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({
     const root = $getRoot()
     root.clear()
 
-    nodes
-      .filter((node) => node.__type !== 'linebreak')
-      .map((node) => {
-        if (node.__type === 'text') {
-          const paragraphNode = $createParagraphNode()
-          paragraphNode.append(node)
-          return paragraphNode
-        }
-        return node
-      })
-      .forEach((node) => root.append(node))
+    appendNodes(root, nodes)
   }
 
   const initialConfig = {
