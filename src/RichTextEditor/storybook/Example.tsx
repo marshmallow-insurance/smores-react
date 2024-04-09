@@ -6,8 +6,8 @@ export const Example = () => {
   return (
     <RichTextEditor
       onChange={(e) => console.log(e)}
-      maxHeight='1000px'
-      defaultValue={`
+      maxHeight="1000px"
+      value={`
         <h1>H1 Header</h1>
         <h2>H2 Header</h2>
         <h3>H3 Header</h3>
