@@ -158,7 +158,7 @@ export default function ToolbarPlugin() {
         }}
         $active={isBold}
       >
-        B
+        Q
       </Bold>
       <Italic
         onClick={() => {

@@ -1,22 +1,16 @@
 import { $generateNodesFromDOM } from '@lexical/html'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { appendNodes } from 'RichTextEditor/utils'
 import DOMPurify from 'dompurify'
 import { $getRoot } from 'lexical'
-import { FC, useRef, useState } from 'react'
+import { FC, useEffect } from 'react'
+import { appendNodes } from '../utils'
 
 export const EditorDefaultUpdatePlugin: FC<{
   defaultValue?: string
 }> = ({ defaultValue }) => {
   const [editor] = useLexicalComposerContext()
-  const [previousDefaultValue, setPreviousDefaultValue] = useState(defaultValue)
-  const previousDefaultValueRef = useRef(defaultValue)
 
-  previousDefaultValueRef.current = previousDefaultValue
-
-  if (defaultValue && defaultValue !== previousDefaultValue) {
-    console.log(defaultValue, previousDefaultValue)
-    setPreviousDefaultValue(defaultValue)
+  useEffect(() => {
     editor.update(() => {
       const parser = new DOMParser()
       const dom = parser.parseFromString(
@@ -28,7 +22,7 @@ export const EditorDefaultUpdatePlugin: FC<{
       const nodes = $generateNodesFromDOM(editor, dom)
       appendNodes(root, nodes)
     })
-  }
+  }, [defaultValue])
 
   return null
 }
