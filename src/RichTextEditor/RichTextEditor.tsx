@@ -1,27 +1,27 @@
+import { CodeHighlightNode, CodeNode } from '@lexical/code'
+import { $generateNodesFromDOM } from '@lexical/html'
+import { AutoLinkNode, LinkNode } from '@lexical/link'
+import { ListItemNode, ListNode } from '@lexical/list'
+import { TRANSFORMERS } from '@lexical/markdown'
+import { LexicalComposer } from '@lexical/react/LexicalComposer'
+import { ContentEditable } from '@lexical/react/LexicalContentEditable'
+import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
+import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
+import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
+import { ListPlugin } from '@lexical/react/LexicalListPlugin'
+import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
+import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
+import { HeadingNode, QuoteNode } from '@lexical/rich-text'
+import DOMPurify from 'dompurify'
+import { $createParagraphNode, $getRoot, LexicalEditor } from 'lexical'
 import React, { FC } from 'react'
-import { MarginProps } from '../utils/space'
 import styled from 'styled-components'
 import { Box } from '../Box'
 import { theme } from '../theme'
-import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
-import { ContentEditable } from '@lexical/react/LexicalContentEditable'
-import { LexicalComposer } from '@lexical/react/LexicalComposer'
-import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
+import { MarginProps } from '../utils/space'
 import CustomAutoLinkPlugin from './plugins/AutoLinkPlugin'
-import { AutoLinkNode, LinkNode } from '@lexical/link'
-import { ListNode, ListItemNode } from '@lexical/list'
-import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
-import ToolbarPlugin from './plugins/ToolbarPlugin'
-import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
-import { ListPlugin } from '@lexical/react/LexicalListPlugin'
-import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
-import { TRANSFORMERS } from '@lexical/markdown'
-import { HeadingNode, QuoteNode } from '@lexical/rich-text'
-import { CodeHighlightNode, CodeNode } from '@lexical/code'
-import { $generateNodesFromDOM } from '@lexical/html'
-import { $createParagraphNode, $getRoot, LexicalEditor } from 'lexical'
-import DOMPurify from 'dompurify'
 import { EditorUpdatePlugin } from './plugins/EditorUpdatePlugin'
+import ToolbarPlugin from './plugins/ToolbarPlugin'
 
 export interface RichTextEditorProps extends MarginProps {
   defaultValue?: string
@@ -93,7 +93,7 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({
           <HistoryPlugin />
           <CustomAutoLinkPlugin />
           <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
-          <EditorUpdatePlugin onChange={onChange} />
+          <EditorUpdatePlugin onChange={onChange} defaultValue={defaultValue} />
         </LexicalComposer>
       </Editor>
     </Container>

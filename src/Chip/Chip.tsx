@@ -53,6 +53,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
       onClick={handleClick}
       $icon={icon}
       {...props}
+      // @ts-ignore
       ref={ref}
     >
       {loading ? (

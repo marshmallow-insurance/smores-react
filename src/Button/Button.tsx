@@ -75,6 +75,7 @@ export const Button: FC<ButtonProps> = forwardRef<
       {...(form ? { form } : {})}
       type={type}
       {...otherProps}
+      // @ts-ignore
       ref={ref}
     >
       {loading && (

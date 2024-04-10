@@ -61,6 +61,7 @@ export const IconStrict: FC<IconStrictProps> = ({
     $size={size}
     {...marginProps}
     $backgroundColor={backgroundColor}
+    // @ts-ignore
     onClick={handleClick}
     onKeyDown={(e: { key: string }) => {
       if (!handleClick) return
