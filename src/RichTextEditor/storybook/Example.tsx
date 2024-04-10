@@ -29,7 +29,7 @@ export const Example = () => {
     <RichTextEditor
       onChange={setValue}
       maxHeight="1000px"
-      value={defaultValue}
+      defaultValue={defaultValue}
       m="16px"
     />
   )
