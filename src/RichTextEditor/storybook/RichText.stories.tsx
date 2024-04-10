@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC, useState } from 'react'
 import { RichTextEditor, RichTextEditorProps } from '../RichTextEditor'
 import { CollectionPage } from './Collection'
 import { Example } from './Example'
@@ -8,12 +8,22 @@ export default {
   component: RichTextEditor,
 }
 
-const Template = (props: RichTextEditorProps) => <RichTextEditor {...props} />
+const Template: FC = (props: RichTextEditorProps) => {
+  const [_value, setValue] = useState(props.defaultValue)
+
+  return (
+    <RichTextEditor
+      {...props}
+      defaultValue={props.defaultValue}
+      onChange={(e) => setValue(e)}
+    />
+  )
+}
 
 export const Default = Template.bind({})
 
 Default.args = {
-  value:
+  defaultValue:
     '<h1>Header</h1><h2>Subheading</h2><p>A paragraph of text with a <a href="https://liamp.uk">link</a></p>',
   onChange: () => {},
   height: '300px',

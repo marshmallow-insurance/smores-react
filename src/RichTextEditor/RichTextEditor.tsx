@@ -13,74 +13,38 @@ import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPl
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { HeadingNode, QuoteNode } from '@lexical/rich-text'
 import DOMPurify from 'dompurify'
-import {
-  $createParagraphNode,
-  $getRoot,
-  LexicalEditor,
-  LexicalNode,
-  RootNode,
-} from 'lexical'
-import React, { FC, useCallback, useState } from 'react'
+import { $getRoot, LexicalEditor } from 'lexical'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Box } from '../Box'
 import { theme } from '../theme'
 import { MarginProps } from '../utils/space'
 import CustomAutoLinkPlugin from './plugins/AutoLinkPlugin'
+import { EditorDefaultUpdatePlugin } from './plugins/EditorDefaultUpdatePlugin'
 import { EditorUpdatePlugin } from './plugins/EditorUpdatePlugin'
 import ToolbarPlugin from './plugins/ToolbarPlugin'
+import { appendNodes } from './utils'
 
 export interface RichTextEditorProps extends MarginProps {
-  value?: string
+  defaultValue?: string
   maxHeight?: string
   height?: string
   outline?: boolean
   onChange: (e: string) => void
 }
 
-const appendNodes = (root: RootNode, nodes: LexicalNode[]) => {
-  nodes
-    .filter((node) => node.__type !== 'linebreak')
-    .map((node) => {
-      if (node.__type === 'text') {
-        const paragraphNode = $createParagraphNode()
-        paragraphNode.append(node)
-        return paragraphNode
-      }
-      return node
-    })
-    .forEach((node) => root.append(node))
-}
-
 export const RichTextEditor: FC<RichTextEditorProps> = ({
-  value,
+  defaultValue,
   height,
   outline = false,
   maxHeight = '300px',
   onChange,
   ...props
 }) => {
-  const [editorState, setEditorState] = useState<null | LexicalEditor>(null)
-
-  useCallback(() => {
-    editorState &&
-      editorState.update(() => {
-        const parser = new DOMParser()
-        const dom = parser.parseFromString(
-          value ? DOMPurify.sanitize(value) : '<p></p>',
-          'text/html',
-        )
-        const root = $getRoot()
-        root.clear()
-        const nodes = $generateNodesFromDOM(editorState, dom)
-        appendNodes(root, nodes)
-      })
-  }, [value])()
-
   const defaultEditorState = (editor: LexicalEditor) => {
-    setEditorState(editor)
     const parser = new DOMParser()
     const dom = parser.parseFromString(
-      value ? DOMPurify.sanitize(value) : '<p></p>',
+      defaultValue ? DOMPurify.sanitize(defaultValue) : '<p></p>',
       'text/html',
     )
     const nodes = $generateNodesFromDOM(editor, dom)
@@ -122,6 +86,7 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({
           <CustomAutoLinkPlugin />
           <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
           <EditorUpdatePlugin onChange={onChange} />
+          <EditorDefaultUpdatePlugin defaultValue={defaultValue} />
         </LexicalComposer>
       </Editor>
     </Container>

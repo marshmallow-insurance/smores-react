@@ -1,33 +1,32 @@
-import React from "react";
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import { useCallback, useEffect, useRef, useState } from "react";
-import {
-  CAN_REDO_COMMAND,
-  CAN_UNDO_COMMAND,
-  SELECTION_CHANGE_COMMAND,
-  FORMAT_TEXT_COMMAND,
-  $getSelection,
-  $isRangeSelection,
-  RangeSelection,
-} from "lexical";
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link";
+import {
+  $isListNode,
+  INSERT_UNORDERED_LIST_COMMAND,
+  ListNode,
+  REMOVE_LIST_COMMAND
+} from "@lexical/list";
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import {
+  $isHeadingNode
+} from "@lexical/rich-text";
 import {
   $isAtNodeEnd
 } from "@lexical/selection";
 import { $getNearestNodeOfType, mergeRegister } from "@lexical/utils";
 import {
-  INSERT_UNORDERED_LIST_COMMAND,
-  REMOVE_LIST_COMMAND,
-  $isListNode,
-  ListNode
-} from "@lexical/list";
-import {
-  $isHeadingNode
-} from "@lexical/rich-text";
+  $getSelection,
+  $isRangeSelection,
+  CAN_REDO_COMMAND,
+  CAN_UNDO_COMMAND,
+  FORMAT_TEXT_COMMAND,
+  RangeSelection,
+  SELECTION_CHANGE_COMMAND,
+} from "lexical";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Box } from "../../Box";
-import { theme } from "../../theme";
 import { Icon } from "../../Icon";
+import { theme } from "../../theme";
 
 const LowPriority = 1;
 
