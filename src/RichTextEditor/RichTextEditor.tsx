@@ -20,6 +20,7 @@ import { Box } from '../Box'
 import { theme } from '../theme'
 import { MarginProps } from '../utils/space'
 import CustomAutoLinkPlugin from './plugins/AutoLinkPlugin'
+import { EditorDefaultUpdatePlugin } from './plugins/EditorDefaultUpdatePlugin'
 import { EditorUpdatePlugin } from './plugins/EditorUpdatePlugin'
 import ToolbarPlugin from './plugins/ToolbarPlugin'
 
@@ -93,7 +94,8 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({
           <HistoryPlugin />
           <CustomAutoLinkPlugin />
           <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
-          <EditorUpdatePlugin onChange={onChange} defaultValue={defaultValue} />
+          <EditorUpdatePlugin onChange={onChange} />
+          <EditorDefaultUpdatePlugin defaultValue={defaultValue} />
         </LexicalComposer>
       </Editor>
     </Container>
