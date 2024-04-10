@@ -1,3 +1,10 @@
+## [9.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.0.0...v9.1.0) (2024-04-10)
+
+
+### Features
+
+* fix rich text editor update ([#3659](https://github.com/marshmallow-insurance/smores-react/issues/3659)) ([823cff6](https://github.com/marshmallow-insurance/smores-react/commit/823cff6ba9789f5d894d5da282608844d7f56118))
+
 ## [9.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v8.0.0...v9.0.0) (2024-04-09)
 
 
