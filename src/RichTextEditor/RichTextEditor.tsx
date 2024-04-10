@@ -13,7 +13,7 @@ import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPl
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { HeadingNode, QuoteNode } from '@lexical/rich-text'
 import DOMPurify from 'dompurify'
-import { $createParagraphNode, $getRoot, LexicalEditor } from 'lexical'
+import { $getRoot, LexicalEditor } from 'lexical'
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Box } from '../Box'
@@ -23,6 +23,7 @@ import CustomAutoLinkPlugin from './plugins/AutoLinkPlugin'
 import { EditorDefaultUpdatePlugin } from './plugins/EditorDefaultUpdatePlugin'
 import { EditorUpdatePlugin } from './plugins/EditorUpdatePlugin'
 import ToolbarPlugin from './plugins/ToolbarPlugin'
+import { appendNodes } from './utils'
 
 export interface RichTextEditorProps extends MarginProps {
   defaultValue?: string
@@ -50,17 +51,7 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({
     const root = $getRoot()
     root.clear()
 
-    nodes
-      .filter((node) => node.__type !== 'linebreak')
-      .map((node) => {
-        if (node.__type === 'text') {
-          const paragraphNode = $createParagraphNode()
-          paragraphNode.append(node)
-          return paragraphNode
-        }
-        return node
-      })
-      .forEach((node) => root.append(node))
+    appendNodes(root, nodes)
   }
 
   const initialConfig = {

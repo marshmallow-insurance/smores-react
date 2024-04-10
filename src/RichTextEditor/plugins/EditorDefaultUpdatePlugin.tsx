@@ -1,7 +1,8 @@
 import { $generateNodesFromDOM } from '@lexical/html'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
+import { appendNodes } from 'RichTextEditor/utils'
 import DOMPurify from 'dompurify'
-import { $createParagraphNode, $getRoot } from 'lexical'
+import { $getRoot } from 'lexical'
 import { FC, useRef, useState } from 'react'
 
 export const EditorDefaultUpdatePlugin: FC<{
@@ -25,17 +26,7 @@ export const EditorDefaultUpdatePlugin: FC<{
       const root = $getRoot()
       root.clear()
       const nodes = $generateNodesFromDOM(editor, dom)
-      nodes
-        .filter((node) => node.__type !== 'linebreak')
-        .map((node) => {
-          if (node.__type === 'text') {
-            const paragraphNode = $createParagraphNode()
-            paragraphNode.append(node)
-            return paragraphNode
-          }
-          return node
-        })
-        .forEach((node) => root.append(node))
+      appendNodes(root, nodes)
     })
   }
 
