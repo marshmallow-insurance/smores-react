@@ -1,3 +1,32 @@
+## [9.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v8.0.0...v9.0.0) (2024-04-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* allow update default value for rich text editor
+
+* extract duplicated logic
+
+* fix: rich text editor update bug
+
+* Fix rich text editor update (#3655) ([148be83](https://github.com/marshmallow-insurance/smores-react/commit/148be83fc44368919a4fb51ce5039ad1eb48d470)), closes [#3655](https://github.com/marshmallow-insurance/smores-react/issues/3655)
+
+## [8.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v7.0.1...v8.0.0) (2024-04-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* allow update default value for rich text editor
+
+* extract duplicated logic
+
+* breaking change: allow update default value for rich text editor (#3654) ([beddc4f](https://github.com/marshmallow-insurance/smores-react/commit/beddc4f84e9c2929c05f6d8a14ac9bb72327473c)), closes [#3654](https://github.com/marshmallow-insurance/smores-react/issues/3654)
+
+
+### Bug Fixes
+
+* remove fossa check on PR creation ([#3619](https://github.com/marshmallow-insurance/smores-react/issues/3619)) ([0279bd5](https://github.com/marshmallow-insurance/smores-react/commit/0279bd5e5b573bed3ff1b735746532bc9b64ff5b))
+
 ## [7.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v7.0.0...v7.0.1) (2024-03-20)
 
 
