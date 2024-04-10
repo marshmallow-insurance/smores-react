@@ -1,6 +1,3 @@
-const ref = process.env.GITHUB_REF
-const branch = ref.split('/').pop()
-
 const config = {
   branches: [
     'main',
@@ -81,21 +78,6 @@ const config = {
       },
     ],
   ],
-}
-
-const isPrereleaseBranch = config.branches.some(
-  (b) => typeof b === 'object' && b.name === branch && b.prerelease,
-)
-
-if (!isPrereleaseBranch) {
-  config.plugins.push([
-    '@semantic-release/git',
-    {
-      assets: ['CHANGELOG.md'],
-      message:
-        'chore(release): ${nextRelease.version} \n\n${nextRelease.notes}',
-    },
-  ])
 }
 
 export default config
