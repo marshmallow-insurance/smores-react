@@ -26,7 +26,3 @@ jobs:
           branch: gh-pages
           folder: storybook-static
           clean: true
-      - name: Fossa dependency analysis 🐛
-        uses: fossas/fossa-action@main
-        with:
-          api-key: ${{ secrets.FOSSA_API_KEY }}

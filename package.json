@@ -1,6 +1,6 @@
 {
-  "name": "@mrshmllw/smores-react",
-  "version": "9.1.0",
+  "name": "testing-testing",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "description": "Collection of React components used by Marshmallow Technology",
   "keywords": [
@@ -87,10 +87,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marshmallow-insurance/smores-react.git"
+    "url": "git+https://github.com/rowanhen/testing-testing.git"
   },
   "author": "Todor Tsankov",
   "license": "MIT",
-  "homepage": "https://github.com/marshmallow-insurance/smores-react#readme",
+  "homepage": "https://github.com/rowanhen/testing-testing#readme",
   "snyk": true
 }

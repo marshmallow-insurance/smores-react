@@ -33,6 +33,6 @@ jobs:
           npm ci
       - name: Generate CHANGELOG.md & Bump & Release to NPM 🦫
         env:
-          GITHUB_TOKEN: ${{ secrets.MARSHMALLOW_CI_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
