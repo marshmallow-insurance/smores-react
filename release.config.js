@@ -92,4 +92,4 @@ if (!isPrereleaseBranch) {
   ])
 }
 
-export default config
+module.exports = config
