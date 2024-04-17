@@ -47,7 +47,7 @@ const styles: Record<SupportMessageType, StylesItem> = {
     iconColor: 'apple',
     backgroundColor: theme.colors.mint,
     hoverBackgroundColor: darken(0.1, theme.colors.mint),
-    icon: 'included',
+    icon: 'circle-tick',
   },
 }
 
