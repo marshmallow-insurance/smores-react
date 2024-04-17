@@ -1,3 +1,10 @@
+## [9.1.2](https://github.com/marshmallow-insurance/smores-react/compare/v9.1.1...v9.1.2) (2024-04-17)
+
+
+### Bug Fixes
+
+* remove uuid from tooltip ([#3677](https://github.com/marshmallow-insurance/smores-react/issues/3677)) ([2b4cc80](https://github.com/marshmallow-insurance/smores-react/commit/2b4cc80288efb401feba47ec1e1712e1235982f7))
+
 ## [9.1.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.1.0...v9.1.1) (2024-04-17)
 
 
