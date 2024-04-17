@@ -1,3 +1,10 @@
+## [9.1.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.1.0...v9.1.1) (2024-04-17)
+
+
+### Bug Fixes
+
+* success supportMessage icon ([#3675](https://github.com/marshmallow-insurance/smores-react/issues/3675)) ([d9b57fd](https://github.com/marshmallow-insurance/smores-react/commit/d9b57fdc90b5acd304d0f7911aadfb9cc1a8a587))
+
 ## [9.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.0.0...v9.1.0) (2024-04-10)
 
 
