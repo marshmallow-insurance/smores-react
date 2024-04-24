@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
-import { MarginProps } from '../utils/space'
+import type { MarginProps, PaddingProps } from '../utils/space'
 
 import { Box } from '../Box'
 import { Color, theme } from '../theme'
@@ -17,7 +17,8 @@ export type IconProps = {
   color?: Color
   /** rotation degrees */
   rotate?: number
-} & MarginProps
+} & MarginProps &
+  PaddingProps
 
 export const Icon: FC<IconProps> = ({
   className = '',
