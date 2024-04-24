@@ -26,7 +26,7 @@ export const Icon: FC<IconProps> = ({
   size = 24,
   color = 'liquorice',
   rotate = 0,
-  ...marginProps
+  ...spaceProps
 }) => {
   if (!render || !iconList[render] || render.length === 0) return null
 
@@ -39,14 +39,14 @@ export const Icon: FC<IconProps> = ({
       size={size}
       rotate={rotate}
       color={color}
-      {...marginProps}
+      {...spaceProps}
     >
       <IconComponent />
     </Container>
   )
 }
 
-interface IIcon extends MarginProps {
+interface IIcon extends MarginProps, PaddingProps {
   size: number
   color: Color
   rotate: number
