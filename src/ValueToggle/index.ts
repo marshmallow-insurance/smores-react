@@ -1,1 +1,1 @@
-export { ValueToggle } from './ValueToggle'
+export * from './ValueToggle'
