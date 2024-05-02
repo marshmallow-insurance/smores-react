@@ -52,8 +52,8 @@ const Wrapper = styled(Box)<{ isSelected: boolean; isDisabled: boolean }>`
   transition: color 0.1s linear;
   height: fit-content;
   width: 100%;
+  align-content: center;
   z-index: 3;
-  text-align: center;
   font-weight: ${theme.font.weight.medium};
   ${({ isSelected }) => isSelected && `color: ${theme.colors.cream};`}
 `

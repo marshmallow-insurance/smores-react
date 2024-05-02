@@ -6,13 +6,15 @@ import { Tag } from '../Tag'
 import React from 'react'
 import { ToggleButton } from './ToggleButton'
 
+//TODO: add ability to set text separately color and type and text arrange to center
+
 export type ValueToggleOption<T> = {
   label: string
   value: T
   tag?: string // optional tag able to show in the toggle if showTag prop is passed
 }
 
-type ValueToggleProps<T> = {
+export type ValueToggleProps<T> = {
   options: ValueToggleOption<T>[] // you can pass more than 2 options
   value: T
   onChange: (value: T) => void
@@ -71,11 +73,9 @@ const BORDER_RADIUS = 25
 
 const StyledWrapper = styled(Box)`
   display: flex;
-  align-self: center;
   justify-content: center;
   align-items: center;
   gap: 4px;
-  margin-top: -2px;
 `
 
 const StyledTag = styled(Tag)`
