@@ -6,7 +6,7 @@ import { theme } from '../theme'
 import { Box } from '../Box'
 import { IconStrict } from '../IconStrict'
 import { Text } from '../Text'
-import useBodyScrollLock from './useBodyScrollLock'
+import { useBodyScrollLock } from './useBodyScrollLock'
 
 interface IModalWrapper {
   // showModal state
