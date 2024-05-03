@@ -1,13 +1,15 @@
 import React from 'react'
 import { Container } from './Container'
-import { ValueToggle, ValueToggleProps } from '../ValueToggle'
+import { SegmentedControl, SegmentedControlProps } from '../SegmentedControl'
 
 export default {
-  title: 'ValueToggle',
-  component: ValueToggle,
+  title: 'SegmentedControl',
+  component: SegmentedControl,
 }
 
-const Template = <T,>(props: ValueToggleProps<T>) => <Container {...props} />
+const Template = <T,>(props: SegmentedControlProps<T>) => (
+  <Container {...props} />
+)
 
 export const Default = Template.bind({})
 

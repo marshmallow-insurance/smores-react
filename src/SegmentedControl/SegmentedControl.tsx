@@ -7,18 +7,21 @@ import { Text } from '../Text'
 import React from 'react'
 import { ToggleButton } from './ToggleButton'
 
-export type ValueToggleOption<T> = {
+export type SegmentedControlOption<T> = {
   label: string
   value: T
-  tag?: string // optional tag able to show in the toggle if showTag prop is passed
+  /** optional tag able to show in the toggle if showTag prop is passed */
+  tag?: string
   isDisabled?: boolean
 }
 
-export type ValueToggleProps<T> = {
-  options: ValueToggleOption<T>[] // you can pass more than 2 options
+export type SegmentedControlProps<T> = {
+  /** you can pass more than 2 options */
+  options: SegmentedControlOption<T>[]
   value: T
   onChange: (value: T) => void
-  showTag?: boolean // pass this prop if you want to show the tag in the toggle
+  /**  pass this prop if you want to show the tag in the toggle */
+  showTag?: boolean
   toggleColor?: Color
   backgroundColor?: Color
   textColor?: Color
@@ -28,8 +31,8 @@ export type ValueToggleProps<T> = {
   tagBorderColor?: Color
 }
 
-// recommend to use a useState to store the selected value above the component
-export const ValueToggle = <T,>({
+/**recommend to use a useState to store the selected value above the component */
+export const SegmentedControl = <T,>({
   options,
   value,
   onChange,
@@ -41,7 +44,7 @@ export const ValueToggle = <T,>({
   tagColor = 'marshmallowPink',
   tagBorderColor = 'marshmallowPink',
   tagTextColor = 'cream',
-}: ValueToggleProps<T>) => {
+}: SegmentedControlProps<T>) => {
   return (
     <ToggleWrapper backgroundColor={backgroundColor}>
       <IndicatorWrapper backgroundColor={backgroundColor}>
