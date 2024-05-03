@@ -3,15 +3,15 @@ import styled from 'styled-components'
 import { Color, theme } from '../theme'
 import { Box } from '../Box'
 import { Tag } from '../Tag'
+import { Text } from '../Text'
 import React from 'react'
 import { ToggleButton } from './ToggleButton'
-
-//TODO: add ability to set text separately color and type and text arrange to center
 
 export type ValueToggleOption<T> = {
   label: string
   value: T
   tag?: string // optional tag able to show in the toggle if showTag prop is passed
+  isDisabled?: boolean
 }
 
 export type ValueToggleProps<T> = {
@@ -21,6 +21,11 @@ export type ValueToggleProps<T> = {
   showTag?: boolean // pass this prop if you want to show the tag in the toggle
   toggleColor?: Color
   backgroundColor?: Color
+  textColor?: Color
+  selectedTextColor?: Color
+  tagColor?: Color
+  tagTextColor?: Color
+  tagBorderColor?: Color
 }
 
 // recommend to use a useState to store the selected value above the component
@@ -31,6 +36,11 @@ export const ValueToggle = <T,>({
   showTag,
   toggleColor: toggleColor,
   backgroundColor,
+  textColor = 'liquorice',
+  selectedTextColor = 'cream',
+  tagColor = 'marshmallowPink',
+  tagBorderColor = 'marshmallowPink',
+  tagTextColor = 'cream',
 }: ValueToggleProps<T>) => {
   return (
     <ToggleWrapper backgroundColor={backgroundColor}>
@@ -43,17 +53,24 @@ export const ValueToggle = <T,>({
               value={option.value}
               onChange={onChange}
               isSelected={option.value === value}
+              isDisabled={option.isDisabled}
             >
               <StyledWrapper>
                 {showTag && option.tag && (
                   <StyledTag
-                    bgColor="marshmallowPink"
-                    borderColor="marshmallowPink"
-                    color="cream"
+                    bgColor={tagColor}
+                    borderColor={tagBorderColor}
+                    color={tagTextColor}
                     label={option.tag}
                   />
                 )}
-                {option.label}
+                <StyledText
+                  isSelected={option.value === value}
+                  selectedTextColor={selectedTextColor}
+                  color={textColor}
+                >
+                  {option.label}
+                </StyledText>
               </StyledWrapper>
             </ToggleButton>
           )
@@ -80,6 +97,16 @@ const StyledWrapper = styled(Box)`
 
 const StyledTag = styled(Tag)`
   border-radius: 100px;
+`
+
+const StyledText = styled(Text)<{
+  isSelected: boolean
+  selectedTextColor: Color
+}>`
+  font-weight: ${theme.font.weight.medium};
+  ${({ isSelected, selectedTextColor }) =>
+    isSelected && `color: ${theme.colors[selectedTextColor]};`}
+  padding: 2px 0px;
 `
 
 const ToggleWrapper = styled(Box)<{ backgroundColor?: Color }>`

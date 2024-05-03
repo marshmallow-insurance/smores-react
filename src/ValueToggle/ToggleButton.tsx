@@ -2,7 +2,6 @@ import { Box } from '../Box'
 import React from 'react'
 import { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
-import { theme } from '../theme'
 
 type ToggleButtonProps<Value> = {
   name: string
@@ -24,7 +23,6 @@ export const ToggleButton = <Value,>({
   return (
     <Wrapper
       as="label"
-      isSelected={isSelected}
       data-testId={`value-toggle-${value}`}
       isDisabled={isDisabled}
     >
@@ -40,7 +38,7 @@ export const ToggleButton = <Value,>({
   )
 }
 
-const Wrapper = styled(Box)<{ isSelected: boolean; isDisabled: boolean }>`
+const Wrapper = styled(Box)<{ isDisabled: boolean }>`
   cursor: pointer;
   ${({ isDisabled }) =>
     isDisabled &&
@@ -54,8 +52,6 @@ const Wrapper = styled(Box)<{ isSelected: boolean; isDisabled: boolean }>`
   width: 100%;
   align-content: center;
   z-index: 3;
-  font-weight: ${theme.font.weight.medium};
-  ${({ isSelected }) => isSelected && `color: ${theme.colors.cream};`}
 `
 
 const VisuallyHiddenInput = styled.input`
