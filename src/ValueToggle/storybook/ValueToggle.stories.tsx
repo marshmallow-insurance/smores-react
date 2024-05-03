@@ -24,11 +24,11 @@ export const Custom = Template.bind({})
 
 Custom.args = {
   options: [
-    { label: 'Option 1', value: 'option1' },
-    { label: 'Option 2', value: 'option2', tag: 'tag 2' },
-    { label: 'Option 3', value: 'option3', tag: 'tag 3', isDisabled: true },
+    { label: 'Option 1', value: 1 },
+    { label: 'Option 2', value: 2, tag: 'tag 2' },
+    { label: 'Option 3', value: 3, tag: 'tag 3', isDisabled: true },
   ],
-  value: 'option2',
+  value: 2,
   showTag: true,
   toggleColor: 'cream',
   backgroundColor: 'marshmallowPink',
