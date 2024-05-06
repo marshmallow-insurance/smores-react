@@ -23,6 +23,7 @@ export type ModalProps = {
   title?: string
   icon?: string
   children?: ReactNode
+  rightPanel?: ReactNode
   showModal?: boolean
   handleClick: () => void
   drawer?: boolean
@@ -35,6 +36,7 @@ export type ModalProps = {
 export const Modal: FC<ModalProps> = ({
   title = '',
   children,
+  rightPanel,
   showModal = false,
   handleClick,
   drawer = true,
@@ -66,14 +68,17 @@ export const Modal: FC<ModalProps> = ({
               {title}
             </Text>
           </TitleElements>
-          {cross && (
-            <IconStrict
-              render="cross"
-              backgroundColor="oatmeal"
-              handleClick={handleClick}
-              size={36}
-            />
-          )}
+          <Box flex alignItems="center" gap={'8px'}>
+            {rightPanel}
+            {cross && (
+              <IconStrict
+                render="cross"
+                backgroundColor="oatmeal"
+                handleClick={handleClick}
+                size={36}
+              />
+            )}
+          </Box>
         </Box>
         <Box flex direction="column">
           {children}
@@ -120,6 +125,7 @@ const Container = styled.div<IModalContainer>(
     position: fixed;
     max-height: calc(100vh - 64px);
     overflow: auto;
+    transition: all 0.3s ease-in-out;
 
     ${$drawer === true &&
     css`
