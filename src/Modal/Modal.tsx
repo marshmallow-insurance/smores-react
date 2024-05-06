@@ -31,6 +31,7 @@ export type ModalProps = {
   width?: string
   containerClass?: string
   portalContainer?: Element | DocumentFragment
+  closeOnOverlayClick?: boolean
 }
 
 export const Modal: FC<ModalProps> = ({
@@ -44,6 +45,7 @@ export const Modal: FC<ModalProps> = ({
   width,
   containerClass,
   portalContainer = document.body,
+  closeOnOverlayClick = true,
 }) => {
   const modalRef = useRef<HTMLDivElement>(null)
 
@@ -51,7 +53,10 @@ export const Modal: FC<ModalProps> = ({
 
   return createPortal(
     <Wrapper $showModal={showModal} ref={modalRef}>
-      <Overlay onClick={handleClick} />
+      <Overlay
+        onClick={() => closeOnOverlayClick && handleClick()}
+        closeOnOverlayClick={closeOnOverlayClick}
+      />
       <Container
         $drawer={drawer}
         $width={width || '460px'}
@@ -103,10 +108,10 @@ const Wrapper = styled(Box)<IModalWrapper>(
   `,
 )
 
-const Overlay = styled.div`
+const Overlay = styled.div<{ closeOnOverlayClick: boolean }>`
   position: fixed;
   background: ${theme.colors.liquorice};
-  cursor: pointer;
+  cursor: ${(props) => (props.closeOnOverlayClick ? 'pointer' : 'default')};
   opacity: 0.4;
   top: 0;
   bottom: 0;

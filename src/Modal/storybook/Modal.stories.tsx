@@ -22,5 +22,5 @@ Interactive.args = {
   showModal: false,
   drawer: true,
   cross: true,
-  width: '640px',
+  closeOnOverlayClick: false,
 }
