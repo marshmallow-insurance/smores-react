@@ -1,6 +1,6 @@
 {
   "name": "@mrshmllw/smores-react",
-  "version": "9.1.0",
+  "version": "9.1.2",
   "main": "./dist/index.js",
   "description": "Collection of React components used by Marshmallow Technology",
   "keywords": [
@@ -55,7 +55,7 @@
     "@types/testing-library__react": "^10.2.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.2.0",
-    "conventional-changelog-conventionalcommits": "^7.0.2",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
     "eslint": "^7.9.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "^7.29.2",
@@ -70,8 +70,8 @@
     "storybook": "^8.0.4",
     "styled-components": "^6.1.8",
     "typescript": "^5.0.2",
-    "vitest": "^1.2.2",
-    "vite": "^5.2.6"
+    "vite": "^5.2.6",
+    "vitest": "^1.2.2"
   },
   "dependencies": {
     "@lexical/react": "^0.13.1",

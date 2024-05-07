@@ -8,7 +8,6 @@ import React, {
 } from 'react'
 import { createPortal } from 'react-dom'
 import styled, { css } from 'styled-components'
-import { v4 as uuidv4 } from 'uuid'
 import { Box } from '../Box'
 import { Text } from '../Text'
 import { useEventListener } from '../hooks'
@@ -48,7 +47,7 @@ export const Tooltip: FC<TooltipProps> = ({
   const [childEl, setChildEl] = useState<HTMLElement | null>(null)
   const [tooltipCoords, setTooltipCoords] = useState({ top: 0, left: 0 })
 
-  const randomId = uuidv4()
+  const randomId = crypto.randomUUID()
 
   const checkInbounds = (element: DOMRect): boolean =>
     element.top >= 0 &&
