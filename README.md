@@ -30,7 +30,7 @@ $ npm install @mrshmllw/smores-react
 
 When making changes and creating PR's we use [semantic-releases](https://www.npmjs.com/package/semantic-release) which make use of [conventional-commits](https://www.conventionalcommits.org/en/v1.0.0/). 
 
-So to ensure our CHANGELOG.md is updated automatically and gets the changes we have made, we just need to name our PR's following this convention: e.g
+So to ensure our CHANGELOG.md is updated automatically and gets the changes we have made, we just need to name our PR's following this convention (casing matters): e.g
 
 1. patch - fix(OPTIONAL bugfix-reference): some bugfix
 2. minor - feat(OPTIONAL feature-reference): some feature
