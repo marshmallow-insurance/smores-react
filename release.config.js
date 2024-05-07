@@ -26,6 +26,7 @@ const config = {
           { type: 'perf', release: 'patch' },
           { type: 'test', release: 'patch' },
           { type: 'revert', release: 'patch' },
+          { type: 'Revert', release: 'patch' },
           { type: 'chore', release: 'patch' },
         ],
         parserOpts: {
@@ -54,6 +55,7 @@ const config = {
             { type: 'perf', section: 'Performance Improvements' },
             { type: 'test', section: 'Tests' },
             { type: 'revert', hidden: true },
+            { type: 'Revert', hidden: true },
             { type: '*', section: 'Others' },
           ],
         },
