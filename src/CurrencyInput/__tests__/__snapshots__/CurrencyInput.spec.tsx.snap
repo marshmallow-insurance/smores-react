@@ -2,10 +2,10 @@
 
 exports[`renders - disabled 1`] = `
 <div
-  class="sc-beySPh kknHUq sc-gLLuof bXJti"
+  class="sc-beySPh kknHUq sc-iBdnpw hObaGP"
 >
   <label
-    class="sc-beySPh cuSjOj sc-hLQSwg gLOShS"
+    class="sc-beySPh cuSjOj sc-eDLKkx iyKPwv"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -19,7 +19,7 @@ exports[`renders - disabled 1`] = `
       class="sc-beySPh dxKTfv"
     >
       <span
-        class="sc-beySPh kknHUq sc-guDLey bBcdgr sc-fsYfdN hoMIGE"
+        class="sc-beySPh kknHUq sc-dmyCSP gSmNUh sc-qZrbh dJjun"
         color="sesame"
         rotate="0"
         size="24"
@@ -38,7 +38,7 @@ exports[`renders - disabled 1`] = `
         </svg>
       </span>
       <input
-        class="sc-iBdnpw jQivlP"
+        class="sc-fsYfdN fcqyZ"
         disabled=""
         id="currencyInput"
         name="currencyInput"
@@ -53,10 +53,10 @@ exports[`renders - disabled 1`] = `
 
 exports[`renders - error 1`] = `
 <div
-  class="sc-beySPh kknHUq sc-gLLuof bXJti"
+  class="sc-beySPh kknHUq sc-iBdnpw hObaGP"
 >
   <label
-    class="sc-beySPh cuSjOj sc-hLQSwg cibKFK"
+    class="sc-beySPh cuSjOj sc-eDLKkx cVLfJj"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -70,7 +70,7 @@ exports[`renders - error 1`] = `
       class="sc-beySPh dxKTfv"
     >
       <span
-        class="sc-beySPh kknHUq sc-guDLey bBcdgr sc-fsYfdN fyDMOK"
+        class="sc-beySPh kknHUq sc-dmyCSP gSmNUh sc-qZrbh mlDzt"
         color="sesame"
         rotate="0"
         size="24"
@@ -89,7 +89,7 @@ exports[`renders - error 1`] = `
         </svg>
       </span>
       <input
-        class="sc-iBdnpw fJYBZN"
+        class="sc-fsYfdN ihRJnb"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
@@ -99,7 +99,7 @@ exports[`renders - error 1`] = `
     </div>
   </div>
   <span
-    class="sc-beySPh jBbmPD sc-hLQSwg dApRvc"
+    class="sc-beySPh jBbmPD sc-eDLKkx fMiVAB"
     cursor="inherit"
     title=""
   >
@@ -110,17 +110,17 @@ exports[`renders - error 1`] = `
 
 exports[`renders - number 1`] = `
 <div
-  class="sc-beySPh kknHUq sc-gLLuof bXJti"
+  class="sc-beySPh kknHUq sc-iBdnpw hObaGP"
 >
   <label
-    class="sc-beySPh cuSjOj sc-hLQSwg gLOShS"
+    class="sc-beySPh cuSjOj sc-eDLKkx iyKPwv"
     cursor="inherit"
     for="CurrencyInput"
     title=""
   >
     Number
     <span
-      class="sc-beySPh kknHUq sc-hLQSwg hjlRnH"
+      class="sc-beySPh kknHUq sc-eDLKkx grDtvC"
       cursor="inherit"
       title=""
     >
@@ -134,7 +134,7 @@ exports[`renders - number 1`] = `
       class="sc-beySPh dxKTfv"
     >
       <span
-        class="sc-beySPh kknHUq sc-guDLey bBcdgr sc-fsYfdN fyDMOK"
+        class="sc-beySPh kknHUq sc-dmyCSP gSmNUh sc-qZrbh mlDzt"
         color="sesame"
         rotate="0"
         size="24"
@@ -153,7 +153,7 @@ exports[`renders - number 1`] = `
         </svg>
       </span>
       <input
-        class="sc-iBdnpw gZjyMn"
+        class="sc-fsYfdN bSHPbF"
         id="CurrencyInput"
         name="CurrencyInput"
         placeholder="0.00"
