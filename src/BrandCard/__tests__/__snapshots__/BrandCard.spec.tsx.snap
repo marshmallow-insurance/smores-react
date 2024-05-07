@@ -2,13 +2,13 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-beySPh kknHUq sc-eDLKkx dpwazC"
+  class="sc-beySPh kknHUq sc-jTQCzO kMSXxa"
 >
   <div
-    class="sc-beySPh kknHUq sc-gLLuof iUmYIw"
+    class="sc-beySPh kknHUq sc-iBdnpw hlAknF"
   >
     <div
-      class="sc-beySPh kknHUq sc-iBdnpw hCpalD"
+      class="sc-beySPh kknHUq sc-fsYfdN czoqmp"
     />
   </div>
   <div
@@ -21,14 +21,14 @@ exports[`renders 1`] = `
         class="sc-beySPh kknHUq"
       >
         <p
-          class="sc-beySPh kknHUq sc-hLQSwg cVkwUG"
+          class="sc-beySPh kknHUq sc-eDLKkx ejkkbP"
           cursor="inherit"
           title=""
         >
           Some example title
         </p>
         <p
-          class="sc-beySPh kknHUq sc-hLQSwg cWaFhx"
+          class="sc-beySPh kknHUq sc-eDLKkx uBcAU"
           cursor="inherit"
           title=""
         >

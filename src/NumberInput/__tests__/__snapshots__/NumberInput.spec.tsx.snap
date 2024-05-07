@@ -2,10 +2,10 @@
 
 exports[`renders - currency 1`] = `
 <div
-  class="sc-beySPh kknHUq sc-gLLuof bXJti"
+  class="sc-beySPh kknHUq sc-iBdnpw hObaGP"
 >
   <label
-    class="sc-beySPh cuSjOj sc-hLQSwg gLOShS"
+    class="sc-beySPh cuSjOj sc-eDLKkx iyKPwv"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -19,7 +19,7 @@ exports[`renders - currency 1`] = `
       class="sc-beySPh dxKTfv"
     >
       <input
-        class="sc-iBdnpw fBNtKn"
+        class="sc-fsYfdN bmfEOR"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
@@ -28,13 +28,13 @@ exports[`renders - currency 1`] = `
         value="50"
       />
       <div
-        class="sc-jsEeTM CPgAR"
+        class="sc-kFCroH gpvqmy"
       >
         <button
-          class="sc-kFCroH dfvsKA"
+          class="sc-irLvIq jOcjzK"
         >
           <span
-            class="sc-beySPh kknHUq sc-guDLey jCIMiq"
+            class="sc-beySPh kknHUq sc-dmyCSP extVns"
             color="sesame"
             rotate="180"
             size="24"
@@ -54,10 +54,10 @@ exports[`renders - currency 1`] = `
           </span>
         </button>
         <button
-          class="sc-kFCroH dfvsKA"
+          class="sc-irLvIq jOcjzK"
         >
           <span
-            class="sc-beySPh kknHUq sc-guDLey bBcdgr"
+            class="sc-beySPh kknHUq sc-dmyCSP gSmNUh"
             color="sesame"
             rotate="0"
             size="24"
@@ -84,10 +84,10 @@ exports[`renders - currency 1`] = `
 
 exports[`renders - disabled 1`] = `
 <div
-  class="sc-beySPh kknHUq sc-gLLuof bXJti"
+  class="sc-beySPh kknHUq sc-iBdnpw hObaGP"
 >
   <label
-    class="sc-beySPh cuSjOj sc-hLQSwg gLOShS"
+    class="sc-beySPh cuSjOj sc-eDLKkx iyKPwv"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -101,7 +101,7 @@ exports[`renders - disabled 1`] = `
       class="sc-beySPh dxKTfv"
     >
       <input
-        class="sc-iBdnpw fLnzFH"
+        class="sc-fsYfdN dceYtF"
         disabled=""
         id="currencyInput"
         name="currencyInput"
@@ -117,10 +117,10 @@ exports[`renders - disabled 1`] = `
 
 exports[`renders - error 1`] = `
 <div
-  class="sc-beySPh kknHUq sc-gLLuof bXJti"
+  class="sc-beySPh kknHUq sc-iBdnpw hObaGP"
 >
   <label
-    class="sc-beySPh cuSjOj sc-hLQSwg cibKFK"
+    class="sc-beySPh cuSjOj sc-eDLKkx cVLfJj"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -134,7 +134,7 @@ exports[`renders - error 1`] = `
       class="sc-beySPh dxKTfv"
     >
       <input
-        class="sc-iBdnpw fAPQpp"
+        class="sc-fsYfdN fGTdKD"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
@@ -143,13 +143,13 @@ exports[`renders - error 1`] = `
         value="200"
       />
       <div
-        class="sc-jsEeTM CPgAR"
+        class="sc-kFCroH gpvqmy"
       >
         <button
-          class="sc-kFCroH dfvsKA"
+          class="sc-irLvIq jOcjzK"
         >
           <span
-            class="sc-beySPh kknHUq sc-guDLey jCIMiq"
+            class="sc-beySPh kknHUq sc-dmyCSP extVns"
             color="sesame"
             rotate="180"
             size="24"
@@ -169,10 +169,10 @@ exports[`renders - error 1`] = `
           </span>
         </button>
         <button
-          class="sc-kFCroH dfvsKA"
+          class="sc-irLvIq jOcjzK"
         >
           <span
-            class="sc-beySPh kknHUq sc-guDLey bBcdgr"
+            class="sc-beySPh kknHUq sc-dmyCSP gSmNUh"
             color="sesame"
             rotate="0"
             size="24"
@@ -195,7 +195,7 @@ exports[`renders - error 1`] = `
     </div>
   </div>
   <span
-    class="sc-beySPh jBbmPD sc-hLQSwg dApRvc"
+    class="sc-beySPh jBbmPD sc-eDLKkx fMiVAB"
     cursor="inherit"
     title=""
   >
@@ -206,17 +206,17 @@ exports[`renders - error 1`] = `
 
 exports[`renders - number 1`] = `
 <div
-  class="sc-beySPh kknHUq sc-gLLuof bXJti"
+  class="sc-beySPh kknHUq sc-iBdnpw hObaGP"
 >
   <label
-    class="sc-beySPh cuSjOj sc-hLQSwg gLOShS"
+    class="sc-beySPh cuSjOj sc-eDLKkx iyKPwv"
     cursor="inherit"
     for="numberInput"
     title=""
   >
     Number
     <span
-      class="sc-beySPh kknHUq sc-hLQSwg hjlRnH"
+      class="sc-beySPh kknHUq sc-eDLKkx grDtvC"
       cursor="inherit"
       title=""
     >
@@ -230,7 +230,7 @@ exports[`renders - number 1`] = `
       class="sc-beySPh dxKTfv"
     >
       <input
-        class="sc-iBdnpw fBNtKn"
+        class="sc-fsYfdN bmfEOR"
         id="numberInput"
         name="numberInput"
         placeholder="0.00"
@@ -245,10 +245,10 @@ exports[`renders - number 1`] = `
 
 exports[`renders - with suffix 1`] = `
 <div
-  class="sc-beySPh kknHUq sc-gLLuof bXJti"
+  class="sc-beySPh kknHUq sc-iBdnpw hObaGP"
 >
   <label
-    class="sc-beySPh cuSjOj sc-hLQSwg gLOShS"
+    class="sc-beySPh cuSjOj sc-eDLKkx iyKPwv"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -262,7 +262,7 @@ exports[`renders - with suffix 1`] = `
       class="sc-beySPh dxKTfv"
     >
       <input
-        class="sc-iBdnpw fBNtKn"
+        class="sc-fsYfdN bmfEOR"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
@@ -277,10 +277,10 @@ exports[`renders - with suffix 1`] = `
 
 exports[`renders - with trailing icon 1`] = `
 <div
-  class="sc-beySPh kknHUq sc-gLLuof bXJti"
+  class="sc-beySPh kknHUq sc-iBdnpw hObaGP"
 >
   <label
-    class="sc-beySPh cuSjOj sc-hLQSwg gLOShS"
+    class="sc-beySPh cuSjOj sc-eDLKkx iyKPwv"
     cursor="inherit"
     for="currencyInput"
     title=""
@@ -294,7 +294,7 @@ exports[`renders - with trailing icon 1`] = `
       class="sc-beySPh dxKTfv"
     >
       <input
-        class="sc-iBdnpw fBNtKn"
+        class="sc-fsYfdN bmfEOR"
         id="currencyInput"
         name="currencyInput"
         placeholder="100.00"
@@ -303,7 +303,7 @@ exports[`renders - with trailing icon 1`] = `
         value=""
       />
       <span
-        class="sc-beySPh kknHUq sc-guDLey bBcdgr sc-qZrbh dhHnRB"
+        class="sc-beySPh kknHUq sc-dmyCSP gSmNUh sc-jsEeTM bJpXLa"
         color="sesame"
         rotate="0"
         size="24"

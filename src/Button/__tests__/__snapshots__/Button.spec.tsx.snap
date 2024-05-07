@@ -2,13 +2,13 @@
 
 exports[`renders 1`] = `
 <button
-  class="sc-beySPh kknHUq sc-gLLuof dkUJrh"
+  class="sc-beySPh kknHUq sc-iBdnpw EETzY"
 >
   <div
-    class="sc-fsYfdN OxbFQ"
+    class="sc-qZrbh fGhuPb"
   >
     <div
-      class="sc-jsEeTM dyithP childrenContainer"
+      class="sc-kFCroH iCHWPk childrenContainer"
     >
       Test
     </div>
