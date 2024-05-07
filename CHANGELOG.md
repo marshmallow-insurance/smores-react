@@ -1,3 +1,10 @@
+## [9.1.4](https://github.com/marshmallow-insurance/smores-react/compare/v9.1.3...v9.1.4) (2024-05-07)
+
+
+### Bug Fixes
+
+* missing export index ([#3720](https://github.com/marshmallow-insurance/smores-react/issues/3720)) ([56af62b](https://github.com/marshmallow-insurance/smores-react/commit/56af62b5b3b608d733117ea90047d94d6b179889))
+
 ## [9.1.3](https://github.com/marshmallow-insurance/smores-react/compare/v9.1.2...v9.1.3) (2024-05-07)
 
 
