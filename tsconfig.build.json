@@ -18,6 +18,7 @@
     "dist",
     "scripts",
     "vite.config.ts",
-    "vitest.config.ts"
+    "vitest.config.ts",
+    "commitlint.config.ts"
   ]
 }
