@@ -1,3 +1,10 @@
+## [9.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.1.4...v9.2.0) (2024-05-08)
+
+
+### Features
+
+* **SegmentedControl:** add segmented control to smores ([#3705](https://github.com/marshmallow-insurance/smores-react/issues/3705)) ([211feed](https://github.com/marshmallow-insurance/smores-react/commit/211feedd8fe982a03135113addca0bb047357a5d))
+
 ## [9.1.4](https://github.com/marshmallow-insurance/smores-react/compare/v9.1.3...v9.1.4) (2024-05-07)
 
 
