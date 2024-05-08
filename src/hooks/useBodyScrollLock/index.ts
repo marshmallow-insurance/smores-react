@@ -5,7 +5,7 @@ import {
   enableBodyScroll,
 } from 'body-scroll-lock'
 
-export default function useBodyScrollLock({
+export function useBodyScrollLock({
   node,
   showModal,
 }: {

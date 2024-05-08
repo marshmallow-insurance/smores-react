@@ -35,6 +35,7 @@ import CarReplacement from './iconFiles/CarReplacement'
 import CarUsage from './iconFiles/CarUsage'
 import Card from './iconFiles/Card'
 import Caret from './iconFiles/Caret'
+import CaretUp from './iconFiles/CaretUp'
 import Charge from './iconFiles/Charge'
 import Chat from './iconFiles/Chat'
 import ChatBubble from './iconFiles/ChatBubble'
@@ -322,6 +323,7 @@ export const iconList = {
   car: Car,
   card: Card,
   caret: Caret,
+  'caret-up': CaretUp,
   charge: Charge,
   chat: Chat,
   checkout: Checkout,

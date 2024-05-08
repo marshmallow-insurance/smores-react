@@ -26,6 +26,7 @@ const config = {
           { type: 'perf', release: 'patch' },
           { type: 'test', release: 'patch' },
           { type: 'revert', release: 'patch' },
+          { type: 'chore', release: 'patch' },
         ],
         parserOpts: {
           noteKeywords: [

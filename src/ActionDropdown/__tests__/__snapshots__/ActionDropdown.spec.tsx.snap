@@ -2,18 +2,18 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-beySPh kknHUq sc-fsYfdN jtAsSb"
+  class="sc-beySPh kknHUq sc-qZrbh cOwlDo"
 >
   <div
-    class="sc-gLLuof jvPrkU"
+    class="sc-iBdnpw hSTQkt"
   >
     <span
-      class="sc-iBdnpw kATtoX"
+      class="sc-fsYfdN iAwBlZ"
     >
       High alert
     </span>
     <span
-      class="sc-beySPh kknHUq sc-guDLey bbIbXV"
+      class="sc-beySPh kknHUq sc-dmyCSP gsVnKL"
       color="cream"
       rotate="0"
       size="24"
@@ -33,18 +33,18 @@ exports[`renders 1`] = `
     </span>
   </div>
   <div
-    class="sc-qZrbh jqrVDk"
+    class="sc-jsEeTM fdDMdr"
   >
     <ul
-      class="sc-eDLKkx ioODIl"
+      class="sc-jTQCzO JPPKV"
     >
       <li
-        class="sc-jTQCzO dikSDd"
+        class="sc-gLLuof eYMpCL"
       >
         High alert
       </li>
       <li
-        class="sc-jTQCzO dikSDd"
+        class="sc-gLLuof eYMpCL"
       >
         Good zone
       </li>

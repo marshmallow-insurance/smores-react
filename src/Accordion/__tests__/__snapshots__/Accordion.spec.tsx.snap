@@ -2,16 +2,16 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-beySPh kknHUq sc-eDLKkx hfyIYC"
+  class="sc-beySPh kknHUq sc-jTQCzO iwzsQa"
 >
   <div
-    class="sc-beySPh gomjiQ sc-gLLuof dTOMnO"
+    class="sc-beySPh gomjiQ sc-iBdnpw bfMHVv"
   >
     <div
-      class="sc-jTQCzO cylpaG"
+      class="sc-gLLuof bLgXmY"
     >
       <h2
-        class="sc-beySPh kknHUq sc-hLQSwg kupRuY"
+        class="sc-beySPh kknHUq sc-eDLKkx dPrzgp"
         cursor="inherit"
         title=""
       >
@@ -19,7 +19,7 @@ exports[`renders 1`] = `
       </h2>
     </div>
     <span
-      class="sc-beySPh kknHUq sc-guDLey gQQncJ sc-iBdnpw djvwdx"
+      class="sc-beySPh kknHUq sc-dmyCSP hzJomD sc-fsYfdN gnfGXb"
       color="marzipan"
       rotate="0"
       size="24"

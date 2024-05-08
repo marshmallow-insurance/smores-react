@@ -2,13 +2,13 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-beySPh jZkyWa sc-eDLKkx gQHIBf"
+  class="sc-beySPh jZkyWa sc-jTQCzO bwHhzP"
 >
   <button
-    class="sc-jTQCzO iMCjtM"
+    class="sc-gLLuof bgsRPS"
   >
     <p
-      class="sc-beySPh kknHUq sc-hLQSwg fzWpyI"
+      class="sc-beySPh kknHUq sc-eDLKkx ealhtR"
       cursor="inherit"
       title=""
     >
@@ -16,10 +16,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-jTQCzO cvChkg"
+    class="sc-gLLuof cnwjhG"
   >
     <p
-      class="sc-beySPh kknHUq sc-hLQSwg fNlbWd"
+      class="sc-beySPh kknHUq sc-eDLKkx jkBeDY"
       cursor="inherit"
       title=""
     >
@@ -27,10 +27,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-jTQCzO cvChkg"
+    class="sc-gLLuof cnwjhG"
   >
     <p
-      class="sc-beySPh kknHUq sc-hLQSwg fNlbWd"
+      class="sc-beySPh kknHUq sc-eDLKkx jkBeDY"
       cursor="inherit"
       title=""
     >
@@ -38,10 +38,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-jTQCzO cvChkg"
+    class="sc-gLLuof cnwjhG"
   >
     <p
-      class="sc-beySPh kknHUq sc-hLQSwg fNlbWd"
+      class="sc-beySPh kknHUq sc-eDLKkx jkBeDY"
       cursor="inherit"
       title=""
     >
@@ -49,10 +49,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-jTQCzO cvChkg"
+    class="sc-gLLuof cnwjhG"
   >
     <p
-      class="sc-beySPh kknHUq sc-hLQSwg fNlbWd"
+      class="sc-beySPh kknHUq sc-eDLKkx jkBeDY"
       cursor="inherit"
       title=""
     >
@@ -60,10 +60,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-jTQCzO cvChkg"
+    class="sc-gLLuof cnwjhG"
   >
     <p
-      class="sc-beySPh kknHUq sc-hLQSwg cWaFhx"
+      class="sc-beySPh kknHUq sc-eDLKkx uBcAU"
       cursor="inherit"
       title=""
     >
@@ -71,10 +71,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-jTQCzO cvChkg"
+    class="sc-gLLuof cnwjhG"
   >
     <p
-      class="sc-beySPh kknHUq sc-hLQSwg fNlbWd"
+      class="sc-beySPh kknHUq sc-eDLKkx jkBeDY"
       cursor="inherit"
       title=""
     >
@@ -82,10 +82,10 @@ exports[`renders 1`] = `
     </p>
   </button>
   <button
-    class="sc-gLLuof hvLIA-d"
+    class="sc-iBdnpw kMEggE"
   >
     <span
-      class="sc-beySPh kknHUq sc-guDLey cnBNpG"
+      class="sc-beySPh kknHUq sc-dmyCSP dUGCUs"
       color="liquorice"
       rotate="180"
       size="18"
