@@ -54,6 +54,7 @@ const config = {
             { type: 'perf', section: 'Performance Improvements' },
             { type: 'test', section: 'Tests' },
             { type: 'revert', hidden: true },
+            { type: 'chore', hidden: true },
             { type: '*', section: 'Others' },
           ],
         },
