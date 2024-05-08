@@ -37,7 +37,7 @@ export const SegmentedControl = <T,>({
   value,
   onChange,
   showTag,
-  toggleColor: toggleColor,
+  toggleColor,
   backgroundColor,
   textColor = 'liquorice',
   selectedTextColor = 'cream',
@@ -51,7 +51,7 @@ export const SegmentedControl = <T,>({
         {options.map((option) => {
           return (
             <ToggleButton
-              key={option.value as string}
+              key={option.label}
               name="toggle-version-button"
               value={option.value}
               onChange={onChange}

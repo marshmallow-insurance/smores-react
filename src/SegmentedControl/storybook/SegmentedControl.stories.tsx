@@ -2,6 +2,11 @@ import React from 'react'
 import { Container } from './Container'
 import { SegmentedControl, SegmentedControlProps } from '../SegmentedControl'
 
+/**
+ * ### How do I pass state to the `SegmentedControl` component?
+ * We recommend pulling the state up to at least the component that renders `SegmentedControl` up to at least the component that renders `SegmentedControl`, this should make it easier to pass state to the `SegmentedControl` component
+ */
+
 export default {
   title: 'SegmentedControl',
   component: SegmentedControl,
