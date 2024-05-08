@@ -3,7 +3,6 @@ import { SegmentedControl, SegmentedControlProps } from '../SegmentedControl'
 import React, { ReactNode } from 'react'
 
 export const Container = <T,>(props: SegmentedControlProps<T>) => {
-  /** recommend to use a useState or a form to store the selected value above the component */
   const [value, setValue] = React.useState(props.value)
 
   return (

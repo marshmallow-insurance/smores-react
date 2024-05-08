@@ -7,12 +7,23 @@ import { Text } from '../Text'
 import React from 'react'
 import { ToggleButton } from './ToggleButton'
 
-export type SegmentedControlOption<T> = {
+export type SegmentedControlOption<T = string | number> = {
   label: string
+  /** value needs to be number or string */
   value: T
   /** optional tag able to show in the toggle if showTag prop is passed */
   tag?: string
   isDisabled?: boolean
+}
+
+type StylingOptions = {
+  toggle?: Color
+  background?: Color
+  text?: Color
+  selectedText?: Color
+  tagBg?: Color
+  tagBorder?: Color
+  tagText?: Color
 }
 
 export type SegmentedControlProps<T> = {
@@ -22,32 +33,32 @@ export type SegmentedControlProps<T> = {
   onChange: (value: T) => void
   /**  pass this prop if you want to show the tag in the toggle */
   showTag?: boolean
-  toggleColor?: Color
-  backgroundColor?: Color
-  textColor?: Color
-  selectedTextColor?: Color
-  tagColor?: Color
-  tagTextColor?: Color
-  tagBorderColor?: Color
+  /** pass a StylingOptions object with the needed styles if you want to style the SegmentedControl */
+  styles?: StylingOptions
 }
 
-/**recommend to use a useState to store the selected value above the component */
+/**
+ * ### How do I pass state to the `SegmentedControl` component?
+ * We recommend pulling the state up to at least the component that renders `SegmentedControl` up to at least the component that renders `SegmentedControl`, this should make it easier to pass state to the `SegmentedControl` component
+ */
 export const SegmentedControl = <T,>({
   options,
   value,
   onChange,
   showTag,
-  toggleColor,
-  backgroundColor,
-  textColor = 'liquorice',
-  selectedTextColor = 'cream',
-  tagColor = 'marshmallowPink',
-  tagBorderColor = 'marshmallowPink',
-  tagTextColor = 'cream',
+  styles: {
+    tagBorder = 'marshmallowPink',
+    tagText = 'cream',
+    tagBg = 'marshmallowPink',
+    selectedText = 'cream',
+    text = 'liquorice',
+    background,
+    toggle,
+  } = {},
 }: SegmentedControlProps<T>) => {
   return (
-    <ToggleWrapper backgroundColor={backgroundColor}>
-      <IndicatorWrapper backgroundColor={backgroundColor}>
+    <ToggleWrapper backgroundColor={background}>
+      <IndicatorWrapper backgroundColor={background}>
         {options.map((option) => {
           return (
             <ToggleButton
@@ -61,16 +72,16 @@ export const SegmentedControl = <T,>({
               <StyledWrapper>
                 {showTag && option.tag && (
                   <StyledTag
-                    bgColor={tagColor}
-                    borderColor={tagBorderColor}
-                    color={tagTextColor}
+                    bgColor={tagBg}
+                    borderColor={tagBorder}
+                    color={tagText}
                     label={option.tag}
                   />
                 )}
                 <StyledText
                   isSelected={option.value === value}
-                  selectedTextColor={selectedTextColor}
-                  color={textColor}
+                  selectedTextColor={selectedText}
+                  color={text}
                 >
                   {option.label}
                 </StyledText>
@@ -82,7 +93,7 @@ export const SegmentedControl = <T,>({
         <ToggleIndicator
           selectedIndex={options.findIndex((option) => option.value === value)}
           sections={options.length}
-          toggleColor={toggleColor}
+          toggleColor={toggle}
         />
       </IndicatorWrapper>
     </ToggleWrapper>
