@@ -1,3 +1,10 @@
+## [9.3.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.3.0...v9.3.1) (2024-05-09)
+
+
+### Bug Fixes
+
+* **caret:** pass className to component ([#3727](https://github.com/marshmallow-insurance/smores-react/issues/3727)) ([ae85645](https://github.com/marshmallow-insurance/smores-react/commit/ae856455184be2dd27da3461b55d8efa4761b2a7))
+
 ## [9.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.2.0...v9.3.0) (2024-05-09)
 
 
