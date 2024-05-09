@@ -23,6 +23,7 @@ export type ModalProps = {
   title?: string
   icon?: string
   children?: ReactNode
+  rightPanel?: ReactNode
   showModal?: boolean
   handleClick: () => void
   drawer?: boolean
@@ -30,11 +31,13 @@ export type ModalProps = {
   width?: string
   containerClass?: string
   portalContainer?: Element | DocumentFragment
+  closeOnOverlayClick?: boolean
 }
 
 export const Modal: FC<ModalProps> = ({
   title = '',
   children,
+  rightPanel,
   showModal = false,
   handleClick,
   drawer = true,
@@ -42,6 +45,7 @@ export const Modal: FC<ModalProps> = ({
   width,
   containerClass,
   portalContainer = document.body,
+  closeOnOverlayClick = true,
 }) => {
   const modalRef = useRef<HTMLDivElement>(null)
 
@@ -49,7 +53,10 @@ export const Modal: FC<ModalProps> = ({
 
   return createPortal(
     <Wrapper $showModal={showModal} ref={modalRef}>
-      <Overlay onClick={handleClick} />
+      <Overlay
+        onClick={() => closeOnOverlayClick && handleClick()}
+        closeOnOverlayClick={closeOnOverlayClick}
+      />
       <Container
         $drawer={drawer}
         $width={width || '460px'}
@@ -66,14 +73,17 @@ export const Modal: FC<ModalProps> = ({
               {title}
             </Text>
           </TitleElements>
-          {cross && (
-            <IconStrict
-              render="cross"
-              backgroundColor="oatmeal"
-              handleClick={handleClick}
-              size={36}
-            />
-          )}
+          <Box flex alignItems="center" gap={'8px'}>
+            {rightPanel}
+            {cross && (
+              <IconStrict
+                render="cross"
+                backgroundColor="oatmeal"
+                handleClick={handleClick}
+                size={36}
+              />
+            )}
+          </Box>
         </Box>
         <Box flex direction="column">
           {children}
@@ -98,10 +108,10 @@ const Wrapper = styled(Box)<IModalWrapper>(
   `,
 )
 
-const Overlay = styled.div`
+const Overlay = styled.div<{ closeOnOverlayClick: boolean }>`
   position: fixed;
   background: ${theme.colors.liquorice};
-  cursor: pointer;
+  cursor: ${(props) => (props.closeOnOverlayClick ? 'pointer' : 'default')};
   opacity: 0.4;
   top: 0;
   bottom: 0;
@@ -120,6 +130,7 @@ const Container = styled.div<IModalContainer>(
     position: fixed;
     max-height: calc(100vh - 64px);
     overflow: auto;
+    transition: all 0.3s ease-in-out;
 
     ${$drawer === true &&
     css`

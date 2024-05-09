@@ -1,34 +1,20 @@
-import React, { useState } from 'react'
-import { Box } from '../../Box'
-import { Button } from '../../Button'
-import { Modal, ModalProps } from '../Modal'
+import { Modal } from '../Modal'
+import { Container } from './Container'
 
 export default {
   title: 'Modal',
   component: Modal,
-  argTypes: { handleClick: { action: 'Callback - `handleClick`' } },
+  argTypes: {
+    handleClick: { action: 'Callback - `handleClick`' },
+    rightPanel: {
+      type: { name: 'ReactNode' },
+      description:
+        'Pass react nodes to display on the right side of the modal before the close button',
+    },
+  },
 }
 
-const Template = (props: ModalProps) => {
-  const [showModal, setShowModal] = useState(false)
-
-  const handleClick = () => {
-    setShowModal(!showModal)
-  }
-  return (
-    <Box height="900px">
-      <Modal {...props} handleClick={handleClick} showModal={showModal}>
-        [A modal window] creates a mode that disables the main window, but keeps
-        it visible with the modal window as a child window in front of it.
-      </Modal>
-      <Button primary handleClick={handleClick}>
-        Show Modal with Mobile Drawer
-      </Button>
-    </Box>
-  )
-}
-
-export const Interactive = Template.bind({})
+export const Interactive = Container.bind({})
 
 Interactive.args = {
   icon: 'calendar',
@@ -36,5 +22,5 @@ Interactive.args = {
   showModal: false,
   drawer: true,
   cross: true,
-  width: '640px',
+  closeOnOverlayClick: false,
 }
