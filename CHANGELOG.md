@@ -1,3 +1,10 @@
+## [9.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.2.0...v9.3.0) (2024-05-09)
+
+
+### Features
+
+* **modal:** update to handle right side components ([#3716](https://github.com/marshmallow-insurance/smores-react/issues/3716)) ([0dfe285](https://github.com/marshmallow-insurance/smores-react/commit/0dfe285b3016a09fa823dd5bbecab293cf505753))
+
 ## [9.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.1.4...v9.2.0) (2024-05-08)
 
 
