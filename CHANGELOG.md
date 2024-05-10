@@ -1,3 +1,10 @@
+## [9.3.2](https://github.com/marshmallow-insurance/smores-react/compare/v9.3.1...v9.3.2) (2024-05-10)
+
+
+### Bug Fixes
+
+* useBodyScrollLock ([#3730](https://github.com/marshmallow-insurance/smores-react/issues/3730)) ([33cd8f5](https://github.com/marshmallow-insurance/smores-react/commit/33cd8f5cee18e71b0f876721f00393abe810ea10))
+
 ## [9.3.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.3.0...v9.3.1) (2024-05-09)
 
 
