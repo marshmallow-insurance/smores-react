@@ -5,6 +5,15 @@ import {
   enableBodyScroll,
 } from 'body-scroll-lock'
 
+const enhancedDisabeBodyScroll = (node: HTMLElement | Element) => {
+  disableBodyScroll(node, {
+    reserveScrollBarGap: true,
+    allowTouchMove: () => true,
+  })
+
+  document.body.style.top = `-${window.scrollY}px`
+}
+
 export function useBodyScrollLock({
   node,
   showModal,
@@ -20,10 +29,7 @@ export function useBodyScrollLock({
     if (node === null) return
 
     if (showModal) {
-      disableBodyScroll(node, {
-        reserveScrollBarGap: true,
-        allowTouchMove: () => true,
-      })
+      enhancedDisabeBodyScroll(node)
     } else {
       enableBodyScroll(node)
     }
