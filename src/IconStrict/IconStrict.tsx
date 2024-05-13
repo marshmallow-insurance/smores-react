@@ -10,6 +10,7 @@ import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
 export type IconStrictProps = {
+  id?: string
   /** className attribute to apply classes from props */
   className?: string
   /** set size of the Icon (including background) */
@@ -46,6 +47,7 @@ const iconSizes = {
 }
 
 export const IconStrict: FC<IconStrictProps> = ({
+  id,
   className = '',
   size = 16,
   render,
@@ -56,6 +58,7 @@ export const IconStrict: FC<IconStrictProps> = ({
   ...marginProps
 }) => (
   <IconContainer
+    id={id}
     forwardedAs={handleClick ? 'button' : 'div'}
     className={className}
     $size={size}
