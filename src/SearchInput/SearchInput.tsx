@@ -12,6 +12,7 @@ import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 import { SearchOptions } from './SearchOptions'
+import Fuse from 'fuse.js'
 
 export type SearchInputItem = {
   label: string
@@ -28,6 +29,7 @@ export interface SearchInputProps extends CommonFieldProps {
   value?: string
   resultsRelativePosition?: boolean
   resultsBorder?: boolean
+  useFuzzySearch?: boolean
 }
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
@@ -46,6 +48,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       fallbackStyle,
       resultsRelativePosition = false,
       resultsBorder = true,
+      useFuzzySearch = false,
       ...otherProps
     },
     ref,
@@ -58,18 +61,31 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       initialState: null,
       stateProp: value,
     })
-
     const [searchQuery, setSearchQuery] = useState<string | null>(null)
+
+    const fuse = useMemo(() => {
+      const searchKeys = ['label', 'value']
+      return new Fuse(searchList, {
+        shouldSort: true,
+        keys: searchKeys,
+        findAllMatches: true,
+        minMatchCharLength: 2,
+      })
+    }, [searchList])
 
     const filteredList = useMemo(() => {
       if (searchQuery === null || searchQuery === '') {
         return searchList
       }
 
+      if (useFuzzySearch) {
+        return fuse.search(searchQuery).map(({ item }) => item)
+      }
+
       return searchList.filter(({ label }) =>
         label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
-    }, [searchQuery])
+    }, [searchQuery, useFuzzySearch])
 
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
