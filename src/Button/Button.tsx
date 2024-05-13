@@ -29,9 +29,10 @@ type Props = {
   form?: string
 }
 
-export type ButtonProps = Props &
-  MarginProps &
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'>
+export interface ButtonProps
+  extends Props,
+    MarginProps,
+    Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color' | 'children'> {}
 
 export const Button: FC<ButtonProps> = forwardRef<
   HTMLButtonElement,
@@ -110,20 +111,21 @@ export const Button: FC<ButtonProps> = forwardRef<
 
 Button.displayName = 'Button'
 
-type IButton = TransientProps<
-  Required<
-    Pick<
-      ButtonProps,
-      | 'primary'
-      | 'secondary'
-      | 'forcedWidth'
-      | 'fallbackStyle'
-      | 'textBtn'
-      | 'trailingIcon'
-      | 'smallButton'
+interface IButton
+  extends TransientProps<
+    Required<
+      Pick<
+        ButtonProps,
+        | 'primary'
+        | 'secondary'
+        | 'forcedWidth'
+        | 'fallbackStyle'
+        | 'textBtn'
+        | 'trailingIcon'
+        | 'smallButton'
+      >
     >
-  >
-> & {
+  > {
   $loading: NonNullable<ButtonProps['loading']>
   disabled: boolean
 }

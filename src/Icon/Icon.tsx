@@ -6,7 +6,7 @@ import { Box } from '../Box'
 import { Color, theme } from '../theme'
 import { Icons, iconList } from './iconsList'
 
-export type IconProps = {
+export interface IconProps extends MarginProps {
   /** className attribute to apply classes from props */
   className?: string
   /** specify what Icon to render  */
@@ -17,7 +17,7 @@ export type IconProps = {
   color?: Color
   /** rotation degrees */
   rotate?: number
-} & MarginProps
+}
 
 export const Icon: FC<IconProps> = ({
   className = '',

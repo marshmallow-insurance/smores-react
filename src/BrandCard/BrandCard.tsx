@@ -5,7 +5,7 @@ import { Text } from '../Text'
 import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
 
-export type BrandCardProps = {
+export interface BrandCardProps extends MarginProps {
   /** generic card title */
   title: string
   /** generic card body */
@@ -27,7 +27,7 @@ export type BrandCardProps = {
   fallbackStyle?: boolean
   /** margin */
   maxWidth?: string
-} & MarginProps
+}
 
 export const BrandCard: FC<BrandCardProps> = ({
   title,

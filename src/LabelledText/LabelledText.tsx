@@ -5,11 +5,11 @@ import { MarginProps } from '../utils/space'
 import { Box } from '../Box'
 import { Text } from '../Text'
 
-export type LabelledTextProps = {
+export interface LabelledTextProps extends MarginProps {
   children: ReactNode
   label: string
   labelMargin?: 2 | 4 | 8 | number
-} & MarginProps
+}
 
 export const LabelledText: FC<LabelledTextProps> = ({
   label,

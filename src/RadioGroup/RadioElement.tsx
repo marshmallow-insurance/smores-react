@@ -9,7 +9,7 @@ import { visuallyHidden } from '../utils/visuallyHidden'
 import { Box } from '../Box'
 import { BaseValueType } from './types'
 
-type RadioElementProps = {
+interface RadioElementProps extends MarginProps {
   name: string
   id: string
   value: BaseValueType
@@ -17,7 +17,7 @@ type RadioElementProps = {
   onChange: (value: BaseValueType) => void
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   isError: boolean
-} & MarginProps
+}
 
 export const RadioElement = forwardRef<HTMLInputElement, RadioElementProps>(
   function RadioElement(

@@ -8,7 +8,7 @@ import { Text } from '../Text'
 import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
 
-export type RowProps = {
+export interface RowProps extends MarginProps {
   iconLeft?: Icons
   iconLeftColor?: Color
   iconRight?: Icons
@@ -20,7 +20,7 @@ export type RowProps = {
   borderTop?: boolean
   borderBottom?: boolean
   boldHeading?: boolean
-} & MarginProps
+}
 
 export const Row: FC<RowProps> = ({
   iconLeft,

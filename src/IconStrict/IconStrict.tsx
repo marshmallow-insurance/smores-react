@@ -9,7 +9,7 @@ import { Color, theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
-export type IconStrictProps = {
+export interface IconStrictProps extends MarginProps {
   /** className attribute to apply classes from props */
   className?: string
   /** set size of the Icon (including background) */
@@ -24,7 +24,7 @@ export type IconStrictProps = {
   handleClick?: (e: FormEvent<HTMLButtonElement>) => void
   /** rotation degrees */
   rotate?: number
-} & MarginProps
+}
 
 const iconSizes = {
   48: {
