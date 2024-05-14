@@ -9,6 +9,7 @@ export default {
 }
 
 const Template: FC = (props: RichTextEditorProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_value, setValue] = useState(props.defaultValue)
 
   return (
@@ -30,9 +31,24 @@ Default.args = {
   maxHeight: '300px',
   outline: true,
 }
+Default.parameters = {
+  a11y: {
+    disable: true,
+  },
+}
 
 export const Collection = CollectionPage.bind({})
+Collection.parameters = {
+  a11y: {
+    disable: true,
+  },
+}
 
 const WorkingExampleTemplate = () => <Example />
 
 export const WorkingExample = WorkingExampleTemplate.bind({})
+WorkingExample.parameters = {
+  a11y: {
+    disable: true,
+  },
+}

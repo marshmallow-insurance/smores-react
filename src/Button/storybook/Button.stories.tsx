@@ -12,6 +12,7 @@ const meta: Meta<typeof Button> = {
   component: Button,
   args: {
     //gives storybook the vi.mock fn() for easy mock implementations
+    handleClick: fn(),
     onClick: fn(),
   },
 }

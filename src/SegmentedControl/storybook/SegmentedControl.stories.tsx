@@ -25,6 +25,19 @@ export const Default: Story = {
     value: 'option1',
     showTag: false,
   },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            //disabling these until we sync with design on this
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
 }
 
 export const Custom: Story = {
@@ -45,6 +58,19 @@ export const Custom: Story = {
       text: 'liquorice',
       background: 'marshmallowPink',
       toggle: 'cream',
+    },
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            //disabling these until we sync with design on this
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
     },
   },
 }

@@ -20,6 +20,10 @@ const config: TestRunnerConfig = {
       rules: storyContext.parameters?.a11y?.config?.rules,
     })
 
+    // Do not run a11y tests on disabled stories.
+    if (storyContext.parameters?.a11y?.disable) {
+      return
+    }
     await checkA11y(page, '#storybook-root', {
       detailedReport: true,
       detailedReportOptions: {

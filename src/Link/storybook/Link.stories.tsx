@@ -24,6 +24,19 @@ Highlighted.args = {
   ...linkArgs,
   highlight: true,
 }
+Highlighted.parameters = {
+  a11y: {
+    config: {
+      rules: [
+        {
+          //disabling these until we sync with design on this
+          id: 'color-contrast',
+          enabled: false,
+        },
+      ],
+    },
+  },
+}
 
 export const LeadingIcon = Link.bind({})
 LeadingIcon.args = {
