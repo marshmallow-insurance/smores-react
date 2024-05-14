@@ -83,7 +83,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const fuse = useMemo(() => {
       const searchKeys = ['label', 'value']
       return new Fuse(searchList, {
-        shouldSort: true,
         keys: searchKeys,
         findAllMatches: true,
         minMatchCharLength: 2,
