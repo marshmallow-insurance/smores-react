@@ -1,6 +1,7 @@
 import React, {
   ChangeEvent,
   FocusEvent,
+  ReactNode,
   forwardRef,
   useMemo,
   useState,
@@ -11,7 +12,7 @@ import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
-import { SearchOptions } from './SearchOptions'
+import { SearchOptions } from './components/SearchOptions'
 import Fuse from 'fuse.js'
 
 export type SearchInputItem = {
@@ -24,6 +25,8 @@ export interface SearchInputProps extends CommonFieldProps {
   placeholder?: string
   searchList: SearchInputItem[]
   onFound: (element: string) => void
+  onNotFound?: () => void
+  notFoundComponent?: ReactNode
   showIcon?: boolean
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   value?: string
@@ -45,6 +48,8 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       value,
       onBlur,
       onFound,
+      onNotFound,
+      notFoundComponent,
       fallbackStyle,
       resultsRelativePosition = false,
       resultsBorder = true,
@@ -164,6 +169,8 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             onSelect={handleSelect}
             positionRelative={resultsRelativePosition}
             resultsBorder={resultsBorder}
+            onNotFound={onNotFound}
+            notFoundComponent={notFoundComponent}
           />
         )}
       </Field>

@@ -24,9 +24,19 @@ const meta: Meta<typeof SearchInput> = {
     searchList: searchList,
     name: 'search_input',
     className: '',
+    onNotFound: undefined,
+    notFoundComponent: undefined,
   },
 }
 
 export default meta
 
 export const ShowIcon: Story = { args: { showIcon: true } }
+
+export const OnNotFoundFunction: Story = {
+  args: { onNotFound: () => alert('Not found') },
+}
+
+export const NotFoundComponent: Story = {
+  args: { notFoundComponent: <div>Custom not found component</div> },
+}
