@@ -7,7 +7,7 @@ interface Props {
 
 export const EmptyResults: FC<Props> = ({ onNotFound, notFoundComponent }) => {
   useEffect(() => {
-    onNotFound && onNotFound()
+    onNotFound?.()
   }, [])
 
   if (notFoundComponent) {

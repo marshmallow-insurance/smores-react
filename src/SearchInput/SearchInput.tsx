@@ -21,17 +21,29 @@ export type SearchInputItem = {
 }
 
 export interface SearchInputProps extends CommonFieldProps {
+  /** Optional input className */
   name?: string
+  /**  Optional placeholder text */
   placeholder?: string
+  /**  List of input items to search on*/
   searchList: SearchInputItem[]
+  /**  callback to handle found item click */
   onFound: (element: string) => void
+  /**  optional callback to run when no results found */
   onNotFound?: () => void
+  /**  optional Component to render when no results found */
   notFoundComponent?: ReactNode
+  /**  optional boolean to show search icon */
   showIcon?: boolean
+  /**  Optional callback to run on blur */
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
+  /**  Optional default value for input */
   value?: string
+  /**  Optional boolean to move results to a realtive position */
   resultsRelativePosition?: boolean
+  /**  optional boolean to add border to results */
   resultsBorder?: boolean
+  /** optional boolean to enable fuzzy search via fuse.js */
   useFuzzySearch?: boolean
 }
 
