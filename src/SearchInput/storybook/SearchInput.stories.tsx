@@ -20,7 +20,7 @@ const meta: Meta<typeof SearchInput> = {
     renderAsTitle: false,
     resultsRelativePosition: false,
     resultsBorder: true,
-    useFuzzySearch: false,
+    enableFuzzySearch: false,
     searchList: searchList,
     name: 'search_input',
     className: '',

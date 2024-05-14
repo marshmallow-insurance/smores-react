@@ -44,7 +44,7 @@ export interface SearchInputProps extends CommonFieldProps {
   /**  optional boolean to add border to results */
   resultsBorder?: boolean
   /** optional boolean to enable fuzzy search via fuse.js */
-  useFuzzySearch?: boolean
+  enableFuzzySearch?: boolean
 }
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
@@ -65,7 +65,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       fallbackStyle,
       resultsRelativePosition = false,
       resultsBorder = true,
-      useFuzzySearch = false,
+      enableFuzzySearch = false,
       ...otherProps
     },
     ref,
@@ -95,14 +95,14 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         return searchList
       }
 
-      if (useFuzzySearch) {
+      if (enableFuzzySearch) {
         return fuse.search(searchQuery).map(({ item }) => item)
       }
 
       return searchList.filter(({ label }) =>
         label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
-    }, [searchQuery, useFuzzySearch])
+    }, [searchQuery, enableFuzzySearch])
 
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
