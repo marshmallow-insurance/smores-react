@@ -46,6 +46,7 @@ export const Default = Template.bind({})
 Default.args = {
   id: 'days',
   list: days,
+  label: 'Days dropdown',
   placeholder: 'Placeholder',
 }
 
@@ -54,6 +55,7 @@ export const DefaultFallback = Template.bind({})
 DefaultFallback.args = {
   id: 'days',
   list: days,
+  label: 'Days dropdown',
   fallbackStyle: true,
   placeholder: 'Placeholder',
 }

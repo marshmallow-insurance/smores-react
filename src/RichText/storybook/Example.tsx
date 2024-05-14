@@ -14,7 +14,7 @@ export const Example = () => {
         <h6>H6 Header</h6>
         <hr />
         <h3>Image</h3>
-        <img src="https://www.gstatic.com/webp/gallery/1.sm.webp" />
+        <img src="https://www.gstatic.com/webp/gallery/1.sm.webp" alt="mountain-img" />
         <h3>Paragraph</h3>
         <p>Paragraph of text with <b>bold text</b>, <i>italic text</i>, <u>underlined text</u> and a  <a href='https://liamp.uk'>link</a>
         <h3>List</h3>

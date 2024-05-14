@@ -1,7 +1,6 @@
-import { Box } from '../Box'
-import React from 'react'
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
+import { Box } from '../Box'
 
 type ToggleButtonProps<Value> = {
   name: string

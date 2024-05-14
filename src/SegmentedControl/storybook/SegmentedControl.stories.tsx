@@ -1,7 +1,7 @@
-import React from 'react'
-import { Container } from './Container'
-import { SegmentedControl, SegmentedControlProps } from '../SegmentedControl'
 import type { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
+import { SegmentedControl, SegmentedControlProps } from '../SegmentedControl'
+import { Container } from './Container'
 
 type StoryMeta = Meta<typeof SegmentedControl>
 type Story = StoryObj<typeof SegmentedControl>
@@ -38,11 +38,11 @@ export const Custom: Story = {
     value: 2,
     showTag: true,
     styles: {
-      tagText: 'apple',
-      tagBorder: 'caramel',
-      tagBg: 'mint',
+      tagText: 'liquorice',
+      tagBorder: 'liquorice',
+      tagBg: 'cream',
       selectedText: 'liquorice',
-      text: 'cream',
+      text: 'liquorice',
       background: 'marshmallowPink',
       toggle: 'cream',
     },

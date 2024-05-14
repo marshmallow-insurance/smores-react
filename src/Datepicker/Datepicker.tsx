@@ -121,6 +121,7 @@ export const Datepicker: FC<DatepickerProps> = ({
         direction="row"
       >
         <Circle
+          aria-label="previous-month"
           type="button"
           disabled={activeMonthIndex === 0}
           onClick={() => setActiveMonth(activeMonthIndex - 1)}
@@ -139,6 +140,7 @@ export const Datepicker: FC<DatepickerProps> = ({
         </Heading>
 
         <Circle
+          aria-label="next-month"
           type="button"
           disabled={activeMonthIndex === availableMonths.length - 1}
           onClick={() => setActiveMonth(activeMonthIndex + 1)}

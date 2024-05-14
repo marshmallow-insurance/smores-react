@@ -88,8 +88,8 @@ export const NumberInput = forwardRef(function NumberInput(
   }
 
   const applyMinMax = (value: number) => {
-    if(min && value < min) return min
-    if(max && value > max) return max
+    if (min && value < min) return min
+    if (max && value > max) return max
     return value
   }
 
@@ -158,11 +158,19 @@ export const NumberInput = forwardRef(function NumberInput(
 
         {onChange && step > 0 && (
           <Spinner>
-            <SpinnerButton onClick={incrementValue} disabled={disabled}>
+            <SpinnerButton
+              aria-label="step-up"
+              onClick={incrementValue}
+              disabled={disabled}
+            >
               <Icon render="caret" rotate={180} color="sesame" size={24} />
             </SpinnerButton>
 
-            <SpinnerButton onClick={decrementValue} disabled={disabled}>
+            <SpinnerButton
+              aria-label="step-down"
+              onClick={decrementValue}
+              disabled={disabled}
+            >
               <Icon render="caret" color="sesame" size={24} />
             </SpinnerButton>
           </Spinner>

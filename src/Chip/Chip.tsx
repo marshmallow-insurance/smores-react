@@ -54,6 +54,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
       $icon={icon}
       {...props}
       ref={ref}
+      aria-label="chip-button"
     >
       {loading ? (
         <Loader color={primary ? 'liquorice' : 'cream'} height="16" />
