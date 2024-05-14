@@ -1,9 +1,10 @@
 import { darken } from 'polished'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
-import { Box } from '../Box'
-import { theme } from '../theme'
+import { Box } from '../../Box'
+import { theme } from '../../theme'
+import { EmptyResults } from './NoOptions'
 
 type Option = {
   label: string
@@ -15,6 +16,8 @@ type SearchOptionsProps = {
   onSelect: (option: Option) => void
   positionRelative: boolean
   resultsBorder: boolean
+  onNotFound?: () => void
+  notFoundComponent?: ReactNode
 }
 
 export const SearchOptions: FC<SearchOptionsProps> = ({
@@ -22,6 +25,8 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   onSelect,
   positionRelative,
   resultsBorder,
+  onNotFound,
+  notFoundComponent,
 }) => {
   return (
     <BoxWithPositionRelative>
@@ -34,7 +39,10 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
               </li>
             ))
           ) : (
-            <li>No results</li>
+            <EmptyResults
+              onNotFound={onNotFound}
+              notFoundComponent={notFoundComponent}
+            />
           )}
         </ResultsList>
       </StyledResultsContainer>
