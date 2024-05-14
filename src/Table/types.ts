@@ -30,7 +30,7 @@ export type RowAction<T> = {
   onClick: (rowData: T) => void
   iconButton?: Pick<
     IconStrictProps,
-    'size' | 'render' | 'iconColor' | 'backgroundColor'
+    'size' | 'render' | 'iconColor' | 'backgroundColor' | 'id'
   >
   genericButton?: Pick<
     ButtonProps,
@@ -42,6 +42,7 @@ export type RowAction<T> = {
     | 'fallbackStyle'
     | 'textBtn'
     | 'smallButton'
+    | 'id'
   >
   showCondition?: (rowData: T) => boolean
 }
