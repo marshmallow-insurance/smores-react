@@ -1,3 +1,10 @@
+## [9.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.3.2...v9.4.0) (2024-05-14)
+
+
+### Features
+
+* **search-input:** implement fuzzy searching capability ([#3736](https://github.com/marshmallow-insurance/smores-react/issues/3736)) ([2064175](https://github.com/marshmallow-insurance/smores-react/commit/206417599e1c20008b65d0914f2aab613d8538b5))
+
 ## [9.3.2](https://github.com/marshmallow-insurance/smores-react/compare/v9.3.1...v9.3.2) (2024-05-10)
 
 
