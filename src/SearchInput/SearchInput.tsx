@@ -177,7 +177,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         {showOptions && (
           <SearchOptions
             displayedList={filteredList}
-            searchTerm={displayedInputText}
+            searchTerm={searchQuery || ''}
             onSelect={handleSelect}
             positionRelative={resultsRelativePosition}
             resultsBorder={resultsBorder}
