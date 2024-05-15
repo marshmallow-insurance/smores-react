@@ -1,3 +1,10 @@
+## [9.4.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.4.0...v9.4.1) (2024-05-15)
+
+
+### Bug Fixes
+
+* **search-input:** propagate search term usage to not found function ([#3744](https://github.com/marshmallow-insurance/smores-react/issues/3744)) ([38614ac](https://github.com/marshmallow-insurance/smores-react/commit/38614ace58e048a02c356d9fc590f8e1879322a3))
+
 ## [9.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.3.2...v9.4.0) (2024-05-14)
 
 

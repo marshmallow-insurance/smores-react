@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../../Box'
 import { theme } from '../../theme'
-import { EmptyResults } from './NoOptions'
+import { EmptyResults } from './EmptyResults'
 
 type Option = {
   label: string
@@ -16,7 +16,8 @@ type SearchOptionsProps = {
   onSelect: (option: Option) => void
   positionRelative: boolean
   resultsBorder: boolean
-  onNotFound?: () => void
+  onNotFound?: (searchTerm: string) => void
+  searchTerm: string
   notFoundComponent?: ReactNode
 }
 
@@ -26,6 +27,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   positionRelative,
   resultsBorder,
   onNotFound,
+  searchTerm,
   notFoundComponent,
 }) => {
   return (
@@ -41,6 +43,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
           ) : (
             <EmptyResults
               onNotFound={onNotFound}
+              searchTerm={searchTerm}
               notFoundComponent={notFoundComponent}
             />
           )}
