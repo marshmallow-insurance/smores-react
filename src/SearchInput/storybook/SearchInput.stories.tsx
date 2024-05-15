@@ -35,7 +35,10 @@ export default meta
 export const ShowIcon: Story = { args: { showIcon: true } }
 
 export const OnNotFoundFunction: Story = {
-  args: { onNotFound: () => alert('Not found') },
+  args: {
+    onNotFound: (searchTerm: string) =>
+      alert(`Could not find value for ${searchTerm}`),
+  },
 }
 
 export const NotFoundComponent: Story = {
