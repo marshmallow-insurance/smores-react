@@ -12,6 +12,7 @@ const meta: Meta<typeof Button> = {
   component: Button,
   args: {
     //gives storybook the vi.mock fn() for easy mock implementations
+    children: 'Button',
     handleClick: fn(),
     onClick: fn(),
   },
@@ -23,7 +24,6 @@ type Story = StoryObj<typeof Button>
 export const Primary: Story = {
   args: {
     primary: true,
-    children: 'Button',
   },
   play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement)
@@ -39,8 +39,6 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    ...Primary.args,
-    primary: false,
     secondary: true,
   },
   play: async ({ canvasElement }) => {
@@ -54,8 +52,6 @@ export const Secondary: Story = {
 
 export const Fallback: Story = {
   args: {
-    ...Primary.args,
-    secondary: false,
     fallbackStyle: true,
   },
   play: async ({ canvasElement }) => {
@@ -67,7 +63,6 @@ export const Fallback: Story = {
 
 export const TextButton: Story = {
   args: {
-    ...Primary.args,
     textBtn: true,
   },
   play: async ({ canvasElement }) => {
@@ -79,7 +74,6 @@ export const TextButton: Story = {
 
 export const Loading: Story = {
   args: {
-    ...Primary.args,
     loading: true,
   },
   play: async ({ args, canvasElement }) => {
@@ -91,7 +85,6 @@ export const Loading: Story = {
 
 export const ForcedWidth: Story = {
   args: {
-    ...Primary.args,
     forcedWidth: '300px',
   },
   play: async ({ canvasElement }) => {
@@ -103,12 +96,7 @@ export const ForcedWidth: Story = {
 
 export const Playground: Story = {
   args: {
-    ...Primary.args,
     primary: true,
-    secondary: false,
-    fallbackStyle: false,
-    disabled: false,
-    loading: false,
   },
 }
 
