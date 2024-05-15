@@ -30,7 +30,7 @@ export interface SearchInputProps extends CommonFieldProps {
   /**  callback to handle found item click */
   onFound: (element: string) => void
   /**  optional callback to run when no results found */
-  onNotFound?: () => void
+  onNotFound?: (searchTerm: string) => void
   /**  optional Component to render when no results found */
   notFoundComponent?: ReactNode
   /**  optional boolean to show search icon */
@@ -177,6 +177,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         {showOptions && (
           <SearchOptions
             displayedList={filteredList}
+            searchTerm={displayedInputText}
             onSelect={handleSelect}
             positionRelative={resultsRelativePosition}
             resultsBorder={resultsBorder}
