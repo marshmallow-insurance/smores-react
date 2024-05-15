@@ -46,7 +46,7 @@ LeadingIcon.args = {
 }
 
 const ParagraphDemo = (props: LinkProps) => (
-  <Text tag="p" color="apple">
+  <Text tag="p" color="liquorice">
     Lorem Ipsum is simply dummy text of the printing and typesetting industry,
     more details <Link {...props} />. Lorem Ipsum has been the industrys
     standard dummy text ever since the 1500s.
