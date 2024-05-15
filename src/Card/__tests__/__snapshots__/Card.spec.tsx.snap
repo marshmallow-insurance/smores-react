@@ -1,0 +1,28 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders 1`] = `
+<div
+  class="sc-beySPh kknHUq sc-jTQCzO hGolbH"
+>
+  <div
+    class="sc-beySPh lnWCea"
+  >
+    <div
+      class="sc-beySPh iSAsCG"
+    >
+      <div
+        class="sc-beySPh kBoXEW"
+      >
+        <div
+          class="sc-beySPh kknHUq"
+        />
+      </div>
+    </div>
+    <div
+      class="sc-beySPh ceQHL"
+    >
+      Text inside
+    </div>
+  </div>
+</div>
+`;

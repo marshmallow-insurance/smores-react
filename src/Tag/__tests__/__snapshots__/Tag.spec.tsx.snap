@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders 1`] = `
+<div
+  class="sc-beySPh jlZyMd sc-jTQCzO hYDYUw"
+>
+  <span
+    class="sc-beySPh kknHUq sc-eDLKkx cVLfJj sc-gLLuof eJeCQQ"
+    cursor="inherit"
+    title=""
+  >
+    Cancelled - Refunded Manually
+  </span>
+</div>
+`;

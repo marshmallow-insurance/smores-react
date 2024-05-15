@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width:0px) {
+  .c0 {
+    margin-top: 32px;
+  }
+}
+
+@media (min-width:0px) {
+  .c0 {
+    padding-bottom: 16px;
+  }
+}
+
+@media (min-width:0px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+<div
+  class="c0"
+  direction="column"
+/>
+`;
