@@ -1,6 +1,6 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { SearchInput } from '../SearchInput'
-import { Meta, StoryObj } from '@storybook/react'
 import { searchList } from './searchList'
 
 type Story = StoryObj<typeof SearchInput>
@@ -16,6 +16,7 @@ const meta: Meta<typeof SearchInput> = {
     ),
   ],
   args: {
+    label: 'Search label',
     showIcon: false,
     renderAsTitle: false,
     resultsRelativePosition: false,
