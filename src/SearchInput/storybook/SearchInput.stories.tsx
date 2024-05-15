@@ -1,23 +1,42 @@
 import React from 'react'
-import { Box } from '../../Box'
-import { SearchInput, SearchInputProps } from '../SearchInput'
-import { Container } from './Container'
+import { SearchInput } from '../SearchInput'
+import { Meta, StoryObj } from '@storybook/react'
+import { searchList } from './searchList'
 
-export default {
+type Story = StoryObj<typeof SearchInput>
+
+const meta: Meta<typeof SearchInput> = {
   title: 'Search Input',
   component: SearchInput,
+  decorators: [
+    (Story) => (
+      <div style={{ minHeight: '300px' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  args: {
+    showIcon: false,
+    renderAsTitle: false,
+    resultsRelativePosition: false,
+    resultsBorder: true,
+    enableFuzzySearch: false,
+    searchList: searchList,
+    name: 'search_input',
+    className: '',
+    onNotFound: undefined,
+    notFoundComponent: undefined,
+  },
 }
 
-const Template = (props: SearchInputProps) => (
-  <Box height="500px" width="100%">
-    <Container {...props} />
-  </Box>
-)
+export default meta
 
-export const Default = Template.bind({})
+export const ShowIcon: Story = { args: { showIcon: true } }
 
-export const ShowIcon = Template.bind({})
+export const OnNotFoundFunction: Story = {
+  args: { onNotFound: () => alert('Not found') },
+}
 
-ShowIcon.args = {
-  showIcon: true,
+export const NotFoundComponent: Story = {
+  args: { notFoundComponent: <div>Custom not found component</div> },
 }

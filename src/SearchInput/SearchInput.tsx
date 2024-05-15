@@ -1,6 +1,7 @@
 import React, {
   ChangeEvent,
   FocusEvent,
+  ReactNode,
   forwardRef,
   useMemo,
   useState,
@@ -11,7 +12,8 @@ import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
-import { SearchOptions } from './SearchOptions'
+import { SearchOptions } from './components/SearchOptions'
+import Fuse from 'fuse.js'
 
 export type SearchInputItem = {
   label: string
@@ -19,15 +21,30 @@ export type SearchInputItem = {
 }
 
 export interface SearchInputProps extends CommonFieldProps {
+  /** Optional input className */
   name?: string
+  /**  Optional placeholder text */
   placeholder?: string
+  /**  List of input items to search on*/
   searchList: SearchInputItem[]
+  /**  callback to handle found item click */
   onFound: (element: string) => void
+  /**  optional callback to run when no results found */
+  onNotFound?: () => void
+  /**  optional Component to render when no results found */
+  notFoundComponent?: ReactNode
+  /**  optional boolean to show search icon */
   showIcon?: boolean
+  /**  Optional callback to run on blur */
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
+  /**  Optional default value for input */
   value?: string
+  /**  Optional boolean to move results to a realtive position */
   resultsRelativePosition?: boolean
+  /**  optional boolean to add border to results */
   resultsBorder?: boolean
+  /** optional boolean to enable fuzzy search via fuse.js */
+  enableFuzzySearch?: boolean
 }
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
@@ -43,9 +60,12 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       value,
       onBlur,
       onFound,
+      onNotFound,
+      notFoundComponent,
       fallbackStyle,
       resultsRelativePosition = false,
       resultsBorder = true,
+      enableFuzzySearch = false,
       ...otherProps
     },
     ref,
@@ -58,18 +78,30 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       initialState: null,
       stateProp: value,
     })
-
     const [searchQuery, setSearchQuery] = useState<string | null>(null)
+
+    const fuse = useMemo(() => {
+      const searchKeys = ['label', 'value']
+      return new Fuse(searchList, {
+        keys: searchKeys,
+        findAllMatches: true,
+        minMatchCharLength: 2,
+      })
+    }, [searchList])
 
     const filteredList = useMemo(() => {
       if (searchQuery === null || searchQuery === '') {
         return searchList
       }
 
+      if (enableFuzzySearch) {
+        return fuse.search(searchQuery).map(({ item }) => item)
+      }
+
       return searchList.filter(({ label }) =>
         label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
-    }, [searchQuery])
+    }, [searchQuery, enableFuzzySearch])
 
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
@@ -148,6 +180,8 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             onSelect={handleSelect}
             positionRelative={resultsRelativePosition}
             resultsBorder={resultsBorder}
+            onNotFound={onNotFound}
+            notFoundComponent={notFoundComponent}
           />
         )}
       </Field>
