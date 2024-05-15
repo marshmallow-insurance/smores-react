@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../../Box'
 import { theme } from '../../theme'
-import { EmptyResults } from './NoOptions'
+import { EmptyResults } from './EmptyResults'
 
 type Option = {
   label: string
