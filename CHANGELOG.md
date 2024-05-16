@@ -1,3 +1,10 @@
+## [9.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.4.1...v9.5.0) (2024-05-16)
+
+
+### Features
+
+* adding fuzzySearchOptions prop ([#3751](https://github.com/marshmallow-insurance/smores-react/issues/3751)) ([fff4f73](https://github.com/marshmallow-insurance/smores-react/commit/fff4f73c5c89c4bb180bde16a25cc807247f2bf0))
+
 ## [9.4.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.4.0...v9.4.1) (2024-05-15)
 
 
