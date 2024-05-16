@@ -1,3 +1,4 @@
+import Fuse, { IFuseOptions } from 'fuse.js'
 import React, {
   ChangeEvent,
   FocusEvent,
@@ -13,11 +14,15 @@ import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 import { SearchOptions } from './components/SearchOptions'
-import Fuse from 'fuse.js'
 
 export type SearchInputItem = {
   label: string
   value: string
+  // Wanted to refactor this component to allow for a generic here
+  // but would take far too long since this is using forwardRef which
+  // complicates things a fair bit
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  tags?: any[]
 }
 
 export interface SearchInputProps extends CommonFieldProps {
@@ -45,6 +50,19 @@ export interface SearchInputProps extends CommonFieldProps {
   resultsBorder?: boolean
   /** optional boolean to enable fuzzy search via fuse.js */
   enableFuzzySearch?: boolean
+  /** optional config of fuzzy search
+   *  passing a value to this prop, automatically enables fuzzy search
+   */
+  fuzzySearchOptions?: IFuseOptions<SearchInputItem>
+}
+
+const defaultFuzzySearchOptions = {
+  keys: ['label', 'value'],
+  findAllMatches: true,
+  minMatchCharLength: 2,
+  location: 0,
+  threshold: 0.45,
+  distance: 55,
 }
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
@@ -66,6 +84,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       resultsRelativePosition = false,
       resultsBorder = true,
       enableFuzzySearch = false,
+      fuzzySearchOptions,
       ...otherProps
     },
     ref,
@@ -81,11 +100,9 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const [searchQuery, setSearchQuery] = useState<string | null>(null)
 
     const fuse = useMemo(() => {
-      const searchKeys = ['label', 'value']
       return new Fuse(searchList, {
-        keys: searchKeys,
-        findAllMatches: true,
-        minMatchCharLength: 2,
+        ...defaultFuzzySearchOptions,
+        ...fuzzySearchOptions,
       })
     }, [searchList])
 
@@ -94,14 +111,14 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         return searchList
       }
 
-      if (enableFuzzySearch) {
+      if (enableFuzzySearch || !!fuzzySearchOptions) {
         return fuse.search(searchQuery).map(({ item }) => item)
       }
 
       return searchList.filter(({ label }) =>
         label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
-    }, [searchQuery, enableFuzzySearch])
+    }, [searchQuery, enableFuzzySearch, !!fuzzySearchOptions])
 
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
