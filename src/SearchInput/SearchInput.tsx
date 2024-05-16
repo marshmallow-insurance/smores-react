@@ -104,7 +104,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         return searchList
       }
 
-      if (enableFuzzySearch || !!fuzzySearchOptions) {
+      if (enableFuzzySearch) {
         return fuse.search(searchQuery).map(({ item }) => item)
       }
 
