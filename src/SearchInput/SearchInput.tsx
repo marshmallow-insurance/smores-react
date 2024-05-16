@@ -50,8 +50,19 @@ export interface SearchInputProps extends CommonFieldProps {
   resultsBorder?: boolean
   /** optional boolean to enable fuzzy search via fuse.js */
   enableFuzzySearch?: boolean
-  /** optional config of fuzzySearchOptions, enableFuzzySearch is required for this to work */
+  /** optional config of fuzzySearchOptions
+   *  passing a value to this prop, automatically enabled fuzzy search
+   */
   fuzzySearchOptions?: IFuseOptions<SearchInputItem>
+}
+
+const defaultFuzzySearchOptions = {
+  keys: ['label', 'value'],
+  findAllMatches: true,
+  minMatchCharLength: 2,
+  location: 0,
+  threshold: 0.45,
+  distance: 55,
 }
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
@@ -73,14 +84,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       resultsRelativePosition = false,
       resultsBorder = true,
       enableFuzzySearch = false,
-      fuzzySearchOptions = {
-        keys: ['label', 'value'],
-        findAllMatches: true,
-        minMatchCharLength: 2,
-        location: 0,
-        threshold: 0.45,
-        distance: 55,
-      },
+      fuzzySearchOptions,
       ...otherProps
     },
     ref,
@@ -96,7 +100,10 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const [searchQuery, setSearchQuery] = useState<string | null>(null)
 
     const fuse = useMemo(() => {
-      return new Fuse(searchList, fuzzySearchOptions)
+      return new Fuse(searchList, {
+        ...defaultFuzzySearchOptions,
+        ...fuzzySearchOptions,
+      })
     }, [searchList])
 
     const filteredList = useMemo(() => {
@@ -104,14 +111,14 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         return searchList
       }
 
-      if (enableFuzzySearch) {
+      if (enableFuzzySearch || !!fuzzySearchOptions) {
         return fuse.search(searchQuery).map(({ item }) => item)
       }
 
       return searchList.filter(({ label }) =>
         label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
-    }, [searchQuery, enableFuzzySearch])
+    }, [searchQuery, enableFuzzySearch, !!fuzzySearchOptions])
 
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
