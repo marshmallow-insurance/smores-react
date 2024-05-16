@@ -111,7 +111,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       return searchList.filter(({ label }) =>
         label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
-    }, [searchQuery, enableFuzzySearch, !!fuzzySearchOptions])
+    }, [searchQuery, enableFuzzySearch])
 
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
