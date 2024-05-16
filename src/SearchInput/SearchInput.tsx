@@ -50,7 +50,7 @@ export interface SearchInputProps extends CommonFieldProps {
   resultsBorder?: boolean
   /** optional boolean to enable fuzzy search via fuse.js */
   enableFuzzySearch?: boolean
-  /** optional config of fuzzySearchOptions
+  /** optional config of fuzzy search
    *  passing a value to this prop, automatically enabled fuzzy search
    */
   fuzzySearchOptions?: IFuseOptions<SearchInputItem>
