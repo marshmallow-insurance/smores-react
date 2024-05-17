@@ -394,3 +394,4 @@ import{d as $}from"./index-DrFu-skq.js";const{useMemo:x,useEffect:f}=__STORYBOOK
     ${i} wbr {
       outline: 1px solid #db175b !important;
     }`}var e=(i,t)=>{let{globals:o}=t,n=[!0,"true"].includes(o[m]),d=t.viewMode==="docs",l=x(()=>s(d?'[data-story-block="true"]':".sb-show-main"),[t]);return f(()=>{let a=d?`addon-outline-docs-${t.id}`:"addon-outline";return n?b(a,l):u(a),()=>{u(a)}},[n,l,t]),i()},g=[e],h={[m]:!1};export{g as decorators,h as globals};
+//# sourceMappingURL=preview-BAz7FMXc.js.map

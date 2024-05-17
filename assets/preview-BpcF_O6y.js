@@ -5,3 +5,4 @@ const{global:r}=__STORYBOOK_MODULE_GLOBAL__,{addons:s}=__STORYBOOK_MODULE_PREVIE
 `,h=s.getChannel(),T=e=>{let t=i;n();let o=Array.from(new Set(e.elements)),_=l.createElement("style");_.setAttribute("id",t),_.innerHTML=o.map(a=>`${a}{
           ${H(e.color,e.style)}
          }`).join(" "),l.head.appendChild(_)},n=()=>{var o;let e=i,t=l.getElementById(e);t&&((o=t.parentNode)==null||o.removeChild(t))};h.on(O,n);h.on(E,n);h.on(g,T);
+//# sourceMappingURL=preview-BpcF_O6y.js.map
