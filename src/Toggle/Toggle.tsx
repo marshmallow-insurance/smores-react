@@ -22,8 +22,9 @@ export const Toggle: FC<Props> = ({
   ...marginProps
 }) => {
   return (
-    <Switch forwardedAs="label" id={id} {...marginProps}>
+    <Switch forwardedAs="label" htmlFor={id} {...marginProps}>
       <Checkbox
+        id={id}
         type="checkbox"
         checked={checked}
         onChange={onToggle}
@@ -32,6 +33,7 @@ export const Toggle: FC<Props> = ({
             onToggle()
           }
         }}
+        aria-label="toggle"
       />
       <Slider />
     </Switch>

@@ -21,7 +21,7 @@ const Template = (props: TooltipProps) => (
 )
 
 const OverflowHiddenTemplate = (props: TooltipProps) => (
-  <OverflowHiddenBox my="64px">
+  <OverflowHiddenBox my="64px" tabIndex={0}>
     <Tooltip {...props}>
       <Box>Harry Hill</Box>
     </Tooltip>
@@ -42,7 +42,7 @@ const OverflowHiddenBox = styled(Box)`
   height: 100px;
   width: 200px;
   overflow: scroll;
-  background: ${theme.colors.blueberry};
+  background: ${theme.colors.coconut};
 `
 
 const ClippedText = styled(Text)`

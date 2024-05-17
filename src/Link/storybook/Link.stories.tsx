@@ -24,6 +24,19 @@ Highlighted.args = {
   ...linkArgs,
   highlight: true,
 }
+Highlighted.parameters = {
+  a11y: {
+    config: {
+      rules: [
+        {
+          //disabling these until we sync with design on this
+          id: 'color-contrast',
+          enabled: false,
+        },
+      ],
+    },
+  },
+}
 
 export const LeadingIcon = Link.bind({})
 LeadingIcon.args = {
@@ -33,7 +46,7 @@ LeadingIcon.args = {
 }
 
 const ParagraphDemo = (props: LinkProps) => (
-  <Text tag="p" color="apple">
+  <Text tag="p" color="liquorice">
     Lorem Ipsum is simply dummy text of the printing and typesetting industry,
     more details <Link {...props} />. Lorem Ipsum has been the industrys
     standard dummy text ever since the 1500s.

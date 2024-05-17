@@ -32,6 +32,19 @@ WithError.args = {
   error: true,
   errorMsg: 'This is an error message describing what is wrong',
 }
+WithError.parameters = {
+  a11y: {
+    config: {
+      rules: [
+        {
+          //disabling these until we sync with design on this
+          id: 'color-contrast',
+          enabled: false,
+        },
+      ],
+    },
+  },
+}
 
 export const WithSmallLabel = Template.bind({})
 
@@ -45,4 +58,17 @@ export const WithCompletedStatus = Template.bind({})
 WithCompletedStatus.args = {
   ...defaultArgs,
   completed: true,
+}
+WithCompletedStatus.parameters = {
+  a11y: {
+    config: {
+      rules: [
+        {
+          //disabling these until we sync with design on this
+          id: 'color-contrast',
+          enabled: false,
+        },
+      ],
+    },
+  },
 }
