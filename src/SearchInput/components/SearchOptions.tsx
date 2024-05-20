@@ -91,9 +91,11 @@ const StyledResultsContainer = styled.div<
   TransientProps<Pick<SearchOptionsProps, 'positionRelative'>>
 >`
   box-sizing: border-box;
-  overflow-y: hidden;
+  overflow: hidden;
+  margin: -16px;
+  padding: 16px;
   ${({ $positionRelative }) => !$positionRelative && 'position: absolute;'}
-  width: 100%;
+  width:  calc(100% + 32px);
   left: 0px;
   top: -8px;
 
@@ -115,6 +117,7 @@ const ResultsList = styled.ul<
   margin-top: 14px;
   z-index: 1000;
   border: 1px solid ${theme.colors.oatmeal};
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
 
   li {
     padding: 16px 14px;
@@ -161,5 +164,4 @@ const ListButton = styled.button<{ $isSelected: boolean }>`
 
 const BoxWithPositionRelative = styled(Box)`
   position: relative;
-  filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.3));
 `

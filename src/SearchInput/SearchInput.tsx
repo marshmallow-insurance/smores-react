@@ -213,7 +213,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     }
 
     return (
-      <Box ref={wrapperRef}>
+      <Wrapper ref={wrapperRef}>
         <Field
           className={className}
           renderAsTitle={renderAsTitle}
@@ -285,10 +285,14 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             />
           )}
         </Field>
-      </Box>
+      </Wrapper>
     )
   },
 )
+
+const Wrapper = styled(Box)`
+  position: relative;
+`
 
 const Line = styled(Box)`
   background: ${theme.colors.oatmeal};
