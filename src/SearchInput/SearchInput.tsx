@@ -171,7 +171,10 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         updateSearchQuery(searchQuery)
         setShowOptions(true)
       } else if (selectedValue !== null && searchQuery === null) {
-        setSearchQuery(selectedValue)
+        setSearchQuery(
+          filteredList.find((val) => val.label === selectedValue)?.label ??
+            null,
+        )
         setShowOptions(true)
       }
     }
