@@ -213,79 +213,77 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     }
 
     return (
-      <Box ref={wrapperRef}>
-        <Field
-          className={className}
-          renderAsTitle={renderAsTitle}
-          htmlFor={id}
-          {...otherProps}
-        >
-          <Box flex alignItems="center" justifyContent="flex-start">
-            {showIcon && <StyledFrontIcon render="search" color="sesame" />}
-            <Input
-              id={id}
-              name={name}
-              ref={ref}
-              placeholder={placeholder}
-              $error={otherProps.error}
-              $frontIcon={showIcon ? 'search' : undefined}
-              $fallbackStyle={fallbackStyle}
-              autoComplete="off"
-              value={displayedInputText}
-              onFocus={handleClick}
-              onChange={handleInputChange}
-              selected={isSelected}
-              onClick={handleClick}
-              onKeyDown={handleKeyDown}
-              onBlur={(e) => {
-                if (displayedInputText === '') {
-                  setSearchQuery(null)
-                }
-                onBlur?.(e)
-              }}
-            />
-            <Icons
-              flex
-              alignItems="center"
-              gap="8px"
-              $clearSearch={!!clearSearch}
-            >
-              {clearSearch && (
-                <IconStrict
-                  render="plus"
-                  rotate={45}
-                  iconColor="marzipan"
-                  handleClick={handleClearSearch}
-                  size={24}
-                />
-              )}
-              <Line />
+      <Field
+        className={className}
+        renderAsTitle={renderAsTitle}
+        htmlFor={id}
+        {...otherProps}
+      >
+        <Box flex alignItems="center" justifyContent="flex-start">
+          {showIcon && <StyledFrontIcon render="search" color="sesame" />}
+          <Input
+            id={id}
+            name={name}
+            ref={ref}
+            placeholder={placeholder}
+            $error={otherProps.error}
+            $frontIcon={showIcon ? 'search' : undefined}
+            $fallbackStyle={fallbackStyle}
+            autoComplete="off"
+            value={displayedInputText}
+            onFocus={handleClick}
+            onChange={handleInputChange}
+            selected={isSelected}
+            onClick={handleClick}
+            onKeyDown={handleKeyDown}
+            onBlur={(e) => {
+              if (displayedInputText === '') {
+                setSearchQuery(null)
+              }
+              onBlur?.(e)
+            }}
+          />
+          <Icons
+            flex
+            alignItems="center"
+            gap="8px"
+            $clearSearch={!!clearSearch}
+          >
+            {clearSearch && (
               <IconStrict
-                render="caret"
+                render="plus"
+                rotate={45}
                 iconColor="marzipan"
-                rotate={showOptions ? 180 : 0}
-                handleClick={handleCaretClick}
+                handleClick={handleClearSearch}
                 size={24}
               />
-            </Icons>
-          </Box>
-
-          {showOptions && (
-            <SearchOptions
-              displayedList={filteredList}
-              selectedValue={selectedValue}
-              focusedIndex={focusedIndex}
-              onKeyDown={handleKeyDown}
-              searchTerm={searchQuery || ''}
-              onSelect={handleSelect}
-              positionRelative={resultsRelativePosition}
-              resultsBorder={resultsBorder}
-              onNotFound={onNotFound}
-              notFoundComponent={notFoundComponent}
+            )}
+            <Line />
+            <IconStrict
+              render="caret"
+              iconColor="marzipan"
+              rotate={showOptions ? 180 : 0}
+              handleClick={handleCaretClick}
+              size={24}
             />
-          )}
-        </Field>
-      </Box>
+          </Icons>
+        </Box>
+
+        {showOptions && (
+          <SearchOptions
+            displayedList={filteredList}
+            selectedValue={selectedValue}
+            focusedIndex={focusedIndex}
+            onKeyDown={handleKeyDown}
+            searchTerm={searchQuery || ''}
+            onSelect={handleSelect}
+            positionRelative={resultsRelativePosition}
+            resultsBorder={resultsBorder}
+            onNotFound={onNotFound}
+            notFoundComponent={notFoundComponent}
+          />
+        )}
+      </Field>
     )
   },
 )
