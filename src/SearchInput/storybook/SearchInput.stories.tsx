@@ -64,7 +64,6 @@ export const Occupations: Story = {
     assistiveText: 'I am assisting',
     fuzzySearchOptions: allFuzzySearchOptions,
     clearSearch: true,
-    completed: true,
     searchList: occupations.map(({ name, value }) => ({ label: name, value })),
     onFound: (searchTerm: string) => console.log(`selected ${searchTerm}`),
     notFoundComponent: (
