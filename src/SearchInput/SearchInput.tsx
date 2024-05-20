@@ -252,6 +252,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             >
               {clearSearch && (
                 <IconStrict
+                  type="button"
                   render="plus"
                   rotate={45}
                   iconColor="marzipan"
@@ -261,6 +262,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               )}
               <Line />
               <IconStrict
+                type="button"
                 render="caret"
                 iconColor="marzipan"
                 rotate={showOptions ? 180 : 0}

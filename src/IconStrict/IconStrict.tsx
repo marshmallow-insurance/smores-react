@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, HTMLAttributes } from 'react'
+import React, { ButtonHTMLAttributes, FC, FormEvent } from 'react'
 import styled, { css } from 'styled-components'
 
 import { darken } from 'polished'
@@ -26,7 +26,7 @@ export type IconStrictProps = {
   /** rotation degrees */
   rotate?: number
 } & MarginProps &
-  Partial<HTMLAttributes<HTMLButtonElement>>
+  Partial<ButtonHTMLAttributes<HTMLButtonElement>>
 
 const iconSizes = {
   48: {
