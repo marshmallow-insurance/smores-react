@@ -60,6 +60,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
               const isSelected = selectedValue === el.label
               return (
                 <ListButton
+                  type="button"
                   aria-label={el.label + '_list_item'}
                   ref={itemRefs.current[i]}
                   key={i}
