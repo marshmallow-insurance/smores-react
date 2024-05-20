@@ -5,12 +5,17 @@ import React, {
   ReactNode,
   forwardRef,
   useMemo,
+  useRef,
   useState,
 } from 'react'
+import styled from 'styled-components'
 import { Box } from '../Box'
+import { IconStrict } from '../IconStrict'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
+import { useOnClickOutside } from '../hooks'
+import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 import { SearchOptions } from './components/SearchOptions'
@@ -40,6 +45,8 @@ export interface SearchInputProps extends CommonFieldProps {
   notFoundComponent?: ReactNode
   /**  optional boolean to show search icon */
   showIcon?: boolean
+  /**  optional boolean to show a clear search button */
+  clearSearch?: boolean
   /**  Optional callback to run on blur */
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   /**  Optional default value for input */
@@ -85,10 +92,12 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       resultsBorder = true,
       enableFuzzySearch = false,
       fuzzySearchOptions,
+      clearSearch,
       ...otherProps
     },
     ref,
   ) {
+    const wrapperRef = useRef(null)
     const id = useUniqueId(idProp)
     const [showOptions, setShowOptions] = useState(false)
     const [selectedValue, setSelectedValue] = useControllableState<
@@ -98,6 +107,12 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       stateProp: value,
     })
     const [searchQuery, setSearchQuery] = useState<string | null>(null)
+    const [focusedIndex, setFocusedIndex] = useState(-1)
+
+    useOnClickOutside({
+      ref: wrapperRef,
+      callback: () => setShowOptions(false),
+    })
 
     const fuse = useMemo(() => {
       return new Fuse(searchList, {
@@ -142,11 +157,22 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
     const updateSearchQuery = (query: string | null) => {
       setSearchQuery(query)
+      setFocusedIndex(-1)
 
       if (query === null) {
         setShowOptions(false)
       } else {
         setShowOptions(2 <= query.length)
+      }
+    }
+
+    const handleClick = () => {
+      if (searchQuery !== null && 2 <= searchQuery.length) {
+        updateSearchQuery(searchQuery)
+        setShowOptions(true)
+      } else if (selectedValue !== null && searchQuery === null) {
+        setSearchQuery(selectedValue)
+        setShowOptions(true)
       }
     }
 
@@ -157,52 +183,121 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
     const handleSelect = (nextValue: SearchInputItem): void => {
       updateSearchQuery(null)
-
       setSelectedValue(nextValue.label)
       onFound(nextValue.value)
     }
 
-    return (
-      <Field
-        className={className}
-        renderAsTitle={renderAsTitle}
-        htmlFor={id}
-        {...otherProps}
-      >
-        <Box flex alignItems="center" justifyContent="flex-start">
-          {showIcon && <StyledFrontIcon render="search" color="sesame" />}
-          <Input
-            id={id}
-            name={name}
-            ref={ref}
-            placeholder={placeholder}
-            $frontIcon={showIcon ? 'search' : undefined}
-            $fallbackStyle={fallbackStyle}
-            autoComplete="off"
-            value={displayedInputText}
-            onChange={handleInputChange}
-            selected={isSelected}
-            onBlur={(e) => {
-              if (displayedInputText === '') {
-                setSearchQuery(null)
-              }
-              onBlur?.(e)
-            }}
-          />
-        </Box>
+    const handleClearSearch = () => {
+      updateSearchQuery(null)
+      setSelectedValue(null)
+    }
 
-        {showOptions && (
-          <SearchOptions
-            displayedList={filteredList}
-            searchTerm={searchQuery || ''}
-            onSelect={handleSelect}
-            positionRelative={resultsRelativePosition}
-            resultsBorder={resultsBorder}
-            onNotFound={onNotFound}
-            notFoundComponent={notFoundComponent}
-          />
-        )}
-      </Field>
+    const handleCaretClick = () => {
+      setShowOptions(!showOptions)
+    }
+
+    const handleKeyDown = (event: {
+      key: string
+      preventDefault: () => void
+    }) => {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault()
+        const nextIndex = (focusedIndex + 1) % filteredList.length
+        setFocusedIndex(nextIndex)
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault()
+        const prevIndex =
+          (focusedIndex - 1 + filteredList.length) % filteredList.length
+        setFocusedIndex(prevIndex)
+      }
+    }
+
+    return (
+      <Box ref={wrapperRef}>
+        <Field
+          className={className}
+          renderAsTitle={renderAsTitle}
+          htmlFor={id}
+          {...otherProps}
+        >
+          <Box flex alignItems="center" justifyContent="flex-start">
+            {showIcon && <StyledFrontIcon render="search" color="sesame" />}
+            <Input
+              id={id}
+              name={name}
+              ref={ref}
+              placeholder={placeholder}
+              $error={otherProps.error}
+              $frontIcon={showIcon ? 'search' : undefined}
+              $fallbackStyle={fallbackStyle}
+              autoComplete="off"
+              value={displayedInputText}
+              onFocus={handleClick}
+              onChange={handleInputChange}
+              selected={isSelected}
+              onClick={handleClick}
+              onKeyDown={handleKeyDown}
+              onBlur={(e) => {
+                if (displayedInputText === '') {
+                  setSearchQuery(null)
+                }
+                onBlur?.(e)
+              }}
+            />
+            <Icons
+              flex
+              alignItems="center"
+              gap="8px"
+              $clearSearch={!!clearSearch}
+            >
+              {clearSearch && (
+                <IconStrict
+                  render="plus"
+                  rotate={45}
+                  iconColor="marzipan"
+                  handleClick={handleClearSearch}
+                  size={24}
+                />
+              )}
+              <Line />
+              <IconStrict
+                render="caret"
+                iconColor="marzipan"
+                rotate={showOptions ? 180 : 0}
+                handleClick={handleCaretClick}
+                size={24}
+              />
+            </Icons>
+          </Box>
+
+          {showOptions && (
+            <SearchOptions
+              displayedList={filteredList}
+              selectedValue={selectedValue}
+              focusedIndex={focusedIndex}
+              onKeyDown={handleKeyDown}
+              searchTerm={searchQuery || ''}
+              onSelect={handleSelect}
+              positionRelative={resultsRelativePosition}
+              resultsBorder={resultsBorder}
+              onNotFound={onNotFound}
+              notFoundComponent={notFoundComponent}
+            />
+          )}
+        </Field>
+      </Box>
     )
   },
 )
+
+const Line = styled(Box)`
+  background: ${theme.colors.oatmeal};
+  height: 24px;
+  width: 1px;
+`
+
+export const Icons = styled(Box)<{ $clearSearch: boolean }>`
+  position: relative;
+  right: ${({ $clearSearch }) => ($clearSearch ? '78px' : '48px')};
+  margin-right: ${({ $clearSearch }) => ($clearSearch ? '-78px' : '-48px')};
+`

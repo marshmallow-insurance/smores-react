@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
+import { Box } from '../../Box'
+import { Text } from '../../Text'
 import { SearchInput } from '../SearchInput'
 import { industries } from './industries'
 import { occupations } from './occupations'
@@ -48,27 +50,31 @@ export const NotFoundComponent: Story = {
 }
 
 const allFuzzySearchOptions = {
-  isCaseSensitive: true,
-  distance: 0,
+  keys: ['label', 'value'],
   findAllMatches: true,
-  ignoreLocation: true,
-  ignoreFieldNorm: true,
-  fieldNormWeight: 0,
-  includeMatches: true,
-  includeScore: true,
-  keys: ['label'],
+  minMatchCharLength: 2,
   location: 0,
-  minMatchCharLength: 0,
-  shouldSort: true,
-  threshold: 0,
-  useExtendedSearch: true,
+  threshold: 0.45,
+  distance: 55,
 }
 
 export const Occupations: Story = {
   args: {
     enableFuzzySearch: true,
+    assistiveText: 'I am assisting',
     fuzzySearchOptions: allFuzzySearchOptions,
+    clearSearch: true,
     searchList: occupations.map(({ name, value }) => ({ label: name, value })),
+    onFound: (searchTerm: string) => console.log(`selected ${searchTerm}`),
+    notFoundComponent: (
+      <Box>
+        <Text typo="headline-regular">No matches for {`'${'X'}'.`}</Text>
+        <Text mt="8px">
+          {`It might be listed differently. For example, if you're a "PR
+          Consultant", try "Public Relations Officer" instead.`}
+        </Text>
+      </Box>
+    ),
   },
   argTypes: {
     searchList: { control: false },
@@ -94,6 +100,14 @@ export const Industries: Story = {
   args: {
     ...Occupations.args,
     searchList: industries.map(({ name, value }) => ({ label: name, value })),
+    notFoundComponent: (
+      <Box>
+        <Text typo="headline-regular">No matches for {`'${'X'}'.`}</Text>
+        <Text mt="8px">
+          {`Sometimes we use different terms. If you're in "Medical services," try "Healthcare."`}
+        </Text>
+      </Box>
+    ),
   },
   argTypes: {
     ...Occupations.argTypes,

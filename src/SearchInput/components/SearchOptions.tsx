@@ -1,8 +1,8 @@
-import { darken } from 'polished'
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode, createRef, useEffect, useRef } from 'react'
 import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../../Box'
+import { Icon } from '../../Icon'
 import { theme } from '../../theme'
 import { EmptyResults } from './EmptyResults'
 
@@ -13,7 +13,10 @@ type Option = {
 
 type SearchOptionsProps = {
   displayedList: Array<Option>
+  selectedValue: string | null
+  focusedIndex: number
   onSelect: (option: Option) => void
+  onKeyDown: (e: { key: string; preventDefault: () => void }) => void
   positionRelative: boolean
   resultsBorder: boolean
   onNotFound?: (searchTerm: string) => void
@@ -23,23 +26,53 @@ type SearchOptionsProps = {
 
 export const SearchOptions: FC<SearchOptionsProps> = ({
   displayedList,
+  selectedValue,
+  focusedIndex,
   onSelect,
+  onKeyDown,
   positionRelative,
   resultsBorder,
   onNotFound,
   searchTerm,
   notFoundComponent,
 }) => {
+  const itemRefs = useRef<React.RefObject<HTMLButtonElement>[]>([])
+
+  useEffect(() => {
+    itemRefs.current = displayedList.map(
+      (_, i) => itemRefs.current[i] ?? createRef<HTMLButtonElement>(),
+    )
+  }, [displayedList.length])
+
+  useEffect(() => {
+    const itemRef = itemRefs?.current[focusedIndex]?.current
+    if (focusedIndex >= 0 && itemRef) {
+      itemRef.focus()
+    }
+  }, [focusedIndex])
+
   return (
     <BoxWithPositionRelative>
       <StyledResultsContainer $positionRelative={positionRelative}>
-        <ResultsList $resultsBorder={resultsBorder}>
+        <ResultsList $resultsBorder={resultsBorder} onKeyDown={onKeyDown}>
           {displayedList.length ? (
-            displayedList.map((el, i) => (
-              <li key={i} onClick={() => onSelect(el)}>
-                {el.label}
-              </li>
-            ))
+            displayedList.map((el, i) => {
+              const isSelected = selectedValue === el.label
+              return (
+                <ListButton
+                  aria-label={el.label + '_list_item'}
+                  ref={itemRefs.current[i]}
+                  key={i}
+                  onClick={() => onSelect(el)}
+                  $isSelected={isSelected || focusedIndex === i}
+                >
+                  {el.label}
+                  {isSelected && (
+                    <Icon render="tick" size={16} color="marshmallowPink" />
+                  )}
+                </ListButton>
+              )
+            })
           ) : (
             <EmptyResults
               onNotFound={onNotFound}
@@ -76,15 +109,11 @@ const ResultsList = styled.ul<
   overflow-y: auto;
   padding: 0;
   margin: 0;
-  background-color: ${theme.colors.custard};
+  background-color: ${theme.colors.cream};
   border-radius: 12px;
   margin-top: 14px;
   z-index: 1000;
-  ${({ $resultsBorder }) =>
-    $resultsBorder &&
-    css`
-      border: 2px solid ${theme.colors.oatmeal};
-    `}
+  border: 1px solid ${theme.colors.oatmeal};
 
   li {
     padding: 16px 14px;
@@ -93,19 +122,43 @@ const ResultsList = styled.ul<
     color: ${theme.colors.liquorice};
     cursor: pointer;
 
-    ${({ $resultsBorder }) =>
-      $resultsBorder && `border-bottom: 2px solid ${theme.colors.oatmeal};`}
-
-    &:last-child {
-      ${({ $resultsBorder }) => $resultsBorder && `border-bottom:none`}
-    }
-
     &:hover {
-      background-color: ${darken(0.1, theme.colors.custard)};
+      background-color: ${theme.colors.mascarpone};
     }
   }
 `
 
+const ListButton = styled.button<{ $isSelected: boolean }>`
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 14px;
+  box-sizing: border-box;
+  font-size: 16px;
+  width: 100%;
+  color: ${theme.colors.liquorice};
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${theme.colors.mascarpone};
+  }
+
+  &:focus {
+    outline: none;
+    background-color: ${theme.colors.mascarpone};
+  }
+  &:focus-visible {
+    outline: none;
+    background-color: ${theme.colors.mascarpone};
+  }
+
+  ${({ $isSelected }) =>
+    $isSelected &&
+    css`
+      background-color: ${theme.colors.mascarpone};
+    `}
+`
+
 const BoxWithPositionRelative = styled(Box)`
   position: relative;
+  filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.3));
 `

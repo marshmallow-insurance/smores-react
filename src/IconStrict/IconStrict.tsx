@@ -1,4 +1,4 @@
-import React, { FC, FormEvent } from 'react'
+import React, { FC, FormEvent, HTMLAttributes } from 'react'
 import styled, { css } from 'styled-components'
 
 import { darken } from 'polished'
@@ -25,7 +25,8 @@ export type IconStrictProps = {
   handleClick?: (e: FormEvent<HTMLButtonElement>) => void
   /** rotation degrees */
   rotate?: number
-} & MarginProps
+} & MarginProps &
+  Partial<HTMLAttributes<HTMLButtonElement>>
 
 const iconSizes = {
   48: {
@@ -55,33 +56,31 @@ export const IconStrict: FC<IconStrictProps> = ({
   backgroundColor,
   rotate,
   handleClick,
-  ...marginProps
-}) => (
-  <IconContainer
-    id={id}
-    forwardedAs={handleClick ? 'button' : 'div'}
-    className={className}
-    $size={size}
-    {...marginProps}
-    $backgroundColor={backgroundColor}
-    onClick={handleClick}
-    onKeyDown={(e: { key: string }) => {
-      if (!handleClick) return
-      if (e.key === 'Enter') {
-        handleClick
-      }
-    }}
-  >
-    <Icon
-      render={render}
+  title,
+  ...otherProps
+}) => {
+  const isButton = !!handleClick
+  const defaultLabel = isButton ? (title ? title : 'icon-button') : undefined
+  return (
+    <IconContainer
+      id={id}
+      as={isButton ? 'button' : 'div'}
       className={className}
-      size={backgroundColor ? iconSizes[size].smallSize : size}
-      color={iconColor}
-      rotate={rotate}
-      {...marginProps}
-    />
-  </IconContainer>
-)
+      $size={size}
+      $backgroundColor={backgroundColor}
+      onClick={handleClick}
+      title={defaultLabel}
+      {...otherProps}
+    >
+      <Icon
+        render={render}
+        size={backgroundColor ? iconSizes[size].smallSize : size}
+        color={iconColor}
+        rotate={rotate}
+      />
+    </IconContainer>
+  )
+}
 
 interface IIconStrict {
   $size: 16 | 24 | 36 | 48
@@ -91,6 +90,7 @@ interface IIconStrict {
 
 const IconContainer = styled.div<IIconStrict>(
   ({ $size, $backgroundColor, onClick }) => css`
+    position: relative;
     padding: ${$backgroundColor ? `${iconSizes[$size].padding}px` : 0};
     width: 100%;
     max-width: ${$size}px;
