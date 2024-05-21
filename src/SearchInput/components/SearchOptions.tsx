@@ -60,7 +60,6 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
           {displayedList.length ? (
             displayedList.map((el, i) => {
               const isSelected = selectedValue === el.label
-              const isNotFocused = focusedIndex === -1
 
               return (
                 <ListButton
@@ -69,7 +68,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
                   ref={itemRefs.current[i]}
                   key={i}
                   onClick={() => onSelect(el)}
-                  $isSelected={isSelected && isNotFocused}
+                  $isSelected={isSelected}
                   onMouseEnter={() => {
                     setFocusedIndex(i)
                   }}
@@ -154,21 +153,29 @@ const ListButton = styled.button<{ $isSelected: boolean }>`
 
   &:focus {
     outline: none;
-    background-color: ${theme.colors.mascarpone};
+    ${({ $isSelected }) =>
+      $isSelected &&
+      css`
+        background-color: ${$isSelected
+          ? theme.colors.custard
+          : theme.colors.mascarpone};
+      `}
   }
   &:focus-visible {
     outline: none;
-    background-color: ${theme.colors.mascarpone};
-  }
-
-  &:hover {
-    background-color: ${theme.colors.custard};
+    ${({ $isSelected }) =>
+      $isSelected &&
+      css`
+        background-color: ${$isSelected
+          ? theme.colors.custard
+          : theme.colors.mascarpone};
+      `}
   }
 
   ${({ $isSelected }) =>
     $isSelected &&
     css`
-      background-color: ${theme.colors.mascarpone};
+      background-color: ${theme.colors.custard};
     `}
 `
 
