@@ -25,6 +25,8 @@ export type IconStrictProps = {
   handleClick?: (e: FormEvent<HTMLButtonElement>) => void
   /** rotation degrees */
   rotate?: number
+  /** Title attribute */
+  title?: string
 } & MarginProps
 
 const iconSizes = {
@@ -55,6 +57,7 @@ export const IconStrict: FC<IconStrictProps> = ({
   backgroundColor,
   rotate,
   handleClick,
+  title,
   ...marginProps
 }) => (
   <IconContainer
@@ -62,6 +65,7 @@ export const IconStrict: FC<IconStrictProps> = ({
     forwardedAs={handleClick ? 'button' : 'div'}
     className={className}
     $size={size}
+    title={title}
     {...marginProps}
     $backgroundColor={backgroundColor}
     onClick={handleClick}
