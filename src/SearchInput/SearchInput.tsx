@@ -166,7 +166,8 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       setSearchQuery(query)
       setFocusedIndex(-1)
 
-      if (query === null) {
+      if (query === null || query === '') {
+        setSelectedValue(null)
         setShowOptions(false)
       } else {
         setShowOptions(true)
@@ -246,9 +247,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               onClick={handleClick}
               onKeyDown={handleKeyDown}
               onBlur={(e) => {
-                if (selectedValue) {
-                  setSearchQuery(selectedValueLabel || null)
-                }
                 if (displayedInputText === '') {
                   setSearchQuery(null)
                 }
