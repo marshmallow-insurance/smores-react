@@ -46,11 +46,12 @@ export const OnNotFoundFunction: Story = {
 }
 
 export const NotFoundComponent: Story = {
-  args: { notFoundComponent: <div>Custom not found component</div> },
+  args: {
+    notFoundComponent: () => <div>Custom not found component</div>,
+  },
 }
 
 const allFuzzySearchOptions = {
-  keys: ['label', 'value'],
   findAllMatches: true,
   minMatchCharLength: 2,
   location: 0,
@@ -66,9 +67,9 @@ export const Occupations: Story = {
     clearSearch: true,
     searchList: occupations.map(({ name, value }) => ({ label: name, value })),
     onFound: (searchTerm: string) => console.log(`selected ${searchTerm}`),
-    notFoundComponent: (
+    notFoundComponent: (searchTerm: string) => (
       <Box>
-        <Text typo="headline-regular">No matches for {`'${'X'}'.`}</Text>
+        <Text typo="headline-regular">No matches for {`'${searchTerm}'`}.</Text>
         <Text mt="8px">
           {`It might be listed differently. For example, if you're a "PR
           Consultant", try "Public Relations Officer" instead.`}
@@ -100,9 +101,9 @@ export const Industries: Story = {
   args: {
     ...Occupations.args,
     searchList: industries.map(({ name, value }) => ({ label: name, value })),
-    notFoundComponent: (
+    notFoundComponent: (searchTerm: string) => (
       <Box>
-        <Text typo="headline-regular">No matches for {`'${'X'}'.`}</Text>
+        <Text typo="headline-regular">No matches for {`'${searchTerm}'`}.</Text>
         <Text mt="8px">
           {`Sometimes we use different terms. If you're in "Medical services," try "Healthcare."`}
         </Text>

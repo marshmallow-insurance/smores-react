@@ -42,7 +42,7 @@ export interface SearchInputProps extends CommonFieldProps {
   /**  optional callback to run when no results found */
   onNotFound?: (searchTerm: string) => void
   /**  optional Component to render when no results found */
-  notFoundComponent?: ReactNode
+  notFoundComponent?: (searchTerm: string) => ReactNode
   /**  optional boolean to show search icon */
   showIcon?: boolean
   /**  optional boolean to show a clear search button */
@@ -64,7 +64,16 @@ export interface SearchInputProps extends CommonFieldProps {
 }
 
 const defaultFuzzySearchOptions = {
-  keys: ['label', 'value'],
+  keys: [
+    {
+      name: 'label',
+      weight: 0.6,
+    },
+    {
+      name: 'tags',
+      weight: 0.4,
+    },
+  ],
   findAllMatches: true,
   minMatchCharLength: 2,
   location: 0,
@@ -286,7 +295,9 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               positionRelative={resultsRelativePosition}
               resultsBorder={resultsBorder}
               onNotFound={onNotFound}
-              notFoundComponent={notFoundComponent}
+              notFoundComponent={
+                notFoundComponent && notFoundComponent(searchQuery ?? '')
+              }
             />
           )}
         </Field>
