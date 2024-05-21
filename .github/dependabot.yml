@@ -11,3 +11,8 @@ updates:
       - marshmallow-insurance/frontend
     assignees:
       - marshmallow-insurance/frontend
+    groups:
+      lexical:
+        patterns:
+          - "@leixcal*"
+          - "lexical*"
