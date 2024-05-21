@@ -16,3 +16,6 @@ updates:
         patterns:
           - "@leixcal*"
           - "lexical*"
+      ts-eslint:
+        patterns:
+          - "@typescript-eslint*"
