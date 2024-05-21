@@ -153,23 +153,19 @@ const ListButton = styled.button<{ $isSelected: boolean }>`
 
   &:focus {
     outline: none;
-    ${({ $isSelected }) =>
-      $isSelected &&
-      css`
-        background-color: ${$isSelected
-          ? theme.colors.custard
-          : theme.colors.mascarpone};
-      `}
+    ${({ $isSelected }) => css`
+      background-color: ${$isSelected
+        ? theme.colors.custard
+        : theme.colors.mascarpone};
+    `}
   }
   &:focus-visible {
     outline: none;
-    ${({ $isSelected }) =>
-      $isSelected &&
-      css`
-        background-color: ${$isSelected
-          ? theme.colors.custard
-          : theme.colors.mascarpone};
-      `}
+    ${({ $isSelected }) => css`
+      background-color: ${$isSelected
+        ? theme.colors.custard
+        : theme.colors.mascarpone};
+    `}
   }
 
   ${({ $isSelected }) =>
