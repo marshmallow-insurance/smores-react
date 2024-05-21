@@ -75,7 +75,7 @@ const defaultFuzzySearchOptions = {
     },
   ],
   findAllMatches: true,
-  minMatchCharLength: 2,
+  minMatchCharLength: 1,
   location: 0,
   threshold: 0.45,
   distance: 55,
@@ -144,20 +144,18 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       )
     }, [searchQuery, enableFuzzySearch, !!fuzzySearchOptions])
 
+    const selectedValueLabel = searchList.find(
+      (option) =>
+        option.label === selectedValue || option.value === selectedValue,
+    )?.label
+
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
         return searchQuery
       }
-
       if (selectedValue !== null) {
-        return (
-          searchList.find(
-            (option) =>
-              option.label === selectedValue || option.value === selectedValue,
-          )?.label || ''
-        )
+        return selectedValueLabel || ''
       }
-
       return ''
     }
 
@@ -171,19 +169,17 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       if (query === null) {
         setShowOptions(false)
       } else {
-        setShowOptions(2 <= query.length)
+        setShowOptions(true)
       }
     }
 
     const handleClick = () => {
-      if (searchQuery !== null && 2 <= searchQuery.length) {
+      setShowOptions(true)
+      if (searchQuery !== null) {
         updateSearchQuery(searchQuery)
         setShowOptions(true)
       } else if (selectedValue !== null && searchQuery === null) {
-        setSearchQuery(
-          filteredList.find((val) => val.label === selectedValue)?.label ??
-            null,
-        )
+        setSearchQuery(selectedValueLabel || null)
         setShowOptions(true)
       }
     }
@@ -250,6 +246,9 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               onClick={handleClick}
               onKeyDown={handleKeyDown}
               onBlur={(e) => {
+                if (selectedValue) {
+                  setSearchQuery(selectedValueLabel || null)
+                }
                 if (displayedInputText === '') {
                   setSearchQuery(null)
                 }

@@ -53,7 +53,7 @@ export const NotFoundComponent: Story = {
 
 const allFuzzySearchOptions = {
   findAllMatches: true,
-  minMatchCharLength: 2,
+  minMatchCharLength: 1,
   location: 0,
   threshold: 0.45,
   distance: 55,
