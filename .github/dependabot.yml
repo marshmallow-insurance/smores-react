@@ -19,3 +19,14 @@ updates:
       ts-eslint:
         patterns:
           - "@typescript-eslint*"
+      storybook-dependencies:
+        patterns:
+          - "@storybook*"
+          - "@storybook/*"
+      semantic-release-dependencies:
+        patterns:
+          - "@semantic-release*"
+          - "@semantic-release/*"
+      babel-dependencies:
+        patterns:
+          - "@babel/*"
