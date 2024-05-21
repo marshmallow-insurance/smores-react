@@ -288,6 +288,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               displayedList={filteredList}
               selectedValue={selectedValue}
               focusedIndex={focusedIndex}
+              setFocusedIndex={setFocusedIndex}
               onKeyDown={handleKeyDown}
               searchTerm={searchQuery || ''}
               onSelect={handleSelect}

@@ -15,6 +15,7 @@ type SearchOptionsProps = {
   displayedList: Array<Option>
   selectedValue: string | null
   focusedIndex: number
+  setFocusedIndex: (arg: number) => void
   onSelect: (option: Option) => void
   onKeyDown: (e: { key: string; preventDefault: () => void }) => void
   positionRelative: boolean
@@ -28,6 +29,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   displayedList,
   selectedValue,
   focusedIndex,
+  setFocusedIndex,
   onSelect,
   onKeyDown,
   positionRelative,
@@ -68,6 +70,12 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
                   key={i}
                   onClick={() => onSelect(el)}
                   $isSelected={isSelected && isNotFocused}
+                  onMouseEnter={() => {
+                    setFocusedIndex(i)
+                  }}
+                  onFocus={() => {
+                    setFocusedIndex(i)
+                  }}
                 >
                   {el.label}
                   {isSelected && (
