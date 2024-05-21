@@ -27,7 +27,7 @@ updates:
           - "patch"
       storybook-dependencies:
         patterns:
-          - "@storybook*"
+          - "storybook*"
           - "@storybook/*"
         update-types:
           - "minor"
