@@ -193,7 +193,7 @@ const StyledSelect = styled.select<SSelect>`
     $fallbackStyle ? theme.colors.custard : theme.colors.cream};
 
   border-radius: 12px;
-  padding: 18px 14px;
+  padding: 12px 12px;
   border: 2px solid
     ${({ $error }) => ($error ? theme.colors.strawberry : theme.colors.oatmeal)};
   height: auto;

@@ -96,7 +96,7 @@ const StyledTextArea = styled.textarea<TextArea>`
   box-sizing: border-box;
   border-radius: 12px;
   width: 100%;
-  padding: 18px 14px;
+  padding: 12px 12px;
   color: ${theme.colors.liquorice};
   resize: ${({ $resize }) => $resize};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'text')};

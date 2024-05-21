@@ -27,7 +27,7 @@ export const Input = styled.input<IInput>`
   outline: none;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'initial')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
-  padding: 18px 14px;
+  padding: 12px 12px;
   background-color: ${({ $fallbackStyle }) =>
     $fallbackStyle ? theme.colors.custard : theme.colors.cream};
   border: 2px solid
