@@ -70,32 +70,52 @@ export interface TableColumn<T> {
   cell?: RowCellRenderer<T>
 }
 
+/** @template T - The type of data the table displays. */
 interface CommonTableProps<T> {
+  /** Array of columns to display in the table. */
   columns: TableColumn<T>[]
+  /** Sets the height of the header. */
   headerHeight?: string
+  /** If true, the table header will be fixed/sticky. */
   fixedHeader?: boolean
+  /** If true, the table header will have a key line. */
   hasKeyline?: boolean
+  /** If present, the table rows will have alternating colors. */
   stripedColor?: Color
+  /** A function to determine if a row is expandable. */
   expandable?: (rowData: T) => boolean
+  /** The color for the table header. */
   headerColor?: Color
+  /** The default color for each table row. */
   rowColor?: Color
+  /** The default color for each table row border. */
   rowBorderColor?: Color
+  /** A React element to show when a row is expanded. */
   subTable?: {
     table: (rowData: T) => ReactElement
     showOnExpand?: (rowData: T) => boolean
   }
+  /** Settings for sub rows. */
   subRows?: {
+    /** Function that returns a React element for the sub row. */
     rows: (rowData: T) => ReactElement | ReactElement[]
+    /** If true, the sub rows will only be shown when the row is expanded. */
     showOnExpand?: (rowData: T) => boolean
   }
+  /** Function to apply to a row, to make the entire row clickable, useful for navigation. */
   clickableRow?: (rowData: T) => void
+  /** Array of actions that can be performed on each row. */
   rowActions?: RowActions<T>
+  /** The Y padding for each row. */
   rowPadding?: string
+  /** The X padding for each row. */
   columnPadding?: string
 }
 
 export interface TableProps<T> extends CommonTableProps<T> {
+  /** Array of data to be displayed in the table. */
   data: T[]
+  /** The text to show when there is no available data to map through. */
   noDataContent?: ReactNode
 }
 
