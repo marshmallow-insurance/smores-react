@@ -1,3 +1,12 @@
+## [9.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.5.0...v9.6.0) (2024-05-22)
+
+
+### Features
+
+* Add 'title' attribute to  props ([#3752](https://github.com/marshmallow-insurance/smores-react/issues/3752)) ([e477bca](https://github.com/marshmallow-insurance/smores-react/commit/e477bca34d8d92a37e0b8efb9f94f167e1b8dc8e))
+* implement accessibility testing ([#3745](https://github.com/marshmallow-insurance/smores-react/issues/3745)) ([818decc](https://github.com/marshmallow-insurance/smores-react/commit/818deccd1344ee90240cc5a321a6d0a74344241a))
+* **SearchInput:** UI and accessibility improvements ([#3755](https://github.com/marshmallow-insurance/smores-react/issues/3755)) ([3fd7648](https://github.com/marshmallow-insurance/smores-react/commit/3fd7648eb5b1ed8046d5f1039b0946558d55ae7a))
+
 ## [9.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.4.1...v9.5.0) (2024-05-16)
 
 
