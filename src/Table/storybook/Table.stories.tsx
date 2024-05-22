@@ -174,10 +174,9 @@ SubTable.args = {
         <Table
           columns={columnsV2}
           data={data}
-          headerColor="mascarpone"
           rowColor="matcha"
-          fixedHeader={false}
           rowActions={{ actions: rowActions }}
+          hideTableHeader
         />
       )
     },
