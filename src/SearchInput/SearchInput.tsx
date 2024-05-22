@@ -226,6 +226,10 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       }
     }
 
+    const showClearSearchButton =
+      !!clearSearch &&
+      ((searchQuery !== null && searchQuery !== '') || selectedValue !== null)
+
     return (
       <Wrapper ref={wrapperRef}>
         <Field
@@ -262,9 +266,9 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               flex
               alignItems="center"
               gap="8px"
-              $clearSearch={!!clearSearch}
+              $clearSearch={showClearSearchButton}
             >
-              {clearSearch && (
+              {showClearSearchButton && (
                 <IconStrict
                   type="button"
                   render="plus"
@@ -321,6 +325,6 @@ const Line = styled(Box)`
 
 export const Icons = styled(Box)<{ $clearSearch: boolean }>`
   position: relative;
-  right: ${({ $clearSearch }) => ($clearSearch ? '78px' : '48px')};
-  margin-right: ${({ $clearSearch }) => ($clearSearch ? '-78px' : '-48px')};
+  right: ${({ $clearSearch }) => ($clearSearch ? '80px' : '48px')};
+  margin-right: ${({ $clearSearch }) => ($clearSearch ? '-80px' : '-48px')};
 `
