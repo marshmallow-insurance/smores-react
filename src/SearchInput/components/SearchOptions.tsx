@@ -1,8 +1,8 @@
-import { darken } from 'polished'
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode, createRef, useEffect, useRef } from 'react'
 import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../../Box'
+import { Icon } from '../../Icon'
 import { theme } from '../../theme'
 import { EmptyResults } from './EmptyResults'
 
@@ -13,7 +13,11 @@ type Option = {
 
 type SearchOptionsProps = {
   displayedList: Array<Option>
+  selectedValue: string | null
+  highlightedIndex: number
+  setHighlightedIndex: (arg: number) => void
   onSelect: (option: Option) => void
+  onKeyDown: (e: { key: string; preventDefault: () => void }) => void
   positionRelative: boolean
   resultsBorder: boolean
   onNotFound?: (searchTerm: string) => void
@@ -23,23 +27,66 @@ type SearchOptionsProps = {
 
 export const SearchOptions: FC<SearchOptionsProps> = ({
   displayedList,
+  selectedValue,
+  highlightedIndex,
+  setHighlightedIndex,
   onSelect,
+  onKeyDown,
   positionRelative,
   resultsBorder,
   onNotFound,
   searchTerm,
   notFoundComponent,
 }) => {
+  const itemRefs = useRef<React.RefObject<HTMLLIElement>[]>([])
+
+  useEffect(() => {
+    itemRefs.current = displayedList.map(
+      (_, i) => itemRefs.current[i] ?? createRef<HTMLLIElement>(),
+    )
+  }, [displayedList.length])
+
+  useEffect(() => {
+    const focusedListItem = itemRefs?.current[highlightedIndex]?.current
+    if (highlightedIndex >= 0 && focusedListItem) {
+      focusedListItem.scrollIntoView({
+        block: 'nearest',
+        inline: 'start',
+      })
+    }
+  }, [highlightedIndex])
+
   return (
     <BoxWithPositionRelative>
       <StyledResultsContainer $positionRelative={positionRelative}>
-        <ResultsList $resultsBorder={resultsBorder}>
+        <ResultsList $resultsBorder={resultsBorder} onKeyDown={onKeyDown}>
           {displayedList.length ? (
-            displayedList.map((el, i) => (
-              <li key={i} onClick={() => onSelect(el)}>
-                {el.label}
-              </li>
-            ))
+            displayedList.map((el, i) => {
+              const isSelected =
+                selectedValue === el.label || selectedValue === el.value
+
+              return (
+                <ListButton
+                  key={el.label + '_list_item'}
+                  aria-label={el.label + '_list_item'}
+                  ref={itemRefs.current[i]}
+                  onClick={() => onSelect(el)}
+                  $isSelected={isSelected}
+                  $showBg={highlightedIndex === i}
+                  onMouseEnter={() => {
+                    setHighlightedIndex(i)
+                  }}
+                  onFocus={() => {
+                    setHighlightedIndex(i)
+                  }}
+                >
+                  {el.label}
+                  {isSelected && (
+                    <Icon render="tick" size={16} color="marshmallowPink" />
+                  )}
+                </ListButton>
+              )
+            })
           ) : (
             <EmptyResults
               onNotFound={onNotFound}
@@ -57,9 +104,11 @@ const StyledResultsContainer = styled.div<
   TransientProps<Pick<SearchOptionsProps, 'positionRelative'>>
 >`
   box-sizing: border-box;
-  overflow-y: hidden;
+  overflow: hidden;
+  margin: -16px;
+  padding: 16px;
   ${({ $positionRelative }) => !$positionRelative && 'position: absolute;'}
-  width: 100%;
+  width:  calc(100% + 32px);
   left: 0px;
   top: -8px;
 
@@ -76,15 +125,12 @@ const ResultsList = styled.ul<
   overflow-y: auto;
   padding: 0;
   margin: 0;
-  background-color: ${theme.colors.custard};
+  background-color: ${theme.colors.cream};
   border-radius: 12px;
   margin-top: 14px;
   z-index: 1000;
-  ${({ $resultsBorder }) =>
-    $resultsBorder &&
-    css`
-      border: 2px solid ${theme.colors.oatmeal};
-    `}
+  border: 1px solid ${theme.colors.oatmeal};
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
 
   li {
     padding: 16px 14px;
@@ -92,18 +138,31 @@ const ResultsList = styled.ul<
     font-size: 16px;
     color: ${theme.colors.liquorice};
     cursor: pointer;
-
-    ${({ $resultsBorder }) =>
-      $resultsBorder && `border-bottom: 2px solid ${theme.colors.oatmeal};`}
-
-    &:last-child {
-      ${({ $resultsBorder }) => $resultsBorder && `border-bottom:none`}
-    }
-
-    &:hover {
-      background-color: ${darken(0.1, theme.colors.custard)};
-    }
   }
+`
+
+const ListButton = styled.li<{ $isSelected: boolean; $showBg: boolean }>`
+  display: flex;
+  justify-content: space-between;
+
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline: none;
+  }
+
+  ${({ $showBg }) =>
+    $showBg &&
+    css`
+      background-color: ${theme.colors.mascarpone};
+    `}
+
+  ${({ $isSelected }) =>
+    $isSelected &&
+    css`
+      background-color: ${theme.colors.custard};
+    `}
 `
 
 const BoxWithPositionRelative = styled(Box)`

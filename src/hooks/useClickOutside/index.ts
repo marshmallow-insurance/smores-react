@@ -1,6 +1,6 @@
 import { RefObject, useCallback, useRef } from 'react'
-import { useEventListener } from '../useEventListener'
 import { GenericEventCallback } from '../../types'
+import { useEventListener } from '../useEventListener'
 
 export const useOnClickOutside = ({
   ref,

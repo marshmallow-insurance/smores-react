@@ -42,7 +42,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: Circular, sans-serif;
-    background: ${theme.colors.coconut}
+    background: ${theme.colors.coconut};
+    border: 1px dashed black;
   }
   
   * {
