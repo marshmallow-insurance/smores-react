@@ -14,8 +14,8 @@ type Option = {
 type SearchOptionsProps = {
   displayedList: Array<Option>
   selectedValue: string | null
-  focusedIndex: number
-  setFocusedIndex: (arg: number) => void
+  highlightedIndex: number
+  setHighlightedIndex: (arg: number) => void
   onSelect: (option: Option) => void
   onKeyDown: (e: { key: string; preventDefault: () => void }) => void
   positionRelative: boolean
@@ -28,8 +28,8 @@ type SearchOptionsProps = {
 export const SearchOptions: FC<SearchOptionsProps> = ({
   displayedList,
   selectedValue,
-  focusedIndex,
-  setFocusedIndex,
+  highlightedIndex,
+  setHighlightedIndex,
   onSelect,
   onKeyDown,
   positionRelative,
@@ -38,20 +38,23 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   searchTerm,
   notFoundComponent,
 }) => {
-  const itemRefs = useRef<React.RefObject<HTMLButtonElement>[]>([])
+  const itemRefs = useRef<React.RefObject<HTMLLIElement>[]>([])
 
   useEffect(() => {
     itemRefs.current = displayedList.map(
-      (_, i) => itemRefs.current[i] ?? createRef<HTMLButtonElement>(),
+      (_, i) => itemRefs.current[i] ?? createRef<HTMLLIElement>(),
     )
   }, [displayedList.length])
 
   useEffect(() => {
-    const itemRef = itemRefs?.current[focusedIndex]?.current
-    if (focusedIndex >= 0 && itemRef) {
-      itemRef.focus()
+    const focusedListItem = itemRefs?.current[highlightedIndex]?.current
+    if (highlightedIndex >= 0 && focusedListItem) {
+      focusedListItem.scrollIntoView({
+        block: 'nearest',
+        inline: 'start',
+      })
     }
-  }, [focusedIndex])
+  }, [highlightedIndex])
 
   return (
     <BoxWithPositionRelative>
@@ -59,21 +62,22 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
         <ResultsList $resultsBorder={resultsBorder} onKeyDown={onKeyDown}>
           {displayedList.length ? (
             displayedList.map((el, i) => {
-              const isSelected = selectedValue === el.label
+              const isSelected =
+                selectedValue === el.label || selectedValue === el.value
 
               return (
                 <ListButton
-                  type="button"
+                  key={el.label + '_list_item'}
                   aria-label={el.label + '_list_item'}
                   ref={itemRefs.current[i]}
-                  key={i}
                   onClick={() => onSelect(el)}
                   $isSelected={isSelected}
+                  $showBg={highlightedIndex === i}
                   onMouseEnter={() => {
-                    setFocusedIndex(i)
+                    setHighlightedIndex(i)
                   }}
                   onFocus={() => {
-                    setFocusedIndex(i)
+                    setHighlightedIndex(i)
                   }}
                 >
                   {el.label}
@@ -134,39 +138,25 @@ const ResultsList = styled.ul<
     font-size: 16px;
     color: ${theme.colors.liquorice};
     cursor: pointer;
-
-    &:hover {
-      background-color: ${theme.colors.mascarpone};
-    }
   }
 `
 
-const ListButton = styled.button<{ $isSelected: boolean }>`
+const ListButton = styled.li<{ $isSelected: boolean; $showBg: boolean }>`
   display: flex;
   justify-content: space-between;
-  padding: 16px 14px;
-  box-sizing: border-box;
-  font-size: 16px;
-  width: 100%;
-  color: ${theme.colors.liquorice};
-  cursor: pointer;
 
   &:focus {
     outline: none;
-    ${({ $isSelected }) => css`
-      background-color: ${$isSelected
-        ? theme.colors.custard
-        : theme.colors.mascarpone};
-    `}
   }
   &:focus-visible {
     outline: none;
-    ${({ $isSelected }) => css`
-      background-color: ${$isSelected
-        ? theme.colors.custard
-        : theme.colors.mascarpone};
-    `}
   }
+
+  ${({ $showBg }) =>
+    $showBg &&
+    css`
+      background-color: ${theme.colors.mascarpone};
+    `}
 
   ${({ $isSelected }) =>
     $isSelected &&

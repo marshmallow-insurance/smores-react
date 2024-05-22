@@ -116,7 +116,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       stateProp: value,
     })
     const [searchQuery, setSearchQuery] = useState<string | null>(null)
-    const [focusedIndex, setFocusedIndex] = useState(-1)
+    const [highlightedIndex, setHighlightedIndex] = useState(-1)
 
     useOnClickOutside({
       ref: wrapperRef,
@@ -164,9 +164,9 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
     const updateSearchQuery = (query: string | null) => {
       setSearchQuery(query)
-      setFocusedIndex(-1)
+      setHighlightedIndex(-1)
 
-      if (query === null || query === '') {
+      if (query === null) {
         setSelectedValue(null)
         setShowOptions(false)
       } else {
@@ -199,6 +199,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const handleClearSearch = () => {
       updateSearchQuery(null)
       setSelectedValue(null)
+      onFound('')
     }
 
     const handleCaretClick = () => {
@@ -209,15 +210,19 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       key: string
       preventDefault: () => void
     }) => {
-      if (event.key === 'ArrowDown') {
+      if (event.key === 'Enter' && highlightedIndex !== -1) {
         event.preventDefault()
-        const nextIndex = (focusedIndex + 1) % filteredList.length
-        setFocusedIndex(nextIndex)
+        const focusedItem = filteredList[highlightedIndex]
+        handleSelect(focusedItem)
+      } else if (event.key === 'ArrowDown') {
+        event.preventDefault()
+        const nextIndex = (highlightedIndex + 1) % filteredList.length
+        setHighlightedIndex(nextIndex)
       } else if (event.key === 'ArrowUp') {
         event.preventDefault()
         const prevIndex =
-          (focusedIndex - 1 + filteredList.length) % filteredList.length
-        setFocusedIndex(prevIndex)
+          (highlightedIndex - 1 + filteredList.length) % filteredList.length
+        setHighlightedIndex(prevIndex)
       }
     }
 
@@ -285,8 +290,8 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             <SearchOptions
               displayedList={filteredList}
               selectedValue={selectedValue}
-              focusedIndex={focusedIndex}
-              setFocusedIndex={setFocusedIndex}
+              highlightedIndex={highlightedIndex}
+              setHighlightedIndex={setHighlightedIndex}
               onKeyDown={handleKeyDown}
               searchTerm={searchQuery || ''}
               onSelect={handleSelect}
