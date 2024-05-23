@@ -118,9 +118,14 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const [searchQuery, setSearchQuery] = useState<string | null>(null)
     const [highlightedIndex, setHighlightedIndex] = useState(-1)
 
+    const selectedValueLabel = searchList.find(
+      (option) =>
+        option.label === selectedValue || option.value === selectedValue,
+    )?.label
+
     const handleBlur = () => {
       if (selectedValue) {
-        setSearchQuery(selectedValue)
+        setSearchQuery(selectedValueLabel ?? null)
       } else if (!selectedValue) {
         setSearchQuery(null)
       }
@@ -154,11 +159,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
     }, [searchQuery, enableFuzzySearch, !!fuzzySearchOptions])
-
-    const selectedValueLabel = searchList.find(
-      (option) =>
-        option.label === selectedValue || option.value === selectedValue,
-    )?.label
 
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
