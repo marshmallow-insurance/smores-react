@@ -118,9 +118,25 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const [searchQuery, setSearchQuery] = useState<string | null>(null)
     const [highlightedIndex, setHighlightedIndex] = useState(-1)
 
+    const selectedValueLabel = searchList.find(
+      (option) =>
+        option.label === selectedValue || option.value === selectedValue,
+    )?.label
+
+    const handleBlur = () => {
+      if (selectedValue) {
+        setSearchQuery(selectedValueLabel ?? null)
+      } else if (!selectedValue) {
+        setSearchQuery(null)
+      }
+    }
+
     useOnClickOutside({
       ref: wrapperRef,
-      callback: () => setShowOptions(false),
+      callback: () => {
+        handleBlur()
+        setShowOptions(false)
+      },
     })
 
     const fuse = useMemo(() => {
@@ -143,11 +159,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
     }, [searchQuery, enableFuzzySearch, !!fuzzySearchOptions])
-
-    const selectedValueLabel = searchList.find(
-      (option) =>
-        option.label === selectedValue || option.value === selectedValue,
-    )?.label
 
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
@@ -227,8 +238,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     }
 
     const showClearSearchButton =
-      !!clearSearch &&
-      ((searchQuery !== null && searchQuery !== '') || selectedValue !== null)
+      !!clearSearch && (!!value || !!selectedValue || !!searchQuery)
 
     return (
       <Wrapper ref={wrapperRef}>
@@ -256,9 +266,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               onClick={handleClick}
               onKeyDown={handleKeyDown}
               onBlur={(e) => {
-                if (displayedInputText === '') {
-                  setSearchQuery(null)
-                }
                 onBlur?.(e)
               }}
             />
