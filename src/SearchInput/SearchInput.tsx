@@ -120,7 +120,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
     const handleBlur = () => {
       if (selectedValue) {
-        setSearchQuery(null)
+        setSearchQuery(selectedValue)
       } else if (!selectedValue) {
         setSearchQuery(null)
       }
