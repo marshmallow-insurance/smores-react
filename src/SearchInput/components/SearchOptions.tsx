@@ -130,7 +130,10 @@ const ResultsList = styled.ul<
   margin-top: 14px;
   z-index: 1000;
   border: 1px solid ${theme.colors.oatmeal};
-  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    0px 10px 18px rgba(18, 18, 23, 0.03),
+    0px 5px 8px rgba(18, 18, 23, 0.04),
+    0px 2px 4px rgba(18, 18, 23, 0.04);
 
   li {
     padding: 16px 14px;

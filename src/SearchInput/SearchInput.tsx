@@ -227,8 +227,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     }
 
     const showClearSearchButton =
-      !!clearSearch &&
-      ((searchQuery !== null && searchQuery !== '') || selectedValue !== null)
+      !!clearSearch && (!!value || !!selectedValue || !!searchQuery)
 
     return (
       <Wrapper ref={wrapperRef}>
@@ -256,9 +255,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               onClick={handleClick}
               onKeyDown={handleKeyDown}
               onBlur={(e) => {
-                if (displayedInputText === '') {
-                  setSearchQuery(null)
-                }
                 onBlur?.(e)
               }}
             />
