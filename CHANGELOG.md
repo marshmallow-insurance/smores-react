@@ -1,3 +1,15 @@
+## [9.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.6.0...v9.7.0) (2024-05-23)
+
+
+### Features
+
+* Add `hideTableHeader` prop to `Table` ([#3775](https://github.com/marshmallow-insurance/smores-react/issues/3775)) ([5d2f13a](https://github.com/marshmallow-insurance/smores-react/commit/5d2f13aaf1d02a61e59631bbf82147ced9abe6b6))
+
+
+### Styles
+
+* search input improvements ([#3778](https://github.com/marshmallow-insurance/smores-react/issues/3778)) ([7a966e3](https://github.com/marshmallow-insurance/smores-react/commit/7a966e341b39707915d12af4cdf0ff654b2a05da))
+
 ## [9.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.5.0...v9.6.0) (2024-05-22)
 
 
