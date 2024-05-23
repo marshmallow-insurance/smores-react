@@ -118,9 +118,20 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const [searchQuery, setSearchQuery] = useState<string | null>(null)
     const [highlightedIndex, setHighlightedIndex] = useState(-1)
 
+    const handleBlur = () => {
+      if (selectedValue) {
+        setSearchQuery(null)
+      } else if (!selectedValue) {
+        setSearchQuery(null)
+      }
+    }
+
     useOnClickOutside({
       ref: wrapperRef,
-      callback: () => setShowOptions(false),
+      callback: () => {
+        handleBlur()
+        setShowOptions(false)
+      },
     })
 
     const fuse = useMemo(() => {
