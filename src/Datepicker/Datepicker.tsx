@@ -47,6 +47,8 @@ export type DatepickerProps = {
   onDateSelect: (date: string) => void
   onChange?: (value: Date) => void
   value?: Date
+  /** Disables all dates, defaults to false */
+  disabled?: boolean
   fallbackStyle?: boolean
 } & MarginProps
 
@@ -61,6 +63,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   onDateSelect,
   onChange,
   value,
+  disabled,
   fallbackStyle = false,
   ...marginProps
 }) => {
@@ -103,9 +106,10 @@ export const Datepicker: FC<DatepickerProps> = ({
         date,
         label: format(date, 'dd'),
         active: activeDay ? isSameDay(date, activeDay) : false,
-        disabled:
-          !isWithinInterval(date, { start: startDate, end: endDate }) ||
-          (disableWeekend && isWeekend(date)),
+        disabled: disabled
+          ? true
+          : !isWithinInterval(date, { start: startDate, end: endDate }) ||
+            (disableWeekend && isWeekend(date)),
       })
     }
 
