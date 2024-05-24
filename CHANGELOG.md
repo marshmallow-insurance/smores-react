@@ -1,3 +1,10 @@
+## [9.8.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.7.0...v9.8.0) (2024-05-24)
+
+
+### Features
+
+* add optional  `disabled` prop to `Datepicker` ([#3780](https://github.com/marshmallow-insurance/smores-react/issues/3780)) ([1047e6a](https://github.com/marshmallow-insurance/smores-react/commit/1047e6ae704d3657b4768ccbcd396e1bcd4dfd5f))
+
 ## [9.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.6.0...v9.7.0) (2024-05-23)
 
 
