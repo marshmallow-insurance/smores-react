@@ -5,6 +5,7 @@ import React, {
   useCallback,
   ReactNode,
   useContext,
+  useRef,
 } from 'react'
 import styled from 'styled-components'
 import { SnackbarItem } from './SnackbarItem'
@@ -21,15 +22,15 @@ export const useSnackbarContext = () => useContext(SnackbarContext)
 export const SnackbarContainer: FC<{ children?: ReactNode }> = ({
   children,
 }) => {
-  let snackbarId = 0
+  const snackbarIdRef = useRef(0)
   const [snackbars, setSnackbars] = useState<Snackbar[]>([])
 
   // create snackbar unique ID
   const newSnackId = useCallback(() => {
-    const newId = `MM_SNACKBAR_${snackbarId}`
-    snackbarId++
+    const newId = `MM_SNACKBAR_${snackbarIdRef.current}`
+    snackbarIdRef.current =+ 1
     return newId
-  }, [snackbarId])
+  }, [])
 
   const addSnackbar = useCallback((snackbar: CreateSnack) => {
     const newSnack = {
