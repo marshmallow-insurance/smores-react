@@ -1,4 +1,4 @@
-import{r as P,R as L}from"./index-uCp2LrAq.js";import{c as Ki}from"./_commonjsHelpers-BosuxZz1.js";import{r as Qi}from"./index-BOkhicXD.js";import{p as oi}from"./purify.es-CGkS_BcK.js";import{p as Se}from"./styled-components.browser.esm-Bmiumwae.js";import{B as Fe}from"./index-CdIuDNv2.js";import{t as ve}from"./theme-BeIETfSH.js";import"./index-DfzELUFi.js";import{I as Nr}from"./Icon-BayaxWfO.js";import"./index-BJvyI_-D.js";import{T as As}from"./Text-CyPVEhU2.js";import"./polished.esm-DlUGb9xG.js";import"./focusOutline-BRfd_C63.js";var Jl={exports:{}};(function(n){var e=typeof window<"u"?window:typeof WorkerGlobalScope<"u"&&self instanceof WorkerGlobalScope?self:{};/**
+import{r as P,R as L}from"./index-uCp2LrAq.js";import{c as Ki}from"./_commonjsHelpers-BosuxZz1.js";import{r as Qi}from"./index-BOkhicXD.js";import{p as oi}from"./purify.es-bauaAvua.js";import{p as Se}from"./styled-components.browser.esm-Bmiumwae.js";import{B as Fe}from"./index-CdIuDNv2.js";import{t as ve}from"./theme-BeIETfSH.js";import"./index-DfzELUFi.js";import{I as Nr}from"./Icon-BayaxWfO.js";import"./index-BJvyI_-D.js";import{T as As}from"./Text-CyPVEhU2.js";import"./polished.esm-DlUGb9xG.js";import"./focusOutline-BRfd_C63.js";var Jl={exports:{}};(function(n){var e=typeof window<"u"?window:typeof WorkerGlobalScope<"u"&&self instanceof WorkerGlobalScope?self:{};/**
  * Prism: Lightweight, robust, elegant syntax highlighting
  *
  * @license MIT <https://opensource.org/licenses/MIT>
@@ -161,4 +161,4 @@ import{r as P,R as L}from"./index-uCp2LrAq.js";import{c as Ki}from"./_commonjsHe
   const [_value, setValue] = useState(props.defaultValue);
   return <RichTextEditor {...props} defaultValue={props.defaultValue} onChange={e => setValue(e)} />;
 }`,...(ls=(ss=Mt.parameters)==null?void 0:ss.docs)==null?void 0:ls.source}}};var as,us,cs;Xt.parameters={...Xt.parameters,docs:{...(as=Xt.parameters)==null?void 0:as.docs,source:{originalSource:"() => <Example />",...(cs=(us=Xt.parameters)==null?void 0:us.docs)==null?void 0:cs.source}}};const KA=["Default","Collection","WorkingExample"];export{kA as Collection,Mt as Default,Xt as WorkingExample,KA as __namedExportsOrder,WA as default};
-//# sourceMappingURL=RichText.stories-B8XF3AwA.js.map
+//# sourceMappingURL=RichText.stories-DHGU9BwZ.js.map
