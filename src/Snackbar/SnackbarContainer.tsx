@@ -31,13 +31,13 @@ export const SnackbarContainer: FC<{ children?: ReactNode }> = ({
     return newId
   }, [snackbarId])
 
-  const addSnackbar = (snackbar: CreateSnack) => {
+  const addSnackbar = useCallback((snackbar: CreateSnack) => {
     const newSnack = {
       ...snackbar,
       id: newSnackId(),
     }
     setSnackbars([...snackbars, newSnack])
-  }
+  }, [])
 
   const deleteSnackbar = (id: string) => {
     setSnackbars(snackbars.filter((snackbar) => snackbar.id !== id))
