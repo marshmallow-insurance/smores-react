@@ -9,8 +9,8 @@ export enum BadgeSize {
 }
 
 type Props = {
-    borderColour: Color;
-    size: BadgeSize;
+    borderColour?: Color;
+    size?: BadgeSize;
     src: string;
     disabled?: boolean;
 }
