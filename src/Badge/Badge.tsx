@@ -40,7 +40,7 @@ const Container = styled.div<ContainerProps>((props) => {
     background-size: cover;
     height: ${props.$size};
     width: ${props.$size};
-    border-radius: 50%;;
+    border-radius: 50%;
     overflow: hidden;
     transition: box-shadow 0.2s ease-in-out;
     outline: 2px solid ${props.$borderColour};
