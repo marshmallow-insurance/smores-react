@@ -5,14 +5,14 @@ import styled from 'styled-components'
 import { Tooltip } from '../Tooltip'
 import type { TooltipProps } from '../Tooltip/Tooltip'
 
-type BadgeWithTooltip = Pick<TooltipProps, 'title' | 'content'> & {
+type WithTooltip = Pick<TooltipProps, 'title' | 'content'> & {
   position?: TooltipProps['position']
 }
 
-type UnionBadge = BadgeProps & { tooltip?: BadgeWithTooltip }
+export type BadgeListBadge = BadgeProps & { tooltip?: WithTooltip }
 
 type Props = {
-  badges: Omit<UnionBadge, 'zIndex'>[]
+  badges: Omit<BadgeListBadge, 'zIndex'>[]
 }
 
 export function BadgeList({ badges }: Props) {
@@ -31,7 +31,7 @@ export function BadgeList({ badges }: Props) {
 }
 
 type WithTooltipProps = {
-  badge: UnionBadge
+  badge: BadgeListBadge
 }
 
 const WithTooltip = ({ badge: { tooltip, ...badge } }: WithTooltipProps) => {
