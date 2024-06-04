@@ -1,3 +1,9 @@
+## [9.9.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.9.0...v9.9.1) (2024-06-04)
+
+### Bug Fixes
+
+* Export `Badge` and `BadgeList` ([#3804](https://github.com/marshmallow-insurance/smores-react/issues/3804)) ([0f59cf4](https://github.com/marshmallow-insurance/smores-react/commit/0f59cf4800a6fe9e0c8a47a2d4a3992eebd2f458))
+
 ## [9.9.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.8.0...v9.9.0) (2024-06-04)
 
 ### Features
