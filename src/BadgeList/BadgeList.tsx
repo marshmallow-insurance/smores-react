@@ -12,6 +12,7 @@ type WithTooltip = Pick<TooltipProps, 'title' | 'content'> & {
 export type BadgeListBadge = BadgeProps & { tooltip?: WithTooltip }
 
 type Props = {
+  size?: BadgeProps['size']
   badges: Omit<BadgeListBadge, 'zIndex'>[]
 }
 
