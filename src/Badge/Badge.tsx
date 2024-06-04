@@ -8,21 +8,30 @@ export enum BadgeSize {
     Lg = "40px",
 }
 
-type Props = {
+export type BadgeProps = {
     borderColour?: Color;
     size?: BadgeSize;
     src: string;
     disabled?: boolean;
+    zIndex?: number;
 }
 
+// TODO: add box-shadow transition
 export function Badge({
     borderColour = "lollipop",
     size = BadgeSize.Lg,
     src,
-    disabled
-}: Props) {
+    disabled,
+    zIndex
+}: BadgeProps) {
 
-    return <Container $borderColour={theme.colors[borderColour]} $size={size} $src={src} $disabled={disabled} />
+    return <Container
+        $borderColour={theme.colors[borderColour]}
+        $size={size}
+        $src={src}
+        $disabled={disabled}
+        $zIndex={zIndex}
+    />
 }
 
 type ContainerProps = {
@@ -30,6 +39,7 @@ type ContainerProps = {
     $size: BadgeSize
     $src: string
     $disabled?: boolean
+    $zIndex?: number
 }
 
 
@@ -46,12 +56,13 @@ const Container = styled.div<ContainerProps>((props) => {
     outline: 2px solid ${props.$borderColour};
     width: ${props.$size};
     filter: ${props.$disabled ? "contrast(0.5)" : "none"};
+    z-index: ${props.$zIndex || 0};
 
     ${!props.$disabled &&
         css`
         &:hover {
             cursor: pointer;
-            box-shadow: 0 0 0px 5px #eee;
+            box-shadow: 0 0 0px 5px #f0f0f0;
         }`}
 `
 })
