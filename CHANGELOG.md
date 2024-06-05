@@ -1,3 +1,9 @@
+## [9.12.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.11.0...v9.12.0) (2024-06-05)
+
+### Features
+
+* **Badge:** Fallback to `title` when badge image fails to load ([#3816](https://github.com/marshmallow-insurance/smores-react/issues/3816)) ([c0531d0](https://github.com/marshmallow-insurance/smores-react/commit/c0531d03ea7459652d6034082c1562d32a00a9b1))
+
 ## [9.11.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.10.0...v9.11.0) (2024-06-05)
 
 ### Features
