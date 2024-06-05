@@ -12,10 +12,11 @@ type WithTooltip = Pick<TooltipProps, 'title' | 'content'> & {
 export type BadgeListBadge = BadgeProps & { tooltip?: WithTooltip }
 
 type Props = {
+  size?: BadgeProps['size']
   badges: Omit<BadgeListBadge, 'zIndex'>[]
 }
 
-export function BadgeList({ badges }: Props) {
+export function BadgeList({ badges, size }: Props) {
   const badgeZIndexMax = badges.length * 10 + 10
 
   return (
@@ -23,7 +24,7 @@ export function BadgeList({ badges }: Props) {
       {badges.map((badge, index) => (
         <WithTooltip
           key={badge.src}
-          badge={{ ...badge, zIndex: badgeZIndexMax - index * 10 }}
+          badge={{ ...badge, zIndex: badgeZIndexMax - index * 10, size }}
         />
       ))}
     </Container>
