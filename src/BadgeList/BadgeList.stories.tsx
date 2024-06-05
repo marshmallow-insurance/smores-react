@@ -47,10 +47,13 @@ export const MediumSize: Story = {
 
 export const BadgeFallback: Story = {
   args: {
-    limit: 4,
+    limit: 5,
     badges: [
-      createTemplateBadge(),
+      {...createTemplateBadge(), src: '' },
       {...createTemplateBadge(), src: 'example/404.jpg' },
+      createTemplateBadge(),
+      createTemplateBadge(),
+      createTemplateBadge(),
       createTemplateBadge(),
     ],
   },
