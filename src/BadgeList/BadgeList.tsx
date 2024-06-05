@@ -43,6 +43,7 @@ export function BadgeList({ badges, limit, size }: Props) {
 
       {limitExcess !== undefined && Boolean(limitExcess) && (
         <Badge
+          title={`+${limitExcess}`}
           borderColour="oatmeal"
           size={size}
           src={<ExcessBadge excess={limitExcess} />}
@@ -123,7 +124,9 @@ const WithTooltip = ({ badge: { tooltip, ...badge } }: WithTooltipProps) => {
 
 const Container = styled(Box)`
   & > * {
-    transition: margin 0.2s ease-in-out, padding 0.2s ease-in-out;
+    transition:
+      margin 0.2s ease-in-out,
+      padding 0.2s ease-in-out;
     margin-right: -15px;
   }
 
