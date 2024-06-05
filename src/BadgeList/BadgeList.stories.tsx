@@ -38,7 +38,7 @@ export const Primary: Story = {
   },
 }
 
-export const Medium: Story = {
+export const MediumSize: Story = {
   args: {
     size: BadgeSize.Md,
     badges: [

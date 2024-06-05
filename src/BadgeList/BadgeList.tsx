@@ -25,13 +25,19 @@ export function BadgeList({ badges, limit, size }: Props) {
     // TODO: off by one adjustments work, just hard to read, refactor for human eyes 👁️👄👁️
     limit && (badges.length + 1 > limit ? badges.length - limit + 1 : 0)
 
+  const maxBadges = limit ? limit - 1 : undefined
+
   return (
     <Container flex>
       {/* TODO: off by one adjustments work, just hard to read, refactor for human eyes 👁️👄👁️ */}
-      {badges.slice(0, limit ? limit - 1 : undefined).map((badge, index) => (
+      {badges.slice(0, maxBadges).map((badge, index) => (
         <WithTooltip
           key={typeof badge.src === 'string' ? badge.src : index}
-          badge={{ ...badge, zIndex: badgeZIndexMax - index * 10, size }}
+          badge={{
+            ...badge,
+            zIndex: badgeZIndexMax - index * 10,
+            size,
+          }}
         />
       ))}
 
@@ -106,6 +112,7 @@ const WithTooltip = ({ badge: { tooltip, ...badge } }: WithTooltipProps) => {
   return (
     <div
       className={classNames}
+      style={{ zIndex: badge.zIndex }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -120,7 +127,7 @@ const Container = styled(Box)`
     margin-right: -15px;
   }
 
-  &::hover > *.hovered:not(:first-child) {
+  &:hover > *.hovered:not(:first-child) {
     margin-left: 10px;
     margin-right: 0px;
   }
