@@ -1,3 +1,9 @@
+## [9.10.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.9.1...v9.10.0) (2024-06-05)
+
+### Features
+
+* Improve badge list and badge ([#3809](https://github.com/marshmallow-insurance/smores-react/issues/3809)) ([7852362](https://github.com/marshmallow-insurance/smores-react/commit/7852362ef6433b171ee9a5f3bb4b1248e55c00d0))
+
 ## [9.9.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.9.0...v9.9.1) (2024-06-04)
 
 ### Bug Fixes
