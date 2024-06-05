@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Badge, type BadgeProps } from '../Badge/Badge'
 import { Box } from '../Box'
 import styled from 'styled-components'
@@ -77,9 +77,21 @@ type WithTooltipProps = {
 }
 
 const WithTooltip = ({ badge: { tooltip, ...badge } }: WithTooltipProps) => {
+  const [hovered, setHover] = useState(false)
+
+  const handleMouseEnter = () => setHover(true)
+  const handleMouseLeave = () => setHover(false)
+
+  const classNames = [hovered ? 'hovered' : ''].join(' ')
+
   if (tooltip) {
     return (
-      <div style={{ zIndex: badge.zIndex }}>
+      <div
+        className={classNames}
+        style={{ zIndex: badge.zIndex }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <Tooltip
           position={tooltip.position ?? 'bottom'}
           title={tooltip?.title}
@@ -91,7 +103,15 @@ const WithTooltip = ({ badge: { tooltip, ...badge } }: WithTooltipProps) => {
     )
   }
 
-  return <Badge {...badge} />
+  return (
+    <div
+      className={classNames}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <Badge {...badge} />
+    </div>
+  )
 }
 
 const Container = styled(Box)`
@@ -100,7 +120,7 @@ const Container = styled(Box)`
     margin-right: -15px;
   }
 
-  & > *:hover:not(:first-child) {
+  &::hover > *.hovered:not(:first-child) {
     margin-left: 10px;
     margin-right: 0px;
   }
