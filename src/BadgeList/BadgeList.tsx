@@ -54,13 +54,15 @@ const WithTooltip = ({ badge: { tooltip, ...badge } }: WithTooltipProps) => {
 
 const Container = styled(Box)`
   & > * {
-    transition: margin-right 0.2s ease-in-out;
+    transition: margin 0.2s ease-in-out;
     margin-right: -10px;
   }
 
-  &:hover {
-    & > * {
-      margin-right: 5px;
+  & > *:hover {
+    margin-right: 5px;
+
+    &:not(:first-child) {
+      margin-left: 5px;
     }
   }
 `
