@@ -24,7 +24,53 @@ export const Primary: Story = {
       {
         src: BadgeSrcExample,
         disabled: true,
-       
+      },
+      {
+        src: BadgeSrcExample,
+        disabled: true,
+        tooltip: {
+          title: 'This is a tooltip',
+          content: 'This is the content of the tooltip',
+        },
+      },
+    ],
+  },
+}
+
+export const BadgeLimit: Story = {
+  args: {
+    limit: 4,
+    badges: [
+      {
+        src: BadgeSrcExample,
+        tooltip: {
+          title: 'This is a tooltip',
+          content: 'This is the content of the tooltip',
+        },
+      },
+      {
+        src: BadgeSrcExample,
+        disabled: true,
+        tooltip: {
+          title: 'This is a tooltip',
+          content: 'This is the content of the tooltip',
+        },
+      },
+      {
+        src: BadgeSrcExample,
+        disabled: true,
+        tooltip: {
+          title: 'This is a tooltip',
+          content: 'This is the content of the tooltip',
+        },
+      },
+      {
+        src: BadgeSrcExample,
+        disabled: true,
+        tooltip: {
+          title: 'This is a tooltip',
+          content: 'This is the content of the tooltip',
+        },
       },
       {
         src: BadgeSrcExample,
