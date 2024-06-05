@@ -11,7 +11,7 @@ import styled, { css } from 'styled-components'
 import { Box } from '../Box'
 import { Text } from '../Text'
 import { useEventListener } from '../hooks'
-import { theme } from '../theme'
+import { Color, theme } from '../theme'
 import { debounce } from '../utils/debounce'
 
 type Position = 'top' | 'bottom' | 'left' | 'right'
@@ -27,6 +27,7 @@ export interface TooltipProps {
   fallbackStyle?: boolean
   zIndex?: number
   portalContainer?: Element | DocumentFragment
+  tooltipColor?: Color
 }
 
 export const Tooltip: FC<TooltipProps> = ({
@@ -39,6 +40,7 @@ export const Tooltip: FC<TooltipProps> = ({
   fallbackStyle = false,
   zIndex = 10,
   portalContainer = document.body,
+  tooltipColor,
 }) => {
   const documentRef = useRef<Document>(document)
   const tipContainer = useRef<HTMLDivElement>(null)
@@ -196,6 +198,7 @@ export const Tooltip: FC<TooltipProps> = ({
             $maxWidth={maxWidth}
             $fallbackStyle={fallbackStyle}
             $zIndex={zIndex}
+            $background={tooltipColor}
             style={{
               position: 'absolute',
               top: `${tooltipCoords.top}px`,
@@ -322,10 +325,12 @@ export const Tip = styled.div<{
   $maxWidth?: number
   $fallbackStyle?: boolean
   $zIndex: number
+  $background?: Color
 }>`
   position: absolute;
   margin: auto;
-  background: ${theme.colors.custard};
+  background: ${({ $background }) =>
+    $background ? theme.colors[$background] : theme.colors.custard};
   padding: 16px 12px 20px;
   border-radius: 16px;
   max-width: 450px;
@@ -348,7 +353,10 @@ export const Tip = styled.div<{
     content: '';
     border-style: solid;
     border-width: 12px 12px 12px 0;
-    border-color: transparent ${theme.colors.custard} transparent transparent;
+    border-color: transparent
+      ${({ $background }) =>
+        $background ? theme.colors[$background] : theme.colors.custard}
+      transparent transparent;
     position: absolute;
   }
 

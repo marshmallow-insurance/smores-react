@@ -122,6 +122,16 @@ export const rowActions = [
   },
   {
     iconButton: {
+      render: 'alert',
+      backgroundColor: 'mascarpone',
+      size: 36,
+      tooltipText: 'mascarpone tooltip',
+    },
+    onClick: () => exampleOnClick('info icon'),
+    showCondition: (row: DataRow) => row.id === 1,
+  },
+  {
+    iconButton: {
       render: 'info',
       backgroundColor: 'peanut',
       size: 36,
