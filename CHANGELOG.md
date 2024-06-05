@@ -1,3 +1,9 @@
+## [9.11.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.10.0...v9.11.0) (2024-06-05)
+
+### Features
+
+* **icon:** add tooltips to table row action icon buttons ([#3811](https://github.com/marshmallow-insurance/smores-react/issues/3811)) ([3decd36](https://github.com/marshmallow-insurance/smores-react/commit/3decd361886ba329c7acd40cfa7d61ceacc20004))
+
 ## [9.10.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.9.1...v9.10.0) (2024-06-05)
 
 ### Features
