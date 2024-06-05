@@ -69,7 +69,6 @@ const Container = styled.div<ContainerProps>((props) => {
     overflow: hidden;
     transition: box-shadow 0.2s ease-in-out;
     border: 2px solid ${props.$borderColour};
-    width: ${props.$size};
     filter: ${props.$disabled ? 'contrast(0.5)' : 'none'};
     z-index: ${props.$zIndex || 0};
 

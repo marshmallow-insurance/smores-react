@@ -37,11 +37,11 @@ export function BadgeList({ badges, limit, size }: Props) {
 
       {limitExcess !== undefined && Boolean(limitExcess) && (
         <Badge
-          disabled
           borderColour="oatmeal"
           size={size}
           src={<ExcessBadge excess={limitExcess} />}
           zIndex={badgeZIndexMax}
+          disabled
         />
       )}
     </Container>
@@ -97,14 +97,11 @@ const WithTooltip = ({ badge: { tooltip, ...badge } }: WithTooltipProps) => {
 const Container = styled(Box)`
   & > * {
     transition: margin 0.2s ease-in-out;
-    margin-right: -10px;
+    margin-right: -15px;
   }
 
-  & > *:hover {
-    margin-right: 5px;
-
-    &:not(:first-child) {
-      margin-left: 5px;
-    }
+  & > *:hover:not(:first-child) {
+    margin-left: 10px;
+    margin-right: 0px;
   }
 `
