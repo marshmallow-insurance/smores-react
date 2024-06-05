@@ -14,8 +14,8 @@ updates:
     groups:
       lexical:
         patterns:
-          - "@leixcal*"
-          - "lexical*"
+          - "@lexical**"
+          - "lexical**"
         update-types:
           - "minor"
           - "patch"
