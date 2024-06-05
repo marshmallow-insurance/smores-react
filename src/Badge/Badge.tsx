@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { theme, type Color } from '../theme'
+import { BadgeFallbackImage } from './BadgeFallbackImage'
 
 export enum BadgeSize {
   Sm = '24px',
@@ -10,21 +11,23 @@ export enum BadgeSize {
 
 export type BadgeProps = {
   src: string | JSX.Element
+  title?: string
   borderColour?: Color
   size?: BadgeSize
   disabled?: boolean
   zIndex?: number
 }
 
-// TODO: add box-shadow transition
-// TODO: add fallback image when image doesn't load - use a marshal?
 export function Badge<T extends BadgeProps>({
   borderColour = 'lollipop',
   size = BadgeSize.Lg,
   src,
   disabled,
   zIndex,
+  title,
 }: BadgeProps) {
+  const [hasFailed, setHasFailed] = useState(false)
+
   if (typeof src === 'string') {
     return (
       <Container
@@ -33,7 +36,18 @@ export function Badge<T extends BadgeProps>({
         $src={src}
         $disabled={disabled}
         $zIndex={zIndex}
-      />
+      >
+        {hasFailed && <BadgeFallbackImage title={title} />}
+        {!hasFailed && (
+          <img
+            width={'100%'}
+            height={'100%'}
+            src={src}
+            alt={title}
+            onError={() => setHasFailed(true)}
+          />
+        )}
+      </Container>
     )
   }
 
@@ -60,6 +74,7 @@ type ContainerProps = {
 
 const Container = styled.div<ContainerProps>((props) => {
   return css`
+    background-color: ${props.$borderColour};
     background-image: ${props.$src ? `url(${props.$src})` : 'none'};
     background-position: center;
     background-size: cover;

@@ -29,7 +29,6 @@ export function BadgeList({ badges, limit, size }: Props) {
 
   return (
     <Container flex>
-      {/* TODO: off by one adjustments work, just hard to read, refactor for human eyes 👁️👄👁️ */}
       {badges.slice(0, maxBadges).map((badge, index) => (
         <WithTooltip
           key={typeof badge.src === 'string' ? badge.src : index}
@@ -43,6 +42,7 @@ export function BadgeList({ badges, limit, size }: Props) {
 
       {limitExcess !== undefined && Boolean(limitExcess) && (
         <Badge
+          title={`+${limitExcess}`}
           borderColour="oatmeal"
           size={size}
           src={<ExcessBadge excess={limitExcess} />}
@@ -123,7 +123,9 @@ const WithTooltip = ({ badge: { tooltip, ...badge } }: WithTooltipProps) => {
 
 const Container = styled(Box)`
   & > * {
-    transition: margin 0.2s ease-in-out, padding 0.2s ease-in-out;
+    transition:
+      margin 0.2s ease-in-out,
+      padding 0.2s ease-in-out;
     margin-right: -15px;
   }
 
