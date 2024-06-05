@@ -31,7 +31,7 @@ export type RowAction<T> = {
   iconButton?: Pick<
     IconStrictProps,
     'size' | 'render' | 'iconColor' | 'backgroundColor' | 'id'
-  >
+  > & { tooltipText?: string }
   genericButton?: Pick<
     ButtonProps,
     | 'children'
