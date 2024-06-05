@@ -29,7 +29,6 @@ export function BadgeList({ badges, limit, size }: Props) {
 
   return (
     <Container flex>
-      {/* TODO: off by one adjustments work, just hard to read, refactor for human eyes 👁️👄👁️ */}
       {badges.slice(0, maxBadges).map((badge, index) => (
         <WithTooltip
           key={typeof badge.src === 'string' ? badge.src : index}
