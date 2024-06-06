@@ -1,3 +1,9 @@
+## [9.12.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.12.0...v9.12.1) (2024-06-06)
+
+### Bug Fixes
+
+* **BadgeList:** Fix `limit` hiding a badge when we exceeded by 1 ([#3818](https://github.com/marshmallow-insurance/smores-react/issues/3818)) ([7fca01b](https://github.com/marshmallow-insurance/smores-react/commit/7fca01bf20e4cc03d64c2aee3d9b950923814848))
+
 ## [9.12.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.11.0...v9.12.0) (2024-06-05)
 
 ### Features
