@@ -19,18 +19,23 @@ type Props = {
   badges: Omit<BadgeListBadge, 'zIndex'>[]
 }
 
+/**
+ * A list of badges with optional tooltips.
+ * @param limit - The maximum number of badges to display. If the number of badges exceeds the limit, a badge will be displayed indicating the number of hidden excess badges.
+ * @returns 
+ */
 export function BadgeList({ badges, limit, size }: Props) {
   const badgeZIndexMax = badges.length * 10 + 10
   const limitExcess =
     // TODO: off by one adjustments work, just hard to read, refactor for human eyes 👁️👄👁️
-    limit && (badges.length + 1 > limit ? badges.length - limit + 1 : 0)
+    limit && (badges.length > limit ? badges.length - limit : 0)
 
   const maxBadges = limit ? limit - 1 : undefined
 
   return (
     <Container flex>
       {/* TODO: off by one adjustments work, just hard to read, refactor for human eyes 👁️👄👁️ */}
-      {badges.slice(0, maxBadges).map((badge, index) => (
+      {badges.slice(0, limitExcess ? maxBadges : undefined).map((badge, index) => (
         <WithTooltip
           key={typeof badge.src === 'string' ? badge.src : index}
           badge={{
@@ -45,7 +50,7 @@ export function BadgeList({ badges, limit, size }: Props) {
         <Badge
           borderColour="oatmeal"
           size={size}
-          src={<ExcessBadge excess={limitExcess} />}
+          src={<ExcessBadge excess={limitExcess + 1} />}
           zIndex={badgeZIndexMax}
           disabled
         />
