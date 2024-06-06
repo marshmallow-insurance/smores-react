@@ -12,28 +12,24 @@ export default meta
 
 type Story = StoryObj<typeof BadgeList>
 
+const createTemplateBadge = () => {
+  return {
+    src: BadgeSrcExample,
+    title: 'Barry Scott',
+    tooltip: {
+      title: 'This is a tooltip',
+      content: 'This is the content of the tooltip',
+    },
+  }
+}
+
 export const Primary: Story = {
   args: {
     badges: [
-      {
-        src: BadgeSrcExample,
-        tooltip: {
-          title: 'This is a tooltip',
-          content: 'This is the content of the tooltip',
-        },
-      },
-      {
-        src: BadgeSrcExample,
-        disabled: true,
-      },
-      {
-        src: BadgeSrcExample,
-        disabled: true,
-        tooltip: {
-          title: 'This is a tooltip',
-          content: 'This is the content of the tooltip',
-        },
-      },
+      createTemplateBadge(),
+      { ...createTemplateBadge(), disabled: true },
+      { ...createTemplateBadge(), disabled: true },
+      { ...createTemplateBadge(), disabled: true },
     ],
   },
 }
@@ -42,25 +38,23 @@ export const MediumSize: Story = {
   args: {
     size: BadgeSize.Md,
     badges: [
-      {
-        src: BadgeSrcExample,
-        tooltip: {
-          title: 'This is a tooltip',
-          content: 'This is the content of the tooltip',
-        },
-      },
-      {
-        src: BadgeSrcExample,
-        disabled: true,
-      },
-      {
-        src: BadgeSrcExample,
-        disabled: true,
-        tooltip: {
-          title: 'This is a tooltip',
-          content: 'This is the content of the tooltip',
-        },
-      },
+      createTemplateBadge(),
+      { ...createTemplateBadge(), disabled: true },
+      { ...createTemplateBadge(), disabled: true },
+    ],
+  },
+}
+
+export const BadgeFallback: Story = {
+  args: {
+    limit: 5,
+    badges: [
+      {...createTemplateBadge(), src: '' },
+      {...createTemplateBadge(), src: 'example/404.jpg' },
+      createTemplateBadge(),
+      createTemplateBadge(),
+      createTemplateBadge(),
+      createTemplateBadge(),
     ],
   },
 }
@@ -69,45 +63,14 @@ export const BadgeLimit: Story = {
   args: {
     limit: 4,
     badges: [
-      {
-        src: BadgeSrcExample,
-        tooltip: {
-          title: 'This is a tooltip',
-          content: 'This is the content of the tooltip',
-        },
-      },
-      {
-        src: BadgeSrcExample,
-        disabled: true,
-        tooltip: {
-          title: 'This is a tooltip',
-          content: 'This is the content of the tooltip',
-        },
-      },
-      {
-        src: BadgeSrcExample,
-        disabled: true,
-        tooltip: {
-          title: 'This is a tooltip',
-          content: 'This is the content of the tooltip',
-        },
-      },
-      {
-        src: BadgeSrcExample,
-        disabled: true,
-        tooltip: {
-          title: 'This is a tooltip',
-          content: 'This is the content of the tooltip',
-        },
-      },
-      {
-        src: BadgeSrcExample,
-        disabled: true,
-        tooltip: {
-          title: 'This is a tooltip',
-          content: 'This is the content of the tooltip',
-        },
-      },
+      createTemplateBadge(),
+      { ...createTemplateBadge() },
+      { ...createTemplateBadge() },
+      { ...createTemplateBadge(), disabled: true },
+      { ...createTemplateBadge(), disabled: true },
+      { ...createTemplateBadge(), disabled: true },
+      { ...createTemplateBadge(), disabled: true },
+      { ...createTemplateBadge(), disabled: true },
     ],
   },
 }
