@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Badge, type BadgeProps } from '../Badge/Badge'
 import { Box } from '../Box'
 import styled from 'styled-components'
@@ -20,9 +20,10 @@ type Props = {
 }
 
 /**
- * A list of badges with optional tooltips.
+ * ### A list of badges with optional tooltips
+ *
  * @param limit - The maximum number of badges to display. If the number of badges exceeds the limit, a badge will be displayed indicating the number of hidden excess badges.
- * @returns 
+ *
  */
 export function BadgeList({ badges, limit, size }: Props) {
   const badgeZIndexMax = badges.length * 10 + 10
@@ -31,30 +32,33 @@ export function BadgeList({ badges, limit, size }: Props) {
     limit && (badges.length > limit ? badges.length - limit : 0)
 
   const maxBadges = limit ? limit - 1 : undefined
+  const showExcessBadge = limitExcess !== undefined && Boolean(limitExcess)
 
   return (
     <Container flex>
-      {/* TODO: off by one adjustments work, just hard to read, refactor for human eyes 👁️👄👁️ */}
-      {badges.slice(0, limitExcess ? maxBadges : undefined).map((badge, index) => (
-        <WithTooltip
-          key={typeof badge.src === 'string' ? badge.src : index}
-          badge={{
-            ...badge,
-            zIndex: badgeZIndexMax - index * 10,
-            size,
-          }}
-        />
-      ))}
+      {badges
+        .slice(0, limitExcess ? maxBadges : undefined)
+        .map((badge, index) => (
+          <WithTooltip
+            key={typeof badge.src === 'string' ? badge.src : index}
+            badge={{
+              ...badge,
+              zIndex: badgeZIndexMax - index * 10,
+              size,
+            }}
+          />
+        ))}
 
-      {limitExcess !== undefined && Boolean(limitExcess) && (
-        <Badge
-          title={`+${limitExcess}`}
-          borderColour="oatmeal"
-          size={size}
-          src={<ExcessBadge excess={limitExcess + 1} />}
-          zIndex={badgeZIndexMax}
-          disabled
-        />
+      {showExcessBadge && (
+        <div className='limit-badge' style={{zIndex: badgeZIndexMax}}>
+          <Badge
+            title={`+${limitExcess}`}
+            borderColour="oatmeal"
+            size={size}
+            src={<ExcessBadge excess={limitExcess + 1} />}
+            disabled
+          />
+        </div>
       )}
     </Container>
   )
@@ -89,21 +93,9 @@ type WithTooltipProps = {
 }
 
 const WithTooltip = ({ badge: { tooltip, ...badge } }: WithTooltipProps) => {
-  const [hovered, setHover] = useState(false)
-
-  const handleMouseEnter = () => setHover(true)
-  const handleMouseLeave = () => setHover(false)
-
-  const classNames = [hovered ? 'hovered' : ''].join(' ')
-
   if (tooltip) {
     return (
-      <div
-        className={classNames}
-        style={{ zIndex: badge.zIndex }}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
+      <div style={{ zIndex: badge.zIndex }}>
         <Tooltip
           position={tooltip.position ?? 'bottom'}
           title={tooltip?.title}
@@ -116,29 +108,24 @@ const WithTooltip = ({ badge: { tooltip, ...badge } }: WithTooltipProps) => {
   }
 
   return (
-    <div
-      className={classNames}
-      style={{ zIndex: badge.zIndex }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div style={{ zIndex: badge.zIndex }}>
       <Badge {...badge} />
     </div>
   )
 }
 
 const Container = styled(Box)`
-  & > * {
+  > * {
     transition:
       margin 0.2s ease-in-out,
       padding 0.2s ease-in-out;
-    margin-right: -15px;
-  }
+    margin-right: -10px;
 
-  &:hover > *.hovered:not(:first-child) {
-    padding-left: 10px;
-    &:not(:last-child) {
-      padding-right: 0px;
+    &:hover:not(:first-child):not(.limit-badge) {
+      padding-left: 10px;
+      &:not(:last-child) {
+        padding-right: 5px;
+      }
     }
   }
 `
