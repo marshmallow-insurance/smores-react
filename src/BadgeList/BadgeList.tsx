@@ -25,7 +25,7 @@ type Props = {
  *
  */
 export function BadgeList({ badges, limit, size = BadgeSize.Lg }: Props) {
-  const badgeZIndexMax = badges.length * 10 + 10
+  const badgeZIndexMax = badges.length
   const limitExcess =
     // TODO: off by one adjustments work, just hard to read, refactor for human eyes 👁️👄👁️
     limit && (badges.length > limit ? badges.length - limit : 0)
@@ -42,14 +42,17 @@ export function BadgeList({ badges, limit, size = BadgeSize.Lg }: Props) {
             key={typeof badge.src === 'string' ? badge.src : index}
             badge={{
               ...badge,
-              zIndex: badgeZIndexMax - index * 10,
+              zIndex: badgeZIndexMax - index,
               size,
             }}
           />
         ))}
 
       {showExcessBadge && (
-        <div className="limit-badge" style={{ zIndex: badgeZIndexMax }}>
+        <div
+          className="limit-badge"
+          style={{ zIndex: badgeZIndexMax, marginLeft: '4px' }}
+        >
           <Badge
             title={`+${limitExcess}`}
             borderColour="oatmeal"
