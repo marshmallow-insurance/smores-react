@@ -1,6 +1,5 @@
 import React from 'react'
-import { Badge, type BadgeProps } from '../Badge/Badge'
-import { Box } from '../Box'
+import { Badge, BadgeSize, type BadgeProps } from '../Badge/Badge'
 import styled from 'styled-components'
 import { Tooltip } from '../Tooltip'
 import type { TooltipProps } from '../Tooltip/Tooltip'
@@ -25,7 +24,7 @@ type Props = {
  * @param limit - The maximum number of badges to display. If the number of badges exceeds the limit, a badge will be displayed indicating the number of hidden excess badges.
  *
  */
-export function BadgeList({ badges, limit, size }: Props) {
+export function BadgeList({ badges, limit, size = BadgeSize.Lg }: Props) {
   const badgeZIndexMax = badges.length * 10 + 10
   const limitExcess =
     // TODO: off by one adjustments work, just hard to read, refactor for human eyes 👁️👄👁️
@@ -35,7 +34,7 @@ export function BadgeList({ badges, limit, size }: Props) {
   const showExcessBadge = limitExcess !== undefined && Boolean(limitExcess)
 
   return (
-    <Container flex>
+    <Container $size={size}>
       {badges
         .slice(0, limitExcess ? maxBadges : undefined)
         .map((badge, index) => (
@@ -50,7 +49,7 @@ export function BadgeList({ badges, limit, size }: Props) {
         ))}
 
       {showExcessBadge && (
-        <div className='limit-badge' style={{zIndex: badgeZIndexMax}}>
+        <div className="limit-badge" style={{ zIndex: badgeZIndexMax }}>
           <Badge
             title={`+${limitExcess}`}
             borderColour="oatmeal"
@@ -114,12 +113,20 @@ const WithTooltip = ({ badge: { tooltip, ...badge } }: WithTooltipProps) => {
   )
 }
 
-const Container = styled(Box)`
+const marginRightMapping = {
+  [BadgeSize.Lg]: '-18px',
+  [BadgeSize.Md]: '-14px',
+  [BadgeSize.Sm]: '-11px',
+} satisfies Record<BadgeSize, string>
+
+const Container = styled.div<{ $size: BadgeSize }>`
+  display: flex;
+
   > * {
     transition:
       margin 0.2s ease-in-out,
       padding 0.2s ease-in-out;
-    margin-right: -10px;
+    margin-right: ${(props) => marginRightMapping[props.$size]};
 
     &:hover:not(:first-child):not(.limit-badge) {
       padding-left: 10px;

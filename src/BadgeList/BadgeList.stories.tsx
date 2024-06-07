@@ -15,7 +15,7 @@ type Story = StoryObj<typeof BadgeList>
 const createTemplateBadge = () => {
   return {
     src: BadgeSrcExample,
-    title: 'Barry Scott',
+    title: 'David G',
     tooltip: {
       title: 'This is a tooltip',
       content: 'This is the content of the tooltip',
@@ -39,6 +39,23 @@ export const MediumSize: Story = {
     size: BadgeSize.Md,
     badges: [
       createTemplateBadge(),
+      createTemplateBadge(),
+      { ...createTemplateBadge(), disabled: true },
+      { ...createTemplateBadge(), disabled: true },
+      { ...createTemplateBadge(), disabled: true },
+    ],
+  },
+}
+
+export const SmallSize: Story = {
+  args: {
+    size: BadgeSize.Sm,
+    badges: [
+      createTemplateBadge(),
+      createTemplateBadge(),
+      createTemplateBadge(),
+      { ...createTemplateBadge(), disabled: true },
+      { ...createTemplateBadge(), disabled: true },
       { ...createTemplateBadge(), disabled: true },
       { ...createTemplateBadge(), disabled: true },
     ],
