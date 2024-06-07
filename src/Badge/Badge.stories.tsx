@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Badge, BadgeSize } from './Badge'
-import { BadgeSrcExample } from './storybook-data'
+import { getExampleImg } from './storybook/exampleImg'
 
 const meta: Meta<typeof Badge> = {
     title: 'Badge',
@@ -16,7 +16,7 @@ export const Primary: Story = {
     args: {
         borderColour: "lollipop",
         size: BadgeSize.Lg,
-        src: BadgeSrcExample
+        src: getExampleImg().src
     },
 }
 
@@ -24,7 +24,7 @@ export const Disabled: Story = {
     args: {
         borderColour: "lollipop",
         size: BadgeSize.Lg,
-        src: BadgeSrcExample,
+        src: getExampleImg().src,
         disabled: true
     },
 }

@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { BadgeList } from './BadgeList'
-import { BadgeSrcExample } from '../Badge/storybook-data'
 import { BadgeSize } from '../Badge/Badge'
+import { getExampleImg } from '../Badge/storybook/exampleImg'
 
 const meta: Meta<typeof BadgeList> = {
   title: 'BadgeList',
@@ -13,9 +13,11 @@ export default meta
 type Story = StoryObj<typeof BadgeList>
 
 const createTemplateBadge = () => {
+  const { name, src } = getExampleImg()
+
   return {
-    src: BadgeSrcExample,
-    title: 'David G',
+    src,
+    title: name,
     tooltip: {
       title: 'This is a tooltip',
       content: 'This is the content of the tooltip',
@@ -66,8 +68,8 @@ export const BadgeFallback: Story = {
   args: {
     limit: 5,
     badges: [
-      {...createTemplateBadge(), src: '' },
-      {...createTemplateBadge(), src: 'example/404.jpg' },
+      { ...createTemplateBadge(), src: '' },
+      { ...createTemplateBadge(), src: 'example/404.jpg' },
       createTemplateBadge(),
       createTemplateBadge(),
       createTemplateBadge(),
