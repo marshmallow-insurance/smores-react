@@ -7,6 +7,7 @@ import { focusOutlineStyle } from '../../utils/focusOutline'
 import { isReactElement } from '../../utils/isReactElement'
 import { RowActionsProps } from '../types'
 import { StyledCell } from './commonComponents'
+import { Tooltip } from '../../Tooltip'
 
 export const RowActions = <T extends object>({
   rowData,
@@ -52,14 +53,28 @@ export const RowActions = <T extends object>({
                       {action.genericButton.children}
                     </Button>
                   )}
-                  {action.iconButton && (
-                    <IconStrict
-                      {...action.iconButton}
-                      handleClick={(e) => {
-                        handleAction(e, action.onClick)
-                      }}
-                    />
-                  )}
+                  {action.iconButton &&
+                    (action.iconButton?.tooltipText ? (
+                      <Tooltip
+                        content={action.iconButton.tooltipText}
+                        position={'bottom'}
+                        tooltipColor={'bubblegum'}
+                      >
+                        <IconStrict
+                          {...action.iconButton}
+                          handleClick={(e) => {
+                            handleAction(e, action.onClick)
+                          }}
+                        />
+                      </Tooltip>
+                    ) : (
+                      <IconStrict
+                        {...action.iconButton}
+                        handleClick={(e) => {
+                          handleAction(e, action.onClick)
+                        }}
+                      />
+                    ))}
                 </Wrapper>
               )
             }

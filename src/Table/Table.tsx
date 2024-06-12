@@ -36,24 +36,27 @@ export const Table = <T extends object>({
   rowPadding,
   columnPadding,
   noDataContent,
+  hideTableHeader = false,
 }: TableProps<T>) => {
   const showActionsCell = expandable || rowActions
   const expandSubProp = showActionsCell ? columns.length + 1 : columns.length
   return (
     <StyledTable>
-      <thead>
-        <TableHeader
-          columns={columns}
-          fixedHeader={fixedHeader}
-          headerHeight={headerHeight}
-          subTable={subTable}
-          headerColor={headerColor}
-          rowActions={rowActions}
-          columnPadding={columnPadding}
-          expandable={expandable}
-          hasKeyline={hasKeyline}
-        />
-      </thead>
+      {!hideTableHeader && (
+        <thead>
+          <TableHeader
+            columns={columns}
+            fixedHeader={fixedHeader}
+            headerHeight={headerHeight}
+            subTable={subTable}
+            headerColor={headerColor}
+            rowActions={rowActions}
+            columnPadding={columnPadding}
+            expandable={expandable}
+            hasKeyline={hasKeyline}
+          />
+        </thead>
+      )}
       <tbody>
         {data.length === 0 && (
           <StyledCell

@@ -14,8 +14,34 @@ updates:
     groups:
       lexical:
         patterns:
-          - "@leixcal*"
-          - "lexical*"
+          - "@lexical**"
+          - "lexical**"
+        update-types:
+          - "minor"
+          - "patch"
       ts-eslint:
         patterns:
           - "@typescript-eslint*"
+        update-types:
+          - "minor"
+          - "patch"
+      storybook-dependencies:
+        patterns:
+          - "storybook*"
+          - "@storybook/*"
+        update-types:
+          - "minor"
+          - "patch"
+      semantic-release-dependencies:
+        patterns:
+          - "@semantic-release*"
+          - "@semantic-release/*"
+        update-types:
+          - "minor"
+          - "patch"
+      babel-dependencies:
+        patterns:
+          - "@babel/*"
+        update-types:
+          - "minor"
+          - "patch"

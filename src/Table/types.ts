@@ -31,7 +31,7 @@ export type RowAction<T> = {
   iconButton?: Pick<
     IconStrictProps,
     'size' | 'render' | 'iconColor' | 'backgroundColor' | 'id'
-  >
+  > & { tooltipText?: string }
   genericButton?: Pick<
     ButtonProps,
     | 'children'
@@ -110,6 +110,8 @@ interface CommonTableProps<T> {
   rowPadding?: string
   /** The X padding for each row. */
   columnPadding?: string
+  /** Hides the table header. Table defaults to always showing the header. */
+  hideTableHeader?: boolean
 }
 
 export interface TableProps<T> extends CommonTableProps<T> {

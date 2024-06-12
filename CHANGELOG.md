@@ -1,3 +1,72 @@
+## [9.12.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.12.0...v9.12.1) (2024-06-06)
+
+### Bug Fixes
+
+* **BadgeList:** Fix `limit` hiding a badge when we exceeded by 1 ([#3818](https://github.com/marshmallow-insurance/smores-react/issues/3818)) ([7fca01b](https://github.com/marshmallow-insurance/smores-react/commit/7fca01bf20e4cc03d64c2aee3d9b950923814848))
+
+## [9.12.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.11.0...v9.12.0) (2024-06-05)
+
+### Features
+
+* **Badge:** Fallback to `title` when badge image fails to load ([#3816](https://github.com/marshmallow-insurance/smores-react/issues/3816)) ([c0531d0](https://github.com/marshmallow-insurance/smores-react/commit/c0531d03ea7459652d6034082c1562d32a00a9b1))
+
+## [9.11.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.10.0...v9.11.0) (2024-06-05)
+
+### Features
+
+* **icon:** add tooltips to table row action icon buttons ([#3811](https://github.com/marshmallow-insurance/smores-react/issues/3811)) ([3decd36](https://github.com/marshmallow-insurance/smores-react/commit/3decd361886ba329c7acd40cfa7d61ceacc20004))
+
+## [9.10.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.9.1...v9.10.0) (2024-06-05)
+
+### Features
+
+* Improve badge list and badge ([#3809](https://github.com/marshmallow-insurance/smores-react/issues/3809)) ([7852362](https://github.com/marshmallow-insurance/smores-react/commit/7852362ef6433b171ee9a5f3bb4b1248e55c00d0))
+
+## [9.9.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.9.0...v9.9.1) (2024-06-04)
+
+### Bug Fixes
+
+* Export `Badge` and `BadgeList` ([#3804](https://github.com/marshmallow-insurance/smores-react/issues/3804)) ([0f59cf4](https://github.com/marshmallow-insurance/smores-react/commit/0f59cf4800a6fe9e0c8a47a2d4a3992eebd2f458))
+
+## [9.9.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.8.0...v9.9.0) (2024-06-04)
+
+### Features
+
+* **Badge:** Add `Badge` component ([#3801](https://github.com/marshmallow-insurance/smores-react/issues/3801)) ([7c20663](https://github.com/marshmallow-insurance/smores-react/commit/7c20663f2f0a431f645abcd9ab6a3e2f72bd8bf8))
+* **BadgeList:** Add `BadgeList` component ([#3803](https://github.com/marshmallow-insurance/smores-react/issues/3803)) ([c3b07cb](https://github.com/marshmallow-insurance/smores-react/commit/c3b07cb6d5d1082706c0f54e52d6442d7fcecc98))
+
+### Bug Fixes
+
+* **Badge:** Change some badge props to be optional ([#3802](https://github.com/marshmallow-insurance/smores-react/issues/3802)) ([ef72f67](https://github.com/marshmallow-insurance/smores-react/commit/ef72f676344c635ecbdc4bfec172112347626943))
+
+## [9.8.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.7.0...v9.8.0) (2024-05-24)
+
+
+### Features
+
+* add optional  `disabled` prop to `Datepicker` ([#3780](https://github.com/marshmallow-insurance/smores-react/issues/3780)) ([1047e6a](https://github.com/marshmallow-insurance/smores-react/commit/1047e6ae704d3657b4768ccbcd396e1bcd4dfd5f))
+
+## [9.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.6.0...v9.7.0) (2024-05-23)
+
+
+### Features
+
+* Add `hideTableHeader` prop to `Table` ([#3775](https://github.com/marshmallow-insurance/smores-react/issues/3775)) ([5d2f13a](https://github.com/marshmallow-insurance/smores-react/commit/5d2f13aaf1d02a61e59631bbf82147ced9abe6b6))
+
+
+### Styles
+
+* search input improvements ([#3778](https://github.com/marshmallow-insurance/smores-react/issues/3778)) ([7a966e3](https://github.com/marshmallow-insurance/smores-react/commit/7a966e341b39707915d12af4cdf0ff654b2a05da))
+
+## [9.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.5.0...v9.6.0) (2024-05-22)
+
+
+### Features
+
+* Add 'title' attribute to  props ([#3752](https://github.com/marshmallow-insurance/smores-react/issues/3752)) ([e477bca](https://github.com/marshmallow-insurance/smores-react/commit/e477bca34d8d92a37e0b8efb9f94f167e1b8dc8e))
+* implement accessibility testing ([#3745](https://github.com/marshmallow-insurance/smores-react/issues/3745)) ([818decc](https://github.com/marshmallow-insurance/smores-react/commit/818deccd1344ee90240cc5a321a6d0a74344241a))
+* **SearchInput:** UI and accessibility improvements ([#3755](https://github.com/marshmallow-insurance/smores-react/issues/3755)) ([3fd7648](https://github.com/marshmallow-insurance/smores-react/commit/3fd7648eb5b1ed8046d5f1039b0946558d55ae7a))
+
 ## [9.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.4.1...v9.5.0) (2024-05-16)
 
 
