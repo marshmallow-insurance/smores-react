@@ -1,12 +1,12 @@
+import { getISODay } from 'date-fns'
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { getISODay } from 'date-fns'
 
 import { theme } from '../theme'
 
-import { Day } from './types'
 import { Text } from '../Text'
 import { focusOutlineStyle } from '../utils/focusOutline'
+import { Day } from './types'
 
 type Props = {
   items: Day[]
@@ -39,7 +39,11 @@ export const DatesList: FC<Props> = ({
       {Array(getBlankDaysCount(items[0].date))
         .fill(null)
         .map((_, index) => (
-          <ListButton key={`blankItem-${index}`} disabled />
+          <ListButton
+            aria-label={`${index}-unselectable-date`}
+            key={`blankItem-${index}`}
+            disabled
+          />
         ))}
       {items.map((item: Day, i) => (
         <ListButton

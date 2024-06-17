@@ -1,3 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`SupportMessage component > Renders a Link within the description 1`] = `Some text rendered with a `;

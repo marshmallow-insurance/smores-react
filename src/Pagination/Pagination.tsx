@@ -95,6 +95,7 @@ export const Pagination: FC<PaginationProps> = ({
     <Container flex direction="row" {...marginProps}>
       {activePage - 1 > 0 && (
         <IconBox
+          aria-label="previous-page"
           onClick={() => movePage(activePage - 1)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
@@ -161,6 +162,7 @@ export const Pagination: FC<PaginationProps> = ({
       )}
       {activePage + 1 <= lastPage && (
         <IconBox
+          aria-label="next-page"
           onClick={() => movePage(activePage + 1)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {

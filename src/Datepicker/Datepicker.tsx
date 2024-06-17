@@ -47,6 +47,8 @@ export type DatepickerProps = {
   onDateSelect: (date: string) => void
   onChange?: (value: Date) => void
   value?: Date
+  /** Disables all dates, defaults to false */
+  disabled?: boolean
   fallbackStyle?: boolean
 } & MarginProps
 
@@ -61,6 +63,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   onDateSelect,
   onChange,
   value,
+  disabled,
   fallbackStyle = false,
   ...marginProps
 }) => {
@@ -103,9 +106,10 @@ export const Datepicker: FC<DatepickerProps> = ({
         date,
         label: format(date, 'dd'),
         active: activeDay ? isSameDay(date, activeDay) : false,
-        disabled:
-          !isWithinInterval(date, { start: startDate, end: endDate }) ||
-          (disableWeekend && isWeekend(date)),
+        disabled: disabled
+          ? true
+          : !isWithinInterval(date, { start: startDate, end: endDate }) ||
+            (disableWeekend && isWeekend(date)),
       })
     }
 
@@ -121,7 +125,9 @@ export const Datepicker: FC<DatepickerProps> = ({
         direction="row"
       >
         <Circle
+          aria-label="previous-month"
           type="button"
+          data-testid="last-month"
           disabled={activeMonthIndex === 0}
           onClick={() => setActiveMonth(activeMonthIndex - 1)}
           onKeyDown={(e) => {
@@ -139,7 +145,9 @@ export const Datepicker: FC<DatepickerProps> = ({
         </Heading>
 
         <Circle
+          aria-label="next-month"
           type="button"
+          data-testid="next-month"
           disabled={activeMonthIndex === availableMonths.length - 1}
           onClick={() => setActiveMonth(activeMonthIndex + 1)}
           onKeyDown={(e) => {

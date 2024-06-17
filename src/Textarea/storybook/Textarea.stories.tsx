@@ -46,6 +46,19 @@ Error.args = {
   error: true,
   errorMsg: 'Something really quite terrible has gone wrong here!',
 }
+Error.parameters = {
+  a11y: {
+    config: {
+      rules: [
+        {
+          //disabling these until we sync with design on this
+          id: 'color-contrast',
+          enabled: false,
+        },
+      ],
+    },
+  },
+}
 
 export const Required = Template.bind({})
 

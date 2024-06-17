@@ -82,6 +82,19 @@ WithError.args = {
   errorMsg: 'something',
   displayType: 'horizontal-card',
 }
+WithError.parameters = {
+  a11y: {
+    config: {
+      rules: [
+        {
+          //disabling these until we sync with design on this
+          id: 'color-contrast',
+          enabled: false,
+        },
+      ],
+    },
+  },
+}
 
 export const WithVisual = Template.bind({})
 

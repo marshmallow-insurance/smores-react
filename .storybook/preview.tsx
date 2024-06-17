@@ -1,6 +1,7 @@
 import { Preview } from '@storybook/react'
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
+import { theme } from '../src/theme'
 
 import { ResetCss } from './ResetCss'
 
@@ -41,6 +42,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: Circular, sans-serif;
+    background: ${theme.colors.coconut};
+    border: 1px dashed black;
   }
   
   * {

@@ -55,7 +55,7 @@ export const Modal: FC<ModalProps> = ({
     <Wrapper $showModal={showModal} ref={modalRef}>
       <Overlay
         onClick={() => closeOnOverlayClick && handleClick()}
-        closeOnOverlayClick={closeOnOverlayClick}
+        $closeOnOverlayClick={closeOnOverlayClick}
       />
       <Container
         $drawer={drawer}
@@ -108,10 +108,10 @@ const Wrapper = styled(Box)<IModalWrapper>(
   `,
 )
 
-const Overlay = styled.div<{ closeOnOverlayClick: boolean }>`
+const Overlay = styled.div<{ $closeOnOverlayClick: boolean }>`
   position: fixed;
   background: ${theme.colors.liquorice};
-  cursor: ${(props) => (props.closeOnOverlayClick ? 'pointer' : 'default')};
+  cursor: ${(props) => (props.$closeOnOverlayClick ? 'pointer' : 'default')};
   opacity: 0.4;
   top: 0;
   bottom: 0;
