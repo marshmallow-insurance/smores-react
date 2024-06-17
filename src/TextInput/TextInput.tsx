@@ -18,8 +18,11 @@ interface Props extends CommonFieldProps {
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
 }
 
+type AutoComplete = 'off' | 'bday-day	' | 'bday-month' | 'bday-year'
+type InputMode = 'text' | 'email' | 'numeric'
+
 /** on change or on input required */
-type InputProps =
+type InputProps = (
   | {
       /** on change is required and on input optional */
       onChange: (e: string) => void
@@ -30,6 +33,10 @@ type InputProps =
       onChange?: (e: string) => void
       onInputChange: (e: FormEvent<HTMLInputElement>) => void
     }
+) & {
+  autoComplete?: AutoComplete
+  inputMode?: InputMode
+}
 
 export type TextInputProps = Props & InputProps
 
@@ -48,6 +55,8 @@ export const TextInput = forwardRef(function TextInput(
     frontIcon,
     trailingIcon,
     fallbackStyle,
+    autoComplete = 'off',
+    inputMode,
     ...fieldProps
   }: TextInputProps,
   ref: ForwardedRef<HTMLInputElement>,
@@ -75,12 +84,13 @@ export const TextInput = forwardRef(function TextInput(
           $error={error}
           $frontIcon={frontIcon}
           $fallbackStyle={fallbackStyle}
-          autoComplete="off"
+          autoComplete={autoComplete}
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && onChange(e.currentTarget.value)
             onInputChange && onInputChange(e)
           }}
           onBlur={onBlur}
+          inputMode={inputMode}
         />
         {trailingIcon && (
           <StyledTrailingIcon
