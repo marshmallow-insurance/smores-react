@@ -18,7 +18,7 @@ interface Props extends CommonFieldProps {
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
 }
 
-type AutoComplete = 'off' | 'bday-day	' | 'bday-month' | 'bday-year'
+type AutoComplete = 'off' | 'bday-day' | 'bday-month' | 'bday-year'
 type InputMode = 'text' | 'email' | 'numeric'
 
 /** on change or on input required */
