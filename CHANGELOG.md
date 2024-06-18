@@ -1,3 +1,9 @@
+## [9.13.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.13.0...v9.13.1) (2024-06-18)
+
+### Bug Fixes
+
+* replace reserved keywords with namespaces ([#3833](https://github.com/marshmallow-insurance/smores-react/issues/3833)) ([1f0b431](https://github.com/marshmallow-insurance/smores-react/commit/1f0b43184faf56aca30160c37e9085cec1db79bb))
+
 ## [9.13.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.12.1...v9.13.0) (2024-06-17)
 
 ### Features
