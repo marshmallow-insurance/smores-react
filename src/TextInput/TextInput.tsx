@@ -34,8 +34,8 @@ type InputProps = (
       onInputChange: (e: FormEvent<HTMLInputElement>) => void
     }
 ) & {
-  autoComplete?: AutoComplete
-  inputMode?: InputMode
+  autoCompleteAttr?: AutoComplete
+  inputModeAttr?: InputMode
 }
 
 export type TextInputProps = Props & InputProps
@@ -55,8 +55,8 @@ export const TextInput = forwardRef(function TextInput(
     frontIcon,
     trailingIcon,
     fallbackStyle,
-    autoComplete = 'off',
-    inputMode,
+    autoCompleteAttr = 'off',
+    inputModeAttr,
     ...fieldProps
   }: TextInputProps,
   ref: ForwardedRef<HTMLInputElement>,
@@ -84,13 +84,13 @@ export const TextInput = forwardRef(function TextInput(
           $error={error}
           $frontIcon={frontIcon}
           $fallbackStyle={fallbackStyle}
-          autoComplete={autoComplete}
+          autoComplete={autoCompleteAttr}
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && onChange(e.currentTarget.value)
             onInputChange && onInputChange(e)
           }}
           onBlur={onBlur}
-          inputMode={inputMode}
+          inputMode={inputModeAttr}
         />
         {trailingIcon && (
           <StyledTrailingIcon
