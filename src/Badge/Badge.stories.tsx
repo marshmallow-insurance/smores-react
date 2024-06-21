@@ -3,10 +3,11 @@ import { Badge, BadgeSize } from './Badge'
 import { getExampleImg } from './storybook/exampleImg'
 
 const meta: Meta<typeof Badge> = {
-    title: 'Badge',
-    component: Badge,
-    args: {
-    },
+  title: 'Badge',
+  component: Badge,
+  args: {
+    title: 'badge',
+  },
 }
 
 export default meta
