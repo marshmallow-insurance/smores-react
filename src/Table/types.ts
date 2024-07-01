@@ -30,7 +30,7 @@ export type RowAction<T> = {
   onClick: (rowData: T) => void
   iconButton?: Pick<
     IconStrictProps,
-    'size' | 'render' | 'iconColor' | 'backgroundColor' | 'id'
+    'size' | 'render' | 'iconColor' | 'backgroundColor' | 'id' | 'title'
   > & { tooltipText?: string }
   genericButton?: Pick<
     ButtonProps,
