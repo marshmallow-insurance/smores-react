@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { noop } from '../../utils/noop'
 import {
-  FullDateFormat,
+  DateObjectType,
   TextDateInput,
   TextDateInputProps,
 } from '../TextDateInput'
@@ -13,14 +13,14 @@ export default {
 }
 
 const Template: FC = (props: TextDateInputProps) => {
-  const [_value, setValue] = useState<FullDateFormat>({
+  const [value, setValue] = useState<DateObjectType>({
     day: '01',
     month: '01',
     year: '2000',
   })
 
   return (
-    <TextDateInput {...props} value={_value} onChange={(e) => setValue(e)} />
+    <TextDateInput {...props} value={value} onChange={(e) => setValue(e)} />
   )
 }
 export const Default = Template.bind({})
@@ -54,7 +54,7 @@ DayMonthError.args = {
   onChange: noop,
   error: true,
   errorMsg: 'Please check the day and month',
-  errorType: 'day-month',
+  fieldsWithError: ['day', 'month'],
 }
 
 export const YearError = Template.bind({})
@@ -64,5 +64,5 @@ YearError.args = {
   onChange: noop,
   error: true,
   errorMsg: 'Please check the year',
-  errorType: 'year',
+  fieldsWithError: ['year'],
 }

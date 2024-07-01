@@ -5,26 +5,19 @@ import { TextInput } from '../TextInput'
 import { Box } from '../Box'
 import { Fieldset, FieldsetProps } from '../fields/Fieldset'
 
-export type FullDateFormat = {
+export type DateObjectType = {
   day: string | null
   month: string | null
   year: string | null
 }
 
-type ValidationErrorType =
-  | 'day'
-  | 'month'
-  | 'year'
-  | 'all'
-  | 'day-month'
-  | 'month-year'
-  | 'day-year'
+type fieldsWithErrorType = 'day' | 'month' | 'year' | 'all'
 
 export type TextDateInputProps = {
-  value: FullDateFormat
-  onChange: (value: FullDateFormat) => void
+  value: DateObjectType
+  onChange: (value: DateObjectType) => void
   showCompleted?: boolean
-  errorType?: ValidationErrorType
+  fieldsWithError?: fieldsWithErrorType[]
 } & Pick<FieldsetProps, 'label' | 'error' | 'errorMsg' | 'assistiveText'>
 
 export const TextDateInput = ({
@@ -35,7 +28,7 @@ export const TextDateInput = ({
   assistiveText,
   errorMsg,
   showCompleted = false,
-  errorType = 'all',
+  fieldsWithError = ['all'],
 }: TextDateInputProps) => {
   return (
     <Fieldset
@@ -63,10 +56,7 @@ export const TextDateInput = ({
           }}
           error={
             !!error &&
-            (errorType === 'day' ||
-              errorType === 'day-month' ||
-              errorType === 'day-year' ||
-              errorType === 'all')
+            (fieldsWithError.includes('day') || fieldsWithError.includes('all'))
           }
         />
         <SetWidthTextInput
@@ -84,10 +74,8 @@ export const TextDateInput = ({
           }}
           error={
             !!error &&
-            (errorType === 'month' ||
-              errorType === 'day-month' ||
-              errorType === 'month-year' ||
-              errorType === 'all')
+            (fieldsWithError.includes('month') ||
+              fieldsWithError.includes('all'))
           }
         />
         <SetWidthTextInput
@@ -105,10 +93,8 @@ export const TextDateInput = ({
           }}
           error={
             !!error &&
-            (errorType === 'year' ||
-              errorType === 'day-year' ||
-              errorType === 'month-year' ||
-              errorType === 'all')
+            (fieldsWithError.includes('year') ||
+              fieldsWithError.includes('all'))
           }
         />
       </Box>
