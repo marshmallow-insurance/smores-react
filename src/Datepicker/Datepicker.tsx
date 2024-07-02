@@ -140,8 +140,8 @@ export const Datepicker: FC<DatepickerProps> = ({
         </Circle>
 
         <Heading tag="h4" typo="body-regular">
-          {availableMonths[activeMonthIndex].label}{' '}
-          {showYear && `- ${getYear(availableMonths[activeMonthIndex].date)}`}
+          {availableMonths[activeMonthIndex]?.label}{' '}
+          {showYear && `- ${getYear(availableMonths[activeMonthIndex]?.date)}`}
         </Heading>
 
         <Circle
@@ -162,7 +162,7 @@ export const Datepicker: FC<DatepickerProps> = ({
 
       <Box flex alignItems="center" justifyContent="center">
         <DatesList
-          items={generateDaysForMonth(availableMonths[activeMonthIndex].date)}
+          items={generateDaysForMonth(availableMonths[activeMonthIndex]?.date)}
           showDayLabels={showDayLabels}
           handleDateSelect={handleSelectEvent}
         />

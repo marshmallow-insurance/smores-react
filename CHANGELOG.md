@@ -1,3 +1,14 @@
+## [9.14.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.13.1...v9.14.0) (2024-07-02)
+
+### Features
+
+* **Table-RowAction:** Allow passing `title` to a row action ([#3850](https://github.com/marshmallow-insurance/smores-react/issues/3850)) ([d891f9e](https://github.com/marshmallow-insurance/smores-react/commit/d891f9e1e8040188b4a03dbd93f4a9779edfe573))
+
+### Bug Fixes
+
+* **BadgeList:** Fix spacing when hovering, additionally with limit badge ([#3819](https://github.com/marshmallow-insurance/smores-react/issues/3819)) ([5c647dc](https://github.com/marshmallow-insurance/smores-react/commit/5c647dc765069057febc9fad4416456b9fdcf507))
+* **datepicker:** optional availableMonths value ([#3856](https://github.com/marshmallow-insurance/smores-react/issues/3856)) ([ab5d07c](https://github.com/marshmallow-insurance/smores-react/commit/ab5d07cb2d06dd1aef49a5fbf64ce31c901392a8))
+
 ## [9.13.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.13.0...v9.13.1) (2024-06-18)
 
 ### Bug Fixes
