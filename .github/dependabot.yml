@@ -2,6 +2,8 @@ version: 2
 updates:
   - package-ecosystem: npm
     directory: '/'
+    # Always increase package version to the latest version even if lockfile is the only thing required to change
+    versioning-strategy: increase
     schedule:
       interval: daily
       time: '05:00'
@@ -14,8 +16,8 @@ updates:
     groups:
       lexical:
         patterns:
-          - "@leixcal*"
-          - "lexical*"
+          - "@lexical**"
+          - "lexical**"
         update-types:
           - "minor"
           - "patch"

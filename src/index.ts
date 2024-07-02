@@ -44,3 +44,5 @@ export * from './utils/space'
 export * from './RichText'
 export * from './RichTextEditor'
 export * from './SegmentedControl'
+export * from "./Badge"
+export * from "./BadgeList"
