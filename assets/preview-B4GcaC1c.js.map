@@ -1,1 +1,0 @@
-{"version":3,"file":"preview-B4GcaC1c.js","sources":["../../node_modules/@storybook/addon-viewport/dist/preview.mjs"],"sourcesContent":["var globals={viewport:\"reset\",viewportRotated:!1};\n\nexport { globals };\n"],"names":["globals"],"mappings":"AAAG,IAACA,EAAQ,CAAC,SAAS,QAAQ,gBAAgB,EAAE","x_google_ignoreList":[0]}
