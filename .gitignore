@@ -10,7 +10,7 @@
 
 # misc
 .DS_Store
-$.vscode/**/*
+.vscode/**/*
 !.vscode/extensions.json
 
 logs
