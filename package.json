@@ -75,13 +75,13 @@
     "prettier": "^3.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rimraf": "^5.0.8",
+    "rimraf": "^6.0.1",
     "semantic-release": "^24.0.0",
     "storybook": "^8.0.4",
     "styled-components": "^6.1.8",
     "typescript": "^5.0.2",
     "vite": "^5.3.4",
-    "vitest": "^1.2.2"
+    "vitest": "^2.0.3"
   },
   "dependencies": {
     "@lexical/react": "^0.16.0",
