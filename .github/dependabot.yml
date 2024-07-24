@@ -1,6 +1,9 @@
 version: 2
 updates:
   - package-ecosystem: npm
+    commit-message:
+      prefix: "chore(npm-dep): "
+      include: "scope"
     directory: '/'
     # Always increase package version to the latest version even if lockfile is the only thing required to change
     versioning-strategy: increase
