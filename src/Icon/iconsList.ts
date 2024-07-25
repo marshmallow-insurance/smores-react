@@ -201,6 +201,7 @@ import Vandalism from './iconFiles/Vandalism'
 import Village from './iconFiles/Village'
 import Visa from './iconFiles/Visa'
 import Warning from './iconFiles/Warning'
+import WarningCircle from './iconFiles/WarningCircle'
 import Watch from './iconFiles/Watch'
 import Wave from './iconFiles/Wave'
 import Wellbeing from './iconFiles/Wellbeing'
@@ -417,6 +418,7 @@ export const iconList = {
   village: Village,
   visa: Visa,
   warning: Warning,
+  warningCircle: WarningCircle,
   watch: Watch,
   wave: Wave,
   wellbeing: Wellbeing,
