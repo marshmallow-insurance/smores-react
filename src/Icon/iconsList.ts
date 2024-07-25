@@ -418,7 +418,7 @@ export const iconList = {
   village: Village,
   visa: Visa,
   warning: Warning,
-  warningCircle: WarningCircle,
+  'warning-circle': WarningCircle,
   watch: Watch,
   wave: Wave,
   wellbeing: Wellbeing,
