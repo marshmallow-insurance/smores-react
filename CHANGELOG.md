@@ -1,3 +1,16 @@
+## [9.15.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.14.0...v9.15.0) (2024-07-25)
+
+### Features
+
+* **core:** Dependabot commit & PR titles - [🤖 generated] ([#3892](https://github.com/marshmallow-insurance/smores-react/issues/3892)) ([7d9f535](https://github.com/marshmallow-insurance/smores-react/commit/7d9f535888a8dff64f53d4b19ddea54c259d3bbf))
+* **warningCircle:** added to icons ([#3895](https://github.com/marshmallow-insurance/smores-react/issues/3895)) ([5fbebcb](https://github.com/marshmallow-insurance/smores-react/commit/5fbebcb794256326a268a71ee8b23b0309943f75))
+
+### Bug Fixes
+
+* **core:** Dependabot PR titles - [🤖 generated] ([#3894](https://github.com/marshmallow-insurance/smores-react/issues/3894)) ([79ada4f](https://github.com/marshmallow-insurance/smores-react/commit/79ada4fab09100c3f6171ff740fa0b1b5ec86ea4))
+* **npm:** remove storybook deployer ([#3880](https://github.com/marshmallow-insurance/smores-react/issues/3880)) ([c8df684](https://github.com/marshmallow-insurance/smores-react/commit/c8df684ab9f784affa248d00073d948302ff0002))
+* snackbar memorisation ([#3796](https://github.com/marshmallow-insurance/smores-react/issues/3796)) ([f1e9037](https://github.com/marshmallow-insurance/smores-react/commit/f1e90377c2d15f898f364c788d1c190348bb184a))
+
 ## [9.14.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.13.1...v9.14.0) (2024-07-02)
 
 ### Features
