@@ -12,6 +12,7 @@ import AlertEngine from './iconFiles/AlertEngine'
 import Amex from './iconFiles/Amex'
 import ApplePay from './iconFiles/ApplePay'
 import ApprovedFile from './iconFiles/ApprovedFile'
+import Archive from './iconFiles/Archive'
 import Arrow from './iconFiles/Arrow'
 import At from './iconFiles/At'
 import Axa from './iconFiles/Axa'
@@ -307,6 +308,7 @@ export const iconList = {
   addons: AddOns,
   alert: Alert,
   amex: Amex,
+  archive: Archive,
   arrow: Arrow,
   at: At,
   axa: Axa,
