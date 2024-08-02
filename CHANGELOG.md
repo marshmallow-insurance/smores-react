@@ -1,3 +1,9 @@
+## [9.16.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.15.0...v9.16.0) (2024-08-02)
+
+### Features
+
+* add archive icon ([#3905](https://github.com/marshmallow-insurance/smores-react/issues/3905)) ([b4bf521](https://github.com/marshmallow-insurance/smores-react/commit/b4bf52107bec7db8183f0a671aedba3fa3265abc))
+
 ## [9.15.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.14.0...v9.15.0) (2024-07-25)
 
 ### Features
