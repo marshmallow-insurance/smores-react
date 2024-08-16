@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, JSX, ReactNode } from 'react'
 import styled from 'styled-components'
 import { MarginProps } from '../utils/space'
 
@@ -7,7 +7,7 @@ import { Text } from '../Text'
 
 export type LabelledTextProps = {
   children: ReactNode
-  label: string
+  label: string | JSX.Element
   labelMargin?: 2 | 4 | 8 | number
 } & MarginProps
 
@@ -21,7 +21,6 @@ export const LabelledText: FC<LabelledTextProps> = ({
     <Text tag="label" color="sesame" typo="label">
       {label}
     </Text>
-
     {children}
   </Container>
 )
