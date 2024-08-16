@@ -10,11 +10,10 @@
 
 # misc
 .DS_Store
-.idea
+.idea/
 .vscode/**/*
 !.vscode/extensions.json
 
 logs
 *.log
 npm-debug.log*
-
