@@ -1,3 +1,9 @@
+## [9.17.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.16.0...v9.17.0) (2024-08-16)
+
+### Features
+
+* **LabelledText:** CP-1780: Allow JSX.Element in label prop to `LabelledText` ([#3930](https://github.com/marshmallow-insurance/smores-react/issues/3930)) ([af2585e](https://github.com/marshmallow-insurance/smores-react/commit/af2585ee4a1b6e8b239ddf394891d679eab0e7d8))
+
 ## [9.16.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.15.0...v9.16.0) (2024-08-02)
 
 ### Features
