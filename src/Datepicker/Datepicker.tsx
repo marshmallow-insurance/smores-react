@@ -9,6 +9,7 @@ import {
   isSameMonth,
   isWeekend,
   isWithinInterval,
+  setYear,
 } from 'date-fns'
 import React, { FC, useState } from 'react'
 import styled, { css } from 'styled-components'
@@ -23,6 +24,7 @@ import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 import { useControllableState } from '../utils/useControlledState'
 import { DatesList } from './DatesList'
+import { YearsList } from './YearsList'
 
 const getAvailableMonths = (startDate: Date, endDate: Date) => {
   const monthList = eachMonthOfInterval({
@@ -69,9 +71,22 @@ export const Datepicker: FC<DatepickerProps> = ({
 }) => {
   // We want to make sure that the date is in the UK timezone,
   // this might need to be revisit when opening up to new countries
-  const startDate = convertToUkDate(fromDate)
-  const endDate = endingDate ? endingDate : addDays(startDate, range)
+  const [startDate, setStartDate] = useState(convertToUkDate(fromDate))
+  const [endDate, setEndDate] = useState(
+    endingDate ? endingDate : addDays(startDate, range),
+  )
   const availableMonths = getAvailableMonths(startDate, endDate)
+  const [showYearSelect, setShowYearSelect] = useState(false)
+
+  const handleYearSelect = (year: number) => {
+    const newDate = setYear(activeDay ?? new Date(), year)
+    setStartDate(new Date(`${year}-01-01`))
+    setEndDate(new Date('2100-12-31'))
+    setActiveDay(newDate)
+    onChange?.(newDate)
+    onDateSelect(format(newDate, 'yyyy-MM-dd'))
+    setShowYearSelect(false)
+  }
 
   const selectedDate = value ?? new Date()
 
@@ -139,10 +154,25 @@ export const Datepicker: FC<DatepickerProps> = ({
           <Icon render="caret" color="cream" size={18} rotate={90} />
         </Circle>
 
-        <Heading tag="h4" typo="body-regular">
-          {availableMonths[activeMonthIndex]?.label}{' '}
-          {showYear && `- ${getYear(availableMonths[activeMonthIndex]?.date)}`}
-        </Heading>
+        <Box flex>
+          <Heading tag="h4" typo="body-regular">
+            {availableMonths[activeMonthIndex]?.label}{' '}
+            {showYear &&
+              `- ${getYear(activeDay || availableMonths[activeMonthIndex]?.date)}`}
+          </Heading>
+          {showYear && (
+            <CaretContainer onClick={() => setShowYearSelect((prev) => !prev)}>
+              <Icon
+                render="caret"
+                color="boba"
+                size={20}
+                mt={{ custom: '2px' }}
+                ml="8px"
+                rotate={showYearSelect ? 180 : 0}
+              />
+            </CaretContainer>
+          )}
+        </Box>
 
         <Circle
           aria-label="next-month"
@@ -161,11 +191,20 @@ export const Datepicker: FC<DatepickerProps> = ({
       </Header>
 
       <Box flex alignItems="center" justifyContent="center">
-        <DatesList
-          items={generateDaysForMonth(availableMonths[activeMonthIndex]?.date)}
-          showDayLabels={showDayLabels}
-          handleDateSelect={handleSelectEvent}
-        />
+        {showYearSelect ? (
+          <YearsList
+            handleYearSelect={handleYearSelect}
+            selectedYear={activeDay?.getFullYear() || startDate.getFullYear()}
+          />
+        ) : (
+          <DatesList
+            items={generateDaysForMonth(
+              availableMonths[activeMonthIndex]?.date,
+            )}
+            showDayLabels={showDayLabels}
+            handleDateSelect={handleSelectEvent}
+          />
+        )}
       </Box>
     </Container>
   )
@@ -225,4 +264,8 @@ const Circle = styled.button`
   }
 
   ${focusOutlineStyle}
+`
+
+const CaretContainer = styled.a`
+  cursor: pointer;
 `

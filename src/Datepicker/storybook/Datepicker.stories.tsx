@@ -1,5 +1,5 @@
-import { Datepicker } from '../Datepicker'
 import type { Meta, StoryObj } from '@storybook/react'
+import { Datepicker } from '../Datepicker'
 
 const meta: Meta<typeof Datepicker> = {
   title: 'Datepicker',
@@ -11,6 +11,7 @@ const meta: Meta<typeof Datepicker> = {
     fromDate: new Date('2021/07/14'),
     fallbackStyle: false,
     disabled: false,
+    showYear: true,
   },
   argTypes: { onDateSelect: { action: 'date selected' } },
 }
