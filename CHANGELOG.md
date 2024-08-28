@@ -1,3 +1,9 @@
+## [9.18.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.17.0...v9.18.0) (2024-08-28)
+
+### Features
+
+* **checkBoxGroup:** add isColumn optional property ([#3946](https://github.com/marshmallow-insurance/smores-react/issues/3946)) ([d3343ec](https://github.com/marshmallow-insurance/smores-react/commit/d3343ec865e4cc646fcc84c19fd61de0ce558c55))
+
 ## [9.17.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.16.0...v9.17.0) (2024-08-16)
 
 ### Features
