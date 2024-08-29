@@ -1,3 +1,9 @@
+## [9.18.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.18.0...v9.18.1) (2024-08-29)
+
+### Bug Fixes
+
+* adjust help-aboutus icon to match figma design ([#3949](https://github.com/marshmallow-insurance/smores-react/issues/3949)) ([dbf2bc5](https://github.com/marshmallow-insurance/smores-react/commit/dbf2bc55b3edf8b5209e1d526813513bfb404c26))
+
 ## [9.18.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.17.0...v9.18.0) (2024-08-28)
 
 ### Features
