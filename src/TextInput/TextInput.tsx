@@ -1,4 +1,10 @@
-import React, { FocusEvent, FormEvent, ForwardedRef, forwardRef } from 'react'
+import React, {
+  FocusEvent,
+  FormEvent,
+  ForwardedRef,
+  forwardRef,
+  HTMLInputAutoCompleteAttribute,
+} from 'react'
 
 import { Box } from '../Box'
 import { Field } from '../fields/Field'
@@ -16,9 +22,9 @@ interface Props extends CommonFieldProps {
   name?: string
   value: string
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
+  onAutoFill?: () => void
 }
 
-type AutoComplete = 'off' | 'bday-day' | 'bday-month' | 'bday-year'
 type InputMode = 'text' | 'email' | 'numeric'
 
 /** on change or on input required */
@@ -34,7 +40,7 @@ type InputProps = (
       onInputChange: (e: FormEvent<HTMLInputElement>) => void
     }
 ) & {
-  autoCompleteAttr?: AutoComplete
+  autoCompleteAttr?: HTMLInputAutoCompleteAttribute
   inputModeAttr?: InputMode
 }
 
@@ -51,6 +57,7 @@ export const TextInput = forwardRef(function TextInput(
     onBlur,
     onChange,
     onInputChange,
+    onAutoFill,
     disabled = false,
     frontIcon,
     trailingIcon,
@@ -62,6 +69,12 @@ export const TextInput = forwardRef(function TextInput(
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   const id = useUniqueId(idProp)
+
+  const handleAnimationStart = (e: React.AnimationEvent<HTMLInputElement>) => {
+    if (e.animationName === 'onAutoFillStart' && onAutoFill && !!value) {
+      onAutoFill()
+    }
+  }
 
   return (
     <Field {...fieldProps} htmlFor={id} error={error}>
@@ -79,6 +92,7 @@ export const TextInput = forwardRef(function TextInput(
           id={id}
           name={name}
           ref={ref}
+          onAnimationStart={handleAnimationStart}
           placeholder={placeholder}
           value={value}
           $error={error}
