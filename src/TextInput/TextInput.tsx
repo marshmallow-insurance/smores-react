@@ -22,6 +22,10 @@ interface Props extends CommonFieldProps {
   name?: string
   value: string
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
+  /**
+   * Triggers after animation end (animation duration is 2s),
+   * the animation starts when a user selects or hovers over an autofill option
+   */
   onAutoFill?: () => void
 }
 
