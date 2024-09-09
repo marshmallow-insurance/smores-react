@@ -70,6 +70,20 @@ export const Input = styled.input<IInput>`
   &::placeholder {
     color: ${theme.colors.sesame};
   }
+
+  &:-webkit-autofill {
+    animation-name: onAutoFillStart;
+    animation-duration: 2s;
+  }
+
+  @keyframes onAutoFillStart {
+    from {
+      background-color: inherit;
+    }
+    to {
+      background-color: inherit;
+    }
+  }
 `
 
 export const StyledFrontIcon = styled(Icon)<SIcon>`
