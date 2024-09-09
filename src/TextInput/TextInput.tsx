@@ -46,6 +46,14 @@ type InputProps = (
 
 export type TextInputProps = Props & InputProps
 
+/**
+ * A reusable TextInput component that supports various input types, custom styling, icons,
+ * and autofill detection.
+ *
+ * ### Caveats:
+ * - `onAutoFill` triggers after animation end (animation duration is 2s),
+ * the animation starts when a user selects or hovers over an autofill option
+ */
 export const TextInput = forwardRef(function TextInput(
   {
     id: idProp,
