@@ -1,3 +1,13 @@
+## [9.19.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.18.1...v9.19.0) (2024-09-09)
+
+### Features
+
+* add onAutoFill prop to TextInput ([#3964](https://github.com/marshmallow-insurance/smores-react/issues/3964)) ([9b2b48e](https://github.com/marshmallow-insurance/smores-react/commit/9b2b48e1fc0a8175816d1e2a64906e414ff91429))
+
+### Documentation
+
+* add jsdoc for onAutoFill prop for TextInput ([#3965](https://github.com/marshmallow-insurance/smores-react/issues/3965)) ([c80e155](https://github.com/marshmallow-insurance/smores-react/commit/c80e1551c2afaff66df34e716dba70bfc6ef9113))
+
 ## [9.18.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.18.0...v9.18.1) (2024-08-29)
 
 ### Bug Fixes
