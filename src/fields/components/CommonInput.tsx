@@ -73,24 +73,10 @@ export const Input = styled.input<IInput>`
 
   &:-webkit-autofill {
     animation-name: onAutoFillStart;
-    animation-duration: 1s;
-  }
-
-  &:not(:-webkit-autofill) {
-    animation-name: onAutoFillCancel;
-    animation-duration: 1s;
+    animation-duration: 2s;
   }
 
   @keyframes onAutoFillStart {
-    from {
-      background-color: inherit;
-    }
-    to {
-      background-color: inherit;
-    }
-  }
-
-  @keyframes onAutoFillCancel {
     from {
       background-color: inherit;
     }

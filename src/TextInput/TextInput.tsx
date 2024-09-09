@@ -70,7 +70,7 @@ export const TextInput = forwardRef(function TextInput(
 ) {
   const id = useUniqueId(idProp)
 
-  const handleAnimationStart = (e: React.AnimationEvent<HTMLInputElement>) => {
+  const handleAnimationEnd = (e: React.AnimationEvent<HTMLInputElement>) => {
     if (e.animationName === 'onAutoFillStart' && onAutoFill && !!value) {
       onAutoFill()
     }
@@ -92,7 +92,7 @@ export const TextInput = forwardRef(function TextInput(
           id={id}
           name={name}
           ref={ref}
-          onAnimationStart={handleAnimationStart}
+          onAnimationEnd={handleAnimationEnd}
           placeholder={placeholder}
           value={value}
           $error={error}
