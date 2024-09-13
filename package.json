@@ -81,7 +81,7 @@
     "styled-components": "^6.1.13",
     "typescript": "^5.6.2",
     "vite": "^5.4.4",
-    "vitest": "^2.0.5"
+    "vitest": "^2.1.0"
   },
   "dependencies": {
     "@lexical/react": "^0.17.1",
