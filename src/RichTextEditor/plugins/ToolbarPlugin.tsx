@@ -102,6 +102,15 @@ export default function ToolbarPlugin() {
     }
   }, [editor])
 
+  const openNewWindow = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation()
+    try {
+      window.open(linkURL, '_blank')
+    } catch (error) {
+      console.warn('Failed to open invalid URL: ', error)
+    }
+  }
+
   const urlInputRef = useRef<HTMLInputElement | null>(null)
 
   useEffect(() => {
@@ -189,12 +198,7 @@ export default function ToolbarPlugin() {
           }}
           onClick={(e) => e.stopPropagation()}
         />
-        <Box
-          onClick={(e) => {
-            e.stopPropagation()
-            window.open(linkURL, '_blank')
-          }}
-        >
+        <Box onClick={openNewWindow}>
           <LinkOpen render="new-window" />
         </Box>
       </Link>
