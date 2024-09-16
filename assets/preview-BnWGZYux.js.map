@@ -1,1 +1,0 @@
-{"version":3,"file":"preview-BnWGZYux.js","sources":["../../node_modules/@storybook/addon-viewport/dist/preview.mjs"],"sourcesContent":["var initialGlobals={viewport:\"reset\",viewportRotated:!1};\n\nexport { initialGlobals };\n"],"names":["initialGlobals"],"mappings":"AAAG,IAACA,EAAe,CAAC,SAAS,QAAQ,gBAAgB,EAAE","x_google_ignoreList":[0]}
