@@ -36,7 +36,7 @@ export const DatesList: FC<Props> = ({
             </Text>
           )
         })}
-      {Array(getBlankDaysCount(items[0]?.date))
+      {Array(getBlankDaysCount(items[0].date))
         .fill(null)
         .map((_, index) => (
           <ListButton
