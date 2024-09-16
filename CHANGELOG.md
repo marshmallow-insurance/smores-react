@@ -1,3 +1,10 @@
+## [9.19.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.19.0...v9.19.1) (2024-09-16)
+
+### Bug Fixes
+
+* **datePicker:** first day error and undefined day ([#3990](https://github.com/marshmallow-insurance/smores-react/issues/3990)) ([6545724](https://github.com/marshmallow-insurance/smores-react/commit/6545724076a1358c891455d5b5c3d7f910516e1c))
+* **RichTextEditor:** invalid URL on new window open ([#3989](https://github.com/marshmallow-insurance/smores-react/issues/3989)) ([4d69de0](https://github.com/marshmallow-insurance/smores-react/commit/4d69de0b8d17502a8ba9367ed883c27f3857aa55))
+
 ## [9.19.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.18.1...v9.19.0) (2024-09-09)
 
 ### Features
