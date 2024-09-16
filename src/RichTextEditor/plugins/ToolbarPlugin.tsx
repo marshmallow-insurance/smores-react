@@ -1,18 +1,14 @@
-import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link";
+import { $isLinkNode, TOGGLE_LINK_COMMAND } from '@lexical/link'
 import {
   $isListNode,
   INSERT_UNORDERED_LIST_COMMAND,
   ListNode,
-  REMOVE_LIST_COMMAND
-} from "@lexical/list";
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import {
-  $isHeadingNode
-} from "@lexical/rich-text";
-import {
-  $isAtNodeEnd
-} from "@lexical/selection";
-import { $getNearestNodeOfType, mergeRegister } from "@lexical/utils";
+  REMOVE_LIST_COMMAND,
+} from '@lexical/list'
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
+import { $isHeadingNode } from '@lexical/rich-text'
+import { $isAtNodeEnd } from '@lexical/selection'
+import { $getNearestNodeOfType, mergeRegister } from '@lexical/utils'
 import {
   $getSelection,
   $isRangeSelection,
@@ -21,96 +17,104 @@ import {
   FORMAT_TEXT_COMMAND,
   RangeSelection,
   SELECTION_CHANGE_COMMAND,
-} from "lexical";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import styled from "styled-components";
-import { Box } from "../../Box";
-import { Icon } from "../../Icon";
-import { theme } from "../../theme";
+} from 'lexical'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+import styled from 'styled-components'
+import { Box } from '../../Box'
+import { Icon } from '../../Icon'
+import { theme } from '../../theme'
 
-const LowPriority = 1;
+const LowPriority = 1
 
 function getSelectedNode(selection: RangeSelection) {
-  const anchor = selection.anchor;
-  const focus = selection.focus;
-  const anchorNode = selection.anchor.getNode();
-  const focusNode = selection.focus.getNode();
+  const anchor = selection.anchor
+  const focus = selection.focus
+  const anchorNode = selection.anchor.getNode()
+  const focusNode = selection.focus.getNode()
   if (anchorNode === focusNode) {
-    return anchorNode;
+    return anchorNode
   }
-  const isBackward = selection.isBackward();
+  const isBackward = selection.isBackward()
   if (isBackward) {
-    return $isAtNodeEnd(focus) ? anchorNode : focusNode;
+    return $isAtNodeEnd(focus) ? anchorNode : focusNode
   } else {
-    return $isAtNodeEnd(anchor) ? focusNode : anchorNode;
+    return $isAtNodeEnd(anchor) ? focusNode : anchorNode
   }
 }
 
 export default function ToolbarPlugin() {
-  const [editor] = useLexicalComposerContext();
-  const toolbarRef = useRef(null);
-  const [blockType, setBlockType] = useState("paragraph");
-  const [isLink, setIsLink] = useState(false);
-  const [isBold, setIsBold] = useState(false);
-  const [isItalic, setIsItalic] = useState(false);
-  const [linkURL, setLinkURL] = useState("")
-  const [prevLinkURL, setPrevLinkURL] = useState("")
+  const [editor] = useLexicalComposerContext()
+  const toolbarRef = useRef(null)
+  const [blockType, setBlockType] = useState('paragraph')
+  const [isLink, setIsLink] = useState(false)
+  const [isBold, setIsBold] = useState(false)
+  const [isItalic, setIsItalic] = useState(false)
+  const [linkURL, setLinkURL] = useState('')
+  const [prevLinkURL, setPrevLinkURL] = useState('')
 
   const formatBulletList = () => {
-    if (blockType !== "ul") {
+    if (blockType !== 'ul') {
       editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined)
     } else {
-      editor.dispatchCommand(REMOVE_LIST_COMMAND, undefined);
+      editor.dispatchCommand(REMOVE_LIST_COMMAND, undefined)
     }
-
-  };
+  }
 
   const updateToolbar = useCallback(() => {
-    const selection = $getSelection();
+    const selection = $getSelection()
     if ($isRangeSelection(selection)) {
-      const anchorNode = selection.anchor.getNode();
+      const anchorNode = selection.anchor.getNode()
       const element =
-        anchorNode.getKey() === "root"
+        anchorNode.getKey() === 'root'
           ? anchorNode
-          : anchorNode.getTopLevelElementOrThrow();
-      const elementKey = element.getKey();
-      const elementDOM = editor.getElementByKey(elementKey);
+          : anchorNode.getTopLevelElementOrThrow()
+      const elementKey = element.getKey()
+      const elementDOM = editor.getElementByKey(elementKey)
       if (elementDOM !== null) {
         if ($isListNode(element)) {
-          const parentList = $getNearestNodeOfType(anchorNode, ListNode);
-          const type = parentList ? parentList.getTag() : element.getTag();
-          setBlockType(type);
+          const parentList = $getNearestNodeOfType(anchorNode, ListNode)
+          const type = parentList ? parentList.getTag() : element.getTag()
+          setBlockType(type)
         } else {
           const type = $isHeadingNode(element)
             ? element.getTag()
-            : element.getType();
-          setBlockType(type);
+            : element.getType()
+          setBlockType(type)
         }
       }
       // Update text format
-      setIsBold(selection.hasFormat("bold"));
-      setIsItalic(selection.hasFormat("italic"));
+      setIsBold(selection.hasFormat('bold'))
+      setIsItalic(selection.hasFormat('italic'))
 
       // Update links
-      const node = getSelectedNode(selection);
-      const parent = node.getParent();
+      const node = getSelectedNode(selection)
+      const parent = node.getParent()
       if ($isLinkNode(parent)) {
-        setIsLink(true);
+        setIsLink(true)
         setLinkURL(parent.getURL())
       } else if ($isLinkNode(node)) {
-        setIsLink(true);
+        setIsLink(true)
         setLinkURL(node.getURL())
       } else {
-        setIsLink(false);
-        setLinkURL("")
+        setIsLink(false)
+        setLinkURL('')
       }
     }
-  }, [editor]);
+  }, [editor])
+
+  const openNewWindow = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation()
+    try {
+      window.open(linkURL, '_blank')
+    } catch (error) {
+      console.warn('Failed to open invalid URL: ', error)
+    }
+  }
 
   const urlInputRef = useRef<HTMLInputElement | null>(null)
 
   useEffect(() => {
-    if (prevLinkURL !== "" && isLink && urlInputRef.current) {
+    if (prevLinkURL !== '' && isLink && urlInputRef.current) {
       urlInputRef.current.focus()
     }
     setPrevLinkURL(linkURL)
@@ -120,40 +124,39 @@ export default function ToolbarPlugin() {
     return mergeRegister(
       editor.registerUpdateListener(({ editorState }) => {
         editorState.read(() => {
-          updateToolbar();
-        });
+          updateToolbar()
+        })
       }),
       editor.registerCommand(
         SELECTION_CHANGE_COMMAND,
         (_payload, newEditor) => {
-          updateToolbar();
-          return false;
+          updateToolbar()
+          return false
         },
-        LowPriority
+        LowPriority,
       ),
       editor.registerCommand(
         CAN_UNDO_COMMAND,
         (payload) => {
-          return false;
+          return false
         },
-        LowPriority
+        LowPriority,
       ),
       editor.registerCommand(
         CAN_REDO_COMMAND,
         (payload) => {
-          return false;
+          return false
         },
-        LowPriority
-      )
-    );
-  }, [editor, updateToolbar]);
+        LowPriority,
+      ),
+    )
+  }, [editor, updateToolbar])
 
   return (
     <Toolbar className="toolbar" ref={toolbarRef}>
-
       <Bold
         onClick={() => {
-          editor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold");
+          editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')
         }}
         $active={isBold}
       >
@@ -161,36 +164,49 @@ export default function ToolbarPlugin() {
       </Bold>
       <Italic
         onClick={() => {
-          editor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic");
+          editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')
         }}
         $active={isItalic}
       >
         i
       </Italic>
-      <EditorButton $active={blockType === "ul"} onClick={() => formatBulletList()}>
+      <EditorButton
+        $active={blockType === 'ul'}
+        onClick={() => formatBulletList()}
+      >
         <Icon render="bullets" />
       </EditorButton>
 
-      <Link $active={isLink} onClick={() => !isLink ? editor.dispatchCommand(TOGGLE_LINK_COMMAND, "https://") : editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)}>
-        <Box ml={{ custom: "-4px" }}>
+      <Link
+        $active={isLink}
+        onClick={() =>
+          !isLink
+            ? editor.dispatchCommand(TOGGLE_LINK_COMMAND, 'https://')
+            : editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)
+        }
+      >
+        <Box ml={{ custom: '-4px' }}>
           <Icon render="link" />
         </Box>
-        <LinkInput tabIndex={-1} ref={urlInputRef} placeholder='Enter url' value={linkURL} onChange={e => {
-          editor.dispatchCommand(TOGGLE_LINK_COMMAND, e.target.value)
-        }} onClick={e => e.stopPropagation()} />
-        <Box onClick={e => {
-          e.stopPropagation()
-          window.open(linkURL, '_blank')
-        }}>
+        <LinkInput
+          tabIndex={-1}
+          ref={urlInputRef}
+          placeholder="Enter url"
+          value={linkURL}
+          onChange={(e) => {
+            editor.dispatchCommand(TOGGLE_LINK_COMMAND, e.target.value)
+          }}
+          onClick={(e) => e.stopPropagation()}
+        />
+        <Box onClick={openNewWindow}>
           <LinkOpen render="new-window" />
         </Box>
       </Link>
     </Toolbar>
-  );
+  )
 }
 
-
-const EditorButton = styled(Box) <{ $active: boolean }>`
+const EditorButton = styled(Box)<{ $active: boolean }>`
   height: 40px;
   width: 40px;
   line-height: 50px;
@@ -204,14 +220,18 @@ const EditorButton = styled(Box) <{ $active: boolean }>`
   background-color: ${theme.colors.custard};
   flex-shrink: 0;
 
-  ${({ $active }) => $active && `
+  ${({ $active }) =>
+    $active &&
+    `
     background-color: ${theme.colors.fairyFloss};
   `}
 
   :hover {
     filter: brightness(0.95);
 
-    ${({ $active }) => $active && `
+    ${({ $active }) =>
+      $active &&
+      `
       background-color: ${theme.colors.fairyFloss};
     `}
   }
@@ -234,7 +254,7 @@ const Toolbar = styled(Box)`
 `
 
 const Link = styled(EditorButton)`
-  transition: width .3s;
+  transition: width 0.3s;
   ${({ $active }) => $active && `width: 360px;`}
   justify-content: left;
   overflow: hidden;
@@ -242,7 +262,9 @@ const Link = styled(EditorButton)`
   padding-right: 5px;
   flex-shrink: 1;
 
-  ${({ $active }) => $active && `
+  ${({ $active }) =>
+    $active &&
+    `
     background-color: ${theme.colors.fairyFloss};
 
     :hover {
