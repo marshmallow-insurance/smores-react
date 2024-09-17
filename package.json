@@ -65,7 +65,7 @@
     "@typescript-eslint/parser": "^7.18.0",
     "axe-playwright": "^2.0.2",
     "conventional-changelog-conventionalcommits": "^8.0.0",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "^7.35.2",
     "eslint-plugin-react-hooks": "^4.1.2",
