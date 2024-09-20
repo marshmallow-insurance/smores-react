@@ -210,6 +210,7 @@ import WheelFlat from './iconFiles/WheelFlat'
 import Windscreen from './iconFiles/Windscreen'
 import WindscreenRepair from './iconFiles/WindscreenRepair'
 import WindscreenReplacement from './iconFiles/WindscreenReplacement'
+import Paperclip from './iconFiles/Paperclip'
 
 export const iconList = {
   'aa-inverted': AaInverted,
@@ -386,6 +387,7 @@ export const iconList = {
   onfido: Onfido,
   other: Other,
   padlock: Padlock,
+  paperclip: Paperclip,
   people: People,
   person: Person,
   photo: Photo,
