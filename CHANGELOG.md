@@ -1,3 +1,9 @@
+## [9.20.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.19.1...v9.20.0) (2024-09-23)
+
+### Features
+
+* **icon:** paperclip added ([#3997](https://github.com/marshmallow-insurance/smores-react/issues/3997)) ([9aba832](https://github.com/marshmallow-insurance/smores-react/commit/9aba8329ae3bb572da81b732c4d766b6b0af6c9b))
+
 ## [9.19.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.19.0...v9.19.1) (2024-09-16)
 
 ### Bug Fixes
