@@ -211,6 +211,7 @@ import Windscreen from './iconFiles/Windscreen'
 import WindscreenRepair from './iconFiles/WindscreenRepair'
 import WindscreenReplacement from './iconFiles/WindscreenReplacement'
 import Paperclip from './iconFiles/Paperclip'
+import Reply from './iconFiles/Reply'
 
 export const iconList = {
   'aa-inverted': AaInverted,
@@ -289,6 +290,7 @@ export const iconList = {
   'pound-outline': PoundOutline,
   'pound-regular': PoundRegular,
   'question-help': QuestionHelp,
+  reply: Reply,
   'refer-a-friend': ReferAFriend,
   'reg-plate': RegPlate,
   'renewal-line': RenewalLine,
