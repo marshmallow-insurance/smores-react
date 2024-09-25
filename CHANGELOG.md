@@ -1,3 +1,9 @@
+## [9.21.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.20.0...v9.21.0) (2024-09-25)
+
+### Features
+
+* **icon:** reply icon ([#4008](https://github.com/marshmallow-insurance/smores-react/issues/4008)) ([5422f12](https://github.com/marshmallow-insurance/smores-react/commit/5422f12a723323075b69120d30ba251a2ad266e9))
+
 ## [9.20.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.19.1...v9.20.0) (2024-09-23)
 
 ### Features
