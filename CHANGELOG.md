@@ -1,3 +1,10 @@
+## [9.22.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.21.0...v9.22.0) (2024-10-08)
+
+### Features
+
+* **RowActions:** Allow `onClick` events to be awaited ([#4025](https://github.com/marshmallow-insurance/smores-react/issues/4025)) ([ce1017d](https://github.com/marshmallow-insurance/smores-react/commit/ce1017d450cbd948c2d39e016c434a4789c91a59))
+* **rowActions:** refactor `RowActions` typing to discriminated union type ([#4026](https://github.com/marshmallow-insurance/smores-react/issues/4026)) ([6356be4](https://github.com/marshmallow-insurance/smores-react/commit/6356be4fa7fa7edc0b285f2a51222981c69ea325))
+
 ## [9.21.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.20.0...v9.21.0) (2024-09-25)
 
 ### Features
