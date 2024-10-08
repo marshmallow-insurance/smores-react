@@ -16,12 +16,12 @@ export const RowActions = <T extends object>({
   isExpanded,
   toggleExpansion,
 }: RowActionsProps<T>) => {
-  const handleAction = (
+  const handleAction = async (
     e: MouseEvent | FormEvent<HTMLButtonElement>,
-    action: (rowData: T) => void,
+    action: (rowData: T) => void | Promise<void>,
   ) => {
     e.stopPropagation()
-    action(rowData)
+    await action(rowData)
   }
 
   return (
@@ -37,8 +37,8 @@ export const RowActions = <T extends object>({
                 <Wrapper flex key={actionIndex}>
                   {"element" in action && isReactElement(action.element) &&
                     React.cloneElement(action.element, {
-                      onClick: (e: MouseEvent) => {
-                        handleAction(e, action.onClick)
+                      onClick: async (e: MouseEvent) => {
+                        await handleAction(e, action.onClick)
                       },
                       tabIndex: 0,
                       className: 'reactElementRowAction',
@@ -46,8 +46,8 @@ export const RowActions = <T extends object>({
                   {!("element" in action) && action.genericButton && (
                     <Button
                       {...action.genericButton}
-                      handleClick={(e) => {
-                        handleAction(e, action.onClick)
+                      handleClick={async (e) => {
+                        await handleAction(e, action.onClick)
                       }}
                     >
                       {action.genericButton.children}
@@ -62,16 +62,16 @@ export const RowActions = <T extends object>({
                       >
                         <IconStrict
                           {...action.iconButton}
-                          handleClick={(e) => {
-                            handleAction(e, action.onClick)
+                          handleClick={async (e) => {
+                            await handleAction(e, action.onClick)
                           }}
                         />
                       </Tooltip>
                     ) : (
                       <IconStrict
                         {...action.iconButton}
-                        handleClick={(e) => {
-                          handleAction(e, action.onClick)
+                        handleClick={async (e) => {
+                          await handleAction(e, action.onClick)
                         }}
                       />
                     ))}
