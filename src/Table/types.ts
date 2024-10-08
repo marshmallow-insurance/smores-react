@@ -31,7 +31,13 @@ export type BaseRowAction<T> = {
   showCondition?: (rowData: T) => boolean
 }
 
-export type RowAction<T> = RowActionButtonDefault<T> | RowActionElementOverride<T>
+/**
+ * A row action can be a button, an icon button, or a custom element.
+ * - If the action is a button or an icon button, the `onClick` function is required.
+ * - If the action is a custom element, the `element` prop is required.
+ * - If the action is a function, it will be called with the row data as an argument, return is expected to be a `ReactElement`.
+ */
+export type RowAction<T> = RowActionButtonDefault<T> | RowActionElementOverride<T> | ((rowData: T) => ReactElement)
 
 export type RowActionButtonDefault<T> = {
   iconButton?: Pick<
