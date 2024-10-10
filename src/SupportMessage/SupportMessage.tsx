@@ -1,5 +1,5 @@
 import { darken } from 'polished'
-import React, { FC, MouseEventHandler, ReactElement } from 'react'
+import React, { forwardRef, MouseEventHandler, ReactElement } from 'react'
 import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
@@ -66,44 +66,43 @@ export type SupportMessageProps = {
   title?: string
 } & MarginProps
 
-export const SupportMessage: FC<SupportMessageProps> = ({
-  className,
-  description,
-  onClick,
-  type = 'info',
-  title,
-  ...marginProps
-}) => {
-  return (
-    <Wrapper
-      className={className}
-      $type={type}
-      onClick={onClick}
-      {...marginProps}
-    >
-      <IconWrapper>
-        <Icon
-          size={20}
-          render={styles[type].icon}
-          color={styles[type].iconColor}
-        />
-      </IconWrapper>
-      <Box flex direction="column" mx="8px">
-        {title && <Title>{title}</Title>}
-        {isReactElement(description) ? (
-          <DescriptionBox>{description}</DescriptionBox>
-        ) : (
-          <Description tag="p">{description}</Description>
-        )}
-      </Box>
-      {onClick && (
-        <Box ml={{ custom: 'auto' }}>
-          <Icon size={16} render="caret" color="marzipan" rotate={270} />
+export const SupportMessage = forwardRef<HTMLDivElement, SupportMessageProps>(
+  function SupportMessage(
+    { className, description, onClick, type = 'info', title, ...marginProps },
+    ref,
+  ) {
+    return (
+      <Wrapper
+        ref={ref}
+        className={className}
+        $type={type}
+        onClick={onClick}
+        {...marginProps}
+      >
+        <IconWrapper>
+          <Icon
+            size={20}
+            render={styles[type].icon}
+            color={styles[type].iconColor}
+          />
+        </IconWrapper>
+        <Box flex direction="column" mx="8px">
+          {title && <Title>{title}</Title>}
+          {isReactElement(description) ? (
+            <DescriptionBox>{description}</DescriptionBox>
+          ) : (
+            <Description tag="p">{description}</Description>
+          )}
         </Box>
-      )}
-    </Wrapper>
-  )
-}
+        {onClick && (
+          <Box ml={{ custom: 'auto' }}>
+            <Icon size={16} render="caret" color="marzipan" rotate={270} />
+          </Box>
+        )}
+      </Wrapper>
+    )
+  },
+)
 
 interface IWrapper {
   $type: SupportMessageType
