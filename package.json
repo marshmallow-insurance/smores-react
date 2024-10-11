@@ -33,10 +33,10 @@
     "fix-package-lock-conflicts": "echo \"Make sure conflicts in package.json are resolved before running this script\" && npm i --package-lock-only"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.7",
-    "@babel/eslint-parser": "^7.25.7",
+    "@babel/core": "^7.25.8",
+    "@babel/eslint-parser": "^7.25.8",
     "@babel/plugin-transform-class-properties": "^7.25.7",
-    "@babel/preset-env": "^7.25.7",
+    "@babel/preset-env": "^7.25.8",
     "@babel/preset-react": "^7.25.7",
     "@babel/preset-typescript": "^7.25.7",
     "@commitlint/cli": "^19.5.0",
