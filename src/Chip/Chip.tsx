@@ -91,7 +91,6 @@ const Container = styled(Box)<IButton>(
     line-height: 100%;
     padding: 8px 16px 8px ${$icon ? '8px' : '16px'};
     min-width: 98px;
-    max-width: 120px;
     min-height: 40px;
     cursor: ${disabled || $loading ? 'not-allowed' : 'pointer'};
     opacity: ${disabled ? '0.5' : '1'};
