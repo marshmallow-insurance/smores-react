@@ -63,7 +63,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
           {icon && (
             <IconComponent
               render={icon}
-              size={20}
+              size={16}
               color={primary ? 'liquorice' : 'cream'}
             />
           )}
@@ -90,7 +90,7 @@ const Container = styled(Box)<IButton>(
     justify-content: ${$icon ? 'space-evenly' : 'center'};
     line-height: 100%;
     padding: 8px 16px 8px ${$icon ? '8px' : '16px'};
-    width: 98px;
+    min-width: 98px;
     min-height: 40px;
     cursor: ${disabled || $loading ? 'not-allowed' : 'pointer'};
     opacity: ${disabled ? '0.5' : '1'};
