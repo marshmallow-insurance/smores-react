@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { MarginProps } from 'utils/space'
 import { theme } from '../theme'
+import { margin, MarginProps, TransientMarginProps } from '../utils/space'
 
 type SliderProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -16,7 +16,10 @@ type SliderProps = Omit<
   }
 
 export const SliderInput = forwardRef<HTMLInputElement, SliderProps>(
-  function SliderInput({ value, onChange, min, max, step, ...rest }, ref) {
+  function SliderInput(
+    { value, onChange, min, max, step, m, mx, my, ml, mr, mt, mb, ...rest },
+    ref,
+  ) {
     return (
       <StyledSlider
         ref={ref}
@@ -28,16 +31,22 @@ export const SliderInput = forwardRef<HTMLInputElement, SliderProps>(
         onChange={(event) => {
           onChange(event.target.valueAsNumber)
         }}
+        $m={m}
+        $mx={mx}
+        $my={my}
+        $ml={ml}
+        $mr={mr}
+        $mt={mt}
+        $mb={mb}
         {...rest}
       />
     )
   },
 )
 
-const StyledSlider = styled.input`
+const StyledSlider = styled.input<TransientMarginProps>`
   outline: 0;
   border: 0;
-  margin: 0;
   padding: 0;
   border-radius: 500px;
   width: 100%;
@@ -45,6 +54,7 @@ const StyledSlider = styled.input`
   max-width: 2000px;
   transition: box-shadow 0.2s ease-in-out;
   background: ${theme.colors.coconut};
+  ${margin};
 
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     overflow: hidden;

@@ -17,6 +17,7 @@ export const Default: Story = {
   args: {
     min: 1,
     max: 10,
+    mt: '64px',
     'aria-label': 'slider',
   },
 }
