@@ -1,3 +1,16 @@
+## [9.23.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.22.0...v9.23.0) (2024-10-16)
+
+### Features
+
+* **slider:** adding slider component ([#4038](https://github.com/marshmallow-insurance/smores-react/issues/4038)) ([0bb9e44](https://github.com/marshmallow-insurance/smores-react/commit/0bb9e445e20ed5b5c6b236bf4fdd4f55d39fa97d))
+
+### Bug Fixes
+
+* **chip:** icon size and min/max width ([#4036](https://github.com/marshmallow-insurance/smores-react/issues/4036)) ([afa4b7a](https://github.com/marshmallow-insurance/smores-react/commit/afa4b7a08f216421359c8e6d7c833e5247a3e500))
+* **colours:** rename facebook and twitter colours ([#4037](https://github.com/marshmallow-insurance/smores-react/issues/4037)) ([06c5c29](https://github.com/marshmallow-insurance/smores-react/commit/06c5c294b56a863022a29a56012e05168269a9c4))
+* **labelText:** default to 4px ([#4034](https://github.com/marshmallow-insurance/smores-react/issues/4034)) ([1cff4ad](https://github.com/marshmallow-insurance/smores-react/commit/1cff4ad24f714897f5069d9b9054b6c146dea493))
+* **link:** default margin for icon ([#4035](https://github.com/marshmallow-insurance/smores-react/issues/4035)) ([cd7a9f1](https://github.com/marshmallow-insurance/smores-react/commit/cd7a9f1058deb0640b39482fe6cc3959a674f75f))
+
 ## [9.22.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.21.0...v9.22.0) (2024-10-08)
 
 ### Features
