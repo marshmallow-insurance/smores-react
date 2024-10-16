@@ -1,17 +1,19 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
+import { MarginProps } from 'utils/space'
 import { theme } from '../theme'
 
 type SliderProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
   'type' | 'value' | 'onChange'
-> & {
-  onChange: (value: number) => void
-  value: number
-  min?: number
-  max?: number
-  step?: number
-}
+> &
+  MarginProps & {
+    onChange: (value: number) => void
+    value: number
+    min?: number
+    max?: number
+    step?: number
+  }
 
 export const SliderInput = forwardRef<HTMLInputElement, SliderProps>(
   function SliderInput({ value, onChange, min, max, step, ...rest }, ref) {
