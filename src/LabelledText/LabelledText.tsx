@@ -14,7 +14,7 @@ export type LabelledTextProps = {
 export const LabelledText: FC<LabelledTextProps> = ({
   label,
   children,
-  labelMargin = 8,
+  labelMargin = 4,
   ...marginProps
 }) => (
   <Container {...marginProps} $labelMargin={labelMargin + 'px'}>
