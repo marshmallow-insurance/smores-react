@@ -1,0 +1,9 @@
+name: Approve and Merge Dependabot PRs
+
+on:
+  pull_request_target:
+    branches: [ main ]
+
+jobs:
+  auto-merge-dependabot:
+    uses: marshmallow-insurance/actions-reusable-workflows/.github/workflows/auto-merge-dependabot.yml@main
