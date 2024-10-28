@@ -1,24 +1,16 @@
 const ref = process.env.GITHUB_REF
 const branch = ref.split('/').pop()
 
+/**
+ * @type {import('semantic-release').GlobalConfig}
+ */
 const config = {
   branches: [
     'main',
     {
-      name: 'feature/*',
+      name: '@{feature,fix,chore}/*',
       prerelease: true,
-    },
-    {
-      name: 'fix/*',
-      prerelease: true,
-    },
-    {
-      name: 'chore/*',
-      prerelease: true,
-    },
-    {
-      name: 'crumbs-*',
-      prerelease: true,
+      channel: 'crumbs'
     },
   ],
   repositoryUrl: 'https://github.com/marshmallow-insurance/smores-react.git',
