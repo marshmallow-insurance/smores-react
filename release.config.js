@@ -8,7 +8,7 @@ const config = {
   branches: [
     'main',
     {
-      name: '@(feature,fix,chore)/*',
+      name: '(feature|fix|chore)/*',
       prerelease: true,
       channel: 'crumbs'
     },
