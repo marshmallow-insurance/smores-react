@@ -9,7 +9,7 @@ const config = {
     'main',
     {
       name: '(feature|fix|chore)/*',
-      prerelease: true,
+      prerelease: "crumbs",
     },
   ],
   repositoryUrl: 'https://github.com/marshmallow-insurance/smores-react.git',
