@@ -50,11 +50,12 @@ export type ModalProps = {
 
 export type TitleProps = TextProps
 
-const defaultTitleProps = {
+const getDefaultTitleProps = (title: string): TitleProps => ({
+  children: title,
   tag: 'h2',
   typo: 'heading-small',
   align: 'left',
-}
+})
 
 export const Modal: FC<ModalProps> = ({
   title = '',
@@ -74,9 +75,7 @@ export const Modal: FC<ModalProps> = ({
   useBodyScrollLock({ node: modalRef.current, showModal })
 
   const isTitleText = typeof title === 'string'
-
-  const titleText = isTitleText ? title : title.children
-  const titleProps = isTitleText ? defaultTitleProps : title
+  const titleProps = isTitleText ? getDefaultTitleProps(title) : title
 
   return createPortal(
     <Wrapper $showModal={showModal} ref={modalRef}>
@@ -96,7 +95,7 @@ export const Modal: FC<ModalProps> = ({
           mb="8px"
         >
           <TitleElements flex direction="column">
-            <Text {...titleProps}>{titleText}</Text>
+            <Text {...titleProps} />
           </TitleElements>
           <Box flex alignItems="center" gap={'8px'}>
             {rightPanel}
