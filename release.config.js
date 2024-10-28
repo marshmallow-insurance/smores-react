@@ -5,6 +5,18 @@ const config = {
   branches: [
     'main',
     {
+      name: 'feature/*',
+      prerelease: true,
+    },
+    {
+      name: 'fix/*',
+      prerelease: true,
+    },
+    {
+      name: 'chore/*',
+      prerelease: true,
+    },
+    {
       name: 'crumbs-*',
       prerelease: true,
     },
