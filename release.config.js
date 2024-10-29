@@ -10,7 +10,7 @@ const config = {
     'main',
     {
       name: '(feature|fix|chore)/*',
-      prerelease: `crumbs-${branch.split('/').pop()}`,
+      prerelease: 'crumbs-${name.replace(/\\//g, "-")}',
     },
   ],
   repositoryUrl: 'https://github.com/marshmallow-insurance/smores-react.git',
