@@ -1,7 +1,5 @@
 const branch = process.env.GITHUB_REF_NAME
 
-
-
 const micromatch = require('micromatch');
 
 /**
