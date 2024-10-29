@@ -74,8 +74,8 @@ export const Modal: FC<ModalProps> = ({
 
   useBodyScrollLock({ node: modalRef.current, showModal })
 
-  const isTitleText = typeof title === 'string'
-  const titleProps = isTitleText ? getDefaultTitleProps(title) : title
+  const isTitleString = typeof title === 'string'
+  const titleProps = isTitleString ? getDefaultTitleProps(title) : title
 
   return createPortal(
     <Wrapper $showModal={showModal} ref={modalRef}>
