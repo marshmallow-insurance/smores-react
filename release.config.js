@@ -87,6 +87,7 @@ const isAcceptedBranch = micromatch.isMatch(
 
 if (!isAcceptedBranch) {
   console.log(`Branch ${branch} is not accepted for release. Skipping release.`)
+  console.log(`Accepted branches: ${config.branches.join(', ')}. [Micromatch](https://github.com/micromatch/micromatch?tab=readme-ov-file#matching-features) is used for matching.`)
   process.exit(0)
 }
 
