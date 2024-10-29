@@ -1,6 +1,8 @@
 const ref = process.env.GITHUB_REF
 const branch = ref.split('/').pop()
 
+const micromatch = require('micromatch');
+
 /**
  * @type {import('semantic-release').GlobalConfig}
  */
@@ -77,6 +79,13 @@ const config = {
       },
     ],
   ],
+}
+
+const isAcceptedBranch = micromatch.isMatch(branch, config.branches.map(b => typeof b === 'object' ? b.name : b))
+
+if (!isAcceptedBranch) {
+  console.log(`Branch ${branch} is not accepted for release. Skipping release.`)
+  process.exit(0)
 }
 
 const isPrereleaseBranch = config.branches.some(
