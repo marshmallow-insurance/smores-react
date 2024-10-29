@@ -10,14 +10,6 @@ jobs:
   bump-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Check branch
-        run: |
-          if [[ "$GITHUB_REF" != "refs/heads/main" && "$GITHUB_REF" != refs/heads/crumbs-* ]]; then
-            echo "This job can only run on the main branch or branches starting with crumbs-"
-            exit 1
-          fi
-        shell: bash
-        
       - name: Checkout 🛎️
         uses: actions/checkout@v4
         with:

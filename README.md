@@ -38,6 +38,12 @@ So to ensure our CHANGELOG.md is updated automatically and gets the changes we h
 
 ## Release
 
+Only the following branches are supported for release:
+- `main`
+- `feature/*`
+- `chore/*`
+- `fix/*`
+
 #### Preview
 Before releasing, you may want to see the changes that will be included in the next version deployed on NPM, you can do so by:
 
@@ -59,11 +65,11 @@ Note: this workflow will fail if the package version is already on the latest, s
 #### Pre-Releases
 Not too different to your usual workflow!
 
-1. Checkout a new branch with the prefix `crumbs-<your-branch-name>`
+1. Checkout a new branch with the prefix `(feature|chore|fix)/<your-branch-name>` e.g. `feature/awesome-new-feature`
 2. Open a PR and create your changes as normal using semantic-commits!
 3. Goto our [github workflows](https://github.com/marshmallow-insurance/smores-react/actions)
 4. Click `Bump and Publish` or `Preview Bump and Publish`
-5. Press `Run workflow` and select `crumbs-<your-branch-name>` branch.
+5. Press `Run workflow` and select `<your-full-branch-name>` branch.
 6. Wait for release!
 7. This can be done multiple times and it will increment your pre-release package version!
 8. When you're happy with the changes, simply squash and merge the PR and release `main`!
