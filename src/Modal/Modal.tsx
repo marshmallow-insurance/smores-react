@@ -5,7 +5,7 @@ import { theme } from '../theme'
 
 import { Box } from '../Box'
 import { IconStrict } from '../IconStrict'
-import { Text } from '../Text'
+import { Text, type TextProps } from '../Text'
 import { useBodyScrollLock } from '../hooks/useBodyScrollLock'
 
 interface IModalWrapper {
@@ -20,7 +20,21 @@ interface IModalContainer {
 }
 
 export type ModalProps = {
-  title?: string
+  /**
+   * Title of the modal
+   * @default "" (empty string)
+   *
+   * @example
+   * ```tsx
+   * <Modal title="MultiCar Account" />
+   * ```
+   *
+   * @example
+   * ```tsx
+   * <Modal title={{ typo: 'hero', children: 'MultiCar Account' }} />
+   * ```
+   */
+  title?: string | TitleProps
   icon?: string
   children?: ReactNode
   rightPanel?: ReactNode
@@ -33,6 +47,15 @@ export type ModalProps = {
   portalContainer?: Element | DocumentFragment
   closeOnOverlayClick?: boolean
 }
+
+export type TitleProps = TextProps
+
+const getDefaultTitleProps = (title: string): TitleProps => ({
+  children: title,
+  tag: 'h2',
+  typo: 'heading-small',
+  align: 'left',
+})
 
 export const Modal: FC<ModalProps> = ({
   title = '',
@@ -50,6 +73,9 @@ export const Modal: FC<ModalProps> = ({
   const modalRef = useRef<HTMLDivElement>(null)
 
   useBodyScrollLock({ node: modalRef.current, showModal })
+
+  const isTitleString = typeof title === 'string'
+  const titleProps = isTitleString ? getDefaultTitleProps(title) : title
 
   return createPortal(
     <Wrapper $showModal={showModal} ref={modalRef}>
@@ -69,9 +95,7 @@ export const Modal: FC<ModalProps> = ({
           mb="8px"
         >
           <TitleElements flex direction="column">
-            <Text tag="h2" typo="heading-small" align="left">
-              {title}
-            </Text>
+            <Text {...titleProps} />
           </TitleElements>
           <Box flex alignItems="center" gap={'8px'}>
             {rightPanel}
