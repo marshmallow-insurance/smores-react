@@ -1,5 +1,10 @@
 import { darken } from 'polished'
-import React, { FC, MouseEventHandler, ReactNode } from 'react'
+import React, {
+  FC,
+  MouseEventHandler,
+  ReactNode,
+  type ReactElement,
+} from 'react'
 import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
@@ -14,7 +19,7 @@ import { MarginProps } from '../utils/space'
 export type CardProps = {
   children?: ReactNode
   /** leading card icon */
-  leadingIcon?: Icons
+  leadingIcon?: Icons | ReactElement
   /** generic card title */
   title?: string
   /** generic card body */
@@ -94,14 +99,7 @@ export const Card: FC<CardProps> = ({
       <Box p={visual ? '16px' : { custom: '0px' }}>
         <Box flex alignItems="center" justifyContent="space-between">
           <Box flex alignItems="center">
-            {leadingIcon && (
-              <Icon
-                mr="12px"
-                render={leadingIcon}
-                size={24}
-                color="liquorice"
-              />
-            )}
+            {constructLeadingIcon(leadingIcon)}
             <Box>
               {title && (
                 <Text typo="headline-regular" color="liquorice">
@@ -190,3 +188,13 @@ const Visual = styled(Box)<{ $visualUrl: string; $visualHeight: string }>`
   ${({ $visualHeight }) =>
     $visualHeight ? `height: ${$visualHeight};` : 'padding-top: 100%;'}
 `
+
+function constructLeadingIcon(leadingIcon: CardProps['leadingIcon']) {
+  if (!leadingIcon) return leadingIcon
+
+  if (typeof leadingIcon === 'string') {
+    return <Icon render={leadingIcon} size={24} color="liquorice" />
+  }
+
+  return leadingIcon
+}
