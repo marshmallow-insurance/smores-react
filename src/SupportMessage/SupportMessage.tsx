@@ -21,8 +21,8 @@ type StylesItem = {
 const styles: Record<SupportMessageType, StylesItem> = {
   info: {
     iconColor: 'liquorice',
-    backgroundColor: theme.colors.custard,
-    hoverBackgroundColor: darken(0.1, theme.colors.custard),
+    backgroundColor: theme.colors.oatmeal,
+    hoverBackgroundColor: darken(0.1, theme.colors.oatmeal),
     icon: 'info',
   },
   fallbackStyle: {
