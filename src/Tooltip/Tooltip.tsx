@@ -29,7 +29,6 @@ export interface TooltipProps {
   title?: string
   underline?: boolean
   variant?: TooltipVariant
-  zIndex?: number
   portalContainer?:
     | HTMLElement
     | null
@@ -84,7 +83,6 @@ export const Tooltip: FC<TooltipProps> = ({
   position,
   maxWidth = 500,
   underline = false,
-  zIndex = 10,
   portalContainer,
   inline: inlineProp,
   variant = TooltipVariant.PRIMARY,
@@ -139,10 +137,8 @@ export const Tooltip: FC<TooltipProps> = ({
           <Tip
             ref={refs.setFloating}
             className="tooltip"
-            $showTip={showTip}
             $maxWidth={maxWidth}
-            $zIndex={zIndex}
-            $background={bgColor}
+            $background={variantValue.bgColor}
             style={floatingStyles}
             {...getFloatingProps()}
           >
@@ -187,22 +183,16 @@ const UnderlinedChild = styled(Box)<{ $underline: boolean; $inline?: boolean }>`
 `
 
 export const Tip = styled.div<{
-  $showTip: boolean
   $maxWidth?: number
-  $zIndex: number
   $background: string
 }>`
-  position: absolute;
   margin: auto;
   background: ${({ $background }) => $background};
   padding: 16px 12px 20px;
   border-radius: 16px;
   max-width: 450px;
-  opacity: ${({ $showTip }) => ($showTip ? '1' : '0')};
-  transition: opacity 0.2s ease-in-out;
   pointer-events: none;
   cursor: default;
-  z-index: ${({ $zIndex }) => ($zIndex ? $zIndex : '10')};
 
   // this is the trick that will make sure the content can go up to maxWidth
   margin-right: ${({ $maxWidth }) => $maxWidth && -$maxWidth / 2 + 'px'};
