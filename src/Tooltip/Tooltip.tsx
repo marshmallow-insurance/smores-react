@@ -125,7 +125,6 @@ export const Tooltip: FC<TooltipProps> = ({
     <>
       <UnderlinedChild
         id={randomId}
-        $inline={inlineProp}
         $underline={underline}
         ref={refs.setReference}
         {...getReferenceProps()}
@@ -138,14 +137,14 @@ export const Tooltip: FC<TooltipProps> = ({
             ref={refs.setFloating}
             className="tooltip"
             $maxWidth={maxWidth}
-            $background={variantValue.bgColor}
+            $background={theme.colors[variantValue.bgColor]}
             style={floatingStyles}
             {...getFloatingProps()}
           >
             <FloatingArrow
               ref={arrowRef}
               context={context}
-              fill={variantValue.bgColor}
+              fill={theme.colors[variantValue.bgColor]}
             />
             {title && (
               <Text tag="h5" typo="desc-medium" color={variantValue.textColor}>
@@ -165,15 +164,10 @@ export const Tooltip: FC<TooltipProps> = ({
   )
 }
 
-const UnderlinedChild = styled(Box)<{ $underline: boolean; $inline?: boolean }>`
+const UnderlinedChild = styled(Box)<{ $underline: boolean }>`
   cursor: pointer;
   width: fit-content;
-
-  ${({ $inline }) =>
-    $inline &&
-    css`
-      display: inline;
-    `}
+  display: inline;
 
   ${({ $underline }) =>
     $underline &&
@@ -186,7 +180,9 @@ export const Tip = styled.div<{
   $maxWidth?: number
   $background: string
 }>`
+  position: absolute;
   margin: auto;
+  z-index: 1000;
   background: ${({ $background }) => $background};
   padding: 16px 12px 20px;
   border-radius: 16px;

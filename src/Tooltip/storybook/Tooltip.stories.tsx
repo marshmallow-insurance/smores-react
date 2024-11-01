@@ -19,10 +19,10 @@ const meta: Meta<typeof Tooltip> = {
   },
   argTypes: {
     variant: {
-      options: [TooltipVariant.PRIMARY, TooltipVariant.FALLBACK],
+      options: Object.values(TooltipVariant),
       control: {
         type: 'select',
-        options: [TooltipVariant.PRIMARY, TooltipVariant.FALLBACK],
+        options: Object.values(TooltipVariant),
       },
     },
   },
@@ -157,7 +157,7 @@ const ModalExampleWrapper = (props: TooltipProps) => {
   return (
     <Box height="900px">
       <Modal handleClick={handleClick} showModal={showModal}>
-        <Tooltip {...props} zIndex={1000}>
+        <Tooltip {...props}>
           <Box>Harry Hill</Box>
         </Tooltip>
       </Modal>
@@ -191,3 +191,85 @@ export const InlineText: Story = {
     inline: true,
   },
 }
+
+export const MTAExample: Story = {
+  render: () => (
+    <InnerSection>
+      <Box>
+        <Row>
+          <Tooltip
+            variant={TooltipVariant.FALLBACK}
+            underline
+            content={
+              <TooltipText typo="caption" color="cream">
+                An adjustment changes the <b>cost</b> of the policy. This field
+                should <b>not</b> be used to adjust for invoices created after a
+                failed up front payment.
+                <br />
+                <br />
+                For annual and Premfina policies, use the `MTA only` transaction
+                option when issuing an invoice.
+                <br />
+                <br />
+                For instalment policies, use `spread entire amount` transaction
+                option when issuing an invoice.
+              </TooltipText>
+            }
+            position="top"
+          >
+            <Text typo="body-regular">Adjustment amount</Text>
+            <Text typo="caption">(Adjusts the policy cost)</Text>
+          </Tooltip>
+        </Row>
+      </Box>
+      <Row>
+        <Text typo="body-regular">MTA admin fee</Text>
+      </Row>
+      <Row>
+        <Tooltip
+          underline
+          variant={TooltipVariant.FALLBACK}
+          content={
+            <TooltipText typo="caption" color="cream">
+              This is the policies total new retained refund after this MTA is
+              complete.
+            </TooltipText>
+          }
+          position="top"
+        >
+          <Text>Predicted retained refund</Text>
+        </Tooltip>
+        <Text>£1,345</Text>
+      </Row>
+    </InnerSection>
+  ),
+}
+
+const InnerSection = styled(Box)`
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+  padding: 24px;
+  border-radius: 16px;
+  background: ${theme.colors.custard};
+  display: flex;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    flex-direction: column;
+  }
+`
+
+const TooltipText = styled(Text)`
+  white-space: normal;
+  width: 200px;
+`
+
+const Row = styled(Box)`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0px;
+`
