@@ -34,7 +34,6 @@ export interface TooltipProps {
     | HTMLElement
     | null
     | React.MutableRefObject<HTMLElement | null>
-  bgColor?: Color
   /**
    * If true, the tooltip will position itself inline its children
    *
@@ -55,16 +54,23 @@ export interface TooltipProps {
 export enum TooltipVariant {
   PRIMARY = 'PRIMARY',
   FALLBACK = 'FALLBACK',
+  BUBBLEGUM = 'BUBBLEGUM',
 }
 
-type VariantValue = { textColor: Color }
+type VariantValue = { textColor: Color; bgColor: Color }
 
 const tooltipVariants = {
   [TooltipVariant.PRIMARY]: {
     textColor: 'liquorice',
+    bgColor: 'custard',
   },
   [TooltipVariant.FALLBACK]: {
     textColor: 'cream',
+    bgColor: 'feijoa',
+  },
+  [TooltipVariant.BUBBLEGUM]: {
+    textColor: 'liquorice',
+    bgColor: 'bubblegum',
   },
 } satisfies Record<TooltipVariant, VariantValue>
 
@@ -80,7 +86,6 @@ export const Tooltip: FC<TooltipProps> = ({
   underline = false,
   zIndex = 10,
   portalContainer,
-  bgColor: bgColorProp,
   inline: inlineProp,
   variant = TooltipVariant.PRIMARY,
 }) => {
@@ -88,7 +93,6 @@ export const Tooltip: FC<TooltipProps> = ({
   const arrowRef = useRef(null)
 
   const variantValue = tooltipVariants[variant]
-  const bgColor = bgColorProp ? theme.colors[bgColorProp] : theme.colors.custard
 
   const randomId = crypto.randomUUID()
 
@@ -142,7 +146,11 @@ export const Tooltip: FC<TooltipProps> = ({
             style={floatingStyles}
             {...getFloatingProps()}
           >
-            <FloatingArrow ref={arrowRef} context={context} fill={bgColor} />
+            <FloatingArrow
+              ref={arrowRef}
+              context={context}
+              fill={variantValue.bgColor}
+            />
             {title && (
               <Text tag="h5" typo="desc-medium" color={variantValue.textColor}>
                 {title}
