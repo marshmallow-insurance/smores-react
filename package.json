@@ -84,6 +84,8 @@
     "vitest": "^2.1.4"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26.27",
+    "@floating-ui/react-dom": "^2.1.2",
     "@lexical/react": "^0.18.0",
     "body-scroll-lock": "^4.0.0-beta.0",
     "date-fns": "^4.1.0",

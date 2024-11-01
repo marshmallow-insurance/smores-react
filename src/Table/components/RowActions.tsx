@@ -58,7 +58,7 @@ export const RowActions = <T extends object>({
                       <Tooltip
                         content={action.iconButton.tooltipText}
                         position={'bottom'}
-                        tooltipColor={'bubblegum'}
+                        bgColor={'bubblegum'}
                       >
                         <IconStrict
                           {...action.iconButton}
