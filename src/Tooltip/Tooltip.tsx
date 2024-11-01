@@ -18,6 +18,7 @@ import {
   arrow,
   FloatingArrow,
   type Placement,
+  inline,
 } from '@floating-ui/react'
 
 export interface TooltipProps {
@@ -34,6 +35,21 @@ export interface TooltipProps {
     | null
     | React.MutableRefObject<HTMLElement | null>
   bgColor?: Color
+  /**
+   * If true, the tooltip will position itself inline its children
+   *
+   * Used for inline content like blocks of text that span multiple lines
+   *
+   * @example
+   * ```tsx
+   * <Text>
+   *   Marshmallow car insurance, the best insurance in town.
+   *   <Tooltip inline content="Tooltip content">Hover here</Tooltip>
+   *   to learn more as the Policy Holder
+   * </Text>
+   * ```
+   */
+  inline?: boolean
 }
 
 export enum TooltipVariant {
@@ -65,6 +81,7 @@ export const Tooltip: FC<TooltipProps> = ({
   zIndex = 10,
   portalContainer,
   bgColor: bgColorProp,
+  inline: inlineProp,
   variant = TooltipVariant.PRIMARY,
 }) => {
   const [showTip, setShowTip] = useState<boolean>(false)
@@ -83,6 +100,7 @@ export const Tooltip: FC<TooltipProps> = ({
       offset(ARROW_HEIGHT + GAP),
       flip(),
       shift(),
+      inlineProp ? inline() : undefined,
       arrow({ element: arrowRef, padding: 14 }),
     ],
     whileElementsMounted: autoUpdate,
@@ -102,9 +120,10 @@ export const Tooltip: FC<TooltipProps> = ({
   ])
 
   return (
-    <Container>
+    <>
       <UnderlinedChild
         id={randomId}
+        $inline={inlineProp}
         $underline={underline}
         ref={refs.setReference}
         {...getReferenceProps()}
@@ -138,22 +157,20 @@ export const Tooltip: FC<TooltipProps> = ({
           </Tip>
         </FloatingPortal>
       )}
-    </Container>
+    </>
   )
 }
 
-export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  > span:hover + .tooltip {
-    opacity: 1;
-  }
-`
-
-const UnderlinedChild = styled(Box)<{ $underline: boolean }>`
+const UnderlinedChild = styled(Box)<{ $underline: boolean; $inline?: boolean }>`
   cursor: pointer;
+  width: fit-content;
+
+  ${({ $inline }) =>
+    $inline &&
+    css`
+      display: inline;
+    `}
+
   ${({ $underline }) =>
     $underline &&
     css`

@@ -70,7 +70,6 @@ export const LongTextExample: Story = {
 
 export const ReactNodeExample: Story = {
   args: {
-    title: 'React node example',
     children: (
       <Box>
         <Text typo="desc-light" color="liquorice">
@@ -93,32 +92,33 @@ export const ReactNodeExample: Story = {
 
 export const OverflowExample: Story = {
   render: (props: TooltipProps) => (
-    <OverflowHiddenBox tabIndex={0} my="64px">
-      <Tooltip {...props} position="left">
-        <Box>Harry Hill (left)</Box>
-      </Tooltip>
+    <OverflowHiddenBox tabIndex={0}>
+      <Box
+        flex
+        direction="column"
+        gap="32px"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Tooltip {...props} position="left">
+          <Text>Harry Hill (left)</Text>
+        </Tooltip>
 
-      <Box my="64px">
         <Tooltip {...props} position="right">
-          <Box>Harry Hill (right)</Box>
+          <Text>Harry Hill (right)</Text>
         </Tooltip>
-      </Box>
 
-      <Box my="64px">
         <Tooltip {...props} position="bottom">
-          <Box>Harry Hill (bottom)</Box>
+          <Text>Harry Hill (bottom)</Text>
         </Tooltip>
-      </Box>
 
-      <Box my="64px">
         <Tooltip {...props} position="top">
-          <Box>Harry Hill (top)</Box>
+          <Text>Harry Hill (top)</Text>
         </Tooltip>
       </Box>
     </OverflowHiddenBox>
   ),
   args: {
-    title: 'React node example',
     children: tooltipContent,
     underline: true,
   },
@@ -132,7 +132,8 @@ export const OverflowExample: Story = {
 }
 
 const OverflowHiddenBox = styled(Box)`
-  height: 200%;
+  padding: 200px 0;
+  height: 150vh;
   width: 200%;
   overflow: scroll;
   background: ${theme.colors.coconut};
@@ -140,7 +141,6 @@ const OverflowHiddenBox = styled(Box)`
 
 export const ModalExample: Story = {
   args: {
-    title: 'Modal example',
     children: tooltipContent,
     underline: true,
   },
@@ -166,4 +166,28 @@ const ModalExampleWrapper = (props: TooltipProps) => {
       </Button>
     </Box>
   )
+}
+
+export const InlineText: Story = {
+  render: (props) => (
+    <Box width="200px">
+      <Text>
+        Marshmallow car insurance, the best insurance in town.{' '}
+        <Tooltip {...props}>Hover here</Tooltip> to learn more as the Policy
+        Holder.
+      </Text>
+      <Text my="12px">
+        Nunc cursus fermentum libero vel iaculis. Praesent vel dignissim purus,
+        a iaculis mauris.{' '}
+        <Tooltip {...props} position="right">
+          In tempor nibh ut elit sollicitudin, vel ultricies elit volutpat.
+          Etiam accumsan tristique ante, at mollis neque laoreet eget.
+        </Tooltip>{' '}
+        Duis rhoncus molestie felis a cursus.
+      </Text>
+    </Box>
+  ),
+  args: {
+    inline: true,
+  },
 }
