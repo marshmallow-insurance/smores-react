@@ -17,14 +17,14 @@ import {
   useRole,
   arrow,
   FloatingArrow,
-  type Placement,
   inline,
+  type Side,
 } from '@floating-ui/react'
 
 export interface TooltipProps {
   children: ReactNode
   content: string | ReactNode
-  position: Placement
+  position?: Side
   maxWidth?: number
   title?: string
   underline?: boolean
