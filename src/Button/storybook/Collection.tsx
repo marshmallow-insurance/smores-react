@@ -11,6 +11,7 @@ export const buttonList: Array<ButtonProps> = [
   { fallbackStyle: true, children: 'Cancel' },
   { textBtn: true, children: 'View' },
   { smallButton: true, children: 'Small' },
+  { smallButton: true, textBtn: true, children: 'Small' },
 ]
 
 export const CollectionPage: FC = () => {
