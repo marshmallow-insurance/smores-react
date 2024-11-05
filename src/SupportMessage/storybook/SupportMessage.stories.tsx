@@ -1,46 +1,62 @@
 import React from 'react'
 import { Link } from '../../Link'
-import { SupportMessage, SupportMessageProps } from '../SupportMessage'
+import { SupportMessage } from '../SupportMessage'
 import { CollectionPage } from './Collection'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Box } from '../../Box'
 
-export default {
+const meta: Meta<typeof SupportMessage> = {
   title: 'SupportMessage',
   component: SupportMessage,
-}
-
-const Template = (props: SupportMessageProps) => (
-  <SupportMessage {...props}>Support message for customer</SupportMessage>
-)
-
-export const Default = Template.bind({})
-
-const supportMessageArgs: SupportMessageProps = {
-  type: 'info',
-  title: undefined,
-  description: 'Some description text',
-}
-
-Default.args = supportMessageArgs
-
-export const WithCustomDescription = Template.bind({})
-
-WithCustomDescription.args = {
-  type: 'info',
-  title: 'A SupportMessage using the Link component',
-  description: (
-    <div>
-      Some text rendered using a <Link href={''}>Link</Link>
-    </div>
+  args: {
+    type: 'info',
+    title: undefined,
+    description: 'Some description text',
+  },
+  render: (args) => (
+    <SupportMessage {...args}>Support message for customer</SupportMessage>
   ),
 }
 
-export const Clickable = Template.bind({})
+export default meta
+type Story = StoryObj<typeof SupportMessage>
 
-Clickable.args = {
-  type: 'info',
-  title: 'An interactive SupportMessage',
-  description: 'Click me!',
-  onClick: () => alert('Clicked!'),
+export const WithCustomDescription: Story = {
+  args: {
+    type: 'info',
+    title: 'A SupportMessage using the Link component',
+    description: (
+      <div>
+        Some text rendered using a <Link href={''}>Link</Link>
+      </div>
+    ),
+  },
 }
 
-export const Collection = CollectionPage.bind({})
+export const Clickable: Story = {
+  args: {
+    type: 'info',
+    title: 'An interactive SupportMessage',
+    description: 'Click me!',
+    onClick: () => alert('Clicked!'),
+  },
+}
+
+export const WithRightSideComponent: Story = {
+  args: {
+    type: 'info',
+    title: 'An interactive SupportMessage',
+    rightSideComponent: (
+      <Box ml={{ custom: 'auto' }}>
+        <Link href={undefined as unknown as string}>
+          This is a right side component
+        </Link>
+      </Box>
+    ),
+    description: 'Click me!',
+  },
+}
+
+export const Collection: Story = {
+  decorators: [() => <CollectionPage />],
+}

@@ -1,3 +1,100 @@
+## [9.23.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.22.0...v9.23.0) (2024-10-16)
+
+### Features
+
+* **slider:** adding slider component ([#4038](https://github.com/marshmallow-insurance/smores-react/issues/4038)) ([0bb9e44](https://github.com/marshmallow-insurance/smores-react/commit/0bb9e445e20ed5b5c6b236bf4fdd4f55d39fa97d))
+
+### Bug Fixes
+
+* **chip:** icon size and min/max width ([#4036](https://github.com/marshmallow-insurance/smores-react/issues/4036)) ([afa4b7a](https://github.com/marshmallow-insurance/smores-react/commit/afa4b7a08f216421359c8e6d7c833e5247a3e500))
+* **colours:** rename facebook and twitter colours ([#4037](https://github.com/marshmallow-insurance/smores-react/issues/4037)) ([06c5c29](https://github.com/marshmallow-insurance/smores-react/commit/06c5c294b56a863022a29a56012e05168269a9c4))
+* **labelText:** default to 4px ([#4034](https://github.com/marshmallow-insurance/smores-react/issues/4034)) ([1cff4ad](https://github.com/marshmallow-insurance/smores-react/commit/1cff4ad24f714897f5069d9b9054b6c146dea493))
+* **link:** default margin for icon ([#4035](https://github.com/marshmallow-insurance/smores-react/issues/4035)) ([cd7a9f1](https://github.com/marshmallow-insurance/smores-react/commit/cd7a9f1058deb0640b39482fe6cc3959a674f75f))
+
+## [9.22.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.21.0...v9.22.0) (2024-10-08)
+
+### Features
+
+* **RowActions:** Allow `onClick` events to be awaited ([#4025](https://github.com/marshmallow-insurance/smores-react/issues/4025)) ([ce1017d](https://github.com/marshmallow-insurance/smores-react/commit/ce1017d450cbd948c2d39e016c434a4789c91a59))
+* **rowActions:** refactor `RowActions` typing to discriminated union type ([#4026](https://github.com/marshmallow-insurance/smores-react/issues/4026)) ([6356be4](https://github.com/marshmallow-insurance/smores-react/commit/6356be4fa7fa7edc0b285f2a51222981c69ea325))
+
+## [9.21.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.20.0...v9.21.0) (2024-09-25)
+
+### Features
+
+* **icon:** reply icon ([#4008](https://github.com/marshmallow-insurance/smores-react/issues/4008)) ([5422f12](https://github.com/marshmallow-insurance/smores-react/commit/5422f12a723323075b69120d30ba251a2ad266e9))
+
+## [9.20.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.19.1...v9.20.0) (2024-09-23)
+
+### Features
+
+* **icon:** paperclip added ([#3997](https://github.com/marshmallow-insurance/smores-react/issues/3997)) ([9aba832](https://github.com/marshmallow-insurance/smores-react/commit/9aba8329ae3bb572da81b732c4d766b6b0af6c9b))
+
+## [9.19.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.19.0...v9.19.1) (2024-09-16)
+
+### Bug Fixes
+
+* **datePicker:** first day error and undefined day ([#3990](https://github.com/marshmallow-insurance/smores-react/issues/3990)) ([6545724](https://github.com/marshmallow-insurance/smores-react/commit/6545724076a1358c891455d5b5c3d7f910516e1c))
+* **RichTextEditor:** invalid URL on new window open ([#3989](https://github.com/marshmallow-insurance/smores-react/issues/3989)) ([4d69de0](https://github.com/marshmallow-insurance/smores-react/commit/4d69de0b8d17502a8ba9367ed883c27f3857aa55))
+
+## [9.19.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.18.1...v9.19.0) (2024-09-09)
+
+### Features
+
+* add onAutoFill prop to TextInput ([#3964](https://github.com/marshmallow-insurance/smores-react/issues/3964)) ([9b2b48e](https://github.com/marshmallow-insurance/smores-react/commit/9b2b48e1fc0a8175816d1e2a64906e414ff91429))
+
+### Documentation
+
+* add jsdoc for onAutoFill prop for TextInput ([#3965](https://github.com/marshmallow-insurance/smores-react/issues/3965)) ([c80e155](https://github.com/marshmallow-insurance/smores-react/commit/c80e1551c2afaff66df34e716dba70bfc6ef9113))
+
+## [9.18.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.18.0...v9.18.1) (2024-08-29)
+
+### Bug Fixes
+
+* adjust help-aboutus icon to match figma design ([#3949](https://github.com/marshmallow-insurance/smores-react/issues/3949)) ([dbf2bc5](https://github.com/marshmallow-insurance/smores-react/commit/dbf2bc55b3edf8b5209e1d526813513bfb404c26))
+
+## [9.18.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.17.0...v9.18.0) (2024-08-28)
+
+### Features
+
+* **checkBoxGroup:** add isColumn optional property ([#3946](https://github.com/marshmallow-insurance/smores-react/issues/3946)) ([d3343ec](https://github.com/marshmallow-insurance/smores-react/commit/d3343ec865e4cc646fcc84c19fd61de0ce558c55))
+
+## [9.17.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.16.0...v9.17.0) (2024-08-16)
+
+### Features
+
+* **LabelledText:** CP-1780: Allow JSX.Element in label prop to `LabelledText` ([#3930](https://github.com/marshmallow-insurance/smores-react/issues/3930)) ([af2585e](https://github.com/marshmallow-insurance/smores-react/commit/af2585ee4a1b6e8b239ddf394891d679eab0e7d8))
+
+## [9.16.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.15.0...v9.16.0) (2024-08-02)
+
+### Features
+
+* add archive icon ([#3905](https://github.com/marshmallow-insurance/smores-react/issues/3905)) ([b4bf521](https://github.com/marshmallow-insurance/smores-react/commit/b4bf52107bec7db8183f0a671aedba3fa3265abc))
+
+## [9.15.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.14.0...v9.15.0) (2024-07-25)
+
+### Features
+
+* **core:** Dependabot commit & PR titles - [🤖 generated] ([#3892](https://github.com/marshmallow-insurance/smores-react/issues/3892)) ([7d9f535](https://github.com/marshmallow-insurance/smores-react/commit/7d9f535888a8dff64f53d4b19ddea54c259d3bbf))
+* **warningCircle:** added to icons ([#3895](https://github.com/marshmallow-insurance/smores-react/issues/3895)) ([5fbebcb](https://github.com/marshmallow-insurance/smores-react/commit/5fbebcb794256326a268a71ee8b23b0309943f75))
+
+### Bug Fixes
+
+* **core:** Dependabot PR titles - [🤖 generated] ([#3894](https://github.com/marshmallow-insurance/smores-react/issues/3894)) ([79ada4f](https://github.com/marshmallow-insurance/smores-react/commit/79ada4fab09100c3f6171ff740fa0b1b5ec86ea4))
+* **npm:** remove storybook deployer ([#3880](https://github.com/marshmallow-insurance/smores-react/issues/3880)) ([c8df684](https://github.com/marshmallow-insurance/smores-react/commit/c8df684ab9f784affa248d00073d948302ff0002))
+* snackbar memorisation ([#3796](https://github.com/marshmallow-insurance/smores-react/issues/3796)) ([f1e9037](https://github.com/marshmallow-insurance/smores-react/commit/f1e90377c2d15f898f364c788d1c190348bb184a))
+
+## [9.14.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.13.1...v9.14.0) (2024-07-02)
+
+### Features
+
+* **Table-RowAction:** Allow passing `title` to a row action ([#3850](https://github.com/marshmallow-insurance/smores-react/issues/3850)) ([d891f9e](https://github.com/marshmallow-insurance/smores-react/commit/d891f9e1e8040188b4a03dbd93f4a9779edfe573))
+
+### Bug Fixes
+
+* **BadgeList:** Fix spacing when hovering, additionally with limit badge ([#3819](https://github.com/marshmallow-insurance/smores-react/issues/3819)) ([5c647dc](https://github.com/marshmallow-insurance/smores-react/commit/5c647dc765069057febc9fad4416456b9fdcf507))
+* **datepicker:** optional availableMonths value ([#3856](https://github.com/marshmallow-insurance/smores-react/issues/3856)) ([ab5d07c](https://github.com/marshmallow-insurance/smores-react/commit/ab5d07cb2d06dd1aef49a5fbf64ce31c901392a8))
+
 ## [9.13.1](https://github.com/marshmallow-insurance/smores-react/compare/v9.13.0...v9.13.1) (2024-06-18)
 
 ### Bug Fixes

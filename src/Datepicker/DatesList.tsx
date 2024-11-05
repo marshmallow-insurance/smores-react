@@ -15,6 +15,7 @@ type Props = {
 }
 
 const getBlankDaysCount = (firstDayOfTheMonth: Date) => {
+  if (!firstDayOfTheMonth) return
   const dayOfTheWeek = getISODay(firstDayOfTheMonth)
   return dayOfTheWeek - 1
 }
@@ -36,7 +37,7 @@ export const DatesList: FC<Props> = ({
             </Text>
           )
         })}
-      {Array(getBlankDaysCount(items[0].date))
+      {Array(getBlankDaysCount(items[0]?.date))
         .fill(null)
         .map((_, index) => (
           <ListButton

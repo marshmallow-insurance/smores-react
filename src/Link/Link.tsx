@@ -60,7 +60,7 @@ export const Link: FC<LinkProps> = ({
       {iconToRender && isTrailingIcon && (
         <Icon
           mt={{ custom: '3px' }}
-          ml={{ custom: '4px' }}
+          ml="8px"
           render={iconToRender}
           size={typo === 'regular' ? 14 : 12}
           color={highlight ? 'lollipop' : 'liquorice'}

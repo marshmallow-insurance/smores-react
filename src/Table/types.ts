@@ -1,3 +1,4 @@
+import React from 'react'
 import { ReactElement, ReactNode } from 'react'
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
@@ -25,12 +26,19 @@ export type TableStylesProps = {
 
 export type Primitive = string | number | boolean | bigint
 
-export type RowAction<T> = {
-  element?: ReactElement
+export type BaseRowAction<T> = {
   onClick: (rowData: T) => void
+  showCondition?: (rowData: T) => boolean
+}
+
+export type RowAction<T> =
+  | RowActionButtonDefault<T>
+  | RowActionElementOverride<T>
+
+export type RowActionButtonDefault<T> = {
   iconButton?: Pick<
     IconStrictProps,
-    'size' | 'render' | 'iconColor' | 'backgroundColor' | 'id'
+    'size' | 'render' | 'iconColor' | 'backgroundColor' | 'id' | 'title'
   > & { tooltipText?: string }
   genericButton?: Pick<
     ButtonProps,
@@ -44,8 +52,11 @@ export type RowAction<T> = {
     | 'smallButton'
     | 'id'
   >
-  showCondition?: (rowData: T) => boolean
-}
+} & BaseRowAction<T>
+
+export type RowActionElementOverride<T> = {
+  element: ReactElement
+} & BaseRowAction<T>
 
 export type RowActions<T> = {
   actions: RowAction<T>[]

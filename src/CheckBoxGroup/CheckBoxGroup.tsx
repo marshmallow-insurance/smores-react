@@ -9,19 +9,22 @@ type Item = {
   id: number
   label: string
   checked: boolean
+  value?: string | number
 }
 
 type CheckBoxGroupProps = {
   list: Item[]
   onToggle: (id: number) => void
+  isColumn?: boolean
 } & MarginProps
 
 export const CheckBoxGroup: FC<CheckBoxGroupProps> = ({
   list,
   onToggle,
+  isColumn = true,
   ...marginProps
 }) => (
-  <Container>
+  <Container isColumn={isColumn}>
     {list.map((item) => (
       <CheckBox
         key={item.id}
@@ -36,8 +39,8 @@ export const CheckBoxGroup: FC<CheckBoxGroupProps> = ({
   </Container>
 )
 
-const Container = styled(Box)`
+const Container = styled(Box)<{ isColumn: boolean }>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${(p) => (p.isColumn ? 'column' : 'row')};
   gap: 16px;
 `
