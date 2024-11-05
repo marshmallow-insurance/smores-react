@@ -7,14 +7,15 @@ export const Container = () => {
   return (
     <form>
       <TextInput
-        id="textInput4"
-        label="label"
-        name="textInput"
+        type="email"
+        name="email"
+        id="emailTextInput"
+        autoCompleteAttr="email"
+        onAutoFill={() => console.log('i am autoflled' + ' ' + value)}
         onChange={setValue}
         placeholder="Placeholder"
         error={value.length > 7}
         errorMsg="Value is over 7 characters!"
-        trailingIcon="at"
         value={value}
       />
     </form>

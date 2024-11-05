@@ -281,6 +281,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
                   render="plus"
                   rotate={45}
                   iconColor="marzipan"
+                  title='Clear search'
                   handleClick={handleClearSearch}
                   size={24}
                 />

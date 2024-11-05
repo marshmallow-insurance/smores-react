@@ -21,8 +21,8 @@ type StylesItem = {
 const styles: Record<SupportMessageType, StylesItem> = {
   info: {
     iconColor: 'liquorice',
-    backgroundColor: theme.colors.custard,
-    hoverBackgroundColor: darken(0.1, theme.colors.custard),
+    backgroundColor: theme.colors.oatmeal,
+    hoverBackgroundColor: darken(0.1, theme.colors.oatmeal),
     icon: 'info',
   },
   fallbackStyle: {
@@ -62,6 +62,10 @@ export type SupportMessageProps = {
   className?: string
   description: string | ReactElement
   onClick?: MouseEventHandler
+  /**
+   * Right side content, usually an icon or a button
+   */
+  rightSideComponent?: ReactElement
   type: SupportMessageType
   title?: string
 } & MarginProps
@@ -70,7 +74,8 @@ export const SupportMessage: FC<SupportMessageProps> = ({
   className,
   description,
   onClick,
-  type = 'info',
+  rightSideComponent,
+  type,
   title,
   ...marginProps
 }) => {
@@ -96,7 +101,8 @@ export const SupportMessage: FC<SupportMessageProps> = ({
           <Description tag="p">{description}</Description>
         )}
       </Box>
-      {onClick && (
+      {rightSideComponent}
+      {onClick && rightSideComponent === undefined && (
         <Box ml={{ custom: 'auto' }}>
           <Icon size={16} render="caret" color="marzipan" rotate={270} />
         </Box>

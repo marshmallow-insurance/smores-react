@@ -1,3 +1,4 @@
+import React from 'react'
 import { ReactElement, ReactNode } from 'react'
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
@@ -25,27 +26,35 @@ export type TableStylesProps = {
 
 export type Primitive = string | number | boolean | bigint
 
-export type RowAction<T> = {
-  element?: ReactElement
+export type BaseRowAction<T> = {
   onClick: (rowData: T) => void
-  iconButton?: Pick<
-    IconStrictProps,
-    'size' | 'render' | 'iconColor' | 'backgroundColor' | 'id'
-  > & { tooltipText?: string }
-  genericButton?: Pick<
-    ButtonProps,
-    | 'children'
-    | 'loading'
-    | 'disabled'
-    | 'primary'
-    | 'secondary'
-    | 'fallbackStyle'
-    | 'textBtn'
-    | 'smallButton'
-    | 'id'
-  >
   showCondition?: (rowData: T) => boolean
 }
+
+export type RowAction<T> = RowActionButtonDefault<T> | RowActionElementOverride<T>
+
+export type RowActionButtonDefault<T> = {
+  iconButton?: Pick<
+  IconStrictProps,
+  'size' | 'render' | 'iconColor' | 'backgroundColor' | 'id' | 'title'
+> & { tooltipText?: string }
+genericButton?: Pick<
+  ButtonProps,
+  | 'children'
+  | 'loading'
+  | 'disabled'
+  | 'primary'
+  | 'secondary'
+  | 'fallbackStyle'
+  | 'textBtn'
+  | 'smallButton'
+  | 'id'
+>
+} & BaseRowAction<T> 
+
+export type RowActionElementOverride<T> = {
+  element: ReactElement
+} & BaseRowAction<T>
 
 export type RowActions<T> = {
   actions: RowAction<T>[]

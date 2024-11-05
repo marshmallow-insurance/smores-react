@@ -1,12 +1,16 @@
-const ref = process.env.GITHUB_REF
-const branch = ref.split('/').pop()
+const branch = process.env.GITHUB_REF_NAME
 
+const micromatch = require('micromatch')
+
+/**
+ * @type {import('semantic-release').GlobalConfig}
+ */
 const config = {
   branches: [
     'main',
     {
-      name: 'crumbs-*',
-      prerelease: true,
+      name: '(feature|fix|chore)/*',
+      prerelease: 'crumbs-${name.replace(/\\//g, "-")}',
     },
   ],
   repositoryUrl: 'https://github.com/marshmallow-insurance/smores-react.git',
@@ -76,11 +80,19 @@ const config = {
   ],
 }
 
+const isAcceptedBranch = micromatch.isMatch(
+  branch,
+  config.branches.map((b) => (typeof b === 'object' ? b.name : b)),
+)
+
+if (!isAcceptedBranch) {
+  console.log(`Branch ${branch} is not accepted for release. Skipping release.`)
+  console.log(`Accepted branches: ${config.branches.join(', ')}. [Micromatch](https://github.com/micromatch/micromatch?tab=readme-ov-file#matching-features) is used for matching.`)
+  process.exit(0)
+}
+
 const isPrereleaseBranch = config.branches.some(
-  (b) =>
-    typeof b === 'object' &&
-    branch.includes(b.name.slice(0, -1)) &&
-    b.prerelease,
+  (b) => typeof b === 'object' && isAcceptedBranch && b.prerelease,
 )
 
 if (!isPrereleaseBranch) {

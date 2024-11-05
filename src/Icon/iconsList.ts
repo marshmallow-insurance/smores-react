@@ -12,6 +12,7 @@ import AlertEngine from './iconFiles/AlertEngine'
 import Amex from './iconFiles/Amex'
 import ApplePay from './iconFiles/ApplePay'
 import ApprovedFile from './iconFiles/ApprovedFile'
+import Archive from './iconFiles/Archive'
 import Arrow from './iconFiles/Arrow'
 import At from './iconFiles/At'
 import Axa from './iconFiles/Axa'
@@ -201,6 +202,7 @@ import Vandalism from './iconFiles/Vandalism'
 import Village from './iconFiles/Village'
 import Visa from './iconFiles/Visa'
 import Warning from './iconFiles/Warning'
+import WarningCircle from './iconFiles/WarningCircle'
 import Watch from './iconFiles/Watch'
 import Wave from './iconFiles/Wave'
 import Wellbeing from './iconFiles/Wellbeing'
@@ -208,6 +210,8 @@ import WheelFlat from './iconFiles/WheelFlat'
 import Windscreen from './iconFiles/Windscreen'
 import WindscreenRepair from './iconFiles/WindscreenRepair'
 import WindscreenReplacement from './iconFiles/WindscreenReplacement'
+import Paperclip from './iconFiles/Paperclip'
+import Reply from './iconFiles/Reply'
 
 export const iconList = {
   'aa-inverted': AaInverted,
@@ -286,6 +290,7 @@ export const iconList = {
   'pound-outline': PoundOutline,
   'pound-regular': PoundRegular,
   'question-help': QuestionHelp,
+  reply: Reply,
   'refer-a-friend': ReferAFriend,
   'reg-plate': RegPlate,
   'renewal-line': RenewalLine,
@@ -306,6 +311,7 @@ export const iconList = {
   addons: AddOns,
   alert: Alert,
   amex: Amex,
+  archive: Archive,
   arrow: Arrow,
   at: At,
   axa: Axa,
@@ -383,6 +389,7 @@ export const iconList = {
   onfido: Onfido,
   other: Other,
   padlock: Padlock,
+  paperclip: Paperclip,
   people: People,
   person: Person,
   photo: Photo,
@@ -417,6 +424,7 @@ export const iconList = {
   village: Village,
   visa: Visa,
   warning: Warning,
+  'warning-circle': WarningCircle,
   watch: Watch,
   wave: Wave,
   wellbeing: Wellbeing,
