@@ -5,7 +5,7 @@ import { Button } from '../../Button'
 import { Modal } from '../../Modal'
 import { Text } from '../../Text'
 import { theme } from '../../theme'
-import { Tooltip, TooltipProps, TooltipVariant } from '../Tooltip'
+import { Tooltip, TooltipProps, type TooltipVariant } from '../Tooltip'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Tooltip> = {
@@ -19,10 +19,10 @@ const meta: Meta<typeof Tooltip> = {
   },
   argTypes: {
     variant: {
-      options: Object.values(TooltipVariant),
+      options: ['primary', 'fallback', 'bubblegum'] satisfies TooltipVariant[],
       control: {
         type: 'select',
-        options: Object.values(TooltipVariant),
+        options: ['primary', 'fallback', 'bubblegum'] satisfies TooltipVariant[],
       },
     },
   },
@@ -198,7 +198,7 @@ export const MTAExample: Story = {
       <Box>
         <Row>
           <Tooltip
-            variant={TooltipVariant.FALLBACK}
+            variant="fallback"
             underline
             content={
               <TooltipText typo="caption" color="cream">
@@ -228,7 +228,7 @@ export const MTAExample: Story = {
       <Row>
         <Tooltip
           underline
-          variant={TooltipVariant.FALLBACK}
+          variant="fallback"
           content={
             <TooltipText typo="caption" color="cream">
               This is the policies total new retained refund after this MTA is

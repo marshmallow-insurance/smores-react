@@ -50,24 +50,20 @@ export interface TooltipProps {
   inline?: boolean
 }
 
-export enum TooltipVariant {
-  PRIMARY = 'PRIMARY',
-  FALLBACK = 'FALLBACK',
-  BUBBLEGUM = 'BUBBLEGUM',
-}
+export type TooltipVariant = 'primary' | 'fallback' | 'bubblegum'
 
 type VariantValue = { textColor: Color; bgColor: Color }
 
 const tooltipVariants = {
-  [TooltipVariant.PRIMARY]: {
+  primary: {
     textColor: 'liquorice',
     bgColor: 'custard',
   },
-  [TooltipVariant.FALLBACK]: {
+  fallback: {
     textColor: 'cream',
     bgColor: 'feijoa',
   },
-  [TooltipVariant.BUBBLEGUM]: {
+  bubblegum: {
     textColor: 'liquorice',
     bgColor: 'bubblegum',
   },
@@ -85,7 +81,7 @@ export const Tooltip: FC<TooltipProps> = ({
   underline = false,
   portalContainer,
   inline: inlineProp,
-  variant = TooltipVariant.PRIMARY,
+  variant = 'primary',
 }) => {
   const [showTip, setShowTip] = useState<boolean>(false)
   const arrowRef = useRef(null)
