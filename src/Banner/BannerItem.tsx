@@ -23,19 +23,19 @@ const styles: Record<BannerType, StylesItem> = {
     textColor: 'liquorice',
   },
   critical: {
-    iconColor: 'mascarpone',
+    iconColor: 'cream',
     backgroundColor: theme.colors.strawberry,
-    textColor: 'mascarpone',
+    textColor: 'cream',
   },
   general: {
-    iconColor: 'mascarpone',
+    iconColor: 'cream',
     backgroundColor: theme.colors.liquorice,
-    textColor: 'mascarpone',
+    textColor: 'cream',
   },
   success: {
-    iconColor: 'mascarpone',
+    iconColor: 'cream',
     backgroundColor: theme.colors.apple,
-    textColor: 'mascarpone',
+    textColor: 'cream',
   },
 }
 

@@ -212,6 +212,7 @@ import WindscreenRepair from './iconFiles/WindscreenRepair'
 import WindscreenReplacement from './iconFiles/WindscreenReplacement'
 import Paperclip from './iconFiles/Paperclip'
 import Reply from './iconFiles/Reply'
+import { Progress } from './iconFiles/Progress'
 
 export const iconList = {
   'aa-inverted': AaInverted,
@@ -399,6 +400,7 @@ export const iconList = {
   profile: Profile,
   prohibited: Prohibited,
   property: Property,
+  progress: Progress,
   rac: Rac,
   ravelin: Ravelin,
   refund: Refund,
