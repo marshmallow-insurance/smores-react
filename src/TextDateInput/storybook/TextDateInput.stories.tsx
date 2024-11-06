@@ -43,8 +43,6 @@ export const Error = Template.bind({})
 Error.args = {
   value: { day: '01', month: '01', year: '2000' },
   onChange: noop,
-  error: true,
-  errorMsg: 'A generic error message',
 }
 
 export const DayMonthError = Template.bind({})
@@ -52,9 +50,6 @@ export const DayMonthError = Template.bind({})
 DayMonthError.args = {
   value: { day: '42', month: '13', year: '2000' },
   onChange: noop,
-  error: true,
-  errorMsg: 'Please check the day and month',
-  fieldsWithError: ['day', 'month'],
 }
 
 export const YearError = Template.bind({})
@@ -62,7 +57,4 @@ export const YearError = Template.bind({})
 YearError.args = {
   value: { day: '12', month: '12', year: '9000' },
   onChange: noop,
-  error: true,
-  errorMsg: 'Please check the year',
-  fieldsWithError: ['year'],
 }

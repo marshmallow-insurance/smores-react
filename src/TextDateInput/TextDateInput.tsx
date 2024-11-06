@@ -1,35 +1,58 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import { TextInput } from '../TextInput'
 import { Box } from '../Box'
 import { Fieldset, FieldsetProps } from '../fields/Fieldset'
+import { dateOfBirthValidator } from '../utils/dateOfBirth/dateOfBirthValidator'
+import { createErrorMessage } from '../utils/dateOfBirth/schema'
 
-export type DateObjectType = {
-  day: string | null
-  month: string | null
-  year: string | null
+export interface DateObjectType {
+  day: string
+  month: string
+  year: string
 }
 
-type fieldsWithErrorType = 'day' | 'month' | 'year' | 'all'
+export type DateObject = {
+  [K in keyof DateObjectType]?: DateObjectType[K] | null
+}
 
 export type TextDateInputProps = {
   value: DateObjectType
   onChange: (value: DateObjectType) => void
   showCompleted?: boolean
-  fieldsWithError?: fieldsWithErrorType[]
-} & Pick<FieldsetProps, 'label' | 'error' | 'errorMsg' | 'assistiveText'>
+} & Pick<FieldsetProps, 'label' | 'assistiveText'>
 
 export const TextDateInput = ({
-  error,
   onChange,
   value,
   label,
   assistiveText,
-  errorMsg,
   showCompleted = false,
-  fieldsWithError = ['all'],
 }: TextDateInputProps) => {
+  const [errorMsg, setErrorMsg] = useState<string | undefined>(undefined)
+  const [fieldsWithError, setFieldsWithError] = useState<string[]>([])
+
+  const handleValidationErrors = () => {
+    const validationResult = dateOfBirthValidator(value)
+
+    if ('error' in validationResult) {
+      const message = createErrorMessage(
+        validationResult.error,
+        validationResult.fields,
+      )
+      setErrorMsg(message)
+      setFieldsWithError(validationResult.fields || [])
+    } else {
+      setErrorMsg(undefined)
+      setFieldsWithError([])
+    }
+  }
+
+  useEffect(() => {
+    handleValidationErrors()
+  }, [value])
+
   return (
     <Fieldset
       label={label}
@@ -37,7 +60,7 @@ export const TextDateInput = ({
       completed={
         showCompleted && Boolean(value.day && value.month && value.year)
       }
-      error={Boolean(error)}
+      error={Boolean(errorMsg)}
       errorMsg={errorMsg}
     >
       <Box flex gap="16px">
@@ -55,8 +78,7 @@ export const TextDateInput = ({
             })
           }}
           error={
-            !!error &&
-            (fieldsWithError.includes('day') || fieldsWithError.includes('all'))
+            fieldsWithError.includes('day') || fieldsWithError.includes('all')
           }
         />
         <SetWidthTextInput
@@ -73,9 +95,7 @@ export const TextDateInput = ({
             })
           }}
           error={
-            !!error &&
-            (fieldsWithError.includes('month') ||
-              fieldsWithError.includes('all'))
+            fieldsWithError.includes('month') || fieldsWithError.includes('all')
           }
         />
         <SetWidthTextInput
@@ -92,9 +112,7 @@ export const TextDateInput = ({
             })
           }}
           error={
-            !!error &&
-            (fieldsWithError.includes('year') ||
-              fieldsWithError.includes('all'))
+            fieldsWithError.includes('year') || fieldsWithError.includes('all')
           }
         />
       </Box>
