@@ -6,7 +6,6 @@ import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { Tooltip } from '../../Tooltip'
 import { RowAction } from '../types'
-import { TooltipVariant } from '../../Tooltip/Tooltip'
 
 export interface DataRow {
   id: number
@@ -211,7 +210,7 @@ export const columns = [
         <Tooltip
           content={<Text color="cream">{row.ability}</Text>}
           position="top"
-          variant={TooltipVariant.FALLBACK}
+          variant="fallback"
           underline
         >
           what ability?
