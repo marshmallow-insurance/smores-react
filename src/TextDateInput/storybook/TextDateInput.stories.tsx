@@ -43,6 +43,7 @@ export const EmptyFieldsError = Template.bind({})
 EmptyFieldsError.args = {
   value: { day: '', month: '', year: '' },
   onChange: noop,
+  error: true,
 }
 
 export const NumericValueError = Template.bind({})
@@ -50,6 +51,7 @@ export const NumericValueError = Template.bind({})
 NumericValueError.args = {
   value: { day: 'a', month: '12', year: '1999' },
   onChange: noop,
+  error: true,
 }
 
 export const YoungerThan17Error = Template.bind({})
@@ -57,6 +59,7 @@ export const YoungerThan17Error = Template.bind({})
 YoungerThan17Error.args = {
   value: { day: '12', month: '12', year: '2012' },
   onChange: noop,
+  error: true,
 }
 
 export const DayMonthError = Template.bind({})
@@ -64,6 +67,7 @@ export const DayMonthError = Template.bind({})
 DayMonthError.args = {
   value: { day: '42', month: '13', year: '2000' },
   onChange: noop,
+  error: true,
 }
 
 export const YearError = Template.bind({})
@@ -71,4 +75,5 @@ export const YearError = Template.bind({})
 YearError.args = {
   value: { day: '12', month: '12', year: '1899' },
   onChange: noop,
+  error: true,
 }

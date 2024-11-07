@@ -21,13 +21,14 @@ export type TextDateInputProps = {
   value: DateObjectType
   onChange: (value: DateObjectType) => void
   showCompleted?: boolean
-} & Pick<FieldsetProps, 'label' | 'assistiveText'>
+} & Pick<FieldsetProps, 'label' | 'error' | 'assistiveText'>
 
 export const TextDateInput = ({
   onChange,
   value,
   label,
   assistiveText,
+  error,
   showCompleted = false,
 }: TextDateInputProps) => {
   const [errorMsg, setErrorMsg] = useState<string | undefined>(undefined)
@@ -60,7 +61,7 @@ export const TextDateInput = ({
       completed={
         showCompleted && Boolean(value.day && value.month && value.year)
       }
-      error={Boolean(errorMsg)}
+      error={Boolean(error)}
       errorMsg={errorMsg}
     >
       <Box flex gap="16px">
