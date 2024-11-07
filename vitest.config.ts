@@ -4,7 +4,11 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    include: ['src/**/__tests__/*'],
-    exclude: ['**/node_modules/**', '**/*.stories.js', 'src/utils/**'],
+    include: [
+      '**/__tests__/**/*.{js,ts}',
+      '**/*.test.{js,ts}',
+      '**/*.spec.{js,ts}',
+    ],
+    exclude: ['**/node_modules/**', '**/*.stories.{js,ts}'],
   },
 })
