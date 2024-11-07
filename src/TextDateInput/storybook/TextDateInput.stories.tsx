@@ -38,10 +38,24 @@ WithCompleteStatus.args = {
   showCompleted: true,
 }
 
-export const Error = Template.bind({})
+export const EmptyFieldsError = Template.bind({})
 
-Error.args = {
-  value: { day: '01', month: '01', year: '2000' },
+EmptyFieldsError.args = {
+  value: { day: '', month: '', year: '' },
+  onChange: noop,
+}
+
+export const NumericValueError = Template.bind({})
+
+NumericValueError.args = {
+  value: { day: 'a', month: '12', year: '1999' },
+  onChange: noop,
+}
+
+export const YoungerThan17Error = Template.bind({})
+
+YoungerThan17Error.args = {
+  value: { day: '12', month: '12', year: '2012' },
   onChange: noop,
 }
 
@@ -55,6 +69,6 @@ DayMonthError.args = {
 export const YearError = Template.bind({})
 
 YearError.args = {
-  value: { day: '12', month: '12', year: '9000' },
+  value: { day: '12', month: '12', year: '1899' },
   onChange: noop,
 }
