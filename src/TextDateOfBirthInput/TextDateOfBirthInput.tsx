@@ -17,20 +17,20 @@ export type DateObject = {
   [K in keyof DateObjectType]?: DateObjectType[K] | null
 }
 
-export type TextDateInputProps = {
+export type TextDateOfBirthInputProps = {
   value: DateObjectType
   onChange: (value: DateObjectType) => void
   showCompleted?: boolean
 } & Pick<FieldsetProps, 'label' | 'error' | 'assistiveText'>
 
-export const TextDateInput = ({
+export const TextDateOfBirthInput = ({
   onChange,
   value,
   label,
   assistiveText,
   error,
   showCompleted = false,
-}: TextDateInputProps) => {
+}: TextDateOfBirthInputProps) => {
   const [errorMsg, setErrorMsg] = useState<string | undefined>(undefined)
   const [fieldsWithError, setFieldsWithError] = useState<string[]>([])
 

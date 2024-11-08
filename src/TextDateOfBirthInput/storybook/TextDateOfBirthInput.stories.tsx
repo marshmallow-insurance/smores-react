@@ -2,17 +2,17 @@ import React, { FC, useState } from 'react'
 import { noop } from '../../utils/noop'
 import {
   DateObjectType,
-  TextDateInput,
-  TextDateInputProps,
+  TextDateOfBirthInput,
+  TextDateOfBirthInputProps,
 } from '../TextDateOfBirthInput'
 
 export default {
-  title: 'Text Date Input',
-  component: TextDateInput,
+  title: 'Text Date Of Birth Input',
+  component: TextDateOfBirthInput,
   argTypes: { onChange: { action: 'changed' } },
 }
 
-const Template: FC<TextDateInputProps> = (props) => {
+const Template: FC<TextDateOfBirthInputProps> = (props) => {
   const [value, setValue] = useState<DateObjectType>({
     day: props.value.day,
     month: props.value.month,
@@ -20,7 +20,11 @@ const Template: FC<TextDateInputProps> = (props) => {
   })
 
   return (
-    <TextDateInput {...props} value={value} onChange={(e) => setValue(e)} />
+    <TextDateOfBirthInput
+      {...props}
+      value={value}
+      onChange={(e) => setValue(e)}
+    />
   )
 }
 export const Default = Template.bind({})
