@@ -4,7 +4,7 @@ import {
   DateObjectType,
   TextDateInput,
   TextDateInputProps,
-} from '../TextDateInput'
+} from '../TextDateOfBirthInput'
 
 export default {
   title: 'Text Date Input',

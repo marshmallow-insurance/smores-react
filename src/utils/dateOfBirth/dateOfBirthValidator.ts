@@ -9,7 +9,7 @@ import {
 } from './dateOfBirthValidator.utils'
 import { FieldValidationError, InputValidationError } from './schema'
 
-import { DateObject } from 'TextDateInput'
+import { DateObject } from 'TextDateOfBirthInput'
 
 export const dateOfBirthValidator = (dateObject: DateObject) => {
   const invalidFields = getInvalidInputFields(dateObject)

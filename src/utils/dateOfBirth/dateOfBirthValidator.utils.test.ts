@@ -7,7 +7,7 @@ import {
   isAllowedValue,
   validators,
 } from './dateOfBirthValidator.utils'
-import { DateObject } from 'TextDateInput'
+import { DateObject } from 'TextDateOfBirthInput'
 import { vi } from 'vitest'
 
 describe('isAllowedValue', () => {
