@@ -25,9 +25,12 @@ export type TextDateOfBirthInputProps = {
 
 /**
  * Renders a set of input fields to collect a date of birth as separate day, month,
- * and year fields. It handles validation using `dateOfBirthValidator`, which checks for invalid formats,
- * impossible values (e.g., days or months out of range), missing fields, and specific constraints
- * (e.g., age must be at least 17 years, year cannot be before 1900).
+ * and year fields.
+ *
+ * @function dateOfBirthValidator validates a date of birth provided in a DateObject format:
+ * - All fields are present and correctly formatted.
+ * - The age is at least 17 years old.
+ * - The year is not before 1900.
  */
 export const TextDateOfBirthInput = ({
   onChange,
