@@ -24,7 +24,7 @@ export type TextDateOfBirthInputProps = {
 } & Pick<FieldsetProps, 'label' | 'error' | 'assistiveText'>
 
 /**
- * This component renders a set of input fields to collect a date of birth as separate day, month,
+ * Renders a set of input fields to collect a date of birth as separate day, month,
  * and year fields. It handles validation using `dateOfBirthValidator`, which checks for invalid formats,
  * impossible values (e.g., days or months out of range), missing fields, and specific constraints
  * (e.g., age must be at least 17 years, year cannot be before 1900).
