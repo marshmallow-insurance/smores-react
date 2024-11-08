@@ -1,168 +1,117 @@
-import React, { FC, useState } from 'react'
+import { Meta, StoryObj } from '@storybook/react'
 import { noop } from '../../utils/noop'
-import {
-  DateObjectType,
-  TextDateOfBirthInput,
-  TextDateOfBirthInputProps,
-} from '../TextDateOfBirthInput'
+import { TextDateOfBirthInput } from '../TextDateOfBirthInput'
 
-export default {
+const meta: Meta<typeof TextDateOfBirthInput> = {
   title: 'Text Date Of Birth Input',
   component: TextDateOfBirthInput,
   argTypes: { onChange: { action: 'changed' } },
 }
 
-const Template: FC<TextDateOfBirthInputProps> = (props) => {
-  const [value, setValue] = useState<DateObjectType>({
-    day: props.value.day,
-    month: props.value.month,
-    year: props.value.year,
-  })
+export default meta
+type Story = StoryObj<typeof TextDateOfBirthInput>
 
-  return (
-    <TextDateOfBirthInput
-      {...props}
-      value={value}
-      onChange={(e) => setValue(e)}
-    />
-  )
-}
-export const Default = Template.bind({})
-
-Default.args = {
-  value: { day: '01', month: '01', year: '2000' },
-  onChange: noop,
+export const Default: Story = {
+  args: {
+    value: { day: '01', month: '01', year: '2000' },
+    onChange: noop,
+  },
 }
 
-export const WithCompleteStatus = Template.bind({})
-
-WithCompleteStatus.args = {
-  value: { day: '01', month: '01', year: '2000' },
-  onChange: noop,
-  showCompleted: true,
-}
-WithCompleteStatus.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
+export const WithCompleteStatus: Story = {
+  args: {
+    value: { day: '01', month: '01', year: '2000' },
+    onChange: noop,
+    showCompleted: true,
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: 'color-contrast', enabled: false }],
+      },
     },
   },
 }
 
-export const EmptyFieldsError = Template.bind({})
-
-EmptyFieldsError.args = {
-  value: { day: '', month: '', year: '' },
-  onChange: noop,
-  error: true,
-  errorMsg: 'Date of birth must include day, month and year (day-month-year)',
-}
-EmptyFieldsError.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
+export const EmptyFieldsError: Story = {
+  args: {
+    value: { day: '', month: '', year: '' },
+    onChange: noop,
+    error: true,
+    errorMsg:
+      'Date of birth must include day, month, and year (day-month-year)',
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: 'color-contrast', enabled: false }],
+      },
     },
   },
 }
 
-export const NumericValueError = Template.bind({})
-
-NumericValueError.args = {
-  value: { day: 'a', month: '12', year: '1999' },
-  onChange: noop,
-  error: true,
-  fieldsWithError: ['day'],
-  errorMsg: 'Please enter a numeric value (day)',
-}
-NumericValueError.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
+export const NumericValueError: Story = {
+  args: {
+    value: { day: 'a', month: '12', year: '1999' },
+    onChange: noop,
+    error: true,
+    fieldsWithError: ['day'],
+    errorMsg: 'Please enter a numeric value (day)',
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: 'color-contrast', enabled: false }],
+      },
     },
   },
 }
 
-export const YoungerThan17Error = Template.bind({})
-
-YoungerThan17Error.args = {
-  value: { day: '12', month: '12', year: '2012' },
-  onChange: noop,
-  error: true,
-  errorMsg: 'Please enter a date of birth on or before 7 November 2007',
-}
-YoungerThan17Error.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
+export const YoungerThan17Error: Story = {
+  args: {
+    value: { day: '12', month: '12', year: '2012' },
+    onChange: noop,
+    error: true,
+    errorMsg: 'Please enter a date of birth on or before 7 November 2007',
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: 'color-contrast', enabled: false }],
+      },
     },
   },
 }
 
-export const DayMonthError = Template.bind({})
-
-DayMonthError.args = {
-  value: { day: '42', month: '13', year: '2000' },
-  onChange: noop,
-  error: true,
-  fieldsWithError: ['day', 'month'],
-  errorMsg: 'Please enter a valid day and month (day-month)',
-}
-DayMonthError.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
+export const DayMonthError: Story = {
+  args: {
+    value: { day: '42', month: '13', year: '2000' },
+    onChange: noop,
+    error: true,
+    fieldsWithError: ['day', 'month'],
+    errorMsg: 'Please enter a valid day and month (day-month)',
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: 'color-contrast', enabled: false }],
+      },
     },
   },
 }
 
-export const YearError = Template.bind({})
-
-YearError.args = {
-  value: { day: '12', month: '12', year: '1899' },
-  onChange: noop,
-  error: true,
-  errorMsg: 'Please enter a date of birth after 1900',
-}
-YearError.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
+export const YearError: Story = {
+  args: {
+    value: { day: '12', month: '12', year: '1899' },
+    onChange: noop,
+    error: true,
+    errorMsg: 'Please enter a date of birth after 1900',
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: 'color-contrast', enabled: false }],
+      },
     },
   },
 }
