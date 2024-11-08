@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, forwardRef } from 'react'
 import styled from 'styled-components'
 
 import { TextInput } from '../TextInput'
@@ -32,14 +32,13 @@ export type TextDateOfBirthInputProps = {
  * - The age is at least 17 years old.
  * - The year is not before 1900.
  */
-export const TextDateOfBirthInput = ({
-  onChange,
-  value,
-  label,
-  assistiveText,
-  error,
-  showCompleted = false,
-}: TextDateOfBirthInputProps) => {
+export const TextDateOfBirthInput = forwardRef<
+  HTMLInputElement,
+  TextDateOfBirthInputProps
+>(function TextDateOfBirthInput(
+  { onChange, value, label, assistiveText, error, showCompleted = false },
+  ref,
+) {
   const [errorMsg, setErrorMsg] = useState<string | undefined>(undefined)
   const [fieldsWithError, setFieldsWithError] = useState<string[]>([])
 
@@ -75,6 +74,7 @@ export const TextDateOfBirthInput = ({
     >
       <Box flex gap="16px">
         <SetWidthTextInput
+          ref={ref}
           label="day"
           autoCompleteAttr="bday-day"
           inputModeAttr="numeric"
@@ -133,7 +133,7 @@ export const TextDateOfBirthInput = ({
       </Box>
     </Fieldset>
   )
-}
+})
 
 const SetWidthTextInput = styled(TextInput)<{ $width: number }>`
   width: ${({ $width }) => `${$width}px`};
