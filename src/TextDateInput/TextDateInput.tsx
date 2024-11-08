@@ -79,7 +79,8 @@ export const TextDateInput = ({
             })
           }}
           error={
-            fieldsWithError.includes('day') || fieldsWithError.includes('all')
+            !!error &&
+            (fieldsWithError.includes('day') || fieldsWithError.includes('all'))
           }
         />
         <SetWidthTextInput
@@ -96,7 +97,9 @@ export const TextDateInput = ({
             })
           }}
           error={
-            fieldsWithError.includes('month') || fieldsWithError.includes('all')
+            !!error &&
+            (fieldsWithError.includes('month') ||
+              fieldsWithError.includes('all'))
           }
         />
         <SetWidthTextInput
@@ -113,7 +116,9 @@ export const TextDateInput = ({
             })
           }}
           error={
-            fieldsWithError.includes('year') || fieldsWithError.includes('all')
+            !!error &&
+            (fieldsWithError.includes('year') ||
+              fieldsWithError.includes('all'))
           }
         />
       </Box>

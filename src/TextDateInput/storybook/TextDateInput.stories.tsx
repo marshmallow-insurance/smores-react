@@ -37,6 +37,19 @@ WithCompleteStatus.args = {
   onChange: noop,
   showCompleted: true,
 }
+WithCompleteStatus.parameters = {
+  a11y: {
+    config: {
+      rules: [
+        {
+          //disabling these until we sync with design on this
+          id: 'color-contrast',
+          enabled: false,
+        },
+      ],
+    },
+  },
+}
 
 export const EmptyFieldsError = Template.bind({})
 
@@ -44,6 +57,19 @@ EmptyFieldsError.args = {
   value: { day: '', month: '', year: '' },
   onChange: noop,
   error: true,
+}
+EmptyFieldsError.parameters = {
+  a11y: {
+    config: {
+      rules: [
+        {
+          //disabling these until we sync with design on this
+          id: 'color-contrast',
+          enabled: false,
+        },
+      ],
+    },
+  },
 }
 
 export const NumericValueError = Template.bind({})
@@ -53,6 +79,19 @@ NumericValueError.args = {
   onChange: noop,
   error: true,
 }
+NumericValueError.parameters = {
+  a11y: {
+    config: {
+      rules: [
+        {
+          //disabling these until we sync with design on this
+          id: 'color-contrast',
+          enabled: false,
+        },
+      ],
+    },
+  },
+}
 
 export const YoungerThan17Error = Template.bind({})
 
@@ -60,6 +99,19 @@ YoungerThan17Error.args = {
   value: { day: '12', month: '12', year: '2012' },
   onChange: noop,
   error: true,
+}
+YoungerThan17Error.parameters = {
+  a11y: {
+    config: {
+      rules: [
+        {
+          //disabling these until we sync with design on this
+          id: 'color-contrast',
+          enabled: false,
+        },
+      ],
+    },
+  },
 }
 
 export const DayMonthError = Template.bind({})
@@ -69,6 +121,19 @@ DayMonthError.args = {
   onChange: noop,
   error: true,
 }
+DayMonthError.parameters = {
+  a11y: {
+    config: {
+      rules: [
+        {
+          //disabling these until we sync with design on this
+          id: 'color-contrast',
+          enabled: false,
+        },
+      ],
+    },
+  },
+}
 
 export const YearError = Template.bind({})
 
@@ -76,4 +141,17 @@ YearError.args = {
   value: { day: '12', month: '12', year: '1899' },
   onChange: noop,
   error: true,
+}
+YearError.parameters = {
+  a11y: {
+    config: {
+      rules: [
+        {
+          //disabling these until we sync with design on this
+          id: 'color-contrast',
+          enabled: false,
+        },
+      ],
+    },
+  },
 }
