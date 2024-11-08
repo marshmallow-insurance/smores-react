@@ -35,7 +35,8 @@ export const RowActions = <T extends object>({
             if (!action.showCondition || action.showCondition(rowData)) {
               return (
                 <Wrapper flex key={actionIndex}>
-                  {"element" in action && isReactElement(action.element) &&
+                  {'element' in action &&
+                    isReactElement(action.element) &&
                     React.cloneElement(action.element, {
                       onClick: async (e: MouseEvent) => {
                         await handleAction(e, action.onClick)
@@ -43,7 +44,7 @@ export const RowActions = <T extends object>({
                       tabIndex: 0,
                       className: 'reactElementRowAction',
                     })}
-                  {!("element" in action) && action.genericButton && (
+                  {!('element' in action) && action.genericButton && (
                     <Button
                       {...action.genericButton}
                       handleClick={async (e) => {
@@ -53,12 +54,13 @@ export const RowActions = <T extends object>({
                       {action.genericButton.children}
                     </Button>
                   )}
-                  {!("element" in action) && action.iconButton &&
+                  {!('element' in action) &&
+                    action.iconButton &&
                     (action.iconButton?.tooltipText ? (
                       <Tooltip
                         content={action.iconButton.tooltipText}
                         position={'bottom'}
-                        tooltipColor={'bubblegum'}
+                        variant="bubblegum"
                       >
                         <IconStrict
                           {...action.iconButton}
