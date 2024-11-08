@@ -61,6 +61,7 @@ EmptyFieldsError.args = {
   value: { day: '', month: '', year: '' },
   onChange: noop,
   error: true,
+  errorMsg: 'Date of birth must include day, month and year (day-month-year)',
 }
 EmptyFieldsError.parameters = {
   a11y: {
@@ -82,6 +83,8 @@ NumericValueError.args = {
   value: { day: 'a', month: '12', year: '1999' },
   onChange: noop,
   error: true,
+  fieldsWithError: ['day'],
+  errorMsg: 'Please enter a numeric value (day)',
 }
 NumericValueError.parameters = {
   a11y: {
@@ -103,6 +106,7 @@ YoungerThan17Error.args = {
   value: { day: '12', month: '12', year: '2012' },
   onChange: noop,
   error: true,
+  errorMsg: 'Please enter a date of birth on or before 7 November 2007',
 }
 YoungerThan17Error.parameters = {
   a11y: {
@@ -124,6 +128,8 @@ DayMonthError.args = {
   value: { day: '42', month: '13', year: '2000' },
   onChange: noop,
   error: true,
+  fieldsWithError: ['day', 'month'],
+  errorMsg: 'Please enter a valid day and month (day-month)',
 }
 DayMonthError.parameters = {
   a11y: {
@@ -145,6 +151,7 @@ YearError.args = {
   value: { day: '12', month: '12', year: '1899' },
   onChange: noop,
   error: true,
+  errorMsg: 'Please enter a date of birth after 1900',
 }
 YearError.parameters = {
   a11y: {

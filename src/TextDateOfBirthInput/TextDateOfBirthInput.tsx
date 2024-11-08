@@ -1,17 +1,17 @@
-import React, { useEffect, useState, forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 
-import { TextInput } from '../TextInput'
 import { Box } from '../Box'
 import { Fieldset, FieldsetProps } from '../fields/Fieldset'
-import { dateOfBirthValidator } from '../utils/dateOfBirth/dateOfBirthValidator'
-import { createErrorMessage } from '../utils/dateOfBirth/schema'
+import { TextInput } from '../TextInput'
 
 export interface DateObjectType {
   day: string
   month: string
   year: string
 }
+
+type fieldsWithErrorType = 'day' | 'month' | 'year' | 'all'
 
 export type DateObject = {
   [K in keyof DateObjectType]?: DateObjectType[K] | null
@@ -21,13 +21,14 @@ export type TextDateOfBirthInputProps = {
   value: DateObjectType
   onChange: (value: DateObjectType) => void
   showCompleted?: boolean
-} & Pick<FieldsetProps, 'label' | 'error' | 'assistiveText'>
+  fieldsWithError?: fieldsWithErrorType[]
+} & Pick<FieldsetProps, 'label' | 'error' | 'errorMsg' | 'assistiveText'>
 
 /**
  * Renders a set of input fields to collect a date of birth as separate day, month,
  * and year fields.
  *
- * @function dateOfBirthValidator validates a date of birth provided in a DateObject format:
+ * ### Date of birth input validations
  * - All fields are present and correctly formatted.
  * - The age is at least 17 years old.
  * - The year is not before 1900.
@@ -36,32 +37,18 @@ export const TextDateOfBirthInput = forwardRef<
   HTMLInputElement,
   TextDateOfBirthInputProps
 >(function TextDateOfBirthInput(
-  { onChange, value, label, assistiveText, error, showCompleted = false },
+  {
+    onChange,
+    value,
+    label,
+    assistiveText,
+    error,
+    errorMsg,
+    showCompleted = false,
+    fieldsWithError = ['all'],
+  },
   ref,
 ) {
-  const [errorMsg, setErrorMsg] = useState<string | undefined>(undefined)
-  const [fieldsWithError, setFieldsWithError] = useState<string[]>([])
-
-  const handleValidationErrors = () => {
-    const validationResult = dateOfBirthValidator(value)
-
-    if ('error' in validationResult) {
-      const message = createErrorMessage(
-        validationResult.error,
-        validationResult.fields,
-      )
-      setErrorMsg(message)
-      setFieldsWithError(validationResult.fields || [])
-    } else {
-      setErrorMsg(undefined)
-      setFieldsWithError([])
-    }
-  }
-
-  useEffect(() => {
-    handleValidationErrors()
-  }, [value])
-
   return (
     <Fieldset
       label={label}
