@@ -4,14 +4,14 @@ import styled from 'styled-components'
 import { Box } from '../Box'
 import { Fieldset, FieldsetProps } from '../fields/Fieldset'
 import { TextInput } from '../TextInput'
+import { InputValidationError } from '../utils/dateOfBirth/schema'
+import { FieldError } from 'react-hook-form'
 
 export interface DateObjectType {
   day: string
   month: string
   year: string
 }
-
-type fieldsWithErrorType = 'day' | 'month' | 'year' | 'all'
 
 export type DateObject = {
   [K in keyof DateObjectType]?: DateObjectType[K] | null
@@ -21,8 +21,8 @@ export type TextDateOfBirthInputProps = {
   value: DateObjectType
   onChange: (value: DateObjectType) => void
   showCompleted?: boolean
-  fieldsWithError?: fieldsWithErrorType[]
-} & Pick<FieldsetProps, 'label' | 'error' | 'errorMsg' | 'assistiveText'>
+  hookformError?: FieldError
+} & Pick<FieldsetProps, 'label' | 'assistiveText'>
 
 /**
  * Renders a set of input fields to collect a date of birth as separate day, month,
@@ -42,13 +42,13 @@ export const TextDateOfBirthInput = forwardRef<
     value,
     label,
     assistiveText,
-    error,
-    errorMsg,
+    hookformError,
     showCompleted = false,
-    fieldsWithError = ['all'],
   },
   ref,
 ) {
+  const inputValidationErrorValues = Object.values(InputValidationError)
+
   return (
     <Fieldset
       label={label}
@@ -56,8 +56,8 @@ export const TextDateOfBirthInput = forwardRef<
       completed={
         showCompleted && Boolean(value.day && value.month && value.year)
       }
-      error={Boolean(error)}
-      errorMsg={errorMsg}
+      error={Boolean(hookformError)}
+      errorMsg={hookformError?.message}
     >
       <Box flex gap="16px">
         <SetWidthTextInput
@@ -75,8 +75,11 @@ export const TextDateOfBirthInput = forwardRef<
             })
           }}
           error={
-            !!error &&
-            (fieldsWithError.includes('day') || fieldsWithError.includes('all'))
+            hookformError?.type?.includes('day') ||
+            (hookformError?.type &&
+              inputValidationErrorValues.includes(
+                hookformError.type as InputValidationError,
+              ))
           }
         />
         <SetWidthTextInput
@@ -93,9 +96,11 @@ export const TextDateOfBirthInput = forwardRef<
             })
           }}
           error={
-            !!error &&
-            (fieldsWithError.includes('month') ||
-              fieldsWithError.includes('all'))
+            hookformError?.type?.includes('month') ||
+            (hookformError?.type &&
+              inputValidationErrorValues.includes(
+                hookformError.type as InputValidationError,
+              ))
           }
         />
         <SetWidthTextInput
@@ -112,9 +117,11 @@ export const TextDateOfBirthInput = forwardRef<
             })
           }}
           error={
-            !!error &&
-            (fieldsWithError.includes('year') ||
-              fieldsWithError.includes('all'))
+            hookformError?.type?.includes('year') ||
+            (hookformError?.type &&
+              inputValidationErrorValues.includes(
+                hookformError.type as InputValidationError,
+              ))
           }
         />
       </Box>
