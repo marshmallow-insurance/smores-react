@@ -7,19 +7,19 @@ import { TextInput } from '../TextInput'
 import { InputValidationError } from '../utils/dateOfBirth/schema'
 import { FieldError } from 'react-hook-form'
 
-export interface DateObjectType {
-  day: string
-  month: string
-  year: string
+export interface CompleteDateObject {
+  day?: string
+  month?: string
+  year?: string
 }
 
 export type DateObject = {
-  [K in keyof DateObjectType]?: DateObjectType[K] | null
+  [K in keyof CompleteDateObject]?: CompleteDateObject[K] | null
 }
 
 export type TextDateOfBirthInputProps = {
-  value: DateObjectType
-  onChange: (value: DateObjectType) => void
+  value: DateObject
+  onChange: (value: DateObject) => void
   showCompleted?: boolean
   hookformError?: FieldError
 } & Pick<FieldsetProps, 'label' | 'assistiveText'>

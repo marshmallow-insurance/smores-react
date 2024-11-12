@@ -16,7 +16,7 @@ export enum FieldValidationError {
   ImpossibleFieldValueError = 'impossibleFieldValueError',
 }
 
-const dateOfBirthErrorMessages: Record<
+export const dateOfBirthErrorMessages: Record<
   InputValidationError | FieldValidationError,
   (value: string[]) => string
 > = {
@@ -30,14 +30,4 @@ const dateOfBirthErrorMessages: Record<
   [FieldValidationError.ImpossibleFieldValueError]:
     createImpossibleFieldErrorMessage,
   [InputValidationError.YoungerThan17]: createYoungerThan17ErrorMessage,
-}
-
-export const createErrorMessage = (
-  errorKey: keyof typeof dateOfBirthErrorMessages,
-  fields?: string[],
-) => {
-  const messageFunc = dateOfBirthErrorMessages[errorKey]
-  const message = messageFunc(fields ?? [])
-  const fieldsSuffix = fields ? ` (${fields.join('-')})` : ''
-  return message + fieldsSuffix
 }
