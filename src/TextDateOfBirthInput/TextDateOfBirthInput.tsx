@@ -22,6 +22,7 @@ export type TextDateOfBirthInputProps = {
   onChange: (value: DateObject) => void
   showCompleted?: boolean
   hookformError?: FieldError
+  dataTestId?: string
 } & Pick<FieldsetProps, 'label' | 'assistiveText'>
 
 /**
@@ -44,6 +45,7 @@ export const TextDateOfBirthInput = forwardRef<
     assistiveText,
     hookformError,
     showCompleted = false,
+    dataTestId,
   },
   ref,
 ) {
@@ -58,6 +60,7 @@ export const TextDateOfBirthInput = forwardRef<
       }
       error={Boolean(hookformError)}
       errorMsg={hookformError?.message}
+      data-testid={dataTestId}
     >
       <Box flex gap="16px">
         <SetWidthTextInput
