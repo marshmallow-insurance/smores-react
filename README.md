@@ -166,6 +166,7 @@ yalc remove --all
 * [Tag](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Tag)
 * [Text](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Text)
 * [Textarea](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Textarea)
+* [TextDateOfBirthInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/TextDateOfBirthInput)
 * [TextInput](https://github.com/marshmallow-insurance/smores-react/tree/master/src/TextInput)
 * [Toggle](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Toggle)
 * [Tooltip](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Tooltip)
