@@ -5,23 +5,21 @@ import { Box } from '../Box'
 import { Fieldset, FieldsetProps } from '../fields/Fieldset'
 import { TextInput } from '../TextInput'
 import { InputValidationError } from '../utils/dateOfBirth/schema'
-import { FieldError } from 'react-hook-form'
-
-export interface CompleteDateObject {
-  day?: string
-  month?: string
-  year?: string
-}
 
 export type DateObject = {
-  [K in keyof CompleteDateObject]?: CompleteDateObject[K] | null
+  day?: string | null
+  month?: string | null
+  year?: string | null
 }
 
 export type TextDateOfBirthInputProps = {
   value: DateObject
   onChange: (value: DateObject) => void
   showCompleted?: boolean
-  hookformError?: FieldError
+  hookformError?: {
+    type: string
+    message?: string
+  }
   dataTestId?: string
 } & Pick<FieldsetProps, 'label' | 'assistiveText'>
 
@@ -77,13 +75,13 @@ export const TextDateOfBirthInput = forwardRef<
               day,
             })
           }}
-          error={
+          error={Boolean(
             hookformError?.type?.includes('day') ||
-            (hookformError?.type &&
-              inputValidationErrorValues.includes(
-                hookformError.type as InputValidationError,
-              ))
-          }
+              (hookformError?.type &&
+                inputValidationErrorValues.includes(
+                  hookformError.type as InputValidationError,
+                )),
+          )}
         />
         <SetWidthTextInput
           label="month"
@@ -98,13 +96,13 @@ export const TextDateOfBirthInput = forwardRef<
               month,
             })
           }}
-          error={
+          error={Boolean(
             hookformError?.type?.includes('month') ||
-            (hookformError?.type &&
-              inputValidationErrorValues.includes(
-                hookformError.type as InputValidationError,
-              ))
-          }
+              (hookformError?.type &&
+                inputValidationErrorValues.includes(
+                  hookformError.type as InputValidationError,
+                )),
+          )}
         />
         <SetWidthTextInput
           label="year"
@@ -119,13 +117,13 @@ export const TextDateOfBirthInput = forwardRef<
               year,
             })
           }}
-          error={
+          error={Boolean(
             hookformError?.type?.includes('year') ||
-            (hookformError?.type &&
-              inputValidationErrorValues.includes(
-                hookformError.type as InputValidationError,
-              ))
-          }
+              (hookformError?.type &&
+                inputValidationErrorValues.includes(
+                  hookformError.type as InputValidationError,
+                )),
+          )}
         />
       </Box>
     </Fieldset>
