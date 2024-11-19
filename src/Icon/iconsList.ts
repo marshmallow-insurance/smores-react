@@ -213,7 +213,7 @@ import WindscreenReplacement from './iconFiles/WindscreenReplacement'
 import Paperclip from './iconFiles/Paperclip'
 import Reply from './iconFiles/Reply'
 import { Progress } from './iconFiles/Progress'
-import AI from './iconFiles/AI'
+import Ai from './iconFiles/Ai'
 
 export const iconList = {
   'aa-inverted': AaInverted,
@@ -311,7 +311,7 @@ export const iconList = {
   'windscreen-replacement': WindscreenReplacement,
   aa: Aa,
   addons: AddOns,
-  ai: AI,
+  ai: Ai,
   alert: Alert,
   amex: Amex,
   archive: Archive,

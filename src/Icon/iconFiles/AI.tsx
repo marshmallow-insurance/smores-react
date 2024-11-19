@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AI = () => (
+const Ai = () => (
   <svg
     width="16"
     height="17"
@@ -29,4 +29,4 @@ const AI = () => (
   </svg>
 )
 
-export default AI
+export default Ai
