@@ -188,6 +188,7 @@ import Stripe from './iconFiles/Stripe'
 import Subsidence from './iconFiles/Subsidence'
 import Theft from './iconFiles/Theft'
 import ThumbsUp from './iconFiles/ThumbsUp'
+import ThumbsDown from './iconFiles/ThumbsDown'
 import Tick from './iconFiles/Tick'
 import TowTruck from './iconFiles/TowTruck'
 import TraceAndAccess from './iconFiles/TraceAndAccess'
@@ -301,6 +302,7 @@ export const iconList = {
   'send-message': SendMessage,
   'shield-check': ShieldCheck,
   'thumbs-up': ThumbsUp,
+  'thumbs-down': ThumbsDown,
   'tow-truck': TowTruck,
   'trace-and-access': TraceAndAccess,
   'up-down': UpDown,
