@@ -81,7 +81,7 @@ const Label = styled.div<ISelected>(
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    border-radius: 64px;
+    border-radius: 100px;
     padding: 16px 16px 14px;
     box-sizing: border-box;
     user-select: none;
@@ -92,7 +92,6 @@ const SelectedOption = styled.span`
   font-size: 14px;
   font-weight: bold;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 `
 
