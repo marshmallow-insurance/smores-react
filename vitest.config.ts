@@ -9,6 +9,6 @@ export default defineConfig({
       '**/*.test.{js,ts}',
       '**/*.spec.{js,ts}',
     ],
-    exclude: ['**/node_modules/**', '**/*.stories.{js,ts}'],
+    exclude: ['**/node_modules/**', '**/*.stories.{js,ts}', '**/dist/**'],
   },
 })
