@@ -74,10 +74,6 @@ Not too different to your usual workflow!
 7. This can be done multiple times and it will increment your pre-release package version!
 8. When you're happy with the changes, simply squash and merge the PR and release `main`!
 
-###### Tokens
-
-The `MARSHMALLOW_CI_PAT` has been created from the internal @marshmallow-ci GH account, it is due to expire on `27th November 2024` so will need regenerating once it does.
-
 ## Running Smores in dev mode 
 To run Smores in dev mode follow the below instructions on installing and using Yalc to link up your project repo with Smores.
 
