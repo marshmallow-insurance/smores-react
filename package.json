@@ -61,7 +61,7 @@
     "@types/node": "^22.9.0",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.16.0",
     "@typescript-eslint/parser": "^7.18.0",
     "axe-playwright": "^2.0.3",
     "conventional-changelog-conventionalcommits": "^8.0.0",
