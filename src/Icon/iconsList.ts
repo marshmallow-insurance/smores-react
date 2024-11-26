@@ -188,6 +188,7 @@ import Stripe from './iconFiles/Stripe'
 import Subsidence from './iconFiles/Subsidence'
 import Theft from './iconFiles/Theft'
 import ThumbsUp from './iconFiles/ThumbsUp'
+import ThumbsDown from './iconFiles/ThumbsDown'
 import Tick from './iconFiles/Tick'
 import TowTruck from './iconFiles/TowTruck'
 import TraceAndAccess from './iconFiles/TraceAndAccess'
@@ -213,6 +214,7 @@ import WindscreenReplacement from './iconFiles/WindscreenReplacement'
 import Paperclip from './iconFiles/Paperclip'
 import Reply from './iconFiles/Reply'
 import { Progress } from './iconFiles/Progress'
+import Ai from './iconFiles/Ai'
 
 export const iconList = {
   'aa-inverted': AaInverted,
@@ -300,6 +302,7 @@ export const iconList = {
   'send-message': SendMessage,
   'shield-check': ShieldCheck,
   'thumbs-up': ThumbsUp,
+  'thumbs-down': ThumbsDown,
   'tow-truck': TowTruck,
   'trace-and-access': TraceAndAccess,
   'up-down': UpDown,
@@ -310,6 +313,7 @@ export const iconList = {
   'windscreen-replacement': WindscreenReplacement,
   aa: Aa,
   addons: AddOns,
+  ai: Ai,
   alert: Alert,
   amex: Amex,
   archive: Archive,

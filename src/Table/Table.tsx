@@ -59,17 +59,19 @@ export const Table = <T extends object>({
       )}
       <tbody>
         {data.length === 0 && (
-          <StyledCell
-            colSpan={expandSubProp}
-            $rowPadding={rowPadding}
-            $columnPadding={columnPadding}
-          >
-            {noDataContent ? (
-              noDataContent
-            ) : (
-              <Text align="center">No available data</Text>
-            )}
-          </StyledCell>
+          <tr>
+            <StyledCell
+              colSpan={expandSubProp}
+              $rowPadding={rowPadding}
+              $columnPadding={columnPadding}
+            >
+              {noDataContent ? (
+                noDataContent
+              ) : (
+                <Text align="center">No available data</Text>
+              )}
+            </StyledCell>
+          </tr>
         )}
         {data.length !== 0 &&
           data.map((row, rowIndex) => (
