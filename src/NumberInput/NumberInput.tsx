@@ -149,6 +149,7 @@ export const NumberInput = forwardRef(function NumberInput(
           $frontIcon={frontIcon}
           step={step}
           $fallbackStyle={fallbackStyle}
+          onWheel={(e) => e.currentTarget.blur()}
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && handleChange(e.currentTarget.value)
             onInputChange && onInputChange(e)
