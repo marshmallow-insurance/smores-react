@@ -14,7 +14,7 @@ jobs:
         uses: actions/create-github-app-token@v1
         id: app-token
         with:
-          app-id: ${{ var.MARSHMALLOW_CI_APP_ID }}
+          app-id: ${{ vars.MARSHMALLOW_CI_APP_ID }}
           private-key: ${{ secrets.MARSHMALLOW_CI_APP_SECRET }}
       - name: Checkout 🛎️
         uses: actions/checkout@v4
