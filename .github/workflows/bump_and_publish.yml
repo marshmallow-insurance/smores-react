@@ -13,18 +13,20 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
-
+          token: ${{ secrets.MARSHMALLOW_CI_PAT }}
       - name: Setup Node 👾
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
-
       - name: Install Dependencies 🔧
         run: |
           npm ci
+      - name: Configure Git
+        run: |
+          git config user.name "marshmallow-ci"
+          git config user.email "ci@marshmallow-insurance.com"
       - name: Generate CHANGELOG.md & Bump & Release to NPM 🦫
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MARSHMALLOW_CI_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
