@@ -87,12 +87,22 @@ const isAcceptedBranch = micromatch.isMatch(
 
 if (!isAcceptedBranch) {
   console.log(`Branch ${branch} is not accepted for release. Skipping release.`)
-  console.log(`Accepted branches: ${config.branches.join(', ')}. [Micromatch](https://github.com/micromatch/micromatch?tab=readme-ov-file#matching-features) is used for matching.`)
+  console.log(
+    `Accepted branches: ${config.branches.join(', ')}. [Micromatch](https://github.com/micromatch/micromatch?tab=readme-ov-file#matching-features) is used for matching.`,
+  )
   process.exit(0)
 }
 
 const isPrereleaseBranch = config.branches.some(
   (b) => typeof b === 'object' && isAcceptedBranch && b.prerelease,
+)
+
+console.log('isPrereleaseBranch: ', isPrereleaseBranch)
+console.log('isAcceptedBranch: ', isAcceptedBranch)
+console.log('branch: ', branch)
+console.log(
+  'config.branches.some((b) => b.prerelease)): ',
+  config.branches.some((b) => b.prerelease),
 )
 
 if (!isPrereleaseBranch) {
