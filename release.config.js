@@ -1,7 +1,3 @@
-const branch = process.env.GITHUB_REF_NAME
-
-const micromatch = require('micromatch')
-
 /**
  * @type {import('semantic-release').GlobalConfig}
  */
@@ -80,30 +76,9 @@ const config = {
   ],
 }
 
-const isAcceptedBranch = micromatch.isMatch(
-  branch,
-  config.branches.map((b) => (typeof b === 'object' ? b.name : b)),
-)
-
 const isPrereleaseBranch = config.branches.some(
-  (b) => typeof b === 'object' && isAcceptedBranch && b.prerelease,
+  (b) => typeof b === 'object' && b.prerelease,
 )
-
-console.log('isPrereleaseBranch: ', isPrereleaseBranch)
-console.log('isAcceptedBranch: ', isAcceptedBranch)
-console.log('branch: ', branch)
-console.log(
-  'config.branches.some((b) => b.prerelease)): ',
-  config.branches.some((b) => b.prerelease),
-)
-
-if (!isAcceptedBranch) {
-  console.log(`Branch ${branch} is not accepted for release. Skipping release.`)
-  console.log(
-    `Accepted branches: ${config.branches.join(', ')}. [Micromatch](https://github.com/micromatch/micromatch?tab=readme-ov-file#matching-features) is used for matching.`,
-  )
-  process.exit(0)
-}
 
 if (!isPrereleaseBranch) {
   config.plugins.push('@semantic-release/changelog', [
