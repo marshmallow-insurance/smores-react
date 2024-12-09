@@ -1,3 +1,5 @@
+const branch = process.env.GITHUB_REF_NAME
+
 /**
  * @type {import('semantic-release').GlobalConfig}
  */
@@ -77,7 +79,7 @@ const config = {
 }
 
 const isPrereleaseBranch = config.branches.some(
-  (b) => typeof b === 'object' && b.prerelease,
+  (b) => typeof b === 'object' && branch !== 'main' && b.prerelease,
 )
 
 if (!isPrereleaseBranch) {
