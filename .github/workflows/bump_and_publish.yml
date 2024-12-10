@@ -10,6 +10,19 @@ jobs:
   bump-and-publish:
     runs-on: ubuntu-latest
     steps:
+      - name: Check branch
+        run: |
+          # Ensure the branch is either:
+          # - main
+          # OR
+          # - feature/your-branch-name
+          # - fix/your-branch-name
+          # - chore/your-branch-name
+          if [[ "$GITHUB_REF" != "refs/heads/main" && ! "$GITHUB_REF" =~ ^refs/heads/(feature|fix|chore)/.* ]]; then
+            echo "This job can only run on the 'main' branch or a '(feature|fix|chore)/*' branch."
+            exit 1
+          fi
+        shell: bash
       - name: Generate Token
         uses: actions/create-github-app-token@v1
         id: app-token
