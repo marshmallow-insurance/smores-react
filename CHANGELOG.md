@@ -1,3 +1,9 @@
+## [10.4.1](https://github.com/marshmallow-insurance/smores-react/compare/v10.4.0...v10.4.1) (2024-12-18)
+
+### Bug Fixes
+
+* removing isAcceptedBranch logic on conditional changelog plugin ([#4132](https://github.com/marshmallow-insurance/smores-react/issues/4132)) ([e655cd5](https://github.com/marshmallow-insurance/smores-react/commit/e655cd5dff012bc94a103e2dc1fcccf991dccfd6))
+
 ## [9.23.0](https://github.com/marshmallow-insurance/smores-react/compare/v9.22.0...v9.23.0) (2024-10-16)
 
 ### Features
