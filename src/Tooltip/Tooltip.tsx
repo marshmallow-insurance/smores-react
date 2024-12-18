@@ -163,7 +163,7 @@ export const Tooltip: FC<TooltipProps> = ({
 const UnderlinedChild = styled(Box)<{ $underline: boolean }>`
   cursor: pointer;
   width: fit-content;
-  display: inline;
+  display: inline-flex;
 
   ${({ $underline }) =>
     $underline &&
