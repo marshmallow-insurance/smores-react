@@ -38,7 +38,7 @@ export const Toggle: FC<Props> = ({
         }}
         aria-label="toggle"
       />
-      <Slider disabled={disabled} />
+      <Slider $disabled={disabled} />
     </Switch>
   )
 }
@@ -56,7 +56,7 @@ const Switch = styled(Box)`
   }
 `
 
-const Slider = styled.span<{ disabled?: boolean }>`
+const Slider = styled.span<{ $disabled?: boolean }>`
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -81,8 +81,8 @@ const Slider = styled.span<{ disabled?: boolean }>`
     border-radius: 50%;
   }
 
-  ${({ disabled }) =>
-    disabled
+  ${({ $disabled }) =>
+    $disabled
       ? css`
           cursor: not-allowed;
         `
