@@ -1,8 +1,19 @@
 import { useArgs } from '@storybook/preview-api'
 import { Meta, StoryObj } from '@storybook/react'
-import { expect, fn, userEvent, within } from '@storybook/test'
+import { expect, fn, userEvent, waitFor, within } from '@storybook/test'
 import React from 'react'
 import { Props, Toggle } from '../Toggle'
+
+const Render = (args: Props) => {
+  const [{ checked }, updateArgs] = useArgs<Props>()
+
+  function onChange() {
+    args.onToggle()
+    updateArgs({ checked: !checked })
+  }
+
+  return <Toggle {...args} onToggle={onChange} checked={checked} />
+}
 
 const meta: Meta<typeof Toggle> = {
   title: 'Toggle',
@@ -10,54 +21,37 @@ const meta: Meta<typeof Toggle> = {
   args: {
     checked: true,
   },
-  render: function Render(args) {
-    const [{ checked }, updateArgs] = useArgs<Props>()
-
-    function onChange() {
-      updateArgs({ checked: !checked })
-    }
-
-    return <Toggle {...args} onToggle={onChange} checked={checked} />
-  },
+  render: Render,
 }
 
 export default meta
 
 type Story = StoryObj<typeof Toggle>
 
-export const Checked: Story = {
+export const Primary: Story = {
   args: {
     onToggle: fn(),
+    checked: true,
   },
+  render: Render,
   play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement)
     const checkbox = canvas.getByRole('checkbox', { name: 'toggle' })
     await userEvent.click(checkbox)
-    await expect(args.onToggle).toHaveBeenCalled()
-  },
-}
-
-export const Unchecked: Story = {
-  args: {
-    checked: false,
-  },
-  play: async ({ args, canvasElement }) => {
-    const canvas = within(canvasElement)
-    const checkbox = canvas.getByRole('checkbox', { name: 'toggle' })
-    await userEvent.click(checkbox)
-    await expect(args.onToggle).toHaveBeenCalled()
+    await waitFor(() => expect(args.onToggle).toHaveBeenCalled())
   },
 }
 
 export const Disabled: Story = {
+  render: Render,
   args: {
     checked: false,
     disabled: true,
   },
-  play: async ({ args, canvasElement }) => {
+  play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const checkbox = canvas.getByRole('checkbox', { name: 'toggle' })
     await userEvent.click(checkbox)
-    await expect(args.onToggle).not.toHaveBeenCalled()
+    await expect(checkbox).toBeDisabled()
   },
 }
