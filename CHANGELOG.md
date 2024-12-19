@@ -1,3 +1,9 @@
+## [10.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v10.4.1...v10.5.0) (2024-12-19)
+
+### Features
+
+* Add disabled state for toggle ([#4145](https://github.com/marshmallow-insurance/smores-react/issues/4145)) ([ca5f046](https://github.com/marshmallow-insurance/smores-react/commit/ca5f0461a210f4008c221bd8de654f91c9faf40c))
+
 ## [10.4.1](https://github.com/marshmallow-insurance/smores-react/compare/v10.4.0...v10.4.1) (2024-12-18)
 
 ### Bug Fixes
