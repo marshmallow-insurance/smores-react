@@ -1,16 +1,17 @@
 import React, { FC } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
 import { theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
-type Props = {
+export type Props = {
   /** unique ID */
   id?: string
   /** checked flag  */
   checked: boolean
+  disabled?: boolean
   /** onToggle listener  */
   onToggle: () => void
 } & MarginProps
@@ -19,12 +20,14 @@ export const Toggle: FC<Props> = ({
   id,
   checked,
   onToggle,
+  disabled,
   ...marginProps
 }) => {
   return (
     <Switch forwardedAs="label" htmlFor={id} {...marginProps}>
       <Checkbox
         id={id}
+        disabled={disabled}
         type="checkbox"
         checked={checked}
         onChange={onToggle}
@@ -35,7 +38,7 @@ export const Toggle: FC<Props> = ({
         }}
         aria-label="toggle"
       />
-      <Slider />
+      <Slider disabled={disabled} />
     </Switch>
   )
 }
@@ -53,7 +56,7 @@ const Switch = styled(Box)`
   }
 `
 
-const Slider = styled.span`
+const Slider = styled.span<{ disabled?: boolean }>`
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -66,10 +69,6 @@ const Slider = styled.span`
   transition: 0.2s background-color;
   outline: none;
 
-  &:hover {
-    background-color: ${theme.colors.marzipan};
-  }
-
   &:before {
     position: absolute;
     content: '';
@@ -81,6 +80,17 @@ const Slider = styled.span`
     transition: 0.2s transform;
     border-radius: 50%;
   }
+
+  ${({ disabled }) =>
+    disabled
+      ? css`
+          cursor: not-allowed;
+        `
+      : css`
+          &:hover {
+            background-color: ${theme.colors.marzipan};
+          }
+        `}
 `
 
 const Checkbox = styled.input`
