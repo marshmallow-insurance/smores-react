@@ -54,7 +54,7 @@
     "@storybook/react": "^8.4.7",
     "@storybook/react-vite": "^8.4.7",
     "@storybook/test": "^8.2.1",
-    "@storybook/test-runner": "^0.20.1",
+    "@storybook/test-runner": "^0.21.0",
     "@testing-library/react": "^16.1.0",
     "@types/body-scroll-lock": "^3.1.0",
     "@types/dompurify": "^3.2.0",
