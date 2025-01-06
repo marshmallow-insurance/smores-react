@@ -78,7 +78,7 @@
     "rimraf": "^6.0.1",
     "semantic-release": "^24.2.1",
     "storybook": "^8.0.4",
-    "styled-components": "^6.1.13",
+    "styled-components": "^6.1.14",
     "typescript": "^5.7.2",
     "vite": "^6.0.7",
     "vitest": "^2.1.8"
