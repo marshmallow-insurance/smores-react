@@ -31,13 +31,3 @@ export const dateOfBirthErrorMessages: Record<
     createImpossibleFieldErrorMessage,
   [InputValidationError.YoungerThan17]: createYoungerThan17ErrorMessage,
 }
-
-export const createErrorMessage = (
-  errorKey: keyof typeof dateOfBirthErrorMessages,
-  fields?: string[],
-) => {
-  const messageFunc = dateOfBirthErrorMessages[errorKey]
-  const message = messageFunc(fields ?? [])
-  const fieldsSuffix = fields ? ` (${fields.join('-')})` : ''
-  return message + fieldsSuffix
-}
