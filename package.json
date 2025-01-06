@@ -1,6 +1,6 @@
 {
   "name": "@mrshmllw/smores-react",
-  "version": "10.5.0",
+  "version": "10.6.0",
   "main": "./dist/index.js",
   "description": "Collection of React components used by Marshmallow Technology",
   "keywords": [
@@ -58,7 +58,7 @@
     "@testing-library/react": "^16.1.0",
     "@types/body-scroll-lock": "^3.1.0",
     "@types/dompurify": "^3.2.0",
-    "@types/node": "^22.10.3",
+    "@types/node": "^22.10.5",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
@@ -76,22 +76,22 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^6.0.1",
-    "semantic-release": "^24.2.0",
+    "semantic-release": "^24.2.1",
     "storybook": "^8.0.4",
-    "styled-components": "^6.1.13",
+    "styled-components": "^6.1.14",
     "typescript": "^5.7.2",
-    "vite": "^6.0.6",
+    "vite": "^6.0.7",
     "vitest": "^2.1.8"
   },
   "dependencies": {
     "@floating-ui/react": "0.27.2",
-    "@lexical/react": "^0.22.0",
+    "@lexical/react": "^0.23.0",
     "@storybook/preview-api": "^8.4.7",
     "body-scroll-lock": "^4.0.0-beta.0",
     "date-fns": "^4.1.0",
     "dompurify": "^3.2.3",
     "fuse.js": "^7.0.0",
-    "lexical": "^0.22.0",
+    "lexical": "^0.23.0",
     "polished": "^4.1.3"
   },
   "peerDependencies": {
