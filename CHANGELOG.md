@@ -1,3 +1,9 @@
+## [10.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v10.5.0...v10.6.0) (2025-01-06)
+
+### Features
+
+* export date of birth validator utils ([#4158](https://github.com/marshmallow-insurance/smores-react/issues/4158)) ([6971af7](https://github.com/marshmallow-insurance/smores-react/commit/6971af788de29455c78065a1f2940e39c7ecdfe9))
+
 ## [10.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v10.4.1...v10.5.0) (2024-12-19)
 
 ### Features
