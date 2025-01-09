@@ -1,4 +1,4 @@
-import React, { useState, type JSX } from 'react';
+import React, { useState, type JSX } from 'react'
 import styled, { css } from 'styled-components'
 import { theme, type Color } from '../theme'
 import { BadgeFallbackImage } from './BadgeFallbackImage'
@@ -18,7 +18,7 @@ export type BadgeProps = {
   zIndex?: number
 }
 
-export function Badge<T extends BadgeProps>({
+export function Badge({
   borderColour = 'lollipop',
   size = BadgeSize.Lg,
   src,
