@@ -1,6 +1,6 @@
 import { isAfter, subYears } from 'date-fns'
 
-import { DateObject } from 'TextDateOfBirthInput'
+import { DateObject } from '../../TextDateOfBirthInput'
 
 const dateFields = ['day', 'month', 'year'] as const
 
