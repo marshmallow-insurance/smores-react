@@ -31,29 +31,33 @@ export type BaseRowAction<T> = {
   showCondition?: (rowData: T) => boolean
 }
 
-export type RowAction<T> = RowActionButtonDefault<T> | RowActionElementOverride<T>
+export type RowAction<T> =
+  | RowActionButtonDefault<T>
+  | RowActionElementOverride<T>
 
 export type RowActionButtonDefault<T> = {
   iconButton?: Pick<
-  IconStrictProps,
-  'size' | 'render' | 'iconColor' | 'backgroundColor' | 'id' | 'title'
-> & { tooltipText?: string }
-genericButton?: Pick<
-  ButtonProps,
-  | 'children'
-  | 'loading'
-  | 'disabled'
-  | 'primary'
-  | 'secondary'
-  | 'fallbackStyle'
-  | 'textBtn'
-  | 'smallButton'
-  | 'id'
->
-} & BaseRowAction<T> 
+    IconStrictProps,
+    'size' | 'render' | 'iconColor' | 'backgroundColor' | 'id' | 'title'
+  > & { tooltipText?: string }
+  genericButton?: Pick<
+    ButtonProps,
+    | 'children'
+    | 'loading'
+    | 'disabled'
+    | 'primary'
+    | 'secondary'
+    | 'fallbackStyle'
+    | 'textBtn'
+    | 'smallButton'
+    | 'id'
+  >
+} & BaseRowAction<T>
 
 export type RowActionElementOverride<T> = {
-  element: ReactElement<unknown>
+  // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  element: ReactElement<any>
 } & BaseRowAction<T>
 
 export type RowActions<T> = {
@@ -101,13 +105,17 @@ interface CommonTableProps<T> {
   rowBorderColor?: Color
   /** A React element to show when a row is expanded. */
   subTable?: {
-    table: (rowData: T) => ReactElement<unknown>
+    // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    table: (rowData: T) => ReactElement<any>
     showOnExpand?: (rowData: T) => boolean
   }
   /** Settings for sub rows. */
   subRows?: {
     /** Function that returns a React element for the sub row. */
-    rows: (rowData: T) => ReactElement<unknown> | ReactElement<unknown>[]
+    // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    rows: (rowData: T) => ReactElement<any> | ReactElement<any>[]
     /** If true, the sub rows will only be shown when the row is expanded. */
     showOnExpand?: (rowData: T) => boolean
   }
