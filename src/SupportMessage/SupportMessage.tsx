@@ -60,12 +60,12 @@ type SupportMessageType =
 
 export type SupportMessageProps = {
   className?: string
-  description: string | ReactElement
+  description: string | ReactElement<unknown>
   onClick?: MouseEventHandler
   /**
    * Right side content, usually an icon or a button
    */
-  rightSideComponent?: ReactElement
+  rightSideComponent?: ReactElement<unknown>
   type: SupportMessageType
   title?: string
 } & MarginProps

@@ -1,9 +1,15 @@
 import React, { ReactElement, ReactNode, useState } from 'react'
 import { isReactElement } from '../../utils/isReactElement'
 import { isMappedReactElement } from '../helpers'
-import { TableRowProps } from '../types'
+import { TableRowProps, type RowActions as RowActionsType } from '../types'
 import { RowActions } from './RowActions'
 import { StyledCell, StyledRow } from './commonComponents'
+
+type SubRowProps = {
+  rowPadding: string | undefined
+  columnPadding: string | undefined
+  showActions: ((rowData: unknown) => boolean) | RowActionsType<unknown> | undefined
+}
 
 export const TableRow = <T extends object>({
   rowData,
@@ -83,7 +89,6 @@ export const TableRow = <T extends object>({
           />
         )}
       </StyledRow>
-
       {/**
        * This could be extracted out and cleaned up
        * this section is for expanded rows only
@@ -95,7 +100,7 @@ export const TableRow = <T extends object>({
             subRowsData &&
             showSubRowsOnExpand &&
             isReactElement(subRowsData) &&
-            React.cloneElement(subRowsData as ReactElement, {
+            React.cloneElement(subRowsData as ReactElement<SubRowProps>, {
               rowPadding: rowPadding,
               columnPadding: columnPadding,
             })}
@@ -104,7 +109,7 @@ export const TableRow = <T extends object>({
             subRowsData &&
             showSubRowsOnExpand &&
             isMappedReactElement(subRowsData) &&
-            (subRowsData as ReactElement[]).map((row) =>
+            (subRowsData as ReactElement<SubRowProps>[]).map((row) =>
               React.cloneElement(row, {
                 rowPadding: rowPadding,
                 showActions: showActionsCell,
@@ -113,7 +118,7 @@ export const TableRow = <T extends object>({
 
           {subTable && showSubTableOnExpand && subTableData && (
             <StyledCell colSpan={expandSubProp}>
-              {React.cloneElement(subTableData, {
+              {React.cloneElement(subTableData as ReactElement<SubRowProps>, {
                 rowPadding: rowPadding,
                 columnPadding: columnPadding,
               })}
@@ -121,7 +126,6 @@ export const TableRow = <T extends object>({
           )}
         </>
       )}
-
       {/**
        * This could be extracted out and cleaned up
        * this section is for rendering things under a row,
@@ -132,25 +136,23 @@ export const TableRow = <T extends object>({
         subRowsData &&
         !showSubRowsOnExpand &&
         isReactElement(subRowsData) &&
-        React.cloneElement(subRowsData as ReactElement, {
+        React.cloneElement(subRowsData as ReactElement<SubRowProps>, {
           rowPadding: rowPadding,
           columnPadding: columnPadding,
         })}
-
       {subRows &&
         subRowsData &&
         !showSubRowsOnExpand &&
         isMappedReactElement(subRowsData) &&
-        (subRowsData as ReactElement[]).map((row) =>
+        (subRowsData as ReactElement<SubRowProps>[]).map((row) =>
           React.cloneElement(row, {
             rowPadding: rowPadding,
             columnPadding: columnPadding,
           }),
         )}
-
       {subTable && subTableData && !showSubTableOnExpand && (
         <StyledCell colSpan={expandSubProp}>
-          {React.cloneElement(subTableData, {
+          {React.cloneElement(subTableData as ReactElement<SubRowProps>, {
             rowPadding: rowPadding,
             columnPadding: columnPadding,
           })}

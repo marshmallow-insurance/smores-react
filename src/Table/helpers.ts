@@ -1,6 +1,6 @@
 import { ReactElement, isValidElement } from 'react'
 
-export const isMappedReactElement = (obj: unknown): obj is ReactElement[] => {
+export const isMappedReactElement = (obj: unknown): obj is ReactElement<unknown>[] => {
   if (!Array.isArray(obj)) return false
   if (!obj[0]) return false
   if (!isValidElement(obj[0])) return false

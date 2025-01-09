@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, type JSX } from 'react';
 import styled, { css } from 'styled-components'
 import { theme, type Color } from '../theme'
 import { BadgeFallbackImage } from './BadgeFallbackImage'

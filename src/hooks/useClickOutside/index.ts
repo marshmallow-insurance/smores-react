@@ -6,7 +6,7 @@ export const useOnClickOutside = ({
   ref,
   callback,
 }: {
-  ref: RefObject<HTMLElement>
+  ref: RefObject<HTMLElement | null>
   callback: GenericEventCallback
 }) => {
   const onClickOutsideListener = useCallback(

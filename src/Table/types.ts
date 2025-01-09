@@ -53,7 +53,7 @@ genericButton?: Pick<
 } & BaseRowAction<T> 
 
 export type RowActionElementOverride<T> = {
-  element: ReactElement
+  element: ReactElement<unknown>
 } & BaseRowAction<T>
 
 export type RowActions<T> = {
@@ -101,13 +101,13 @@ interface CommonTableProps<T> {
   rowBorderColor?: Color
   /** A React element to show when a row is expanded. */
   subTable?: {
-    table: (rowData: T) => ReactElement
+    table: (rowData: T) => ReactElement<unknown>
     showOnExpand?: (rowData: T) => boolean
   }
   /** Settings for sub rows. */
   subRows?: {
     /** Function that returns a React element for the sub row. */
-    rows: (rowData: T) => ReactElement | ReactElement[]
+    rows: (rowData: T) => ReactElement<unknown> | ReactElement<unknown>[]
     /** If true, the sub rows will only be shown when the row is expanded. */
     showOnExpand?: (rowData: T) => boolean
   }

@@ -56,7 +56,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
 ) => {
   const name = useUniqueId()
 
-  const optionRefs = useRef<RefObject<HTMLInputElement>[]>([])
+  const optionRefs = useRef<RefObject<HTMLInputElement | null>[]>([])
   useImperativeHandle(ref, () => {
     return {
       focus: () => {
@@ -107,7 +107,7 @@ export const RadioGroup = forwardRef(RadioGroupComponent) as <
   Value extends BaseValueType = BaseValueType,
 >(
   p: RadioGroupProps<Value> & React.RefAttributes<HTMLInputElement>,
-) => ReactElement | null
+) => ReactElement<any> | null
 
 const RadioItemList = styled.div<
   TransientProps<Pick<RadioGroupProps, 'displayType'>>

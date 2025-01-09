@@ -38,7 +38,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   searchTerm,
   notFoundComponent,
 }) => {
-  const itemRefs = useRef<React.RefObject<HTMLLIElement>[]>([])
+  const itemRefs = useRef<React.RefObject<HTMLLIElement | null>[]>([])
 
   useEffect(() => {
     itemRefs.current = displayedList.map(
