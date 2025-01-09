@@ -1,3 +1,14 @@
+## [10.6.2](https://github.com/marshmallow-insurance/smores-react/compare/v10.6.1...v10.6.2) (2025-01-09)
+
+### Bug Fixes
+
+* **dateOfBirthValidator:** Unable to build downstream apps because of missing import ([#4170](https://github.com/marshmallow-insurance/smores-react/issues/4170)) ([1d9da50](https://github.com/marshmallow-insurance/smores-react/commit/1d9da500e1d1957888af663cfb58c82ff09bb269))
+* **React:** Fix types after react 19 upgrade ([#4171](https://github.com/marshmallow-insurance/smores-react/issues/4171)) ([59ff228](https://github.com/marshmallow-insurance/smores-react/commit/59ff2288bd55250b1d3cedab9fc856918656e72a))
+
+### Refactors
+
+* remove unused util ([#4167](https://github.com/marshmallow-insurance/smores-react/issues/4167)) ([fedbe9a](https://github.com/marshmallow-insurance/smores-react/commit/fedbe9ab4fcfec0c87c0cae629c02e596426ea65))
+
 ## [10.6.1](https://github.com/marshmallow-insurance/smores-react/compare/v10.6.0...v10.6.1) (2025-01-06)
 
 ## [10.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v10.5.0...v10.6.0) (2025-01-06)
