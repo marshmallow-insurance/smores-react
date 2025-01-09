@@ -83,7 +83,6 @@ export const TableRow = <T extends object>({
           />
         )}
       </StyledRow>
-
       {/**
        * This could be extracted out and cleaned up
        * this section is for expanded rows only
@@ -95,7 +94,9 @@ export const TableRow = <T extends object>({
             subRowsData &&
             showSubRowsOnExpand &&
             isReactElement(subRowsData) &&
-            React.cloneElement(subRowsData as ReactElement, {
+            // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            React.cloneElement(subRowsData as ReactElement<any>, {
               rowPadding: rowPadding,
               columnPadding: columnPadding,
             })}
@@ -104,7 +105,9 @@ export const TableRow = <T extends object>({
             subRowsData &&
             showSubRowsOnExpand &&
             isMappedReactElement(subRowsData) &&
-            (subRowsData as ReactElement[]).map((row) =>
+            // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (subRowsData as ReactElement<any>[]).map((row) =>
               React.cloneElement(row, {
                 rowPadding: rowPadding,
                 showActions: showActionsCell,
@@ -113,15 +116,18 @@ export const TableRow = <T extends object>({
 
           {subTable && showSubTableOnExpand && subTableData && (
             <StyledCell colSpan={expandSubProp}>
-              {React.cloneElement(subTableData, {
-                rowPadding: rowPadding,
-                columnPadding: columnPadding,
-              })}
+              {
+                // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                React.cloneElement(subTableData as ReactElement<any>, {
+                  rowPadding: rowPadding,
+                  columnPadding: columnPadding,
+                })
+              }
             </StyledCell>
           )}
         </>
       )}
-
       {/**
        * This could be extracted out and cleaned up
        * this section is for rendering things under a row,
@@ -132,28 +138,34 @@ export const TableRow = <T extends object>({
         subRowsData &&
         !showSubRowsOnExpand &&
         isReactElement(subRowsData) &&
-        React.cloneElement(subRowsData as ReactElement, {
+        // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        React.cloneElement(subRowsData as ReactElement<any>, {
           rowPadding: rowPadding,
           columnPadding: columnPadding,
         })}
-
       {subRows &&
         subRowsData &&
         !showSubRowsOnExpand &&
         isMappedReactElement(subRowsData) &&
-        (subRowsData as ReactElement[]).map((row) =>
+        // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (subRowsData as ReactElement<any>[]).map((row) =>
           React.cloneElement(row, {
             rowPadding: rowPadding,
             columnPadding: columnPadding,
           }),
         )}
-
       {subTable && subTableData && !showSubTableOnExpand && (
         <StyledCell colSpan={expandSubProp}>
-          {React.cloneElement(subTableData, {
-            rowPadding: rowPadding,
-            columnPadding: columnPadding,
-          })}
+          {
+            // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            React.cloneElement(subTableData as ReactElement<any>, {
+              rowPadding: rowPadding,
+              columnPadding: columnPadding,
+            })
+          }
         </StyledCell>
       )}
     </>
