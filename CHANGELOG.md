@@ -1,3 +1,9 @@
+## [10.6.3](https://github.com/marshmallow-insurance/smores-react/compare/v10.6.2...v10.6.3) (2025-01-10)
+
+### Bug Fixes
+
+* **library:** Missing import ([#4172](https://github.com/marshmallow-insurance/smores-react/issues/4172)) ([7bee5d0](https://github.com/marshmallow-insurance/smores-react/commit/7bee5d030c4c79d4dfcc786368fab252a36209ce))
+
 ## [10.6.2](https://github.com/marshmallow-insurance/smores-react/compare/v10.6.1...v10.6.2) (2025-01-09)
 
 ### Bug Fixes
