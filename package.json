@@ -61,7 +61,7 @@
     "@types/dompurify": "^3.2.0",
     "@types/node": "^22.10.10",
     "@types/react": "^19.0.8",
-    "@types/react-dom": "^18.0.8",
+    "@types/react-dom": "^19.0.3",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "axe-playwright": "^2.0.3",
