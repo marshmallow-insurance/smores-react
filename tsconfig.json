@@ -15,6 +15,7 @@
     ],
     "types": ["react", "node", "vitest/globals"],
     "sourceMap": true,
+    "inlineSources": true,
     "allowJs": true,
     "checkJs": false,
     "jsx": "react",
