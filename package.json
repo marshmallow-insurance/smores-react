@@ -3,6 +3,7 @@
   "version": "10.6.3",
   "main": "./dist/index.js",
   "description": "Collection of React components used by Marshmallow Technology",
+  "type": "module",
   "keywords": [
     "react",
     "components",
@@ -17,6 +18,7 @@
     "build": "npm run clean && tsc --p ./tsconfig.build.json",
     "build-storybook": "storybook build -c .storybook",
     "check-types": "tsc --noEmit",
+    "lint": "eslint .",
     "prepublishOnly": "npm run build",
     "start": "npm run storybook",
     "storybook": "storybook dev -p 6006",
@@ -33,12 +35,6 @@
     "fix-package-lock-conflicts": "echo \"Make sure conflicts in package.json are resolved before running this script\" && npm i --package-lock-only"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.7",
-    "@babel/eslint-parser": "^7.26.5",
-    "@babel/plugin-transform-class-properties": "^7.25.9",
-    "@babel/preset-env": "^7.26.7",
-    "@babel/preset-react": "^7.26.3",
-    "@babel/preset-typescript": "^7.26.0",
     "@commitlint/cli": "^19.6.1",
     "@commitlint/types": "^19.5.0",
     "@semantic-release/changelog": "^6.0.3",
@@ -66,8 +62,9 @@
     "@typescript-eslint/parser": "^8.22.0",
     "axe-playwright": "^2.0.3",
     "conventional-changelog-conventionalcommits": "^8.0.0",
-    "eslint": "^8.57.1",
+    "eslint": "^9.19.0",
     "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
     "husky": "^9.1.7",
@@ -82,6 +79,7 @@
     "storybook": "^8.0.4",
     "styled-components": "^6.1.14",
     "typescript": "^5.7.3",
+    "typescript-eslint": "^8.22.0",
     "vite": "^6.0.11",
     "vitest": "^3.0.4"
   },

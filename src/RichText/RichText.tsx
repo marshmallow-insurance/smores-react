@@ -1,20 +1,17 @@
-import React, { ForwardedRef, forwardRef } from 'react'
-import { MarginProps } from '../utils/space'
-import { Box } from '../Box'
 import domPurify from 'dompurify'
+import React, { ForwardedRef, forwardRef } from 'react'
 import styled from 'styled-components'
-import { theme } from '../theme'
+import { Box } from '../Box'
 import { Icon } from '../Icon'
+import { theme } from '../theme'
+import { MarginProps } from '../utils/space'
 
 export interface RichTextProps extends MarginProps {
   htmlString: string
 }
 
 export const RichText = forwardRef(function RichText(
-  {
-    htmlString,
-    ...props
-  }: RichTextProps,
+  { htmlString, ...props }: RichTextProps,
   ref: ForwardedRef<HTMLDivElement>,
 ) {
   const sanitisedHtml = domPurify.sanitize(htmlString)
@@ -31,7 +28,11 @@ export const RichText = forwardRef(function RichText(
     )
   } else {
     return (
-      <HtmlBox ref={ref} {...props} dangerouslySetInnerHTML={{ __html: sanitisedHtml }} />
+      <HtmlBox
+        ref={ref}
+        {...props}
+        dangerouslySetInnerHTML={{ __html: sanitisedHtml }}
+      />
     )
   }
 })

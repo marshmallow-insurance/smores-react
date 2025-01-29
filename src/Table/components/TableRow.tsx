@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import { isReactElement } from '../../utils/isReactElement'
 import { isMappedReactElement } from '../helpers'
 import { TableRowProps } from '../types'
@@ -33,10 +33,8 @@ export const TableRow = <T extends object>({
 
   const subRowsData = subRows?.rows(rowData)
   const subTableData = subTable?.table(rowData)
-  const showSubRowsOnExpand =
-    subRows?.showOnExpand && subRows?.showOnExpand(rowData)
-  const showSubTableOnExpand =
-    subTable?.showOnExpand && subTable?.showOnExpand(rowData)
+  const showSubRowsOnExpand = subRows?.showOnExpand?.(rowData)
+  const showSubTableOnExpand = subTable?.showOnExpand?.(rowData)
 
   const showActionsCell = expandable || rowActions
   const expandSubProp = showActionsCell ? columns.length + 1 : columns.length
@@ -96,7 +94,7 @@ export const TableRow = <T extends object>({
             isReactElement(subRowsData) &&
             // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            React.cloneElement(subRowsData as ReactElement<any>, {
+            React.cloneElement(subRowsData, {
               rowPadding: rowPadding,
               columnPadding: columnPadding,
             })}
@@ -107,7 +105,7 @@ export const TableRow = <T extends object>({
             isMappedReactElement(subRowsData) &&
             // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (subRowsData as ReactElement<any>[]).map((row) =>
+            subRowsData.map((row) =>
               React.cloneElement(row, {
                 rowPadding: rowPadding,
                 showActions: showActionsCell,
@@ -119,7 +117,7 @@ export const TableRow = <T extends object>({
               {
                 // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                React.cloneElement(subTableData as ReactElement<any>, {
+                React.cloneElement(subTableData, {
                   rowPadding: rowPadding,
                   columnPadding: columnPadding,
                 })
@@ -140,7 +138,7 @@ export const TableRow = <T extends object>({
         isReactElement(subRowsData) &&
         // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        React.cloneElement(subRowsData as ReactElement<any>, {
+        React.cloneElement(subRowsData, {
           rowPadding: rowPadding,
           columnPadding: columnPadding,
         })}
@@ -150,7 +148,7 @@ export const TableRow = <T extends object>({
         isMappedReactElement(subRowsData) &&
         // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (subRowsData as ReactElement<any>[]).map((row) =>
+        subRowsData.map((row) =>
           React.cloneElement(row, {
             rowPadding: rowPadding,
             columnPadding: columnPadding,
@@ -161,7 +159,7 @@ export const TableRow = <T extends object>({
           {
             // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            React.cloneElement(subTableData as ReactElement<any>, {
+            React.cloneElement(subTableData, {
               rowPadding: rowPadding,
               columnPadding: columnPadding,
             })

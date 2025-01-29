@@ -22,7 +22,7 @@ export const ToggleButton = <Value,>({
   return (
     <Wrapper
       as="label"
-      data-testId={`value-toggle-${value}`}
+      data-testId={`value-toggle-${value as string}`}
       isDisabled={isDisabled}
     >
       <VisuallyHiddenInput

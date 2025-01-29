@@ -1,1 +1,1 @@
-export { BadgeList, BadgeListBadge } from "./BadgeList"
+export { BadgeList, BadgeListBadge } from './BadgeList'

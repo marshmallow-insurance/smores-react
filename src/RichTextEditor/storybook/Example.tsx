@@ -23,7 +23,7 @@ const defaultValue = `
 `
 
 export const Example = () => {
-  const [_value, setValue] = useState(defaultValue)
+  const [, setValue] = useState(defaultValue)
 
   return (
     <RichTextEditor

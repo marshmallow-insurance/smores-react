@@ -1,3 +1,4 @@
+import type { Meta, StoryObj } from '@storybook/react'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
@@ -6,7 +7,6 @@ import { Modal } from '../../Modal'
 import { Text } from '../../Text'
 import { theme } from '../../theme'
 import { Tooltip, TooltipProps, type TooltipVariant } from '../Tooltip'
-import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Tooltip> = {
   title: 'Tooltip',
@@ -22,7 +22,11 @@ const meta: Meta<typeof Tooltip> = {
       options: ['primary', 'fallback', 'bubblegum'] satisfies TooltipVariant[],
       control: {
         type: 'select',
-        options: ['primary', 'fallback', 'bubblegum'] satisfies TooltipVariant[],
+        options: [
+          'primary',
+          'fallback',
+          'bubblegum',
+        ] satisfies TooltipVariant[],
       },
     },
   },

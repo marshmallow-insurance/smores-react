@@ -7,7 +7,7 @@ const breakpointToMinPxMapping = {
 type Breakpoint = keyof typeof breakpointToMinPxMapping
 const breakpointList = Object.keys(breakpointToMinPxMapping) as Breakpoint[]
 
-type PropByBreakpoint<PropValue> = { [key in Breakpoint]?: PropValue }
+type PropByBreakpoint<PropValue> = Partial<Record<Breakpoint, PropValue>>
 export type ResponsiveProp<PropValue> = PropValue | PropByBreakpoint<PropValue>
 
 const isPropByBreakpoint = <PropValue>(

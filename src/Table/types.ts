@@ -1,5 +1,4 @@
-import React from 'react'
-import { ReactElement, ReactNode } from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
 import { Color } from '../theme'
@@ -151,4 +150,4 @@ export interface RowActionsProps<T>
   isExpanded?: boolean
 }
 
-export interface TableHeaderProps<T> extends CommonTableProps<T> {}
+export type TableHeaderProps<T> = CommonTableProps<T>

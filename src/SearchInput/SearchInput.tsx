@@ -281,7 +281,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
                   render="plus"
                   rotate={45}
                   iconColor="marzipan"
-                  title='Clear search'
+                  title="Clear search"
                   handleClick={handleClearSearch}
                   size={24}
                 />
@@ -310,9 +310,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               positionRelative={resultsRelativePosition}
               resultsBorder={resultsBorder}
               onNotFound={onNotFound}
-              notFoundComponent={
-                notFoundComponent && notFoundComponent(searchQuery ?? '')
-              }
+              notFoundComponent={notFoundComponent?.(searchQuery ?? '')}
             />
           )}
         </Field>

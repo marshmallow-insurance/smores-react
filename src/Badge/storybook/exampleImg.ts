@@ -6,13 +6,13 @@ import oliverImg from './oliver.png'
 import david from './david.png'
 
 const exampleImgs = [alexImg, oliverImg, david]
-const exampleImgNames = ["Alex", "Oliver", "David"]
+const exampleImgNames = ['Alex', 'Oliver', 'David']
 
 export const getExampleImg = () => {
-    const imgIndex = Math.floor(Math.random() * exampleImgs.length)
-    
-    return {
-        src: exampleImgs[imgIndex],
-        name: exampleImgNames[imgIndex]
-    }
+  const imgIndex = Math.floor(Math.random() * exampleImgs.length)
+
+  return {
+    src: exampleImgs[imgIndex],
+    name: exampleImgNames[imgIndex],
+  }
 }
