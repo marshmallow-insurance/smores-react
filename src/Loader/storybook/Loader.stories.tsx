@@ -1,22 +1,32 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import { Loader, LoaderProps } from '../Loader'
+import { Loader } from '../Loader'
 
-export default {
+const meta: Meta<typeof Loader> = {
   title: 'Loader',
   component: Loader,
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '20px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
-const Template = (props: LoaderProps) => <Loader {...props} />
+export default meta
 
-export const Default = Template.bind({})
+type Story = StoryObj<typeof Loader>
 
-Default.args = {
-  height: 32,
+export const Default: Story = {
+  args: {
+    height: '32',
+  },
 }
 
-export const BigLoader = Template.bind({})
-
-BigLoader.args = {
-  height: 54,
-  color: 'liquorice',
+export const BigLoader: Story = {
+  args: {
+    height: '54',
+    color: 'liquorice',
+  },
 }

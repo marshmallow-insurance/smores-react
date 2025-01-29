@@ -1,12 +1,8 @@
+import { Meta, StoryObj } from '@storybook/react'
+import { BaseValueType } from 'RadioGroup/types'
 import React, { useState } from 'react'
-import { RadioGroup, RadioGroupProps } from '../RadioGroup'
+import { RadioGroup } from '../RadioGroup'
 import visualSvg from './radio-visual.svg'
-
-export default {
-  title: 'RadioGroup',
-  component: RadioGroup,
-  argTypes: { onChange: { action: 'clicked' } },
-}
 
 const options = [
   { label: 'Social', value: 'social' },
@@ -18,100 +14,97 @@ const options = [
   { label: 'It’s a commercial vehicle', value: 'commercial' },
 ]
 
-const defaultArgs: RadioGroupProps = {
-  label: 'What do you use it for?',
-  onChange: (value: string) => console.log(value),
-  value: options[0].value,
-  options,
-  displayType: 'normal',
+const meta: Meta<typeof RadioGroup> = {
+  title: 'RadioGroup',
+  component: RadioGroup,
+  argTypes: { onChange: { action: 'clicked' } },
+  args: {
+    label: 'What do you use it for?',
+    onChange: (value: BaseValueType) => console.log(value),
+    value: options[0].value,
+    options,
+    displayType: 'normal',
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '20px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
-const InteractiveStory = (props: RadioGroupProps<string>) => {
-  const [value, setValue] = useState('')
+export default meta
 
-  return (
-    <RadioGroup
-      {...props}
-      onChange={(nextValue) => setValue(nextValue)}
-      value={value}
-    />
-  )
+type Story = StoryObj<typeof RadioGroup>
+
+export const Default: Story = {}
+
+export const Interactive: Story = {
+  render: (args) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [value, setValue] = useState<BaseValueType>('')
+    return <RadioGroup {...args} onChange={setValue} value={value} />
+  },
 }
 
-export const Interactive = InteractiveStory.bind({})
-
-Interactive.args = defaultArgs
-
-const Template = (props: RadioGroupProps) => <RadioGroup {...props} />
-
-export const Default = Template.bind({})
-
-Default.args = defaultArgs
-
-export const Vertical = Template.bind({})
-
-Vertical.args = {
-  ...defaultArgs,
-  displayType: 'vertical-card',
+export const Vertical: Story = {
+  args: {
+    displayType: 'vertical-card',
+  },
 }
 
-export const Horizontal = Template.bind({})
-
-Horizontal.args = {
-  ...defaultArgs,
-  displayType: 'horizontal-card',
+export const Horizontal: Story = {
+  args: {
+    displayType: 'horizontal-card',
+  },
 }
 
-export const WithBodyCopy = Template.bind({})
-
-WithBodyCopy.args = {
-  ...defaultArgs,
-  displayType: 'vertical-card',
-  options: options.map((option) => ({
-    ...option,
-    bodyCopy:
-      'E.g. shopping, travel and driving to see friends. Does not include travelling to and from work.',
-  })),
+export const WithBodyCopy: Story = {
+  args: {
+    displayType: 'vertical-card',
+    options: options.map((option) => ({
+      ...option,
+      bodyCopy:
+        'E.g. shopping, travel and driving to see friends. Does not include travelling to and from work.',
+    })),
+  },
 }
 
-export const WithError = Template.bind({})
-
-WithError.args = {
-  ...defaultArgs,
-  error: true,
-  errorMsg: 'something',
-  displayType: 'horizontal-card',
-}
-WithError.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
+export const WithError: Story = {
+  args: {
+    error: true,
+    errorMsg: 'something',
+    displayType: 'horizontal-card',
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
     },
   },
 }
 
-export const WithVisual = Template.bind({})
-
-WithVisual.args = {
-  ...defaultArgs,
-  options: options.map((option) => ({ ...option, visual: visualSvg })),
-  displayType: 'horizontal-card',
+export const WithVisual: Story = {
+  args: {
+    options: options.map((option) => ({ ...option, visual: visualSvg })),
+    displayType: 'horizontal-card',
+  },
 }
 
-export const Withicon = Template.bind({})
-
-Withicon.args = {
-  ...defaultArgs,
-  options: options.map((option) => ({
-    ...option,
-    icon: 'card',
-    iconPosition: 'center',
-  })),
-  displayType: 'horizontal-card',
+export const Withicon: Story = {
+  args: {
+    options: options.map((option) => ({
+      ...option,
+      icon: 'card',
+      iconPosition: 'center',
+    })),
+    displayType: 'horizontal-card',
+  },
 }

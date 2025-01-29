@@ -1,35 +1,41 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
 import { theme } from '../../theme'
-import { Pagination, PaginationProps } from '../Pagination'
-
-export default {
-  title: 'Pagination',
-  component: Pagination,
-  argTypes: { handlePageChange: { action: 'pageChanged' } },
-}
+import { Pagination } from '../Pagination'
 
 const BgWrapper = styled(Box)`
   background: ${theme.colors.coconut};
 `
 
-const Template = (props: PaginationProps & { showBg: boolean }) => (
-  <BgWrapper height="100px" flex alignItems="center">
-    <Pagination mx="32px" {...props} />
-  </BgWrapper>
-)
-
-export const Default = Template.bind({})
-
-Default.args = {
-  total: 123,
-  partition: 1,
+const meta: Meta<typeof Pagination> = {
+  title: 'Pagination',
+  component: Pagination,
+  argTypes: { handlePageChange: { action: 'pageChanged' } },
+  decorators: [
+    (Story) => (
+      <BgWrapper height="100px" flex alignItems="center">
+        <Story />
+      </BgWrapper>
+    ),
+  ],
 }
 
-export const LongerPagination = Template.bind({})
+export default meta
 
-LongerPagination.args = {
-  total: 11,
-  partition: 1,
+type Story = StoryObj<typeof Pagination>
+
+export const Default: Story = {
+  args: {
+    total: 123,
+    partition: 1,
+  },
+}
+
+export const LongerPagination: Story = {
+  args: {
+    total: 11,
+    partition: 1,
+  },
 }

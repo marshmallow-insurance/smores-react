@@ -1,12 +1,24 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React, { FC } from 'react'
 import { Button } from '../../Button'
 import { SnackbarContainer } from '../SnackbarContainer'
 import { useSnackbar } from '../hooks'
 
-export default {
+const meta: Meta<typeof SnackbarContainer> = {
   title: 'SnackbarContainer',
   component: SnackbarContainer,
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '20px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
+
+export default meta
+
+type Story = StoryObj<typeof SnackbarContainer>
 
 const ChildComponent: FC = () => {
   const { addSnackbar } = useSnackbar()
@@ -28,14 +40,11 @@ const ChildComponent: FC = () => {
     </>
   )
 }
-const Template: FC = () => {
-  return (
-    <>
-      <SnackbarContainer>
-        <ChildComponent />
-      </SnackbarContainer>
-    </>
-  )
-}
 
-export const Default = Template.bind({})
+export const Default: Story = {
+  render: () => (
+    <SnackbarContainer>
+      <ChildComponent />
+    </SnackbarContainer>
+  ),
+}

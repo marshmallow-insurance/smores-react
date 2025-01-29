@@ -1,54 +1,76 @@
-import React from 'react'
-import { CheckBox, CheckBoxProps } from '../CheckBox'
-import { Container as CheckBoxContainer } from './Container'
+import { Meta, StoryObj } from '@storybook/react'
+import React, { useState } from 'react'
+import { CheckBox } from '../CheckBox'
 
-export default {
+const Container = () => {
+  const [checked, setChecked] = useState(false)
+
+  return (
+    <CheckBox
+      id="agreement"
+      checked={checked}
+      toggle={() => setChecked(!checked)}
+    >
+      I agree
+    </CheckBox>
+  )
+}
+
+const meta: Meta<typeof CheckBox> = {
   title: 'Checkbox',
   component: CheckBox,
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '20px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
-const ContainerTemplate = () => <CheckBoxContainer />
+export default meta
 
-export const Default = ContainerTemplate.bind({})
+type Story = StoryObj<typeof CheckBox>
 
-const Template = (props: CheckBoxProps) => <CheckBox {...props} />
-
-export const WithError = Template.bind({})
-
-WithError.args = {
-  children: 'I disagree',
-  error: true,
+export const Default: Story = {
+  render: () => <Container />,
 }
-WithError.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
+
+export const WithError: Story = {
+  args: {
+    children: 'I disagree',
+    error: true,
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
     },
   },
 }
 
-export const WithErrorLabel = Template.bind({})
-WithErrorLabel.args = {
-  children: 'I disagree',
-  error: true,
-  errorMsg: 'Something has gone wrong',
-}
-WithErrorLabel.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
+export const WithErrorLabel: Story = {
+  args: {
+    children: 'I disagree',
+    error: true,
+    errorMsg: 'Something has gone wrong',
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
     },
   },
 }

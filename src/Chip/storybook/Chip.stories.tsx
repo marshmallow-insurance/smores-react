@@ -1,44 +1,53 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import { Chip, ChipProps } from '../Chip'
+import { Chip } from '../Chip'
 
-export default {
+const meta: Meta<typeof Chip> = {
   title: 'Chip',
   component: Chip,
   argTypes: { handleClick: { action: 'clicked' } },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '20px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
-const Template = (props: ChipProps) => <Chip {...props} />
+export default meta
 
-export const Primary = Template.bind({})
+type Story = StoryObj<typeof Chip>
 
-Primary.args = {
-  primary: true,
-  children: 'Add',
-  icon: 'plus',
-  'data-testid': 'works!',
+export const Primary: Story = {
+  args: {
+    primary: true,
+    children: 'Add',
+    icon: 'plus',
+  },
 }
 
-export const Secondary = Template.bind({})
-
-Secondary.args = {
-  secondary: true,
-  children: 'Added',
-  icon: 'tick',
+export const Secondary: Story = {
+  args: {
+    secondary: true,
+    children: 'Added',
+    icon: 'tick',
+  },
 }
 
-export const Loading = Template.bind({})
-
-Loading.args = {
-  loading: true,
-  primary: true,
+export const Loading: Story = {
+  args: {
+    loading: true,
+    primary: true,
+  },
 }
 
-export const SecondaryDisabled = Template.bind({})
-
-SecondaryDisabled.args = {
-  secondary: true,
-  disabled: true,
-  loading: false,
-  children: 'Add',
-  icon: 'plus',
+export const SecondaryDisabled: Story = {
+  args: {
+    secondary: true,
+    disabled: true,
+    loading: false,
+    children: 'Add',
+    icon: 'plus',
+  },
 }

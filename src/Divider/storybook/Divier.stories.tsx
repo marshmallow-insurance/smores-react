@@ -1,13 +1,23 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import { Divider, DividerProps } from '../Divider'
+import { Divider } from '../Divider'
 
-export default {
+const meta: Meta<typeof Divider> = {
   title: 'Divider',
   component: Divider,
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '20px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
-const Template = (props: DividerProps) => <Divider {...props} />
+export default meta
 
-export const Default = Template.bind({})
+type Story = StoryObj<typeof Divider>
 
-Default.args = {}
+export const Default: Story = {
+  args: {},
+}

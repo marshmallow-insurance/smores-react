@@ -1,18 +1,64 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import { Accordion, AccordionProps } from '../Accordion'
-import { CollectionPage } from './Collection'
+import { Box } from '../../Box'
+import { Accordion } from '../Accordion'
 
-export default {
-  title: 'Accordion',
+const meta: Meta<typeof Accordion> = {
+  title: 'Accordian',
   component: Accordion,
+  args: {
+    title: 'How it works',
+    children: 'Lots of brilliant information about this beautiful component',
+  },
 }
 
-const Template = (props: AccordionProps) => (
-  <Accordion {...props} title="How it works">
-    Lots of brilliant information about this beautiful component
-  </Accordion>
-)
+export default meta
+type Story = StoryObj<typeof Accordion>
 
-export const Default = Template.bind({})
+export const Default: Story = {
+  args: {
+    title: 'How it works',
+    children: 'Lots of brilliant information about this beautiful component',
+  },
+}
 
-export const Collection = CollectionPage.bind({})
+export const FilledBackground: Story = {
+  args: {
+    title: 'How it works',
+    children: 'Lots of brilliant information about this beautiful component',
+    filledBackground: true,
+  },
+}
+
+export const FullBorder: Story = {
+  args: {
+    title: 'How it works',
+    children: 'Lots of brilliant information about this beautiful component',
+    fullBorder: true,
+  },
+}
+
+export const BorderTop: Story = {
+  args: {
+    title: 'How it works',
+    children: 'Lots of brilliant information about this beautiful component',
+    borderTop: true,
+  },
+}
+
+export const Stacked: Story = {
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '64px' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  render: (args) => (
+    <Box flex direction="column">
+      <Accordion {...args} {...Default.args} />
+      <Accordion {...args} {...Default.args} />
+      <Accordion {...args} {...Default.args} />
+    </Box>
+  ),
+}
