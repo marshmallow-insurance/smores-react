@@ -11,16 +11,19 @@ function sleep(delay: number) {
 export const InteractivePlayground: FC = () => {
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleClick = () => {
-    void (async () => {
-      setIsLoading(true)
-      await sleep(1000)
-      setIsLoading(false)
-    })()
+  const handleClick = async () => {
+    setIsLoading(true)
+    await sleep(1000)
+    setIsLoading(false)
   }
 
   return (
-    <Button primary icon="info" handleClick={handleClick} loading={isLoading}>
+    <Button
+      primary
+      icon="info"
+      handleClick={void handleClick}
+      loading={isLoading}
+    >
       Get started
     </Button>
   )

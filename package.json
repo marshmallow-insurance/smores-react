@@ -18,7 +18,7 @@
     "build": "npm run clean && tsc --p ./tsconfig.build.json",
     "build-storybook": "storybook build -c .storybook",
     "check-types": "tsc --noEmit",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "prepublishOnly": "npm run build",
     "start": "npm run storybook",
     "storybook": "storybook dev -p 6006",

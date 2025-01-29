@@ -51,7 +51,6 @@ export type Typo =
 
 type Props = {
   children: ReactNode
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tag?: any
   className?: string
   // Record<never, never> matches any non-null and non-undefined type so

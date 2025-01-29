@@ -23,10 +23,6 @@ import { SearchOptions } from './components/SearchOptions'
 export type SearchInputItem = {
   label: string
   value: string
-  // Wanted to refactor this component to allow for a generic here
-  // but would take far too long since this is using forwardRef which
-  // complicates things a fair bit
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tags?: any[]
 }
 

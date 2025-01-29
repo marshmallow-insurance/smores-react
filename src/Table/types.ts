@@ -54,8 +54,6 @@ export type RowActionButtonDefault<T> = {
 } & BaseRowAction<T>
 
 export type RowActionElementOverride<T> = {
-  // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   element: ReactElement<any>
 } & BaseRowAction<T>
 
@@ -104,16 +102,12 @@ interface CommonTableProps<T> {
   rowBorderColor?: Color
   /** A React element to show when a row is expanded. */
   subTable?: {
-    // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     table: (rowData: T) => ReactElement<any>
     showOnExpand?: (rowData: T) => boolean
   }
   /** Settings for sub rows. */
   subRows?: {
     /** Function that returns a React element for the sub row. */
-    // TODO: React 19 requires the props type by default. It was previously inferred to be 'any'. It would be beneficial to explicitly type this generic value
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     rows: (rowData: T) => ReactElement<any> | ReactElement<any>[]
     /** If true, the sub rows will only be shown when the row is expanded. */
     showOnExpand?: (rowData: T) => boolean

@@ -53,9 +53,10 @@ export default [
       // TODO: Temporary warn, to fix in separate PR
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/prefer-nullish-coalescing': 'warn',
-      strict: ['error', 'never'],
+      '@typescript-eslint/no-redundant-type-constituents': 'warn',
       'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'off',
+      'react-hooks/exhaustive-deps': 'warn',
+      strict: ['error', 'never'],
     },
   },
 ]

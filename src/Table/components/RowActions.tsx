@@ -46,11 +46,7 @@ export const RowActions = <T extends object>({
                 {!('element' in action) && action.genericButton && (
                   <Button
                     {...action.genericButton}
-                    handleClick={(e) => {
-                      void (async () => {
-                        await handleAction(e, action.onClick)
-                      })()
-                    }}
+                    handleClick={(e) => void handleAction(e, action.onClick)}
                   >
                     {action.genericButton.children}
                   </Button>
@@ -65,21 +61,15 @@ export const RowActions = <T extends object>({
                     >
                       <IconStrict
                         {...action.iconButton}
-                        handleClick={(e) => {
-                          void (async () => {
-                            await handleAction(e, action.onClick)
-                          })()
-                        }}
+                        handleClick={(e) =>
+                          void handleAction(e, action.onClick)
+                        }
                       />
                     </Tooltip>
                   ) : (
                     <IconStrict
                       {...action.iconButton}
-                      handleClick={(e) => {
-                        void (async () => {
-                          await handleAction(e, action.onClick)
-                        })()
-                      }}
+                      handleClick={(e) => void handleAction(e, action.onClick)}
                     />
                   ))}
               </Wrapper>
