@@ -18,7 +18,12 @@ export const InteractivePlayground: FC = () => {
   }
 
   return (
-    <Button primary icon="info" handleClick={handleClick} loading={isLoading}>
+    <Button
+      primary
+      icon="info"
+      handleClick={void handleClick}
+      loading={isLoading}
+    >
       Get started
     </Button>
   )

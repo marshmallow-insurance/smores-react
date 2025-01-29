@@ -14,18 +14,18 @@ export default meta
 type Story = StoryObj<typeof Badge>
 
 export const Primary: Story = {
-    args: {
-        borderColour: "lollipop",
-        size: BadgeSize.Lg,
-        src: getExampleImg().src
-    },
+  args: {
+    borderColour: 'lollipop',
+    size: BadgeSize.Lg,
+    src: getExampleImg().src,
+  },
 }
 
 export const Disabled: Story = {
-    args: {
-        borderColour: "lollipop",
-        size: BadgeSize.Lg,
-        src: getExampleImg().src,
-        disabled: true
-    },
+  args: {
+    borderColour: 'lollipop',
+    size: BadgeSize.Lg,
+    src: getExampleImg().src,
+    disabled: true,
+  },
 }

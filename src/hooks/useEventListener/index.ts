@@ -7,13 +7,13 @@ export const useEventListener = ({
   ref,
   capture = false,
 }: {
-  eventName: keyof HTMLElementEventMap | string
+  eventName: keyof HTMLElementEventMap
   callback: GenericEventCallback
   ref: RefObject<HTMLElement | Document | null>
   capture?: boolean
 }): void => {
   useEffect(() => {
-    const refElement = ref && ref.current
+    const refElement = ref?.current
     if (!refElement) return
     const listenerOptions = { capture }
 

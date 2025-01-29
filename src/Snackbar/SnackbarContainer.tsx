@@ -1,11 +1,11 @@
 import React, {
   createContext,
   FC,
-  useState,
-  useCallback,
   ReactNode,
+  useCallback,
   useContext,
   useRef,
+  useState,
 } from 'react'
 import styled from 'styled-components'
 import { SnackbarItem } from './SnackbarItem'
@@ -28,7 +28,7 @@ export const SnackbarContainer: FC<{ children?: ReactNode }> = ({
   // create snackbar unique ID
   const newSnackId = useCallback(() => {
     const newId = `MM_SNACKBAR_${snackbarIdRef.current}`
-    snackbarIdRef.current =+ 1
+    snackbarIdRef.current = +1
     return newId
   }, [])
 

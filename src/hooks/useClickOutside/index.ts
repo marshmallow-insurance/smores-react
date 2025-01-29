@@ -11,7 +11,7 @@ export const useOnClickOutside = ({
 }) => {
   const onClickOutsideListener = useCallback(
     (event: MouseEvent) => {
-      if (!ref || !ref.current || ref.current.contains(event.target as Node)) {
+      if (!ref?.current || ref?.current?.contains(event.target as Node)) {
         return
       }
 

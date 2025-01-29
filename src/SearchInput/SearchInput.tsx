@@ -23,10 +23,6 @@ import { SearchOptions } from './components/SearchOptions'
 export type SearchInputItem = {
   label: string
   value: string
-  // Wanted to refactor this component to allow for a generic here
-  // but would take far too long since this is using forwardRef which
-  // complicates things a fair bit
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tags?: any[]
 }
 
@@ -281,7 +277,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
                   render="plus"
                   rotate={45}
                   iconColor="marzipan"
-                  title='Clear search'
+                  title="Clear search"
                   handleClick={handleClearSearch}
                   size={24}
                 />
@@ -310,9 +306,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               positionRelative={resultsRelativePosition}
               resultsBorder={resultsBorder}
               onNotFound={onNotFound}
-              notFoundComponent={
-                notFoundComponent && notFoundComponent(searchQuery ?? '')
-              }
+              notFoundComponent={notFoundComponent?.(searchQuery ?? '')}
             />
           )}
         </Field>

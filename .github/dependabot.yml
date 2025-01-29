@@ -44,9 +44,6 @@ updates:
         update-types:
           - "minor"
           - "patch"
-      babel-dependencies:
-        patterns:
-          - "@babel/*"
         update-types:
           - "minor"
           - "patch"

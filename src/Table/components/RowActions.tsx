@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import { Box } from '../../Box'
 import { Button } from '../../Button'
 import { IconStrict } from '../../IconStrict'
+import { Tooltip } from '../../Tooltip'
 import { focusOutlineStyle } from '../../utils/focusOutline'
 import { isReactElement } from '../../utils/isReactElement'
 import { RowActionsProps } from '../types'
 import { StyledCell } from './commonComponents'
-import { Tooltip } from '../../Tooltip'
 
 export const RowActions = <T extends object>({
   rowData,
@@ -30,59 +30,54 @@ export const RowActions = <T extends object>({
       $rowActionsBgColor={rowActions?.bgColor}
     >
       <Box flex alignItems="center" justifyContent="flex-end">
-        {rowActions &&
-          rowActions.actions?.map((action, actionIndex) => {
-            if (!action.showCondition || action.showCondition(rowData)) {
-              return (
-                <Wrapper flex key={actionIndex}>
-                  {'element' in action &&
-                    isReactElement(action.element) &&
-                    React.cloneElement(action.element, {
-                      onClick: async (e: MouseEvent) => {
-                        await handleAction(e, action.onClick)
-                      },
-                      tabIndex: 0,
-                      className: 'reactElementRowAction',
-                    })}
-                  {!('element' in action) && action.genericButton && (
-                    <Button
-                      {...action.genericButton}
-                      handleClick={async (e) => {
-                        await handleAction(e, action.onClick)
-                      }}
+        {rowActions?.actions?.map((action, actionIndex) => {
+          if (!action.showCondition || action.showCondition(rowData)) {
+            return (
+              <Wrapper flex key={actionIndex}>
+                {'element' in action &&
+                  isReactElement(action.element) &&
+                  React.cloneElement(action.element, {
+                    onClick: async (e: MouseEvent) => {
+                      await handleAction(e, action.onClick)
+                    },
+                    tabIndex: 0,
+                    className: 'reactElementRowAction',
+                  })}
+                {!('element' in action) && action.genericButton && (
+                  <Button
+                    {...action.genericButton}
+                    handleClick={(e) => void handleAction(e, action.onClick)}
+                  >
+                    {action.genericButton.children}
+                  </Button>
+                )}
+                {!('element' in action) &&
+                  action.iconButton &&
+                  (action.iconButton?.tooltipText ? (
+                    <Tooltip
+                      content={action.iconButton.tooltipText}
+                      position={'bottom'}
+                      variant="bubblegum"
                     >
-                      {action.genericButton.children}
-                    </Button>
-                  )}
-                  {!('element' in action) &&
-                    action.iconButton &&
-                    (action.iconButton?.tooltipText ? (
-                      <Tooltip
-                        content={action.iconButton.tooltipText}
-                        position={'bottom'}
-                        variant="bubblegum"
-                      >
-                        <IconStrict
-                          {...action.iconButton}
-                          handleClick={async (e) => {
-                            await handleAction(e, action.onClick)
-                          }}
-                        />
-                      </Tooltip>
-                    ) : (
                       <IconStrict
                         {...action.iconButton}
-                        handleClick={async (e) => {
-                          await handleAction(e, action.onClick)
-                        }}
+                        handleClick={(e) =>
+                          void handleAction(e, action.onClick)
+                        }
                       />
-                    ))}
-                </Wrapper>
-              )
-            }
-            return null
-          })}
-        {expandable && expandable(rowData) && (
+                    </Tooltip>
+                  ) : (
+                    <IconStrict
+                      {...action.iconButton}
+                      handleClick={(e) => void handleAction(e, action.onClick)}
+                    />
+                  ))}
+              </Wrapper>
+            )
+          }
+          return null
+        })}
+        {expandable?.(rowData) && (
           <CaretIcon
             render="caret"
             handleClick={(e) => {

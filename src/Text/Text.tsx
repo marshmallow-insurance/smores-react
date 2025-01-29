@@ -51,12 +51,10 @@ export type Typo =
 
 type Props = {
   children: ReactNode
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tag?: any
   className?: string
   // Record<never, never> matches any non-null and non-undefined type so
   // IntelliSense can suggest Typo to autocomplete
-  // eslint-disable-next-line @typescript-eslint/ban-types
   typo?: Typo | (string & Record<never, never>)
   align?: string
   color?: Color
