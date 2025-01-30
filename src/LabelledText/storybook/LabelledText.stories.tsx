@@ -7,7 +7,7 @@ const meta: Meta<typeof LabelledText> = {
   component: LabelledText,
   decorators: [
     (Story) => (
-      <div style={{ padding: '20px' }}>
+      <div style={{ margin: '64px' }}>
         <Story />
       </div>
     ),

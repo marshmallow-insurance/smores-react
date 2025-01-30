@@ -1,27 +1,77 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import { Tag, TagProps } from '../Tag'
-import { CollectionPage } from './Collection'
+import { Box } from '../../Box'
+import { Color, theme } from '../../theme'
+import { Tag } from '../Tag'
 
-export default {
+const meta: Meta<typeof Tag> = {
   title: 'Tag',
   component: Tag,
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '64px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
-const Template = (props: TagProps) => <Tag {...props} />
+export default meta
 
-export const Default = Template.bind({})
+type Story = StoryObj<typeof Tag>
 
-Default.args = {
-  label: 'This is a tag',
-  bgColor: 'feijoa',
-  borderColor: 'feijoa',
-  color: 'cream',
+export const Default: Story = {
+  args: {
+    bgColor: 'feijoa',
+    color: 'cream',
+    label: 'Example',
+  },
+  render: (args) => <Tag {...args} />,
 }
 
-Default.argTypes = {
-  theme: { table: { disable: true } },
-  as: { table: { disable: true } },
-  forwardedAs: { table: { disable: true } },
-}
+export const Colors: Story = {
+  render: (args) => {
+    const darkCol = [
+      'boba',
+      'liquorice',
+      'sesame',
+      'spearmint',
+      'feijoa',
+      'blueberry',
+      'pistachio',
+      'caramel',
+      'marzipan',
+      'strawberry',
+      'apple',
+      'compareTheMarket',
+      'confused',
+      'onfido',
+      'x',
+      'premfina',
+      'checkout',
+      'meta',
+      'stripe',
+      'intercom',
+      'ravelin',
+      'rac',
+      'hometree',
+    ]
 
-export const Collection = CollectionPage.bind({})
+    const map = Object.keys(theme.colors).map((col) => {
+      return (
+        <Tag
+          {...args}
+          label={col}
+          bgColor={col as Color}
+          color={darkCol.includes(col) ? 'cream' : 'liquorice'}
+        />
+      )
+    })
+
+    return (
+      <Box flex direction="column" gap={{ custom: '4px' }} width="200px">
+        {map}
+      </Box>
+    )
+  },
+}

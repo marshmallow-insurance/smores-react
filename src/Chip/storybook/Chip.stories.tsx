@@ -8,7 +8,7 @@ const meta: Meta<typeof Chip> = {
   argTypes: { handleClick: { action: 'clicked' } },
   decorators: [
     (Story) => (
-      <div style={{ padding: '20px' }}>
+      <div style={{ margin: '64px' }}>
         <Story />
       </div>
     ),

@@ -86,7 +86,7 @@ export const SupportMessage: FC<SupportMessageProps> = ({
       onClick={onClick}
       {...marginProps}
     >
-      <IconWrapper>
+      <IconWrapper alignItems="center">
         <Icon
           size={20}
           render={styles[type].icon}

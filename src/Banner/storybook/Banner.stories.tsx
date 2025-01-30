@@ -1,137 +1,161 @@
-import React, { FC, ReactNode } from 'react'
-import styled from 'styled-components'
-import { Box } from '../../Box'
+import { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 import { Button } from '../../Button'
-import { Text } from '../../Text'
 import { BannerContainer } from '../BannerContainer'
 import { useBanner } from '../hooks'
 
-export default {
+const meta: Meta<typeof BannerContainer> = {
   title: 'BannerContainer',
   component: BannerContainer,
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '128px' }}>
+        <BannerContainer>
+          <Story />
+        </BannerContainer>
+      </div>
+    ),
+  ],
 }
 
-const ChildComponent: FC = () => {
-  const { addBanner } = useBanner()
+export default meta
 
-  return (
-    <Box>
-      <Row label="Generic">
-        <Button
-          primary
-          onClick={() => {
-            addBanner({
-              type: 'general',
-              topOffset: '64px',
-              leadingIcon: 'wellbeing',
-              message: 'Free insurance for 1 month for all our customers',
-              exploreAction: () => undefined,
-              showExploreText: true,
-              canManuallyClose: true,
-            })
-          }}
-        >
-          General banner
-        </Button>
-      </Row>
-      <Row label="Upsell">
-        <Button
-          primary
-          onClick={() => {
-            addBanner({
-              type: 'upsell',
-              topOffset: '64px',
-              leadingIcon: 'circle-tick',
-              message: 'Get up to £19.34 off your plan today',
-              exploreAction: () => undefined,
-              showExploreIcon: true,
-            })
-          }}
-        >
-          Upsell banner
-        </Button>
-      </Row>
-      <Row label="Success">
-        <Button
-          primary
-          onClick={() => {
-            addBanner({
-              type: 'success',
-              topOffset: '64px',
-              leadingIcon: 'circle-tick',
-              message: 'Marshmallow Miles discount applied',
-            })
-          }}
-        >
-          Success banner
-        </Button>
-      </Row>
-      <Row label="Critical">
-        <Button
-          primary
-          onClick={() => {
-            addBanner({
-              type: 'critical',
-              topOffset: '64px',
-              leadingIcon: 'card',
-              message: 'Your card needs to be updated',
-              canManuallyClose: true,
-            })
-          }}
-        >
-          Critical banner
-        </Button>
-      </Row>
-      <Row label="Success (do not auto close)">
-        <Button
-          primary
-          onClick={() => {
-            addBanner({
-              type: 'success',
-              topOffset: '64px',
-              leadingIcon: 'circle-tick',
-              message: 'Marshmallow Miles discount applied (no timeout)',
-              noTimeout: true,
-            })
-          }}
-        >
-          Success banner (no timeout)
-        </Button>
-      </Row>
-    </Box>
-  )
-}
-const Template: FC = () => {
-  return (
-    <>
-      <BannerContainer>
-        <ChildComponent />
-      </BannerContainer>
-    </>
-  )
+type Story = StoryObj<typeof BannerContainer>
+
+export const Default: Story = {
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { addBanner } = useBanner()
+    return (
+      <Button
+        primary
+        onClick={() => {
+          addBanner({
+            type: 'general',
+            topOffset: '0px',
+            message: 'Free insurance for 1 month for all our customers',
+          })
+        }}
+      >
+        General banner
+      </Button>
+    )
+  },
 }
 
-export const Default = Template.bind({})
-
-const Row: FC<{ label: string; children?: ReactNode }> = ({
-  label,
-  children,
-}) => {
-  return (
-    <RowWrapper mt="16px">
-      <Box width="140px">
-        <Text tag="span" typo="label-large">
-          {label}
-        </Text>
-      </Box>
-      {children}
-    </RowWrapper>
-  )
+export const General: Story = {
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { addBanner } = useBanner()
+    return (
+      <Button
+        primary
+        onClick={() => {
+          addBanner({
+            type: 'general',
+            topOffset: '0px',
+            leadingIcon: 'wellbeing',
+            message: 'Free insurance for 1 month for all our customers',
+            exploreAction: () => undefined,
+            showExploreText: true,
+            canManuallyClose: true,
+          })
+        }}
+      >
+        General banner
+      </Button>
+    )
+  },
 }
 
-const RowWrapper = styled(Box)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 16px;
-`
+export const Upsell: Story = {
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { addBanner } = useBanner()
+    return (
+      <Button
+        primary
+        onClick={() => {
+          addBanner({
+            type: 'upsell',
+            topOffset: '0px',
+            leadingIcon: 'circle-tick',
+            message: 'Get up to £19.34 off your plan today',
+            exploreAction: () => undefined,
+            showExploreIcon: true,
+          })
+        }}
+      >
+        Upsell banner
+      </Button>
+    )
+  },
+}
+
+export const Success: Story = {
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { addBanner } = useBanner()
+    return (
+      <Button
+        primary
+        onClick={() => {
+          addBanner({
+            type: 'success',
+            topOffset: '0px',
+            leadingIcon: 'circle-tick',
+            message: 'Marshmallow Miles discount applied',
+          })
+        }}
+      >
+        Success banner
+      </Button>
+    )
+  },
+}
+
+export const Critical: Story = {
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { addBanner } = useBanner()
+    return (
+      <Button
+        primary
+        onClick={() => {
+          addBanner({
+            type: 'critical',
+            topOffset: '0px',
+            leadingIcon: 'card',
+            message: 'Your card needs to be updated',
+            canManuallyClose: true,
+          })
+        }}
+      >
+        Critical banner
+      </Button>
+    )
+  },
+}
+
+export const NoTimeout: Story = {
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { addBanner } = useBanner()
+    return (
+      <Button
+        primary
+        onClick={() => {
+          addBanner({
+            type: 'success',
+            topOffset: '0px',
+            leadingIcon: 'circle-tick',
+            message: 'Marshmallow Miles discount applied (no timeout)',
+            noTimeout: true,
+          })
+        }}
+      >
+        Success banner (no timeout)
+      </Button>
+    )
+  },
+}

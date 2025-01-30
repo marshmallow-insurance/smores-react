@@ -7,7 +7,7 @@ const meta: Meta<typeof Divider> = {
   component: Divider,
   decorators: [
     (Story) => (
-      <div style={{ padding: '20px' }}>
+      <div style={{ margin: '64px' }}>
         <Story />
       </div>
     ),

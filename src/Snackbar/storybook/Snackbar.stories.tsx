@@ -9,7 +9,7 @@ const meta: Meta<typeof SnackbarContainer> = {
   component: SnackbarContainer,
   decorators: [
     (Story) => (
-      <div style={{ padding: '20px' }}>
+      <div style={{ margin: '64px' }}>
         <Story />
       </div>
     ),

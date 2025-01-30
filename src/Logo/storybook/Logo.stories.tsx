@@ -1,39 +1,56 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import { Logo, LogoProps } from '../Logo'
-import { CollectionPage } from './Collection'
+import { theme } from '../../theme'
+import { Logo } from '../Logo'
 
-export default {
+const meta: Meta<typeof Logo> = {
   title: 'Logo',
   component: Logo,
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '64px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
-const Template = (props: LogoProps) => <Logo {...props} />
+export default meta
 
-export const Default = Template.bind({})
+type Story = StoryObj<typeof Logo>
 
-export const ColorScheme1 = Template.bind({})
-
-ColorScheme1.args = {
-  type: 'positive1',
+export const Default: Story = {
+  args: {},
 }
 
-export const ColorScheme2 = Template.bind({})
-
-ColorScheme2.args = {
-  type: 'positive1',
+export const ColorScheme1: Story = {
+  args: {
+    type: 'positive1',
+  },
 }
 
-export const ColorScheme3 = Template.bind({})
-
-ColorScheme3.args = {
-  type: 'positive2',
+export const ColorScheme2: Story = {
+  args: {
+    type: 'positive2',
+  },
 }
 
-export const NoText = Template.bind({})
-
-NoText.args = {
-  type: 'positive1',
-  showText: false,
+export const ColorScheme3: Story = {
+  args: {
+    type: 'negative1',
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ background: theme.colors.custard }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
-export const Collection = CollectionPage.bind({})
+export const NoText: Story = {
+  args: {
+    type: 'positive1',
+    showText: false,
+  },
+}
