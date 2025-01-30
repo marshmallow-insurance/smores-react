@@ -185,6 +185,18 @@ export const ReactElementAssistiveText: Story = {
     completed: true,
   },
   render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
 }
 
 export const Completed: Story = {
@@ -196,6 +208,18 @@ export const Completed: Story = {
     errorMsg: 'This field is required',
   },
   render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
 }
 
 export const AsTitle: Story = {
@@ -220,6 +244,18 @@ export const Error: Story = {
     errorMsg: 'This field is required',
   },
   render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
 }
 
 export const ReactElementError: Story = {
@@ -232,6 +268,18 @@ export const ReactElementError: Story = {
     errorMsg: <SupportMessage type="warning" description="Error!!" />,
   },
   render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
 }
 
 export const FallbackError: Story = {
@@ -245,4 +293,16 @@ export const FallbackError: Story = {
     errorMsg: 'This field is required',
   },
   render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
 }

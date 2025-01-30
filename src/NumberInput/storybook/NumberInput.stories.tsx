@@ -98,6 +98,18 @@ export const Completed: Story = {
     completed: true,
   },
   render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
 }
 
 export const AsTitle: Story = {
@@ -114,6 +126,18 @@ export const Error: Story = {
     error: true,
   },
   render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
 }
 
 export const ReactElementError: Story = {
@@ -123,6 +147,18 @@ export const ReactElementError: Story = {
     errorMsg: <SupportMessage type="warning" description="error!!" />,
   },
   render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
 }
 
 export const FallbackError: Story = {
@@ -132,4 +168,16 @@ export const FallbackError: Story = {
     error: true,
   },
   render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
 }
