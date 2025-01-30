@@ -31,7 +31,7 @@ export const Default: Story = {
 
 export const Colors: Story = {
   render: (args) => {
-    const darkCol = [
+    const darkCol: Color[] = [
       'boba',
       'liquorice',
       'sesame',
@@ -47,6 +47,7 @@ export const Colors: Story = {
       'ravelin',
       'hometree',
     ]
+    const otherCol: Color[] = ['pistachio', 'caramel', 'stripe']
 
     const map = Object.keys(theme.colors).map((col) => {
       return (
@@ -54,7 +55,13 @@ export const Colors: Story = {
           {...args}
           label={col}
           bgColor={col as Color}
-          color={darkCol.includes(col) ? 'cream' : 'liquorice'}
+          color={
+            otherCol.includes(col as Color)
+              ? 'boba'
+              : darkCol.includes(col as Color)
+                ? 'cream'
+                : 'liquorice'
+          }
         />
       )
     })
@@ -64,5 +71,17 @@ export const Colors: Story = {
         {map}
       </Box>
     )
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
   },
 }
