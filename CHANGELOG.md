@@ -1,3 +1,13 @@
+## [10.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v10.6.3...v10.7.0) (2025-01-30)
+
+### Features
+
+* upgrading eslint to v9 and removing unneeded deps ([#4216](https://github.com/marshmallow-insurance/smores-react/issues/4216)) ([a10fb58](https://github.com/marshmallow-insurance/smores-react/commit/a10fb58fe22900328a4dd9db6cbb0c6ed173de31))
+
+### Bug Fixes
+
+* semantic-release config as esmodule ([#4217](https://github.com/marshmallow-insurance/smores-react/issues/4217)) ([77fe90f](https://github.com/marshmallow-insurance/smores-react/commit/77fe90f600a568460a917003b2425709bda4567a))
+
 ## [10.6.3](https://github.com/marshmallow-insurance/smores-react/compare/v10.6.2...v10.6.3) (2025-01-10)
 
 ### Bug Fixes
