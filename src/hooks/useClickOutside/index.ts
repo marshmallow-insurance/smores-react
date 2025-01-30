@@ -1,5 +1,5 @@
 import { RefObject, useCallback, useRef } from 'react'
-import { GenericEventCallback } from '../../types'
+import { GeneralEvent, GenericEventCallback } from '../../types'
 import { useEventListener } from '../useEventListener'
 
 export const useOnClickOutside = ({
@@ -10,7 +10,7 @@ export const useOnClickOutside = ({
   callback: GenericEventCallback
 }) => {
   const onClickOutsideListener = useCallback(
-    (event: MouseEvent) => {
+    (event: GeneralEvent) => {
       if (!ref?.current || ref?.current?.contains(event.target as Node)) {
         return
       }

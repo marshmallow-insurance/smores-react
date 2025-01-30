@@ -1,74 +1,87 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-
 import { Placeholder } from '../../components/Placeholder'
 import { Fieldset, FieldsetProps } from '../Fieldset'
 
-export default {
+const meta: Meta<FieldsetProps> = {
   title: 'Fieldset',
   component: Fieldset,
 }
 
-const defaultArgs: FieldsetProps = {
-  label: 'Fieldset label',
-  assistiveText: 'Some assistive text to help the user',
-  renderAsTitle: true,
-  required: false,
+export default meta
+type Story = StoryObj<FieldsetProps>
+
+const Template: Story = {
+  render: (args) => (
+    <Fieldset {...args}>
+      <Placeholder />
+    </Fieldset>
+  ),
 }
 
-const Template = (props: FieldsetProps) => (
-  <Fieldset {...props}>
-    <Placeholder />
-  </Fieldset>
-)
-
-export const Default = Template.bind({})
-
-Default.args = defaultArgs
-
-export const WithError = Template.bind({})
-
-WithError.args = {
-  ...defaultArgs,
-  error: true,
-  errorMsg: 'This is an error message describing what is wrong',
+export const Default: Story = {
+  ...Template,
+  args: {
+    label: 'Fieldset label',
+    assistiveText: 'Some assistive text to help the user',
+    renderAsTitle: true,
+    required: false,
+  },
 }
-WithError.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
+
+export const WithError: Story = {
+  ...Template,
+  args: {
+    label: 'Fieldset label',
+    assistiveText: 'Some assistive text to help the user',
+    renderAsTitle: true,
+    required: false,
+    error: true,
+    errorMsg: 'This is an error message describing what is wrong',
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
     },
   },
 }
 
-export const WithSmallLabel = Template.bind({})
-
-WithSmallLabel.args = {
-  ...defaultArgs,
-  renderAsTitle: false,
+export const WithSmallLabel: Story = {
+  ...Template,
+  args: {
+    label: 'Fieldset label',
+    assistiveText: 'Some assistive text to help the user',
+    renderAsTitle: false,
+    required: false,
+  },
 }
 
-export const WithCompletedStatus = Template.bind({})
-
-WithCompletedStatus.args = {
-  ...defaultArgs,
-  completed: true,
-}
-WithCompletedStatus.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
+export const WithCompletedStatus: Story = {
+  ...Template,
+  args: {
+    label: 'Fieldset label',
+    assistiveText: 'Some assistive text to help the user',
+    renderAsTitle: true,
+    required: false,
+    completed: true,
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
     },
   },
 }
