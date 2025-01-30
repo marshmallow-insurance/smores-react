@@ -1,76 +1,169 @@
+import { useArgs } from '@storybook/preview-api'
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
+import { SupportMessage } from '../../SupportMessage'
 import { Dropdown, DropdownProps } from '../Dropdown'
-import { CollectionPage } from './Collection'
 
 const days = [
-  {
-    label: 'Monday',
-    value: 'MONDAY',
-  },
-  {
-    label: 'Tuesday',
-    value: 'TUESDAY',
-  },
-  {
-    label: 'Wednesday',
-    value: 'WEDNESDAY',
-  },
-  {
-    label: 'Thursday',
-    value: 'THURSDAY',
-  },
-  {
-    label: 'Friday',
-    value: 'FRIDAY',
-  },
-  {
-    label: 'Saturday',
-    value: 'SATURDAY',
-  },
-  {
-    label: 'Sunday',
-    value: 'SUNDAY',
-  },
+  { label: 'Monday', value: 'MONDAY' },
+  { label: 'Tuesday', value: 'TUESDAY' },
+  { label: 'Wednesday', value: 'WEDNESDAY' },
+  { label: 'Thursday', value: 'THURSDAY' },
+  { label: 'Friday', value: 'FRIDAY' },
+  { label: 'Saturday', value: 'SATURDAY' },
+  { label: 'Sunday', value: 'SUNDAY' },
 ]
 
-export default {
+const meta: Meta<DropdownProps> = {
   title: 'Dropdown',
   component: Dropdown,
-  argTypes: { onSelect: { action: 'selected' } },
-}
-
-const Template = (props: DropdownProps) => <Dropdown {...props} />
-
-export const Default = Template.bind({})
-
-Default.args = {
-  id: 'days',
-  list: days,
-  label: 'Days dropdown',
-  placeholder: 'Placeholder',
-}
-
-export const DefaultFallback = Template.bind({})
-
-DefaultFallback.args = {
-  id: 'days',
-  list: days,
-  label: 'Days dropdown',
-  fallbackStyle: true,
-  placeholder: 'Placeholder',
-}
-
-export const Collection = CollectionPage.bind({})
-Collection.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
-    },
+  args: {
+    list: days,
+    label: 'Days of the Week',
+    placeholder: 'Select a day',
   },
+}
+
+export default meta
+type Story = StoryObj<DropdownProps>
+
+const InteractiveTemplate: React.FC<DropdownProps> = (args) => {
+  const [{ value }, updateArgs] = useArgs<DropdownProps>()
+
+  const handleChange = (e: string) => {
+    updateArgs({ value: e })
+    args?.onSelect?.(e)
+  }
+
+  return <Dropdown {...args} value={value} onSelect={handleChange} />
+}
+
+export const Default: Story = {
+  args: {
+    id: 'days-default',
+  },
+  render: InteractiveTemplate,
+}
+
+export const DefaultFallback: Story = {
+  args: {
+    id: 'days-fallback',
+
+    fallbackStyle: true,
+  },
+  render: InteractiveTemplate,
+}
+
+export const Disabled: Story = {
+  args: {
+    id: 'days-disabled',
+
+    disabled: true,
+  },
+  render: InteractiveTemplate,
+}
+export const DisabledFallback: Story = {
+  args: {
+    id: 'days-disabled-fallback',
+
+    disabled: true,
+    fallbackStyle: true,
+  },
+  render: InteractiveTemplate,
+}
+
+export const NoPlaceholder: Story = {
+  args: {
+    id: 'days-no-placeholder',
+    label: 'Days of the Week',
+  },
+  render: InteractiveTemplate,
+}
+
+export const ShowDefaultOption: Story = {
+  args: {
+    id: 'days-show-default-option',
+    showDefaultOption: true,
+  },
+  render: InteractiveTemplate,
+}
+
+export const ShowDefaultOptionWithCustomLabel: Story = {
+  args: {
+    id: 'days-show-default-custom-label',
+    showDefaultOption: true,
+    customDefaultOption: 'Select a specific day',
+  },
+  render: InteractiveTemplate,
+}
+
+export const LeadingIcon: Story = {
+  args: {
+    id: 'days-leading-icon',
+    frontIcon: 'iphone',
+    fallbackStyle: true,
+  },
+  render: InteractiveTemplate,
+}
+
+export const Required: Story = {
+  args: {
+    id: 'days-required',
+    required: true,
+  },
+  render: InteractiveTemplate,
+}
+
+export const AssistiveText: Story = {
+  args: {
+    id: 'days-assistive-text',
+    assistiveText: 'Please select a day from the dropdown',
+  },
+  render: InteractiveTemplate,
+}
+
+export const Completed: Story = {
+  args: {
+    id: 'days-completed',
+    completed: true,
+  },
+  render: InteractiveTemplate,
+}
+
+export const AsTitle: Story = {
+  args: {
+    id: 'days-as-title',
+    renderAsTitle: true,
+  },
+  render: InteractiveTemplate,
+}
+
+export const Error: Story = {
+  args: {
+    id: 'days-error',
+    error: true,
+    errorMsg: 'This field is required',
+  },
+  render: InteractiveTemplate,
+}
+
+export const FallbackError: Story = {
+  args: {
+    id: 'days-fallback-error',
+    fallbackStyle: true,
+    error: true,
+    errorMsg: 'This field is required',
+  },
+  render: InteractiveTemplate,
+}
+
+export const ReactElementError: Story = {
+  args: {
+    id: 'days-react-element-error',
+    error: true,
+    errorMsg: (
+      <SupportMessage type="warning" description="Error selecting a day!" />
+    ),
+  },
+  render: InteractiveTemplate,
 }

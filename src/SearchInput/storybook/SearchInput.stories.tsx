@@ -36,8 +36,6 @@ const meta: Meta<typeof SearchInput> = {
 
 export default meta
 
-export const ShowIcon: Story = { args: { showIcon: true } }
-
 export const OnNotFoundFunction: Story = {
   args: {
     onNotFound: (searchTerm: string) =>
