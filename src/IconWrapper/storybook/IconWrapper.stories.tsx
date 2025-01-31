@@ -1,61 +1,97 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { Icon } from '../../Icon'
-import { IconWrapper, IconWrapperProps } from '../IconWrapper'
+import { IconWrapper } from '../IconWrapper'
 
-export default {
+const meta: Meta<typeof IconWrapper> = {
   title: 'IconWrapper',
   component: IconWrapper,
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '64px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
-const Template = (props: IconWrapperProps) => (
-  <IconWrapper {...props}>
-    <Icon render="wheel-flat" />
-  </IconWrapper>
-)
+export default meta
 
-export const Default = Template.bind({})
+type Story = StoryObj<typeof IconWrapper>
 
-Default.args = {
-  render: 'included',
-  size: 16,
-  t: '0',
-  r: '0',
-  b: '0',
-  l: '0',
+export const Default: Story = {
+  args: {
+    render: 'included',
+    size: 16,
+    t: '0',
+    r: '0',
+    b: '0',
+    l: '0',
+  },
+  render: (args) => (
+    <IconWrapper {...args}>
+      <Icon render="wheel-flat" />
+    </IconWrapper>
+  ),
 }
 
-export const Excluded = Template.bind({})
-
-Excluded.args = {
-  render: 'excluded',
-  l: '0',
-  t: '0',
+export const Excluded: Story = {
+  args: {
+    render: 'excluded',
+    l: '0',
+    t: '0',
+  },
+  render: (args) => (
+    <IconWrapper {...args}>
+      <Icon render="wheel-flat" />
+    </IconWrapper>
+  ),
 }
 
-export const BottomRight = Template.bind({})
-
-BottomRight.args = {
-  r: '0',
-  b: '0',
+export const BottomRight: Story = {
+  args: {
+    r: '0',
+    b: '0',
+  },
+  render: (args) => (
+    <IconWrapper {...args}>
+      <Icon render="wheel-flat" />
+    </IconWrapper>
+  ),
 }
 
-export const BottomLeft = Template.bind({})
-
-BottomLeft.args = {
-  l: '0',
-  b: '0',
+export const BottomLeft: Story = {
+  args: {
+    l: '0',
+    b: '0',
+  },
+  render: (args) => (
+    <IconWrapper {...args}>
+      <Icon render="wheel-flat" />
+    </IconWrapper>
+  ),
 }
 
-export const TopRight = Template.bind({})
-
-TopRight.args = {
-  r: '0',
-  t: '0',
+export const TopRight: Story = {
+  args: {
+    r: '0',
+    t: '0',
+  },
+  render: (args) => (
+    <IconWrapper {...args}>
+      <Icon render="wheel-flat" />
+    </IconWrapper>
+  ),
 }
 
-export const TopLeft = Template.bind({})
-
-TopLeft.args = {
-  l: '0',
-  t: '0',
+export const TopLeft: Story = {
+  args: {
+    l: '0',
+    t: '0',
+  },
+  render: (args) => (
+    <IconWrapper {...args}>
+      <Icon render="wheel-flat" />
+    </IconWrapper>
+  ),
 }

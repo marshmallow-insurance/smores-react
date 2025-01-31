@@ -29,7 +29,7 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
     value: Value
     bodyCopy?: string
   }>
-  onChange: (value: Value) => void
+  onChange: (value: BaseValueType) => void
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   value: Value
   displayType?: DisplayType

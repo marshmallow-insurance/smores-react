@@ -3,8 +3,8 @@ import { RuleConfigSeverity } from '@commitlint/types'
 export default {
   parserPreset: 'conventional-changelog-conventionalcommits',
   rules: {
-    'type-case': [RuleConfigSeverity.Error, 'always', 'lower-case'] as const,
-    'type-empty': [RuleConfigSeverity.Error, 'never'] as const,
+    'type-case': [RuleConfigSeverity.Error, 'always', 'lower-case'],
+    'type-empty': [RuleConfigSeverity.Error, 'never'],
     'type-enum': [
       RuleConfigSeverity.Error,
       'always',

@@ -1,17 +1,26 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import { LabelledText, LabelledTextProps } from '../LabelledText'
+import { LabelledText } from '../LabelledText'
 
-export default {
+const meta: Meta<typeof LabelledText> = {
   title: 'LabelledText',
   component: LabelledText,
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '64px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
-const Template = (props: LabelledTextProps) => (
-  <LabelledText {...props}>Hideo Kojima</LabelledText>
-)
+export default meta
 
-export const Default = Template.bind({})
+type Story = StoryObj<typeof LabelledText>
 
-Default.args = {
-  label: 'Name',
+export const Default: Story = {
+  args: {
+    label: 'Name',
+  },
+  render: (args) => <LabelledText {...args}>Hideo Kojima</LabelledText>,
 }

@@ -1,39 +1,53 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-
 import { Icon } from '../../Icon'
 import { Text } from '../../Text'
 import { theme } from '../../theme'
-import { Box, BoxProps } from '../Box'
+import { Box } from '../Box'
 
-export default {
+const meta: Meta<typeof Box> = {
   title: 'Box',
   component: Box,
+  args: {
+    flex: true,
+    direction: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    m: '16px',
+    p: '16px',
+  },
+  argTypes: {
+    as: { table: { disable: true } },
+    forwardedAs: { table: { disable: true } },
+  },
 }
 
-const Template = (props: BoxProps) => (
-  <Box {...props}>
-    <Text>Some lovely content.</Text>
-  </Box>
-)
+export default meta
+type Story = StoryObj<typeof Box>
 
-export const Default = Template.bind({})
-
-Default.args = {
-  flex: true,
-  direction: 'row',
-  justifyContent: 'flex-start',
-  alignItems: 'flex-starts',
-  m: '16px',
-  p: '16px',
+export const Default: Story = {
+  render: (args) => (
+    <Box {...args}>
+      <Text>Some lovely content.</Text>
+    </Box>
+  ),
 }
 
-Default.argTypes = {
-  theme: { table: { disable: true } },
-  as: { table: { disable: true } },
-  forwardedAs: { table: { disable: true } },
+export const ResponsiveProps: Story = {
+  render: () => (
+    <Box
+      flex
+      direction={{ small: 'column', medium: 'row' }}
+      gap={{ small: '12px', medium: '16px' }}
+    >
+      <Card />
+      <Card />
+      <Card />
+    </Box>
+  ),
 }
 
-const Card = () => (
+const Card: React.FC = () => (
   <Box
     px={{ small: '12px', medium: '24px' }}
     pt={{ small: '8px', medium: '16px' }}
@@ -52,24 +66,8 @@ const Card = () => (
     </Box>
     <Text color="sesame">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industrys standard dummy text ever since the
+      Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s.
     </Text>
   </Box>
 )
-
-const ResponsiveTemplate = () => {
-  return (
-    <Box
-      flex
-      direction={{ small: 'column', medium: 'row' }}
-      gap={{ small: '12px', medium: '16px' }}
-    >
-      <Card />
-      <Card />
-      <Card />
-    </Box>
-  )
-}
-
-export const ResponsiveProps = ResponsiveTemplate.bind({})

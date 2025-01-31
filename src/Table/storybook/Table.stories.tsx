@@ -1,3 +1,4 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
@@ -7,119 +8,126 @@ import { TableRow } from '../components/TableRow'
 import { TableProps } from '../types'
 import { DataRow, columns, columnsV2, data, rowActions } from './storyUtils'
 
-export default {
-  title: 'Table',
-  component: Table,
-}
-
-const Template = (props: TableProps<DataRow>) => <Table {...props} />
-
-const TemplateWithWrapper = (props: TableProps<DataRow>) => (
-  <Wrapper height="400px" mb="64px">
-    <Table {...props} />
-  </Wrapper>
-)
-
 const Wrapper = styled(Box)`
   background: ${theme.colors.blueberry};
   overflow: scroll;
 `
 
-export const Default = Template.bind({})
-
-Default.args = {
-  rowPadding: '12px',
-  columns: columns.slice(0, 6),
-  data,
-  fixedHeader: true,
-}
-
-export const BasicTable = Template.bind({})
-
-BasicTable.args = {
-  rowPadding: '12px',
-  columns: columns.slice(0, 3),
-  data,
-}
-
-export const TrucateContent = Template.bind({})
-
-TrucateContent.args = {
-  rowPadding: '12px',
-  columns: columns,
-  data,
-}
-
-export const OverflowTable = TemplateWithWrapper.bind({})
-
-OverflowTable.args = {
-  rowPadding: '12px',
-  columns: columns,
-  data,
-}
-
-export const NoDataTable = TemplateWithWrapper.bind({})
-
-NoDataTable.args = {
-  rowPadding: '12px',
-  columns: columns.slice(0, 4),
-  data: [],
-}
-
 const BorderBox = styled(Box)`
   border: 1px dashed ${theme.colors.oatmeal};
 `
-export const CustomNoDataTable = TemplateWithWrapper.bind({})
 
-CustomNoDataTable.args = {
-  rowPadding: '0px',
-  columns: columns.slice(0, 5),
-  data: [],
-  noDataContent: (
-    <BorderBox flex justifyContent="center" my="24px" p="48px">
-      No data
-    </BorderBox>
+const meta: Meta<TableProps<DataRow>> = {
+  title: 'Table',
+  component: Table,
+}
+
+export default meta
+type Story = StoryObj<TableProps<DataRow>>
+
+const TemplateWithWrapper: Story = {
+  render: (args) => (
+    <Wrapper height="400px" mb="64px">
+      <Table {...args} />
+    </Wrapper>
   ),
 }
 
-export const StaticHeader = TemplateWithWrapper.bind({})
-
-StaticHeader.args = {
-  rowPadding: '12px',
-  columns: columns,
-  data,
-  fixedHeader: false,
+export const Default: Story = {
+  args: {
+    rowPadding: '12px',
+    columns: columns.slice(0, 6),
+    data,
+    fixedHeader: true,
+  },
 }
 
-export const ReallyLargeHeader = TemplateWithWrapper.bind({})
-
-ReallyLargeHeader.args = {
-  rowPadding: '12px',
-  headerHeight: '120px',
-  columns: columns,
-  data,
-  fixedHeader: false,
+export const BasicTable: Story = {
+  args: {
+    rowPadding: '12px',
+    columns: columns.slice(0, 3),
+    data,
+  },
 }
 
-export const RowPadding = Template.bind({})
-
-RowPadding.args = {
-  rowPadding: '0px',
-  columns: columns.slice(0, 4),
-  data,
+export const TrucateContent: Story = {
+  args: {
+    rowPadding: '12px',
+    columns: columns,
+    data,
+  },
 }
 
-export const SubRows = Template.bind({})
+export const OverflowTable: Story = {
+  ...TemplateWithWrapper,
+  args: {
+    rowPadding: '12px',
+    columns: columns,
+    data,
+  },
+}
 
-SubRows.args = {
-  rowPadding: '12px',
-  columns: columns.slice(0, 4),
-  data,
-  subRows: {
-    rows: (row: DataRow) => {
-      if (!row.subRowData) return
-      return row.subRowData.map((row, rowIndex) => {
-        return (
+export const NoDataTable: Story = {
+  ...TemplateWithWrapper,
+  args: {
+    rowPadding: '12px',
+    columns: columns.slice(0, 4),
+    data: [],
+  },
+}
+
+export const CustomNoDataTable: Story = {
+  ...TemplateWithWrapper,
+  args: {
+    rowPadding: '0px',
+    columns: columns.slice(0, 5),
+    data: [],
+    noDataContent: (
+      <BorderBox flex justifyContent="center" my="24px" p="48px">
+        No data
+      </BorderBox>
+    ),
+  },
+}
+
+export const StaticHeader: Story = {
+  ...TemplateWithWrapper,
+  args: {
+    rowPadding: '12px',
+    columns: columns,
+    data,
+    fixedHeader: false,
+  },
+}
+
+export const ReallyLargeHeader: Story = {
+  ...TemplateWithWrapper,
+  args: {
+    rowPadding: '12px',
+    headerHeight: '120px',
+    columns: columns,
+    data,
+    fixedHeader: false,
+  },
+}
+
+export const RowPadding: Story = {
+  args: {
+    rowPadding: '0px',
+    columns: columns.slice(0, 4),
+    data,
+  },
+}
+
+export const SubRows: Story = {
+  args: {
+    rowPadding: '12px',
+    columns: columns.slice(0, 4),
+    data,
+    subRows: {
+      rows: (row: DataRow) => {
+        if (!row.subRowData) return []
+        return row.subRowData.map((row, rowIndex) => (
           <TableRow
             key={rowIndex}
             rowIndex={rowIndex}
@@ -127,25 +135,23 @@ SubRows.args = {
             columns={columns.slice(0, 4)}
             rowColor="chia"
           />
-        )
-      })
+        ))
+      },
+      showOnExpand: () => false,
     },
-    showOnExpand: () => false,
   },
 }
 
-export const SubRowsShowOnExpand = Template.bind({})
-
-SubRowsShowOnExpand.args = {
-  rowPadding: '12px',
-  columns: columns.slice(0, 4),
-  data,
-  expandable: (row: DataRow) => !!row.subRowData,
-  subRows: {
-    rows: (row: DataRow) => {
-      if (!row.subRowData) return
-      return row.subRowData.map((row, rowIndex) => {
-        return (
+export const SubRowsShowOnExpand: Story = {
+  args: {
+    rowPadding: '12px',
+    columns: columns.slice(0, 4),
+    data,
+    expandable: (row: DataRow) => !!row.subRowData,
+    subRows: {
+      rows: (row: DataRow) => {
+        if (!row.subRowData) return []
+        return row.subRowData.map((row, rowIndex) => (
           <TableRow
             key={rowIndex}
             rowIndex={rowIndex}
@@ -153,24 +159,22 @@ SubRowsShowOnExpand.args = {
             columns={columns.slice(0, 4)}
             rowColor="chia"
           />
-        )
-      })
+        ))
+      },
+      showOnExpand: () => true,
     },
-    showOnExpand: () => true,
   },
 }
 
-export const SubTable = Template.bind({})
-
-SubTable.args = {
-  rowPadding: '12px',
-  columns: columns.slice(0, 4),
-  data,
-  stripedColor: 'cream',
-  expandable: () => true,
-  subTable: {
-    table: () => {
-      return (
+export const SubTable: Story = {
+  args: {
+    rowPadding: '12px',
+    columns: columns.slice(0, 4),
+    data,
+    stripedColor: 'cream',
+    expandable: () => true,
+    subTable: {
+      table: () => (
         <Table
           columns={columnsV2}
           data={data}
@@ -178,25 +182,23 @@ SubTable.args = {
           rowActions={{ actions: rowActions }}
           hideTableHeader
         />
-      )
+      ),
+      showOnExpand: () => true,
     },
-    showOnExpand: () => true,
   },
 }
 
-export const RowActions = Template.bind({})
-
-RowActions.args = {
-  rowPadding: '12px',
-  columns: columns.slice(0, 4),
-  data,
-  stripedColor: 'cream',
-  expandable: () => true,
-  clickableRow: (row: DataRow) =>
-    alert(`onClick from ${row.ability} is working`),
-  subTable: {
-    table: () => {
-      return (
+export const RowActions: Story = {
+  args: {
+    rowPadding: '12px',
+    columns: columns.slice(0, 4),
+    data,
+    stripedColor: 'cream',
+    expandable: () => true,
+    clickableRow: (row: DataRow) =>
+      alert(`onClick from ${row.ability} is working`),
+    subTable: {
+      table: () => (
         <Table
           columns={columnsV2}
           data={data}
@@ -205,22 +207,21 @@ RowActions.args = {
           fixedHeader={false}
           rowActions={{ actions: rowActions }}
         />
-      )
+      ),
+      showOnExpand: () => true,
     },
-    showOnExpand: () => true,
+    rowActions: { actions: rowActions, bgColor: 'matcha' },
   },
-  rowActions: { actions: rowActions, bgColor: 'matcha' },
 }
 
-export const EverythingTable = TemplateWithWrapper.bind({})
-
-EverythingTable.args = {
-  columns: columns,
-  data,
-  expandable: () => true,
-  subTable: {
-    table: () => {
-      return (
+export const EverythingTable: Story = {
+  ...TemplateWithWrapper,
+  args: {
+    columns: columns,
+    data,
+    expandable: () => true,
+    subTable: {
+      table: () => (
         <Table
           clickableRow={(row: DataRow) =>
             alert(`onClick from ${row.ability} is working`)
@@ -232,15 +233,13 @@ EverythingTable.args = {
           fixedHeader={false}
           rowActions={{ actions: rowActions }}
         />
-      )
+      ),
+      showOnExpand: () => true,
     },
-    showOnExpand: () => true,
-  },
-  subRows: {
-    rows: (row: DataRow) => {
-      if (!row.subRowData) return
-      return row.subRowData.map((row, rowIndex) => {
-        return (
+    subRows: {
+      rows: (row: DataRow) => {
+        if (!row.subRowData) return []
+        return row.subRowData.map((row, rowIndex) => (
           <TableRow
             key={rowIndex}
             rowIndex={rowIndex}
@@ -250,16 +249,16 @@ EverythingTable.args = {
             rowBorderColor="chia"
             rowActions={{ actions: rowActions }}
           />
-        )
-      })
+        ))
+      },
+      showOnExpand: () => false,
     },
-    showOnExpand: () => false,
+    rowColor: 'custard',
+    headerColor: 'mascarpone',
+    rowActions: {
+      actions: rowActions,
+      bgColor: 'custard',
+    },
+    rowPadding: '4px',
   },
-  rowColor: 'custard',
-  headerColor: 'mascarpone',
-  rowActions: {
-    actions: rowActions,
-    bgColor: 'custard',
-  },
-  rowPadding: '4px',
 }

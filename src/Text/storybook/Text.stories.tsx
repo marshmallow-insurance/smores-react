@@ -1,32 +1,16 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
-import { Text, TextProps, Typo } from '../Text'
+import { Text, Typo } from '../Text'
 import { fontStyleMapping } from '../fontMapping'
 
-export default {
-  title: 'Text',
-  component: Text,
-}
-
-const typos = Object.keys(fontStyleMapping)
-
-const deprecatedTypos = [
-  'header-large',
-  'header-medium',
-  'header-small',
-  'desc-heavy',
-  'desc-medium',
-  'desc-light',
-  'desc-small',
-  'base',
-  'base-small',
-  'base-xsmall',
-]
-
-const Template = (props: TextProps) => (
-  <Text {...props}>The quick brown fox jumps over the lazy dog</Text>
-)
+const Grid = styled(Box)`
+  display: grid;
+  grid-template-columns: 0.4fr 1.2fr 1fr;
+  margin-bottom: 24px;
+  gap: 10px;
+`
 
 const TypoCollection = ({
   typos,
@@ -68,38 +52,71 @@ const TypoCollection = ({
   )
 }
 
-const Grid = styled(Box)`
-  display: grid;
-  grid-template-columns: 0.4fr 1.2fr 1fr;
-  margin-bottom: 24px;
-  gap: 10px;
-`
-
-const TypographyTemplate = () => <TypoCollection typos={typos} />
-
-const DeprecatedTemplate = () => <TypoCollection typos={deprecatedTypos} />
-
-export const Default = Template.bind({})
-
-Default.args = {
-  tag: 'p',
+const meta: Meta<typeof Text> = {
+  title: 'Text',
+  component: Text,
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '64px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
-export const Label = Template.bind({})
+export default meta
 
-Label.args = {
-  tag: 'label',
-  typo: 'label',
-  color: 'liquorice',
+type Story = StoryObj<typeof Text>
+
+const typos = Object.keys(fontStyleMapping)
+
+const deprecatedTypos = [
+  'header-large',
+  'header-medium',
+  'header-small',
+  'desc-heavy',
+  'desc-medium',
+  'desc-light',
+  'desc-small',
+  'base',
+  'base-small',
+  'base-xsmall',
+]
+
+export const Default: Story = {
+  args: {
+    tag: 'p',
+  },
+  render: (args) => (
+    <Text {...args}>The quick brown fox jumps over the lazy dog</Text>
+  ),
 }
 
-export const WithTitle = Template.bind({})
-
-WithTitle.args = {
-  tag: 'p',
-  title: 'a11y title tooltip',
+export const Label: Story = {
+  args: {
+    tag: 'label',
+    typo: 'label',
+    color: 'liquorice',
+  },
+  render: (args) => (
+    <Text {...args}>The quick brown fox jumps over the lazy dog</Text>
+  ),
 }
 
-export const Collection = TypographyTemplate.bind({})
+export const WithTitle: Story = {
+  args: {
+    tag: 'p',
+    title: 'a11y title tooltip',
+  },
+  render: (args) => (
+    <Text {...args}>The quick brown fox jumps over the lazy dog</Text>
+  ),
+}
 
-export const DeprecatedTypos = DeprecatedTemplate.bind({})
+export const Collection: Story = {
+  render: () => <TypoCollection typos={typos} />,
+}
+
+export const DeprecatedTypos: Story = {
+  render: () => <TypoCollection typos={deprecatedTypos} />,
+}

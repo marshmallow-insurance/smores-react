@@ -1,41 +1,55 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import { IconStrict, IconStrictProps } from '../IconStrict'
+import { IconStrict } from '../IconStrict'
 
-export default {
+const meta: Meta<typeof IconStrict> = {
   title: 'IconStrict',
   component: IconStrict,
+  argTypes: {
+    handleClick: { action: 'clicked' },
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '64px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
-const Template = (props: IconStrictProps) => <IconStrict {...props} />
+export default meta
 
-export const Default = Template.bind({})
+type Story = StoryObj<typeof IconStrict>
 
-Default.args = {
-  size: 48,
-  render: 'info',
-  backgroundColor: 'mascarpone',
+export const Default: Story = {
+  args: {
+    size: 48,
+    render: 'info',
+    backgroundColor: 'mascarpone',
+  },
 }
 
-export const AlternateColours = Template.bind({})
-
-AlternateColours.args = {
-  size: 48,
-  render: 'info',
-  iconColor: 'cream',
-  backgroundColor: 'marshmallowPink',
+export const AlternateColours: Story = {
+  args: {
+    size: 48,
+    render: 'info',
+    iconColor: 'cream',
+    backgroundColor: 'marshmallowPink',
+  },
 }
 
-export const WithoutBackground = Template.bind({})
-
-WithoutBackground.args = {
-  size: 48,
-  render: 'info',
+export const WithoutBackground: Story = {
+  args: {
+    size: 48,
+    render: 'info',
+  },
 }
 
-export const WithClickHandler = Template.bind({})
-WithClickHandler.args = {
-  size: 48,
-  render: 'info',
-  handleClick: () => alert('clicked'),
-  backgroundColor: 'mascarpone',
+export const WithClickHandler: Story = {
+  args: {
+    size: 48,
+    render: 'info',
+    handleClick: () => alert('clicked'),
+    backgroundColor: 'mascarpone',
+  },
 }

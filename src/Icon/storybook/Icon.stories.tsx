@@ -1,37 +1,53 @@
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
+import styled from 'styled-components'
+import { Box } from '../../Box'
+import { Text } from '../../Text'
 import { Icon, IconProps } from '../Icon'
-import { Container } from './Container'
+import { iconList, Icons } from '../iconsList'
 
-export default {
+const meta: Meta<IconProps> = {
   title: 'Icon',
   component: Icon,
 }
 
-const Template = (props: IconProps) => <Icon {...props} />
+export default meta
+type Story = StoryObj<IconProps>
 
-export const Default = Template.bind({})
-
-Default.args = {
-  render: 'info',
-  size: 32,
-  color: 'liquorice',
-  rotate: '0',
-  mt: '8px',
-  mr: '8px',
-  mb: '8px',
-  ml: '8px',
+export const Default: Story = {
+  args: {
+    render: 'info',
+    size: 32,
+    color: 'liquorice',
+  },
 }
 
-const CollectionTemplate = () => <Container />
+export const Colors: Story = {
+  render: (args) => {
+    const map = Object.keys(iconList).map((icon) => {
+      return (
+        <Box
+          key={icon}
+          flex
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Icon {...args} render={icon as Icons} />
+          <Text typo="label" mt="12px">
+            {icon}
+          </Text>
+        </Box>
+      )
+    })
 
-export const Collection = CollectionTemplate.bind({})
-
-Collection.args = {
-  size: 24,
-  color: 'liquorice',
-  rotate: '0',
-  mt: '8px',
-  mr: '8px',
-  mb: '8px',
-  ml: '8px',
+    return <Wrapper>{map}</Wrapper>
+  },
 }
+
+const Wrapper = styled(Box)`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 32px;
+`

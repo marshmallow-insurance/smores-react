@@ -1,54 +1,183 @@
+import { useArgs } from '@storybook/preview-api'
+import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import { noop } from '../../utils/noop'
+import { SupportMessage } from '../../SupportMessage'
 import { NumberInput, NumberInputProps } from '../NumberInput'
-import { CollectionPage } from './Collection'
-import { Container } from './Container'
 
-export default {
-  title: 'Number Input',
+const meta: Meta<typeof NumberInput> = {
+  title: 'NumberInput',
   component: NumberInput,
-  argTypes: { onChange: { action: 'changed' } },
+  args: {
+    id: 'number-input',
+    label: 'Total Amount',
+    name: 'totalAmount',
+  },
 }
 
-const Template = (props: NumberInputProps) => <NumberInput {...props} />
+const InteractiveTemplate: React.FC<NumberInputProps> = (args) => {
+  const [{ value }, updateArgs] = useArgs<NumberInputProps>()
 
-export const Default = Template.bind({})
+  const handleChange = (e: string | number) => {
+    updateArgs({ value: String(e) })
+    args?.onChange?.(e)
+  }
 
-Default.args = {
-  id: 'total_amount',
-  label: 'Total Amount',
-  name: 'totalAmount',
-  placeholder: '0',
-  onChange: noop,
+  return <NumberInput {...args} value={value} onChange={handleChange} />
 }
 
-export const DefaultFallback = Template.bind({})
+export default meta
 
-DefaultFallback.args = {
-  id: 'telephone',
-  label: 'Telephone number',
-  name: 'telephoneNumber',
-  placeholder: '7123 456789',
-  required: true,
-  onChange: noop,
-  fallbackStyle: true,
+type Story = StoryObj<typeof NumberInput>
+
+export const Default: Story = {
+  args: {
+    id: 'number-input',
+    label: 'Total Amount',
+    name: 'totalAmount',
+  },
+  render: InteractiveTemplate,
 }
 
-export const Collection = CollectionPage.bind({})
-Collection.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //disabling these until we sync with design on this
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
+export const DefaultFallback: Story = {
+  args: {
+    id: 'telephone-number-input',
+    label: 'Telephone number',
+    name: 'telephoneNumber',
+    required: true,
+    fallbackStyle: true,
+  },
+  render: InteractiveTemplate,
+}
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+  render: InteractiveTemplate,
+}
+
+export const Required: Story = {
+  args: {
+    required: true,
+  },
+  render: InteractiveTemplate,
+}
+
+export const LeadingIcon: Story = {
+  args: {
+    frontIcon: 'iphone',
+  },
+  render: InteractiveTemplate,
+}
+
+export const TrailingIcon: Story = {
+  args: {
+    trailingIcon: 'iphone',
+  },
+  render: InteractiveTemplate,
+}
+
+export const Step: Story = {
+  args: {
+    step: 10,
+    min: 0,
+    max: 200,
+  },
+  render: InteractiveTemplate,
+}
+
+export const AssistiveText: Story = {
+  args: {
+    assistiveText: 'Some assistive text',
+  },
+  render: InteractiveTemplate,
+}
+
+export const Completed: Story = {
+  args: {
+    completed: true,
+  },
+  render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
     },
   },
 }
 
-const WorkingExampleTemplate = () => <Container />
+export const AsTitle: Story = {
+  args: {
+    renderAsTitle: true,
+  },
+  render: InteractiveTemplate,
+}
 
-export const WorkingExample = WorkingExampleTemplate.bind({})
+export const Error: Story = {
+  args: {
+    required: true,
+    assistiveText: 'Some assistive text',
+    error: true,
+  },
+  render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
+}
+
+export const ReactElementError: Story = {
+  args: {
+    required: true,
+    error: true,
+    errorMsg: <SupportMessage type="warning" description="error!!" />,
+  },
+  render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
+}
+
+export const FallbackError: Story = {
+  args: {
+    required: true,
+    fallbackStyle: true,
+    error: true,
+  },
+  render: InteractiveTemplate,
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
+}

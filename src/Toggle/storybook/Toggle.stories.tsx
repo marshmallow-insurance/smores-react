@@ -18,10 +18,13 @@ const Render = (args: Props) => {
 const meta: Meta<typeof Toggle> = {
   title: 'Toggle',
   component: Toggle,
-  args: {
-    checked: true,
-  },
-  render: Render,
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '64px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export default meta
@@ -43,11 +46,11 @@ export const Primary: Story = {
 }
 
 export const Disabled: Story = {
-  render: Render,
   args: {
     checked: false,
     disabled: true,
   },
+  render: Render,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const checkbox = canvas.getByRole('checkbox', { name: 'toggle' })
