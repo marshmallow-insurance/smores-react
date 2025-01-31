@@ -9,6 +9,8 @@ export default {
       RuleConfigSeverity.Error,
       'always',
       [
+        'breaking change',
+        'breaking-change',
         'feat',
         'fix',
         'docs',
