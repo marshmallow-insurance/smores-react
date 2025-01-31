@@ -4,7 +4,7 @@ import { Box } from '../../Box'
 import { Accordion } from '../Accordion'
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Accordian',
+  title: 'Accordion',
   component: Accordion,
   args: {
     title: 'How it works',
