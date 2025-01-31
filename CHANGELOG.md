@@ -1,3 +1,11 @@
+## [10.7.1](https://github.com/marshmallow-insurance/smores-react/compare/v10.7.0...v10.7.1) (2025-01-31)
+
+### ⚠ BREAKING CHANGES
+
+* deletes BrandCard and Emoji components
+
+* adding strict mode to tsconfig ([#4218](https://github.com/marshmallow-insurance/smores-react/issues/4218)) ([01487b8](https://github.com/marshmallow-insurance/smores-react/commit/01487b867cee7d26cce8b7e39f9d7e13c04d669a))
+
 ## [10.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v10.6.3...v10.7.0) (2025-01-30)
 
 ### Features
