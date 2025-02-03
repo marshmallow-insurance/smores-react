@@ -89,7 +89,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
               label={option.label}
               value={option.value}
               checked={isSelected}
-              //@ts-expect-error TODO: refine this type
+              //@ts-expect-error TODO: address this type inconsistency in another PR
               onChange={onChange}
               onBlur={onBlur}
               displayType={displayType}
