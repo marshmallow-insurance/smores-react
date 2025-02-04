@@ -20,6 +20,7 @@ export default [
       '**/build',
       'prettier.config.js',
       'lint-staged.config.js',
+      'commitlint.config.js',
       'eslint.config.js',
       'release.config.js',
     ],
