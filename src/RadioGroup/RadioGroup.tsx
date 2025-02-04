@@ -29,7 +29,7 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
     value: Value
     bodyCopy?: string
   }>
-  onChange: (value: BaseValueType) => void
+  onChange: (value: Value) => void
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   value: Value
   displayType?: DisplayType
@@ -89,6 +89,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
               label={option.label}
               value={option.value}
               checked={isSelected}
+              // @ts-expect-error TODO: address this type inconsistency in another PR
               onChange={onChange}
               onBlur={onBlur}
               displayType={displayType}
