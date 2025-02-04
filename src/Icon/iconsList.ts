@@ -6,6 +6,7 @@ import AccountMlp from './iconFiles/AccountMlp'
 import ActivityClipboard from './iconFiles/ActivityClipboard'
 import AddOns from './iconFiles/AddOns'
 import AddressMta from './iconFiles/AddressMta'
+import Ai from './iconFiles/Ai'
 import AlbumAudio from './iconFiles/AlbumAudio'
 import Alert from './iconFiles/Alert'
 import AlertEngine from './iconFiles/AlertEngine'
@@ -142,6 +143,7 @@ import Other from './iconFiles/Other'
 import OutOfHome from './iconFiles/OutOfHome'
 import Padlock from './iconFiles/Padlock'
 import PadlockOutline from './iconFiles/PadlockOutline'
+import Paperclip from './iconFiles/Paperclip'
 import People from './iconFiles/People'
 import Person from './iconFiles/Person'
 import PhoneFilled from './iconFiles/PhoneFilled'
@@ -161,6 +163,7 @@ import PoundOutline from './iconFiles/PoundOutline'
 import PoundRegular from './iconFiles/PoundRegular'
 import Premfina from './iconFiles/Premfina'
 import Profile from './iconFiles/Profile'
+import { Progress } from './iconFiles/Progress'
 import Prohibited from './iconFiles/Prohibited'
 import Property from './iconFiles/Property'
 import QuestionHelp from './iconFiles/QuestionHelp'
@@ -172,6 +175,7 @@ import RegPlate from './iconFiles/RegPlate'
 import Renewal from './iconFiles/Renewal'
 import RenewalLine from './iconFiles/RenewalLine'
 import RepeatCharge from './iconFiles/RepeatCharge'
+import Reply from './iconFiles/Reply'
 import Return from './iconFiles/Return'
 import ScheduleQuote from './iconFiles/ScheduleQuote'
 import Search from './iconFiles/Search'
@@ -187,8 +191,8 @@ import Storm from './iconFiles/Storm'
 import Stripe from './iconFiles/Stripe'
 import Subsidence from './iconFiles/Subsidence'
 import Theft from './iconFiles/Theft'
-import ThumbsUp from './iconFiles/ThumbsUp'
 import ThumbsDown from './iconFiles/ThumbsDown'
+import ThumbsUp from './iconFiles/ThumbsUp'
 import Tick from './iconFiles/Tick'
 import TowTruck from './iconFiles/TowTruck'
 import TraceAndAccess from './iconFiles/TraceAndAccess'
@@ -211,10 +215,6 @@ import WheelFlat from './iconFiles/WheelFlat'
 import Windscreen from './iconFiles/Windscreen'
 import WindscreenRepair from './iconFiles/WindscreenRepair'
 import WindscreenReplacement from './iconFiles/WindscreenReplacement'
-import Paperclip from './iconFiles/Paperclip'
-import Reply from './iconFiles/Reply'
-import { Progress } from './iconFiles/Progress'
-import Ai from './iconFiles/Ai'
 
 export const iconList = {
   'aa-inverted': AaInverted,
@@ -234,6 +234,7 @@ export const iconList = {
   'car-repairs': CarRepairs,
   'car-replacement': CarReplacement,
   'car-usage': CarUsage,
+  'caret-up': CaretUp,
   'chat-bubble': ChatBubble,
   'checkout-with-text': CheckoutWithText,
   'circle-tick': CircleTick,
@@ -293,7 +294,6 @@ export const iconList = {
   'pound-outline': PoundOutline,
   'pound-regular': PoundRegular,
   'question-help': QuestionHelp,
-  reply: Reply,
   'refer-a-friend': ReferAFriend,
   'reg-plate': RegPlate,
   'renewal-line': RenewalLine,
@@ -301,13 +301,14 @@ export const iconList = {
   'schedule-quote': ScheduleQuote,
   'send-message': SendMessage,
   'shield-check': ShieldCheck,
-  'thumbs-up': ThumbsUp,
   'thumbs-down': ThumbsDown,
+  'thumbs-up': ThumbsUp,
   'tow-truck': TowTruck,
   'trace-and-access': TraceAndAccess,
   'up-down': UpDown,
   'upload-documents': UploadDocuments,
   'upload-email': UploadEmail,
+  'warning-circle': WarningCircle,
   'wheel-flat': WheelFlat,
   'windscreen-repair': WindscreenRepair,
   'windscreen-replacement': WindscreenReplacement,
@@ -326,15 +327,14 @@ export const iconList = {
   boost: Boost,
   breakdown: Breakdown,
   briefcase: Briefcase,
-  burger: Burger,
   bullets: Bullets,
+  burger: Burger,
   calendar: Calendar,
   camera: Camera,
   cancel: Cancel,
   car: Car,
   card: Card,
   caret: Caret,
-  'caret-up': CaretUp,
   charge: Charge,
   chat: Chat,
   checkout: Checkout,
@@ -402,13 +402,14 @@ export const iconList = {
   policy: Policy,
   premfina: Premfina,
   profile: Profile,
+  progress: Progress,
   prohibited: Prohibited,
   property: Property,
-  progress: Progress,
   rac: Rac,
   ravelin: Ravelin,
   refund: Refund,
   renewal: Renewal,
+  reply: Reply,
   return: Return,
   search: Search,
   security: Security,
@@ -430,7 +431,6 @@ export const iconList = {
   village: Village,
   visa: Visa,
   warning: Warning,
-  'warning-circle': WarningCircle,
   watch: Watch,
   wave: Wave,
   wellbeing: Wellbeing,
