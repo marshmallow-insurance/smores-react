@@ -1,3 +1,11 @@
+## [11.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v10.7.1...v11.0.0) (2025-02-04)
+
+### ⚠ BREAKING CHANGES
+
+* deleting BrandCard and Emoji components, also adjusting Package type to module
+
+* BREAKING CHANGE: deleting BrandCard and Emoji components, adjusting package type to esm ([#4230](https://github.com/marshmallow-insurance/smores-react/issues/4230)) ([83615dd](https://github.com/marshmallow-insurance/smores-react/commit/83615dd4058c1c36f33ad1e55c694084dd461c92))
+
 ## [10.7.1](https://github.com/marshmallow-insurance/smores-react/compare/v10.7.0...v10.7.1) (2025-01-31)
 
 ### ⚠ BREAKING CHANGES
