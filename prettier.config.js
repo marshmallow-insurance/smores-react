@@ -1,9 +1,2 @@
-const config = {
-  bracketSpacing: true,
-  proseWrap: 'always',
-  semi: false,
-  singleQuote: true,
-  trailingComma: 'all',
-}
-
+import config from '@mrshmllw/campfire/dist/configs/prettier.config.js'
 export default config
