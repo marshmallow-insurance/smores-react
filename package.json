@@ -5,7 +5,9 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "import": "./dist/index.js"
+    }
   },
   "description": "Collection of React components used by Marshmallow Technology",
   "type": "module",
