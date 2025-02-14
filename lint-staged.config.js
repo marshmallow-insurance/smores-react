@@ -1,4 +1,2 @@
-export default {
-  '*.+(js|ts|tsx)': ['eslint', 'vitest related --run'],
-  '**/*.+(js|json|ts|tsx)': ['prettier --write'],
-}
+import config from '@mrshmllw/campfire/dist/configs/lint-staged.config.js'
+export default config
