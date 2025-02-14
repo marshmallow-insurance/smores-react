@@ -6,7 +6,7 @@ import {
   getInvalidInputFields,
   getMissingFields,
   is17YearsOld,
-} from './dateOfBirthValidator.utils'
+} from './dateOfBirthValidatorUtils'
 import { FieldValidationError, InputValidationError } from './schema'
 
 import { DateObject } from '../../TextDateOfBirthInput'

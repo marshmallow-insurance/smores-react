@@ -2,7 +2,7 @@ import {
   createImpossibleFieldErrorMessage,
   createMissingFieldErrorMessage,
   createYoungerThan17ErrorMessage,
-} from './dateOfBirthValidator.utils'
+} from './dateOfBirthValidatorUtils'
 
 export enum InputValidationError {
   RealDateError = 'realDateError',

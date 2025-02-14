@@ -1,7 +1,7 @@
-import { dateOfBirthValidator } from './dateOfBirthValidator'
-import * as dateOfBirthValidatorHelpers from './dateOfBirthValidator.utils'
-import { FieldValidationError, InputValidationError } from './schema'
 import { vi } from 'vitest'
+import { dateOfBirthValidator } from './dateOfBirthValidator'
+import * as dateOfBirthValidatorHelpers from './dateOfBirthValidatorUtils'
+import { FieldValidationError, InputValidationError } from './schema'
 
 describe('dateOfBirthValidator', () => {
   afterEach(() => {

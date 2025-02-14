@@ -1,3 +1,5 @@
+import { DateObject } from 'TextDateOfBirthInput'
+import { vi } from 'vitest'
 import {
   getImpossibleFields,
   getInvalidInputFields,
@@ -6,9 +8,7 @@ import {
   is17YearsOld,
   isAllowedValue,
   validators,
-} from './dateOfBirthValidator.utils'
-import { DateObject } from 'TextDateOfBirthInput'
-import { vi } from 'vitest'
+} from './dateOfBirthValidatorUtils'
 
 describe('isAllowedValue', () => {
   test('accepts null', () => {
