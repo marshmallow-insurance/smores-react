@@ -2,17 +2,30 @@ import { darken } from 'polished'
 import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { fontStyleMapping } from '../../Text/fontMapping'
-import { theme } from '../../theme'
+import { theme, type Color } from '../../theme'
 import { focusOutlineStyle } from '../../utils/focusOutline'
-import { TableStylesProps } from '../types'
+import { TableStylesProps, type TableProps } from '../types'
 
-export const StyledTable = styled.table`
+type StyledTableProps = {
+  $roundedTable: TableProps<unknown>['roundedTable']
+}
+
+const isString = (value: unknown): value is string => typeof value === 'string'
+
+export const StyledTable = styled.table<StyledTableProps>`
   width: 100%;
   height: 100%;
   border-collapse: collapse;
   overflow: auto;
   background: ${theme.colors.coconut};
   border-spacing: 30px;
+
+  ${({ $roundedTable }) =>
+    $roundedTable &&
+    css`
+      border-radius: ${isString($roundedTable) ? $roundedTable : '16px'};
+      overflow: hidden;
+    `}
 `
 
 export const StyledHeaderCell = styled.th<TransientProps<TableStylesProps>>`
@@ -126,8 +139,9 @@ export const StyledCell = styled.td<TransientProps<TableStylesProps>>`
 export const StyledRow = styled.tr<TransientProps<TableStylesProps>>`
   background: ${theme.colors.custard};
 
-  ${({ $rowBorderColor }) =>
+  ${({ $rowBorderColor, $noRowBorderColor }) =>
     $rowBorderColor &&
+    !$noRowBorderColor &&
     css`
       border-bottom: 1px solid ${theme.colors[$rowBorderColor]};
     `}
@@ -158,4 +172,31 @@ export const StyledRow = styled.tr<TransientProps<TableStylesProps>>`
         background: ${darken(0.1, theme.colors[$rowColor ?? 'custard'])};
       }
     `}
+`
+
+type StyledSubTableCellProps = {
+  $bgColor?: Color
+  $padding?: string | undefined
+  $rowBorderColor?: Color
+}
+
+type StyledSubInnerCellProps = {
+  $padding?: string | undefined
+}
+
+export const StyledSubTableCell = styled.td<StyledSubTableCellProps>`
+  padding: ${({ $padding }) => $padding ?? '12px 0'};
+
+  ${({ $rowBorderColor }) =>
+    $rowBorderColor &&
+    css`
+      border-bottom: 1px solid ${theme.colors[$rowBorderColor]};
+    `}
+
+  ${({ $bgColor }) =>
+    $bgColor && `background-color: ${theme.colors[$bgColor]};`}
+`
+
+export const StyledSubInnerCell = styled.div<StyledSubInnerCellProps>`
+  padding: ${({ $padding }) => $padding ?? '12px 0'};
 `

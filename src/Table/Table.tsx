@@ -36,12 +36,13 @@ export const Table = <T extends object>({
   rowPadding,
   columnPadding,
   noDataContent,
+  roundedTable,
   hideTableHeader = false,
 }: TableProps<T>) => {
-  const showActionsCell = expandable || rowActions
+  const showActionsCell = expandable ?? rowActions
   const expandSubProp = showActionsCell ? columns.length + 1 : columns.length
   return (
-    <StyledTable>
+    <StyledTable $roundedTable={roundedTable}>
       {!hideTableHeader && (
         <thead>
           <TableHeader
@@ -65,11 +66,7 @@ export const Table = <T extends object>({
               $rowPadding={rowPadding}
               $columnPadding={columnPadding}
             >
-              {noDataContent ? (
-                noDataContent
-              ) : (
-                <Text align="center">No available data</Text>
-              )}
+              {noDataContent ?? <Text align="center">No available data</Text>}
             </StyledCell>
           </tr>
         )}
@@ -90,6 +87,7 @@ export const Table = <T extends object>({
               columnPadding={columnPadding}
               expandable={expandable}
               clickableRow={clickableRow}
+              hideBorder={Boolean(roundedTable) && rowIndex === data.length - 1}
             />
           ))}
       </tbody>

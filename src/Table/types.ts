@@ -21,6 +21,7 @@ export type TableStylesProps = {
   columnPadding?: string
   hideOverflow?: boolean
   clickableRow?: boolean
+  noRowBorderColor?: boolean
 }
 
 export type Primitive = string | number | boolean | bigint
@@ -80,6 +81,35 @@ export interface TableColumn<T> {
   cell?: RowCellRenderer<T>
 }
 
+/**
+ * A type that represents a pixel value with the "px" suffix.
+ *
+ * @example '0' | '12px' | '24px'
+ */
+type PixelSuffix = `${number}px`
+
+type Spacing = '0' | PixelSuffix
+/**
+ * A type that represents a padding value with the "px" suffix.
+ *
+ * The value can be a single value, or a string with 2, 3, or 4 values.
+ * The values are applied in the following order: top, right, bottom, left.
+ *
+ * @example '0' | '12px' | '24px' | '12px 24px' | '12px 0 36px' | '12px 24px 36px 48px'
+ */
+type BoxSpacing =
+  | Spacing
+  | `${Spacing} ${Spacing}`
+  | `${Spacing} ${Spacing} ${Spacing}`
+  | `${Spacing} ${Spacing} ${Spacing} ${Spacing}`
+
+type SubElementProps = {
+  bgColor?: Color
+  padding?: BoxSpacing
+  margin?: BoxSpacing
+}
+
+// TODO: make `subTable` and `subRows` mutually exclusive
 /** @template T - The type of data the table displays. */
 interface CommonTableProps<T> {
   /** Array of columns to display in the table. */
@@ -100,17 +130,16 @@ interface CommonTableProps<T> {
   rowColor?: Color
   /** The default color for each table row border. */
   rowBorderColor?: Color
+  /** If true, the table will have rounded corners */
+  roundedTable?: true
   /** A React element to show when a row is expanded. */
-  subTable?: {
+  subTable?: SubElementProps & {
     table: (rowData: T) => ReactElement<any>
-    showOnExpand?: (rowData: T) => boolean
   }
   /** Settings for sub rows. */
-  subRows?: {
+  subRows?: SubElementProps & {
     /** Function that returns a React element for the sub row. */
     rows: (rowData: T) => ReactElement<any> | ReactElement<any>[]
-    /** If true, the sub rows will only be shown when the row is expanded. */
-    showOnExpand?: (rowData: T) => boolean
   }
   /** Function to apply to a row, to make the entire row clickable, useful for navigation. */
   clickableRow?: (rowData: T) => void
@@ -135,6 +164,7 @@ export interface TableRowProps<T> extends CommonTableProps<T> {
   rowData: T
   rowIndex: number
   showActions?: boolean
+  hideBorder?: boolean
 }
 
 export interface RowActionsProps<T>
