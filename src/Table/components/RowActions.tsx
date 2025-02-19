@@ -85,9 +85,10 @@ export const RowActions = <T extends object>({
               e.stopPropagation()
               toggleExpansion()
             }}
-            size={36}
+            size={24}
             $isOpen={isExpanded}
-            backgroundColor="cream"
+            iconColor={isExpanded ? 'cream' : 'liquorice'}
+            backgroundColor={isExpanded ? 'liquorice' : 'oatmeal'}
           />
         )}
       </Box>
@@ -111,7 +112,7 @@ const Wrapper = styled(Box)`
 
 const CaretIcon = styled(IconStrict)<{ $isOpen?: boolean }>(
   ({ $isOpen }) => `
-    transform: ${$isOpen ? 'rotate(90deg)' : 'rotate(0deg)'};
+    transform: ${$isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
     transition: transform 0.3s ease;
   `,
 )
