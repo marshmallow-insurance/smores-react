@@ -12,9 +12,10 @@ import { StyledCell } from './commonComponents'
 export const RowActions = <T extends object>({
   rowData,
   rowActions,
-  expandable,
   isExpanded,
   toggleExpansion,
+  expandable,
+  canExpandRow,
 }: RowActionsProps<T>) => {
   const handleAction = async (
     e: MouseEvent | FormEvent<HTMLButtonElement>,
@@ -77,7 +78,7 @@ export const RowActions = <T extends object>({
           }
           return null
         })}
-        {expandable?.(rowData) && (
+        {canExpandRow && (
           <CaretIcon
             render="caret"
             handleClick={(e) => {

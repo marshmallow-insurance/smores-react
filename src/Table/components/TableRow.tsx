@@ -32,6 +32,11 @@ export const TableRow = <T extends object>({
     )
   }
 
+  const canExpandRow =
+    expandable !== undefined
+      ? expandable?.(rowData)
+      : Boolean(subTable?.table ?? subRows?.rows)
+
   const subRowsData = subRows?.rows(rowData)
   const subTableData = subTable?.table(rowData)
 
@@ -78,7 +83,7 @@ export const TableRow = <T extends object>({
 
         {(showActionsCell ?? showActions) && (
           <RowActions
-            expandable={expandable}
+            canExpandRow={canExpandRow}
             rowActions={rowActions}
             rowData={rowData}
             isExpanded={isExpandedRow}
@@ -93,22 +98,20 @@ export const TableRow = <T extends object>({
        * this section is for expanded rows only
        * Items rendered here wont show unless expanded
        */}
+
       {isExpandedRow && (
         <>
-          {subRows &&
-            subRowsData &&
+          {subRowsData &&
             isReactElement(subRowsData) &&
             cloneElement(subRowsData, { rowPadding, columnPadding })}
 
-          {subRows &&
-            subRowsData &&
-            isReactElement(subRowsData) &&
+          {subRowsData &&
             isMappedReactElement(subRowsData) &&
             subRowsData.map((row) =>
               cloneElement(row, { rowPadding, showActions: showActionsCell }),
             )}
 
-          {subTable && subTableData && (
+          {subTableData && (
             <StyledSubTableCell
               $rowBorderColor={rowBorderColor}
               colSpan={expandSubProp}

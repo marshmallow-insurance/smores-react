@@ -169,6 +169,7 @@ export interface TableRowProps<T> extends CommonTableProps<T> {
 export interface RowActionsProps<T>
   extends Pick<CommonTableProps<T>, 'expandable' | 'rowActions'> {
   rowData: T
+  canExpandRow: boolean
   toggleExpansion: () => void
   isExpanded?: boolean
 }
