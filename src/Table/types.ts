@@ -109,7 +109,6 @@ type SubElementProps = {
   margin?: BoxSpacing
 }
 
-// TODO: make `subTable` and `subRows` mutually exclusive
 /** @template T - The type of data the table displays. */
 interface CommonTableProps<T> {
   /** Array of columns to display in the table. */
