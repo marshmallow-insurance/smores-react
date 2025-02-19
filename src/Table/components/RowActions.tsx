@@ -12,9 +12,10 @@ import { StyledCell } from './commonComponents'
 export const RowActions = <T extends object>({
   rowData,
   rowActions,
-  expandable,
   isExpanded,
   toggleExpansion,
+  expandable,
+  canExpandRow,
 }: RowActionsProps<T>) => {
   const handleAction = async (
     e: MouseEvent | FormEvent<HTMLButtonElement>,
@@ -77,16 +78,17 @@ export const RowActions = <T extends object>({
           }
           return null
         })}
-        {expandable?.(rowData) && (
+        {canExpandRow && (
           <CaretIcon
             render="caret"
             handleClick={(e) => {
               e.stopPropagation()
               toggleExpansion()
             }}
-            size={36}
+            size={24}
             $isOpen={isExpanded}
-            backgroundColor="cream"
+            iconColor={isExpanded ? 'cream' : 'liquorice'}
+            backgroundColor={isExpanded ? 'liquorice' : 'oatmeal'}
           />
         )}
       </Box>
@@ -110,7 +112,7 @@ const Wrapper = styled(Box)`
 
 const CaretIcon = styled(IconStrict)<{ $isOpen?: boolean }>(
   ({ $isOpen }) => `
-    transform: ${$isOpen ? 'rotate(90deg)' : 'rotate(0deg)'};
+    transform: ${$isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
     transition: transform 0.3s ease;
   `,
 )

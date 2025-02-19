@@ -20,6 +20,13 @@ const BorderBox = styled(Box)`
 const meta: Meta<TableProps<DataRow>> = {
   title: 'Table',
   component: Table,
+  decorators: [
+    (Story) => (
+      <Box px="12px" m="24px" style={{ backgroundColor: theme.colors.custard }}>
+        <Story />
+      </Box>
+    ),
+  ],
 }
 
 export default meta
@@ -137,7 +144,6 @@ export const SubRows: Story = {
           />
         ))
       },
-      showOnExpand: () => false,
     },
   },
 }
@@ -161,7 +167,6 @@ export const SubRowsShowOnExpand: Story = {
           />
         ))
       },
-      showOnExpand: () => true,
     },
   },
 }
@@ -170,22 +175,25 @@ export const SubTable: Story = {
   args: {
     rowPadding: '12px',
     columns: columns.slice(0, 4),
+    headerColor: 'custard',
+    rowColor: 'custard',
     data,
-    stripedColor: 'cream',
     expandable: () => true,
     subTable: {
+      bgColor: 'custard',
       table: () => (
         <Table
           columns={columnsV2}
+          rowColor="mascarpone"
+          rowBorderColor="oatmeal"
           data={data}
-          rowColor="matcha"
           rowActions={{ actions: rowActions }}
+          roundedTable
           hideTableHeader
         />
       ),
-      showOnExpand: () => true,
     },
-  },
+  } satisfies TableProps<DataRow>,
 }
 
 export const RowActions: Story = {
@@ -208,7 +216,6 @@ export const RowActions: Story = {
           rowActions={{ actions: rowActions }}
         />
       ),
-      showOnExpand: () => true,
     },
     rowActions: { actions: rowActions, bgColor: 'matcha' },
   },
@@ -234,7 +241,6 @@ export const EverythingTable: Story = {
           rowActions={{ actions: rowActions }}
         />
       ),
-      showOnExpand: () => true,
     },
     subRows: {
       rows: (row: DataRow) => {
@@ -251,7 +257,6 @@ export const EverythingTable: Story = {
           />
         ))
       },
-      showOnExpand: () => false,
     },
     rowColor: 'custard',
     headerColor: 'mascarpone',
