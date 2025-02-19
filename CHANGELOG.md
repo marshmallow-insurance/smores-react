@@ -1,3 +1,9 @@
+## [11.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v11.0.0...v11.1.0) (2025-02-19)
+
+### Features
+
+* **Table:** Implement rounded subTables ([#4257](https://github.com/marshmallow-insurance/smores-react/issues/4257)) ([e45478f](https://github.com/marshmallow-insurance/smores-react/commit/e45478f62f36a93f9bc01d2e402d41db5581cdbf))
+
 ## [11.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v10.7.1...v11.0.0) (2025-02-04)
 
 ### ⚠ BREAKING CHANGES
