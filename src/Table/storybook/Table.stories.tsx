@@ -180,7 +180,6 @@ export const SubTable: Story = {
     data,
     expandable: () => true,
     subTable: {
-      margin: '12px 0',
       bgColor: 'custard',
       table: () => (
         <Table
