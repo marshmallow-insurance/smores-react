@@ -2,7 +2,8 @@ import React, { FC, forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
-import { Color } from '../theme'
+import { linkStyleOverride } from '../Link/Link'
+import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
 import { fontStyleMapping } from './fontMapping'
 
@@ -84,9 +85,14 @@ const isTypo = (value: string): value is Typo => {
 }
 
 const Container = styled(Box)<IText>(
-  ({ $typo }) => css`
+  ({ $align, $color, $cursor, $typo }) => css`
     /** TYPOGRAPHY STYLES */
 
     ${isTypo($typo) && fontStyleMapping[$typo]}
+
+    text-align: ${$align};
+    cursor: ${$cursor};
+    color: ${theme.colors[$color]};
+    ${linkStyleOverride({ color: theme.colors[$color] })}
   `,
 )
