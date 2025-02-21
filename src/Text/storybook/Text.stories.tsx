@@ -70,19 +70,6 @@ type Story = StoryObj<typeof Text>
 
 const typos = Object.keys(fontStyleMapping)
 
-const deprecatedTypos = [
-  'header-large',
-  'header-medium',
-  'header-small',
-  'desc-heavy',
-  'desc-medium',
-  'desc-light',
-  'desc-small',
-  'base',
-  'base-small',
-  'base-xsmall',
-]
-
 export const Default: Story = {
   args: {
     tag: 'p',
@@ -115,8 +102,4 @@ export const WithTitle: Story = {
 
 export const Collection: Story = {
   render: () => <TypoCollection typos={typos} />,
-}
-
-export const DeprecatedTypos: Story = {
-  render: () => <TypoCollection typos={deprecatedTypos} />,
 }
