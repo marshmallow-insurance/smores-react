@@ -44,16 +44,16 @@ type Story = StoryObj<typeof Tooltip>
 
 const tooltipContent = (
   <Box>
-    <Text typo="desc-light" color="liquorice">
+    <Text typo="body-regular" color="liquorice">
       20 Cherry Blossom Lane,
     </Text>
-    <Text typo="desc-light" color="liquorice">
+    <Text typo="body-regular" color="liquorice">
       Aintree,
     </Text>
-    <Text typo="desc-light" color="liquorice">
+    <Text typo="body-regular" color="liquorice">
       Manchester,
     </Text>
-    <Text typo="desc-light" color="liquorice">
+    <Text typo="body-regular" color="liquorice">
       T: 07123456789
     </Text>
   </Box>
@@ -63,7 +63,7 @@ export const LongTextExample: Story = {
   args: {
     title: 'Long text example',
     children: (
-      <Text typo="desc-light" color="liquorice">
+      <Text typo="body-regular" color="liquorice">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </Text>
@@ -76,16 +76,16 @@ export const ReactNodeExample: Story = {
   args: {
     children: (
       <Box>
-        <Text typo="desc-light" color="liquorice">
+        <Text typo="body-regular" color="liquorice">
           20 Cherry Blossom Lane,
         </Text>
-        <Text typo="desc-light" color="liquorice">
+        <Text typo="body-regular" color="liquorice">
           Aintree,
         </Text>
-        <Text typo="desc-light" color="liquorice">
+        <Text typo="body-regular" color="liquorice">
           Manchester,
         </Text>
-        <Text typo="desc-light" color="liquorice">
+        <Text typo="body-regular" color="liquorice">
           T: 07123456789
         </Text>
       </Box>

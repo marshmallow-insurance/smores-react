@@ -38,7 +38,7 @@ type Props = {
   className?: string
   // Record<never, never> matches any non-null and non-undefined type so
   // IntelliSense can suggest Typo to autocomplete
-  typo?: Typo | (string & Record<never, never>)
+  typo?: Typo
   align?: string
   color?: Color
   cursor?: string

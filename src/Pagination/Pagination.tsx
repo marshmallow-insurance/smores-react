@@ -107,7 +107,10 @@ export const Pagination: FC<PaginationProps> = ({
         </IconBox>
       )}
       <PageBox $active={activePage === 1} onClick={() => movePage(1)}>
-        <Text typo={activePage === 1 ? 'desc-medium' : 'desc-light'} tag="p">
+        <Text
+          typo={activePage === 1 ? 'headline-small' : 'body-regular'}
+          tag="p"
+        >
           1
         </Text>
       </PageBox>
@@ -129,7 +132,7 @@ export const Pagination: FC<PaginationProps> = ({
             }}
           >
             <Text
-              typo={activePage === i ? 'desc-medium' : 'desc-light'}
+              typo={activePage === i ? 'headline-small' : 'body-regular'}
               tag="p"
             >
               {i}
@@ -153,7 +156,7 @@ export const Pagination: FC<PaginationProps> = ({
           }}
         >
           <Text
-            typo={activePage === lastPage ? 'desc-medium' : 'desc-light'}
+            typo={activePage === lastPage ? 'headline-small' : 'body-regular'}
             tag="p"
           >
             {lastPage}
