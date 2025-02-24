@@ -57,10 +57,10 @@ const ColorCard = ({ colorName }: { colorName: Color }) => {
       <ColorBox $colorName={colorName} width="100%" pt={{ custom: '50%' }} />
       <Divider />
       <Box px="16px" py={{ custom: 4 }}>
-        <Text tag="span" typo="base">
+        <Text tag="span" typo="body-regular">
           {colorName}
         </Text>
-        <Text tag="span" typo="base-xsmall" color="sesame">
+        <Text tag="span" typo="caption" color="sesame">
           {hexValue}
         </Text>
       </Box>
@@ -78,7 +78,7 @@ const ColorSection = ({
   return (
     <Box width="100%">
       <Box mb="16px">
-        <Text tag="span" typo="header-small">
+        <Text tag="span" typo="headline-small">
           {title}
         </Text>
       </Box>

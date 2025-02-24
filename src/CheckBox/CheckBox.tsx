@@ -26,7 +26,7 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckBoxProps>(
         <BoxContainer id={id}>
           <Text
             tag="span"
-            typo="base"
+            typo="body-regular"
             color={error ? 'strawberry' : 'liquorice'}
           >
             {children}

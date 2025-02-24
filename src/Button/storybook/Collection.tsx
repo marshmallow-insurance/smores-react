@@ -69,7 +69,7 @@ const Section: FC<{ label: string; children?: ReactNode }> = ({
   return (
     <Box>
       <Box mb="16px">
-        <Text tag="span" typo="header-small">
+        <Text tag="span" typo="heading-small">
           {label}
         </Text>
       </Box>
@@ -91,7 +91,7 @@ const Row: FC<{ label: string; children?: ReactNode }> = ({
   return (
     <RowWrapper>
       <Box width="80px">
-        <Text tag="span" typo="label-large">
+        <Text tag="span" typo="label">
           {label}
         </Text>
       </Box>

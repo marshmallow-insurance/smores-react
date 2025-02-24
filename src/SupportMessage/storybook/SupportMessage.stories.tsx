@@ -86,26 +86,26 @@ const Group: FC<SupportMessageProps> = (args) => {
   return (
     <Box flex direction="column" mb="32px" gap="8px">
       <Box flex>
-        <Label tag="span" typo="header-small">
+        <Label tag="span" typo="heading-small">
           Default
         </Label>
         <SupportMessage {...args} title={undefined} />
       </Box>
       <Box flex>
-        <Label tag="span" typo="header-small">
+        <Label tag="span" typo="heading-small">
           Title
         </Label>
         <SupportMessage {...args} />
       </Box>
 
       <Box flex>
-        <Label tag="span" typo="header-small">
+        <Label tag="span" typo="heading-small">
           onClick
         </Label>
         <SupportMessage {...args} onClick={() => alert('Clicked!')} />
       </Box>
       <Box flex>
-        <Label tag="span" typo="header-small">
+        <Label tag="span" typo="heading-small">
           Right side component
         </Label>
         <SupportMessage
@@ -118,7 +118,7 @@ const Group: FC<SupportMessageProps> = (args) => {
         />
       </Box>
       <Box flex>
-        <Label tag="span" typo="header-small">
+        <Label tag="span" typo="heading-small">
           ReactNode description
         </Label>
         <SupportMessage

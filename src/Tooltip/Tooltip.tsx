@@ -1,12 +1,10 @@
-import React, { FC, ReactNode, useRef, useState } from 'react'
-import styled, { css } from 'styled-components'
-import { Box } from '../Box'
-import { Text } from '../Text'
-import { Color, theme } from '../theme'
 import {
+  arrow,
   autoUpdate,
   flip,
+  FloatingArrow,
   FloatingPortal,
+  inline,
   offset,
   shift,
   useDismiss,
@@ -15,11 +13,13 @@ import {
   useHover,
   useInteractions,
   useRole,
-  arrow,
-  FloatingArrow,
-  inline,
   type Side,
 } from '@floating-ui/react'
+import React, { FC, ReactNode, useRef, useState } from 'react'
+import styled, { css } from 'styled-components'
+import { Box } from '../Box'
+import { Text } from '../Text'
+import { Color, theme } from '../theme'
 
 export interface TooltipProps {
   children: ReactNode
@@ -143,12 +143,16 @@ export const Tooltip: FC<TooltipProps> = ({
               fill={theme.colors[variantValue.bgColor]}
             />
             {title && (
-              <Text tag="h5" typo="desc-medium" color={variantValue.textColor}>
+              <Text
+                tag="h5"
+                typo="headline-small"
+                color={variantValue.textColor}
+              >
                 {title}
               </Text>
             )}
             {(typeof content === 'string' && (
-              <Text typo="desc-light" color={variantValue.textColor}>
+              <Text typo="body-regular" color={variantValue.textColor}>
                 {content}
               </Text>
             )) ||
