@@ -1,3 +1,17 @@
+## [12.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v11.1.0...v12.0.0) (2025-02-24)
+
+### ⚠ BREAKING CHANGES
+
+* removes deprecated typos
+
+### Features
+
+* removes deprecated typos ([#4263](https://github.com/marshmallow-insurance/smores-react/issues/4263)) ([d38b7d8](https://github.com/marshmallow-insurance/smores-react/commit/d38b7d8e249018a5bb2e5f231fcc73730f00d967))
+
+### Bug Fixes
+
+* add breaking change config to semantic release ([#4268](https://github.com/marshmallow-insurance/smores-react/issues/4268)) ([989adf9](https://github.com/marshmallow-insurance/smores-react/commit/989adf9133a03bfaafbfc14e0966fac9d6f4b22d))
+
 ## [11.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v11.0.0...v11.1.0) (2025-02-19)
 
 ### Features
