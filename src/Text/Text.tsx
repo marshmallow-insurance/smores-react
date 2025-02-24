@@ -36,8 +36,6 @@ type Props = {
   children: ReactNode
   tag?: any
   className?: string
-  // Record<never, never> matches any non-null and non-undefined type so
-  // IntelliSense can suggest Typo to autocomplete
   typo?: Typo
   align?: string
   color?: Color
