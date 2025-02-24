@@ -96,7 +96,11 @@ export const BannerItem: FC<Props> = ({
             {showCloseIcon ? (
               <Icon render="cross" size={16} color={iconColor} />
             ) : (
-              <UnderlinedText tag="span" typo="heading-small" color={textColor}>
+              <UnderlinedText
+                tag="span"
+                typo="headline-small"
+                color={textColor}
+              >
                 Dismiss
               </UnderlinedText>
             )}
