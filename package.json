@@ -15,7 +15,8 @@
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "npm run clean && tsc --p ./tsconfig.build.json",
-    "build:css": "npm run clean && tsc --p ./css-gen/tsconfig.json",
+    "build:css": "npx babel src --out-dir css_dist --extensions \".ts,.tsx\" --ignore \"node_modules/**\"",
+    "generate:css": "node ./css_dist/compileComponents.js ",
     "build-storybook": "storybook build -c .storybook",
     "check-types": "tsc --noEmit",
     "lint": "eslint . --fix",
