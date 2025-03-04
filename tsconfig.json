@@ -3,6 +3,7 @@
     "outDir": "./dist",
     "module": "esnext",
     "target": "esnext",
+    "esModuleInterop": true,
     "lib": ["esnext", "dom", "dom.iterable"],
     "types": ["react", "node", "vitest/globals"],
     "sourceMap": true,
