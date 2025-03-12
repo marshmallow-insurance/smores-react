@@ -81,6 +81,7 @@ import FileCabinet from './iconFiles/FileCabinet'
 import Filter from './iconFiles/Filter'
 import Fire from './iconFiles/Fire'
 import Flag from './iconFiles/Flag'
+import FlagFilled from './iconFiles/FlagFilled'
 import Folder from './iconFiles/Folder'
 import FraudAlert from './iconFiles/FraudAlert'
 import FreezerFood from './iconFiles/FreezerFood'
@@ -360,6 +361,7 @@ export const iconList = {
   filter: Filter,
   fire: Fire,
   flag: Flag,
+  flagFilled: FlagFilled,
   folder: Folder,
   fuel: Fuel,
   globe: Globe,

@@ -1,3 +1,9 @@
+## [12.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.0.0...v12.1.0) (2025-03-12)
+
+### Features
+
+* **tag:** add optional icon to tag component  ([#4303](https://github.com/marshmallow-insurance/smores-react/issues/4303)) ([7c96871](https://github.com/marshmallow-insurance/smores-react/commit/7c96871b17ac25c5f60f7df337b840e0db3d06fe))
+
 ## [12.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v11.1.0...v12.0.0) (2025-02-24)
 
 ### ⚠ BREAKING CHANGES

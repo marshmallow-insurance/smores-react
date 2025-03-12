@@ -6,6 +6,8 @@ import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Text } from '../Text'
 import { Color, theme } from '../theme'
+import { Icon } from '../Icon'
+import { Icons } from 'Icon/iconsList'
 
 export type TagProps = {
   label: string
@@ -13,6 +15,8 @@ export type TagProps = {
   bgColor: Color
   borderColor?: Color
   className?: string
+  icon?: Icons
+  iconColor?: Color
 } & MarginProps
 
 export const Tag: FC<TagProps> = ({
@@ -21,6 +25,8 @@ export const Tag: FC<TagProps> = ({
   borderColor,
   bgColor,
   className,
+  icon,
+  iconColor,
   ...marginProps
 }) => (
   <Wrapper
@@ -31,6 +37,7 @@ export const Tag: FC<TagProps> = ({
     alignContent="center"
     justifyContent="center"
   >
+    {icon && <TagIcon render={icon} color={iconColor} size={16} />}
     <TagText tag="span" typo="label" color={color}>
       {label}
     </TagText>
@@ -60,4 +67,8 @@ const TagText = styled(Text)`
   font-weight: 500;
   line-height: 12px;
   text-transform: uppercase;
+`
+
+const TagIcon = styled(Icon)`
+  padding-right: 4px;
 `
