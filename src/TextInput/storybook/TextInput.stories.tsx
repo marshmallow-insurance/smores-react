@@ -12,7 +12,7 @@ const meta: Meta<TextInputProps> = {
 export default meta
 type Story = StoryObj<TextInputProps>
 
-const InteractiveTemplate: React.FC<TextInputProps> = (args) => {
+const InteractiveTemplate = (args: TextInputProps) => {
   const [{ value }, updateArgs] = useArgs<TextInputProps>()
 
   const handleChange = (e: string) => {
