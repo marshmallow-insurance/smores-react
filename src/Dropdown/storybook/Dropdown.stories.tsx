@@ -27,7 +27,7 @@ const meta: Meta<DropdownProps> = {
 export default meta
 type Story = StoryObj<DropdownProps>
 
-const InteractiveTemplate: React.FC<DropdownProps> = (args) => {
+const InteractiveTemplate = (args: DropdownProps) => {
   const [{ value }, updateArgs] = useArgs<DropdownProps>()
 
   const handleChange = (e: string) => {
