@@ -24,7 +24,9 @@ const meta: Meta<typeof CurrencyInput> = {
 
 export default meta
 
-const InteractiveTemplate = (args: CurrencyInputProps) => {
+const InteractiveTemplate: React.FC<CurrencyInputProps> = (
+  args: CurrencyInputProps,
+) => {
   const [{ value }, updateArgs] = useArgs<CurrencyInputProps>()
 
   const handleChange = (e: string) => {
