@@ -37,7 +37,14 @@ export const Tag: FC<TagProps> = ({
     alignContent="center"
     justifyContent="center"
   >
-    {icon && <TagIcon render={icon} color={iconColor} size={16} />}
+    {icon && (
+      <TagIcon
+        render={icon}
+        color={iconColor}
+        size={16}
+        data-testid={`tag-icon-${icon}`}
+      />
+    )}
     <TagText tag="span" typo="label" color={color}>
       {label}
     </TagText>
