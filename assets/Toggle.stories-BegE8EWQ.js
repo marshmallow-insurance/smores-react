@@ -1,0 +1,89 @@
+import{f,w as B,u as h,a as S,e as C}from"./index-DuopzoTV.js";import{R as m}from"./index-Dxs5m6lS.js";import{d as p,t as o,l as g}from"./theme-B8lnh0Zb.js";import{B as M}from"./index-BjDago2u.js";import{f as E}from"./focusOutline-eUcV9Z5o.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./space-B-76eNGj.js";function n(){var e="/home/runner/work/smores-react/smores-react/src/Toggle/Toggle.tsx",r="33195763150a1d9454e5d1d56c1d59d932c952d7",a=window,l="__coverage__",s={path:"/home/runner/work/smores-react/smores-react/src/Toggle/Toggle.tsx",statementMap:{0:{start:{line:6,column:22},end:{line:29,column:1}},1:{start:{line:13,column:2},end:{line:28,column:75}},2:{start:{line:22,column:8},end:{line:24,column:9}},3:{start:{line:23,column:10},end:{line:23,column:21}},4:{start:{line:30,column:15},end:{line:41,column:1}},5:{start:{line:42,column:15},end:{line:74,column:1}},6:{start:{line:67,column:23},end:{line:73,column:9}},7:{start:{line:75,column:17},end:{line:86,column:1}},8:{start:{line:87,column:0},end:{line:87,column:14193}}},fnMap:{0:{name:"(anonymous_0)",decl:{start:{line:6,column:22},end:{line:6,column:23}},loc:{start:{line:12,column:6},end:{line:29,column:1}},line:12},1:{name:"(anonymous_1)",decl:{start:{line:21,column:17},end:{line:21,column:18}},loc:{start:{line:21,column:24},end:{line:25,column:7}},line:21},2:{name:"(anonymous_2)",decl:{start:{line:67,column:4},end:{line:67,column:5}},loc:{start:{line:67,column:23},end:{line:73,column:9}},line:67}},branchMap:{0:{loc:{start:{line:22,column:8},end:{line:24,column:9}},type:"if",locations:[{start:{line:22,column:8},end:{line:24,column:9}},{start:{line:void 0,column:void 0},end:{line:void 0,column:void 0}}],line:22},1:{loc:{start:{line:67,column:23},end:{line:73,column:9}},type:"cond-expr",locations:[{start:{line:67,column:35},end:{line:69,column:9}},{start:{line:69,column:12},end:{line:73,column:9}}],line:67}},s:{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0},f:{0:0,1:0,2:0},b:{0:[0,0],1:[0,0]},inputSourceMap:{version:3,file:null,sources:["/home/runner/work/smores-react/smores-react/src/Toggle/Toggle.tsx"],names:[],mappings:"AAAA,OAAO,WAAmB;AAC1B,OAAO,UAAU,WAAW;AAE5B,SAAS,WAAW;AACpB,SAAS,aAAa;AACtB,SAAS,oBAAoB;AAatB,aAAM,SAAoB,CAAC;AAAA,EAChC;AAAA,EACA;AAAA,EACA;AAAA,EACA;AAAA,EACA,GAAG;AACL,MAAM;AACJ,SACE,oCAAC,UAAO,aAAY,SAAQ,SAAS,IAAK,GAAG,eAC3C;AAAA,IAAC;AAAA;AAAA,MACC;AAAA,MACA;AAAA,MACA,MAAK;AAAA,MACL;AAAA,MACA,UAAU;AAAA,MACV,WAAW,CAAC,MAAM;AAChB,YAAI,EAAE,QAAQ,SAAS;AACrB,mBAAS;AAAA,QACX;AAAA,MACF;AAAA,MACA,cAAW;AAAA;AAAA,EACb,GACA,oCAAC,UAAO,WAAW,UAAU,CAC/B;AAEJ;AAEA,MAAM,SAAS,OAAO,GAAG;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAazB,MAAM,SAAS,OAAO;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,sBAOA,MAAM,OAAO,OAAO;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,wBAalB,MAAM,OAAO,UAAU;AAAA;AAAA;AAAA;AAAA;AAAA,IAK3C,CAAC,EAAE,UAAU,MACb,YACI;AAAA;AAAA,YAGA;AAAA;AAAA,gCAEwB,MAAM,OAAO,QAAQ;AAAA;AAAA,SAE5C;AAAA;AAGT,MAAM,WAAW,OAAO;AAAA,IACpB,aAAa,EAAE,UAAU,qBAAqB,MAAM,GAAG,CAAC,CAAC;AAAA;AAAA,gBAE7C,MAAM;AAAA,wBACE,MAAM,OAAO,SAAS;AAAA;AAAA;AAAA;AAAA,gBAI9B,MAAM;AAAA;AAAA;AAAA;;"},_coverageSchema:"1a1c01bbd47fc00a2c39e90264f33305004495a9",hash:"33195763150a1d9454e5d1d56c1d59d932c952d7"},t=a[l]||(a[l]={});(!t[e]||t[e].hash!==r)&&(t[e]=s);var x=t[e];return n=function(){return x},x}n();n().s[0]++;const c=({id:e,checked:r,onToggle:a,disabled:l,...s})=>(n().f[0]++,n().s[1]++,m.createElement(R,{forwardedAs:"label",htmlFor:e,...s},m.createElement(V,{id:e,disabled:l,type:"checkbox",checked:r,onChange:a,onKeyDown:t=>{n().f[1]++,n().s[2]++,t.key==="Enter"?(n().b[0][0]++,n().s[3]++,a()):n().b[0][1]++},"aria-label":"toggle"}),m.createElement(u,{$disabled:l}))),R=(n().s[4]++,p(M)`
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 32px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+`),u=(n().s[5]++,p.span`
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: ${o.colors.oatmeal};
+  border: none;
+  border-radius: 28px;
+  transition: 0.2s background-color;
+  outline: none;
+
+  &:before {
+    position: absolute;
+    content: '';
+    height: 24px;
+    width: 24px;
+    left: 4px;
+    bottom: 4px;
+    background-color: ${o.colors.mascarpone};
+    transition: 0.2s transform;
+    border-radius: 50%;
+  }
+
+  ${({$disabled:e})=>(n().f[2]++,n().s[6]++,e?(n().b[1][0]++,g`
+          cursor: not-allowed;
+        `):(n().b[1][1]++,g`
+          &:hover {
+            background-color: ${o.colors.marzipan};
+          }
+        `))}
+`),V=(n().s[7]++,p.input`
+  ${E({selector:`&:focus-visible + ${u}`})}
+
+  &:checked + ${u} {
+    background-color: ${o.colors.pistachio};
+    border: none;
+  }
+
+  &:checked + ${u}:before {
+    transform: translateX(24px);
+  }
+`);n().s[8]++;c.__docgenInfo={description:"",methods:[],displayName:"Toggle",props:{id:{required:!1,tsType:{name:"string"},description:"unique ID"},checked:{required:!0,tsType:{name:"boolean"},description:"checked flag"},disabled:{required:!1,tsType:{name:"boolean"},description:""},onToggle:{required:!0,tsType:{name:"signature",type:"function",raw:"() => void",signature:{arguments:[],return:{name:"void"}}},description:"onToggle listener"},m:{required:!1,tsType:{name:"union",raw:"PropValue | PropByBreakpoint<PropValue>",elements:[{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]},{name:"Partial",elements:[{name:"Record",elements:[{name:"unknown"},{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]}],raw:"Record<Breakpoint, PropValue>"}],raw:"Partial<Record<Breakpoint, PropValue>>"}]},description:""},mx:{required:!1,tsType:{name:"union",raw:"PropValue | PropByBreakpoint<PropValue>",elements:[{name:"union",raw:"SpacingProp | 'auto'",elements:[{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]},{name:"literal",value:"'auto'"}]},{name:"Partial",elements:[{name:"Record",elements:[{name:"unknown"},{name:"union",raw:"SpacingProp | 'auto'",elements:[{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]},{name:"literal",value:"'auto'"}]}],raw:"Record<Breakpoint, PropValue>"}],raw:"Partial<Record<Breakpoint, PropValue>>"}]},description:""},my:{required:!1,tsType:{name:"union",raw:"PropValue | PropByBreakpoint<PropValue>",elements:[{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]},{name:"Partial",elements:[{name:"Record",elements:[{name:"unknown"},{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]}],raw:"Record<Breakpoint, PropValue>"}],raw:"Partial<Record<Breakpoint, PropValue>>"}]},description:""},ml:{required:!1,tsType:{name:"union",raw:"PropValue | PropByBreakpoint<PropValue>",elements:[{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]},{name:"Partial",elements:[{name:"Record",elements:[{name:"unknown"},{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]}],raw:"Record<Breakpoint, PropValue>"}],raw:"Partial<Record<Breakpoint, PropValue>>"}]},description:""},mr:{required:!1,tsType:{name:"union",raw:"PropValue | PropByBreakpoint<PropValue>",elements:[{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]},{name:"Partial",elements:[{name:"Record",elements:[{name:"unknown"},{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]}],raw:"Record<Breakpoint, PropValue>"}],raw:"Partial<Record<Breakpoint, PropValue>>"}]},description:""},mt:{required:!1,tsType:{name:"union",raw:"PropValue | PropByBreakpoint<PropValue>",elements:[{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]},{name:"Partial",elements:[{name:"Record",elements:[{name:"unknown"},{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]}],raw:"Record<Breakpoint, PropValue>"}],raw:"Partial<Record<Breakpoint, PropValue>>"}]},description:""},mb:{required:!1,tsType:{name:"union",raw:"PropValue | PropByBreakpoint<PropValue>",elements:[{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]},{name:"Partial",elements:[{name:"Record",elements:[{name:"unknown"},{name:"union",raw:"'0' | Spacing | { custom: number | string }",elements:[{name:"literal",value:"'0'"},{name:"union",raw:"'8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'",elements:[{name:"literal",value:"'8px'"},{name:"literal",value:"'12px'"},{name:"literal",value:"'16px'"},{name:"literal",value:"'24px'"},{name:"literal",value:"'32px'"},{name:"literal",value:"'48px'"},{name:"literal",value:"'64px'"}]},{name:"signature",type:"object",raw:"{ custom: number | string }",signature:{properties:[{key:"custom",value:{name:"union",raw:"number | string",elements:[{name:"number"},{name:"string"}],required:!0}}]}}]}],raw:"Record<Breakpoint, PropValue>"}],raw:"Partial<Record<Breakpoint, PropValue>>"}]},description:""}}};const{useArgs:q}=__STORYBOOK_MODULE_PREVIEW_API__,P=e=>{const[{checked:r},a]=q();function l(){e.onToggle(),a({checked:!r})}return m.createElement(c,{...e,onToggle:l,checked:r})},I={title:"Toggle",component:c,decorators:[e=>m.createElement("div",{style:{margin:"64px"}},m.createElement(e,null))]},i={args:{onToggle:f(),checked:!0},render:P,play:async({args:e,canvasElement:r})=>{const l=B(r).getByRole("checkbox",{name:"toggle"});await h.click(l),await S(()=>C(e.onToggle).toHaveBeenCalled())}},A={args:{checked:!1,disabled:!0},render:P,play:async({canvasElement:e})=>{const a=B(e).getByRole("checkbox",{name:"toggle"});await h.click(a),await C(a).toBeDisabled()}};var d,v,b;i.parameters={...i.parameters,docs:{...(d=i.parameters)==null?void 0:d.docs,source:{originalSource:`{
+  args: {
+    onToggle: fn(),
+    checked: true
+  },
+  render: Render,
+  play: async ({
+    args,
+    canvasElement
+  }) => {
+    const canvas = within(canvasElement);
+    const checkbox = canvas.getByRole('checkbox', {
+      name: 'toggle'
+    });
+    await userEvent.click(checkbox);
+    await waitFor(() => expect(args.onToggle).toHaveBeenCalled());
+  }
+}`,...(b=(v=i.parameters)==null?void 0:v.docs)==null?void 0:b.source}}};var w,k,y;A.parameters={...A.parameters,docs:{...(w=A.parameters)==null?void 0:w.docs,source:{originalSource:`{
+  args: {
+    checked: false,
+    disabled: true
+  },
+  render: Render,
+  play: async ({
+    canvasElement
+  }) => {
+    const canvas = within(canvasElement);
+    const checkbox = canvas.getByRole('checkbox', {
+      name: 'toggle'
+    });
+    await userEvent.click(checkbox);
+    await expect(checkbox).toBeDisabled();
+  }
+}`,...(y=(k=A.parameters)==null?void 0:k.docs)==null?void 0:y.source}}};const $=["Primary","Disabled"];export{A as Disabled,i as Primary,$ as __namedExportsOrder,I as default};
+//# sourceMappingURL=Toggle.stories-BegE8EWQ.js.map
