@@ -12,7 +12,7 @@ export default meta
 
 type Story = StoryObj<typeof Textarea>
 
-const InteractiveTemplate: React.FC<TextareaProps> = (args) => {
+const InteractiveTemplate = (args: TextareaProps) => {
   const [{ value }, updateArgs] = useArgs<TextareaProps>()
 
   const handleChange = (e: string) => {
