@@ -88,10 +88,10 @@ export const Colors: Story = {
 
 export const WithIcon: Story = {
   args: {
-    bgColor: 'checkout',
+    bgColor: 'feijoa',
     color: 'cream',
     label: 'I have an icon',
     icon: 'flagFilled',
-    iconColor: 'lemon',
+    iconColor: 'strawberry',
   },
 }
