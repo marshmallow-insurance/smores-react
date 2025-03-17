@@ -20,13 +20,13 @@ jobs:
           npm ci
           npm run build-storybook
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@6c2d9db40f9296374acc17b90404b6e8864128c8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: storybook-static
           clean: true
       - name: Fossa dependency analysis 🐛
-        uses: fossas/fossa-action@main
+        uses: fossas/fossa-action@93a52ecf7c3ac7eb40f5de77fd69b1a19524de94
         with:
           api-key: ${{ secrets.FOSSA_API_KEY }}
