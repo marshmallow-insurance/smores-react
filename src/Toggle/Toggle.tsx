@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
-import { theme } from '../theme'
+import { Color, theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
@@ -14,6 +14,7 @@ export type Props = {
   disabled?: boolean
   /** onToggle listener  */
   onToggle: () => void
+  bgColor?: Color
 } & MarginProps
 
 export const Toggle: FC<Props> = ({
@@ -21,6 +22,7 @@ export const Toggle: FC<Props> = ({
   checked,
   onToggle,
   disabled,
+  bgColor,
   ...marginProps
 }) => {
   return (
@@ -31,6 +33,7 @@ export const Toggle: FC<Props> = ({
         type="checkbox"
         checked={checked}
         onChange={onToggle}
+        $bgColor={bgColor}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             onToggle()
@@ -93,11 +96,12 @@ const Slider = styled.span<{ $disabled?: boolean }>`
         `}
 `
 
-const Checkbox = styled.input`
+const Checkbox = styled.input<{ $bgColor?: Color }>`
   ${focusOutline({ selector: `&:focus-visible + ${Slider}` })}
 
   &:checked + ${Slider} {
-    background-color: ${theme.colors.pistachio};
+    background-color: ${(props) =>
+      props.$bgColor ? theme.colors[props.$bgColor] : theme.colors.pistachio};
     border: none;
   }
 
