@@ -30,11 +30,7 @@ export const InternalField = ({
   const labelTag = fieldType === 'field' ? 'label' : 'legend'
 
   return (
-    <Container
-      forwardedAs={fieldType === 'field' ? 'div' : 'fieldset'}
-      className={className}
-      {...marginProps}
-    >
+    <Container forwardedAs="fieldset" className={className} {...marginProps}>
       {label && (
         <>
           {renderAsTitle ? (
