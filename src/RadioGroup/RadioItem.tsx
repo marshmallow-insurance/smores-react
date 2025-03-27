@@ -53,7 +53,6 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
   ) {
     const id = useUniqueId()
 
-    console.log(disabled)
     return (
       <Wrapper
         htmlFor={id}

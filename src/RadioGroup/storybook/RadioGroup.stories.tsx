@@ -6,12 +6,12 @@ import visualSvg from './radio-visual.svg'
 
 const options = [
   { label: 'Social', value: 'social' },
-  { label: 'Social and commuting', value: 'social/commuting', disabled: true },
+  { label: 'Social and commuting', value: 'social/commuting' },
   {
     label: 'All the above, and I drive for work',
     value: 'social/commuting/work',
   },
-  { label: 'It’s a commercial vehicle', value: 'commercial' },
+  { label: 'It’s a commercial vehicle', value: 'commercial', disabled: true },
 ]
 
 const meta: Meta<typeof RadioGroup> = {
