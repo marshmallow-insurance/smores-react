@@ -102,7 +102,7 @@ export const Dropdown = forwardRef(function Dropdown(
 
   return (
     <Field {...fieldProps} htmlFor={id} error={error}>
-      <Box flex alignItems="center">
+      <Box flex alignItems="center" style={{ position: 'relative' }}>
         {frontIcon && (
           <StyledFrontIcon
             $disabled={disabled}
