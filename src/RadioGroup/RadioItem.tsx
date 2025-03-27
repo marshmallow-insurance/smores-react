@@ -28,6 +28,7 @@ type RadioItemProps = {
   isError: boolean
   fallbackStyle?: boolean
   bodyCopy?: string
+  disabled?: boolean
 }
 
 export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
@@ -46,10 +47,13 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
       isError,
       fallbackStyle,
       bodyCopy,
+      disabled,
     },
     ref,
   ) {
     const id = useUniqueId()
+
+    console.log(disabled)
     return (
       <Wrapper
         htmlFor={id}
@@ -58,6 +62,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
         data-testid={value}
         $isError={isError}
         $fallbackStyle={fallbackStyle}
+        $disabled={disabled}
       >
         {visual && !icon && (
           <VisualWrapper>
@@ -80,6 +85,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             onBlur={onBlur}
             isError={isError}
             mr="8px"
+            isDisabled={disabled}
           />
           <Box>
             <RadioText $isError={isError}>{label}</RadioText>
@@ -130,20 +136,22 @@ const Visual = styled.div<{ $visualUrl: string }>`
 const Wrapper = styled.label<
   TransientProps<
     Pick<RadioItemProps, 'displayType' | 'isError' | 'fallbackStyle'>
-  > & { checked: boolean }
+  > & { checked: boolean; $disabled?: boolean }
 >`
   display: flex;
   flex-direction: column;
   cursor: pointer;
 
-  ${({ $displayType, checked, $isError, $fallbackStyle }) => css`
+  ${({ $displayType, checked, $isError, $fallbackStyle, $disabled }) => css`
     ${($displayType === 'horizontal-card' ||
       $displayType === 'vertical-card') &&
     css`
       border-radius: 12px;
-      background-color: ${$fallbackStyle
-        ? theme.colors.cream
-        : theme.colors.custard};
+      background-color: ${$disabled
+        ? theme.colors.chia
+        : $fallbackStyle
+          ? theme.colors.cream
+          : theme.colors.custard};
       padding: ${checked ? '10px' : '12px'};
       border: ${checked &&
       ($isError
@@ -151,9 +159,12 @@ const Wrapper = styled.label<
         : `2px solid ${theme.colors.liquorice}`)};
 
       &:hover {
-        background-color: ${$fallbackStyle
-          ? theme.colors.coconut
-          : theme.colors.oatmeal};
+        ${!$disabled &&
+        css`
+          background-color: ${$fallbackStyle
+            ? theme.colors.coconut
+            : theme.colors.oatmeal};
+        `}
       }
     `}
     ${$displayType === 'horizontal-card' &&

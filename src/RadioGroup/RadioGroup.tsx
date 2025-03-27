@@ -28,6 +28,7 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
     label: string
     value: Value
     bodyCopy?: string
+    disabled?: boolean
   }>
   onChange: (value: Value) => void
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
@@ -96,6 +97,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
               isError={error}
               fallbackStyle={fallbackStyle}
               bodyCopy={option.bodyCopy}
+              disabled={option.disabled}
             />
           )
         })}

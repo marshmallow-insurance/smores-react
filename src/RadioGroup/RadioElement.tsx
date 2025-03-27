@@ -17,11 +17,22 @@ type RadioElementProps = {
   onChange: (value: BaseValueType) => void
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   isError: boolean
+  isDisabled?: boolean
 } & MarginProps
 
 export const RadioElement = forwardRef<HTMLInputElement, RadioElementProps>(
   function RadioElement(
-    { name, id, value, checked, onChange, onBlur, isError, ...marginProps },
+    {
+      name,
+      id,
+      value,
+      isDisabled,
+      checked,
+      onChange,
+      onBlur,
+      isError,
+      ...marginProps
+    },
     ref,
   ) {
     return (
@@ -35,6 +46,7 @@ export const RadioElement = forwardRef<HTMLInputElement, RadioElementProps>(
           checked={checked}
           onChange={() => onChange(value)}
           onBlur={onBlur}
+          disabled={isDisabled}
         />
         <RadioCircle $isError={isError} $checked={checked} {...marginProps} />
       </>

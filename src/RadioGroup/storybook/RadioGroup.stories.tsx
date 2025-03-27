@@ -6,7 +6,7 @@ import visualSvg from './radio-visual.svg'
 
 const options = [
   { label: 'Social', value: 'social' },
-  { label: 'Social and commuting', value: 'social/commuting' },
+  { label: 'Social and commuting', value: 'social/commuting', disabled: true },
   {
     label: 'All the above, and I drive for work',
     value: 'social/commuting/work',
