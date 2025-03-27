@@ -1,3 +1,9 @@
+## [12.2.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.2.0...v12.2.1) (2025-03-27)
+
+### Bug Fixes
+
+* adding position relative to box wrapping select ([#4337](https://github.com/marshmallow-insurance/smores-react/issues/4337)) ([edcfb6f](https://github.com/marshmallow-insurance/smores-react/commit/edcfb6fc7b44856a01b0cf2a19746fc9684ba2c4))
+
 ## [12.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.1.0...v12.2.0) (2025-03-20)
 
 ### Features
