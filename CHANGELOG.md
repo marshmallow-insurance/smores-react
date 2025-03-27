@@ -1,3 +1,19 @@
+## [12.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.1.0...v12.2.0) (2025-03-20)
+
+### Features
+
+* **toggle:** added optional bgcolor for toggle component ([#4324](https://github.com/marshmallow-insurance/smores-react/issues/4324)) ([c155766](https://github.com/marshmallow-insurance/smores-react/commit/c155766ebb9b62e245696a71c41cefcc597277d8))
+
+### Tests
+
+* **tag:** added test for tag component ([#4309](https://github.com/marshmallow-insurance/smores-react/issues/4309)) ([520c568](https://github.com/marshmallow-insurance/smores-react/commit/520c568baba47b12d1363a31bd9884b50fc1e546))
+
+## [12.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.0.0...v12.1.0) (2025-03-12)
+
+### Features
+
+* **tag:** add optional icon to tag component  ([#4303](https://github.com/marshmallow-insurance/smores-react/issues/4303)) ([7c96871](https://github.com/marshmallow-insurance/smores-react/commit/7c96871b17ac25c5f60f7df337b840e0db3d06fe))
+
 ## [12.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v11.1.0...v12.0.0) (2025-02-24)
 
 ### ⚠ BREAKING CHANGES
