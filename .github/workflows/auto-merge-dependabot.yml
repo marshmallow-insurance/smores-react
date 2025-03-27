@@ -1,0 +1,45 @@
+name: Auto approve Dependabot pull requests
+on:
+  pull_request_target:
+    branches: [ main ]
+
+jobs:
+  approve-and-merge:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - name: Fetch Dependabot Metadata
+        id: dependabot-metadata
+        uses: dependabot/fetch-metadata@d7267f607e9d3fb96fc2fbe83e0af444713e90b7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set should-run
+        id: should-run
+        run: |
+          case "${{ steps.dependabot-metadata.outputs.update-type }}" in
+              version-update:semver-patch) should_run=true ;;
+              version-update:semver-minor) should_run=true ;;
+              *) should_run=false ;;
+          esac
+          echo "should_run=$should_run" >> "$GITHUB_OUTPUT"
+
+      - name: Approve a PR
+        if: steps.should-run.outputs.should_run == 'true'
+        run: |
+          CURRENT_DECISION="$(gh pr view "$PR_URL" --json reviewDecision -q '.reviewDecision')"
+          if [ "$CURRENT_DECISION" != "APPROVED" ]; then
+            gh pr review --approve "$PR_URL"
+          else
+            echo "PR already approved, skipping additional approvals."
+          fi
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.AUTO_MERGE_DEPENDABOT_PR }}
+
+      - name: Enable auto-merge
+        if: steps.should-run.outputs.should_run == 'true'
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

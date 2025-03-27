@@ -17,7 +17,9 @@ jobs:
       - name: Install deps 🗄️
         run: |
           npm ci
-      - name: Run unit tests
+      - name: Run type check 📝
+        run: npm run check-types
+      - name: Run unit tests 🧪
         run: npm run test
       - name: Build 🔧
         run: |

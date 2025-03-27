@@ -85,3 +85,13 @@ export const Colors: Story = {
     },
   },
 }
+
+export const WithIcon: Story = {
+  args: {
+    bgColor: 'feijoa',
+    color: 'cream',
+    label: 'I have an icon',
+    icon: 'flagFilled',
+    iconColor: 'strawberry',
+  },
+}

@@ -5,9 +5,9 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     include: [
-      '**/__tests__/**/*.{js,ts}',
-      '**/*.test.{js,ts}',
-      '**/*.spec.{js,ts}',
+      '**/__tests__/**/*.{js,ts,tsx}',
+      '**/*.test.{js,ts,tsx}',
+      '**/*.spec.{js,ts,tsx}',
     ],
     exclude: ['**/node_modules/**', '**/*.stories.{js,ts}', '**/dist/**'],
   },
