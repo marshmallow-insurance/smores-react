@@ -12,7 +12,7 @@ import { Icons } from '../Icon/iconsList'
 import { Text } from '../Text'
 import { RadioElement } from './RadioElement'
 import { ITEM_GAP } from './constants'
-import { BaseValueType, DisplayType, IconPosition } from './types'
+import { BaseValueType, DisplayType, IconPosition, ItemWidth } from './types'
 
 type RadioItemProps = {
   name: string
@@ -29,6 +29,7 @@ type RadioItemProps = {
   fallbackStyle?: boolean
   bodyCopy?: string
   disabled?: boolean
+  itemWidth?: ItemWidth
 }
 
 export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
@@ -48,6 +49,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
       fallbackStyle,
       bodyCopy,
       disabled,
+      itemWidth,
     },
     ref,
   ) {
@@ -62,6 +64,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
         $isError={isError}
         $fallbackStyle={fallbackStyle}
         $disabled={disabled}
+        $itemWidth={itemWidth}
       >
         {visual && !icon && (
           <VisualWrapper>
@@ -135,13 +138,20 @@ const Visual = styled.div<{ $visualUrl: string }>`
 const Wrapper = styled.label<
   TransientProps<
     Pick<RadioItemProps, 'displayType' | 'isError' | 'fallbackStyle'>
-  > & { checked: boolean; $disabled?: boolean }
+  > & { checked: boolean; $disabled?: boolean; $itemWidth?: ItemWidth }
 >`
   display: flex;
   flex-direction: column;
   cursor: pointer;
 
-  ${({ $displayType, checked, $isError, $fallbackStyle, $disabled }) => css`
+  ${({
+    $displayType,
+    checked,
+    $isError,
+    $fallbackStyle,
+    $disabled,
+    $itemWidth,
+  }) => css`
     ${($displayType === 'horizontal-card' ||
       $displayType === 'vertical-card') &&
     css`
@@ -168,17 +178,19 @@ const Wrapper = styled.label<
     `}
     ${$displayType === 'horizontal-card' &&
     css`
-      width: 100%;
       justify-content: center;
+      ${!$itemWidth &&
+      css`
+        @media (min-width: 420px) {
+          width: calc(50% - ${ITEM_GAP / 2}px);
+        }
 
-      @media (min-width: 420px) {
-        width: calc(50% - ${ITEM_GAP / 2}px);
-      }
-
-      @media (min-width: 768px) {
-        width: 201px;
-      }
+        @media (min-width: 768px) {
+          width: 201px;
+        }
+      `}
     `}
+  width: ${$itemWidth ?? '100%'};
   `}
 `
 

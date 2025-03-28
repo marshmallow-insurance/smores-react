@@ -17,7 +17,13 @@ import { Icons } from '../Icon/iconsList'
 
 import { ITEM_GAP } from './constants'
 import { RadioItem } from './RadioItem'
-import { BaseValueType, DisplayType, IconPosition } from './types'
+import {
+  BaseValueType,
+  DisplayType,
+  IconPosition,
+  ItemWidth,
+  JustifyContent,
+} from './types'
 import { TransientProps } from 'utils/utilTypes'
 
 export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
@@ -30,18 +36,8 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
     bodyCopy?: string
     disabled?: boolean
   }>
-  justifyContent?:
-    | 'center'
-    | 'flex-end'
-    | 'flex-start'
-    | 'space-around'
-    | 'space-between'
-    | 'space-evenly'
-  itemWidth?:
-    | `${number}${'px' | 'em' | 'rem' | '%' | 'vw' | 'vh'}`
-    | 'fit-content'
-    | 'min-content'
-    | 'max-content'
+  justifyContent?: JustifyContent
+  itemWidth?: ItemWidth
   onChange: (value: Value) => void
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   value: Value
@@ -64,6 +60,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
     error = false,
     fallbackStyle = false,
     justifyContent,
+    itemWidth,
     ...fieldProps
   }: RadioGroupProps<Value>,
   ref: ForwardedRef<RadioGroupElement>,
@@ -114,6 +111,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
               fallbackStyle={fallbackStyle}
               bodyCopy={option.bodyCopy}
               disabled={option.disabled}
+              itemWidth={itemWidth}
             />
           )
         })}
