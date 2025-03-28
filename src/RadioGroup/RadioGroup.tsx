@@ -11,7 +11,6 @@ import styled from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
 
-import { TransientProps } from 'utils/utilTypes'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { Fieldset } from '../fields/Fieldset'
 import { Icons } from '../Icon/iconsList'
@@ -19,6 +18,7 @@ import { Icons } from '../Icon/iconsList'
 import { ITEM_GAP } from './constants'
 import { RadioItem } from './RadioItem'
 import { BaseValueType, DisplayType, IconPosition } from './types'
+import { TransientProps } from 'utils/utilTypes'
 
 export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   options: Array<{
@@ -30,6 +30,18 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
     bodyCopy?: string
     disabled?: boolean
   }>
+  justifyContent?:
+    | 'center'
+    | 'flex-end'
+    | 'flex-start'
+    | 'space-around'
+    | 'space-between'
+    | 'space-evenly'
+  itemWidth?:
+    | `${number}${'px' | 'em' | 'rem' | '%' | 'vw' | 'vh'}`
+    | 'fit-content'
+    | 'min-content'
+    | 'max-content'
   onChange: (value: Value) => void
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   value: Value
@@ -51,6 +63,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
     renderAsTitle = false,
     error = false,
     fallbackStyle = false,
+    justifyContent,
     ...fieldProps
   }: RadioGroupProps<Value>,
   ref: ForwardedRef<RadioGroupElement>,
@@ -71,7 +84,10 @@ const RadioGroupComponent = <Value extends BaseValueType>(
 
   return (
     <Fieldset renderAsTitle={renderAsTitle} error={error} {...fieldProps}>
-      <RadioItemList $displayType={displayType}>
+      <RadioItemList
+        $displayType={displayType}
+        $justifyContent={justifyContent}
+      >
         {options.map((option, index) => {
           const isSelected = option.value === value
 
@@ -113,7 +129,7 @@ export const RadioGroup = forwardRef(RadioGroupComponent) as <
 ) => ReactElement<any> | null
 
 const RadioItemList = styled.div<
-  TransientProps<Pick<RadioGroupProps, 'displayType'>>
+  TransientProps<Pick<RadioGroupProps, 'displayType' | 'justifyContent'>>
 >`
   display: flex;
   gap: ${ITEM_GAP}px;
@@ -128,4 +144,5 @@ const RadioItemList = styled.div<
 
     return `flex-direction: column;`
   }}
+  justify-content: ${({ $justifyContent }) => $justifyContent ?? 'flex-start'};
 `
