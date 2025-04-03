@@ -52,7 +52,7 @@
     "@storybook/react-vite": "^8.6.11",
     "@storybook/test": "^8.2.1",
     "@storybook/test-runner": "^0.22.0",
-    "@testing-library/react": "^16.2.0",
+    "@testing-library/react": "^16.3.0",
     "@types/body-scroll-lock": "^3.1.0",
     "@types/dompurify": "^3.2.0",
     "@types/node": "^22.13.17",
