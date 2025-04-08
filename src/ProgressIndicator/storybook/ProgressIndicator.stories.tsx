@@ -33,7 +33,6 @@ const meta: Meta<typeof ProgressIndicator> = {
           detail:
             'Function used to run functions that should run on click of a step but not always as part of the handleStepChange function',
         },
-        defaultValue: { summary: 'test', detail: 'deta' },
       },
     },
     currentStep: {
