@@ -34,6 +34,7 @@ export const Icon: FC<IconProps> = ({
   return (
     <Container
       forwardedAs="span"
+      data-testId={`${render}-container`}
       className={className}
       size={size}
       rotate={rotate}
