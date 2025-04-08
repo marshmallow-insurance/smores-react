@@ -24,7 +24,10 @@ export const ProgressIndicator = ({
   steps,
   currentStep,
 }: Props) => {
-  const { totalWidth, stepWidth } = calulateProgressWidths(steps.length)
+  const { totalWidth, stepWidth } = calulateProgressWidths(
+    steps.length,
+    simpleStep,
+  )
 
   const visibleSteps = steps.filter((step) => !step.isHidden)
   const currentStepIndex = visibleSteps.findIndex(
@@ -52,7 +55,7 @@ export const ProgressIndicator = ({
 
   return (
     <Wrapper width={`${totalWidth}px`} flex alignItems="center">
-      <DefaultProgress />
+      <DefaultProgress $simpleStep={simpleStep} />
       <Box flex>
         {visibleSteps.map((step, index) => {
           const stepState = calculateStepState(index, currentStepIndex)

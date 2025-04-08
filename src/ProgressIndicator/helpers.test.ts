@@ -11,6 +11,15 @@ describe('progress incidator helpers', () => {
       }
       expect(calulateProgressWidths(stepCount)).toEqual(expected)
     })
+
+    it('should return the correct total width and step width for simple steps', () => {
+      const stepCount = 5
+      const expected = {
+        totalWidth: 320,
+        stepWidth: 64,
+      }
+      expect(calulateProgressWidths(stepCount, true)).toEqual(expected)
+    })
   })
 
   describe('calculateStepState', () => {

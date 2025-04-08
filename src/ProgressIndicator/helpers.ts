@@ -7,11 +7,15 @@ interface ReturnValue {
   stepWidth: number
 }
 
-export const calulateProgressWidths = (stepCount: number): ReturnValue => {
-  // As the last item doesn't have a line, we need to subtract 1 from the step count
+export const calulateProgressWidths = (
+  stepCount: number,
+  isSimpleSteps?: boolean,
+): ReturnValue => {
+  // if not simple steps, we need to subtract 1 from the step count as the last item doesn't have a line
+  const stepsToUse = isSimpleSteps ? stepCount : stepCount - 1
   return {
     totalWidth: TOTAL_WIDTH,
-    stepWidth: TOTAL_WIDTH / (stepCount - 1),
+    stepWidth: TOTAL_WIDTH / stepsToUse,
   }
 }
 
