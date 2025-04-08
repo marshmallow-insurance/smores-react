@@ -3,26 +3,29 @@ import { StepData } from 'ProgressIndicator/types'
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { theme } from '../../theme'
+import { Text } from '../../Text'
+import { Icon } from '../../Icon'
 
-export interface Props extends Pick<StepData, 'label' | 'isHidden'> {
+export interface StepItemProps extends Pick<StepData, 'label'> {
   isCompleted?: boolean
   isLastCompleted?: boolean
+  isCurrentStep: boolean
   isSimple?: boolean
   onClick: () => void
   stepWidth: string
+  isLastItem: boolean
 }
 
 export const StepItem = ({
-  isHidden,
+  label,
   isSimple = false,
+  isCurrentStep,
   stepWidth,
+  onClick,
   isCompleted = false,
   isLastCompleted = false,
-}: Props) => {
-  if (isHidden) {
-    return null
-  }
-
+  isLastItem = false,
+}: StepItemProps) => {
   if (isSimple) {
     return (
       <SimpleItem
@@ -35,18 +38,36 @@ export const StepItem = ({
   }
 
   return (
-    <Box flex alignItems="center">
-      normal progress bar
-    </Box>
+    <ProgressItem
+      flex
+      $completed={isCompleted}
+      $lastCompleted={isLastCompleted}
+      width={stepWidth}
+      onClick={onClick}
+    >
+      <ProgressIndicator
+        $completed={isCompleted}
+        $currentStep={isCurrentStep}
+        flex
+        alignItems="center"
+        justifyContent="center"
+      >
+        {isCompleted ? <Icon render="tick" size={16} color="cream" /> : null}
+      </ProgressIndicator>
+      {isCompleted && !isLastItem ? <CompletedBar /> : null}
+      <FloatingText typo="caption">{label}</FloatingText>
+    </ProgressItem>
   )
 }
 
 interface StyledComponentProps {
-  $completed: boolean
-  $lastCompleted: boolean
+  $completed?: boolean
+  $lastCompleted?: boolean
+  $currentStep?: boolean
+  $completedStep?: boolean
 }
 
-const firstChildAndLastCompleted = css`
+const lastCompleted = css`
   border-radius: 0 100px 100px 0;
 
   &:first-child {
@@ -59,11 +80,49 @@ const borderRadiusCss = css<StyledComponentProps>`
     border-radius: 100px 0 0 100px;
   }
 
-  ${({ $lastCompleted }) => $lastCompleted && firstChildAndLastCompleted}
+  ${({ $lastCompleted }) => $lastCompleted && lastCompleted}
 `
 
 const SimpleItem = styled(Box)<StyledComponentProps>`
+  position: relative;
+  z-index: 1;
   ${borderRadiusCss}
 
-  ${({ $completed }) => $completed && `background: ${theme.colors.pistachio};`};
+  background: ${({ $completed }) =>
+    $completed ? theme.colors.pistachio : 'none'};
+`
+
+const ProgressItem = styled(Box)<StyledComponentProps>`
+  position: relative;
+  z-index: 1;
+`
+
+const ProgressIndicator = styled(Box)<StyledComponentProps>`
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  left: -2px;
+  z-index: 1;
+  background: ${({ $completed, $currentStep }) =>
+    $completed || $currentStep ? theme.colors.pistachio : theme.colors.matcha};
+`
+
+const FloatingText = styled(Text)`
+  position: absolute;
+  top: 0;
+  transform: translateY(calc(-50% + 34px));
+  left: -6px;
+  font-weight: ${theme.font.weight.medium};
+`
+
+const CompletedBar = styled(Box)`
+  position: absolute;
+  height: 12px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: translateY(calc(-50% + 12px));
+  background: ${theme.colors.pistachio};
+  z-index: 0;
 `

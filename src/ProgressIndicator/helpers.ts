@@ -8,9 +8,10 @@ interface ReturnValue {
 }
 
 export const calulateProgressWidths = (stepCount: number): ReturnValue => {
+  // As the last item doesn't have a line, we need to subtract 1 from the step count
   return {
     totalWidth: TOTAL_WIDTH,
-    stepWidth: TOTAL_WIDTH / stepCount,
+    stepWidth: TOTAL_WIDTH / (stepCount - 1),
   }
 }
 

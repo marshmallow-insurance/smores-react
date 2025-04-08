@@ -47,32 +47,45 @@ export const ProgressIndicator = ({
 
     if (currentStepState !== 'disabled') {
       handleStepChange(stepData)
-    } else {
-      console.log('disabled')
     }
   }
 
   return (
     <Wrapper width={`${totalWidth}px`} flex alignItems="center">
-      {visibleSteps.map((step, index) => {
-        const stepState = calculateStepState(index, currentStepIndex)
-        return (
-          <StepItem
-            key={step.id}
-            isCompleted={stepState === 'completed'}
-            isLastCompleted={lastCompletedStepIndex === index}
-            onClick={() => handleStepClick(index, stepState, step)}
-            stepWidth={`${stepWidth}px`}
-            label={step.label}
-            isSimple={simpleStep}
-          />
-        )
-      })}
+      <DefaultProgress />
+      <Box flex>
+        {visibleSteps.map((step, index) => {
+          const stepState = calculateStepState(index, currentStepIndex)
+          return (
+            <StepItem
+              key={step.id}
+              isCompleted={stepState === 'completed'}
+              isCurrentStep={stepState === 'current'}
+              isLastCompleted={lastCompletedStepIndex === index}
+              onClick={() => handleStepClick(index, stepState, step)}
+              stepWidth={`${stepWidth}px`}
+              label={step.label}
+              isSimple={simpleStep}
+              isLastItem={index === visibleSteps.length - 1}
+            />
+          )
+        })}
+      </Box>
     </Wrapper>
   )
 }
 
 const Wrapper = styled(Box)`
-  border-radius: 100px;
+  position: relative;
+`
+
+const DefaultProgress = styled(Box)<{ $simpleStep?: boolean }>`
+  z-index: 0;
+  content: '';
+  position: absolute;
   background: ${theme.colors.matcha};
+  width: 100%;
+  height: 12px;
+
+  ${({ $simpleStep }) => $simpleStep && `border-radius:100px;`}
 `
