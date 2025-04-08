@@ -16,10 +16,10 @@ describe('StepItem', () => {
   it('renders the label correctly and does not render tick if notCompleted', () => {
     render(<StepItem {...defaultProps} />)
     expect(screen.getByText('Step 1')).toBeTruthy()
-    expect(screen.findByTestId('tick-container')).not.toBeTruthy()
+    expect(screen.queryByTestId('tick-container')).not.toBeTruthy()
   })
 
-  it.only('renders the completed icon when step is completed', () => {
+  it('renders the completed icon when step is completed', () => {
     render(<StepItem {...defaultProps} isCompleted={true} />)
     expect(screen.getByTestId('tick-container')).toBeTruthy()
   })

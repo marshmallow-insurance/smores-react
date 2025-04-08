@@ -6,17 +6,32 @@ import { theme } from '../../theme'
 import { ProgressIndicator } from '../ProgressIndicator'
 import { StepData } from 'ProgressIndicator/types'
 
+const defaultSteps: StepData[] = [
+  {
+    label: 'Step 1',
+    id: '1',
+  },
+  {
+    label: 'Step 2',
+    id: '2',
+  },
+  {
+    label: 'Step 3',
+    id: '3',
+  },
+  {
+    label: 'Step 4',
+    id: '4',
+  },
+  {
+    label: 'Step 5',
+    id: '5',
+  },
+]
+
 const BgWrapper = styled(Box)`
   background: ${theme.colors.coconut};
 `
-// steps: ReadonlyArray<StepData>
-// handleStepChange: (step: StepData) => void
-// simpleStep?: boolean
-// onStepClick?: (data: {
-//   currentStepIndex: number
-//   currentStepState: StepState
-// }) => void
-// currentStep: string
 
 const meta: Meta<typeof ProgressIndicator> = {
   title: 'ProgressIndicator',
@@ -75,29 +90,6 @@ const meta: Meta<typeof ProgressIndicator> = {
 export default meta
 
 type Story = StoryObj<typeof ProgressIndicator>
-
-const defaultSteps: StepData[] = [
-  {
-    label: 'Step 1',
-    id: '1',
-  },
-  {
-    label: 'Step 2',
-    id: '2',
-  },
-  {
-    label: 'Step 3',
-    id: '3',
-  },
-  {
-    label: 'Step 4',
-    id: '4',
-  },
-  {
-    label: 'Step 5',
-    id: '5',
-  },
-]
 
 export const Default: Story = {
   args: {
