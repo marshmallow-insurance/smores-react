@@ -1,6 +1,6 @@
 import React from 'react'
 import { StepData, StepState } from './types'
-import { calculateStepState, calulateProgressWidths } from './helpers'
+import { calculateStepState, calculateProgressWidths } from './helpers'
 import styled from 'styled-components'
 import { theme } from '../theme'
 import { Box } from '../Box'
@@ -24,7 +24,7 @@ export const ProgressIndicator = ({
   steps,
   currentStep,
 }: Props) => {
-  const { totalWidth, stepWidth } = calulateProgressWidths(
+  const { totalWidth, stepWidth } = calculateProgressWidths(
     steps.length,
     simpleStep,
   )

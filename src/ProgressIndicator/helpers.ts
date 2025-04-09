@@ -7,7 +7,7 @@ interface ReturnValue {
   stepWidth: number
 }
 
-export const calulateProgressWidths = (
+export const calculateProgressWidths = (
   stepCount: number,
   isSimpleSteps?: boolean,
 ): ReturnValue => {

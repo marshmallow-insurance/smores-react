@@ -1,7 +1,7 @@
-import { calculateStepState, calulateProgressWidths } from './helpers'
+import { calculateStepState, calculateProgressWidths } from './helpers'
 
 describe('progress incidator helpers', () => {
-  describe('calulateProgressWidths', () => {
+  describe('calculateProgressWidths', () => {
     it('should return the correct total width and step width', () => {
       const stepCount = 5
 
@@ -9,7 +9,7 @@ describe('progress incidator helpers', () => {
         totalWidth: 320,
         stepWidth: 80,
       }
-      expect(calulateProgressWidths(stepCount)).toEqual(expected)
+      expect(calculateProgressWidths(stepCount)).toEqual(expected)
     })
 
     it('should return the correct total width and step width for simple steps', () => {
@@ -18,7 +18,7 @@ describe('progress incidator helpers', () => {
         totalWidth: 320,
         stepWidth: 64,
       }
-      expect(calulateProgressWidths(stepCount, true)).toEqual(expected)
+      expect(calculateProgressWidths(stepCount, true)).toEqual(expected)
     })
   })
 
