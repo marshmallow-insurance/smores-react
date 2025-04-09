@@ -70,8 +70,6 @@ const meta: Meta<typeof ProgressIndicator> = {
         },
       },
     },
-
-    // simpleStep: { description: 'used to determine ', 'type' },
   },
   decorators: [
     (Story) => (

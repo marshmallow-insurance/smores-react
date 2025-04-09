@@ -52,9 +52,9 @@ export const StepItem = ({
         alignItems="center"
         justifyContent="center"
       >
-        {isCompleted ? <Icon render="tick" size={16} color="cream" /> : null}
+        {isCompleted && <Icon render="tick" size={16} color="cream" />}
       </ProgressIndicator>
-      {isCompleted && !isLastItem ? <CompletedBar /> : null}
+      {isCompleted && !isLastItem && <CompletedBar />}
       <FloatingText typo="caption">{label}</FloatingText>
     </ProgressItem>
   )
