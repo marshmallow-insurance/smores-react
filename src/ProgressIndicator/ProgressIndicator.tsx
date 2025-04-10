@@ -24,15 +24,16 @@ export const ProgressIndicator = ({
   steps,
   currentStep,
 }: Props) => {
-  const { totalWidth, stepWidth } = calculateProgressWidths(
-    steps.length,
-    simpleStep,
-  )
-
   const visibleSteps = steps.filter((step) => !step.isHidden)
   const currentStepIndex = visibleSteps.findIndex(
     (step) => step.id === currentStep,
   )
+
+  const { totalWidth, stepWidth } = calculateProgressWidths(
+    visibleSteps.length,
+    simpleStep,
+  )
+
   const lastCompletedStepIndex = visibleSteps.findLastIndex(
     (step) =>
       calculateStepState(visibleSteps.indexOf(step), currentStepIndex) ===
