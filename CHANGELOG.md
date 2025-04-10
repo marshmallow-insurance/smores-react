@@ -1,3 +1,9 @@
+## [12.3.2](https://github.com/marshmallow-insurance/smores-react/compare/v12.3.1...v12.3.2) (2025-04-10)
+
+### Bug Fixes
+
+* **progress-indicator:** minor changes from implementation ([#4367](https://github.com/marshmallow-insurance/smores-react/issues/4367)) ([5aa4278](https://github.com/marshmallow-insurance/smores-react/commit/5aa42783444f7a2030f92eee53e37bb6ecc489e8))
+
 ## [12.3.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.3.0...v12.3.1) (2025-04-10)
 
 ## [12.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.2.2...v12.3.0) (2025-04-09)
