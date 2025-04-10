@@ -55,7 +55,12 @@ export const ProgressIndicator = ({
   }
 
   return (
-    <Wrapper width={`${totalWidth}px`} flex alignItems="center">
+    <Wrapper
+      width={`${totalWidth}px`}
+      flex
+      justifyContent="flex-start"
+      alignItems="center"
+    >
       <DefaultProgress $simpleStep={simpleStep} />
       <Box flex>
         {visibleSteps.map((step, index) => {
@@ -65,6 +70,7 @@ export const ProgressIndicator = ({
               key={step.id}
               isCompleted={stepState === 'completed'}
               isCurrentStep={stepState === 'current'}
+              isDisabled={stepState === 'disabled'}
               isLastCompleted={lastCompletedStepIndex === index}
               onClick={() => handleStepClick(index, stepState, step)}
               stepWidth={`${stepWidth}px`}

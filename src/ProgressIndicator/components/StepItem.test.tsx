@@ -7,6 +7,7 @@ describe('StepItem', () => {
     isCurrentStep: false,
     isCompleted: false,
     isLastCompleted: false,
+    isDisabled: false,
     isSimple: false,
     onClick: vi.fn(),
     stepWidth: '100px',

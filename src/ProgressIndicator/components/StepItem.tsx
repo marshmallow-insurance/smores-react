@@ -9,6 +9,7 @@ import { Icon } from '../../Icon'
 export interface StepItemProps extends Pick<StepData, 'label'> {
   isCompleted?: boolean
   isLastCompleted?: boolean
+  isDisabled: boolean
   isCurrentStep: boolean
   isSimple?: boolean
   onClick: () => void
@@ -25,6 +26,7 @@ export const StepItem = ({
   isCompleted = false,
   isLastCompleted = false,
   isLastItem = false,
+  isDisabled,
 }: StepItemProps) => {
   if (isSimple) {
     return (
@@ -40,22 +42,30 @@ export const StepItem = ({
   return (
     <ProgressItem
       flex
+      alignItems="flex-start"
       $completed={isCompleted}
       $lastCompleted={isLastCompleted}
       width={stepWidth}
-      onClick={onClick}
     >
-      <ProgressIndicator
-        $completed={isCompleted}
-        $currentStep={isCurrentStep}
+      <ClickableArea
         flex
+        direction="column"
         alignItems="center"
-        justifyContent="center"
+        onClick={onClick}
+        $isDisabled={isDisabled}
       >
-        {isCompleted && <Icon render="tick" size={16} color="cream" />}
-      </ProgressIndicator>
+        <ProgressIndicator
+          $completed={isCompleted}
+          $currentStep={isCurrentStep}
+          flex
+          alignItems="center"
+          justifyContent="center"
+        >
+          {isCompleted && <Icon render="tick" size={16} color="cream" />}
+        </ProgressIndicator>
+        <StyledText typo="caption">{label}</StyledText>
+      </ClickableArea>
       {isCompleted && !isLastItem && <CompletedBar />}
-      <FloatingText typo="caption">{label}</FloatingText>
     </ProgressItem>
   )
 }
@@ -64,6 +74,7 @@ interface StyledComponentProps {
   $completed?: boolean
   $lastCompleted?: boolean
   $currentStep?: boolean
+  $isDisabled?: boolean
   $completedStep?: boolean
 }
 
@@ -96,23 +107,25 @@ const ProgressItem = styled(Box)<StyledComponentProps>`
   position: relative;
   z-index: 1;
 `
+const ClickableArea = styled(Box)<StyledComponentProps>`
+  position: relative;
+  cursor: ${({ $isDisabled }) => ($isDisabled ? 'auto' : 'pointer')};
+  top: 9px;
+  left: -8px;
+`
 
 const ProgressIndicator = styled(Box)<StyledComponentProps>`
   border-radius: 50%;
   height: 24px;
   width: 24px;
   position: relative;
-  left: -2px;
   z-index: 1;
   background: ${({ $completed, $currentStep }) =>
     $completed || $currentStep ? theme.colors.pistachio : theme.colors.matcha};
 `
 
-const FloatingText = styled(Text)`
-  position: absolute;
-  top: 0;
-  transform: translateY(calc(-50% + 34px));
-  left: -6px;
+const StyledText = styled(Text)`
+  margin-top: 2px;
   font-weight: ${theme.font.weight.medium};
 `
 
@@ -120,9 +133,9 @@ const CompletedBar = styled(Box)`
   position: absolute;
   height: 12px;
   width: 100%;
-  top: 0;
+  top: 50%;
   left: 0;
-  transform: translateY(calc(-50% + 12px));
+  transform: translateY(calc(-50%));
   background: ${theme.colors.pistachio};
   z-index: 0;
 `
