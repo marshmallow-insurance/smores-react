@@ -106,12 +106,16 @@ const SimpleItem = styled(Box)<StyledComponentProps>`
 const ProgressItem = styled(Box)<StyledComponentProps>`
   position: relative;
   z-index: 1;
+  top: 9px;
+  left: -10px;
+
+  &:last-child {
+    width: auto;
+  }
 `
 const ClickableArea = styled(Box)<StyledComponentProps>`
   position: relative;
   cursor: ${({ $isDisabled }) => ($isDisabled ? 'auto' : 'pointer')};
-  top: 9px;
-  left: -8px;
 `
 
 const ProgressIndicator = styled(Box)<StyledComponentProps>`
@@ -127,15 +131,15 @@ const ProgressIndicator = styled(Box)<StyledComponentProps>`
 const StyledText = styled(Text)`
   margin-top: 2px;
   font-weight: ${theme.font.weight.medium};
+  white-space: nowrap;
 `
 
 const CompletedBar = styled(Box)`
   position: absolute;
   height: 12px;
   width: 100%;
-  top: 50%;
-  left: 0;
-  transform: translateY(calc(-50%));
+  top: 7px;
+  left: 10px;
   background: ${theme.colors.pistachio};
   z-index: 0;
 `
