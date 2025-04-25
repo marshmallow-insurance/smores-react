@@ -49,6 +49,7 @@ export const StepItem = ({
     >
       <ClickableArea
         flex
+        data-testid={`step-item-${label}`}
         direction="column"
         alignItems="center"
         onClick={onClick}
@@ -139,7 +140,7 @@ const CompletedBar = styled(Box)`
   height: 12px;
   width: 100%;
   top: 7px;
-  left: 10px;
+  left: 13px;
   background: ${theme.colors.pistachio};
   z-index: 0;
 `
