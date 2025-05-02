@@ -83,9 +83,12 @@ export const InternalField = ({
       {error &&
         errorMsg &&
         (typeof errorMsg === 'string' ? (
-          <Text tag="span" typo="caption" color="strawberry" mt="8px">
-            {errorMsg}
-          </Text>
+          <Box flex alignItems="center" mt="8px" gap={{ custom: 4 }}>
+            <Icon render="warning" size={16} color="strawberry" />
+            <Text tag="span" typo="caption" color="strawberry">
+              {errorMsg}
+            </Text>
+          </Box>
         ) : (
           <Box mt="8px">{errorMsg}</Box>
         ))}
