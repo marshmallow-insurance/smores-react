@@ -1,3 +1,9 @@
+## [12.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.3.4...v12.4.0) (2025-05-07)
+
+### Features
+
+* **tag:** added optional onclick prop to tag comp ([#4413](https://github.com/marshmallow-insurance/smores-react/issues/4413)) ([b41867d](https://github.com/marshmallow-insurance/smores-react/commit/b41867d58bf36df34b6ddaa7cb73923ed105d1ce))
+
 ## [12.3.4](https://github.com/marshmallow-insurance/smores-react/compare/v12.3.3...v12.3.4) (2025-04-25)
 
 ## [12.3.3](https://github.com/marshmallow-insurance/smores-react/compare/v12.3.2...v12.3.3) (2025-04-16)
