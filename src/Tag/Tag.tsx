@@ -17,6 +17,7 @@ export type TagProps = {
   className?: string
   icon?: Icons
   iconColor?: Color
+  onClick?: () => void
 } & MarginProps
 
 export const Tag: FC<TagProps> = ({
@@ -27,6 +28,7 @@ export const Tag: FC<TagProps> = ({
   className,
   icon,
   iconColor,
+  onClick,
   ...marginProps
 }) => (
   <Wrapper
@@ -36,6 +38,7 @@ export const Tag: FC<TagProps> = ({
     {...marginProps}
     alignContent="center"
     justifyContent="center"
+    onClick={onClick}
   >
     {icon && (
       <TagIcon
