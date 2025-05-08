@@ -1,3 +1,9 @@
+## [12.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.4.0...v12.5.0) (2025-05-08)
+
+### Features
+
+* **radiogroup:** radiogroup and dropdown style ([#4419](https://github.com/marshmallow-insurance/smores-react/issues/4419)) ([a07d973](https://github.com/marshmallow-insurance/smores-react/commit/a07d973a33a76d8e34645b3d4660b9867a6ddc94))
+
 ## [12.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.3.4...v12.4.0) (2025-05-07)
 
 ### Features
