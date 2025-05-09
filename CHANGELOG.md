@@ -1,3 +1,13 @@
+## [12.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.5.0...v12.6.0) (2025-05-09)
+
+### Features
+
+* **dropdown:** fix dropdown controlled to uncontrolled ([#4423](https://github.com/marshmallow-insurance/smores-react/issues/4423)) ([9d5c4d6](https://github.com/marshmallow-insurance/smores-react/commit/9d5c4d66784f5679fd3583aeee3f1b84ad567f03))
+
+### Bug Fixes
+
+* **checkbox:** adjust BoxContainer and ErrorBox styles for better layout ([#4422](https://github.com/marshmallow-insurance/smores-react/issues/4422)) ([7bc55ab](https://github.com/marshmallow-insurance/smores-react/commit/7bc55ab09a87e0bd3866d93f17dfe70ae5f8b804))
+
 ## [12.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.4.0...v12.5.0) (2025-05-08)
 
 ### Features
