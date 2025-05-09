@@ -58,7 +58,7 @@ export const Dropdown = forwardRef(function Dropdown(
     showDefaultOption = false,
     customDefaultOption,
     name,
-    value: valueProp = '',
+    value: valueProp,
     defaultValue,
     disabled = false,
     list,
@@ -126,7 +126,7 @@ export const Dropdown = forwardRef(function Dropdown(
           name={name}
           $frontIcon={frontIcon}
           $fallbackStyle={fallbackStyle}
-          value={value}
+          value={value ?? ''}
         >
           {hasOptGroups ? (
             <optgroup label={defaultOptionLabel()}>
