@@ -2,7 +2,7 @@ import React, { ReactElement, ReactNode } from 'react'
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
 import { Color } from '../theme'
-import type { BoxSpacing } from './helper.types'
+import type { BoxSpacing, SingleSpacing } from './helper.types'
 
 export type TableStylesProps = {
   hasKeyline?: boolean
@@ -124,9 +124,9 @@ interface CommonTableProps<T> {
   /** Array of actions that can be performed on each row. */
   rowActions?: RowActions<T>
   /** The Y padding for each row. */
-  rowPadding?: string
+  rowPadding?: SingleSpacing
   /** The X padding for each row. */
-  columnPadding?: string
+  columnPadding?: SingleSpacing
   /** Hides the table header. Table defaults to always showing the header. */
   hideTableHeader?: boolean
 }

@@ -5,7 +5,7 @@
  */
 type PixelSuffix = `${number}px`
 
-type Spacing = '0' | PixelSuffix
+export type SingleSpacing = '0' | PixelSuffix
 /**
  * A type that represents a padding value with the "px" suffix.
  *
@@ -15,7 +15,7 @@ type Spacing = '0' | PixelSuffix
  * @example '0' | '12px' | '24px' | '12px 24px' | '12px 0 36px' | '12px 24px 36px 48px'
  */
 export type BoxSpacing =
-  | Spacing
-  | `${Spacing} ${Spacing}`
-  | `${Spacing} ${Spacing} ${Spacing}`
-  | `${Spacing} ${Spacing} ${Spacing} ${Spacing}`
+  | SingleSpacing
+  | `${SingleSpacing} ${SingleSpacing}`
+  | `${SingleSpacing} ${SingleSpacing} ${SingleSpacing}`
+  | `${SingleSpacing} ${SingleSpacing} ${SingleSpacing} ${SingleSpacing}`
