@@ -1,3 +1,9 @@
+## [12.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.6.1...v12.7.0) (2025-05-14)
+
+### Features
+
+* **table:** add footer support to Table component [RT-426] ([#4433](https://github.com/marshmallow-insurance/smores-react/issues/4433)) ([7bb89e6](https://github.com/marshmallow-insurance/smores-react/commit/7bb89e683fb9e6377b4bbf717d9bb63da30922de))
+
 ## [12.6.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.6.0...v12.6.1) (2025-05-13)
 
 ### Bug Fixes
