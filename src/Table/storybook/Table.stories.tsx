@@ -65,7 +65,7 @@ const tableFooterData = {
   pageSize: 10,
 } as const
 
-const tableColumns = [
+const footerColumns = [
   {
     name: 'ID',
     cell: () => 'Footer row',
@@ -87,7 +87,7 @@ export const TableFooter: Story<typeof tableFooterData> = {
     data,
     footer: {
       data: tableFooterData,
-      columns: tableColumns,
+      columns: footerColumns,
       rowColor: 'chia',
     },
   },

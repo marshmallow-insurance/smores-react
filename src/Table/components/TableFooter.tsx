@@ -15,11 +15,13 @@ export function TableFooter<K extends object>({
     return <td colSpan={columnCount}>{footer.element}</td>
   }
 
-  const columns = footer.columns
-  const data = footer.data
-  const rowColor = footer.rowColor ?? 'custard'
-  const rowPadding = footer.rowPadding
-  const columnPadding = footer.columnPadding
+  const {
+    columns,
+    data,
+    rowColor = 'custard',
+    rowPadding,
+    columnPadding,
+  } = footer
 
   return (
     <TableRow
