@@ -1,3 +1,9 @@
+## [12.6.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.6.0...v12.6.1) (2025-05-13)
+
+### Bug Fixes
+
+* **Table:** Fix custom table padding ([#4427](https://github.com/marshmallow-insurance/smores-react/issues/4427)) ([c106c12](https://github.com/marshmallow-insurance/smores-react/commit/c106c12ccfb655254ce2c25ad0c44f0ecb5243f1))
+
 ## [12.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.5.0...v12.6.0) (2025-05-09)
 
 ### Features
