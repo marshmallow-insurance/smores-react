@@ -137,8 +137,6 @@ export interface TableProps<T, K = undefined> extends CommonTableProps<T> {
 
   footer?: TableFooter<K>
 
-  /** The cell color of the footer. */
-  footerColor?: Color
   /** The text to show when there is no available data to map through. */
   noDataContent?: ReactNode
 }
