@@ -180,8 +180,8 @@ type TableFooterColumnsProps<K> = {
    * @default 'custard'
    */
   rowColor?: Color
-  rowPadding?: string
-  columnPadding?: string
+  rowPadding?: SingleSpacing
+  columnPadding?: SingleSpacing
   columns: TableColumn<K>[]
   data: K
 }
