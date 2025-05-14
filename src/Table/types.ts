@@ -131,12 +131,28 @@ interface CommonTableProps<T> {
   hideTableHeader?: boolean
 }
 
-export interface TableProps<T> extends CommonTableProps<T> {
+export interface TableProps<T, K = undefined> extends CommonTableProps<T> {
   /** Array of data to be displayed in the table. */
   data: T[]
+
+  footer?: TableFooter<K>
+
+  /** The cell color of the footer. */
+  footerColor?: Color
   /** The text to show when there is no available data to map through. */
   noDataContent?: ReactNode
 }
+
+/**
+ * The type of the footer prop in the Table component.
+ * It can either be an array of columns and data, or a React element.
+ *
+ * For columns, the columns and data will be passed to each column.cell component to generate the footer.
+ * For a React element, it will render that as the table footer.
+ */
+export type TableFooter<K> =
+  | TableFooterColumnsProps<K>
+  | TableFooterElementProps<K>
 
 export interface TableRowProps<T> extends CommonTableProps<T> {
   rowData: T
@@ -151,6 +167,23 @@ export interface RowActionsProps<T>
   canExpandRow: boolean
   toggleExpansion: () => void
   isExpanded?: boolean
+}
+
+type TableFooterElementProps<K> = {
+  element: ReactElement<K>
+}
+
+type TableFooterColumnsProps<K> = {
+  /**
+   * Row color of the footer.
+   *
+   * @default 'custard'
+   */
+  rowColor?: Color
+  rowPadding?: string
+  columnPadding?: string
+  columns: TableColumn<K>[]
+  data: K
 }
 
 export type TableHeaderProps<T> = CommonTableProps<T>
