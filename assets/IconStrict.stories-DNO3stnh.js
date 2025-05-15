@@ -1,4 +1,4 @@
-import{R as n}from"./index-F2Fta7eo.js";import{I as h}from"./IconStrict-BxyHE82g.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./theme-BGnjMei9.js";import"./polished.esm-loEtNAQt.js";import"./index-CjLsI09y.js";import"./index-C-BdmnUU.js";import"./space-B-76eNGj.js";import"./focusOutline-CI39r61V.js";const A={title:"IconStrict",component:h,argTypes:{handleClick:{action:"clicked"}},decorators:[f=>n.createElement("div",{style:{margin:"64px"}},n.createElement(f,null))]},r={args:{size:48,render:"info",backgroundColor:"mascarpone"}},e={args:{size:48,render:"info",iconColor:"cream",backgroundColor:"marshmallowPink"}},o={args:{size:48,render:"info"}},a={args:{size:48,render:"info",handleClick:()=>alert("clicked"),backgroundColor:"mascarpone"}};var s,c,t;r.parameters={...r.parameters,docs:{...(s=r.parameters)==null?void 0:s.docs,source:{originalSource:`{
+import{R as n}from"./index-F2Fta7eo.js";import{I as h}from"./IconStrict-B43JfgUr.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./theme-BGnjMei9.js";import"./polished.esm-loEtNAQt.js";import"./index-CjLsI09y.js";import"./index-C-BdmnUU.js";import"./space-B-76eNGj.js";import"./focusOutline-CI39r61V.js";const A={title:"IconStrict",component:h,argTypes:{handleClick:{action:"clicked"}},decorators:[f=>n.createElement("div",{style:{margin:"64px"}},n.createElement(f,null))]},r={args:{size:48,render:"info",backgroundColor:"mascarpone"}},e={args:{size:48,render:"info",iconColor:"cream",backgroundColor:"marshmallowPink"}},o={args:{size:48,render:"info"}},a={args:{size:48,render:"info",handleClick:()=>alert("clicked"),backgroundColor:"mascarpone"}};var s,c,t;r.parameters={...r.parameters,docs:{...(s=r.parameters)==null?void 0:s.docs,source:{originalSource:`{
   args: {
     size: 48,
     render: 'info',
@@ -24,4 +24,4 @@ import{R as n}from"./index-F2Fta7eo.js";import{I as h}from"./IconStrict-BxyHE82g
     backgroundColor: 'mascarpone'
   }
 }`,...(C=(k=a.parameters)==null?void 0:k.docs)==null?void 0:C.source}}};const B=["Default","AlternateColours","WithoutBackground","WithClickHandler"];export{e as AlternateColours,r as Default,a as WithClickHandler,o as WithoutBackground,B as __namedExportsOrder,A as default};
-//# sourceMappingURL=IconStrict.stories-CaObTeCo.js.map
+//# sourceMappingURL=IconStrict.stories-DNO3stnh.js.map
