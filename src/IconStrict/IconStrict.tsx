@@ -60,7 +60,8 @@ export const IconStrict: FC<IconStrictProps> = ({
   ...otherProps
 }) => {
   const isButton = !!handleClick
-  const defaultLabel = isButton ? (title ? title : 'icon-button') : undefined
+  const defaultLabel =
+    title ?? (isButton ? (title ?? 'icon-button') : undefined)
   return (
     <IconContainer
       id={id}
