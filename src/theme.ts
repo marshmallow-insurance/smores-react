@@ -28,6 +28,7 @@ const colors = {
   peanut: '#F8C699', // 4 60
   marzipan: '#A1957C', // 5 100
   oatmeal: '#DAD2C4', // 5 60
+  satsuma: '#FFECD5',
 
   // Traffic light
   strawberry: '#DF2929', // Error 100
