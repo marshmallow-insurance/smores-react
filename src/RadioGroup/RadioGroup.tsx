@@ -124,23 +124,29 @@ export const RadioGroup = forwardRef(RadioGroupComponent) as <
   Value extends BaseValueType = BaseValueType,
 >(
   p: RadioGroupProps<Value> & React.RefAttributes<HTMLInputElement>,
-) => ReactElement<any> | null
+) => ReactElement | null
 
 const RadioItemList = styled.div<
   TransientProps<Pick<RadioGroupProps, 'displayType' | 'justifyContent'>>
 >`
   display: flex;
   gap: ${ITEM_GAP}px;
+  justify-content: ${({ $justifyContent }) => $justifyContent ?? 'flex-start'};
 
   ${({ $displayType }) => {
-    if ($displayType === 'horizontal-card') {
-      return `
+    switch ($displayType) {
+      case 'horizontal-normal':
+        return `
         flex-direction: row;
-        flex-wrap: wrap;
-      `
+        align-items: center;
+        `
+      case 'horizontal-card':
+        return `
+          flex-direction: row;
+          flex-wrap: wrap;
+        `
+      default:
+        return 'flex-direction: column;'
     }
-
-    return `flex-direction: column;`
   }}
-  justify-content: ${({ $justifyContent }) => $justifyContent ?? 'flex-start'};
 `
