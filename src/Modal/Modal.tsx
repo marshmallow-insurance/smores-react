@@ -77,6 +77,8 @@ export const Modal: FC<ModalProps> = ({
   const isTitleString = typeof title === 'string'
   const titleProps = isTitleString ? getDefaultTitleProps(title) : title
 
+  if (!showModal) return null
+
   return createPortal(
     <Wrapper $showModal={showModal} ref={modalRef}>
       <Overlay
