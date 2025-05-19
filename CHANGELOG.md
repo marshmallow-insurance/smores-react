@@ -1,3 +1,9 @@
+## [12.9.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.8.0...v12.9.0) (2025-05-19)
+
+### Features
+
+* **RadioGroup:** add 'horizontal-normal' display type and update styles ([#4445](https://github.com/marshmallow-insurance/smores-react/issues/4445)) ([2ca2756](https://github.com/marshmallow-insurance/smores-react/commit/2ca275632c0a89e93229f31e49ade19cc0ae6984))
+
 ## [12.8.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.7.0...v12.8.0) (2025-05-19)
 
 ### Features
