@@ -48,6 +48,12 @@ export const Interactive: Story = {
   },
 }
 
+export const HorizontalNormal: Story = {
+  args: {
+    displayType: 'horizontal-normal',
+  },
+}
+
 export const Vertical: Story = {
   args: {
     displayType: 'vertical-card',
