@@ -126,7 +126,7 @@ export const Dropdown = forwardRef(function Dropdown(
           name={name}
           $frontIcon={frontIcon}
           $fallbackStyle={fallbackStyle}
-          value={value ? value : ''}
+          value={value ?? ''}
         >
           {hasOptGroups ? (
             <optgroup label={defaultOptionLabel()}>
@@ -181,13 +181,15 @@ interface SSelect {
   $error: boolean
   $frontIcon?: string
   $fallbackStyle?: boolean
+  value?: string | null
 }
 
 const StyledSelect = styled.select<SSelect>`
   ${resetSelect}
   width: 100%;
   height: 32px;
-
+  color: ${({ value }) =>
+    value === '' ? theme.colors.sesame : theme.colors.liquorice};
   cursor: pointer;
   background-color: ${({ $fallbackStyle }) =>
     $fallbackStyle ? theme.colors.custard : theme.colors.cream};

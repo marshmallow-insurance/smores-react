@@ -77,10 +77,10 @@ export const StyledHeaderCell = styled.th<TransientProps<TableStylesProps>>`
 
 export const StyledCell = styled.td<TransientProps<TableStylesProps>>`
   vertical-align: middle;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-left: ${({ $columnPadding }) => $columnPadding ?? '8px'};
+  padding-right: ${({ $columnPadding }) => $columnPadding ?? '8px'};
+  padding-top: ${({ $rowPadding }) => $rowPadding ?? '8px'};
+  padding-bottom: ${({ $rowPadding }) => $rowPadding ?? '8px'};
 
   ${({ $hideOverflow }) =>
     $hideOverflow &&
@@ -107,20 +107,6 @@ export const StyledCell = styled.td<TransientProps<TableStylesProps>>`
     css`
       position: sticky;
       right: 0;
-    `};
-
-  ${({ $rowPadding }) =>
-    $rowPadding &&
-    css`
-      padding-top: ${$rowPadding};
-      padding-bottom: ${$rowPadding};
-    `};
-
-  ${({ $columnPadding }) =>
-    $columnPadding &&
-    css`
-      padding-left: ${$columnPadding};
-      padding-right: ${$columnPadding};
     `};
 
   ${({ $maxWidth }) =>

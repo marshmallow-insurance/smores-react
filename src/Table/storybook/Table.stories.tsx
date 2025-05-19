@@ -5,7 +5,7 @@ import { Box } from '../../Box'
 import { theme } from '../../theme'
 import { Table } from '../Table'
 import { TableRow } from '../components/TableRow'
-import { TableProps } from '../types'
+import { TableProps, type TableColumn } from '../types'
 import { DataRow, columns, columnsV2, data, rowActions } from './storyUtils'
 
 const Wrapper = styled(Box)`
@@ -17,7 +17,7 @@ const BorderBox = styled(Box)`
   border: 1px dashed ${theme.colors.oatmeal};
 `
 
-const meta: Meta<TableProps<DataRow>> = {
+const meta: Meta<TableProps<DataRow, object>> = {
   title: 'Table',
   component: Table,
   decorators: [
@@ -30,7 +30,9 @@ const meta: Meta<TableProps<DataRow>> = {
 }
 
 export default meta
-type Story = StoryObj<TableProps<DataRow>>
+type Story<K extends object | undefined = undefined> = StoryObj<
+  TableProps<DataRow, K extends object ? K : object>
+>
 
 const TemplateWithWrapper: Story = {
   render: (args) => (
@@ -54,6 +56,61 @@ export const BasicTable: Story = {
     rowPadding: '12px',
     columns: columns.slice(0, 3),
     data,
+  },
+}
+
+const tableFooterData = {
+  total: 100,
+  page: 1,
+  pageSize: 10,
+} as const
+
+const footerColumns = [
+  {
+    name: 'ID',
+    cell: () => 'Footer row',
+  },
+  {
+    name: 'Total',
+    cell: (row) => row.total,
+  },
+  {
+    name: 'Page',
+    cell: (row) => row.page,
+  },
+] satisfies TableColumn<typeof tableFooterData>[]
+
+export const TableFooter: Story<typeof tableFooterData> = {
+  args: {
+    rowPadding: '12px',
+    columns: columns.slice(0, 3),
+    data,
+    footer: {
+      data: tableFooterData,
+      columns: footerColumns,
+      rowColor: 'chia',
+    },
+  },
+}
+
+export const TableFooterElement: Story<typeof tableFooterData> = {
+  args: {
+    rowPadding: '12px',
+    columns: columns.slice(0, 3),
+    data,
+    footer: {
+      element: (
+        <BorderBox
+          flex
+          justifyContent="center"
+          p="48px"
+          width="100%"
+          style={{ backgroundColor: theme.colors.custard }}
+        >
+          Footer element
+        </BorderBox>
+      ),
+    },
   },
 }
 

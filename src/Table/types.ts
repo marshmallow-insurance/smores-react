@@ -2,7 +2,7 @@ import React, { ReactElement, ReactNode } from 'react'
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
 import { Color } from '../theme'
-import type { BoxSpacing } from './helper.types'
+import type { BoxSpacing, SingleSpacing } from './helper.types'
 
 export type TableStylesProps = {
   hasKeyline?: boolean
@@ -124,19 +124,33 @@ interface CommonTableProps<T> {
   /** Array of actions that can be performed on each row. */
   rowActions?: RowActions<T>
   /** The Y padding for each row. */
-  rowPadding?: string
+  rowPadding?: SingleSpacing
   /** The X padding for each row. */
-  columnPadding?: string
+  columnPadding?: SingleSpacing
   /** Hides the table header. Table defaults to always showing the header. */
   hideTableHeader?: boolean
 }
 
-export interface TableProps<T> extends CommonTableProps<T> {
+export interface TableProps<T, K = undefined> extends CommonTableProps<T> {
   /** Array of data to be displayed in the table. */
   data: T[]
+
+  footer?: TableFooter<K>
+
   /** The text to show when there is no available data to map through. */
   noDataContent?: ReactNode
 }
+
+/**
+ * The type of the footer prop in the Table component.
+ * It can either be an array of columns and data, or a React element.
+ *
+ * For columns, the columns and data will be passed to each column.cell component to generate the footer.
+ * For a React element, it will render that as the table footer.
+ */
+export type TableFooter<K> =
+  | TableFooterColumnsProps<K>
+  | TableFooterElementProps<K>
 
 export interface TableRowProps<T> extends CommonTableProps<T> {
   rowData: T
@@ -151,6 +165,23 @@ export interface RowActionsProps<T>
   canExpandRow: boolean
   toggleExpansion: () => void
   isExpanded?: boolean
+}
+
+type TableFooterElementProps<K> = {
+  element: ReactElement<K>
+}
+
+type TableFooterColumnsProps<K> = {
+  /**
+   * Row color of the footer.
+   *
+   * @default 'custard'
+   */
+  rowColor?: Color
+  rowPadding?: SingleSpacing
+  columnPadding?: SingleSpacing
+  columns: TableColumn<K>[]
+  data: K
 }
 
 export type TableHeaderProps<T> = CommonTableProps<T>

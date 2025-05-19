@@ -142,8 +142,8 @@ const Wrapper = styled.label<
 >`
   display: flex;
   flex-direction: column;
-  cursor: pointer;
-
+  cursor: ${({ $disabled }) => ($disabled ? 'default' : 'pointer')};
+  opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
   ${({
     $displayType,
     checked,
@@ -156,11 +156,9 @@ const Wrapper = styled.label<
       $displayType === 'vertical-card') &&
     css`
       border-radius: 12px;
-      background-color: ${$disabled
-        ? theme.colors.chia
-        : $fallbackStyle
-          ? theme.colors.cream
-          : theme.colors.custard};
+      background-color: ${$fallbackStyle
+        ? theme.colors.cream
+        : theme.colors.custard};
       padding: ${checked ? '10px' : '12px'};
       border: ${checked &&
       ($isError
