@@ -25,6 +25,7 @@ const brandSecondary = [
   'peanut',
   'marzipan',
   'oatmeal',
+  'satsuma',
 ] as const
 const trafficLight = [
   'strawberry',
