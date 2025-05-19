@@ -1,3 +1,13 @@
+## [12.8.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.7.0...v12.8.0) (2025-05-19)
+
+### Features
+
+* **color:** added new color ([#4444](https://github.com/marshmallow-insurance/smores-react/issues/4444)) ([df300b7](https://github.com/marshmallow-insurance/smores-react/commit/df300b7255e0cea793f9b9ae9114d64665419ba9))
+
+### Refactors
+
+* **IconStrict:** Use `title` regardless of `isButton` ([#4437](https://github.com/marshmallow-insurance/smores-react/issues/4437)) ([3349035](https://github.com/marshmallow-insurance/smores-react/commit/33490354dd9fd0ab35eb94148f34831aba33453a))
+
 ## [12.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.6.1...v12.7.0) (2025-05-14)
 
 ### Features
