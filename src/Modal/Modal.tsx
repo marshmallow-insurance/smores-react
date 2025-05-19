@@ -8,10 +8,6 @@ import { IconStrict } from '../IconStrict'
 import { Text, type TextProps } from '../Text'
 import { useBodyScrollLock } from '../hooks/useBodyScrollLock'
 
-interface IModalWrapper {
-  // showModal state
-  $showModal: boolean
-}
 interface IModalContainer {
   // drawer state
   $drawer: boolean
@@ -80,7 +76,7 @@ export const Modal: FC<ModalProps> = ({
   if (!showModal) return null
 
   return createPortal(
-    <Wrapper $showModal={showModal} ref={modalRef}>
+    <Wrapper ref={modalRef}>
       <Overlay
         onClick={() => closeOnOverlayClick && handleClick()}
         $closeOnOverlayClick={closeOnOverlayClick}
@@ -121,19 +117,17 @@ export const Modal: FC<ModalProps> = ({
   )
 }
 
-const Wrapper = styled(Box)<IModalWrapper>(
-  ({ $showModal }) => css`
-    display: ${$showModal ? 'flex' : 'none'};
-    position: absolute;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  `,
-)
+const Wrapper = styled(Box)`
+  display: flex;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`
 
 const Overlay = styled.div<{ $closeOnOverlayClick: boolean }>`
   position: fixed;
