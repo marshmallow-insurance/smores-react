@@ -1,3 +1,9 @@
+## [12.9.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.9.0...v12.9.1) (2025-05-20)
+
+### Bug Fixes
+
+* **CLM-176:** prevent rendering when showModal is false ([#4446](https://github.com/marshmallow-insurance/smores-react/issues/4446)) ([9df485f](https://github.com/marshmallow-insurance/smores-react/commit/9df485fd1ec350774d0bbf7e6ea1147b9beb9254))
+
 ## [12.9.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.8.0...v12.9.0) (2025-05-19)
 
 ### Features
