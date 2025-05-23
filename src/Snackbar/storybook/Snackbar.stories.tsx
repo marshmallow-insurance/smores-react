@@ -55,6 +55,7 @@ import { useSnackbar } from '../hooks'
  *       <Button
  *         secondary
  *         onClick={() => {
+ *           // This snackbar will appear centered directly over the modal
  *           addSnackbar({
  *             leadingIcon: 'warning',
  *             message: 'Important notification!',
