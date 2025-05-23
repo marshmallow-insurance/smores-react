@@ -1,4 +1,5 @@
 import { Icons } from '../Icon/iconsList'
+import { ReactNode } from 'react'
 
 export interface Snackbar {
   id: string
@@ -13,4 +14,9 @@ export type CreateSnack = Omit<Snackbar, 'id'>
 
 export interface SnackbarContextType {
   addSnackbar: (snackbar: CreateSnack) => void
+}
+
+export interface SnackbarContainerProps {
+  children?: ReactNode
+  portalContainer?: Element | DocumentFragment
 }
