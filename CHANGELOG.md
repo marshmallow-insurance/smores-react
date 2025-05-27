@@ -1,3 +1,9 @@
+## [12.9.2](https://github.com/marshmallow-insurance/smores-react/compare/v12.9.1...v12.9.2) (2025-05-26)
+
+### Refactors
+
+* **CLM-156:** Allow snackbar toasts to show over modals ([#4453](https://github.com/marshmallow-insurance/smores-react/issues/4453)) ([e8338c6](https://github.com/marshmallow-insurance/smores-react/commit/e8338c676066de2eddef1c68921f15897701ec6d))
+
 ## [12.9.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.9.0...v12.9.1) (2025-05-20)
 
 ### Bug Fixes
