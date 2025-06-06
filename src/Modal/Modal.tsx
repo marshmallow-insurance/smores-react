@@ -83,10 +83,10 @@ export const Modal: FC<ModalProps> = ({
       />
       <Container
         $drawer={drawer}
-        $width={width || '460px'}
+        $width={width ?? '460px'}
         className={containerClass}
       >
-        <Box
+        <HeaderContainer
           flex
           alignItems="flex-start"
           justifyContent="space-between"
@@ -107,7 +107,7 @@ export const Modal: FC<ModalProps> = ({
               />
             )}
           </Box>
-        </Box>
+        </HeaderContainer>
         <Box flex direction="column">
           {children}
         </Box>
@@ -140,12 +140,20 @@ const Overlay = styled.div<{ $closeOnOverlayClick: boolean }>`
   right: 0;
 `
 
+const HeaderContainer = styled(Box)`
+  position: sticky;
+  top: 0;
+  background: ${theme.colors.coconut};
+  padding: 36px 0 8px;
+  z-index: 1;
+`
+
 const Container = styled.div<IModalContainer>(
   ({ $drawer, $width }) => css`
     background: ${theme.colors.coconut};
     box-sizing: border-box;
     border-radius: 16px;
-    padding: 24px;
+    padding: 0 24px 24px 24px;
     width: 100%;
     max-width: ${$width};
     position: fixed;

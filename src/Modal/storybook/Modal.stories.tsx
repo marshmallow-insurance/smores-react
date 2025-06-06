@@ -5,11 +5,18 @@ import { Box } from '../../Box'
 import { Button } from '../../Button'
 import { Icon } from '../../Icon'
 import { Modal, ModalProps } from '../Modal'
+import { theme } from '../../theme'
 
 const StyledBox = styled(Box)<{ height: string }>`
   width: ${(props) => props.width || '100%'};
   height: ${(props) => props.height};
   transition: height 0.3s ease-in-out;
+`
+
+const SectionBox = styled(Box)`
+  padding: 16px;
+  background-color: ${theme.colors.oatmeal};
+  border-radius: 8px;
 `
 
 const Container: FC<ModalProps> = (props) => {
@@ -99,6 +106,35 @@ export const Interactive: Story = {
           keeps it visible with the modal window as a child window in front of
           it.
         </StyledBox>
+      </Container>
+    )
+  },
+}
+
+export const Scrollable: Story = {
+  args: {
+    title: 'Scrollable Modal',
+    showModal: false,
+    width: '400px',
+  },
+  render: (args) => {
+    return (
+      <Container {...args}>
+        <Box flex direction="column" gap="16px">
+          {Array.from({ length: 20 }).map((_, index) => (
+            <SectionBox key={index}>
+              <Box mb="8px">
+                <strong>Section {index + 1}</strong>
+              </Box>
+              <Box>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </Box>
+            </SectionBox>
+          ))}
+        </Box>
       </Container>
     )
   },
