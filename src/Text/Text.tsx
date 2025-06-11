@@ -17,23 +17,6 @@ interface IText {
   $cursor: string
 }
 
-/**
- * @deprecated Use only new Typo
- */
-
-export type DeprecatedTypo =
-  | 'header-large'
-  | 'header-medium'
-  | 'header-small'
-  | 'desc-heavy'
-  | 'desc-medium'
-  | 'desc-light'
-  | 'desc-small'
-  | 'base'
-  | 'base-small'
-  | 'base-xsmall'
-  | 'label-large'
-
 export type Typo =
   | 'hero-alternate'
   | 'hero'
@@ -53,9 +36,7 @@ type Props = {
   children: ReactNode
   tag?: any
   className?: string
-  // Record<never, never> matches any non-null and non-undefined type so
-  // IntelliSense can suggest Typo to autocomplete
-  typo?: Typo | (string & Record<never, never>)
+  typo?: Typo
   align?: string
   color?: Color
   cursor?: string
@@ -97,7 +78,7 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
 
 Text.displayName = 'Text'
 
-const isNewTypo = (value: string): value is Typo => {
+const isTypo = (value: string): value is Typo => {
   return Object.keys(fontStyleMapping).includes(value)
 }
 
@@ -105,137 +86,7 @@ const Container = styled(Box)<IText>(
   ({ $align, $color, $cursor, $typo }) => css`
     /** TYPOGRAPHY STYLES */
 
-    ${isNewTypo($typo) && fontStyleMapping[$typo]}
-
-    /** DEPRECATED TYPOGRAPHY STYLES */
-    ${$typo === 'header-large' &&
-    css`
-      font-size: 24px;
-      line-height: 31px;
-      font-weight: 500;
-
-      @media (min-width: 768px) {
-        font-size: 42px;
-        line-height: 54px;
-      }
-    `}
-
-  ${$typo === 'header-medium' &&
-    css`
-      font-size: 21px;
-      line-height: 27px;
-      font-weight: 500;
-
-      @media (min-width: 768px) {
-        font-size: 32px;
-        line-height: 41px;
-      }
-    `}
-
-  ${$typo === 'header-small' &&
-    css`
-      font-size: 18px;
-      line-height: 23px;
-      font-weight: 500;
-
-      @media (min-width: 768px) {
-        font-size: 21px;
-        line-height: 27px;
-      }
-    `}
-
-  ${$typo === 'desc-heavy' &&
-    css`
-      font-size: 14px;
-      line-height: 20px;
-      font-weight: 700;
-
-      @media (min-width: 768px) {
-        font-size: 16px;
-        line-height: 23px;
-      }
-    `}
-
-  ${$typo === 'desc-medium' &&
-    css`
-      font-size: 14px;
-      line-height: 20px;
-      font-weight: 500;
-
-      @media (min-width: 768px) {
-        font-size: 16px;
-        line-height: 23px;
-      }
-    `}
-
-  ${$typo === 'desc-light' &&
-    css`
-      font-size: 14px;
-      line-height: 20px;
-      font-weight: 400;
-
-      @media (min-width: 768px) {
-        font-size: 16px;
-        line-height: 23px;
-      }
-    `}
-
-  ${$typo === 'desc-small' &&
-    css`
-      font-size: 12px;
-      line-height: 16px;
-      font-weight: 400;
-
-      @media (min-width: 768px) {
-        font-size: 14px;
-        line-height: 18px;
-      }
-    `}
-
-  ${$typo === 'base' &&
-    css`
-      font-size: 14px;
-      line-height: 23px;
-      font-weight: 400;
-
-      @media (min-width: 768px) {
-        font-size: 16px;
-        line-height: 26px;
-      }
-    `}
-
-  ${$typo === 'base-small' &&
-    css`
-      font-size: 12px;
-      line-height: 20px;
-      font-weight: 400;
-
-      @media (min-width: 768px) {
-        font-size: 14px;
-        line-height: 23px;
-      }
-    `}
-
-  ${$typo === 'base-xsmall' &&
-    css`
-      font-size: 10px;
-      line-height: 16px;
-      font-weight: 400;
-
-      @media (min-width: 768px) {
-        font-size: 12px;
-        line-height: 19px;
-      }
-    `}
-  
-  ${$typo === 'label-large' &&
-    css`
-      font-size: 12px;
-      line-height: 100%;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.75px;
-    `}
+    ${isTypo($typo) && fontStyleMapping[$typo]}
 
     text-align: ${$align};
     cursor: ${$cursor};

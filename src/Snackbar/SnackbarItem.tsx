@@ -1,11 +1,11 @@
-import { Box } from '../Box'
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { Icon } from '../Icon'
-import { theme } from '../theme'
-import { Text } from '../Text'
-import { Snackbar } from './types'
+import { Box } from '../Box'
 import { useTimeout } from '../hooks'
+import { Icon } from '../Icon'
+import { Text } from '../Text'
+import { theme } from '../theme'
+import { Snackbar } from './types'
 
 interface Props extends Snackbar {
   deleteSnack: (id: string) => void
@@ -28,7 +28,7 @@ export const SnackbarItem: FC<Props> = ({
         {leadingIcon && (
           <Icon mr="12px" render={leadingIcon} size={24} color="mascarpone" />
         )}
-        <Text typo="desc-small" color="mascarpone">
+        <Text typo="body-small" color="mascarpone">
           {message}
         </Text>
       </Box>
@@ -40,7 +40,7 @@ export const SnackbarItem: FC<Props> = ({
           {showCloseIcon ? (
             <Icon render="cross" size={16} color="mascarpone" />
           ) : (
-            <UnderlinedText tag="span" typo="desc-medium" color="mascarpone">
+            <UnderlinedText tag="span" typo="headline-small" color="mascarpone">
               Dismiss
             </UnderlinedText>
           )}

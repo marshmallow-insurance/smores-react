@@ -57,10 +57,10 @@ export const Row: FC<RowProps> = ({
         />
       )}
       <Box>
-        <Text tag="h1" typo="base">
+        <Text tag="h1" typo="body-regular">
           {heading}
         </Text>
-        <Text tag="p" typo="desc-small" color="sesame">
+        <Text tag="p" typo="body-small" color="sesame">
           {subHeading}
         </Text>
       </Box>

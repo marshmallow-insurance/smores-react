@@ -14,7 +14,7 @@ const meta: Meta<typeof NumberInput> = {
   },
 }
 
-const InteractiveTemplate: React.FC<NumberInputProps> = (args) => {
+const InteractiveTemplate = (args: NumberInputProps) => {
   const [{ value }, updateArgs] = useArgs<NumberInputProps>()
 
   const handleChange = (e: string | number) => {

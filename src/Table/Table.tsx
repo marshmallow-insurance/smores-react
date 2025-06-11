@@ -4,6 +4,7 @@ import { TableHeader } from './components/TableHeader'
 import { TableRow } from './components/TableRow'
 import { StyledCell, StyledTable } from './components/commonComponents'
 import { TableProps } from './types'
+import { TableFooter } from './components/TableFooter'
 
 /**
  * A table component that displays data with various features such as expandable rows, striped rows, and fixed headers.
@@ -18,7 +19,7 @@ import { TableProps } from './types'
  * ## Improvements:
  * - It would be nice if we expandable logic inside this component, e.g the presence of certain props would automatically add this
  */
-export const Table = <T extends object>({
+export const Table = <T extends object, K extends object>({
   columns,
   data,
   fixedHeader = true,
@@ -29,6 +30,7 @@ export const Table = <T extends object>({
   headerHeight,
   headerColor = 'mascarpone',
   rowColor = 'custard',
+  footer,
   stripedColor,
   rowBorderColor = 'oatmeal',
   rowActions,
@@ -36,12 +38,13 @@ export const Table = <T extends object>({
   rowPadding,
   columnPadding,
   noDataContent,
+  roundedTable,
   hideTableHeader = false,
-}: TableProps<T>) => {
-  const showActionsCell = expandable || rowActions
+}: TableProps<T, K>) => {
+  const showActionsCell = expandable ?? rowActions
   const expandSubProp = showActionsCell ? columns.length + 1 : columns.length
   return (
-    <StyledTable>
+    <StyledTable $roundedTable={roundedTable}>
       {!hideTableHeader && (
         <thead>
           <TableHeader
@@ -65,33 +68,39 @@ export const Table = <T extends object>({
               $rowPadding={rowPadding}
               $columnPadding={columnPadding}
             >
-              {noDataContent ? (
-                noDataContent
-              ) : (
-                <Text align="center">No available data</Text>
-              )}
+              {noDataContent ?? <Text align="center">No available data</Text>}
             </StyledCell>
           </tr>
         )}
-        {data.length !== 0 &&
-          data.map((row, rowIndex) => (
-            <TableRow
-              key={rowIndex}
-              rowData={row}
-              rowIndex={rowIndex}
-              columns={columns}
-              rowActions={rowActions}
-              stripedColor={stripedColor}
-              subTable={subTable}
-              subRows={subRows}
-              rowColor={rowColor}
-              rowBorderColor={rowBorderColor}
-              rowPadding={rowPadding}
-              columnPadding={columnPadding}
-              expandable={expandable}
-              clickableRow={clickableRow}
-            />
-          ))}
+        {data.length !== 0 && (
+          <>
+            {data.map((row, rowIndex) => (
+              <TableRow
+                key={rowIndex}
+                rowData={row}
+                rowIndex={rowIndex}
+                columns={columns}
+                rowActions={rowActions}
+                stripedColor={stripedColor}
+                subTable={subTable}
+                subRows={subRows}
+                rowColor={rowColor}
+                rowBorderColor={rowBorderColor}
+                rowPadding={rowPadding}
+                columnPadding={columnPadding}
+                expandable={expandable}
+                clickableRow={clickableRow}
+                hideBorder={
+                  Boolean(roundedTable) && rowIndex === data.length - 1
+                }
+              />
+            ))}
+
+            {footer && (
+              <TableFooter columnCount={columns.length} footer={footer} />
+            )}
+          </>
+        )}
       </tbody>
     </StyledTable>
   )

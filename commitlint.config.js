@@ -1,2 +1,2 @@
-import config from '@mrshmllw/campfire/dist/configs/commitlint.config.js'
-export default config
+import { commitlintConfig } from '@mrshmllw/campfire'
+export default commitlintConfig

@@ -1,3 +1,127 @@
+## [12.9.2](https://github.com/marshmallow-insurance/smores-react/compare/v12.9.1...v12.9.2) (2025-05-26)
+
+### Refactors
+
+* **CLM-156:** Allow snackbar toasts to show over modals ([#4453](https://github.com/marshmallow-insurance/smores-react/issues/4453)) ([e8338c6](https://github.com/marshmallow-insurance/smores-react/commit/e8338c676066de2eddef1c68921f15897701ec6d))
+
+## [12.9.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.9.0...v12.9.1) (2025-05-20)
+
+### Bug Fixes
+
+* **CLM-176:** prevent rendering when showModal is false ([#4446](https://github.com/marshmallow-insurance/smores-react/issues/4446)) ([9df485f](https://github.com/marshmallow-insurance/smores-react/commit/9df485fd1ec350774d0bbf7e6ea1147b9beb9254))
+
+## [12.9.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.8.0...v12.9.0) (2025-05-19)
+
+### Features
+
+* **RadioGroup:** add 'horizontal-normal' display type and update styles ([#4445](https://github.com/marshmallow-insurance/smores-react/issues/4445)) ([2ca2756](https://github.com/marshmallow-insurance/smores-react/commit/2ca275632c0a89e93229f31e49ade19cc0ae6984))
+
+## [12.8.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.7.0...v12.8.0) (2025-05-19)
+
+### Features
+
+* **color:** added new color ([#4444](https://github.com/marshmallow-insurance/smores-react/issues/4444)) ([df300b7](https://github.com/marshmallow-insurance/smores-react/commit/df300b7255e0cea793f9b9ae9114d64665419ba9))
+
+### Refactors
+
+* **IconStrict:** Use `title` regardless of `isButton` ([#4437](https://github.com/marshmallow-insurance/smores-react/issues/4437)) ([3349035](https://github.com/marshmallow-insurance/smores-react/commit/33490354dd9fd0ab35eb94148f34831aba33453a))
+
+## [12.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.6.1...v12.7.0) (2025-05-14)
+
+### Features
+
+* **table:** add footer support to Table component [RT-426] ([#4433](https://github.com/marshmallow-insurance/smores-react/issues/4433)) ([7bb89e6](https://github.com/marshmallow-insurance/smores-react/commit/7bb89e683fb9e6377b4bbf717d9bb63da30922de))
+
+## [12.6.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.6.0...v12.6.1) (2025-05-13)
+
+### Bug Fixes
+
+* **Table:** Fix custom table padding ([#4427](https://github.com/marshmallow-insurance/smores-react/issues/4427)) ([c106c12](https://github.com/marshmallow-insurance/smores-react/commit/c106c12ccfb655254ce2c25ad0c44f0ecb5243f1))
+
+## [12.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.5.0...v12.6.0) (2025-05-09)
+
+### Features
+
+* **dropdown:** fix dropdown controlled to uncontrolled ([#4423](https://github.com/marshmallow-insurance/smores-react/issues/4423)) ([9d5c4d6](https://github.com/marshmallow-insurance/smores-react/commit/9d5c4d66784f5679fd3583aeee3f1b84ad567f03))
+
+### Bug Fixes
+
+* **checkbox:** adjust BoxContainer and ErrorBox styles for better layout ([#4422](https://github.com/marshmallow-insurance/smores-react/issues/4422)) ([7bc55ab](https://github.com/marshmallow-insurance/smores-react/commit/7bc55ab09a87e0bd3866d93f17dfe70ae5f8b804))
+
+## [12.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.4.0...v12.5.0) (2025-05-08)
+
+### Features
+
+* **radiogroup:** radiogroup and dropdown style ([#4419](https://github.com/marshmallow-insurance/smores-react/issues/4419)) ([a07d973](https://github.com/marshmallow-insurance/smores-react/commit/a07d973a33a76d8e34645b3d4660b9867a6ddc94))
+
+## [12.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.3.4...v12.4.0) (2025-05-07)
+
+### Features
+
+* **tag:** added optional onclick prop to tag comp ([#4413](https://github.com/marshmallow-insurance/smores-react/issues/4413)) ([b41867d](https://github.com/marshmallow-insurance/smores-react/commit/b41867d58bf36df34b6ddaa7cb73923ed105d1ce))
+
+## [12.3.4](https://github.com/marshmallow-insurance/smores-react/compare/v12.3.3...v12.3.4) (2025-04-25)
+
+## [12.3.3](https://github.com/marshmallow-insurance/smores-react/compare/v12.3.2...v12.3.3) (2025-04-16)
+
+## [12.3.2](https://github.com/marshmallow-insurance/smores-react/compare/v12.3.1...v12.3.2) (2025-04-10)
+
+### Bug Fixes
+
+* **progress-indicator:** minor changes from implementation ([#4367](https://github.com/marshmallow-insurance/smores-react/issues/4367)) ([5aa4278](https://github.com/marshmallow-insurance/smores-react/commit/5aa42783444f7a2030f92eee53e37bb6ecc489e8))
+
+## [12.3.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.3.0...v12.3.1) (2025-04-10)
+
+## [12.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.2.2...v12.3.0) (2025-04-09)
+
+### Features
+
+* **progress-indicator:** new component ([#4364](https://github.com/marshmallow-insurance/smores-react/issues/4364)) ([f99ef45](https://github.com/marshmallow-insurance/smores-react/commit/f99ef45995cbfc700da0883d663fcc6dc0b2f66a))
+
+## [12.2.2](https://github.com/marshmallow-insurance/smores-react/compare/v12.2.1...v12.2.2) (2025-03-31)
+
+## [12.2.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.2.0...v12.2.1) (2025-03-27)
+
+### Bug Fixes
+
+* adding position relative to box wrapping select ([#4337](https://github.com/marshmallow-insurance/smores-react/issues/4337)) ([edcfb6f](https://github.com/marshmallow-insurance/smores-react/commit/edcfb6fc7b44856a01b0cf2a19746fc9684ba2c4))
+
+## [12.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.1.0...v12.2.0) (2025-03-20)
+
+### Features
+
+* **toggle:** added optional bgcolor for toggle component ([#4324](https://github.com/marshmallow-insurance/smores-react/issues/4324)) ([c155766](https://github.com/marshmallow-insurance/smores-react/commit/c155766ebb9b62e245696a71c41cefcc597277d8))
+
+### Tests
+
+* **tag:** added test for tag component ([#4309](https://github.com/marshmallow-insurance/smores-react/issues/4309)) ([520c568](https://github.com/marshmallow-insurance/smores-react/commit/520c568baba47b12d1363a31bd9884b50fc1e546))
+
+## [12.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.0.0...v12.1.0) (2025-03-12)
+
+### Features
+
+* **tag:** add optional icon to tag component  ([#4303](https://github.com/marshmallow-insurance/smores-react/issues/4303)) ([7c96871](https://github.com/marshmallow-insurance/smores-react/commit/7c96871b17ac25c5f60f7df337b840e0db3d06fe))
+
+## [12.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v11.1.0...v12.0.0) (2025-02-24)
+
+### ⚠ BREAKING CHANGES
+
+* removes deprecated typos
+
+### Features
+
+* removes deprecated typos ([#4263](https://github.com/marshmallow-insurance/smores-react/issues/4263)) ([d38b7d8](https://github.com/marshmallow-insurance/smores-react/commit/d38b7d8e249018a5bb2e5f231fcc73730f00d967))
+
+### Bug Fixes
+
+* add breaking change config to semantic release ([#4268](https://github.com/marshmallow-insurance/smores-react/issues/4268)) ([989adf9](https://github.com/marshmallow-insurance/smores-react/commit/989adf9133a03bfaafbfc14e0966fac9d6f4b22d))
+
+## [11.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v11.0.0...v11.1.0) (2025-02-19)
+
+### Features
+
+* **Table:** Implement rounded subTables ([#4257](https://github.com/marshmallow-insurance/smores-react/issues/4257)) ([e45478f](https://github.com/marshmallow-insurance/smores-react/commit/e45478f62f36a93f9bc01d2e402d41db5581cdbf))
+
 ## [11.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v10.7.1...v11.0.0) (2025-02-04)
 
 ### ⚠ BREAKING CHANGES

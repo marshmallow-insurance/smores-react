@@ -26,7 +26,7 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckBoxProps>(
         <BoxContainer id={id}>
           <Text
             tag="span"
-            typo="base"
+            typo="body-regular"
             color={error ? 'strawberry' : 'liquorice'}
           >
             {children}
@@ -96,6 +96,7 @@ const BoxContainer = styled.label`
   padding-left: 32px;
   user-select: none;
   cursor: pointer;
+  min-height: 24px;
 
   input {
     position: absolute;
@@ -132,11 +133,12 @@ const BoxContainer = styled.label`
 
   span {
     border-radius: 6px;
+    line-height: 24px;
   }
 `
 
-const ErrorBox = styled.span`
-  padding-top: 8px;
+const ErrorBox = styled.div`
+  margin-top: 4px;
   font-size: 12px;
   color: ${theme.colors.strawberry};
 `

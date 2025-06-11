@@ -1,15 +1,20 @@
 import React, {
   createContext,
   FC,
-  ReactNode,
   useCallback,
   useContext,
   useRef,
   useState,
 } from 'react'
+import { createPortal } from 'react-dom'
 import styled from 'styled-components'
 import { SnackbarItem } from './SnackbarItem'
-import { CreateSnack, Snackbar, SnackbarContextType } from './types'
+import {
+  CreateSnack,
+  Snackbar,
+  SnackbarContextType,
+  SnackbarContainerProps,
+} from './types'
 
 export const SnackbarContext = createContext<SnackbarContextType>({
   addSnackbar: () => {
@@ -19,8 +24,9 @@ export const SnackbarContext = createContext<SnackbarContextType>({
 
 export const useSnackbarContext = () => useContext(SnackbarContext)
 
-export const SnackbarContainer: FC<{ children?: ReactNode }> = ({
+export const SnackbarContainer: FC<SnackbarContainerProps> = ({
   children,
+  portalContainer = document.body,
 }) => {
   const snackbarIdRef = useRef(0)
   const [snackbars, setSnackbars] = useState<Snackbar[]>([])
@@ -51,15 +57,18 @@ export const SnackbarContainer: FC<{ children?: ReactNode }> = ({
       }}
     >
       {children}
-      <SnackbarWrapper>
-        {snackbars.map((snackbar) => (
-          <SnackbarItem
-            key={snackbar.id}
-            {...snackbar}
-            deleteSnack={deleteSnackbar}
-          />
-        ))}
-      </SnackbarWrapper>
+      {createPortal(
+        <SnackbarWrapper>
+          {snackbars.map((snackbar) => (
+            <SnackbarItem
+              key={snackbar.id}
+              {...snackbar}
+              deleteSnack={deleteSnackbar}
+            />
+          ))}
+        </SnackbarWrapper>,
+        portalContainer,
+      )}
     </SnackbarContext.Provider>
   )
 }

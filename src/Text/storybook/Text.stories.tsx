@@ -20,28 +20,28 @@ const TypoCollection = ({
   return (
     <Box>
       <Grid>
-        <Text tag="p" typo="base">
+        <Text tag="p" typo="body-regular">
           Name
         </Text>
-        <Text tag="p" typo="base">
+        <Text tag="p" typo="body-regular">
           Single Line
         </Text>
-        <Text tag="p" typo="base">
+        <Text tag="p" typo="body-regular">
           Paragraph
         </Text>
       </Grid>
       {typos.map((typo) => (
         <Grid key={typo}>
-          <Text tag="p" typo="base" color="sesame">
+          <Text tag="p" typo="body-regular" color="sesame">
             {typo}
           </Text>
-          <Text tag="p" typo={typo} color="liquorice">
+          <Text tag="p" typo="body-regular" color="liquorice">
             They waited patiently for what seemed a very long time.
           </Text>
           {!['hero-alternate', 'hero', 'heading-alternate', 'label'].includes(
             typo,
           ) && (
-            <Text tag="p" typo={typo} color="liquorice">
+            <Text tag="p" typo="body-regular" color="liquorice">
               They waited patiently for what seemed a very long time. They
               waited patiently for what seemed a very long time.
             </Text>
@@ -69,19 +69,6 @@ export default meta
 type Story = StoryObj<typeof Text>
 
 const typos = Object.keys(fontStyleMapping)
-
-const deprecatedTypos = [
-  'header-large',
-  'header-medium',
-  'header-small',
-  'desc-heavy',
-  'desc-medium',
-  'desc-light',
-  'desc-small',
-  'base',
-  'base-small',
-  'base-xsmall',
-]
 
 export const Default: Story = {
   args: {
@@ -115,8 +102,4 @@ export const WithTitle: Story = {
 
 export const Collection: Story = {
   render: () => <TypoCollection typos={typos} />,
-}
-
-export const DeprecatedTypos: Story = {
-  render: () => <TypoCollection typos={deprecatedTypos} />,
 }

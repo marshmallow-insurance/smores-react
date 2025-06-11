@@ -1,2 +1,2 @@
-import config from '@mrshmllw/campfire/dist/configs/lint-staged.config.js'
-export default config
+import { lintStagedConfig } from '@mrshmllw/campfire'
+export default lintStagedConfig

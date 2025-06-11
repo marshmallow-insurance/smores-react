@@ -12,7 +12,7 @@ import { Icons } from '../Icon/iconsList'
 import { Text } from '../Text'
 import { RadioElement } from './RadioElement'
 import { ITEM_GAP } from './constants'
-import { BaseValueType, DisplayType, IconPosition } from './types'
+import { BaseValueType, DisplayType, IconPosition, ItemWidth } from './types'
 
 type RadioItemProps = {
   name: string
@@ -28,6 +28,8 @@ type RadioItemProps = {
   isError: boolean
   fallbackStyle?: boolean
   bodyCopy?: string
+  disabled?: boolean
+  itemWidth?: ItemWidth
 }
 
 export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
@@ -46,10 +48,13 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
       isError,
       fallbackStyle,
       bodyCopy,
+      disabled,
+      itemWidth,
     },
     ref,
   ) {
     const id = useUniqueId()
+
     return (
       <Wrapper
         htmlFor={id}
@@ -58,6 +63,8 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
         data-testid={value}
         $isError={isError}
         $fallbackStyle={fallbackStyle}
+        $disabled={disabled}
+        $itemWidth={itemWidth}
       >
         {visual && !icon && (
           <VisualWrapper>
@@ -80,6 +87,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             onBlur={onBlur}
             isError={isError}
             mr="8px"
+            isDisabled={disabled}
           />
           <Box>
             <RadioText $isError={isError}>{label}</RadioText>
@@ -130,13 +138,20 @@ const Visual = styled.div<{ $visualUrl: string }>`
 const Wrapper = styled.label<
   TransientProps<
     Pick<RadioItemProps, 'displayType' | 'isError' | 'fallbackStyle'>
-  > & { checked: boolean }
+  > & { checked: boolean; $disabled?: boolean; $itemWidth?: ItemWidth }
 >`
   display: flex;
   flex-direction: column;
-  cursor: pointer;
-
-  ${({ $displayType, checked, $isError, $fallbackStyle }) => css`
+  cursor: ${({ $disabled }) => ($disabled ? 'default' : 'pointer')};
+  opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
+  ${({
+    $displayType,
+    checked,
+    $isError,
+    $fallbackStyle,
+    $disabled,
+    $itemWidth,
+  }) => css`
     ${($displayType === 'horizontal-card' ||
       $displayType === 'vertical-card') &&
     css`
@@ -151,24 +166,29 @@ const Wrapper = styled.label<
         : `2px solid ${theme.colors.liquorice}`)};
 
       &:hover {
-        background-color: ${$fallbackStyle
-          ? theme.colors.coconut
-          : theme.colors.oatmeal};
+        ${!$disabled &&
+        css`
+          background-color: ${$fallbackStyle
+            ? theme.colors.coconut
+            : theme.colors.oatmeal};
+        `}
       }
     `}
     ${$displayType === 'horizontal-card' &&
     css`
-      width: 100%;
       justify-content: center;
+      ${!$itemWidth &&
+      css`
+        @media (min-width: 420px) {
+          width: calc(50% - ${ITEM_GAP / 2}px);
+        }
 
-      @media (min-width: 420px) {
-        width: calc(50% - ${ITEM_GAP / 2}px);
-      }
-
-      @media (min-width: 768px) {
-        width: 201px;
-      }
+        @media (min-width: 768px) {
+          width: 201px;
+        }
+      `}
     `}
+  width: ${$itemWidth ?? '100%'};
   `}
 `
 

@@ -5,7 +5,7 @@ import { Box } from '../../Box'
 import { theme } from '../../theme'
 import { Table } from '../Table'
 import { TableRow } from '../components/TableRow'
-import { TableProps } from '../types'
+import { TableProps, type TableColumn } from '../types'
 import { DataRow, columns, columnsV2, data, rowActions } from './storyUtils'
 
 const Wrapper = styled(Box)`
@@ -17,13 +17,22 @@ const BorderBox = styled(Box)`
   border: 1px dashed ${theme.colors.oatmeal};
 `
 
-const meta: Meta<TableProps<DataRow>> = {
+const meta: Meta<TableProps<DataRow, object>> = {
   title: 'Table',
   component: Table,
+  decorators: [
+    (Story) => (
+      <Box px="12px" m="24px" style={{ backgroundColor: theme.colors.custard }}>
+        <Story />
+      </Box>
+    ),
+  ],
 }
 
 export default meta
-type Story = StoryObj<TableProps<DataRow>>
+type Story<K extends object | undefined = undefined> = StoryObj<
+  TableProps<DataRow, K extends object ? K : object>
+>
 
 const TemplateWithWrapper: Story = {
   render: (args) => (
@@ -47,6 +56,61 @@ export const BasicTable: Story = {
     rowPadding: '12px',
     columns: columns.slice(0, 3),
     data,
+  },
+}
+
+const tableFooterData = {
+  total: 100,
+  page: 1,
+  pageSize: 10,
+} as const
+
+const footerColumns = [
+  {
+    name: 'ID',
+    cell: () => 'Footer row',
+  },
+  {
+    name: 'Total',
+    cell: (row) => row.total,
+  },
+  {
+    name: 'Page',
+    cell: (row) => row.page,
+  },
+] satisfies TableColumn<typeof tableFooterData>[]
+
+export const TableFooter: Story<typeof tableFooterData> = {
+  args: {
+    rowPadding: '12px',
+    columns: columns.slice(0, 3),
+    data,
+    footer: {
+      data: tableFooterData,
+      columns: footerColumns,
+      rowColor: 'chia',
+    },
+  },
+}
+
+export const TableFooterElement: Story<typeof tableFooterData> = {
+  args: {
+    rowPadding: '12px',
+    columns: columns.slice(0, 3),
+    data,
+    footer: {
+      element: (
+        <BorderBox
+          flex
+          justifyContent="center"
+          p="48px"
+          width="100%"
+          style={{ backgroundColor: theme.colors.custard }}
+        >
+          Footer element
+        </BorderBox>
+      ),
+    },
   },
 }
 
@@ -137,7 +201,6 @@ export const SubRows: Story = {
           />
         ))
       },
-      showOnExpand: () => false,
     },
   },
 }
@@ -161,7 +224,6 @@ export const SubRowsShowOnExpand: Story = {
           />
         ))
       },
-      showOnExpand: () => true,
     },
   },
 }
@@ -170,22 +232,25 @@ export const SubTable: Story = {
   args: {
     rowPadding: '12px',
     columns: columns.slice(0, 4),
+    headerColor: 'custard',
+    rowColor: 'custard',
     data,
-    stripedColor: 'cream',
     expandable: () => true,
     subTable: {
+      bgColor: 'custard',
       table: () => (
         <Table
           columns={columnsV2}
+          rowColor="mascarpone"
+          rowBorderColor="oatmeal"
           data={data}
-          rowColor="matcha"
           rowActions={{ actions: rowActions }}
+          roundedTable
           hideTableHeader
         />
       ),
-      showOnExpand: () => true,
     },
-  },
+  } satisfies TableProps<DataRow>,
 }
 
 export const RowActions: Story = {
@@ -208,7 +273,6 @@ export const RowActions: Story = {
           rowActions={{ actions: rowActions }}
         />
       ),
-      showOnExpand: () => true,
     },
     rowActions: { actions: rowActions, bgColor: 'matcha' },
   },
@@ -234,7 +298,6 @@ export const EverythingTable: Story = {
           rowActions={{ actions: rowActions }}
         />
       ),
-      showOnExpand: () => true,
     },
     subRows: {
       rows: (row: DataRow) => {
@@ -251,7 +314,6 @@ export const EverythingTable: Story = {
           />
         ))
       },
-      showOnExpand: () => false,
     },
     rowColor: 'custard',
     headerColor: 'mascarpone',
