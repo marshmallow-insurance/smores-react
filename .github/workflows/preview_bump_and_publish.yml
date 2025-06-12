@@ -1,39 +1,12 @@
 name: Preview Bump and Publish
 
-on: 
+on:
   workflow_dispatch:
 
 permissions:
-  contents: write 
+  contents: write
 
 jobs:
   preview-bump-and-publish:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Generate Token
-        uses: actions/create-github-app-token@v1
-        id: app-token
-        with:
-          app-id: ${{ vars.MARSHMALLOW_CI_APP_ID }}
-          private-key: ${{ secrets.MARSHMALLOW_CI_APP_PRIVATE_KEY }}
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
-        with:
-          token: ${{ steps.app-token.outputs.token }}
-          persist-credentials: false
-      - name: Setup Node 👾
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-      - name: Install Dependencies 🔧
-        run: |
-          npm ci
-      - name: Configure Git
-        run: |
-          git config user.name "marshmallow-ci"
-          git config user.email "ci@marshmallow.co"
-      - name: Generate preview CHANGELOG.md
-        env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release --dry-run
+    uses: marshmallow-insurance/campfire/.github/workflows/shared-semantic-release-preview.yml@main
+    secrets: inherit
