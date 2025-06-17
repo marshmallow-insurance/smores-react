@@ -11,10 +11,6 @@ updates:
       time: '05:00'
       timezone: Europe/London
     open-pull-requests-limit: 99
-    reviewers:
-      - marshmallow-insurance/frontend
-    assignees:
-      - marshmallow-insurance/frontend
     groups:
       lexical:
         patterns:
