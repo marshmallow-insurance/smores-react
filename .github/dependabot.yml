@@ -12,6 +12,14 @@ updates:
       timezone: Europe/London
     open-pull-requests-limit: 99
     groups:
+      storybook:
+        patterns:
+          - "storybook*"
+          - "@storybook/*"
+        update-types:
+          - "major"
+          - "minor"
+          - "patch"
       lexical:
         patterns:
           - "@lexical**"
@@ -37,9 +45,6 @@ updates:
         patterns:
           - "@semantic-release*"
           - "@semantic-release/*"
-        update-types:
-          - "minor"
-          - "patch"
         update-types:
           - "minor"
           - "patch"
