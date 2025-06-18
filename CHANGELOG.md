@@ -1,3 +1,10 @@
+## [12.10.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.9.2...v12.10.0) (2025-06-18)
+
+### Features
+
+* **icon:** add MailTime icon to iconsList ([#4538](https://github.com/marshmallow-insurance/smores-react/issues/4538)) ([2085170](https://github.com/marshmallow-insurance/smores-react/commit/208517069063b7111fbc0fd120d2fc3fc8ad1e83))
+* using campfire configs ([#4231](https://github.com/marshmallow-insurance/smores-react/issues/4231)) ([2b44384](https://github.com/marshmallow-insurance/smores-react/commit/2b44384cb48a033105bf003fe5763fd5daa0f77b))
+
 ## [12.9.2](https://github.com/marshmallow-insurance/smores-react/compare/v12.9.1...v12.9.2) (2025-05-26)
 
 ### Refactors
