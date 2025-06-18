@@ -120,6 +120,7 @@ import LiveChat from './iconFiles/LiveChat'
 import LiveChat2 from './iconFiles/LiveChat2'
 import Location from './iconFiles/Location'
 import LogOut from './iconFiles/LogOut'
+import MailTime from './iconFiles/MailTime'
 import ManageDrivers from './iconFiles/ManageDrivers'
 import ManagePolicy from './iconFiles/ManagePolicy'
 import Marshmallow from './iconFiles/Marshmallow'
@@ -270,6 +271,7 @@ export const iconList = {
   'live-chat': LiveChat,
   'live-chat2': LiveChat2,
   'log-out': LogOut,
+  'mail-time': MailTime,
   'manage-drivers': ManageDrivers,
   'manage-policy': ManagePolicy,
   'maximise-window': MaximiseWindow,
