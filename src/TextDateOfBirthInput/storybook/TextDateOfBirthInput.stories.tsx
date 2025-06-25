@@ -1,6 +1,12 @@
+import { useArgs } from '@storybook/preview-api'
 import { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 import { noop } from '../../utils/noop'
-import { TextDateOfBirthInput } from '../TextDateOfBirthInput'
+import {
+  DateObject,
+  TextDateOfBirthInput,
+  TextDateOfBirthInputProps,
+} from '../TextDateOfBirthInput'
 
 const meta: Meta<typeof TextDateOfBirthInput> = {
   title: 'Text Date Of Birth Input',
@@ -11,11 +17,30 @@ const meta: Meta<typeof TextDateOfBirthInput> = {
 export default meta
 type Story = StoryObj<typeof TextDateOfBirthInput>
 
+const InteractiveTemplate = (args: TextDateOfBirthInputProps) => {
+  const [{ value }, updateArgs] = useArgs<TextDateOfBirthInputProps>()
+
+  const handleChange = (e: DateObject) => {
+    updateArgs({ value: e })
+    args?.onChange?.(e)
+  }
+
+  return (
+    <TextDateOfBirthInput
+      {...args}
+      value={value}
+      onChange={handleChange}
+      label="Date of birth"
+    />
+  )
+}
+
 export const Default: Story = {
   args: {
     value: { day: '01', month: '01', year: '2000' },
     onChange: noop,
   },
+  render: InteractiveTemplate,
 }
 
 export const WithCompleteStatus: Story = {
