@@ -6,7 +6,7 @@ import { StyledCell, StyledTable } from './components/commonComponents'
 import { TableProps } from './types'
 import { TableFooter } from './components/TableFooter'
 
-type RowData = Object & {
+export type RowData = Object & {
   /**
    * It is recommended to have a rowKey for each row, but it is not mandatory.
    * This key is used to uniquely identify each row in the table to accurately reconcile each row between React renders.
