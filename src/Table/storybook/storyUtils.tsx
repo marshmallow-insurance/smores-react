@@ -5,9 +5,9 @@ import { Icon } from '../../Icon'
 import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { Tooltip } from '../../Tooltip'
-import { RowAction } from '../types'
+import { RowAction, type TableRowData } from '../types'
 
-export interface DataRow {
+export interface DataRow extends TableRowData {
   id: number
   name: string
   type: string
