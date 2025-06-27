@@ -134,7 +134,7 @@ interface CommonTableProps<T> {
 /**
  *  The type of data that each row in the table should conform to.
  */
-export type TableRowData = Object & {
+export type TableRowData = {
   /**
    * It is recommended to have a rowKey for each row, but it is not mandatory.
    * This key is used to uniquely identify each row in the table to accurately reconcile each row between React renders.
