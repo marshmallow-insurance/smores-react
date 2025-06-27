@@ -6,6 +6,17 @@ import { StyledCell, StyledTable } from './components/commonComponents'
 import { TableProps } from './types'
 import { TableFooter } from './components/TableFooter'
 
+type RowData = Object & {
+  /**
+   * It is recommended to have a rowKey for each row, but it is not mandatory.
+   * This key is used to uniquely identify each row in the table to accurately reconcile each row between React renders.
+   *
+   * If not provided, the row index will be used as the key.
+   * This might not ideal as unrelated rows may cause unexpected transitions if they change position within the table.
+   */
+  rowKey?: React.Key
+}
+
 /**
  * A table component that displays data with various features such as expandable rows, striped rows, and fixed headers.
  *
@@ -19,7 +30,7 @@ import { TableFooter } from './components/TableFooter'
  * ## Improvements:
  * - It would be nice if we expandable logic inside this component, e.g the presence of certain props would automatically add this
  */
-export const Table = <T extends object, K extends object>({
+export const Table = <T extends RowData, K extends object>({
   columns,
   data,
   fixedHeader = true,
@@ -76,7 +87,7 @@ export const Table = <T extends object, K extends object>({
           <>
             {data.map((row, rowIndex) => (
               <TableRow
-                key={rowIndex}
+                key={row.rowKey ?? rowIndex}
                 rowData={row}
                 rowIndex={rowIndex}
                 columns={columns}
