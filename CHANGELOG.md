@@ -1,3 +1,5 @@
+## [12.10.2](https://github.com/marshmallow-insurance/smores-react/compare/v12.10.1...v12.10.2) (2025-06-27)
+
 ## [12.10.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.10.0...v12.10.1) (2025-06-25)
 
 ### Bug Fixes
