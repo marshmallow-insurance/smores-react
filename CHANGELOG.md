@@ -1,3 +1,9 @@
+## [12.10.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.10.0...v12.10.1) (2025-06-25)
+
+### Bug Fixes
+
+* filter non-numeric values and auto focus next input for DoB input ([#4540](https://github.com/marshmallow-insurance/smores-react/issues/4540)) ([07c9dcb](https://github.com/marshmallow-insurance/smores-react/commit/07c9dcb19043423b85e0f7a82b93f89f6ff42ace))
+
 ## [12.10.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.9.2...v12.10.0) (2025-06-18)
 
 ### Features
