@@ -1,0 +1,76 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CheckBox > renders correctly when checked 1`] = `
+<div>
+  <label
+    class="sc-hjsuWn degeIE"
+    id="MM_SMORES_1"
+  >
+    <span
+      class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+      cursor="inherit"
+      title=""
+    >
+      Accept Terms
+    </span>
+    <input
+      checked=""
+      type="checkbox"
+    />
+    <span
+      class="sc-jwTyAe jUFwTC"
+    />
+  </label>
+</div>
+`;
+
+exports[`CheckBox > renders correctly when unchecked 1`] = `
+<div>
+  <label
+    class="sc-hjsuWn degeIE"
+    id="MM_SMORES_0"
+  >
+    <span
+      class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+      cursor="inherit"
+      title=""
+    >
+      Accept Terms
+    </span>
+    <input
+      type="checkbox"
+    />
+    <span
+      class="sc-jwTyAe jUFwTC"
+    />
+  </label>
+</div>
+`;
+
+exports[`CheckBox > renders correctly with an error state 1`] = `
+<div>
+  <label
+    class="sc-hjsuWn degeIE"
+    id="MM_SMORES_2"
+  >
+    <span
+      class="sc-bRKDuR bHjpxP sc-dTvVRJ fWKoGb"
+      cursor="inherit"
+      title=""
+    >
+      Accept Terms
+    </span>
+    <input
+      type="checkbox"
+    />
+    <span
+      class="sc-jwTyAe gQvhra"
+    />
+  </label>
+  <div
+    class="sc-jJLAfE dDPnEi"
+  >
+    You must accept the terms
+  </div>
+</div>
+`;
