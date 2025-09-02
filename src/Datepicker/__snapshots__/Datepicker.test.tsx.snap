@@ -1,0 +1,316 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Datepicker > renders correctly with default props 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR bHjpxP sc-jJLAfE fhpAtg"
+    id="datepicker"
+  >
+    <div
+      class="sc-bRKDuR hsryNT sc-hwkwBN gkcJMw"
+    >
+      <button
+        aria-label="previous-month"
+        class="sc-dYwGCk dxaSwj"
+        data-testid="last-month"
+        disabled=""
+        type="button"
+      >
+        <span
+          class="sc-bRKDuR bHjpxP sc-fhHczv bvDwHH"
+          color="cream"
+          data-testid="caret-container"
+          rotate="90"
+          size="18"
+        >
+          <svg
+            fill="none"
+            height="100%"
+            viewBox="0 0 24 24"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+      </button>
+      <h4
+        class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-kNOymR kGWfzP"
+        cursor="inherit"
+        title=""
+      >
+        September
+         
+      </h4>
+      <button
+        aria-label="next-month"
+        class="sc-dYwGCk dxaSwj"
+        data-testid="next-month"
+        disabled=""
+        type="button"
+      >
+        <span
+          class="sc-bRKDuR bHjpxP sc-fhHczv uyYpS"
+          color="cream"
+          data-testid="caret-container"
+          rotate="-90"
+          size="18"
+        >
+          <svg
+            fill="none"
+            height="100%"
+            viewBox="0 0 24 24"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      class="sc-bRKDuR fwCHSf"
+    >
+      <div
+        class="sc-jwTyAe lnXCrR"
+      >
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="01"
+          disabled=""
+          type="button"
+        >
+          01
+        </button>
+        <button
+          class="sc-hjsuWn fwhmiu ListButton "
+          data-testid="02"
+          type="button"
+        >
+          02
+        </button>
+        <button
+          class="sc-hjsuWn fwhmiu ListButton "
+          data-testid="03"
+          type="button"
+        >
+          03
+        </button>
+        <button
+          class="sc-hjsuWn fwhmiu ListButton "
+          data-testid="04"
+          type="button"
+        >
+          04
+        </button>
+        <button
+          class="sc-hjsuWn fwhmiu ListButton "
+          data-testid="05"
+          type="button"
+        >
+          05
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="06"
+          disabled=""
+          type="button"
+        >
+          06
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="07"
+          disabled=""
+          type="button"
+        >
+          07
+        </button>
+        <button
+          class="sc-hjsuWn fwhmiu ListButton "
+          data-testid="08"
+          type="button"
+        >
+          08
+        </button>
+        <button
+          class="sc-hjsuWn fwhmiu ListButton "
+          data-testid="09"
+          type="button"
+        >
+          09
+        </button>
+        <button
+          class="sc-hjsuWn fwhmiu ListButton "
+          data-testid="10"
+          type="button"
+        >
+          10
+        </button>
+        <button
+          class="sc-hjsuWn fwhmiu ListButton "
+          data-testid="11"
+          type="button"
+        >
+          11
+        </button>
+        <button
+          class="sc-hjsuWn fwhmiu ListButton "
+          data-testid="12"
+          type="button"
+        >
+          12
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="13"
+          disabled=""
+          type="button"
+        >
+          13
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="14"
+          disabled=""
+          type="button"
+        >
+          14
+        </button>
+        <button
+          class="sc-hjsuWn fwhmiu ListButton "
+          data-testid="15"
+          type="button"
+        >
+          15
+        </button>
+        <button
+          class="sc-hjsuWn fwhmiu ListButton "
+          data-testid="16"
+          type="button"
+        >
+          16
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="17"
+          disabled=""
+          type="button"
+        >
+          17
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="18"
+          disabled=""
+          type="button"
+        >
+          18
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="19"
+          disabled=""
+          type="button"
+        >
+          19
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="20"
+          disabled=""
+          type="button"
+        >
+          20
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="21"
+          disabled=""
+          type="button"
+        >
+          21
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="22"
+          disabled=""
+          type="button"
+        >
+          22
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="23"
+          disabled=""
+          type="button"
+        >
+          23
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="24"
+          disabled=""
+          type="button"
+        >
+          24
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="25"
+          disabled=""
+          type="button"
+        >
+          25
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="26"
+          disabled=""
+          type="button"
+        >
+          26
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="27"
+          disabled=""
+          type="button"
+        >
+          27
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="28"
+          disabled=""
+          type="button"
+        >
+          28
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="29"
+          disabled=""
+          type="button"
+        >
+          29
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="30"
+          disabled=""
+          type="button"
+        >
+          30
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
