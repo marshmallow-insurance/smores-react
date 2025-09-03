@@ -1,0 +1,75 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SegmentedControl > renders correctly with default props and a tag 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR bHjpxP sc-kcLKEh eMGvRd"
+  >
+    <div
+      class="sc-bRKDuR bHjpxP sc-dntSTA jwVueJ"
+    >
+      <label
+        class="sc-hwkwBN emcrIN"
+        data-testid="value-toggle-option1"
+      >
+        <input
+          checked=""
+          class="sc-kNOymR gOqGXX"
+          name="toggle-version-button"
+          type="radio"
+        />
+        <div
+          class="sc-bRKDuR bHjpxP sc-dYwGCk gDiBwR"
+        >
+          <p
+            class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC hICQgG"
+            cursor="inherit"
+            selectedtextcolor="cream"
+            title=""
+          >
+            Option 1
+          </p>
+        </div>
+      </label>
+      <label
+        class="sc-hwkwBN emcrIN"
+        data-testid="value-toggle-option2"
+      >
+        <input
+          class="sc-kNOymR gOqGXX"
+          name="toggle-version-button"
+          type="radio"
+        />
+        <div
+          class="sc-bRKDuR bHjpxP sc-dYwGCk gDiBwR"
+        >
+          <div
+            class="sc-bRKDuR gQglmM sc-jwTyAe ilJKfW sc-lgpSej jEUgcj"
+          >
+            <span
+              class="sc-bRKDuR bHjpxP sc-dTvVRJ keFgrq sc-hjsuWn juqWeu"
+              cursor="inherit"
+              title=""
+            >
+              tag 2
+            </span>
+          </div>
+          <p
+            class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC dSYhYp"
+            cursor="inherit"
+            selectedtextcolor="cream"
+            title=""
+          >
+            Option 2
+          </p>
+        </div>
+      </label>
+      <div
+        class="sc-bRKDuR bHjpxP sc-kvnevz jBBJWR"
+        sections="2"
+        selectedindex="0"
+      />
+    </div>
+  </div>
+</div>
+`;
