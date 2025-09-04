@@ -1,0 +1,74 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProgressIndicator > snapshot > renders correctly with default props 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR gjQVek sc-lgpSej dlzJMu"
+  >
+    <div
+      class="sc-bRKDuR bHjpxP sc-eqYatC fyiGGa"
+    />
+    <div
+      class="sc-bRKDuR jCllHL"
+    >
+      <div
+        class="sc-bRKDuR eXoKVa sc-hjsuWn blvpKV"
+      >
+        <div
+          class="sc-bRKDuR leNTXj sc-jJLAfE ejaShY"
+          data-testid="step-item-Step 1"
+        >
+          <div
+            class="sc-bRKDuR fwCHSf sc-hwkwBN kIGDIO"
+          />
+          <p
+            class="sc-bRKDuR bHjpxP sc-dTvVRJ qDeEm sc-kNOymR eiBTXe"
+            cursor="inherit"
+            title=""
+          >
+            Step 1
+          </p>
+        </div>
+      </div>
+      <div
+        class="sc-bRKDuR eXoKVa sc-hjsuWn blvpKV"
+      >
+        <div
+          class="sc-bRKDuR leNTXj sc-jJLAfE beJilU"
+          data-testid="step-item-Step 2"
+        >
+          <div
+            class="sc-bRKDuR fwCHSf sc-hwkwBN WSNsJ"
+          />
+          <p
+            class="sc-bRKDuR bHjpxP sc-dTvVRJ qDeEm sc-kNOymR eiBTXe"
+            cursor="inherit"
+            title=""
+          >
+            Step 2
+          </p>
+        </div>
+      </div>
+      <div
+        class="sc-bRKDuR eXoKVa sc-hjsuWn blvpKV"
+      >
+        <div
+          class="sc-bRKDuR leNTXj sc-jJLAfE beJilU"
+          data-testid="step-item-Step 3"
+        >
+          <div
+            class="sc-bRKDuR fwCHSf sc-hwkwBN WSNsJ"
+          />
+          <p
+            class="sc-bRKDuR bHjpxP sc-dTvVRJ qDeEm sc-kNOymR eiBTXe"
+            cursor="inherit"
+            title=""
+          >
+            Step 3
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

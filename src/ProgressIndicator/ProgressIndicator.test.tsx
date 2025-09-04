@@ -17,6 +17,19 @@ describe('ProgressIndicator', () => {
     vi.clearAllMocks()
   })
 
+  describe('snapshot', () => {
+    it('renders correctly with default props', () => {
+      const { container } = render(
+        <ProgressIndicator
+          steps={steps}
+          handleStepChange={handleStepChange}
+          currentStep="step1"
+        />,
+      )
+      expect(container).toMatchSnapshot()
+    })
+  })
+
   describe('steps', () => {
     it('renders all visible steps', () => {
       render(

@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Link > renders correctly with default props 1`] = `
+<div>
+  <a
+    class="sc-ggWZvA eqjrji"
+    href="https://www.google.com"
+  >
+    Google Link
+  </a>
+</div>
+`;
