@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Toggle Component > renders correctly with default props 1`] = `
+<div>
+  <label
+    class="sc-bRKDuR bHjpxP sc-hvigdm eJKeDG"
+  >
+    <input
+      aria-label="toggle"
+      checked=""
+      class="sc-ggWZvA dRpueM"
+      type="checkbox"
+    />
+    <span
+      class="sc-fhHczv iAVPse"
+    />
+  </label>
+</div>
+`;

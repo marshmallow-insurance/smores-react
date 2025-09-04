@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SliderInput > renders correctly with default props 1`] = `
+<div>
+  <input
+    class="sc-bRKDuR cNEPmh"
+    max="100"
+    min="0"
+    type="range"
+    value="50"
+  />
+</div>
+`;

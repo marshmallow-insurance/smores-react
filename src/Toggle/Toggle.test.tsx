@@ -1,0 +1,14 @@
+import React from 'react'
+import { render } from '@testing-library/react'
+import { it, expect } from 'vitest'
+import { Toggle } from './Toggle'
+import { noop } from '../utils/noop'
+
+describe('Toggle Component', () => {
+  it('renders correctly with default props', () => {
+    const { container } = render(
+      <Toggle checked={true} onToggle={noop} bgColor="peanut" />,
+    )
+    expect(container).toMatchSnapshot()
+  })
+})

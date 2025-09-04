@@ -1,10 +1,18 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
+import { it, expect } from 'vitest'
 import '@testing-library/jest-dom'
 import { Tag } from '../Tag'
 import { TagProps } from './Tag'
 
 describe('Tag Component', () => {
+  it('renders snapshot test correctly', () => {
+    const { container } = render(
+      <Tag label="Snapshot Test Tag" color="marzipan" bgColor="satsuma" />,
+    )
+    expect(container).toMatchSnapshot()
+  })
+
   testCases.forEach(({ description, props }) => {
     test(description, () => {
       render(<Tag {...props} />)
