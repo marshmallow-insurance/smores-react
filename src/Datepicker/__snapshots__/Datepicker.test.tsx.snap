@@ -42,7 +42,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
         cursor="inherit"
         title=""
       >
-        September
+        July
          
       </h4>
       <button
@@ -81,9 +81,18 @@ exports[`Datepicker > renders correctly with default props 1`] = `
         class="sc-jwTyAe lnXCrR"
       >
         <button
-          class="sc-hjsuWn ksvyqJ ListButton "
-          data-testid="01"
+          aria-label="0-unselectable-date"
+          class="sc-hjsuWn ksvyqJ"
           disabled=""
+        />
+        <button
+          aria-label="1-unselectable-date"
+          class="sc-hjsuWn ksvyqJ"
+          disabled=""
+        />
+        <button
+          class="sc-hjsuWn fwhmiu ListButton "
+          data-testid="01"
           type="button"
         >
           01
@@ -103,31 +112,31 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           03
         </button>
         <button
-          class="sc-hjsuWn fwhmiu ListButton "
+          class="sc-hjsuWn ksvyqJ ListButton "
           data-testid="04"
+          disabled=""
           type="button"
         >
           04
         </button>
         <button
-          class="sc-hjsuWn fwhmiu ListButton "
+          class="sc-hjsuWn ksvyqJ ListButton "
           data-testid="05"
+          disabled=""
           type="button"
         >
           05
         </button>
         <button
-          class="sc-hjsuWn ksvyqJ ListButton "
+          class="sc-hjsuWn fwhmiu ListButton "
           data-testid="06"
-          disabled=""
           type="button"
         >
           06
         </button>
         <button
-          class="sc-hjsuWn ksvyqJ ListButton "
+          class="sc-hjsuWn fwhmiu ListButton "
           data-testid="07"
-          disabled=""
           type="button"
         >
           07
@@ -154,31 +163,31 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           10
         </button>
         <button
-          class="sc-hjsuWn fwhmiu ListButton "
+          class="sc-hjsuWn ksvyqJ ListButton "
           data-testid="11"
+          disabled=""
           type="button"
         >
           11
         </button>
         <button
-          class="sc-hjsuWn fwhmiu ListButton "
+          class="sc-hjsuWn ksvyqJ ListButton "
           data-testid="12"
+          disabled=""
           type="button"
         >
           12
         </button>
         <button
-          class="sc-hjsuWn ksvyqJ ListButton "
+          class="sc-hjsuWn fwhmiu ListButton "
           data-testid="13"
-          disabled=""
           type="button"
         >
           13
         </button>
         <button
-          class="sc-hjsuWn ksvyqJ ListButton "
+          class="sc-hjsuWn fwhmiu ListButton "
           data-testid="14"
-          disabled=""
           type="button"
         >
           14
@@ -191,8 +200,9 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           15
         </button>
         <button
-          class="sc-hjsuWn fwhmiu ListButton "
+          class="sc-hjsuWn ksvyqJ ListButton "
           data-testid="16"
+          disabled=""
           type="button"
         >
           16
@@ -308,6 +318,14 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           type="button"
         >
           30
+        </button>
+        <button
+          class="sc-hjsuWn ksvyqJ ListButton "
+          data-testid="31"
+          disabled=""
+          type="button"
+        >
+          31
         </button>
       </div>
     </div>
