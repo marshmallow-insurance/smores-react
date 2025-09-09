@@ -1,3 +1,11 @@
+## [12.11.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.11.0...v12.11.1) (2025-09-09)
+
+## [12.11.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.10.3...v12.11.0) (2025-09-04)
+
+### Features
+
+* **testing:** add snapshot tests to 4 components ([#4543](https://github.com/marshmallow-insurance/smores-react/issues/4543)) ([478773c](https://github.com/marshmallow-insurance/smores-react/commit/478773c1b1605d8c8e4470aaf06b515fb3dbdfaa))
+
 ## [12.10.3](https://github.com/marshmallow-insurance/smores-react/compare/v12.10.2...v12.10.3) (2025-08-21)
 
 ## [12.10.2](https://github.com/marshmallow-insurance/smores-react/compare/v12.10.1...v12.10.2) (2025-06-27)
