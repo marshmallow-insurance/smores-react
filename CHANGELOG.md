@@ -1,3 +1,5 @@
+## [12.11.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.11.0...v12.11.1) (2025-09-09)
+
 ## [12.11.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.10.3...v12.11.0) (2025-09-04)
 
 ### Features
