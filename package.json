@@ -1,6 +1,6 @@
 {
   "name": "@mrshmllw/smores-react",
-  "version": "12.11.2",
+  "version": "12.11.3",
   "main": "./dist/index.js",
   "description": "Collection of React components used by Marshmallow Technology",
   "type": "module",
@@ -50,7 +50,6 @@
     "@storybook/test-runner": "^0.23.0",
     "@testing-library/react": "^16.3.0",
     "@types/body-scroll-lock": "^3.1.0",
-    "@types/dompurify": "^3.2.0",
     "@types/node": "^24.0.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
