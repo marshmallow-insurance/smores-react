@@ -1,6 +1,6 @@
 {
   "name": "@mrshmllw/smores-react",
-  "version": "12.10.3",
+  "version": "12.11.2",
   "main": "./dist/index.js",
   "description": "Collection of React components used by Marshmallow Technology",
   "type": "module",
@@ -74,7 +74,7 @@
     "styled-components": "^6.1.19",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.34.1",
-    "vite": "^6.3.5",
+    "vite": "^6.3.6",
     "vitest": "^3.2.3"
   },
   "dependencies": {
