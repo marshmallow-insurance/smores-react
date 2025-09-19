@@ -140,7 +140,7 @@ export type TableRowData = {
    * This key is used to uniquely identify each row in the table to accurately reconcile each row between React renders.
    *
    * If not provided, the row index will be used as the key.
-   * This might not ideal as unrelated rows may cause unexpected transitions if they change position within the table.
+   * This might not be ideal as unrelated rows may cause unexpected transitions if it changes position within the table.
    */
   rowKey?: React.Key
 }
