@@ -1,3 +1,17 @@
+## [13.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.11.5...v13.0.0) (2025-09-24)
+
+### ⚠ BREAKING CHANGES
+
+* New S'mores Theme Provider 
+
+New theming provider for S'mores, anything going forward will require usage of the theme provider
+* **theme-provider:** new component (#4550)
+
+### Features
+
+* breaking change empty commit ([#4551](https://github.com/marshmallow-insurance/smores-react/issues/4551)) ([de000e2](https://github.com/marshmallow-insurance/smores-react/commit/de000e2c2bc7fb6829af5b3ca5d39dc184273e30))
+* **theme-provider:** new component ([#4550](https://github.com/marshmallow-insurance/smores-react/issues/4550)) ([a2d8a3e](https://github.com/marshmallow-insurance/smores-react/commit/a2d8a3edacb7e35c014a7cc5b1e81f56500d912c))
+
 ## [12.11.5](https://github.com/marshmallow-insurance/smores-react/compare/v12.11.4...v12.11.5) (2025-09-19)
 
 ## [12.11.4](https://github.com/marshmallow-insurance/smores-react/compare/v12.11.3...v12.11.4) (2025-09-10)
