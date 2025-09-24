@@ -1,3 +1,9 @@
+## [13.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.0.0...v13.0.1) (2025-09-24)
+
+### Bug Fixes
+
+* **theme-provider:** properly export ([#4552](https://github.com/marshmallow-insurance/smores-react/issues/4552)) ([d929b97](https://github.com/marshmallow-insurance/smores-react/commit/d929b9717cc2b81931c33e16f92714fc8b473f6d))
+
 ## [13.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.11.5...v13.0.0) (2025-09-24)
 
 ### ⚠ BREAKING CHANGES
