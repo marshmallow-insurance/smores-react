@@ -1,11 +1,10 @@
 import React, { FC } from 'react'
-import styled, { css } from 'styled-components'
-import { TransientProps } from 'utils/utilTypes'
+import styled, { css, useTheme } from 'styled-components'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { useTimeout } from '../hooks'
-import { Color, theme } from '../theme'
+import { Color } from '../theme'
 import { Banner } from './types'
 
 type StylesItem = {
@@ -15,29 +14,6 @@ type StylesItem = {
 }
 
 type BannerType = 'upsell' | 'critical' | 'general' | 'success'
-
-const styles: Record<BannerType, StylesItem> = {
-  upsell: {
-    iconColor: 'liquorice',
-    backgroundColor: theme.colors.marshmallowPink,
-    textColor: 'liquorice',
-  },
-  critical: {
-    iconColor: 'cream',
-    backgroundColor: theme.colors.strawberry,
-    textColor: 'cream',
-  },
-  general: {
-    iconColor: 'cream',
-    backgroundColor: theme.colors.liquorice,
-    textColor: 'cream',
-  },
-  success: {
-    iconColor: 'cream',
-    backgroundColor: theme.colors.apple,
-    textColor: 'cream',
-  },
-}
 
 interface Props extends Banner {
   deleteBanner: (id: string) => void
@@ -58,6 +34,30 @@ export const BannerItem: FC<Props> = ({
   deleteBanner,
   noTimeout,
 }) => {
+  const theme = useTheme()
+
+  const styles: Record<BannerType, StylesItem> = {
+    upsell: {
+      iconColor: 'liquorice',
+      backgroundColor: theme.color.surface.brand[300],
+      textColor: 'liquorice',
+    },
+    critical: {
+      iconColor: 'cream',
+      backgroundColor: theme.color.feedback.negative[200],
+      textColor: 'cream',
+    },
+    general: {
+      iconColor: 'cream',
+      backgroundColor: theme.color.surface.base[900],
+      textColor: 'cream',
+    },
+    success: {
+      iconColor: 'cream',
+      backgroundColor: theme.color.feedback.positive[200],
+      textColor: 'cream',
+    },
+  }
   const autoCloseBaner = () => {
     if (noTimeout) return
     if (type !== 'critical') return deleteBanner(id)
@@ -77,7 +77,7 @@ export const BannerItem: FC<Props> = ({
       key={id}
       flex
       justifyContent="space-between"
-      $type={type}
+      $backgroundColour={styles[type].backgroundColor}
     >
       <Box flex alignItems="center">
         {leadingIcon && (
@@ -136,10 +136,10 @@ export const BannerItem: FC<Props> = ({
   )
 }
 
-const BannerWrapper = styled(Box)<TransientProps<Pick<Banner, 'type'>>>(
-  ({ $type }) => css`
+const BannerWrapper = styled(Box)<{ $backgroundColour: string }>(
+  ({ $backgroundColour }) => css`
     border-radius: 0px 0px 16px 16px;
-    background-color: ${styles[$type].backgroundColor};
+    background-color: ${$backgroundColour};
   `,
 )
 
