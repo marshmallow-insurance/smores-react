@@ -1,3 +1,9 @@
+## [13.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.0.1...v13.1.0) (2025-09-25)
+
+### Features
+
+* **theming:** include external types for code completion ([#4553](https://github.com/marshmallow-insurance/smores-react/issues/4553)) ([d0e66d9](https://github.com/marshmallow-insurance/smores-react/commit/d0e66d9df0cb9feea34bfffcbf63ef921506b772))
+
 ## [13.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.0.0...v13.0.1) (2025-09-24)
 
 ### Bug Fixes
