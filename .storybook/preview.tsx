@@ -2,6 +2,7 @@ import { Preview } from '@storybook/react'
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import { theme } from '../src/theme'
+import { SmoresThemeProvider } from '../src/ThemeProvider/ThemeProvider'
 
 import { ResetCss } from './ResetCss'
 
@@ -58,9 +59,11 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <>
-        <ResetCss />
-        <GlobalStyle />
-        <Story />
+        <SmoresThemeProvider>
+          <ResetCss />
+          <GlobalStyle />
+          <Story />
+        </SmoresThemeProvider>
       </>
     ),
   ],
