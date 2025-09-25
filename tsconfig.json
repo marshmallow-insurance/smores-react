@@ -4,7 +4,7 @@
     "module": "esnext",
     "target": "esnext",
     "lib": ["esnext", "dom", "dom.iterable"],
-    "types": ["react", "node", "vitest/globals", "./src/styled.d.ts"],
+    "types": ["react", "node", "vitest/globals", "./src/styled.ts"],
     "sourceMap": true,
     "inlineSources": true,
     "jsx": "react",
@@ -21,6 +21,7 @@
   "include": [
     "src/**/*",
     "src/global.d.ts",
+    "src/styled.ts",
     "vite.config.ts",
     "vitest.config.ts"
   ],
