@@ -1,4 +1,4 @@
-import { cleanup, renderHook } from '@testing-library/react'
+import { cleanup, renderHook } from '../../testUtils'
 import { useScript } from '.'
 
 describe('useScript', () => {

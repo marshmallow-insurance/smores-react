@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent } from '../../testUtils'
 import { StepItem, StepItemProps } from './StepItem'
 describe('StepItem', () => {
   const defaultProps: StepItemProps = {
