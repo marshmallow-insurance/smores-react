@@ -1,6 +1,6 @@
 import React from 'react'
 import { expect, it } from 'vitest'
-import { render } from '@testing-library/react'
+import { render } from '../testUtils'
 import { Chip } from './Chip'
 import { noop } from '../utils/noop'
 

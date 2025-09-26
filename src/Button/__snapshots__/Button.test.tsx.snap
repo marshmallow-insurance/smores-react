@@ -3,7 +3,7 @@
 exports[`Button > renders correctly when disabled 1`] = `
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE fhgohJ"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE eMOURj"
     disabled=""
   >
     <div
@@ -22,7 +22,7 @@ exports[`Button > renders correctly when disabled 1`] = `
 exports[`Button > renders correctly when loading 1`] = `
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE fhgohJ"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE eMOURj"
     disabled=""
   >
     <div
@@ -74,7 +74,7 @@ exports[`Button > renders correctly when loading 1`] = `
 exports[`Button > renders correctly with a custom className 1`] = `
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE cRvUpc custom-class"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE kgFfue custom-class"
   >
     <div
       class="sc-kNOymR AyWek"
@@ -92,7 +92,7 @@ exports[`Button > renders correctly with a custom className 1`] = `
 exports[`Button > renders correctly with a custom type 1`] = `
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE cRvUpc"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE kgFfue"
     type="submit"
   >
     <div
@@ -111,7 +111,7 @@ exports[`Button > renders correctly with a custom type 1`] = `
 exports[`Button > renders correctly with an icon 1`] = `
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE cRvUpc"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE kgFfue"
   >
     <div
       class="sc-kNOymR cOHRID"
@@ -151,7 +151,7 @@ exports[`Button > renders correctly with an icon 1`] = `
 exports[`Button > renders correctly with default props 1`] = `
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE cRvUpc"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE kgFfue"
   >
     <div
       class="sc-kNOymR AyWek"
@@ -169,7 +169,7 @@ exports[`Button > renders correctly with default props 1`] = `
 exports[`Button > renders correctly with forced width 1`] = `
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE khrGJF"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE kQxtdL"
   >
     <div
       class="sc-kNOymR AyWek"
@@ -187,7 +187,7 @@ exports[`Button > renders correctly with forced width 1`] = `
 exports[`Button > renders correctly with primary styling 1`] = `
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE hFWsoJ"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE cTCXtj"
   >
     <div
       class="sc-kNOymR AyWek"
@@ -205,7 +205,7 @@ exports[`Button > renders correctly with primary styling 1`] = `
 exports[`Button > renders correctly with secondary styling 1`] = `
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE emWyIm"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE dTAtDC"
   >
     <div
       class="sc-kNOymR AyWek"
@@ -223,7 +223,7 @@ exports[`Button > renders correctly with secondary styling 1`] = `
 exports[`Button > renders correctly with small button styling 1`] = `
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE eyvxmm"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE dXnJco"
   >
     <div
       class="sc-kNOymR AyWek"
@@ -241,7 +241,7 @@ exports[`Button > renders correctly with small button styling 1`] = `
 exports[`Button > renders correctly with text button styling 1`] = `
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE hJEFtC"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE dtsDty"
   >
     <div
       class="sc-kNOymR AyWek"
@@ -259,7 +259,7 @@ exports[`Button > renders correctly with text button styling 1`] = `
 exports[`Button > renders correctly with trailing icon 1`] = `
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE cRvUpc"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE kgFfue"
   >
     <div
       class="sc-kNOymR cOHRID"

@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '../testUtils'
 import { it, expect } from 'vitest'
 import '@testing-library/jest-dom'
 import { Tag } from '../Tag'

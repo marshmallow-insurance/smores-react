@@ -8,7 +8,7 @@ exports[`Toggle Component > renders correctly with default props 1`] = `
     <input
       aria-label="toggle"
       checked=""
-      class="sc-ggWZvA dRpueM"
+      class="sc-ggWZvA lkdDSc"
       type="checkbox"
     />
     <span

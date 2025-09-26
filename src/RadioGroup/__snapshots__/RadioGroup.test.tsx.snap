@@ -28,7 +28,7 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
               value="option1"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR gvpcPc"
+              class="sc-bRKDuR bqffzd sc-kNOymR kCUhTl"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -57,7 +57,7 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
               value="option2"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR kCalB"
+              class="sc-bRKDuR bqffzd sc-kNOymR gvYkWE"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -86,7 +86,7 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
               value="option3"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR kCalB"
+              class="sc-bRKDuR bqffzd sc-kNOymR gvYkWE"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -164,7 +164,7 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
               value="option1"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR czRWiA"
+              class="sc-bRKDuR bqffzd sc-kNOymR jfJTMl"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -204,7 +204,7 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
               value="option2"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR kbkePy"
+              class="sc-bRKDuR bqffzd sc-kNOymR lgYEQD"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -244,7 +244,7 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
               value="option3"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR kbkePy"
+              class="sc-bRKDuR bqffzd sc-kNOymR lgYEQD"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -302,7 +302,7 @@ exports[`RadioGroup > renders correctly with default props 1`] = `
               value="option1"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR czRWiA"
+              class="sc-bRKDuR bqffzd sc-kNOymR jfJTMl"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -331,7 +331,7 @@ exports[`RadioGroup > renders correctly with default props 1`] = `
               value="option2"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR kbkePy"
+              class="sc-bRKDuR bqffzd sc-kNOymR lgYEQD"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -360,7 +360,7 @@ exports[`RadioGroup > renders correctly with default props 1`] = `
               value="option3"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR kbkePy"
+              class="sc-bRKDuR bqffzd sc-kNOymR lgYEQD"
             />
             <div
               class="sc-bRKDuR bHjpxP"

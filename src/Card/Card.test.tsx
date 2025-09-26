@@ -1,6 +1,6 @@
 import React from 'react'
 import { expect, it } from 'vitest'
-import { render } from '@testing-library/react'
+import { render } from '../testUtils'
 import { Card } from './Card'
 import placeHolderSvg from './storybook/placeHolderImage.svg'
 import { Button } from '../Button'
