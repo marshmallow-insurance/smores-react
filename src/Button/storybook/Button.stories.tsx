@@ -2,7 +2,6 @@ import React from 'react'
 
 import { Meta, StoryObj } from '@storybook/react'
 import { expect, fn, userEvent, within } from '@storybook/test'
-import { theme } from '../../theme'
 import { Button } from '../Button'
 import { CollectionPage } from './Collection'
 import { InteractivePlayground } from './InteractivePlayground'
@@ -31,9 +30,7 @@ export const Primary: Story = {
     await expect(button.innerText).toBe('Button')
     await userEvent.click(button)
     await expect(args.onClick).toHaveBeenCalled()
-    await expect(button).toHaveStyle(
-      `background-color: ${theme.colors.marshmallowPink}`,
-    )
+    await expect(button).toHaveStyle(`background-color: #ff88c8`)
   },
 }
 
@@ -44,9 +41,7 @@ export const Secondary: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const button = canvas.getByRole('button', { name: /Button/i })
-    await expect(button).toHaveStyle(
-      `background-color: ${theme.colors.oatmeal}`,
-    )
+    await expect(button).toHaveStyle(`background-color: #dad2c4`)
   },
 }
 
@@ -57,7 +52,7 @@ export const Fallback: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const button = canvas.getByRole('button', { name: /Button/i })
-    await expect(button).toHaveStyle(`background-color: ${theme.colors.cream}`)
+    await expect(button).toHaveStyle(`background-color: #ffffff`)
   },
 }
 

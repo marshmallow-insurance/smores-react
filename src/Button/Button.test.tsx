@@ -1,7 +1,7 @@
 import React from 'react'
 import { expect, it } from 'vitest'
-import { render } from '@testing-library/react'
 import { Button } from './Button'
+import { render } from '../testUtils'
 
 describe('Button', () => {
   it('renders correctly with default props', () => {

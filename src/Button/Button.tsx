@@ -7,7 +7,6 @@ import { Icon as IconComponent } from '../Icon'
 import { Icons } from '../Icon/iconsList'
 
 import { Loader } from '../Loader'
-import { theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
@@ -140,13 +139,13 @@ const Container = styled(Box)<IButton>(
     $smallButton,
   }) => css`
     position: relative;
-    background-color: ${theme.colors.marshmallowPink};
+    background-color: ${({ theme }) => theme.color.interactive.primary.base};
     box-shadow: none;
-    color: ${theme.colors.liquorice};
+    color: ${({ theme }) => theme.color.text.base};
     padding: 0 20px;
     outline: none;
     border-radius: 10000px;
-    font-weight: ${theme.font.weight.medium};
+    font-weight: ${({ theme }) => theme.fontWeight[500]};
     cursor: ${disabled || $loading ? 'not-allowed' : 'pointer'};
     line-height: 100%;
     font-size: 16px;
@@ -157,35 +156,41 @@ const Container = styled(Box)<IButton>(
 
     ${$primary &&
     css`
-      color: ${theme.colors.liquorice};
-
       &:hover {
-        background-color: ${!(disabled || $loading) && theme.colors.bubblegum};
+        background-color: ${({ theme }) =>
+          !(disabled || $loading) && theme.color.interactive.primary.hover};
       }
       &:active {
-        background-color: ${theme.colors.lollipop};
+        background-color: ${({ theme }) =>
+          theme.color.interactive.primary.pressed};
       }
     `}
+
     ${$secondary &&
     css`
-      background-color: ${theme.colors.oatmeal};
+      background-color: ${({ theme }) =>
+        theme.color.interactive.secondary.base};
 
       &:hover {
-        background-color: ${!(disabled || $loading) && theme.colors.mascarpone};
+        background-color: ${({ theme }) =>
+          !(disabled || $loading) && theme.color.interactive.secondary.hover};
       }
       &:active {
-        background-color: ${theme.colors.custard};
+        background-color: ${({ theme }) =>
+          theme.color.interactive.secondary.pressed};
       }
     `}
   ${$fallbackStyle &&
     css`
-      background-color: ${theme.colors.cream};
+      background-color: ${({ theme }) => theme.color.interactive.tertiary.base};
 
       &:hover {
-        background-color: ${!(disabled || $loading) && theme.colors.coconut};
+        background-color: ${({ theme }) =>
+          !(disabled || $loading) && theme.color.interactive.tertiary.hover};
       }
       &:active {
-        background-color: ${theme.colors.mascarpone};
+        background-color: ${({ theme }) =>
+          theme.color.interactive.tertiary.pressed};
       }
     `}
   ${$smallButton &&
@@ -210,11 +215,12 @@ const Container = styled(Box)<IButton>(
       text-decoration: underline;
 
       &:hover {
-        background-color: ${!(disabled || $loading) && theme.colors.fairyFloss};
+        background-color: ${({ theme }) =>
+          !(disabled || $loading) && theme.color.interactive.primary.hover};
       }
       &:active {
         background-color: transparent;
-        color: ${theme.colors.sesame};
+        color: ${({ theme }) => theme.color.text.subtle};
       }
     `}
   `,
