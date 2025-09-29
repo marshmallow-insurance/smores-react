@@ -3,7 +3,6 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 
 import { theme } from '../theme'
-
 import { Text } from '../Text'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { Day } from './types'
@@ -101,20 +100,20 @@ const ListButton = styled.button<IListButton>`
   font-weight: ${theme.font.weight.medium};
   font-size: 14px;
   line-height: 15px;
-  color: ${theme.colors.liquorice};
+  color: ${({ theme }) => theme.color.text.base};
   background-color: transparent;
   pointer-events: ${({ disabled }) => (disabled ? 'none' : '')};
   opacity: ${({ disabled }) => (disabled ? '0.2' : '1')};
   cursor: pointer;
 
   &:hover:not(.active) {
-    color: ${theme.colors.custard};
-    background-color: ${theme.colors.liquorice};
+    color: ${({ theme }) => theme.color.text['on-dark']};
+    background-color: ${({ theme }) => theme.color.surface.base[900]};
   }
 
   &.active {
-    color: ${theme.colors.custard};
-    background-color: ${theme.colors.liquorice};
+    color: ${({ theme }) => theme.color.text['on-dark']};
+    background-color: ${({ theme }) => theme.color.surface.base[900]};
     cursor: default;
   }
 
