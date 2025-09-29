@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { focusOutline } from '../utils/focusOutline'
 
 import { Text } from '../Text'
-import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 
 export type CheckBoxProps = {
@@ -51,10 +50,10 @@ const Checkmark = styled.span<{ $error?: boolean }>`
   left: 0;
   width: 24px;
   height: 24px;
-  border: ${({ $error }) =>
+  border: ${({ $error, theme }) =>
     $error
-      ? `solid 2px ${theme.colors.strawberry}`
-      : `solid 2px ${theme.colors.liquorice}`};
+      ? `solid 2px ${theme.color.feedback.negative[200]}`
+      : `solid 2px ${theme.color.border.contrast}`};
   box-sizing: border-box;
   border-radius: 1px;
 
@@ -67,7 +66,7 @@ const Checkmark = styled.span<{ $error?: boolean }>`
     width: 3px;
     height: 8px;
     border-radius: 4px;
-    background-color: ${theme.colors.cream};
+    background-color: ${({ theme }) => theme.color.surface.base['000']};
     -webkit-transform: rotate(316deg);
     -ms-transform: rotate(316deg);
     transform: rotate(316deg);
@@ -82,7 +81,7 @@ const Checkmark = styled.span<{ $error?: boolean }>`
     width: 3px;
     height: 15px;
     border-radius: 4px;
-    background-color: ${theme.colors.cream};
+    background-color: ${({ theme }) => theme.color.surface.base['000']};
     -webkit-transform: rotate(43deg);
     -ms-transform: rotate(43deg);
     transform: rotate(43deg);
@@ -102,11 +101,11 @@ const BoxContainer = styled.label`
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    background-color: ${theme.colors.cream};
+    background-color: ${({ theme }) => theme.color.surface.base['000']};
 
     &:checked ~ ${Checkmark} {
-      background-color: ${theme.colors.liquorice};
-      border: solid 2px ${theme.colors.liquorice};
+      background-color: ${({ theme }) => theme.color.icon.base};
+      border: solid 2px ${({ theme }) => theme.color.icon.base};
     }
 
     &:checked ~ ${Checkmark}:before {
@@ -122,8 +121,8 @@ const BoxContainer = styled.label`
 
   &:hover {
     ${Checkmark} {
-      background-color: ${theme.colors.coconut};
-      border: solid 2px ${theme.colors.liquorice};
+      background-color: ${({ theme }) =>
+        theme.color.interactive.tertiary.hover};
     }
   }
 
@@ -140,5 +139,5 @@ const BoxContainer = styled.label`
 const ErrorBox = styled.div`
   margin-top: 4px;
   font-size: 12px;
-  color: ${theme.colors.strawberry};
+  color: ${({ theme }) => theme.color.feedback.negative[200]};
 `
