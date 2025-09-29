@@ -4,7 +4,7 @@ exports[`Chip > renders correctly when disabled 1`] = `
 <div>
   <button
     aria-label="chip-button"
-    class="sc-bRKDuR bHjpxP sc-jJLAfE hLhiaH"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE cNbkBf"
     disabled=""
   >
     <div
@@ -20,7 +20,7 @@ exports[`Chip > renders correctly when loading 1`] = `
 <div>
   <button
     aria-label="chip-button"
-    class="sc-bRKDuR bHjpxP sc-jJLAfE hLhiaH"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE cNbkBf"
     disabled=""
   >
     <svg
@@ -60,7 +60,7 @@ exports[`Chip > renders correctly with primary styling 1`] = `
 <div>
   <button
     aria-label="chip-button"
-    class="sc-bRKDuR bHjpxP sc-jJLAfE hGBwBh"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE dogeqJ"
   >
     <div
       class="sc-hwkwBN hqFAmV"
@@ -75,7 +75,7 @@ exports[`Chip > renders correctly with secondary styling 1`] = `
 <div>
   <button
     aria-label="chip-button"
-    class="sc-bRKDuR bHjpxP sc-jJLAfE jXrfJx"
+    class="sc-bRKDuR bHjpxP sc-jJLAfE hcNHaZ"
   >
     <div
       class="sc-hwkwBN hqFAmV"
