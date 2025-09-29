@@ -3,7 +3,7 @@
 exports[`Card > renders correctly with a leading icon 1`] = `
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe hjnNOi"
+    class="sc-bRKDuR bHjpxP sc-jwTyAe hwiAiy"
   >
     <div
       class="sc-bRKDuR cRGbbj"
@@ -60,7 +60,7 @@ exports[`Card > renders correctly with a leading icon 1`] = `
 exports[`Card > renders correctly with a visual 1`] = `
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe hzFEh"
+    class="sc-bRKDuR bHjpxP sc-jwTyAe foUrsx"
   >
     <div
       class="sc-bRKDuR bHjpxP sc-jJLAfE ixsXVo"
@@ -102,7 +102,7 @@ exports[`Card > renders correctly with a visual 1`] = `
 exports[`Card > renders correctly with action button 1`] = `
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe hjnNOi"
+    class="sc-bRKDuR bHjpxP sc-jwTyAe hwiAiy"
   >
     <div
       class="sc-bRKDuR cRGbbj"
@@ -154,7 +154,7 @@ exports[`Card > renders correctly with action button 1`] = `
 exports[`Card > renders correctly with fallback style 1`] = `
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe KWyJy"
+    class="sc-bRKDuR bHjpxP sc-jwTyAe jNkFWe"
   >
     <div
       class="sc-bRKDuR cRGbbj"
@@ -189,7 +189,7 @@ exports[`Card > renders correctly with fallback style 1`] = `
 exports[`Card > renders correctly with title and body 1`] = `
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe hjnNOi"
+    class="sc-bRKDuR bHjpxP sc-jwTyAe hwiAiy"
   >
     <div
       class="sc-bRKDuR cRGbbj"
