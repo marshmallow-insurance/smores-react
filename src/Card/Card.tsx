@@ -7,7 +7,6 @@ import { Icon } from '../Icon'
 import { Icons } from '../Icon/iconsList'
 
 import { Text } from '../Text'
-import { theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
@@ -137,8 +136,10 @@ type ICard = TransientProps<
   }
 
 const Container = styled(Box)<ICard>`
-  background: ${({ $fallbackStyle }) =>
-    $fallbackStyle ? theme.colors.cream : theme.colors.custard};
+  background: ${({ $fallbackStyle, theme }) =>
+    $fallbackStyle
+      ? theme.color.surface.base['000']
+      : theme.color.surface.base[300]};
   box-sizing: border-box;
   border-radius: 16px;
 
@@ -152,14 +153,16 @@ const Container = styled(Box)<ICard>`
   position: relative;
   overflow: hidden;
 
-  ${({ $isNotClickable, $fallbackStyle }) =>
+  ${({ $isNotClickable, $fallbackStyle, theme }) =>
     !$isNotClickable &&
     css`
       cursor: pointer;
       &:hover {
         background: ${darken(
           0.1,
-          $fallbackStyle ? theme.colors.cream : theme.colors.custard,
+          $fallbackStyle
+            ? theme.color.surface.base['000']
+            : theme.color.surface.base[300],
         )};
       }
 
