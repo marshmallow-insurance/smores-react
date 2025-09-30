@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../../Box'
 import { Icon } from '../../Icon'
-import { theme } from '../../theme'
 import { EmptyResults } from './EmptyResults'
 
 type Option = {
@@ -125,11 +124,11 @@ const ResultsList = styled.ul<
   overflow-y: auto;
   padding: 0;
   margin: 0;
-  background-color: ${theme.colors.cream};
+  background-color: ${({ theme }) => theme.color.background['000']};
   border-radius: 12px;
   margin-top: 14px;
   z-index: 1000;
-  border: 1px solid ${theme.colors.oatmeal};
+  border: 1px solid ${({ theme }) => theme.color.border.subtle};
   box-shadow:
     0px 10px 18px rgba(18, 18, 23, 0.03),
     0px 5px 8px rgba(18, 18, 23, 0.04),
@@ -139,7 +138,7 @@ const ResultsList = styled.ul<
     padding: 16px 14px;
     box-sizing: border-box;
     font-size: 16px;
-    color: ${theme.colors.liquorice};
+    color: ${({ theme }) => theme.color.text.base};
     cursor: pointer;
   }
 `
@@ -158,13 +157,13 @@ const ListButton = styled.li<{ $isSelected: boolean; $showBg: boolean }>`
   ${({ $showBg }) =>
     $showBg &&
     css`
-      background-color: ${theme.colors.mascarpone};
+      background-color: ${({ theme }) => theme.color.background[200]};
     `}
 
   ${({ $isSelected }) =>
     $isSelected &&
     css`
-      background-color: ${theme.colors.custard};
+      background-color: ${({ theme }) => theme.color.surface.base[300]};
     `}
 `
 
