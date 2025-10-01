@@ -5,7 +5,6 @@ import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
 
-import { theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
@@ -196,8 +195,8 @@ const Container = styled(Box)`
 `
 
 const PageBox = styled.button<IPageBox>`
-  background: ${({ $active }) =>
-    $active ? theme.colors.custard : theme.colors.cream};
+  background: ${({ $active, theme }) =>
+    $active ? theme.color.surface.base[300] : theme.color.surface.base['000']};
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -208,10 +207,10 @@ const PageBox = styled.button<IPageBox>`
   min-width: 24px;
 
   &:hover {
-    background-color: ${theme.colors.mascarpone};
+    background-color: ${({ theme }) => theme.color.surface.base[300]};
   }
   &:active {
-    background-color: ${theme.colors.custard};
+    background-color: ${({ theme }) => theme.color.surface.base[200]};
   }
 
   ${focusOutlineStyle}
