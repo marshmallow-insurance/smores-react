@@ -2,7 +2,6 @@ import React from 'react'
 import { StepData, StepState } from './types'
 import { calculateStepState, calculateProgressWidths } from './helpers'
 import styled from 'styled-components'
-import { theme } from '../theme'
 import { Box } from '../Box'
 import { StepItem } from './components/StepItem'
 
@@ -93,7 +92,7 @@ const DefaultProgress = styled(Box)<{ $simpleStep?: boolean }>`
   z-index: 0;
   content: '';
   position: absolute;
-  background: ${theme.colors.matcha};
+  background: ${({ theme }) => theme.color.feedback.positive[100]};
   width: 100%;
   height: 12px;
 
