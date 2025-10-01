@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 
 import { Icon } from '../Icon'
 import { Icons } from '../Icon/iconsList'
-import { theme } from '../theme'
+import { theme as oldTheme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 
 type LinkTypo = 'regular' | 'small'
@@ -71,7 +71,7 @@ export const Link: FC<LinkProps> = ({
 }
 
 const LinkWrapper = styled.a<{ $typo: LinkTypo; $highlight: boolean }>(
-  ({ $typo, $highlight }) => css`
+  ({ $typo, $highlight, theme }) => css`
     ${focusOutline()}
     display: inline-flex;
     flex-direction: row;
@@ -88,26 +88,28 @@ const LinkWrapper = styled.a<{ $typo: LinkTypo; $highlight: boolean }>(
       line-height: 20px;
     `}
 
-      font-weight: ${theme.font.weight.medium};
+    font-weight: ${oldTheme.font.weight.medium};
     text-decoration: underline;
-    color: ${$highlight ? theme.colors.lollipop : theme.colors.liquorice};
+    color: ${$highlight
+      ? theme.color.interactive.primary.base
+      : theme.color.text.base};
 
     background: none;
     cursor: pointer;
 
     &:hover {
-      color: ${theme.colors.sesame};
+      color: ${theme.color.text.subtle};
 
       path {
-        fill: ${theme.colors.sesame};
+        fill: ${theme.color.icon.subtle};
       }
     }
 
     &:active {
-      color: ${theme.colors.liquorice};
+      color: ${theme.color.text.base};
 
       path {
-        fill: ${theme.colors.liquorice};
+        fill: ${theme.color.icon.subtle};
       }
     }
   `,
