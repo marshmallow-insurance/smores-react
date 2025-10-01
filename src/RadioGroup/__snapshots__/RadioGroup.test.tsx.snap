@@ -12,7 +12,7 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
         class="sc-kvnevz eXwXep"
       >
         <label
-          class="sc-kcLKEh iAGano"
+          class="sc-kcLKEh eyTHnd"
           data-testid="option1"
           for="MM_SMORES_9"
         >
@@ -28,13 +28,13 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
               value="option1"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR kCUhTl"
+              class="sc-bRKDuR bqffzd sc-kNOymR hlmzGy"
             />
             <div
               class="sc-bRKDuR bHjpxP"
             >
               <span
-                class="sc-dntSTA jFmGnf"
+                class="sc-dntSTA da-dRhW"
               >
                 Option 1
               </span>
@@ -42,7 +42,7 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
           </div>
         </label>
         <label
-          class="sc-kcLKEh kYNofY"
+          class="sc-kcLKEh beawdA"
           data-testid="option2"
           for="MM_SMORES_10"
         >
@@ -57,13 +57,13 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
               value="option2"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR gvYkWE"
+              class="sc-bRKDuR bqffzd sc-kNOymR fWvkiS"
             />
             <div
               class="sc-bRKDuR bHjpxP"
             >
               <span
-                class="sc-dntSTA jFmGnf"
+                class="sc-dntSTA da-dRhW"
               >
                 Option 2
               </span>
@@ -71,7 +71,7 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
           </div>
         </label>
         <label
-          class="sc-kcLKEh kYNofY"
+          class="sc-kcLKEh beawdA"
           data-testid="option3"
           for="MM_SMORES_11"
         >
@@ -86,13 +86,13 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
               value="option3"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR gvYkWE"
+              class="sc-bRKDuR bqffzd sc-kNOymR fWvkiS"
             />
             <div
               class="sc-bRKDuR bHjpxP"
             >
               <span
-                class="sc-dntSTA jFmGnf"
+                class="sc-dntSTA da-dRhW"
               >
                 Option 3
               </span>
@@ -148,7 +148,7 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
         class="sc-kvnevz bRRMGI"
       >
         <label
-          class="sc-kcLKEh ivOohR"
+          class="sc-kcLKEh cCbfrZ"
           data-testid="option1"
           for="MM_SMORES_5"
         >
@@ -164,7 +164,7 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
               value="option1"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR jfJTMl"
+              class="sc-bRKDuR bqffzd sc-kNOymR hrydBC"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -189,7 +189,7 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
           </div>
         </label>
         <label
-          class="sc-kcLKEh cRNtYF"
+          class="sc-kcLKEh cWZLgV"
           data-testid="option2"
           for="MM_SMORES_6"
         >
@@ -204,7 +204,7 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
               value="option2"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR lgYEQD"
+              class="sc-bRKDuR bqffzd sc-kNOymR ggSPLk"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -229,7 +229,7 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
           </div>
         </label>
         <label
-          class="sc-kcLKEh cRNtYF"
+          class="sc-kcLKEh cWZLgV"
           data-testid="option3"
           for="MM_SMORES_7"
         >
@@ -244,7 +244,7 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
               value="option3"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR lgYEQD"
+              class="sc-bRKDuR bqffzd sc-kNOymR ggSPLk"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -302,7 +302,7 @@ exports[`RadioGroup > renders correctly with default props 1`] = `
               value="option1"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR jfJTMl"
+              class="sc-bRKDuR bqffzd sc-kNOymR hrydBC"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -331,7 +331,7 @@ exports[`RadioGroup > renders correctly with default props 1`] = `
               value="option2"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR lgYEQD"
+              class="sc-bRKDuR bqffzd sc-kNOymR ggSPLk"
             />
             <div
               class="sc-bRKDuR bHjpxP"
@@ -360,7 +360,7 @@ exports[`RadioGroup > renders correctly with default props 1`] = `
               value="option3"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR lgYEQD"
+              class="sc-bRKDuR bqffzd sc-kNOymR ggSPLk"
             />
             <div
               class="sc-bRKDuR bHjpxP"
