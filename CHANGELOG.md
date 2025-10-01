@@ -1,3 +1,17 @@
+## [13.2.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.2.0...v13.2.1) (2025-10-01)
+
+## [13.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.11...v13.2.0) (2025-10-01)
+
+### Features
+
+* **progress-indicator:** align with design system [DES-67] ([#4567](https://github.com/marshmallow-insurance/smores-react/issues/4567)) ([16ee2b4](https://github.com/marshmallow-insurance/smores-react/commit/16ee2b4411798397615ee345348b8e65b5fe839a))
+
+## [13.1.11](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.10...v13.1.11) (2025-10-01)
+
+## [13.1.10](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.9...v13.1.10) (2025-10-01)
+
+## [13.1.9](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.8...v13.1.9) (2025-10-01)
+
 ## [13.1.8](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.7...v13.1.8) (2025-09-30)
 
 ## [13.1.7](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.6...v13.1.7) (2025-09-30)
