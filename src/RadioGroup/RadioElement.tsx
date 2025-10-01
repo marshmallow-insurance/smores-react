@@ -1,7 +1,6 @@
 import React, { FocusEvent, forwardRef } from 'react'
 import styled from 'styled-components'
 
-import { theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 import { visuallyHidden } from '../utils/visuallyHidden'
@@ -65,24 +64,28 @@ const RadioCircle = styled(Box)<{ $isError: boolean; $checked: boolean }>`
   width: ${RADIO_SIZE}px;
   height: ${RADIO_SIZE}px;
   border-radius: ${RADIO_SIZE}px;
-  background-color: ${theme.colors.cream};
+  background-color: ${({ theme }) => theme.color.background['000']};
   border: 2px solid
-    ${({ $isError }) =>
-      $isError ? theme.colors.strawberry : theme.colors.sesame};
+    ${({ $isError, theme }) =>
+      $isError
+        ? theme.color.feedback.negative[200]
+        : theme.color.border.contrast};
 
-  ${({ $checked, $isError }) =>
+  ${({ $checked, $isError, theme }) =>
     !$checked &&
     !$isError &&
     `
     &:hover {
-      border: 2px solid ${theme.colors.liquorice};
+      border: 2px solid ${theme.color.surface.base[900]};
     }
   `}
 
-  ${({ $checked, $isError }) =>
+  ${({ $checked, $isError, theme }) =>
     $checked &&
     `border: 8px solid ${
-      $isError ? theme.colors.strawberry : theme.colors.liquorice
+      $isError
+        ? theme.color.feedback.negative[200]
+        : theme.color.surface.base[900]
     };`}
 
   ${focusOutline({ selector: `${StyledInput}:focus-visible + &` })}

@@ -17,7 +17,6 @@ import { $getRoot, LexicalEditor } from 'lexical'
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Box } from '../Box'
-import { theme } from '../theme'
 import { MarginProps } from '../utils/space'
 import CustomAutoLinkPlugin from './plugins/AutoLinkPlugin'
 import { EditorDefaultUpdatePlugin } from './plugins/EditorDefaultUpdatePlugin'
@@ -96,12 +95,12 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({
 const Editor = styled(Box)<{ $maxHeight: string; $height?: string }>`
   .editor-input {
     margin-top: 12px;
-    background-color: ${theme.colors.cream};
+    background-color: ${({ theme }) => theme.color.background['000']};
     border-radius: 12px;
-    border: 2px solid ${theme.colors.oatmeal};
+    border: 2px solid ${({ theme }) => theme.color.surface.base[400]};
     padding: 16px;
     overflow: scroll;
-    outline-color: ${theme.colors.marzipan};
+    outline-color: ${({ theme }) => theme.color.border.base};
     max-height: ${({ $maxHeight }) => $maxHeight};
     ${({ $height }) => $height && `height: ${$height}`};
     min-height: 84px;
@@ -114,8 +113,9 @@ const Editor = styled(Box)<{ $maxHeight: string; $height?: string }>`
 `
 
 const Container = styled(Box)<{ $outline: boolean }>`
-  background-color: ${theme.colors.coconut};
+  background-color: ${({ theme }) => theme.color.background[100]};
   border-radius: 16px;
   padding: 12px;
-  ${({ $outline }) => $outline && `border: 2px solid ${theme.colors.oatmeal}`}
+  ${({ $outline, theme }) =>
+    $outline && `border: 2px solid ${theme.color.surface.base[400]}`}
 `
