@@ -3,7 +3,7 @@
 exports[`Link > renders correctly with default props 1`] = `
 <div>
   <a
-    class="sc-ggWZvA eqjrji"
+    class="sc-ggWZvA jROAcy"
     href="https://www.google.com"
   >
     Google Link
