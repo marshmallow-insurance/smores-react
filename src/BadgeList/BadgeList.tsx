@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { Tooltip } from '../Tooltip'
 import type { TooltipProps } from '../Tooltip/Tooltip'
 import { Text } from '../Text'
-import { theme } from '../theme'
 
 type WithTooltip = Pick<TooltipProps, 'title' | 'content'> & {
   position?: TooltipProps['position']
@@ -86,7 +85,7 @@ const ExcessBadgeContainer = styled.div`
   place-content: center;
   width: 100%;
   height: 100%;
-  background-color: ${theme.colors.oatmeal};
+  background-color: ${({ theme }) => theme.color.surface.base[400]};
   pointer-events: none;
 `
 
