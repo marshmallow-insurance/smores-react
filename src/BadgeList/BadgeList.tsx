@@ -85,7 +85,7 @@ const ExcessBadgeContainer = styled.div`
   place-content: center;
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.color.background[200]};
+  background-color: ${({ theme }) => theme.color.surface.base[400]};
   pointer-events: none;
 `
 
