@@ -3,7 +3,6 @@ import React, { ForwardedRef, forwardRef } from 'react'
 import styled from 'styled-components'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
-import { theme } from '../theme'
 import { MarginProps } from '../utils/space'
 
 export interface RichTextProps extends MarginProps {
@@ -38,7 +37,7 @@ export const RichText = forwardRef(function RichText(
 })
 
 const WarningText = styled(Box)`
-  background-color: ${theme.colors.sherbert};
+  background-color: ${({ theme }) => theme.color.feedback.negative[200]};
   padding: 16px;
   border-radius: 16px;
   width: fit-content;

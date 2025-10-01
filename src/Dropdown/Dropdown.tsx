@@ -14,7 +14,6 @@ import { Icons } from '../Icon/iconsList'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { StyledFrontIcon } from '../fields/components/CommonInput'
-import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 
@@ -188,16 +187,19 @@ const StyledSelect = styled.select<SSelect>`
   ${resetSelect}
   width: 100%;
   height: 32px;
-  color: ${({ value }) =>
-    value === '' ? theme.colors.sesame : theme.colors.liquorice};
+  color: ${({ value, theme }) =>
+    value === '' ? theme.color.text.subtle : theme.color.text.base};
   cursor: pointer;
-  background-color: ${({ $fallbackStyle }) =>
-    $fallbackStyle ? theme.colors.custard : theme.colors.cream};
+  background-color: ${({ $fallbackStyle, theme }) =>
+    $fallbackStyle
+      ? theme.color.surface.base[300]
+      : theme.color.background['000']};
 
   border-radius: 12px;
   padding: 18px 14px;
   border: 2px solid
-    ${({ $error }) => ($error ? theme.colors.strawberry : theme.colors.oatmeal)};
+    ${({ $error, theme }) =>
+      $error ? theme.color.feedback.negative[200] : theme.color.border.subtle};
   height: auto;
 
   ${({ $frontIcon }) =>
@@ -220,7 +222,7 @@ const StyledSelect = styled.select<SSelect>`
         &:focus,
         &:focus-visible,
         &:checked {
-          border-color: ${theme.colors.marzipan}
+          border-color: ${({ theme }) => theme.color.icon.nonEssential};
       }
     `}
 `
@@ -230,5 +232,5 @@ const Caret = styled.div`
   z-index: 1;
   right: 15px;
   pointer-events: none;
-  color: ${theme.colors.marzipan};
+  color: ${({ theme }) => theme.color.icon.nonEssential};
 `

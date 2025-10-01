@@ -1,7 +1,6 @@
 import React, { FC, ReactNode, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import styled, { css } from 'styled-components'
-import { theme } from '../theme'
 
 import { Box } from '../Box'
 import { IconStrict } from '../IconStrict'
@@ -131,7 +130,7 @@ const Wrapper = styled(Box)`
 
 const Overlay = styled.div<{ $closeOnOverlayClick: boolean }>`
   position: fixed;
-  background: ${theme.colors.liquorice};
+  background: ${({ theme }) => theme.color.surface.base[900]};
   cursor: ${(props) => (props.$closeOnOverlayClick ? 'pointer' : 'default')};
   opacity: 0.4;
   top: 0;
@@ -142,7 +141,7 @@ const Overlay = styled.div<{ $closeOnOverlayClick: boolean }>`
 
 const Container = styled.div<IModalContainer>(
   ({ $drawer, $width }) => css`
-    background: ${theme.colors.coconut};
+    background: ${({ theme }) => theme.color.background[100]};
     box-sizing: border-box;
     border-radius: 16px;
     padding: 24px;
