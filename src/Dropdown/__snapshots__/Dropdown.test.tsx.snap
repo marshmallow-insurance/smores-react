@@ -13,7 +13,7 @@ exports[`Dropdown > renders correctly when completed 1`] = `
         style="position: relative;"
       >
         <select
-          class="sc-lgpSej kJUTNY"
+          class="sc-lgpSej ckPePk"
           id="MM_SMORES_1"
         >
           <option
@@ -33,7 +33,7 @@ exports[`Dropdown > renders correctly when completed 1`] = `
           </option>
         </select>
         <div
-          class="sc-eqYatC kHqUDE"
+          class="sc-eqYatC gvIKPK"
         >
           <span
             class="sc-bRKDuR bHjpxP sc-fhHczv cTkdi"
@@ -116,7 +116,7 @@ exports[`Dropdown > renders correctly with a list of items 1`] = `
         style="position: relative;"
       >
         <select
-          class="sc-lgpSej kJUTNY"
+          class="sc-lgpSej ckPePk"
           id="MM_SMORES_0"
         >
           <option
@@ -136,7 +136,7 @@ exports[`Dropdown > renders correctly with a list of items 1`] = `
           </option>
         </select>
         <div
-          class="sc-eqYatC kHqUDE"
+          class="sc-eqYatC gvIKPK"
         >
           <span
             class="sc-bRKDuR bHjpxP sc-fhHczv cTkdi"
@@ -178,7 +178,7 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
         style="position: relative;"
       >
         <select
-          class="sc-lgpSej fNtANg"
+          class="sc-lgpSej dsPMCh"
           id="MM_SMORES_2"
         >
           <option
@@ -198,7 +198,7 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
           </option>
         </select>
         <div
-          class="sc-eqYatC kHqUDE"
+          class="sc-eqYatC gvIKPK"
         >
           <span
             class="sc-bRKDuR bHjpxP sc-fhHczv cTkdi"

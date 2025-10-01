@@ -2,7 +2,7 @@ import { Box } from '../../Box'
 import { StepData } from 'ProgressIndicator/types'
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { theme } from '../../theme'
+import { theme as oldTheme } from '../../theme'
 import { Text } from '../../Text'
 import { Icon } from '../../Icon'
 
@@ -100,8 +100,8 @@ const SimpleItem = styled(Box)<StyledComponentProps>`
   z-index: 1;
   ${borderRadiusCss}
 
-  background: ${({ $completed }) =>
-    $completed ? theme.colors.pistachio : 'none'};
+  background: ${({ $completed, theme }) =>
+    $completed ? theme.color.feedback.positive[200] : 'none'};
 `
 
 const ProgressItem = styled(Box)<StyledComponentProps>`
@@ -125,13 +125,15 @@ const ProgressIndicator = styled(Box)<StyledComponentProps>`
   width: 24px;
   position: relative;
   z-index: 1;
-  background: ${({ $completed, $currentStep }) =>
-    $completed || $currentStep ? theme.colors.pistachio : theme.colors.matcha};
+  background: ${({ $completed, $currentStep, theme }) =>
+    $completed || $currentStep
+      ? theme.color.feedback.positive[200]
+      : theme.color.feedback.positive[100]};
 `
 
 const StyledText = styled(Text)`
   margin-top: 2px;
-  font-weight: ${theme.font.weight.medium};
+  font-weight: ${oldTheme.font.weight.medium};
   white-space: nowrap;
 `
 
@@ -141,6 +143,6 @@ const CompletedBar = styled(Box)`
   width: 100%;
   top: 7px;
   left: 13px;
-  background: ${theme.colors.pistachio};
+  background: ${({ theme }) => theme.color.feedback.positive[200]};
   z-index: 0;
 `
