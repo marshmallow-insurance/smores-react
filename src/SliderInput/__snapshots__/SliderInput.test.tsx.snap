@@ -3,7 +3,7 @@
 exports[`SliderInput > renders correctly with default props 1`] = `
 <div>
   <input
-    class="sc-bRKDuR cNEPmh"
+    class="sc-bRKDuR gNHzaB"
     max="100"
     min="0"
     type="range"
