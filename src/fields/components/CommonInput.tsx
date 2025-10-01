@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Icon } from '../../Icon'
 import { Icons } from '../../Icon/iconsList'
-import { theme } from '../../theme'
 
 interface IInput {
   $error?: boolean
@@ -20,26 +19,29 @@ interface SIcon {
 
 export const Input = styled.input<IInput>`
   border: none;
-  color: ${({ $error }) =>
-    theme.colors[`${$error ? 'strawberry' : 'liquorice'}`]};
+  color: ${({ $error, theme }) =>
+    $error ? theme.color.feedback.negative[200] : theme.color.text.base};
   font-size: 16px;
   width: 100%;
   outline: none;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'initial')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   padding: 18px 14px;
-  background-color: ${({ $fallbackStyle }) =>
-    $fallbackStyle ? theme.colors.custard : theme.colors.cream};
+  background-color: ${({ $fallbackStyle, theme }) =>
+    $fallbackStyle
+      ? theme.color.surface.base[300]
+      : theme.color.background['000']};
   border: 2px solid
-    ${({ $error }) => ($error ? theme.colors.strawberry : theme.colors.oatmeal)};
+    ${({ $error, theme }) =>
+      $error ? theme.color.feedback.negative[200] : theme.color.border.subtle};
 
-  ${({ disabled, $error }) =>
+  ${({ disabled, $error, theme }) =>
     !disabled &&
     !$error &&
     css`
       &:hover,
       &:focus-within {
-        border-color: ${theme.colors.marzipan};
+        border-color: ${theme.color.border.base};
       }
     `}
 
@@ -68,7 +70,7 @@ export const Input = styled.input<IInput>`
   }
 
   &::placeholder {
-    color: ${theme.colors.sesame};
+    color: ${({ theme }) => theme.color.text.subtle};
   }
 
   &:-webkit-autofill {
@@ -92,7 +94,7 @@ export const StyledFrontIcon = styled(Icon)<SIcon>`
   margin-left: -24px;
   z-index: 1;
   opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
-  color: ${theme.colors.liquorice};
+  color: ${({ theme }) => theme.color.text.base};
 `
 
 export const StyledTrailingIcon = styled(Icon)<SIcon>`
@@ -100,5 +102,5 @@ export const StyledTrailingIcon = styled(Icon)<SIcon>`
   right: 36px;
   margin-right: -36px;
   opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
-  color: ${theme.colors.liquorice};
+  color: ${({ theme }) => theme.color.text.base};
 `

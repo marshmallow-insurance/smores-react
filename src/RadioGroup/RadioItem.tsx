@@ -1,8 +1,8 @@
 import React, { FocusEvent, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
-import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
+import { theme as oldTheme } from '../theme'
 
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
@@ -151,26 +151,27 @@ const Wrapper = styled.label<
     $fallbackStyle,
     $disabled,
     $itemWidth,
+    theme,
   }) => css`
     ${($displayType === 'horizontal-card' ||
       $displayType === 'vertical-card') &&
     css`
       border-radius: 12px;
       background-color: ${$fallbackStyle
-        ? theme.colors.cream
-        : theme.colors.custard};
+        ? theme.color.surface.base['000']
+        : theme.color.surface.base[300]};
       padding: ${checked ? '10px' : '12px'};
       border: ${checked &&
       ($isError
-        ? `2px solid ${theme.colors.strawberry}`
-        : `2px solid ${theme.colors.liquorice}`)};
+        ? `2px solid ${theme.color.feedback.negative[200]}`
+        : `2px solid ${theme.color.border.contrast}`)};
 
       &:hover {
         ${!$disabled &&
         css`
           background-color: ${$fallbackStyle
-            ? theme.colors.coconut
-            : theme.colors.oatmeal};
+            ? theme.color.surface.base[100]
+            : theme.color.surface.base[400]};
         `}
       }
     `}
@@ -195,8 +196,8 @@ const Wrapper = styled.label<
 const RadioText = styled.span<{ $isError: boolean }>`
   line-height: 16px;
   font-size: 16px;
-  font-weight: ${theme.font.weight.medium};
-  color: ${({ $isError }) =>
-    $isError ? theme.colors.strawberry : theme.colors.liquorice};
+  font-weight: ${oldTheme.font.weight.medium};
+  color: ${({ $isError, theme }) =>
+    $isError ? theme.color.feedback.negative[200] : theme.color.text.base};
   margin-top: 4px;
 `

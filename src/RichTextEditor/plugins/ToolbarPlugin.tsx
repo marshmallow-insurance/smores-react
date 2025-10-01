@@ -22,7 +22,6 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
 import { Icon } from '../../Icon'
-import { theme } from '../../theme'
 
 const LowPriority = 1
 
@@ -217,24 +216,14 @@ const EditorButton = styled(Box)<{ $active: boolean }>`
   align-items: center;
   font-size: 24px;
   cursor: pointer;
-  background-color: ${theme.colors.custard};
+  background-color: ${({ theme }) => theme.color.surface.base[300]};
   flex-shrink: 0;
 
-  ${({ $active }) =>
+  ${({ $active, theme }) =>
     $active &&
     `
-    background-color: ${theme.colors.fairyFloss};
+    background-color: ${theme.color.interactive.primary.hover};
   `}
-
-  :hover {
-    filter: brightness(0.95);
-
-    ${({ $active }) =>
-      $active &&
-      `
-      background-color: ${theme.colors.fairyFloss};
-    `}
-  }
 `
 
 const Bold = styled(EditorButton)`
@@ -262,10 +251,10 @@ const Link = styled(EditorButton)`
   padding-right: 5px;
   flex-shrink: 1;
 
-  ${({ $active }) =>
+  ${({ $active, theme }) =>
     $active &&
     `
-    background-color: ${theme.colors.fairyFloss};
+    background-color: ${theme.color.interactive.primary.hover};
 
     :hover {
       filter: none;
@@ -274,14 +263,14 @@ const Link = styled(EditorButton)`
 `
 
 const LinkOpen = styled(Icon)`
-  background-color: ${theme.colors.marshmallowPink};
+  background-color: ${({ theme }) => theme.color.interactive.tertiary.base};
   height: 32px;
   width: 32px;
   border-radius: 20px;
   padding: 6px;
 
   :hover {
-    background-color: ${theme.colors.lollipop};
+    background-color: ${({ theme }) => theme.color.interactive.tertiary.active};
   }
 `
 
@@ -294,12 +283,13 @@ const LinkInput = styled.input`
   padding-right: 12px;
   font-size: 16px;
   min-width: 0;
+  background-color: white;
 
   :hover {
-    outline: 2px solid ${theme.colors.bubblegum};
+    outline: 2px solid ${({ theme }) => theme.color.surface.brand[200]};
   }
 
   :focus {
-    outline: 2px solid ${theme.colors.marshmallowPink};
+    outline: 2px solid ${({ theme }) => theme.color.surface.brand[300]};
   }
 `
