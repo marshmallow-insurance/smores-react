@@ -1,4 +1,4 @@
-import * as theme from '@mrshmllw/smores-foundations/build/web/variables.json'
+import * as designTokens from '@mrshmllw/smores-foundations/build/web/variables.json'
 
 type Flatten<T, Prefix extends string = ''> = {
   [K in keyof T & string]: T[K] extends Record<string, any>
@@ -6,14 +6,14 @@ type Flatten<T, Prefix extends string = ''> = {
     : `${Prefix}${K}`
 }[keyof T & string]
 
-export type NewColor = Flatten<(typeof theme)['color']>
+export type NewColor = Flatten<(typeof designTokens)['color']>
 
 // TODO: Test how well this works
 // we currently access numerical colours like `theme.color.neutral[100]` or in the case of 000 colours, `theme.color.neutral['000']`
 export const getThemeColor = (path: NewColor): string => {
   return path
     .split('.')
-    .reduce((acc, key) => acc?.[key], theme.color as any) as string
+    .reduce((acc, key) => acc?.[key], designTokens.color as any) as string
 }
 
 export const legacyColorMap = {
