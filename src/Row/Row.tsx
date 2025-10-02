@@ -5,7 +5,7 @@ import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Icons } from '../Icon/iconsList'
 import { Text } from '../Text'
-import { Color, theme } from '../theme'
+import { Color } from '../theme'
 import { MarginProps } from '../utils/space'
 
 export type RowProps = {
@@ -87,20 +87,20 @@ interface IContainer {
 }
 
 const Container = styled(Box)<IContainer>(
-  ({ $type, $iconLeft, $borderTop, $borderBottom, $boldHeading }) => css`
+  ({ $type, $iconLeft, $borderTop, $borderBottom, $boldHeading, theme }) => css`
     border-radius: ${($type === 'first' && `16px 16px 0 0`) ||
     ($type === 'curved' && `16px`) ||
     ($type === 'last' && `0 0 16px 16px`) ||
     0};
 
     border-top: ${$borderTop && $type !== 'curved' && $type !== 'first'
-      ? `1px solid ${theme.colors.oatmeal}`
+      ? `1px solid ${theme.color.border.subtle}`
       : 'none'};
     border-bottom: ${$borderBottom && $type !== 'curved' && $type !== 'last'
-      ? `1px solid ${theme.colors.oatmeal}`
+      ? `1px solid ${theme.color.border.subtle}`
       : 'none'};
 
-    background-color: ${theme.colors.custard};
+    background-color: ${theme.color.surface.base[300]};
     display: grid;
     grid-template-columns: ${$iconLeft ? `24px auto 24px` : `auto 24px`};
     padding: 16px;
