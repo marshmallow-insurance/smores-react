@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
-import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 import { MarginProps } from '../utils/space'
 
@@ -90,25 +89,27 @@ const StyledTextArea = styled.textarea<TextArea>`
   font-size: 16px;
   font: inherit;
   line-height: 20px;
-  background: ${({ $fallbackStyle }) =>
-    $fallbackStyle ? theme.colors.custard : theme.colors.cream};
-  border: 2px solid ${theme.colors.oatmeal};
+  background: ${({ $fallbackStyle, theme }) =>
+    $fallbackStyle
+      ? theme.color.surface.base[300]
+      : theme.color.background['000']};
+  border: 2px solid ${({ theme }) => theme.color.border.subtle};
   box-sizing: border-box;
   border-radius: 12px;
   width: 100%;
   padding: 18px 14px;
-  color: ${theme.colors.liquorice};
+  color: ${({ theme }) => theme.color.text.base};
   resize: ${({ $resize }) => $resize};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'text')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
-  border-color: ${({ $error }) =>
-    theme.colors[`${$error ? 'strawberry' : 'oatmeal'}`]};
+  border-color: ${({ $error, theme }) =>
+    $error ? theme.color.feedback.negative[200] : theme.color.border.subtle};
   outline: none;
 
   &:hover,
   &:focus,
   &:focus-visible {
-    border-color: ${({ $error }) =>
-      $error ? theme.colors.strawberry : theme.colors.marzipan};
+    border-color: ${({ $error, theme }) =>
+      $error ? theme.color.feedback.negative[200] : theme.color.border.base};
   }
 `
