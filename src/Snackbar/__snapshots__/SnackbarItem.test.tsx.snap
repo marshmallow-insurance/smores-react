@@ -10,7 +10,7 @@ exports[`SnackbarItem > renders correctly with required props 1`] = `
         class="sc-bRKDuR hUwRKL"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ iaYRQx"
+          class="sc-bRKDuR bHjpxP sc-dTvVRJ dzOPrl"
           cursor="inherit"
           title=""
         >

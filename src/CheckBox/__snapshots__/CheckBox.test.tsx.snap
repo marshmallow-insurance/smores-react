@@ -54,7 +54,7 @@ exports[`CheckBox > renders correctly with an error state 1`] = `
     id="MM_SMORES_2"
   >
     <span
-      class="sc-bRKDuR bHjpxP sc-dTvVRJ fWKoGb"
+      class="sc-bRKDuR bHjpxP sc-dTvVRJ gXSYMm"
       cursor="inherit"
       title=""
     >

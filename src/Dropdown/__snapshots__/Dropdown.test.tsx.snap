@@ -91,7 +91,7 @@ exports[`Dropdown > renders correctly when completed 1`] = `
           </svg>
         </span>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ dETlFh"
+          class="sc-bRKDuR bHjpxP sc-dTvVRJ karOVv"
           cursor="inherit"
           title=""
         >
@@ -247,7 +247,7 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
         </svg>
       </span>
       <span
-        class="sc-bRKDuR bHjpxP sc-dTvVRJ gANYIy"
+        class="sc-bRKDuR bHjpxP sc-dTvVRJ hozFOv"
         cursor="inherit"
         title=""
       >
