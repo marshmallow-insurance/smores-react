@@ -21,17 +21,12 @@ export const getThemeColor = (path: NewColor): string => {
     .reduce((acc, key) => acc?.[key], designTokens as any) as string
 }
 
-// a function that extracts the color objects from the design tokens
-const getColourObjectsFromDesignTokens = () => {
-  const { color, extended1, thirdParty } = designTokens
-  return { color, extended1, thirdParty }
-}
-
 // a function that returns a flattened dot notation string path to access the color value
 export const formatDesignTokenColor = (): string => {
-  const colors = getColourObjectsFromDesignTokens()
+  const { color, extended1, thirdParty } = designTokens
+  const colors = { color, extended1, thirdParty }
 
-  if (typeof colors !== 'object' || colors === null) {
+  if (colors === null) {
     return ''
   }
 

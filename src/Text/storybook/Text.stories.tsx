@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Box } from '../../Box'
 import { Text, Typo } from '../Text'
 import { fontStyleMapping } from '../fontMapping'
-import { formatDesignTokenColor } from '../../ThemeProvider/utils/colourMap'
+import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 
 const Grid = styled(Box)`
   display: grid;
@@ -12,8 +12,6 @@ const Grid = styled(Box)`
   margin-bottom: 24px;
   gap: 10px;
 `
-
-const colourOptions = Array.from(new Set(formatDesignTokenColor().split(', ')))
 
 const TypoCollection = ({
   typos,
