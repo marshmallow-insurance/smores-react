@@ -13,7 +13,6 @@ export type NewColor = Flatten<
 
 export type ColorTypes = Color | NewColor
 
-// TODO: Test how well this works
 // we currently access numerical colours like `theme.color.neutral[100]` or in the case of 000 colours, `theme.color.neutral['000']`
 export const getThemeColor = (path: NewColor): string => {
   return path
@@ -103,15 +102,3 @@ export const legacyColorMap: Record<Color, NewColor> = {
   rac: 'thirdParty.rac',
   hometree: 'thirdParty.hometree',
 } as const
-
-/* usage example */
-// prop change:
-// change color prop type to be `color?: Color | NewColor`
-// component usage:
-// <Component color={'marshmallowPink'}/>
-// OR
-// <Component color={'interactive.primary.base'}/>
-// inside component:
-// const resolvedColor = color in legacyColorMap ? getThemeColor(legacyColorMap[color]) : getThemeColor(color)
-
-// the above should resolve to #FF88C8
