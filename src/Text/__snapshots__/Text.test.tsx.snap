@@ -1,0 +1,73 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Text component > renders color.feedback.negative.200 / strawberry correctly with NEW color name 1`] = `
+<div>
+  <p
+    class="sc-bRKDuR bHjpxP sc-dTvVRJ gXSYMm"
+    cursor="inherit"
+    title=""
+  >
+    The quick brown fox jumps over the lazy dog
+  </p>
+</div>
+`;
+
+exports[`Text component > renders color.feedback.negative.200 / strawberry correctly with OLD color name 1`] = `
+<div>
+  <p
+    class="sc-bRKDuR bHjpxP sc-dTvVRJ gXSYMm"
+    cursor="inherit"
+    title=""
+  >
+    The quick brown fox jumps over the lazy dog
+  </p>
+</div>
+`;
+
+exports[`Text component > renders color.feedback.positive.200 / apple correctly with NEW color name 1`] = `
+<div>
+  <p
+    class="sc-bRKDuR bHjpxP sc-dTvVRJ hwfzpe"
+    cursor="inherit"
+    title=""
+  >
+    The quick brown fox jumps over the lazy dog
+  </p>
+</div>
+`;
+
+exports[`Text component > renders color.feedback.positive.200 / apple correctly with OLD color name 1`] = `
+<div>
+  <p
+    class="sc-bRKDuR bHjpxP sc-dTvVRJ hwfzpe"
+    cursor="inherit"
+    title=""
+  >
+    The quick brown fox jumps over the lazy dog
+  </p>
+</div>
+`;
+
+exports[`Text component > renders color.feedback.positive.200 / apple correctly with old color name 1`] = `
+<div>
+  <p
+    class="sc-bRKDuR bHjpxP sc-dTvVRJ hwfzpe"
+    cursor="inherit"
+    title=""
+  >
+    The quick brown fox jumps over the lazy dog
+  </p>
+</div>
+`;
+
+exports[`Text component > renders correctly with default props 1`] = `
+<div>
+  <p
+    class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+    cursor="inherit"
+    title=""
+  >
+    The quick brown fox jumps over the lazy dog
+  </p>
+</div>
+`;

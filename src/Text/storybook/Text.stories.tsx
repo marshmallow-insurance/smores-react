@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Box } from '../../Box'
 import { Text, Typo } from '../Text'
 import { fontStyleMapping } from '../fontMapping'
+import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 
 const Grid = styled(Box)`
   display: grid;
@@ -32,16 +33,16 @@ const TypoCollection = ({
       </Grid>
       {typos.map((typo) => (
         <Grid key={typo}>
-          <Text tag="p" typo="body-regular" color="sesame">
+          <Text tag="p" typo="body-regular" color="color.text.subtle">
             {typo}
           </Text>
-          <Text tag="p" typo="body-regular" color="liquorice">
+          <Text tag="p" typo="body-regular" color="color.text.base">
             They waited patiently for what seemed a very long time.
           </Text>
           {!['hero-alternate', 'hero', 'heading-alternate', 'label'].includes(
             typo,
           ) && (
-            <Text tag="p" typo="body-regular" color="liquorice">
+            <Text tag="p" typo="body-regular" color="color.text.base">
               They waited patiently for what seemed a very long time. They
               waited patiently for what seemed a very long time.
             </Text>
@@ -55,6 +56,12 @@ const TypoCollection = ({
 const meta: Meta<typeof Text> = {
   title: 'Text',
   component: Text,
+  argTypes: {
+    color: {
+      control: 'select',
+      options: colourOptions,
+    },
+  },
   decorators: [
     (Story) => (
       <div style={{ margin: '64px' }}>
@@ -83,7 +90,7 @@ export const Label: Story = {
   args: {
     tag: 'label',
     typo: 'label',
-    color: 'liquorice',
+    color: 'color.text.base',
   },
   render: (args) => (
     <Text {...args}>The quick brown fox jumps over the lazy dog</Text>
