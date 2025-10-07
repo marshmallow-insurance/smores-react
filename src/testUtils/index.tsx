@@ -12,4 +12,6 @@ const customRender = (
 ) => render(ui, { wrapper: Providers, ...options })
 
 export * from '@testing-library/react'
+export * from '@testing-library/jest-dom/vitest'
+
 export { customRender as render }

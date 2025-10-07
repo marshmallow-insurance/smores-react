@@ -9,7 +9,7 @@ exports[`BannerItem > render Critical banner correctly 1`] = `
       class="sc-bRKDuR hUwRKL"
     >
       <p
-        class="sc-bRKDuR bHjpxP sc-dTvVRJ kBCpCa"
+        class="sc-bRKDuR bHjpxP sc-dTvVRJ fXhrsO"
         cursor="inherit"
         title=""
       >
@@ -32,7 +32,7 @@ exports[`BannerItem > render General banner correctly 1`] = `
       class="sc-bRKDuR hUwRKL"
     >
       <p
-        class="sc-bRKDuR bHjpxP sc-dTvVRJ kBCpCa"
+        class="sc-bRKDuR bHjpxP sc-dTvVRJ fXhrsO"
         cursor="inherit"
         title=""
       >
@@ -55,7 +55,7 @@ exports[`BannerItem > render Success banner correctly 1`] = `
       class="sc-bRKDuR hUwRKL"
     >
       <p
-        class="sc-bRKDuR bHjpxP sc-dTvVRJ kBCpCa"
+        class="sc-bRKDuR bHjpxP sc-dTvVRJ fXhrsO"
         cursor="inherit"
         title=""
       >
