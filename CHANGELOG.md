@@ -1,3 +1,9 @@
+## [13.4.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.4.0...v13.4.1) (2025-10-07)
+
+### Bug Fixes
+
+* **theme:** correct import to fix typing ([#4578](https://github.com/marshmallow-insurance/smores-react/issues/4578)) ([8b7d909](https://github.com/marshmallow-insurance/smores-react/commit/8b7d90959fa8bbf2c04d179004ef688122f00fe7))
+
 ## [13.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.3.7...v13.4.0) (2025-10-07)
 
 ### Features
