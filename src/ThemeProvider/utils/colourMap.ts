@@ -13,6 +13,7 @@ export type NewColor = Flatten<
 
 export type ColorTypes = Color | NewColor
 
+// a function that takes a dot notation string path and returns the corresponding hex color value from design tokens
 // we currently access numerical colours like `theme.color.neutral[100]` or in the case of 000 colours, `theme.color.neutral['000']`
 export const getThemeColor = (path: NewColor): string => {
   return path
@@ -21,6 +22,13 @@ export const getThemeColor = (path: NewColor): string => {
 }
 
 // a function that returns a flattened dot notation string path to access the color value
+export const getColorPath = (color: ColorTypes) => {
+  return color in legacyColorMap
+    ? legacyColorMap[color as keyof typeof legacyColorMap]
+    : color
+}
+
+// a function that returns the design token color paths as a comma-separated string
 export const formatDesignTokenColor = (): string => {
   const { color, extended1, thirdParty } = designTokens
   const colors = { color, extended1, thirdParty }

@@ -1,12 +1,27 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { Box } from '../../Box'
-import { Color, theme } from '../../theme'
 import { Tag } from '../Tag'
+import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
+import { legacyColorMap, NewColor } from '../../ThemeProvider/utils/colourMap'
 
 const meta: Meta<typeof Tag> = {
   title: 'Tag',
   component: Tag,
+  argTypes: {
+    color: {
+      control: 'select',
+      options: colourOptions,
+    },
+    bgColor: {
+      control: 'select',
+      options: colourOptions,
+    },
+    borderColor: {
+      control: 'select',
+      options: colourOptions,
+    },
+  },
   decorators: [
     (Story) => (
       <div style={{ margin: '64px' }}>
@@ -22,8 +37,8 @@ type Story = StoryObj<typeof Tag>
 
 export const Default: Story = {
   args: {
-    bgColor: 'feijoa',
-    color: 'cream',
+    bgColor: 'color.illustration.accent1.100',
+    color: 'color.surface.base.000',
     label: 'Example',
   },
   render: (args) => <Tag {...args} />,
@@ -31,36 +46,40 @@ export const Default: Story = {
 
 export const Colors: Story = {
   render: (args) => {
-    const darkCol: Color[] = [
-      'boba',
-      'liquorice',
-      'sesame',
-      'spearmint',
-      'feijoa',
-      'strawberry',
-      'apple',
-      'compareTheMarket',
-      'confused',
-      'onfido',
-      'x',
-      'meta',
-      'ravelin',
-      'hometree',
+    const darkCol: NewColor[] = [
+      'color.text.contrast',
+      'color.text.base',
+      'color.text.subtle',
+      'color.illustration.accent1.200',
+      'color.illustration.accent1.100',
+      'color.feedback.negative.200',
+      'color.feedback.positive.200',
+      'thirdParty.compareTheMarket',
+      'thirdParty.confusedCom',
+      'thirdParty.onfido',
+      'thirdParty.twitter',
+      'thirdParty.facebook',
+      'thirdParty.ravelin',
+      'thirdParty.hometree',
     ]
-    const otherCol: Color[] = ['pistachio', 'caramel', 'stripe']
+    const otherCol: NewColor[] = [
+      'color.illustration.accent3.200',
+      'color.illustration.accent4.200',
+      'thirdParty.stripe',
+    ]
 
-    const map = Object.keys(theme.colors).map((col) => {
+    const map = Object.values(legacyColorMap).map((col) => {
       return (
         <Tag
           {...args}
           label={col}
-          bgColor={col as Color}
+          bgColor={col}
           color={
-            otherCol.includes(col as Color)
-              ? 'boba'
-              : darkCol.includes(col as Color)
-                ? 'cream'
-                : 'liquorice'
+            otherCol.includes(col)
+              ? 'color.text.contrast'
+              : darkCol.includes(col)
+                ? 'color.surface.base.000'
+                : 'color.text.base'
           }
         />
       )
