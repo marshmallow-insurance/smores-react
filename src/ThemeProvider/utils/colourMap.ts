@@ -17,11 +17,14 @@ export type NewColor = Prettify<
 
 export type ColorTypes = Color | NewColor
 
-// we currently access numerical colours like `theme.color.neutral[100]` or in the case of 000 colours, `theme.color.neutral['000']`
 export const getThemeColor = (path: NewColor): string => {
-  return path
-    .split('.')
-    .reduce((acc, key) => acc?.[key], designTokens as any) as string
+  return path.split('.').reduce((acc, key) => acc?.[key], designTokens as any)
+}
+
+export const resolveToThemeColor = (color: NewColor | Color): string => {
+  return color in legacyColorMap
+    ? getThemeColor(legacyColorMap[color as keyof typeof legacyColorMap])
+    : getThemeColor(color as NewColor)
 }
 
 // a function that returns a flattened dot notation string path to access the color value
