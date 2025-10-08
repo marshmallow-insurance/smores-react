@@ -3,12 +3,29 @@ import React from 'react'
 import { Box } from '../../Box'
 import { Accordion } from '../Accordion'
 
+const colourOptions = [
+  'color.surface.base.000',
+  'color.surface.base.100',
+  'color.surface.base.300',
+  'color.illustration.neutral.300',
+]
+
 const meta: Meta<typeof Accordion> = {
   title: 'Accordion',
   component: Accordion,
   args: {
     title: 'How it works',
     children: 'Lots of brilliant information about this beautiful component',
+  },
+  argTypes: {
+    backgroundColor: {
+      control: 'select',
+      options: colourOptions,
+    },
+    borderColor: {
+      control: 'select',
+      options: colourOptions,
+    },
   },
 }
 

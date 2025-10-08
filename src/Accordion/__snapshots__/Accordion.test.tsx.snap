@@ -3,7 +3,7 @@
 exports[`Accordion > renders correctly for fullBorder and filledBackground variant 1`] = `
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe jaJEhk"
+    class="sc-bRKDuR bHjpxP sc-jwTyAe emHXsE"
   >
     <div
       class="sc-bRKDuR gwwejK sc-jJLAfE iWiHKP"
@@ -52,7 +52,7 @@ exports[`Accordion > renders correctly for fullBorder and filledBackground varia
 exports[`Accordion > renders correctly when closed 1`] = `
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe LOspj"
+    class="sc-bRKDuR bHjpxP sc-jwTyAe dRsXQD"
   >
     <div
       class="sc-bRKDuR jGGaUV sc-jJLAfE iWiHKP"
@@ -96,7 +96,7 @@ exports[`Accordion > renders correctly when closed 1`] = `
 exports[`Accordion > renders correctly when expanded 1`] = `
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe LOspj"
+    class="sc-bRKDuR bHjpxP sc-jwTyAe dRsXQD"
   >
     <div
       class="sc-bRKDuR jGGaUV sc-jJLAfE iWiHKP"
