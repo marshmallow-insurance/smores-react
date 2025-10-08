@@ -18,9 +18,7 @@ export type NewColor = Prettify<
 export type ColorTypes = Color | NewColor
 
 export const getThemeColor = (path: NewColor): string => {
-  return path
-    .split('.')
-    .reduce((acc, key) => acc?.[key], designTokens as any) as string
+  return path.split('.').reduce((acc, key) => acc?.[key], designTokens as any)
 }
 
 export const resolveToThemeColor = (color: NewColor | Color): string => {
