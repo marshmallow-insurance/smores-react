@@ -11,9 +11,7 @@ import { Icons } from 'Icon/iconsList'
 import {
   ColorTypes,
   getColorPath,
-  getThemeColor,
-  legacyColorMap,
-  NewColor,
+  resolveToThemeColor,
 } from '../ThemeProvider/utils/colourMap'
 
 export type TagProps = {
@@ -38,25 +36,15 @@ export const Tag: FC<TagProps> = ({
   onClick,
   ...marginProps
 }) => {
-  const resolvedBGColor =
-    bgColor in legacyColorMap
-      ? getThemeColor(legacyColorMap[bgColor as keyof typeof legacyColorMap])
-      : getThemeColor(bgColor as NewColor)
+  const resolvedBGColor = resolveToThemeColor(bgColor)
 
-  const resolvedBorderColor =
-    borderColor &&
-    (borderColor in legacyColorMap
-      ? getThemeColor(
-          legacyColorMap[borderColor as keyof typeof legacyColorMap],
-        )
-      : getThemeColor(borderColor as NewColor))
+  const resolvedBorderColor = borderColor && resolveToThemeColor(borderColor)
 
-  console.log(getColorPath(color))
   return (
     <Wrapper
-      $bgColor={resolvedBGColor as NewColor}
+      $bgColor={resolvedBGColor}
       className={className}
-      $borderColor={resolvedBorderColor as NewColor}
+      $borderColor={resolvedBorderColor}
       {...marginProps}
       alignContent="center"
       justifyContent="center"
@@ -77,7 +65,10 @@ export const Tag: FC<TagProps> = ({
   )
 }
 
-type WrapperProps = TransientProps<Pick<TagProps, 'bgColor' | 'borderColor'>>
+type WrapperProps = TransientProps<{
+  bgColor: string
+  borderColor?: string
+}>
 
 const Wrapper = styled(Box)<WrapperProps>`
   background-color: ${({ $bgColor }) => $bgColor};
