@@ -6,16 +6,29 @@ import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { MarginProps } from '../utils/space'
-import { resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
+import { NewColor, resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
+
+type UsableNewColors = Extract<
+  NewColor,
+  | 'color.surface.base.000'
+  | 'color.surface.base.100'
+  | 'color.surface.base.300'
+  | 'color.illustration.neutral.300'
+>
 
 export type AccordionProps = {
   title: string
   subTitle?: string
   filledBackground?: boolean
   borderTop?: boolean
-  borderColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut'
+  borderColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut' | UsableNewColors
   fullBorder?: boolean
-  backgroundColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut'
+  backgroundColor?:
+    | 'oatmeal'
+    | 'custard'
+    | 'cream'
+    | 'coconut'
+    | UsableNewColors
   onToggle?: (isOpen: boolean) => void
   children: ReactNode
   defaultIsOpen?: boolean
@@ -28,8 +41,8 @@ export const Accordion: FC<AccordionProps> = ({
   filledBackground,
   defaultIsOpen = false,
   borderTop = false,
-  borderColor = 'oatmeal',
-  backgroundColor = 'custard',
+  borderColor = 'color.illustration.neutral.300',
+  backgroundColor = 'color.surface.base.300',
   subTitle,
   fullBorder = false,
   ...marginProps
