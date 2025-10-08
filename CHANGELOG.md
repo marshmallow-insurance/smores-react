@@ -1,3 +1,9 @@
+## [13.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.4.1...v13.5.0) (2025-10-08)
+
+### Features
+
+* **accordion:** resolve border and background to theme colours [DES-42] ([#4579](https://github.com/marshmallow-insurance/smores-react/issues/4579)) ([a31dc32](https://github.com/marshmallow-insurance/smores-react/commit/a31dc32236412701e74ef2f2237aaa306bfbc3aa))
+
 ## [13.4.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.4.0...v13.4.1) (2025-10-07)
 
 ### Bug Fixes
