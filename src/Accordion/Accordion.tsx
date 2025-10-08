@@ -5,8 +5,8 @@ import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
-import { theme } from '../theme'
 import { MarginProps } from '../utils/space'
+import { resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
 
 export type AccordionProps = {
   title: string
@@ -37,6 +37,10 @@ export const Accordion: FC<AccordionProps> = ({
   const [isOpen, setIsOpen] = useState(defaultIsOpen)
   const px = fullBorder ? '16px' : '0'
 
+  const resolvedBorderColor = resolveToThemeColor(borderColor)
+
+  const resolvedBackgroundColour = resolveToThemeColor(backgroundColor)
+
   const handleToggle = () => {
     const nextOpenState = !isOpen
     onToggle?.(nextOpenState)
@@ -48,8 +52,8 @@ export const Accordion: FC<AccordionProps> = ({
       $borderTop={borderTop}
       $fullBorder={fullBorder}
       $filledBackground={filledBackground}
-      $borderColor={borderColor}
-      $backgroundColor={backgroundColor}
+      $borderColor={resolvedBorderColor}
+      $backgroundColor={resolvedBackgroundColour}
       {...marginProps}
     >
       <TopContainer
@@ -91,15 +95,8 @@ export const Accordion: FC<AccordionProps> = ({
 
 const Wrapper = styled(Box)<
   TransientProps<
-    Pick<
-      AccordionProps,
-      | 'borderTop'
-      | 'fullBorder'
-      | 'filledBackground'
-      | 'borderColor'
-      | 'backgroundColor'
-    >
-  >
+    Pick<AccordionProps, 'borderTop' | 'fullBorder' | 'filledBackground'>
+  > & { $borderColor: string; $backgroundColor: string }
 >(
   ({
     $borderTop,
@@ -108,18 +105,18 @@ const Wrapper = styled(Box)<
     $borderColor = 'oatmeal',
     $backgroundColor = 'custard',
   }) => css`
-    border-bottom: 1px solid ${theme.colors[$borderColor]};
-    ${$borderTop && `border-top: 1px solid ${theme.colors[$borderColor]};`}
+    border-bottom: 1px solid ${$borderColor};
+    ${$borderTop && `border-top: 1px solid ${$backgroundColor};`}
 
     ${$fullBorder &&
     css`
-      border: 1px solid ${theme.colors[$borderColor]};
+      border: 1px solid ${$borderColor};
       border-radius: 16px;
     `}
 
     ${$filledBackground &&
     css`
-      background-color: ${theme.colors[$backgroundColor]};
+      background-color: ${$backgroundColor};
     `}
   `,
 )
