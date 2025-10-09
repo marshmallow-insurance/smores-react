@@ -1,3 +1,9 @@
+## [13.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.5.0...v13.6.0) (2025-10-09)
+
+### Features
+
+* **badge:** update to use theme provider [DES-44] ([#4581](https://github.com/marshmallow-insurance/smores-react/issues/4581)) ([a3e45f0](https://github.com/marshmallow-insurance/smores-react/commit/a3e45f092439adbe86af6c41899580d267b16a90))
+
 ## [13.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.4.1...v13.5.0) (2025-10-08)
 
 ### Features
