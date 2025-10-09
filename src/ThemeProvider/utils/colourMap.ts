@@ -18,14 +18,13 @@ export type NewColor = Prettify<
 export type ColorTypes = Color | NewColor
 
 // a function that takes a dot notation string path and returns the corresponding hex color value from design tokens
-export const getThemeColor = (path: NewColor): string => {
+export const getThemeColor = (path: ColorTypes): string => {
   return path.split('.').reduce((acc, key) => acc?.[key], designTokens as any)
 }
 
-export const resolveToThemeColor = (color: NewColor | Color): string => {
-  return color in legacyColorMap
-    ? getThemeColor(legacyColorMap[color as keyof typeof legacyColorMap])
-    : getThemeColor(color as NewColor)
+export const resolveToThemeColor = (color: ColorTypes): string => {
+  const colourPath = getColorPath(color)
+  return getThemeColor(colourPath)
 }
 
 // a function that returns a flattened dot notation string path to access the color value
