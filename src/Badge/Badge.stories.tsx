@@ -22,7 +22,7 @@ type Story = StoryObj<typeof Badge>
 
 export const Primary: Story = {
   args: {
-    borderColour: 'lollipop',
+    borderColour: 'color.surface.base.400',
     size: BadgeSize.Lg,
     src: getExampleImg().src,
   },
@@ -30,7 +30,7 @@ export const Primary: Story = {
 
 export const Disabled: Story = {
   args: {
-    borderColour: 'lollipop',
+    borderColour: 'color.surface.base.400',
     size: BadgeSize.Lg,
     src: getExampleImg().src,
     disabled: true,
