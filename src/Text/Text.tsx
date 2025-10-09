@@ -1,5 +1,5 @@
 import React, { FC, forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
 import { linkStyleOverride } from '../Link/Link'
@@ -7,9 +7,7 @@ import { MarginProps } from '../utils/space'
 import { fontStyleMapping } from './fontMapping'
 import {
   ColorTypes,
-  NewColor,
-  getThemeColor,
-  legacyColorMap,
+  resolveToThemeColor,
 } from '../ThemeProvider/utils/colourMap'
 interface IText {
   /** typography class name to apply predefined styles */
@@ -64,10 +62,9 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
     },
     ref,
   ) => {
-    const resolvedColor =
-      color in legacyColorMap
-        ? getThemeColor(legacyColorMap[color as keyof typeof legacyColorMap])
-        : getThemeColor(color as NewColor)
+    const theme = useTheme()
+    const resolvedColor = resolveToThemeColor(color, theme)
+
     return (
       <Container
         forwardedAs={tag}

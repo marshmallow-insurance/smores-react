@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, useState } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
@@ -47,12 +47,13 @@ export const Accordion: FC<AccordionProps> = ({
   fullBorder = false,
   ...marginProps
 }) => {
+  const theme = useTheme()
   const [isOpen, setIsOpen] = useState(defaultIsOpen)
   const px = fullBorder ? '16px' : '0'
 
-  const resolvedBorderColor = resolveToThemeColor(borderColor)
+  const resolvedBorderColor = resolveToThemeColor(borderColor, theme)
 
-  const resolvedBackgroundColour = resolveToThemeColor(backgroundColor)
+  const resolvedBackgroundColour = resolveToThemeColor(backgroundColor, theme)
 
   const handleToggle = () => {
     const nextOpenState = !isOpen

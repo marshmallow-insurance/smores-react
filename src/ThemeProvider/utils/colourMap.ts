@@ -1,5 +1,7 @@
 import * as designTokens from '@mrshmllw/smores-foundations/build/web/variables.json'
 import { Color } from '../../theme'
+import { Theme } from 'ThemeProvider/ThemeProvider'
+import { getFromObject } from '../../utils/getFromObject'
 
 type Flatten<T, Prefix extends string = ''> = {
   [K in keyof T & string]: T[K] extends Record<string, any>
@@ -17,14 +19,16 @@ export type NewColor = Prettify<
 
 export type ColorTypes = Color | NewColor
 
-export const getThemeColor = (path: NewColor): string => {
-  return path.split('.').reduce((acc, key) => acc?.[key], designTokens as any)
-}
-
-export const resolveToThemeColor = (color: NewColor | Color): string => {
+export const resolveToThemeColor = (
+  color: NewColor | Color,
+  theme: Theme,
+): string => {
   return color in legacyColorMap
-    ? getThemeColor(legacyColorMap[color as keyof typeof legacyColorMap])
-    : getThemeColor(color as NewColor)
+    ? getFromObject({
+        obj: theme,
+        path: legacyColorMap[color as keyof typeof legacyColorMap],
+      })
+    : getFromObject({ obj: theme, path: color })
 }
 
 // a function that returns a flattened dot notation string path to access the color value
