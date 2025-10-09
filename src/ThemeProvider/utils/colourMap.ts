@@ -27,7 +27,6 @@ export const resolveToThemeColor = (
   return getFromObject({
     obj: theme,
     path: colourPath,
-    defaultValue: undefined,
   })
 }
 
