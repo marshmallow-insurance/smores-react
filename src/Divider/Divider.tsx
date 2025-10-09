@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react'
 import styled, { css, useTheme } from 'styled-components'
-import { TransientProps } from 'utils/utilTypes'
+import { TransientProps } from '../utils/utilTypes'
 import { Box } from '../Box'
 import { MarginProps } from '../utils/space'
 import {
@@ -23,6 +23,7 @@ export const Divider: FC<DividerProps> = memo(function Divider({
   const theme = useTheme()
   const resolvedColor = resolveToThemeColor(color, theme)
 
+  console.log(resolvedColor)
   return (
     <Line
       $maxWidth={maxWidth}
@@ -40,7 +41,7 @@ const Line = styled(Box)<
 >`
   ${({ $color }) =>
     $color &&
-    css`,
+    css`
       background: ${$color};
     `}
   display: block;
