@@ -17,17 +17,24 @@ export type NewColor = Prettify<
 
 export type ColorTypes = Color | NewColor
 
-export const getThemeColor = (path: NewColor): string => {
+// a function that takes a dot notation string path and returns the corresponding hex color value from design tokens
+export const getThemeColor = (path: ColorTypes): string => {
   return path.split('.').reduce((acc, key) => acc?.[key], designTokens as any)
 }
 
-export const resolveToThemeColor = (color: NewColor | Color): string => {
-  return color in legacyColorMap
-    ? getThemeColor(legacyColorMap[color as keyof typeof legacyColorMap])
-    : getThemeColor(color as NewColor)
+export const resolveToThemeColor = (color: ColorTypes): string => {
+  const colourPath = getColorPath(color)
+  return getThemeColor(colourPath)
 }
 
 // a function that returns a flattened dot notation string path to access the color value
+export const getColorPath = (color: ColorTypes) => {
+  return color in legacyColorMap
+    ? legacyColorMap[color as keyof typeof legacyColorMap]
+    : color
+}
+
+// a function that returns the design token color paths as a comma-separated string
 export const formatDesignTokenColor = (): string => {
   const { color, extended1, thirdParty } = designTokens
   const colors = { color, extended1, thirdParty }

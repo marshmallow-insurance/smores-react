@@ -5,15 +5,20 @@ import { MarginProps } from '../utils/space'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Text } from '../Text'
-import { Color, theme } from '../theme'
+import { Color } from '../theme'
 import { Icon } from '../Icon'
 import { Icons } from 'Icon/iconsList'
+import {
+  ColorTypes,
+  getColorPath,
+  resolveToThemeColor,
+} from '../ThemeProvider/utils/colourMap'
 
 export type TagProps = {
   label: string
-  color: Color
-  bgColor: Color
-  borderColor?: Color
+  color: ColorTypes
+  bgColor: ColorTypes
+  borderColor?: ColorTypes
   className?: string
   icon?: Icons
   iconColor?: Color
@@ -30,36 +35,44 @@ export const Tag: FC<TagProps> = ({
   iconColor,
   onClick,
   ...marginProps
-}) => (
-  <Wrapper
-    $bgColor={bgColor}
-    className={className}
-    $borderColor={borderColor}
-    {...marginProps}
-    alignContent="center"
-    justifyContent="center"
-    onClick={onClick}
-  >
-    {icon && (
-      <TagIcon
-        render={icon}
-        color={iconColor}
-        size={16}
-        data-testid={`tag-icon-${icon}`}
-      />
-    )}
-    <TagText tag="span" typo="label" color={color}>
-      {label}
-    </TagText>
-  </Wrapper>
-)
+}) => {
+  const resolvedBGColor = resolveToThemeColor(bgColor)
 
-type WrapperProps = TransientProps<Pick<TagProps, 'bgColor' | 'borderColor'>>
+  const resolvedBorderColor = borderColor && resolveToThemeColor(borderColor)
+
+  return (
+    <Wrapper
+      $bgColor={resolvedBGColor}
+      className={className}
+      $borderColor={resolvedBorderColor}
+      {...marginProps}
+      alignContent="center"
+      justifyContent="center"
+      onClick={onClick}
+    >
+      {icon && (
+        <TagIcon
+          render={icon}
+          color={iconColor}
+          size={16}
+          data-testid={`tag-icon-${icon}`}
+        />
+      )}
+      <TagText tag="span" typo="label" color={getColorPath(color)}>
+        {label}
+      </TagText>
+    </Wrapper>
+  )
+}
+
+type WrapperProps = TransientProps<{
+  bgColor: string
+  borderColor?: string
+}>
 
 const Wrapper = styled(Box)<WrapperProps>`
-  background-color: ${({ $bgColor }) => $bgColor && theme.colors[$bgColor]};
-  border: ${({ $borderColor }) =>
-    $borderColor && `1px solid ${theme.colors[$borderColor]}`};
+  background-color: ${({ $bgColor }) => $bgColor};
+  border: ${({ $borderColor }) => $borderColor && `1px solid ${$borderColor}`};
 
   border-radius: 6px;
   padding: 4px 8px;
