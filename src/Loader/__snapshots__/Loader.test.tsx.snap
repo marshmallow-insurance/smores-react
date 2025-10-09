@@ -3,8 +3,7 @@
 exports[`Loader > renders correctly with default props 1`] = `
 <div>
   <svg
-    class="sc-bRKDuR laUodG"
-    color="marshmallowPink"
+    class="sc-bRKDuR dXQBoZ"
     height="24px"
     viewBox="0 0 60 32"
   >

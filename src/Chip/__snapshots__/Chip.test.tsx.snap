@@ -24,8 +24,7 @@ exports[`Chip > renders correctly when loading 1`] = `
     disabled=""
   >
     <svg
-      class="sc-ggWZvA yoRyC"
-      color="cream"
+      class="sc-ggWZvA fEzudM"
       height="16"
       viewBox="0 0 60 32"
     >
