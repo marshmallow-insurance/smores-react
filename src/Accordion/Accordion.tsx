@@ -80,11 +80,11 @@ export const Accordion: FC<AccordionProps> = ({
         pl={px}
       >
         <TitleContainer>
-          <Text tag="h2" typo="headline-regular" color="liquorice">
+          <Text tag="h2" typo="headline-regular">
             {title}
           </Text>
           {subTitle && (
-            <Text tag="label" color="liquorice" typo="label" mt={{ custom: 4 }}>
+            <Text tag="label" typo="label" mt={{ custom: 4 }}>
               {subTitle}
             </Text>
           )}
