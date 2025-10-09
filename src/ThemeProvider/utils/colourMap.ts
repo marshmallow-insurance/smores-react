@@ -19,9 +19,12 @@ export type NewColor = Prettify<
 
 export type ColorTypes = Color | NewColor
 
-export const resolveToThemeColor = (color: ColorTypes,  theme: Theme): string => {
+export const resolveToThemeColor = (
+  color: ColorTypes,
+  theme: Theme,
+): string => {
   const colourPath = getColorPath(color)
-  return getFromObject({obj: theme, path: colorPath})
+  return getFromObject({ obj: theme, path: colourPath })
 }
 
 // a function that returns a flattened dot notation string path to access the color value

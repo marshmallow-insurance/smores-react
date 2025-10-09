@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import { MarginProps } from '../utils/space'
 
 import { TransientProps } from 'utils/utilTypes'
@@ -36,9 +36,11 @@ export const Tag: FC<TagProps> = ({
   onClick,
   ...marginProps
 }) => {
-  const resolvedBGColor = resolveToThemeColor(bgColor)
+  const theme = useTheme()
 
-  const resolvedBorderColor = borderColor && resolveToThemeColor(borderColor)
+  const resolvedBGColor = resolveToThemeColor(bgColor, theme)
+  const resolvedBorderColor =
+    borderColor && resolveToThemeColor(borderColor, theme)
 
   return (
     <Wrapper

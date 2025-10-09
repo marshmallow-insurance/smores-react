@@ -12,13 +12,13 @@ export const getFromObject = ({ obj, path, defaultValue }: Args) => {
     return match ? match[1] : seg
   }
 
-  const travel = (regexp: RegExp) =>
+  const resolvePath = (regexp: RegExp) =>
     String.prototype.split
       .call(path, regexp)
       .filter(Boolean)
       .map(normalize)
       .reduce((res, key) => (res != null ? res[key] : res), obj)
 
-  const result = travel(/[,[\]]+?/) || travel(/[,[\].]+?/)
+  const result = resolvePath(/[,[\]]+?/) || resolvePath(/[,[\].]+?/)
   return result === undefined || result === obj ? defaultValue : result
 }
