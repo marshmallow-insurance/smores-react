@@ -1,3 +1,9 @@
+## [13.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.6.0...v13.7.0) (2025-10-09)
+
+### Features
+
+* **tag:** update to new theme colours [DES-41] ([#4580](https://github.com/marshmallow-insurance/smores-react/issues/4580)) ([5246769](https://github.com/marshmallow-insurance/smores-react/commit/52467696e5e3be5e8d3a47617181a0476ad314ee))
+
 ## [13.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.5.0...v13.6.0) (2025-10-09)
 
 ### Features
