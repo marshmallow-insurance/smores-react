@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { Divider } from '../Divider'
+import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 
 const meta: Meta<typeof Divider> = {
   title: 'Divider',
@@ -12,6 +13,12 @@ const meta: Meta<typeof Divider> = {
       </div>
     ),
   ],
+  argTypes: {
+    color: {
+      control: 'select',
+      options: colourOptions,
+    },
+  },
 }
 
 export default meta
