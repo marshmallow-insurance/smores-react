@@ -3,7 +3,7 @@
 exports[`Divider > renders correctly with default props 1`] = `
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-hvigdm kmSbBJ"
+    class="sc-bRKDuR bHjpxP sc-hvigdm hmNPHF"
   />
 </div>
 `;
