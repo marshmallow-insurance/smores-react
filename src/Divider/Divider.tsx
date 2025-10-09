@@ -1,39 +1,47 @@
 import React, { FC, memo } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
-import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
+import {
+  ColorTypes,
+  resolveToThemeColor,
+} from '../ThemeProvider/utils/colourMap'
 
 export type DividerProps = {
   maxWidth?: string
   height?: string
-  color?: Color
+  color?: ColorTypes
 } & MarginProps
 
 export const Divider: FC<DividerProps> = memo(function Divider({
   maxWidth = 'none',
   height = '1px',
-  color = 'oatmeal',
+  color = 'color.illustration.neutral.300',
   ...marginProps
 }) {
+  const theme = useTheme()
+  const resolvedColor = resolveToThemeColor(color, theme)
+
   return (
     <Line
       $maxWidth={maxWidth}
       $height={height}
-      $color={color}
+      $color={resolvedColor}
       {...marginProps}
     />
   )
 })
 
 const Line = styled(Box)<
-  TransientProps<Pick<DividerProps, 'color' | 'height' | 'maxWidth'>>
+  TransientProps<Pick<DividerProps, 'height' | 'maxWidth'>> & {
+    $color: string
+  }
 >`
   ${({ $color }) =>
     $color &&
-    css`
-      background: ${theme.colors[$color]};
+    css`,
+      background: ${$color};
     `}
   display: block;
   height: ${({ $height }) => $height};
