@@ -1,3 +1,9 @@
+## [13.7.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.7.0...v13.7.1) (2025-10-09)
+
+### Bug Fixes
+
+* **theme:** use theme correctly when resolving colours ([#4582](https://github.com/marshmallow-insurance/smores-react/issues/4582)) ([8eae2d5](https://github.com/marshmallow-insurance/smores-react/commit/8eae2d58bc007761d6a670d09d7f47e656fd2409))
+
 ## [13.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.6.0...v13.7.0) (2025-10-09)
 
 ### Features
