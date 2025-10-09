@@ -1,5 +1,5 @@
 import React, { useState, type JSX } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 import { BadgeFallbackImage } from './BadgeFallbackImage'
 import {
   ColorTypes,
@@ -30,8 +30,8 @@ export function Badge({
   title,
 }: BadgeProps) {
   const [hasFailed, setHasFailed] = useState(false)
-
-  const resolvedBorderColor = resolveToThemeColor(borderColour)
+  const theme = useTheme()
+  const resolvedBorderColor = resolveToThemeColor(borderColour, theme)
 
   if (typeof src === 'string') {
     return (
