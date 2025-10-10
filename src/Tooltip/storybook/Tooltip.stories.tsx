@@ -5,7 +5,6 @@ import { Box } from '../../Box'
 import { Button } from '../../Button'
 import { Modal } from '../../Modal'
 import { Text } from '../../Text'
-import { theme } from '../../theme'
 import { Tooltip, TooltipProps, type TooltipVariant } from '../Tooltip'
 
 const meta: Meta<typeof Tooltip> = {
@@ -127,10 +126,6 @@ export const OverflowExample: Story = {
     underline: true,
   },
   parameters: {
-    backgrounds: {
-      values: [{ name: 'Coconut', value: theme.colors.coconut }],
-      default: 'Coconut',
-    },
     layout: 'fullscreen',
   },
 }
@@ -140,7 +135,7 @@ const OverflowHiddenBox = styled(Box)`
   height: 150vh;
   width: 200%;
   overflow: scroll;
-  background: ${theme.colors.coconut};
+  background: ${({ theme }) => theme.color.surface.base[100]};
 `
 
 export const ModalExample: Story = {
@@ -256,7 +251,7 @@ const InnerSection = styled(Box)`
   width: 100%;
   padding: 24px;
   border-radius: 16px;
-  background: ${theme.colors.custard};
+  background: ${({ theme }) => theme.color.surface.base[300]};
   display: flex;
 
   @media (max-width: 1000px) {
