@@ -6,13 +6,13 @@
 </picture></p>
 <p align="center">
   <a href="https://www.npmjs.com/package/@mrshmllw/smores-react">
-    <img alt="npm-version-badge" src="https://img.shields.io/npm/v/@mrshmllw/smores-react.svg?style=flat-square" /></a>
+    <img alt="npm-version-badge" src="https://img.shields.io/npm/v/@mrshmllw/smores-react.svg?style=flat-square&logo=nodedotjs" /></a>
   <a href="https://github.com/marshmallow-insurance/smores-react/blob/master/LICENSE">
-    <img alt="licence-badge" src="https://img.shields.io/github/license/marshmallow-insurance/smores-react.svg?style=flat-square" /></a>
-  <a href="https://snyk.io//test/github/marshmallow-insurance/smores-react?targetFile=package.json">
-    <img alt="snyk-badge" src="https://img.shields.io/snyk/vulnerabilities/github/marshmallow-insurance/smores-react?style=flat-square" /></a>
+    <img alt="licence-badge" src="https://img.shields.io/github/license/marshmallow-insurance/smores-react.svg?style=flat-square&logo=ReadMe" /></a>
+  <a href="https://snyk.io/test/github/marshmallow-insurance/smores-react?targetFile=package.json">
+    <img alt="snyk-badge" src="https://snyk.io/test/github/marshmallow-insurance/smores-react/badge.svg?targetFile=package.json&style=flat-square" /></a>
   <a href="https://prettier.io/">
-    <img alt="prettier-badge" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" /></a>
+    <img alt="prettier-badge" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square&logo=prettier" /></a>
 </p>
 
 # Smores React
