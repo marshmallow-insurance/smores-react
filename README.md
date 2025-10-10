@@ -1,7 +1,7 @@
 <p align="center">
     <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/smores-logo-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="assets/smoreslogo-light.png">
+  <source media="(prefers-color-scheme: light)" srcset="assets/smores-logo-light.png">
   <img alt="Project Logo" src="assets/smores-logo-light.png">
 </picture></p>
 <p align="center">
