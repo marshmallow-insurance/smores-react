@@ -1,0 +1,54 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ActionDropdown > renders correctly with default props 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR bHjpxP sc-kNOymR iMmesL"
+  >
+    <div
+      class="sc-jJLAfE hkZcbE"
+    >
+      <span
+        class="sc-hwkwBN bjyVWn"
+      >
+        Default grey
+      </span>
+      <span
+        class="sc-bRKDuR bHjpxP sc-fhHczv XmxEI"
+        data-testid="caret-container"
+      >
+        <svg
+          fill="none"
+          height="100%"
+          viewBox="0 0 24 24"
+          width="100%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class="sc-dYwGCk dvdcAq"
+    >
+      <ul
+        class="sc-jwTyAe gMUwNg"
+      >
+        <li
+          class="sc-hjsuWn dRRnwj"
+        >
+          Default grey
+        </li>
+        <li
+          class="sc-hjsuWn dRRnwj"
+        >
+          Brand
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
