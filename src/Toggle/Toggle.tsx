@@ -1,10 +1,13 @@
 import React, { FC } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
-import { Color, theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
+import {
+  ColorTypes,
+  resolveToThemeColor,
+} from '../ThemeProvider/utils/colourMap'
 
 export type Props = {
   /** unique ID */
@@ -14,7 +17,7 @@ export type Props = {
   disabled?: boolean
   /** onToggle listener  */
   onToggle: () => void
-  bgColor?: Color
+  bgColor?: ColorTypes
 } & MarginProps
 
 export const Toggle: FC<Props> = ({
@@ -25,6 +28,12 @@ export const Toggle: FC<Props> = ({
   bgColor,
   ...marginProps
 }) => {
+  const theme = useTheme()
+
+  const resolvedBgColor = bgColor
+    ? resolveToThemeColor(bgColor, theme)
+    : undefined
+
   return (
     <Switch forwardedAs="label" htmlFor={id} {...marginProps}>
       <Checkbox
@@ -33,7 +42,7 @@ export const Toggle: FC<Props> = ({
         type="checkbox"
         checked={checked}
         onChange={onToggle}
-        $bgColor={bgColor}
+        $bgColor={resolvedBgColor}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             onToggle()
@@ -66,7 +75,7 @@ const Slider = styled.span<{ $disabled?: boolean }>`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${theme.colors.oatmeal};
+  background-color: ${({ theme }) => theme.color.feedback.inactive[100]};
   border: none;
   border-radius: 28px;
   transition: 0.2s background-color;
@@ -79,7 +88,7 @@ const Slider = styled.span<{ $disabled?: boolean }>`
     width: 24px;
     left: 4px;
     bottom: 4px;
-    background-color: ${theme.colors.mascarpone};
+    background-color: ${({ theme }) => theme.color.surface.base[100]};
     transition: 0.2s transform;
     border-radius: 50%;
   }
@@ -91,17 +100,18 @@ const Slider = styled.span<{ $disabled?: boolean }>`
         `
       : css`
           &:hover {
-            background-color: ${theme.colors.marzipan};
+            background-color: ${({ theme }) =>
+              theme.color.illustration.neutral[400]};
           }
         `}
 `
 
-const Checkbox = styled.input<{ $bgColor?: Color }>`
+const Checkbox = styled.input<{ $bgColor?: string }>`
   ${focusOutline({ selector: `&:focus-visible + ${Slider}` })}
 
   &:checked + ${Slider} {
-    background-color: ${(props) =>
-      props.$bgColor ? theme.colors[props.$bgColor] : theme.colors.pistachio};
+    background-color: ${({ $bgColor, theme }) =>
+      $bgColor ? $bgColor : theme.color.feedback.positive[200]};
     border: none;
   }
 
