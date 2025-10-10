@@ -17,11 +17,8 @@ exports[`Datepicker > renders correctly with default props 1`] = `
         type="button"
       >
         <span
-          class="sc-bRKDuR bHjpxP sc-fhHczv bvDwHH"
-          color="cream"
+          class="sc-bRKDuR bHjpxP sc-fhHczv bTckXH"
           data-testid="caret-container"
-          rotate="90"
-          size="18"
         >
           <svg
             fill="none"
@@ -53,11 +50,8 @@ exports[`Datepicker > renders correctly with default props 1`] = `
         type="button"
       >
         <span
-          class="sc-bRKDuR bHjpxP sc-fhHczv uyYpS"
-          color="cream"
+          class="sc-bRKDuR bHjpxP sc-fhHczv jYPAkW"
           data-testid="caret-container"
-          rotate="-90"
-          size="18"
         >
           <svg
             fill="none"

@@ -105,11 +105,8 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
       class="sc-bRKDuR ezosON"
     >
       <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv dyULJc"
-        color="strawberry"
+        class="sc-bRKDuR bHjpxP sc-fhHczv bXMvct"
         data-testid="warning-container"
-        rotate="0"
-        size="16"
       >
         <svg
           fill="none"

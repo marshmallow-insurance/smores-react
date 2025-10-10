@@ -36,11 +36,8 @@ exports[`Dropdown > renders correctly when completed 1`] = `
           class="sc-eqYatC gvIKPK"
         >
           <span
-            class="sc-bRKDuR bHjpxP sc-fhHczv cTkdi"
-            color="marzipan"
+            class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh"
             data-testid="caret-container"
-            rotate="0"
-            size="24"
           >
             <svg
               fill="none"
@@ -65,11 +62,8 @@ exports[`Dropdown > renders correctly when completed 1`] = `
         class="sc-bRKDuR fhEDUK sc-hjsuWn kRRkcz"
       >
         <span
-          class="sc-bRKDuR bHjpxP sc-fhHczv erUrKn"
-          color="apple"
+          class="sc-bRKDuR bHjpxP sc-fhHczv hRkrYx"
           data-testid="included-container"
-          rotate="0"
-          size="16"
         >
           <svg
             fill="none"
@@ -139,11 +133,8 @@ exports[`Dropdown > renders correctly with a list of items 1`] = `
           class="sc-eqYatC gvIKPK"
         >
           <span
-            class="sc-bRKDuR bHjpxP sc-fhHczv cTkdi"
-            color="marzipan"
+            class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh"
             data-testid="caret-container"
-            rotate="0"
-            size="24"
           >
             <svg
               fill="none"
@@ -201,11 +192,8 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
           class="sc-eqYatC gvIKPK"
         >
           <span
-            class="sc-bRKDuR bHjpxP sc-fhHczv cTkdi"
-            color="marzipan"
+            class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh"
             data-testid="caret-container"
-            rotate="0"
-            size="24"
           >
             <svg
               fill="none"
@@ -227,11 +215,8 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
       class="sc-bRKDuR ezosON"
     >
       <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv dyULJc"
-        color="strawberry"
+        class="sc-bRKDuR bHjpxP sc-fhHczv bXMvct"
         data-testid="warning-container"
-        rotate="0"
-        size="16"
       >
         <svg
           fill="none"
