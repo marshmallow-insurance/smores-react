@@ -5,6 +5,8 @@ import { TableRow } from './components/TableRow'
 import { StyledCell, StyledTable } from './components/commonComponents'
 import { TableProps } from './types'
 import { TableFooter } from './components/TableFooter'
+import { useTheme } from 'styled-components'
+import { resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
 
 /**
  * A table component that displays data with various features such as expandable rows, striped rows, and fixed headers.
@@ -28,11 +30,11 @@ export const Table = <T extends object, K extends object>({
   subTable,
   subRows,
   headerHeight,
-  headerColor = 'mascarpone',
-  rowColor = 'custard',
+  headerColor = 'color.surface.base.200',
+  rowColor = 'color.surface.base.300',
   footer,
   stripedColor,
-  rowBorderColor = 'oatmeal',
+  rowBorderColor = 'color.illustration.neutral.300',
   rowActions,
   clickableRow,
   rowPadding,
@@ -41,6 +43,10 @@ export const Table = <T extends object, K extends object>({
   roundedTable,
   hideTableHeader = false,
 }: TableProps<T, K>) => {
+  const theme = useTheme()
+
+  const resolvedHeaderColor = resolveToThemeColor(headerColor, theme)
+
   const showActionsCell = expandable ?? rowActions
   const expandSubProp = showActionsCell ? columns.length + 1 : columns.length
   return (
@@ -52,7 +58,7 @@ export const Table = <T extends object, K extends object>({
             fixedHeader={fixedHeader}
             headerHeight={headerHeight}
             subTable={subTable}
-            headerColor={headerColor}
+            headerColor={resolvedHeaderColor}
             rowActions={rowActions}
             columnPadding={columnPadding}
             expandable={expandable}

@@ -3,17 +3,18 @@ import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
 import { Color } from '../theme'
 import type { BoxSpacing, SingleSpacing } from './helper.types'
+import { ColorTypes } from '../ThemeProvider/utils/colourMap'
 
 export type TableStylesProps = {
   hasKeyline?: boolean
   fixedHeader?: boolean
   headerHeight?: string
-  stripedColor?: Color
+  stripedColor?: string
   stickyCell?: boolean
-  headerColor?: Color
-  rowColor?: Color
-  rowBorderColor?: Color
-  rowActionsBgColor?: Color
+  headerColor?: string
+  rowColor?: string
+  rowBorderColor?: string
+  rowActionsBgColor?: string
   minWidth?: string
   maxWidth?: string
   noWrapContent?: boolean
@@ -89,7 +90,7 @@ type SubElementProps = {
 }
 
 /** @template T - The type of data the table displays. */
-interface CommonTableProps<T> {
+interface CommonTableProps<T, ColorT = ColorTypes> {
   /** Array of columns to display in the table. */
   columns: TableColumn<T>[]
   /** Sets the height of the header. */
@@ -99,15 +100,15 @@ interface CommonTableProps<T> {
   /** If true, the table header will have a key line. */
   hasKeyline?: boolean
   /** If present, the table rows will have alternating colors. */
-  stripedColor?: Color
+  stripedColor?: ColorT
   /** A function to determine if a row is expandable. */
   expandable?: (rowData: T) => boolean
   /** The color for the table header. */
-  headerColor?: Color
+  headerColor?: ColorT
   /** The default color for each table row. */
-  rowColor?: Color
+  rowColor?: ColorT
   /** The default color for each table row border. */
-  rowBorderColor?: Color
+  rowBorderColor?: ColorT
   /** If true, the table will have rounded corners */
   roundedTable?: true
   /** A React element to show when a row is expanded. */
@@ -160,7 +161,7 @@ export interface TableRowProps<T> extends CommonTableProps<T> {
 }
 
 export interface RowActionsProps<T>
-  extends Pick<CommonTableProps<T>, 'expandable' | 'rowActions'> {
+  extends Pick<CommonTableProps<T, string>, 'expandable' | 'rowActions'> {
   rowData: T
   canExpandRow: boolean
   toggleExpansion: () => void
@@ -184,4 +185,4 @@ type TableFooterColumnsProps<K> = {
   data: K
 }
 
-export type TableHeaderProps<T> = CommonTableProps<T>
+export type TableHeaderProps<T> = CommonTableProps<T, string>
