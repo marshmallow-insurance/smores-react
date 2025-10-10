@@ -1,3 +1,9 @@
+## [13.9.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.8.0...v13.9.0) (2025-10-10)
+
+### Features
+
+* **icon:** use theme provider [DES-57] ([#4590](https://github.com/marshmallow-insurance/smores-react/issues/4590)) ([c974dc8](https://github.com/marshmallow-insurance/smores-react/commit/c974dc8b5d786d3d0b60e001b62f4ce14a5f8b64))
+
 ## [13.8.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.7.1...v13.8.0) (2025-10-10)
 
 ### Features
