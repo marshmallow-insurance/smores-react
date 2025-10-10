@@ -1,6 +1,9 @@
 <p align="center">
-    <img src="./smores-logo.png"
-        height="95">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./public/smores-logo-light.png">
+        <source media="(prefers-color-scheme: light)" srcset="./public/smores-logo-dark.png">
+        <img alt="Alternate text" src="./public/smores-logo-light.png" height="95">
+    </picture>
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/@mrshmllw/smores-react">
