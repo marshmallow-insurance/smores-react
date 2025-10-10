@@ -1,52 +1,47 @@
 import { darken } from 'polished'
 import React, { FC, MouseEventHandler, ReactElement } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Icons } from '../Icon/iconsList'
 
 import { Text } from '../Text'
-import { Color, theme } from '../theme'
+import { theme as oldTheme } from '../theme'
 import { isReactElement } from '../utils/isReactElement'
 import { MarginProps } from '../utils/space'
+import { NewColor, resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
 
 type StylesItem = {
-  iconColor: Color
-  backgroundColor: string
-  hoverBackgroundColor: string
+  iconColor: NewColor
+  backgroundColor: NewColor
   icon: Icons
 }
 
 const styles: Record<SupportMessageType, StylesItem> = {
   info: {
-    iconColor: 'liquorice',
-    backgroundColor: theme.colors.oatmeal,
-    hoverBackgroundColor: darken(0.1, theme.colors.oatmeal),
+    iconColor: 'color.icon.base',
+    backgroundColor: 'color.illustration.neutral.300',
     icon: 'info',
   },
   fallbackStyle: {
-    iconColor: 'liquorice',
-    backgroundColor: theme.colors.coconut,
-    hoverBackgroundColor: darken(0.1, theme.colors.coconut),
+    iconColor: 'color.icon.base',
+    backgroundColor: 'color.surface.base.100',
     icon: 'info',
   },
   alert: {
-    iconColor: 'tangerine',
-    backgroundColor: theme.colors.sherbert,
-    hoverBackgroundColor: darken(0.1, theme.colors.sherbert),
+    iconColor: 'extended1.100',
+    backgroundColor: 'color.feedback.notice.100',
     icon: 'alert',
   },
   warning: {
-    iconColor: 'strawberry',
-    backgroundColor: theme.colors.watermelon,
-    hoverBackgroundColor: darken(0.1, theme.colors.watermelon),
+    iconColor: 'color.feedback.negative.200',
+    backgroundColor: 'color.feedback.negative.100',
     icon: 'warning',
   },
   success: {
-    iconColor: 'apple',
-    backgroundColor: theme.colors.mint,
-    hoverBackgroundColor: darken(0.1, theme.colors.mint),
+    iconColor: 'color.feedback.positive.200',
+    backgroundColor: 'color.feedback.positive.100',
     icon: 'circle-tick',
   },
 }
@@ -79,10 +74,16 @@ export const SupportMessage: FC<SupportMessageProps> = ({
   title,
   ...marginProps
 }) => {
+  const theme = useTheme()
+  const resolveBackgroundColor = resolveToThemeColor(
+    styles[type].backgroundColor,
+    theme,
+  )
+
   return (
     <Wrapper
       className={className}
-      $type={type}
+      $backgroundColor={resolveBackgroundColor}
       onClick={onClick}
       {...marginProps}
     >
@@ -112,7 +113,7 @@ export const SupportMessage: FC<SupportMessageProps> = ({
 }
 
 interface IWrapper {
-  $type: SupportMessageType
+  $backgroundColor: string
   onClick?: MouseEventHandler
 }
 
@@ -121,9 +122,9 @@ const IconWrapper = styled(Box)`
 `
 
 const Wrapper = styled(Box)<IWrapper>(
-  ({ $type, onClick }) => css`
+  ({ $backgroundColor, onClick }) => css`
     align-items: center;
-    background-color: ${styles[$type].backgroundColor};
+    background-color: ${$backgroundColor};
     border-radius: 16px;
     ${onClick && `cursor: pointer`};
     padding: 12px;
@@ -132,27 +133,25 @@ const Wrapper = styled(Box)<IWrapper>(
 
     &:hover,
     &:active {
-      ${onClick && `background-color: ${styles[$type].hoverBackgroundColor};`};
+      ${onClick && `background-color: ${darken(0.1, $backgroundColor)};`};
     }
   `,
 )
 
 const Title = styled.p`
   font-size: 16px;
-  font-weight: ${theme.font.weight.medium};
-  color: ${theme.colors.liquorice};
+  font-weight: ${oldTheme.font.weight.medium};
+  color: ${({ theme }) => theme.color.text.base}};
   line-height: 20.8px;
   margin-bottom: 4px;
 `
 
 const DescriptionBox = styled(Box)`
-  color: ${theme.colors.liquorice};
   font-size: 14px;
   line-height: 20px;
 `
 
 const Description = styled(Text)`
-  color: ${theme.colors.liquorice};
   font-size: 14px;
   line-height: 20px;
 `
