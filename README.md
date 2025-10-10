@@ -1,10 +1,9 @@
 <p align="center">
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./public/smores-logo-dark.png">
-        <source media="(prefers-color-scheme: light)" srcset="./public/smores-logo-light.png">
-        <img alt="Alternate text" src="./public/smores-logo-light.png" height="95">
-    </picture>
-</p>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/smores-logo-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="assets/smoreslogo-light.png">
+  <img alt="Project Logo" src="assets/smores-logo-light.png">
+</picture></p>
 <p align="center">
   <a href="https://www.npmjs.com/package/@mrshmllw/smores-react">
     <img alt="npm-version-badge" src="https://img.shields.io/npm/v/@mrshmllw/smores-react.svg?style=flat-square" /></a>
