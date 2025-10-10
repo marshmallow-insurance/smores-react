@@ -1,13 +1,16 @@
 import React, { ButtonHTMLAttributes, FC, FormEvent } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import { darken } from 'polished'
 import { Icon } from '../Icon'
 import { Icons } from '../Icon/iconsList'
 
-import { Color, theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
+import {
+  ColorTypes,
+  resolveToThemeColor,
+} from '../ThemeProvider/utils/colourMap'
 
 export type IconStrictProps = {
   id?: string
@@ -18,9 +21,9 @@ export type IconStrictProps = {
   /** specify what Icon to render  */
   render: Icons
   /** set icon colour */
-  iconColor?: Color
+  iconColor?: ColorTypes
   /** set background colour */
-  backgroundColor?: Color
+  backgroundColor?: ColorTypes
   /** function to handle click */
   handleClick?: (e: FormEvent<HTMLButtonElement>) => void
   /** rotation degrees */
@@ -62,13 +65,19 @@ export const IconStrict: FC<IconStrictProps> = ({
   const isButton = !!handleClick
   const defaultLabel =
     title ?? (isButton ? (title ?? 'icon-button') : undefined)
+
+  const theme = useTheme()
+  const resolvedBgColor = backgroundColor
+    ? resolveToThemeColor(backgroundColor, theme)
+    : undefined
+
   return (
     <IconContainer
       id={id}
       as={isButton ? 'button' : 'div'}
       className={className}
       $size={size}
-      $backgroundColor={backgroundColor}
+      $backgroundColor={resolvedBgColor}
       onClick={handleClick}
       title={defaultLabel}
       {...otherProps}
@@ -85,7 +94,7 @@ export const IconStrict: FC<IconStrictProps> = ({
 
 interface IIconStrict {
   $size: 16 | 24 | 36 | 48
-  $backgroundColor?: Color
+  $backgroundColor?: string
   onClick?: (e: FormEvent<HTMLButtonElement>) => void
 }
 
@@ -97,16 +106,14 @@ const IconContainer = styled.div<IIconStrict>(
     max-width: ${$size}px;
     height: ${$size}px;
     border-radius: 100%;
-    background-color: ${$backgroundColor
-      ? theme.colors[$backgroundColor]
-      : 'none'};
+    background-color: ${$backgroundColor ?? 'none'};
     cursor: ${onClick ? 'pointer' : 'default'};
 
     ${onClick &&
     `
     &:hover {
       background-color: ${
-        $backgroundColor ? darken(0.1, theme.colors[$backgroundColor]) : 'none'
+        $backgroundColor ? darken(0.1, $backgroundColor) : 'none'
       };
     }
       
