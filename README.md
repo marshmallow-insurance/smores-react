@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./smores-logo.svg"
+    <img src="./smores-logo.png"
         height="95">
 </p>
 <p align="center">
