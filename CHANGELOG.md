@@ -1,3 +1,9 @@
+## [13.12.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.11.0...v13.12.0) (2025-10-13)
+
+### Features
+
+* **segmented-control:** update to new theme colours [DES-73] ([#4584](https://github.com/marshmallow-insurance/smores-react/issues/4584)) ([6e498be](https://github.com/marshmallow-insurance/smores-react/commit/6e498be02503e401c8caf4da122b10f1f310a006))
+
 ## [13.11.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.10.0...v13.11.0) (2025-10-13)
 
 ### Features
