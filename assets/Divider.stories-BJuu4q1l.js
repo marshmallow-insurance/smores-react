@@ -1,0 +1,4 @@
+import{R as o}from"./index-DbOFzPHX.js";import{D as m}from"./Divider-l0pB1V4f.js";import{c as i}from"./colourOptions-CbOJdSSM.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./styled-components.browser.esm-Cttt-Tea.js";import"./index-Cxnk3SxV.js";import"./space-BLajQSvN.js";import"./colourMap-BqneUWMU.js";import"./variables-DcGMWv_V.js";const v={title:"Divider",component:m,decorators:[s=>o.createElement("div",{style:{margin:"64px"}},o.createElement(s,null))],argTypes:{color:{control:"select",options:i}}},r={args:{}};var e,t,a;r.parameters={...r.parameters,docs:{...(e=r.parameters)==null?void 0:e.docs,source:{originalSource:`{
+  args: {}
+}`,...(a=(t=r.parameters)==null?void 0:t.docs)==null?void 0:a.source}}};const x=["Default"];export{r as Default,x as __namedExportsOrder,v as default};
+//# sourceMappingURL=Divider.stories-BJuu4q1l.js.map
