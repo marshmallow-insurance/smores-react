@@ -23,7 +23,6 @@ export const Divider: FC<DividerProps> = memo(function Divider({
   const theme = useTheme()
   const resolvedColor = resolveToThemeColor(color, theme)
 
-  console.log(resolvedColor)
   return (
     <Line
       $maxWidth={maxWidth}
