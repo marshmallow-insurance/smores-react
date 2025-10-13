@@ -1,3 +1,9 @@
+## [13.10.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.9.1...v13.10.0) (2025-10-13)
+
+### Features
+
+* **divider:** use theme on divider [DES-55] ([#4583](https://github.com/marshmallow-insurance/smores-react/issues/4583)) ([54dcd6b](https://github.com/marshmallow-insurance/smores-react/commit/54dcd6bb683ff7384d53b32daa8acfd66c005439))
+
 ## [13.9.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.9.0...v13.9.1) (2025-10-13)
 
 ### Bug Fixes
