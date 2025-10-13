@@ -1,13 +1,13 @@
 import React, { FC, useState } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { ActionListItem, List } from './List'
 
-import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
+import { resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
 
 export type ActionDropdownProps = {
   id?: string
@@ -33,6 +33,17 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
 }) => {
   const [open, setOpen] = useState(false)
 
+  const theme = useTheme()
+
+  const resolvedBgColor = resolveToThemeColor(
+    value.bgColor ?? 'color.background.100',
+    theme,
+  )
+  const resolvedTextColor = resolveToThemeColor(
+    value.textColor ?? 'color.text.base',
+    theme,
+  )
+
   return (
     <Container
       id={id}
@@ -46,14 +57,11 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
         </Text>
       )}
 
-      <Label
-        $text={value.textColor ?? 'liquorice'}
-        $bg={value.bgColor ?? 'sesame'}
-      >
+      <Label $text={resolvedTextColor} $bg={resolvedBgColor}>
         <SelectedOption>{value.label}</SelectedOption>
         <Icon
           render="caret"
-          color={value.textColor ?? 'sesame'}
+          color={value.textColor ?? 'color.text.base'}
           size={24}
           rotate={open ? 180 : 0}
         />
@@ -66,14 +74,14 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
 }
 
 interface ISelected {
-  $text: Color
-  $bg: Color
+  $text: string
+  $bg: string
 }
 
 const Label = styled.div<ISelected>(
   ({ $text, $bg }) => css`
-    color: ${theme.colors[$text]};
-    background-color: ${theme.colors[$bg]};
+    color: ${$text};
+    background-color: ${$bg};
     position: relative;
     width: 100%;
     height: 48px;
@@ -118,7 +126,7 @@ const OuterContainer = styled.div<IOpen>(
     margin-top: 8px;
     display: ${open ? 'block' : 'none'};
     max-height: ${open ? '235px' : '48px'};
-    background-color: ${theme.colors.custard};
+    background-color: ${({ theme }) => theme.color.surface.base[300]};
     overflow-y: ${open ? 'auto' : 'hidden'};
     z-index: 4;
     transition: all 0.2s ease-in-out;
