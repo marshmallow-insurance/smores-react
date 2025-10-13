@@ -35,7 +35,6 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
 
   const theme = useTheme()
 
-  console.log({ value })
   const resolvedBgColor = resolveToThemeColor(
     value.bgColor ?? 'color.background.100',
     theme,
