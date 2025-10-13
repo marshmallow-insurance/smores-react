@@ -4,6 +4,8 @@ import { isMappedReactElement } from '../helpers'
 import { TableRowProps } from '../types'
 import { RowActions } from './RowActions'
 import { StyledCell, StyledRow, StyledSubTableCell } from './commonComponents'
+import { useTheme } from 'styled-components'
+import { resolveToThemeColor } from '../../ThemeProvider/utils/colourMap'
 
 export const TableRow = <T extends object>({
   rowData,
@@ -22,7 +24,18 @@ export const TableRow = <T extends object>({
   clickableRow,
   hideBorder,
 }: TableRowProps<T>) => {
+  const theme = useTheme()
   const [expandedRows, setExpandedRows] = useState<number[]>([])
+
+  const resolvedRowColor = rowColor
+    ? resolveToThemeColor(rowColor, theme)
+    : undefined
+  const resolvedStripedColor = stripedColor
+    ? resolveToThemeColor(stripedColor, theme)
+    : undefined
+  const resolvedRowBorderColor = rowBorderColor
+    ? resolveToThemeColor(rowBorderColor, theme)
+    : undefined
 
   const toggleRowExpansion = (rowIndex: number) => {
     setExpandedRows((prevState) =>
@@ -41,7 +54,10 @@ export const TableRow = <T extends object>({
   const subTableData = subTable?.table(rowData)
 
   const subPadding = subTable?.padding ?? subRows?.padding
-  const subBgColor = subTable?.bgColor ?? subRows?.bgColor
+  const subBgColor = subTable?.bgColor || subRows?.bgColor
+  const resolvedSubBgColor = subBgColor
+    ? resolveToThemeColor(subBgColor, theme)
+    : undefined
 
   const showActionsCell = expandable ?? rowActions
   const expandSubProp = showActionsCell ? columns.length + 1 : columns.length
@@ -51,12 +67,12 @@ export const TableRow = <T extends object>({
   return (
     <>
       <StyledRow
-        $stripedColor={stripedColor}
-        $rowColor={rowColor}
-        $rowBorderColor={rowBorderColor}
+        $stripedColor={resolvedStripedColor}
+        $rowColor={resolvedRowColor}
+        $rowBorderColor={resolvedRowBorderColor}
         $clickableRow={!!clickableRow}
         $noRowBorderColor={isExpandedRow || hideBorder}
-        onClick={() => clickableRow && clickableRow(rowData)}
+        onClick={() => clickableRow?.(rowData)}
         tabIndex={clickableRow && 0}
       >
         {columns.map((column, columnIndex) => {
@@ -113,9 +129,9 @@ export const TableRow = <T extends object>({
 
           {subTableData && (
             <StyledSubTableCell
-              $rowBorderColor={rowBorderColor}
+              $rowBorderColor={resolvedRowBorderColor}
               colSpan={expandSubProp}
-              $bgColor={subBgColor}
+              $bgColor={resolvedSubBgColor}
               $padding={subPadding}
             >
               {cloneElement(subTableData, { rowPadding, columnPadding })}

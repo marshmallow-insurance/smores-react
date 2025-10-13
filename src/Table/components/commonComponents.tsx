@@ -2,7 +2,6 @@ import { darken } from 'polished'
 import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { fontStyleMapping } from '../../Text/fontMapping'
-import { theme, type Color } from '../../theme'
 import { focusOutlineStyle } from '../../utils/focusOutline'
 import { TableStylesProps, type TableProps } from '../types'
 
@@ -17,7 +16,7 @@ export const StyledTable = styled.table<StyledTableProps>`
   height: 100%;
   border-collapse: collapse;
   overflow: auto;
-  background: ${theme.colors.coconut};
+  background: ${({ theme }) => theme.color.surface.base[100]};
   border-spacing: 30px;
 
   ${({ $roundedTable }) =>
@@ -29,9 +28,9 @@ export const StyledTable = styled.table<StyledTableProps>`
 `
 
 export const StyledHeaderCell = styled.th<TransientProps<TableStylesProps>>`
-  background: ${theme.colors.coconut};
-  border-bottom: ${({ $hasKeyline }) =>
-    $hasKeyline ? `1px solid ${theme.colors.liquorice}` : 'none'};
+  background: ${({ theme }) => theme.color.surface.base[100]};
+  border-bottom: ${({ $hasKeyline, theme }) =>
+    $hasKeyline ? `1px solid ${theme.color.surface.base[900]}` : 'none'};
   position: ${({ $fixedHeader }) => ($fixedHeader ? 'sticky' : 'auto')};
   top: 0;
   z-index: 2;
@@ -46,7 +45,7 @@ export const StyledHeaderCell = styled.th<TransientProps<TableStylesProps>>`
   ${({ $headerColor }) =>
     $headerColor &&
     css`
-      background: ${theme.colors[$headerColor]};
+      background: ${$headerColor};
     `}
 
   ${({ $headerHeight }) =>
@@ -118,52 +117,52 @@ export const StyledCell = styled.td<TransientProps<TableStylesProps>>`
   ${({ $rowActionsBgColor }) =>
     $rowActionsBgColor &&
     css`
-      background: ${theme.colors[$rowActionsBgColor]};
+      background: ${$rowActionsBgColor};
     `}
 `
 
 export const StyledRow = styled.tr<TransientProps<TableStylesProps>>`
-  background: ${theme.colors.custard};
+  background: ${({ theme }) => theme.color.surface.base[300]};
 
   ${({ $rowBorderColor, $noRowBorderColor }) =>
     $rowBorderColor &&
     !$noRowBorderColor &&
     css`
-      border-bottom: 1px solid ${theme.colors[$rowBorderColor]};
+      border-bottom: 1px solid ${$rowBorderColor};
     `}
 
   ${({ $rowColor }) =>
     $rowColor &&
     css`
-      background: ${theme.colors[$rowColor]};
+      background: ${$rowColor};
     `}
 
   ${({ $stripedColor }) =>
     $stripedColor &&
     css`
       &:nth-child(even) {
-        background: ${theme.colors[$stripedColor]};
+        background: ${$stripedColor};
       }
     `}
 
-    ${({ $clickableRow, $rowColor }) =>
+    ${({ $clickableRow, $rowColor, theme }) =>
     $clickableRow &&
     css`
       cursor: pointer;
       &:hover {
-        background: ${darken(0.1, theme.colors[$rowColor ?? 'custard'])};
+        background: ${darken(0.1, $rowColor ?? theme.color.surface.base[300])};
       }
       &:focus-visible {
         ${focusOutlineStyle}
-        background: ${darken(0.1, theme.colors[$rowColor ?? 'custard'])};
+        background: ${darken(0.1, $rowColor ?? theme.color.surface.base[300])};
       }
     `}
 `
 
 type StyledSubTableCellProps = {
-  $bgColor?: Color
+  $bgColor?: string
   $padding?: string | undefined
-  $rowBorderColor?: Color
+  $rowBorderColor?: string
 }
 
 type StyledSubInnerCellProps = {
@@ -176,11 +175,10 @@ export const StyledSubTableCell = styled.td<StyledSubTableCellProps>`
   ${({ $rowBorderColor }) =>
     $rowBorderColor &&
     css`
-      border-bottom: 1px solid ${theme.colors[$rowBorderColor]};
+      border-bottom: 1px solid ${$rowBorderColor};
     `}
 
-  ${({ $bgColor }) =>
-    $bgColor && `background-color: ${theme.colors[$bgColor]};`}
+  ${({ $bgColor }) => $bgColor && `background-color: ${$bgColor};`}
 `
 
 export const StyledSubInnerCell = styled.div<StyledSubInnerCellProps>`

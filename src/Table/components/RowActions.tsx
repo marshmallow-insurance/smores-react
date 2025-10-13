@@ -1,5 +1,5 @@
 import React, { FormEvent } from 'react'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import { Box } from '../../Box'
 import { Button } from '../../Button'
 import { IconStrict } from '../../IconStrict'
@@ -8,6 +8,7 @@ import { focusOutlineStyle } from '../../utils/focusOutline'
 import { isReactElement } from '../../utils/isReactElement'
 import { RowActionsProps } from '../types'
 import { StyledCell } from './commonComponents'
+import { resolveToThemeColor } from '../../ThemeProvider/utils/colourMap'
 
 export const RowActions = <T extends object>({
   rowData,
@@ -25,10 +26,16 @@ export const RowActions = <T extends object>({
     await action(rowData)
   }
 
+  const theme = useTheme()
+
+  const resolvedRowActionBgColor = rowActions?.bgColor
+    ? resolveToThemeColor(rowActions.bgColor, theme)
+    : undefined
+
   return (
     <StyledCell
       $stickyCell={Boolean(rowActions) || Boolean(expandable)}
-      $rowActionsBgColor={rowActions?.bgColor}
+      $rowActionsBgColor={resolvedRowActionBgColor}
     >
       <Box flex alignItems="center" justifyContent="flex-end">
         {rowActions?.actions?.map((action, actionIndex) => {
@@ -87,8 +94,14 @@ export const RowActions = <T extends object>({
             }}
             size={24}
             $isOpen={isExpanded}
-            iconColor={isExpanded ? 'cream' : 'liquorice'}
-            backgroundColor={isExpanded ? 'liquorice' : 'oatmeal'}
+            iconColor={
+              isExpanded ? 'color.surface.base.000' : 'color.icon.base'
+            }
+            backgroundColor={
+              isExpanded
+                ? 'color.surface.base.900'
+                : 'color.illustration.neutral.300'
+            }
           />
         )}
       </Box>
