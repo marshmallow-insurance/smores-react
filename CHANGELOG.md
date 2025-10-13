@@ -1,3 +1,9 @@
+## [13.15.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.14.0...v13.15.0) (2025-10-13)
+
+### Features
+
+* **icon-strict:** update to use theme colour [DES-58] ([#4592](https://github.com/marshmallow-insurance/smores-react/issues/4592)) ([26c9373](https://github.com/marshmallow-insurance/smores-react/commit/26c9373f3348fff14872f69934f7e23f04d6099d))
+
 ## [13.14.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.13.0...v13.14.0) (2025-10-13)
 
 ### Features
