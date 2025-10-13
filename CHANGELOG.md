@@ -1,3 +1,9 @@
+## [13.13.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.12.0...v13.13.0) (2025-10-13)
+
+### Features
+
+* **tooltip:** align with theme provider [DES-84] ([#4587](https://github.com/marshmallow-insurance/smores-react/issues/4587)) ([7dcc67d](https://github.com/marshmallow-insurance/smores-react/commit/7dcc67dc98b29da8477fb85d1f26d01f4b52bc26))
+
 ## [13.12.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.11.0...v13.12.0) (2025-10-13)
 
 ### Features
