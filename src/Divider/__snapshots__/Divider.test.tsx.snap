@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Divider > renders correctly with default props 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR bHjpxP sc-hvigdm hmNPHF"
+  />
+</div>
+`;
