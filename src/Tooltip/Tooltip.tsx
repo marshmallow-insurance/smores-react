@@ -16,10 +16,10 @@ import {
   type Side,
 } from '@floating-ui/react'
 import React, { FC, ReactNode, useRef, useState } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 import { Box } from '../Box'
 import { Text } from '../Text'
-import { Color, theme } from '../theme'
+import { NewColor, resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
 
 export interface TooltipProps {
   children: ReactNode
@@ -52,22 +52,22 @@ export interface TooltipProps {
 
 export type TooltipVariant = 'primary' | 'fallback' | 'bubblegum'
 
-type VariantValue = { textColor: Color; bgColor: Color }
+type VariantValue = { textColor: NewColor; bgColor: NewColor }
 
-const tooltipVariants = {
+const tooltipVariants: Record<TooltipVariant, VariantValue> = {
   primary: {
-    textColor: 'liquorice',
-    bgColor: 'custard',
+    textColor: 'color.text.base',
+    bgColor: 'color.surface.base.300',
   },
   fallback: {
-    textColor: 'cream',
-    bgColor: 'feijoa',
+    textColor: 'color.surface.base.000',
+    bgColor: 'color.illustration.accent1.100',
   },
   bubblegum: {
-    textColor: 'liquorice',
-    bgColor: 'bubblegum',
+    textColor: 'color.text.base',
+    bgColor: 'color.surface.brand.200',
   },
-} satisfies Record<TooltipVariant, VariantValue>
+}
 
 const ARROW_HEIGHT = 8
 const GAP = 4
@@ -84,6 +84,7 @@ export const Tooltip: FC<TooltipProps> = ({
   variant = 'primary',
 }) => {
   const [showTip, setShowTip] = useState<boolean>(false)
+  const theme = useTheme()
   const arrowRef = useRef(null)
 
   const variantValue = tooltipVariants[variant]
@@ -109,6 +110,8 @@ export const Tooltip: FC<TooltipProps> = ({
   const dismiss = useDismiss(context)
   const role = useRole(context, { role: 'tooltip' })
 
+  const resolvedBgColor = resolveToThemeColor(variantValue.bgColor, theme)
+
   // Merge all the interactions into prop getters
   const { getReferenceProps, getFloatingProps } = useInteractions([
     hover,
@@ -133,14 +136,14 @@ export const Tooltip: FC<TooltipProps> = ({
             ref={refs.setFloating}
             className="tooltip"
             $maxWidth={maxWidth}
-            $background={theme.colors[variantValue.bgColor]}
+            $background={resolvedBgColor}
             style={floatingStyles}
             {...getFloatingProps()}
           >
             <FloatingArrow
               ref={arrowRef}
               context={context}
-              fill={theme.colors[variantValue.bgColor]}
+              fill={resolvedBgColor}
             />
             {title && (
               <Text
@@ -169,10 +172,10 @@ const UnderlinedChild = styled(Box)<{ $underline: boolean }>`
   width: fit-content;
   display: inline-flex;
 
-  ${({ $underline }) =>
+  ${({ $underline, theme }) =>
     $underline &&
     css`
-      border-bottom: 1px dashed ${theme.colors.marshmallowPink};
+      border-bottom: 1px dashed ${theme.color.surface.brand[300]};
     `}
 `
 
