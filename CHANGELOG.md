@@ -1,3 +1,9 @@
+## [13.9.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.9.0...v13.9.1) (2025-10-13)
+
+### Bug Fixes
+
+* **badge:** color usage in story ([#4586](https://github.com/marshmallow-insurance/smores-react/issues/4586)) ([f067d05](https://github.com/marshmallow-insurance/smores-react/commit/f067d052e028237f127fe1c5d4918516a16b7567))
+
 ## [13.9.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.8.0...v13.9.0) (2025-10-10)
 
 ### Features
