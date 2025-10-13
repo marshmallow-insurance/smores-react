@@ -29,8 +29,7 @@ exports[`Button > renders correctly when loading 1`] = `
       class="sc-hwkwBN HRaKY"
     >
       <svg
-        class="sc-ggWZvA gpJQRo"
-        color="liquorice"
+        class="sc-ggWZvA bAkxau"
         height="16"
         viewBox="0 0 60 32"
       >
@@ -118,10 +117,7 @@ exports[`Button > renders correctly with an icon 1`] = `
     >
       <span
         class="sc-bRKDuR bHjpxP sc-fhHczv XmxEI sc-dYwGCk ijOES"
-        color="liquorice"
         data-testid="info-container"
-        rotate="0"
-        size="24"
       >
         <svg
           fill="none"

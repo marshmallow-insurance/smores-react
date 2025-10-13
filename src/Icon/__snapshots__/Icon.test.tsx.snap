@@ -3,11 +3,8 @@
 exports[`Icon > renders correctly with custom size and color 1`] = `
 <div>
   <span
-    class="sc-bRKDuR bHjpxP sc-fhHczv iYUusI"
-    color="blueberry"
+    class="sc-bRKDuR bHjpxP sc-fhHczv jzqxIY"
     data-testid="search-container"
-    rotate="0"
-    size="32"
   >
     <svg
       fill="none"
@@ -31,10 +28,7 @@ exports[`Icon > renders correctly with default props 1`] = `
 <div>
   <span
     class="sc-bRKDuR bHjpxP sc-fhHczv XmxEI"
-    color="liquorice"
     data-testid="car-container"
-    rotate="0"
-    size="24"
   >
     <svg
       fill="none"

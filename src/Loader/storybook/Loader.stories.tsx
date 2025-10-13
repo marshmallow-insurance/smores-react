@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { Loader } from '../Loader'
+import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 
 const meta: Meta<typeof Loader> = {
   title: 'Loader',
@@ -12,6 +13,12 @@ const meta: Meta<typeof Loader> = {
       </div>
     ),
   ],
+  argTypes: {
+    color: {
+      control: 'select',
+      options: colourOptions,
+    },
+  },
 }
 
 export default meta
@@ -27,6 +34,6 @@ export const Default: Story = {
 export const BigLoader: Story = {
   args: {
     height: '54',
-    color: 'liquorice',
+    color: 'color.text.base',
   },
 }
