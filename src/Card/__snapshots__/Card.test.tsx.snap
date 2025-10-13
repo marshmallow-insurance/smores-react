@@ -16,10 +16,7 @@ exports[`Card > renders correctly with a leading icon 1`] = `
         >
           <span
             class="sc-bRKDuR cNXuge sc-fhHczv XmxEI"
-            color="liquorice"
             data-testid="info-container"
-            rotate="0"
-            size="24"
           >
             <svg
               fill="none"

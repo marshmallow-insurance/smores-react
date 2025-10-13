@@ -7,10 +7,7 @@ exports[`IconStrict > renders correctly with background color 1`] = `
   >
     <span
       class="sc-bRKDuR bHjpxP sc-fhHczv iNYmWQ"
-      color="liquorice"
       data-testid="search-container"
-      rotate="0"
-      size="20"
     >
       <svg
         fill="none"
@@ -38,10 +35,7 @@ exports[`IconStrict > renders correctly with default props 1`] = `
   >
     <span
       class="sc-bRKDuR bHjpxP sc-fhHczv bkxtmk"
-      color="liquorice"
       data-testid="car-container"
-      rotate="0"
-      size="16"
     >
       <svg
         fill="none"
