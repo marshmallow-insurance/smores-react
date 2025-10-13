@@ -1,14 +1,14 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
-import { Color, theme } from '../theme'
 import { darken } from 'polished'
+import { ColorTypes } from '../ThemeProvider/utils/colourMap'
 
 export type ActionListItem = {
   label: string
   value: string
-  bgColor?: Color
-  textColor?: Color
+  bgColor?: ColorTypes
+  textColor?: ColorTypes
 }
 
 type Props = {
@@ -41,10 +41,11 @@ const ListItem = styled.li`
   box-sizing: border-box;
   font-size: 14px;
   cursor: pointer;
-  color: ${theme.colors.liquorice};
+  color: ${({ theme }) => theme.color.surface.base[900]};
 
   &:hover {
-    background-color: ${darken(0.1, theme.colors.custard)};
+    background-color: ${({ theme }) =>
+      darken(0.1, theme.color.surface.base[300])};
   }
 
   &:last-child {
