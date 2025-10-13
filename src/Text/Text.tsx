@@ -1,19 +1,21 @@
 import React, { FC, forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
 import { linkStyleOverride } from '../Link/Link'
-import { Color, theme } from '../theme'
 import { MarginProps } from '../utils/space'
 import { fontStyleMapping } from './fontMapping'
-
+import {
+  ColorTypes,
+  resolveToThemeColor,
+} from '../ThemeProvider/utils/colourMap'
 interface IText {
   /** typography class name to apply predefined styles */
   $typo: string
   /** text-align  */
   $align: string
   /** color from the theme  */
-  $color: Color
+  $color: ColorTypes
   $cursor: string
 }
 
@@ -38,7 +40,7 @@ type Props = {
   className?: string
   typo?: Typo
   align?: string
-  color?: Color
+  color?: ColorTypes
   cursor?: string
   title?: string
 } & MarginProps
@@ -53,27 +55,32 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
       className = '',
       tag = 'p',
       align = 'left',
-      color = 'liquorice',
+      color = 'color.text.base',
       cursor = 'inherit',
       title = '',
       ...props
     },
     ref,
-  ) => (
-    <Container
-      forwardedAs={tag}
-      className={className}
-      $typo={typo}
-      $align={align}
-      $color={color}
-      cursor={cursor}
-      title={title}
-      {...props}
-      ref={ref}
-    >
-      {children}
-    </Container>
-  ),
+  ) => {
+    const theme = useTheme()
+    const resolvedColor = resolveToThemeColor(color, theme)
+
+    return (
+      <Container
+        forwardedAs={tag}
+        className={className}
+        $typo={typo}
+        $align={align}
+        $color={resolvedColor}
+        cursor={cursor}
+        title={title}
+        {...props}
+        ref={ref}
+      >
+        {children}
+      </Container>
+    )
+  },
 )
 
 Text.displayName = 'Text'
@@ -90,7 +97,7 @@ const Container = styled(Box)<IText>(
 
     text-align: ${$align};
     cursor: ${$cursor};
-    color: ${theme.colors[$color]};
-    ${linkStyleOverride({ color: theme.colors[$color] })}
+    color: ${$color};
+    ${linkStyleOverride({ color: $color })}
   `,
 )

@@ -1,21 +1,34 @@
 import React, { FC, ReactNode, useState } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
-import { theme } from '../theme'
 import { MarginProps } from '../utils/space'
+import { NewColor, resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
+
+type UsableNewColors = Extract<
+  NewColor,
+  | 'color.surface.base.000'
+  | 'color.surface.base.100'
+  | 'color.surface.base.300'
+  | 'color.illustration.neutral.300'
+>
 
 export type AccordionProps = {
   title: string
   subTitle?: string
   filledBackground?: boolean
   borderTop?: boolean
-  borderColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut'
+  borderColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut' | UsableNewColors
   fullBorder?: boolean
-  backgroundColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut'
+  backgroundColor?:
+    | 'oatmeal'
+    | 'custard'
+    | 'cream'
+    | 'coconut'
+    | UsableNewColors
   onToggle?: (isOpen: boolean) => void
   children: ReactNode
   defaultIsOpen?: boolean
@@ -28,14 +41,19 @@ export const Accordion: FC<AccordionProps> = ({
   filledBackground,
   defaultIsOpen = false,
   borderTop = false,
-  borderColor = 'oatmeal',
-  backgroundColor = 'custard',
+  borderColor = 'color.illustration.neutral.300',
+  backgroundColor = 'color.surface.base.300',
   subTitle,
   fullBorder = false,
   ...marginProps
 }) => {
+  const theme = useTheme()
   const [isOpen, setIsOpen] = useState(defaultIsOpen)
   const px = fullBorder ? '16px' : '0'
+
+  const resolvedBorderColor = resolveToThemeColor(borderColor, theme)
+
+  const resolvedBackgroundColour = resolveToThemeColor(backgroundColor, theme)
 
   const handleToggle = () => {
     const nextOpenState = !isOpen
@@ -48,8 +66,8 @@ export const Accordion: FC<AccordionProps> = ({
       $borderTop={borderTop}
       $fullBorder={fullBorder}
       $filledBackground={filledBackground}
-      $borderColor={borderColor}
-      $backgroundColor={backgroundColor}
+      $borderColor={resolvedBorderColor}
+      $backgroundColor={resolvedBackgroundColour}
       {...marginProps}
     >
       <TopContainer
@@ -62,11 +80,11 @@ export const Accordion: FC<AccordionProps> = ({
         pl={px}
       >
         <TitleContainer>
-          <Text tag="h2" typo="headline-regular" color="liquorice">
+          <Text tag="h2" typo="headline-regular">
             {title}
           </Text>
           {subTitle && (
-            <Text tag="label" color="liquorice" typo="label" mt={{ custom: 4 }}>
+            <Text tag="label" typo="label" mt={{ custom: 4 }}>
               {subTitle}
             </Text>
           )}
@@ -91,15 +109,8 @@ export const Accordion: FC<AccordionProps> = ({
 
 const Wrapper = styled(Box)<
   TransientProps<
-    Pick<
-      AccordionProps,
-      | 'borderTop'
-      | 'fullBorder'
-      | 'filledBackground'
-      | 'borderColor'
-      | 'backgroundColor'
-    >
-  >
+    Pick<AccordionProps, 'borderTop' | 'fullBorder' | 'filledBackground'>
+  > & { $borderColor: string; $backgroundColor: string }
 >(
   ({
     $borderTop,
@@ -108,18 +119,18 @@ const Wrapper = styled(Box)<
     $borderColor = 'oatmeal',
     $backgroundColor = 'custard',
   }) => css`
-    border-bottom: 1px solid ${theme.colors[$borderColor]};
-    ${$borderTop && `border-top: 1px solid ${theme.colors[$borderColor]};`}
+    border-bottom: 1px solid ${$borderColor};
+    ${$borderTop && `border-top: 1px solid ${$backgroundColor};`}
 
     ${$fullBorder &&
     css`
-      border: 1px solid ${theme.colors[$borderColor]};
+      border: 1px solid ${$borderColor};
       border-radius: 16px;
     `}
 
     ${$filledBackground &&
     css`
-      background-color: ${theme.colors[$backgroundColor]};
+      background-color: ${$backgroundColor};
     `}
   `,
 )

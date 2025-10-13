@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { theme } from '../theme'
 import { margin, MarginProps, TransientMarginProps } from '../utils/space'
 
 type SliderProps = Omit<
@@ -53,7 +52,7 @@ const StyledSlider = styled.input<TransientMarginProps>`
   //guard rail as we have a hard coded limit on progress bar length
   max-width: 2000px;
   transition: box-shadow 0.2s ease-in-out;
-  background: ${theme.colors.coconut};
+  background: ${({ theme }) => theme.color.background[100]};
   ${margin};
 
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -71,22 +70,22 @@ const StyledSlider = styled.input<TransientMarginProps>`
       -webkit-appearance: none;
       height: 44px;
       cursor: ew-resize;
-      background: ${theme.colors.coconut};
+      background: ${({ theme }) => theme.color.background[100]};
       box-shadow:
       //handles the progress bar
-        -1000px 0 0 980px ${theme.colors.marshmallowPink},
+        -1000px 0 0 980px ${({ theme }) => theme.color.surface.brand[300]},
         //added for the focus anim
-        inset 0 0 0 44px ${theme.colors.lollipop};
+        inset 0 0 0 44px ${({ theme }) => theme.color.surface.brand[400]};
       border-radius: 50%;
       transition: box-shadow 0.2s ease-in-out;
       position: relative;
     }
     &:active::-webkit-slider-thumb,
     &:focus::-webkit-slider-thumb {
-      background: ${theme.colors.coconut};
+      background: ${({ theme }) => theme.color.background[100]};
       box-shadow:
-        -1000px 0 0 980px ${theme.colors.marshmallowPink},
-        inset 0 0 0 4px ${theme.colors.lollipop};
+        -1000px 0 0 980px ${({ theme }) => theme.color.surface.brand[300]},
+        inset 0 0 0 4px ${({ theme }) => theme.color.surface.brand[400]};
     }
   }
 `

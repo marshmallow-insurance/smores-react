@@ -4,7 +4,6 @@ import { Box } from '../Box'
 import { useTimeout } from '../hooks'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
-import { theme } from '../theme'
 import { Snackbar } from './types'
 
 interface Props extends Snackbar {
@@ -52,7 +51,7 @@ export const SnackbarItem: FC<Props> = ({
 
 const SnackItem = styled(Box)`
   border-radius: 16px;
-  background-color: ${theme.colors.liquorice};
+  background-color: ${({ theme }) => theme.color.surface.base[900]};
 `
 
 const CloseButton = styled.button`

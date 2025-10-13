@@ -1,4 +1,4 @@
-import { act, fireEvent, renderHook } from '@testing-library/react'
+import { act, fireEvent, renderHook } from '../../testUtils'
 import { Mock, vi } from 'vitest'
 import { useEventListener } from '.'
 

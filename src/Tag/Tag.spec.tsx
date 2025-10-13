@@ -1,23 +1,53 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
+import { render, screen } from '../testUtils'
+import { it, expect } from 'vitest'
 import { Tag } from '../Tag'
 import { TagProps } from './Tag'
 
 describe('Tag Component', () => {
-  testCases.forEach(({ description, props }) => {
-    test(description, () => {
-      render(<Tag {...props} />)
+  it('renders snapshot test correctly', () => {
+    const { container } = render(
+      <Tag label="Snapshot Test Tag" color="marzipan" bgColor="satsuma" />,
+    )
+    expect(container).toMatchSnapshot()
+  })
 
-      expect(screen.getByText(props.label)).toBeInTheDocument()
+  describe('old colour name', () => {
+    testCases.forEach(({ description, props }) => {
+      test(description, () => {
+        const { container } = render(<Tag {...props} />)
 
-      if (props.icon) {
-        const iconElement = screen.getByTestId(`tag-icon-${props.icon}`)
-        expect(iconElement).toBeInTheDocument()
-      } else {
-        const iconElement = screen.queryByTestId(`tag-icon-${props.icon}`)
-        expect(iconElement).not.toBeInTheDocument()
-      }
+        expect(screen.getByText(props.label)).toBeInTheDocument()
+
+        if (props.icon) {
+          const iconElement = screen.getByTestId(`tag-icon-${props.icon}`)
+          expect(iconElement).toBeInTheDocument()
+        } else {
+          const iconElement = screen.queryByTestId(`tag-icon-${props.icon}`)
+          expect(iconElement).not.toBeInTheDocument()
+        }
+
+        expect(container.firstChild).toHaveStyle('backgroundColor: #d2d2d2')
+      })
+    })
+  })
+  describe('new colour name', () => {
+    testCasesWithNewColourNames.forEach(({ description, props }) => {
+      test(description, () => {
+        const { container } = render(<Tag {...props} />)
+
+        expect(screen.getByText(props.label)).toBeInTheDocument()
+
+        if (props.icon) {
+          const iconElement = screen.getByTestId(`tag-icon-${props.icon}`)
+          expect(iconElement).toBeInTheDocument()
+        } else {
+          const iconElement = screen.queryByTestId(`tag-icon-${props.icon}`)
+          expect(iconElement).not.toBeInTheDocument()
+        }
+
+        expect(container.firstChild).toHaveStyle('backgroundColor: #d2d2d2')
+      })
     })
   })
 })
@@ -58,6 +88,47 @@ const testCases = [
       label: 'Test Tag 0004',
       color: 'apple',
       bgColor: 'chia',
+      icon: 'flagFilled',
+    } as TagProps,
+  },
+]
+
+const testCasesWithNewColourNames = [
+  {
+    description: 'Renders Tag with label Test Tag 0001',
+    props: {
+      label: 'Test Tag 0001',
+      color: 'color.feedback.positive.200',
+      bgColor: 'color.feedback.inactive.100',
+    } as TagProps,
+  },
+  {
+    description: 'Renders Tag with label Test Tag 0002 and flag icon',
+    props: {
+      label: 'Test Tag 0002',
+      color: 'color.feedback.positive.200',
+      bgColor: 'color.feedback.inactive.100',
+      icon: 'flag',
+      iconColor: 'blueberry',
+    } as TagProps,
+  },
+  {
+    description:
+      'Renders Tag with label Test Tag 0003 and no icon if iconColor: blueberry, icon: undefined',
+    props: {
+      label: 'Test Tag 0003',
+      color: 'color.feedback.positive.200',
+      bgColor: 'color.feedback.inactive.100',
+      iconColor: 'blueberry',
+    } as TagProps,
+  },
+  {
+    description:
+      'Renders Tag with label Test Tag 0004 and icon with default color if iconColor: undefined',
+    props: {
+      label: 'Test Tag 0004',
+      color: 'color.feedback.positive.200',
+      bgColor: 'color.feedback.inactive.100',
       icon: 'flagFilled',
     } as TagProps,
   },

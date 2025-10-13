@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Textarea > renders correctly with required props 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-bRKDuR bHjpxP sc-jJLAfE izsDDD"
+    >
+      <div
+        class="sc-bRKDuR bHjpxP"
+      >
+        <textarea
+          class="sc-hwkwBN ipGeao"
+          id="MM_SMORES_0"
+          rows="4"
+        >
+          Textarea label
+        </textarea>
+      </div>
+    </div>
+  </div>
+</body>
+`;

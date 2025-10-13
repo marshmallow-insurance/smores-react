@@ -1,13 +1,21 @@
 import React, { useRef } from 'react'
-import { theme } from '../theme'
 import { Text } from '../Text'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 
 type Props = {
   title?: string
 }
 
 export function BadgeFallbackImage({ title }: Props) {
+  const theme = useTheme()
+
+  const fallbackBackgroundColours = [
+    theme.color.surface.brand[100],
+    theme.color.surface.brand[200],
+    theme.color.surface.brand[300],
+    theme.color.surface.brand[400],
+  ]
+
   const bgColour = useRef(
     fallbackBackgroundColours[
       Math.floor(Math.random() * fallbackBackgroundColours.length)
@@ -15,19 +23,12 @@ export function BadgeFallbackImage({ title }: Props) {
   )
   return (
     <StyledFallbackImage $backgroundColour={bgColour.current}>
-      <Text typo="caption" color="liquorice" style={{ fontWeight: 'bold' }}>
+      <Text typo="caption" style={{ fontWeight: 'bold' }}>
         {title?.substring(0, 2) ?? null}
       </Text>
     </StyledFallbackImage>
   )
 }
-
-const fallbackBackgroundColours = [
-  theme.colors.lollipop,
-  theme.colors.marshmallowPink,
-  theme.colors.bubblegum,
-  theme.colors.fairyFloss,
-]
 
 const StyledFallbackImage = styled.div<{ $backgroundColour: string }>`
   background-color: ${(props) => props.$backgroundColour};

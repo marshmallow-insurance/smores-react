@@ -1,3 +1,197 @@
+## [13.16.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.16.0...v13.16.1) (2025-10-13)
+
+## [13.16.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.15.0...v13.16.0) (2025-10-13)
+
+### Features
+
+* **support-message:** update to use theme colours [DES-76] ([#4593](https://github.com/marshmallow-insurance/smores-react/issues/4593)) ([3389e14](https://github.com/marshmallow-insurance/smores-react/commit/3389e14aea55a44c4fb70f4c9ac29eba423e1440))
+
+## [13.15.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.14.0...v13.15.0) (2025-10-13)
+
+### Features
+
+* **icon-strict:** update to use theme colour [DES-58] ([#4592](https://github.com/marshmallow-insurance/smores-react/issues/4592)) ([26c9373](https://github.com/marshmallow-insurance/smores-react/commit/26c9373f3348fff14872f69934f7e23f04d6099d))
+
+## [13.14.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.13.0...v13.14.0) (2025-10-13)
+
+### Features
+
+* **action-dropdown:** use design system theming [DES-43] ([#4591](https://github.com/marshmallow-insurance/smores-react/issues/4591)) ([2b9de3d](https://github.com/marshmallow-insurance/smores-react/commit/2b9de3db072e372f0a9c1050c366597f1ba00e0c))
+
+## [13.13.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.12.0...v13.13.0) (2025-10-13)
+
+### Features
+
+* **tooltip:** align with theme provider [DES-84] ([#4587](https://github.com/marshmallow-insurance/smores-react/issues/4587)) ([7dcc67d](https://github.com/marshmallow-insurance/smores-react/commit/7dcc67dc98b29da8477fb85d1f26d01f4b52bc26))
+
+## [13.12.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.11.0...v13.12.0) (2025-10-13)
+
+### Features
+
+* **segmented-control:** update to new theme colours [DES-73] ([#4584](https://github.com/marshmallow-insurance/smores-react/issues/4584)) ([6e498be](https://github.com/marshmallow-insurance/smores-react/commit/6e498be02503e401c8caf4da122b10f1f310a006))
+
+## [13.11.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.10.0...v13.11.0) (2025-10-13)
+
+### Features
+
+* **loader:** update to use theme colours [DES-62] ([#4585](https://github.com/marshmallow-insurance/smores-react/issues/4585)) ([fe3605f](https://github.com/marshmallow-insurance/smores-react/commit/fe3605f63a098958d4b3674a75f81a9e0733ce87))
+
+## [13.10.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.9.1...v13.10.0) (2025-10-13)
+
+### Features
+
+* **divider:** use theme on divider [DES-55] ([#4583](https://github.com/marshmallow-insurance/smores-react/issues/4583)) ([54dcd6b](https://github.com/marshmallow-insurance/smores-react/commit/54dcd6bb683ff7384d53b32daa8acfd66c005439))
+
+## [13.9.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.9.0...v13.9.1) (2025-10-13)
+
+### Bug Fixes
+
+* **badge:** color usage in story ([#4586](https://github.com/marshmallow-insurance/smores-react/issues/4586)) ([f067d05](https://github.com/marshmallow-insurance/smores-react/commit/f067d052e028237f127fe1c5d4918516a16b7567))
+
+## [13.9.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.8.0...v13.9.0) (2025-10-10)
+
+### Features
+
+* **icon:** use theme provider [DES-57] ([#4590](https://github.com/marshmallow-insurance/smores-react/issues/4590)) ([c974dc8](https://github.com/marshmallow-insurance/smores-react/commit/c974dc8b5d786d3d0b60e001b62f4ce14a5f8b64))
+
+## [13.8.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.7.1...v13.8.0) (2025-10-10)
+
+### Features
+
+* **toggle:** update to new theme provided colours [DES-83] ([#4588](https://github.com/marshmallow-insurance/smores-react/issues/4588)) ([47dd5d7](https://github.com/marshmallow-insurance/smores-react/commit/47dd5d7d421d8104fffff9b11932df51a54f1b26))
+
+## [13.7.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.7.0...v13.7.1) (2025-10-09)
+
+### Bug Fixes
+
+* **theme:** use theme correctly when resolving colours ([#4582](https://github.com/marshmallow-insurance/smores-react/issues/4582)) ([8eae2d5](https://github.com/marshmallow-insurance/smores-react/commit/8eae2d58bc007761d6a670d09d7f47e656fd2409))
+
+## [13.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.6.0...v13.7.0) (2025-10-09)
+
+### Features
+
+* **tag:** update to new theme colours [DES-41] ([#4580](https://github.com/marshmallow-insurance/smores-react/issues/4580)) ([5246769](https://github.com/marshmallow-insurance/smores-react/commit/52467696e5e3be5e8d3a47617181a0476ad314ee))
+
+## [13.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.5.0...v13.6.0) (2025-10-09)
+
+### Features
+
+* **badge:** update to use theme provider [DES-44] ([#4581](https://github.com/marshmallow-insurance/smores-react/issues/4581)) ([a3e45f0](https://github.com/marshmallow-insurance/smores-react/commit/a3e45f092439adbe86af6c41899580d267b16a90))
+
+## [13.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.4.1...v13.5.0) (2025-10-08)
+
+### Features
+
+* **accordion:** resolve border and background to theme colours [DES-42] ([#4579](https://github.com/marshmallow-insurance/smores-react/issues/4579)) ([a31dc32](https://github.com/marshmallow-insurance/smores-react/commit/a31dc32236412701e74ef2f2237aaa306bfbc3aa))
+
+## [13.4.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.4.0...v13.4.1) (2025-10-07)
+
+### Bug Fixes
+
+* **theme:** correct import to fix typing ([#4578](https://github.com/marshmallow-insurance/smores-react/issues/4578)) ([8b7d909](https://github.com/marshmallow-insurance/smores-react/commit/8b7d90959fa8bbf2c04d179004ef688122f00fe7))
+
+## [13.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.3.7...v13.4.0) (2025-10-07)
+
+### Features
+
+* **text:** update to new theme colors [DES-79] ([#4577](https://github.com/marshmallow-insurance/smores-react/issues/4577)) ([7513f77](https://github.com/marshmallow-insurance/smores-react/commit/7513f77b98662e3db35bd3101e080d2e18b23d99))
+
+## [13.3.7](https://github.com/marshmallow-insurance/smores-react/compare/v13.3.6...v13.3.7) (2025-10-02)
+
+## [13.3.6](https://github.com/marshmallow-insurance/smores-react/compare/v13.3.5...v13.3.6) (2025-10-02)
+
+## [13.3.5](https://github.com/marshmallow-insurance/smores-react/compare/v13.3.4...v13.3.5) (2025-10-01)
+
+## [13.3.4](https://github.com/marshmallow-insurance/smores-react/compare/v13.3.3...v13.3.4) (2025-10-01)
+
+## [13.3.3](https://github.com/marshmallow-insurance/smores-react/compare/v13.3.2...v13.3.3) (2025-10-01)
+
+## [13.3.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.3.1...v13.3.2) (2025-10-01)
+
+## [13.3.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.3.0...v13.3.1) (2025-10-01)
+
+## [13.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.2.2...v13.3.0) (2025-10-01)
+
+### Features
+
+* **rich-text-editor:** update theming [DES-70] ([#4570](https://github.com/marshmallow-insurance/smores-react/issues/4570)) ([8c2fe05](https://github.com/marshmallow-insurance/smores-react/commit/8c2fe052afab5c96f78b35c227e957c11b88f954))
+
+## [13.2.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.2.1...v13.2.2) (2025-10-01)
+
+## [13.2.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.2.0...v13.2.1) (2025-10-01)
+
+## [13.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.11...v13.2.0) (2025-10-01)
+
+### Features
+
+* **progress-indicator:** align with design system [DES-67] ([#4567](https://github.com/marshmallow-insurance/smores-react/issues/4567)) ([16ee2b4](https://github.com/marshmallow-insurance/smores-react/commit/16ee2b4411798397615ee345348b8e65b5fe839a))
+
+## [13.1.11](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.10...v13.1.11) (2025-10-01)
+
+## [13.1.10](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.9...v13.1.10) (2025-10-01)
+
+## [13.1.9](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.8...v13.1.9) (2025-10-01)
+
+## [13.1.8](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.7...v13.1.8) (2025-09-30)
+
+## [13.1.7](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.6...v13.1.7) (2025-09-30)
+
+## [13.1.6](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.5...v13.1.6) (2025-09-29)
+
+## [13.1.5](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.4...v13.1.5) (2025-09-29)
+
+## [13.1.4](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.3...v13.1.4) (2025-09-29)
+
+## [13.1.3](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.2...v13.1.3) (2025-09-29)
+
+## [13.1.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.1...v13.1.2) (2025-09-26)
+
+## [13.1.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.1.0...v13.1.1) (2025-09-25)
+
+## [13.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.0.1...v13.1.0) (2025-09-25)
+
+### Features
+
+* **theming:** include external types for code completion ([#4553](https://github.com/marshmallow-insurance/smores-react/issues/4553)) ([d0e66d9](https://github.com/marshmallow-insurance/smores-react/commit/d0e66d9df0cb9feea34bfffcbf63ef921506b772))
+
+## [13.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.0.0...v13.0.1) (2025-09-24)
+
+### Bug Fixes
+
+* **theme-provider:** properly export ([#4552](https://github.com/marshmallow-insurance/smores-react/issues/4552)) ([d929b97](https://github.com/marshmallow-insurance/smores-react/commit/d929b9717cc2b81931c33e16f92714fc8b473f6d))
+
+## [13.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.11.5...v13.0.0) (2025-09-24)
+
+### ⚠ BREAKING CHANGES
+
+* New S'mores Theme Provider 
+
+New theming provider for S'mores, anything going forward will require usage of the theme provider
+* **theme-provider:** new component (#4550)
+
+### Features
+
+* breaking change empty commit ([#4551](https://github.com/marshmallow-insurance/smores-react/issues/4551)) ([de000e2](https://github.com/marshmallow-insurance/smores-react/commit/de000e2c2bc7fb6829af5b3ca5d39dc184273e30))
+* **theme-provider:** new component ([#4550](https://github.com/marshmallow-insurance/smores-react/issues/4550)) ([a2d8a3e](https://github.com/marshmallow-insurance/smores-react/commit/a2d8a3edacb7e35c014a7cc5b1e81f56500d912c))
+
+## [12.11.5](https://github.com/marshmallow-insurance/smores-react/compare/v12.11.4...v12.11.5) (2025-09-19)
+
+## [12.11.4](https://github.com/marshmallow-insurance/smores-react/compare/v12.11.3...v12.11.4) (2025-09-10)
+
+## [12.11.3](https://github.com/marshmallow-insurance/smores-react/compare/v12.11.2...v12.11.3) (2025-09-10)
+
+## [12.11.2](https://github.com/marshmallow-insurance/smores-react/compare/v12.11.1...v12.11.2) (2025-09-09)
+
+## [12.11.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.11.0...v12.11.1) (2025-09-09)
+
+## [12.11.0](https://github.com/marshmallow-insurance/smores-react/compare/v12.10.3...v12.11.0) (2025-09-04)
+
+### Features
+
+* **testing:** add snapshot tests to 4 components ([#4543](https://github.com/marshmallow-insurance/smores-react/issues/4543)) ([478773c](https://github.com/marshmallow-insurance/smores-react/commit/478773c1b1605d8c8e4470aaf06b515fb3dbdfaa))
+
+## [12.10.3](https://github.com/marshmallow-insurance/smores-react/compare/v12.10.2...v12.10.3) (2025-08-21)
+
 ## [12.10.2](https://github.com/marshmallow-insurance/smores-react/compare/v12.10.1...v12.10.2) (2025-06-27)
 
 ## [12.10.1](https://github.com/marshmallow-insurance/smores-react/compare/v12.10.0...v12.10.1) (2025-06-25)

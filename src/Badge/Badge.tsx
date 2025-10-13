@@ -1,7 +1,10 @@
 import React, { useState, type JSX } from 'react'
-import styled, { css } from 'styled-components'
-import { theme, type Color } from '../theme'
+import styled, { css, useTheme } from 'styled-components'
 import { BadgeFallbackImage } from './BadgeFallbackImage'
+import {
+  ColorTypes,
+  resolveToThemeColor,
+} from '../ThemeProvider/utils/colourMap'
 
 export enum BadgeSize {
   Sm = '24px',
@@ -12,14 +15,14 @@ export enum BadgeSize {
 export type BadgeProps = {
   src: string | JSX.Element
   title?: string
-  borderColour?: Color
+  borderColour?: ColorTypes
   size?: BadgeSize
   disabled?: boolean
   zIndex?: number
 }
 
 export function Badge({
-  borderColour = 'lollipop',
+  borderColour = 'color.surface.brand.400',
   size = BadgeSize.Lg,
   src,
   disabled,
@@ -27,11 +30,13 @@ export function Badge({
   title,
 }: BadgeProps) {
   const [hasFailed, setHasFailed] = useState(false)
+  const theme = useTheme()
+  const resolvedBorderColor = resolveToThemeColor(borderColour, theme)
 
   if (typeof src === 'string') {
     return (
       <Container
-        $borderColour={theme.colors[borderColour]}
+        $borderColour={resolvedBorderColor}
         $size={size}
         $src={src}
         $disabled={disabled}
@@ -53,7 +58,7 @@ export function Badge({
 
   return (
     <Container
-      $borderColour={theme.colors[borderColour]}
+      $borderColour={resolvedBorderColor}
       $size={size}
       $disabled={disabled}
       $zIndex={zIndex}

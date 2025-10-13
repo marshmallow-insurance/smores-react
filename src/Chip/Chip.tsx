@@ -6,7 +6,6 @@ import { Icon as IconComponent } from '../Icon'
 import { Icons } from '../Icon/iconsList'
 
 import { Loader } from '../Loader'
-import { theme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 
@@ -77,14 +76,14 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
 Chip.displayName = 'Chip'
 
 const Container = styled(Box)<IButton>(
-  ({ $primary, $secondary, $icon, $loading, disabled }) => css`
+  ({ $primary, $secondary, $icon, $loading, disabled, theme }) => css`
     ${focusOutline()}
 
     align-items: center;
-    background-color: ${theme.colors.oatmeal};
+    background-color: ${theme.color.surface.base[300]};
     border-radius: 100px;
-    border: 2px solid ${theme.colors.oatmeal};
-    color: ${theme.colors.liquorice};
+    border: 2px solid ${theme.color.surface.base[300]};
+    color: ${theme.color.text.base};
     display: flex;
     font-size: 16px;
     justify-content: ${$icon ? 'space-evenly' : 'center'};
@@ -99,19 +98,20 @@ const Container = styled(Box)<IButton>(
     css`
       &:hover {
         border: ${!(disabled || $loading) &&
-        `2px solid ${theme.colors.mascarpone}`};
-        background-color: ${!(disabled || $loading) && theme.colors.mascarpone};
+        `2px solid ${theme.color.background[200]}`};
+        background-color: ${!(disabled || $loading) &&
+        theme.color.background[200]};
       }
     `}
     ${$secondary &&
     css`
-      color: ${theme.colors.cream};
-      background-color: ${theme.colors.liquorice};
-      border: 2px solid ${theme.colors.liquorice};
+      color: ${theme.color.text['on-dark']};
+      background-color: ${theme.color.surface.base[900]};
+      border: 2px solid ${theme.color.surface.base[900]};
       &:hover {
         border: ${!(disabled || $loading) &&
-        `2px solid ${theme.colors.sesame}`};
-        background-color: ${!(disabled || $loading) && theme.colors.sesame};
+        `2px solid ${theme.color.text.subtle}`};
+        background-color: ${!(disabled || $loading) && theme.color.text.subtle};
       }
     `};
   `,

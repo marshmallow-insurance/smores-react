@@ -15,7 +15,6 @@ import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
 import { useOnClickOutside } from '../hooks'
-import { theme } from '../theme'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 import { SearchOptions } from './components/SearchOptions'
@@ -320,7 +319,7 @@ const Wrapper = styled(Box)`
 `
 
 const Line = styled(Box)`
-  background: ${theme.colors.oatmeal};
+  background: ${({ theme }) => theme.color.border.subtle};
   height: 24px;
   width: 1px;
 `

@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent } from '../../testUtils'
 import { StepItem, StepItemProps } from './StepItem'
 describe('StepItem', () => {
   const defaultProps: StepItemProps = {
@@ -15,13 +15,19 @@ describe('StepItem', () => {
   }
 
   it('renders the label correctly and does not render tick if notCompleted', () => {
-    render(<StepItem {...defaultProps} />)
+    const { baseElement } = render(<StepItem {...defaultProps} />)
+
+    expect(baseElement).toMatchSnapshot()
     expect(screen.getByText('Step 1')).toBeTruthy()
     expect(screen.queryByTestId('tick-container')).not.toBeTruthy()
   })
 
   it('renders the completed icon when step is completed', () => {
-    render(<StepItem {...defaultProps} isCompleted={true} />)
+    const { baseElement } = render(
+      <StepItem {...defaultProps} isCompleted={true} />,
+    )
+
+    expect(baseElement).toMatchSnapshot()
     expect(screen.getByTestId('tick-container')).toBeTruthy()
   })
 
@@ -32,7 +38,10 @@ describe('StepItem', () => {
   })
 
   it('renders a simple item when isSimple is true', () => {
-    render(<StepItem {...defaultProps} isSimple={true} />)
+    const { baseElement } = render(
+      <StepItem {...defaultProps} isSimple={true} />,
+    )
+    expect(baseElement).toMatchSnapshot()
     expect(screen.queryByText('Step 1')).not.toBeTruthy()
   })
 })

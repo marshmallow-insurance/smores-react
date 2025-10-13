@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent } from '../testUtils'
 import { ProgressIndicator } from './ProgressIndicator'
 import { StepData } from './types'
 
@@ -15,6 +15,19 @@ describe('ProgressIndicator', () => {
 
   beforeEach(() => {
     vi.clearAllMocks()
+  })
+
+  describe('snapshot', () => {
+    it('renders correctly with default props', () => {
+      const { container } = render(
+        <ProgressIndicator
+          steps={steps}
+          handleStepChange={handleStepChange}
+          currentStep="step1"
+        />,
+      )
+      expect(container).toMatchSnapshot()
+    })
   })
 
   describe('steps', () => {

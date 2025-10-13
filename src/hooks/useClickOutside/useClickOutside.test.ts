@@ -1,4 +1,4 @@
-import { act, cleanup, fireEvent, renderHook } from '@testing-library/react'
+import { act, cleanup, fireEvent, renderHook } from '../../testUtils'
 import { Mock } from 'vitest'
 import { useOnClickOutside } from '.'
 

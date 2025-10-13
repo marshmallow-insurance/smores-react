@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tag Component > renders snapshot test correctly 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR gQglmM sc-jwTyAe byPFIm"
+  >
+    <span
+      class="sc-bRKDuR bHjpxP sc-dTvVRJ cWoRvt sc-hjsuWn juqWeu"
+      cursor="inherit"
+      title=""
+    >
+      Snapshot Test Tag
+    </span>
+  </div>
+</div>
+`;

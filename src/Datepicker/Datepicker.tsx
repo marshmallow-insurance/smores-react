@@ -178,22 +178,22 @@ const Container = styled(Box)<{ $fallbackStyle: boolean }>`
   outline: none;
   border-radius: 16px;
 
-  ${({ $fallbackStyle }) => {
+  ${({ $fallbackStyle, theme }) => {
     return $fallbackStyle
       ? css`
-          background-color: ${theme.colors.cream};
+          background-color: ${theme.color.surface.base['000']};
         `
       : css`
-          background-color: ${theme.colors.custard};
+          background-color: ${theme.color.surface.base[300]};
         `
   }}
 `
 
 const Header = styled(Box)`
-  color: ${theme.colors.liquorice};
+  color: ${({ theme }) => theme.color.text.base};
   user-select: none;
   padding: 16px;
-  border-bottom: 1px solid ${theme.colors.oatmeal};
+  border-bottom: 1px solid ${({ theme }) => theme.color.border.subtle};
 
   span {
     font-size: 16px;
@@ -208,7 +208,7 @@ const Heading = styled(Text)`
 `
 
 const Circle = styled.button`
-  background-color: ${theme.colors.liquorice};
+  background-color: ${({ theme }) => theme.color.surface.base[900]};
   height: 32px;
   width: 32px;
   display: flex;

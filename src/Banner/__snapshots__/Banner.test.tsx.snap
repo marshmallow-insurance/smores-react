@@ -1,0 +1,93 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BannerItem > render Critical banner correctly 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR kAKHvc sc-jwTyAe ifrSgI"
+  >
+    <div
+      class="sc-bRKDuR hUwRKL"
+    >
+      <p
+        class="sc-bRKDuR bHjpxP sc-dTvVRJ fXhrsO"
+        cursor="inherit"
+        title=""
+      >
+        This is a banner
+      </p>
+    </div>
+    <div
+      class="sc-bRKDuR hUwRKL"
+    />
+  </div>
+</div>
+`;
+
+exports[`BannerItem > render General banner correctly 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR kAKHvc sc-jwTyAe ffmYjh"
+  >
+    <div
+      class="sc-bRKDuR hUwRKL"
+    >
+      <p
+        class="sc-bRKDuR bHjpxP sc-dTvVRJ fXhrsO"
+        cursor="inherit"
+        title=""
+      >
+        This is a banner
+      </p>
+    </div>
+    <div
+      class="sc-bRKDuR hUwRKL"
+    />
+  </div>
+</div>
+`;
+
+exports[`BannerItem > render Success banner correctly 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR kAKHvc sc-jwTyAe YIoBc"
+  >
+    <div
+      class="sc-bRKDuR hUwRKL"
+    >
+      <p
+        class="sc-bRKDuR bHjpxP sc-dTvVRJ fXhrsO"
+        cursor="inherit"
+        title=""
+      >
+        This is a banner
+      </p>
+    </div>
+    <div
+      class="sc-bRKDuR hUwRKL"
+    />
+  </div>
+</div>
+`;
+
+exports[`BannerItem > render Upsell banner correctly 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR kAKHvc sc-jwTyAe RcMhA"
+  >
+    <div
+      class="sc-bRKDuR hUwRKL"
+    >
+      <p
+        class="sc-bRKDuR bHjpxP sc-dTvVRJ fvPyJk"
+        cursor="inherit"
+        title=""
+      >
+        This is a banner
+      </p>
+    </div>
+    <div
+      class="sc-bRKDuR hUwRKL"
+    />
+  </div>
+</div>
+`;

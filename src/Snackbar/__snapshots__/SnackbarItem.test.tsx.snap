@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SnackbarItem > renders correctly with required props 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-bRKDuR iQYNmO sc-jwTyAe btMzyf"
+    >
+      <div
+        class="sc-bRKDuR hUwRKL"
+      >
+        <p
+          class="sc-bRKDuR bHjpxP sc-dTvVRJ dzOPrl"
+          cursor="inherit"
+          title=""
+        >
+          Test message
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -1,0 +1,244 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Dropdown > renders correctly when completed 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR bHjpxP sc-jJLAfE izsDDD"
+  >
+    <div
+      class="sc-bRKDuR bHjpxP"
+    >
+      <div
+        class="sc-bRKDuR hUwRKL"
+        style="position: relative;"
+      >
+        <select
+          class="sc-lgpSej ckPePk"
+          id="MM_SMORES_1"
+        >
+          <option
+            disabled=""
+            hidden=""
+            value=""
+          />
+          <option
+            value="option1"
+          >
+            Option 1
+          </option>
+          <option
+            value="option2"
+          >
+            Option 2
+          </option>
+        </select>
+        <div
+          class="sc-eqYatC gvIKPK"
+        >
+          <span
+            class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh"
+            data-testid="caret-container"
+          >
+            <svg
+              fill="none"
+              height="100%"
+              viewBox="0 0 24 24"
+              width="100%"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-bRKDuR bHjpxP sc-jwTyAe iDLFKn"
+    >
+      <div
+        class="sc-bRKDuR fhEDUK sc-hjsuWn kRRkcz"
+      >
+        <span
+          class="sc-bRKDuR bHjpxP sc-fhHczv hRkrYx"
+          data-testid="included-container"
+        >
+          <svg
+            fill="none"
+            height="100%"
+            viewBox="0 0 24 24"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M18.4808 6.924C18.1605 6.6585 17.6895 6.70275 17.424 7.02L10.3552 15.5025L6.41625 12.8768C6.0705 12.6458 5.6055 12.7395 5.376 13.0845C5.14575 13.4288 5.23875 13.8953 5.58375 14.1248L10.0837 17.1248C10.2112 17.2088 10.356 17.25 10.4992 17.25C10.7152 17.25 10.9282 17.157 11.0767 16.98L18.5768 7.98C18.8415 7.662 18.798 7.18875 18.4808 6.924V6.924Z"
+              fill="white"
+            />
+          </svg>
+        </span>
+        <p
+          class="sc-bRKDuR bHjpxP sc-dTvVRJ karOVv"
+          cursor="inherit"
+          title=""
+        >
+          Complete
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown > renders correctly with a list of items 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR bHjpxP sc-jJLAfE izsDDD"
+  >
+    <div
+      class="sc-bRKDuR bHjpxP"
+    >
+      <div
+        class="sc-bRKDuR hUwRKL"
+        style="position: relative;"
+      >
+        <select
+          class="sc-lgpSej ckPePk"
+          id="MM_SMORES_0"
+        >
+          <option
+            disabled=""
+            hidden=""
+            value=""
+          />
+          <option
+            value="option1"
+          >
+            Option 1
+          </option>
+          <option
+            value="option2"
+          >
+            Option 2
+          </option>
+        </select>
+        <div
+          class="sc-eqYatC gvIKPK"
+        >
+          <span
+            class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh"
+            data-testid="caret-container"
+          >
+            <svg
+              fill="none"
+              height="100%"
+              viewBox="0 0 24 24"
+              width="100%"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown > renders correctly with an error message 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR bHjpxP sc-jJLAfE izsDDD"
+  >
+    <div
+      class="sc-bRKDuR bHjpxP"
+    >
+      <div
+        class="sc-bRKDuR hUwRKL"
+        style="position: relative;"
+      >
+        <select
+          class="sc-lgpSej dsPMCh"
+          id="MM_SMORES_2"
+        >
+          <option
+            disabled=""
+            hidden=""
+            value=""
+          />
+          <option
+            value="option1"
+          >
+            Option 1
+          </option>
+          <option
+            value="option2"
+          >
+            Option 2
+          </option>
+        </select>
+        <div
+          class="sc-eqYatC gvIKPK"
+        >
+          <span
+            class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh"
+            data-testid="caret-container"
+          >
+            <svg
+              fill="none"
+              height="100%"
+              viewBox="0 0 24 24"
+              width="100%"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-bRKDuR ezosON"
+    >
+      <span
+        class="sc-bRKDuR bHjpxP sc-fhHczv bXMvct"
+        data-testid="warning-container"
+      >
+        <svg
+          fill="none"
+          height="100%"
+          viewBox="0 0 25 24"
+          width="100%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12.001 6a1 1 0 00-1 1v6a1 1 0 102 0V7a1 1 0 00-1-1zm0 10.005a1.003 1.003 0 000 2.005 1 1 0 001-1V17a.995.995 0 00-1-.995zm11.42-.503l-7.64-13.316A4.31 4.31 0 0012.001 0a4.31 4.31 0 00-3.78 2.186L.581 15.502a4.288 4.288 0 00.01 4.327A4.313 4.313 0 004.36 22h15.28a4.313 4.313 0 003.771-2.171 4.288 4.288 0 00.01-4.327zm-1.739 3.324A2.333 2.333 0 0119.642 20H4.361a2.331 2.331 0 01-2.042-1.174 2.306 2.306 0 01-.005-2.328l7.64-13.316A2.332 2.332 0 0112.001 2c.856 0 1.621.441 2.046 1.182l7.64 13.316c.418.73.417 1.6-.005 2.328z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+      <span
+        class="sc-bRKDuR bHjpxP sc-dTvVRJ hozFOv"
+        cursor="inherit"
+        title=""
+      >
+        This is an error
+      </span>
+    </div>
+  </div>
+</div>
+`;
