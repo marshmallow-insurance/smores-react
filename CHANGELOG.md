@@ -1,3 +1,9 @@
+## [13.17.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.16.2...v13.17.0) (2025-10-13)
+
+### Features
+
+* **table:** use design system theme [DES-77] ([#4595](https://github.com/marshmallow-insurance/smores-react/issues/4595)) ([1d70c4e](https://github.com/marshmallow-insurance/smores-react/commit/1d70c4ec39e1336c11345a4508110804b2ff6fc7))
+
 ## [13.16.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.16.1...v13.16.2) (2025-10-13)
 
 ## [13.16.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.16.0...v13.16.1) (2025-10-13)
