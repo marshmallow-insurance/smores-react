@@ -3,6 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { expect, fn, userEvent, waitFor, within } from '@storybook/test'
 import React from 'react'
 import { Props, Toggle } from '../Toggle'
+import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 
 const Render = (args: Props) => {
   const [{ checked }, updateArgs] = useArgs<Props>()
@@ -25,6 +26,12 @@ const meta: Meta<typeof Toggle> = {
       </div>
     ),
   ],
+  argTypes: {
+    bgColor: {
+      control: 'select',
+      options: colourOptions,
+    },
+  },
 }
 
 export default meta
