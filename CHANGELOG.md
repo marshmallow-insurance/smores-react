@@ -1,3 +1,9 @@
+## [13.14.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.13.0...v13.14.0) (2025-10-13)
+
+### Features
+
+* **action-dropdown:** use design system theming [DES-43] ([#4591](https://github.com/marshmallow-insurance/smores-react/issues/4591)) ([2b9de3d](https://github.com/marshmallow-insurance/smores-react/commit/2b9de3db072e372f0a9c1050c366597f1ba00e0c))
+
 ## [13.13.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.12.0...v13.13.0) (2025-10-13)
 
 ### Features
