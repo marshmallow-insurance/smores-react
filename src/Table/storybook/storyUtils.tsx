@@ -183,6 +183,7 @@ export const rowActions = [
     onClick: () => exampleOnClick('generic button'),
     showCondition: (row: DataRow) => row.id === 7,
   },
+  // TODO: Buttons below need to change colour when IconStrict is updated
   {
     iconButton: {
       render: 'alert',
@@ -205,9 +206,9 @@ export const rowActions = [
   {
     label: (
       <Tag
-        bgColor="marshmallowPink"
-        borderColor="marshmallowPink"
-        color="liquorice"
+        bgColor="color.surface.brand.300"
+        borderColor="color.surface.brand.300"
+        color="color.text.base"
         label="anything"
       />
     ),
@@ -238,17 +239,17 @@ export const columns = [
   {
     name: (
       <Tag
-        bgColor="marshmallowPink"
-        borderColor="marshmallowPink"
-        color="liquorice"
+        bgColor="color.surface.brand.300"
+        borderColor="color.surface.brand.300"
+        color="color.text.base"
         label="ReactNode Header"
       />
     ),
     cell: (row: DataRow) => (
       <Tag
-        bgColor="coconut"
-        borderColor="coconut"
-        color="liquorice"
+        bgColor="color.surface.base.100"
+        borderColor="color.surface.base.100"
+        color="color.text.base"
         label={row.type}
       />
     ),
@@ -271,7 +272,7 @@ export const columns = [
     cell: (row: DataRow) => (
       <Box flex justifyContent="flex-start">
         <Tooltip
-          content={<Text color="cream">{row.ability}</Text>}
+          content={<Text color="color.surface.base.000">{row.ability}</Text>}
           position="top"
           variant="fallback"
           underline

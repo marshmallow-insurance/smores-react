@@ -54,7 +54,10 @@ export const TableRow = <T extends object>({
   const subTableData = subTable?.table(rowData)
 
   const subPadding = subTable?.padding ?? subRows?.padding
-  const subBgColor = subTable?.bgColor ?? subRows?.bgColor
+  const subBgColor = subTable?.bgColor || subRows?.bgColor
+  const resolvedSubBgColor = subBgColor
+    ? resolveToThemeColor(subBgColor, theme)
+    : undefined
 
   const showActionsCell = expandable ?? rowActions
   const expandSubProp = showActionsCell ? columns.length + 1 : columns.length
@@ -128,7 +131,7 @@ export const TableRow = <T extends object>({
             <StyledSubTableCell
               $rowBorderColor={resolvedRowBorderColor}
               colSpan={expandSubProp}
-              $bgColor={subBgColor}
+              $bgColor={resolvedSubBgColor}
               $padding={subPadding}
             >
               {cloneElement(subTableData, { rowPadding, columnPadding })}

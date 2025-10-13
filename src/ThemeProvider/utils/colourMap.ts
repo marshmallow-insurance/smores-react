@@ -78,7 +78,7 @@ export const legacyColorMap: Record<Color, NewColor> = {
   boba: 'color.text.contrast', // palette.secondary.120
 
   // Core Tertiary
-  cream: `color.surface.base.000`, // palette.neutral.000
+  cream: 'color.surface.base.000', // palette.neutral.000
   coconut: 'color.surface.base.100', // palette.neutral.010
   mascarpone: 'color.surface.base.200', // palette.neutral.020
   custard: 'color.surface.base.300', // palette.neutral.040

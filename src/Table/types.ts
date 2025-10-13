@@ -1,7 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react'
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
-import { Color } from '../theme'
 import type { BoxSpacing, SingleSpacing } from './helper.types'
 import { ColorTypes } from '../ThemeProvider/utils/colourMap'
 
@@ -63,7 +62,7 @@ export type RowActionElementOverride<T> = {
 export type RowActions<T> = {
   actions: RowAction<T>[]
   minWidth?: string
-  bgColor?: Color
+  bgColor?: ColorTypes
 }
 
 type RowCellRenderer<T> = (
@@ -84,7 +83,7 @@ export interface TableColumn<T> {
 }
 
 type SubElementProps = {
-  bgColor?: Color
+  bgColor?: ColorTypes
   padding?: BoxSpacing
   margin?: BoxSpacing
 }
@@ -178,7 +177,7 @@ type TableFooterColumnsProps<K> = {
    *
    * @default 'custard'
    */
-  rowColor?: Color
+  rowColor?: ColorTypes
   rowPadding?: SingleSpacing
   columnPadding?: SingleSpacing
   columns: TableColumn<K>[]

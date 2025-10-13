@@ -2,19 +2,18 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
-import { theme } from '../../theme'
 import { Table } from '../Table'
 import { TableRow } from '../components/TableRow'
 import { TableProps, type TableColumn } from '../types'
 import { DataRow, columns, columnsV2, data, rowActions } from './storyUtils'
 
 const Wrapper = styled(Box)`
-  background: ${theme.colors.blueberry};
+  background: ${({ theme }) => theme.color.illustration.accent2[200]};
   overflow: scroll;
 `
 
 const BorderBox = styled(Box)`
-  border: 1px dashed ${theme.colors.oatmeal};
+  border: 1px dashed ${({ theme }) => theme.color.illustration.neutral[300]};
 `
 
 const meta: Meta<TableProps<DataRow, object>> = {
@@ -22,7 +21,7 @@ const meta: Meta<TableProps<DataRow, object>> = {
   component: Table,
   decorators: [
     (Story) => (
-      <Box px="12px" m="24px" style={{ backgroundColor: theme.colors.custard }}>
+      <Box px="12px" m="24px" style={{ backgroundColor: '#F1E9DC' }}>
         <Story />
       </Box>
     ),
@@ -88,7 +87,7 @@ export const TableFooter: Story<typeof tableFooterData> = {
     footer: {
       data: tableFooterData,
       columns: footerColumns,
-      rowColor: 'chia',
+      rowColor: 'color.feedback.inactive.100',
     },
   },
 }
@@ -105,7 +104,7 @@ export const TableFooterElement: Story<typeof tableFooterData> = {
           justifyContent="center"
           p="48px"
           width="100%"
-          style={{ backgroundColor: theme.colors.custard }}
+          style={{ backgroundColor: '#F1E9DC' }}
         >
           Footer element
         </BorderBox>
@@ -197,7 +196,7 @@ export const SubRows: Story = {
             rowIndex={rowIndex}
             rowData={row}
             columns={columns.slice(0, 4)}
-            rowColor="chia"
+            rowColor="color.feedback.inactive.100"
           />
         ))
       },
@@ -220,7 +219,7 @@ export const SubRowsShowOnExpand: Story = {
             rowIndex={rowIndex}
             rowData={row}
             columns={columns.slice(0, 4)}
-            rowColor="chia"
+            rowColor="color.feedback.inactive.100"
           />
         ))
       },
@@ -232,17 +231,17 @@ export const SubTable: Story = {
   args: {
     rowPadding: '12px',
     columns: columns.slice(0, 4),
-    headerColor: 'custard',
-    rowColor: 'custard',
+    headerColor: 'color.surface.base.300',
+    rowColor: 'color.surface.base.300',
     data,
     expandable: () => true,
     subTable: {
-      bgColor: 'custard',
+      bgColor: 'color.surface.base.300',
       table: () => (
         <Table
           columns={columnsV2}
-          rowColor="mascarpone"
-          rowBorderColor="oatmeal"
+          rowColor="color.surface.base.200"
+          rowBorderColor="color.illustration.neutral.300"
           data={data}
           rowActions={{ actions: rowActions }}
           roundedTable
@@ -258,7 +257,7 @@ export const RowActions: Story = {
     rowPadding: '12px',
     columns: columns.slice(0, 4),
     data,
-    stripedColor: 'cream',
+    stripedColor: 'color.surface.base.000',
     expandable: () => true,
     clickableRow: (row: DataRow) =>
       alert(`onClick from ${row.ability} is working`),
@@ -267,14 +266,17 @@ export const RowActions: Story = {
         <Table
           columns={columnsV2}
           data={data}
-          headerColor="mascarpone"
-          rowColor="matcha"
+          headerColor="color.surface.base.200"
+          rowColor="color.illustration.accent3.100"
           fixedHeader={false}
           rowActions={{ actions: rowActions }}
         />
       ),
     },
-    rowActions: { actions: rowActions, bgColor: 'matcha' },
+    rowActions: {
+      actions: rowActions,
+      bgColor: 'color.illustration.accent3.100',
+    },
   },
 }
 
@@ -292,8 +294,8 @@ export const EverythingTable: Story = {
           }
           columns={columnsV2}
           data={data}
-          headerColor="mascarpone"
-          rowColor="matcha"
+          headerColor="color.surface.base.200"
+          rowColor="color.illustration.accent3.100"
           fixedHeader={false}
           rowActions={{ actions: rowActions }}
         />
@@ -308,18 +310,18 @@ export const EverythingTable: Story = {
             rowIndex={rowIndex}
             rowData={row}
             columns={columns}
-            rowColor="cream"
-            rowBorderColor="chia"
+            rowColor="color.surface.base.000"
+            rowBorderColor="color.feedback.inactive.100"
             rowActions={{ actions: rowActions }}
           />
         ))
       },
     },
-    rowColor: 'custard',
-    headerColor: 'mascarpone',
+    rowColor: 'color.surface.base.300',
+    headerColor: 'color.surface.base.200',
     rowActions: {
       actions: rowActions,
-      bgColor: 'custard',
+      bgColor: 'color.surface.base.300',
     },
     rowPadding: '4px',
   },
