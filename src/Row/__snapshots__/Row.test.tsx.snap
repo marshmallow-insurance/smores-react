@@ -145,10 +145,7 @@ exports[`Row > icons > renders iconLeft 1`] = `
     >
       <span
         class="sc-bRKDuR bHjpxP sc-fhHczv lfpoiQ"
-        color="liquorice"
         data-testid="info-container"
-        rotate="0"
-        size="18"
       >
         <svg
           fill="none"
@@ -209,11 +206,8 @@ exports[`Row > icons > renders iconRight 1`] = `
         />
       </div>
       <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv cTkdi iconRight"
-        color="marzipan"
+        class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh iconRight"
         data-testid="info-container"
-        rotate="0"
-        size="24"
       >
         <svg
           fill="none"

@@ -118,10 +118,7 @@ exports[`Button > renders correctly with an icon 1`] = `
     >
       <span
         class="sc-bRKDuR bHjpxP sc-fhHczv XmxEI sc-dYwGCk ijOES"
-        color="liquorice"
         data-testid="info-container"
-        rotate="0"
-        size="24"
       >
         <svg
           fill="none"

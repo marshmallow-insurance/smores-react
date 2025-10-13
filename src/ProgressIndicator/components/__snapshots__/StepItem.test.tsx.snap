@@ -24,11 +24,8 @@ exports[`StepItem > renders the completed icon when step is completed 1`] = `
           class="sc-bRKDuR fwCHSf sc-hwkwBN ehCFIa"
         >
           <span
-            class="sc-bRKDuR bHjpxP sc-fhHczv ckZEFa"
-            color="cream"
+            class="sc-bRKDuR bHjpxP sc-fhHczv kxywTO"
             data-testid="tick-container"
-            rotate="0"
-            size="16"
           >
             <svg
               fill="none"
