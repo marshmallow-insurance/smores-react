@@ -35,10 +35,7 @@ exports[`Modal > renders correctly with default props 1`] = `
           >
             <span
               class="sc-bRKDuR bHjpxP sc-fhHczv iNYmWQ"
-              color="liquorice"
               data-testid="cross-container"
-              rotate="0"
-              size="20"
             >
               <svg
                 fill="none"

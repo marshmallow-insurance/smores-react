@@ -5,6 +5,7 @@ import { Box } from '../../Box'
 import { Text } from '../../Text'
 import { Icon, IconProps } from '../Icon'
 import { iconList, Icons } from '../iconsList'
+import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 
 const meta: Meta<IconProps> = {
   title: 'Icon',
@@ -18,7 +19,9 @@ export const Default: Story = {
   args: {
     render: 'info',
     size: 32,
-    color: 'liquorice',
+  },
+  argTypes: {
+    color: { control: 'select', options: colourOptions },
   },
 }
 

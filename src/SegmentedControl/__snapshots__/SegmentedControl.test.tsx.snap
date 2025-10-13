@@ -3,10 +3,12 @@
 exports[`SegmentedControl > renders correctly with default props and a tag 1`] = `
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-kcLKEh eMGvRd"
+    backgroundcolor="#f1e9dc"
+    class="sc-bRKDuR bHjpxP sc-kcLKEh fmIIIh"
   >
     <div
-      class="sc-bRKDuR bHjpxP sc-dntSTA jwVueJ"
+      backgroundcolor="#f1e9dc"
+      class="sc-bRKDuR bHjpxP sc-dntSTA hKPNxx"
     >
       <label
         class="sc-hwkwBN emcrIN"
@@ -22,9 +24,9 @@ exports[`SegmentedControl > renders correctly with default props and a tag 1`] =
           class="sc-bRKDuR bHjpxP sc-dYwGCk gDiBwR"
         >
           <p
-            class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC hICQgG"
+            class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC dzZuDu"
             cursor="inherit"
-            selectedtextcolor="cream"
+            selectedtextcolor="#ffffff"
             title=""
           >
             Option 1
@@ -57,7 +59,7 @@ exports[`SegmentedControl > renders correctly with default props and a tag 1`] =
           <p
             class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC dSYhYp"
             cursor="inherit"
-            selectedtextcolor="cream"
+            selectedtextcolor="#ffffff"
             title=""
           >
             Option 2
@@ -68,6 +70,7 @@ exports[`SegmentedControl > renders correctly with default props and a tag 1`] =
         class="sc-bRKDuR bHjpxP sc-kvnevz jBBJWR"
         sections="2"
         selectedindex="0"
+        togglecolor="#292924"
       />
     </div>
   </div>

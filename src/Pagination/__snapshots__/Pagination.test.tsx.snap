@@ -12,10 +12,7 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
       >
         <span
           class="sc-bRKDuR bHjpxP sc-fhHczv lfpoiQ"
-          color="liquorice"
           data-testid="arrow-container"
-          rotate="0"
-          size="18"
         >
           <svg
             fill="none"
@@ -114,10 +111,7 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
       >
         <span
           class="sc-bRKDuR bHjpxP sc-fhHczv hoLKYB"
-          color="liquorice"
           data-testid="arrow-container"
-          rotate="180"
-          size="18"
         >
           <svg
             fill="none"
@@ -227,10 +221,7 @@ exports[`Pagination > renders correctly with default props 1`] = `
       >
         <span
           class="sc-bRKDuR bHjpxP sc-fhHczv hoLKYB"
-          color="liquorice"
           data-testid="arrow-container"
-          rotate="180"
-          size="18"
         >
           <svg
             fill="none"
