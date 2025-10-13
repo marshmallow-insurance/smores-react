@@ -94,9 +94,14 @@ export const RowActions = <T extends object>({
             }}
             size={24}
             $isOpen={isExpanded}
-            // TODO: Change value once IconStrict has been updated
-            iconColor={isExpanded ? 'cream' : 'liquorice'}
-            backgroundColor={isExpanded ? 'liquorice' : 'oatmeal'}
+            iconColor={
+              isExpanded ? 'color.surface.base.000' : 'color.icon.base'
+            }
+            backgroundColor={
+              isExpanded
+                ? 'color.surface.base.900'
+                : 'color.illustration.neutral.300'
+            }
           />
         )}
       </Box>

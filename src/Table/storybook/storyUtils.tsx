@@ -183,13 +183,12 @@ export const rowActions = [
     onClick: () => exampleOnClick('generic button'),
     showCondition: (row: DataRow) => row.id === 7,
   },
-  // TODO: Buttons below need to change colour when IconStrict is updated
   {
     iconButton: {
       render: 'alert',
-      backgroundColor: 'mascarpone',
+      backgroundColor: 'color.surface.base.200',
       size: 36,
-      tooltipText: 'mascarpone tooltip',
+      tooltipText: 'alert tooltip',
     },
     onClick: () => exampleOnClick('info icon'),
     showCondition: (row: DataRow) => row.id === 1,
@@ -197,7 +196,7 @@ export const rowActions = [
   {
     iconButton: {
       render: 'info',
-      backgroundColor: 'peanut',
+      backgroundColor: 'color.illustration.accent4.100',
       size: 36,
     },
     onClick: () => exampleOnClick('info icon'),
