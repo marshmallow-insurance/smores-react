@@ -106,7 +106,7 @@ const ColorsPage = () => {
 }
 
 export default {
-  title: 'Foundation/Colors',
+  title: 'Foundation/Colors (Deprecated)',
   components: ColorsPage,
 }
 
