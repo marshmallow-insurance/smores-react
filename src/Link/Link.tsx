@@ -53,7 +53,7 @@ export const Link: FC<LinkProps> = ({
           mr={{ custom: '4px' }}
           render={iconToRender}
           size={typo === 'regular' ? 14 : 12}
-          color={highlight ? 'lollipop' : 'liquorice'}
+          color={highlight ? 'color.surface.brand.400' : 'liquorice'}
         />
       )}
       {children}
@@ -63,7 +63,7 @@ export const Link: FC<LinkProps> = ({
           ml="8px"
           render={iconToRender}
           size={typo === 'regular' ? 14 : 12}
-          color={highlight ? 'lollipop' : 'liquorice'}
+          color={highlight ? 'color.surface.brand.400' : 'liquorice'}
         />
       )}
     </LinkWrapper>
