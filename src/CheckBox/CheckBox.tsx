@@ -26,7 +26,7 @@ export const CheckBox = forwardRef<HTMLInputElement, CheckBoxProps>(
           <Text
             tag="span"
             typo="body-regular"
-            color={error ? 'strawberry' : 'liquorice'}
+            color={error ? 'color.feedback.negative.200' : 'color.text.base'}
           >
             {children}
           </Text>

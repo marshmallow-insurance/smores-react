@@ -56,14 +56,17 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
       aria-label="chip-button"
     >
       {loading ? (
-        <Loader color={primary ? 'liquorice' : 'cream'} height="16" />
+        <Loader
+          color={primary ? 'color.icon.base' : 'color.icon.on-dark'}
+          height="16"
+        />
       ) : (
         <>
           {icon && (
             <IconComponent
               render={icon}
               size={16}
-              color={primary ? 'liquorice' : 'cream'}
+              color={primary ? 'color.icon.base' : 'color.icon.on-dark'}
             />
           )}
           <ChildrenContainer>{children}</ChildrenContainer>

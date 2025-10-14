@@ -98,17 +98,17 @@ export const Card: FC<CardProps> = ({
                 mr="12px"
                 render={leadingIcon}
                 size={24}
-                color="liquorice"
+                color="color.icon.base"
               />
             )}
             <Box>
               {title && (
-                <Text typo="headline-regular" color="liquorice">
+                <Text typo="headline-regular" color="color.text.base">
                   {title}
                 </Text>
               )}
               {body && (
-                <Text typo="body-regular" color="sesame">
+                <Text typo="body-regular" color="color.text.subtle">
                   {body}
                 </Text>
               )}
