@@ -95,10 +95,10 @@ describe('SegmentedControl', () => {
         onChange={noop}
         showTag={true}
         styles={{
-          selectedText: 'liquorice',
-          text: 'liquorice',
+          selectedText: 'color.text.base',
+          text: 'color.text.subtle',
           background: 'marshmallowPink',
-          toggle: 'cream',
+          toggle: 'color.surface.base.000',
         }}
       />,
     )

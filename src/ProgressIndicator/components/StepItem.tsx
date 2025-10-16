@@ -62,7 +62,9 @@ export const StepItem = ({
           alignItems="center"
           justifyContent="center"
         >
-          {isCompleted && <Icon render="tick" size={16} color="cream" />}
+          {isCompleted && (
+            <Icon render="tick" size={16} color="color.surface.base.000" />
+          )}
         </ProgressIndicator>
         <StyledText typo="caption">{label}</StyledText>
       </ClickableArea>

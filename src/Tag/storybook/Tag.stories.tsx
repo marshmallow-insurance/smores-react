@@ -107,10 +107,10 @@ export const Colors: Story = {
 
 export const WithIcon: Story = {
   args: {
-    bgColor: 'feijoa',
-    color: 'cream',
+    bgColor: 'color.illustration.accent1.100',
+    color: 'color.surface.base.000',
     label: 'I have an icon',
     icon: 'flagFilled',
-    iconColor: 'strawberry',
+    iconColor: 'color.feedback.negative.200',
   },
 }
