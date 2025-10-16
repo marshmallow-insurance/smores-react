@@ -96,8 +96,8 @@ describe('SegmentedControl', () => {
         showTag={true}
         styles={{
           selectedText: 'color.text.base',
-          text: 'color.text.subtle',
-          background: 'marshmallowPink',
+          text: 'color.text.base',
+          background: 'color.surface.brand.300',
           toggle: 'color.surface.base.000',
         }}
       />,
@@ -114,6 +114,7 @@ describe('SegmentedControl', () => {
     expect(getByText('Option 2')).toHaveStyle({
       color: '#292924', // liquorice
     })
+
     expect(container.firstChild).toHaveStyle({
       'background-color': '#ff88c8', // marshmallowPink
     })
