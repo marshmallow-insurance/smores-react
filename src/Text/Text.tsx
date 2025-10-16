@@ -4,14 +4,18 @@ import styled, { css, useTheme } from 'styled-components'
 import { Box } from '../Box'
 import { linkStyleOverride } from '../Link/Link'
 import { MarginProps } from '../utils/space'
-import { fontStyleMapping } from './fontMapping'
 import {
   ColorTypes,
   resolveToThemeColor,
 } from '../ThemeProvider/utils/colourMap'
+import {
+  FontValueObject,
+  resolveToThemeFont,
+  TypoTypes,
+} from '../ThemeProvider/utils/fontMap'
 interface IText {
-  /** typography class name to apply predefined styles */
-  $typo: string
+  /** the resolved font object based on the Design System fonts */
+  $typo: FontValueObject
   /** text-align  */
   $align: string
   /** color from the theme  */
@@ -38,7 +42,7 @@ type Props = {
   children: ReactNode
   tag?: any
   className?: string
-  typo?: Typo
+  typo?: TypoTypes // TODO: check for type errors in product repos due to type narrowing
   align?: string
   color?: ColorTypes
   cursor?: string
@@ -51,7 +55,7 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
   (
     {
       children,
-      typo = 'body-regular',
+      typo = 'font.body.200',
       className = '',
       tag = 'p',
       align = 'left',
@@ -64,12 +68,15 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
   ) => {
     const theme = useTheme()
     const resolvedColor = resolveToThemeColor(color, theme)
+    const resolvedTypography = resolveToThemeFont(typo, theme)
+
+    console.log(resolvedTypography)
 
     return (
       <Container
         forwardedAs={tag}
         className={className}
-        $typo={typo}
+        $typo={resolvedTypography}
         $align={align}
         $color={resolvedColor}
         cursor={cursor}
@@ -85,15 +92,24 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
 
 Text.displayName = 'Text'
 
-const isTypo = (value: string): value is Typo => {
-  return Object.keys(fontStyleMapping).includes(value)
+const translateFontStyleIntoCss = (
+  fontObject: FontValueObject & { textCase?: string }, // TODO: work out why this is not correctly typed
+) => {
+  return css`
+    font-family: ${fontObject.fontFamily};
+    font-size: ${fontObject.fontSize};
+    font-weight: ${fontObject.fontWeight};
+    letter-spacing: ${fontObject.letterSpacing};
+    line-height: ${fontObject.lineHeight};
+    text-transform: ${fontObject.textCase};
+  `
 }
 
 const Container = styled(Box)<IText>(
   ({ $align, $color, $cursor, $typo }) => css`
     /** TYPOGRAPHY STYLES */
 
-    ${isTypo($typo) && fontStyleMapping[$typo]}
+    ${translateFontStyleIntoCss($typo)}
 
     text-align: ${$align};
     cursor: ${$cursor};
