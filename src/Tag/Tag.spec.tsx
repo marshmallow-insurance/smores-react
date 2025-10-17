@@ -7,7 +7,11 @@ import { TagProps } from './Tag'
 describe('Tag Component', () => {
   it('renders snapshot test correctly', () => {
     const { container } = render(
-      <Tag label="Snapshot Test Tag" color="marzipan" bgColor="satsuma" />,
+      <Tag
+        label="Snapshot Test Tag"
+        color="color.illustration.neutral.400"
+        bgColor="extended1.20"
+      />,
     )
     expect(container).toMatchSnapshot()
   })
@@ -68,17 +72,17 @@ const testCases = [
       color: 'apple',
       bgColor: 'chia',
       icon: 'flag',
-      iconColor: 'blueberry',
+      iconColor: 'color.illustration.accent2.200',
     } as TagProps,
   },
   {
     description:
-      'Renders Tag with label Test Tag 0003 and no icon if iconColor: blueberry, icon: undefined',
+      'Renders Tag with label Test Tag 0003 and no icon if iconColor: color.illustration.accent2.200, icon: undefined',
     props: {
       label: 'Test Tag 0003',
       color: 'apple',
       bgColor: 'chia',
-      iconColor: 'blueberry',
+      iconColor: 'color.illustration.accent2.200',
     } as TagProps,
   },
   {
@@ -109,17 +113,17 @@ const testCasesWithNewColourNames = [
       color: 'color.feedback.positive.200',
       bgColor: 'color.feedback.inactive.100',
       icon: 'flag',
-      iconColor: 'blueberry',
+      iconColor: 'color.illustration.accent2.200',
     } as TagProps,
   },
   {
     description:
-      'Renders Tag with label Test Tag 0003 and no icon if iconColor: blueberry, icon: undefined',
+      'Renders Tag with label Test Tag 0003 and no icon if iconColor: color.illustration.accent2.200, icon: undefined',
     props: {
       label: 'Test Tag 0003',
       color: 'color.feedback.positive.200',
       bgColor: 'color.feedback.inactive.100',
-      iconColor: 'blueberry',
+      iconColor: 'color.illustration.accent2.200',
     } as TagProps,
   },
   {

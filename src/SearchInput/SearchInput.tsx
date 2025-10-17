@@ -275,7 +275,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
                   type="button"
                   render="plus"
                   rotate={45}
-                  iconColor="marzipan"
+                  iconColor="color.illustration.neutral.400"
                   title="Clear search"
                   handleClick={handleClearSearch}
                   size={24}
@@ -285,7 +285,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               <IconStrict
                 type="button"
                 render="caret"
-                iconColor="marzipan"
+                iconColor="color.illustration.neutral.400"
                 rotate={showOptions ? 180 : 0}
                 handleClick={handleCaretClick}
                 size={24}

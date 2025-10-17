@@ -100,7 +100,7 @@ export const Modal: FC<ModalProps> = ({
               <IconStrict
                 render="cross"
                 title="Close modal"
-                backgroundColor="oatmeal"
+                backgroundColor="color.illustration.neutral.300"
                 handleClick={handleClick}
                 size={36}
               />

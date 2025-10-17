@@ -93,7 +93,7 @@ export const Accordion: FC<AccordionProps> = ({
         <CaretIcon
           render="caret"
           size={24}
-          color="marzipan"
+          color="color.illustration.neutral.400"
           $isOpen={isOpen}
           $borderTop={borderTop}
         />

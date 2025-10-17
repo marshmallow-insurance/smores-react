@@ -105,7 +105,12 @@ export const SupportMessage: FC<SupportMessageProps> = ({
       {rightSideComponent}
       {onClick && rightSideComponent === undefined && (
         <Box ml={{ custom: 'auto' }}>
-          <Icon size={16} render="caret" color="marzipan" rotate={270} />
+          <Icon
+            size={16}
+            render="caret"
+            color="color.illustration.neutral.400"
+            rotate={270}
+          />
         </Box>
       )}
     </Wrapper>

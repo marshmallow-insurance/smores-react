@@ -161,7 +161,11 @@ export const Dropdown = forwardRef(function Dropdown(
           )}
         </StyledSelect>
         <Caret>
-          <Icon render="caret" color="marzipan" size={24} />
+          <Icon
+            render="caret"
+            color="color.illustration.neutral.400"
+            size={24}
+          />
         </Caret>
       </Box>
     </Field>
