@@ -3,8 +3,7 @@
 exports[`SegmentedControl > renders correctly with default props and a tag 1`] = `
 <div>
   <div
-    backgroundcolor="#f1e9dc"
-    class="sc-bRKDuR bHjpxP sc-kcLKEh eyivPf"
+    class="sc-bRKDuR bHjpxP sc-kcLKEh irKUmS"
   >
     <div
       backgroundcolor="#f1e9dc"
