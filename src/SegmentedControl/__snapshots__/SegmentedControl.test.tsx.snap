@@ -29,7 +29,6 @@ exports[`SegmentedControl > renders correctly with default props and a tag 1`] =
             <p
               class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC dzZuDu"
               cursor="inherit"
-              selectedtextcolor="#ffffff"
               title=""
             >
               Option 1
@@ -66,7 +65,6 @@ exports[`SegmentedControl > renders correctly with default props and a tag 1`] =
             <p
               class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC dSYhYp"
               cursor="inherit"
-              selectedtextcolor="#ffffff"
               title=""
             >
               Option 2
