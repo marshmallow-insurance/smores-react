@@ -1,19 +1,20 @@
 import styled, { useTheme } from 'styled-components'
 
-import { theme as oldTheme } from '../theme'
+import React from 'react'
 import { Box } from '../Box'
 import { Tag } from '../Tag'
 import { Text } from '../Text'
-import React from 'react'
-import { ToggleButton } from './ToggleButton'
+import { theme as oldTheme } from '../theme'
 import {
   ColorTypes,
   getColorPath,
   resolveToThemeColor,
 } from '../ThemeProvider/utils/colourMap'
+import { ToggleButton } from './ToggleButton'
 
 export type SegmentedControlOption<T = string | number> = {
   label: string
+  secondaryLabel?: string
   /** value needs to be number or string */
   value: T
   /** optional tag able to show in the toggle if showTag prop is passed */
@@ -72,13 +73,15 @@ export const SegmentedControl = <T,>({
     <ToggleWrapper backgroundColor={resolvedBackgroundColor}>
       <IndicatorWrapper backgroundColor={resolvedBackgroundColor}>
         {options.map((option) => {
+          const isSelected = option.value === value
+
           return (
             <ToggleButton
               key={option.label}
               name="toggle-version-button"
               value={option.value}
               onChange={onChange}
-              isSelected={option.value === value}
+              isSelected={isSelected}
               isDisabled={option.isDisabled}
             >
               <StyledWrapper>
@@ -90,13 +93,28 @@ export const SegmentedControl = <T,>({
                     label={option.tag}
                   />
                 )}
-                <StyledText
-                  isSelected={option.value === value}
-                  selectedTextColor={resolvedSelectedTextColor}
-                  color={text}
+                <Box
+                  flex
+                  direction="column"
+                  justifyContent="center"
+                  alignItems="center"
                 >
-                  {option.label}
-                </StyledText>
+                  <StyledText
+                    isSelected={isSelected}
+                    selectedTextColor={resolvedSelectedTextColor}
+                    color={text}
+                  >
+                    {option.label}
+                  </StyledText>
+                  {option.secondaryLabel && (
+                    <Text
+                      color={isSelected ? selectedText : text}
+                      typo="caption"
+                    >
+                      {option.secondaryLabel}
+                    </Text>
+                  )}
+                </Box>
               </StyledWrapper>
             </ToggleButton>
           )
@@ -112,7 +130,7 @@ export const SegmentedControl = <T,>({
   )
 }
 
-const BORDER_RADIUS = 25
+const BORDER_RADIUS = 1000
 
 const StyledWrapper = styled(Box)`
   display: flex;
