@@ -101,7 +101,7 @@ export const SegmentedControl = <T,>({
                 >
                   <StyledText
                     isSelected={isSelected}
-                    selectedTextColor={resolvedSelectedTextColor}
+                    $selectedTextColor={resolvedSelectedTextColor}
                     color={text}
                   >
                     {option.label}
@@ -145,11 +145,11 @@ const StyledTag = styled(Tag)`
 
 const StyledText = styled(Text)<{
   isSelected: boolean
-  selectedTextColor: string
+  $selectedTextColor: string
 }>`
   font-weight: ${oldTheme.font.weight.medium};
-  ${({ isSelected, selectedTextColor }) =>
-    isSelected && `color: ${selectedTextColor};`}
+  ${({ isSelected, $selectedTextColor }) =>
+    isSelected && `color: ${$selectedTextColor};`}
   padding: 2px 0px;
 `
 
