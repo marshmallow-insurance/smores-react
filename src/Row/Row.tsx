@@ -6,7 +6,7 @@ import { Icon } from '../Icon'
 import { Icons } from '../Icon/iconsList'
 import { Text } from '../Text'
 import { MarginProps } from '../utils/space'
-import { ColorTypes } from 'ThemeProvider/utils/colourMap'
+import { ColorTypes } from '../ThemeProvider/utils/colourMap'
 
 export type RowProps = {
   iconLeft?: Icons
@@ -24,9 +24,9 @@ export type RowProps = {
 
 export const Row: FC<RowProps> = ({
   iconLeft,
-  iconLeftColor = 'liquorice',
+  iconLeftColor = 'color.icon.base',
   iconRight,
-  iconRightColor = 'color.illustration.neutral.400',
+  iconRightColor = 'color.icon.nonEssential',
   handleClick,
   heading,
   subHeading,
