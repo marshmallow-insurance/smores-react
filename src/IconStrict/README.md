@@ -18,6 +18,6 @@ This component is designed to provide strict sizes for the Icon component, and t
 import {IconStrict} from '@mrshmllw/smores-react';
 
 const App = () => (
-  <IconStrict render='edit' backgroundColor="marshmallowPink" size={24} />
+  <IconStrict render='edit' backgroundColor="color.surface.brand.300" size={24} />
 );
 ```
