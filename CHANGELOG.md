@@ -1,3 +1,9 @@
+## [13.18.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.17.2...v13.18.0) (2025-10-17)
+
+### Features
+
+* **update colours:** remove all core primary colours ([#4596](https://github.com/marshmallow-insurance/smores-react/issues/4596)) ([6d0c72c](https://github.com/marshmallow-insurance/smores-react/commit/6d0c72c74809c1ec7a7bbe5e85a13fd60fba3495))
+
 ## [13.17.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.17.1...v13.17.2) (2025-10-17)
 
 ## [13.17.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.17.0...v13.17.1) (2025-10-16)
