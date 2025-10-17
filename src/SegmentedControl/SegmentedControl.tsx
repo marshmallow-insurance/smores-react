@@ -1,4 +1,4 @@
-import styled, { useTheme } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import React from 'react'
 import { Box } from '../Box'
@@ -30,6 +30,7 @@ type StylingOptions = {
   tagBg?: ColorTypes
   tagBorder?: ColorTypes
   tagText?: ColorTypes
+  fullWidth?: boolean
 }
 
 export type SegmentedControlProps<T> = {
@@ -60,6 +61,7 @@ export const SegmentedControl = <T,>({
     text = 'color.text.base',
     background = 'color.surface.base.300',
     toggle = 'color.text.base',
+    fullWidth = false,
   } = {},
 }: SegmentedControlProps<T>) => {
   const theme = useTheme()
@@ -70,7 +72,10 @@ export const SegmentedControl = <T,>({
   const resolvedSelectedTextColor = resolveToThemeColor(selectedText, theme)
 
   return (
-    <ToggleWrapper backgroundColor={resolvedBackgroundColor}>
+    <ToggleWrapper
+      $backgroundColor={resolvedBackgroundColor}
+      $fullWidth={fullWidth}
+    >
       <IndicatorWrapper backgroundColor={resolvedBackgroundColor}>
         {options.map((option) => {
           const isSelected = option.value === value
@@ -153,10 +158,19 @@ const StyledText = styled(Text)<{
   padding: 2px 0px;
 `
 
-const ToggleWrapper = styled(Box)<{ backgroundColor?: string }>`
+const ToggleWrapper = styled(Box)<{
+  $backgroundColor?: string
+  $fullWidth?: boolean
+}>`
   padding: 4px;
-  background-color: ${(p) => p.backgroundColor};
+  background-color: ${(p) => p.$backgroundColor};
   border-radius: ${BORDER_RADIUS}px;
+
+  ${({ $fullWidth }) =>
+    $fullWidth &&
+    css`
+      width: 100%;
+    `}
 `
 
 const IndicatorWrapper = styled(Box)<{ backgroundColor?: string }>`
