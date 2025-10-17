@@ -4,11 +4,11 @@ exports[`SegmentedControl > renders correctly with default props and a tag 1`] =
 <div>
   <div
     backgroundcolor="#f1e9dc"
-    class="sc-bRKDuR bHjpxP sc-kcLKEh fmIIIh"
+    class="sc-bRKDuR bHjpxP sc-kcLKEh eyivPf"
   >
     <div
       backgroundcolor="#f1e9dc"
-      class="sc-bRKDuR bHjpxP sc-dntSTA hKPNxx"
+      class="sc-bRKDuR bHjpxP sc-dntSTA jkxddj"
     >
       <label
         class="sc-hwkwBN emcrIN"
@@ -23,14 +23,18 @@ exports[`SegmentedControl > renders correctly with default props and a tag 1`] =
         <div
           class="sc-bRKDuR bHjpxP sc-dYwGCk gDiBwR"
         >
-          <p
-            class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC dzZuDu"
-            cursor="inherit"
-            selectedtextcolor="#ffffff"
-            title=""
+          <div
+            class="sc-bRKDuR eWGHgL"
           >
-            Option 1
-          </p>
+            <p
+              class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC dzZuDu"
+              cursor="inherit"
+              selectedtextcolor="#ffffff"
+              title=""
+            >
+              Option 1
+            </p>
+          </div>
         </div>
       </label>
       <label
@@ -56,18 +60,22 @@ exports[`SegmentedControl > renders correctly with default props and a tag 1`] =
               tag 2
             </span>
           </div>
-          <p
-            class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC dSYhYp"
-            cursor="inherit"
-            selectedtextcolor="#ffffff"
-            title=""
+          <div
+            class="sc-bRKDuR eWGHgL"
           >
-            Option 2
-          </p>
+            <p
+              class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC dSYhYp"
+              cursor="inherit"
+              selectedtextcolor="#ffffff"
+              title=""
+            >
+              Option 2
+            </p>
+          </div>
         </div>
       </label>
       <div
-        class="sc-bRKDuR bHjpxP sc-kvnevz jBBJWR"
+        class="sc-bRKDuR bHjpxP sc-kvnevz hcWvRX"
         sections="2"
         selectedindex="0"
         togglecolor="#292924"
