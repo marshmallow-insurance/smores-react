@@ -25,9 +25,14 @@ export const SnackbarItem: FC<Props> = ({
     <SnackItem p="16px" key={id} mt="16px" flex justifyContent="space-between">
       <Box flex alignItems="center">
         {leadingIcon && (
-          <Icon mr="12px" render={leadingIcon} size={24} color="mascarpone" />
+          <Icon
+            mr="12px"
+            render={leadingIcon}
+            size={24}
+            color="color.surface.base.200"
+          />
         )}
-        <Text typo="body-small" color="mascarpone">
+        <Text typo="body-small" color="color.surface.base.200">
           {message}
         </Text>
       </Box>
@@ -37,9 +42,13 @@ export const SnackbarItem: FC<Props> = ({
           aria-label={`close snackbar ${message}`}
         >
           {showCloseIcon ? (
-            <Icon render="cross" size={16} color="mascarpone" />
+            <Icon render="cross" size={16} color="color.surface.base.200" />
           ) : (
-            <UnderlinedText tag="span" typo="headline-small" color="mascarpone">
+            <UnderlinedText
+              tag="span"
+              typo="headline-small"
+              color="color.surface.base.200"
+            >
               Dismiss
             </UnderlinedText>
           )}

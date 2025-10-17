@@ -2,11 +2,10 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
-import { theme } from '../../theme'
 import { Pagination } from '../Pagination'
 
 const BgWrapper = styled(Box)`
-  background: ${theme.colors.coconut};
+  background: ${({ theme }) => theme.color.surface.base[100]};
 `
 
 const meta: Meta<typeof Pagination> = {

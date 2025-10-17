@@ -5,12 +5,12 @@ import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { useTimeout } from '../hooks'
 import { Banner } from './types'
-import { ColorTypes } from '../ThemeProvider/utils/colourMap'
+import { NewColor } from 'ThemeProvider/utils/colourMap'
 
 type StylesItem = {
-  iconColor: ColorTypes
+  iconColor: NewColor
   backgroundColor: string
-  textColor: ColorTypes
+  textColor: NewColor
 }
 
 type BannerType = 'upsell' | 'critical' | 'general' | 'success'

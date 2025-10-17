@@ -136,7 +136,13 @@ export const CardWithImageWithTag: Story = {
     leadingIcon: 'copy',
     maxWidth: '300px',
     visualHeight: '180px',
-    tag: <Tag label="default" bgColor="feijoa" color="cream" />,
+    tag: (
+      <Tag
+        label="default"
+        bgColor="color.illustration.accent1.100"
+        color="color.surface.base.000"
+      />
+    ),
     buttonAction: (
       <Button primary={true} forcedWidth="100%">
         Default

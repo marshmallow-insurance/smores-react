@@ -5,7 +5,6 @@ import { MarginProps } from '../utils/space'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Text } from '../Text'
-import { Color } from '../theme'
 import { Icon } from '../Icon'
 import { Icons } from 'Icon/iconsList'
 import {
@@ -21,7 +20,7 @@ export type TagProps = {
   borderColor?: ColorTypes
   className?: string
   icon?: Icons
-  iconColor?: Color
+  iconColor?: ColorTypes
   onClick?: () => void
 } & MarginProps
 

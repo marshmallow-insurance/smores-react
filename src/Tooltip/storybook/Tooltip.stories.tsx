@@ -200,7 +200,7 @@ export const MTAExample: Story = {
             variant="fallback"
             underline
             content={
-              <TooltipText typo="caption" color="cream">
+              <TooltipText typo="caption" color="color.surface.base.000">
                 An adjustment changes the <b>cost</b> of the policy. This field
                 should <b>not</b> be used to adjust for invoices created after a
                 failed up front payment.
@@ -229,7 +229,7 @@ export const MTAExample: Story = {
           underline
           variant="fallback"
           content={
-            <TooltipText typo="caption" color="cream">
+            <TooltipText typo="caption" color="color.surface.base.000">
               This is the policies total new retained refund after this MTA is
               complete.
             </TooltipText>
