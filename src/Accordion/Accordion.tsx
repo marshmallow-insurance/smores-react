@@ -116,8 +116,8 @@ const Wrapper = styled(Box)<
     $borderTop,
     $fullBorder,
     $filledBackground,
-    $borderColor = 'oatmeal',
-    $backgroundColor = 'custard',
+    $borderColor,
+    $backgroundColor,
   }) => css`
     border-bottom: 1px solid ${$borderColor};
     ${$borderTop && `border-top: 1px solid ${$backgroundColor};`}

@@ -2,7 +2,6 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { Icon } from '../../Icon'
 import { Text } from '../../Text'
-import { theme } from '../../theme'
 import { Box } from '../Box'
 
 const meta: Meta<typeof Box> = {
@@ -52,7 +51,7 @@ const Card: React.FC = () => (
     px={{ small: '12px', medium: '24px' }}
     pt={{ small: '8px', medium: '16px' }}
     pb={{ small: '24px', medium: '32px' }}
-    style={{ backgroundColor: theme.colors.coconut, borderRadius: 12 }}
+    style={{ backgroundColor: '#FBF8F5', borderRadius: 12 }}
   >
     <Box
       flex
