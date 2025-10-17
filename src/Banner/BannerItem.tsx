@@ -4,13 +4,13 @@ import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { useTimeout } from '../hooks'
-import { Color } from '../theme'
 import { Banner } from './types'
+import { NewColor } from 'ThemeProvider/utils/colourMap'
 
 type StylesItem = {
-  iconColor: Color
+  iconColor: NewColor
   backgroundColor: string
-  textColor: Color
+  textColor: NewColor
 }
 
 type BannerType = 'upsell' | 'critical' | 'general' | 'success'
@@ -38,24 +38,24 @@ export const BannerItem: FC<Props> = ({
 
   const styles: Record<BannerType, StylesItem> = {
     upsell: {
-      iconColor: 'liquorice',
+      iconColor: 'color.icon.base',
       backgroundColor: theme.color.surface.brand[300],
-      textColor: 'liquorice',
+      textColor: 'color.text.base',
     },
     critical: {
-      iconColor: 'cream',
+      iconColor: 'color.surface.base.000',
       backgroundColor: theme.color.feedback.negative[200],
-      textColor: 'cream',
+      textColor: 'color.surface.base.000',
     },
     general: {
-      iconColor: 'cream',
+      iconColor: 'color.surface.base.000',
       backgroundColor: theme.color.surface.base[900],
-      textColor: 'cream',
+      textColor: 'color.surface.base.000',
     },
     success: {
-      iconColor: 'cream',
+      iconColor: 'color.surface.base.000',
       backgroundColor: theme.color.feedback.positive[200],
-      textColor: 'cream',
+      textColor: 'color.surface.base.000',
     },
   }
   const autoCloseBaner = () => {
