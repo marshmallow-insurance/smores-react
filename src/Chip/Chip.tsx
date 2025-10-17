@@ -57,7 +57,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
     >
       {loading ? (
         <Loader
-          color={primary ? 'color.text.base' : 'color.text.on-dark'}
+          color={primary ? 'color.icon.base' : 'color.icon.on-dark'}
           height="16"
         />
       ) : (

@@ -5,14 +5,15 @@ import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Icons } from '../Icon/iconsList'
 import { Text } from '../Text'
-import { Color } from '../theme'
+
 import { MarginProps } from '../utils/space'
+import { ColorTypes } from '../ThemeProvider/utils/colourMap'
 
 export type RowProps = {
   iconLeft?: Icons
-  iconLeftColor?: Color
+  iconLeftColor?: ColorTypes
   iconRight?: Icons
-  iconRightColor?: Color
+  iconRightColor?: ColorTypes
   handleClick?: () => void
   heading: string
   subHeading?: string
@@ -24,9 +25,9 @@ export type RowProps = {
 
 export const Row: FC<RowProps> = ({
   iconLeft,
-  iconLeftColor = 'liquorice',
+  iconLeftColor = 'color.icon.base',
   iconRight,
-  iconRightColor = 'marzipan',
+  iconRightColor = 'color.icon.nonEssential',
   handleClick,
   heading,
   subHeading,
