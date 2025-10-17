@@ -57,7 +57,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
     >
       {loading ? (
         <Loader
-          color={primary ? 'color.text.base' : 'color.surface.base.000'}
+          color={primary ? 'color.text.base' : 'color.text.on-dark'}
           height="16"
         />
       ) : (
@@ -66,7 +66,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
             <IconComponent
               render={icon}
               size={16}
-              color={primary ? 'color.text.base' : 'color.surface.base.000'}
+              color={primary ? 'color.icon.base' : 'color.icon.on-dark'}
             />
           )}
           <ChildrenContainer>{children}</ChildrenContainer>
