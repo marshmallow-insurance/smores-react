@@ -1,6 +1,7 @@
+import { userEvent } from '@storybook/test'
 import React from 'react'
 import { expect, it } from 'vitest'
-import { render } from '../testUtils'
+import { render, waitFor } from '../testUtils'
 import { noop } from '../utils/noop'
 import { SegmentedControl } from './SegmentedControl'
 
@@ -169,6 +170,29 @@ describe('SegmentedControl', () => {
     })
     expect(getByText('Secondary Label 3')).toHaveStyle({
       color: '#ffffff', // color.surface.base.000
+    })
+  })
+
+  it('calls onChange when an option is clicked', async () => {
+    const onChange = vi.fn()
+    const { getByText } = render(
+      <SegmentedControl
+        options={[
+          { label: 'Option 1', value: 'option1' },
+          { label: 'Option 2', value: 'option2' },
+        ]}
+        value="option1"
+        onChange={onChange}
+        showTag={false}
+      />,
+    )
+
+    const user = userEvent.setup()
+
+    user.click(getByText('Option 2'))
+
+    await waitFor(() => {
+      expect(onChange).toHaveBeenCalledWith('option2')
     })
   })
 })
