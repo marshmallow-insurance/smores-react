@@ -2,7 +2,6 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
-import { theme } from '../../theme'
 import { ProgressIndicator } from '../ProgressIndicator'
 import { StepData } from 'ProgressIndicator/types'
 
@@ -30,7 +29,7 @@ const defaultSteps: StepData[] = [
 ]
 
 const BgWrapper = styled(Box)`
-  background: ${theme.colors.coconut};
+  background: ${({ theme }) => theme.color.surface.base[100]};
 `
 
 const meta: Meta<typeof ProgressIndicator> = {
