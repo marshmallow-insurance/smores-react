@@ -81,7 +81,11 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
                 >
                   {el.label}
                   {isSelected && (
-                    <Icon render="tick" size={16} color="marshmallowPink" />
+                    <Icon
+                      render="tick"
+                      size={16}
+                      color="color.surface.brand.300"
+                    />
                   )}
                 </ListButton>
               )
