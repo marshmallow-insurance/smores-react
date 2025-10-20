@@ -78,7 +78,7 @@ export const Button: FC<ButtonProps> = forwardRef<
     >
       {loading && (
         <LoaderContainer>
-          <Loader color={'liquorice'} height="16" />
+          <Loader color="color.icon.base" height="16" />
         </LoaderContainer>
       )}
       <ContentContainer $icon={icon} $loading={loading}>
@@ -87,7 +87,7 @@ export const Button: FC<ButtonProps> = forwardRef<
             $trailingIcon={trailingIcon}
             render={icon}
             size={smallButton ? 16 : 24}
-            color={'liquorice'}
+            color="color.icon.base"
           />
         )}
         <ChildrenContainer className="childrenContainer">
@@ -98,7 +98,7 @@ export const Button: FC<ButtonProps> = forwardRef<
             $trailingIcon={trailingIcon}
             render={icon}
             size={smallButton ? 16 : 24}
-            color={'liquorice'}
+            color="color.icon.base"
             className="iconContainer"
           />
         )}

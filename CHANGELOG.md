@@ -1,3 +1,9 @@
+## [13.19.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.18.0...v13.19.0) (2025-10-17)
+
+### Features
+
+* **core-secondary:** replace with design system colours ([#4597](https://github.com/marshmallow-insurance/smores-react/issues/4597)) ([9ce17eb](https://github.com/marshmallow-insurance/smores-react/commit/9ce17eb2fe62ceb17408f5bf1a3032ed629235b4))
+
 ## [13.18.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.17.2...v13.18.0) (2025-10-17)
 
 ### Features
