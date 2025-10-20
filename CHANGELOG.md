@@ -1,3 +1,25 @@
+## [13.20.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.19.0...v13.20.0) (2025-10-20)
+
+### Features
+
+* add secondary label to segment control ([#4600](https://github.com/marshmallow-insurance/smores-react/issues/4600)) ([5aa296d](https://github.com/marshmallow-insurance/smores-react/commit/5aa296d4bc1b838b3c1fc71ba47c190d0a09c485))
+
+## [13.19.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.18.0...v13.19.0) (2025-10-17)
+
+### Features
+
+* **core-secondary:** replace with design system colours ([#4597](https://github.com/marshmallow-insurance/smores-react/issues/4597)) ([9ce17eb](https://github.com/marshmallow-insurance/smores-react/commit/9ce17eb2fe62ceb17408f5bf1a3032ed629235b4))
+
+## [13.18.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.17.2...v13.18.0) (2025-10-17)
+
+### Features
+
+* **update colours:** remove all core primary colours ([#4596](https://github.com/marshmallow-insurance/smores-react/issues/4596)) ([6d0c72c](https://github.com/marshmallow-insurance/smores-react/commit/6d0c72c74809c1ec7a7bbe5e85a13fd60fba3495))
+
+## [13.17.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.17.1...v13.17.2) (2025-10-17)
+
+## [13.17.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.17.0...v13.17.1) (2025-10-16)
+
 ## [13.17.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.16.2...v13.17.0) (2025-10-13)
 
 ### Features

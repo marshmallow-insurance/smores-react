@@ -136,7 +136,12 @@ export const Datepicker: FC<DatepickerProps> = ({
             }
           }}
         >
-          <Icon render="caret" color="cream" size={18} rotate={90} />
+          <Icon
+            render="caret"
+            color="color.surface.base.000"
+            size={18}
+            rotate={90}
+          />
         </Circle>
 
         <Heading tag="h4" typo="body-regular">
@@ -156,7 +161,12 @@ export const Datepicker: FC<DatepickerProps> = ({
             }
           }}
         >
-          <Icon render="caret" color="cream" size={18} rotate={-90} />
+          <Icon
+            render="caret"
+            color="color.surface.base.000"
+            size={18}
+            rotate={-90}
+          />
         </Circle>
       </Header>
 
