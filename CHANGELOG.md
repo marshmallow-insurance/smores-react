@@ -1,3 +1,9 @@
+## [13.20.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.19.0...v13.20.0) (2025-10-20)
+
+### Features
+
+* add secondary label to segment control ([#4600](https://github.com/marshmallow-insurance/smores-react/issues/4600)) ([5aa296d](https://github.com/marshmallow-insurance/smores-react/commit/5aa296d4bc1b838b3c1fc71ba47c190d0a09c485))
+
 ## [13.19.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.18.0...v13.19.0) (2025-10-17)
 
 ### Features
