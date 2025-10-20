@@ -29,6 +29,7 @@ export const InternalField = ({
 }: InternalFieldProps) => {
   const labelTag = fieldType === 'field' ? 'label' : 'legend'
 
+  const textColor = error ? 'color.feedback.negative.200' : 'color.text.subtle'
   return (
     <Container
       forwardedAs={fieldType === 'field' ? 'div' : 'fieldset'}
@@ -53,13 +54,17 @@ export const InternalField = ({
             <Text
               tag={labelTag}
               typo="label"
-              color={error ? 'strawberry' : 'sesame'}
+              color={textColor}
               htmlFor={htmlFor}
               mb={{ custom: 4 }}
             >
               {label}
               {required && (
-                <Text tag="span" typo="body-small" color="strawberry">
+                <Text
+                  tag="span"
+                  typo="body-small"
+                  color="color.feedback.negative.200"
+                >
                   *
                 </Text>
               )}
@@ -73,7 +78,7 @@ export const InternalField = ({
         <Text
           tag={labelTag}
           typo="caption"
-          color={error ? 'strawberry' : 'sesame'}
+          color={textColor}
           mt={{ custom: 4 }}
         >
           {assistiveText}
@@ -84,8 +89,12 @@ export const InternalField = ({
         errorMsg &&
         (typeof errorMsg === 'string' ? (
           <Box flex alignItems="center" mt="8px" gap={{ custom: 4 }}>
-            <Icon render="warning" size={16} color="strawberry" />
-            <Text tag="span" typo="caption" color="strawberry">
+            <Icon
+              render="warning"
+              size={16}
+              color="color.feedback.negative.200"
+            />
+            <Text tag="span" typo="caption" color="color.feedback.negative.200">
               {errorMsg}
             </Text>
           </Box>
@@ -100,8 +109,12 @@ export const InternalField = ({
           $isError={!!(error && errorMsg)}
         >
           <StatusWrapper mt={'8px'}>
-            <Icon render="included" size={16} color="apple" />
-            <Text typo="caption" color="apple">
+            <Icon
+              render="included"
+              size={16}
+              color="color.feedback.positive.200"
+            />
+            <Text typo="caption" color="color.feedback.positive.200">
               Complete
             </Text>
           </StatusWrapper>
