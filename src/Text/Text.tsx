@@ -70,8 +70,6 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
     const resolvedColor = resolveToThemeColor(color, theme)
     const resolvedTypography = resolveToThemeFont(typo, theme)
 
-    console.log(resolvedTypography)
-
     return (
       <Container
         forwardedAs={tag}

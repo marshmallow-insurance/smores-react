@@ -8,6 +8,15 @@ type Font = typeof designTokens.font
 type FontKey = keyof Font
 export type FontValueObject = Font[keyof Font][keyof Font[keyof Font]]
 
+const fontValueKeys = [
+  'fontFamily',
+  'fontSize',
+  'fontWeight',
+  'lineHeight',
+  'letterSpacing',
+  'textCase',
+]
+
 type captionTypeKeys = [keyof Font['caption']]
 type bodyTypeKeys = [keyof Font['body']]
 type headingTypeKeys = [keyof Font['heading']]
@@ -55,6 +64,39 @@ export const getTypoPath = (typo: TypoTypes) => {
   return typo in legacyFontStyleMapping
     ? legacyFontStyleMapping[typo as keyof typeof legacyFontStyleMapping]
     : typo
+}
+
+export const formatDesignTokenFont = (): string => {
+  const { font } = designTokens
+  if (font === null) {
+    return ''
+  }
+
+  const result: string[] = []
+  const destructureNestedObject = (obj: any, currentPath: string) => {
+    for (const key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        const value = obj[key]
+
+        const newPath = currentPath ? `${currentPath}.${key}` : key
+
+        // TODO: instead of trimming, we should not add paths that end with font value keys
+        const trimmedPath = fontValueKeys.some((key) =>
+          newPath.endsWith(`.${key}`),
+        )
+          ? newPath.slice(0, newPath.lastIndexOf('.'))
+          : newPath
+
+        if (typeof value === 'object' && value !== null) {
+          destructureNestedObject(value, trimmedPath)
+        } else {
+          result.push(trimmedPath)
+        }
+      }
+    }
+  }
+  destructureNestedObject(font, 'font')
+  return result.join(', ')
 }
 
 export const newFontStyles: Font = designTokens.font
