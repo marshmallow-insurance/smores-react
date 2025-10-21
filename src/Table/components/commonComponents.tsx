@@ -36,7 +36,7 @@ export const StyledHeaderCell = styled.th<TransientProps<TableStylesProps>>`
   z-index: 2;
   text-align: left;
   vertical-align: bottom;
-  ${fontStyleMapping.label};
+  ${fontStyleMapping.label}; // TODO: change to label 100 and test
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 8px;

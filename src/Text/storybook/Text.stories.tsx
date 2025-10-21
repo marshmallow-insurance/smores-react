@@ -2,9 +2,10 @@ import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
-import { Text, Typo } from '../Text'
-import { fontStyleMapping } from '../fontMapping'
+import { Text } from '../Text'
 import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
+import { fontOptions } from '../../utils/storybookHelpers/fontOptions'
+import { TypoTypes } from '../../ThemeProvider/utils/fontMap'
 
 const Grid = styled(Box)`
   display: grid;
@@ -13,7 +14,7 @@ const Grid = styled(Box)`
   gap: 10px;
 `
 
-const TypoCollection = ({ typos }: { typos: Readonly<Typo[]> }) => {
+const TypoCollection = ({ typos }: { typos: Readonly<TypoTypes[]> }) => {
   return (
     <Box>
       <Grid>
@@ -29,7 +30,7 @@ const TypoCollection = ({ typos }: { typos: Readonly<Typo[]> }) => {
       </Grid>
       {typos.map((typo) => (
         <Grid key={typo}>
-          <Text tag="p" typo="body-regular" color="color.text.subtle">
+          <Text tag="p" typo="font.body.200" color="color.text.subtle">
             {typo}
           </Text>
           <Text tag="p" typo={typo} color="color.text.base">
@@ -37,12 +38,19 @@ const TypoCollection = ({ typos }: { typos: Readonly<Typo[]> }) => {
           </Text>
           {!['hero-alternate', 'hero', 'heading-alternate', 'label'].includes(
             typo,
-          ) && (
-            <Text tag="p" typo={typo} color="color.text.base">
-              They waited patiently for what seemed a very long time. They
-              waited patiently for what seemed a very long time.
-            </Text>
-          )}
+          ) &&
+            ![
+              'font.hero.100',
+              'font.hero.200',
+              'font.hero.300',
+              'font.label.100',
+              'font.label.200', // TODO: work out if caption needs to be included here
+            ].includes(typo) && (
+              <Text tag="p" typo={typo} color="color.text.base">
+                They waited patiently for what seemed a very long time. They
+                waited patiently for what seemed a very long time.
+              </Text>
+            )}
         </Grid>
       ))}
     </Box>
@@ -71,11 +79,17 @@ export default meta
 
 type Story = StoryObj<typeof Text>
 
-const typos = Object.keys(fontStyleMapping) as Typo[]
+const typos = fontOptions as TypoTypes[]
 
 export const Default: Story = {
   args: {
     tag: 'p',
+  },
+  argTypes: {
+    typo: {
+      control: 'select',
+      options: fontOptions,
+    },
   },
   render: (args) => (
     <Text {...args}>The quick brown fox jumps over the lazy dog</Text>
