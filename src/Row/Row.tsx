@@ -5,7 +5,6 @@ import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Icons } from '../Icon/iconsList'
 import { Text } from '../Text'
-
 import { MarginProps } from '../utils/space'
 import { ColorTypes } from '../ThemeProvider/utils/colourMap'
 

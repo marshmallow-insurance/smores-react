@@ -54,7 +54,7 @@ export function BadgeList({ badges, limit, size = BadgeSize.Lg }: Props) {
         >
           <Badge
             title={`+${limitExcess}`}
-            borderColour="oatmeal"
+            borderColour="color.illustration.neutral.300"
             size={size}
             src={<ExcessBadge excess={limitExcess + 1} />}
             disabled
