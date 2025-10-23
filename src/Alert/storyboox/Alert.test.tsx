@@ -17,7 +17,8 @@ describe('Alert Component', () => {
       <Alert
         type="fallback"
         ctaType="button"
-        ctaTypeAction={noop}
+        ctaAction={noop}
+        ctaLabel="Click Me"
         title="Test Alert"
         message="This is a test alert."
       />,
@@ -30,7 +31,8 @@ describe('Alert Component', () => {
       <Alert
         type="notice"
         ctaType="link"
-        ctaTypeAction=""
+        ctaAction=""
+        ctaLabel="Learn More"
         title="Test Alert"
         message="This is a test alert."
       />,

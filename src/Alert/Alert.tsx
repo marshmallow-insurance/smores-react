@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, ReactElement, useState } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
 import { MarginProps } from 'utils/space'
@@ -14,14 +14,30 @@ import { Link } from '../Link'
 
 type AlertType = 'info' | 'fallback' | 'notice' | 'negative' | 'positive'
 
+type CtaProps =
+  | {
+      ctaType: 'button'
+      ctaAction: () => void
+      ctaLabel: string
+    }
+  | {
+      ctaType: 'link'
+      ctaAction: string
+      ctaLabel: string
+    }
+  | {
+      ctaType?: undefined
+      ctaAction?: undefined
+      ctaLabel?: undefined
+    }
+
 type AlertProps = {
   type?: AlertType
-  title: string
-  message: string
-  showCloseIcon?: boolean
-  ctaType?: 'button' | 'link'
-  ctaTypeAction?: (() => void) | string
-} & MarginProps
+  title?: string
+  message: string | ReactElement<unknown>
+  isDismissible?: boolean
+} & CtaProps &
+  MarginProps
 
 type AlertTypeConfig = {
   backgroundColor: NewColor
@@ -61,9 +77,10 @@ export const Alert: FC<AlertProps> = ({
   type = 'info',
   title,
   message,
-  showCloseIcon = false,
+  isDismissible = false,
   ctaType,
-  ctaTypeAction,
+  ctaAction,
+  ctaLabel,
   ...marginProps
 }) => {
   const theme = useTheme()
@@ -97,18 +114,26 @@ export const Alert: FC<AlertProps> = ({
         gap="8px"
       >
         <Box>
-          <Text typo="headline-regular">{title}</Text>
-          <Text mb={ctaType && '8px'}>{message}</Text>
-          {ctaType === 'button' && typeof ctaTypeAction === 'function' && (
-            <Button smallButton fallbackStyle onClick={() => ctaTypeAction()}>
-              Learn more
+          {title && (
+            <Text mb={{ custom: '4px' }} typo="headline-regular">
+              {title}
+            </Text>
+          )}
+          {typeof message === 'string' ? (
+            <Text mb={ctaType && '8px'}>{message}</Text>
+          ) : (
+            message
+          )}
+          {ctaType === 'button' && typeof ctaAction === 'function' && (
+            <Button smallButton fallbackStyle onClick={() => ctaAction()}>
+              {ctaLabel}
             </Button>
           )}
-          {ctaType === 'link' && typeof ctaTypeAction === 'string' && (
-            <Link href={ctaTypeAction}>Marshmallow website</Link>
+          {ctaType === 'link' && typeof ctaAction === 'string' && (
+            <Link href={ctaAction}>{ctaLabel}</Link>
           )}
         </Box>
-        {showCloseIcon && (
+        {isDismissible && (
           <IconStrict
             render="cross"
             size={16}
@@ -127,9 +152,10 @@ interface IStyledAlert {
   $alertClosed: boolean
 }
 
-const StyledAlert = styled.div<IStyledAlert>(
+const StyledAlert = styled(Box)<IStyledAlert>(
   ({ $backgroundColor, $accentColor, $alertClosed }) => css`
     display: flex;
+    width: 100%;
     max-width: 512px;
     min-width: min-content;
     padding: 12px 12px 12px 20px;

@@ -3,7 +3,7 @@
 exports[`Alert Component > should render Info alert correctly 1`] = `
 <div>
   <div
-    class="sc-kvnevz crtyZU"
+    class="sc-bRKDuR bHjpxP sc-kvnevz dnbNYB"
   >
     <span
       class="sc-bRKDuR hMhNDm sc-fhHczv bkxtmk"
@@ -29,7 +29,7 @@ exports[`Alert Component > should render Info alert correctly 1`] = `
         class="sc-bRKDuR bHjpxP"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-jwTyAe eXDEYI"
+          class="sc-bRKDuR iBBFyu sc-jwTyAe eXDEYI"
           cursor="inherit"
           title=""
         >
@@ -51,7 +51,7 @@ exports[`Alert Component > should render Info alert correctly 1`] = `
 exports[`Alert Component > should render correctly with button cta 1`] = `
 <div>
   <div
-    class="sc-kvnevz bsIbMi"
+    class="sc-bRKDuR bHjpxP sc-kvnevz fOnGIb"
   >
     <span
       class="sc-bRKDuR hMhNDm sc-fhHczv bkxtmk"
@@ -77,7 +77,7 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
         class="sc-bRKDuR bHjpxP"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-jwTyAe eXDEYI"
+          class="sc-bRKDuR iBBFyu sc-jwTyAe eXDEYI"
           cursor="inherit"
           title=""
         >
@@ -99,7 +99,7 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
             <div
               class="sc-dntSTA cJjARX childrenContainer"
             >
-              Learn more
+              Click Me
             </div>
           </div>
         </button>
@@ -112,7 +112,7 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
 exports[`Alert Component > should render correctly with link cta 1`] = `
 <div>
   <div
-    class="sc-kvnevz iETRPw"
+    class="sc-bRKDuR bHjpxP sc-kvnevz bcaSLF"
   >
     <span
       class="sc-bRKDuR hMhNDm sc-fhHczv bkxtmk"
@@ -138,7 +138,7 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
         class="sc-bRKDuR bHjpxP"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-jwTyAe eXDEYI"
+          class="sc-bRKDuR iBBFyu sc-jwTyAe eXDEYI"
           cursor="inherit"
           title=""
         >
@@ -155,7 +155,7 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
           class="sc-dTvVRJ eKuQWY"
           href=""
         >
-          Marshmallow website
+          Learn More
         </a>
       </div>
     </div>
