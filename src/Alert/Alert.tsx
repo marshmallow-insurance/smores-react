@@ -120,7 +120,9 @@ export const Alert: FC<AlertProps> = ({
             </Text>
           )}
           {typeof message === 'string' ? (
-            <Text mb={ctaType && '8px'}>{message}</Text>
+            <Text typo="body-small" mb={ctaType && '8px'}>
+              {message}
+            </Text>
           ) : (
             message
           )}

@@ -36,7 +36,7 @@ exports[`Alert Component > should render Info alert correctly 1`] = `
           Info Alert
         </p>
         <p
-          class="sc-bRKDuR bHjpxP sc-jwTyAe fEDjod"
+          class="sc-bRKDuR bHjpxP sc-jwTyAe kSVvkr"
           cursor="inherit"
           title=""
         >
@@ -84,7 +84,7 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
           Test Alert
         </p>
         <p
-          class="sc-bRKDuR gOmDWy sc-jwTyAe fEDjod"
+          class="sc-bRKDuR gOmDWy sc-jwTyAe kSVvkr"
           cursor="inherit"
           title=""
         >
@@ -145,7 +145,7 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
           Test Alert
         </p>
         <p
-          class="sc-bRKDuR gOmDWy sc-jwTyAe fEDjod"
+          class="sc-bRKDuR gOmDWy sc-jwTyAe kSVvkr"
           cursor="inherit"
           title=""
         >
