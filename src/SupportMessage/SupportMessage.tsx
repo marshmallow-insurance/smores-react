@@ -146,7 +146,7 @@ const Wrapper = styled(Box)<IWrapper>(
 const Title = styled.p`
   font-size: 16px;
   font-weight: ${oldTheme.font.weight.medium};
-  color: ${({ theme }) => theme.color.text.base}};
+  color: ${({ theme }) => theme.color.text.base};
   line-height: 20.8px;
   margin-bottom: 4px;
 `
