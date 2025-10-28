@@ -26,7 +26,7 @@ exports[`Alert Component > should render Info alert correctly 1`] = `
       class="sc-bRKDuR fqRygK"
     >
       <div
-        class="sc-bRKDuR bHjpxP"
+        class="sc-bRKDuR ZJMPX"
       >
         <p
           class="sc-bRKDuR iBBFyu sc-jwTyAe eXDEYI"
@@ -74,7 +74,7 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
       class="sc-bRKDuR fqRygK"
     >
       <div
-        class="sc-bRKDuR bHjpxP"
+        class="sc-bRKDuR ZJMPX"
       >
         <p
           class="sc-bRKDuR iBBFyu sc-jwTyAe eXDEYI"
@@ -135,7 +135,7 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
       class="sc-bRKDuR fqRygK"
     >
       <div
-        class="sc-bRKDuR bHjpxP"
+        class="sc-bRKDuR ZJMPX"
       >
         <p
           class="sc-bRKDuR iBBFyu sc-jwTyAe eXDEYI"

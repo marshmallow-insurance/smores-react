@@ -36,6 +36,7 @@ type AlertProps = {
   title?: string
   message: string | ReactElement<unknown>
   isDismissible?: boolean
+  maxWidth?: string
 } & CtaProps &
   MarginProps
 
@@ -81,6 +82,7 @@ export const Alert: FC<AlertProps> = ({
   ctaType,
   ctaAction,
   ctaLabel,
+  maxWidth = '512px',
   ...marginProps
 }) => {
   const theme = useTheme()
@@ -97,6 +99,7 @@ export const Alert: FC<AlertProps> = ({
       $backgroundColor={backgroundColor}
       $accentColor={accentColor}
       $alertClosed={alertClosed}
+      $maxWidth={maxWidth}
       {...marginProps}
     >
       <Icon
@@ -113,7 +116,7 @@ export const Alert: FC<AlertProps> = ({
         width="100%"
         gap="8px"
       >
-        <Box>
+        <Box maxWidth="512px">
           {title && (
             <Text mb={{ custom: '4px' }} typo="headline-regular">
               {title}
@@ -152,13 +155,14 @@ interface IStyledAlert {
   $backgroundColor: string
   $accentColor: string
   $alertClosed: boolean
+  $maxWidth?: string
 }
 
 const StyledAlert = styled(Box)<IStyledAlert>(
-  ({ $backgroundColor, $accentColor, $alertClosed }) => css`
+  ({ $backgroundColor, $accentColor, $alertClosed, $maxWidth }) => css`
     display: flex;
     width: 100%;
-    max-width: 512px;
+    max-width: ${$maxWidth};
     min-width: min-content;
     padding: 12px 12px 12px 20px;
     align-items: flex-start;

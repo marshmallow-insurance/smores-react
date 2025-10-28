@@ -103,9 +103,10 @@ export const WithLinkCTA: Story = {
 export const WithLongerMessage: Story = {
   args: {
     type: 'notice',
-    title: 'Alert with Longer Message',
+    title: 'Alert with Longer Message and Max Width of 100%',
     message:
-      'This is a longer alert message to demonstrate how the alert component handles more text content. It should properly wrap and maintain readability across different screen sizes.',
+      'This is a longer alert message to demonstrate how the alert component handles more text content. The Text container has a max-width of 512px, even if the component width is flexible. It should properly wrap and maintain readability across different screen sizes.',
+    maxWidth: '100%',
   },
   render: (args) => <Alert {...args} />,
 }
