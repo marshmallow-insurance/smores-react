@@ -1,6 +1,7 @@
 export * from './Accordion'
 export * from './ActionDropdown'
 export * from './Badge'
+export * from './Alert'
 export * from './BadgeList'
 export * from './Banner'
 export * from './Box'

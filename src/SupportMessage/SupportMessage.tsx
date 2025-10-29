@@ -105,7 +105,12 @@ export const SupportMessage: FC<SupportMessageProps> = ({
       {rightSideComponent}
       {onClick && rightSideComponent === undefined && (
         <Box ml={{ custom: 'auto' }}>
-          <Icon size={16} render="caret" color="marzipan" rotate={270} />
+          <Icon
+            size={16}
+            render="caret"
+            color="color.illustration.neutral.400"
+            rotate={270}
+          />
         </Box>
       )}
     </Wrapper>
@@ -141,7 +146,7 @@ const Wrapper = styled(Box)<IWrapper>(
 const Title = styled.p`
   font-size: 16px;
   font-weight: ${oldTheme.font.weight.medium};
-  color: ${({ theme }) => theme.color.text.base}};
+  color: ${({ theme }) => theme.color.text.base};
   line-height: 20.8px;
   margin-bottom: 4px;
 `

@@ -43,6 +43,7 @@ import Chat from './iconFiles/Chat'
 import ChatBubble from './iconFiles/ChatBubble'
 import Checkout from './iconFiles/Checkout'
 import CheckoutWithText from './iconFiles/CheckoutWithText'
+import CircleInfoFilled from './iconFiles/CircleInfoFilled'
 import CircleTick from './iconFiles/CircleTick'
 import City from './iconFiles/City'
 import Claim from './iconFiles/Claim'
@@ -200,6 +201,7 @@ import TowTruck from './iconFiles/TowTruck'
 import TraceAndAccess from './iconFiles/TraceAndAccess'
 import Training from './iconFiles/Training'
 import Trash from './iconFiles/Trash'
+import TriangleExclamationSolid from './iconFiles/TriangleExclamationSolid'
 import Twitter from './iconFiles/Twitter'
 import UpDown from './iconFiles/UpDown'
 import Upload from './iconFiles/Upload'
@@ -240,6 +242,7 @@ export const iconList = {
   'chat-bubble': ChatBubble,
   'checkout-with-text': CheckoutWithText,
   'circle-tick': CircleTick,
+  'circle-info-filled': CircleInfoFilled,
   'claim-line': ClaimLine,
   'clipboard-check': ClipboardCheck,
   'close-panel': ClosePanel,
@@ -308,6 +311,7 @@ export const iconList = {
   'thumbs-up': ThumbsUp,
   'tow-truck': TowTruck,
   'trace-and-access': TraceAndAccess,
+  'triangle-exclamation-solid': TriangleExclamationSolid,
   'up-down': UpDown,
   'upload-documents': UploadDocuments,
   'upload-email': UploadEmail,

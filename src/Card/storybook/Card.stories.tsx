@@ -86,7 +86,13 @@ export const CardWithRightAction: Story = {
     body: 'Card description',
     leadingIcon: 'copy',
     maxWidth: '300px',
-    rightAction: <Icon render="caret" color="marzipan" rotate={-90} />,
+    rightAction: (
+      <Icon
+        render="caret"
+        color="color.illustration.neutral.400"
+        rotate={-90}
+      />
+    ),
   },
 }
 

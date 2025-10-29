@@ -10,7 +10,7 @@ describe('Icon', () => {
   })
   it('renders correctly with custom size and color', () => {
     const { container } = render(
-      <Icon render="search" size={32} color="blueberry" />,
+      <Icon render="search" size={32} color="color.illustration.accent2.200" />,
     )
     expect(container).toMatchSnapshot()
   })

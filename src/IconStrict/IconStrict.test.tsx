@@ -10,7 +10,11 @@ describe('IconStrict', () => {
   })
   it('renders correctly with background color', () => {
     const { container } = render(
-      <IconStrict render="search" size={36} backgroundColor="matcha" />,
+      <IconStrict
+        render="search"
+        size={36}
+        backgroundColor="color.illustration.accent3.100"
+      />,
     )
     expect(container).toMatchSnapshot()
   })

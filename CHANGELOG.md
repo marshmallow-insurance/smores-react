@@ -1,3 +1,15 @@
+## [13.21.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.21.0...v13.21.1) (2025-10-28)
+
+## [13.21.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.20.2...v13.21.0) (2025-10-24)
+
+### Features
+
+* **alert component:** add new component [DES-110] ([#4606](https://github.com/marshmallow-insurance/smores-react/issues/4606)) ([c27324d](https://github.com/marshmallow-insurance/smores-react/commit/c27324dbaa3fefad6b095ab783e21fcc908d8701))
+
+## [13.20.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.20.1...v13.20.2) (2025-10-21)
+
+## [13.20.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.20.0...v13.20.1) (2025-10-20)
+
 ## [13.20.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.19.0...v13.20.0) (2025-10-20)
 
 ### Features

@@ -1,0 +1,164 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Alert Component > should render Info alert correctly 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR bHjpxP sc-kvnevz dnbNYB"
+  >
+    <span
+      class="sc-bRKDuR hMhNDm sc-fhHczv bkxtmk"
+      data-testid="circle-info-filled-container"
+    >
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 16 16"
+        width="100%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 16C12.4187 16 16 12.4187 16 8C16 3.58125 12.4187 0 8 0C3.58125 0 0 3.58125 0 8C0 12.4187 3.58125 16 8 16ZM7 5C7 4.44688 7.44688 4 8 4C8.55313 4 9 4.44688 9 5C9 5.55312 8.55313 6 8 6C7.44688 6 7 5.55312 7 5ZM6.75 7H8.25C8.66562 7 9 7.33437 9 7.75V10.5H9.25C9.66562 10.5 10 10.8344 10 11.25C10 11.6656 9.66562 12 9.25 12H6.75C6.33437 12 6 11.6656 6 11.25C6 10.8344 6.33437 10.5 6.75 10.5H7.5V8.5H6.75C6.33437 8.5 6 8.16562 6 7.75C6 7.33437 6.33437 7 6.75 7Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+    <div
+      class="sc-bRKDuR fqRygK"
+    >
+      <div
+        class="sc-bRKDuR ZJMPX"
+      >
+        <p
+          class="sc-bRKDuR iBBFyu sc-jwTyAe eXDEYI"
+          cursor="inherit"
+          title=""
+        >
+          Info Alert
+        </p>
+        <p
+          class="sc-bRKDuR bHjpxP sc-jwTyAe kSVvkr"
+          cursor="inherit"
+          title=""
+        >
+          This is an info alert.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Alert Component > should render correctly with button cta 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR bHjpxP sc-kvnevz fOnGIb"
+  >
+    <span
+      class="sc-bRKDuR hMhNDm sc-fhHczv bkxtmk"
+      data-testid="circle-info-filled-container"
+    >
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 16 16"
+        width="100%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 16C12.4187 16 16 12.4187 16 8C16 3.58125 12.4187 0 8 0C3.58125 0 0 3.58125 0 8C0 12.4187 3.58125 16 8 16ZM7 5C7 4.44688 7.44688 4 8 4C8.55313 4 9 4.44688 9 5C9 5.55312 8.55313 6 8 6C7.44688 6 7 5.55312 7 5ZM6.75 7H8.25C8.66562 7 9 7.33437 9 7.75V10.5H9.25C9.66562 10.5 10 10.8344 10 11.25C10 11.6656 9.66562 12 9.25 12H6.75C6.33437 12 6 11.6656 6 11.25C6 10.8344 6.33437 10.5 6.75 10.5H7.5V8.5H6.75C6.33437 8.5 6 8.16562 6 7.75C6 7.33437 6.33437 7 6.75 7Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+    <div
+      class="sc-bRKDuR fqRygK"
+    >
+      <div
+        class="sc-bRKDuR ZJMPX"
+      >
+        <p
+          class="sc-bRKDuR iBBFyu sc-jwTyAe eXDEYI"
+          cursor="inherit"
+          title=""
+        >
+          Test Alert
+        </p>
+        <p
+          class="sc-bRKDuR gOmDWy sc-jwTyAe kSVvkr"
+          cursor="inherit"
+          title=""
+        >
+          This is a test alert.
+        </p>
+        <button
+          class="sc-bRKDuR bHjpxP sc-dYwGCk ksdSko"
+        >
+          <div
+            class="sc-eqYatC kREyTP"
+          >
+            <div
+              class="sc-dntSTA cJjARX childrenContainer"
+            >
+              Click Me
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Alert Component > should render correctly with link cta 1`] = `
+<div>
+  <div
+    class="sc-bRKDuR bHjpxP sc-kvnevz bcaSLF"
+  >
+    <span
+      class="sc-bRKDuR hMhNDm sc-fhHczv bkxtmk"
+      data-testid="triangle-exclamation-solid-container"
+    >
+      <svg
+        fill="none"
+        height="100%"
+        viewBox="0 0 16 15"
+        width="100%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.00065 0C8.46002 0 8.8819 0.253125 9.10065 0.65625L15.8506 13.1562C16.06 13.5437 16.0506 14.0125 15.8256 14.3906C15.6006 14.7688 15.1913 15 14.7506 15H1.25065C0.810021 15 0.400646 14.7688 0.175646 14.3906C-0.0493544 14.0125 -0.0587293 13.5437 0.150646 13.1562L6.90065 0.65625C7.1194 0.253125 7.54127 0 8.00065 0ZM8.00065 11C7.44752 11 7.00065 11.4469 7.00065 12C7.00065 12.5531 7.44752 13 8.00065 13C8.55377 13 9.00065 12.5531 9.00065 12C9.00065 11.4469 8.55377 11 8.00065 11ZM8.00065 5C7.4319 5 6.97877 5.48438 7.0194 6.05313L7.25065 9.30313C7.27877 9.69375 7.6069 10 7.99752 10C8.39127 10 8.71627 9.69688 8.7444 9.30313L8.97565 6.05313C9.01627 5.48438 8.56627 5 7.9944 5H8.00065Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+    <div
+      class="sc-bRKDuR fqRygK"
+    >
+      <div
+        class="sc-bRKDuR ZJMPX"
+      >
+        <p
+          class="sc-bRKDuR iBBFyu sc-jwTyAe eXDEYI"
+          cursor="inherit"
+          title=""
+        >
+          Test Alert
+        </p>
+        <p
+          class="sc-bRKDuR gOmDWy sc-jwTyAe kSVvkr"
+          cursor="inherit"
+          title=""
+        >
+          This is a test alert.
+        </p>
+        <a
+          class="sc-dTvVRJ eKuQWY"
+          href=""
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
