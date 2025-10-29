@@ -1,2 +1,2 @@
 export { SmoresThemeProvider, Theme } from './ThemeProvider'
-export { resolveToThemeColor } from './utils/colourMap'
+export { resolveToThemeColor, ColorTypes } from './utils/colourMap'
