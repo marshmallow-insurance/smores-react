@@ -22,6 +22,7 @@ type bodyTypeKeys = [keyof Font['body']]
 type headingTypeKeys = [keyof Font['heading']]
 type heroTypeKeys = [keyof Font['hero']]
 type labelTypeKeys = [keyof Font['label']]
+type linkTypeKeys = [keyof Font['link']]
 
 export type FontTypeMap = {
   caption: captionTypeKeys
@@ -29,6 +30,7 @@ export type FontTypeMap = {
   body: bodyTypeKeys
   heading: headingTypeKeys
   hero: heroTypeKeys
+  link: linkTypeKeys
 }[keyof Font]
 
 // type for the path to each font type in design tokens, e.g. 'font.hero.200'
