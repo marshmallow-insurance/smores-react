@@ -107,12 +107,12 @@ const ListButton = styled.button<IListButton>`
   cursor: pointer;
 
   &:hover:not(.active) {
-    color: ${({ theme }) => theme.color.text['on-dark']};
+    color: ${({ theme }) => theme.color.text.inverse};
     background-color: ${({ theme }) => theme.color.surface.base[900]};
   }
 
   &.active {
-    color: ${({ theme }) => theme.color.text['on-dark']};
+    color: ${({ theme }) => theme.color.text.inverse};
     background-color: ${({ theme }) => theme.color.surface.base[900]};
     cursor: default;
   }
