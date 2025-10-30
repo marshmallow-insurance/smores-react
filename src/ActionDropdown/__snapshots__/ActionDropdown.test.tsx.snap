@@ -1,20 +1,107 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ActionDropdown > renders correctly with default props 1`] = `
+.c3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+}
+
+.c3 svg {
+  color: #292924!important;
+}
+
+.c5 {
+  padding: 0;
+  margin: 0;
+  max-height: 188px;
+}
+
+.c6 {
+  padding: 16px 24px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  font-size: 14px;
+  cursor: pointer;
+  color: #292924;
+}
+
+.c6:hover {
+  background-color: #e2d2b8;
+}
+
+.c6:last-child {
+  border-bottom: none;
+}
+
+.c1 {
+  color: #292924;
+  background-color: #fbf8f5;
+  position: relative;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 100px;
+  padding: 16px 16px 14px;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c0 {
+  position: relative;
+  display: block;
+  width: 210px;
+  height: 48px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border-radius: 8px;
+}
+
+.c4 {
+  position: absolute;
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 8px;
+  display: none;
+  max-height: 48px;
+  background-color: #f1e9dc;
+  overflow-y: hidden;
+  z-index: 4;
+  transition: all 0.2s ease-in-out;
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-kNOymR iMmesL"
+    class="c0"
   >
     <div
-      class="sc-jJLAfE kVjsTn"
+      class="c1"
     >
       <span
-        class="sc-hwkwBN bjyVWn"
+        class="c2"
       >
         Default grey
       </span>
       <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv XmxEI"
+        class="c3"
         data-testid="caret-container"
       >
         <svg
@@ -32,18 +119,18 @@ exports[`ActionDropdown > renders correctly with default props 1`] = `
       </span>
     </div>
     <div
-      class="sc-dYwGCk dvdcAq"
+      class="c4"
     >
       <ul
-        class="sc-jwTyAe gMUwNg"
+        class="c5"
       >
         <li
-          class="sc-hjsuWn dRRnwj"
+          class="c6"
         >
           Default grey
         </li>
         <li
-          class="sc-hjsuWn dRRnwj"
+          class="c6"
         >
           Brand
         </li>

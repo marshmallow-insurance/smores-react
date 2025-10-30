@@ -1,23 +1,62 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Row > borders > renders borderBottom 1`] = `
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #636768;
+}
+
+.c0 {
+  border-radius: 0;
+  border-top: none;
+  border-bottom: 1px solid #dad2c4;
+  background-color: #f1e9dc;
+  display: grid;
+  grid-template-columns: auto 24px;
+  padding: 16px;
+  grid-gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 .iconRight {
+  justify-self: end;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    grid-gap: 24px;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR bHjpxP sc-jwTyAe jrLFzT"
+      class="c0"
     >
       <div
-        class="sc-bRKDuR bHjpxP"
+        class=""
       >
         <h1
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c1"
           cursor="inherit"
           title=""
         >
           A lovely heading
         </h1>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ hZFdzh"
+          class="c2"
           cursor="inherit"
           title=""
         />
@@ -28,23 +67,62 @@ exports[`Row > borders > renders borderBottom 1`] = `
 `;
 
 exports[`Row > borders > renders borderTop 1`] = `
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #636768;
+}
+
+.c0 {
+  border-radius: 0;
+  border-top: 1px solid #dad2c4;
+  border-bottom: none;
+  background-color: #f1e9dc;
+  display: grid;
+  grid-template-columns: auto 24px;
+  padding: 16px;
+  grid-gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 .iconRight {
+  justify-self: end;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    grid-gap: 24px;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR bHjpxP sc-jwTyAe joyHXT"
+      class="c0"
     >
       <div
-        class="sc-bRKDuR bHjpxP"
+        class=""
       >
         <h1
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c1"
           cursor="inherit"
           title=""
         >
           A lovely heading
         </h1>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ hZFdzh"
+          class="c2"
           cursor="inherit"
           title=""
         />
@@ -55,23 +133,66 @@ exports[`Row > borders > renders borderTop 1`] = `
 `;
 
 exports[`Row > headings > renders bold heading 1`] = `
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #636768;
+}
+
+.c0 {
+  border-radius: 0;
+  border-top: 1px solid #dad2c4;
+  border-bottom: 1px solid #dad2c4;
+  background-color: #f1e9dc;
+  display: grid;
+  grid-template-columns: auto 24px;
+  padding: 16px;
+  grid-gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 h1 {
+  font-weight: 500;
+}
+
+.c0 .iconRight {
+  justify-self: end;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    grid-gap: 24px;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR bHjpxP sc-jwTyAe itoHSn"
+      class="c0"
     >
       <div
-        class="sc-bRKDuR bHjpxP"
+        class=""
       >
         <h1
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c1"
           cursor="inherit"
           title=""
         >
           A lovely heading
         </h1>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ hZFdzh"
+          class="c2"
           cursor="inherit"
           title=""
         />
@@ -82,23 +203,62 @@ exports[`Row > headings > renders bold heading 1`] = `
 `;
 
 exports[`Row > headings > renders heading 1`] = `
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #636768;
+}
+
+.c0 {
+  border-radius: 0;
+  border-top: 1px solid #dad2c4;
+  border-bottom: 1px solid #dad2c4;
+  background-color: #f1e9dc;
+  display: grid;
+  grid-template-columns: auto 24px;
+  padding: 16px;
+  grid-gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 .iconRight {
+  justify-self: end;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    grid-gap: 24px;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR bHjpxP sc-jwTyAe cbpIdC"
+      class="c0"
     >
       <div
-        class="sc-bRKDuR bHjpxP"
+        class=""
       >
         <h1
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c1"
           cursor="inherit"
           title=""
         >
           A lovely heading
         </h1>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ hZFdzh"
+          class="c2"
           cursor="inherit"
           title=""
         />
@@ -109,23 +269,62 @@ exports[`Row > headings > renders heading 1`] = `
 `;
 
 exports[`Row > headings > renders subHeading 1`] = `
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #636768;
+}
+
+.c0 {
+  border-radius: 0;
+  border-top: 1px solid #dad2c4;
+  border-bottom: 1px solid #dad2c4;
+  background-color: #f1e9dc;
+  display: grid;
+  grid-template-columns: auto 24px;
+  padding: 16px;
+  grid-gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 .iconRight {
+  justify-self: end;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    grid-gap: 24px;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR bHjpxP sc-jwTyAe cbpIdC"
+      class="c0"
     >
       <div
-        class="sc-bRKDuR bHjpxP"
+        class=""
       >
         <h1
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c1"
           cursor="inherit"
           title=""
         >
           A lovely heading
         </h1>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ hZFdzh"
+          class="c2"
           cursor="inherit"
           title=""
         >
@@ -138,13 +337,66 @@ exports[`Row > headings > renders subHeading 1`] = `
 `;
 
 exports[`Row > icons > renders iconLeft 1`] = `
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  transform: rotate(0deg);
+}
+
+.c1 svg {
+  color: #292924!important;
+}
+
+.c2 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c3 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #636768;
+}
+
+.c0 {
+  border-radius: 0;
+  border-top: 1px solid #dad2c4;
+  border-bottom: 1px solid #dad2c4;
+  background-color: #f1e9dc;
+  display: grid;
+  grid-template-columns: 24px auto 24px;
+  padding: 16px;
+  grid-gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 .iconRight {
+  justify-self: end;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    grid-gap: 24px;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR bHjpxP sc-jwTyAe iQFqtA"
+      class="c0"
     >
       <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv lfpoiQ"
+        class="c1"
         data-testid="info-container"
       >
         <svg
@@ -163,17 +415,17 @@ exports[`Row > icons > renders iconLeft 1`] = `
         </svg>
       </span>
       <div
-        class="sc-bRKDuR bHjpxP"
+        class=""
       >
         <h1
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c2"
           cursor="inherit"
           title=""
         >
           A lovely heading
         </h1>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ hZFdzh"
+          class="c3"
           cursor="inherit"
           title=""
         />
@@ -184,29 +436,82 @@ exports[`Row > icons > renders iconLeft 1`] = `
 `;
 
 exports[`Row > icons > renders iconRight 1`] = `
+.c3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+}
+
+.c3 svg {
+  color: #9d927b!important;
+}
+
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #636768;
+}
+
+.c0 {
+  border-radius: 0;
+  border-top: 1px solid #dad2c4;
+  border-bottom: 1px solid #dad2c4;
+  background-color: #f1e9dc;
+  display: grid;
+  grid-template-columns: auto 24px;
+  padding: 16px;
+  grid-gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 .iconRight {
+  justify-self: end;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    grid-gap: 24px;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR bHjpxP sc-jwTyAe cbpIdC"
+      class="c0"
     >
       <div
-        class="sc-bRKDuR bHjpxP"
+        class=""
       >
         <h1
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c1"
           cursor="inherit"
           title=""
         >
           A lovely heading
         </h1>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ hZFdzh"
+          class="c2"
           cursor="inherit"
           title=""
         />
       </div>
       <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh iconRight"
+        class="c3 iconRight"
         data-testid="info-container"
       >
         <svg
@@ -230,23 +535,62 @@ exports[`Row > icons > renders iconRight 1`] = `
 `;
 
 exports[`Row > type > renders curved last 1`] = `
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #636768;
+}
+
+.c0 {
+  border-radius: 0 0 16px 16px;
+  border-top: 1px solid #dad2c4;
+  border-bottom: none;
+  background-color: #f1e9dc;
+  display: grid;
+  grid-template-columns: auto 24px;
+  padding: 16px;
+  grid-gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 .iconRight {
+  justify-self: end;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    grid-gap: 24px;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR bHjpxP sc-jwTyAe TJUoj"
+      class="c0"
     >
       <div
-        class="sc-bRKDuR bHjpxP"
+        class=""
       >
         <h1
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c1"
           cursor="inherit"
           title=""
         >
           A lovely heading
         </h1>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ hZFdzh"
+          class="c2"
           cursor="inherit"
           title=""
         />
@@ -257,23 +601,62 @@ exports[`Row > type > renders curved last 1`] = `
 `;
 
 exports[`Row > type > renders curved type 1`] = `
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #636768;
+}
+
+.c0 {
+  border-radius: 16px;
+  border-top: none;
+  border-bottom: none;
+  background-color: #f1e9dc;
+  display: grid;
+  grid-template-columns: auto 24px;
+  padding: 16px;
+  grid-gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 .iconRight {
+  justify-self: end;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    grid-gap: 24px;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR bHjpxP sc-jwTyAe dDYruh"
+      class="c0"
     >
       <div
-        class="sc-bRKDuR bHjpxP"
+        class=""
       >
         <h1
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c1"
           cursor="inherit"
           title=""
         >
           A lovely heading
         </h1>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ hZFdzh"
+          class="c2"
           cursor="inherit"
           title=""
         />
@@ -284,23 +667,62 @@ exports[`Row > type > renders curved type 1`] = `
 `;
 
 exports[`Row > type > renders first type 1`] = `
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #636768;
+}
+
+.c0 {
+  border-radius: 16px 16px 0 0;
+  border-top: none;
+  border-bottom: 1px solid #dad2c4;
+  background-color: #f1e9dc;
+  display: grid;
+  grid-template-columns: auto 24px;
+  padding: 16px;
+  grid-gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 .iconRight {
+  justify-self: end;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    grid-gap: 24px;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR bHjpxP sc-jwTyAe cfQTIj"
+      class="c0"
     >
       <div
-        class="sc-bRKDuR bHjpxP"
+        class=""
       >
         <h1
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c1"
           cursor="inherit"
           title=""
         >
           A lovely heading
         </h1>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ hZFdzh"
+          class="c2"
           cursor="inherit"
           title=""
         />

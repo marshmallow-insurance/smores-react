@@ -1,16 +1,61 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SnackbarItem > renders correctly with required props 1`] = `
+.c0 {
+  display: flex;
+}
+
+.c2 {
+  display: flex;
+}
+
+.c3 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #f8f2ea;
+}
+
+.c1 {
+  border-radius: 16px;
+  background-color: #292924;
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    margin-top: 16px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: center;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR iQYNmO sc-jwTyAe btMzyf"
+      class="c0 c1"
     >
       <div
-        class="sc-bRKDuR hUwRKL"
+        class="c2"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ dzOPrl"
+          class="c3"
           cursor="inherit"
           title=""
         >

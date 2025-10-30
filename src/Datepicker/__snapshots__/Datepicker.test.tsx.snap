@@ -1,23 +1,237 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Datepicker > renders correctly with default props 1`] = `
+.c1 {
+  display: flex;
+}
+
+.c8 {
+  display: flex;
+}
+
+.c4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  transform: rotate(90deg);
+}
+
+.c4 svg {
+  color: #ffffff!important;
+}
+
+.c7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  transform: rotate(-90deg);
+}
+
+.c7 svg {
+  color: #ffffff!important;
+}
+
+.c5 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c9 {
+  justify-items: center;
+  display: grid;
+  grid-column-gap: 4px;
+  grid-row-gap: 8px;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 8px;
+}
+
+.c10 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid transparent;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+  color: #292924;
+  background-color: transparent;
+  pointer-events: none;
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.c10:hover:not(.active) {
+  color: #ffffff;
+  background-color: #292924;
+}
+
+.c10.active {
+  color: #ffffff;
+  background-color: #292924;
+  cursor: default;
+}
+
+.c10:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c11 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid transparent;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+  color: #292924;
+  background-color: transparent;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.c11:hover:not(.active) {
+  color: #ffffff;
+  background-color: #292924;
+}
+
+.c11.active {
+  color: #ffffff;
+  background-color: #292924;
+  cursor: default;
+}
+
+.c11:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0 {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  border-radius: 16px;
+  background-color: #f1e9dc;
+}
+
+.c2 {
+  color: #292924;
+  user-select: none;
+  padding: 16px;
+  border-bottom: 1px solid #dad2c4;
+}
+
+.c2 span {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.c6 {
+  position: relative;
+  top: 2px;
+  font-weight: 500;
+}
+
+.c3 {
+  background-color: #292924;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+  padding: 0!important;
+  cursor: pointer;
+}
+
+.c3 :disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.c3:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c8 {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c8 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 360px) {
+  .c9 {
+    grid-gap: 8px;
+    padding: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .c9 {
+    grid-column-gap: 16px;
+    padding: 32px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jJLAfE bTWFLo"
+    class="c0"
     id="datepicker"
   >
     <div
-      class="sc-bRKDuR hsryNT sc-hwkwBN kshGKm"
+      class="c1 c2"
     >
       <button
         aria-label="previous-month"
-        class="sc-dYwGCk eoezIS"
+        class="c3"
         data-testid="last-month"
         disabled=""
         type="button"
       >
         <span
-          class="sc-bRKDuR bHjpxP sc-fhHczv bTckXH"
+          class="c4"
           data-testid="caret-container"
         >
           <svg
@@ -35,7 +249,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
         </span>
       </button>
       <h4
-        class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-kNOymR kGWfzP"
+        class="c5 c6"
         cursor="inherit"
         title=""
       >
@@ -44,13 +258,13 @@ exports[`Datepicker > renders correctly with default props 1`] = `
       </h4>
       <button
         aria-label="next-month"
-        class="sc-dYwGCk eoezIS"
+        class="c3"
         data-testid="next-month"
         disabled=""
         type="button"
       >
         <span
-          class="sc-bRKDuR bHjpxP sc-fhHczv jYPAkW"
+          class="c7"
           data-testid="caret-container"
         >
           <svg
@@ -69,44 +283,44 @@ exports[`Datepicker > renders correctly with default props 1`] = `
       </button>
     </div>
     <div
-      class="sc-bRKDuR fwCHSf"
+      class="c8"
     >
       <div
-        class="sc-jwTyAe lnXCrR"
+        class="c9"
       >
         <button
           aria-label="0-unselectable-date"
-          class="sc-hjsuWn dXBqJk"
+          class="c10"
           disabled=""
         />
         <button
           aria-label="1-unselectable-date"
-          class="sc-hjsuWn dXBqJk"
+          class="c10"
           disabled=""
         />
         <button
-          class="sc-hjsuWn fsGFMP ListButton "
+          class="c11 ListButton "
           data-testid="01"
           type="button"
         >
           01
         </button>
         <button
-          class="sc-hjsuWn fsGFMP ListButton "
+          class="c11 ListButton "
           data-testid="02"
           type="button"
         >
           02
         </button>
         <button
-          class="sc-hjsuWn fsGFMP ListButton "
+          class="c11 ListButton "
           data-testid="03"
           type="button"
         >
           03
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="04"
           disabled=""
           type="button"
@@ -114,7 +328,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           04
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="05"
           disabled=""
           type="button"
@@ -122,42 +336,42 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           05
         </button>
         <button
-          class="sc-hjsuWn fsGFMP ListButton "
+          class="c11 ListButton "
           data-testid="06"
           type="button"
         >
           06
         </button>
         <button
-          class="sc-hjsuWn fsGFMP ListButton "
+          class="c11 ListButton "
           data-testid="07"
           type="button"
         >
           07
         </button>
         <button
-          class="sc-hjsuWn fsGFMP ListButton "
+          class="c11 ListButton "
           data-testid="08"
           type="button"
         >
           08
         </button>
         <button
-          class="sc-hjsuWn fsGFMP ListButton "
+          class="c11 ListButton "
           data-testid="09"
           type="button"
         >
           09
         </button>
         <button
-          class="sc-hjsuWn fsGFMP ListButton "
+          class="c11 ListButton "
           data-testid="10"
           type="button"
         >
           10
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="11"
           disabled=""
           type="button"
@@ -165,7 +379,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           11
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="12"
           disabled=""
           type="button"
@@ -173,28 +387,28 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           12
         </button>
         <button
-          class="sc-hjsuWn fsGFMP ListButton "
+          class="c11 ListButton "
           data-testid="13"
           type="button"
         >
           13
         </button>
         <button
-          class="sc-hjsuWn fsGFMP ListButton "
+          class="c11 ListButton "
           data-testid="14"
           type="button"
         >
           14
         </button>
         <button
-          class="sc-hjsuWn fsGFMP ListButton "
+          class="c11 ListButton "
           data-testid="15"
           type="button"
         >
           15
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="16"
           disabled=""
           type="button"
@@ -202,7 +416,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           16
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="17"
           disabled=""
           type="button"
@@ -210,7 +424,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           17
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="18"
           disabled=""
           type="button"
@@ -218,7 +432,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           18
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="19"
           disabled=""
           type="button"
@@ -226,7 +440,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           19
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="20"
           disabled=""
           type="button"
@@ -234,7 +448,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           20
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="21"
           disabled=""
           type="button"
@@ -242,7 +456,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           21
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="22"
           disabled=""
           type="button"
@@ -250,7 +464,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           22
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="23"
           disabled=""
           type="button"
@@ -258,7 +472,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           23
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="24"
           disabled=""
           type="button"
@@ -266,7 +480,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           24
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="25"
           disabled=""
           type="button"
@@ -274,7 +488,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           25
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="26"
           disabled=""
           type="button"
@@ -282,7 +496,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           26
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="27"
           disabled=""
           type="button"
@@ -290,7 +504,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           27
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="28"
           disabled=""
           type="button"
@@ -298,7 +512,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           28
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="29"
           disabled=""
           type="button"
@@ -306,7 +520,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           29
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="30"
           disabled=""
           type="button"
@@ -314,7 +528,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
           30
         </button>
         <button
-          class="sc-hjsuWn dXBqJk ListButton "
+          class="c10 ListButton "
           data-testid="31"
           disabled=""
           type="button"
