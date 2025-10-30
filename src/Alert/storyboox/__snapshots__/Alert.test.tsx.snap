@@ -1,12 +1,112 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Alert Component > should render Info alert correctly 1`] = `
+.c3 {
+  display: flex;
+  width: 100%;
+}
+
+.c4 {
+  max-width: 512px;
+}
+
+.c2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  transform: rotate(0deg);
+}
+
+.c2 svg {
+  color: #292924!important;
+}
+
+.c6 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c7 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  display: flex;
+  width: 100%;
+  max-width: 512px;
+  min-width: min-content;
+  padding: 12px 12px 12px 20px;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 8px 16px 16px 8px;
+  background: #d0e3f2;
+  position: relative;
+  display: flex;
+}
+
+.c0:before {
+  width: 8px;
+  height: 100%;
+  position: absolute;
+  background: #4d92c9;
+  content: '';
+  top: 0;
+  left: 0;
+  border-radius: 16px 0 0 16px;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    margin: 2px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    gap: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    margin-bottom: 4px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-kvnevz dnbNYB"
+    class="c0"
   >
     <span
-      class="sc-bRKDuR hMhNDm sc-fhHczv bkxtmk"
+      class="c1 c2"
       data-testid="circle-info-filled-container"
     >
       <svg
@@ -23,20 +123,20 @@ exports[`Alert Component > should render Info alert correctly 1`] = `
       </svg>
     </span>
     <div
-      class="sc-bRKDuR fqRygK"
+      class="c3"
     >
       <div
-        class="sc-bRKDuR ZJMPX"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR iBBFyu sc-jwTyAe eXDEYI"
+          class="c5 c6"
           cursor="inherit"
           title=""
         >
           Info Alert
         </p>
         <p
-          class="sc-bRKDuR bHjpxP sc-jwTyAe kSVvkr"
+          class="c7"
           cursor="inherit"
           title=""
         >
@@ -49,12 +149,171 @@ exports[`Alert Component > should render Info alert correctly 1`] = `
 `;
 
 exports[`Alert Component > should render correctly with button cta 1`] = `
+.c3 {
+  display: flex;
+  width: 100%;
+}
+
+.c4 {
+  max-width: 512px;
+}
+
+.c2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  transform: rotate(0deg);
+}
+
+.c2 svg {
+  color: #292924!important;
+}
+
+.c6 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c8 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c9 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+  background-color: #ffffff;
+  padding: 0 10px;
+  min-width: 54px;
+  font-size: 14px;
+}
+
+.c9:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c9:hover {
+  background-color: #fbf8f5;
+}
+
+.c9:active {
+  background-color: #f8f2ea;
+}
+
+.c9 .childrenContainer {
+  padding: 9px 0;
+}
+
+.c9 span {
+  margin: 0 5px 0 0;
+}
+
+.c10 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c11 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
+.c0 {
+  display: flex;
+  width: 100%;
+  max-width: 512px;
+  min-width: min-content;
+  padding: 12px 12px 12px 20px;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 8px 16px 16px 8px;
+  background: #fbf8f5;
+  position: relative;
+  display: flex;
+}
+
+.c0:before {
+  width: 8px;
+  height: 100%;
+  position: absolute;
+  background: #dad2c4;
+  content: '';
+  top: 0;
+  left: 0;
+  border-radius: 16px 0 0 16px;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    margin: 2px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    gap: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    margin-bottom: 4px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c7 {
+    margin-bottom: 8px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-kvnevz fOnGIb"
+    class="c0"
   >
     <span
-      class="sc-bRKDuR hMhNDm sc-fhHczv bkxtmk"
+      class="c1 c2"
       data-testid="circle-info-filled-container"
     >
       <svg
@@ -71,33 +330,33 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
       </svg>
     </span>
     <div
-      class="sc-bRKDuR fqRygK"
+      class="c3"
     >
       <div
-        class="sc-bRKDuR ZJMPX"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR iBBFyu sc-jwTyAe eXDEYI"
+          class="c5 c6"
           cursor="inherit"
           title=""
         >
           Test Alert
         </p>
         <p
-          class="sc-bRKDuR gOmDWy sc-jwTyAe kSVvkr"
+          class="c7 c8"
           cursor="inherit"
           title=""
         >
           This is a test alert.
         </p>
         <button
-          class="sc-bRKDuR bHjpxP sc-dYwGCk ksdSko"
+          class="c9"
         >
           <div
-            class="sc-eqYatC kREyTP"
+            class="c10"
           >
             <div
-              class="sc-dntSTA cJjARX childrenContainer"
+              class="c11 childrenContainer"
             >
               Click Me
             </div>
@@ -110,12 +369,184 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
 `;
 
 exports[`Alert Component > should render correctly with link cta 1`] = `
+.c3 {
+  display: flex;
+  width: 100%;
+}
+
+.c4 {
+  max-width: 512px;
+}
+
+.c2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  transform: rotate(0deg);
+}
+
+.c2 svg {
+  color: #292924!important;
+}
+
+.c10 {
+  outline: 0;
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  text-decoration: underline;
+  color: #292924;
+  background: none;
+  cursor: pointer;
+}
+
+.c10:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c10:hover {
+  color: #636768;
+}
+
+.c10:hover path {
+  fill: #636768;
+}
+
+.c10:active {
+  color: #292924;
+}
+
+.c10:active path {
+  fill: #636768;
+}
+
+.c6 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c6 .c9 {
+  color: #292924;
+}
+
+.c6 .c9 path {
+  fill: #292924;
+}
+
+.c6 .c9:hover {
+  color: #0e0e0c;
+}
+
+.c6 .c9:hover path {
+  fill: #0e0e0c;
+}
+
+.c8 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c8 .c9 {
+  color: #292924;
+}
+
+.c8 .c9 path {
+  fill: #292924;
+}
+
+.c8 .c9:hover {
+  color: #0e0e0c;
+}
+
+.c8 .c9:hover path {
+  fill: #0e0e0c;
+}
+
+.c0 {
+  display: flex;
+  width: 100%;
+  max-width: 512px;
+  min-width: min-content;
+  padding: 12px 12px 12px 20px;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 8px 16px 16px 8px;
+  background: #fcf0d0;
+  position: relative;
+  display: flex;
+}
+
+.c0:before {
+  width: 8px;
+  height: 100%;
+  position: absolute;
+  background: #f2cb4a;
+  content: '';
+  top: 0;
+  left: 0;
+  border-radius: 16px 0 0 16px;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    margin: 2px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    gap: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    margin-bottom: 4px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c7 {
+    margin-bottom: 8px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-kvnevz bcaSLF"
+    class="c0"
   >
     <span
-      class="sc-bRKDuR hMhNDm sc-fhHczv bkxtmk"
+      class="c1 c2"
       data-testid="triangle-exclamation-solid-container"
     >
       <svg
@@ -132,27 +563,27 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
       </svg>
     </span>
     <div
-      class="sc-bRKDuR fqRygK"
+      class="c3"
     >
       <div
-        class="sc-bRKDuR ZJMPX"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR iBBFyu sc-jwTyAe eXDEYI"
+          class="c5 c6"
           cursor="inherit"
           title=""
         >
           Test Alert
         </p>
         <p
-          class="sc-bRKDuR gOmDWy sc-jwTyAe kSVvkr"
+          class="c7 c8"
           cursor="inherit"
           title=""
         >
           This is a test alert.
         </p>
         <a
-          class="sc-dTvVRJ eKuQWY"
+          class="c9 c10"
           href=""
         >
           Learn More

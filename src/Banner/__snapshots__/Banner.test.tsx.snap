@@ -1,15 +1,60 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`BannerItem > render Critical banner correctly 1`] = `
+.c0 {
+  display: flex;
+}
+
+.c2 {
+  display: flex;
+}
+
+.c3 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.c1 {
+  border-radius: 0px 0px 16px 16px;
+  background-color: #d03c30;
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: center;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR kAKHvc sc-jwTyAe ifrSgI"
+    class="c0 c1"
   >
     <div
-      class="sc-bRKDuR hUwRKL"
+      class="c2"
     >
       <p
-        class="sc-bRKDuR bHjpxP sc-dTvVRJ fXhrsO"
+        class="c3"
         cursor="inherit"
         title=""
       >
@@ -17,22 +62,67 @@ exports[`BannerItem > render Critical banner correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-bRKDuR hUwRKL"
+      class="c2"
     />
   </div>
 </div>
 `;
 
 exports[`BannerItem > render General banner correctly 1`] = `
+.c0 {
+  display: flex;
+}
+
+.c2 {
+  display: flex;
+}
+
+.c3 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.c1 {
+  border-radius: 0px 0px 16px 16px;
+  background-color: #292924;
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: center;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR kAKHvc sc-jwTyAe ffmYjh"
+    class="c0 c1"
   >
     <div
-      class="sc-bRKDuR hUwRKL"
+      class="c2"
     >
       <p
-        class="sc-bRKDuR bHjpxP sc-dTvVRJ fXhrsO"
+        class="c3"
         cursor="inherit"
         title=""
       >
@@ -40,22 +130,67 @@ exports[`BannerItem > render General banner correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-bRKDuR hUwRKL"
+      class="c2"
     />
   </div>
 </div>
 `;
 
 exports[`BannerItem > render Success banner correctly 1`] = `
+.c0 {
+  display: flex;
+}
+
+.c2 {
+  display: flex;
+}
+
+.c3 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.c1 {
+  border-radius: 0px 0px 16px 16px;
+  background-color: #317a4c;
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: center;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR kAKHvc sc-jwTyAe YIoBc"
+    class="c0 c1"
   >
     <div
-      class="sc-bRKDuR hUwRKL"
+      class="c2"
     >
       <p
-        class="sc-bRKDuR bHjpxP sc-dTvVRJ fXhrsO"
+        class="c3"
         cursor="inherit"
         title=""
       >
@@ -63,22 +198,67 @@ exports[`BannerItem > render Success banner correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-bRKDuR hUwRKL"
+      class="c2"
     />
   </div>
 </div>
 `;
 
 exports[`BannerItem > render Upsell banner correctly 1`] = `
+.c0 {
+  display: flex;
+}
+
+.c2 {
+  display: flex;
+}
+
+.c3 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c1 {
+  border-radius: 0px 0px 16px 16px;
+  background-color: #ff88c8;
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: center;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR kAKHvc sc-jwTyAe RcMhA"
+    class="c0 c1"
   >
     <div
-      class="sc-bRKDuR hUwRKL"
+      class="c2"
     >
       <p
-        class="sc-bRKDuR bHjpxP sc-dTvVRJ fvPyJk"
+        class="c3"
         cursor="inherit"
         title=""
       >
@@ -86,7 +266,7 @@ exports[`BannerItem > render Upsell banner correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-bRKDuR hUwRKL"
+      class="c2"
     />
   </div>
 </div>

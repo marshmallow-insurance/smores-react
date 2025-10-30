@@ -1,17 +1,142 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Pagination > renders correctly with current page prop 1`] = `
+.c0 {
+  display: flex;
+}
+
+.c3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  transform: rotate(0deg);
+}
+
+.c3 svg {
+  color: #292924!important;
+}
+
+.c8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  transform: rotate(180deg);
+}
+
+.c8 svg {
+  color: #292924!important;
+}
+
+.c7 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c5 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c1 {
+  align-items: center;
+}
+
+.c1 >button {
+  margin-right: 4px;
+}
+
+.c1 >button:last-child {
+  margin-right: 0;
+}
+
+.c6 {
+  background: #f1e9dc;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border-radius: 24px;
+  width: fit-content;
+  padding: 0px 4px;
+  height: 24px;
+  min-width: 24px;
+}
+
+.c6:hover {
+  background-color: #f1e9dc;
+}
+
+.c6:active {
+  background-color: #f8f2ea;
+}
+
+.c6:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c4 {
+  background: #ffffff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border-radius: 24px;
+  width: fit-content;
+  padding: 0px 4px;
+  height: 24px;
+  min-width: 24px;
+}
+
+.c4:hover {
+  background-color: #f1e9dc;
+}
+
+.c4:active {
+  background-color: #f8f2ea;
+}
+
+.c4:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c2 {
+  cursor: pointer;
+}
+
+.c2:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    flex-direction: row;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR hbiRtX sc-jwTyAe dOPolu"
+      class="c0 c1"
     >
       <button
         aria-label="previous-page"
-        class="sc-jJLAfE cFYRTO"
+        class="c2"
       >
         <span
-          class="sc-bRKDuR bHjpxP sc-fhHczv lfpoiQ"
+          class="c3"
           data-testid="arrow-container"
         >
           <svg
@@ -29,10 +154,10 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
         </span>
       </button>
       <button
-        class="sc-hjsuWn kPWbTG"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c5"
           cursor="inherit"
           title=""
         >
@@ -40,10 +165,10 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
         </p>
       </button>
       <button
-        class="sc-hjsuWn kPWbTG"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c5"
           cursor="inherit"
           title=""
         >
@@ -51,10 +176,10 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
         </p>
       </button>
       <button
-        class="sc-hjsuWn kPWbTG"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c5"
           cursor="inherit"
           title=""
         >
@@ -62,10 +187,10 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
         </p>
       </button>
       <button
-        class="sc-hjsuWn joHega"
+        class="c6"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ fvPyJk"
+          class="c7"
           cursor="inherit"
           title=""
         >
@@ -73,10 +198,10 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
         </p>
       </button>
       <button
-        class="sc-hjsuWn kPWbTG"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c5"
           cursor="inherit"
           title=""
         >
@@ -84,10 +209,10 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
         </p>
       </button>
       <button
-        class="sc-hjsuWn kPWbTG"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c5"
           cursor="inherit"
           title=""
         >
@@ -95,10 +220,10 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
         </p>
       </button>
       <button
-        class="sc-hjsuWn kPWbTG"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c5"
           cursor="inherit"
           title=""
         >
@@ -107,10 +232,10 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
       </button>
       <button
         aria-label="next-page"
-        class="sc-jJLAfE cFYRTO"
+        class="c2"
       >
         <span
-          class="sc-bRKDuR bHjpxP sc-fhHczv hoLKYB"
+          class="c8"
           data-testid="arrow-container"
         >
           <svg
@@ -133,16 +258,127 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
 `;
 
 exports[`Pagination > renders correctly with default props 1`] = `
+.c0 {
+  display: flex;
+}
+
+.c7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  transform: rotate(180deg);
+}
+
+.c7 svg {
+  color: #292924!important;
+}
+
+.c3 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c5 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c1 {
+  align-items: center;
+}
+
+.c1 >button {
+  margin-right: 4px;
+}
+
+.c1 >button:last-child {
+  margin-right: 0;
+}
+
+.c2 {
+  background: #f1e9dc;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border-radius: 24px;
+  width: fit-content;
+  padding: 0px 4px;
+  height: 24px;
+  min-width: 24px;
+}
+
+.c2:hover {
+  background-color: #f1e9dc;
+}
+
+.c2:active {
+  background-color: #f8f2ea;
+}
+
+.c2:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c4 {
+  background: #ffffff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border-radius: 24px;
+  width: fit-content;
+  padding: 0px 4px;
+  height: 24px;
+  min-width: 24px;
+}
+
+.c4:hover {
+  background-color: #f1e9dc;
+}
+
+.c4:active {
+  background-color: #f8f2ea;
+}
+
+.c4:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c6 {
+  cursor: pointer;
+}
+
+.c6:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    flex-direction: row;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR hbiRtX sc-jwTyAe dOPolu"
+      class="c0 c1"
     >
       <button
-        class="sc-hjsuWn joHega"
+        class="c2"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ fvPyJk"
+          class="c3"
           cursor="inherit"
           title=""
         >
@@ -150,10 +386,10 @@ exports[`Pagination > renders correctly with default props 1`] = `
         </p>
       </button>
       <button
-        class="sc-hjsuWn kPWbTG"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c5"
           cursor="inherit"
           title=""
         >
@@ -161,10 +397,10 @@ exports[`Pagination > renders correctly with default props 1`] = `
         </p>
       </button>
       <button
-        class="sc-hjsuWn kPWbTG"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c5"
           cursor="inherit"
           title=""
         >
@@ -172,10 +408,10 @@ exports[`Pagination > renders correctly with default props 1`] = `
         </p>
       </button>
       <button
-        class="sc-hjsuWn kPWbTG"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c5"
           cursor="inherit"
           title=""
         >
@@ -183,10 +419,10 @@ exports[`Pagination > renders correctly with default props 1`] = `
         </p>
       </button>
       <button
-        class="sc-hjsuWn kPWbTG"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c5"
           cursor="inherit"
           title=""
         >
@@ -194,10 +430,10 @@ exports[`Pagination > renders correctly with default props 1`] = `
         </p>
       </button>
       <button
-        class="sc-hjsuWn kPWbTG"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c5"
           cursor="inherit"
           title=""
         >
@@ -205,10 +441,10 @@ exports[`Pagination > renders correctly with default props 1`] = `
         </p>
       </button>
       <button
-        class="sc-hjsuWn kPWbTG"
+        class="c4"
       >
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+          class="c5"
           cursor="inherit"
           title=""
         >
@@ -217,10 +453,10 @@ exports[`Pagination > renders correctly with default props 1`] = `
       </button>
       <button
         aria-label="next-page"
-        class="sc-jJLAfE cFYRTO"
+        class="c6"
       >
         <span
-          class="sc-bRKDuR bHjpxP sc-fhHczv hoLKYB"
+          class="c7"
           data-testid="arrow-container"
         >
           <svg

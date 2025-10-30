@@ -13,5 +13,6 @@ const customRender = (
 
 export * from '@testing-library/react'
 export * from '@testing-library/jest-dom/vitest'
+export * from 'jest-styled-components'
 
 export { customRender as render }

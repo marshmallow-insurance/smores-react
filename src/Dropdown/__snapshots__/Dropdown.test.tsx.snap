@@ -1,19 +1,129 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Dropdown > renders correctly when completed 1`] = `
+.c1 {
+  display: flex;
+}
+
+.c4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+}
+
+.c4 svg {
+  color: #9d927b!important;
+}
+
+.c8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  transform: rotate(0deg);
+}
+
+.c8 svg {
+  color: #317a4c!important;
+}
+
+.c9 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #317a4c;
+}
+
+.c5 {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.6s ease-in;
+  width: 100%;
+}
+
+.c7 {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.c0 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border: 0;
+}
+
+.c2 {
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  appearance: none;
+  outline: none;
+  width: 100%;
+  height: 32px;
+  color: #636768;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 18px 14px;
+  border: 2px solid #dad2c4;
+  height: auto;
+}
+
+.c2:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.c2 :not(:disabled):hover,
+.c2 :not(:disabled):focus,
+.c2 :not(:disabled):focus-visible,
+.c2 :not(:disabled):checked {
+  border-color: #9d927b;
+}
+
+.c3 {
+  position: absolute;
+  z-index: 1;
+  right: 15px;
+  pointer-events: none;
+  color: #9d927b;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c6 {
+    margin-top: 8px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jJLAfE izsDDD"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR bHjpxP"
+      class=""
     >
       <div
-        class="sc-bRKDuR hUwRKL"
+        class="c1"
         style="position: relative;"
       >
         <select
-          class="sc-lgpSej ckPePk"
+          class="c2"
           id="MM_SMORES_1"
         >
           <option
@@ -33,10 +143,10 @@ exports[`Dropdown > renders correctly when completed 1`] = `
           </option>
         </select>
         <div
-          class="sc-eqYatC gvIKPK"
+          class="c3"
         >
           <span
-            class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh"
+            class="c4"
             data-testid="caret-container"
           >
             <svg
@@ -56,13 +166,13 @@ exports[`Dropdown > renders correctly when completed 1`] = `
       </div>
     </div>
     <div
-      class="sc-bRKDuR bHjpxP sc-jwTyAe iDLFKn"
+      class="c5"
     >
       <div
-        class="sc-bRKDuR fhEDUK sc-hjsuWn kRRkcz"
+        class="c6 c7"
       >
         <span
-          class="sc-bRKDuR bHjpxP sc-fhHczv hRkrYx"
+          class="c8"
           data-testid="included-container"
         >
           <svg
@@ -85,7 +195,7 @@ exports[`Dropdown > renders correctly when completed 1`] = `
           </svg>
         </span>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ karOVv"
+          class="c9"
           cursor="inherit"
           title=""
         >
@@ -98,19 +208,88 @@ exports[`Dropdown > renders correctly when completed 1`] = `
 `;
 
 exports[`Dropdown > renders correctly with a list of items 1`] = `
+.c1 {
+  display: flex;
+}
+
+.c4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+}
+
+.c4 svg {
+  color: #9d927b!important;
+}
+
+.c0 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border: 0;
+}
+
+.c2 {
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  appearance: none;
+  outline: none;
+  width: 100%;
+  height: 32px;
+  color: #636768;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 18px 14px;
+  border: 2px solid #dad2c4;
+  height: auto;
+}
+
+.c2:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.c2 :not(:disabled):hover,
+.c2 :not(:disabled):focus,
+.c2 :not(:disabled):focus-visible,
+.c2 :not(:disabled):checked {
+  border-color: #9d927b;
+}
+
+.c3 {
+  position: absolute;
+  z-index: 1;
+  right: 15px;
+  pointer-events: none;
+  color: #9d927b;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    align-items: center;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jJLAfE izsDDD"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR bHjpxP"
+      class=""
     >
       <div
-        class="sc-bRKDuR hUwRKL"
+        class="c1"
         style="position: relative;"
       >
         <select
-          class="sc-lgpSej ckPePk"
+          class="c2"
           id="MM_SMORES_0"
         >
           <option
@@ -130,10 +309,10 @@ exports[`Dropdown > renders correctly with a list of items 1`] = `
           </option>
         </select>
         <div
-          class="sc-eqYatC gvIKPK"
+          class="c3"
         >
           <span
-            class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh"
+            class="c4"
             data-testid="caret-container"
           >
             <svg
@@ -157,19 +336,125 @@ exports[`Dropdown > renders correctly with a list of items 1`] = `
 `;
 
 exports[`Dropdown > renders correctly with an error message 1`] = `
+.c1 {
+  display: flex;
+}
+
+.c5 {
+  display: flex;
+}
+
+.c4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+}
+
+.c4 svg {
+  color: #9d927b!important;
+}
+
+.c6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  transform: rotate(0deg);
+}
+
+.c6 svg {
+  color: #d03c30!important;
+}
+
+.c7 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #d03c30;
+}
+
+.c0 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border: 0;
+}
+
+.c2 {
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  appearance: none;
+  outline: none;
+  width: 100%;
+  height: 32px;
+  color: #636768;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 18px 14px;
+  border: 2px solid #d03c30;
+  height: auto;
+}
+
+.c2:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.c3 {
+  position: absolute;
+  z-index: 1;
+  right: 15px;
+  pointer-events: none;
+  color: #9d927b;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    gap: 4px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jJLAfE izsDDD"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR bHjpxP"
+      class=""
     >
       <div
-        class="sc-bRKDuR hUwRKL"
+        class="c1"
         style="position: relative;"
       >
         <select
-          class="sc-lgpSej dsPMCh"
+          class="c2"
           id="MM_SMORES_2"
         >
           <option
@@ -189,10 +474,10 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
           </option>
         </select>
         <div
-          class="sc-eqYatC gvIKPK"
+          class="c3"
         >
           <span
-            class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh"
+            class="c4"
             data-testid="caret-container"
           >
             <svg
@@ -212,10 +497,10 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
       </div>
     </div>
     <div
-      class="sc-bRKDuR ezosON"
+      class="c5"
     >
       <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv bXMvct"
+        class="c6"
         data-testid="warning-container"
       >
         <svg
@@ -232,7 +517,7 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
         </svg>
       </span>
       <span
-        class="sc-bRKDuR bHjpxP sc-dTvVRJ hozFOv"
+        class="c7"
         cursor="inherit"
         title=""
       >

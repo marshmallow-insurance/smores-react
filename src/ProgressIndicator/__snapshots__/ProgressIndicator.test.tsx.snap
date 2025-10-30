@@ -1,28 +1,158 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ProgressIndicator > snapshot > renders correctly with default props 1`] = `
+.c0 {
+  display: flex;
+  width: 320px;
+}
+
+.c3 {
+  display: flex;
+}
+
+.c4 {
+  display: flex;
+  width: 160px;
+}
+
+.c6 {
+  display: flex;
+}
+
+.c8 {
+  display: flex;
+}
+
+.c10 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #292924;
+}
+
+.c5 {
+  position: relative;
+  z-index: 1;
+  top: 9px;
+  left: -10px;
+}
+
+.c5:last-child {
+  width: auto;
+}
+
+.c7 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c12 {
+  position: relative;
+  cursor: auto;
+}
+
+.c9 {
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  z-index: 1;
+  background: #317a4c;
+}
+
+.c13 {
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  z-index: 1;
+  background: #c9e2ce;
+}
+
+.c11 {
+  margin-top: 2px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  z-index: 0;
+  content: '';
+  position: absolute;
+  background: #c9e2ce;
+  width: 100%;
+  height: 12px;
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c4 {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 0px) {
+  .c6 {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 0px) {
+  .c6 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c8 {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c8 {
+    align-items: center;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR gjQVek sc-lgpSej dlzJMu"
+    class="c0 c1"
   >
     <div
-      class="sc-bRKDuR bHjpxP sc-eqYatC eePycs"
+      class="c2"
     />
     <div
-      class="sc-bRKDuR jCllHL"
+      class="c3"
     >
       <div
-        class="sc-bRKDuR eXoKVa sc-hjsuWn blvpKV"
+        class="c4 c5"
       >
         <div
-          class="sc-bRKDuR leNTXj sc-jJLAfE ejaShY"
+          class="c6 c7"
           data-testid="step-item-Step 1"
         >
           <div
-            class="sc-bRKDuR fwCHSf sc-hwkwBN ehCFIa"
+            class="c8 c9"
           />
           <p
-            class="sc-bRKDuR bHjpxP sc-dTvVRJ qDeEm sc-kNOymR eiBTXe"
+            class="c10 c11"
             cursor="inherit"
             title=""
           >
@@ -31,17 +161,17 @@ exports[`ProgressIndicator > snapshot > renders correctly with default props 1`]
         </div>
       </div>
       <div
-        class="sc-bRKDuR eXoKVa sc-hjsuWn blvpKV"
+        class="c4 c5"
       >
         <div
-          class="sc-bRKDuR leNTXj sc-jJLAfE beJilU"
+          class="c6 c12"
           data-testid="step-item-Step 2"
         >
           <div
-            class="sc-bRKDuR fwCHSf sc-hwkwBN eWQDzm"
+            class="c8 c13"
           />
           <p
-            class="sc-bRKDuR bHjpxP sc-dTvVRJ qDeEm sc-kNOymR eiBTXe"
+            class="c10 c11"
             cursor="inherit"
             title=""
           >
@@ -50,17 +180,17 @@ exports[`ProgressIndicator > snapshot > renders correctly with default props 1`]
         </div>
       </div>
       <div
-        class="sc-bRKDuR eXoKVa sc-hjsuWn blvpKV"
+        class="c4 c5"
       >
         <div
-          class="sc-bRKDuR leNTXj sc-jJLAfE beJilU"
+          class="c6 c12"
           data-testid="step-item-Step 3"
         >
           <div
-            class="sc-bRKDuR fwCHSf sc-hwkwBN eWQDzm"
+            class="c8 c13"
           />
           <p
-            class="sc-bRKDuR bHjpxP sc-dTvVRJ qDeEm sc-kNOymR eiBTXe"
+            class="c10 c11"
             cursor="inherit"
             title=""
           >

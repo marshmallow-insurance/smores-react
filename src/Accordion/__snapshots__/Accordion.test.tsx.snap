@@ -1,18 +1,115 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Accordion > renders correctly for fullBorder and filledBackground variant 1`] = `
+.c1 {
+  display: flex;
+}
+
+.c5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+}
+
+.c5 svg {
+  color: #9d927b!important;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  border-bottom: 1px solid #dad2c4;
+  border: 1px solid #dad2c4;
+  border-radius: 16px;
+  background-color: #f1e9dc;
+}
+
+.c3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.c2 {
+  cursor: pointer;
+}
+
+.c6 {
+  transform: rotate(180deg);
+  transition: transform 0.6s ease;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding-left: 16px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c7 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c7 {
+    padding-top: 12px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c7 {
+    padding-bottom: 16px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe emHXsE"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR gwwejK sc-jJLAfE iWiHKP"
+      class="c1 c2"
     >
       <div
-        class="sc-hjsuWn hLwqBO"
+        class="c3"
       >
         <h2
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ jMSukC"
+          class="c4"
           cursor="inherit"
           title=""
         >
@@ -20,7 +117,7 @@ exports[`Accordion > renders correctly for fullBorder and filledBackground varia
         </h2>
       </div>
       <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh sc-hwkwBN fqsjph"
+        class="c5 c6"
         data-testid="caret-container"
       >
         <svg
@@ -38,7 +135,7 @@ exports[`Accordion > renders correctly for fullBorder and filledBackground varia
       </span>
     </div>
     <div
-      class="sc-bRKDuR enIEuK"
+      class="c7"
     >
       Lots of brilliant information about this beautiful component
     </div>
@@ -47,18 +144,93 @@ exports[`Accordion > renders correctly for fullBorder and filledBackground varia
 `;
 
 exports[`Accordion > renders correctly when closed 1`] = `
+.c1 {
+  display: flex;
+}
+
+.c5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+}
+
+.c5 svg {
+  color: #9d927b!important;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  border-bottom: 1px solid #dad2c4;
+}
+
+.c3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.c2 {
+  cursor: pointer;
+}
+
+.c6 {
+  transform: rotate(0deg);
+  transition: transform 0.6s ease;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    align-items: center;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe dRsXQD"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR jGGaUV sc-jJLAfE iWiHKP"
+      class="c1 c2"
     >
       <div
-        class="sc-hjsuWn hLwqBO"
+        class="c3"
       >
         <h2
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ jMSukC"
+          class="c4"
           cursor="inherit"
           title=""
         >
@@ -66,7 +238,7 @@ exports[`Accordion > renders correctly when closed 1`] = `
         </h2>
       </div>
       <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh sc-hwkwBN hNMPrg"
+        class="c5 c6"
         data-testid="caret-container"
       >
         <svg
@@ -88,18 +260,112 @@ exports[`Accordion > renders correctly when closed 1`] = `
 `;
 
 exports[`Accordion > renders correctly when expanded 1`] = `
+.c1 {
+  display: flex;
+}
+
+.c5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+}
+
+.c5 svg {
+  color: #9d927b!important;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  border-bottom: 1px solid #dad2c4;
+}
+
+.c3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.c2 {
+  cursor: pointer;
+}
+
+.c6 {
+  transform: rotate(180deg);
+  transition: transform 0.6s ease;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c7 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 0px) {
+  .c7 {
+    padding-top: 12px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c7 {
+    padding-bottom: 16px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe dRsXQD"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR jGGaUV sc-jJLAfE iWiHKP"
+      class="c1 c2"
     >
       <div
-        class="sc-hjsuWn hLwqBO"
+        class="c3"
       >
         <h2
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ jMSukC"
+          class="c4"
           cursor="inherit"
           title=""
         >
@@ -107,7 +373,7 @@ exports[`Accordion > renders correctly when expanded 1`] = `
         </h2>
       </div>
       <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv ewPdMh sc-hwkwBN fqsjph"
+        class="c5 c6"
         data-testid="caret-container"
       >
         <svg
@@ -125,7 +391,7 @@ exports[`Accordion > renders correctly when expanded 1`] = `
       </span>
     </div>
     <div
-      class="sc-bRKDuR hANJi"
+      class="c7"
     >
       Lots of brilliant information about this beautiful component
     </div>

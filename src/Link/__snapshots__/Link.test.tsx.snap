@@ -1,9 +1,43 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Link > renders correctly with default props 1`] = `
+.c0 {
+  outline: 0;
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  text-decoration: underline;
+  color: #292924;
+  background: none;
+  cursor: pointer;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  color: #636768;
+}
+
+.c0:hover path {
+  fill: #636768;
+}
+
+.c0:active {
+  color: #292924;
+}
+
+.c0:active path {
+  fill: #636768;
+}
+
 <div>
   <a
-    class="sc-ggWZvA jROAcy"
+    class="c0"
     href="https://www.google.com"
   >
     Google Link

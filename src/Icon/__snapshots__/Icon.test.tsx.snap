@@ -1,9 +1,23 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Icon > renders correctly with custom size and color 1`] = `
+.c0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  transform: rotate(0deg);
+}
+
+.c0 svg {
+  color: #89a2b6!important;
+}
+
 <div>
   <span
-    class="sc-bRKDuR bHjpxP sc-fhHczv jzqxIY"
+    class="c0"
     data-testid="search-container"
   >
     <svg
@@ -25,9 +39,23 @@ exports[`Icon > renders correctly with custom size and color 1`] = `
 `;
 
 exports[`Icon > renders correctly with default props 1`] = `
+.c0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+}
+
+.c0 svg {
+  color: #292924!important;
+}
+
 <div>
   <span
-    class="sc-bRKDuR bHjpxP sc-fhHczv XmxEI"
+    class="c0"
     data-testid="car-container"
   >
     <svg

@@ -1,9 +1,52 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SliderInput > renders correctly with default props 1`] = `
+.c0 {
+  outline: 0;
+  border: 0;
+  padding: 0;
+  border-radius: 500px;
+  width: 100%;
+  max-width: 2000px;
+  transition: box-shadow 0.2s ease-in-out;
+  background: #fbf8f5;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .c0 {
+    overflow: hidden;
+    height: 44px;
+    -webkit-appearance: none;
+  }
+
+  .c0::-webkit-slider-runnable-track {
+    height: 44px;
+    -webkit-appearance: none;
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  .c0::-webkit-slider-thumb {
+    width: 44px;
+    -webkit-appearance: none;
+    height: 44px;
+    cursor: ew-resize;
+    background: #fbf8f5;
+    box-shadow: -1000px 0 0 980px #ff88c8,inset 0 0 0 44px #f759a9;
+    border-radius: 50%;
+    transition: box-shadow 0.2s ease-in-out;
+    position: relative;
+  }
+
+  .c0:active::-webkit-slider-thumb,
+  .c0:focus::-webkit-slider-thumb {
+    background: #fbf8f5;
+    box-shadow: -1000px 0 0 980px #ff88c8,inset 0 0 0 4px #f759a9;
+  }
+}
+
 <div>
   <input
-    class="sc-bRKDuR gNHzaB"
+    class="c0"
     max="100"
     min="0"
     type="range"
