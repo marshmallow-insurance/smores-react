@@ -1,16 +1,49 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Button > renders correctly when disabled 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: not-allowed;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 0.5;
+  width: auto;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE eMOURj"
+    class="c0"
     disabled=""
   >
     <div
-      class="sc-kNOymR AyWek"
+      class="c1"
     >
       <div
-        class="sc-lgpSej dtnxRg childrenContainer"
+        class="c2 childrenContainer"
       >
         Click Me
       </div>
@@ -20,16 +53,78 @@ exports[`Button > renders correctly when disabled 1`] = `
 `;
 
 exports[`Button > renders correctly when loading 1`] = `
+.c2 path {
+  fill: #292924;
+  stroke: none;
+  fill-rule: evenodd;
+}
+
+.c3 {
+  animation: Marshmallow1_t 1.6s linear infinite both,Marshmallow1_d 1.6s linear infinite both;
+}
+
+.c4 {
+  animation: Marshmallow2_t 1.6s linear infinite both,Marshmallow2_d 1.6s linear infinite both;
+}
+
+.c5 {
+  animation: Marshmallow3_t 1.6s linear infinite both,Marshmallow3_d 1.6s linear infinite both;
+}
+
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: not-allowed;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 0.5;
+  width: auto;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c1 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.c7 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE eMOURj"
+    class="c0"
     disabled=""
   >
     <div
-      class="sc-hwkwBN HRaKY"
+      class="c1"
     >
       <svg
-        class="sc-ggWZvA bAkxau"
+        class="c2"
         height="16"
         viewBox="0 0 60 32"
       >
@@ -37,19 +132,19 @@ exports[`Button > renders correctly when loading 1`] = `
           transform="translate(30,18.5455) translate(-30,-9)"
         >
           <path
-            class="sc-dTvVRJ jLBpiK"
+            class="c3"
             d="M73.999,81.9767L73.6592,70.6087C73.6352,69.8071,73.1892,69.0806,72.4916,68.707C71.1747,68.0014,69.0105,67.648,66.0001,67.6467C62.9894,67.648,60.8254,68.0014,59.5084,68.707C58.8109,69.0806,58.3648,69.8071,58.3408,70.6087L58.001,81.9767C57.983,82.5754,58.2138,83.1538,58.6366,83.5705C60.0408,84.9546,62.4906,85.6467,65.986,85.6467C65.9907,85.6467,65.9953,85.6467,66.0001,85.6467C66.0047,85.6467,66.0094,85.6467,66.014,85.6467C69.5095,85.6467,71.9593,84.9546,73.3634,83.5705C73.7863,83.1538,74.0169,82.5754,73.999,81.9767"
             id="Marshmallow1"
             transform="translate(-58,-67.6467)"
           />
           <path
-            class="sc-jwTyAe kHfTEG"
+            class="c4"
             d="M73.999,81.9767L73.6592,70.6087C73.6352,69.8071,73.1892,69.0806,72.4916,68.707C71.1747,68.0014,69.0105,67.648,66.0001,67.6467C62.9894,67.648,60.8254,68.0014,59.5084,68.707C58.8109,69.0806,58.3648,69.8071,58.3408,70.6087L58.001,81.9767C57.983,82.5754,58.2138,83.1538,58.6366,83.5705C60.0408,84.9546,62.4906,85.6467,65.986,85.6467C65.9907,85.6467,65.9953,85.6467,66.0001,85.6467C66.0047,85.6467,66.0094,85.6467,66.014,85.6467C69.5095,85.6467,71.9593,84.9546,73.3634,83.5705C73.7863,83.1538,74.0169,82.5754,73.999,81.9767"
             id="Marshmallow2"
             transform="translate(-36,-67.6467)"
           />
           <path
-            class="sc-hjsuWn bjPPtv"
+            class="c5"
             d="M73.999,81.9767L73.6592,70.6087C73.6352,69.8071,73.1892,69.0806,72.4916,68.707C71.1747,68.0014,69.0105,67.648,66.0001,67.6467C62.9894,67.648,60.8254,68.0014,59.5084,68.707C58.8109,69.0806,58.3648,69.8071,58.3408,70.6087L58.001,81.9767C57.983,82.5754,58.2138,83.1538,58.6366,83.5705C60.0408,84.9546,62.4906,85.6467,65.986,85.6467C65.9907,85.6467,65.9953,85.6467,66.0001,85.6467C66.0047,85.6467,66.0094,85.6467,66.014,85.6467C69.5095,85.6467,71.9593,84.9546,73.3634,83.5705C73.7863,83.1538,74.0169,82.5754,73.999,81.9767"
             id="Marshmallow3"
             transform="translate(-14,-67.6467)"
@@ -58,10 +153,10 @@ exports[`Button > renders correctly when loading 1`] = `
       </svg>
     </div>
     <div
-      class="sc-kNOymR AyVJp"
+      class="c6"
     >
       <div
-        class="sc-lgpSej dtnxRg childrenContainer"
+        class="c7 childrenContainer"
       >
         Loading
       </div>
@@ -71,15 +166,48 @@ exports[`Button > renders correctly when loading 1`] = `
 `;
 
 exports[`Button > renders correctly with a custom className 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE kgFfue custom-class"
+    class="c0 custom-class"
   >
     <div
-      class="sc-kNOymR AyWek"
+      class="c1"
     >
       <div
-        class="sc-lgpSej dtnxRg childrenContainer"
+        class="c2 childrenContainer"
       >
         Click Me
       </div>
@@ -89,16 +217,49 @@ exports[`Button > renders correctly with a custom className 1`] = `
 `;
 
 exports[`Button > renders correctly with a custom type 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE kgFfue"
+    class="c0"
     type="submit"
   >
     <div
-      class="sc-kNOymR AyWek"
+      class="c1"
     >
       <div
-        class="sc-lgpSej dtnxRg childrenContainer"
+        class="c2 childrenContainer"
       >
         Submit
       </div>
@@ -108,15 +269,66 @@ exports[`Button > renders correctly with a custom type 1`] = `
 `;
 
 exports[`Button > renders correctly with an icon 1`] = `
+.c2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+}
+
+.c2 svg {
+  color: #292924!important;
+}
+
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  opacity: 1;
+}
+
+.c3 {
+  margin: 0 10px 0 0;
+}
+
+.c4 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE kgFfue"
+    class="c0"
   >
     <div
-      class="sc-kNOymR cOHRID"
+      class="c1"
     >
       <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv XmxEI sc-dYwGCk ijOES"
+        class="c2 c3"
         data-testid="info-container"
       >
         <svg
@@ -135,7 +347,7 @@ exports[`Button > renders correctly with an icon 1`] = `
         </svg>
       </span>
       <div
-        class="sc-lgpSej dtnxRg childrenContainer"
+        class="c4 childrenContainer"
       >
         With Icon
       </div>
@@ -145,15 +357,48 @@ exports[`Button > renders correctly with an icon 1`] = `
 `;
 
 exports[`Button > renders correctly with default props 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE kgFfue"
+    class="c0"
   >
     <div
-      class="sc-kNOymR AyWek"
+      class="c1"
     >
       <div
-        class="sc-lgpSej dtnxRg childrenContainer"
+        class="c2 childrenContainer"
       >
         Click Me
       </div>
@@ -163,15 +408,48 @@ exports[`Button > renders correctly with default props 1`] = `
 `;
 
 exports[`Button > renders correctly with forced width 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: 200px;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE kQxtdL"
+    class="c0"
   >
     <div
-      class="sc-kNOymR AyWek"
+      class="c1"
     >
       <div
-        class="sc-lgpSej dtnxRg childrenContainer"
+        class="c2 childrenContainer"
       >
         Forced Width
       </div>
@@ -181,15 +459,56 @@ exports[`Button > renders correctly with forced width 1`] = `
 `;
 
 exports[`Button > renders correctly with primary styling 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  background-color: #ffb3da;
+}
+
+.c0:active {
+  background-color: #f759a9;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE cTCXtj"
+    class="c0"
   >
     <div
-      class="sc-kNOymR AyWek"
+      class="c1"
     >
       <div
-        class="sc-lgpSej dtnxRg childrenContainer"
+        class="c2 childrenContainer"
       >
         Primary Button
       </div>
@@ -199,15 +518,57 @@ exports[`Button > renders correctly with primary styling 1`] = `
 `;
 
 exports[`Button > renders correctly with secondary styling 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+  background-color: #dad2c4;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  background-color: #f1e9dc;
+}
+
+.c0:active {
+  background-color: #beb4a0;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE dTAtDC"
+    class="c0"
   >
     <div
-      class="sc-kNOymR AyWek"
+      class="c1"
     >
       <div
-        class="sc-lgpSej dtnxRg childrenContainer"
+        class="c2 childrenContainer"
       >
         Secondary Button
       </div>
@@ -217,15 +578,59 @@ exports[`Button > renders correctly with secondary styling 1`] = `
 `;
 
 exports[`Button > renders correctly with small button styling 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+  padding: 0 10px;
+  min-width: 54px;
+  font-size: 14px;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0 .childrenContainer {
+  padding: 9px 0;
+}
+
+.c0 span {
+  margin: 0 5px 0 0;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE dXnJco"
+    class="c0"
   >
     <div
-      class="sc-kNOymR AyWek"
+      class="c1"
     >
       <div
-        class="sc-lgpSej dtnxRg childrenContainer"
+        class="c2 childrenContainer"
       >
         Small Button
       </div>
@@ -235,15 +640,61 @@ exports[`Button > renders correctly with small button styling 1`] = `
 `;
 
 exports[`Button > renders correctly with text button styling 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  text-decoration: underline;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  background-color: #ffb3da;
+}
+
+.c0:active {
+  background-color: transparent;
+  color: #636768;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE dtsDty"
+    class="c0"
   >
     <div
-      class="sc-kNOymR AyWek"
+      class="c1"
     >
       <div
-        class="sc-lgpSej dtnxRg childrenContainer"
+        class="c2 childrenContainer"
       >
         Text Button
       </div>
@@ -253,15 +704,48 @@ exports[`Button > renders correctly with text button styling 1`] = `
 `;
 
 exports[`Button > renders correctly with trailing icon 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
 <div>
   <button
-    class="sc-bRKDuR bHjpxP sc-jJLAfE kgFfue"
+    class="c0"
   >
     <div
-      class="sc-kNOymR cOHRID"
+      class="c1"
     >
       <div
-        class="sc-lgpSej dtnxRg childrenContainer"
+        class="c2 childrenContainer"
       >
         Trailing Icon
       </div>

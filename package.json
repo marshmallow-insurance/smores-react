@@ -1,6 +1,6 @@
 {
   "name": "@mrshmllw/smores-react",
-  "version": "13.21.2",
+  "version": "13.21.3",
   "main": "./dist/index.js",
   "description": "Collection of React components used by Marshmallow Technology",
   "type": "module",
@@ -63,6 +63,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "husky": "^9.1.7",
+    "jest-styled-components": "^7.2.0",
     "jsdom": "^26.1.0",
     "lint-staged": "^16.1.2",
     "playwright": "^1.56.1",
