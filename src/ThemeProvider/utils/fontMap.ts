@@ -3,10 +3,17 @@ import * as designTokens from '@mrshmllw/smores-foundations/build/web/variables.
 import { Typo } from '../../Text'
 import { Theme } from '../../ThemeProvider/ThemeProvider'
 import { getFromObject } from '../../utils/getFromObject'
+import { css } from 'styled-components'
 
 type Font = typeof designTokens.font
 type FontKey = keyof Font
-export type FontValueObject = Font[keyof Font][keyof Font[keyof Font]]
+type FontValueKey = (typeof fontValueKeys)[number]
+
+export type FontValueObject = Partial<{
+  [K in FontValueKey]?: K extends keyof Font[keyof Font][keyof Font[keyof Font]]
+    ? Font[keyof Font][keyof Font[keyof Font]][K]
+    : never
+}>
 
 const fontValueKeys = [
   'fontFamily',
@@ -15,6 +22,7 @@ const fontValueKeys = [
   'lineHeight',
   'letterSpacing',
   'textCase',
+  'textDecoration',
 ]
 
 type captionTypeKeys = [keyof Font['caption']]
@@ -45,7 +53,9 @@ export type FontPathMap = {
           ? `font.${K}.${heroTypeKeys[number]}`
           : K extends 'label'
             ? `font.${K}.${labelTypeKeys[number]}`
-            : never
+            : K extends 'link'
+              ? `font.${K}.${linkTypeKeys[number]}`
+              : never
 }[FontKey]
 
 export type TypoTypes = FontPathMap | Typo
@@ -117,4 +127,17 @@ export const legacyFontStyleMapping: Record<Typo, FontPathMap> = {
   'body-small': 'font.body.100',
   caption: 'font.caption.100',
   label: 'font.label.100',
+}
+
+export const translateFontStyleIntoCss = (fontObject: FontValueObject) => {
+  console.log('fontObject.lineheight', fontObject.lineHeight)
+  return css`
+    font-family: ${fontObject.fontFamily};
+    font-size: ${fontObject.fontSize};
+    font-weight: ${fontObject.fontWeight};
+    letter-spacing: ${fontObject.letterSpacing};
+    line-height: ${fontObject.lineHeight};
+    text-transform: ${fontObject.textCase};
+    text-decoration: ${fontObject.textDecoration};
+  `
 }

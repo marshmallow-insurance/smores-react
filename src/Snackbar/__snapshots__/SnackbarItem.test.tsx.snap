@@ -10,9 +10,11 @@ exports[`SnackbarItem > renders correctly with required props 1`] = `
 }
 
 .c3 {
+  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #f8f2ea;
 }

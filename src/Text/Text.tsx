@@ -11,6 +11,7 @@ import {
 import {
   FontValueObject,
   resolveToThemeFont,
+  translateFontStyleIntoCss,
   TypoTypes,
 } from '../ThemeProvider/utils/fontMap'
 interface IText {
@@ -89,19 +90,6 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
 )
 
 Text.displayName = 'Text'
-
-const translateFontStyleIntoCss = (
-  fontObject: FontValueObject & { textCase?: string }, // TODO: work out why this is not correctly typed
-) => {
-  return css`
-    font-family: ${fontObject.fontFamily};
-    font-size: ${fontObject.fontSize};
-    font-weight: ${fontObject.fontWeight};
-    letter-spacing: ${fontObject.letterSpacing};
-    line-height: ${fontObject.lineHeight};
-    text-transform: ${fontObject.textCase};
-  `
-}
 
 const Container = styled(Box)<IText>(
   ({ $align, $color, $cursor, $typo }) => css`

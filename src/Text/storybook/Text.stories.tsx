@@ -15,6 +15,23 @@ const Grid = styled(Box)`
 `
 
 const TypoCollection = ({ typos }: { typos: Readonly<TypoTypes[]> }) => {
+  const orderOfTypoTypes = [
+    'hero',
+    'heading',
+    'body',
+    'link',
+    'label',
+    'caption',
+  ]
+  const orderedTypos = typos.toSorted((a, b) => {
+    const aType = orderOfTypoTypes.findIndex((type) => a.includes(type))
+    const bType = orderOfTypoTypes.findIndex((type) => b.includes(type))
+    if (aType === bType) {
+      return b.localeCompare(a)
+    }
+    return aType - bType
+  })
+
   return (
     <Box>
       <Grid>
@@ -28,7 +45,7 @@ const TypoCollection = ({ typos }: { typos: Readonly<TypoTypes[]> }) => {
           Paragraph
         </Text>
       </Grid>
-      {typos.map((typo) => (
+      {orderedTypos.map((typo) => (
         <Grid key={typo}>
           <Text tag="p" typo="font.body.200" color="color.text.subtle">
             {typo}
@@ -44,7 +61,7 @@ const TypoCollection = ({ typos }: { typos: Readonly<TypoTypes[]> }) => {
               'font.hero.200',
               'font.hero.300',
               'font.label.100',
-              'font.label.200', // TODO: work out if caption needs to be included here
+              'font.label.200',
             ].includes(typo) && (
               <Text tag="p" typo={typo} color="color.text.base">
                 They waited patiently for what seemed a very long time. They
