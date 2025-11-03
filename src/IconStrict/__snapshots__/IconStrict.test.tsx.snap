@@ -1,12 +1,42 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`IconStrict > renders correctly with background color 1`] = `
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  transform: rotate(0deg);
+}
+
+.c1 svg {
+  color: #292924!important;
+}
+
+.c0 {
+  position: relative;
+  padding: 8px;
+  width: 100%;
+  max-width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background-color: #dbe1b0;
+  cursor: default;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
 <div>
   <div
-    class="sc-ggWZvA ibLTfl"
+    class="c0"
   >
     <span
-      class="sc-bRKDuR bHjpxP sc-fhHczv iNYmWQ"
+      class="c1"
       data-testid="search-container"
     >
       <svg
@@ -29,12 +59,42 @@ exports[`IconStrict > renders correctly with background color 1`] = `
 `;
 
 exports[`IconStrict > renders correctly with default props 1`] = `
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  transform: rotate(0deg);
+}
+
+.c1 svg {
+  color: #292924!important;
+}
+
+.c0 {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  max-width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background-color: none;
+  cursor: default;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
 <div>
   <div
-    class="sc-ggWZvA iYvYSM"
+    class="c0"
   >
     <span
-      class="sc-bRKDuR bHjpxP sc-fhHczv bkxtmk"
+      class="c1"
       data-testid="car-container"
     >
       <svg
