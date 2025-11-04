@@ -73,6 +73,16 @@ export const resolveToThemeFont = (
 }
 
 export const getTypoPath = (typo: TypoTypes) => {
+  const useSmallerFontSizes = window.innerWidth < 768 // This is to handle responsive font sizes for hero-alternate, hero and heading-large
+  if (useSmallerFontSizes) {
+    if (typo === 'hero-alternate') {
+      typo = 'font.hero.200'
+    } else if (typo === 'hero') {
+      typo = 'font.hero.100'
+    } else if (typo === 'heading-large') {
+      typo = 'font.heading.500'
+    }
+  }
   return typo in legacyFontStyleMapping
     ? legacyFontStyleMapping[typo as keyof typeof legacyFontStyleMapping]
     : typo
@@ -116,12 +126,12 @@ export const newFontStyles: Font = designTokens.font
 export const legacyFontStyleMapping: Record<Typo, FontPathMap> = {
   'hero-alternate': 'font.hero.300',
   hero: 'font.hero.200',
-  'heading-alternate': 'font.hero.100',
-  'heading-large': 'font.heading.500',
-  'heading-medium': 'font.heading.300',
-  'heading-small': 'font.heading.200',
-  'headline-regular': 'font.heading.100',
-  'headline-small': 'font.heading.100', // query this
+  'heading-alternate': 'font.hero.200',
+  'heading-large': 'font.heading.600',
+  'heading-medium': 'font.heading.400',
+  'heading-small': 'font.heading.300',
+  'headline-regular': 'font.heading.200',
+  'headline-small': 'font.heading.100',
   'body-standfirst': 'font.body.300',
   'body-regular': 'font.body.200',
   'body-small': 'font.body.100',
@@ -130,7 +140,6 @@ export const legacyFontStyleMapping: Record<Typo, FontPathMap> = {
 }
 
 export const translateFontStyleIntoCss = (fontObject: FontValueObject) => {
-  console.log('fontObject.lineheight', fontObject.lineHeight)
   return css`
     font-family: ${fontObject.fontFamily};
     font-size: ${fontObject.fontSize};

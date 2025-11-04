@@ -5,7 +5,11 @@ import { Box } from '../../Box'
 import { Text } from '../Text'
 import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 import { fontOptions } from '../../utils/storybookHelpers/fontOptions'
-import { TypoTypes } from '../../ThemeProvider/utils/fontMap'
+import {
+  getTypoPath,
+  legacyFontStyleMapping,
+  TypoTypes,
+} from '../../ThemeProvider/utils/fontMap'
 
 const Grid = styled(Box)`
   display: grid;
@@ -60,6 +64,7 @@ const TypoCollection = ({ typos }: { typos: Readonly<TypoTypes[]> }) => {
               'font.hero.100',
               'font.hero.200',
               'font.hero.300',
+              'font.hero.400',
               'font.label.100',
               'font.label.200',
             ].includes(typo) && (
@@ -136,4 +141,49 @@ export const WithTitle: Story = {
 
 export const Collection: Story = {
   render: () => <TypoCollection typos={typos} />,
+}
+
+export const MappedDeprecatedTypoValues: Story = {
+  render: () => (
+    <Box>
+      {Object.keys(legacyFontStyleMapping).map((deprecatedTypo) => {
+        const mappedTypo = getTypoPath(deprecatedTypo as TypoTypes)
+        const responsiveNote =
+          deprecatedTypo === 'hero-alternate' ||
+          deprecatedTypo === 'hero' ||
+          deprecatedTypo === 'heading-large'
+            ? ' (Note: This typo maps to different new values based on screen size)'
+            : ''
+        return (
+          <Grid key={deprecatedTypo} mb="32px">
+            <Text
+              tag="p"
+              typo="font.body.200"
+              color="color.text.subtle"
+              mb="8px"
+            >
+              Deprecated typo: {deprecatedTypo}
+              <br />
+              {responsiveNote}
+            </Text>
+            <Box>
+              <Text
+                tag="p"
+                typo={deprecatedTypo as TypoTypes}
+                color="color.text.base"
+              >
+                This is rendered using the deprecated typo value:{' '}
+                {deprecatedTypo}
+              </Text>
+            </Box>
+            <Box>
+              <Text tag="p" typo={mappedTypo} color="color.text.base">
+                This is rendered using the mapped new typo value: {mappedTypo}
+              </Text>
+            </Box>
+          </Grid>
+        )
+      })}
+    </Box>
+  ),
 }
