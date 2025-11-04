@@ -25,7 +25,7 @@ exports[`Card > renders correctly with a leading icon 1`] = `
 
 .c6 {
   font-family: CircularXX;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.33;
@@ -142,7 +142,7 @@ exports[`Card > renders correctly with a visual 1`] = `
 
 .c6 {
   font-family: CircularXX;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.33;
@@ -255,7 +255,7 @@ exports[`Card > renders correctly with action button 1`] = `
 
 .c4 {
   font-family: CircularXX;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.33;
@@ -411,7 +411,7 @@ exports[`Card > renders correctly with fallback style 1`] = `
 
 .c4 {
   font-family: CircularXX;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.33;
@@ -503,7 +503,7 @@ exports[`Card > renders correctly with title and body 1`] = `
 
 .c4 {
   font-family: CircularXX;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.33;

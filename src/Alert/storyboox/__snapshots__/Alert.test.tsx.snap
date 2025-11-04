@@ -26,7 +26,7 @@ exports[`Alert Component > should render Info alert correctly 1`] = `
 
 .c6 {
   font-family: CircularXX;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.33;
@@ -178,7 +178,7 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
 
 .c6 {
   font-family: CircularXX;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.33;
@@ -436,7 +436,7 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
 
 .c6 {
   font-family: CircularXX;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.33;
