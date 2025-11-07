@@ -219,6 +219,7 @@ import WheelFlat from './iconFiles/WheelFlat'
 import Windscreen from './iconFiles/Windscreen'
 import WindscreenRepair from './iconFiles/WindscreenRepair'
 import WindscreenReplacement from './iconFiles/WindscreenReplacement'
+import Cmt from './iconFiles/Cmt'
 
 export const iconList = {
   'aa-inverted': AaInverted,
@@ -443,6 +444,7 @@ export const iconList = {
   wave: Wave,
   wellbeing: Wellbeing,
   windscreen: Windscreen,
+  cmt: Cmt,
 }
 
 export type Icons = keyof typeof iconList
