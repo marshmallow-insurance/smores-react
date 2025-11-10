@@ -43,7 +43,7 @@ type Props = {
   children: ReactNode
   tag?: any
   className?: string
-  typo?: TypoTypes // TODO: check for type errors in product repos due to type narrowing
+  typo?: TypoTypes
   align?: string
   color?: ColorTypes
   cursor?: string
