@@ -4,14 +4,19 @@ import styled, { css, useTheme } from 'styled-components'
 import { Box } from '../Box'
 import { linkStyleOverride } from '../Link/Link'
 import { MarginProps } from '../utils/space'
-import { fontStyleMapping } from './fontMapping'
 import {
   ColorTypes,
   resolveToThemeColor,
 } from '../ThemeProvider/utils/colourMap'
+import {
+  FontValueObject,
+  resolveToThemeFont,
+  translateFontStyleIntoCss,
+  TypoTypes,
+} from '../ThemeProvider/utils/fontMap'
 interface IText {
-  /** typography class name to apply predefined styles */
-  $typo: string
+  /** the resolved font object based on the Design System fonts */
+  $typo: FontValueObject
   /** text-align  */
   $align: string
   /** color from the theme  */
@@ -38,7 +43,7 @@ type Props = {
   children: ReactNode
   tag?: any
   className?: string
-  typo?: Typo
+  typo?: TypoTypes
   align?: string
   color?: ColorTypes
   cursor?: string
@@ -51,7 +56,7 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
   (
     {
       children,
-      typo = 'body-regular',
+      typo = 'font.body.200',
       className = '',
       tag = 'p',
       align = 'left',
@@ -64,12 +69,13 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
   ) => {
     const theme = useTheme()
     const resolvedColor = resolveToThemeColor(color, theme)
+    const resolvedTypography = resolveToThemeFont(typo, theme)
 
     return (
       <Container
         forwardedAs={tag}
         className={className}
-        $typo={typo}
+        $typo={resolvedTypography}
         $align={align}
         $color={resolvedColor}
         cursor={cursor}
@@ -85,15 +91,11 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
 
 Text.displayName = 'Text'
 
-const isTypo = (value: string): value is Typo => {
-  return Object.keys(fontStyleMapping).includes(value)
-}
-
 const Container = styled(Box)<IText>(
   ({ $align, $color, $cursor, $typo }) => css`
     /** TYPOGRAPHY STYLES */
 
-    ${isTypo($typo) && fontStyleMapping[$typo]}
+    ${translateFontStyleIntoCss($typo)}
 
     text-align: ${$align};
     cursor: ${$cursor};

@@ -24,9 +24,11 @@ exports[`Card > renders correctly with a leading icon 1`] = `
 }
 
 .c6 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }
@@ -139,9 +141,11 @@ exports[`Card > renders correctly with a visual 1`] = `
 }
 
 .c6 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }
@@ -250,9 +254,11 @@ exports[`Card > renders correctly with action button 1`] = `
 }
 
 .c4 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }
@@ -404,9 +410,11 @@ exports[`Card > renders correctly with fallback style 1`] = `
 }
 
 .c4 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }
@@ -494,17 +502,21 @@ exports[`Card > renders correctly with title and body 1`] = `
 }
 
 .c4 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }
 
 .c5 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #636768;
 }
