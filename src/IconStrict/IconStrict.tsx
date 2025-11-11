@@ -11,6 +11,7 @@ import {
   ColorTypes,
   resolveToThemeColor,
 } from '../ThemeProvider/utils/colourMap'
+import { useDeprecatedWarning } from 'utils/deprecated'
 
 export type IconStrictProps = {
   id?: string
@@ -62,6 +63,12 @@ export const IconStrict: FC<IconStrictProps> = ({
   title,
   ...otherProps
 }) => {
+  useDeprecatedWarning({
+    title: 'IconStrict',
+    message:
+      'The IconStrict component is deprecated and will be removed in future releases. Please migrate to using the font awesome library directly.',
+  })
+
   const isButton = !!handleClick
   const defaultLabel =
     title ?? (isButton ? (title ?? 'icon-button') : undefined)
