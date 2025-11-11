@@ -8,7 +8,7 @@ import {
   ColorTypes,
   resolveToThemeColor,
 } from '../ThemeProvider/utils/colourMap'
-import { useDeprecatedWarning } from 'utils/deprecated'
+import { useDeprecatedWarning } from '../utils/deprecated'
 
 export type IconProps = {
   /** className attribute to apply classes from props */
