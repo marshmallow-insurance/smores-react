@@ -252,6 +252,32 @@ export const SubTable: Story = {
   } satisfies TableProps<DataRow>,
 }
 
+export const SubTableAlignedColumns: Story = {
+  args: {
+    rowPadding: '12px',
+    columns: columns.slice(0, 4),
+    headerColor: 'color.surface.base.300',
+    rowColor: 'color.surface.base.300',
+    alignSubTableColumns: true,
+    data,
+    expandable: () => true,
+    subTable: {
+      bgColor: 'color.surface.base.300',
+      table: () => (
+        <Table
+          columns={columnsV2}
+          rowColor="color.surface.base.200"
+          rowBorderColor="color.illustration.neutral.300"
+          data={data}
+          rowActions={{ actions: rowActions }}
+          roundedTable
+          hideTableHeader
+        />
+      ),
+    },
+  } satisfies TableProps<DataRow>,
+}
+
 export const RowActions: Story = {
   args: {
     rowPadding: '12px',

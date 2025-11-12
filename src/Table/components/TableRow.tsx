@@ -22,6 +22,8 @@ export const TableRow = <T extends object>({
   showActions,
   expandable,
   clickableRow,
+  columnWidths,
+  renderSubTable,
   hideBorder,
 }: TableRowProps<T>) => {
   const theme = useTheme()
@@ -51,10 +53,10 @@ export const TableRow = <T extends object>({
       : Boolean(subTable?.table ?? subRows?.rows)
 
   const subRowsData = subRows?.rows(rowData)
-  const subTableData = subTable?.table(rowData)
+  const subTableData = renderSubTable?.(rowData)
 
   const subPadding = subTable?.padding ?? subRows?.padding
-  const subBgColor = subTable?.bgColor || subRows?.bgColor
+  const subBgColor = subTable?.bgColor ?? subRows?.bgColor
   const resolvedSubBgColor = subBgColor
     ? resolveToThemeColor(subBgColor, theme)
     : undefined
@@ -63,6 +65,11 @@ export const TableRow = <T extends object>({
   const expandSubProp = showActionsCell ? columns.length + 1 : columns.length
 
   const isExpandedRow = expandedRows.includes(rowIndex)
+
+  const actionCellWidth =
+    columnWidths && columnWidths.length === columns.length
+      ? columnWidths[columnWidths.length - 1]
+      : undefined
 
   return (
     <>
@@ -81,11 +88,21 @@ export const TableRow = <T extends object>({
             cellContent = column.cell(rowData, rowIndex, column, rowIndex)
           }
 
+          const width =
+            columnWidths && columnWidths.length > columnIndex
+              ? columnWidths[columnIndex]
+              : undefined
+
+          if (width) {
+            console.log('width for column', columnIndex, 'is', width)
+          }
+
           return (
             <StyledCell
               key={columnIndex}
               $rowPadding={rowPadding}
               $columnPadding={columnPadding}
+              $width={width}
               $minWidth={column.minWidth}
               $maxWidth={column.maxWidth}
               $noWrapContent={column.noWrapContent}
@@ -99,6 +116,7 @@ export const TableRow = <T extends object>({
 
         {(showActionsCell ?? showActions) && (
           <RowActions
+            width={actionCellWidth}
             canExpandRow={canExpandRow}
             rowActions={rowActions}
             rowData={rowData}

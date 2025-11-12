@@ -1,4 +1,9 @@
-import React from 'react'
+import React, {
+  cloneElement,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+} from 'react'
 import { Text } from '../Text'
 import { TableHeader } from './components/TableHeader'
 import { TableRow } from './components/TableRow'
@@ -41,9 +46,19 @@ export const Table = <T extends object, K extends object>({
   columnPadding,
   noDataContent,
   roundedTable,
+  alignSubTableColumns = false,
+  columnWidths,
   hideTableHeader = false,
 }: TableProps<T, K>) => {
   const theme = useTheme()
+  const { renderSubTable, setSubTableColumnWidths } = useAlignedSubTableColumns(
+    subTable,
+    alignSubTableColumns,
+  )
+
+  if (columnWidths) {
+    console.log('columnWidths', columnWidths)
+  }
 
   const resolvedHeaderColor = resolveToThemeColor(headerColor, theme)
 
@@ -57,10 +72,11 @@ export const Table = <T extends object, K extends object>({
             columns={columns}
             fixedHeader={fixedHeader}
             headerHeight={headerHeight}
-            subTable={subTable}
             headerColor={resolvedHeaderColor}
             rowActions={rowActions}
             columnPadding={columnPadding}
+            columnWidths={columnWidths}
+            setSubTableColumnWidths={setSubTableColumnWidths}
             expandable={expandable}
             hasKeyline={hasKeyline}
           />
@@ -88,7 +104,9 @@ export const Table = <T extends object, K extends object>({
                 columns={columns}
                 rowActions={rowActions}
                 stripedColor={stripedColor}
+                columnWidths={columnWidths}
                 subTable={subTable}
+                renderSubTable={renderSubTable}
                 subRows={subRows}
                 rowColor={rowColor}
                 rowBorderColor={rowBorderColor}
@@ -110,4 +128,35 @@ export const Table = <T extends object, K extends object>({
       </tbody>
     </StyledTable>
   )
+}
+
+type AlignedSubTableColumns<T> = {
+  setSubTableColumnWidths: Dispatch<SetStateAction<string[]>>
+  renderSubTable: ((rowData: T) => React.ReactElement<any>) | undefined
+}
+
+function useAlignedSubTableColumns<T>(
+  subTable: TableProps<T>['subTable'],
+  alignedEnabled: boolean,
+): AlignedSubTableColumns<T> {
+  const [columnWidths, setSubTableColumnWidths] = useState<string[]>([])
+
+  if (!subTable || !alignedEnabled) {
+    console.log('not aligning')
+    return {
+      setSubTableColumnWidths,
+      renderSubTable: subTable?.table,
+    }
+  }
+
+  console.log('cloning with aligned columns')
+
+  return {
+    setSubTableColumnWidths,
+    renderSubTable: (rowData: T) => {
+      return cloneElement(subTable.table(rowData), {
+        columnWidths,
+      })
+    },
+  }
 }
