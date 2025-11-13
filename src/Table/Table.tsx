@@ -12,6 +12,7 @@ import { TableProps } from './types'
 import { TableFooter } from './components/TableFooter'
 import { useTheme } from 'styled-components'
 import { resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
+import { TableColumnGroup } from './components/TableColumnGroup'
 
 /**
  * A table component that displays data with various features such as expandable rows, striped rows, and fixed headers.
@@ -56,16 +57,14 @@ export const Table = <T extends object, K extends object>({
     alignSubTableColumns,
   )
 
-  if (columnWidths) {
-    console.log('columnWidths', columnWidths)
-  }
-
   const resolvedHeaderColor = resolveToThemeColor(headerColor, theme)
 
   const showActionsCell = expandable ?? rowActions
-  const expandSubProp = showActionsCell ? columns.length + 1 : columns.length
+  const totalColumns = showActionsCell ? columns.length + 1 : columns.length
+
   return (
     <StyledTable $roundedTable={roundedTable}>
+      <TableColumnGroup widths={columnWidths} count={totalColumns} />
       {!hideTableHeader && (
         <thead>
           <TableHeader
@@ -75,7 +74,6 @@ export const Table = <T extends object, K extends object>({
             headerColor={resolvedHeaderColor}
             rowActions={rowActions}
             columnPadding={columnPadding}
-            columnWidths={columnWidths}
             setSubTableColumnWidths={setSubTableColumnWidths}
             expandable={expandable}
             hasKeyline={hasKeyline}
@@ -86,7 +84,7 @@ export const Table = <T extends object, K extends object>({
         {data.length === 0 && (
           <tr>
             <StyledCell
-              colSpan={expandSubProp}
+              colSpan={totalColumns}
               $rowPadding={rowPadding}
               $columnPadding={columnPadding}
             >
@@ -104,7 +102,6 @@ export const Table = <T extends object, K extends object>({
                 columns={columns}
                 rowActions={rowActions}
                 stripedColor={stripedColor}
-                columnWidths={columnWidths}
                 subTable={subTable}
                 renderSubTable={renderSubTable}
                 subRows={subRows}
@@ -142,14 +139,11 @@ function useAlignedSubTableColumns<T>(
   const [columnWidths, setSubTableColumnWidths] = useState<string[]>([])
 
   if (!subTable || !alignedEnabled) {
-    console.log('not aligning')
     return {
       setSubTableColumnWidths,
       renderSubTable: subTable?.table,
     }
   }
-
-  console.log('cloning with aligned columns')
 
   return {
     setSubTableColumnWidths,

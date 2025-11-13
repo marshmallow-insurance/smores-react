@@ -11,7 +11,6 @@ export const TableHeader = <T extends object>({
   columnPadding,
   expandable,
   hasKeyline,
-  columnWidths: subTableColumnWidths,
   setSubTableColumnWidths,
 }: TableHeaderProps<T>) => {
   const cellRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -46,19 +45,9 @@ export const TableHeader = <T extends object>({
     setSubTableColumnWidths,
   ])
 
-  const actionsWidth =
-    showActionsCell && subTableColumnWidths?.length == columns.length
-      ? subTableColumnWidths[subTableColumnWidths.length - 1]
-      : undefined
-
   return (
     <StyledRow>
       {columns.map((column, columnIndex) => {
-        const width =
-          subTableColumnWidths && subTableColumnWidths.length > columnIndex
-            ? subTableColumnWidths[columnIndex]
-            : undefined
-
         return (
           <StyledHeaderCell
             key={columnIndex}
@@ -70,7 +59,6 @@ export const TableHeader = <T extends object>({
             $minWidth={column.minWidth}
             $maxWidth={column.maxWidth}
             $headerColor={headerColor}
-            $width={width}
             $columnPadding={columnPadding}
             $hasKeyline={hasKeyline}
           >
@@ -83,7 +71,6 @@ export const TableHeader = <T extends object>({
           ref={actionsRef}
           $fixedHeader={fixedHeader}
           $stickyCell={true}
-          $width={actionsWidth}
           $minWidth={rowActions?.minWidth}
           $headerColor={headerColor}
           $columnPadding={columnPadding}

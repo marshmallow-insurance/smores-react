@@ -42,12 +42,6 @@ export const StyledHeaderCell = styled.th<TransientProps<TableStylesProps>>`
   padding-top: 8px;
   padding-bottom: 8px;
 
-  ${({ $width }) =>
-    $width &&
-    css`
-      width: ${$width};
-    `}
-
   ${({ $headerColor }) =>
     $headerColor &&
     css`

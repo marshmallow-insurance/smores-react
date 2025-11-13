@@ -88,21 +88,11 @@ export const TableRow = <T extends object>({
             cellContent = column.cell(rowData, rowIndex, column, rowIndex)
           }
 
-          const width =
-            columnWidths && columnWidths.length > columnIndex
-              ? columnWidths[columnIndex]
-              : undefined
-
-          if (width) {
-            console.log('width for column', columnIndex, 'is', width)
-          }
-
           return (
             <StyledCell
               key={columnIndex}
               $rowPadding={rowPadding}
               $columnPadding={columnPadding}
-              $width={width}
               $minWidth={column.minWidth}
               $maxWidth={column.maxWidth}
               $noWrapContent={column.noWrapContent}
