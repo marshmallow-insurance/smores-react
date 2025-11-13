@@ -22,7 +22,6 @@ export const TableRow = <T extends object>({
   showActions,
   expandable,
   clickableRow,
-  columnWidths,
   renderSubTable,
   hideBorder,
 }: TableRowProps<T>) => {
@@ -66,11 +65,6 @@ export const TableRow = <T extends object>({
 
   const isExpandedRow = expandedRows.includes(rowIndex)
 
-  const actionCellWidth =
-    columnWidths && columnWidths.length === columns.length
-      ? columnWidths[columnWidths.length - 1]
-      : undefined
-
   return (
     <>
       <StyledRow
@@ -106,7 +100,6 @@ export const TableRow = <T extends object>({
 
         {(showActionsCell ?? showActions) && (
           <RowActions
-            width={actionCellWidth}
             canExpandRow={canExpandRow}
             rowActions={rowActions}
             rowData={rowData}

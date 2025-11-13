@@ -1,9 +1,4 @@
-import React, {
-  ReactElement,
-  ReactNode,
-  type Dispatch,
-  type SetStateAction,
-} from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
 import type { BoxSpacing, SingleSpacing } from './helper.types'
@@ -121,11 +116,6 @@ interface CommonTableProps<T, ColorT = ColorTypes> {
     table: (rowData: T) => ReactElement<any>
   }
 
-  /** The widths of the table columns to be set to, usually passed down to a subtable to align to the main table columns.
-   * @example ['100px', '200px', '150px']
-   */
-  columnWidths?: string[]
-
   /** Settings for sub rows. */
   subRows?: SubElementProps & {
     /** Function that returns a React element for the sub row. */
@@ -149,6 +139,12 @@ export interface TableProps<T, K = undefined> extends CommonTableProps<T> {
 
   /** If true, the sub table columns will be aligned with the main table columns, by using the widths of the main table columns. */
   alignSubTableColumns?: boolean
+
+  /** The widths of the table columns to be set to, usually passed down to a subtable to align to the main table columns.
+   * The array length should match the number of columns in the table.
+   * @example ['100px', '200px', '150px']
+   */
+  columnWidths?: string[]
 
   footer?: TableFooter<K>
 
@@ -202,6 +198,4 @@ type TableFooterColumnsProps<K> = {
   data: K
 }
 
-export type TableHeaderProps<T> = CommonTableProps<T, string> & {
-  setSubTableColumnWidths?: Dispatch<SetStateAction<string[]>>
-}
+export type TableHeaderProps<T> = CommonTableProps<T, string>

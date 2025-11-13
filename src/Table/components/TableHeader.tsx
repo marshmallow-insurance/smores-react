@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { TableHeaderProps } from '../types'
 import { StyledHeaderCell, StyledRow } from './commonComponents'
 
@@ -11,39 +11,11 @@ export const TableHeader = <T extends object>({
   columnPadding,
   expandable,
   hasKeyline,
-  setSubTableColumnWidths,
 }: TableHeaderProps<T>) => {
   const cellRefs = useRef<(HTMLDivElement | null)[]>([])
   const actionsRef = useRef<HTMLTableHeaderCellElement | null>(null)
   // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   const showActionsCell = expandable || rowActions
-
-  // Sync header cell widths to sub table column widths
-  useLayoutEffect(() => {
-    // Measure header cell widths (including the optional actions/expand column)
-    const headerWidths = columns.map((_, i) => {
-      const el = cellRefs.current[i]
-      return el ? el.getBoundingClientRect().width + 'px' : '0'
-    })
-
-    if (showActionsCell) {
-      const el = actionsRef.current
-      headerWidths.push(el ? el.getBoundingClientRect().width + 'px' : '0')
-    }
-
-    if (setSubTableColumnWidths) {
-      setSubTableColumnWidths(headerWidths)
-    }
-  }, [
-    columns,
-    headerHeight,
-    columnPadding,
-    fixedHeader,
-    hasKeyline,
-    headerColor,
-    showActionsCell,
-    setSubTableColumnWidths,
-  ])
 
   return (
     <StyledRow>

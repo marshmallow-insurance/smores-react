@@ -265,7 +265,7 @@ export const SubTableAlignedColumns: Story = {
       bgColor: 'color.surface.base.300',
       table: () => (
         <Table
-          columns={columnsV2}
+          columns={columns.slice(0, 4)}
           rowColor="color.surface.base.200"
           rowBorderColor="color.illustration.neutral.300"
           data={data}
