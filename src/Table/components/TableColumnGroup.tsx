@@ -21,7 +21,8 @@ export function TableColumnGroup({
 }: TableColumnGroupProps) {
   const cellRefs = useRef<(HTMLDivElement | null)[]>([])
 
-  const { width } = useWindowSize()
+  const colGroupRef = useRef<HTMLTableColElement | null>(null)
+  const { width } = useWindowSize(colGroupRef)
 
   // Sync header cell widths to sub table column widths
   useLayoutEffect(() => {
@@ -41,7 +42,7 @@ export function TableColumnGroup({
   }, [setSubTableColumnWidths, columnCount, shouldAlignSubTableColumns, width])
 
   return (
-    <colgroup>
+    <colgroup ref={colGroupRef}>
       {Array.from({ length: columnCount }).map((_, index) => {
         const width =
           widths && index < widths.length ? widths[index] : undefined
