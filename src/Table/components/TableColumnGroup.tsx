@@ -4,6 +4,7 @@ import React, {
   type Dispatch,
   type SetStateAction,
 } from 'react'
+import { useWindowSize } from '../../utils/useWindowSize'
 
 type TableColumnGroupProps = {
   widths: string[] | undefined
@@ -20,6 +21,8 @@ export function TableColumnGroup({
 }: TableColumnGroupProps) {
   const cellRefs = useRef<(HTMLDivElement | null)[]>([])
 
+  const { width } = useWindowSize()
+
   // Sync header cell widths to sub table column widths
   useLayoutEffect(() => {
     // Only measure and set widths if aligning is enabled
@@ -35,7 +38,7 @@ export function TableColumnGroup({
     if (setSubTableColumnWidths) {
       setSubTableColumnWidths(headerWidths)
     }
-  }, [setSubTableColumnWidths, columnCount, shouldAlignSubTableColumns])
+  }, [setSubTableColumnWidths, columnCount, shouldAlignSubTableColumns, width])
 
   return (
     <colgroup>
@@ -43,13 +46,17 @@ export function TableColumnGroup({
         const width =
           widths && index < widths.length ? widths[index] : undefined
 
-        if (width) {
-          console.log('colgroup width for column', index, 'is', width)
-        }
-
         const style = width ? { width } : undefined
 
-        return <col key={index} style={style} />
+        return (
+          <col
+            ref={(el) => {
+              cellRefs.current[index] = el
+            }}
+            key={index}
+            style={style}
+          />
+        )
       })}
     </colgroup>
   )
