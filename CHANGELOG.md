@@ -1,3 +1,9 @@
+## [13.23.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.22.0...v13.23.0) (2025-11-17)
+
+### Features
+
+* **table:** add support for aligned subtable columns ([#4613](https://github.com/marshmallow-insurance/smores-react/issues/4613)) ([93cbb3d](https://github.com/marshmallow-insurance/smores-react/commit/93cbb3d98914283563843c6b89ca8b8f610f0e51))
+
 ## [13.22.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.21.3...v13.22.0) (2025-11-07)
 
 ### Features
