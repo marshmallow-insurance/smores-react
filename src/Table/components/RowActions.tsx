@@ -16,6 +16,7 @@ export const RowActions = <T extends object>({
   isExpanded,
   toggleExpansion,
   expandable,
+  width,
   canExpandRow,
 }: RowActionsProps<T>) => {
   const handleAction = async (
@@ -36,6 +37,7 @@ export const RowActions = <T extends object>({
     <StyledCell
       $stickyCell={Boolean(rowActions) || Boolean(expandable)}
       $rowActionsBgColor={resolvedRowActionBgColor}
+      $width={width}
     >
       <Box flex alignItems="center" justifyContent="flex-end">
         {rowActions?.actions?.map((action, actionIndex) => {
