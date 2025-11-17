@@ -1,10 +1,9 @@
-import { forwardRef } from 'react';
-import * as React from 'react';
+import { forwardRef, InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { margin, MarginProps, TransientMarginProps } from '../utils/space'
 
 type SliderProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
+  InputHTMLAttributes<HTMLInputElement>,
   'type' | 'value' | 'onChange'
 > &
   MarginProps & {

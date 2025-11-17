@@ -1,5 +1,4 @@
-import { ReactElement, ReactNode } from 'react';
-import * as React from 'react';
+import { ReactElement, ReactNode } from 'react'
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
 import type { BoxSpacing, SingleSpacing } from './helper.types'
@@ -71,10 +70,10 @@ type RowCellRenderer<T> = (
   rowIndex: number,
   column: TableColumn<T>,
   id: string | number,
-) => React.ReactNode
+) => ReactNode
 
 export interface TableColumn<T> {
-  name?: string | number | React.ReactNode
+  name?: string | number | ReactNode
   minWidth?: string
   maxWidth?: string
   noWrapContent?: boolean

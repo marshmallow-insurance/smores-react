@@ -1,9 +1,8 @@
-import { ReactElement } from 'react';
-import * as React from 'react';
+import { ReactElement, ReactNode } from 'react'
 import { render, RenderOptions } from '@testing-library/react'
 import { SmoresThemeProvider } from '../ThemeProvider/ThemeProvider'
 
-const Providers = ({ children }: { children: React.ReactNode }) => {
+const Providers = ({ children }: { children: ReactNode }) => {
   return <SmoresThemeProvider>{children}</SmoresThemeProvider>
 }
 

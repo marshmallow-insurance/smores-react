@@ -15,8 +15,7 @@ import {
   useRole,
   type Side,
 } from '@floating-ui/react'
-import { FC, ReactNode, useRef, useState } from 'react';
-import * as React from 'react';
+import { FC, ReactNode, RefObject, useRef, useState } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 import { Box } from '../Box'
 import { Text } from '../Text'
@@ -30,12 +29,9 @@ export interface TooltipProps {
   title?: string
   underline?: boolean
   variant?: TooltipVariant
-  portalContainer?:
-    | HTMLElement
-    | null
-    | React.MutableRefObject<HTMLElement | null>
+  portalContainer?: HTMLElement | null | RefObject<HTMLElement | null>
   /**
-   * If true, the tooltip will position itself inline its children
+   * If true, the tooltip will position iReact.tself inline its children
    *
    * Used for inline content like blocks of text that span multiple lines
    *

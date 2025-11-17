@@ -1,12 +1,11 @@
 import {
   FocusEvent,
+  AnimationEvent,
   FormEvent,
   ForwardedRef,
   forwardRef,
   HTMLInputAutoCompleteAttribute,
-} from 'react';
-
-import * as React from 'react';
+} from 'react'
 
 import { Box } from '../Box'
 import { Field } from '../fields/Field'
@@ -84,7 +83,7 @@ export const TextInput = forwardRef(function TextInput(
 ) {
   const id = useUniqueId(idProp)
 
-  const handleAnimationEnd = (e: React.AnimationEvent<HTMLInputElement>) => {
+  const handleAnimationEnd = (e: AnimationEvent<HTMLInputElement>) => {
     if (e.animationName === 'onAutoFillStart' && onAutoFill && !!value) {
       onAutoFill()
     }

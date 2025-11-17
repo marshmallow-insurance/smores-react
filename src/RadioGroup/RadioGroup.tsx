@@ -3,12 +3,12 @@ import {
   ForwardedRef,
   forwardRef,
   ReactElement,
+  RefAttributes,
   RefObject,
   useImperativeHandle,
   useRef,
-} from 'react';
+} from 'react'
 
-import * as React from 'react';
 import styled from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
@@ -125,7 +125,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
 export const RadioGroup = forwardRef(RadioGroupComponent) as <
   Value extends BaseValueType = BaseValueType,
 >(
-  p: RadioGroupProps<Value> & React.RefAttributes<HTMLInputElement>,
+  p: RadioGroupProps<Value> & RefAttributes<HTMLInputElement>,
 ) => ReactElement | null
 
 const RadioItemList = styled.div<

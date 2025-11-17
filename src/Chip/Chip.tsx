@@ -1,5 +1,10 @@
-import { ButtonHTMLAttributes, FC, ReactNode, forwardRef } from 'react';
-import * as React from 'react';
+import {
+  ButtonHTMLAttributes,
+  FC,
+  FormEvent,
+  ReactNode,
+  forwardRef,
+} from 'react'
 import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
@@ -20,7 +25,7 @@ interface IButton {
 
 type Props = {
   children: ReactNode
-  handleClick: (e: React.FormEvent<HTMLButtonElement>) => void
+  handleClick: (e: FormEvent<HTMLButtonElement>) => void
   primary?: boolean
   secondary?: boolean
   icon?: Icons
