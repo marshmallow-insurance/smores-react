@@ -169,7 +169,7 @@ export interface TableRowProps<T> extends CommonTableProps<T> {
   showActions?: boolean
   hideBorder?: boolean
 
-  renderSubTable?: (rowData: T) => React.ReactElement<any>
+  renderSubTable?: (rowData: T) => ReactElement<any>
 }
 
 export interface RowActionsProps<T>

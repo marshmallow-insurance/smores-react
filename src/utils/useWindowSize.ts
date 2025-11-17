@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, RefObject } from 'react'
 
 export type MeasuredSize = { width: number; height: number }
 
@@ -38,7 +38,7 @@ export type MeasuredSize = { width: number; height: number }
  * @returns Current measured size `{ width, height }`.
  */
 export function useWindowSize(
-  targetRef?: React.RefObject<HTMLElement | null>,
+  targetRef?: RefObject<HTMLElement | null>,
 ): MeasuredSize {
   const isBrowser = typeof window !== 'undefined'
 
