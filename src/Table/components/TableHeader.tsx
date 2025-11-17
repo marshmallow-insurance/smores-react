@@ -11,23 +11,28 @@ export const TableHeader = <T extends object>({
   expandable,
   hasKeyline,
 }: TableHeaderProps<T>) => {
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+  const showActionsCell = expandable || rowActions
+
   return (
     <StyledRow>
-      {columns.map((column, columnIndex) => (
-        <StyledHeaderCell
-          key={columnIndex}
-          $fixedHeader={fixedHeader}
-          $headerHeight={headerHeight}
-          $minWidth={column.minWidth}
-          $maxWidth={column.maxWidth}
-          $headerColor={headerColor}
-          $columnPadding={columnPadding}
-          $hasKeyline={hasKeyline}
-        >
-          {column.name}
-        </StyledHeaderCell>
-      ))}
-      {(expandable || rowActions) && (
+      {columns.map((column, columnIndex) => {
+        return (
+          <StyledHeaderCell
+            key={columnIndex}
+            $fixedHeader={fixedHeader}
+            $headerHeight={headerHeight}
+            $minWidth={column.minWidth}
+            $maxWidth={column.maxWidth}
+            $headerColor={headerColor}
+            $columnPadding={columnPadding}
+            $hasKeyline={hasKeyline}
+          >
+            {column.name}
+          </StyledHeaderCell>
+        )
+      })}
+      {showActionsCell && (
         <StyledHeaderCell
           $fixedHeader={fixedHeader}
           $stickyCell={true}

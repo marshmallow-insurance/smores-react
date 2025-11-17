@@ -6,6 +6,8 @@ import { TableProps } from './types'
 import { TableFooter } from './components/TableFooter'
 import { useTheme } from 'styled-components'
 import { resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
+import { TableColumnGroup } from './components/TableColumnGroup'
+import { useAlignedSubTableColumns } from './hooks/useAlignedSubTableColumns'
 
 /**
  * A table component that displays data with various features such as expandable rows, striped rows, and fixed headers.
@@ -40,23 +42,35 @@ export const Table = <T extends object, K extends object>({
   columnPadding,
   noDataContent,
   roundedTable,
+  alignSubTableColumns = false,
+  columnWidths,
   hideTableHeader = false,
 }: TableProps<T, K>) => {
   const theme = useTheme()
+  const { renderSubTable, setSubTableColumnWidths } = useAlignedSubTableColumns(
+    subTable,
+    alignSubTableColumns,
+  )
 
   const resolvedHeaderColor = resolveToThemeColor(headerColor, theme)
 
   const showActionsCell = expandable ?? rowActions
-  const expandSubProp = showActionsCell ? columns.length + 1 : columns.length
+  const totalColumns = showActionsCell ? columns.length + 1 : columns.length
+
   return (
     <StyledTable $roundedTable={roundedTable}>
+      <TableColumnGroup
+        widths={columnWidths}
+        columnCount={totalColumns}
+        setSubTableColumnWidths={setSubTableColumnWidths}
+        shouldAlignSubTableColumns={alignSubTableColumns}
+      />
       {!hideTableHeader && (
         <thead>
           <TableHeader
             columns={columns}
             fixedHeader={fixedHeader}
             headerHeight={headerHeight}
-            subTable={subTable}
             headerColor={resolvedHeaderColor}
             rowActions={rowActions}
             columnPadding={columnPadding}
@@ -69,7 +83,7 @@ export const Table = <T extends object, K extends object>({
         {data.length === 0 && (
           <tr>
             <StyledCell
-              colSpan={expandSubProp}
+              colSpan={totalColumns}
               $rowPadding={rowPadding}
               $columnPadding={columnPadding}
             >
@@ -88,6 +102,7 @@ export const Table = <T extends object, K extends object>({
                 rowActions={rowActions}
                 stripedColor={stripedColor}
                 subTable={subTable}
+                renderSubTable={renderSubTable}
                 subRows={subRows}
                 rowColor={rowColor}
                 rowBorderColor={rowBorderColor}
