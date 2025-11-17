@@ -1,3 +1,15 @@
+## [13.23.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.22.0...v13.23.0) (2025-11-17)
+
+### Features
+
+* **table:** add support for aligned subtable columns ([#4613](https://github.com/marshmallow-insurance/smores-react/issues/4613)) ([93cbb3d](https://github.com/marshmallow-insurance/smores-react/commit/93cbb3d98914283563843c6b89ca8b8f610f0e51))
+
+## [13.22.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.21.3...v13.22.0) (2025-11-07)
+
+### Features
+
+* **telematics:** Implement cmt icon ([#4611](https://github.com/marshmallow-insurance/smores-react/issues/4611)) ([93c2faa](https://github.com/marshmallow-insurance/smores-react/commit/93c2faaa01f94c758dd4a967beb31012aed867cc))
+
 ## [13.21.3](https://github.com/marshmallow-insurance/smores-react/compare/v13.21.2...v13.21.3) (2025-11-03)
 
 ## [13.21.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.21.1...v13.21.2) (2025-10-29)
