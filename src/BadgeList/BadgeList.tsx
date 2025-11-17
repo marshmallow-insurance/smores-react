@@ -1,4 +1,3 @@
-import React from 'react'
 import { Badge, BadgeSize, type BadgeProps } from '../Badge/Badge'
 import styled from 'styled-components'
 import { Tooltip } from '../Tooltip'

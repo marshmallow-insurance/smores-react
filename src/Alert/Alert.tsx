@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useState } from 'react'
+import { FC, ReactElement, useState } from 'react';
 import styled, { css, useTheme } from 'styled-components'
 
 import { MarginProps } from 'utils/space'

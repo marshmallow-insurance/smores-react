@@ -1,4 +1,4 @@
-import React, { cloneElement, ReactNode, useState } from 'react'
+import { cloneElement, ReactNode, useState } from 'react';
 import { isReactElement } from '../../utils/isReactElement'
 import { isMappedReactElement } from '../helpers'
 import { TableRowProps } from '../types'

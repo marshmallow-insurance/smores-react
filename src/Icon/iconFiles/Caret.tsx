@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Caret = ({ className }: { className?: string }) => (
   <svg
     width="100%"

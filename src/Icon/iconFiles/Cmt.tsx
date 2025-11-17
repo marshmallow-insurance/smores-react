@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 const Cmt = () => (
   <svg
     width="100%"

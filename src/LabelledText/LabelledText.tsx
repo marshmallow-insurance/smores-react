@@ -1,4 +1,4 @@
-import React, { FC, JSX, ReactNode } from 'react'
+import { FC, JSX, ReactNode } from 'react';
 import styled from 'styled-components'
 import { MarginProps } from '../utils/space'
 

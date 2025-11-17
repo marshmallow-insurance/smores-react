@@ -1,5 +1,3 @@
-import React from 'react'
-
 const FraudAlert = () => (
   <svg
     width="100%"

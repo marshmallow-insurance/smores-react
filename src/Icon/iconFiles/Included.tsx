@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Included = () => (
   <svg
     width="100%"

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Mastercard = () => (
   <svg
     width="100%"

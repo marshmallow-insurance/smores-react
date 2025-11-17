@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
+import * as React from 'react';
 import { Icon } from '../../Icon'
 import { Text } from '../../Text'
 import { Box } from '../Box'

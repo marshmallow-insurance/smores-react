@@ -1,4 +1,3 @@
-import React from 'react'
 import { expect, it } from 'vitest'
 import { BannerItem } from './BannerItem'
 import { render } from '../testUtils'

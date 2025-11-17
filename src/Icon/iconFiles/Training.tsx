@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Training = () => (
   <svg
     width="100%"

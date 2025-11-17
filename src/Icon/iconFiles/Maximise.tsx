@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Maximise = () => (
   <svg
     width="100%"

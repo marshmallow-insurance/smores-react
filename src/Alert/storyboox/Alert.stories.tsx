@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Alert } from '../Alert'
-import React from 'react'
 import { Link } from '../../Link'
 import { Text } from '../../Text'
 

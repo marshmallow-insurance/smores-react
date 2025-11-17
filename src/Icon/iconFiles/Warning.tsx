@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Warning = () => (
   <svg
     width="100%"

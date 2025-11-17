@@ -1,6 +1,5 @@
 import styled, { css, useTheme } from 'styled-components'
 
-import React from 'react'
 import { Box } from '../Box'
 import { Tag } from '../Tag'
 import { Text } from '../Text'

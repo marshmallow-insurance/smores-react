@@ -1,5 +1,3 @@
-import React from 'react'
-
 const PoundBold = () => (
   <svg
     width="100%"

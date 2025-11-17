@@ -1,4 +1,4 @@
-import React, {
+import {
   FocusEvent,
   ForwardedRef,
   forwardRef,
@@ -6,7 +6,9 @@ import React, {
   RefObject,
   useImperativeHandle,
   useRef,
-} from 'react'
+} from 'react';
+
+import * as React from 'react';
 import styled from 'styled-components'
 
 import { useUniqueId } from '../utils/id'

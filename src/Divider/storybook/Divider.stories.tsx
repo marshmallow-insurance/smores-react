@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 import { Divider } from '../Divider'
 import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 

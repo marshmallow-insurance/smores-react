@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Charge = () => (
   <svg
     width="24"

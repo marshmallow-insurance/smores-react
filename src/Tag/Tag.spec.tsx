@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, screen } from '../testUtils'
 import { it, expect } from 'vitest'
 import { Tag } from '../Tag'

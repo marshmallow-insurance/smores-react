@@ -1,5 +1,3 @@
-import React from 'react'
-
 const DocDownload = () => (
   <svg
     width="100%"

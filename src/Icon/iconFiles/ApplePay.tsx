@@ -1,5 +1,3 @@
-import React from 'react'
-
 const ApplePay = () => (
   <svg
     width="100%"

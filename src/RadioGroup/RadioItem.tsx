@@ -1,4 +1,4 @@
-import React, { FocusEvent, forwardRef } from 'react'
+import { FocusEvent, forwardRef } from 'react';
 import styled, { css } from 'styled-components'
 
 import { useUniqueId } from '../utils/id'

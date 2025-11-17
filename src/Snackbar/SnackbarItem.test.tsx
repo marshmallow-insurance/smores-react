@@ -1,4 +1,3 @@
-import React from 'react'
 import { noop } from '../utils/noop'
 import { SnackbarItem } from './SnackbarItem'
 import { render, screen } from '../testUtils'

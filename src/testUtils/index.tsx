@@ -1,4 +1,5 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react';
+import * as React from 'react';
 import { render, RenderOptions } from '@testing-library/react'
 import { SmoresThemeProvider } from '../ThemeProvider/ThemeProvider'
 

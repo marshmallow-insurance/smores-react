@@ -1,5 +1,3 @@
-import React from 'react'
-
 const CarMta = () => (
   <svg
     width="100%"

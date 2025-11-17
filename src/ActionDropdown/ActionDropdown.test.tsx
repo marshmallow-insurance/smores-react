@@ -1,4 +1,3 @@
-import React from 'react'
 import { render } from '../testUtils'
 import { ActionDropdown } from './ActionDropdown'
 import { ActionListItem } from './List'

@@ -1,10 +1,12 @@
-import React, {
+import {
   FocusEvent,
   FormEvent,
   ForwardedRef,
   forwardRef,
   HTMLInputAutoCompleteAttribute,
-} from 'react'
+} from 'react';
+
+import * as React from 'react';
 
 import { Box } from '../Box'
 import { Field } from '../fields/Field'

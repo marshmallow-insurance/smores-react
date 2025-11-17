@@ -1,5 +1,3 @@
-import React from 'react'
-
 const RepeatCharge = () => (
   <svg width="100%" height="100%" fill="none" viewBox="0 0 24 24">
     <path

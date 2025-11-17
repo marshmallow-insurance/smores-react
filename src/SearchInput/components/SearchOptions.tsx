@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, createRef, useEffect, useRef } from 'react'
+import { FC, ReactNode, createRef, useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../../Box'

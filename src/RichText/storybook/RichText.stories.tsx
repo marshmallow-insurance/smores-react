@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 import { RichText, RichTextProps } from '../RichText'
 
 const meta: Meta<RichTextProps> = {

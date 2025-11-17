@@ -1,5 +1,3 @@
-import React from 'react'
-
 const CircleInfoFilled = () => (
   <svg
     width="100%"

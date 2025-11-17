@@ -1,4 +1,5 @@
-import React, { ButtonHTMLAttributes, FC, ReactNode, forwardRef } from 'react'
+import { ButtonHTMLAttributes, FC, ReactNode, forwardRef } from 'react';
+import * as React from 'react';
 import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'

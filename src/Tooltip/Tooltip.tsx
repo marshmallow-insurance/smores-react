@@ -15,7 +15,8 @@ import {
   useRole,
   type Side,
 } from '@floating-ui/react'
-import React, { FC, ReactNode, useRef, useState } from 'react'
+import { FC, ReactNode, useRef, useState } from 'react';
+import * as React from 'react';
 import styled, { css, useTheme } from 'styled-components'
 import { Box } from '../Box'
 import { Text } from '../Text'

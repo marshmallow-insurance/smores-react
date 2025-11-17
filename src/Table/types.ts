@@ -1,4 +1,5 @@
-import React, { ReactElement, ReactNode } from 'react'
+import { ReactElement, ReactNode } from 'react';
+import * as React from 'react';
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
 import type { BoxSpacing, SingleSpacing } from './helper.types'

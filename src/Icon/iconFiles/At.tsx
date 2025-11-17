@@ -1,5 +1,3 @@
-import React from 'react'
-
 const At = () => (
   <svg
     width="100%"
