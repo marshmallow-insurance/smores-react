@@ -33,6 +33,13 @@ export const FontStyle = createGlobalStyle`
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'Marshmallow Youth';
+    src: url('https://assets.marshmallow.com/fonts/MarshmallowYouth-Bold.woff2') format('woff2');
+    font-weight: ${theme.font.weight.bold};
+    font-style: normal;
+  }
+
 	@font-face {
     font-family: 'CircularXX';
     src: url('https://assets.marshmallow.com/fonts/CircularXXSub-RegularSubset.woff2') format('woff2');

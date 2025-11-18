@@ -24,9 +24,11 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
 }
 
 .c13 {
+  font-family: CircularXX;
   font-size: 12px;
   font-weight: 400;
-  line-height: 16px;
+  letter-spacing: 0;
+  line-height: 1.25;
   text-align: left;
   color: #d03c30;
 }
@@ -321,9 +323,11 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
 }
 
 .c9 {
+  font-family: CircularXX;
   font-size: 12px;
   font-weight: 400;
-  line-height: 16px;
+  letter-spacing: 0;
+  line-height: 1.25;
   text-align: left;
   color: #292924;
 }

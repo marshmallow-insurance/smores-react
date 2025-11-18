@@ -63,7 +63,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
     >
       {loading ? (
         <Loader
-          color={primary ? 'color.icon.base' : 'color.icon.on-dark'}
+          color={primary ? 'color.icon.base' : 'color.icon.inverse'}
           height="16"
         />
       ) : (
@@ -72,7 +72,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
             <IconComponent
               render={icon}
               size={16}
-              color={primary ? 'color.icon.base' : 'color.icon.on-dark'}
+              color={primary ? 'color.icon.base' : 'color.icon.inverse'}
             />
           )}
           <ChildrenContainer>{children}</ChildrenContainer>
@@ -114,7 +114,7 @@ const Container = styled(Box)<IButton>(
     `}
     ${$secondary &&
     css`
-      color: ${theme.color.text['on-dark']};
+      color: ${theme.color.text.inverse};
       background-color: ${theme.color.surface.base[900]};
       border: 2px solid ${theme.color.surface.base[900]};
       &:hover {
