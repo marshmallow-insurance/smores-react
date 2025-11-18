@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 import { Box } from '../../Box'
 import { Text } from '../../Text'
 import { SearchInput } from '../SearchInput'

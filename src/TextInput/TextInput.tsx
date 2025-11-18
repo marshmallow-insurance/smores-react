@@ -1,5 +1,6 @@
-import React, {
+import {
   FocusEvent,
+  AnimationEvent,
   FormEvent,
   ForwardedRef,
   forwardRef,
@@ -82,7 +83,7 @@ export const TextInput = forwardRef(function TextInput(
 ) {
   const id = useUniqueId(idProp)
 
-  const handleAnimationEnd = (e: React.AnimationEvent<HTMLInputElement>) => {
+  const handleAnimationEnd = (e: AnimationEvent<HTMLInputElement>) => {
     if (e.animationName === 'onAutoFillStart' && onAutoFill && !!value) {
       onAutoFill()
     }

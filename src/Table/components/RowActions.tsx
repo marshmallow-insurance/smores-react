@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react'
+import { cloneElement, FormEvent } from 'react';
 import styled, { useTheme } from 'styled-components'
 import { Box } from '../../Box'
 import { Button } from '../../Button'
@@ -16,6 +16,7 @@ export const RowActions = <T extends object>({
   isExpanded,
   toggleExpansion,
   expandable,
+  width,
   canExpandRow,
 }: RowActionsProps<T>) => {
   const handleAction = async (
@@ -36,6 +37,7 @@ export const RowActions = <T extends object>({
     <StyledCell
       $stickyCell={Boolean(rowActions) || Boolean(expandable)}
       $rowActionsBgColor={resolvedRowActionBgColor}
+      $width={width}
     >
       <Box flex alignItems="center" justifyContent="flex-end">
         {rowActions?.actions?.map((action, actionIndex) => {
@@ -44,7 +46,7 @@ export const RowActions = <T extends object>({
               <Wrapper flex key={actionIndex}>
                 {'element' in action &&
                   isReactElement(action.element) &&
-                  React.cloneElement(action.element, {
+                  cloneElement(action.element, {
                     onClick: async (e: MouseEvent) => {
                       await handleAction(e, action.onClick)
                     },
@@ -81,7 +83,7 @@ export const RowActions = <T extends object>({
                     />
                   ))}
               </Wrapper>
-            )
+            );
           }
           return null
         })}
@@ -106,7 +108,7 @@ export const RowActions = <T extends object>({
         )}
       </Box>
     </StyledCell>
-  )
+  );
 }
 
 const Wrapper = styled(Box)`

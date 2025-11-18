@@ -1,5 +1,3 @@
-import React from 'react'
-
 const HelpAboutus = () => (
   <svg
     width="100%"

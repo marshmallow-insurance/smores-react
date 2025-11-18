@@ -1,5 +1,3 @@
-import React from 'react'
-
 const HelpCenter = () => (
   <svg
     width="100%"

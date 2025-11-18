@@ -1,4 +1,4 @@
-import React, { cloneElement, ReactNode, useState } from 'react'
+import { cloneElement, ReactNode, useState } from 'react';
 import { isReactElement } from '../../utils/isReactElement'
 import { isMappedReactElement } from '../helpers'
 import { TableRowProps } from '../types'
@@ -22,6 +22,7 @@ export const TableRow = <T extends object>({
   showActions,
   expandable,
   clickableRow,
+  renderSubTable,
   hideBorder,
 }: TableRowProps<T>) => {
   const theme = useTheme()
@@ -51,10 +52,10 @@ export const TableRow = <T extends object>({
       : Boolean(subTable?.table ?? subRows?.rows)
 
   const subRowsData = subRows?.rows(rowData)
-  const subTableData = subTable?.table(rowData)
+  const subTableData = renderSubTable?.(rowData)
 
   const subPadding = subTable?.padding ?? subRows?.padding
-  const subBgColor = subTable?.bgColor || subRows?.bgColor
+  const subBgColor = subTable?.bgColor ?? subRows?.bgColor
   const resolvedSubBgColor = subBgColor
     ? resolveToThemeColor(subBgColor, theme)
     : undefined

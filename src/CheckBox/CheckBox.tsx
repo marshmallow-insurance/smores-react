@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactNode } from 'react'
+import { forwardRef, ReactNode } from 'react';
 import styled from 'styled-components'
 import { focusOutline } from '../utils/focusOutline'
 

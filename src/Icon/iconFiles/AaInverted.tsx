@@ -1,5 +1,3 @@
-import React from 'react'
-
 const AaInverted = () => (
   <svg
     width="100%"

@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 import { IconStrict } from '../IconStrict'
 import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 

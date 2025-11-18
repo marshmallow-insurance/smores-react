@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from 'react'
+import { forwardRef, useRef } from 'react';
 import styled from 'styled-components'
 
 import { Box } from '../Box'

@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Meta, StoryObj } from '@storybook/react'
 import { expect, fn, userEvent, within } from '@storybook/test'
 import { Button } from '../Button'

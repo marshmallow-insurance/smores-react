@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Subsidence = () => (
   <svg
     width="100%"

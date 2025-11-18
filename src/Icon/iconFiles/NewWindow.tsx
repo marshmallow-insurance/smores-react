@@ -1,5 +1,3 @@
-import React from 'react'
-
 const NewWindow = () => (
   <svg
     width="100%"

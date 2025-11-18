@@ -1,5 +1,3 @@
-import React from 'react'
-
 const ScheduleQuote = () => (
   <svg
     width="100%"

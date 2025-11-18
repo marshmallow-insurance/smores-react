@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, FC, FormEvent } from 'react'
+import { ButtonHTMLAttributes, FC, FormEvent } from 'react';
 import styled, { css, useTheme } from 'styled-components'
 
 import { darken } from 'polished'

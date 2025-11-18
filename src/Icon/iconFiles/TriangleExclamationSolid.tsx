@@ -1,5 +1,3 @@
-import React from 'react'
-
 const TriangleExclamationSolid = () => (
   <svg
     width="100%"

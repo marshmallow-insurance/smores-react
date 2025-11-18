@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Burger = () => (
   <svg
     width="100%"

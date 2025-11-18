@@ -1,5 +1,3 @@
-import React from 'react'
-
 const NoExcess = () => (
   <svg
     width="100%"

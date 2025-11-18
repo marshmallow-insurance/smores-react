@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Engine = () => (
   <svg
     width="100%"

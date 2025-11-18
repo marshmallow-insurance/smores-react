@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react';
 
 import { CommonFieldProps } from '../commonFieldTypes'
 import { InternalField } from '../components/InternalField'

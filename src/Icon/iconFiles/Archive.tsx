@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Archive = () => (
   <svg
     width="100%"

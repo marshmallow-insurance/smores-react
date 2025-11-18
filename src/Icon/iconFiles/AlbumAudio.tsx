@@ -1,5 +1,3 @@
-import React from 'react'
-
 const AlbumAudio = () => (
   <svg
     width="100%"
