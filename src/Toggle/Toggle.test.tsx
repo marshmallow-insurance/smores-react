@@ -1,4 +1,3 @@
-import React from 'react'
 import { render } from '../testUtils'
 import { it, expect } from 'vitest'
 import { Toggle } from './Toggle'

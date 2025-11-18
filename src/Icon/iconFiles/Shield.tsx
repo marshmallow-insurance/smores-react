@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Shield = () => (
   <svg
     width="100%"

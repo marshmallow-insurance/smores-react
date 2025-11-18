@@ -1,10 +1,4 @@
-import React, {
-  FocusEvent,
-  FormEvent,
-  ForwardedRef,
-  forwardRef,
-  useMemo,
-} from 'react'
+import { FocusEvent, FormEvent, ForwardedRef, forwardRef, useMemo } from 'react';
 import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'

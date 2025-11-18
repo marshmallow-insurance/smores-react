@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { MarginProps } from '../../utils/space'
 import { CommonFieldProps } from '../commonFieldTypes'
 import { InternalField } from '../components/InternalField'

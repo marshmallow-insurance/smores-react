@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Intercom2 = () => (
   <svg
     width="100%"

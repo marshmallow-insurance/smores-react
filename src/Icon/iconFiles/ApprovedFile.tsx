@@ -1,5 +1,3 @@
-import React from 'react'
-
 const ApprovedFile = () => (
   <svg
     width="100%"

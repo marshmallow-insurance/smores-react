@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const Progress = () => (
   <svg
     viewBox="0 0 16 16"

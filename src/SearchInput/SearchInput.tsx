@@ -1,13 +1,5 @@
 import Fuse, { IFuseOptions } from 'fuse.js'
-import React, {
-  ChangeEvent,
-  FocusEvent,
-  ReactNode,
-  forwardRef,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
+import { ChangeEvent, FocusEvent, ReactNode, forwardRef, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components'
 import { Box } from '../Box'
 import { IconStrict } from '../IconStrict'

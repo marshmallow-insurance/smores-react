@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Photo = () => (
   <svg
     width="100%"

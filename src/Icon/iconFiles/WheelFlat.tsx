@@ -1,5 +1,3 @@
-import React from 'react'
-
 const WheelFlat = () => (
   <svg
     width="100%"

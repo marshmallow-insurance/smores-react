@@ -1,5 +1,3 @@
-import React from 'react'
-
 const ContactEmail = () => (
   <svg
     width="100%"

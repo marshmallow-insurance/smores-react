@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Stripe = () => (
   <svg
     width="100%"

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const HelpIdcheck = () => (
   <svg
     width="100%"

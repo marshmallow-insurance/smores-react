@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, screen } from '../testUtils'
 import { it, describe } from 'vitest'
 import { Text } from './Text'

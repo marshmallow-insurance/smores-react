@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Renewal = () => (
   <svg
     width="100%"

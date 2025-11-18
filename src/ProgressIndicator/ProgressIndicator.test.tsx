@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, screen, fireEvent } from '../testUtils'
 import { ProgressIndicator } from './ProgressIndicator'
 import { StepData } from './types'

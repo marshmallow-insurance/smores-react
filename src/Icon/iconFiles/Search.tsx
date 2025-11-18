@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Search = () => (
   <svg
     width="100%"

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const ThumbsUp = () => (
   <svg
     width="100%"

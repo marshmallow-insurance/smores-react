@@ -1,7 +1,6 @@
 import { useArgs } from '@storybook/preview-api'
 import { Meta, StoryObj } from '@storybook/react'
 import { expect, fn, userEvent, waitFor, within } from '@storybook/test'
-import React from 'react'
 import { Props, Toggle } from '../Toggle'
 import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 

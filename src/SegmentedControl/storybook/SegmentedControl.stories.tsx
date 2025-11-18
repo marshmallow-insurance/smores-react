@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 import { SegmentedControl, SegmentedControlProps } from '../SegmentedControl'
 import { Container } from './Container'
 

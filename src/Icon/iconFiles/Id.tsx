@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Id = () => (
   <svg
     width="100%"

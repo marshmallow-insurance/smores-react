@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Vandalism = () => (
   <svg
     width="100%"

@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, screen } from '../testUtils'
 import { Textarea } from './Textarea'
 import { noop } from '../utils/noop'

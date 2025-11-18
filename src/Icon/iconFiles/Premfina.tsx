@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Premfina = () => (
   <svg
     width="100%"

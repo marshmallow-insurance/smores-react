@@ -1,5 +1,3 @@
-import React from 'react'
-
 const GooglePlayBadge = () => (
   <svg
     width="100%"

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Clock = () => (
   <svg
     width="100%"

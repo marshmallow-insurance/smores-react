@@ -1,5 +1,3 @@
-import React from 'react'
-
 const MoneyBag = () => (
   <svg
     width="100%"

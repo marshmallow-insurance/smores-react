@@ -1,4 +1,3 @@
-import React from 'react'
 import { TableHeaderProps } from '../types'
 import { StyledHeaderCell, StyledRow } from './commonComponents'
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Text } from '../Text'
 import { TableHeader } from './components/TableHeader'
 import { TableRow } from './components/TableRow'

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const PolicyDocs = () => (
   <svg
     width="100%"

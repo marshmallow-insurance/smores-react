@@ -1,4 +1,3 @@
-import React from 'react'
 import { StepData, StepState } from './types'
 import { calculateStepState, calculateProgressWidths } from './helpers'
 import styled from 'styled-components'

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Medical = () => (
   <svg
     width="100%"

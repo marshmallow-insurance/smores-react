@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 import { Placeholder } from '../../components/Placeholder'
 import { Fieldset, FieldsetProps } from '../Fieldset'
 

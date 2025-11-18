@@ -1,5 +1,3 @@
-import React from 'react'
-
 const CancelBw = () => (
   <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none">
     <path d="M1.846 2.77h20.308v20.307H1.846V2.769Z" fill="#fff" />

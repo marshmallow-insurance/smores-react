@@ -1,10 +1,4 @@
-import React, {
-  FocusEvent,
-  FormEvent,
-  ForwardedRef,
-  WheelEvent,
-  forwardRef,
-} from 'react'
+import { FocusEvent, FormEvent, ForwardedRef, WheelEvent, forwardRef } from 'react';
 
 import { Box } from '../Box'
 import { Field } from '../fields/Field'

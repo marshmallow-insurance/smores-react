@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 import { Box } from '../../Box'
 import { Tag } from '../Tag'
 import { colourOptions } from '../../utils/storybookHelpers/colourOptions'

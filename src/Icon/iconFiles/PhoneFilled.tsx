@@ -1,5 +1,3 @@
-import React from 'react'
-
 const PhoneFilled = () => (
   <svg
     width="100%"

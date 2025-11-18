@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 import { Chip } from '../Chip'
 
 const meta: Meta<typeof Chip> = {
