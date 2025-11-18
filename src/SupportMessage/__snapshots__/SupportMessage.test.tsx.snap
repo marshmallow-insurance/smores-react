@@ -20,11 +20,9 @@ exports[`SupportMessage > renders correctly with default props 1`] = `
 }
 
 .c5 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }

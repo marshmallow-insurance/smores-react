@@ -43,19 +43,19 @@ export const BannerItem: FC<Props> = ({
       textColor: 'color.text.base',
     },
     critical: {
-      iconColor: 'color.icon.inverse',
+      iconColor: 'color.icon.on-dark',
       backgroundColor: theme.color.feedback.negative[200],
-      textColor: 'color.icon.inverse',
+      textColor: 'color.text.on-dark',
     },
     general: {
-      iconColor: 'color.icon.inverse',
+      iconColor: 'color.icon.on-dark',
       backgroundColor: theme.color.surface.base[900],
-      textColor: 'color.icon.inverse',
+      textColor: 'color.text.on-dark',
     },
     success: {
-      iconColor: 'color.icon.inverse',
+      iconColor: 'color.icon.on-dark',
       backgroundColor: theme.color.feedback.positive[200],
-      textColor: 'color.icon.inverse',
+      textColor: 'color.text.on-dark',
     },
   }
   const autoCloseBaner = () => {

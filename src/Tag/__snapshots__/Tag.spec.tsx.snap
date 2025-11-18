@@ -2,11 +2,9 @@
 
 exports[`Tag Component > renders snapshot test correctly 1`] = `
 .c2 {
-  font-family: CircularXX;
   font-size: 10px;
+  line-height: 12px;
   font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1;
   text-transform: uppercase;
   text-align: left;
   color: #9d927b;

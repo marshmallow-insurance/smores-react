@@ -1,6 +1,7 @@
 import { darken } from 'polished'
 import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
+import { fontStyleMapping } from '../../Text/fontMapping'
 import { focusOutlineStyle } from '../../utils/focusOutline'
 import { TableStylesProps, type TableProps } from '../types'
 
@@ -35,10 +36,7 @@ export const StyledHeaderCell = styled.th<TransientProps<TableStylesProps>>`
   z-index: 2;
   text-align: left;
   vertical-align: bottom;
-  font-weight: ${({ theme }) => theme.font.label[100].fontWeight};
-  line-height: ${({ theme }) => theme.font.label[100].lineHeight};
-  font-size: ${({ theme }) => theme.font.label[100].fontSize};
-  text-transform: ${({ theme }) => theme.font.label[100].textCase};
+  ${fontStyleMapping.label};
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 8px;
