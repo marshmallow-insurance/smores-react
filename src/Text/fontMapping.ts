@@ -1,9 +1,6 @@
 import { theme } from '../theme'
 import { Typo } from './Text'
 
-/**
- * @deprecated Use `resolveToThemeFont` instead
- */
 export const fontStyleMapping: Record<Typo, string> = {
   'hero-alternate': `
     font-size: 40px;

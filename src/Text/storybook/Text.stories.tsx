@@ -1,14 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
-import { Text } from '../Text'
+import { Text, Typo } from '../Text'
+import { fontStyleMapping } from '../fontMapping'
 import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
-import { fontOptions } from '../../utils/storybookHelpers/fontOptions'
-import {
-  getTypoPath,
-  legacyFontStyleMapping,
-  TypoTypes,
-} from '../../ThemeProvider/utils/fontMap'
 
 const Grid = styled(Box)`
   display: grid;
@@ -17,24 +12,7 @@ const Grid = styled(Box)`
   gap: 10px;
 `
 
-const TypoCollection = ({ typos }: { typos: Readonly<TypoTypes[]> }) => {
-  const orderOfTypoTypes = [
-    'hero',
-    'heading',
-    'body',
-    'link',
-    'label',
-    'caption',
-  ]
-  const orderedTypos = typos.toSorted((a, b) => {
-    const aType = orderOfTypoTypes.findIndex((type) => a.includes(type))
-    const bType = orderOfTypoTypes.findIndex((type) => b.includes(type))
-    if (aType === bType) {
-      return b.localeCompare(a)
-    }
-    return aType - bType
-  })
-
+const TypoCollection = ({ typos }: { typos: Readonly<Typo[]> }) => {
   return (
     <Box>
       <Grid>
@@ -48,9 +26,9 @@ const TypoCollection = ({ typos }: { typos: Readonly<TypoTypes[]> }) => {
           Paragraph
         </Text>
       </Grid>
-      {orderedTypos.map((typo) => (
+      {typos.map((typo) => (
         <Grid key={typo}>
-          <Text tag="p" typo="font.body.200" color="color.text.subtle">
+          <Text tag="p" typo="body-regular" color="color.text.subtle">
             {typo}
           </Text>
           <Text tag="p" typo={typo} color="color.text.base">
@@ -58,20 +36,12 @@ const TypoCollection = ({ typos }: { typos: Readonly<TypoTypes[]> }) => {
           </Text>
           {!['hero-alternate', 'hero', 'heading-alternate', 'label'].includes(
             typo,
-          ) &&
-            ![
-              'font.hero.100',
-              'font.hero.200',
-              'font.hero.300',
-              'font.hero.400',
-              'font.label.100',
-              'font.label.200',
-            ].includes(typo) && (
-              <Text tag="p" typo={typo} color="color.text.base">
-                They waited patiently for what seemed a very long time. They
-                waited patiently for what seemed a very long time.
-              </Text>
-            )}
+          ) && (
+            <Text tag="p" typo={typo} color="color.text.base">
+              They waited patiently for what seemed a very long time. They
+              waited patiently for what seemed a very long time.
+            </Text>
+          )}
         </Grid>
       ))}
     </Box>
@@ -100,17 +70,11 @@ export default meta
 
 type Story = StoryObj<typeof Text>
 
-const typos = fontOptions as TypoTypes[]
+const typos = Object.keys(fontStyleMapping) as Typo[]
 
 export const Default: Story = {
   args: {
     tag: 'p',
-  },
-  argTypes: {
-    typo: {
-      control: 'select',
-      options: fontOptions,
-    },
   },
   render: (args) => (
     <Text {...args}>The quick brown fox jumps over the lazy dog</Text>
@@ -140,49 +104,4 @@ export const WithTitle: Story = {
 
 export const Collection: Story = {
   render: () => <TypoCollection typos={typos} />,
-}
-
-export const MappedDeprecatedTypoValues: Story = {
-  render: () => (
-    <Box>
-      {Object.keys(legacyFontStyleMapping).map((deprecatedTypo) => {
-        const mappedTypo = getTypoPath(deprecatedTypo as TypoTypes)
-        const responsiveNote =
-          deprecatedTypo === 'hero-alternate' ||
-          deprecatedTypo === 'hero' ||
-          deprecatedTypo === 'heading-large'
-            ? ' (Note: This typo maps to different new values based on screen size)'
-            : ''
-        return (
-          <Grid key={deprecatedTypo} mb="32px">
-            <Text
-              tag="p"
-              typo="font.body.200"
-              color="color.text.subtle"
-              mb="8px"
-            >
-              Deprecated typo: {deprecatedTypo}
-              <br />
-              {responsiveNote}
-            </Text>
-            <Box>
-              <Text
-                tag="p"
-                typo={deprecatedTypo as TypoTypes}
-                color="color.text.base"
-              >
-                This is rendered using the deprecated typo value:{' '}
-                {deprecatedTypo}
-              </Text>
-            </Box>
-            <Box>
-              <Text tag="p" typo={mappedTypo} color="color.text.base">
-                This is rendered using the mapped new typo value: {mappedTypo}
-              </Text>
-            </Box>
-          </Grid>
-        )
-      })}
-    </Box>
-  ),
 }

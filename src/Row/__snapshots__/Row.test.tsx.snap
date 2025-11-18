@@ -2,21 +2,17 @@
 
 exports[`Row > borders > renders borderBottom 1`] = `
 .c1 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
 
 .c2 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #636768;
 }
@@ -72,21 +68,17 @@ exports[`Row > borders > renders borderBottom 1`] = `
 
 exports[`Row > borders > renders borderTop 1`] = `
 .c1 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
 
 .c2 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #636768;
 }
@@ -142,21 +134,17 @@ exports[`Row > borders > renders borderTop 1`] = `
 
 exports[`Row > headings > renders bold heading 1`] = `
 .c1 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
 
 .c2 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #636768;
 }
@@ -216,21 +204,17 @@ exports[`Row > headings > renders bold heading 1`] = `
 
 exports[`Row > headings > renders heading 1`] = `
 .c1 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
 
 .c2 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #636768;
 }
@@ -286,21 +270,17 @@ exports[`Row > headings > renders heading 1`] = `
 
 exports[`Row > headings > renders subHeading 1`] = `
 .c1 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
 
 .c2 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #636768;
 }
@@ -372,21 +352,17 @@ exports[`Row > icons > renders iconLeft 1`] = `
 }
 
 .c2 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
 
 .c3 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #636768;
 }
@@ -475,21 +451,17 @@ exports[`Row > icons > renders iconRight 1`] = `
 }
 
 .c1 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
 
 .c2 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #636768;
 }
@@ -564,21 +536,17 @@ exports[`Row > icons > renders iconRight 1`] = `
 
 exports[`Row > type > renders curved last 1`] = `
 .c1 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
 
 .c2 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #636768;
 }
@@ -634,21 +602,17 @@ exports[`Row > type > renders curved last 1`] = `
 
 exports[`Row > type > renders curved type 1`] = `
 .c1 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
 
 .c2 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #636768;
 }
@@ -704,21 +668,17 @@ exports[`Row > type > renders curved type 1`] = `
 
 exports[`Row > type > renders first type 1`] = `
 .c1 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
 
 .c2 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #636768;
 }

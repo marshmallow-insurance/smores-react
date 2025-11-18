@@ -34,11 +34,9 @@ exports[`Dropdown > renders correctly when completed 1`] = `
 }
 
 .c9 {
-  font-family: CircularXX;
   font-size: 12px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.25;
+  line-height: 16px;
   text-align: left;
   color: #317a4c;
 }
@@ -375,11 +373,9 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
 }
 
 .c7 {
-  font-family: CircularXX;
   font-size: 12px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.25;
+  line-height: 16px;
   text-align: left;
   color: #d03c30;
 }

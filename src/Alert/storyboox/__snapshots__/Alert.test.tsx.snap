@@ -25,21 +25,17 @@ exports[`Alert Component > should render Info alert correctly 1`] = `
 }
 
 .c6 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
 
 .c7 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
@@ -177,21 +173,17 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
 }
 
 .c6 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
 
 .c8 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
@@ -435,11 +427,9 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
 }
 
 .c6 {
-  font-family: CircularXX;
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
@@ -461,11 +451,9 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
 }
 
 .c8 {
-  font-family: CircularXX;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.33;
+  line-height: 20px;
   text-align: left;
   color: #292924;
 }
