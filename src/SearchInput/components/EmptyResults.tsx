@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect } from 'react'
+import { FC, ReactNode, useEffect } from 'react';
 
 interface Props {
   onNotFound?: (searchTerm: string) => void

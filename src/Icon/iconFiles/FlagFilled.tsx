@@ -1,5 +1,3 @@
-import React from 'react'
-
 const FlagFilled = () => (
   <svg
     width="100%"

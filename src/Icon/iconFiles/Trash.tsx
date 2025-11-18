@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Trash = () => (
   <svg
     width="100%"

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Wave = () => (
   <svg
     width="100%"

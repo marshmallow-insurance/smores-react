@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Download = () => (
   <svg
     width="100%"

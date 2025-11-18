@@ -1,5 +1,3 @@
-import React from 'react'
-
 const FileCabinet = () => (
   <svg
     width="100%"

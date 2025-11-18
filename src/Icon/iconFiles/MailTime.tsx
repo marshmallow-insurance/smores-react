@@ -1,5 +1,3 @@
-import React from 'react'
-
 const MailTime = () => (
   <svg
     width="100%"

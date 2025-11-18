@@ -1,4 +1,10 @@
-import React, { ButtonHTMLAttributes, FC, ReactNode, forwardRef } from 'react'
+import {
+  ButtonHTMLAttributes,
+  FC,
+  FormEvent,
+  ReactNode,
+  forwardRef,
+} from 'react'
 import styled, { css } from 'styled-components'
 
 import { TransientProps } from 'utils/utilTypes'
@@ -15,7 +21,7 @@ type Props = {
   id?: string
   className?: string
   disabled?: boolean
-  handleClick?: (e: React.FormEvent<HTMLButtonElement>) => void
+  handleClick?: (e: FormEvent<HTMLButtonElement>) => void
   loading?: boolean
   primary?: boolean
   secondary?: boolean

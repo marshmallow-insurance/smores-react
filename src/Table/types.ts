@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
 import type { BoxSpacing, SingleSpacing } from './helper.types'
@@ -71,10 +71,10 @@ type RowCellRenderer<T> = (
   rowIndex: number,
   column: TableColumn<T>,
   id: string | number,
-) => React.ReactNode
+) => ReactNode
 
 export interface TableColumn<T> {
-  name?: string | number | React.ReactNode
+  name?: string | number | ReactNode
   minWidth?: string
   maxWidth?: string
   noWrapContent?: boolean
@@ -169,7 +169,7 @@ export interface TableRowProps<T> extends CommonTableProps<T> {
   showActions?: boolean
   hideBorder?: boolean
 
-  renderSubTable?: (rowData: T) => React.ReactElement<any>
+  renderSubTable?: (rowData: T) => ReactElement<any>
 }
 
 export interface RowActionsProps<T>

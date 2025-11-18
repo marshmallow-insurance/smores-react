@@ -1,5 +1,3 @@
-import React from 'react'
-
 const UploadEmail = () => (
   <svg
     width="100%"

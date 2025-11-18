@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Settings = () => (
   <svg
     width="100%"

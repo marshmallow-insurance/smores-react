@@ -1,5 +1,4 @@
 import { userEvent } from '@storybook/test'
-import React from 'react'
 import { expect, it } from 'vitest'
 import { render, waitFor } from '../testUtils'
 import { noop } from '../utils/noop'

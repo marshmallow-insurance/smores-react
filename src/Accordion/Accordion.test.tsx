@@ -2,7 +2,6 @@ import { expect, it } from 'vitest'
 import { render } from '../testUtils'
 
 import { Accordion } from './Accordion'
-import React from 'react'
 
 describe('Accordion', () => {
   it('renders correctly when closed', () => {

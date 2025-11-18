@@ -1,5 +1,3 @@
-import React from 'react'
-
 const People = () => (
   <svg
     width="100%"

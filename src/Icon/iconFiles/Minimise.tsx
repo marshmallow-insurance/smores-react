@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Minimise = () => (
   <svg
     width="100%"

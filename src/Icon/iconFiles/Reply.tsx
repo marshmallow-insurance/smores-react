@@ -1,4 +1,3 @@
-import React from 'react'
 const Reply = () => (
   <svg
     viewBox="0 0 24 24"

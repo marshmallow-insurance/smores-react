@@ -1,4 +1,3 @@
-import React from 'react'
 import { expect, it } from 'vitest'
 import { render } from '../testUtils'
 import { Loader } from './Loader'

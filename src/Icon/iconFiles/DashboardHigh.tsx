@@ -1,5 +1,3 @@
-import React from 'react'
-
 const DashboardHigh = () => (
   <svg
     width="100%"

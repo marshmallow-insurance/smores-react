@@ -1,5 +1,3 @@
-import React from 'react'
-
 const PadlockOutline = () => (
   <svg
     width="100%"

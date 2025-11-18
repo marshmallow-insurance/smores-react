@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Briefcase = () => (
   <svg
     width="100%"

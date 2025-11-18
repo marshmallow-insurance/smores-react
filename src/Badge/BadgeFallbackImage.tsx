@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react';
 import { Text } from '../Text'
 import styled, { useTheme } from 'styled-components'
 

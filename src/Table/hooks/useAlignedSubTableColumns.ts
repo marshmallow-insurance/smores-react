@@ -1,5 +1,6 @@
 import {
   cloneElement,
+  ReactElement,
   useState,
   type Dispatch,
   type SetStateAction,
@@ -8,7 +9,7 @@ import type { TableProps } from '../types'
 
 type AlignedSubTableColumns<T> = {
   setSubTableColumnWidths: Dispatch<SetStateAction<string[]>>
-  renderSubTable: ((rowData: T) => React.ReactElement<any>) | undefined
+  renderSubTable: ((rowData: T) => ReactElement<any>) | undefined
 }
 
 export function useAlignedSubTableColumns<T>(

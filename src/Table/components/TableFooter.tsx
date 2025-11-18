@@ -1,4 +1,3 @@
-import React from 'react'
 import type { TableFooter } from '../types'
 import { TableRow } from './TableRow'
 

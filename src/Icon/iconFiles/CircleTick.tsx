@@ -1,5 +1,3 @@
-import React from 'react'
-
 const CircleTick = () => (
   <svg
     width="100%"

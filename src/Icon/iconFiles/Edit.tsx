@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Edit = () => (
   <svg
     width="100%"

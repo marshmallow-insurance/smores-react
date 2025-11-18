@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Copy = () => (
   <svg
     width="100%"

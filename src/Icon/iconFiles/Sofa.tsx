@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Sofa = () => (
   <svg
     width="100%"

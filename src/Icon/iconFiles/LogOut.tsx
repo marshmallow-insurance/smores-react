@@ -1,5 +1,3 @@
-import React from 'react'
-
 const LogOut = () => (
   <svg
     width="100%"

@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
 import { Icon } from '../../Icon'
 import { Text } from '../../Text'
 import { Box } from '../Box'
@@ -46,7 +45,7 @@ export const ResponsiveProps: Story = {
   ),
 }
 
-const Card: React.FC = () => (
+const Card = () => (
   <Box
     px={{ small: '12px', medium: '24px' }}
     pt={{ small: '8px', medium: '16px' }}
