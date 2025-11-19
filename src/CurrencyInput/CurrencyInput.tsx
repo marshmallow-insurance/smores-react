@@ -1,4 +1,10 @@
-import { FocusEvent, FormEvent, ForwardedRef, WheelEvent, forwardRef } from 'react';
+import {
+  FocusEvent,
+  FormEvent,
+  ForwardedRef,
+  WheelEvent,
+  forwardRef,
+} from 'react'
 
 import { Box } from '../Box'
 import { Field } from '../fields/Field'
@@ -111,7 +117,7 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
           $fallbackStyle={fallbackStyle}
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && handleChange(e.currentTarget.value)
-            onInputChange && onInputChange(e)
+            onInputChange?.(e)
           }}
           onWheel={(e: WheelEvent<HTMLInputElement>) => e.currentTarget.blur()}
           onBlur={onBlur}

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { useState } from 'react';
+import { useState } from 'react'
 import { RichTextEditor, RichTextEditorProps } from '../RichTextEditor'
 
 const meta: Meta<RichTextEditorProps> = {

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { FC } from 'react';
+import { FC } from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
 import { Link } from '../../Link'

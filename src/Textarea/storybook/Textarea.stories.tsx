@@ -1,5 +1,5 @@
-import { useArgs } from '@storybook/preview-api'
 import { Meta, StoryObj } from '@storybook/react'
+import { useArgs } from 'storybook/preview-api'
 import { Textarea, TextareaProps } from '../Textarea'
 
 const meta: Meta<typeof Textarea> = {

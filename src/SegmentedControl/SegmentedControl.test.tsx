@@ -1,4 +1,4 @@
-import { userEvent } from '@storybook/test'
+import { userEvent } from 'storybook/test'
 import { expect, it } from 'vitest'
 import { render, waitFor } from '../testUtils'
 import { noop } from '../utils/noop'

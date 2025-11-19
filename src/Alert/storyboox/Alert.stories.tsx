@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Alert } from '../Alert'
 import { Link } from '../../Link'
 import { Text } from '../../Text'
+import { Alert } from '../Alert'
 
 const Meta = {
   title: 'Alert',

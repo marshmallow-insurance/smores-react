@@ -1,4 +1,4 @@
-import { FC, forwardRef, LabelHTMLAttributes, ReactNode } from 'react';
+import { FC, forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'

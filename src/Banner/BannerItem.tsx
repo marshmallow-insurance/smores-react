@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 import { Box } from '../Box'
 import { Icon } from '../Icon'

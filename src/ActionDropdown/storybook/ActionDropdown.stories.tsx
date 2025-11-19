@@ -1,9 +1,9 @@
 import { ActionDropdown, ActionDropdownProps } from '../ActionDropdown'
 
 import { Meta, StoryObj } from '@storybook/react'
-import { fn } from '@storybook/test'
 import { ActionListItem } from 'ActionDropdown/List'
-import { useState } from 'react';
+import { useState } from 'react'
+import { fn } from 'storybook/test'
 
 const actions: ActionDropdownProps['list'] = [
   {

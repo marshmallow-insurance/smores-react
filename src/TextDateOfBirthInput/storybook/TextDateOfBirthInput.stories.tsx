@@ -1,5 +1,5 @@
-import { useArgs } from '@storybook/preview-api'
 import { Meta, StoryObj } from '@storybook/react'
+import { useArgs } from 'storybook/preview-api'
 import { noop } from '../../utils/noop'
 import {
   DateObject,

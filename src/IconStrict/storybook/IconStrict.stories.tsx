@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { IconStrict } from '../IconStrict'
 import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
+import { IconStrict } from '../IconStrict'
 
 const meta: Meta<typeof IconStrict> = {
   title: 'IconStrict',

@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
+import { colourOptions } from '../utils/storybookHelpers/colourOptions'
 import { Badge, BadgeSize } from './Badge'
 import { getExampleImg } from './storybook/exampleImg'
-import { colourOptions } from '../utils/storybookHelpers/colourOptions'
 
 const meta: Meta<typeof Badge> = {
   title: 'Badge',

@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { BadgeList } from './BadgeList'
 import { BadgeSize } from '../Badge/Badge'
 import { getExampleImg } from '../Badge/storybook/exampleImg'
+import { BadgeList } from './BadgeList'
 
 const meta: Meta<typeof BadgeList> = {
   title: 'BadgeList',

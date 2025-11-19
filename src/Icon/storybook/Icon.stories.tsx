@@ -2,9 +2,9 @@ import { Meta, StoryObj } from '@storybook/react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
 import { Text } from '../../Text'
+import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 import { Icon, IconProps } from '../Icon'
 import { iconList, Icons } from '../iconsList'
-import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 
 const meta: Meta<IconProps> = {
   title: 'Icon',

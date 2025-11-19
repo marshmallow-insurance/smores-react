@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 import { SliderInput } from '../SliderInput'
 
 const meta: Meta<typeof SliderInput> = {
