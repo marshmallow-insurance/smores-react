@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { Placeholder } from '../../components/Placeholder'
 import { Fieldset, FieldsetProps } from '../Fieldset'
 

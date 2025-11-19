@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { BadgeSize } from '../Badge/Badge'
 import { getExampleImg } from '../Badge/storybook/exampleImg'
 import { BadgeList } from './BadgeList'

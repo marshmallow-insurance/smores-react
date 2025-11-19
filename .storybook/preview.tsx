@@ -1,4 +1,4 @@
-import { Preview } from '@storybook/react'
+import { Preview } from '@storybook/react-vite'
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import { FontStyle } from '../src/fontStyle'

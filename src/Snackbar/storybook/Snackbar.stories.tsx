@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { FC, useState } from 'react'
 import { Button } from '../../Button'
 import { Modal } from '../../Modal'

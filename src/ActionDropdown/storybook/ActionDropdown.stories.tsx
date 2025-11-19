@@ -1,6 +1,6 @@
 import { ActionDropdown, ActionDropdownProps } from '../ActionDropdown'
 
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { ActionListItem } from 'ActionDropdown/List'
 import { useState } from 'react'
 import { fn } from 'storybook/test'

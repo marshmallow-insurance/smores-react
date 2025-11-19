@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { Box } from '../../Box'
 import { legacyColorMap, NewColor } from '../../ThemeProvider/utils/colourMap'
 import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
