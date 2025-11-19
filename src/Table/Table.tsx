@@ -2,7 +2,7 @@ import { Text } from '../Text'
 import { TableHeader } from './components/TableHeader'
 import { TableRow } from './components/TableRow'
 import { StyledCell, StyledTable } from './components/commonComponents'
-import { TableProps } from './types'
+import { TableProps, type TableRowData } from './types'
 import { TableFooter } from './components/TableFooter'
 import { useTheme } from 'styled-components'
 import { resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
@@ -22,7 +22,7 @@ import { useAlignedSubTableColumns } from './hooks/useAlignedSubTableColumns'
  * ## Improvements:
  * - It would be nice if we expandable logic inside this component, e.g the presence of certain props would automatically add this
  */
-export const Table = <T extends object, K extends object>({
+export const Table = <T extends TableRowData, K extends object>({
   columns,
   data,
   fixedHeader = true,
@@ -95,7 +95,7 @@ export const Table = <T extends object, K extends object>({
           <>
             {data.map((row, rowIndex) => (
               <TableRow
-                key={rowIndex}
+                key={row.rowKey ?? rowIndex}
                 rowData={row}
                 rowIndex={rowIndex}
                 columns={columns}
