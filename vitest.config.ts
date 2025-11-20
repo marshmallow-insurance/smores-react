@@ -5,6 +5,7 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
+      reporters: ['verbose'],
       environment: 'jsdom',
       globals: true,
       include: [
