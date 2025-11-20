@@ -10,7 +10,7 @@ import {
   isWeekend,
   isWithinInterval,
 } from 'date-fns'
-import { FC, useState } from 'react';
+import { FC, useState } from 'react'
 import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'

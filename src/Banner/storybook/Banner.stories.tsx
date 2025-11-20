@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { Button } from '../../Button'
 import { BannerContainer } from '../BannerContainer'
 import { useBanner } from '../hooks'

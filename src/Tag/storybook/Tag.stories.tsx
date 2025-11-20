@@ -1,8 +1,8 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { Box } from '../../Box'
-import { Tag } from '../Tag'
-import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 import { legacyColorMap, NewColor } from '../../ThemeProvider/utils/colourMap'
+import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
+import { Tag } from '../Tag'
 
 const meta: Meta<typeof Tag> = {
   title: 'Tag',

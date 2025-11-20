@@ -1,8 +1,8 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { StepData } from 'ProgressIndicator/types'
 import styled from 'styled-components'
 import { Box } from '../../Box'
 import { ProgressIndicator } from '../ProgressIndicator'
-import { StepData } from 'ProgressIndicator/types'
 
 const defaultSteps: StepData[] = [
   {

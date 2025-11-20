@@ -1,9 +1,9 @@
 import { getISODay } from 'date-fns'
-import { FC } from 'react';
+import { FC } from 'react'
 import styled from 'styled-components'
 
-import { theme } from '../theme'
 import { Text } from '../Text'
+import { theme } from '../theme'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { Day } from './types'
 

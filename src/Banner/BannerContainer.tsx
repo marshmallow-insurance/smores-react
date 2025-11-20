@@ -1,4 +1,11 @@
-import { createContext, FC, useState, useCallback, ReactNode, useContext } from 'react';
+import {
+  createContext,
+  FC,
+  useState,
+  useCallback,
+  ReactNode,
+  useContext,
+} from 'react'
 import styled from 'styled-components'
 import { BannerItem } from './BannerItem'
 import { CreateBanner, Banner, BannerContextType } from './types'

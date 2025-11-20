@@ -1,9 +1,9 @@
-import { Preview } from '@storybook/react'
+import { Preview } from '@storybook/react-vite'
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
+import { FontStyle } from '../src/fontStyle'
 import { theme } from '../src/theme'
 import { SmoresThemeProvider } from '../src/ThemeProvider/ThemeProvider'
-import { FontStyle } from '../src/fontStyle'
 
 import { ResetCss } from './ResetCss'
 
@@ -35,6 +35,8 @@ const preview: Preview = {
       </>
     ),
   ],
+
+  tags: ['autodocs'],
 }
 
 export default preview

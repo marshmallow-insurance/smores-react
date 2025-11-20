@@ -1,5 +1,5 @@
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Datepicker } from '../Datepicker'
-import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Datepicker> = {
   title: 'Datepicker',

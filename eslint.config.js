@@ -53,6 +53,7 @@ export default [
       '@typescript-eslint/no-unsafe-return': 'warn',
       // TODO: Temporary warn, to fix in separate PR
       '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-unsafe-call': 'warn',
       '@typescript-eslint/prefer-nullish-coalescing': 'warn',
       '@typescript-eslint/no-redundant-type-constituents': 'warn',
       'react-hooks/rules-of-hooks': 'error',

@@ -1,8 +1,8 @@
-import { useArgs } from '@storybook/preview-api'
-import { Meta, StoryObj } from '@storybook/react'
-import { expect, fn, userEvent, waitFor, within } from '@storybook/test'
-import { Props, Toggle } from '../Toggle'
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { useArgs } from 'storybook/preview-api'
+import { expect, fn, userEvent, waitFor, within } from 'storybook/test'
 import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
+import { Props, Toggle } from '../Toggle'
 
 const Render = (args: Props) => {
   const [{ checked }, updateArgs] = useArgs<Props>()

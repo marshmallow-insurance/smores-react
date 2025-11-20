@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, memo } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 import { TransientProps } from '../utils/utilTypes'
 import { Box } from '../Box'

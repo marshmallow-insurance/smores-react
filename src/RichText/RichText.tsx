@@ -1,5 +1,5 @@
 import domPurify from 'dompurify'
-import { ForwardedRef, forwardRef } from 'react';
+import { ForwardedRef, forwardRef } from 'react'
 import styled from 'styled-components'
 import { Box } from '../Box'
 import { Icon } from '../Icon'

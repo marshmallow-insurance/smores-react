@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { BaseValueType } from 'RadioGroup/types'
-import { useState } from 'react';
+import { useState } from 'react'
 import { RadioGroup } from '../RadioGroup'
 import visualSvg from './radio-visual.svg'
 
