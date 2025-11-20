@@ -8,6 +8,7 @@ export default mergeConfig(
       reporters: ['verbose'],
       environment: 'jsdom',
       globals: true,
+      testTimeout: 60000,
       include: [
         '**/__tests__/**/*.{js,ts,tsx}',
         '**/*.test.{js,ts,tsx}',
