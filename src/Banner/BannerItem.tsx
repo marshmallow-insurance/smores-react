@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
@@ -43,19 +43,19 @@ export const BannerItem: FC<Props> = ({
       textColor: 'color.text.base',
     },
     critical: {
-      iconColor: 'color.icon.on-dark',
+      iconColor: 'color.icon.inverse',
       backgroundColor: theme.color.feedback.negative[200],
-      textColor: 'color.text.on-dark',
+      textColor: 'color.text.inverse',
     },
     general: {
-      iconColor: 'color.icon.on-dark',
+      iconColor: 'color.icon.inverse',
       backgroundColor: theme.color.surface.base[900],
-      textColor: 'color.text.on-dark',
+      textColor: 'color.text.inverse',
     },
     success: {
-      iconColor: 'color.icon.on-dark',
+      iconColor: 'color.icon.inverse',
       backgroundColor: theme.color.feedback.positive[200],
-      textColor: 'color.text.on-dark',
+      textColor: 'color.text.inverse',
     },
   }
   const autoCloseBaner = () => {
