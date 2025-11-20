@@ -481,11 +481,11 @@ exports[`Button > renders correctly with primary styling 1`] = `
 }
 
 .c0:hover {
-  background-color: #ffb3da;
+  background-color: #f759a9;
 }
 
 .c0:active {
-  background-color: #f759a9;
+  background-color: #e43e93;
 }
 
 .c1 {
@@ -541,11 +541,11 @@ exports[`Button > renders correctly with secondary styling 1`] = `
 }
 
 .c0:hover {
-  background-color: #f1e9dc;
+  background-color: #beb4a0;
 }
 
 .c0:active {
-  background-color: #beb4a0;
+  background-color: #9d927b;
 }
 
 .c1 {
@@ -666,7 +666,7 @@ exports[`Button > renders correctly with text button styling 1`] = `
 }
 
 .c0:hover {
-  background-color: #ffb3da;
+  background-color: #f759a9;
 }
 
 .c0:active {
