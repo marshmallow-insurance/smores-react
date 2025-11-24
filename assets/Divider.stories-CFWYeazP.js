@@ -1,0 +1,4 @@
+import{j as o}from"./jsx-runtime-D_zvdyIk.js";import{D as i}from"./Divider-8teQSBx2.js";import{c as m}from"./colourOptions-BcAKDdno.js";import"./index-DbOFzPHX.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./styled-components.browser.esm-Cttt-Tea.js";import"./index-BX4QO5EF.js";import"./space-BLajQSvN.js";import"./colourMap-Ci63V2Q_.js";import"./variables-BSivX5nm.js";const j={title:"Divider",component:i,decorators:[a=>o.jsx("div",{style:{margin:"64px"},children:o.jsx(a,{})})],argTypes:{color:{control:"select",options:m}}},r={args:{}};var t,e,s;r.parameters={...r.parameters,docs:{...(t=r.parameters)==null?void 0:t.docs,source:{originalSource:`{
+  args: {}
+}`,...(s=(e=r.parameters)==null?void 0:e.docs)==null?void 0:s.source}}};const v=["Default"];export{r as Default,v as __namedExportsOrder,j as default};
+//# sourceMappingURL=Divider.stories-CFWYeazP.js.map
