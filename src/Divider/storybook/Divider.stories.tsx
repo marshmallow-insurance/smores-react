@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { Divider } from '../Divider'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
+import { Divider } from '../Divider'
 
 const meta: Meta<typeof Divider> = {
   title: 'Divider',

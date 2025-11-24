@@ -14,7 +14,7 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { HeadingNode, QuoteNode } from '@lexical/rich-text'
 import DOMPurify from 'dompurify'
 import { $getRoot, LexicalEditor } from 'lexical'
-import { FC } from 'react';
+import { FC } from 'react'
 import styled from 'styled-components'
 import { Box } from '../Box'
 import { MarginProps } from '../utils/space'

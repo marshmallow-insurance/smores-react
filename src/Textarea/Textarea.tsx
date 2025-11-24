@@ -1,4 +1,4 @@
-import { FocusEvent, FormEvent, ForwardedRef, forwardRef } from 'react';
+import { FocusEvent, FormEvent, ForwardedRef, forwardRef } from 'react'
 import styled from 'styled-components'
 
 import { Field } from '../fields/Field'

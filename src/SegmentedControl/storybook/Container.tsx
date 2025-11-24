@@ -1,6 +1,6 @@
 import { Box } from '../../Box'
 import { SegmentedControl, SegmentedControlProps } from '../SegmentedControl'
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode } from 'react'
 
 export const Container = <T,>(props: SegmentedControlProps<T>) => {
   const [value, setValue] = useState(props.value)

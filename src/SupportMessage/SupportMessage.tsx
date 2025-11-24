@@ -1,5 +1,5 @@
 import { darken } from 'polished'
-import { FC, MouseEventHandler, ReactElement } from 'react';
+import { FC, MouseEventHandler, ReactElement } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'

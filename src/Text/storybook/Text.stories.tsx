@@ -1,9 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import styled from 'styled-components'
 import { Box } from '../../Box'
+import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 import { Text, Typo } from '../Text'
 import { fontStyleMapping } from '../fontMapping'
-import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 
 const Grid = styled(Box)`
   display: grid;

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 import * as designTokens from '@mrshmllw/smores-foundations/build/web/variables.json'
 import { ThemeProvider } from 'styled-components'
 

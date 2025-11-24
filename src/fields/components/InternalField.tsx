@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
 import { Box } from '../../Box'

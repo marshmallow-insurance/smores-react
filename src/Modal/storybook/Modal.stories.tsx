@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { FC, useState } from 'react';
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { FC, useState } from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
 import { Button } from '../../Button'

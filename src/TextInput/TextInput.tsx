@@ -113,8 +113,8 @@ export const TextInput = forwardRef(function TextInput(
           $fallbackStyle={fallbackStyle}
           autoComplete={autoCompleteAttr}
           onChange={(e: FormEvent<HTMLInputElement>) => {
-            onChange && onChange(e.currentTarget.value)
-            onInputChange && onInputChange(e)
+            onChange?.(e.currentTarget.value)
+            onInputChange?.(e)
           }}
           onBlur={onBlur}
           inputMode={inputModeAttr}
