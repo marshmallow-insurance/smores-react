@@ -63,7 +63,7 @@
     "jest-styled-components": "^7.2.0",
     "jsdom": "^27.2.0",
     "lint-staged": "^16.2.7",
-    "playwright": "^1.56.1",
+    "playwright": "^1.57.0",
     "prettier": "^3.6.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
