@@ -35,7 +35,7 @@
     "fix-package-lock-conflicts": "echo \"Make sure conflicts in package.json are resolved before running this script\" && npm i --package-lock-only"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.1.0",
+    "@commitlint/cli": "^20.2.0",
     "@mrshmllw/campfire": "^2.2.10",
     "@snyk/protect": "^1.1301.0",
     "@storybook/addon-a11y": "^10.0.8",
