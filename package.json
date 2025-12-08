@@ -65,7 +65,7 @@
     "lint-staged": "^16.2.7",
     "playwright": "^1.57.0",
     "prettier": "^3.7.4",
-    "react": "^19.2.0",
+    "react": "^19.2.1",
     "react-dom": "^19.2.0",
     "rimraf": "^6.1.2",
     "storybook": "^10.0.8",
