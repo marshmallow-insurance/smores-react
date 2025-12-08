@@ -1,4 +1,4 @@
-import { FocusEvent, forwardRef } from 'react';
+import { FocusEvent, forwardRef } from 'react'
 import styled from 'styled-components'
 
 import { focusOutline } from '../utils/focusOutline'

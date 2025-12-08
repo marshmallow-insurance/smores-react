@@ -1,5 +1,5 @@
-import { useArgs } from '@storybook/preview-api'
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { useArgs } from 'storybook/preview-api'
 import { SupportMessage } from '../../SupportMessage'
 import { NumberInput, NumberInputProps } from '../NumberInput'
 

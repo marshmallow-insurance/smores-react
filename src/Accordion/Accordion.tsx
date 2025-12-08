@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from 'react';
+import { FC, ReactNode, useState } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
 import { TransientProps } from 'utils/utilTypes'

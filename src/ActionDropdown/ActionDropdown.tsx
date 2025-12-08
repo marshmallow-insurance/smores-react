@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'

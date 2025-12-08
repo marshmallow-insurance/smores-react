@@ -288,11 +288,11 @@ exports[`Card > renders correctly with action button 1`] = `
 }
 
 .c7:hover {
-  background-color: #ffb3da;
+  background-color: #f759a9;
 }
 
 .c7:active {
-  background-color: #f759a9;
+  background-color: #e43e93;
 }
 
 .c8 {

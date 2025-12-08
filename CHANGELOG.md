@@ -1,3 +1,62 @@
+## [14.0.4](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.3...v14.0.4) (2025-11-24)
+
+## [14.0.3](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.2...v14.0.3) (2025-11-24)
+
+## [14.0.2](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.1...v14.0.2) (2025-11-19)
+
+## [14.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.0...v14.0.1) (2025-11-18)
+
+## [14.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.23.2...v14.0.0) (2025-11-18)
+
+### ⚠ BREAKING CHANGES
+
+* Typography design tokens
+
+## What does this do?
+<!-- 
+- A short description of what the PR changes and why it's necessary
+- Give the reviewers context
+- Is the impact global or localised?
+- Any tech debt created or discovered?
+-->
+
+## Screenshot / Video
+<!--
+- applicable for UI changes, can be skipped if not relevant. You can
+drag and drop images/videos to upload them to GitHub.
+- Example with image with fixed width 
+- <img
+src="https://github.com/marshmallow-insurance/uk-auto-signup-www/assets/57456071/3dbf1ec1-2363-4e20-8236-b1f1581b0953"
+width="300px" />
+shortcuts:
+ - Screenshot: cmd + shift + 4
+ - Screen recording: cmd + shift + 5
+-->
+
+## Relevant tickets / Documentation
+<!--
+- Link to any relevant issue tracking software (jira, GitHub etc),
+documentation (PRDs, engineering plans, Figma designs) or slack threads
+- If applicable, list any new documentation that has been
+created/updated e.g. diagrams/flows etc
+-->
+
+## Testing
+<!--
+- Tests should have been updated/created to cover the changes made in
+this PR, if not please explain why
+-->
+* breaking change empty commit (#4617)
+* **typography:** use new typography design tokens (#4603)
+
+### Features
+
+* breaking change empty commit ([#4617](https://github.com/marshmallow-insurance/smores-react/issues/4617)) ([da9fc56](https://github.com/marshmallow-insurance/smores-react/commit/da9fc56cc10e83b6c20fe305b5f6ed5958f270f3))
+* BREAKING CHANGE TYPOGRAPHY ([#4618](https://github.com/marshmallow-insurance/smores-react/issues/4618)) ([49b89f3](https://github.com/marshmallow-insurance/smores-react/commit/49b89f31aa336a0caac363fa5bc5be01d68a4e0b))
+* **typography:** use new typography design tokens ([#4603](https://github.com/marshmallow-insurance/smores-react/issues/4603)) ([fc030ca](https://github.com/marshmallow-insurance/smores-react/commit/fc030ca53988b8514bd623df297d3b154c840299))
+
+## [13.23.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.23.1...v13.23.2) (2025-11-18)
+
 ## [13.23.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.23.0...v13.23.1) (2025-11-18)
 
 ## [13.23.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.22.0...v13.23.0) (2025-11-17)

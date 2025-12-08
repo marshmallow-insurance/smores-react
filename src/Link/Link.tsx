@@ -1,5 +1,5 @@
 import { darken } from 'polished'
-import { FC, MouseEventHandler, ReactNode } from 'react';
+import { FC, MouseEventHandler, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
 import { Icon } from '../Icon'
