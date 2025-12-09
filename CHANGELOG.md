@@ -1,3 +1,9 @@
+## [14.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.5...v14.1.0) (2025-12-09)
+
+### Features
+
+* **beta:** adding beta component capabilities ([#4650](https://github.com/marshmallow-insurance/smores-react/issues/4650)) ([dde279f](https://github.com/marshmallow-insurance/smores-react/commit/dde279f9eedd54dfc49d5f1cef1984ec5aaf41d9))
+
 ## [14.0.5](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.4...v14.0.5) (2025-12-08)
 
 ## [14.0.4](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.3...v14.0.4) (2025-11-24)
