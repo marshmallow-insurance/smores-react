@@ -13,6 +13,17 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./beta": {
+      "types": "./dist/beta/index.d.ts",
+      "default": "./dist/beta/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "npm run clean && tsc --p ./tsconfig.build.json",
