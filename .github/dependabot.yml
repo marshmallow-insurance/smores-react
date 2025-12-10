@@ -4,6 +4,8 @@ updates:
     commit-message:
       prefix: "chore(npm-dep): "
     directory: '/'
+    cooldown:
+      default-days: 7
     # Always increase package version to the latest version even if lockfile is the only thing required to change
     versioning-strategy: increase
     schedule:
