@@ -1,6 +1,6 @@
 {
   "name": "@mrshmllw/smores-react",
-  "version": "14.0.5",
+  "version": "14.1.0",
   "main": "./dist/index.js",
   "description": "Collection of React components used by Marshmallow Technology",
   "type": "module",
@@ -13,6 +13,17 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./beta": {
+      "types": "./dist/beta/index.d.ts",
+      "default": "./dist/beta/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "clean": "rimraf ./dist",
     "build": "npm run clean && tsc --p ./tsconfig.build.json",
@@ -36,13 +47,13 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
-    "@mrshmllw/campfire": "^2.3.0",
+    "@mrshmllw/campfire": "^2.3.1",
     "@snyk/protect": "^1.1301.1",
-    "@storybook/addon-a11y": "^10.1.4",
+    "@storybook/addon-a11y": "^10.1.5",
     "@storybook/addon-coverage": "^3.0.0",
-    "@storybook/addon-docs": "^10.1.4",
-    "@storybook/addon-links": "^10.1.4",
-    "@storybook/react-vite": "^10.1.4",
+    "@storybook/addon-docs": "^10.1.5",
+    "@storybook/addon-links": "^10.1.5",
+    "@storybook/react-vite": "^10.1.5",
     "@storybook/test-runner": "^0.24.2",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
@@ -58,7 +69,7 @@
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-storybook": "10.1.4",
+    "eslint-plugin-storybook": "10.1.5",
     "husky": "^9.1.7",
     "jest-styled-components": "^7.2.0",
     "jsdom": "^27.3.0",
