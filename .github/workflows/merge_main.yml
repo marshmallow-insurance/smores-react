@@ -11,11 +11,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Checkout campfire (to access setup-node-project action)
-        uses: actions/checkout@v4
-        with:
-          repository: marshmallow-insurance/campfire
-          path: campfire
       - uses: marshmallow-insurance/campfire/.github/actions/setup-node-project@main
       - name: Run Build Storybook
         run: |
