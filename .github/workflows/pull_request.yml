@@ -1,35 +1,32 @@
-name: build, and test
+name: Pull Request
 on:
   pull_request:
 
 jobs:
-  pull-request-tests:
+  pull-request:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Setup Node 👾
-        uses: actions/setup-node@v4
+      - name: Checkout campfire
+        uses: actions/checkout@v4
         with:
-          node-version-file: '.nvmrc'
-      - name: Install deps 🗄️
-        run: |
-          npm ci
-      - name: Run type check 📝
+          repository: marshmallow-insurance/campfire
+          path: campfire
+      - uses: marshmallow-insurance/campfire/.github/actions/setup-node-project@main
+      - name: Run Check Types
         run: npm run check-types
-      - name: Run unit tests 🧪
+      - name: Run Tests
         run: npm run test
-      - name: Build 🔧
+      - name: Run Build Storybook
         run: |
-          npm ci
           npm run build-storybook --quiet
-      - name: Install Playwright 🃏
+      - name: Install Playwright
         run: npx playwright install --with-deps
-      - name: Serve Storybook and test 🧪
+      - name: Serve Storybook and test
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
             "npx wait-on tcp:6006 && npm run test-storybook:ci"
-
