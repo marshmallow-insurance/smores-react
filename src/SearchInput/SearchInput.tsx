@@ -324,7 +324,7 @@ const Line = styled(Box)`
   width: 1px;
 `
 
-export const Icons = styled(Box)<{ $clearSearch: boolean }>`
+const Icons = styled(Box)<{ $clearSearch: boolean }>`
   position: relative;
   right: ${({ $clearSearch }) => ($clearSearch ? '80px' : '48px')};
   margin-right: ${({ $clearSearch }) => ($clearSearch ? '-80px' : '-48px')};
