@@ -5,7 +5,7 @@ import { useTimeout } from '../hooks'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { Snackbar } from './types'
-import { IconContainer } from 'sharedStyles/shared.styles'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 interface Props extends Snackbar {
   deleteSnack: (id: string) => void

@@ -6,7 +6,7 @@ import { Icon } from '../Icon'
 import { Icons } from '../Icon/iconsList'
 import { theme as oldTheme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
-import { IconContainer } from 'sharedStyles/shared.styles'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 type LinkTypo = 'regular' | 'small'
 

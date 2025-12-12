@@ -14,7 +14,7 @@ import { Icons } from '../Icon/iconsList'
 import { Loader } from '../Loader'
 import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
-import { IconContainer } from 'sharedStyles/shared.styles'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 interface IButton {
   $primary: boolean

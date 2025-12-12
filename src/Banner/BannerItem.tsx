@@ -6,7 +6,7 @@ import { Text } from '../Text'
 import { useTimeout } from '../hooks'
 import { Banner } from './types'
 import { NewColor } from 'ThemeProvider/utils/colourMap'
-import { IconContainer } from 'sharedStyles/shared.styles'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 type StylesItem = {
   iconColor: NewColor

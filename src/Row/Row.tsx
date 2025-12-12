@@ -7,7 +7,7 @@ import { Icons } from '../Icon/iconsList'
 import { Text } from '../Text'
 import { MarginProps } from '../utils/space'
 import { ColorTypes } from '../ThemeProvider/utils/colourMap'
-import { IconContainer } from 'sharedStyles/shared.styles'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 export type RowProps = {
   iconLeft?: Icons

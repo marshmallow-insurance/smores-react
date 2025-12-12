@@ -1,8 +1,10 @@
 import { expect, it } from 'vitest'
-import { render } from '../testUtils'
+import { render, screen } from '../testUtils'
 import { Card } from './Card'
 import placeHolderSvg from './storybook/placeHolderImage.svg'
 import { Button } from '../Button'
+
+const CustomIcon = () => <span data-testid="card-custom-icon" />
 
 describe('Card', () => {
   it('renders correctly with title and body', () => {
@@ -15,6 +17,21 @@ describe('Card', () => {
   it('renders correctly with a leading icon', () => {
     const { container } = render(<Card title="Card Title" leadingIcon="info" />)
     expect(container).toMatchSnapshot()
+
+    expect(screen.getByTestId('info-container')).toBeInTheDocument()
+  })
+
+  it('renders correctly with a custom icon component', () => {
+    render(
+      <Card
+        title="Card Title"
+        leadingIcon="info"
+        iconComponent={<CustomIcon />}
+      />,
+    )
+
+    expect(screen.getByTestId('card-custom-icon')).toBeInTheDocument()
+    expect(screen.queryByTestId('info-container')).not.toBeInTheDocument()
   })
 
   it('renders correctly with a visual', () => {
@@ -37,5 +54,7 @@ describe('Card', () => {
   it('renders correctly with fallback style', () => {
     const { container } = render(<Card title="Card Title" fallbackStyle />)
     expect(container).toMatchSnapshot()
+
+    expect(container.querySelector('[data-testid$="-container"]')).toBeNull()
   })
 })

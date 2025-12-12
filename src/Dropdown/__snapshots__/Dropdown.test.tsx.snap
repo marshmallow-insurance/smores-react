@@ -124,7 +124,7 @@ exports[`Dropdown > renders correctly when completed 1`] = `
       >
         <select
           class="c2"
-          id="MM_SMORES_1"
+          id="MM_SMORES_3"
         >
           <option
             disabled=""
@@ -455,7 +455,7 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
       >
         <select
           class="c2"
-          id="MM_SMORES_2"
+          id="MM_SMORES_4"
         >
           <option
             disabled=""

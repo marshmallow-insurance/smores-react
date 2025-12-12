@@ -17,7 +17,7 @@ import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { StyledFrontIcon } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
-import { IconContainer } from 'sharedStyles/shared.styles'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 export type DropdownItem = {
   optionGroupLabel?: string

@@ -12,7 +12,7 @@ import {
   getColorPath,
   resolveToThemeColor,
 } from '../ThemeProvider/utils/colourMap'
-import { IconContainer } from 'sharedStyles/shared.styles'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 export type TagProps = {
   label: string

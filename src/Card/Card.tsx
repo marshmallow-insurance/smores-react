@@ -9,7 +9,7 @@ import { Icons } from '../Icon/iconsList'
 import { Text } from '../Text'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
-import { IconContainer } from 'sharedStyles/shared.styles'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 export type CardProps = {
   children?: ReactNode

@@ -1,7 +1,9 @@
 import { expect, it } from 'vitest'
-import { render } from '../testUtils'
+import { render, screen } from '../testUtils'
 import { Dropdown } from './Dropdown'
 import { noop } from '../utils/noop'
+
+const CustomIcon = () => <span data-testid="dropdown-custom-icon" />
 
 const items = [
   { label: 'Option 1', value: 'option1' },
@@ -14,6 +16,34 @@ describe('Dropdown', () => {
       <Dropdown list={items} onSelect={noop} onInputChange={noop} />,
     )
     expect(container).toMatchSnapshot()
+  })
+
+  it('renders the legacy icon when provided', () => {
+    render(
+      <Dropdown
+        list={items}
+        onSelect={noop}
+        onInputChange={noop}
+        frontIcon="info"
+      />,
+    )
+
+    expect(screen.getByTestId('info-container')).toBeInTheDocument()
+  })
+
+  it('renders a custom icon component when provided', () => {
+    render(
+      <Dropdown
+        list={items}
+        onSelect={noop}
+        onInputChange={noop}
+        frontIcon="info"
+        iconComponent={<CustomIcon />}
+      />,
+    )
+
+    expect(screen.getByTestId('dropdown-custom-icon')).toBeInTheDocument()
+    expect(screen.queryByTestId('info-container')).not.toBeInTheDocument()
   })
   it('renders correctly when completed', () => {
     const { container } = render(
@@ -32,5 +62,13 @@ describe('Dropdown', () => {
       />,
     )
     expect(container).toMatchSnapshot()
+  })
+
+  it('renders without an icon when none is provided', () => {
+    render(<Dropdown list={items} onSelect={noop} onInputChange={noop} />)
+
+    expect(screen.queryByTestId('dropdown-custom-icon')).not.toBeInTheDocument()
+    expect(screen.queryByTestId('info-container')).not.toBeInTheDocument()
+    expect(screen.getByTestId('caret-container')).toBeInTheDocument()
   })
 })
