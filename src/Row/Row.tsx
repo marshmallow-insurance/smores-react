@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import styled, { css } from 'styled-components'
+import { FC, ReactNode } from 'react'
+import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
@@ -7,12 +7,15 @@ import { Icons } from '../Icon/iconsList'
 import { Text } from '../Text'
 import { MarginProps } from '../utils/space'
 import { ColorTypes } from '../ThemeProvider/utils/colourMap'
+import { IconContainer } from 'sharedStyles/shared.styles'
 
 export type RowProps = {
   iconLeft?: Icons
+  iconLeftComponent?: ReactNode
   iconLeftColor?: ColorTypes
   iconRight?: Icons
   iconRightColor?: ColorTypes
+  iconRightComponent?: ReactNode
   handleClick?: () => void
   heading: string
   subHeading?: string
@@ -24,8 +27,10 @@ export type RowProps = {
 
 export const Row: FC<RowProps> = ({
   iconLeft,
+  iconLeftComponent,
   iconLeftColor = 'color.icon.base',
   iconRight,
+  iconRightComponent,
   iconRightColor = 'color.icon.nonEssential',
   handleClick,
   heading,
@@ -37,25 +42,42 @@ export const Row: FC<RowProps> = ({
   ...marginProps
 }) => {
   const windowWidth = screen.width
+  const iconLeftSize = windowWidth > 768 ? 24 : 16
+  const { color } = useTheme()
+
+  const iconLeftToRender = iconLeftComponent ? (
+    <IconContainer $size={iconLeftSize} color={color.icon.base}>
+      {iconLeftComponent}
+    </IconContainer>
+  ) : iconLeft ? (
+    <Icon render={iconLeft} size={iconLeftSize} color={iconLeftColor} />
+  ) : null
+
+  const iconRightToRender = iconRightComponent ? (
+    <IconContainer $size={24} color={color.icon.nonEssential}>
+      {iconRightComponent}
+    </IconContainer>
+  ) : iconRight ? (
+    <Icon
+      render={iconRight}
+      size={24}
+      rotate={iconRight === 'caret' ? -90 : 0}
+      color={iconRightColor}
+    />
+  ) : null
 
   return (
     <Container
       $type={type}
-      $iconLeft={iconLeft}
+      $iconLeft={Boolean(iconLeft || iconLeftComponent)}
       $borderTop={borderTop}
       $borderBottom={borderBottom}
-      $iconRight={iconRight}
+      $iconRight={Boolean(iconRight || iconRightComponent)}
       onClick={handleClick}
       $boldHeading={boldHeading}
       {...marginProps}
     >
-      {iconLeft && (
-        <Icon
-          render={iconLeft}
-          size={windowWidth > 768 ? 24 : 18}
-          color={iconLeftColor}
-        />
-      )}
+      {iconLeftToRender}
       <Box>
         <Text tag="h1" typo="body-regular">
           {heading}
@@ -64,23 +86,15 @@ export const Row: FC<RowProps> = ({
           {subHeading}
         </Text>
       </Box>
-      {iconRight && (
-        <Icon
-          className="iconRight"
-          render={iconRight}
-          size={24}
-          rotate={iconRight === 'caret' ? -90 : 0}
-          color={iconRightColor}
-        />
-      )}
+      {iconRightToRender}
     </Container>
   )
 }
 
 interface IContainer {
   $type?: 'first' | 'last' | 'curved'
-  $iconLeft?: string
-  $iconRight?: string
+  $iconLeft?: boolean
+  $iconRight?: boolean
   $borderTop: boolean
   $borderBottom: boolean
   $boldHeading?: boolean

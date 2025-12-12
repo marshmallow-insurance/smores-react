@@ -1,5 +1,12 @@
-import { FocusEvent, FormEvent, ForwardedRef, forwardRef, useMemo } from 'react'
-import styled, { css } from 'styled-components'
+import {
+  FocusEvent,
+  FormEvent,
+  ForwardedRef,
+  forwardRef,
+  ReactNode,
+  useMemo,
+} from 'react'
+import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
 import { Icon } from '../Icon'
@@ -10,6 +17,7 @@ import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { StyledFrontIcon } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
+import { IconContainer } from 'sharedStyles/shared.styles'
 
 export type DropdownItem = {
   optionGroupLabel?: string
@@ -27,6 +35,7 @@ export interface Props extends CommonFieldProps {
   disabled?: boolean
   list: DropdownItem[]
   frontIcon?: Icons
+  iconComponent?: ReactNode
   fallbackStyle?: boolean
   onSelect: (element: string) => void
   onBlur?: (e: FocusEvent<HTMLSelectElement>) => void
@@ -60,11 +69,13 @@ export const Dropdown = forwardRef(function Dropdown(
     onInputChange,
     onBlur,
     frontIcon,
+    iconComponent,
     fallbackStyle,
     ...fieldProps
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
+  const theme = useTheme()
   const [value, setValue] = useControllableState({
     initialState: defaultValue,
     stateProp: valueProp,
@@ -93,16 +104,28 @@ export const Dropdown = forwardRef(function Dropdown(
     return customDefaultOption ?? 'Select an option'
   }
 
+  const iconToRender = iconComponent ? (
+    <IconContainer
+      style={{
+        position: 'relative',
+        left: '36px',
+        marginLeft: '-24px',
+        zIndex: 1,
+        opacity: disabled ? '0.5' : '1',
+      }}
+      $size={16}
+      $iconColor={theme.color.text.base}
+    >
+      {iconComponent}
+    </IconContainer>
+  ) : frontIcon ? (
+    <StyledFrontIcon $disabled={disabled} render={frontIcon} color="sesame" />
+  ) : null
+
   return (
     <Field {...fieldProps} htmlFor={id} error={error}>
       <Box flex alignItems="center" style={{ position: 'relative' }}>
-        {frontIcon && (
-          <StyledFrontIcon
-            $disabled={disabled}
-            render={frontIcon}
-            color="sesame"
-          />
-        )}
+        {iconToRender}
         <StyledSelect
           id={id}
           disabled={disabled || list.length < 1}

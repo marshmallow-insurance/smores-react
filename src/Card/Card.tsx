@@ -1,6 +1,6 @@
 import { darken } from 'polished'
 import { FC, MouseEventHandler, ReactNode } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
@@ -9,45 +9,33 @@ import { Icons } from '../Icon/iconsList'
 import { Text } from '../Text'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
+import { IconContainer } from 'sharedStyles/shared.styles'
 
 export type CardProps = {
   children?: ReactNode
-  /** leading card icon */
   leadingIcon?: Icons
-  /** generic card title */
+  iconComponent?: ReactNode
   title?: string
-  /** generic card body */
   body?: string
-  /** card image */
   visual?: string
-  /** height of the image */
   visualHeight?: string
-  /** card tag */
   tag?: ReactNode
-  /** action for a fully clickable card */
   cardOnClickAction?: MouseEventHandler<HTMLDivElement>
-  /** action to the right of the card, chevron, chip or link text */
   rightAction?: ReactNode
-  /** primary button */
   buttonAction?: ReactNode
-  /** fallback color scheme */
   fallbackStyle?: boolean
   className?: string
-  /** margin */
   maxWidth?: string
-  /** left-right margin */
   marginX?: string
-  /** top-bottom margin */
   marginY?: string
-  /** Narrow padding */
   narrow?: boolean
-  /** Wide padding */
   wide?: boolean
 } & MarginProps
 
 export const Card: FC<CardProps> = ({
   children,
   leadingIcon,
+  iconComponent,
   title,
   body,
   visual,
@@ -65,9 +53,23 @@ export const Card: FC<CardProps> = ({
   wide = false,
   ...otherProps
 }) => {
-  const addChildMargin = (!!leadingIcon || !!title || !!body) && children
+  const theme = useTheme()
+  const addChildMargin =
+    (!!iconComponent || !!leadingIcon || !!title || !!body) && children
 
   const isNotClickable = !cardOnClickAction
+
+  const iconToRender = iconComponent ? (
+    <IconContainer
+      style={{ marginRight: '12px' }}
+      $size={24}
+      $iconColor={theme.color.icon.base}
+    >
+      {iconComponent}
+    </IconContainer>
+  ) : leadingIcon ? (
+    <Icon mr="12px" render={leadingIcon} size={24} color="color.icon.base" />
+  ) : null
 
   return (
     <Container
@@ -93,14 +95,7 @@ export const Card: FC<CardProps> = ({
       <Box p={visual ? '16px' : { custom: '0px' }}>
         <Box flex alignItems="center" justifyContent="space-between">
           <Box flex alignItems="center">
-            {leadingIcon && (
-              <Icon
-                mr="12px"
-                render={leadingIcon}
-                size={24}
-                color="color.icon.base"
-              />
-            )}
+            {iconToRender}
             <Box>
               {title && (
                 <Text typo="headline-regular" color="color.text.base">

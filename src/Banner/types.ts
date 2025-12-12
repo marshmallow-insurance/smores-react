@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { Icons } from '../Icon/iconsList'
 
 export interface Banner {
@@ -10,6 +11,7 @@ export interface Banner {
   showExploreIcon?: boolean
   autoCloseTime?: 4 | 5 | 6 | 7 | 8 | 9 | 10
   leadingIcon?: Icons
+  iconComponent?: ReactNode
   canManuallyClose?: boolean
   showCloseIcon?: boolean
   noTimeout?: boolean
