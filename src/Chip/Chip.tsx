@@ -55,7 +55,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
     const iconToRender = iconComponent ? (
       <IconContainer
         $size={16}
-        color={primary ? 'color.icon.base' : 'color.icon.inverse'}
+        $iconColor={primary ? 'color.icon.base' : 'color.icon.inverse'}
       >
         {iconComponent}
       </IconContainer>
