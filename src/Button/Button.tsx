@@ -104,7 +104,7 @@ export const Button: FC<ButtonProps> = forwardRef<
         </LoaderContainer>
       )}
       <ContentContainer $hasIcon={!!iconToRender} $loading={loading}>
-        {!trailingIcon && icon ? iconToRender : null}
+        {!trailingIcon && iconToRender ? iconToRender : null}
         <ChildrenContainer className="childrenContainer">
           {children}
         </ChildrenContainer>
