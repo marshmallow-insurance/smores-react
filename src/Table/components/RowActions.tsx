@@ -21,10 +21,13 @@ export const RowActions = <T extends object>({
 }: RowActionsProps<T>) => {
   const handleAction = async (
     e: MouseEvent | FormEvent<HTMLButtonElement>,
-    action: (rowData: T) => void | Promise<void>,
+    action: (
+      rowData: T,
+      e: MouseEvent | FormEvent<HTMLButtonElement>,
+    ) => void | Promise<void>,
   ) => {
     e.stopPropagation()
-    await action(rowData)
+    await action(rowData, e)
   }
 
   const theme = useTheme()

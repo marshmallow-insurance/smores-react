@@ -1,4 +1,5 @@
 import { ReactElement, ReactNode } from 'react'
+import { type FormEvent } from 'react'
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
 import type { BoxSpacing, SingleSpacing } from './helper.types'
@@ -29,7 +30,10 @@ export type TableStylesProps = {
 export type Primitive = string | number | boolean | bigint
 
 export type BaseRowAction<T> = {
-  onClick: (rowData: T) => void
+  onClick: (
+    rowData: T,
+    event: MouseEvent | FormEvent<HTMLButtonElement>,
+  ) => void
   showCondition?: (rowData: T) => boolean
 }
 
