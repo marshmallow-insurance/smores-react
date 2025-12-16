@@ -1,4 +1,4 @@
-import { FocusEvent, forwardRef } from 'react'
+import { FocusEvent, forwardRef, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
@@ -13,11 +13,13 @@ import { Text } from '../Text'
 import { RadioElement } from './RadioElement'
 import { ITEM_GAP } from './constants'
 import { BaseValueType, DisplayType, IconPosition, ItemWidth } from './types'
+import { IconContainer } from 'sharedStyles/shared.styles'
 
 type RadioItemProps = {
   name: string
   visual?: string
   icon?: Icons
+  iconComponent?: ReactNode
   iconPosition?: IconPosition
   value: BaseValueType
   label: string
@@ -38,6 +40,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
       name,
       visual,
       icon,
+      iconComponent,
       iconPosition = 'center',
       label,
       value,
@@ -55,6 +58,22 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
   ) {
     const id = useUniqueId()
 
+    const iconToRender = iconComponent ? (
+      <IconContainer
+        $size={24}
+        style={{
+          display: 'flex',
+          justifyContent: iconPosition === 'center' ? 'center' : 'flex-start',
+        }}
+      >
+        {iconComponent}
+      </IconContainer>
+    ) : icon ? (
+      <IconWrapper $iconPosition={iconPosition}>
+        <Icon render={icon} size={24} />
+      </IconWrapper>
+    ) : null
+
     return (
       <Wrapper
         htmlFor={id}
@@ -71,11 +90,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             <Visual $visualUrl={visual} />
           </VisualWrapper>
         )}
-        {!visual && icon && (
-          <IconWrapper $iconPosition={iconPosition}>
-            <Icon render={icon} size={24} />
-          </IconWrapper>
-        )}
+        {!visual && iconToRender}
         <Box flex alignItems="center">
           <RadioElement
             ref={ref}
