@@ -13,7 +13,7 @@ import { Text } from '../Text'
 import { RadioElement } from './RadioElement'
 import { ITEM_GAP } from './constants'
 import { BaseValueType, DisplayType, IconPosition, ItemWidth } from './types'
-import { IconContainer } from 'sharedStyles/shared.styles'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 type RadioItemProps = {
   name: string
