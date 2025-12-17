@@ -1,5 +1,5 @@
+import { Icons } from 'Icon'
 import { ReactNode } from 'react'
-import { Icons } from '../Icon/iconsList'
 
 export interface Banner {
   id: string

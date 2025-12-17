@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Icon } from '../../Icon'
-import { Icons } from '../../Icon/iconsList'
+import { Icon, Icons } from '../../Icon'
 
 interface IInput {
   $error?: boolean
