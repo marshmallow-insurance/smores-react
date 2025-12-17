@@ -2,8 +2,7 @@ import { ButtonHTMLAttributes, FC, FormEvent } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
 import { darken } from 'polished'
-import { Icon } from '../Icon'
-import { Icons } from '../Icon/iconsList'
+import { Icon, Icons } from '../Icon'
 
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'

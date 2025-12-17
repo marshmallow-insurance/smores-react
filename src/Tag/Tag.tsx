@@ -5,8 +5,7 @@ import { MarginProps } from '../utils/space'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Text } from '../Text'
-import { Icon } from '../Icon'
-import { Icons } from 'Icon/iconsList'
+import { Icon, Icons } from '../Icon'
 import {
   ColorTypes,
   getColorPath,

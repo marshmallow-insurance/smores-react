@@ -10,8 +10,7 @@ import { IconContainer as CommonIconContainer } from '../sharedStyles/shared.sty
 
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
-import { Icon as IconComponent } from '../Icon'
-import { Icons } from '../Icon/iconsList'
+import { Icon as IconComponent, Icons } from '../Icon'
 
 import { Loader } from '../Loader'
 import { focusOutlineStyle } from '../utils/focusOutline'

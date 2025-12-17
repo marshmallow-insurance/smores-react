@@ -15,7 +15,6 @@ import { useUniqueId } from '../utils/id'
 
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { Fieldset } from '../fields/Fieldset'
-import { Icons } from '../Icon/iconsList'
 
 import { ITEM_GAP } from './constants'
 import { RadioItem } from './RadioItem'
@@ -27,6 +26,7 @@ import {
   JustifyContent,
 } from './types'
 import { TransientProps } from 'utils/utilTypes'
+import { Icons } from '../Icon'
 
 export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   options: Array<{

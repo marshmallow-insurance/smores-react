@@ -9,8 +9,7 @@ import {
 import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon } from '../Icon'
-import { Icons } from '../Icon/iconsList'
+import { Icon, Icons } from '../Icon'
 
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'

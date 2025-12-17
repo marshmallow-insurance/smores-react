@@ -8,8 +8,7 @@ import {
 import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon } from '../Icon'
-import { Icons } from '../Icon/iconsList'
+import { Icon, Icons } from '../Icon'
 
 import { Loader } from '../Loader'
 import { focusOutline } from '../utils/focusOutline'

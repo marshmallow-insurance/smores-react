@@ -1,4 +1,4 @@
-import { Icons } from '../Icon/iconsList'
+import { Icons } from '../Icon'
 import { ReactNode } from 'react'
 
 export interface Snackbar {
