@@ -2,14 +2,14 @@ import { useEffect } from 'react'
 
 type Env = 'development' | 'production' | 'local'
 
-const detectEnv = (): Env => {
+const detectEnv = (): Env | null => {
   const env =
     (typeof process !== 'undefined' && process?.env?.REACT_APP_NODE_ENV) ||
     (typeof process !== 'undefined' && process?.env?.NODE_ENV)
 
   if (env === 'development' || env === 'production' || env === 'local')
     return env
-  return 'production'
+  return null
 }
 
 export const isLocal = detectEnv() === 'local'
