@@ -3,46 +3,54 @@ import { FC, MouseEventHandler, ReactElement } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon } from '../Icon'
-import { Icons } from '../Icon/iconsList'
 
 import { Text } from '../Text'
 import { theme as oldTheme } from '../theme'
 import { isReactElement } from '../utils/isReactElement'
 import { MarginProps } from '../utils/space'
 import { NewColor, resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+import {
+  faCircleCheck,
+  faCircleExclamation,
+  faCircleInfo,
+  faTriangleExclamation,
+} from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { IconContainer } from '../sharedStyles/shared.styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight } from '@awesome.me/kit-46ca99185c/icons/classic/solid'
 
 type StylesItem = {
   iconColor: NewColor
   backgroundColor: NewColor
-  icon: Icons
+  icon: IconDefinition
 }
 
 const styles: Record<SupportMessageType, StylesItem> = {
   info: {
     iconColor: 'color.icon.base',
     backgroundColor: 'color.illustration.neutral.300',
-    icon: 'info',
+    icon: faCircleInfo,
   },
   fallbackStyle: {
     iconColor: 'color.icon.base',
     backgroundColor: 'color.surface.base.100',
-    icon: 'info',
+    icon: faCircleInfo,
   },
   alert: {
     iconColor: 'extended1.100',
     backgroundColor: 'color.feedback.notice.100',
-    icon: 'alert',
+    icon: faTriangleExclamation,
   },
   warning: {
     iconColor: 'color.feedback.negative.200',
     backgroundColor: 'color.feedback.negative.100',
-    icon: 'warning',
+    icon: faCircleExclamation,
   },
   success: {
     iconColor: 'color.feedback.positive.200',
     backgroundColor: 'color.feedback.positive.100',
-    icon: 'circle-tick',
+    icon: faCircleCheck,
   },
 }
 
@@ -80,6 +88,8 @@ export const SupportMessage: FC<SupportMessageProps> = ({
     theme,
   )
 
+  const resolvedIconColor = resolveToThemeColor(styles[type].iconColor, theme)
+
   return (
     <Wrapper
       className={className}
@@ -87,13 +97,9 @@ export const SupportMessage: FC<SupportMessageProps> = ({
       onClick={onClick}
       {...marginProps}
     >
-      <IconWrapper alignItems="center">
-        <Icon
-          size={20}
-          render={styles[type].icon}
-          color={styles[type].iconColor}
-        />
-      </IconWrapper>
+      <IconContainer $size={20} style={{ alignSelf: 'flex-start' }}>
+        <FontAwesomeIcon icon={styles[type].icon} color={resolvedIconColor} />
+      </IconContainer>
       <Box flex direction="column" mx="8px">
         {title && <Title>{title}</Title>}
         {isReactElement(description) ? (
@@ -105,12 +111,12 @@ export const SupportMessage: FC<SupportMessageProps> = ({
       {rightSideComponent}
       {onClick && rightSideComponent === undefined && (
         <Box ml={{ custom: 'auto' }}>
-          <Icon
-            size={16}
-            render="caret"
-            color="color.illustration.neutral.400"
-            rotate={270}
-          />
+          <IconContainer $size={16}>
+            <FontAwesomeIcon
+              icon={faChevronRight}
+              color={theme.color.illustration.neutral[400]}
+            />
+          </IconContainer>
         </Box>
       )}
     </Wrapper>
@@ -121,10 +127,6 @@ interface IWrapper {
   $backgroundColor: string
   onClick?: MouseEventHandler
 }
-
-const IconWrapper = styled(Box)`
-  align-self: flex-start;
-`
 
 const Wrapper = styled(Box)<IWrapper>(
   ({ $backgroundColor, onClick }) => css`
