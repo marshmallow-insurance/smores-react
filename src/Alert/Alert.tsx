@@ -5,7 +5,6 @@ import { MarginProps } from 'utils/space'
 import { NewColor, resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
 
 import { Box } from '../Box'
-import { IconStrict } from '../IconStrict'
 import { Text } from '../Text'
 import { Button } from '../Button'
 import { Link } from '../Link'
@@ -15,7 +14,9 @@ import {
   faTriangleExclamation,
   faCircleExclamation,
   faCircleCheck,
+  faXmark,
 } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { IconContainer } from '../sharedStyles/shared.styles'
 
@@ -146,12 +147,13 @@ export const Alert: FC<AlertProps> = ({
           )}
         </Box>
         {isDismissible && (
-          <IconStrict
-            render="cross"
-            size={16}
-            color="liquorice"
+          <IconContainer
+            $size={16}
+            style={{ cursor: 'pointer' }}
             onClick={() => setAlertClosed(true)}
-          />
+          >
+            <FontAwesomeIcon icon={faXmark} color={theme.color.icon.base} />
+          </IconContainer>
         )}
       </Box>
     </StyledAlert>
