@@ -293,6 +293,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               <Line />
               <IconContainer
                 type="button"
+                title="icon-button"
                 as="button"
                 onClick={handleCaretClick}
                 $size={20}

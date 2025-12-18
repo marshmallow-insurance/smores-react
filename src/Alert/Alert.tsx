@@ -150,6 +150,7 @@ export const Alert: FC<AlertProps> = ({
           <IconContainer
             as="button"
             type="button"
+            title="icon-button"
             $size={16}
             style={{ cursor: 'pointer' }}
             onClick={() => setAlertClosed(true)}
