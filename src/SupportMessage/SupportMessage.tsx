@@ -97,11 +97,9 @@ export const SupportMessage: FC<SupportMessageProps> = ({
       onClick={onClick}
       {...marginProps}
     >
-      <IconWrapper alignItems="center">
-        <IconContainer $size={20}>
-          <FontAwesomeIcon icon={styles[type].icon} color={resolvedIconColor} />
-        </IconContainer>
-      </IconWrapper>
+      <IconContainer $size={20} style={{ alignSelf: 'flex-start' }}>
+        <FontAwesomeIcon icon={styles[type].icon} color={resolvedIconColor} />
+      </IconContainer>
       <Box flex direction="column" mx="8px">
         {title && <Title>{title}</Title>}
         {isReactElement(description) ? (
@@ -129,10 +127,6 @@ interface IWrapper {
   $backgroundColor: string
   onClick?: MouseEventHandler
 }
-
-const IconWrapper = styled(Box)`
-  align-self: flex-start;
-`
 
 const Wrapper = styled(Box)<IWrapper>(
   ({ $backgroundColor, onClick }) => css`
