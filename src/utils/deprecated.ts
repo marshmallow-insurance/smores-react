@@ -1,8 +1,18 @@
 import { useEffect } from 'react'
 
-const env = process.env.REACT_APP_NODE_ENV || process.env.ENV
+type Env = 'development' | 'production' | 'local'
 
-export const isLocal = env === 'local'
+const detectEnv = (): Env | null => {
+  const env =
+    (typeof process !== 'undefined' && process?.env?.REACT_APP_NODE_ENV) ||
+    (typeof process !== 'undefined' && process?.env?.NODE_ENV)
+
+  if (env === 'development' || env === 'production' || env === 'local')
+    return env
+  return null
+}
+
+export const isLocal = detectEnv() === 'local'
 
 const stripUndefinedProps = (props: Record<string, unknown>) => {
   const propKeys = Object.keys(props)
