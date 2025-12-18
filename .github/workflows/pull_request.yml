@@ -11,6 +11,8 @@ jobs:
         with:
           persist-credentials: false
       - uses: marshmallow-insurance/campfire/.github/actions/setup-node-project@main
+        env:
+          FONT_AWESOME_AUTH_TOKEN: ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
       - name: Run Check Types
         run: npm run check-types
       - name: Run Tests
