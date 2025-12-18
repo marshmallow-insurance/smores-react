@@ -8,16 +8,21 @@ import {
   useRef,
   useState,
 } from 'react'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import { Box } from '../Box'
 import { IconStrict } from '../IconStrict'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
-import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
+import {
+  Input,
+  InputLeadingIconContainer,
+} from '../fields/components/CommonInput'
 import { useOnClickOutside } from '../hooks'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 import { SearchOptions } from './components/SearchOptions'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 export type SearchInputItem = {
   label: string
@@ -103,6 +108,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
   ) {
     const wrapperRef = useRef(null)
     const id = useUniqueId(idProp)
+    const theme = useTheme()
     const [showOptions, setShowOptions] = useState(false)
     const [selectedValue, setSelectedValue] = useControllableState<
       string | null
@@ -244,7 +250,14 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           {...otherProps}
         >
           <Box flex alignItems="center" justifyContent="flex-start">
-            {showIcon && <StyledFrontIcon render="search" color="sesame" />}
+            {showIcon && (
+              <InputLeadingIconContainer $size={20}>
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  color={theme.color.text.subtle}
+                />
+              </InputLeadingIconContainer>
+            )}
             <Input
               id={id}
               name={name}
