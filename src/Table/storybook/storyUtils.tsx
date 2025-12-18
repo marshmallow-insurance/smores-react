@@ -4,9 +4,9 @@ import { Icon } from '../../Icon'
 import { Tag } from '../../Tag'
 import { Text } from '../../Text'
 import { Tooltip } from '../../Tooltip'
-import { RowAction } from '../types'
+import { RowAction, type TableRowData } from '../types'
 
-export interface DataRow {
+export interface DataRow extends TableRowData {
   id: number
   name: string
   type: string
@@ -25,12 +25,14 @@ export const data: DataRow[] = [
     type: 'Grass/Poison',
     ability: 'Overgrow',
     evolves: true,
+    rowKey: 'bulbasaur',
     subRowData: [
       {
         id: 1,
         name: 'Bulbasaur',
         type: 'Grass/Poison',
         ability: 'Overgrow',
+        rowKey: 'bulbasaur',
         evolves: true,
       },
       {
@@ -38,6 +40,7 @@ export const data: DataRow[] = [
         name: 'Charmander',
         type: 'Fire',
         ability: 'Blaze',
+        rowKey: 'charmander',
         evolves: true,
       },
     ],
@@ -47,6 +50,7 @@ export const data: DataRow[] = [
     name: 'Charmander',
     type: 'Fire',
     ability: 'Blaze',
+    rowKey: 'charmander',
     evolves: true,
   },
   {
@@ -54,6 +58,7 @@ export const data: DataRow[] = [
     name: 'Squirtle',
     type: 'Water',
     ability: 'Torrent',
+    rowKey: 'squirtle',
     evolves: true,
     subRowData: [
       {
@@ -61,6 +66,7 @@ export const data: DataRow[] = [
         name: 'Ivysaur',
         type: 'Grass/Poison',
         ability: 'Overgrow',
+        rowKey: 'ivysaur',
         evolves: true,
       },
       {
@@ -68,6 +74,7 @@ export const data: DataRow[] = [
         name: 'Charmander',
         type: 'Fire',
         ability: 'Blaze',
+        rowKey: 'charmander',
         evolves: true,
       },
     ],
@@ -77,6 +84,7 @@ export const data: DataRow[] = [
     name: 'Caterpie',
     type: 'Bug',
     ability: 'Shield Dust',
+    rowKey: 'caterpie',
     evolves: true,
   },
   {
@@ -84,6 +92,7 @@ export const data: DataRow[] = [
     name: 'Weedle',
     type: 'Bug/Poison',
     ability: 'Shield Dust',
+    rowKey: 'weedle',
     evolves: true,
   },
   {
@@ -91,6 +100,7 @@ export const data: DataRow[] = [
     name: 'Pidgey',
     type: 'Normal/Flying',
     ability: 'Tangled Feet',
+    rowKey: 'pidgey',
     evolves: true,
   },
   {
@@ -98,11 +108,13 @@ export const data: DataRow[] = [
     name: 'Rattata',
     type: 'Normal',
     ability: 'Run Away',
+    rowKey: 'rattata',
     evolves: true,
   },
   {
     id: 23,
     name: 'Ekans',
+    rowKey: 'ekans',
     type: 'Poison',
     ability: 'Intimidate',
     evolves: true,
@@ -110,6 +122,7 @@ export const data: DataRow[] = [
   {
     id: 40,
     name: 'Wigglytuff',
+    rowKey: 'wigglytuff',
     type: 'Normal/Fairy',
     ability: 'Cute Charm',
     evolves: false,
@@ -117,6 +130,7 @@ export const data: DataRow[] = [
   {
     id: 30,
     name: 'Nidorina',
+    rowKey: 'nidorina',
     type: 'Poison',
     ability: 'Poison Point',
     evolves: false,
@@ -124,6 +138,7 @@ export const data: DataRow[] = [
   {
     id: 33,
     name: 'Nidorino',
+    rowKey: 'nidorino',
     type: 'Poison',
     ability: 'Poison Point',
     evolves: false,
@@ -131,6 +146,7 @@ export const data: DataRow[] = [
   {
     id: 36,
     name: 'Clefable',
+    rowKey: 'clefable',
     type: 'Fairy',
     ability: 'Magic Guard',
     evolves: false,
@@ -138,6 +154,7 @@ export const data: DataRow[] = [
   {
     id: 39,
     name: 'Jigglypuff',
+    rowKey: 'jigglypuff',
     type: 'Normal/Fairy',
     ability: 'Cute Charm',
     evolves: false,
@@ -145,6 +162,7 @@ export const data: DataRow[] = [
   {
     id: 42,
     name: 'Golbat',
+    rowKey: 'golbat',
     type: 'Poison/Flying',
     ability: 'Inner Focus',
     evolves: false,
@@ -152,6 +170,7 @@ export const data: DataRow[] = [
   {
     id: 45,
     name: 'Vileplume',
+    rowKey: 'vileplume',
     type: 'Grass/Poison',
     ability: 'Chlorophyll',
     evolves: false,
@@ -159,6 +178,7 @@ export const data: DataRow[] = [
   {
     id: 48,
     name: 'Venonat',
+    rowKey: 'venonat',
     type: 'Bug/Poison',
     ability: 'Compound Eyes',
     evolves: true,
@@ -166,6 +186,7 @@ export const data: DataRow[] = [
   {
     id: 51,
     name: 'Dugtrio',
+    rowKey: 'dugtrio',
     type: 'Ground',
     ability: 'Sand Veil',
     evolves: false,
