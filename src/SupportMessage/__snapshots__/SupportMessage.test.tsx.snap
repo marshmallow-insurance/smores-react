@@ -6,17 +6,16 @@ exports[`SupportMessage > renders correctly with default props 1`] = `
 }
 
 .c3 {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   width: 20px;
   height: 20px;
-  transform: rotate(0deg);
 }
 
 .c3 svg {
-  color: #292924!important;
+  width: 100%;
+  height: 100%;
 }
 
 .c5 {
@@ -73,20 +72,19 @@ exports[`SupportMessage > renders correctly with default props 1`] = `
     >
       <span
         class="c3"
-        data-testid="info-container"
       >
         <svg
-          fill="none"
-          height="100%"
-          viewBox="0 0 24 24"
-          width="100%"
-          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          class="svg-inline--fa fa-circle-info"
+          color="#292924"
+          data-icon="circle-info"
+          data-prefix="far"
+          role="img"
+          viewBox="0 0 512 512"
         >
           <path
-            clip-rule="evenodd"
-            d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0zm-1 6.99a1 1 0 112 0c0 .553-.447 1.005-1 1.005-.553 0-1-.442-1-.995v-.01zM11 11a1 1 0 112 0v7a1 1 0 11-2 0v-7zm-9 1c0 5.514 4.486 10 10 10s10-4.486 10-10S17.514 2 12 2 2 6.486 2 12z"
+            d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM216 336c-13.3 0-24 10.7-24 24s10.7 24 24 24l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-8 0 0-88c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l24 0 0 64-24 0zm40-144a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
             fill="currentColor"
-            fill-rule="evenodd"
           />
         </svg>
       </span>
