@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Icon, Icons } from '../../Icon'
+import { IconContainer } from '../../sharedStyles/shared.styles'
 
 interface IInput {
   $error?: boolean
@@ -87,6 +88,15 @@ export const Input = styled.input<IInput>`
   }
 `
 
+export const InputLeadingIconContainer = styled(IconContainer)<SIcon>`
+  position: relative;
+  left: 36px;
+  margin-left: -24px;
+  z-index: 1;
+  opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
+  color: ${({ theme }) => theme.color.text.base};
+`
+
 export const StyledFrontIcon = styled(Icon)<SIcon>`
   position: relative;
   left: 36px;
@@ -97,6 +107,14 @@ export const StyledFrontIcon = styled(Icon)<SIcon>`
 `
 
 export const StyledTrailingIcon = styled(Icon)<SIcon>`
+  position: relative;
+  right: 36px;
+  margin-right: -36px;
+  opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
+  color: ${({ theme }) => theme.color.text.base};
+`
+
+export const InputTrailingIconContainer = styled(IconContainer)<SIcon>`
   position: relative;
   right: 36px;
   margin-right: -36px;
