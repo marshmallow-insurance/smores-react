@@ -6,6 +6,7 @@ import { Text } from '../Text'
 import { useTimeout } from '../hooks'
 import { Banner } from './types'
 import { NewColor } from 'ThemeProvider/utils/colourMap'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 type StylesItem = {
   iconColor: NewColor
@@ -29,6 +30,7 @@ export const BannerItem: FC<Props> = ({
   showExploreText,
   showExploreIcon,
   leadingIcon,
+  iconComponent,
   canManuallyClose,
   showCloseIcon,
   deleteBanner,
@@ -70,6 +72,14 @@ export const BannerItem: FC<Props> = ({
   const textColor = styles[type].textColor
   const iconColor = styles[type].iconColor
 
+  const iconToRender = iconComponent ? (
+    <IconContainer $size={24} $iconColor={iconColor}>
+      {iconComponent}
+    </IconContainer>
+  ) : leadingIcon ? (
+    <Icon render={leadingIcon} size={24} color={iconColor} />
+  ) : null
+
   return (
     <BannerWrapper
       p="24px"
@@ -80,9 +90,7 @@ export const BannerItem: FC<Props> = ({
       $backgroundColour={styles[type].backgroundColor}
     >
       <Box flex alignItems="center">
-        {leadingIcon && (
-          <Icon mr="12px" render={leadingIcon} size={24} color={iconColor} />
-        )}
+        {iconToRender}
         <Text typo="headline-small" color={textColor}>
           {message}
         </Text>

@@ -1,6 +1,6 @@
 import { ReactElement, ReactNode } from 'react'
-import { Icons } from '../Icon/iconsList'
 import { MarginProps } from '../utils/space'
+import { Icons } from '../Icon'
 
 export interface CommonFieldProps extends MarginProps {
   id?: string

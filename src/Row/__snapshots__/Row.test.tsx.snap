@@ -342,8 +342,8 @@ exports[`Row > icons > renders iconLeft 1`] = `
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   transform: rotate(0deg);
 }
 
@@ -511,7 +511,7 @@ exports[`Row > icons > renders iconRight 1`] = `
         />
       </div>
       <span
-        class="c3 iconRight"
+        class="c3"
         data-testid="info-container"
       >
         <svg

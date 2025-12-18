@@ -8,17 +8,17 @@ import {
 import styled, { css } from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon as IconComponent } from '../Icon'
-import { Icons } from '../Icon/iconsList'
+import { Icon, Icons } from '../Icon'
 
 import { Loader } from '../Loader'
 import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 interface IButton {
   $primary: boolean
   $secondary: boolean
-  $icon?: Icons
+  $icon?: boolean
   $loading: boolean
   disabled: boolean
 }
@@ -29,6 +29,7 @@ type Props = {
   primary?: boolean
   secondary?: boolean
   icon?: Icons
+  iconComponent?: ReactNode
   disabled?: boolean
   loading?: boolean
 } & MarginProps
@@ -45,41 +46,53 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
       disabled = false,
       loading = false,
       icon,
+      iconComponent,
       ...props
     },
     ref,
-  ) => (
-    <Container
-      forwardedAs="button"
-      $primary={primary}
-      $secondary={secondary}
-      disabled={disabled || loading}
-      $loading={loading}
-      onClick={handleClick}
-      $icon={icon}
-      {...props}
-      ref={ref}
-      aria-label="chip-button"
-    >
-      {loading ? (
-        <Loader
-          color={primary ? 'color.icon.base' : 'color.icon.inverse'}
-          height="16"
-        />
-      ) : (
-        <>
-          {icon && (
-            <IconComponent
-              render={icon}
-              size={16}
-              color={primary ? 'color.icon.base' : 'color.icon.inverse'}
-            />
-          )}
-          <ChildrenContainer>{children}</ChildrenContainer>
-        </>
-      )}
-    </Container>
-  ),
+  ) => {
+    const iconToRender = iconComponent ? (
+      <IconContainer
+        $size={16}
+        $iconColor={primary ? 'color.icon.base' : 'color.icon.inverse'}
+      >
+        {iconComponent}
+      </IconContainer>
+    ) : icon ? (
+      <Icon
+        render={icon}
+        size={16}
+        color={primary ? 'color.icon.base' : 'color.icon.inverse'}
+      />
+    ) : null
+
+    return (
+      <Container
+        forwardedAs="button"
+        $primary={primary}
+        $secondary={secondary}
+        disabled={disabled || loading}
+        $loading={loading}
+        onClick={handleClick}
+        $icon={Boolean(icon || iconComponent)}
+        {...props}
+        ref={ref}
+        aria-label="chip-button"
+      >
+        {loading ? (
+          <Loader
+            color={primary ? 'color.icon.base' : 'color.icon.inverse'}
+            height="16"
+          />
+        ) : (
+          <>
+            {iconToRender}
+            <ChildrenContainer>{children}</ChildrenContainer>
+          </>
+        )}
+      </Container>
+    )
+  },
 )
 
 Chip.displayName = 'Chip'

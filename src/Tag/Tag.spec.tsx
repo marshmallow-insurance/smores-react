@@ -3,6 +3,8 @@ import { it, expect } from 'vitest'
 import { Tag } from '../Tag'
 import { TagProps } from './Tag'
 
+const CustomIcon = () => <span data-testid="tag-custom-icon" />
+
 describe('Tag Component', () => {
   it('renders snapshot test correctly', () => {
     const { container } = render(
@@ -52,6 +54,29 @@ describe('Tag Component', () => {
         expect(container.firstChild).toHaveStyle('backgroundColor: #d2d2d2')
       })
     })
+  })
+
+  it('renders a custom icon component when provided', () => {
+    render(
+      <Tag
+        label="Tag with Custom Icon"
+        color="apple"
+        bgColor="chia"
+        icon="flag"
+        iconComponent={<CustomIcon />}
+      />,
+    )
+
+    expect(screen.getByTestId('tag-custom-icon')).toBeInTheDocument()
+    expect(screen.queryByTestId('tag-icon-flag')).not.toBeInTheDocument()
+  })
+
+  it('renders without an icon when none is provided', () => {
+    const { container } = render(
+      <Tag label="Tag without Icon" color="apple" bgColor="chia" />,
+    )
+
+    expect(container.querySelector('[data-testid$="-icon"]')).toBeNull()
   })
 })
 

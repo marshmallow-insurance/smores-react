@@ -1,4 +1,4 @@
-import { Icons } from '../Icon/iconsList'
+import { Icons } from '../Icon'
 import { ReactNode } from 'react'
 
 export interface Snackbar {
@@ -6,6 +6,7 @@ export interface Snackbar {
   message: string
   autoCloseTime?: 4 | 5 | 6 | 7 | 8 | 9 | 10
   leadingIcon?: Icons
+  iconComponent?: ReactNode
   canManuallyClose?: boolean
   showCloseIcon?: boolean
 }

@@ -2,10 +2,10 @@ import { darken } from 'polished'
 import { FC, MouseEventHandler, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
 
-import { Icon } from '../Icon'
-import { Icons } from '../Icon/iconsList'
+import { Icon, Icons } from '../Icon'
 import { theme as oldTheme } from '../theme'
 import { focusOutline } from '../utils/focusOutline'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 type LinkTypo = 'regular' | 'small'
 
@@ -19,6 +19,7 @@ export type LinkProps = {
   typo?: LinkTypo
   highlight?: boolean
   iconToRender?: Icons
+  iconComponent?: ReactNode
   isTrailingIcon?: boolean
 }
 
@@ -31,9 +32,29 @@ export const Link: FC<LinkProps> = ({
   children,
   typo = 'regular',
   highlight = false,
-  iconToRender = openInNewTab ? 'new-window' : undefined,
+  iconToRender: legacyIcon = openInNewTab ? 'new-window' : undefined,
+  iconComponent,
   isTrailingIcon = true,
 }) => {
+  const iconToRender = iconComponent ? (
+    <IconContainer
+      $size={typo === 'regular' ? 16 : 12}
+      style={{
+        paddingRight: isTrailingIcon ? '0' : '4px',
+        paddingLeft: isTrailingIcon ? '8px' : '0',
+      }}
+    >
+      {iconComponent}
+    </IconContainer>
+  ) : legacyIcon ? (
+    <Icon
+      mt={{ custom: '3px' }}
+      size={typo === 'regular' ? 14 : 12}
+      render={legacyIcon}
+      color={highlight ? 'color.surface.brand.400' : 'color.surface.base.900'}
+    />
+  ) : null
+
   return (
     <LinkWrapper
       href={href}
@@ -47,29 +68,9 @@ export const Link: FC<LinkProps> = ({
         target: '_blank',
       })}
     >
-      {iconToRender && !isTrailingIcon && (
-        <Icon
-          mt={{ custom: '3px' }}
-          mr={{ custom: '4px' }}
-          render={iconToRender}
-          size={typo === 'regular' ? 14 : 12}
-          color={
-            highlight ? 'color.surface.brand.400' : 'color.surface.base.900'
-          }
-        />
-      )}
+      {!isTrailingIcon && iconToRender}
       {children}
-      {iconToRender && isTrailingIcon && (
-        <Icon
-          mt={{ custom: '3px' }}
-          ml="8px"
-          render={iconToRender}
-          size={typo === 'regular' ? 14 : 12}
-          color={
-            highlight ? 'color.surface.brand.400' : 'color.surface.base.900'
-          }
-        />
-      )}
+      {isTrailingIcon && iconToRender}
     </LinkWrapper>
   )
 }

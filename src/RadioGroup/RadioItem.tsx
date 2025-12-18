@@ -6,8 +6,7 @@ import { theme as oldTheme } from '../theme'
 
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
-import { Icon } from '../Icon'
-import { Icons } from '../Icon/iconsList'
+import { Icon, Icons } from '../Icon'
 
 import { Text } from '../Text'
 import { RadioElement } from './RadioElement'
