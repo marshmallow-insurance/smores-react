@@ -88,13 +88,13 @@
   },
   "dependencies": {
     "@floating-ui/react": "0.27.16",
-    "@lexical/react": "^0.38.2",
+    "@lexical/react": "^0.39.0",
     "@mrshmllw/smores-foundations": "^1.1.0",
     "body-scroll-lock": "^4.0.0-beta.0",
     "date-fns": "^4.1.0",
     "dompurify": "^3.3.1",
     "fuse.js": "^7.1.0",
-    "lexical": "^0.38.2",
+    "lexical": "^0.39.0",
     "polished": "^4.3.1"
   },
   "peerDependencies": {
