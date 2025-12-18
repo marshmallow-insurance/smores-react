@@ -1,30 +1,29 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Alert Component > should render Info alert correctly 1`] = `
-.c3 {
+.c2 {
   display: flex;
   width: 100%;
 }
 
-.c4 {
+.c3 {
   max-width: 512px;
 }
 
-.c2 {
-  display: flex;
+.c1 {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   width: 16px;
   height: 16px;
-  transform: rotate(0deg);
 }
 
-.c2 svg {
-  color: #292924!important;
+.c1 svg {
+  width: 100%;
+  height: 100%;
 }
 
-.c6 {
+.c5 {
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -32,7 +31,7 @@ exports[`Alert Component > should render Info alert correctly 1`] = `
   color: #292924;
 }
 
-.c7 {
+.c6 {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -66,37 +65,31 @@ exports[`Alert Component > should render Info alert correctly 1`] = `
 }
 
 @media (min-width: 0px) {
-  .c1 {
-    margin: 2px;
-  }
-}
-
-@media (min-width: 0px) {
-  .c3 {
+  .c2 {
     flex-direction: row;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c2 {
     justify-content: space-between;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c2 {
     align-items: flex-start;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c2 {
     gap: 8px;
   }
 }
 
 @media (min-width: 0px) {
-  .c5 {
+  .c4 {
     margin-bottom: 4px;
   }
 }
@@ -106,37 +99,39 @@ exports[`Alert Component > should render Info alert correctly 1`] = `
     class="c0"
   >
     <span
-      class="c1 c2"
-      data-testid="circle-info-filled-container"
+      class="c1"
+      style="margin: 2px;"
     >
       <svg
-        fill="none"
-        height="100%"
-        viewBox="0 0 16 16"
-        width="100%"
-        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        class="svg-inline--fa fa-circle-info"
+        color="#292924"
+        data-icon="circle-info"
+        data-prefix="far"
+        role="img"
+        viewBox="0 0 512 512"
       >
         <path
-          d="M8 16C12.4187 16 16 12.4187 16 8C16 3.58125 12.4187 0 8 0C3.58125 0 0 3.58125 0 8C0 12.4187 3.58125 16 8 16ZM7 5C7 4.44688 7.44688 4 8 4C8.55313 4 9 4.44688 9 5C9 5.55312 8.55313 6 8 6C7.44688 6 7 5.55312 7 5ZM6.75 7H8.25C8.66562 7 9 7.33437 9 7.75V10.5H9.25C9.66562 10.5 10 10.8344 10 11.25C10 11.6656 9.66562 12 9.25 12H6.75C6.33437 12 6 11.6656 6 11.25C6 10.8344 6.33437 10.5 6.75 10.5H7.5V8.5H6.75C6.33437 8.5 6 8.16562 6 7.75C6 7.33437 6.33437 7 6.75 7Z"
+          d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM216 336c-13.3 0-24 10.7-24 24s10.7 24 24 24l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-8 0 0-88c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l24 0 0 64-24 0zm40-144a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
           fill="currentColor"
         />
       </svg>
     </span>
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
         <p
-          class="c5 c6"
+          class="c4 c5"
           cursor="inherit"
           title=""
         >
           Info Alert
         </p>
         <p
-          class="c7"
+          class="c6"
           cursor="inherit"
           title=""
         >
@@ -149,30 +144,29 @@ exports[`Alert Component > should render Info alert correctly 1`] = `
 `;
 
 exports[`Alert Component > should render correctly with button cta 1`] = `
-.c3 {
+.c2 {
   display: flex;
   width: 100%;
 }
 
-.c4 {
+.c3 {
   max-width: 512px;
 }
 
-.c2 {
-  display: flex;
+.c1 {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   width: 16px;
   height: 16px;
-  transform: rotate(0deg);
 }
 
-.c2 svg {
-  color: #292924!important;
+.c1 svg {
+  width: 100%;
+  height: 100%;
 }
 
-.c6 {
+.c5 {
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -180,7 +174,7 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
   color: #292924;
 }
 
-.c8 {
+.c7 {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -188,7 +182,7 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
   color: #292924;
 }
 
-.c9 {
+.c8 {
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
@@ -208,35 +202,35 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
   font-size: 14px;
 }
 
-.c9:focus-visible {
+.c8:focus-visible {
   outline: 2px solid #292924;
   outline-offset: 2px;
 }
 
-.c9:hover {
+.c8:hover {
   background-color: #f1e9dc;
 }
 
-.c9:active {
+.c8:active {
   background-color: #dad2c4;
 }
 
-.c9 .childrenContainer {
+.c8 .childrenContainer {
   padding: 9px 0;
 }
 
-.c9 span {
+.c8 span {
   margin: 0 5px 0 0;
 }
 
-.c10 {
+.c9 {
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 1;
 }
 
-.c11 {
+.c10 {
   padding: 16px 0;
   flex-grow: 1;
 }
@@ -267,43 +261,37 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
 }
 
 @media (min-width: 0px) {
-  .c1 {
-    margin: 2px;
-  }
-}
-
-@media (min-width: 0px) {
-  .c3 {
+  .c2 {
     flex-direction: row;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c2 {
     justify-content: space-between;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c2 {
     align-items: flex-start;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c2 {
     gap: 8px;
   }
 }
 
 @media (min-width: 0px) {
-  .c5 {
+  .c4 {
     margin-bottom: 4px;
   }
 }
 
 @media (min-width: 0px) {
-  .c7 {
+  .c6 {
     margin-bottom: 8px;
   }
 }
@@ -313,50 +301,52 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
     class="c0"
   >
     <span
-      class="c1 c2"
-      data-testid="circle-info-filled-container"
+      class="c1"
+      style="margin: 2px;"
     >
       <svg
-        fill="none"
-        height="100%"
-        viewBox="0 0 16 16"
-        width="100%"
-        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        class="svg-inline--fa fa-circle-info"
+        color="#292924"
+        data-icon="circle-info"
+        data-prefix="far"
+        role="img"
+        viewBox="0 0 512 512"
       >
         <path
-          d="M8 16C12.4187 16 16 12.4187 16 8C16 3.58125 12.4187 0 8 0C3.58125 0 0 3.58125 0 8C0 12.4187 3.58125 16 8 16ZM7 5C7 4.44688 7.44688 4 8 4C8.55313 4 9 4.44688 9 5C9 5.55312 8.55313 6 8 6C7.44688 6 7 5.55312 7 5ZM6.75 7H8.25C8.66562 7 9 7.33437 9 7.75V10.5H9.25C9.66562 10.5 10 10.8344 10 11.25C10 11.6656 9.66562 12 9.25 12H6.75C6.33437 12 6 11.6656 6 11.25C6 10.8344 6.33437 10.5 6.75 10.5H7.5V8.5H6.75C6.33437 8.5 6 8.16562 6 7.75C6 7.33437 6.33437 7 6.75 7Z"
+          d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM216 336c-13.3 0-24 10.7-24 24s10.7 24 24 24l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-8 0 0-88c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l24 0 0 64-24 0zm40-144a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
           fill="currentColor"
         />
       </svg>
     </span>
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
         <p
-          class="c5 c6"
+          class="c4 c5"
           cursor="inherit"
           title=""
         >
           Test Alert
         </p>
         <p
-          class="c7 c8"
+          class="c6 c7"
           cursor="inherit"
           title=""
         >
           This is a test alert.
         </p>
         <button
-          class="c9"
+          class="c8"
         >
           <div
-            class="c10"
+            class="c9"
           >
             <div
-              class="c11 childrenContainer"
+              class="c10 childrenContainer"
             >
               Click Me
             </div>
@@ -369,30 +359,29 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
 `;
 
 exports[`Alert Component > should render correctly with link cta 1`] = `
-.c3 {
+.c2 {
   display: flex;
   width: 100%;
 }
 
-.c4 {
+.c3 {
   max-width: 512px;
 }
 
-.c2 {
-  display: flex;
+.c1 {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   width: 16px;
   height: 16px;
-  transform: rotate(0deg);
 }
 
-.c2 svg {
-  color: #292924!important;
+.c1 svg {
+  width: 100%;
+  height: 100%;
 }
 
-.c10 {
+.c9 {
   outline: 0;
   display: inline-flex;
   flex-direction: row;
@@ -405,28 +394,28 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
   cursor: pointer;
 }
 
-.c10:focus-visible {
+.c9:focus-visible {
   outline: 2px solid #292924;
   outline-offset: 2px;
 }
 
-.c10:hover {
+.c9:hover {
   color: #636768;
 }
 
-.c10:hover path {
+.c9:hover path {
   fill: #636768;
 }
 
-.c10:active {
+.c9:active {
   color: #292924;
 }
 
-.c10:active path {
+.c9:active path {
   fill: #636768;
 }
 
-.c6 {
+.c5 {
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -434,23 +423,23 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
   color: #292924;
 }
 
-.c6 .c9 {
+.c5 .c8 {
   color: #292924;
 }
 
-.c6 .c9 path {
+.c5 .c8 path {
   fill: #292924;
 }
 
-.c6 .c9:hover {
+.c5 .c8:hover {
   color: #0e0e0c;
 }
 
-.c6 .c9:hover path {
+.c5 .c8:hover path {
   fill: #0e0e0c;
 }
 
-.c8 {
+.c7 {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -458,19 +447,19 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
   color: #292924;
 }
 
-.c8 .c9 {
+.c7 .c8 {
   color: #292924;
 }
 
-.c8 .c9 path {
+.c7 .c8 path {
   fill: #292924;
 }
 
-.c8 .c9:hover {
+.c7 .c8:hover {
   color: #0e0e0c;
 }
 
-.c8 .c9:hover path {
+.c7 .c8:hover path {
   fill: #0e0e0c;
 }
 
@@ -500,43 +489,37 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
 }
 
 @media (min-width: 0px) {
-  .c1 {
-    margin: 2px;
-  }
-}
-
-@media (min-width: 0px) {
-  .c3 {
+  .c2 {
     flex-direction: row;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c2 {
     justify-content: space-between;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c2 {
     align-items: flex-start;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c2 {
     gap: 8px;
   }
 }
 
 @media (min-width: 0px) {
-  .c5 {
+  .c4 {
     margin-bottom: 4px;
   }
 }
 
 @media (min-width: 0px) {
-  .c7 {
+  .c6 {
     margin-bottom: 8px;
   }
 }
@@ -546,44 +529,46 @@ exports[`Alert Component > should render correctly with link cta 1`] = `
     class="c0"
   >
     <span
-      class="c1 c2"
-      data-testid="triangle-exclamation-solid-container"
+      class="c1"
+      style="margin: 2px;"
     >
       <svg
-        fill="none"
-        height="100%"
-        viewBox="0 0 16 15"
-        width="100%"
-        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        class="svg-inline--fa fa-triangle-exclamation"
+        color="#292924"
+        data-icon="triangle-exclamation"
+        data-prefix="far"
+        role="img"
+        viewBox="0 0 512 512"
       >
         <path
-          d="M8.00065 0C8.46002 0 8.8819 0.253125 9.10065 0.65625L15.8506 13.1562C16.06 13.5437 16.0506 14.0125 15.8256 14.3906C15.6006 14.7688 15.1913 15 14.7506 15H1.25065C0.810021 15 0.400646 14.7688 0.175646 14.3906C-0.0493544 14.0125 -0.0587293 13.5437 0.150646 13.1562L6.90065 0.65625C7.1194 0.253125 7.54127 0 8.00065 0ZM8.00065 11C7.44752 11 7.00065 11.4469 7.00065 12C7.00065 12.5531 7.44752 13 8.00065 13C8.55377 13 9.00065 12.5531 9.00065 12C9.00065 11.4469 8.55377 11 8.00065 11ZM8.00065 5C7.4319 5 6.97877 5.48438 7.0194 6.05313L7.25065 9.30313C7.27877 9.69375 7.6069 10 7.99752 10C8.39127 10 8.71627 9.69688 8.7444 9.30313L8.97565 6.05313C9.01627 5.48438 8.56627 5 7.9944 5H8.00065Z"
+          d="M256.5 0c14.7 0 28.2 8.1 35.2 21l216 400c6.7 12.4 6.4 27.4-.8 39.5S486.6 480 472.5 480l-432 0c-14.1 0-27.1-7.4-34.3-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9 20.5-21 35.2-21zM53.9 432L459.1 432 256.5 56.8 53.9 432zm202.6-40a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm0-208c18.6 0 33 16.1 31 34.6l-7.1 64.1C279 294.8 268.7 304 256.5 304s-22.5-9.2-23.8-21.3l-7.1-64.1c-2-18.5 12.4-34.6 31-34.6z"
           fill="currentColor"
         />
       </svg>
     </span>
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
         <p
-          class="c5 c6"
+          class="c4 c5"
           cursor="inherit"
           title=""
         >
           Test Alert
         </p>
         <p
-          class="c7 c8"
+          class="c6 c7"
           cursor="inherit"
           title=""
         >
           This is a test alert.
         </p>
         <a
-          class="c9 c10"
+          class="c8 c9"
           href=""
         >
           Learn More

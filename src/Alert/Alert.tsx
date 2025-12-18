@@ -6,11 +6,18 @@ import { NewColor, resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
 
 import { Box } from '../Box'
 import { IconStrict } from '../IconStrict'
-import { Icon } from '../Icon'
 import { Text } from '../Text'
-import { Icons } from '../Icon/iconsList'
 import { Button } from '../Button'
 import { Link } from '../Link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faCircleInfo,
+  faTriangleExclamation,
+  faCircleExclamation,
+  faCircleCheck,
+} from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 type AlertType = 'info' | 'fallback' | 'notice' | 'negative' | 'positive'
 
@@ -43,34 +50,34 @@ type AlertProps = {
 type AlertTypeConfig = {
   backgroundColor: NewColor
   accentColor: NewColor
-  icon: Icons
+  icon: IconDefinition
 }
 
 const typeConfig: Record<AlertType, AlertTypeConfig> = {
   info: {
     backgroundColor: 'color.feedback.informative.100',
     accentColor: 'color.feedback.informative.200',
-    icon: 'circle-info-filled',
+    icon: faCircleInfo,
   },
   fallback: {
     backgroundColor: 'color.surface.base.100',
     accentColor: 'color.surface.base.400',
-    icon: 'circle-info-filled',
+    icon: faCircleInfo,
   },
   notice: {
     backgroundColor: 'color.feedback.notice.100',
     accentColor: 'color.feedback.notice.200',
-    icon: 'triangle-exclamation-solid',
+    icon: faTriangleExclamation,
   },
   negative: {
     backgroundColor: 'color.feedback.negative.100',
     accentColor: 'color.feedback.negative.200',
-    icon: 'warning-circle',
+    icon: faCircleExclamation,
   },
   positive: {
     backgroundColor: 'color.feedback.positive.100',
     accentColor: 'color.feedback.positive.200',
-    icon: 'included',
+    icon: faCircleCheck,
   },
 }
 
@@ -102,12 +109,12 @@ export const Alert: FC<AlertProps> = ({
       $maxWidth={maxWidth}
       {...marginProps}
     >
-      <Icon
-        render={typeConfig[type].icon}
-        size={16}
-        m={{ custom: 2 }}
-        color="liquorice"
-      />
+      <IconContainer $size={16} style={{ margin: '2px' }}>
+        <FontAwesomeIcon
+          icon={typeConfig[type].icon}
+          color={theme.color.icon.base}
+        />
+      </IconContainer>
       <Box
         flex
         direction="row"
