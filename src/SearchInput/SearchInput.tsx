@@ -283,6 +283,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
                   type="button"
                   as="button"
                   $size={20}
+                  style={{ cursor: 'pointer' }}
                 >
                   <FontAwesomeIcon
                     icon={faXmark}
