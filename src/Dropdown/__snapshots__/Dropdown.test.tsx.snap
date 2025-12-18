@@ -5,20 +5,6 @@ exports[`Dropdown > renders correctly when completed 1`] = `
   display: flex;
 }
 
-.c4 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  transform: rotate(0deg);
-}
-
-.c4 svg {
-  color: #9d927b!important;
-}
-
 .c8 {
   display: flex;
   align-items: center;
@@ -31,6 +17,19 @@ exports[`Dropdown > renders correctly when completed 1`] = `
 
 .c8 svg {
   color: #317a4c!important;
+}
+
+.c4 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.c4 svg {
+  width: 100%;
+  height: 100%;
 }
 
 .c9 {
@@ -147,17 +146,18 @@ exports[`Dropdown > renders correctly when completed 1`] = `
         >
           <span
             class="c4"
-            data-testid="caret-container"
           >
             <svg
-              fill="none"
-              height="100%"
-              viewBox="0 0 24 24"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              class="svg-inline--fa fa-chevron-down"
+              color="#9d927b"
+              data-icon="chevron-down"
+              data-prefix="far"
+              role="img"
+              viewBox="0 0 448 512"
             >
               <path
-                d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+                d="M207.5 409c9.4 9.4 24.6 9.4 33.9 0l200-200c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-183 183-183-183c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l200 200z"
                 fill="currentColor"
               />
             </svg>
@@ -213,17 +213,16 @@ exports[`Dropdown > renders correctly with a list of items 1`] = `
 }
 
 .c4 {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  transform: rotate(0deg);
+  width: 20px;
+  height: 20px;
 }
 
 .c4 svg {
-  color: #9d927b!important;
+  width: 100%;
+  height: 100%;
 }
 
 .c0 {
@@ -313,17 +312,18 @@ exports[`Dropdown > renders correctly with a list of items 1`] = `
         >
           <span
             class="c4"
-            data-testid="caret-container"
           >
             <svg
-              fill="none"
-              height="100%"
-              viewBox="0 0 24 24"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              class="svg-inline--fa fa-chevron-down"
+              color="#9d927b"
+              data-icon="chevron-down"
+              data-prefix="far"
+              role="img"
+              viewBox="0 0 448 512"
             >
               <path
-                d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+                d="M207.5 409c9.4 9.4 24.6 9.4 33.9 0l200-200c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-183 183-183-183c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l200 200z"
                 fill="currentColor"
               />
             </svg>
@@ -344,20 +344,6 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
   display: flex;
 }
 
-.c4 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  transform: rotate(0deg);
-}
-
-.c4 svg {
-  color: #9d927b!important;
-}
-
 .c6 {
   display: flex;
   align-items: center;
@@ -370,6 +356,19 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
 
 .c6 svg {
   color: #d03c30!important;
+}
+
+.c4 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.c4 svg {
+  width: 100%;
+  height: 100%;
 }
 
 .c7 {
@@ -478,17 +477,18 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
         >
           <span
             class="c4"
-            data-testid="caret-container"
           >
             <svg
-              fill="none"
-              height="100%"
-              viewBox="0 0 24 24"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              class="svg-inline--fa fa-chevron-down"
+              color="#9d927b"
+              data-icon="chevron-down"
+              data-prefix="far"
+              role="img"
+              viewBox="0 0 448 512"
             >
               <path
-                d="M19.66 8.248a1 1 0 00-1.412.095L12 15.482l-6.248-7.14a1 1 0 10-1.504 1.317l7 8a.995.995 0 001.504 0l7-8a1 1 0 00-.093-1.411z"
+                d="M207.5 409c9.4 9.4 24.6 9.4 33.9 0l200-200c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-183 183-183-183c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l200 200z"
                 fill="currentColor"
               />
             </svg>

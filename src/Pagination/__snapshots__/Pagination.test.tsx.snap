@@ -6,31 +6,16 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
 }
 
 .c3 {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  transform: rotate(0deg);
+  width: 16px;
+  height: 16px;
 }
 
 .c3 svg {
-  color: #292924!important;
-}
-
-.c8 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  transform: rotate(180deg);
-}
-
-.c8 svg {
-  color: #292924!important;
+  width: 100%;
+  height: 100%;
 }
 
 .c7 {
@@ -137,17 +122,17 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
       >
         <span
           class="c3"
-          data-testid="arrow-container"
         >
           <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 24 24"
-            width="100%"
-            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-left"
+            data-icon="arrow-left"
+            data-prefix="far"
+            role="img"
+            viewBox="0 0 512 512"
           >
             <path
-              d="M2.087 12.401c.014.033.042.058.06.089a.99.99 0 00.177.238c.008.007.01.018.018.025l8 7a1 1 0 101.316-1.505L5.661 13H21a1 1 0 100-2H5.661l5.997-5.248a1 1 0 10-1.316-1.504l-8 7c-.008.007-.011.018-.018.025a.99.99 0 00-.177.238c-.018.031-.045.056-.06.089a.97.97 0 000 .801z"
+              d="M7 239c-9.4 9.4-9.4 24.6 0 33.9L175 441c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9L81.9 280 488 280c13.3 0 24-10.7 24-24s-10.7-24-24-24L81.9 232 209 105c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L7 239z"
               fill="currentColor"
             />
           </svg>
@@ -235,18 +220,18 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
         class="c2"
       >
         <span
-          class="c8"
-          data-testid="arrow-container"
+          class="c3"
         >
           <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 24 24"
-            width="100%"
-            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-right"
+            data-icon="arrow-right"
+            data-prefix="far"
+            role="img"
+            viewBox="0 0 512 512"
           >
             <path
-              d="M2.087 12.401c.014.033.042.058.06.089a.99.99 0 00.177.238c.008.007.01.018.018.025l8 7a1 1 0 101.316-1.505L5.661 13H21a1 1 0 100-2H5.661l5.997-5.248a1 1 0 10-1.316-1.504l-8 7c-.008.007-.011.018-.018.025a.99.99 0 00-.177.238c-.018.031-.045.056-.06.089a.97.97 0 000 .801z"
+              d="M505 273c9.4-9.4 9.4-24.6 0-33.9L337 71c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l127 127-406.1 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l406.1 0-127 127c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L505 273z"
               fill="currentColor"
             />
           </svg>
@@ -263,17 +248,16 @@ exports[`Pagination > renders correctly with default props 1`] = `
 }
 
 .c7 {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  transform: rotate(180deg);
+  width: 16px;
+  height: 16px;
 }
 
 .c7 svg {
-  color: #292924!important;
+  width: 100%;
+  height: 100%;
 }
 
 .c3 {
@@ -457,17 +441,17 @@ exports[`Pagination > renders correctly with default props 1`] = `
       >
         <span
           class="c7"
-          data-testid="arrow-container"
         >
           <svg
-            fill="none"
-            height="100%"
-            viewBox="0 0 24 24"
-            width="100%"
-            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-right"
+            data-icon="arrow-right"
+            data-prefix="far"
+            role="img"
+            viewBox="0 0 512 512"
           >
             <path
-              d="M2.087 12.401c.014.033.042.058.06.089a.99.99 0 00.177.238c.008.007.01.018.018.025l8 7a1 1 0 101.316-1.505L5.661 13H21a1 1 0 100-2H5.661l5.997-5.248a1 1 0 10-1.316-1.504l-8 7c-.008.007-.011.018-.018.025a.99.99 0 00-.177.238c-.018.031-.045.056-.06.089a.97.97 0 000 .801z"
+              d="M505 273c9.4-9.4 9.4-24.6 0-33.9L337 71c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l127 127-406.1 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l406.1 0-127 127c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L505 273z"
               fill="currentColor"
             />
           </svg>

@@ -9,7 +9,7 @@ import {
 import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon, Icons } from '../Icon'
+import { Icons } from '../Icon'
 
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
@@ -17,6 +17,8 @@ import { StyledFrontIcon } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 import { IconContainer } from '../sharedStyles/shared.styles'
+import { faChevronDown } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export type DropdownItem = {
   optionGroupLabel?: string
@@ -177,11 +179,12 @@ export const Dropdown = forwardRef(function Dropdown(
           )}
         </StyledSelect>
         <Caret>
-          <Icon
-            render="caret"
-            color="color.illustration.neutral.400"
-            size={24}
-          />
+          <IconContainer $size={20}>
+            <FontAwesomeIcon
+              icon={faChevronDown}
+              color={theme.color.illustration.neutral[400]}
+            />
+          </IconContainer>
         </Caret>
       </Box>
     </Field>

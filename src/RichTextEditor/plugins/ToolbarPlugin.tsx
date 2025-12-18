@@ -22,7 +22,13 @@ import {
 import { useCallback, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
-import { Icon } from '../../Icon'
+import { IconContainer } from '../../sharedStyles/shared.styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowUpRightFromSquare,
+  faLinkSimple,
+  faList,
+} from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 const LowPriority = 1
 
@@ -174,7 +180,9 @@ export default function ToolbarPlugin() {
         $active={blockType === 'ul'}
         onClick={() => formatBulletList()}
       >
-        <Icon render="bullets" />
+        <IconContainer $size={24}>
+          <FontAwesomeIcon icon={faList} />
+        </IconContainer>
       </EditorButton>
 
       <Link
@@ -185,8 +193,10 @@ export default function ToolbarPlugin() {
             : editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)
         }
       >
-        <Box ml={{ custom: '-4px' }}>
-          <Icon render="link" />
+        <Box ml={{ custom: '-4px' }} mt={{ custom: '6px' }}>
+          <IconContainer $size={24}>
+            <FontAwesomeIcon icon={faLinkSimple} />
+          </IconContainer>
         </Box>
         <LinkInput
           tabIndex={-1}
@@ -199,7 +209,9 @@ export default function ToolbarPlugin() {
           onClick={(e) => e.stopPropagation()}
         />
         <Box onClick={openNewWindow}>
-          <LinkOpen render="new-window" />
+          <LinkOpen $size={24}>
+            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+          </LinkOpen>
         </Box>
       </Link>
     </Toolbar>
@@ -263,7 +275,7 @@ const Link = styled(EditorButton)`
   `}
 `
 
-const LinkOpen = styled(Icon)`
+const LinkOpen = styled(IconContainer)`
   background-color: ${({ theme }) => theme.color.interactive.tertiary.base};
   height: 32px;
   width: 32px;

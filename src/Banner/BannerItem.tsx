@@ -5,8 +5,13 @@ import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { useTimeout } from '../hooks'
 import { Banner } from './types'
-import { NewColor } from 'ThemeProvider/utils/colourMap'
+import { NewColor, resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
 import { IconContainer } from '../sharedStyles/shared.styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowRight,
+  faXmark,
+} from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 type StylesItem = {
   iconColor: NewColor
@@ -71,13 +76,18 @@ export const BannerItem: FC<Props> = ({
 
   const textColor = styles[type].textColor
   const iconColor = styles[type].iconColor
+  const resolvedIconColor = resolveToThemeColor(iconColor, theme)
 
   const iconToRender = iconComponent ? (
-    <IconContainer $size={24} $iconColor={iconColor}>
+    <IconContainer
+      $size={24}
+      $iconColor={resolvedIconColor}
+      style={{ marginRight: '12px' }}
+    >
       {iconComponent}
     </IconContainer>
   ) : leadingIcon ? (
-    <Icon render={leadingIcon} size={24} color={iconColor} />
+    <Icon mr="12px" render={leadingIcon} size={24} color={iconColor} />
   ) : null
 
   return (
@@ -102,7 +112,12 @@ export const BannerItem: FC<Props> = ({
             aria-label={`close banner ${message}`}
           >
             {showCloseIcon ? (
-              <Icon render="cross" size={16} color={iconColor} />
+              <IconContainer $size={16}>
+                <FontAwesomeIcon
+                  icon={faXmark}
+                  color={resolveToThemeColor(iconColor, theme)}
+                />
+              </IconContainer>
             ) : (
               <UnderlinedText
                 tag="span"
@@ -128,13 +143,12 @@ export const BannerItem: FC<Props> = ({
                 </UnderlinedText>
               )}
               {showExploreIcon && (
-                <Icon
-                  render="arrow"
-                  ml="12px"
-                  size={24}
-                  color={iconColor}
-                  rotate={180}
-                />
+                <IconContainer $size={24} style={{ marginLeft: '12px' }}>
+                  <FontAwesomeIcon
+                    color={resolvedIconColor}
+                    icon={faArrowRight}
+                  />
+                </IconContainer>
               )}
             </Box>
           </GenericButton>

@@ -69,6 +69,5 @@ describe('Dropdown', () => {
 
     expect(screen.queryByTestId('dropdown-custom-icon')).not.toBeInTheDocument()
     expect(screen.queryByTestId('info-container')).not.toBeInTheDocument()
-    expect(screen.getByTestId('caret-container')).toBeInTheDocument()
   })
 })

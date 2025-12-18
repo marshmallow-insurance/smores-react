@@ -5,7 +5,7 @@ import {
   ReactNode,
   forwardRef,
 } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
 import { Icon, Icons } from '../Icon'
@@ -14,6 +14,7 @@ import { Loader } from '../Loader'
 import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 import { IconContainer } from '../sharedStyles/shared.styles'
+import { resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
 
 interface IButton {
   $primary: boolean
@@ -51,10 +52,15 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
     },
     ref,
   ) => {
+    const theme = useTheme()
     const iconToRender = iconComponent ? (
       <IconContainer
         $size={16}
-        $iconColor={primary ? 'color.icon.base' : 'color.icon.inverse'}
+        $iconColor={
+          primary
+            ? resolveToThemeColor('color.icon.base', theme)
+            : resolveToThemeColor('color.icon.inverse', theme)
+        }
       >
         {iconComponent}
       </IconContainer>
