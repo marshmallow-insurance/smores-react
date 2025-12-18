@@ -73,4 +73,44 @@ describe('RadioGroup', () => {
     )
     expect(container).toMatchSnapshot()
   })
+
+  it('renders a custom icon component when provided', () => {
+    const CustomIcon = () => <span data-testid="custom-icon" />
+
+    const { getByTestId, queryByTestId } = render(
+      <RadioGroup
+        options={[
+          {
+            label: 'Option 1',
+            value: 'option1',
+            icon: 'alert',
+            iconComponent: <CustomIcon />,
+          },
+        ]}
+        value="option1"
+        onChange={noop}
+      />,
+    )
+
+    expect(getByTestId('custom-icon')).toBeInTheDocument()
+    expect(queryByTestId('alert-container')).not.toBeInTheDocument()
+  })
+
+  it('falls back to the icon prop when no custom icon is provided', () => {
+    const { getByTestId } = render(
+      <RadioGroup
+        options={[
+          {
+            label: 'Option 1',
+            value: 'option1',
+            icon: 'alert',
+          },
+        ]}
+        value="option1"
+        onChange={noop}
+      />,
+    )
+
+    expect(getByTestId('alert-container')).toBeInTheDocument()
+  })
 })

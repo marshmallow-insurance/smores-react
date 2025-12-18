@@ -3,6 +3,7 @@ import {
   ForwardedRef,
   forwardRef,
   ReactElement,
+  ReactNode,
   RefAttributes,
   RefObject,
   useImperativeHandle,
@@ -33,6 +34,7 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
     visual?: string
     icon?: Icons
     iconPosition?: IconPosition
+    iconComponent?: ReactNode
     label: string
     value: Value
     bodyCopy?: string
@@ -101,6 +103,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
               name={name}
               visual={option.visual}
               icon={option.icon}
+              iconComponent={option.iconComponent}
               iconPosition={option.iconPosition}
               label={option.label}
               value={option.value}
