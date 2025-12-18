@@ -2,12 +2,14 @@ import { FC, useState } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { ActionListItem, List } from './List'
 
 import { MarginProps } from '../utils/space'
 import { resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
+import { faChevronDown } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 export type ActionDropdownProps = {
   id?: string
@@ -59,12 +61,14 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
 
       <Label $text={resolvedTextColor} $bg={resolvedBgColor}>
         <SelectedOption>{value.label}</SelectedOption>
-        <Icon
-          render="caret"
-          color={value.textColor ?? 'color.text.base'}
-          size={24}
-          rotate={open ? 180 : 0}
-        />
+        <IconContainer
+          $size={20}
+          style={{
+            rotate: open ? '180deg' : '0deg',
+          }}
+        >
+          <FontAwesomeIcon icon={faChevronDown} color={resolvedTextColor} />
+        </IconContainer>
       </Label>
       <OuterContainer open={open}>
         <List options={list} selectOption={onSelect} />

@@ -5,10 +5,9 @@ import {
   MouseEvent,
   forwardRef,
 } from 'react'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon } from '../Icon'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 
@@ -18,6 +17,12 @@ import {
   StyledTrailingIcon,
 } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
+import {
+  faChevronDown,
+  faChevronUp,
+} from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 export interface Props extends CommonFieldProps {
   type?: 'number'
@@ -68,7 +73,7 @@ export const NumberInput = forwardRef(function NumberInput(
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   const id = useUniqueId(idProp)
-
+  const theme = useTheme()
   // Check whether the min/max value exists is within the specified range
   const isInRange = (value: number) => {
     if (min && value < min) {
@@ -164,7 +169,12 @@ export const NumberInput = forwardRef(function NumberInput(
               onClick={incrementValue}
               disabled={disabled}
             >
-              <Icon render="caret" rotate={180} color="sesame" size={24} />
+              <IconContainer $size={20}>
+                <FontAwesomeIcon
+                  icon={faChevronDown}
+                  color={theme.color.text.subtle}
+                />
+              </IconContainer>
             </SpinnerButton>
 
             <SpinnerButton
@@ -172,7 +182,12 @@ export const NumberInput = forwardRef(function NumberInput(
               onClick={decrementValue}
               disabled={disabled}
             >
-              <Icon render="caret" color="sesame" size={24} />
+              <IconContainer $size={20}>
+                <FontAwesomeIcon
+                  icon={faChevronUp}
+                  color={theme.color.text.subtle}
+                />
+              </IconContainer>
             </SpinnerButton>
           </Spinner>
         )}
