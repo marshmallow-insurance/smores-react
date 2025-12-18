@@ -8,7 +8,7 @@ interface IInput {
   selected?: boolean
   step?: number
   value?: string
-  $frontIcon?: Icons
+  $frontIcon?: boolean
   $trailingIcon?: Icons
   $fallbackStyle?: boolean
 }

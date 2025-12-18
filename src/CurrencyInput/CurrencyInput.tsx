@@ -65,7 +65,6 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
 ) {
   const theme = useTheme()
   const id = useUniqueId(idProp)
-  const frontIcon = 'pound-regular'
 
   const formatCurrency = (value: string) => {
     const decimalIndex = value.indexOf('.')
@@ -123,7 +122,7 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
           name={name}
           placeholder={placeholder}
           value={value}
-          $frontIcon={frontIcon}
+          $frontIcon={true}
           $fallbackStyle={fallbackStyle}
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && handleChange(e.currentTarget.value)

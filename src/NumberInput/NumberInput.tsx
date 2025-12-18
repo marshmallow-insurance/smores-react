@@ -169,7 +169,7 @@ export const NumberInput = forwardRef(function NumberInput(
           name={name}
           placeholder={placeholder}
           value={value}
-          $frontIcon={frontIcon}
+          $frontIcon={Boolean(frontIconToRender)}
           step={step}
           $fallbackStyle={fallbackStyle}
           onWheel={(e) => e.currentTarget.blur()}
