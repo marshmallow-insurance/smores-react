@@ -6,6 +6,8 @@ import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { Snackbar } from './types'
 import { IconContainer } from '../sharedStyles/shared.styles'
+import { faXmark } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface Props extends Snackbar {
   deleteSnack: (id: string) => void
@@ -42,7 +44,14 @@ export const SnackbarItem: FC<Props> = ({
   ) : null
 
   return (
-    <SnackItem p="16px" key={id} mt="16px" flex justifyContent="space-between">
+    <SnackItem
+      p="16px"
+      key={id}
+      mt="16px"
+      flex
+      justifyContent="space-between"
+      alignItems="center"
+    >
       <Box flex alignItems="center">
         {iconToRender}
         <Text typo="body-small" color="color.surface.base.200">
@@ -55,7 +64,12 @@ export const SnackbarItem: FC<Props> = ({
           aria-label={`close snackbar ${message}`}
         >
           {showCloseIcon ? (
-            <Icon render="cross" size={16} color="color.surface.base.200" />
+            <IconContainer as="span" $size={16}>
+              <FontAwesomeIcon
+                icon={faXmark}
+                color={theme.color.surface.base[200]}
+              />
+            </IconContainer>
           ) : (
             <UnderlinedText
               tag="span"
