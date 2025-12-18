@@ -148,6 +148,8 @@ export const Alert: FC<AlertProps> = ({
         </Box>
         {isDismissible && (
           <IconContainer
+            as="button"
+            type="button"
             $size={16}
             style={{ cursor: 'pointer' }}
             onClick={() => setAlertClosed(true)}
