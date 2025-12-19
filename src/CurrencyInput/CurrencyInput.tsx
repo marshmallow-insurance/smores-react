@@ -108,10 +108,12 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
         <InputLeadingIconContainer
           $size={20}
           $disabled={disabled}
-          color={theme.color.text.subtle}
           style={{ top: '-1px' }}
         >
-          <FontAwesomeIcon icon={faSterlingSign} />
+          <FontAwesomeIcon
+            icon={faSterlingSign}
+            color={theme.color.text.subtle}
+          />
         </InputLeadingIconContainer>
         <Input
           ref={ref}
