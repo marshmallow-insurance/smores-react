@@ -36,7 +36,6 @@ export const Default: Story = {
     value: 5,
     minValue: 1,
     maxValue: 10,
-    'aria-label': 'Number stepper',
   },
 }
 

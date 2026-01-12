@@ -1,5 +1,5 @@
 import { expect, it, vi } from 'vitest'
-import { render, screen, fireEvent } from '../testUtils'
+import { render, screen, fireEvent } from '../../testUtils'
 import { NumberStepper } from './NumberStepper'
 
 const noop = () => {}
