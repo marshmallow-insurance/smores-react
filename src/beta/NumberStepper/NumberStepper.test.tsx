@@ -1,8 +1,16 @@
 import { expect, it, vi } from 'vitest'
 import { render, screen, fireEvent } from '../../testUtils'
+import { noop } from '../../utils/noop'
 import { NumberStepper } from './NumberStepper'
 
-const noop = () => {}
+// Helper to get buttons since they have aria-hidden="true"
+const getButtons = (container: HTMLElement) => {
+  const buttons = container.querySelectorAll<HTMLButtonElement>('button')
+  return {
+    decrement: buttons[0],
+    increment: buttons[1],
+  }
+}
 
 describe('NumberStepper', () => {
   it('renders correctly with default props', () => {
@@ -68,59 +76,75 @@ describe('NumberStepper', () => {
 
   it('calls setValue with incremented value when increment button is clicked', () => {
     const setValue = vi.fn()
-    render(
-      <NumberStepper value={5} minValue={0} maxValue={10} setValue={setValue} />,
+    const { container } = render(
+      <NumberStepper
+        value={5}
+        minValue={0}
+        maxValue={10}
+        setValue={setValue}
+      />,
     )
 
-    const buttons = screen.getAllByRole('button')
-    const incrementButton = buttons[1] // Second button is increment
+    const buttons = getButtons(container)
+    fireEvent.click(buttons.increment)
 
-    fireEvent.click(incrementButton)
     expect(setValue).toHaveBeenCalledWith(6)
   })
 
   it('calls setValue with decremented value when decrement button is clicked', () => {
     const setValue = vi.fn()
-    render(
-      <NumberStepper value={5} minValue={0} maxValue={10} setValue={setValue} />,
+    const { container } = render(
+      <NumberStepper
+        value={5}
+        minValue={0}
+        maxValue={10}
+        setValue={setValue}
+      />,
     )
 
-    const buttons = screen.getAllByRole('button')
-    const decrementButton = buttons[0] // First button is decrement
+    const buttons = getButtons(container)
+    fireEvent.click(buttons.decrement)
 
-    fireEvent.click(decrementButton)
     expect(setValue).toHaveBeenCalledWith(4)
   })
 
   it('does not call setValue when at minimum and decrement is clicked', () => {
     const setValue = vi.fn()
-    render(
-      <NumberStepper value={0} minValue={0} maxValue={10} setValue={setValue} />,
+    const { container } = render(
+      <NumberStepper
+        value={0}
+        minValue={0}
+        maxValue={10}
+        setValue={setValue}
+      />,
     )
 
-    const buttons = screen.getAllByRole('button')
-    const decrementButton = buttons[0]
+    const buttons = getButtons(container)
+    fireEvent.click(buttons.decrement)
 
-    fireEvent.click(decrementButton)
     expect(setValue).not.toHaveBeenCalled()
   })
 
   it('does not call setValue when at maximum and increment is clicked', () => {
     const setValue = vi.fn()
-    render(
-      <NumberStepper value={10} minValue={0} maxValue={10} setValue={setValue} />,
+    const { container } = render(
+      <NumberStepper
+        value={10}
+        minValue={0}
+        maxValue={10}
+        setValue={setValue}
+      />,
     )
 
-    const buttons = screen.getAllByRole('button')
-    const incrementButton = buttons[1]
+    const buttons = getButtons(container)
+    fireEvent.click(buttons.increment)
 
-    fireEvent.click(incrementButton)
     expect(setValue).not.toHaveBeenCalled()
   })
 
   it('does not call setValue when disabled', () => {
     const setValue = vi.fn()
-    render(
+    const { container } = render(
       <NumberStepper
         value={5}
         minValue={0}
@@ -130,9 +154,9 @@ describe('NumberStepper', () => {
       />,
     )
 
-    const buttons = screen.getAllByRole('button')
-    fireEvent.click(buttons[0])
-    fireEvent.click(buttons[1])
+    const buttons = getButtons(container)
+    fireEvent.click(buttons.decrement)
+    fireEvent.click(buttons.increment)
 
     expect(setValue).not.toHaveBeenCalled()
   })
@@ -140,7 +164,12 @@ describe('NumberStepper', () => {
   it('updates value via input change', () => {
     const setValue = vi.fn()
     render(
-      <NumberStepper value={5} minValue={0} maxValue={10} setValue={setValue} />,
+      <NumberStepper
+        value={5}
+        minValue={0}
+        maxValue={10}
+        setValue={setValue}
+      />,
     )
 
     const input = screen.getByRole('textbox')
@@ -152,7 +181,12 @@ describe('NumberStepper', () => {
   it('clamps value to max when input exceeds maximum', () => {
     const setValue = vi.fn()
     render(
-      <NumberStepper value={5} minValue={0} maxValue={10} setValue={setValue} />,
+      <NumberStepper
+        value={5}
+        minValue={0}
+        maxValue={10}
+        setValue={setValue}
+      />,
     )
 
     const input = screen.getByRole('textbox')
@@ -164,7 +198,12 @@ describe('NumberStepper', () => {
   it('clamps value to min when input is below minimum', () => {
     const setValue = vi.fn()
     render(
-      <NumberStepper value={5} minValue={2} maxValue={10} setValue={setValue} />,
+      <NumberStepper
+        value={5}
+        minValue={2}
+        maxValue={10}
+        setValue={setValue}
+      />,
     )
 
     const input = screen.getByRole('textbox')
@@ -176,7 +215,12 @@ describe('NumberStepper', () => {
   it('rejects non-numeric input', () => {
     const setValue = vi.fn()
     render(
-      <NumberStepper value={5} minValue={0} maxValue={10} setValue={setValue} />,
+      <NumberStepper
+        value={5}
+        minValue={0}
+        maxValue={10}
+        setValue={setValue}
+      />,
     )
 
     const input = screen.getByRole('textbox')
@@ -188,7 +232,12 @@ describe('NumberStepper', () => {
   it('handles arrow key up to increment', () => {
     const setValue = vi.fn()
     render(
-      <NumberStepper value={5} minValue={0} maxValue={10} setValue={setValue} />,
+      <NumberStepper
+        value={5}
+        minValue={0}
+        maxValue={10}
+        setValue={setValue}
+      />,
     )
 
     const input = screen.getByRole('textbox')
@@ -200,7 +249,12 @@ describe('NumberStepper', () => {
   it('handles arrow key down to decrement', () => {
     const setValue = vi.fn()
     render(
-      <NumberStepper value={5} minValue={0} maxValue={10} setValue={setValue} />,
+      <NumberStepper
+        value={5}
+        minValue={0}
+        maxValue={10}
+        setValue={setValue}
+      />,
     )
 
     const input = screen.getByRole('textbox')
