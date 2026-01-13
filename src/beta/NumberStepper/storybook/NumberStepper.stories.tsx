@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { NumberStepper } from '../NumberStepper'
 
 const meta: Meta<typeof NumberStepper> = {
-  title: 'NumberStepper',
+  title: 'Beta/NumberStepper',
   component: NumberStepper,
   args: {
     minValue: 1,
