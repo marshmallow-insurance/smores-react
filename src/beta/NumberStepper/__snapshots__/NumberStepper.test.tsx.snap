@@ -242,6 +242,7 @@ exports[`NumberStepper > renders correctly at maximum value 1`] = `
         aria-valuenow="10"
         class="c4"
         inputmode="numeric"
+        role="spinbutton"
         type="text"
         value="10"
       />
@@ -514,6 +515,7 @@ exports[`NumberStepper > renders correctly at minimum value 1`] = `
         aria-valuenow="0"
         class="c4"
         inputmode="numeric"
+        role="spinbutton"
         type="text"
         value="0"
       />
@@ -728,6 +730,7 @@ exports[`NumberStepper > renders correctly when disabled 1`] = `
         class="c4"
         disabled=""
         inputmode="numeric"
+        role="spinbutton"
         type="text"
         value="5"
       />
@@ -941,6 +944,7 @@ exports[`NumberStepper > renders correctly with default props 1`] = `
         aria-valuenow="5"
         class="c4"
         inputmode="numeric"
+        role="spinbutton"
         type="text"
         value="5"
       />
@@ -1172,6 +1176,7 @@ exports[`NumberStepper > renders with label and id 1`] = `
         class="c5"
         id="quantity-stepper"
         inputmode="numeric"
+        role="spinbutton"
         type="text"
         value="5"
       />
@@ -1396,6 +1401,7 @@ exports[`NumberStepper > renders with margin props 1`] = `
         aria-valuenow="5"
         class="c4"
         inputmode="numeric"
+        role="spinbutton"
         type="text"
         value="5"
       />

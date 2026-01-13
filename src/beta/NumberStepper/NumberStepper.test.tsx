@@ -172,7 +172,7 @@ describe('NumberStepper', () => {
       />,
     )
 
-    const input = screen.getByRole('textbox')
+    const input = screen.getByRole('spinbutton')
     fireEvent.change(input, { target: { value: '7' } })
 
     expect(setValue).toHaveBeenCalledWith(7)
@@ -189,7 +189,7 @@ describe('NumberStepper', () => {
       />,
     )
 
-    const input = screen.getByRole('textbox')
+    const input = screen.getByRole('spinbutton')
     fireEvent.change(input, { target: { value: '15' } })
 
     expect(setValue).toHaveBeenCalledWith(10)
@@ -206,7 +206,7 @@ describe('NumberStepper', () => {
       />,
     )
 
-    const input = screen.getByRole('textbox')
+    const input = screen.getByRole('spinbutton')
     fireEvent.change(input, { target: { value: '1' } })
 
     expect(setValue).toHaveBeenCalledWith(2)
@@ -223,7 +223,7 @@ describe('NumberStepper', () => {
       />,
     )
 
-    const input = screen.getByRole('textbox')
+    const input = screen.getByRole('spinbutton')
     fireEvent.change(input, { target: { value: 'abc' } })
 
     expect(setValue).not.toHaveBeenCalled()
@@ -240,7 +240,7 @@ describe('NumberStepper', () => {
       />,
     )
 
-    const input = screen.getByRole('textbox')
+    const input = screen.getByRole('spinbutton')
     fireEvent.keyDown(input, { key: 'ArrowUp' })
 
     expect(setValue).toHaveBeenCalledWith(6)
@@ -257,7 +257,7 @@ describe('NumberStepper', () => {
       />,
     )
 
-    const input = screen.getByRole('textbox')
+    const input = screen.getByRole('spinbutton')
     fireEvent.keyDown(input, { key: 'ArrowDown' })
 
     expect(setValue).toHaveBeenCalledWith(4)
