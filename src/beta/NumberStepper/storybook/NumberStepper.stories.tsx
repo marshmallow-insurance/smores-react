@@ -7,7 +7,6 @@ const meta: Meta<typeof NumberStepper> = {
   title: 'NumberStepper',
   component: NumberStepper,
   args: {
-    setValue: fn(),
     minValue: 1,
     maxValue: 10,
     value: 5,
@@ -36,6 +35,7 @@ export const Default: Story = {
     value: 5,
     minValue: 1,
     maxValue: 10,
+    setValue: fn(),
   },
 }
 
@@ -44,6 +44,7 @@ export const AtMinimum: Story = {
     value: 1,
     minValue: 1,
     maxValue: 10,
+    setValue: fn(),
   },
 }
 
@@ -52,6 +53,7 @@ export const AtMaximum: Story = {
     value: 10,
     minValue: 1,
     maxValue: 10,
+    setValue: fn(),
   },
 }
 
@@ -61,6 +63,7 @@ export const Disabled: Story = {
     minValue: 1,
     maxValue: 10,
     disabled: true,
+    setValue: fn(),
   },
 }
 
@@ -71,6 +74,7 @@ export const WithLabel: Story = {
     maxValue: 99,
     label: 'Number of items',
     id: 'items-stepper',
+    setValue: fn(),
   },
 }
 
