@@ -1,26 +1,32 @@
 import { faMinus, faPlus } from '@awesome.me/kit-46ca99185c/icons/classic/solid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { forwardRef, useRef, useState, useEffect, useImperativeHandle } from 'react'
+import {
+  forwardRef,
+  useRef,
+  useState,
+  useEffect,
+  useImperativeHandle,
+} from 'react'
 import styled, { keyframes } from 'styled-components'
 import { margin, MarginProps, TransientMarginProps } from '../../utils/space'
 
 export interface NumberStepperProps extends MarginProps {
-    /** Current value */
-    value: number
-    /** Minimum allowed value */
-    minValue: number
-    /** Maximum allowed value */
-    maxValue: number
-    /** Whether the stepper is disabled */
-    disabled?: boolean
-    /** Callback when value changes */
-    setValue: (newValue: number) => void
-    /** Test ID for the component */
-    testId?: string
-    /** Accessible label for the input field */
-    label?: string
-    /** ID for the input field (required if label is used) */
-    id?: string
+  /** Current value */
+  value: number
+  /** Minimum allowed value */
+  minValue: number
+  /** Maximum allowed value */
+  maxValue: number
+  /** Whether the stepper is disabled */
+  disabled?: boolean
+  /** Callback when value changes */
+  setValue: (newValue: number) => void
+  /** Test ID for the component */
+  testId?: string
+  /** Accessible label for the input field */
+  label?: string
+  /** ID for the input field (required if label is used) */
+  id?: string
 }
 
 /**
@@ -30,223 +36,224 @@ export interface NumberStepperProps extends MarginProps {
  * arrow key support, and full accessibility.
  */
 export const NumberStepper = forwardRef<HTMLInputElement, NumberStepperProps>(
-    function NumberStepper(
-        {
-            value,
-            minValue,
-            maxValue,
-            disabled = false,
-            setValue,
-            testId,
-            label,
-            id,
-            m,
-            mx,
-            my,
-            ml,
-            mr,
-            mt,
-            mb,
-        },
-        ref,
-    ) {
-        const inputRef = useRef<HTMLInputElement>(null)
-        const containerRef = useRef<HTMLDivElement>(null)
-        const [displayValue, setDisplayValue] = useState(String(value))
-        const [isEditing, setIsEditing] = useState(false)
-
-        // Forward ref to input
-        useImperativeHandle(ref, () => inputRef.current!, [])
-
-        // Sync display value when prop value changes (e.g., from button clicks)
-        // But don't interrupt user while they're typing
-        useEffect(() => {
-            if (!isEditing) {
-                setDisplayValue(String(value))
-            }
-        }, [value, isEditing])
-
-        // Warn if label and id are mismatched (accessibility issue)
-        useEffect(() => {
-            if ((label && !id) || (!label && id)) {
-                console.warn(
-                    'NumberStepper: label and id should be provided together for proper accessibility. ' +
-                    'Either provide both or neither.',
-                )
-            }
-        }, [label, id])
-
-        const triggerAnimation = (animationClass: string) => {
-            if (!containerRef.current) return
-
-            const el = containerRef.current
-
-            // Remove all animation classes
-            el.classList.remove('stepper--increment')
-            el.classList.remove('stepper--decrement')
-            el.classList.remove('stepper--increment-boundary')
-            el.classList.remove('stepper--decrement-boundary')
-
-            // Trigger a reflow to ensure the animation restarts
-            void el.offsetWidth
-
-            // Add the new animation class
-            el.classList.add(`stepper--${animationClass}`)
-        }
-
-        const handleIncrement = () => {
-            if (disabled || value >= maxValue) return
-            const newValue = value + 1
-
-            // Determine animation type
-            const animationClass =
-                newValue >= maxValue ? 'increment-boundary' : 'increment'
-            triggerAnimation(animationClass)
-
-            // Stop editing mode so displayValue syncs
-            setIsEditing(false)
-            setValue(newValue)
-        }
-
-        const handleDecrement = () => {
-            if (disabled || value <= minValue) return
-            const newValue = value - 1
-
-            // Determine animation type
-            const animationClass =
-                newValue <= minValue ? 'decrement-boundary' : 'decrement'
-            triggerAnimation(animationClass)
-
-            // Stop editing mode so displayValue syncs
-            setIsEditing(false)
-            setValue(newValue)
-        }
-
-        const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-            const newValue = e.target.value
-
-            // Only allow digits (prevent e, +, -, ., etc.)
-            if (newValue !== '' && !/^\d+$/.test(newValue)) {
-                return
-            }
-
-            setIsEditing(true)
-
-            // Update display value to allow clearing the field
-            setDisplayValue(newValue)
-
-            // Allow empty input temporarily (user is clearing to retype)
-            if (newValue === '') {
-                return
-            }
-
-            const numValue = parseInt(newValue, 10)
-
-            // Validate and update parent state if valid
-            if (!isNaN(numValue)) {
-                const clampedValue = Math.max(minValue, Math.min(maxValue, numValue))
-                setValue(clampedValue)
-            }
-        }
-
-        const handleInputFocus = () => {
-            setIsEditing(true)
-        }
-
-        const handleInputBlur = () => {
-            setIsEditing(false)
-
-            // On blur, ensure we have a valid normalized value
-            if (displayValue === '' || isNaN(parseInt(displayValue, 10))) {
-                setDisplayValue(String(value))
-            } else {
-                // Normalize and clamp the value
-                const numValue = parseInt(displayValue, 10)
-                const clampedValue = Math.max(minValue, Math.min(maxValue, numValue))
-
-                // Always normalize to remove leading zeros, etc.
-                setValue(clampedValue)
-                setDisplayValue(String(clampedValue))
-            }
-        }
-
-        const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-            if (e.key === 'ArrowUp') {
-                e.preventDefault()
-                handleIncrement()
-            } else if (e.key === 'ArrowDown') {
-                e.preventDefault()
-                handleDecrement()
-            }
-        }
-
-        const isDecrementDisabled = disabled || value <= minValue
-        const isIncrementDisabled = disabled || value >= maxValue
-
-        return (
-            <StepperContainer
-                ref={containerRef}
-                role="group"
-                aria-label="Number stepper"
-                data-testid={testId}
-                $m={m}
-                $mx={mx}
-                $my={my}
-                $ml={ml}
-                $mr={mr}
-                $mt={mt}
-                $mb={mb}
-            >
-                {label && id && (
-                    <VisuallyHiddenLabel htmlFor={id}>{label}</VisuallyHiddenLabel>
-                )}
-
-                <StepperButton
-                    type="button"
-                    onClick={handleDecrement}
-                    disabled={isDecrementDisabled}
-                    tabIndex={-1}
-                    aria-hidden="true"
-                    className="stepper-button--decrement"
-                >
-                    <FontAwesomeIcon icon={faMinus} aria-hidden="true" />
-                </StepperButton>
-
-                <ValueContainer>
-                    <ValueDisplay $disabled={disabled}>{displayValue}</ValueDisplay>
-                    <NumberInput
-                        ref={inputRef}
-                        id={id}
-                        type="text"
-                        inputMode="numeric"
-                        value={displayValue}
-                        onChange={handleInputChange}
-                        onFocus={handleInputFocus}
-                        onBlur={handleInputBlur}
-                        onKeyDown={handleKeyDown}
-                        disabled={disabled}
-                        aria-label={
-                            label || `Number input, minimum ${minValue}, maximum ${maxValue}`
-                        }
-                        aria-valuemin={minValue}
-                        aria-valuemax={maxValue}
-                        aria-valuenow={value}
-                    />
-                </ValueContainer>
-
-                <StepperButton
-                    type="button"
-                    onClick={handleIncrement}
-                    disabled={isIncrementDisabled}
-                    tabIndex={-1}
-                    aria-hidden="true"
-                    className="stepper-button--increment"
-                >
-                    <FontAwesomeIcon icon={faPlus} aria-hidden="true" />
-                </StepperButton>
-            </StepperContainer>
-        )
+  function NumberStepper(
+    {
+      value,
+      minValue,
+      maxValue,
+      disabled = false,
+      setValue,
+      testId,
+      label,
+      id,
+      m,
+      mx,
+      my,
+      ml,
+      mr,
+      mt,
+      mb,
     },
+    ref,
+  ) {
+    const inputRef = useRef<HTMLInputElement>(null)
+    const containerRef = useRef<HTMLDivElement>(null)
+    const [displayValue, setDisplayValue] = useState(String(value))
+    const [isEditing, setIsEditing] = useState(false)
+
+    // Forward ref to input
+    useImperativeHandle(ref, () => inputRef.current!, [])
+
+    // Sync display value when prop value changes (e.g., from button clicks)
+    // But don't interrupt user while they're typing
+    useEffect(() => {
+      if (!isEditing) {
+        setDisplayValue(String(value))
+      }
+    }, [value, isEditing])
+
+    // Warn if label and id are mismatched (accessibility issue)
+    useEffect(() => {
+      if ((label && !id) || (!label && id)) {
+        console.warn(
+          'NumberStepper: label and id should be provided together for proper accessibility. ' +
+            'Either provide both or neither.',
+        )
+      }
+    }, [label, id])
+
+    const triggerAnimation = (animationClass: string) => {
+      if (!containerRef.current) return
+
+      const el = containerRef.current
+
+      // Remove all animation classes
+      el.classList.remove('stepper--increment')
+      el.classList.remove('stepper--decrement')
+      el.classList.remove('stepper--increment-boundary')
+      el.classList.remove('stepper--decrement-boundary')
+
+      // Trigger a reflow to ensure the animation restarts
+      void el.offsetWidth
+
+      // Add the new animation class
+      el.classList.add(`stepper--${animationClass}`)
+    }
+
+    const handleIncrement = () => {
+      if (disabled || value >= maxValue) return
+      const newValue = value + 1
+
+      // Determine animation type
+      const animationClass =
+        newValue >= maxValue ? 'increment-boundary' : 'increment'
+      triggerAnimation(animationClass)
+
+      // Stop editing mode so displayValue syncs
+      setIsEditing(false)
+      setValue(newValue)
+    }
+
+    const handleDecrement = () => {
+      if (disabled || value <= minValue) return
+      const newValue = value - 1
+
+      // Determine animation type
+      const animationClass =
+        newValue <= minValue ? 'decrement-boundary' : 'decrement'
+      triggerAnimation(animationClass)
+
+      // Stop editing mode so displayValue syncs
+      setIsEditing(false)
+      setValue(newValue)
+    }
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const newValue = e.target.value
+
+      // Only allow digits (prevent e, +, -, ., etc.)
+      if (newValue !== '' && !/^\d+$/.test(newValue)) {
+        return
+      }
+
+      setIsEditing(true)
+
+      // Update display value to allow clearing the field
+      setDisplayValue(newValue)
+
+      // Allow empty input temporarily (user is clearing to retype)
+      if (newValue === '') {
+        return
+      }
+
+      const numValue = parseInt(newValue, 10)
+
+      // Validate and update parent state if valid
+      if (!isNaN(numValue)) {
+        const clampedValue = Math.max(minValue, Math.min(maxValue, numValue))
+        setValue(clampedValue)
+      }
+    }
+
+    const handleInputFocus = () => {
+      setIsEditing(true)
+    }
+
+    const handleInputBlur = () => {
+      setIsEditing(false)
+
+      // On blur, ensure we have a valid normalized value
+      if (displayValue === '' || isNaN(parseInt(displayValue, 10))) {
+        setDisplayValue(String(value))
+      } else {
+        // Normalize and clamp the value
+        const numValue = parseInt(displayValue, 10)
+        const clampedValue = Math.max(minValue, Math.min(maxValue, numValue))
+
+        // Always normalize to remove leading zeros, etc.
+        setValue(clampedValue)
+        setDisplayValue(String(clampedValue))
+      }
+    }
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'ArrowUp') {
+        e.preventDefault()
+        handleIncrement()
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault()
+        handleDecrement()
+      }
+    }
+
+    const isDecrementDisabled = disabled || value <= minValue
+    const isIncrementDisabled = disabled || value >= maxValue
+
+    return (
+      <StepperContainer
+        ref={containerRef}
+        role="group"
+        aria-label="Number stepper"
+        data-testid={testId}
+        $m={m}
+        $mx={mx}
+        $my={my}
+        $ml={ml}
+        $mr={mr}
+        $mt={mt}
+        $mb={mb}
+      >
+        {label && id && (
+          <VisuallyHiddenLabel htmlFor={id}>{label}</VisuallyHiddenLabel>
+        )}
+
+        <StepperButton
+          type="button"
+          onClick={handleDecrement}
+          disabled={isDecrementDisabled}
+          tabIndex={-1}
+          aria-hidden="true"
+          className="stepper-button--decrement"
+        >
+          <FontAwesomeIcon icon={faMinus} aria-hidden="true" />
+        </StepperButton>
+
+        <ValueContainer>
+          <ValueDisplay $disabled={disabled}>{displayValue}</ValueDisplay>
+          <NumberInput
+            ref={inputRef}
+            id={id}
+            type="text"
+            inputMode="numeric"
+            role="spinbutton"
+            value={displayValue}
+            onChange={handleInputChange}
+            onFocus={handleInputFocus}
+            onBlur={handleInputBlur}
+            onKeyDown={handleKeyDown}
+            disabled={disabled}
+            aria-label={
+              label || `Number input, minimum ${minValue}, maximum ${maxValue}`
+            }
+            aria-valuemin={minValue}
+            aria-valuemax={maxValue}
+            aria-valuenow={value}
+          />
+        </ValueContainer>
+
+        <StepperButton
+          type="button"
+          onClick={handleIncrement}
+          disabled={isIncrementDisabled}
+          tabIndex={-1}
+          aria-hidden="true"
+          className="stepper-button--increment"
+        >
+          <FontAwesomeIcon icon={faPlus} aria-hidden="true" />
+        </StepperButton>
+      </StepperContainer>
+    )
+  },
 )
 
 // Keyframe animations for button nudge effects
@@ -361,7 +368,7 @@ const ValueContainer = styled.div`
 `
 
 const ValueDisplay = styled.div<{
-    $disabled?: boolean
+  $disabled?: boolean
 }>`
   position: absolute;
   width: 100%;
@@ -374,7 +381,7 @@ const ValueDisplay = styled.div<{
   font-size: 16px;
   line-height: 1.33;
   color: ${({ $disabled, theme }) =>
-        $disabled ? theme.color.feedback.inactive[100] : theme.color.text.base};
+    $disabled ? theme.color.feedback.inactive[100] : theme.color.text.base};
   pointer-events: none;
   user-select: none;
   z-index: 1;
@@ -421,7 +428,7 @@ const StepperButton = styled.button<{ disabled?: boolean }>`
     height: 32px;
     border-radius: 1000px;
     background: ${({ disabled, theme }) =>
-        disabled ? 'transparent' : theme.color.interactive.secondary.base};
+      disabled ? 'transparent' : theme.color.interactive.secondary.base};
     transition: background 167ms cubic-bezier(0.3, 0, 0.7, 1);
   }
 
@@ -449,7 +456,7 @@ const StepperButton = styled.button<{ disabled?: boolean }>`
     width: 14px;
     height: 14px;
     color: ${({ disabled, theme }) =>
-        disabled ? theme.color.feedback.inactive[100] : theme.color.text.base};
+      disabled ? theme.color.feedback.inactive[100] : theme.color.text.base};
     transition: color 167ms cubic-bezier(0.3, 0, 0.7, 1);
   }
 
