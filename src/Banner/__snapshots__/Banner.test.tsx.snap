@@ -10,9 +10,11 @@ exports[`BannerItem > render Critical banner correctly 1`] = `
 }
 
 .c3 {
+  font-family: CircularXX;
   font-size: 14px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #ffffff;
 }
@@ -78,9 +80,11 @@ exports[`BannerItem > render General banner correctly 1`] = `
 }
 
 .c3 {
+  font-family: CircularXX;
   font-size: 14px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #ffffff;
 }
@@ -146,9 +150,11 @@ exports[`BannerItem > render Success banner correctly 1`] = `
 }
 
 .c3 {
+  font-family: CircularXX;
   font-size: 14px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #ffffff;
 }
@@ -214,9 +220,11 @@ exports[`BannerItem > render Upsell banner correctly 1`] = `
 }
 
 .c3 {
+  font-family: CircularXX;
   font-size: 14px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }

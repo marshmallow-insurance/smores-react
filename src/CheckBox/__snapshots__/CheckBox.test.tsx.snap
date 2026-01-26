@@ -2,9 +2,11 @@
 
 exports[`CheckBox > renders correctly when checked 1`] = `
 .c1 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }
@@ -125,9 +127,11 @@ exports[`CheckBox > renders correctly when checked 1`] = `
 
 exports[`CheckBox > renders correctly when unchecked 1`] = `
 .c1 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }
@@ -247,9 +251,11 @@ exports[`CheckBox > renders correctly when unchecked 1`] = `
 
 exports[`CheckBox > renders correctly with an error state 1`] = `
 .c1 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #d03c30;
 }

@@ -2,9 +2,11 @@
 
 exports[`Text component > renders color.feedback.negative.200 / strawberry correctly with NEW color name 1`] = `
 .c0 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #d03c30;
 }
@@ -22,9 +24,11 @@ exports[`Text component > renders color.feedback.negative.200 / strawberry corre
 
 exports[`Text component > renders color.feedback.negative.200 / strawberry correctly with OLD color name 1`] = `
 .c0 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #d03c30;
 }
@@ -42,9 +46,11 @@ exports[`Text component > renders color.feedback.negative.200 / strawberry corre
 
 exports[`Text component > renders color.feedback.positive.200 / apple correctly with NEW color name 1`] = `
 .c0 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #317a4c;
 }
@@ -62,9 +68,11 @@ exports[`Text component > renders color.feedback.positive.200 / apple correctly 
 
 exports[`Text component > renders color.feedback.positive.200 / apple correctly with OLD color name 1`] = `
 .c0 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #317a4c;
 }
@@ -82,9 +90,11 @@ exports[`Text component > renders color.feedback.positive.200 / apple correctly 
 
 exports[`Text component > renders correctly with default props 1`] = `
 .c0 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }
