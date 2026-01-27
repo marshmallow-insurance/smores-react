@@ -97,7 +97,7 @@ export default meta
 
 type Story = StoryObj<typeof SnackbarContainer>
 
-const ChildComponent: FC = () => {
+const ChildComponent: FC<{ showCloseIcon?: boolean }> = ({ showCloseIcon }) => {
   const { addSnackbar } = useSnackbar()
 
   return (
@@ -109,6 +109,7 @@ const ChildComponent: FC = () => {
             leadingIcon: 'tick',
             message: 'Hello there general Kenobi',
             canManuallyClose: true,
+            showCloseIcon: showCloseIcon,
           })
         }}
       >
@@ -122,6 +123,14 @@ export const Default: Story = {
   render: () => (
     <SnackbarContainer>
       <ChildComponent />
+    </SnackbarContainer>
+  ),
+}
+
+export const ShowCloseIcon: Story = {
+  render: () => (
+    <SnackbarContainer>
+      <ChildComponent showCloseIcon />
     </SnackbarContainer>
   ),
 }

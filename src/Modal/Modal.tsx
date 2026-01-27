@@ -1,11 +1,13 @@
 import { FC, ReactNode, useRef } from 'react'
 import { createPortal } from 'react-dom'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
-import { IconStrict } from '../IconStrict'
 import { Text, type TextProps } from '../Text'
 import { useBodyScrollLock } from '../hooks/useBodyScrollLock'
+import { IconContainer } from '../sharedStyles/shared.styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 interface IModalContainer {
   // drawer state
@@ -66,6 +68,7 @@ export const Modal: FC<ModalProps> = ({
   closeOnOverlayClick = true,
 }) => {
   const modalRef = useRef<HTMLDivElement>(null)
+  const theme = useTheme()
 
   useBodyScrollLock({ node: modalRef.current, showModal })
 
@@ -97,13 +100,22 @@ export const Modal: FC<ModalProps> = ({
           <Box flex alignItems="center" gap={'8px'}>
             {rightPanel}
             {cross && (
-              <IconStrict
-                render="cross"
+              <IconContainer
+                as="button"
+                onClick={handleClick}
+                role="button"
                 title="Close modal"
-                backgroundColor="color.illustration.neutral.300"
-                handleClick={handleClick}
-                size={36}
-              />
+                $size={32}
+                style={{
+                  background: theme.color.illustration.neutral[300],
+                  borderRadius: '100%',
+                  padding: '6px',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                <FontAwesomeIcon icon={faXmark} color={theme.color.icon.base} />
+              </IconContainer>
             )}
           </Box>
         </Box>

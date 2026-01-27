@@ -5,19 +5,26 @@ import {
   MouseEvent,
   forwardRef,
 } from 'react'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon } from '../Icon'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 
 import {
   Input,
+  InputLeadingIconContainer,
+  InputTrailingIconContainer,
   StyledFrontIcon,
   StyledTrailingIcon,
 } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
+import {
+  faChevronDown,
+  faChevronUp,
+} from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 export interface Props extends CommonFieldProps {
   type?: 'number'
@@ -61,6 +68,8 @@ export const NumberInput = forwardRef(function NumberInput(
     disabled = false,
     error = false,
     frontIcon,
+    frontIconComponent,
+    trailingIconComponent,
     trailingIcon,
     fallbackStyle,
     ...fieldProps
@@ -68,7 +77,7 @@ export const NumberInput = forwardRef(function NumberInput(
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   const id = useUniqueId(idProp)
-
+  const theme = useTheme()
   // Check whether the min/max value exists is within the specified range
   const isInRange = (value: number) => {
     if (min && value < min) {
@@ -127,16 +136,30 @@ export const NumberInput = forwardRef(function NumberInput(
     }
   }
 
+  const frontIconToRender = frontIconComponent ? (
+    <InputLeadingIconContainer $size={20} $iconColor={theme.color.text.subtle}>
+      {frontIconComponent}
+    </InputLeadingIconContainer>
+  ) : frontIcon ? (
+    <StyledFrontIcon $disabled={disabled} render={frontIcon} color="sesame" />
+  ) : null
+
+  const trailingIconToRender = trailingIconComponent ? (
+    <InputTrailingIconContainer $size={20} $iconColor={theme.color.text.subtle}>
+      {trailingIconComponent}
+    </InputTrailingIconContainer>
+  ) : trailingIcon ? (
+    <StyledTrailingIcon
+      $disabled={disabled}
+      render={trailingIcon}
+      color="sesame"
+    />
+  ) : null
+
   return (
     <Field {...fieldProps} htmlFor={id} error={error}>
       <Box flex alignItems="center" justifyContent="flex-start">
-        {frontIcon && (
-          <StyledFrontIcon
-            $disabled={disabled}
-            render={frontIcon}
-            color="sesame"
-          />
-        )}
+        {frontIconToRender && frontIconToRender}
         <Input
           ref={ref}
           $error={error}
@@ -146,7 +169,7 @@ export const NumberInput = forwardRef(function NumberInput(
           name={name}
           placeholder={placeholder}
           value={value}
-          $frontIcon={frontIcon}
+          $frontIcon={Boolean(frontIconToRender)}
           step={step}
           $fallbackStyle={fallbackStyle}
           onWheel={(e) => e.currentTarget.blur()}
@@ -164,7 +187,12 @@ export const NumberInput = forwardRef(function NumberInput(
               onClick={incrementValue}
               disabled={disabled}
             >
-              <Icon render="caret" rotate={180} color="sesame" size={24} />
+              <IconContainer $size={20}>
+                <FontAwesomeIcon
+                  icon={faChevronDown}
+                  color={theme.color.text.subtle}
+                />
+              </IconContainer>
             </SpinnerButton>
 
             <SpinnerButton
@@ -172,17 +200,16 @@ export const NumberInput = forwardRef(function NumberInput(
               onClick={decrementValue}
               disabled={disabled}
             >
-              <Icon render="caret" color="sesame" size={24} />
+              <IconContainer $size={20}>
+                <FontAwesomeIcon
+                  icon={faChevronUp}
+                  color={theme.color.text.subtle}
+                />
+              </IconContainer>
             </SpinnerButton>
           </Spinner>
         )}
-        {trailingIcon && !step && (
-          <StyledTrailingIcon
-            $disabled={disabled}
-            render={trailingIcon}
-            color="sesame"
-          />
-        )}
+        {trailingIconToRender && !step && trailingIconToRender}
       </Box>
     </Field>
   )
