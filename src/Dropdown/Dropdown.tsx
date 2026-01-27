@@ -9,14 +9,19 @@ import {
 import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon, Icons } from '../Icon'
+import { Icons } from '../Icon'
 
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
-import { StyledFrontIcon } from '../fields/components/CommonInput'
+import {
+  InputLeadingIconContainer,
+  StyledFrontIcon,
+} from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 import { IconContainer } from '../sharedStyles/shared.styles'
+import { faChevronDown } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export type DropdownItem = {
   optionGroupLabel?: string
@@ -104,19 +109,9 @@ export const Dropdown = forwardRef(function Dropdown(
   }
 
   const iconToRender = iconComponent ? (
-    <IconContainer
-      style={{
-        position: 'relative',
-        left: '36px',
-        marginLeft: '-24px',
-        zIndex: 1,
-        opacity: disabled ? '0.5' : '1',
-      }}
-      $size={16}
-      $iconColor={theme.color.text.base}
-    >
+    <InputLeadingIconContainer $size={16} $iconColor={theme.color.text.base}>
       {iconComponent}
-    </IconContainer>
+    </InputLeadingIconContainer>
   ) : frontIcon ? (
     <StyledFrontIcon $disabled={disabled} render={frontIcon} color="sesame" />
   ) : null
@@ -177,11 +172,12 @@ export const Dropdown = forwardRef(function Dropdown(
           )}
         </StyledSelect>
         <Caret>
-          <Icon
-            render="caret"
-            color="color.illustration.neutral.400"
-            size={24}
-          />
+          <IconContainer $size={20}>
+            <FontAwesomeIcon
+              icon={faChevronDown}
+              color={theme.color.illustration.neutral[400]}
+            />
+          </IconContainer>
         </Caret>
       </Box>
     </Field>

@@ -12,7 +12,10 @@ import styled, { useTheme } from 'styled-components'
 import { Box } from '../Box'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
-import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
+import {
+  Input,
+  InputLeadingIconContainer,
+} from '../fields/components/CommonInput'
 import { useOnClickOutside } from '../hooks'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
@@ -22,6 +25,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faXmark,
   faChevronDown,
+  faSearch,
 } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 export type SearchInputItem = {
@@ -250,14 +254,21 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           {...otherProps}
         >
           <Box flex alignItems="center" justifyContent="flex-start">
-            {showIcon && <StyledFrontIcon render="search" color="sesame" />}
+            {showIcon && (
+              <InputLeadingIconContainer $size={20}>
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  color={theme.color.text.subtle}
+                />
+              </InputLeadingIconContainer>
+            )}
             <Input
               id={id}
               name={name}
               ref={ref}
               placeholder={placeholder}
               $error={otherProps.error}
-              $frontIcon={showIcon ? 'search' : undefined}
+              $frontIcon={showIcon}
               $fallbackStyle={fallbackStyle}
               autoComplete="off"
               value={displayedInputText}

@@ -10,8 +10,14 @@ import { Box } from '../Box'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 
-import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
+import {
+  Input,
+  InputLeadingIconContainer,
+} from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
+import { faSterlingSign } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useTheme } from 'styled-components'
 
 export interface Props extends CommonFieldProps {
   placeholder: string
@@ -57,8 +63,8 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
   }: CurrencyInputProps,
   ref: ForwardedRef<HTMLInputElement>,
 ) {
+  const theme = useTheme()
   const id = useUniqueId(idProp)
-  const frontIcon = 'pound-regular'
 
   const formatCurrency = (value: string) => {
     const decimalIndex = value.indexOf('.')
@@ -99,11 +105,16 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
   return (
     <Field {...fieldProps} htmlFor={id} error={error}>
       <Box flex alignItems="center" justifyContent="flex-start">
-        <StyledFrontIcon
+        <InputLeadingIconContainer
+          $size={20}
           $disabled={disabled}
-          render={frontIcon}
-          color="sesame"
-        />
+          style={{ top: '-1px' }}
+        >
+          <FontAwesomeIcon
+            icon={faSterlingSign}
+            color={theme.color.text.subtle}
+          />
+        </InputLeadingIconContainer>
         <Input
           ref={ref}
           $error={error}
@@ -113,7 +124,7 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
           name={name}
           placeholder={placeholder}
           value={value}
-          $frontIcon={frontIcon}
+          $frontIcon={true}
           $fallbackStyle={fallbackStyle}
           onChange={(e: FormEvent<HTMLInputElement>) => {
             onChange && handleChange(e.currentTarget.value)
