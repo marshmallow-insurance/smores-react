@@ -25,6 +25,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faXmark,
   faChevronDown,
+  faSearch,
 } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 export type SearchInputItem = {
@@ -112,7 +113,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const wrapperRef = useRef(null)
     const theme = useTheme()
     const id = useUniqueId(idProp)
-    const theme = useTheme()
     const [showOptions, setShowOptions] = useState(false)
     const [selectedValue, setSelectedValue] = useControllableState<
       string | null
