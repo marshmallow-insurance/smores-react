@@ -99,7 +99,11 @@ export const TextInput = forwardRef(function TextInput(
       {frontIconComponent}
     </InputLeadingIconContainer>
   ) : frontIcon ? (
-    <StyledFrontIcon $disabled={disabled} render={frontIcon} color="sesame" />
+    <StyledFrontIcon
+      $disabled={disabled}
+      render={frontIcon}
+      color="color.icon.base"
+    />
   ) : null
 
   const trailingIconToRender = trailingIconComponent ? (
@@ -110,7 +114,7 @@ export const TextInput = forwardRef(function TextInput(
     <StyledTrailingIcon
       $disabled={disabled}
       render={trailingIcon}
-      color="sesame"
+      color="color.icon.base"
     />
   ) : null
 
