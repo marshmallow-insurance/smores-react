@@ -14,6 +14,12 @@ updates:
       timezone: Europe/London
     open-pull-requests-limit: 99
     groups:
+      react:
+        patterns:
+          - "react*"
+          - "react-**"
+          - "@types/react*"
+          - "@types/react-**"
       storybook:
         patterns:
           - "storybook*"
