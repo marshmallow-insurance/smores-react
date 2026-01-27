@@ -13,6 +13,8 @@ import { CommonFieldProps } from '../fields/commonFieldTypes'
 
 import {
   Input,
+  InputLeadingIconContainer,
+  InputTrailingIconContainer,
   StyledFrontIcon,
   StyledTrailingIcon,
 } from '../fields/components/CommonInput'
@@ -66,6 +68,8 @@ export const NumberInput = forwardRef(function NumberInput(
     disabled = false,
     error = false,
     frontIcon,
+    frontIconComponent,
+    trailingIconComponent,
     trailingIcon,
     fallbackStyle,
     ...fieldProps
@@ -132,16 +136,30 @@ export const NumberInput = forwardRef(function NumberInput(
     }
   }
 
+  const frontIconToRender = frontIconComponent ? (
+    <InputLeadingIconContainer $size={20} $iconColor={theme.color.text.subtle}>
+      {frontIconComponent}
+    </InputLeadingIconContainer>
+  ) : frontIcon ? (
+    <StyledFrontIcon $disabled={disabled} render={frontIcon} color="sesame" />
+  ) : null
+
+  const trailingIconToRender = trailingIconComponent ? (
+    <InputTrailingIconContainer $size={20} $iconColor={theme.color.text.subtle}>
+      {trailingIconComponent}
+    </InputTrailingIconContainer>
+  ) : trailingIcon ? (
+    <StyledTrailingIcon
+      $disabled={disabled}
+      render={trailingIcon}
+      color="sesame"
+    />
+  ) : null
+
   return (
     <Field {...fieldProps} htmlFor={id} error={error}>
       <Box flex alignItems="center" justifyContent="flex-start">
-        {frontIcon && (
-          <StyledFrontIcon
-            $disabled={disabled}
-            render={frontIcon}
-            color="sesame"
-          />
-        )}
+        {frontIconToRender && frontIconToRender}
         <Input
           ref={ref}
           $error={error}
@@ -151,7 +169,7 @@ export const NumberInput = forwardRef(function NumberInput(
           name={name}
           placeholder={placeholder}
           value={value}
-          $frontIcon={frontIcon}
+          $frontIcon={Boolean(frontIconToRender)}
           step={step}
           $fallbackStyle={fallbackStyle}
           onWheel={(e) => e.currentTarget.blur()}
@@ -191,13 +209,7 @@ export const NumberInput = forwardRef(function NumberInput(
             </SpinnerButton>
           </Spinner>
         )}
-        {trailingIcon && !step && (
-          <StyledTrailingIcon
-            $disabled={disabled}
-            render={trailingIcon}
-            color="sesame"
-          />
-        )}
+        {trailingIconToRender && !step && trailingIconToRender}
       </Box>
     </Field>
   )
