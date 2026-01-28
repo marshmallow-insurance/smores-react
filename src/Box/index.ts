@@ -1,1 +1,1 @@
-export { Box } from './Box'
+export { Box, BoxAsButton } from './Box'

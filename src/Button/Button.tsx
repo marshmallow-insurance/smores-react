@@ -9,7 +9,7 @@ import styled, { css } from 'styled-components'
 import { IconContainer as CommonIconContainer } from '../sharedStyles/shared.styles'
 
 import { TransientProps } from 'utils/utilTypes'
-import { Box } from '../Box'
+import { BoxAsButton } from '../Box'
 import { Icon as IconComponent, Icons } from '../Icon'
 
 import { Loader } from '../Loader'
@@ -133,7 +133,7 @@ type IButton = TransientProps<
   disabled: boolean
 }
 
-const Container = styled(Box)<IButton>(
+const Container = styled(BoxAsButton)<IButton>(
   ({
     disabled,
     $loading,

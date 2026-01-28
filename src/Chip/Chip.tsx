@@ -7,7 +7,7 @@ import {
 } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
-import { Box } from '../Box'
+import { BoxAsButton } from '../Box'
 import { Icon, Icons } from '../Icon'
 
 import { Loader } from '../Loader'
@@ -103,7 +103,7 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
 
 Chip.displayName = 'Chip'
 
-const Container = styled(Box)<IButton>(
+const Container = styled(BoxAsButton)<IButton>(
   ({ $primary, $secondary, $icon, $loading, disabled, theme }) => css`
     ${focusOutline()}
 

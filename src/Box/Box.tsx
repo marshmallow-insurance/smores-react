@@ -109,3 +109,9 @@ export const CustomBox = styled.div<TransientBoxProps>`
   ${flex};
   ${measure};
 `
+
+// Create a version of Box that always renders a real <button type="button">
+export const BoxAsButton = styled(Box).attrs({
+  as: 'button',
+  type: 'button',
+})``

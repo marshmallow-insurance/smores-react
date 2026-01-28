@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, FormEvent } from 'react'
+import { ButtonHTMLAttributes, FC, MouseEvent } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
 import { darken } from 'polished'
@@ -11,6 +11,7 @@ import {
   resolveToThemeColor,
 } from '../ThemeProvider/utils/colourMap'
 import { useDeprecatedWarning } from '../utils/deprecated'
+import { BoxAsButton } from '../Box'
 
 export type IconStrictProps = {
   id?: string
@@ -25,11 +26,12 @@ export type IconStrictProps = {
   /** set background colour */
   backgroundColor?: ColorTypes
   /** function to handle click */
-  handleClick?: (e: FormEvent<HTMLButtonElement>) => void
+  handleClick?: (e: MouseEvent<HTMLButtonElement>) => void
   /** rotation degrees */
   rotate?: number
-} & MarginProps &
-  Partial<ButtonHTMLAttributes<HTMLButtonElement>>
+  /** title attribute for accessibility */
+  title?: string
+} & MarginProps
 
 const iconSizes = {
   48: {
@@ -77,10 +79,30 @@ export const IconStrict: FC<IconStrictProps> = ({
     ? resolveToThemeColor(backgroundColor, theme)
     : undefined
 
+  if (isButton) {
+    return (
+      <IconButtonContainer
+        id={id}
+        className={className}
+        $size={size}
+        $backgroundColor={resolvedBgColor}
+        onClick={handleClick}
+        title={defaultLabel}
+        {...otherProps}
+      >
+        <Icon
+          render={render}
+          size={backgroundColor ? iconSizes[size].smallSize : size}
+          color={iconColor}
+          rotate={rotate}
+        />
+      </IconButtonContainer>
+    )
+  }
+
   return (
     <IconContainer
       id={id}
-      as={isButton ? 'button' : 'div'}
       className={className}
       $size={size}
       $backgroundColor={resolvedBgColor}
@@ -101,22 +123,25 @@ export const IconStrict: FC<IconStrictProps> = ({
 interface IIconStrict {
   $size: 16 | 24 | 36 | 48
   $backgroundColor?: string
-  onClick?: (e: FormEvent<HTMLButtonElement>) => void
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void
 }
 
-const IconContainer = styled.div<IIconStrict>(
-  ({ $size, $backgroundColor, onClick }) => css`
-    position: relative;
-    padding: ${$backgroundColor ? `${iconSizes[$size].padding}px` : 0};
-    width: 100%;
-    max-width: ${$size}px;
-    height: ${$size}px;
-    border-radius: 100%;
-    background-color: ${$backgroundColor ?? 'none'};
-    cursor: ${onClick ? 'pointer' : 'default'};
+const containerSyles = ({
+  $size,
+  $backgroundColor,
+  onClick,
+}: IIconStrict) => css`
+  position: relative;
+  padding: ${$backgroundColor ? `${iconSizes[$size].padding}px` : 0};
+  width: 100%;
+  max-width: ${$size}px;
+  height: ${$size}px;
+  border-radius: 100%;
+  background-color: ${$backgroundColor ?? 'none'};
+  cursor: ${onClick ? 'pointer' : 'default'};
 
-    ${onClick &&
-    `
+  ${onClick &&
+  `
     &:hover {
       background-color: ${
         $backgroundColor ? darken(0.1, $backgroundColor) : 'none'
@@ -125,6 +150,10 @@ const IconContainer = styled.div<IIconStrict>(
       
     `}
 
-    ${focusOutlineStyle}
-  `,
-)
+  ${focusOutlineStyle}
+`
+
+const IconContainer = styled.div<IIconStrict>((props) => containerSyles(props))
+const IconButtonContainer = styled(BoxAsButton)<
+  IIconStrict & Partial<ButtonHTMLAttributes<HTMLButtonElement>>
+>((props) => containerSyles(props))
