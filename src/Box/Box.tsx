@@ -115,3 +115,5 @@ export const BoxAsButton = styled(Box).attrs({
   as: 'button',
   type: 'button',
 })``
+
+BoxAsButton.displayName = 'BoxAsButton'
