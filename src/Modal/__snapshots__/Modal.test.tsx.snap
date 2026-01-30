@@ -13,38 +13,17 @@ exports[`Modal > renders correctly with default props 1`] = `
   display: flex;
 }
 
-.c9 {
-  display: flex;
+.c8 {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  transform: rotate(0deg);
+  width: 32px;
+  height: 32px;
 }
 
-.c9 svg {
-  color: #292924!important;
-}
-
-.c8 {
-  position: relative;
-  padding: 8px;
+.c8 svg {
   width: 100%;
-  max-width: 36px;
-  height: 36px;
-  border-radius: 100%;
-  background-color: #dad2c4;
-  cursor: pointer;
-}
-
-.c8:hover {
-  background-color: #c6baa5;
-}
-
-.c8:focus-visible {
-  outline: 2px solid #292924;
-  outline-offset: 2px;
+  height: 100%;
 }
 
 .c6 {
@@ -176,25 +155,24 @@ exports[`Modal > renders correctly with default props 1`] = `
         >
           <button
             class="c8"
+            role="button"
+            style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
             title="Close modal"
           >
-            <span
-              class="c9"
-              data-testid="cross-container"
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-xmark"
+              color="#292924"
+              data-icon="xmark"
+              data-prefix="far"
+              role="img"
+              viewBox="0 0 384 512"
             >
-              <svg
-                fill="none"
-                height="100%"
-                viewBox="0 0 24 24"
-                width="100%"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13.414 11.5l7.293-7.67c.39-.42.39-1.097 0-1.516a.953.953 0 00-1.414 0L12 9.985l-7.293-7.67a.953.953 0 00-1.414 0 1.125 1.125 0 000 1.514l7.293 7.671-7.293 7.67a1.125 1.125 0 000 1.516A.965.965 0 004 21a.965.965 0 00.707-.314L12 13.015l7.293 7.67A.965.965 0 0020 21a.965.965 0 00.707-.314c.39-.42.39-1.096 0-1.515L13.414 11.5z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
+              <path
+                d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
+                fill="currentColor"
+              />
+            </svg>
           </button>
         </div>
       </div>

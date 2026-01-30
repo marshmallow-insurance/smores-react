@@ -43,6 +43,12 @@ exports[`SnackbarItem > renders correctly with required props 1`] = `
 }
 
 @media (min-width: 0px) {
+  .c0 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
   .c2 {
     align-items: center;
   }

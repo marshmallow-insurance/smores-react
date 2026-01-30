@@ -27,7 +27,6 @@ describe('StepItem', () => {
     )
 
     expect(baseElement).toMatchSnapshot()
-    expect(screen.getByTestId('tick-container')).toBeTruthy()
   })
 
   it('calls onClick when clicked', () => {
