@@ -1,12 +1,32 @@
+import { Theme } from '../ThemeProvider/ThemeProvider'
+import { Flatten, Prettify } from '../types'
+import { getFromObject } from './getFromObject'
 import { resolveResponsiveProp, ResponsiveProp } from './responsiveProp'
 import { TransientProps } from './utilTypes'
 
-type Spacing = '8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'
+type LegacySpacing = '8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'
 
-export type SpacingProp = '0' | Spacing | { custom: number | string }
+export type ThemeSpacing = Prettify<Flatten<Pick<Theme, 'space'>>>
 
-export const resolveSpacing = (value: SpacingProp | 'auto') => {
+export type SpacingProp =
+  | '0'
+  | LegacySpacing
+  | ThemeSpacing
+  | { custom: number | string }
+
+export const resolveSpacing = (value: SpacingProp | 'auto', theme?: Theme) => {
   if (typeof value === 'string') {
+    if (theme) {
+      const spacingValue = getFromObject({
+        obj: theme,
+        path: value,
+      })
+
+      if (spacingValue !== undefined) {
+        return String(spacingValue)
+      }
+    }
+
     return value
   }
 
@@ -40,15 +60,17 @@ export interface PaddingProps {
 export type TransientMarginProps = TransientProps<MarginProps>
 export type TransientPaddingProps = TransientProps<PaddingProps>
 
-export const margin = (props: TransientMarginProps): string => {
-  const { $m, $mx, $my, $ml, $mr, $mt, $mb } = props
+export const margin = (
+  props: TransientMarginProps & { theme: Theme },
+): string => {
+  const { $m, $mx, $my, $ml, $mr, $mt, $mb, theme } = props
 
   return `
     ${
       $m
         ? resolveResponsiveProp(
             $m,
-            (value) => `margin: ${resolveSpacing(value)};`,
+            (value) => `margin: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }
@@ -57,8 +79,8 @@ export const margin = (props: TransientMarginProps): string => {
         ? resolveResponsiveProp(
             $mx,
             (value) => `
-        margin-left: ${resolveSpacing(value)};
-        margin-right: ${resolveSpacing(value)};
+        margin-left: ${resolveSpacing(value, theme)};
+        margin-right: ${resolveSpacing(value, theme)};
       `,
           )
         : ''
@@ -68,8 +90,8 @@ export const margin = (props: TransientMarginProps): string => {
         ? resolveResponsiveProp(
             $my,
             (value) => `
-        margin-top: ${resolveSpacing(value)};
-        margin-bottom: ${resolveSpacing(value)};
+        margin-top: ${resolveSpacing(value, theme)};
+        margin-bottom: ${resolveSpacing(value, theme)};
       `,
           )
         : ''
@@ -78,7 +100,7 @@ export const margin = (props: TransientMarginProps): string => {
       $ml
         ? resolveResponsiveProp(
             $ml,
-            (value) => `margin-left: ${resolveSpacing(value)};`,
+            (value) => `margin-left: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }
@@ -86,7 +108,7 @@ export const margin = (props: TransientMarginProps): string => {
       $mr
         ? resolveResponsiveProp(
             $mr,
-            (value) => `margin-right: ${resolveSpacing(value)};`,
+            (value) => `margin-right: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }
@@ -94,7 +116,7 @@ export const margin = (props: TransientMarginProps): string => {
       $mt
         ? resolveResponsiveProp(
             $mt,
-            (value) => `margin-top: ${resolveSpacing(value)};`,
+            (value) => `margin-top: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }
@@ -102,22 +124,24 @@ export const margin = (props: TransientMarginProps): string => {
       $mb
         ? resolveResponsiveProp(
             $mb,
-            (value) => `margin-bottom: ${resolveSpacing(value)};`,
+            (value) => `margin-bottom: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }
   `
 }
 
-export const padding = (props: TransientPaddingProps): string => {
-  const { $p, $px, $py, $pl, $pr, $pt, $pb } = props
+export const padding = (
+  props: TransientPaddingProps & { theme: Theme },
+): string => {
+  const { $p, $px, $py, $pl, $pr, $pt, $pb, theme } = props
 
   return `
     ${
       $p
         ? resolveResponsiveProp(
             $p,
-            (value) => `padding: ${resolveSpacing(value)};`,
+            (value) => `padding: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }
@@ -126,8 +150,8 @@ export const padding = (props: TransientPaddingProps): string => {
         ? resolveResponsiveProp(
             $px,
             (value) => `
-        padding-left: ${resolveSpacing(value)};
-        padding-right: ${resolveSpacing(value)};
+        padding-left: ${resolveSpacing(value, theme)};
+        padding-right: ${resolveSpacing(value, theme)};
       `,
           )
         : ''
@@ -137,8 +161,8 @@ export const padding = (props: TransientPaddingProps): string => {
         ? resolveResponsiveProp(
             $py,
             (value) => `
-        padding-top: ${resolveSpacing(value)};
-        padding-bottom: ${resolveSpacing(value)};
+        padding-top: ${resolveSpacing(value, theme)};
+        padding-bottom: ${resolveSpacing(value, theme)};
       `,
           )
         : ''
@@ -147,7 +171,7 @@ export const padding = (props: TransientPaddingProps): string => {
       $pl
         ? resolveResponsiveProp(
             $pl,
-            (value) => `padding-left: ${resolveSpacing(value)};`,
+            (value) => `padding-left: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }
@@ -155,7 +179,7 @@ export const padding = (props: TransientPaddingProps): string => {
       $pr
         ? resolveResponsiveProp(
             $pr,
-            (value) => `padding-right: ${resolveSpacing(value)};`,
+            (value) => `padding-right: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }
@@ -163,7 +187,7 @@ export const padding = (props: TransientPaddingProps): string => {
       $pt
         ? resolveResponsiveProp(
             $pt,
-            (value) => `padding-top: ${resolveSpacing(value)};`,
+            (value) => `padding-top: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }
@@ -171,7 +195,7 @@ export const padding = (props: TransientPaddingProps): string => {
       $pb
         ? resolveResponsiveProp(
             $pb,
-            (value) => `padding-bottom: ${resolveSpacing(value)};`,
+            (value) => `padding-bottom: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }

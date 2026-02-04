@@ -8,6 +8,9 @@ on:
       - next
       - 'v*'
 
+env:
+  FONT_AWESOME_AUTH_TOKEN: ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
+
 permissions:
   contents: write
 

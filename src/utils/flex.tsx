@@ -1,8 +1,9 @@
+import { Theme } from '../ThemeProvider/ThemeProvider'
 import { resolveResponsiveProp, ResponsiveProp } from './responsiveProp'
 import { resolveSpacing, SpacingProp } from './space'
 import { TransientProps } from './utilTypes'
 
-type FlexFN = (arg: TransientFlexProps) => string
+type FlexFN = (arg: TransientFlexProps & { theme: Theme }) => string
 
 export interface FlexProps {
   direction?: ResponsiveProp<
@@ -38,7 +39,7 @@ export interface FlexProps {
 
 export type TransientFlexProps = TransientProps<FlexProps>
 
-export const flex: FlexFN = (props: TransientFlexProps) => {
+export const flex: FlexFN = (props) => {
   const {
     $flex,
     $direction,
@@ -50,6 +51,7 @@ export const flex: FlexFN = (props: TransientFlexProps) => {
     $gap,
     $columnGap,
     $rowGap,
+    theme,
   } = props
 
   return `
@@ -92,7 +94,7 @@ export const flex: FlexFN = (props: TransientFlexProps) => {
       $gap
         ? resolveResponsiveProp(
             $gap,
-            (value) => `gap: ${resolveSpacing(value)};`,
+            (value) => `gap: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }
@@ -100,7 +102,7 @@ export const flex: FlexFN = (props: TransientFlexProps) => {
       $columnGap
         ? resolveResponsiveProp(
             $columnGap,
-            (value) => `column-gap: ${resolveSpacing(value)};`,
+            (value) => `column-gap: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }
@@ -108,7 +110,7 @@ export const flex: FlexFN = (props: TransientFlexProps) => {
       $rowGap
         ? resolveResponsiveProp(
             $rowGap,
-            (value) => `row-gap: ${resolveSpacing(value)};`,
+            (value) => `row-gap: ${resolveSpacing(value, theme)};`,
           )
         : ''
     }
