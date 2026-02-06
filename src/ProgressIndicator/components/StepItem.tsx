@@ -1,9 +1,11 @@
 import { Box } from '../../Box'
 import { StepData } from 'ProgressIndicator/types'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 import { theme as oldTheme } from '../../theme'
 import { Text } from '../../Text'
-import { Icon } from '../../Icon'
+import { IconContainer } from '../../sharedStyles/shared.styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@awesome.me/kit-46ca99185c/icons/classic/solid'
 
 export interface StepItemProps extends Pick<StepData, 'label'> {
   isCompleted?: boolean
@@ -27,6 +29,7 @@ export const StepItem = ({
   isLastItem = false,
   isDisabled,
 }: StepItemProps) => {
+  const theme = useTheme()
   if (isSimple) {
     return (
       <SimpleItem
@@ -62,7 +65,12 @@ export const StepItem = ({
           justifyContent="center"
         >
           {isCompleted && (
-            <Icon render="tick" size={16} color="color.surface.base.000" />
+            <IconContainer $size={12}>
+              <FontAwesomeIcon
+                icon={faCheck}
+                color={theme.color.surface.base['000']}
+              />
+            </IconContainer>
           )}
         </ProgressIndicator>
         <StyledText typo="caption">{label}</StyledText>
