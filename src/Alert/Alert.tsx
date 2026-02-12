@@ -39,7 +39,7 @@ type CtaProps =
       ctaLabel?: undefined
     }
 
-type AlertProps = {
+export type AlertProps = {
   type?: AlertType
   title?: string
   message: string | ReactElement<unknown>
