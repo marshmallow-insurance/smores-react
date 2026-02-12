@@ -1,3 +1,9 @@
+## [14.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.2.0...v14.3.0) (2026-02-12)
+
+### Features
+
+* **exports:** export BoxProps and Table props ([#4758](https://github.com/marshmallow-insurance/smores-react/issues/4758)) ([66633cb](https://github.com/marshmallow-insurance/smores-react/commit/66633cbac8e477b08ef249735516568d07185ebc))
+
 ## [14.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.1.1...v14.2.0) (2026-02-05)
 
 ### Features
