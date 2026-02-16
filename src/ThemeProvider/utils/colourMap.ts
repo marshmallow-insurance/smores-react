@@ -1,17 +1,8 @@
 import * as designTokens from '@mrshmllw/smores-foundations/build/web/variables.json'
 import { Color } from '../../theme'
+import { Flatten, Prettify } from '../../types'
 import { Theme } from '../ThemeProvider'
 import { getFromObject } from '../../utils/getFromObject'
-
-type Flatten<T, Prefix extends string = ''> = {
-  [K in keyof T & string]: T[K] extends Record<string, any>
-    ? Flatten<T[K], `${Prefix}${K}.`>
-    : `${Prefix}${K}`
-}[keyof T & string]
-
-type Prettify<T> = {
-  [K in keyof T]: T[K]
-} & {}
 
 export type NewColor = Prettify<
   Flatten<Pick<typeof designTokens, 'color' | 'extended1' | 'thirdParty'>>

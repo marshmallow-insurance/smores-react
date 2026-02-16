@@ -1,3 +1,29 @@
+## [14.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.3.0...v14.4.0) (2026-02-12)
+
+### Features
+
+* **Alert:** export  type for external usage ([#4761](https://github.com/marshmallow-insurance/smores-react/issues/4761)) ([60d48b0](https://github.com/marshmallow-insurance/smores-react/commit/60d48b0d6931a01e2a3093175e095743a9ab496d))
+
+## [14.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.2.0...v14.3.0) (2026-02-12)
+
+### Features
+
+* **exports:** export BoxProps and Table props ([#4758](https://github.com/marshmallow-insurance/smores-react/issues/4758)) ([66633cb](https://github.com/marshmallow-insurance/smores-react/commit/66633cbac8e477b08ef249735516568d07185ebc))
+
+## [14.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.1.1...v14.2.0) (2026-02-05)
+
+### Features
+
+* **alert:** upgrade to FontAwesome icons [DES-136] ([#4677](https://github.com/marshmallow-insurance/smores-react/issues/4677)) ([1be1ac2](https://github.com/marshmallow-insurance/smores-react/commit/1be1ac29dec1d625cd168cd59676ba64c10ba5f7))
+* **icon:** update to allow icon component within components [DES-126] ([#4670](https://github.com/marshmallow-insurance/smores-react/issues/4670)) ([1f4d6c5](https://github.com/marshmallow-insurance/smores-react/commit/1f4d6c5e5b6be807eaa6f84e94c1be1308d2b8f7))
+* **radio-group:** enable icon component [DES-133] [DES-134] ([#4671](https://github.com/marshmallow-insurance/smores-react/issues/4671)) ([8fa4b14](https://github.com/marshmallow-insurance/smores-react/commit/8fa4b144eda2d942d3f022845e0183f3c789bed7))
+* **spacing:** allowing design tokens for spacing values [DES-158] ([#4738](https://github.com/marshmallow-insurance/smores-react/issues/4738)) ([1216f0b](https://github.com/marshmallow-insurance/smores-react/commit/1216f0b6c284e322ee88ba9b14b2f278e78380e4))
+* **support-message:** update to new icons [DES-135] ([#4678](https://github.com/marshmallow-insurance/smores-react/issues/4678)) ([7701746](https://github.com/marshmallow-insurance/smores-react/commit/770174654657dc0fa67202cf58acd6a1190d8a4e))
+
+### Bug Fixes
+
+* **build:** exports ([#4748](https://github.com/marshmallow-insurance/smores-react/issues/4748)) ([177b252](https://github.com/marshmallow-insurance/smores-react/commit/177b252298f8528e38a6b02772ef973fde48dec6))
+
 ## [14.1.1](https://github.com/marshmallow-insurance/smores-react/compare/v14.1.0...v14.1.1) (2025-12-10)
 
 ## [14.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.5...v14.1.0) (2025-12-09)
