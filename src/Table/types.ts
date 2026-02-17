@@ -172,8 +172,10 @@ export interface TableRowProps<T> extends CommonTableProps<T> {
   renderSubTable?: (rowData: T) => ReactElement<any>
 }
 
-export interface RowActionsProps<T>
-  extends Pick<CommonTableProps<T, string>, 'expandable' | 'rowActions'> {
+export interface RowActionsProps<T> extends Pick<
+  CommonTableProps<T, string>,
+  'expandable' | 'rowActions'
+> {
   rowData: T
   width?: string
   canExpandRow: boolean
