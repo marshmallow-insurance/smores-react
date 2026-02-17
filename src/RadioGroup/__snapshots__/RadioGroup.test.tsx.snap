@@ -157,7 +157,7 @@ exports[`RadioGroup > renders React elements in bodyCopy 1`] = `
         <label
           class="c2"
           data-testid="pay-now"
-          for="MM_SMORES_1"
+          for="MM_SMORES_17"
         >
           <div
             class="c3"
@@ -165,8 +165,8 @@ exports[`RadioGroup > renders React elements in bodyCopy 1`] = `
             <input
               checked=""
               class="c4 c5"
-              id="MM_SMORES_1"
-              name="MM_SMORES_0"
+              id="MM_SMORES_17"
+              name="MM_SMORES_16"
               type="radio"
               value="pay-now"
             />
@@ -209,15 +209,15 @@ exports[`RadioGroup > renders React elements in bodyCopy 1`] = `
         <label
           class="c12"
           data-testid="spread-cost"
-          for="MM_SMORES_2"
+          for="MM_SMORES_18"
         >
           <div
             class="c3"
           >
             <input
               class="c4 c5"
-              id="MM_SMORES_2"
-              name="MM_SMORES_0"
+              id="MM_SMORES_18"
+              name="MM_SMORES_16"
               type="radio"
               value="spread-cost"
             />
