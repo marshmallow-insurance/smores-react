@@ -1,3 +1,11 @@
+## [14.4.1](https://github.com/marshmallow-insurance/smores-react/compare/v14.4.0...v14.4.1) (2026-02-17)
+
+## [14.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.3.0...v14.4.0) (2026-02-12)
+
+### Features
+
+* **Alert:** export  type for external usage ([#4761](https://github.com/marshmallow-insurance/smores-react/issues/4761)) ([60d48b0](https://github.com/marshmallow-insurance/smores-react/commit/60d48b0d6931a01e2a3093175e095743a9ab496d))
+
 ## [14.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.2.0...v14.3.0) (2026-02-12)
 
 ### Features
