@@ -1,4 +1,4 @@
-import { FocusEvent, forwardRef, ReactNode } from 'react'
+import { FocusEvent, forwardRef, ReactNode, type ReactElement } from 'react'
 import styled, { css } from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
@@ -28,7 +28,7 @@ type RadioItemProps = {
   displayType: DisplayType
   isError: boolean
   fallbackStyle?: boolean
-  bodyCopy?: string
+  bodyCopy?: string | ReactElement
   disabled?: boolean
   itemWidth?: ItemWidth
 }
@@ -107,7 +107,11 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             <RadioText $isError={isError}>{label}</RadioText>
             {bodyCopy && (
               <Box>
-                <Text typo="caption">{bodyCopy}</Text>
+                {typeof bodyCopy === 'string' ? (
+                  <Text typo="caption">{bodyCopy}</Text>
+                ) : (
+                  bodyCopy
+                )}
               </Box>
             )}
           </Box>
