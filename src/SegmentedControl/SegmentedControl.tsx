@@ -75,7 +75,7 @@ export const SegmentedControl = <T,>({
       $backgroundColor={resolvedBackgroundColor}
       $fullWidth={fullWidth}
     >
-      <IndicatorWrapper backgroundColor={resolvedBackgroundColor}>
+      <IndicatorWrapper $backgroundColor={resolvedBackgroundColor}>
         {options.map((option) => {
           const isSelected = option.value === value
 
@@ -104,7 +104,7 @@ export const SegmentedControl = <T,>({
                   alignItems="center"
                 >
                   <StyledText
-                    isSelected={isSelected}
+                    $isSelected={isSelected}
                     $selectedTextColor={resolvedSelectedTextColor}
                     color={text}
                   >
@@ -125,9 +125,10 @@ export const SegmentedControl = <T,>({
         })}
 
         <ToggleIndicator
-          selectedIndex={options.findIndex((option) => option.value === value)}
-          sections={options.length}
-          toggleColor={resolvedToggleColor}
+          data-testid="toggle-indicator"
+          $selectedIndex={options.findIndex((option) => option.value === value)}
+          $sections={options.length}
+          $toggleColor={resolvedToggleColor}
         />
       </IndicatorWrapper>
     </ToggleWrapper>
@@ -148,12 +149,12 @@ const StyledTag = styled(Tag)`
 `
 
 const StyledText = styled(Text)<{
-  isSelected: boolean
+  $isSelected: boolean
   $selectedTextColor: string
 }>`
   font-weight: ${oldTheme.font.weight.medium};
-  ${({ isSelected, $selectedTextColor }) =>
-    isSelected && `color: ${$selectedTextColor};`}
+  ${({ $isSelected, $selectedTextColor }) =>
+    $isSelected && `color: ${$selectedTextColor};`}
   padding: 2px 0px;
 `
 
@@ -172,24 +173,24 @@ const ToggleWrapper = styled(Box)<{
     `}
 `
 
-const IndicatorWrapper = styled(Box)<{ backgroundColor?: string }>`
+const IndicatorWrapper = styled(Box)<{ $backgroundColor?: string }>`
   position: relative;
   display: flex;
-  background-color: ${(p) => p.backgroundColor};
+  background-color: ${(p) => p.$backgroundColor};
   border-radius: ${BORDER_RADIUS}px;
 `
 
 const ToggleIndicator = styled(Box)<{
-  selectedIndex: number
-  sections: number
-  toggleColor?: string
+  $selectedIndex: number
+  $sections: number
+  $toggleColor?: string
 }>`
-  background-color: ${(p) => p.toggleColor};
+  background-color: ${(p) => p.$toggleColor};
   border-radius: ${BORDER_RADIUS}px;
   position: absolute;
   z-index: 1;
   height: 100%;
-  width: ${(p) => `calc(100% / ${p.sections})`};
+  width: ${(p) => `calc(100% / ${p.$sections})`};
   transition: transform 0.4s;
-  transform: ${(p) => `translateX(${p.selectedIndex * 100}%)`};
+  transform: ${(p) => `translateX(${p.$selectedIndex * 100}%)`};
 `
