@@ -1,3 +1,9 @@
+## [14.5.1](https://github.com/marshmallow-insurance/smores-react/compare/v14.5.0...v14.5.1) (2026-02-19)
+
+### Bug Fixes
+
+* **SegmentedControl:** Update styled component prop names to use dollar sign prefix ([#4773](https://github.com/marshmallow-insurance/smores-react/issues/4773)) ([3194de1](https://github.com/marshmallow-insurance/smores-react/commit/3194de1b635338c5c2f9f35a4081bccaa6676473))
+
 ## [14.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.4.1...v14.5.0) (2026-02-17)
 
 ### Features
