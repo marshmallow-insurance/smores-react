@@ -36,7 +36,9 @@ describe('SegmentedControl', () => {
     expect(getByText('Option 1')).toHaveStyle({
       color: '#ffffff', // color.surface.base.000
     })
-    expect(container.querySelector('[togglecolor]')).toHaveStyle({
+    expect(
+      container.querySelector('[data-testid="toggle-indicator"]'),
+    ).toHaveStyle({
       'background-color': '#292924', // color.text.base
     })
 
@@ -71,7 +73,9 @@ describe('SegmentedControl', () => {
     expect(getByText('Option 1')).toHaveStyle({
       color: '#292924', // color.text.base
     })
-    expect(container.querySelector('[togglecolor]')).toHaveStyle({
+    expect(
+      container.querySelector('[data-testid="toggle-indicator"]'),
+    ).toHaveStyle({
       'background-color': '#FFFFFF', // color.surface.base.000
     })
 
@@ -106,7 +110,9 @@ describe('SegmentedControl', () => {
     expect(getByText('Option 1')).toHaveStyle({
       color: '#292924', // liquorice
     })
-    expect(container.querySelector('[togglecolor]')).toHaveStyle({
+    expect(
+      container.querySelector('[data-testid="toggle-indicator"]'),
+    ).toHaveStyle({
       'background-color': '#FFFFFF', // cream
     })
 
@@ -152,7 +158,9 @@ describe('SegmentedControl', () => {
     expect(getByText('Secondary Label 1')).toHaveStyle({
       color: '#292924', // color.text.base
     })
-    expect(container.querySelector('[togglecolor]')).toHaveStyle({
+    expect(
+      container.querySelector('[data-testid="toggle-indicator"]'),
+    ).toHaveStyle({
       'background-color': '#292924', // color.text.base
     })
 
