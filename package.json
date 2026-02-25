@@ -88,7 +88,7 @@
   },
   "dependencies": {
     "@awesome.me/kit-46ca99185c": "^1.0.22",
-    "@floating-ui/react": "0.27.17",
+    "@floating-ui/react": "0.27.18",
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/react-fontawesome": "^3.1.1",
     "@lexical/react": "^0.40.0",
