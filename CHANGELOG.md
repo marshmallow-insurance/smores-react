@@ -1,3 +1,9 @@
+## [15.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v15.0.0...v15.1.0) (2026-02-26)
+
+### Features
+
+* export LabelledTextProps, CardProps, ModalProps, and TooltipProps ([#4784](https://github.com/marshmallow-insurance/smores-react/issues/4784)) ([f6d6a16](https://github.com/marshmallow-insurance/smores-react/commit/f6d6a16a50832c19aea917e0b7a0e820ed51c5f6))
+
 ## [15.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.5.1...v15.0.0) (2026-02-26)
 
 ### ⚠ BREAKING CHANGES
