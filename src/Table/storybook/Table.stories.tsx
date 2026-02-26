@@ -46,6 +46,7 @@ export const Default: Story = {
     columns: columns.slice(0, 6),
     data,
     fixedHeader: true,
+    getRowKey: (row) => row.id,
   },
 }
 

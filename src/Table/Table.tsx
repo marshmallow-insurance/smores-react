@@ -45,6 +45,7 @@ export const Table = <T extends object, K extends object>({
   alignSubTableColumns = false,
   columnWidths,
   hideTableHeader = false,
+  getRowKey,
 }: TableProps<T, K>) => {
   const theme = useTheme()
   const { renderSubTable, setSubTableColumnWidths } = useAlignedSubTableColumns(
@@ -95,7 +96,7 @@ export const Table = <T extends object, K extends object>({
           <>
             {data.map((row, rowIndex) => (
               <TableRow
-                key={rowIndex}
+                key={getRowKey ? getRowKey(row, rowIndex) : rowIndex}
                 rowData={row}
                 rowIndex={rowIndex}
                 columns={columns}
