@@ -148,6 +148,9 @@ export interface TableProps<T, K = undefined> extends CommonTableProps<T> {
   /** Array of data to be displayed in the table. */
   data: T[]
 
+  /** Callback to derive a stable React key for each row. Falls back to row index if not provided. */
+  getRowKey?: (row: T, index: number) => React.Key
+
   /** If true, the sub table columns will be aligned with the main table columns, by using the widths of the main table columns. */
   alignSubTableColumns?: boolean
 
