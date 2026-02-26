@@ -1,1 +1,1 @@
-{"version":3,"file":"index-CtAbjeou.js","sources":["../../src/Modal/index.ts"],"sourcesContent":["export { Modal } from './Modal'\n"],"names":["cov_2ma6iuz8li"],"mappings":"upBAAAA,EAAS"}
+{"version":3,"file":"index-CtAbjeou.js","sources":["../../src/Modal/index.ts"],"sourcesContent":["export { Modal } from './Modal'\nexport type { ModalProps } from './Modal'\n"],"names":["cov_2ma6iuz8li"],"mappings":"upBAAAA,EAAS"}

@@ -1,1 +1,1 @@
-{"version":3,"file":"index-DovVX7Yv.js","sources":["../../src/Tooltip/index.ts"],"sourcesContent":["export { Tooltip } from './Tooltip'\n"],"names":["cov_c5s104tbq","Tooltip"],"mappings":"+pBAAAA,EAASC"}
+{"version":3,"file":"index-DovVX7Yv.js","sources":["../../src/Tooltip/index.ts"],"sourcesContent":["export { Tooltip } from './Tooltip'\nexport type { TooltipProps } from './Tooltip'\n"],"names":["cov_c5s104tbq","Tooltip"],"mappings":"+pBAAAA,EAASC"}
