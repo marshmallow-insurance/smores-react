@@ -142,7 +142,6 @@ exports[`SegmentedControl > renders correctly with default props and a tag 1`] =
     class="c0"
   >
     <div
-      backgroundcolor="#f1e9dc"
       class="c1"
     >
       <label
@@ -209,9 +208,7 @@ exports[`SegmentedControl > renders correctly with default props and a tag 1`] =
       </label>
       <div
         class="c14"
-        sections="2"
-        selectedindex="0"
-        togglecolor="#292924"
+        data-testid="toggle-indicator"
       />
     </div>
   </div>

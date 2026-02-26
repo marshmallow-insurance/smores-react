@@ -1,3 +1,15 @@
+## [14.5.1](https://github.com/marshmallow-insurance/smores-react/compare/v14.5.0...v14.5.1) (2026-02-19)
+
+### Bug Fixes
+
+* **SegmentedControl:** Update styled component prop names to use dollar sign prefix ([#4773](https://github.com/marshmallow-insurance/smores-react/issues/4773)) ([3194de1](https://github.com/marshmallow-insurance/smores-react/commit/3194de1b635338c5c2f9f35a4081bccaa6676473))
+
+## [14.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.4.1...v14.5.0) (2026-02-17)
+
+### Features
+
+* **RadioGroup:** support rendering React elements in bodyCopy prop ([#4771](https://github.com/marshmallow-insurance/smores-react/issues/4771)) ([dbb1134](https://github.com/marshmallow-insurance/smores-react/commit/dbb1134695ff05b31bbf8cd3e41dda0dd5139368))
+
 ## [14.4.1](https://github.com/marshmallow-insurance/smores-react/compare/v14.4.0...v14.4.1) (2026-02-17)
 
 ## [14.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.3.0...v14.4.0) (2026-02-12)
