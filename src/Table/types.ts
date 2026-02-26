@@ -134,15 +134,12 @@ interface CommonTableProps<T, ColorT = ColorTypes> {
 }
 
 /**
- *  The type of data that each row in the table should conform to.
- */
+ * Type for each table row's data object.
+ **/
 export type TableRowData = {
   /**
-   * It is recommended to have a rowKey for each row, but it is not mandatory.
-   * This key is used to uniquely identify each row in the table to accurately reconcile each row between React renders.
-   *
-   * If not provided, the row index will be used as the key.
-   * This might not be ideal as unrelated rows may cause unexpected transitions if it changes position within the table.
+   * Optionally include a unique `rowKey` for stable React keys.
+   * If omitted, row index is used, which may cause issues if rows move.
    */
   rowKey?: React.Key
 }
