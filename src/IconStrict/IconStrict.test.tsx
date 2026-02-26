@@ -1,4 +1,3 @@
-import React from 'react'
 import { expect, it } from 'vitest'
 import { render } from '../testUtils'
 import { IconStrict } from './IconStrict'
@@ -10,7 +9,11 @@ describe('IconStrict', () => {
   })
   it('renders correctly with background color', () => {
     const { container } = render(
-      <IconStrict render="search" size={36} backgroundColor="matcha" />,
+      <IconStrict
+        render="search"
+        size={36}
+        backgroundColor="color.illustration.accent3.100"
+      />,
     )
     expect(container).toMatchSnapshot()
   })

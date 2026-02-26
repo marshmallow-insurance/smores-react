@@ -1,4 +1,4 @@
-import React, { ElementType, HTMLAttributes, forwardRef } from 'react'
+import { ElementType, HTMLAttributes, forwardRef } from 'react'
 import styled from 'styled-components'
 import { FlexProps, TransientFlexProps, flex } from '../utils/flex'
 import { MeasureProps, TransientMeasureProps, measure } from '../utils/measure'

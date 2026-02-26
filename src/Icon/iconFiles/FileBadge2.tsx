@@ -1,5 +1,3 @@
-import React from 'react'
-
 const FileBadge2 = () => (
   <svg
     width="100%"

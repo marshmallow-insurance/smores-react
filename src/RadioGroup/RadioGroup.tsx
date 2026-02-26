@@ -1,19 +1,21 @@
-import React, {
+import {
   FocusEvent,
   ForwardedRef,
   forwardRef,
   ReactElement,
+  ReactNode,
+  RefAttributes,
   RefObject,
   useImperativeHandle,
   useRef,
 } from 'react'
+
 import styled from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
 
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { Fieldset } from '../fields/Fieldset'
-import { Icons } from '../Icon/iconsList'
 
 import { ITEM_GAP } from './constants'
 import { RadioItem } from './RadioItem'
@@ -25,15 +27,17 @@ import {
   JustifyContent,
 } from './types'
 import { TransientProps } from 'utils/utilTypes'
+import { Icons } from '../Icon'
 
 export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
   options: Array<{
     visual?: string
     icon?: Icons
     iconPosition?: IconPosition
+    iconComponent?: ReactNode
     label: string
     value: Value
-    bodyCopy?: string
+    bodyCopy?: string | ReactElement
     disabled?: boolean
   }>
   justifyContent?: JustifyContent
@@ -99,6 +103,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
               name={name}
               visual={option.visual}
               icon={option.icon}
+              iconComponent={option.iconComponent}
               iconPosition={option.iconPosition}
               label={option.label}
               value={option.value}
@@ -123,7 +128,7 @@ const RadioGroupComponent = <Value extends BaseValueType>(
 export const RadioGroup = forwardRef(RadioGroupComponent) as <
   Value extends BaseValueType = BaseValueType,
 >(
-  p: RadioGroupProps<Value> & React.RefAttributes<HTMLInputElement>,
+  p: RadioGroupProps<Value> & RefAttributes<HTMLInputElement>,
 ) => ReactElement | null
 
 const RadioItemList = styled.div<

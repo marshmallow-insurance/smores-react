@@ -1,5 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { Button } from '../../Button'
 import { Icon } from '../../Icon'
 import { Link } from '../../Link'
@@ -86,7 +85,13 @@ export const CardWithRightAction: Story = {
     body: 'Card description',
     leadingIcon: 'copy',
     maxWidth: '300px',
-    rightAction: <Icon render="caret" color="marzipan" rotate={-90} />,
+    rightAction: (
+      <Icon
+        render="caret"
+        color="color.illustration.neutral.400"
+        rotate={-90}
+      />
+    ),
   },
 }
 
@@ -136,7 +141,13 @@ export const CardWithImageWithTag: Story = {
     leadingIcon: 'copy',
     maxWidth: '300px',
     visualHeight: '180px',
-    tag: <Tag label="default" bgColor="feijoa" color="cream" />,
+    tag: (
+      <Tag
+        label="default"
+        bgColor="color.illustration.accent1.100"
+        color="color.surface.base.000"
+      />
+    ),
     buttonAction: (
       <Button primary={true} forcedWidth="100%">
         Default

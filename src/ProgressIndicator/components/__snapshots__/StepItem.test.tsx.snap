@@ -1,48 +1,169 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`StepItem > renders a simple item when isSimple is true 1`] = `
+.c0 {
+  width: 100px;
+  height: 12px;
+}
+
+.c1 {
+  position: relative;
+  z-index: 1;
+  background: none;
+}
+
+.c1:first-child {
+  border-radius: 100px 0 0 100px;
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR kAMLGE sc-jwTyAe hTtDPN"
+      class="c0 c1"
     />
   </div>
 </body>
 `;
 
 exports[`StepItem > renders the completed icon when step is completed 1`] = `
+.c0 {
+  display: flex;
+  width: 100px;
+}
+
+.c2 {
+  display: flex;
+}
+
+.c4 {
+  display: flex;
+}
+
+.c6 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+}
+
+.c6 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c7 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #292924;
+}
+
+.c1 {
+  position: relative;
+  z-index: 1;
+  top: 9px;
+  left: -10px;
+}
+
+.c1:last-child {
+  width: auto;
+}
+
+.c3 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c5 {
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  z-index: 1;
+  background: #317a4c;
+}
+
+.c8 {
+  margin-top: 2px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.c9 {
+  position: absolute;
+  height: 12px;
+  width: 100%;
+  top: 7px;
+  left: 13px;
+  background: #317a4c;
+  z-index: 0;
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c4 {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c4 {
+    align-items: center;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR ioVWEY sc-hjsuWn blvpKV"
+      class="c0 c1"
     >
       <div
-        class="sc-bRKDuR leNTXj sc-jJLAfE ejaShY"
+        class="c2 c3"
         data-testid="step-item-Step 1"
       >
         <div
-          class="sc-bRKDuR fwCHSf sc-hwkwBN ehCFIa"
+          class="c4 c5"
         >
           <span
-            class="sc-bRKDuR bHjpxP sc-fhHczv kxywTO"
-            data-testid="tick-container"
+            class="c6"
           >
             <svg
-              fill="none"
-              height="100%"
-              viewBox="0 0 24 24"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              class="svg-inline--fa fa-check"
+              color="#ffffff"
+              data-icon="check"
+              data-prefix="fas"
+              role="img"
+              viewBox="0 0 448 512"
             >
               <path
-                d="M20.641 5.232a1.001 1.001 0 00-1.409.128L9.807 16.67l-5.252-3.501a1 1 0 10-1.11 1.664l6 4a1.006 1.006 0 001.324-.193l10-12a1.001 1.001 0 00-.128-1.408z"
+                d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
                 fill="currentColor"
               />
             </svg>
           </span>
         </div>
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ qDeEm sc-kNOymR eiBTXe"
+          class="c7 c8"
           cursor="inherit"
           title=""
         >
@@ -50,7 +171,7 @@ exports[`StepItem > renders the completed icon when step is completed 1`] = `
         </p>
       </div>
       <div
-        class="sc-bRKDuR bHjpxP sc-dYwGCk kDpsHe"
+        class="c9"
       />
     </div>
   </div>
@@ -58,20 +179,102 @@ exports[`StepItem > renders the completed icon when step is completed 1`] = `
 `;
 
 exports[`StepItem > renders the label correctly and does not render tick if notCompleted 1`] = `
+.c0 {
+  display: flex;
+  width: 100px;
+}
+
+.c2 {
+  display: flex;
+}
+
+.c4 {
+  display: flex;
+}
+
+.c6 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #292924;
+}
+
+.c1 {
+  position: relative;
+  z-index: 1;
+  top: 9px;
+  left: -10px;
+}
+
+.c1:last-child {
+  width: auto;
+}
+
+.c3 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c5 {
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  z-index: 1;
+  background: #c9e2ce;
+}
+
+.c7 {
+  margin-top: 2px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (min-width: 0px) {
+  .c0 {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c4 {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c4 {
+    align-items: center;
+  }
+}
+
 <body>
   <div>
     <div
-      class="sc-bRKDuR ioVWEY sc-hjsuWn blvpKV"
+      class="c0 c1"
     >
       <div
-        class="sc-bRKDuR leNTXj sc-jJLAfE ejaShY"
+        class="c2 c3"
         data-testid="step-item-Step 1"
       >
         <div
-          class="sc-bRKDuR fwCHSf sc-hwkwBN eWQDzm"
+          class="c4 c5"
         />
         <p
-          class="sc-bRKDuR bHjpxP sc-dTvVRJ qDeEm sc-kNOymR eiBTXe"
+          class="c6 c7"
           cursor="inherit"
           title=""
         >

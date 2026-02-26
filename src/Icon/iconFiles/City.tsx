@@ -1,5 +1,3 @@
-import React from 'react'
-
 const City = () => (
   <svg
     width="100%"

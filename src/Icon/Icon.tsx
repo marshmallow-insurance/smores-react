@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 import { MarginProps } from '../utils/space'
 
@@ -8,6 +8,7 @@ import {
   ColorTypes,
   resolveToThemeColor,
 } from '../ThemeProvider/utils/colourMap'
+import { useDeprecatedWarning } from '../utils/deprecated'
 
 export type IconProps = {
   /** className attribute to apply classes from props */
@@ -31,6 +32,12 @@ export const Icon: FC<IconProps> = ({
   ...marginProps
 }) => {
   const theme = useTheme()
+  useDeprecatedWarning({
+    title: 'Icon',
+    message:
+      'The Icon component is deprecated and will be removed in future releases. Please migrate to using the font awesome library directly.',
+  })
+
   if (!render || !iconList[render] || render.length === 0) return null
   const resolvedColor = resolveToThemeColor(color, theme)
 

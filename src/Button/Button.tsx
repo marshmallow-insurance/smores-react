@@ -1,10 +1,16 @@
-import React, { ButtonHTMLAttributes, FC, ReactNode, forwardRef } from 'react'
+import {
+  ButtonHTMLAttributes,
+  FC,
+  FormEvent,
+  ReactNode,
+  forwardRef,
+} from 'react'
 import styled, { css } from 'styled-components'
+import { IconContainer as CommonIconContainer } from '../sharedStyles/shared.styles'
 
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
-import { Icon as IconComponent } from '../Icon'
-import { Icons } from '../Icon/iconsList'
+import { Icon as IconComponent, Icons } from '../Icon'
 
 import { Loader } from '../Loader'
 import { focusOutlineStyle } from '../utils/focusOutline'
@@ -15,7 +21,7 @@ type Props = {
   id?: string
   className?: string
   disabled?: boolean
-  handleClick?: (e: React.FormEvent<HTMLButtonElement>) => void
+  handleClick?: (e: FormEvent<HTMLButtonElement>) => void
   loading?: boolean
   primary?: boolean
   secondary?: boolean
@@ -23,6 +29,7 @@ type Props = {
   textBtn?: boolean
   smallButton?: boolean
   icon?: Icons
+  iconComponent?: ReactNode
   trailingIcon?: boolean
   forcedWidth?: string
   form?: string
@@ -49,12 +56,26 @@ export const Button: FC<ButtonProps> = forwardRef<
     textBtn = false,
     smallButton = false,
     icon,
+    iconComponent,
     trailingIcon = false,
     forcedWidth = '',
     form,
     type,
     ...otherProps
   } = props
+
+  const iconToRender = iconComponent ? (
+    <CommonIconContainer $size={smallButton ? 16 : 24}>
+      {iconComponent}
+    </CommonIconContainer>
+  ) : icon ? (
+    <IconContainer
+      $trailingIcon={trailingIcon}
+      render={icon}
+      size={smallButton ? 16 : 24}
+      color="color.icon.base"
+    />
+  ) : null
 
   return (
     <Container
@@ -78,30 +99,15 @@ export const Button: FC<ButtonProps> = forwardRef<
     >
       {loading && (
         <LoaderContainer>
-          <Loader color={'liquorice'} height="16" />
+          <Loader color="color.icon.base" height="16" />
         </LoaderContainer>
       )}
-      <ContentContainer $icon={icon} $loading={loading}>
-        {!trailingIcon && icon && (
-          <IconContainer
-            $trailingIcon={trailingIcon}
-            render={icon}
-            size={smallButton ? 16 : 24}
-            color={'liquorice'}
-          />
-        )}
+      <ContentContainer $hasIcon={!!iconToRender} $loading={loading}>
+        {!trailingIcon && iconToRender ? iconToRender : null}
         <ChildrenContainer className="childrenContainer">
           {children}
         </ChildrenContainer>
-        {trailingIcon && icon && textBtn && (
-          <IconContainer
-            $trailingIcon={trailingIcon}
-            render={icon}
-            size={smallButton ? 16 : 24}
-            color={'liquorice'}
-            className="iconContainer"
-          />
-        )}
+        {trailingIcon && iconToRender && textBtn ? iconToRender : null}
       </ContentContainer>
     </Container>
   )
@@ -237,10 +243,10 @@ const LoaderContainer = styled.div`
   justify-content: center;
 `
 
-const ContentContainer = styled.div<{ $loading: boolean; $icon?: Icons }>`
+const ContentContainer = styled.div<{ $loading: boolean; $hasIcon?: boolean }>`
   display: flex;
   align-items: center;
-  justify-content: ${({ $icon }) => ($icon ? 'space-evenly' : 'center')};
+  justify-content: ${({ $hasIcon }) => ($hasIcon ? 'space-evenly' : 'center')};
   opacity: ${({ $loading }) => ($loading ? '0' : '1')};
 `
 

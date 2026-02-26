@@ -1,5 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { Row } from '../Row'
 
 const meta: Meta<typeof Row> = {
@@ -22,9 +21,9 @@ type Story = StoryObj<typeof Row>
 export const Default: Story = {
   args: {
     iconLeft: 'info',
-    iconLeftColor: 'liquorice',
+    iconLeftColor: 'color.icon.base',
     iconRight: 'caret',
-    iconRightColor: 'sesame',
+    iconRightColor: 'color.icon.subtle',
     heading: 'A lovely heading',
     subHeading: 'The quick brown fox jumps over the lazy dog',
     type: 'curved',

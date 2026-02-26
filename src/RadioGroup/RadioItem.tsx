@@ -1,4 +1,4 @@
-import React, { FocusEvent, forwardRef } from 'react'
+import { FocusEvent, forwardRef, ReactNode, type ReactElement } from 'react'
 import styled, { css } from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
@@ -6,18 +6,19 @@ import { theme as oldTheme } from '../theme'
 
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
-import { Icon } from '../Icon'
-import { Icons } from '../Icon/iconsList'
+import { Icon, Icons } from '../Icon'
 
 import { Text } from '../Text'
 import { RadioElement } from './RadioElement'
 import { ITEM_GAP } from './constants'
 import { BaseValueType, DisplayType, IconPosition, ItemWidth } from './types'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 type RadioItemProps = {
   name: string
   visual?: string
   icon?: Icons
+  iconComponent?: ReactNode
   iconPosition?: IconPosition
   value: BaseValueType
   label: string
@@ -27,7 +28,7 @@ type RadioItemProps = {
   displayType: DisplayType
   isError: boolean
   fallbackStyle?: boolean
-  bodyCopy?: string
+  bodyCopy?: string | ReactElement
   disabled?: boolean
   itemWidth?: ItemWidth
 }
@@ -38,6 +39,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
       name,
       visual,
       icon,
+      iconComponent,
       iconPosition = 'center',
       label,
       value,
@@ -55,6 +57,22 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
   ) {
     const id = useUniqueId()
 
+    const iconToRender = iconComponent ? (
+      <IconContainer
+        $size={24}
+        style={{
+          display: 'flex',
+          justifyContent: iconPosition === 'center' ? 'center' : 'flex-start',
+        }}
+      >
+        {iconComponent}
+      </IconContainer>
+    ) : icon ? (
+      <IconWrapper $iconPosition={iconPosition}>
+        <Icon render={icon} size={24} />
+      </IconWrapper>
+    ) : null
+
     return (
       <Wrapper
         htmlFor={id}
@@ -71,11 +89,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             <Visual $visualUrl={visual} />
           </VisualWrapper>
         )}
-        {!visual && icon && (
-          <IconWrapper $iconPosition={iconPosition}>
-            <Icon render={icon} size={24} />
-          </IconWrapper>
-        )}
+        {!visual && iconToRender}
         <Box flex alignItems="center">
           <RadioElement
             ref={ref}
@@ -93,7 +107,11 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             <RadioText $isError={isError}>{label}</RadioText>
             {bodyCopy && (
               <Box>
-                <Text typo="caption">{bodyCopy}</Text>
+                {typeof bodyCopy === 'string' ? (
+                  <Text typo="caption">{bodyCopy}</Text>
+                ) : (
+                  bodyCopy
+                )}
               </Box>
             )}
           </Box>

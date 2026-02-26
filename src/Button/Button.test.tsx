@@ -1,7 +1,8 @@
-import React from 'react'
 import { expect, it } from 'vitest'
 import { Button } from './Button'
-import { render } from '../testUtils'
+import { render, screen } from '../testUtils'
+
+const CustomIcon = () => <span data-testid="custom-icon" />
 
 describe('Button', () => {
   it('renders correctly with default props', () => {
@@ -29,6 +30,19 @@ describe('Button', () => {
   it('renders correctly with an icon', () => {
     const { container } = render(<Button icon="info">With Icon</Button>)
     expect(container).toMatchSnapshot()
+
+    expect(screen.getByTestId('info-container')).toBeInTheDocument()
+  })
+
+  it('renders a custom icon component when provided', () => {
+    render(
+      <Button icon="info" iconComponent={<CustomIcon />}>
+        With Custom Icon
+      </Button>,
+    )
+
+    expect(screen.getByTestId('custom-icon')).toBeInTheDocument()
+    expect(screen.queryByTestId('info-container')).not.toBeInTheDocument()
   })
 
   it('renders correctly when loading', () => {
@@ -63,6 +77,12 @@ describe('Button', () => {
       </Button>,
     )
     expect(container).toMatchSnapshot()
+  })
+
+  it('renders without an icon when none is provided', () => {
+    const { container } = render(<Button>Without Icon</Button>)
+
+    expect(container.querySelector('[data-testid$="-container"]')).toBeNull()
   })
 
   it('renders correctly with forced width', () => {

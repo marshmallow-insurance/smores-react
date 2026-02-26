@@ -1,5 +1,3 @@
-import React from 'react'
-
 const IosStoreBadge = () => (
   <svg
     width="100%"

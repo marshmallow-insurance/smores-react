@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Theft = () => (
   <svg
     width="100%"

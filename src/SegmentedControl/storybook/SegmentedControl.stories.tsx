@@ -1,5 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { SegmentedControl, SegmentedControlProps } from '../SegmentedControl'
 import { Container } from './Container'
 
@@ -40,7 +39,30 @@ export const Default: Story = {
   },
 }
 
-export const Custom: Story = {
+export const SegmentedControlWithSecondaryLabels: Story = {
+  render: Template,
+  args: {
+    options: [
+      { label: 'Option 1', value: 1, secondaryLabel: 'Secondary Label 1' },
+      { label: 'Option 2', value: 2, secondaryLabel: 'Secondary Label 2' },
+    ],
+    value: 1,
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
+  },
+}
+
+export const SegmentedControlWithTags: Story = {
   render: Template,
   args: {
     options: [

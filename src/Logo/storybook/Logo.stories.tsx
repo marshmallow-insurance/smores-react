@@ -1,6 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
-import { theme } from '../../theme'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { Logo } from '../Logo'
 
 const meta: Meta<typeof Logo> = {
@@ -41,7 +39,7 @@ export const ColorScheme3: Story = {
   },
   decorators: [
     (Story) => (
-      <div style={{ background: theme.colors.custard }}>
+      <div style={{ background: '#F1E9DC ' }}>
         <Story />
       </div>
     ),

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const PoundRegular = () => (
   <svg
     width="100%"

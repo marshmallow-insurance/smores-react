@@ -1,21 +1,27 @@
-import React, {
+import {
   FocusEvent,
   FormEvent,
   ForwardedRef,
   forwardRef,
+  ReactNode,
   useMemo,
 } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon } from '../Icon'
-import { Icons } from '../Icon/iconsList'
+import { Icons } from '../Icon'
 
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
-import { StyledFrontIcon } from '../fields/components/CommonInput'
+import {
+  InputLeadingIconContainer,
+  StyledFrontIcon,
+} from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
+import { IconContainer } from '../sharedStyles/shared.styles'
+import { faChevronDown } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export type DropdownItem = {
   optionGroupLabel?: string
@@ -33,6 +39,7 @@ export interface Props extends CommonFieldProps {
   disabled?: boolean
   list: DropdownItem[]
   frontIcon?: Icons
+  iconComponent?: ReactNode
   fallbackStyle?: boolean
   onSelect: (element: string) => void
   onBlur?: (e: FocusEvent<HTMLSelectElement>) => void
@@ -66,11 +73,13 @@ export const Dropdown = forwardRef(function Dropdown(
     onInputChange,
     onBlur,
     frontIcon,
+    iconComponent,
     fallbackStyle,
     ...fieldProps
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
+  const theme = useTheme()
   const [value, setValue] = useControllableState({
     initialState: defaultValue,
     stateProp: valueProp,
@@ -99,16 +108,18 @@ export const Dropdown = forwardRef(function Dropdown(
     return customDefaultOption ?? 'Select an option'
   }
 
+  const iconToRender = iconComponent ? (
+    <InputLeadingIconContainer $size={16} $iconColor={theme.color.text.base}>
+      {iconComponent}
+    </InputLeadingIconContainer>
+  ) : frontIcon ? (
+    <StyledFrontIcon $disabled={disabled} render={frontIcon} color="sesame" />
+  ) : null
+
   return (
     <Field {...fieldProps} htmlFor={id} error={error}>
       <Box flex alignItems="center" style={{ position: 'relative' }}>
-        {frontIcon && (
-          <StyledFrontIcon
-            $disabled={disabled}
-            render={frontIcon}
-            color="sesame"
-          />
-        )}
+        {iconToRender}
         <StyledSelect
           id={id}
           disabled={disabled || list.length < 1}
@@ -161,7 +172,12 @@ export const Dropdown = forwardRef(function Dropdown(
           )}
         </StyledSelect>
         <Caret>
-          <Icon render="caret" color="marzipan" size={24} />
+          <IconContainer $size={20}>
+            <FontAwesomeIcon
+              icon={faChevronDown}
+              color={theme.color.illustration.neutral[400]}
+            />
+          </IconContainer>
         </Caret>
       </Box>
     </Field>

@@ -1,8 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
 
 import { Box } from '../../Box'
-import { theme } from '../../theme'
 
 export const Placeholder = () => {
   return (
@@ -16,8 +14,9 @@ export const Placeholder = () => {
 }
 
 const Wrapper = styled(Box)`
-  background-color: ${theme.colors.coconut};
-  border: 2px solid ${theme.colors.chia};
+  display: inline-flex;
+  background-color: ${({ theme }) => theme.color.surface.base[100]};
+  border: 2px solid ${({ theme }) => theme.color.feedback.inactive[100]};
   height: 40px;
   width: auto;
 `
@@ -29,5 +28,5 @@ const Svg = styled.svg`
 
 const Line = styled.line`
   stroke-width: 2px;
-  stroke: ${theme.colors.chia};
+  stroke: ${({ theme }) => theme.color.feedback.inactive[100]};
 `

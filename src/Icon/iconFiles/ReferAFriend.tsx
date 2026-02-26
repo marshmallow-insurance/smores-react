@@ -1,5 +1,3 @@
-import React from 'react'
-
 const ReferAFriend = () => (
   <svg
     width="100%"

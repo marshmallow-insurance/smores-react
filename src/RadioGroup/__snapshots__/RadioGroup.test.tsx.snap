@@ -1,40 +1,485 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`RadioGroup > renders correctly as a horizontal-card with an error message 1`] = `
+exports[`RadioGroup > renders React elements in bodyCopy 1`] = `
+.c3 {
+  display: flex;
+}
+
+.c10 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c11 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #636768;
+}
+
+.c0 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border: 0;
+}
+
+.c5 {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c7 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  border: 2px solid #292924;
+  border: 8px solid #292924;
+  outline: 0;
+}
+
+.c4:focus-visible+.c7 {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c13 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  border: 2px solid #292924;
+  outline: 0;
+}
+
+.c13:hover {
+  border: 2px solid #292924;
+}
+
+.c4:focus-visible+.c13 {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  opacity: 1;
+  border-radius: 12px;
+  background-color: #f1e9dc;
+  padding: 10px;
+  border: 2px solid #292924;
+  width: 100%;
+}
+
+.c2:hover {
+  background-color: #dad2c4;
+}
+
+.c12 {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  opacity: 1;
+  border-radius: 12px;
+  background-color: #f1e9dc;
+  padding: 12px;
+  width: 100%;
+}
+
+.c12:hover {
+  background-color: #dad2c4;
+}
+
+.c8 {
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #292924;
+  margin-top: 4px;
+}
+
+.c1 {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c6 {
+    margin-right: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c9 {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 0px) {
+  .c9 {
+    gap: 4px;
+  }
+}
+
 <div>
   <fieldset
-    class="sc-bRKDuR bHjpxP sc-jJLAfE izsDDD"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR bHjpxP"
+      class=""
     >
       <div
-        class="sc-kvnevz eXwXep"
+        class="c1"
       >
         <label
-          class="sc-kcLKEh eyTHnd"
+          class="c2"
+          data-testid="pay-now"
+          for="MM_SMORES_17"
+        >
+          <div
+            class="c3"
+          >
+            <input
+              checked=""
+              class="c4 c5"
+              id="MM_SMORES_17"
+              name="MM_SMORES_16"
+              type="radio"
+              value="pay-now"
+            />
+            <div
+              class="c6 c7"
+            />
+            <div
+              class=""
+            >
+              <span
+                class="c8"
+              >
+                Pay now
+              </span>
+              <div
+                class=""
+              >
+                <div
+                  class="c9"
+                >
+                  <p
+                    class="c10"
+                    cursor="inherit"
+                    title=""
+                  >
+                    £189.38 today
+                  </p>
+                  <p
+                    class="c11"
+                    cursor="inherit"
+                    title=""
+                  >
+                    Your remaining 3 monthly payments stay at £39.43
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </label>
+        <label
+          class="c12"
+          data-testid="spread-cost"
+          for="MM_SMORES_18"
+        >
+          <div
+            class="c3"
+          >
+            <input
+              class="c4 c5"
+              id="MM_SMORES_18"
+              name="MM_SMORES_16"
+              type="radio"
+              value="spread-cost"
+            />
+            <div
+              class="c6 c13"
+            />
+            <div
+              class=""
+            >
+              <span
+                class="c8"
+              >
+                Spread the cost
+              </span>
+              <div
+                class=""
+              >
+                <div
+                  class="c9"
+                >
+                  <p
+                    class="c10"
+                    cursor="inherit"
+                    title=""
+                  >
+                    £12.50 today
+                  </p>
+                  <p
+                    class="c11"
+                    cursor="inherit"
+                    title=""
+                  >
+                    Your remaining 3 monthly payments will increase to £94.22
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`RadioGroup > renders correctly as a horizontal-card with an error message 1`] = `
+.c3 {
+  display: flex;
+}
+
+.c11 {
+  display: flex;
+}
+
+.c12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  transform: rotate(0deg);
+}
+
+.c12 svg {
+  color: #d03c30!important;
+}
+
+.c13 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #d03c30;
+}
+
+.c0 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border: 0;
+}
+
+.c5 {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c7 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  border: 2px solid #d03c30;
+  border: 8px solid #d03c30;
+  outline: 0;
+}
+
+.c4:focus-visible+.c7 {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c10 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  border: 2px solid #d03c30;
+  outline: 0;
+}
+
+.c4:focus-visible+.c10 {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  opacity: 1;
+  border-radius: 12px;
+  background-color: #f1e9dc;
+  padding: 10px;
+  border: 2px solid #d03c30;
+  justify-content: center;
+  width: 100%;
+}
+
+.c2:hover {
+  background-color: #dad2c4;
+}
+
+.c9 {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  opacity: 1;
+  border-radius: 12px;
+  background-color: #f1e9dc;
+  padding: 12px;
+  justify-content: center;
+  width: 100%;
+}
+
+.c9:hover {
+  background-color: #dad2c4;
+}
+
+.c8 {
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #d03c30;
+  margin-top: 4px;
+}
+
+.c1 {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c6 {
+    margin-right: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c11 {
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c11 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c11 {
+    gap: 4px;
+  }
+}
+
+@media (min-width: 420px) {
+  .c2 {
+    width: calc(50% - 6px);
+  }
+}
+
+@media (min-width: 768px) {
+  .c2 {
+    width: 201px;
+  }
+}
+
+@media (min-width: 420px) {
+  .c9 {
+    width: calc(50% - 6px);
+  }
+}
+
+@media (min-width: 768px) {
+  .c9 {
+    width: 201px;
+  }
+}
+
+<div>
+  <fieldset
+    class="c0"
+  >
+    <div
+      class=""
+    >
+      <div
+        class="c1"
+      >
+        <label
+          class="c2"
           data-testid="option1"
           for="MM_SMORES_9"
         >
           <div
-            class="sc-bRKDuR hUwRKL"
+            class="c3"
           >
             <input
               checked=""
-              class="sc-hwkwBN knajmM"
+              class="c4 c5"
               id="MM_SMORES_9"
               name="MM_SMORES_8"
               type="radio"
               value="option1"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR hlmzGy"
+              class="c6 c7"
             />
             <div
-              class="sc-bRKDuR bHjpxP"
+              class=""
             >
               <span
-                class="sc-dntSTA da-dRhW"
+                class="c8"
               >
                 Option 1
               </span>
@@ -42,28 +487,28 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
           </div>
         </label>
         <label
-          class="sc-kcLKEh beawdA"
+          class="c9"
           data-testid="option2"
           for="MM_SMORES_10"
         >
           <div
-            class="sc-bRKDuR hUwRKL"
+            class="c3"
           >
             <input
-              class="sc-hwkwBN knajmM"
+              class="c4 c5"
               id="MM_SMORES_10"
               name="MM_SMORES_8"
               type="radio"
               value="option2"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR fWvkiS"
+              class="c6 c10"
             />
             <div
-              class="sc-bRKDuR bHjpxP"
+              class=""
             >
               <span
-                class="sc-dntSTA da-dRhW"
+                class="c8"
               >
                 Option 2
               </span>
@@ -71,28 +516,28 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
           </div>
         </label>
         <label
-          class="sc-kcLKEh beawdA"
+          class="c9"
           data-testid="option3"
           for="MM_SMORES_11"
         >
           <div
-            class="sc-bRKDuR hUwRKL"
+            class="c3"
           >
             <input
-              class="sc-hwkwBN knajmM"
+              class="c4 c5"
               id="MM_SMORES_11"
               name="MM_SMORES_8"
               type="radio"
               value="option3"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR fWvkiS"
+              class="c6 c10"
             />
             <div
-              class="sc-bRKDuR bHjpxP"
+              class=""
             >
               <span
-                class="sc-dntSTA da-dRhW"
+                class="c8"
               >
                 Option 3
               </span>
@@ -102,10 +547,10 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
       </div>
     </div>
     <div
-      class="sc-bRKDuR ezosON"
+      class="c11"
     >
       <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv bXMvct"
+        class="c12"
         data-testid="warning-container"
       >
         <svg
@@ -122,7 +567,7 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
         </svg>
       </span>
       <span
-        class="sc-bRKDuR bHjpxP sc-dTvVRJ hozFOv"
+        class="c13"
         cursor="inherit"
         title=""
       >
@@ -134,48 +579,171 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
 `;
 
 exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = `
+.c3 {
+  display: flex;
+}
+
+.c9 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border: 0;
+}
+
+.c5 {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c7 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  border: 2px solid #292924;
+  border: 8px solid #292924;
+  outline: 0;
+}
+
+.c4:focus-visible+.c7 {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c11 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  border: 2px solid #292924;
+  outline: 0;
+}
+
+.c11:hover {
+  border: 2px solid #292924;
+}
+
+.c4:focus-visible+.c11 {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  opacity: 1;
+  border-radius: 12px;
+  background-color: #f1e9dc;
+  padding: 10px;
+  border: 2px solid #292924;
+  width: 100%;
+}
+
+.c2:hover {
+  background-color: #dad2c4;
+}
+
+.c10 {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  opacity: 1;
+  border-radius: 12px;
+  background-color: #f1e9dc;
+  padding: 12px;
+  width: 100%;
+}
+
+.c10:hover {
+  background-color: #dad2c4;
+}
+
+.c8 {
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #292924;
+  margin-top: 4px;
+}
+
+.c1 {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c6 {
+    margin-right: 8px;
+  }
+}
+
 <div>
   <fieldset
-    class="sc-bRKDuR bHjpxP sc-jJLAfE izsDDD"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR bHjpxP"
+      class=""
     >
       <div
-        class="sc-kvnevz bRRMGI"
+        class="c1"
       >
         <label
-          class="sc-kcLKEh cCbfrZ"
+          class="c2"
           data-testid="option1"
           for="MM_SMORES_5"
         >
           <div
-            class="sc-bRKDuR hUwRKL"
+            class="c3"
           >
             <input
               checked=""
-              class="sc-hwkwBN knajmM"
+              class="c4 c5"
               id="MM_SMORES_5"
               name="MM_SMORES_4"
               type="radio"
               value="option1"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR hrydBC"
+              class="c6 c7"
             />
             <div
-              class="sc-bRKDuR bHjpxP"
+              class=""
             >
               <span
-                class="sc-dntSTA hSRrNX"
+                class="c8"
               >
                 Option 1
               </span>
               <div
-                class="sc-bRKDuR bHjpxP"
+                class=""
               >
                 <p
-                  class="sc-bRKDuR bHjpxP sc-dTvVRJ qDeEm"
+                  class="c9"
                   cursor="inherit"
                   title=""
                 >
@@ -186,36 +754,36 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
           </div>
         </label>
         <label
-          class="sc-kcLKEh cWZLgV"
+          class="c10"
           data-testid="option2"
           for="MM_SMORES_6"
         >
           <div
-            class="sc-bRKDuR hUwRKL"
+            class="c3"
           >
             <input
-              class="sc-hwkwBN knajmM"
+              class="c4 c5"
               id="MM_SMORES_6"
               name="MM_SMORES_4"
               type="radio"
               value="option2"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR ggSPLk"
+              class="c6 c11"
             />
             <div
-              class="sc-bRKDuR bHjpxP"
+              class=""
             >
               <span
-                class="sc-dntSTA hSRrNX"
+                class="c8"
               >
                 Option 2
               </span>
               <div
-                class="sc-bRKDuR bHjpxP"
+                class=""
               >
                 <p
-                  class="sc-bRKDuR bHjpxP sc-dTvVRJ qDeEm"
+                  class="c9"
                   cursor="inherit"
                   title=""
                 >
@@ -226,36 +794,36 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
           </div>
         </label>
         <label
-          class="sc-kcLKEh cWZLgV"
+          class="c10"
           data-testid="option3"
           for="MM_SMORES_7"
         >
           <div
-            class="sc-bRKDuR hUwRKL"
+            class="c3"
           >
             <input
-              class="sc-hwkwBN knajmM"
+              class="c4 c5"
               id="MM_SMORES_7"
               name="MM_SMORES_4"
               type="radio"
               value="option3"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR ggSPLk"
+              class="c6 c11"
             />
             <div
-              class="sc-bRKDuR bHjpxP"
+              class=""
             >
               <span
-                class="sc-dntSTA hSRrNX"
+                class="c8"
               >
                 Option 3
               </span>
               <div
-                class="sc-bRKDuR bHjpxP"
+                class=""
               >
                 <p
-                  class="sc-bRKDuR bHjpxP sc-dTvVRJ qDeEm"
+                  class="c9"
                   cursor="inherit"
                   title=""
                 >
@@ -272,40 +840,132 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
 `;
 
 exports[`RadioGroup > renders correctly with default props 1`] = `
+.c3 {
+  display: flex;
+}
+
+.c0 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border: 0;
+}
+
+.c5 {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c7 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  border: 2px solid #292924;
+  border: 8px solid #292924;
+  outline: 0;
+}
+
+.c4:focus-visible+.c7 {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c9 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  border: 2px solid #292924;
+  outline: 0;
+}
+
+.c9:hover {
+  border: 2px solid #292924;
+}
+
+.c4:focus-visible+.c9 {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  opacity: 1;
+  width: 100%;
+}
+
+.c8 {
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #292924;
+  margin-top: 4px;
+}
+
+.c1 {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c6 {
+    margin-right: 8px;
+  }
+}
+
 <div>
   <fieldset
-    class="sc-bRKDuR bHjpxP sc-jJLAfE izsDDD"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR bHjpxP"
+      class=""
     >
       <div
-        class="sc-kvnevz bRRMGI"
+        class="c1"
       >
         <label
-          class="sc-kcLKEh bSQYCC"
+          class="c2"
           data-testid="option1"
           for="MM_SMORES_1"
         >
           <div
-            class="sc-bRKDuR hUwRKL"
+            class="c3"
           >
             <input
               checked=""
-              class="sc-hwkwBN knajmM"
+              class="c4 c5"
               id="MM_SMORES_1"
               name="MM_SMORES_0"
               type="radio"
               value="option1"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR hrydBC"
+              class="c6 c7"
             />
             <div
-              class="sc-bRKDuR bHjpxP"
+              class=""
             >
               <span
-                class="sc-dntSTA hSRrNX"
+                class="c8"
               >
                 Option 1
               </span>
@@ -313,28 +973,28 @@ exports[`RadioGroup > renders correctly with default props 1`] = `
           </div>
         </label>
         <label
-          class="sc-kcLKEh bSQYCC"
+          class="c2"
           data-testid="option2"
           for="MM_SMORES_2"
         >
           <div
-            class="sc-bRKDuR hUwRKL"
+            class="c3"
           >
             <input
-              class="sc-hwkwBN knajmM"
+              class="c4 c5"
               id="MM_SMORES_2"
               name="MM_SMORES_0"
               type="radio"
               value="option2"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR ggSPLk"
+              class="c6 c9"
             />
             <div
-              class="sc-bRKDuR bHjpxP"
+              class=""
             >
               <span
-                class="sc-dntSTA hSRrNX"
+                class="c8"
               >
                 Option 2
               </span>
@@ -342,28 +1002,28 @@ exports[`RadioGroup > renders correctly with default props 1`] = `
           </div>
         </label>
         <label
-          class="sc-kcLKEh bSQYCC"
+          class="c2"
           data-testid="option3"
           for="MM_SMORES_3"
         >
           <div
-            class="sc-bRKDuR hUwRKL"
+            class="c3"
           >
             <input
-              class="sc-hwkwBN knajmM"
+              class="c4 c5"
               id="MM_SMORES_3"
               name="MM_SMORES_0"
               type="radio"
               value="option3"
             />
             <div
-              class="sc-bRKDuR bqffzd sc-kNOymR ggSPLk"
+              class="c6 c9"
             />
             <div
-              class="sc-bRKDuR bHjpxP"
+              class=""
             >
               <span
-                class="sc-dntSTA hSRrNX"
+                class="c8"
               >
                 Option 3
               </span>

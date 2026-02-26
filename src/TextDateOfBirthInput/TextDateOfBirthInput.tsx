@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from 'react'
+import { forwardRef, useRef } from 'react'
 import styled from 'styled-components'
 
 import { Box } from '../Box'
@@ -115,10 +115,10 @@ export const TextDateOfBirthInput = forwardRef<
           onChange={handleDayChange}
           error={Boolean(
             hookformError?.type?.includes('day') ||
-              (hookformError?.type &&
-                inputValidationErrorValues.includes(
-                  hookformError.type as InputValidationError,
-                )),
+            (hookformError?.type &&
+              inputValidationErrorValues.includes(
+                hookformError.type as InputValidationError,
+              )),
           )}
         />
         <SetWidthTextInput
@@ -132,10 +132,10 @@ export const TextDateOfBirthInput = forwardRef<
           onChange={handleMonthChange}
           error={Boolean(
             hookformError?.type?.includes('month') ||
-              (hookformError?.type &&
-                inputValidationErrorValues.includes(
-                  hookformError.type as InputValidationError,
-                )),
+            (hookformError?.type &&
+              inputValidationErrorValues.includes(
+                hookformError.type as InputValidationError,
+              )),
           )}
         />
         <SetWidthTextInput
@@ -149,10 +149,10 @@ export const TextDateOfBirthInput = forwardRef<
           onChange={handleYearChange}
           error={Boolean(
             hookformError?.type?.includes('year') ||
-              (hookformError?.type &&
-                inputValidationErrorValues.includes(
-                  hookformError.type as InputValidationError,
-                )),
+            (hookformError?.type &&
+              inputValidationErrorValues.includes(
+                hookformError.type as InputValidationError,
+              )),
           )}
         />
       </Box>

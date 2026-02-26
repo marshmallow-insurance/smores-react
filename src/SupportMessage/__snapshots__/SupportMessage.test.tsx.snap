@@ -1,38 +1,86 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SupportMessage > renders correctly with default props 1`] = `
+.c2 {
+  display: flex;
+}
+
+.c1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.c1 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c3 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  align-items: center;
+  background-color: #dad2c4;
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  width: 100%;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    flex-direction: column;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-hjsuWn iTabPZ"
+    class="c0"
   >
-    <div
-      class="sc-bRKDuR dqcIAb sc-jwTyAe ezPUQC"
+    <span
+      class="c1"
+      style="align-self: flex-start;"
     >
-      <span
-        class="sc-bRKDuR bHjpxP sc-fhHczv iNYmWQ"
-        data-testid="info-container"
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-circle-info"
+        color="#292924"
+        data-icon="circle-info"
+        data-prefix="far"
+        role="img"
+        viewBox="0 0 512 512"
       >
-        <svg
-          fill="none"
-          height="100%"
-          viewBox="0 0 24 24"
-          width="100%"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0zm-1 6.99a1 1 0 112 0c0 .553-.447 1.005-1 1.005-.553 0-1-.442-1-.995v-.01zM11 11a1 1 0 112 0v7a1 1 0 11-2 0v-7zm-9 1c0 5.514 4.486 10 10 10s10-4.486 10-10S17.514 2 12 2 2 6.486 2 12z"
-            fill="currentColor"
-            fill-rule="evenodd"
-          />
-        </svg>
-      </span>
-    </div>
+        <path
+          d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM216 336c-13.3 0-24 10.7-24 24s10.7 24 24 24l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-8 0 0-88c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l24 0 0 64-24 0zm40-144a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <div
-      class="sc-bRKDuR hWnpyG"
+      class="c2"
     >
       <p
-        class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-kNOymR cgERsz"
+        class="c3 c4"
         cursor="inherit"
         title=""
       >

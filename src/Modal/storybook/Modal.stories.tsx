@@ -1,10 +1,11 @@
-import { Meta, StoryObj } from '@storybook/react'
-import React, { FC, useState } from 'react'
+import { Meta, StoryObj } from '@storybook/react-vite'
+import { FC, useState } from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
 import { Button } from '../../Button'
-import { Icon } from '../../Icon'
 import { Modal, ModalProps } from '../Modal'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowsMaximize } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 const StyledBox = styled(Box)<{ height: string }>`
   width: ${(props) => props.width || '100%'};
@@ -84,7 +85,7 @@ export const Interactive: Story = {
     const [expanded, setExpanded] = useState(false)
     const rightPanel = (
       <Box onClick={() => setExpanded((current) => !current)}>
-        <Icon render={expanded ? 'collpase' : 'expand'} />
+        <FontAwesomeIcon icon={faArrowsMaximize} />
       </Box>
     )
 

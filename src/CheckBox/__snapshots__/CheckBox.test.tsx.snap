@@ -1,13 +1,112 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`CheckBox > renders correctly when checked 1`] = `
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c3 {
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: solid 2px #292924;
+  box-sizing: border-box;
+  border-radius: 1px;
+}
+
+.c3:before {
+  content: '';
+  position: absolute;
+  display: none;
+  top: 9px;
+  left: 5px;
+  width: 3px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  -webkit-transform: rotate(316deg);
+  -ms-transform: rotate(316deg);
+  transform: rotate(316deg);
+}
+
+.c3:after {
+  content: '';
+  position: absolute;
+  display: none;
+  top: 3px;
+  left: 11px;
+  width: 3px;
+  height: 15px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  -webkit-transform: rotate(43deg);
+  -ms-transform: rotate(43deg);
+  transform: rotate(43deg);
+}
+
+.c0 {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 32px;
+  user-select: none;
+  cursor: pointer;
+  min-height: 24px;
+}
+
+.c0 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  background-color: #ffffff;
+  outline: 0;
+}
+
+.c0 input:checked~.c2 {
+  background-color: #292924;
+  border: solid 2px #292924;
+}
+
+.c0 input:checked~.c2:before {
+  display: block;
+}
+
+.c0 input:checked~.c2:after {
+  display: block;
+}
+
+.c0 input:focus-visible~.c2 {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover .c2 {
+  background-color: #f1e9dc;
+}
+
+.c0 span {
+  border-radius: 6px;
+  line-height: 24px;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    padding-left: 32px;
+  }
+}
+
 <div>
   <label
-    class="sc-hjsuWn iyKZva"
+    class="c0"
     id="MM_SMORES_1"
   >
     <span
-      class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+      class="c1"
       cursor="inherit"
       title=""
     >
@@ -18,20 +117,119 @@ exports[`CheckBox > renders correctly when checked 1`] = `
       type="checkbox"
     />
     <span
-      class="sc-jwTyAe kYeyOg"
+      class="c2 c3"
     />
   </label>
 </div>
 `;
 
 exports[`CheckBox > renders correctly when unchecked 1`] = `
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c3 {
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: solid 2px #292924;
+  box-sizing: border-box;
+  border-radius: 1px;
+}
+
+.c3:before {
+  content: '';
+  position: absolute;
+  display: none;
+  top: 9px;
+  left: 5px;
+  width: 3px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  -webkit-transform: rotate(316deg);
+  -ms-transform: rotate(316deg);
+  transform: rotate(316deg);
+}
+
+.c3:after {
+  content: '';
+  position: absolute;
+  display: none;
+  top: 3px;
+  left: 11px;
+  width: 3px;
+  height: 15px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  -webkit-transform: rotate(43deg);
+  -ms-transform: rotate(43deg);
+  transform: rotate(43deg);
+}
+
+.c0 {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 32px;
+  user-select: none;
+  cursor: pointer;
+  min-height: 24px;
+}
+
+.c0 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  background-color: #ffffff;
+  outline: 0;
+}
+
+.c0 input:checked~.c2 {
+  background-color: #292924;
+  border: solid 2px #292924;
+}
+
+.c0 input:checked~.c2:before {
+  display: block;
+}
+
+.c0 input:checked~.c2:after {
+  display: block;
+}
+
+.c0 input:focus-visible~.c2 {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover .c2 {
+  background-color: #f1e9dc;
+}
+
+.c0 span {
+  border-radius: 6px;
+  line-height: 24px;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    padding-left: 32px;
+  }
+}
+
 <div>
   <label
-    class="sc-hjsuWn iyKZva"
+    class="c0"
     id="MM_SMORES_0"
   >
     <span
-      class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT"
+      class="c1"
       cursor="inherit"
       title=""
     >
@@ -41,20 +239,125 @@ exports[`CheckBox > renders correctly when unchecked 1`] = `
       type="checkbox"
     />
     <span
-      class="sc-jwTyAe kYeyOg"
+      class="c2 c3"
     />
   </label>
 </div>
 `;
 
 exports[`CheckBox > renders correctly with an error state 1`] = `
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #d03c30;
+}
+
+.c3 {
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: solid 2px #d03c30;
+  box-sizing: border-box;
+  border-radius: 1px;
+}
+
+.c3:before {
+  content: '';
+  position: absolute;
+  display: none;
+  top: 9px;
+  left: 5px;
+  width: 3px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  -webkit-transform: rotate(316deg);
+  -ms-transform: rotate(316deg);
+  transform: rotate(316deg);
+}
+
+.c3:after {
+  content: '';
+  position: absolute;
+  display: none;
+  top: 3px;
+  left: 11px;
+  width: 3px;
+  height: 15px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  -webkit-transform: rotate(43deg);
+  -ms-transform: rotate(43deg);
+  transform: rotate(43deg);
+}
+
+.c0 {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 32px;
+  user-select: none;
+  cursor: pointer;
+  min-height: 24px;
+}
+
+.c0 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  background-color: #ffffff;
+  outline: 0;
+}
+
+.c0 input:checked~.c2 {
+  background-color: #292924;
+  border: solid 2px #292924;
+}
+
+.c0 input:checked~.c2:before {
+  display: block;
+}
+
+.c0 input:checked~.c2:after {
+  display: block;
+}
+
+.c0 input:focus-visible~.c2 {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover .c2 {
+  background-color: #f1e9dc;
+}
+
+.c0 span {
+  border-radius: 6px;
+  line-height: 24px;
+}
+
+.c4 {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #d03c30;
+}
+
+@media (min-width: 768px) {
+  .c0 {
+    padding-left: 32px;
+  }
+}
+
 <div>
   <label
-    class="sc-hjsuWn iyKZva"
+    class="c0"
     id="MM_SMORES_2"
   >
     <span
-      class="sc-bRKDuR bHjpxP sc-dTvVRJ gXSYMm"
+      class="c1"
       cursor="inherit"
       title=""
     >
@@ -64,11 +367,11 @@ exports[`CheckBox > renders correctly with an error state 1`] = `
       type="checkbox"
     />
     <span
-      class="sc-jwTyAe iuKYMp"
+      class="c2 c3"
     />
   </label>
   <div
-    class="sc-jJLAfE llFNkS"
+    class="c4"
   >
     You must accept the terms
   </div>

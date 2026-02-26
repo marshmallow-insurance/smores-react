@@ -1,19 +1,20 @@
-import React, { ReactElement, ReactNode } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import { ButtonProps } from '../Button/Button'
 import { IconStrictProps } from '../IconStrict'
-import { Color } from '../theme'
 import type { BoxSpacing, SingleSpacing } from './helper.types'
+import { ColorTypes } from '../ThemeProvider/utils/colourMap'
 
 export type TableStylesProps = {
   hasKeyline?: boolean
   fixedHeader?: boolean
   headerHeight?: string
-  stripedColor?: Color
+  stripedColor?: string
   stickyCell?: boolean
-  headerColor?: Color
-  rowColor?: Color
-  rowBorderColor?: Color
-  rowActionsBgColor?: Color
+  headerColor?: string
+  rowColor?: string
+  rowBorderColor?: string
+  rowActionsBgColor?: string
+  width?: string
   minWidth?: string
   maxWidth?: string
   noWrapContent?: boolean
@@ -62,7 +63,7 @@ export type RowActionElementOverride<T> = {
 export type RowActions<T> = {
   actions: RowAction<T>[]
   minWidth?: string
-  bgColor?: Color
+  bgColor?: ColorTypes
 }
 
 type RowCellRenderer<T> = (
@@ -70,10 +71,10 @@ type RowCellRenderer<T> = (
   rowIndex: number,
   column: TableColumn<T>,
   id: string | number,
-) => React.ReactNode
+) => ReactNode
 
 export interface TableColumn<T> {
-  name?: string | number | React.ReactNode
+  name?: string | number | ReactNode
   minWidth?: string
   maxWidth?: string
   noWrapContent?: boolean
@@ -83,13 +84,13 @@ export interface TableColumn<T> {
 }
 
 type SubElementProps = {
-  bgColor?: Color
+  bgColor?: ColorTypes
   padding?: BoxSpacing
   margin?: BoxSpacing
 }
 
 /** @template T - The type of data the table displays. */
-interface CommonTableProps<T> {
+interface CommonTableProps<T, ColorT = ColorTypes> {
   /** Array of columns to display in the table. */
   columns: TableColumn<T>[]
   /** Sets the height of the header. */
@@ -99,21 +100,22 @@ interface CommonTableProps<T> {
   /** If true, the table header will have a key line. */
   hasKeyline?: boolean
   /** If present, the table rows will have alternating colors. */
-  stripedColor?: Color
+  stripedColor?: ColorT
   /** A function to determine if a row is expandable. */
   expandable?: (rowData: T) => boolean
   /** The color for the table header. */
-  headerColor?: Color
+  headerColor?: ColorT
   /** The default color for each table row. */
-  rowColor?: Color
+  rowColor?: ColorT
   /** The default color for each table row border. */
-  rowBorderColor?: Color
+  rowBorderColor?: ColorT
   /** If true, the table will have rounded corners */
   roundedTable?: true
   /** A React element to show when a row is expanded. */
   subTable?: SubElementProps & {
     table: (rowData: T) => ReactElement<any>
   }
+
   /** Settings for sub rows. */
   subRows?: SubElementProps & {
     /** Function that returns a React element for the sub row. */
@@ -149,6 +151,15 @@ export interface TableProps<T, K = undefined> extends CommonTableProps<T> {
   /** Array of data to be displayed in the table. */
   data: T[]
 
+  /** If true, the sub table columns will be aligned with the main table columns, by using the widths of the main table columns. */
+  alignSubTableColumns?: boolean
+
+  /** The widths of the table columns to be set to, usually passed down to a subtable to align to the main table columns.
+   * The array length should match the number of columns in the table.
+   * @example ['100px', '200px', '150px']
+   */
+  columnWidths?: string[]
+
   footer?: TableFooter<K>
 
   /** The text to show when there is no available data to map through. */
@@ -171,11 +182,16 @@ export interface TableRowProps<T> extends CommonTableProps<T> {
   rowIndex: number
   showActions?: boolean
   hideBorder?: boolean
+
+  renderSubTable?: (rowData: T) => ReactElement<any>
 }
 
-export interface RowActionsProps<T>
-  extends Pick<CommonTableProps<T>, 'expandable' | 'rowActions'> {
+export interface RowActionsProps<T> extends Pick<
+  CommonTableProps<T, string>,
+  'expandable' | 'rowActions'
+> {
   rowData: T
+  width?: string
   canExpandRow: boolean
   toggleExpansion: () => void
   isExpanded?: boolean
@@ -191,11 +207,11 @@ type TableFooterColumnsProps<K> = {
    *
    * @default 'custard'
    */
-  rowColor?: Color
+  rowColor?: ColorTypes
   rowPadding?: SingleSpacing
   columnPadding?: SingleSpacing
   columns: TableColumn<K>[]
   data: K
 }
 
-export type TableHeaderProps<T> = CommonTableProps<T>
+export type TableHeaderProps<T> = CommonTableProps<T, string>

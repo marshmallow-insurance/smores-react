@@ -1,12 +1,14 @@
-import React, { FC, ReactNode, useState } from 'react'
+import { FC, ReactNode, useState } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
-import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { MarginProps } from '../utils/space'
 import { NewColor, resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
+import { IconContainer } from '../sharedStyles/shared.styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 type UsableNewColors = Extract<
   NewColor,
@@ -90,13 +92,12 @@ export const Accordion: FC<AccordionProps> = ({
           )}
         </TitleContainer>
 
-        <CaretIcon
-          render="caret"
-          size={24}
-          color="marzipan"
-          $isOpen={isOpen}
-          $borderTop={borderTop}
-        />
+        <CaretIcon $size={20} $isOpen={isOpen} $borderTop={borderTop}>
+          <FontAwesomeIcon
+            icon={faChevronDown}
+            color={theme.color.illustration.neutral[400]}
+          />
+        </CaretIcon>
       </TopContainer>
       {isOpen && (
         <Box pt="12px" pb="16px" px={px}>
@@ -116,8 +117,8 @@ const Wrapper = styled(Box)<
     $borderTop,
     $fullBorder,
     $filledBackground,
-    $borderColor = 'oatmeal',
-    $backgroundColor = 'custard',
+    $borderColor,
+    $backgroundColor,
   }) => css`
     border-bottom: 1px solid ${$borderColor};
     ${$borderTop && `border-top: 1px solid ${$backgroundColor};`}
@@ -143,7 +144,7 @@ const TopContainer = styled(Box)`
   cursor: pointer;
 `
 
-const CaretIcon = styled(Icon)<
+const CaretIcon = styled(IconContainer)<
   TransientProps<Pick<AccordionProps, 'borderTop'>> & { $isOpen: boolean }
 >(
   ({ $isOpen }) => css`

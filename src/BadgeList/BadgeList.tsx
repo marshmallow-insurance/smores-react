@@ -1,4 +1,3 @@
-import React from 'react'
 import { Badge, BadgeSize, type BadgeProps } from '../Badge/Badge'
 import styled from 'styled-components'
 import { Tooltip } from '../Tooltip'
@@ -54,7 +53,7 @@ export function BadgeList({ badges, limit, size = BadgeSize.Lg }: Props) {
         >
           <Badge
             title={`+${limitExcess}`}
-            borderColour="oatmeal"
+            borderColour="color.illustration.neutral.300"
             size={size}
             src={<ExcessBadge excess={limitExcess + 1} />}
             disabled

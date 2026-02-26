@@ -1,5 +1,3 @@
-import React from 'react'
-
 const DocUpload = () => (
   <svg
     width="100%"

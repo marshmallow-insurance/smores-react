@@ -1,28 +1,36 @@
-import React, { ButtonHTMLAttributes, FC, ReactNode, forwardRef } from 'react'
-import styled, { css } from 'styled-components'
+import {
+  ButtonHTMLAttributes,
+  FC,
+  FormEvent,
+  ReactNode,
+  forwardRef,
+} from 'react'
+import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon as IconComponent } from '../Icon'
-import { Icons } from '../Icon/iconsList'
+import { Icon, Icons } from '../Icon'
 
 import { Loader } from '../Loader'
 import { focusOutline } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
+import { IconContainer } from '../sharedStyles/shared.styles'
+import { resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
 
 interface IButton {
   $primary: boolean
   $secondary: boolean
-  $icon?: Icons
+  $icon?: boolean
   $loading: boolean
   disabled: boolean
 }
 
 type Props = {
   children: ReactNode
-  handleClick: (e: React.FormEvent<HTMLButtonElement>) => void
+  handleClick: (e: FormEvent<HTMLButtonElement>) => void
   primary?: boolean
   secondary?: boolean
   icon?: Icons
+  iconComponent?: ReactNode
   disabled?: boolean
   loading?: boolean
 } & MarginProps
@@ -39,38 +47,58 @@ export const Chip: FC<ChipProps> = forwardRef<HTMLButtonElement, ChipProps>(
       disabled = false,
       loading = false,
       icon,
+      iconComponent,
       ...props
     },
     ref,
-  ) => (
-    <Container
-      forwardedAs="button"
-      $primary={primary}
-      $secondary={secondary}
-      disabled={disabled || loading}
-      $loading={loading}
-      onClick={handleClick}
-      $icon={icon}
-      {...props}
-      ref={ref}
-      aria-label="chip-button"
-    >
-      {loading ? (
-        <Loader color={primary ? 'liquorice' : 'cream'} height="16" />
-      ) : (
-        <>
-          {icon && (
-            <IconComponent
-              render={icon}
-              size={16}
-              color={primary ? 'liquorice' : 'cream'}
-            />
-          )}
-          <ChildrenContainer>{children}</ChildrenContainer>
-        </>
-      )}
-    </Container>
-  ),
+  ) => {
+    const theme = useTheme()
+    const iconToRender = iconComponent ? (
+      <IconContainer
+        $size={16}
+        $iconColor={
+          primary
+            ? resolveToThemeColor('color.icon.base', theme)
+            : resolveToThemeColor('color.icon.inverse', theme)
+        }
+      >
+        {iconComponent}
+      </IconContainer>
+    ) : icon ? (
+      <Icon
+        render={icon}
+        size={16}
+        color={primary ? 'color.icon.base' : 'color.icon.inverse'}
+      />
+    ) : null
+
+    return (
+      <Container
+        forwardedAs="button"
+        $primary={primary}
+        $secondary={secondary}
+        disabled={disabled || loading}
+        $loading={loading}
+        onClick={handleClick}
+        $icon={Boolean(icon || iconComponent)}
+        {...props}
+        ref={ref}
+        aria-label="chip-button"
+      >
+        {loading ? (
+          <Loader
+            color={primary ? 'color.icon.base' : 'color.icon.inverse'}
+            height="16"
+          />
+        ) : (
+          <>
+            {iconToRender}
+            <ChildrenContainer>{children}</ChildrenContainer>
+          </>
+        )}
+      </Container>
+    )
+  },
 )
 
 Chip.displayName = 'Chip'
@@ -105,7 +133,7 @@ const Container = styled(Box)<IButton>(
     `}
     ${$secondary &&
     css`
-      color: ${theme.color.text['on-dark']};
+      color: ${theme.color.text.inverse};
       background-color: ${theme.color.surface.base[900]};
       border: 2px solid ${theme.color.surface.base[900]};
       &:hover {

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Injury = () => (
   <svg
     width="100%"

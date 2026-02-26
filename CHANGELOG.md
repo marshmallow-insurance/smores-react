@@ -1,3 +1,172 @@
+## [14.5.1](https://github.com/marshmallow-insurance/smores-react/compare/v14.5.0...v14.5.1) (2026-02-19)
+
+### Bug Fixes
+
+* **SegmentedControl:** Update styled component prop names to use dollar sign prefix ([#4773](https://github.com/marshmallow-insurance/smores-react/issues/4773)) ([3194de1](https://github.com/marshmallow-insurance/smores-react/commit/3194de1b635338c5c2f9f35a4081bccaa6676473))
+
+## [14.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.4.1...v14.5.0) (2026-02-17)
+
+### Features
+
+* **RadioGroup:** support rendering React elements in bodyCopy prop ([#4771](https://github.com/marshmallow-insurance/smores-react/issues/4771)) ([dbb1134](https://github.com/marshmallow-insurance/smores-react/commit/dbb1134695ff05b31bbf8cd3e41dda0dd5139368))
+
+## [14.4.1](https://github.com/marshmallow-insurance/smores-react/compare/v14.4.0...v14.4.1) (2026-02-17)
+
+## [14.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.3.0...v14.4.0) (2026-02-12)
+
+### Features
+
+* **Alert:** export  type for external usage ([#4761](https://github.com/marshmallow-insurance/smores-react/issues/4761)) ([60d48b0](https://github.com/marshmallow-insurance/smores-react/commit/60d48b0d6931a01e2a3093175e095743a9ab496d))
+
+## [14.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.2.0...v14.3.0) (2026-02-12)
+
+### Features
+
+* **exports:** export BoxProps and Table props ([#4758](https://github.com/marshmallow-insurance/smores-react/issues/4758)) ([66633cb](https://github.com/marshmallow-insurance/smores-react/commit/66633cbac8e477b08ef249735516568d07185ebc))
+
+## [14.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.1.1...v14.2.0) (2026-02-05)
+
+### Features
+
+* **alert:** upgrade to FontAwesome icons [DES-136] ([#4677](https://github.com/marshmallow-insurance/smores-react/issues/4677)) ([1be1ac2](https://github.com/marshmallow-insurance/smores-react/commit/1be1ac29dec1d625cd168cd59676ba64c10ba5f7))
+* **icon:** update to allow icon component within components [DES-126] ([#4670](https://github.com/marshmallow-insurance/smores-react/issues/4670)) ([1f4d6c5](https://github.com/marshmallow-insurance/smores-react/commit/1f4d6c5e5b6be807eaa6f84e94c1be1308d2b8f7))
+* **radio-group:** enable icon component [DES-133] [DES-134] ([#4671](https://github.com/marshmallow-insurance/smores-react/issues/4671)) ([8fa4b14](https://github.com/marshmallow-insurance/smores-react/commit/8fa4b144eda2d942d3f022845e0183f3c789bed7))
+* **spacing:** allowing design tokens for spacing values [DES-158] ([#4738](https://github.com/marshmallow-insurance/smores-react/issues/4738)) ([1216f0b](https://github.com/marshmallow-insurance/smores-react/commit/1216f0b6c284e322ee88ba9b14b2f278e78380e4))
+* **support-message:** update to new icons [DES-135] ([#4678](https://github.com/marshmallow-insurance/smores-react/issues/4678)) ([7701746](https://github.com/marshmallow-insurance/smores-react/commit/770174654657dc0fa67202cf58acd6a1190d8a4e))
+
+### Bug Fixes
+
+* **build:** exports ([#4748](https://github.com/marshmallow-insurance/smores-react/issues/4748)) ([177b252](https://github.com/marshmallow-insurance/smores-react/commit/177b252298f8528e38a6b02772ef973fde48dec6))
+
+## [14.1.1](https://github.com/marshmallow-insurance/smores-react/compare/v14.1.0...v14.1.1) (2025-12-10)
+
+## [14.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.5...v14.1.0) (2025-12-09)
+
+### Features
+
+* **beta:** adding beta component capabilities ([#4650](https://github.com/marshmallow-insurance/smores-react/issues/4650)) ([dde279f](https://github.com/marshmallow-insurance/smores-react/commit/dde279f9eedd54dfc49d5f1cef1984ec5aaf41d9))
+
+## [14.0.5](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.4...v14.0.5) (2025-12-08)
+
+## [14.0.4](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.3...v14.0.4) (2025-11-24)
+
+## [14.0.3](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.2...v14.0.3) (2025-11-24)
+
+## [14.0.2](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.1...v14.0.2) (2025-11-19)
+
+## [14.0.1](https://github.com/marshmallow-insurance/smores-react/compare/v14.0.0...v14.0.1) (2025-11-18)
+
+## [14.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.23.2...v14.0.0) (2025-11-18)
+
+### ⚠ BREAKING CHANGES
+
+* Typography design tokens
+
+## What does this do?
+<!-- 
+- A short description of what the PR changes and why it's necessary
+- Give the reviewers context
+- Is the impact global or localised?
+- Any tech debt created or discovered?
+-->
+
+## Screenshot / Video
+<!--
+- applicable for UI changes, can be skipped if not relevant. You can
+drag and drop images/videos to upload them to GitHub.
+- Example with image with fixed width 
+- <img
+src="https://github.com/marshmallow-insurance/uk-auto-signup-www/assets/57456071/3dbf1ec1-2363-4e20-8236-b1f1581b0953"
+width="300px" />
+shortcuts:
+ - Screenshot: cmd + shift + 4
+ - Screen recording: cmd + shift + 5
+-->
+
+## Relevant tickets / Documentation
+<!--
+- Link to any relevant issue tracking software (jira, GitHub etc),
+documentation (PRDs, engineering plans, Figma designs) or slack threads
+- If applicable, list any new documentation that has been
+created/updated e.g. diagrams/flows etc
+-->
+
+## Testing
+<!--
+- Tests should have been updated/created to cover the changes made in
+this PR, if not please explain why
+-->
+* breaking change empty commit (#4617)
+* **typography:** use new typography design tokens (#4603)
+
+### Features
+
+* breaking change empty commit ([#4617](https://github.com/marshmallow-insurance/smores-react/issues/4617)) ([da9fc56](https://github.com/marshmallow-insurance/smores-react/commit/da9fc56cc10e83b6c20fe305b5f6ed5958f270f3))
+* BREAKING CHANGE TYPOGRAPHY ([#4618](https://github.com/marshmallow-insurance/smores-react/issues/4618)) ([49b89f3](https://github.com/marshmallow-insurance/smores-react/commit/49b89f31aa336a0caac363fa5bc5be01d68a4e0b))
+* **typography:** use new typography design tokens ([#4603](https://github.com/marshmallow-insurance/smores-react/issues/4603)) ([fc030ca](https://github.com/marshmallow-insurance/smores-react/commit/fc030ca53988b8514bd623df297d3b154c840299))
+
+## [13.23.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.23.1...v13.23.2) (2025-11-18)
+
+## [13.23.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.23.0...v13.23.1) (2025-11-18)
+
+## [13.23.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.22.0...v13.23.0) (2025-11-17)
+
+### Features
+
+* **table:** add support for aligned subtable columns ([#4613](https://github.com/marshmallow-insurance/smores-react/issues/4613)) ([93cbb3d](https://github.com/marshmallow-insurance/smores-react/commit/93cbb3d98914283563843c6b89ca8b8f610f0e51))
+
+## [13.22.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.21.3...v13.22.0) (2025-11-07)
+
+### Features
+
+* **telematics:** Implement cmt icon ([#4611](https://github.com/marshmallow-insurance/smores-react/issues/4611)) ([93c2faa](https://github.com/marshmallow-insurance/smores-react/commit/93c2faaa01f94c758dd4a967beb31012aed867cc))
+
+## [13.21.3](https://github.com/marshmallow-insurance/smores-react/compare/v13.21.2...v13.21.3) (2025-11-03)
+
+## [13.21.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.21.1...v13.21.2) (2025-10-29)
+
+## [13.21.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.21.0...v13.21.1) (2025-10-28)
+
+## [13.21.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.20.2...v13.21.0) (2025-10-24)
+
+### Features
+
+* **alert component:** add new component [DES-110] ([#4606](https://github.com/marshmallow-insurance/smores-react/issues/4606)) ([c27324d](https://github.com/marshmallow-insurance/smores-react/commit/c27324dbaa3fefad6b095ab783e21fcc908d8701))
+
+## [13.20.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.20.1...v13.20.2) (2025-10-21)
+
+## [13.20.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.20.0...v13.20.1) (2025-10-20)
+
+## [13.20.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.19.0...v13.20.0) (2025-10-20)
+
+### Features
+
+* add secondary label to segment control ([#4600](https://github.com/marshmallow-insurance/smores-react/issues/4600)) ([5aa296d](https://github.com/marshmallow-insurance/smores-react/commit/5aa296d4bc1b838b3c1fc71ba47c190d0a09c485))
+
+## [13.19.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.18.0...v13.19.0) (2025-10-17)
+
+### Features
+
+* **core-secondary:** replace with design system colours ([#4597](https://github.com/marshmallow-insurance/smores-react/issues/4597)) ([9ce17eb](https://github.com/marshmallow-insurance/smores-react/commit/9ce17eb2fe62ceb17408f5bf1a3032ed629235b4))
+
+## [13.18.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.17.2...v13.18.0) (2025-10-17)
+
+### Features
+
+* **update colours:** remove all core primary colours ([#4596](https://github.com/marshmallow-insurance/smores-react/issues/4596)) ([6d0c72c](https://github.com/marshmallow-insurance/smores-react/commit/6d0c72c74809c1ec7a7bbe5e85a13fd60fba3495))
+
+## [13.17.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.17.1...v13.17.2) (2025-10-17)
+
+## [13.17.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.17.0...v13.17.1) (2025-10-16)
+
+## [13.17.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.16.2...v13.17.0) (2025-10-13)
+
+### Features
+
+* **table:** use design system theme [DES-77] ([#4595](https://github.com/marshmallow-insurance/smores-react/issues/4595)) ([1d70c4e](https://github.com/marshmallow-insurance/smores-react/commit/1d70c4ec39e1336c11345a4508110804b2ff6fc7))
+
+## [13.16.2](https://github.com/marshmallow-insurance/smores-react/compare/v13.16.1...v13.16.2) (2025-10-13)
+
 ## [13.16.1](https://github.com/marshmallow-insurance/smores-react/compare/v13.16.0...v13.16.1) (2025-10-13)
 
 ## [13.16.0](https://github.com/marshmallow-insurance/smores-react/compare/v13.15.0...v13.16.0) (2025-10-13)

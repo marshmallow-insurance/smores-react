@@ -1,32 +1,29 @@
-name: Build and Deploy
+name: Merge Main
 on:
   push:
     branches:
       - main
 jobs:
-  build-and-deploy:
+  merge-main:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Setup Node 👾
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-      - name: Install and Build 🔧
+      - uses: marshmallow-insurance/campfire/.github/actions/setup-node-project@main
+        env:
+          FONT_AWESOME_AUTH_TOKEN: ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
+      - name: Run Build Storybook
         run: |
-          npm ci
           npm run build-storybook
-      - name: Deploy 🚀
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@6c2d9db40f9296374acc17b90404b6e8864128c8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: storybook-static
           clean: true
-      - name: Fossa dependency analysis 🐛
-        uses: fossas/fossa-action@93a52ecf7c3ac7eb40f5de77fd69b1a19524de94
+      - uses: marshmallow-insurance/campfire/.github/actions/run-fossa-analysis@main
         with:
           api-key: ${{ secrets.FOSSA_API_KEY }}

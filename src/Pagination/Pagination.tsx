@@ -1,12 +1,17 @@
-import React, { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon } from '../Icon'
 import { Text } from '../Text'
 
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconContainer } from '../sharedStyles/shared.styles'
+import {
+  faArrowLeft,
+  faArrowRight,
+} from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 const MAX_PAGES = 7
 const MAX_ADDITIONAL_PAGES = Math.ceil(MAX_PAGES / 2)
@@ -102,7 +107,9 @@ export const Pagination: FC<PaginationProps> = ({
             }
           }}
         >
-          <Icon size={18} render="arrow" />
+          <IconContainer $size={16}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </IconContainer>
         </IconBox>
       )}
       <PageBox $active={activePage === 1} onClick={() => movePage(1)}>
@@ -172,7 +179,9 @@ export const Pagination: FC<PaginationProps> = ({
             }
           }}
         >
-          <Icon size={18} render="arrow" rotate={180} />
+          <IconContainer $size={16}>
+            <FontAwesomeIcon icon={faArrowRight} />
+          </IconContainer>
         </IconBox>
       )}
     </Container>

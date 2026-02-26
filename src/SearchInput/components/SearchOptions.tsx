@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, createRef, useEffect, useRef } from 'react'
+import { FC, ReactNode, RefObject, createRef, useEffect, useRef } from 'react'
 import styled, { css } from 'styled-components'
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../../Box'
@@ -37,7 +37,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   searchTerm,
   notFoundComponent,
 }) => {
-  const itemRefs = useRef<React.RefObject<HTMLLIElement | null>[]>([])
+  const itemRefs = useRef<RefObject<HTMLLIElement | null>[]>([])
 
   useEffect(() => {
     itemRefs.current = displayedList.map(
@@ -81,7 +81,11 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
                 >
                   {el.label}
                   {isSelected && (
-                    <Icon render="tick" size={16} color="marshmallowPink" />
+                    <Icon
+                      render="tick"
+                      size={16}
+                      color="color.surface.brand.300"
+                    />
                   )}
                 </ListButton>
               )

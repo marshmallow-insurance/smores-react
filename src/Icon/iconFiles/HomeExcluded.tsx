@@ -1,5 +1,3 @@
-import React from 'react'
-
 const HomeExcluded = () => (
   <svg
     width="100%"

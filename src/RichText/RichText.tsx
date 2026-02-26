@@ -1,9 +1,11 @@
 import domPurify from 'dompurify'
-import React, { ForwardedRef, forwardRef } from 'react'
+import { ForwardedRef, forwardRef } from 'react'
 import styled from 'styled-components'
 import { Box } from '../Box'
-import { Icon } from '../Icon'
 import { MarginProps } from '../utils/space'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWarning } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 export interface RichTextProps extends MarginProps {
   htmlString: string
@@ -19,7 +21,9 @@ export const RichText = forwardRef(function RichText(
     return (
       <Box {...props}>
         <WarningText>
-          <Icon render="warning" />
+          <IconContainer $size={24}>
+            <FontAwesomeIcon icon={faWarning} />
+          </IconContainer>
           Your browser is not supported, please upgrade to a newer version
         </WarningText>
         {htmlString}

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const AccountMlp = () => (
   <svg
     width="100%"

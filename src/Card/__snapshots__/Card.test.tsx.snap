@@ -1,21 +1,96 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Card > renders correctly with a leading icon 1`] = `
+.c2 {
+  display: flex;
+}
+
+.c3 {
+  display: flex;
+}
+
+.c5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0deg);
+}
+
+.c5 svg {
+  color: #292924!important;
+}
+
+.c6 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  background: #f1e9dc;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c4 {
+    margin-right: 12px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c7 {
+    margin-top: 0px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe hwiAiy"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR cRGbbj"
+      class="c1"
     >
       <div
-        class="sc-bRKDuR pJiNb"
+        class="c2"
       >
         <div
-          class="sc-bRKDuR hUwRKL"
+          class="c3"
         >
           <span
-            class="sc-bRKDuR cNXuge sc-fhHczv XmxEI"
+            class="c4 c5"
             data-testid="info-container"
           >
             <svg
@@ -34,10 +109,10 @@ exports[`Card > renders correctly with a leading icon 1`] = `
             </svg>
           </span>
           <div
-            class="sc-bRKDuR bHjpxP"
+            class=""
           >
             <p
-              class="sc-bRKDuR bHjpxP sc-dTvVRJ jMSukC"
+              class="c6"
               cursor="inherit"
               title=""
             >
@@ -47,7 +122,7 @@ exports[`Card > renders correctly with a leading icon 1`] = `
         </div>
       </div>
       <div
-        class="sc-bRKDuR drfqDG"
+        class="c7"
       />
     </div>
   </div>
@@ -55,31 +130,100 @@ exports[`Card > renders correctly with a leading icon 1`] = `
 `;
 
 exports[`Card > renders correctly with a visual 1`] = `
+.c4 {
+  display: flex;
+}
+
+.c5 {
+  display: flex;
+}
+
+.c6 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  background: #f1e9dc;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 0px;
+  position: relative;
+  overflow: hidden;
+}
+
+.c1 {
+  width: 100%;
+  margin-top: -16px;
+}
+
+.c2 {
+  width: 100%;
+  background-image: url('/src/Card/storybook/placeHolderImage.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 100%;
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c4 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c4 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c7 {
+    margin-top: 0px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe foUrsx"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR bHjpxP sc-jJLAfE ixsXVo"
+      class="c1"
     >
       <div
-        class="sc-bRKDuR bHjpxP sc-hwkwBN kdnwPq"
+        class="c2"
       />
     </div>
     <div
-      class="sc-bRKDuR gHyHhE"
+      class="c3"
     >
       <div
-        class="sc-bRKDuR pJiNb"
+        class="c4"
       >
         <div
-          class="sc-bRKDuR hUwRKL"
+          class="c5"
         >
           <div
-            class="sc-bRKDuR bHjpxP"
+            class=""
           >
             <p
-              class="sc-bRKDuR bHjpxP sc-dTvVRJ jMSukC"
+              class="c6"
               cursor="inherit"
               title=""
             >
@@ -89,7 +233,7 @@ exports[`Card > renders correctly with a visual 1`] = `
         </div>
       </div>
       <div
-        class="sc-bRKDuR drfqDG"
+        class="c7"
       />
     </div>
   </div>
@@ -97,24 +241,126 @@ exports[`Card > renders correctly with a visual 1`] = `
 `;
 
 exports[`Card > renders correctly with action button 1`] = `
+.c2 {
+  display: flex;
+}
+
+.c3 {
+  display: flex;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  background: #f1e9dc;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.c7 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c7:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c7:hover {
+  background-color: #f759a9;
+}
+
+.c7:active {
+  background-color: #e43e93;
+}
+
+.c8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c9 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c6 {
+    margin-top: 16px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe hwiAiy"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR cRGbbj"
+      class="c1"
     >
       <div
-        class="sc-bRKDuR pJiNb"
+        class="c2"
       >
         <div
-          class="sc-bRKDuR hUwRKL"
+          class="c3"
         >
           <div
-            class="sc-bRKDuR bHjpxP"
+            class=""
           >
             <p
-              class="sc-bRKDuR bHjpxP sc-dTvVRJ jMSukC"
+              class="c4"
               cursor="inherit"
               title=""
             >
@@ -124,19 +370,19 @@ exports[`Card > renders correctly with action button 1`] = `
         </div>
       </div>
       <div
-        class="sc-bRKDuR drfqDG"
+        class="c5"
       />
       <div
-        class="sc-bRKDuR bozFCt"
+        class="c6"
       >
         <button
-          class="sc-bRKDuR bHjpxP sc-kcLKEh kxEBcb"
+          class="c7"
         >
           <div
-            class="sc-kvnevz bNTvaC"
+            class="c8"
           >
             <div
-              class="sc-kCuUfV eQEbcv childrenContainer"
+              class="c9 childrenContainer"
             >
               Action
             </div>
@@ -149,24 +395,79 @@ exports[`Card > renders correctly with action button 1`] = `
 `;
 
 exports[`Card > renders correctly with fallback style 1`] = `
+.c2 {
+  display: flex;
+}
+
+.c3 {
+  display: flex;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  background: #ffffff;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    margin-top: 0px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe jNkFWe"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR cRGbbj"
+      class="c1"
     >
       <div
-        class="sc-bRKDuR pJiNb"
+        class="c2"
       >
         <div
-          class="sc-bRKDuR hUwRKL"
+          class="c3"
         >
           <div
-            class="sc-bRKDuR bHjpxP"
+            class=""
           >
             <p
-              class="sc-bRKDuR bHjpxP sc-dTvVRJ jMSukC"
+              class="c4"
               cursor="inherit"
               title=""
             >
@@ -176,7 +477,7 @@ exports[`Card > renders correctly with fallback style 1`] = `
         </div>
       </div>
       <div
-        class="sc-bRKDuR drfqDG"
+        class="c5"
       />
     </div>
   </div>
@@ -184,31 +485,94 @@ exports[`Card > renders correctly with fallback style 1`] = `
 `;
 
 exports[`Card > renders correctly with title and body 1`] = `
+.c2 {
+  display: flex;
+}
+
+.c3 {
+  display: flex;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c5 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #636768;
+}
+
+.c0 {
+  background: #f1e9dc;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 0px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c6 {
+    margin-top: 0px;
+  }
+}
+
 <div>
   <div
-    class="sc-bRKDuR bHjpxP sc-jwTyAe hwiAiy"
+    class="c0"
   >
     <div
-      class="sc-bRKDuR cRGbbj"
+      class="c1"
     >
       <div
-        class="sc-bRKDuR pJiNb"
+        class="c2"
       >
         <div
-          class="sc-bRKDuR hUwRKL"
+          class="c3"
         >
           <div
-            class="sc-bRKDuR bHjpxP"
+            class=""
           >
             <p
-              class="sc-bRKDuR bHjpxP sc-dTvVRJ jMSukC"
+              class="c4"
               cursor="inherit"
               title=""
             >
               Card Title
             </p>
             <p
-              class="sc-bRKDuR bHjpxP sc-dTvVRJ cXtlSP"
+              class="c5"
               cursor="inherit"
               title=""
             >
@@ -218,7 +582,7 @@ exports[`Card > renders correctly with title and body 1`] = `
         </div>
       </div>
       <div
-        class="sc-bRKDuR drfqDG"
+        class="c6"
       />
     </div>
   </div>

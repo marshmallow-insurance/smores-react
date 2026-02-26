@@ -1,14 +1,41 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Chip > renders correctly when disabled 1`] = `
+.c0 {
+  outline: 0;
+  align-items: center;
+  background-color: #f1e9dc;
+  border-radius: 100px;
+  border: 2px solid #f1e9dc;
+  color: #292924;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  line-height: 100%;
+  padding: 8px 16px 8px 16px;
+  min-width: 98px;
+  min-height: 40px;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c1 {
+  flex-grow: 1;
+}
+
 <div>
   <button
     aria-label="chip-button"
-    class="sc-bRKDuR bHjpxP sc-jJLAfE cNbkBf"
+    class="c0"
     disabled=""
   >
     <div
-      class="sc-hwkwBN hqFAmV"
+      class="c1"
     >
       Disabled
     </div>
@@ -17,14 +44,55 @@ exports[`Chip > renders correctly when disabled 1`] = `
 `;
 
 exports[`Chip > renders correctly when loading 1`] = `
+.c1 path {
+  fill: #ffffff;
+  stroke: none;
+  fill-rule: evenodd;
+}
+
+.c2 {
+  animation: Marshmallow1_t 1.6s linear infinite both,Marshmallow1_d 1.6s linear infinite both;
+}
+
+.c3 {
+  animation: Marshmallow2_t 1.6s linear infinite both,Marshmallow2_d 1.6s linear infinite both;
+}
+
+.c4 {
+  animation: Marshmallow3_t 1.6s linear infinite both,Marshmallow3_d 1.6s linear infinite both;
+}
+
+.c0 {
+  outline: 0;
+  align-items: center;
+  background-color: #f1e9dc;
+  border-radius: 100px;
+  border: 2px solid #f1e9dc;
+  color: #292924;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  line-height: 100%;
+  padding: 8px 16px 8px 16px;
+  min-width: 98px;
+  min-height: 40px;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
 <div>
   <button
     aria-label="chip-button"
-    class="sc-bRKDuR bHjpxP sc-jJLAfE cNbkBf"
+    class="c0"
     disabled=""
   >
     <svg
-      class="sc-ggWZvA fEzudM"
+      class="c1"
       height="16"
       viewBox="0 0 60 32"
     >
@@ -32,19 +100,19 @@ exports[`Chip > renders correctly when loading 1`] = `
         transform="translate(30,18.5455) translate(-30,-9)"
       >
         <path
-          class="sc-dTvVRJ jLBpiK"
+          class="c2"
           d="M73.999,81.9767L73.6592,70.6087C73.6352,69.8071,73.1892,69.0806,72.4916,68.707C71.1747,68.0014,69.0105,67.648,66.0001,67.6467C62.9894,67.648,60.8254,68.0014,59.5084,68.707C58.8109,69.0806,58.3648,69.8071,58.3408,70.6087L58.001,81.9767C57.983,82.5754,58.2138,83.1538,58.6366,83.5705C60.0408,84.9546,62.4906,85.6467,65.986,85.6467C65.9907,85.6467,65.9953,85.6467,66.0001,85.6467C66.0047,85.6467,66.0094,85.6467,66.014,85.6467C69.5095,85.6467,71.9593,84.9546,73.3634,83.5705C73.7863,83.1538,74.0169,82.5754,73.999,81.9767"
           id="Marshmallow1"
           transform="translate(-58,-67.6467)"
         />
         <path
-          class="sc-jwTyAe kHfTEG"
+          class="c3"
           d="M73.999,81.9767L73.6592,70.6087C73.6352,69.8071,73.1892,69.0806,72.4916,68.707C71.1747,68.0014,69.0105,67.648,66.0001,67.6467C62.9894,67.648,60.8254,68.0014,59.5084,68.707C58.8109,69.0806,58.3648,69.8071,58.3408,70.6087L58.001,81.9767C57.983,82.5754,58.2138,83.1538,58.6366,83.5705C60.0408,84.9546,62.4906,85.6467,65.986,85.6467C65.9907,85.6467,65.9953,85.6467,66.0001,85.6467C66.0047,85.6467,66.0094,85.6467,66.014,85.6467C69.5095,85.6467,71.9593,84.9546,73.3634,83.5705C73.7863,83.1538,74.0169,82.5754,73.999,81.9767"
           id="Marshmallow2"
           transform="translate(-36,-67.6467)"
         />
         <path
-          class="sc-hjsuWn bjPPtv"
+          class="c4"
           d="M73.999,81.9767L73.6592,70.6087C73.6352,69.8071,73.1892,69.0806,72.4916,68.707C71.1747,68.0014,69.0105,67.648,66.0001,67.6467C62.9894,67.648,60.8254,68.0014,59.5084,68.707C58.8109,69.0806,58.3648,69.8071,58.3408,70.6087L58.001,81.9767C57.983,82.5754,58.2138,83.1538,58.6366,83.5705C60.0408,84.9546,62.4906,85.6467,65.986,85.6467C65.9907,85.6467,65.9953,85.6467,66.0001,85.6467C66.0047,85.6467,66.0094,85.6467,66.014,85.6467C69.5095,85.6467,71.9593,84.9546,73.3634,83.5705C73.7863,83.1538,74.0169,82.5754,73.999,81.9767"
           id="Marshmallow3"
           transform="translate(-14,-67.6467)"
@@ -56,13 +124,45 @@ exports[`Chip > renders correctly when loading 1`] = `
 `;
 
 exports[`Chip > renders correctly with primary styling 1`] = `
+.c0 {
+  outline: 0;
+  align-items: center;
+  background-color: #f1e9dc;
+  border-radius: 100px;
+  border: 2px solid #f1e9dc;
+  color: #292924;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  line-height: 100%;
+  padding: 8px 16px 8px 16px;
+  min-width: 98px;
+  min-height: 40px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  border: 2px solid #f8f2ea;
+  background-color: #f8f2ea;
+}
+
+.c1 {
+  flex-grow: 1;
+}
+
 <div>
   <button
     aria-label="chip-button"
-    class="sc-bRKDuR bHjpxP sc-jJLAfE dogeqJ"
+    class="c0"
   >
     <div
-      class="sc-hwkwBN hqFAmV"
+      class="c1"
     >
       Primary
     </div>
@@ -71,13 +171,48 @@ exports[`Chip > renders correctly with primary styling 1`] = `
 `;
 
 exports[`Chip > renders correctly with secondary styling 1`] = `
+.c0 {
+  outline: 0;
+  align-items: center;
+  background-color: #f1e9dc;
+  border-radius: 100px;
+  border: 2px solid #f1e9dc;
+  color: #292924;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  line-height: 100%;
+  padding: 8px 16px 8px 16px;
+  min-width: 98px;
+  min-height: 40px;
+  cursor: pointer;
+  opacity: 1;
+  color: #ffffff;
+  background-color: #292924;
+  border: 2px solid #292924;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  border: 2px solid #636768;
+  background-color: #636768;
+}
+
+.c1 {
+  flex-grow: 1;
+}
+
 <div>
   <button
     aria-label="chip-button"
-    class="sc-bRKDuR bHjpxP sc-jJLAfE hcNHaZ"
+    class="c0"
   >
     <div
-      class="sc-hwkwBN hqFAmV"
+      class="c1"
     >
       Secondary
     </div>

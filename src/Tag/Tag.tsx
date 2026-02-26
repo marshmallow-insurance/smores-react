@@ -1,18 +1,17 @@
-import React, { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import styled, { useTheme } from 'styled-components'
 import { MarginProps } from '../utils/space'
 
 import { TransientProps } from 'utils/utilTypes'
 import { Box } from '../Box'
 import { Text } from '../Text'
-import { Color } from '../theme'
-import { Icon } from '../Icon'
-import { Icons } from 'Icon/iconsList'
+import { Icon, Icons } from '../Icon'
 import {
   ColorTypes,
   getColorPath,
   resolveToThemeColor,
 } from '../ThemeProvider/utils/colourMap'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 export type TagProps = {
   label: string
@@ -21,7 +20,8 @@ export type TagProps = {
   borderColor?: ColorTypes
   className?: string
   icon?: Icons
-  iconColor?: Color
+  iconComponent?: ReactNode
+  iconColor?: ColorTypes
   onClick?: () => void
 } & MarginProps
 
@@ -32,6 +32,7 @@ export const Tag: FC<TagProps> = ({
   bgColor,
   className,
   icon,
+  iconComponent,
   iconColor,
   onClick,
   ...marginProps
@@ -41,6 +42,19 @@ export const Tag: FC<TagProps> = ({
   const resolvedBGColor = resolveToThemeColor(bgColor, theme)
   const resolvedBorderColor =
     borderColor && resolveToThemeColor(borderColor, theme)
+
+  const iconToRender = iconComponent ? (
+    <IconContainer $size={16} style={{ paddingRight: '4px' }}>
+      {iconComponent}
+    </IconContainer>
+  ) : icon ? (
+    <TagIcon
+      render={icon}
+      color={iconColor}
+      size={16}
+      data-testid={`tag-icon-${icon}`}
+    />
+  ) : null
 
   return (
     <Wrapper
@@ -52,14 +66,7 @@ export const Tag: FC<TagProps> = ({
       justifyContent="center"
       onClick={onClick}
     >
-      {icon && (
-        <TagIcon
-          render={icon}
-          color={iconColor}
-          size={16}
-          data-testid={`tag-icon-${icon}`}
-        />
-      )}
+      {iconToRender}
       <TagText tag="span" typo="label" color={getColorPath(color)}>
         {label}
       </TagText>

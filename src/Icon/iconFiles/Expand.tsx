@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Expand = () => (
   <svg
     width="100%"

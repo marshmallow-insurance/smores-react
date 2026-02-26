@@ -1,5 +1,3 @@
-import React from 'react'
-
 const AccidentalDamage = () => (
   <svg
     width="100%"

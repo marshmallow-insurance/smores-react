@@ -1,5 +1,6 @@
-import React, {
+import {
   FocusEvent,
+  AnimationEvent,
   FormEvent,
   ForwardedRef,
   forwardRef,
@@ -11,10 +12,12 @@ import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import {
   Input,
+  InputLeadingIconContainer,
   StyledFrontIcon,
   StyledTrailingIcon,
 } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
+import { useTheme } from 'styled-components'
 
 interface Props extends CommonFieldProps {
   type?: 'text' | 'email' | 'password' | 'time' | 'date' | 'tel'
@@ -72,6 +75,8 @@ export const TextInput = forwardRef(function TextInput(
     onAutoFill,
     disabled = false,
     frontIcon,
+    frontIconComponent,
+    trailingIconComponent,
     trailingIcon,
     fallbackStyle,
     autoCompleteAttr = 'off',
@@ -81,23 +86,42 @@ export const TextInput = forwardRef(function TextInput(
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   const id = useUniqueId(idProp)
+  const theme = useTheme()
 
-  const handleAnimationEnd = (e: React.AnimationEvent<HTMLInputElement>) => {
+  const handleAnimationEnd = (e: AnimationEvent<HTMLInputElement>) => {
     if (e.animationName === 'onAutoFillStart' && onAutoFill && !!value) {
       onAutoFill()
     }
   }
 
+  const frontIconToRender = frontIconComponent ? (
+    <InputLeadingIconContainer $size={20} $iconColor={theme.color.text.subtle}>
+      {frontIconComponent}
+    </InputLeadingIconContainer>
+  ) : frontIcon ? (
+    <StyledFrontIcon
+      $disabled={disabled}
+      render={frontIcon}
+      color="color.icon.base"
+    />
+  ) : null
+
+  const trailingIconToRender = trailingIconComponent ? (
+    <InputLeadingIconContainer $size={20} $iconColor={theme.color.text.subtle}>
+      {trailingIconComponent}
+    </InputLeadingIconContainer>
+  ) : trailingIcon ? (
+    <StyledTrailingIcon
+      $disabled={disabled}
+      render={trailingIcon}
+      color="color.icon.base"
+    />
+  ) : null
+
   return (
     <Field {...fieldProps} htmlFor={id} error={error}>
       <Box flex alignItems="center" justifyContent="flex-start">
-        {frontIcon && (
-          <StyledFrontIcon
-            $disabled={disabled}
-            render={frontIcon}
-            color="sesame"
-          />
-        )}
+        {frontIconToRender && frontIconToRender}
         <Input
           disabled={disabled}
           type={type}
@@ -108,23 +132,17 @@ export const TextInput = forwardRef(function TextInput(
           placeholder={placeholder}
           value={value}
           $error={error}
-          $frontIcon={frontIcon}
+          $frontIcon={Boolean(frontIconToRender)}
           $fallbackStyle={fallbackStyle}
           autoComplete={autoCompleteAttr}
           onChange={(e: FormEvent<HTMLInputElement>) => {
-            onChange && onChange(e.currentTarget.value)
-            onInputChange && onInputChange(e)
+            onChange?.(e.currentTarget.value)
+            onInputChange?.(e)
           }}
           onBlur={onBlur}
           inputMode={inputModeAttr}
         />
-        {trailingIcon && (
-          <StyledTrailingIcon
-            $disabled={disabled}
-            render={trailingIcon}
-            color="sesame"
-          />
-        )}
+        {trailingIconToRender && trailingIconToRender}
       </Box>
     </Field>
   )

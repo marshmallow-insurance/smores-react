@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Visa = () => (
   <svg
     width="100%"

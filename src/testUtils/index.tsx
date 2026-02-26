@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import { render, RenderOptions } from '@testing-library/react'
 import { SmoresThemeProvider } from '../ThemeProvider/ThemeProvider'
 
-const Providers = ({ children }: { children: React.ReactNode }) => {
+const Providers = ({ children }: { children: ReactNode }) => {
   return <SmoresThemeProvider>{children}</SmoresThemeProvider>
 }
 
@@ -13,5 +13,6 @@ const customRender = (
 
 export * from '@testing-library/react'
 export * from '@testing-library/jest-dom/vitest'
+export * from 'jest-styled-components'
 
 export { customRender as render }

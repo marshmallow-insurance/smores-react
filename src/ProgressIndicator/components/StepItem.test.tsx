@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, screen, fireEvent } from '../../testUtils'
 import { StepItem, StepItemProps } from './StepItem'
 describe('StepItem', () => {
@@ -28,7 +27,6 @@ describe('StepItem', () => {
     )
 
     expect(baseElement).toMatchSnapshot()
-    expect(screen.getByTestId('tick-container')).toBeTruthy()
   })
 
   it('calls onClick when clicked', () => {

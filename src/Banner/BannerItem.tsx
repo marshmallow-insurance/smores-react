@@ -1,16 +1,22 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 import { Box } from '../Box'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { useTimeout } from '../hooks'
-import { Color } from '../theme'
 import { Banner } from './types'
+import { NewColor, resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
+import { IconContainer } from '../sharedStyles/shared.styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowRight,
+  faXmark,
+} from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 type StylesItem = {
-  iconColor: Color
+  iconColor: NewColor
   backgroundColor: string
-  textColor: Color
+  textColor: NewColor
 }
 
 type BannerType = 'upsell' | 'critical' | 'general' | 'success'
@@ -29,6 +35,7 @@ export const BannerItem: FC<Props> = ({
   showExploreText,
   showExploreIcon,
   leadingIcon,
+  iconComponent,
   canManuallyClose,
   showCloseIcon,
   deleteBanner,
@@ -38,24 +45,24 @@ export const BannerItem: FC<Props> = ({
 
   const styles: Record<BannerType, StylesItem> = {
     upsell: {
-      iconColor: 'liquorice',
+      iconColor: 'color.icon.base',
       backgroundColor: theme.color.surface.brand[300],
-      textColor: 'liquorice',
+      textColor: 'color.text.base',
     },
     critical: {
-      iconColor: 'cream',
+      iconColor: 'color.icon.inverse',
       backgroundColor: theme.color.feedback.negative[200],
-      textColor: 'cream',
+      textColor: 'color.text.inverse',
     },
     general: {
-      iconColor: 'cream',
+      iconColor: 'color.icon.inverse',
       backgroundColor: theme.color.surface.base[900],
-      textColor: 'cream',
+      textColor: 'color.text.inverse',
     },
     success: {
-      iconColor: 'cream',
+      iconColor: 'color.icon.inverse',
       backgroundColor: theme.color.feedback.positive[200],
-      textColor: 'cream',
+      textColor: 'color.text.inverse',
     },
   }
   const autoCloseBaner = () => {
@@ -69,6 +76,19 @@ export const BannerItem: FC<Props> = ({
 
   const textColor = styles[type].textColor
   const iconColor = styles[type].iconColor
+  const resolvedIconColor = resolveToThemeColor(iconColor, theme)
+
+  const iconToRender = iconComponent ? (
+    <IconContainer
+      $size={24}
+      $iconColor={resolvedIconColor}
+      style={{ marginRight: '12px' }}
+    >
+      {iconComponent}
+    </IconContainer>
+  ) : leadingIcon ? (
+    <Icon mr="12px" render={leadingIcon} size={24} color={iconColor} />
+  ) : null
 
   return (
     <BannerWrapper
@@ -80,9 +100,7 @@ export const BannerItem: FC<Props> = ({
       $backgroundColour={styles[type].backgroundColor}
     >
       <Box flex alignItems="center">
-        {leadingIcon && (
-          <Icon mr="12px" render={leadingIcon} size={24} color={iconColor} />
-        )}
+        {iconToRender}
         <Text typo="headline-small" color={textColor}>
           {message}
         </Text>
@@ -94,7 +112,12 @@ export const BannerItem: FC<Props> = ({
             aria-label={`close banner ${message}`}
           >
             {showCloseIcon ? (
-              <Icon render="cross" size={16} color={iconColor} />
+              <IconContainer $size={16}>
+                <FontAwesomeIcon
+                  icon={faXmark}
+                  color={resolveToThemeColor(iconColor, theme)}
+                />
+              </IconContainer>
             ) : (
               <UnderlinedText
                 tag="span"
@@ -120,13 +143,12 @@ export const BannerItem: FC<Props> = ({
                 </UnderlinedText>
               )}
               {showExploreIcon && (
-                <Icon
-                  render="arrow"
-                  ml="12px"
-                  size={24}
-                  color={iconColor}
-                  rotate={180}
-                />
+                <IconContainer $size={24} style={{ marginLeft: '12px' }}>
+                  <FontAwesomeIcon
+                    color={resolvedIconColor}
+                    icon={faArrowRight}
+                  />
+                </IconContainer>
               )}
             </Box>
           </GenericButton>

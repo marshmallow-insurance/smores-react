@@ -1,9 +1,8 @@
-import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { Box } from '../../Box'
-import { Tag } from '../Tag'
-import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
 import { legacyColorMap, NewColor } from '../../ThemeProvider/utils/colourMap'
+import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
+import { Tag } from '../Tag'
 
 const meta: Meta<typeof Tag> = {
   title: 'Tag',
@@ -107,10 +106,10 @@ export const Colors: Story = {
 
 export const WithIcon: Story = {
   args: {
-    bgColor: 'feijoa',
-    color: 'cream',
+    bgColor: 'color.illustration.accent1.100',
+    color: 'color.surface.base.000',
     label: 'I have an icon',
     icon: 'flagFilled',
-    iconColor: 'strawberry',
+    iconColor: 'color.feedback.negative.200',
   },
 }

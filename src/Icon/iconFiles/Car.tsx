@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Car = () => (
   <svg
     width="100%"

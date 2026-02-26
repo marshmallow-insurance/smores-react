@@ -1,0 +1,580 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Alert Component > should render Info alert correctly 1`] = `
+.c2 {
+  display: flex;
+  width: 100%;
+}
+
+.c3 {
+  max-width: 512px;
+}
+
+.c1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.c1 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c5 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c6 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  display: flex;
+  width: 100%;
+  max-width: 512px;
+  min-width: min-content;
+  padding: 12px 12px 12px 20px;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 8px 16px 16px 8px;
+  background: #d0e3f2;
+  position: relative;
+  display: flex;
+}
+
+.c0:before {
+  width: 8px;
+  height: 100%;
+  position: absolute;
+  background: #4d92c9;
+  content: '';
+  top: 0;
+  left: 0;
+  border-radius: 16px 0 0 16px;
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    gap: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c4 {
+    margin-bottom: 4px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <span
+      class="c1"
+      style="margin: 2px;"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-circle-info"
+        color="#292924"
+        data-icon="circle-info"
+        data-prefix="far"
+        role="img"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM216 336c-13.3 0-24 10.7-24 24s10.7 24 24 24l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-8 0 0-88c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l24 0 0 64-24 0zm40-144a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <p
+          class="c4 c5"
+          cursor="inherit"
+          title=""
+        >
+          Info Alert
+        </p>
+        <p
+          class="c6"
+          cursor="inherit"
+          title=""
+        >
+          This is an info alert.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Alert Component > should render correctly with button cta 1`] = `
+.c2 {
+  display: flex;
+  width: 100%;
+}
+
+.c3 {
+  max-width: 512px;
+}
+
+.c1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.c1 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c5 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c7 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c8 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+  background-color: #ffffff;
+  padding: 0 10px;
+  min-width: 54px;
+  font-size: 14px;
+}
+
+.c8:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c8:hover {
+  background-color: #f1e9dc;
+}
+
+.c8:active {
+  background-color: #dad2c4;
+}
+
+.c8 .childrenContainer {
+  padding: 9px 0;
+}
+
+.c8 span {
+  margin: 0 5px 0 0;
+}
+
+.c9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c10 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
+.c0 {
+  display: flex;
+  width: 100%;
+  max-width: 512px;
+  min-width: min-content;
+  padding: 12px 12px 12px 20px;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 8px 16px 16px 8px;
+  background: #fbf8f5;
+  position: relative;
+  display: flex;
+}
+
+.c0:before {
+  width: 8px;
+  height: 100%;
+  position: absolute;
+  background: #dad2c4;
+  content: '';
+  top: 0;
+  left: 0;
+  border-radius: 16px 0 0 16px;
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    gap: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c4 {
+    margin-bottom: 4px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c6 {
+    margin-bottom: 8px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <span
+      class="c1"
+      style="margin: 2px;"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-circle-info"
+        color="#292924"
+        data-icon="circle-info"
+        data-prefix="far"
+        role="img"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM216 336c-13.3 0-24 10.7-24 24s10.7 24 24 24l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-8 0 0-88c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l24 0 0 64-24 0zm40-144a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <p
+          class="c4 c5"
+          cursor="inherit"
+          title=""
+        >
+          Test Alert
+        </p>
+        <p
+          class="c6 c7"
+          cursor="inherit"
+          title=""
+        >
+          This is a test alert.
+        </p>
+        <button
+          class="c8"
+        >
+          <div
+            class="c9"
+          >
+            <div
+              class="c10 childrenContainer"
+            >
+              Click Me
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Alert Component > should render correctly with link cta 1`] = `
+.c2 {
+  display: flex;
+  width: 100%;
+}
+
+.c3 {
+  max-width: 512px;
+}
+
+.c1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.c1 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c9 {
+  outline: 0;
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  text-decoration: underline;
+  color: #292924;
+  background: none;
+  cursor: pointer;
+}
+
+.c9:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c9:hover {
+  color: #636768;
+}
+
+.c9:hover path {
+  fill: #636768;
+}
+
+.c9:active {
+  color: #292924;
+}
+
+.c9:active path {
+  fill: #636768;
+}
+
+.c5 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c5 .c8 {
+  color: #292924;
+}
+
+.c5 .c8 path {
+  fill: #292924;
+}
+
+.c5 .c8:hover {
+  color: #0e0e0c;
+}
+
+.c5 .c8:hover path {
+  fill: #0e0e0c;
+}
+
+.c7 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c7 .c8 {
+  color: #292924;
+}
+
+.c7 .c8 path {
+  fill: #292924;
+}
+
+.c7 .c8:hover {
+  color: #0e0e0c;
+}
+
+.c7 .c8:hover path {
+  fill: #0e0e0c;
+}
+
+.c0 {
+  display: flex;
+  width: 100%;
+  max-width: 512px;
+  min-width: min-content;
+  padding: 12px 12px 12px 20px;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 8px 16px 16px 8px;
+  background: #fcf0d0;
+  position: relative;
+  display: flex;
+}
+
+.c0:before {
+  width: 8px;
+  height: 100%;
+  position: absolute;
+  background: #f2cb4a;
+  content: '';
+  top: 0;
+  left: 0;
+  border-radius: 16px 0 0 16px;
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 0px) {
+  .c2 {
+    gap: 8px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c4 {
+    margin-bottom: 4px;
+  }
+}
+
+@media (min-width: 0px) {
+  .c6 {
+    margin-bottom: 8px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <span
+      class="c1"
+      style="margin: 2px;"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-triangle-exclamation"
+        color="#292924"
+        data-icon="triangle-exclamation"
+        data-prefix="far"
+        role="img"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M256.5 0c14.7 0 28.2 8.1 35.2 21l216 400c6.7 12.4 6.4 27.4-.8 39.5S486.6 480 472.5 480l-432 0c-14.1 0-27.1-7.4-34.3-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9 20.5-21 35.2-21zM53.9 432L459.1 432 256.5 56.8 53.9 432zm202.6-40a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm0-208c18.6 0 33 16.1 31 34.6l-7.1 64.1C279 294.8 268.7 304 256.5 304s-22.5-9.2-23.8-21.3l-7.1-64.1c-2-18.5 12.4-34.6 31-34.6z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <p
+          class="c4 c5"
+          cursor="inherit"
+          title=""
+        >
+          Test Alert
+        </p>
+        <p
+          class="c6 c7"
+          cursor="inherit"
+          title=""
+        >
+          This is a test alert.
+        </p>
+        <a
+          class="c8 c9"
+          href=""
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

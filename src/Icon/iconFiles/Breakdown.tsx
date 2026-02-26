@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Breakdown = () => (
   <svg
     width="100%"

@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 import { Box } from './Box'
@@ -106,7 +105,7 @@ const ColorsPage = () => {
 }
 
 export default {
-  title: 'Foundation/Colors',
+  title: 'Foundation/Colors (Deprecated)',
   components: ColorsPage,
 }
 

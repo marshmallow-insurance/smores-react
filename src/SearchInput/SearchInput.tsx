@@ -1,5 +1,5 @@
 import Fuse, { IFuseOptions } from 'fuse.js'
-import React, {
+import {
   ChangeEvent,
   FocusEvent,
   ReactNode,
@@ -8,16 +8,25 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import { Box } from '../Box'
-import { IconStrict } from '../IconStrict'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
-import { Input, StyledFrontIcon } from '../fields/components/CommonInput'
+import {
+  Input,
+  InputLeadingIconContainer,
+} from '../fields/components/CommonInput'
 import { useOnClickOutside } from '../hooks'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 import { SearchOptions } from './components/SearchOptions'
+import { IconContainer } from '../sharedStyles/shared.styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faXmark,
+  faChevronDown,
+  faSearch,
+} from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 export type SearchInputItem = {
   label: string
@@ -102,6 +111,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     ref,
   ) {
     const wrapperRef = useRef(null)
+    const theme = useTheme()
     const id = useUniqueId(idProp)
     const [showOptions, setShowOptions] = useState(false)
     const [selectedValue, setSelectedValue] = useControllableState<
@@ -244,14 +254,21 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           {...otherProps}
         >
           <Box flex alignItems="center" justifyContent="flex-start">
-            {showIcon && <StyledFrontIcon render="search" color="sesame" />}
+            {showIcon && (
+              <InputLeadingIconContainer $size={20}>
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  color={theme.color.text.subtle}
+                />
+              </InputLeadingIconContainer>
+            )}
             <Input
               id={id}
               name={name}
               ref={ref}
               placeholder={placeholder}
               $error={otherProps.error}
-              $frontIcon={showIcon ? 'search' : undefined}
+              $frontIcon={showIcon}
               $fallbackStyle={fallbackStyle}
               autoComplete="off"
               value={displayedInputText}
@@ -271,25 +288,36 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               $clearSearch={showClearSearchButton}
             >
               {showClearSearchButton && (
-                <IconStrict
-                  type="button"
-                  render="plus"
-                  rotate={45}
-                  iconColor="marzipan"
+                <IconContainer
                   title="Clear search"
-                  handleClick={handleClearSearch}
-                  size={24}
-                />
+                  onClick={handleClearSearch}
+                  type="button"
+                  as="button"
+                  $size={20}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <FontAwesomeIcon
+                    icon={faXmark}
+                    color={theme.color.illustration.neutral[400]}
+                  />
+                </IconContainer>
               )}
               <Line />
-              <IconStrict
+              <IconContainer
                 type="button"
-                render="caret"
-                iconColor="marzipan"
-                rotate={showOptions ? 180 : 0}
-                handleClick={handleCaretClick}
-                size={24}
-              />
+                title="icon-button"
+                as="button"
+                onClick={handleCaretClick}
+                $size={20}
+              >
+                <FontAwesomeIcon
+                  style={{
+                    rotate: showOptions ? '180deg' : '0deg',
+                  }}
+                  icon={faChevronDown}
+                  color={theme.color.illustration.neutral[400]}
+                />
+              </IconContainer>
             </Icons>
           </Box>
 
@@ -324,7 +352,7 @@ const Line = styled(Box)`
   width: 1px;
 `
 
-export const Icons = styled(Box)<{ $clearSearch: boolean }>`
+const Icons = styled(Box)<{ $clearSearch: boolean }>`
   position: relative;
   right: ${({ $clearSearch }) => ($clearSearch ? '80px' : '48px')};
   margin-right: ${({ $clearSearch }) => ($clearSearch ? '-80px' : '-48px')};

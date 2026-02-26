@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Storm = () => (
   <svg
     width="100%"

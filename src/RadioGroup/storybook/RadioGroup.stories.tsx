@@ -1,7 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { BaseValueType } from 'RadioGroup/types'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { RadioGroup } from '../RadioGroup'
+import { Box } from '../../Box'
+import { Text } from '../../Text'
 import visualSvg from './radio-visual.svg'
 
 const options = [
@@ -112,5 +114,45 @@ export const Withicon: Story = {
       iconPosition: 'center',
     })),
     displayType: 'horizontal-card',
+  },
+}
+
+export const WithMultipleTextElements: Story = {
+  args: {
+    displayType: 'vertical-card',
+    options: [
+      {
+        label: 'Pay now',
+        value: 'basic',
+        bodyCopy: (
+          <Box
+            direction="column"
+            mt={{ custom: '4px' }}
+            gap={{ custom: '4px' }}
+          >
+            <Text>£189.38 today</Text>
+            <Text typo="body-small" color="color.text.subtle">
+              Your remaining 3 monthly payments stay at £39.43
+            </Text>
+          </Box>
+        ),
+      },
+      {
+        label: 'Spread the cost',
+        value: 'standard',
+        bodyCopy: (
+          <Box
+            direction="column"
+            mt={{ custom: '4px' }}
+            gap={{ custom: '4px' }}
+          >
+            <Text>£12.50 today</Text>
+            <Text typo="body-small" color="color.text.subtle">
+              Your remaining 3 monthly payments will increase to £94.22
+            </Text>
+          </Box>
+        ),
+      },
+    ],
   },
 }

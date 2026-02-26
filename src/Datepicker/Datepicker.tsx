@@ -10,11 +10,10 @@ import {
   isWeekend,
   isWithinInterval,
 } from 'date-fns'
-import React, { FC, useState } from 'react'
-import styled, { css } from 'styled-components'
+import { FC, useState } from 'react'
+import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
-import { Icon } from '../Icon'
 import { Text } from '../Text'
 import { theme } from '../theme'
 
@@ -23,6 +22,12 @@ import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 import { useControllableState } from '../utils/useControlledState'
 import { DatesList } from './DatesList'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faChevronLeft,
+  faChevronRight,
+} from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { IconContainer } from '../sharedStyles/shared.styles'
 
 const getAvailableMonths = (startDate: Date, endDate: Date) => {
   const monthList = eachMonthOfInterval({
@@ -67,6 +72,7 @@ export const Datepicker: FC<DatepickerProps> = ({
   fallbackStyle = false,
   ...marginProps
 }) => {
+  const theme = useTheme()
   // We want to make sure that the date is in the UK timezone,
   // this might need to be revisit when opening up to new countries
   const startDate = convertToUkDate(fromDate)
@@ -136,7 +142,12 @@ export const Datepicker: FC<DatepickerProps> = ({
             }
           }}
         >
-          <Icon render="caret" color="cream" size={18} rotate={90} />
+          <IconContainer $size={16}>
+            <FontAwesomeIcon
+              icon={faChevronLeft}
+              color={theme.color.surface.base['000']}
+            />
+          </IconContainer>
         </Circle>
 
         <Heading tag="h4" typo="body-regular">
@@ -156,7 +167,12 @@ export const Datepicker: FC<DatepickerProps> = ({
             }
           }}
         >
-          <Icon render="caret" color="cream" size={18} rotate={-90} />
+          <IconContainer $size={16}>
+            <FontAwesomeIcon
+              icon={faChevronRight}
+              color={theme.color.surface.base['000']}
+            />
+          </IconContainer>
         </Circle>
       </Header>
 

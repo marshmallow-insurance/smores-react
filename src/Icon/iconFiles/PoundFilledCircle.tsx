@@ -1,5 +1,3 @@
-import React from 'react'
-
 const PoundFilledCircle = () => (
   <svg
     width="100%"

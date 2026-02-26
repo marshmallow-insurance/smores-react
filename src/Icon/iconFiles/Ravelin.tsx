@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Ravelin = () => (
   <svg
     width="100%"

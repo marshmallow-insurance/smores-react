@@ -1,8 +1,8 @@
-import React from 'react'
+import { userEvent } from 'storybook/test'
 import { expect, it } from 'vitest'
-import { render } from '../testUtils'
-import { SegmentedControl } from './SegmentedControl'
+import { render, waitFor } from '../testUtils'
 import { noop } from '../utils/noop'
+import { SegmentedControl } from './SegmentedControl'
 
 describe('SegmentedControl', () => {
   it('renders correctly with default props and a tag', () => {
@@ -36,7 +36,9 @@ describe('SegmentedControl', () => {
     expect(getByText('Option 1')).toHaveStyle({
       color: '#ffffff', // color.surface.base.000
     })
-    expect(container.querySelector('[togglecolor]')).toHaveStyle({
+    expect(
+      container.querySelector('[data-testid="toggle-indicator"]'),
+    ).toHaveStyle({
       'background-color': '#292924', // color.text.base
     })
 
@@ -71,7 +73,9 @@ describe('SegmentedControl', () => {
     expect(getByText('Option 1')).toHaveStyle({
       color: '#292924', // color.text.base
     })
-    expect(container.querySelector('[togglecolor]')).toHaveStyle({
+    expect(
+      container.querySelector('[data-testid="toggle-indicator"]'),
+    ).toHaveStyle({
       'background-color': '#FFFFFF', // color.surface.base.000
     })
 
@@ -95,10 +99,10 @@ describe('SegmentedControl', () => {
         onChange={noop}
         showTag={true}
         styles={{
-          selectedText: 'liquorice',
-          text: 'liquorice',
-          background: 'marshmallowPink',
-          toggle: 'cream',
+          selectedText: 'color.text.base',
+          text: 'color.text.base',
+          background: 'color.surface.brand.300',
+          toggle: 'color.surface.base.000',
         }}
       />,
     )
@@ -106,7 +110,9 @@ describe('SegmentedControl', () => {
     expect(getByText('Option 1')).toHaveStyle({
       color: '#292924', // liquorice
     })
-    expect(container.querySelector('[togglecolor]')).toHaveStyle({
+    expect(
+      container.querySelector('[data-testid="toggle-indicator"]'),
+    ).toHaveStyle({
       'background-color': '#FFFFFF', // cream
     })
 
@@ -114,8 +120,87 @@ describe('SegmentedControl', () => {
     expect(getByText('Option 2')).toHaveStyle({
       color: '#292924', // liquorice
     })
+
     expect(container.firstChild).toHaveStyle({
       'background-color': '#ff88c8', // marshmallowPink
+    })
+  })
+
+  it('renders correctly with secondary labels', () => {
+    const { container, getByText } = render(
+      <SegmentedControl
+        options={[
+          {
+            label: 'Option 1',
+            value: 'option1',
+            secondaryLabel: 'Secondary Label 1',
+          },
+          {
+            label: 'Option 2',
+            value: 'option2',
+            secondaryLabel: 'Secondary Label 2',
+          },
+          {
+            label: 'Option 3',
+            value: 'option3',
+            secondaryLabel: 'Secondary Label 3',
+          },
+        ]}
+        value="option3"
+        onChange={noop}
+        showTag={false}
+      />,
+    )
+    // Selected
+    expect(getByText('Option 1')).toHaveStyle({
+      color: '#292924', // color.text.base
+    })
+    expect(getByText('Secondary Label 1')).toHaveStyle({
+      color: '#292924', // color.text.base
+    })
+    expect(
+      container.querySelector('[data-testid="toggle-indicator"]'),
+    ).toHaveStyle({
+      'background-color': '#292924', // color.text.base
+    })
+
+    // Unselected
+    expect(getByText('Option 2')).toHaveStyle({
+      color: '#292924', // color.surface.base.000
+    })
+    expect(getByText('Secondary Label 2')).toHaveStyle({
+      color: '#292924', // color.surface.base.000
+    })
+
+    // Option 3
+    expect(getByText('Option 3')).toHaveStyle({
+      color: '#ffffff', // color.surface.base.000
+    })
+    expect(getByText('Secondary Label 3')).toHaveStyle({
+      color: '#ffffff', // color.surface.base.000
+    })
+  })
+
+  it('calls onChange when an option is clicked', async () => {
+    const onChange = vi.fn()
+    const { getByText } = render(
+      <SegmentedControl
+        options={[
+          { label: 'Option 1', value: 'option1' },
+          { label: 'Option 2', value: 'option2' },
+        ]}
+        value="option1"
+        onChange={onChange}
+        showTag={false}
+      />,
+    )
+
+    const user = userEvent.setup()
+
+    user.click(getByText('Option 2'))
+
+    await waitFor(() => {
+      expect(onChange).toHaveBeenCalledWith('option2')
     })
   })
 })

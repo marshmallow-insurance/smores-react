@@ -1,76 +1,214 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SegmentedControl > renders correctly with default props and a tag 1`] = `
+.c5 {
+  display: flex;
+}
+
+.c6 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #292924;
+}
+
+.c11 {
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: left;
+  color: #ffffff;
+}
+
+.c9 {
+  background-color: #ff88c8;
+  border: 1px solid #ff88c8;
+  border-radius: 6px;
+  padding: 4px 8px;
+  height: 22px;
+  box-sizing: border-box;
+  display: inline-flex;
+}
+
+.c12 {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+
+.c2 {
+  cursor: pointer;
+  padding: 10px 14px;
+  transition: color 0.1s linear;
+  height: fit-content;
+  width: 100%;
+  align-content: center;
+  z-index: 3;
+}
+
+.c3 {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.c10 {
+  border-radius: 100px;
+}
+
+.c7 {
+  font-weight: 500;
+  color: #ffffff;
+  padding: 2px 0px;
+}
+
+.c13 {
+  font-weight: 500;
+  padding: 2px 0px;
+}
+
+.c0 {
+  padding: 4px;
+  background-color: #f1e9dc;
+  border-radius: 1000px;
+}
+
+.c1 {
+  position: relative;
+  display: flex;
+  background-color: #f1e9dc;
+  border-radius: 1000px;
+}
+
+.c14 {
+  background-color: #292924;
+  border-radius: 1000px;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: calc(100% / 2);
+  transition: transform 0.4s;
+  transform: translateX(0%);
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c8 {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c8 {
+    align-content: center;
+  }
+}
+
 <div>
   <div
-    backgroundcolor="#f1e9dc"
-    class="sc-bRKDuR bHjpxP sc-kcLKEh fmIIIh"
+    class="c0"
   >
     <div
-      backgroundcolor="#f1e9dc"
-      class="sc-bRKDuR bHjpxP sc-dntSTA hKPNxx"
+      class="c1"
     >
       <label
-        class="sc-hwkwBN emcrIN"
+        class="c2"
         data-testid="value-toggle-option1"
       >
         <input
           checked=""
-          class="sc-kNOymR gOqGXX"
+          class="c3"
           name="toggle-version-button"
           type="radio"
         />
         <div
-          class="sc-bRKDuR bHjpxP sc-dYwGCk gDiBwR"
+          class="c4"
         >
-          <p
-            class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC dzZuDu"
-            cursor="inherit"
-            selectedtextcolor="#ffffff"
-            title=""
+          <div
+            class="c5"
           >
-            Option 1
-          </p>
+            <p
+              class="c6 c7"
+              cursor="inherit"
+              title=""
+            >
+              Option 1
+            </p>
+          </div>
         </div>
       </label>
       <label
-        class="sc-hwkwBN emcrIN"
+        class="c2"
         data-testid="value-toggle-option2"
       >
         <input
-          class="sc-kNOymR gOqGXX"
+          class="c3"
           name="toggle-version-button"
           type="radio"
         />
         <div
-          class="sc-bRKDuR bHjpxP sc-dYwGCk gDiBwR"
+          class="c4"
         >
           <div
-            class="sc-bRKDuR gQglmM sc-jwTyAe dUgXye sc-lgpSej jEUgcj"
+            class="c8 c9 c10"
           >
             <span
-              class="sc-bRKDuR bHjpxP sc-dTvVRJ bKhXFi sc-hjsuWn juqWeu"
+              class="c11 c12"
               cursor="inherit"
               title=""
             >
               tag 2
             </span>
           </div>
-          <p
-            class="sc-bRKDuR bHjpxP sc-dTvVRJ JyLYT sc-eqYatC dSYhYp"
-            cursor="inherit"
-            selectedtextcolor="#ffffff"
-            title=""
+          <div
+            class="c5"
           >
-            Option 2
-          </p>
+            <p
+              class="c6 c13"
+              cursor="inherit"
+              title=""
+            >
+              Option 2
+            </p>
+          </div>
         </div>
       </label>
       <div
-        class="sc-bRKDuR bHjpxP sc-kvnevz jBBJWR"
-        sections="2"
-        selectedindex="0"
-        togglecolor="#292924"
+        class="c14"
+        data-testid="toggle-indicator"
       />
     </div>
   </div>

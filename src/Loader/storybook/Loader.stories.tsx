@@ -1,7 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
-import { Loader } from '../Loader'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { colourOptions } from '../../utils/storybookHelpers/colourOptions'
+import { Loader } from '../Loader'
 
 const meta: Meta<typeof Loader> = {
   title: 'Loader',

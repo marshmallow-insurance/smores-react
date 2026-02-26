@@ -1,5 +1,5 @@
-import React, { FormEvent } from 'react'
-import styled from 'styled-components'
+import { cloneElement, FormEvent } from 'react'
+import styled, { useTheme } from 'styled-components'
 import { Box } from '../../Box'
 import { Button } from '../../Button'
 import { IconStrict } from '../../IconStrict'
@@ -8,6 +8,7 @@ import { focusOutlineStyle } from '../../utils/focusOutline'
 import { isReactElement } from '../../utils/isReactElement'
 import { RowActionsProps } from '../types'
 import { StyledCell } from './commonComponents'
+import { resolveToThemeColor } from '../../ThemeProvider/utils/colourMap'
 
 export const RowActions = <T extends object>({
   rowData,
@@ -15,6 +16,7 @@ export const RowActions = <T extends object>({
   isExpanded,
   toggleExpansion,
   expandable,
+  width,
   canExpandRow,
 }: RowActionsProps<T>) => {
   const handleAction = async (
@@ -25,10 +27,17 @@ export const RowActions = <T extends object>({
     await action(rowData)
   }
 
+  const theme = useTheme()
+
+  const resolvedRowActionBgColor = rowActions?.bgColor
+    ? resolveToThemeColor(rowActions.bgColor, theme)
+    : undefined
+
   return (
     <StyledCell
       $stickyCell={Boolean(rowActions) || Boolean(expandable)}
-      $rowActionsBgColor={rowActions?.bgColor}
+      $rowActionsBgColor={resolvedRowActionBgColor}
+      $width={width}
     >
       <Box flex alignItems="center" justifyContent="flex-end">
         {rowActions?.actions?.map((action, actionIndex) => {
@@ -37,7 +46,7 @@ export const RowActions = <T extends object>({
               <Wrapper flex key={actionIndex}>
                 {'element' in action &&
                   isReactElement(action.element) &&
-                  React.cloneElement(action.element, {
+                  cloneElement(action.element, {
                     onClick: async (e: MouseEvent) => {
                       await handleAction(e, action.onClick)
                     },
@@ -87,8 +96,14 @@ export const RowActions = <T extends object>({
             }}
             size={24}
             $isOpen={isExpanded}
-            iconColor={isExpanded ? 'cream' : 'liquorice'}
-            backgroundColor={isExpanded ? 'liquorice' : 'oatmeal'}
+            iconColor={
+              isExpanded ? 'color.surface.base.000' : 'color.icon.base'
+            }
+            backgroundColor={
+              isExpanded
+                ? 'color.surface.base.900'
+                : 'color.illustration.neutral.300'
+            }
           />
         )}
       </Box>
