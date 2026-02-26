@@ -1,3 +1,48 @@
+## [15.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v14.5.1...v15.0.0) (2026-02-26)
+
+### ⚠ BREAKING CHANGES
+
+* **npm-dep:** testing release config change (<a
+href="https://redirect.github.com/marshmallow-insurance/campfire/issues/310">#310</a>)</li>
+<li><a
+href="https://github.com/marshmallow-insurance/campfire/commit/cbc770dc320fcb5c2d791a959c4f4e6e3c4339f5"><code>cbc770d</code></a>
+chore(release): 2.3.3 [skip ci]</li>
+<li><a
+href="https://github.com/marshmallow-insurance/campfire/commit/664b07756d60d2c683d0d20c3ecd1119dbe4ae41"><code>664b077</code></a>
+fix: re-add sm-release/git pkg (<a
+href="https://redirect.github.com/marshmallow-insurance/campfire/issues/309">#309</a>)</li>
+<li><a
+href="https://github.com/marshmallow-insurance/campfire/commit/f6fd78f9097ae30768bb375a6b7503c89fa45f3a"><code>f6fd78f</code></a>
+chore: remove shared semantic release on main push trigger (<a
+href="https://redirect.github.com/marshmallow-insurance/campfire/issues/292">#292</a>)</li>
+<li><a
+href="https://github.com/marshmallow-insurance/campfire/commit/a6ddc2cb3ef129e6199920da204d0f236a608a7f"><code>a6ddc2c</code></a>
+chore: remove unneeded semantic-release-deps (the semantic-release
+package ha...</li>
+<li>Additional commits viewable in <a
+href="https://github.com/marshmallow-insurance/campfire/compare/v2.3.2...v3.0.1">compare
+view</a></li>
+</ul>
+</details>
+<br />
+
+
+[![Dependabot compatibility
+score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=@mrshmllw/campfire&package-manager=npm_and_yarn&previous-version=2.3.2&new-version=3.0.1)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)
+
+Dependabot will resolve any conflicts with this PR as long as you don't
+alter it yourself. You can also trigger a rebase manually by commenting
+`@dependabot rebase`.
+
+[//]: # (dependabot-automerge-start)
+[//]: # (dependabot-automerge-end)
+
+* **npm-dep:** bump @mrshmllw/campfire from 2.3.2 to 3.0.1 ([#4747](https://github.com/marshmallow-insurance/smores-react/issues/4747)) ([a70460a](https://github.com/marshmallow-insurance/smores-react/commit/a70460abfb1f2a904a743340ef158d0131a9b1a2))
+
+### Features
+
+* **table:** add optional `getRowKey` prop for row identification in `Table` component ([#4541](https://github.com/marshmallow-insurance/smores-react/issues/4541)) ([b2b7266](https://github.com/marshmallow-insurance/smores-react/commit/b2b7266b6d92c1d597e65234fff52c896425f0e0))
+
 ## [14.5.1](https://github.com/marshmallow-insurance/smores-react/compare/v14.5.0...v14.5.1) (2026-02-19)
 
 ### Bug Fixes
