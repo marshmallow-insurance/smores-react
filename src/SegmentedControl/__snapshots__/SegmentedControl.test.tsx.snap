@@ -6,17 +6,21 @@ exports[`SegmentedControl > renders correctly with default props and a tag 1`] =
 }
 
 .c6 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }
 
 .c11 {
+  font-family: CircularXX;
   font-size: 10px;
-  line-height: 12px;
   font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
   text-transform: uppercase;
   text-align: left;
   color: #ffffff;

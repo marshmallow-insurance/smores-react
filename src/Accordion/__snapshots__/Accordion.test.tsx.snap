@@ -19,9 +19,11 @@ exports[`Accordion > renders correctly for fullBorder and filledBackground varia
 }
 
 .c4 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }
@@ -162,9 +164,11 @@ exports[`Accordion > renders correctly when closed 1`] = `
 }
 
 .c4 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }
@@ -278,9 +282,11 @@ exports[`Accordion > renders correctly when expanded 1`] = `
 }
 
 .c4 {
+  font-family: CircularXX;
   font-size: 16px;
   font-weight: 500;
-  line-height: 20px;
+  letter-spacing: 0;
+  line-height: 1.33;
   text-align: left;
   color: #292924;
 }
