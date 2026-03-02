@@ -1,8 +1,8 @@
 {
   "name": "@mrshmllw/smores-react",
   "version": "15.1.0",
-  "main": "./dist/index.js",
   "description": "Collection of React components used by Marshmallow Technology",
+  "main": "./dist/index.js",
   "type": "module",
   "keywords": [
     "react",
@@ -45,6 +45,20 @@
     "commitlint": "commitlint --edit",
     "fix-package-lock-conflicts": "echo \"Make sure conflicts in package.json are resolved before running this script\" && npm i --package-lock-only"
   },
+  "dependencies": {
+    "@awesome.me/kit-46ca99185c": "^1.0.22",
+    "@floating-ui/react": "0.27.18",
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.1",
+    "@lexical/react": "^0.40.0",
+    "@mrshmllw/smores-foundations": "^1.1.0",
+    "body-scroll-lock": "^4.0.0-beta.0",
+    "date-fns": "^4.1.0",
+    "dompurify": "^3.3.1",
+    "fuse.js": "^7.1.0",
+    "lexical": "^0.40.0",
+    "polished": "^4.3.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^20.4.2",
     "@mrshmllw/campfire": "^3.0.2",
@@ -86,23 +100,9 @@
     "vite": "^7.3.1",
     "vitest": "^4.0.18"
   },
-  "dependencies": {
-    "@awesome.me/kit-46ca99185c": "^1.0.22",
-    "@floating-ui/react": "0.27.18",
-    "@fortawesome/fontawesome-svg-core": "^7.1.0",
-    "@fortawesome/react-fontawesome": "^3.1.1",
-    "@lexical/react": "^0.40.0",
-    "@mrshmllw/smores-foundations": "^1.1.0",
-    "body-scroll-lock": "^4.0.0-beta.0",
-    "date-fns": "^4.1.0",
-    "dompurify": "^3.3.1",
-    "fuse.js": "^7.1.0",
-    "lexical": "^0.40.0",
-    "polished": "^4.3.1"
-  },
   "peerDependencies": {
-    "react": "^16.8.0 || ^17 || ^18 || ^19",
-    "react-dom": "^16.8.0 || ^17 || ^18 || ^19"
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
   },
   "repository": {
     "type": "git",
