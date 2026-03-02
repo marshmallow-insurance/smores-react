@@ -83,13 +83,6 @@ exports[`Dropdown > renders correctly when completed 1`] = `
   opacity: 0.5;
 }
 
-.c2 :not(:disabled):hover,
-.c2 :not(:disabled):focus,
-.c2 :not(:disabled):focus-visible,
-.c2 :not(:disabled):checked {
-  border-color: #9d927b;
-}
-
 .c3 {
   position: absolute;
   z-index: 1;
@@ -253,13 +246,6 @@ exports[`Dropdown > renders correctly with a list of items 1`] = `
 .c2:disabled {
   cursor: not-allowed;
   opacity: 0.5;
-}
-
-.c2 :not(:disabled):hover,
-.c2 :not(:disabled):focus,
-.c2 :not(:disabled):focus-visible,
-.c2 :not(:disabled):checked {
-  border-color: #9d927b;
 }
 
 .c3 {
