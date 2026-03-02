@@ -1,6 +1,5 @@
-import { userEvent } from 'storybook/test'
 import { expect, it } from 'vitest'
-import { render, waitFor } from '../testUtils'
+import { fireEvent, render } from '../testUtils'
 import { noop } from '../utils/noop'
 import { SegmentedControl } from './SegmentedControl'
 
@@ -181,7 +180,7 @@ describe('SegmentedControl', () => {
     })
   })
 
-  it('calls onChange when an option is clicked', async () => {
+  it('calls onChange when an option is clicked', () => {
     const onChange = vi.fn()
     const { getByText } = render(
       <SegmentedControl
@@ -195,12 +194,8 @@ describe('SegmentedControl', () => {
       />,
     )
 
-    const user = userEvent.setup()
+    fireEvent.click(getByText('Option 2'))
 
-    user.click(getByText('Option 2'))
-
-    await waitFor(() => {
-      expect(onChange).toHaveBeenCalledWith('option2')
-    })
+    expect(onChange).toHaveBeenCalledWith('option2')
   })
 })
