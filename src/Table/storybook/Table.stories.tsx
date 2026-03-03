@@ -20,7 +20,7 @@ const meta: Meta<TableProps<DataRow, object>> = {
   component: Table,
   decorators: [
     (Story) => (
-      <Box px="12px" m="24px" style={{ backgroundColor: '#F1E9DC' }}>
+      <Box px="space.150" m="space.300" style={{ backgroundColor: '#F1E9DC' }}>
         <Story />
       </Box>
     ),
@@ -34,7 +34,7 @@ type Story<K extends object | undefined = undefined> = StoryObj<
 
 const TemplateWithWrapper: Story = {
   render: (args) => (
-    <Wrapper height="400px" mb="64px">
+    <Wrapper height="400px" mb="space.800">
       <Table {...args} />
     </Wrapper>
   ),
@@ -102,7 +102,7 @@ export const TableFooterElement: Story<typeof tableFooterData> = {
         <BorderBox
           flex
           justifyContent="center"
-          p="48px"
+          p="space.600"
           width="100%"
           style={{ backgroundColor: '#F1E9DC' }}
         >
@@ -146,7 +146,7 @@ export const CustomNoDataTable: Story = {
     columns: columns.slice(0, 5),
     data: [],
     noDataContent: (
-      <BorderBox flex justifyContent="center" my="24px" p="48px">
+      <BorderBox flex justifyContent="center" my="space.300" p="space.600">
         No data
       </BorderBox>
     ),
