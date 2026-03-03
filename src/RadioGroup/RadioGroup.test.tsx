@@ -124,7 +124,7 @@ describe('RadioGroup', () => {
             label: 'Pay now',
             value: 'pay-now',
             bodyCopy: (
-              <Box direction="column" gap={{ custom: '4px' }}>
+              <Box direction="column" gap="space.050">
                 <Text>£189.38 today</Text>
                 <Text typo="body-small" color="color.text.subtle">
                   Your remaining 3 monthly payments stay at £39.43
@@ -136,7 +136,7 @@ describe('RadioGroup', () => {
             label: 'Spread the cost',
             value: 'spread-cost',
             bodyCopy: (
-              <Box direction="column" gap={{ custom: '4px' }}>
+              <Box direction="column" gap="space.050">
                 <Text>£12.50 today</Text>
                 <Text typo="body-small" color="color.text.subtle">
                   Your remaining 3 monthly payments will increase to £94.22
