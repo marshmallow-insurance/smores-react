@@ -141,7 +141,7 @@ const StyledWrapper = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: ${({ theme }) => theme.space['050']};
 `
 
 const StyledTag = styled(Tag)`
@@ -162,7 +162,7 @@ const ToggleWrapper = styled(Box)<{
   $backgroundColor?: string
   $fullWidth?: boolean
 }>`
-  padding: 4px;
+  padding: ${({ theme }) => theme.space['050']};
   background-color: ${(p) => p.$backgroundColor};
   border-radius: ${BORDER_RADIUS}px;
 

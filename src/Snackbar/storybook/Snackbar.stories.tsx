@@ -49,7 +49,7 @@ import { useSnackbar } from '../hooks'
  *
  *   return (
  *     <>
- *       <Button primary onClick={() => setShowModal(true)} mr="16px">
+ *       <Button primary onClick={() => setShowModal(true)} mr="space.200">
  *         Open Modal
  *       </Button>
  *       <Button
@@ -141,7 +141,7 @@ const WithModalComponent: FC = () => {
 
   return (
     <>
-      <Button primary onClick={() => setShowModal(true)} mr="16px">
+      <Button primary onClick={() => setShowModal(true)} mr="space.200">
         Open Modal
       </Button>
 
@@ -150,7 +150,7 @@ const WithModalComponent: FC = () => {
         showModal={showModal}
         handleClick={() => setShowModal(false)}
       >
-        <Text mb="16px">
+        <Text mb="space.200">
           This is a test modal. Try clicking the "Add Snackbar" button to see
           how the snackbar appears centered directly over this modal content.
         </Text>
