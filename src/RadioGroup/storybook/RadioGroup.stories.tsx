@@ -127,8 +127,8 @@ export const WithMultipleTextElements: Story = {
         bodyCopy: (
           <Box
             direction="column"
-            mt={{ custom: '4px' }}
-            gap={{ custom: '4px' }}
+            mt="space.050"
+            gap="space.050"
           >
             <Text>£189.38 today</Text>
             <Text typo="body-small" color="color.text.subtle">
@@ -143,8 +143,8 @@ export const WithMultipleTextElements: Story = {
         bodyCopy: (
           <Box
             direction="column"
-            mt={{ custom: '4px' }}
-            gap={{ custom: '4px' }}
+            mt="space.050"
+            gap="space.050"
           >
             <Text>£12.50 today</Text>
             <Text typo="body-small" color="color.text.subtle">
