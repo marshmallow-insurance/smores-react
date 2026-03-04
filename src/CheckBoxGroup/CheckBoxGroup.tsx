@@ -42,5 +42,5 @@ export const CheckBoxGroup: FC<CheckBoxGroupProps> = ({
 const Container = styled(Box)<{ isColumn: boolean }>`
   display: flex;
   flex-direction: ${(p) => (p.isColumn ? 'column' : 'row')};
-  gap: 16px;
+  gap: ${({ theme }) => theme.space[200]};
 `
