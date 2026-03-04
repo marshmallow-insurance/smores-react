@@ -1,3 +1,5 @@
+## [15.1.24](https://github.com/marshmallow-insurance/smores-react/compare/v15.1.23...v15.1.24) (2026-03-04)
+
 ## [15.1.23](https://github.com/marshmallow-insurance/smores-react/compare/v15.1.22...v15.1.23) (2026-03-04)
 
 ## [15.1.22](https://github.com/marshmallow-insurance/smores-react/compare/v15.1.21...v15.1.22) (2026-03-04)
