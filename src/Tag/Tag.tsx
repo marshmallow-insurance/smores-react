@@ -102,5 +102,5 @@ const TagText = styled(Text)`
 `
 
 const TagIcon = styled(Icon)`
-  padding-right: 4px;
+  padding-right: ${({ theme }) => theme.space['050']};
 `

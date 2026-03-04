@@ -20,20 +20,20 @@ The `<Box />` component is a replacement for the commonly used `<div>` tag. It i
 
 | Description     | Prop | Type     |      Options      |
 | --------------- | ---- | -------- | :---------------: |
-| margin          | m    | optional | string, in pixels |
-| margin x-axis   | mx   | optional | string, in pixels |
-| margin y-axis   | my   | optional | string, in pixels |
-| margin-left     | ml   | optional | string, in pixels |
-| margin-right    | mr   | optional | string, in pixels |
-| margin-top      | mt   | optional | string, in pixels |
-| margin-bottom   | mb   | optional | string, in pixels |
-| padding         | p    | optional | string, in pixels |
-| padding x-axis  | px   | optional | string, in pixels |
-| padding  y-axis | py   | optional | string, in pixels |
-| padding-left    | pl   | optional | string, in pixels |
-| padding-right   | pr   | optional | string, in pixels |
-| padding-top     | pt   | optional | string, in pixels |
-| padding-bottom  | pb   | optional | string, in pixels |
+| margin          | m    | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
+| margin x-axis   | mx   | optional | `space.*`, legacy px string, `'auto'`, or `{ custom: number \| string }` |
+| margin y-axis   | my   | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
+| margin-left     | ml   | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
+| margin-right    | mr   | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
+| margin-top      | mt   | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
+| margin-bottom   | mb   | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
+| padding         | p    | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
+| padding x-axis  | px   | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
+| padding  y-axis | py   | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
+| padding-left    | pl   | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
+| padding-right   | pr   | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
+| padding-top     | pt   | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
+| padding-bottom  | pb   | optional | `space.*`, legacy px string, or `{ custom: number \| string }` |
 
 ### Measure
 

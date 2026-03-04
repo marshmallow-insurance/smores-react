@@ -222,7 +222,7 @@ const EditorButton = styled(Box)<{ $active: boolean }>`
   height: 40px;
   width: 40px;
   line-height: 50px;
-  padding: 12px;
+  padding: ${({ theme }) => theme.space[150]};
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -252,7 +252,7 @@ const Italic = styled(EditorButton)`
 const Toolbar = styled(Box)`
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: ${({ theme }) => theme.space[100]};
 `
 
 const Link = styled(EditorButton)`
@@ -260,7 +260,7 @@ const Link = styled(EditorButton)`
   ${({ $active }) => $active && `width: 360px;`}
   justify-content: left;
   overflow: hidden;
-  gap: 12px;
+  gap: ${({ theme }) => theme.space[150]};
   padding-right: 5px;
   flex-shrink: 1;
 
@@ -292,8 +292,8 @@ const LinkInput = styled.input`
   height: 32px;
   border: none;
   border-radius: 20px;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: ${({ theme }) => theme.space[150]};
+  padding-right: ${({ theme }) => theme.space[150]};
   font-size: 16px;
   min-width: 0;
   background-color: white;
