@@ -43,7 +43,7 @@ const ColorCard = ({ colorName }: { colorName: NewColor }) => {
     <ColorCardWrapper width="260px">
       <ColorBox $colorName={colorName} width="100%" pt={{ custom: '50%' }} />
       <Divider />
-      <Box px="16px" py={{ custom: 4 }} flex direction="column">
+      <Box px="space.200" py="space.050" flex direction="column">
         <Text tag="span" typo="body-regular">
           {colorName}
         </Text>
@@ -64,7 +64,7 @@ const ColorSection = ({
 }) => {
   return (
     <Box width="100%">
-      <Box mb="16px">
+      <Box mb="space.200">
         <Text tag="span" typo="headline-small">
           {title}
         </Text>
@@ -105,7 +105,7 @@ const ColorList = styled(Box)`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 16px;
+  gap: ${({ theme }) => theme.space[200]};
 `
 
 const PageWrapper = styled(Box)`
