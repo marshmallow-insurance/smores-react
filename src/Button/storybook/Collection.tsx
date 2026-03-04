@@ -68,7 +68,7 @@ const Section: FC<{ label: string; children?: ReactNode }> = ({
 }) => {
   return (
     <Box>
-      <Box mb="16px">
+      <Box mb="space.200">
         <Text tag="span" typo="heading-small">
           {label}
         </Text>
@@ -81,7 +81,7 @@ const Section: FC<{ label: string; children?: ReactNode }> = ({
 const Column = styled(Box)`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: ${({ theme }) => theme.space[200]};
 `
 
 const Row: FC<{ label: string; children?: ReactNode }> = ({
@@ -104,5 +104,5 @@ const RowWrapper = styled(Box)`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 16px;
+  gap: ${({ theme }) => theme.space[200]};
 `
