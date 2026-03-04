@@ -100,7 +100,7 @@ export const SupportMessage: FC<SupportMessageProps> = ({
       <IconContainer $size={20} style={{ alignSelf: 'flex-start' }}>
         <FontAwesomeIcon icon={styles[type].icon} color={resolvedIconColor} />
       </IconContainer>
-      <Box flex direction="column" mx="8px">
+      <Box flex direction="column" mx="space.100">
         {title && <Title>{title}</Title>}
         {isReactElement(description) ? (
           <DescriptionBox>{description}</DescriptionBox>
@@ -134,7 +134,7 @@ const Wrapper = styled(Box)<IWrapper>(
     background-color: ${$backgroundColor};
     border-radius: 16px;
     ${onClick && `cursor: pointer`};
-    padding: 12px;
+    padding: ${({ theme }) => theme.space[150]};
     display: flex;
     width: 100%;
 
@@ -150,7 +150,7 @@ const Title = styled.p`
   font-weight: ${oldTheme.font.weight.medium};
   color: ${({ theme }) => theme.color.text.base};
   line-height: 20.8px;
-  margin-bottom: 4px;
+  margin-bottom: ${({ theme }) => theme.space['050']};
 `
 
 const DescriptionBox = styled(Box)`
