@@ -122,11 +122,11 @@ export const Alert: FC<AlertProps> = ({
         justifyContent="space-between"
         alignItems="flex-start"
         width="100%"
-        gap="8px"
+        gap="space.100"
       >
         <Box maxWidth="512px">
           {title && (
-            <Text mb={{ custom: '4px' }} typo="headline-regular">
+            <Text mb="space.050" typo="headline-regular">
               {title}
             </Text>
           )}
@@ -178,7 +178,7 @@ const StyledAlert = styled(Box)<IStyledAlert>(
     min-width: min-content;
     padding: 12px 12px 12px 20px;
     align-items: flex-start;
-    gap: 8px;
+    gap: ${({ theme }) => theme.space[100]};
     border-radius: 8px 16px 16px 8px;
     background: ${$backgroundColor};
     position: relative;

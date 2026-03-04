@@ -100,7 +100,7 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             onChange={onChange}
             onBlur={onBlur}
             isError={isError}
-            mr="8px"
+            mr="space.100"
             isDisabled={disabled}
           />
           <Box>
@@ -129,7 +129,7 @@ const VisualWrapper = styled.div`
 
 const IconWrapper = styled.div<{ $iconPosition?: IconPosition }>`
   display: flex;
-  padding-bottom: 12px;
+  padding-bottom: ${({ theme }) => theme.space[150]};
 
   ${({ $iconPosition }) =>
     $iconPosition === 'center' &&
@@ -217,5 +217,5 @@ const RadioText = styled.span<{ $isError: boolean }>`
   font-weight: ${oldTheme.font.weight.medium};
   color: ${({ $isError, theme }) =>
     $isError ? theme.color.feedback.negative[200] : theme.color.text.base};
-  margin-top: 4px;
+  margin-top: ${({ theme }) => theme.space['050']};
 `
