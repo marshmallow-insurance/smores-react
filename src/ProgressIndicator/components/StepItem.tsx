@@ -141,7 +141,7 @@ const ProgressIndicator = styled(Box)<StyledComponentProps>`
 `
 
 const StyledText = styled(Text)`
-  margin-top: 2px;
+  margin-top: ${({ theme }) => theme.space['025']};
   font-weight: ${oldTheme.font.weight.medium};
   white-space: nowrap;
 `
