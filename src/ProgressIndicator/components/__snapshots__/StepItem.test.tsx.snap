@@ -53,9 +53,11 @@ exports[`StepItem > renders the completed icon when step is completed 1`] = `
 }
 
 .c7 {
+  font-family: CircularXX;
   font-size: 12px;
   font-weight: 400;
-  line-height: 16px;
+  letter-spacing: 0;
+  line-height: 1.25;
   text-align: left;
   color: #292924;
 }
@@ -193,9 +195,11 @@ exports[`StepItem > renders the label correctly and does not render tick if notC
 }
 
 .c6 {
+  font-family: CircularXX;
   font-size: 12px;
   font-weight: 400;
-  line-height: 16px;
+  letter-spacing: 0;
+  line-height: 1.25;
   text-align: left;
   color: #292924;
 }
