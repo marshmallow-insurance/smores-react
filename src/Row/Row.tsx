@@ -116,8 +116,8 @@ const Container = styled(Box)<IContainer>(
     background-color: ${theme.color.surface.base[300]};
     display: grid;
     grid-template-columns: ${$iconLeft ? `24px auto 24px` : `auto 24px`};
-    padding: 16px;
-    grid-gap: 16px;
+    padding: ${({ theme }) => theme.space[200]};
+    grid-gap: ${({ theme }) => theme.space[200]};
     align-items: center;
 
     cursor: pointer;
@@ -131,7 +131,7 @@ const Container = styled(Box)<IContainer>(
     }
 
     @media (min-width: 768px) {
-      grid-gap: 24px;
+      grid-gap: ${({ theme }) => theme.space[300]};
     }
   `,
 )
