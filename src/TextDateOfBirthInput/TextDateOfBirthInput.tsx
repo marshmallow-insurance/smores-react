@@ -103,7 +103,7 @@ export const TextDateOfBirthInput = forwardRef<
       errorMsg={hookformError?.message}
       data-testid={dataTestId}
     >
-      <Box flex gap="16px">
+      <Box flex gap="space.200">
         <SetWidthTextInput
           ref={ref}
           label="day"
