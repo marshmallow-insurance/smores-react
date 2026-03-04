@@ -87,12 +87,12 @@ export const BannerItem: FC<Props> = ({
       {iconComponent}
     </IconContainer>
   ) : leadingIcon ? (
-    <Icon mr="12px" render={leadingIcon} size={24} color={iconColor} />
+    <Icon mr="space.150" render={leadingIcon} size={24} color={iconColor} />
   ) : null
 
   return (
     <BannerWrapper
-      p="24px"
+      p="space.300"
       mt={{ custom: topOffset }}
       key={id}
       flex
@@ -134,7 +134,7 @@ export const BannerItem: FC<Props> = ({
             <Box flex alignItems="center">
               {showExploreText && (
                 <UnderlinedText
-                  ml="12px"
+                  ml="space.150"
                   tag="span"
                   typo="headline-small"
                   color={textColor}
