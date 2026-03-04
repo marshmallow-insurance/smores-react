@@ -109,7 +109,7 @@ const StyledResultsContainer = styled.div<
   box-sizing: border-box;
   overflow: hidden;
   margin: -16px;
-  padding: 16px;
+  padding: ${({ theme }) => theme.space[200]};
   ${({ $positionRelative }) => !$positionRelative && 'position: absolute;'}
   width:  calc(100% + 32px);
   left: 0px;
