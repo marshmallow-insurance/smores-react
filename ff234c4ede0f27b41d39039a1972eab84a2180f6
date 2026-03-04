@@ -1,0 +1,21 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.4",
+  "base_commit_sha": "ff234c4ede0f27b41d39039a1972eab84a2180f6",
+  "prompts": {
+    "1547d6b4278ac2fa": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019cb444-9d82-78e2-85d3-e3627f13d86a",
+        "model": "gpt-5.3-codex"
+      },
+      "human_author": "Liam Canetti <git@liamcanetti.co.uk>",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 39,
+      "overriden_lines": 0
+    }
+  }
+}
