@@ -92,12 +92,12 @@ export const Modal: FC<ModalProps> = ({
           flex
           alignItems="flex-start"
           justifyContent="space-between"
-          mb="8px"
+          mb="space.100"
         >
           <TitleElements flex direction="column">
             <Text {...titleProps} />
           </TitleElements>
-          <Box flex alignItems="center" gap={'8px'}>
+          <Box flex alignItems="center" gap={'space.100'}>
             {rightPanel}
             {cross && (
               <IconContainer
@@ -156,7 +156,7 @@ const Container = styled.div<IModalContainer>(
     background: ${({ theme }) => theme.color.background[100]};
     box-sizing: border-box;
     border-radius: 16px;
-    padding: 24px;
+    padding: ${({ theme }) => theme.space[300]};
     width: 100%;
     max-width: ${$width};
     position: fixed;
