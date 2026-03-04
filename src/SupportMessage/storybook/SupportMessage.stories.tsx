@@ -76,7 +76,7 @@ export const Success: Story = {
 }
 
 const Label = styled(Text)`
-  margin-bottom: 4px;
+  margin-bottom: ${({ theme }) => theme.space['050']};
   font-size: 14px;
   width: 140px;
   flex-shrink: 0;
@@ -84,7 +84,7 @@ const Label = styled(Text)`
 
 const Group: FC<SupportMessageProps> = (args) => {
   return (
-    <Box flex direction="column" mb="32px" gap="8px">
+    <Box flex direction="column" mb="space.400" gap="space.100">
       <Box flex>
         <Label tag="span" typo="heading-small">
           Default
