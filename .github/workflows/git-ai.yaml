@@ -1,0 +1,12 @@
+name: Git AI
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  git-ai:
+    uses: marshmallow-insurance/.github/.github/workflows/git-ai.yaml@main
+    permissions:
+      contents: write
+    secrets: inherit
