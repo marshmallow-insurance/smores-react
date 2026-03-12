@@ -1,3 +1,684 @@
+## [16.0.0](https://github.com/marshmallow-insurance/smores-react/compare/v15.1.31...v16.0.0) (2026-03-12)
+
+### ⚠ BREAKING CHANGES
+
+* **npm-dep:** Fix --lexical-indent-base-value CSS variable
+override</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8111">#8111</a>
+Prevent layout thrashing when setting element indent for no indent
+case</li>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8115">#8115</a>
+Support legacy 'align' attribute in ParagraphNode importDOM</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8121">#8121</a>
+IME: Do not move anchor when inserting composition start char</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8142">#8142</a>
+IME: Fix history not recording composing character</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8148">#8148</a>
+IME: Do not apply format and style when moving to a different node in
+composition</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8154">#8154</a>
+IME: Fix selected text not properly deleted after IME input on Safari
+(macOS)</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8162">#8162</a>
+IME: Maintain format when multiple formatted text nodes are replaced
+with composition text</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8159">#8159</a>
+Support DOM selection in elements with slots
+Code</li>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/7918">#7918</a>
+Allow moving caret outside of code block</li>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8155">#8155</a>
+Trigger keyboard shortcuts by physical key code with non-ascii keyboard
+layouts</li>
+</ul>
+<p>Extension</p>
+<ul>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8114">#8114</a>
+Implement DecoratorTextExtension applying format to
+DecoratorTextNode</li>
+</ul>
+<p>Rich Text</p>
+<ul>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8122">#8122</a>
+Support configuration of indentable nodes</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8152">#8152</a>
+Inherit format and style when inserting tab</li>
+</ul>
+<p>Link</p>
+<ul>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8123">#8123</a>
+Prevent AutoLink from linking URLs inside code blocks without
+highlighting</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8127">#8127</a>
+Prevent AutoLinkNode from creating extra paragraphs</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8137">#8137</a>
+Add AutoLinkNode to AutoLinkExtension node dependencies</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8138">#8138</a>
+<code>$toggleLink</code> should remove the whole link when selection is
+collapsed</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8164">#8164</a>
+Prevent creation of nested LinkNode</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8158">#8158</a>
+Transform to move blocks outside of LinkNode
+List</li>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8092">#8092</a>
+Preserve ordered list numbering when split by blocks or paragraphs</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8118">#8118</a>
+Remove empty parent node in nested list</li>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8105">#8105</a>
+Add focus event option for the checklist extension</li>
+</ul>
+<p>Table</p>
+<ul>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8097">#8097</a>
+Implement &quot;fit nested tables&quot; for nested table pasting</li>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8094">#8094</a>
+Support 'scope' attribute in HTML import for th tags</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8131">#8131</a>
+Preserve Background Color when pasting table rows inside table</li>
+</ul>
+<p>Markdown</p>
+<ul>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8116">#8116</a>
+Fix nested fenced code blocks parsing and export</li>
+</ul>
+<!-- raw HTML omitted -->
+</blockquote>
+<p>... (truncated)</p>
+</details>
+<details>
+<summary>Changelog</summary>
+<p><em>Sourced from <a
+href="https://github.com/facebook/lexical/blob/main/CHANGELOG.md"><code>@​lexical/react</code>'s
+changelog</a>.</em></p>
+<blockquote>
+<h2>v0.41.0 (2026-02-25)</h2>
+<ul>
+<li>lexical Bug Fix Move new paragraph outside inline element in
+insertParagraph (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8158">#8158</a>)
+Achal Jhawar</li>
+<li>lexical-markdown Bug Fix Prevent nesting links creation (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8164">#8164</a>)
+Sergey Gorbachev</li>
+<li>tests Chore Update yaml-language-server in lexical-esm-astro-react
+integration fixture (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8163">#8163</a>)
+PikkaPikkachu</li>
+<li>lexical Bug Fix Maintain format when replace multiple formatted text
+nodes with composition text (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8162">#8162</a>)
+kimseongyu</li>
+<li>lexical-markdown Fix Prevent markdown shortcut link transformer from
+being too greedy (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8161">#8161</a>)
+Bob Ippolito</li>
+<li>feat add focus event option for the checklist extension (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8105">#8105</a>)
+Tulio</li>
+<li>lexical Bug Fix Fix selected text not properly deleted after IME
+input on Safari (macOS) (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8154">#8154</a>)
+Kawashima Shota (shiba)</li>
+<li>lexical-core Bug fix support dom selection for elements with slots
+(<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8159">#8159</a>)
+Maksim Horbachevsky</li>
+<li>lexical-rich-text Bug Fix Inherit format and style when inserting
+tab (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8152">#8152</a>)
+kimseongyu</li>
+<li>lexical-playground Bug Fix Code block formatting in unintended
+adjacent lines (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8149">#8149</a>)
+Achal Jhawar</li>
+<li>lexical Bug Fix Do not apply format and style when moving to
+different node in composition (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8148">#8148</a>)
+kimseongyu</li>
+<li>lexical-history Bug Fix History not record composing character (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8142">#8142</a>)
+Senasiko</li>
+<li>lexical-website Chore Add a website build step to Github Actions in
+CI (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8146">#8146</a>)
+Bob Ippolito</li>
+<li>docs fix formatting and update browser support table (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8144">#8144</a>)
+IkyssOffc</li>
+<li>lexical-extension Feature Implement DecoratorTextExtension applying
+format to DecoratorTextNode (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8114">#8114</a>)
+Sergey Gorbachev</li>
+<li>lexical-markdown Feature Support Enter key after to create code
+block (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8140">#8140</a>)
+Achal Jhawar</li>
+<li>lexical-link Bug Fix toggleLink removes link when selection is
+collapsed (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8138">#8138</a>)
+Senasiko</li>
+<li>lexical-website Chore Update supported browsers list to Safari 15,
+Chrome 86, Firefox 115 (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8141">#8141</a>)
+Bob Ippolito</li>
+<li>lexical-playground Clean up old Table Hover Actions (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8139">#8139</a>)
+Ivaylo Pavlov</li>
+<li>lexical-link Bug Fix Add AutoLinkNode to AutoLinkExtension node
+dependencies (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8137">#8137</a>)
+Bob Ippolito</li>
+<li>lexical-playground Fix Increase toolbar z-index to prevent content
+overlap (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8134">#8134</a>)
+Sa-Te</li>
+<li>Breaking Changelexical Bug Fix Fix --lexical-indent-base-value CSS
+variable override (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8132">#8132</a>)
+Achal Jhawar</li>
+<li>lexical-code Bug Fix Allow moving caret outside code block (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/7918">#7918</a>)
+Simon</li>
+<li>lexical-table Fix Preserve Background Color when pasting table rows
+inside table. (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8131">#8131</a>)
+Sa-Te</li>
+<li>lexical Bug Fix Do not move anchor when inserting composition start
+char (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8121">#8121</a>)
+kimseongyu</li>
+<li>lexical-react Annotate deprecated to menuRenderFn with NodeContext
+(<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8001">#8001</a>)
+Michael</li>
+<li>lexical-playgroundlexical-link Bug Fix Prevent AutoLinkNode from
+creating extra paragraphs (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8127">#8127</a>)
+Sebastian</li>
+<li>lexical-playground Rearrange table columns (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8063">#8063</a>)
+Ivaylo Pavlov</li>
+<li>lexical-link Bug Fix Prevent AutoLink from linking URLs inside code
+blocks (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8123">#8123</a>)
+Achal Jhawar</li>
+<li>lexical-extensionlexical-rich-textlexical-react Feature Support
+configuration of indentable nodes (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8122">#8122</a>)
+Sergey Gorbachev</li>
+<li>lexical Bug Fix Remove empty parent node in nested list (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8118">#8118</a>)
+Senasiko</li>
+<li>lexical-playground tests for ComponentPickerMenuPlugin (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8128">#8128</a>)
+Syed Umar Anis</li>
+<li>lexical-markdown Bug Fix Fix nested fenced code blocks parsing and
+export (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8116">#8116</a>)
+Abdul Alim</li>
+<li>lexical-list Feature Preserve ordered list numbering when split by
+blocks or paragraphs (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8092">#8092</a>)
+Sa-Te</li>
+<li>lexical Feature Support legacy align attribute in ParagraphNode
+importDOM (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8115">#8115</a>)
+Sa-Te</li>
+<li>Fix(table) Support scope attribute in HTML import. (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8094">#8094</a>)
+Sa-Te</li>
+<li>lexical Chore Stabilize playground collab WebKit E2E test waits (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8113">#8113</a>)
+Szymon Rczka</li>
+<li>lexical-tablelexical-playground Feature Implement fit nested tables
+for nested table pasting (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8097">#8097</a>)
+Randal</li>
+<li>Update examples for v0.40.0 and pnpm (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8110">#8110</a>)
+Bob Ippolito</li>
+<li>lexical Bug Fix Prevent layout thrashing when setting element indent
+for no indent case (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8111">#8111</a>)
+InanBerkin</li>
+<li>v0.40.0 (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8104">#8104</a>)
+Bob Ippolito</li>
+<li>v0.40.0 Lexical GitHub Actions Bot</li>
+</ul>
+</blockquote>
+</details>
+<details>
+<summary>Commits</summary>
+<ul>
+<li><a
+href="https://github.com/facebook/lexical/commit/14bb73075d80f36b2f05610679ed6cdbfa95f017"><code>14bb730</code></a>
+v0.41.0</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/2f1189deb06a5cce8ade8355c3f5642d7a6b47c4"><code>2f1189d</code></a>
+feat: add focus event option for the checklist extension (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8105">#8105</a>)</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/d5716cb70eeba7a9f4e7090fd05b697f9c95be8e"><code>d5716cb</code></a>
+[lexical-react] Annotate <a
+href="https://github.com/deprecated"><code>@​deprecated</code></a> to
+menuRenderFn with NodeContext… (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8001">#8001</a>)</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/4b70f58dc67a14bc082b981c156bdfa65ef21d0b"><code>4b70f58</code></a>
+[lexical-link] Bug Fix: Prevent AutoLink from linking URLs inside code
+blocks...</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/36b8872567e00ee01bdbd30140e50e9df2ac62f2"><code>36b8872</code></a>
+[lexical-extension][lexical-rich-text][lexical-react] Feature: Support
+config...</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/2ccc73ab647def41a53a633b94ac61404c4f34b0"><code>2ccc73a</code></a>
+[lexical-list] Feature: Preserve ordered list numbering when split by
+blocks ...</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/80ed4aa65f3cd94d63038b346a86e8f11939ceea"><code>80ed4aa</code></a>
+[lexical-table][lexical-playground] Feature: Implement &quot;fit nested
+tables&quot; fo...</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/b961452b9028f5b26a056fbc00f8c65506b2f391"><code>b961452</code></a>
+v0.40.0 (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical-react/issues/8104">#8104</a>)</li>
+<li>See full diff in <a
+href="https://github.com/facebook/lexical/commits/v0.41.0/packages/lexical-react">compare
+view</a></li>
+</ul>
+</details>
+<br />
+
+Updates `lexical` from 0.40.0 to 0.41.0
+<details>
+<summary>Release notes</summary>
+<p><em>Sourced from <a
+href="https://github.com/facebook/lexical/releases">lexical's
+releases</a>.</em></p>
+<blockquote>
+<p>v0.41.0 is a monthly release with a huge number of fixes and features
+from a lot of new contributors. The most notable fixes are related to
+IME, non-ascii keyboard layouts, and markdown.</p>
+<h2>Breaking Changes</h2>
+<h3><code>--lexical-indent-base-value</code> CSS moved to root element
+<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8132">#8132</a></h3>
+<p>The <code>--lexical-indent-base-value</code> CSS custom property is
+now only read from the root element of the editor, so any CSS or code to
+set this value must target that rather than an indented element in the
+document. This allows the indent to be computed while the document is
+being rendered without layout thrashing.</p>
+<h2>Highlights</h2>
+<p>Core</p>
+<ul>
+<li>⚠️ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8132">#8132</a>
+* **npm-dep:** Fix --lexical-indent-base-value CSS variable
+override</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8111">#8111</a>
+Prevent layout thrashing when setting element indent for no indent
+case</li>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8115">#8115</a>
+Support legacy 'align' attribute in ParagraphNode importDOM</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8121">#8121</a>
+IME: Do not move anchor when inserting composition start char</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8142">#8142</a>
+IME: Fix history not recording composing character</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8148">#8148</a>
+IME: Do not apply format and style when moving to a different node in
+composition</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8154">#8154</a>
+IME: Fix selected text not properly deleted after IME input on Safari
+(macOS)</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8162">#8162</a>
+IME: Maintain format when multiple formatted text nodes are replaced
+with composition text</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8159">#8159</a>
+Support DOM selection in elements with slots
+Code</li>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/7918">#7918</a>
+Allow moving caret outside of code block</li>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8155">#8155</a>
+Trigger keyboard shortcuts by physical key code with non-ascii keyboard
+layouts</li>
+</ul>
+<p>Extension</p>
+<ul>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8114">#8114</a>
+Implement DecoratorTextExtension applying format to
+DecoratorTextNode</li>
+</ul>
+<p>Rich Text</p>
+<ul>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8122">#8122</a>
+Support configuration of indentable nodes</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8152">#8152</a>
+Inherit format and style when inserting tab</li>
+</ul>
+<p>Link</p>
+<ul>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8123">#8123</a>
+Prevent AutoLink from linking URLs inside code blocks without
+highlighting</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8127">#8127</a>
+Prevent AutoLinkNode from creating extra paragraphs</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8137">#8137</a>
+Add AutoLinkNode to AutoLinkExtension node dependencies</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8138">#8138</a>
+<code>$toggleLink</code> should remove the whole link when selection is
+collapsed</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8164">#8164</a>
+Prevent creation of nested LinkNode</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8158">#8158</a>
+Transform to move blocks outside of LinkNode
+List</li>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8092">#8092</a>
+Preserve ordered list numbering when split by blocks or paragraphs</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8118">#8118</a>
+Remove empty parent node in nested list</li>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8105">#8105</a>
+Add focus event option for the checklist extension</li>
+</ul>
+<p>Table</p>
+<ul>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8097">#8097</a>
+Implement &quot;fit nested tables&quot; for nested table pasting</li>
+<li>🆕 <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8094">#8094</a>
+Support 'scope' attribute in HTML import for th tags</li>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8131">#8131</a>
+Preserve Background Color when pasting table rows inside table</li>
+</ul>
+<p>Markdown</p>
+<ul>
+<li>✅ <a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8116">#8116</a>
+Fix nested fenced code blocks parsing and export</li>
+</ul>
+<!-- raw HTML omitted -->
+</blockquote>
+<p>... (truncated)</p>
+</details>
+<details>
+<summary>Changelog</summary>
+<p><em>Sourced from <a
+href="https://github.com/facebook/lexical/blob/main/CHANGELOG.md">lexical's
+changelog</a>.</em></p>
+<blockquote>
+<h2>v0.41.0 (2026-02-25)</h2>
+<ul>
+<li>lexical Bug Fix Move new paragraph outside inline element in
+insertParagraph (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8158">#8158</a>)
+Achal Jhawar</li>
+<li>lexical-markdown Bug Fix Prevent nesting links creation (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8164">#8164</a>)
+Sergey Gorbachev</li>
+<li>tests Chore Update yaml-language-server in lexical-esm-astro-react
+integration fixture (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8163">#8163</a>)
+PikkaPikkachu</li>
+<li>lexical Bug Fix Maintain format when replace multiple formatted text
+nodes with composition text (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8162">#8162</a>)
+kimseongyu</li>
+<li>lexical-markdown Fix Prevent markdown shortcut link transformer from
+being too greedy (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8161">#8161</a>)
+Bob Ippolito</li>
+<li>feat add focus event option for the checklist extension (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8105">#8105</a>)
+Tulio</li>
+<li>lexical Bug Fix Fix selected text not properly deleted after IME
+input on Safari (macOS) (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8154">#8154</a>)
+Kawashima Shota (shiba)</li>
+<li>lexical-core Bug fix support dom selection for elements with slots
+(<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8159">#8159</a>)
+Maksim Horbachevsky</li>
+<li>lexical-rich-text Bug Fix Inherit format and style when inserting
+tab (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8152">#8152</a>)
+kimseongyu</li>
+<li>lexical-playground Bug Fix Code block formatting in unintended
+adjacent lines (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8149">#8149</a>)
+Achal Jhawar</li>
+<li>lexical Bug Fix Do not apply format and style when moving to
+different node in composition (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8148">#8148</a>)
+kimseongyu</li>
+<li>lexical-history Bug Fix History not record composing character (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8142">#8142</a>)
+Senasiko</li>
+<li>lexical-website Chore Add a website build step to Github Actions in
+CI (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8146">#8146</a>)
+Bob Ippolito</li>
+<li>docs fix formatting and update browser support table (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8144">#8144</a>)
+IkyssOffc</li>
+<li>lexical-extension Feature Implement DecoratorTextExtension applying
+format to DecoratorTextNode (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8114">#8114</a>)
+Sergey Gorbachev</li>
+<li>lexical-markdown Feature Support Enter key after to create code
+block (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8140">#8140</a>)
+Achal Jhawar</li>
+<li>lexical-link Bug Fix toggleLink removes link when selection is
+collapsed (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8138">#8138</a>)
+Senasiko</li>
+<li>lexical-website Chore Update supported browsers list to Safari 15,
+Chrome 86, Firefox 115 (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8141">#8141</a>)
+Bob Ippolito</li>
+<li>lexical-playground Clean up old Table Hover Actions (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8139">#8139</a>)
+Ivaylo Pavlov</li>
+<li>lexical-link Bug Fix Add AutoLinkNode to AutoLinkExtension node
+dependencies (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8137">#8137</a>)
+Bob Ippolito</li>
+<li>lexical-playground Fix Increase toolbar z-index to prevent content
+overlap (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8134">#8134</a>)
+Sa-Te</li>
+<li>Breaking Changelexical Bug Fix Fix --lexical-indent-base-value CSS
+variable override (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8132">#8132</a>)
+Achal Jhawar</li>
+<li>lexical-code Bug Fix Allow moving caret outside code block (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/7918">#7918</a>)
+Simon</li>
+<li>lexical-table Fix Preserve Background Color when pasting table rows
+inside table. (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8131">#8131</a>)
+Sa-Te</li>
+<li>lexical Bug Fix Do not move anchor when inserting composition start
+char (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8121">#8121</a>)
+kimseongyu</li>
+<li>lexical-react Annotate deprecated to menuRenderFn with NodeContext
+(<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8001">#8001</a>)
+Michael</li>
+<li>lexical-playgroundlexical-link Bug Fix Prevent AutoLinkNode from
+creating extra paragraphs (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8127">#8127</a>)
+Sebastian</li>
+<li>lexical-playground Rearrange table columns (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8063">#8063</a>)
+Ivaylo Pavlov</li>
+<li>lexical-link Bug Fix Prevent AutoLink from linking URLs inside code
+blocks (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8123">#8123</a>)
+Achal Jhawar</li>
+<li>lexical-extensionlexical-rich-textlexical-react Feature Support
+configuration of indentable nodes (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8122">#8122</a>)
+Sergey Gorbachev</li>
+<li>lexical Bug Fix Remove empty parent node in nested list (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8118">#8118</a>)
+Senasiko</li>
+<li>lexical-playground tests for ComponentPickerMenuPlugin (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8128">#8128</a>)
+Syed Umar Anis</li>
+<li>lexical-markdown Bug Fix Fix nested fenced code blocks parsing and
+export (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8116">#8116</a>)
+Abdul Alim</li>
+<li>lexical-list Feature Preserve ordered list numbering when split by
+blocks or paragraphs (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8092">#8092</a>)
+Sa-Te</li>
+<li>lexical Feature Support legacy align attribute in ParagraphNode
+importDOM (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8115">#8115</a>)
+Sa-Te</li>
+<li>Fix(table) Support scope attribute in HTML import. (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8094">#8094</a>)
+Sa-Te</li>
+<li>lexical Chore Stabilize playground collab WebKit E2E test waits (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8113">#8113</a>)
+Szymon Rczka</li>
+<li>lexical-tablelexical-playground Feature Implement fit nested tables
+for nested table pasting (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8097">#8097</a>)
+Randal</li>
+<li>Update examples for v0.40.0 and pnpm (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8110">#8110</a>)
+Bob Ippolito</li>
+<li>lexical Bug Fix Prevent layout thrashing when setting element indent
+for no indent case (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8111">#8111</a>)
+InanBerkin</li>
+<li>v0.40.0 (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8104">#8104</a>)
+Bob Ippolito</li>
+<li>v0.40.0 Lexical GitHub Actions Bot</li>
+</ul>
+</blockquote>
+</details>
+<details>
+<summary>Commits</summary>
+<ul>
+<li><a
+href="https://github.com/facebook/lexical/commit/14bb73075d80f36b2f05610679ed6cdbfa95f017"><code>14bb730</code></a>
+v0.41.0</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/454ba980679a683f37c7ae7b2effbc8bb4e3592f"><code>454ba98</code></a>
+[lexical] Bug Fix: REDO_COMMAND not triggered with non-English keyboard
+layou...</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/1448d64c942e792858f97ffe59eb988013cb526e"><code>1448d64</code></a>
+[lexical] Bug Fix: Maintain format when replace multiple formatted text
+nodes...</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/7ce628cdd5442c132a35ce68197f4cf1d80b5cc8"><code>7ce628c</code></a>
+[lexical] Bug Fix: Fix selected text not properly deleted after IME
+input on ...</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/ee59864a33cd9fd42914644bee7f016f51852a87"><code>ee59864</code></a>
+[lexical-core] Bug fix: support dom selection for elements with slots
+(<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8159">#8159</a>)</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/42b2e04fcf0d27f1f2c27bbbc4f45882291e32b6"><code>42b2e04</code></a>
+[lexical] Bug Fix: Do not apply format and style when moving to
+different nod...</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/c32268ada4908272d01b2708939b5af50d8fec02"><code>c32268a</code></a>
+[lexical-history] Bug Fix: History not record composing character (<a
+href="https://github.com/facebook/lexical/tree/HEAD/packages/lexical/issues/8142">#8142</a>)</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/d437a14a2424f52ee27c4a27d800dfea4a794437"><code>d437a14</code></a>
+[lexical-extension] Feature: Implement DecoratorTextExtension applying
+format...</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/f6b5c778ac2f9c90e9a7ef6cb547339199423633"><code>f6b5c77</code></a>
+[Breaking Change][lexical] Bug Fix: Fix --lexical-indent-base-value CSS
+varia...</li>
+<li><a
+href="https://github.com/facebook/lexical/commit/1efd452852fe39f9e986ce16cad0216d9b4bb667"><code>1efd452</code></a>
+[lexical] Bug Fix: Do not move anchor when inserting composition start
+char (...</li>
+<li>Additional commits viewable in <a
+href="https://github.com/facebook/lexical/commits/v0.41.0/packages/lexical">compare
+view</a></li>
+</ul>
+</details>
+<br />
+
+
+Dependabot will resolve any conflicts with this PR as long as you don't
+alter it yourself. You can also trigger a rebase manually by commenting
+`@dependabot rebase`.
+
+[//]: # (dependabot-automerge-start)
+[//]: # (dependabot-automerge-end)
+
+* **npm-dep:** bump the lexical group with 2 updates ([#4826](https://github.com/marshmallow-insurance/smores-react/issues/4826)) ([0d4ef77](https://github.com/marshmallow-insurance/smores-react/commit/0d4ef774b178470cb28676c72d72bc4148592a57))
+
+### Features
+
+* Add git-ai workflow ([#4842](https://github.com/marshmallow-insurance/smores-react/issues/4842)) ([78379fb](https://github.com/marshmallow-insurance/smores-react/commit/78379fb81ae90097a4ca69d717b407c5fdd10b2b))
+
 ## [15.1.31](https://github.com/marshmallow-insurance/smores-react/compare/v15.1.30...v15.1.31) (2026-03-04)
 
 ## [15.1.30](https://github.com/marshmallow-insurance/smores-react/compare/v15.1.29...v15.1.30) (2026-03-04)
