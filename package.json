@@ -60,7 +60,7 @@
     "polished": "^4.3.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.4.4",
+    "@commitlint/cli": "^20.5.0",
     "@mrshmllw/campfire": "^3.2.0",
     "@snyk/protect": "^1.1303.1",
     "@storybook/addon-a11y": "^10.2.19",
