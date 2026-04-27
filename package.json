@@ -82,7 +82,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-storybook": "^10.3.5",
     "husky": "^9.1.7",
     "jest-styled-components": "^7.4.0",
