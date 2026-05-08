@@ -26,7 +26,7 @@ import {
   ItemWidth,
   JustifyContent,
 } from './types'
-import { TransientProps } from 'utils/utilTypes'
+import { TransientProps } from '../utils/utilTypes'
 import { Icons } from '../Icon'
 
 export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {

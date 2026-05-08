@@ -19,44 +19,6 @@
 		"jsx": "react-jsx",
 		"declaration": true,
 		"moduleResolution": "Bundler",
-		"paths": {
-			"ActionDropdown": [
-				"./src/ActionDropdown"
-			],
-			"ActionDropdown/*": [
-				"./src/ActionDropdown/*"
-			],
-			"Icon": [
-				"./src/Icon"
-			],
-			"Icon/*": [
-				"./src/Icon/*"
-			],
-			"ProgressIndicator": [
-				"./src/ProgressIndicator"
-			],
-			"ProgressIndicator/*": [
-				"./src/ProgressIndicator/*"
-			],
-			"RadioGroup": [
-				"./src/RadioGroup"
-			],
-			"RadioGroup/*": [
-				"./src/RadioGroup/*"
-			],
-			"TextDateOfBirthInput": [
-				"./src/TextDateOfBirthInput"
-			],
-			"TextDateOfBirthInput/*": [
-				"./src/TextDateOfBirthInput/*"
-			],
-			"utils": [
-				"./src/utils"
-			],
-			"utils/*": [
-				"./src/utils/*"
-			]
-		},
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"noUnusedLocals": true,
