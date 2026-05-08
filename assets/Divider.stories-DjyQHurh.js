@@ -1,4 +1,0 @@
-import{n as e}from"./chunk-DnJy8xQt.js";import{t}from"./iframe-CQpRN2iB.js";import{n,t as r}from"./colourOptions-B2toMxzR.js";import{n as i,t as a}from"./Divider-CXLxjGQ5.js";var o,s,c,l;e((()=>{n(),i(),o=t(),s={title:`Divider`,component:a,decorators:[e=>(0,o.jsx)(`div`,{style:{margin:`64px`},children:(0,o.jsx)(e,{})})],argTypes:{color:{control:`select`,options:r}}},c={args:{}},c.parameters={...c.parameters,docs:{...c.parameters?.docs,source:{originalSource:`{
-  args: {}
-}`,...c.parameters?.docs?.source}}},l=[`Default`]}))();export{c as Default,l as __namedExportsOrder,s as default};
-//# sourceMappingURL=Divider.stories-DjyQHurh.js.map

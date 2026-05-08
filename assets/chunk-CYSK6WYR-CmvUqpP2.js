@@ -1,0 +1,2 @@
+import{n as e}from"./chunk-DnJy8xQt.js";var t,n,r=e((()=>{t=e=>`control-${e.replace(/\s+/g,`-`)}`,n=e=>`set-${e.replace(/\s+/g,`-`)}`}));export{n,r,t};
+//# sourceMappingURL=chunk-CYSK6WYR-CmvUqpP2.js.map
