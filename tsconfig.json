@@ -19,16 +19,13 @@
 		"jsx": "react-jsx",
 		"declaration": true,
 		"moduleResolution": "Bundler",
-		"paths": {
-			"*": [
-				"./src/*"
-			]
-		},
+		"baseUrl": "src",
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"noUnusedLocals": true,
 		"allowSyntheticDefaultImports": true,
 		"experimentalDecorators": true,
+		"ignoreDeprecations": "6.0",
 		"skipLibCheck": true
 	},
 	"include": [
