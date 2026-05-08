@@ -26,6 +26,9 @@
 			"Icon": [
 				"./src/Icon"
 			],
+			"Icon/*": [
+				"./src/Icon/*"
+			],
 			"ProgressIndicator/*": [
 				"./src/ProgressIndicator/*"
 			],
@@ -34,6 +37,9 @@
 			],
 			"TextDateOfBirthInput": [
 				"./src/TextDateOfBirthInput"
+			],
+			"TextDateOfBirthInput/*": [
+				"./src/TextDateOfBirthInput/*"
 			],
 			"utils/*": [
 				"./src/utils/*"
