@@ -20,8 +20,23 @@
 		"declaration": true,
 		"moduleResolution": "Bundler",
 		"paths": {
-			"*": [
-				"./src/*"
+			"ActionDropdown/*": [
+				"./src/ActionDropdown/*"
+			],
+			"Icon": [
+				"./src/Icon"
+			],
+			"ProgressIndicator/*": [
+				"./src/ProgressIndicator/*"
+			],
+			"RadioGroup/*": [
+				"./src/RadioGroup/*"
+			],
+			"TextDateOfBirthInput": [
+				"./src/TextDateOfBirthInput"
+			],
+			"utils/*": [
+				"./src/utils/*"
 			]
 		},
 		"forceConsistentCasingInFileNames": true,
