@@ -31,6 +31,7 @@ updates:
           - "patch"
       lexical:
         patterns:
+          - "@lexical/code"
           - "@lexical**"
           - "lexical**"
         update-types:
