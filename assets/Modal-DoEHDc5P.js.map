@@ -1,0 +1,1 @@
+{"version":3,"file":"Modal-DoEHDc5P.js","names":[],"sources":["../../src/Modal/index.ts"],"sourcesContent":["export { Modal } from './Modal'\nexport type { ModalProps } from './Modal'\n"],"mappings":""}
