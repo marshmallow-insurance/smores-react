@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import { useUniqueId } from '../utils/id'
 import { theme as oldTheme } from '../theme'
 
-import { TransientProps } from 'utils/utilTypes'
+import { TransientProps } from '../utils/utilTypes'
 import { Box } from '../Box'
 import { Icon, Icons } from '../Icon'
 

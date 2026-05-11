@@ -19,7 +19,6 @@
 		"jsx": "react-jsx",
 		"declaration": true,
 		"moduleResolution": "Bundler",
-		"baseUrl": "src",
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"noUnusedLocals": true,

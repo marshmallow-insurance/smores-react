@@ -1,5 +1,5 @@
 import { Box } from '../../Box'
-import { StepData } from 'ProgressIndicator/types'
+import { StepData } from '../types'
 import styled, { css, useTheme } from 'styled-components'
 import { theme as oldTheme } from '../../theme'
 import { Text } from '../../Text'
