@@ -5,8 +5,7 @@
 		"target": "esnext",
 		"lib": [
 			"esnext",
-			"dom",
-			"dom.iterable"
+			"dom"
 		],
 		"types": [
 			"react",
@@ -24,7 +23,6 @@
 		"strict": true,
 		"noUnusedLocals": true,
 		"allowSyntheticDefaultImports": true,
-		"experimentalDecorators": true,
 		"skipLibCheck": true
 	},
 	"include": [
