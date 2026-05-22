@@ -20,6 +20,7 @@
 		"declaration": true,
 		"moduleResolution": "Bundler",
 		"baseUrl": "src",
+		"ignoreDeprecations": "6.0",
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"noUnusedLocals": true,
