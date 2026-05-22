@@ -8,7 +8,7 @@ import {
 import styled, { css } from 'styled-components'
 import { IconContainer as CommonIconContainer } from '../sharedStyles/shared.styles'
 
-import { TransientProps } from 'utils/utilTypes'
+import { TransientProps } from '../utils/utilTypes'
 import { Box } from '../Box'
 import { Icon as IconComponent, Icons } from '../Icon'
 

@@ -1,6 +1,6 @@
 import { darken } from 'polished'
 import styled, { css } from 'styled-components'
-import { TransientProps } from 'utils/utilTypes'
+import { TransientProps } from '../../utils/utilTypes'
 import { fontStyleMapping } from '../../Text/fontMapping'
 import { focusOutlineStyle } from '../../utils/focusOutline'
 import { TableStylesProps, type TableProps } from '../types'

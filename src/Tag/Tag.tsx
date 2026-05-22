@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react'
 import styled, { useTheme } from 'styled-components'
 import { MarginProps } from '../utils/space'
 
-import { TransientProps } from 'utils/utilTypes'
+import { TransientProps } from '../utils/utilTypes'
 import { Box } from '../Box'
 import { Text } from '../Text'
 import { Icon, Icons } from '../Icon'
