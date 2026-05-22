@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
-import { StepData } from '../../types'
+import { StepData } from '../types'
 import styled from 'styled-components'
 import { Box } from '../../Box'
 import { ProgressIndicator } from '../ProgressIndicator'
