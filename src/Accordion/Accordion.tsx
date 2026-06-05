@@ -1,7 +1,7 @@
 import { FC, ReactNode, useState } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
-import { TransientProps } from 'utils/utilTypes'
+import { TransientProps } from '../utils/utilTypes'
 import { Box } from '../Box'
 import { Text } from '../Text'
 import { MarginProps } from '../utils/space'

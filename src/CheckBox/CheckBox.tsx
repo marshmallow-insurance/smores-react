@@ -122,7 +122,7 @@ const BoxContainer = styled.label`
   &:hover {
     ${Checkmark} {
       background-color: ${({ theme }) =>
-        theme.color.interactive.tertiary.hover};
+        theme.color.interactive.neutral.subtle.hover};
     }
   }
 
