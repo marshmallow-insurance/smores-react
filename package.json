@@ -62,7 +62,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.3",
-    "@mrshmllw/campfire": "^6.1.1",
+    "@mrshmllw/campfire": "^6.1.2",
     "@snyk/protect": "^1.1305.0",
     "@storybook/addon-a11y": "^10.4.1",
     "@storybook/addon-coverage": "^3.0.1",
