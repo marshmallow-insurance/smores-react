@@ -5,8 +5,7 @@
 		"target": "esnext",
 		"lib": [
 			"esnext",
-			"dom",
-			"dom.iterable"
+			"dom"
 		],
 		"types": [
 			"react",
@@ -19,12 +18,10 @@
 		"jsx": "react-jsx",
 		"declaration": true,
 		"moduleResolution": "Bundler",
-		"baseUrl": "src",
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"noUnusedLocals": true,
 		"allowSyntheticDefaultImports": true,
-		"experimentalDecorators": true,
 		"skipLibCheck": true
 	},
 	"include": [

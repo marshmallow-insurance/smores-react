@@ -8,7 +8,7 @@ import {
 import styled, { css } from 'styled-components'
 import { IconContainer as CommonIconContainer } from '../sharedStyles/shared.styles'
 
-import { TransientProps } from 'utils/utilTypes'
+import { TransientProps } from '../utils/utilTypes'
 import { Box } from '../Box'
 import { Icon as IconComponent, Icons } from '../Icon'
 
@@ -188,15 +188,15 @@ const Container = styled(Box)<IButton>(
     `}
   ${$fallbackStyle &&
     css`
-      background-color: ${({ theme }) => theme.color.interactive.tertiary.base};
+      background-color: ${({ theme }) => theme.color.interactive.neutral.subtle.base};
 
       &:hover {
         background-color: ${({ theme }) =>
-          !(disabled || $loading) && theme.color.interactive.tertiary.hover};
+          !(disabled || $loading) && theme.color.interactive.neutral.subtle.hover};
       }
       &:active {
         background-color: ${({ theme }) =>
-          theme.color.interactive.tertiary.pressed};
+          theme.color.interactive.neutral.subtle.selected};
       }
     `}
   ${$smallButton &&
