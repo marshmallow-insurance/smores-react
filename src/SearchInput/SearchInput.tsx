@@ -284,7 +284,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             <Icons
               flex
               alignItems="center"
-              gap="8px"
+              gap="space.100"
               $clearSearch={showClearSearchButton}
             >
               {showClearSearchButton && (

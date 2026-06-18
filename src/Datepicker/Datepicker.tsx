@@ -208,7 +208,7 @@ const Container = styled(Box)<{ $fallbackStyle: boolean }>`
 const Header = styled(Box)`
   color: ${({ theme }) => theme.color.text.base};
   user-select: none;
-  padding: 16px;
+  padding: ${({ theme }) => theme.space[200]};
   border-bottom: 1px solid ${({ theme }) => theme.color.border.subtle};
 
   span {

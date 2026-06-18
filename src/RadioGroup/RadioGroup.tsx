@@ -37,7 +37,7 @@ export type RadioGroupProps<Value extends BaseValueType = BaseValueType> = {
     iconComponent?: ReactNode
     label: string
     value: Value
-    bodyCopy?: string
+    bodyCopy?: string | ReactElement
     disabled?: boolean
   }>
   justifyContent?: JustifyContent

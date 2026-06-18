@@ -99,7 +99,7 @@ export const OverflowExample: Story = {
       <Box
         flex
         direction="column"
-        gap="32px"
+        gap="space.400"
         justifyContent="center"
         alignItems="center"
       >
@@ -175,7 +175,7 @@ export const InlineText: Story = {
         <Tooltip {...props}>Hover here</Tooltip> to learn more as the Policy
         Holder.
       </Text>
-      <Text my="12px">
+      <Text my="space.150">
         Nunc cursus fermentum libero vel iaculis. Praesent vel dignissim purus,
         a iaculis mauris.{' '}
         <Tooltip {...props} position="right">
@@ -246,10 +246,10 @@ export const MTAExample: Story = {
 
 const InnerSection = styled(Box)`
   flex-direction: column;
-  gap: 16px;
+  gap: ${({ theme }) => theme.space[200]};
   position: relative;
   width: 100%;
-  padding: 24px;
+  padding: ${({ theme }) => theme.space[300]};
   border-radius: 16px;
   background: ${({ theme }) => theme.color.surface.base[300]};
   display: flex;

@@ -57,7 +57,7 @@ const Card = () => (
       direction={{ small: 'column', medium: 'row' }}
       gap={{ small: { custom: 2 }, medium: '8px' }}
       alignItems={{ medium: 'center' }}
-      mb="8px"
+      mb="space.100"
     >
       <Icon render="info" size={24} />
       <Text typo="heading-small">Card content.</Text>

@@ -23,7 +23,7 @@ export const ToggleButton = <Value,>({
     <Wrapper
       as="label"
       data-testid={`value-toggle-${String(value)}`}
-      isDisabled={isDisabled}
+      $isDisabled={isDisabled}
     >
       <VisuallyHiddenInput
         type="radio"
@@ -37,10 +37,10 @@ export const ToggleButton = <Value,>({
   )
 }
 
-const Wrapper = styled(Box)<{ isDisabled: boolean }>`
+const Wrapper = styled(Box)<{ $isDisabled: boolean }>`
   cursor: pointer;
-  ${({ isDisabled }) =>
-    isDisabled &&
+  ${({ $isDisabled }) =>
+    $isDisabled &&
     css`
       pointer-events: none;
       opacity: 0.5;

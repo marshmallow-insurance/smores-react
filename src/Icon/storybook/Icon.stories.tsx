@@ -36,7 +36,7 @@ export const Colors: Story = {
           justifyContent="center"
         >
           <Icon {...args} render={icon as Icons} />
-          <Text typo="label" mt="12px">
+          <Text typo="label" mt="space.150">
             {icon}
           </Text>
         </Box>
@@ -51,5 +51,5 @@ const Wrapper = styled(Box)`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 32px;
+  gap: ${({ theme }) => theme.space[400]};
 `

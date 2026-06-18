@@ -37,10 +37,10 @@ export const StyledHeaderCell = styled.th<TransientProps<TableStylesProps>>`
   text-align: left;
   vertical-align: bottom;
   ${fontStyleMapping.label};
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-left: ${({ theme }) => theme.space[100]};
+  padding-right: ${({ theme }) => theme.space[100]};
+  padding-top: ${({ theme }) => theme.space[100]};
+  padding-bottom: ${({ theme }) => theme.space[100]};
 
   ${({ $headerColor }) =>
     $headerColor &&

@@ -8,7 +8,7 @@ import { fontStyleMapping } from '../fontMapping'
 const Grid = styled(Box)`
   display: grid;
   grid-template-columns: 0.4fr 1.2fr 1fr;
-  margin-bottom: 24px;
+  margin-bottom: ${({ theme }) => theme.space[300]};
   gap: 10px;
 `
 

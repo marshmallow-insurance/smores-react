@@ -127,7 +127,7 @@ const OuterContainer = styled.div<IOpen>(
     position: absolute;
     width: 100%;
     border-radius: 12px;
-    margin-top: 8px;
+    margin-top: ${({ theme }) => theme.space[100]};
     display: ${open ? 'block' : 'none'};
     max-height: ${open ? '235px' : '48px'};
     background-color: ${({ theme }) => theme.color.surface.base[300]};

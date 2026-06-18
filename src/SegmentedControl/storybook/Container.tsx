@@ -8,7 +8,7 @@ export const Container = <T,>(props: SegmentedControlProps<T>) => {
   return (
     <>
       <SegmentedControl {...props} value={value} onChange={setValue} />
-      <Box p={'16px'}>
+      <Box p={'space.200'}>
         <p>Selected value: {value as ReactNode}</p>
       </Box>
     </>

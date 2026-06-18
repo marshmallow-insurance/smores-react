@@ -42,13 +42,13 @@ export const RichText = forwardRef(function RichText(
 
 const WarningText = styled(Box)`
   background-color: ${({ theme }) => theme.color.feedback.negative[200]};
-  padding: 16px;
+  padding: ${({ theme }) => theme.space[200]};
   border-radius: 16px;
   width: fit-content;
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: ${({ theme }) => theme.space[200]};
+  margin-bottom: ${({ theme }) => theme.space[200]};
 `
 
 const HtmlBox = styled(Box)`

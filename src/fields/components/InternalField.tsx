@@ -39,13 +39,13 @@ export const InternalField = ({
       {label && (
         <>
           {renderAsTitle ? (
-            <Box mb="16px">
+            <Box mb="space.200">
               <Text tag={labelTag} typo="heading-small" htmlFor={htmlFor}>
                 {label}
               </Text>
 
               {assistiveText && (
-                <Text tag="p" color="sesame" mt={{ custom: 4 }}>
+                <Text tag="p" color="sesame" mt="space.050">
                   {assistiveText}
                 </Text>
               )}
@@ -56,7 +56,7 @@ export const InternalField = ({
               typo="label"
               color={textColor}
               htmlFor={htmlFor}
-              mb={{ custom: 4 }}
+              mb="space.050"
             >
               {label}
               {required && (
@@ -79,7 +79,7 @@ export const InternalField = ({
           tag={labelTag}
           typo="caption"
           color={textColor}
-          mt={{ custom: 4 }}
+          mt="space.050"
         >
           {assistiveText}
         </Text>
@@ -88,7 +88,7 @@ export const InternalField = ({
       {error &&
         errorMsg &&
         (typeof errorMsg === 'string' ? (
-          <Box flex alignItems="center" mt="8px" gap={{ custom: 4 }}>
+          <Box flex alignItems="center" mt="space.100" gap="space.050">
             <Icon
               render="warning"
               size={16}
@@ -99,7 +99,7 @@ export const InternalField = ({
             </Text>
           </Box>
         ) : (
-          <Box mt="8px">{errorMsg}</Box>
+          <Box mt="space.100">{errorMsg}</Box>
         ))}
 
       {/* When completed is false, whitespace is rendered */}
@@ -108,7 +108,7 @@ export const InternalField = ({
           $displayStatus={completed}
           $isError={!!(error && errorMsg)}
         >
-          <StatusWrapper mt={'8px'}>
+          <StatusWrapper mt={'space.100'}>
             <Icon
               render="included"
               size={16}
@@ -149,7 +149,7 @@ const AnimationWrapper = styled(Box)<{
 const StatusWrapper = styled(Box)`
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: ${({ theme }) => theme.space['050']};
 `
 
 const Container = styled(Box)`

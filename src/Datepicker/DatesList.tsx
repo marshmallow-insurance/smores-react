@@ -31,7 +31,7 @@ export const DatesList: FC<Props> = ({
       {showDayLabels &&
         daysOfTheWeek.map((day) => {
           return (
-            <Text key={day} color="sesame" typo="label" mb="24px">
+            <Text key={day} color="sesame" typo="label" mb="space.300">
               {day}
             </Text>
           )
@@ -69,19 +69,19 @@ export const DatesList: FC<Props> = ({
 const Container = styled.div`
   justify-items: center;
   display: grid;
-  grid-column-gap: 4px;
-  grid-row-gap: 8px;
+  grid-column-gap: ${({ theme }) => theme.space['050']};
+  grid-row-gap: ${({ theme }) => theme.space[100]};
   grid-template-columns: repeat(7, 1fr);
-  padding: 8px;
+  padding: ${({ theme }) => theme.space[100]};
 
   @media (min-width: 360px) {
-    grid-gap: 8px;
-    padding: 16px;
+    grid-gap: ${({ theme }) => theme.space[100]};
+    padding: ${({ theme }) => theme.space[200]};
   }
 
   @media (min-width: 768px) {
-    grid-column-gap: 16px;
-    padding: 32px;
+    grid-column-gap: ${({ theme }) => theme.space[200]};
+    padding: ${({ theme }) => theme.space[400]};
   }
 `
 

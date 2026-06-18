@@ -195,7 +195,7 @@ interface IPageBox {
 const Container = styled(Box)`
   align-items: center;
   > button {
-    margin-right: 4px;
+    margin-right: ${({ theme }) => theme.space['050']};
 
     &:last-child {
       margin-right: 0;

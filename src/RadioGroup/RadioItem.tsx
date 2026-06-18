@@ -1,4 +1,4 @@
-import { FocusEvent, forwardRef, ReactNode } from 'react'
+import { FocusEvent, forwardRef, ReactNode, type ReactElement } from 'react'
 import styled, { css } from 'styled-components'
 
 import { useUniqueId } from '../utils/id'
@@ -28,7 +28,7 @@ type RadioItemProps = {
   displayType: DisplayType
   isError: boolean
   fallbackStyle?: boolean
-  bodyCopy?: string
+  bodyCopy?: string | ReactElement
   disabled?: boolean
   itemWidth?: ItemWidth
 }
@@ -100,14 +100,18 @@ export const RadioItem = forwardRef<HTMLInputElement, RadioItemProps>(
             onChange={onChange}
             onBlur={onBlur}
             isError={isError}
-            mr="8px"
+            mr="space.100"
             isDisabled={disabled}
           />
           <Box>
             <RadioText $isError={isError}>{label}</RadioText>
             {bodyCopy && (
               <Box>
-                <Text typo="caption">{bodyCopy}</Text>
+                {typeof bodyCopy === 'string' ? (
+                  <Text typo="caption">{bodyCopy}</Text>
+                ) : (
+                  bodyCopy
+                )}
               </Box>
             )}
           </Box>
@@ -125,7 +129,7 @@ const VisualWrapper = styled.div`
 
 const IconWrapper = styled.div<{ $iconPosition?: IconPosition }>`
   display: flex;
-  padding-bottom: 12px;
+  padding-bottom: ${({ theme }) => theme.space[150]};
 
   ${({ $iconPosition }) =>
     $iconPosition === 'center' &&
@@ -213,5 +217,5 @@ const RadioText = styled.span<{ $isError: boolean }>`
   font-weight: ${oldTheme.font.weight.medium};
   color: ${({ $isError, theme }) =>
     $isError ? theme.color.feedback.negative[200] : theme.color.text.base};
-  margin-top: 4px;
+  margin-top: ${({ theme }) => theme.space['050']};
 `

@@ -113,10 +113,10 @@ export const RowActions = <T extends object>({
 
 const Wrapper = styled(Box)`
   white-space: nowrap;
-  margin-right: 8px;
+  margin-right: ${({ theme }) => theme.space[100]};
 
   &:last-child {
-    margin-right: 0px;
+    margin-right: ${({ theme }) => theme.space['000']};
   }
 
   .reactElementRowAction {

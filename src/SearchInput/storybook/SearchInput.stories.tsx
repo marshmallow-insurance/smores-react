@@ -67,7 +67,7 @@ export const Occupations: Story = {
     notFoundComponent: (searchTerm: string) => (
       <Box>
         <Text typo="headline-regular">No matches for {`'${searchTerm}'`}.</Text>
-        <Text mt="8px">
+        <Text mt="space.100">
           {`It might be listed differently. For example, if you're a "PR
           Consultant", try "Public Relations Officer" instead.`}
         </Text>
@@ -101,7 +101,7 @@ export const Industries: Story = {
     notFoundComponent: (searchTerm: string) => (
       <Box>
         <Text typo="headline-regular">No matches for {`'${searchTerm}'`}.</Text>
-        <Text mt="8px">
+        <Text mt="space.100">
           {`Sometimes we use different terms. If you're in "Medical services," try "Healthcare."`}
         </Text>
       </Box>

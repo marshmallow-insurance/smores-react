@@ -85,7 +85,7 @@ export const Colors: Story = {
     })
 
     return (
-      <Box flex direction="column" gap={{ custom: '4px' }} width="200px">
+      <Box flex direction="column" gap="space.050" width="200px">
         {map}
       </Box>
     )

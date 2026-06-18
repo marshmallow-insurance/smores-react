@@ -39,15 +39,15 @@ export const SnackbarItem: FC<Props> = ({
       render={leadingIcon}
       size={24}
       color="color.surface.base.200"
-      mr="12px"
+      mr="space.150"
     />
   ) : null
 
   return (
     <SnackItem
-      p="16px"
+      p="space.200"
       key={id}
-      mt="16px"
+      mt="space.200"
       flex
       justifyContent="space-between"
       alignItems="center"

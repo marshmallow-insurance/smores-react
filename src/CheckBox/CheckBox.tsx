@@ -92,7 +92,7 @@ const BoxContainer = styled.label`
   position: relative;
   display: flex;
   align-items: flex-start;
-  padding-left: 32px;
+  padding-left: ${({ theme }) => theme.space[400]};
   user-select: none;
   cursor: pointer;
   min-height: 24px;
@@ -127,7 +127,7 @@ const BoxContainer = styled.label`
   }
 
   @media (min-width: 768px) {
-    padding-left: 32px;
+    padding-left: ${({ theme }) => theme.space[400]};
   }
 
   span {
@@ -137,7 +137,7 @@ const BoxContainer = styled.label`
 `
 
 const ErrorBox = styled.div`
-  margin-top: 4px;
+  margin-top: ${({ theme }) => theme.space['050']};
   font-size: 12px;
   color: ${({ theme }) => theme.color.feedback.negative[200]};
 `

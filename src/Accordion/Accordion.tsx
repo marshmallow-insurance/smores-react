@@ -77,8 +77,8 @@ export const Accordion: FC<AccordionProps> = ({
         alignItems="center"
         justifyContent="space-between"
         onClick={handleToggle}
-        py="16px"
-        pr="16px"
+        py="space.200"
+        pr="space.200"
         pl={px}
       >
         <TitleContainer>
@@ -86,7 +86,7 @@ export const Accordion: FC<AccordionProps> = ({
             {title}
           </Text>
           {subTitle && (
-            <Text tag="label" typo="label" mt={{ custom: 4 }}>
+            <Text tag="label" typo="label" mt="space.050">
               {subTitle}
             </Text>
           )}
@@ -100,7 +100,7 @@ export const Accordion: FC<AccordionProps> = ({
         </CaretIcon>
       </TopContainer>
       {isOpen && (
-        <Box pt="12px" pb="16px" px={px}>
+        <Box pt="space.150" pb="space.200" px={px}>
           {children}
         </Box>
       )}
