@@ -168,7 +168,7 @@ const Container = styled(Box)<IButton>(
       }
       &:active {
         background-color: ${({ theme }) =>
-          theme.color.interactive.primary.pressed};
+          theme.color.interactive.primary.selected};
       }
     `}
 
@@ -183,7 +183,7 @@ const Container = styled(Box)<IButton>(
       }
       &:active {
         background-color: ${({ theme }) =>
-          theme.color.interactive.secondary.pressed};
+          theme.color.interactive.secondary.selected};
       }
     `}
   ${$fallbackStyle &&

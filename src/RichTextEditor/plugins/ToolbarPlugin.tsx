@@ -283,7 +283,7 @@ const LinkOpen = styled(IconContainer)`
   padding: 6px;
 
   :hover {
-    background-color: ${({ theme }) => theme.color.interactive.neutral.subtle.selected};
+    background-color: ${({ theme }) => theme.color.interactive.neutral.subtle.hover};
   }
 `
 
