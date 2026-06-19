@@ -1,2 +1,2 @@
-import { prettierConfig } from '@mrshmllw/campfire'
+import prettierConfig from '@mrshmllw/campfire/configs/prettier.config'
 export default prettierConfig
