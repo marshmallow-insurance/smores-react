@@ -167,7 +167,6 @@ exports[`PromoCard > renders correctly with imagePosition right 1`] = `
       >
         <button
           class="c7"
-          label="Claim discount"
         >
           <div
             class="c8"
@@ -376,7 +375,6 @@ exports[`PromoCard > renders correctly with variant override on primaryButton 1`
       >
         <button
           class="c6"
-          label="Claim discount"
         >
           <div
             class="c7"
@@ -390,7 +388,6 @@ exports[`PromoCard > renders correctly with variant override on primaryButton 1`
         </button>
         <button
           class="c9"
-          label="No thanks"
         >
           <div
             class="c7"

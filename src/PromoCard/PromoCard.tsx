@@ -28,12 +28,13 @@ export type PromoCardProps = {
 } & MarginProps
 
 const toButtonProps = (
-  { variant, ...rest }: PromoCardAction,
+  { variant, disabled, loading }: PromoCardAction,
   defaultVariant: PromoCardButtonVariant,
 ) => {
   const resolved = variant ?? defaultVariant
   return {
-    ...rest,
+    disabled,
+    loading,
     primary: resolved === 'primary',
     secondary: resolved === 'secondary',
     fallbackStyle: resolved === 'fallbackStyle',
