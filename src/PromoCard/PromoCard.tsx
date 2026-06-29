@@ -3,6 +3,10 @@ import styled from 'styled-components'
 
 import { MarginProps } from '../utils/space'
 import { TransientProps } from '../utils/utilTypes'
+import {
+  ColorTypes,
+  resolveToThemeColor,
+} from '../ThemeProvider/utils/colourMap'
 import { Box } from '../Box'
 import { Button } from '../Button'
 import { Text } from '../Text'
@@ -21,6 +25,8 @@ export type PromoCardProps = {
   title: string
   body: string
   imagePosition?: 'left' | 'right'
+  /** Card background, as a theme colour. Defaults to `custard`. */
+  backgroundColor?: ColorTypes
   illustration?: ReactNode
   primaryButton?: PromoCardAction
   secondaryButton?: PromoCardAction
@@ -59,6 +65,7 @@ export const PromoCard: FC<PromoCardProps> = ({
   title,
   body,
   imagePosition = 'left',
+  backgroundColor = 'custard',
   illustration,
   primaryButton,
   secondaryButton,
@@ -67,6 +74,7 @@ export const PromoCard: FC<PromoCardProps> = ({
 }) => (
   <Container
     $imagePosition={imagePosition}
+    $backgroundColor={backgroundColor}
     className={className}
     {...marginProps}
   >
@@ -105,7 +113,7 @@ export const PromoCard: FC<PromoCardProps> = ({
 PromoCard.displayName = 'PromoCard'
 
 type IContainer = TransientProps<
-  Required<Pick<PromoCardProps, 'imagePosition'>>
+  Required<Pick<PromoCardProps, 'imagePosition' | 'backgroundColor'>>
 >
 
 const Container = styled(Box)<IContainer>`
@@ -115,7 +123,8 @@ const Container = styled(Box)<IContainer>`
   align-items: flex-end;
   gap: ${({ theme }) => theme.space[200]};
   padding: ${({ theme }) => theme.space[200]};
-  background: ${({ theme }) => theme.color.surface.base[300]};
+  background: ${({ theme, $backgroundColor }) =>
+    resolveToThemeColor($backgroundColor, theme)};
   border-radius: 24px;
   box-sizing: border-box;
 `

@@ -108,6 +108,13 @@ describe('PromoCard', () => {
     expect(handlePrimary).not.toHaveBeenCalled()
   })
 
+  it('applies a custom backgroundColor (matcha)', () => {
+    const { container } = render(
+      <PromoCard {...defaultProps} backgroundColor="matcha" />,
+    )
+    expect(container).toMatchSnapshot()
+  })
+
   it('disables the button when loading is true', () => {
     render(
       <PromoCard

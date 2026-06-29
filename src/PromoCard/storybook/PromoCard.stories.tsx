@@ -92,3 +92,13 @@ export const DisabledAndLoading: Story = {
     secondaryButton: { label: 'No thanks', onClick: noop, loading: true },
   },
 }
+
+export const MatchaBackground: Story = {
+  args: {
+    backgroundColor: 'matcha',
+    title: '£75 MultiCover discount',
+    body: 'After purchasing your car policy today, get home insurance in the next 14 days to keep your discount.',
+    primaryButton: { label: 'Apply discount', onClick: noop },
+    secondaryButton: undefined,
+  },
+}
