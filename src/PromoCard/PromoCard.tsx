@@ -11,11 +11,7 @@ import { Box } from '../Box'
 import { Button } from '../Button'
 import { Text } from '../Text'
 
-type PromoCardButtonVariant =
-  | 'primary'
-  | 'secondary'
-  | 'fallbackStyle'
-  | 'tertiary'
+type PromoCardButtonVariant = 'secondary' | 'fallbackStyle' | 'tertiary'
 
 export type PromoCardAction = {
   label: string
@@ -45,7 +41,6 @@ const toButtonProps = (
   return {
     disabled,
     loading,
-    primary: resolved === 'primary',
     secondary: resolved === 'secondary',
     fallbackStyle: resolved === 'fallbackStyle',
     textBtn: resolved === 'tertiary',

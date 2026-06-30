@@ -71,17 +71,17 @@ export const WithoutIllustration: Story = {
   },
 }
 
-export const PrimaryVariant: Story = {
+export const SecondaryAndTertiary: Story = {
   args: {
     primaryButton: {
       label: 'Claim discount',
       onClick: noop,
-      variant: 'primary',
+      variant: 'secondary',
     },
     secondaryButton: {
       label: 'No thanks',
       onClick: noop,
-      variant: 'fallbackStyle',
+      variant: 'tertiary',
     },
   },
 }

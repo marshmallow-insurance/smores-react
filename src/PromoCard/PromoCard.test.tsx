@@ -131,19 +131,19 @@ describe('PromoCard', () => {
     ).toBeDisabled()
   })
 
-  it('renders correctly with variant override on primaryButton', () => {
+  it('renders correctly with explicit variant overrides on both buttons', () => {
     const { container } = render(
       <PromoCard
         {...defaultProps}
         primaryButton={{
           label: 'Claim discount',
           onClick: vi.fn(),
-          variant: 'primary',
+          variant: 'secondary',
         }}
         secondaryButton={{
           label: 'No thanks',
           onClick: vi.fn(),
-          variant: 'secondary',
+          variant: 'tertiary',
         }}
       />,
     )
