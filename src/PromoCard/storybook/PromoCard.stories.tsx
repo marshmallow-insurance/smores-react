@@ -93,6 +93,22 @@ export const DisabledAndLoading: Story = {
   },
 }
 
+export const WithoutBody: Story = {
+  args: {
+    body: undefined,
+  },
+}
+
+export const TertiaryVariant: Story = {
+  args: {
+    secondaryButton: {
+      label: 'Skip',
+      onClick: noop,
+      variant: 'tertiary',
+    },
+  },
+}
+
 export const MatchaBackground: Story = {
   args: {
     backgroundColor: 'matcha',

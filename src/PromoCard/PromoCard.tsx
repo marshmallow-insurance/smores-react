@@ -11,7 +11,11 @@ import { Box } from '../Box'
 import { Button } from '../Button'
 import { Text } from '../Text'
 
-type PromoCardButtonVariant = 'primary' | 'secondary' | 'fallbackStyle'
+type PromoCardButtonVariant =
+  | 'primary'
+  | 'secondary'
+  | 'fallbackStyle'
+  | 'tertiary'
 
 export type PromoCardAction = {
   label: string
@@ -23,7 +27,7 @@ export type PromoCardAction = {
 
 export type PromoCardProps = {
   title: string
-  body: string
+  body?: string
   imagePosition?: 'left' | 'right'
   /** Card background, as a theme colour. Defaults to `custard`. */
   backgroundColor?: ColorTypes
@@ -44,6 +48,7 @@ const toButtonProps = (
     primary: resolved === 'primary',
     secondary: resolved === 'secondary',
     fallbackStyle: resolved === 'fallbackStyle',
+    textBtn: resolved === 'tertiary',
   }
 }
 
@@ -82,7 +87,7 @@ export const PromoCard: FC<PromoCardProps> = ({
     <Content>
       <Box flex direction="column" gap="space.050">
         <Text typo="heading-small">{title}</Text>
-        <Text typo="body-regular">{body}</Text>
+        {body && <Text typo="body-regular">{body}</Text>}
       </Box>
       {(primaryButton ?? secondaryButton) && (
         <Box flex direction="row" gap="space.100">

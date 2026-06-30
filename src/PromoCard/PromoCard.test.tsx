@@ -149,4 +149,26 @@ describe('PromoCard', () => {
     )
     expect(container).toMatchSnapshot()
   })
+
+  it('renders without body when body is omitted', () => {
+    const { container } = render(<PromoCard title="Insure your home" />)
+    expect(screen.getByText('Insure your home')).toBeInTheDocument()
+    expect(screen.queryByText('Add home cover and save £75.')).toBeNull()
+    expect(container).toMatchSnapshot()
+  })
+
+  it('renders correctly with tertiary variant on secondaryButton', () => {
+    const { container } = render(
+      <PromoCard
+        {...defaultProps}
+        secondaryButton={{
+          label: 'Skip',
+          onClick: vi.fn(),
+          variant: 'tertiary',
+        }}
+      />,
+    )
+    expect(screen.getByRole('button', { name: 'Skip' })).toBeInTheDocument()
+    expect(container).toMatchSnapshot()
+  })
 })
