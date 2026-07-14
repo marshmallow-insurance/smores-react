@@ -65,7 +65,7 @@
     "@mrshmllw/campfire": "^6.1.2",
     "@snyk/protect": "^1.1305.2",
     "@storybook/addon-a11y": "^10.4.6",
-    "@storybook/addon-coverage": "^3.0.1",
+    "@storybook/addon-coverage": "^3.0.2",
     "@storybook/addon-docs": "^10.4.6",
     "@storybook/addon-links": "^10.4.6",
     "@storybook/react-vite": "^10.4.6",
