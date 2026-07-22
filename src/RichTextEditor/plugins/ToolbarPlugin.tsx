@@ -276,14 +276,14 @@ const Link = styled(EditorButton)`
 `
 
 const LinkOpen = styled(IconContainer)`
-  background-color: ${({ theme }) => theme.color.interactive.tertiary.base};
+  background-color: ${({ theme }) => theme.color.interactive.neutral.subtle.base};
   height: 32px;
   width: 32px;
   border-radius: 20px;
   padding: 6px;
 
   :hover {
-    background-color: ${({ theme }) => theme.color.interactive.tertiary.active};
+    background-color: ${({ theme }) => theme.color.interactive.neutral.subtle.hover};
   }
 `
 

@@ -208,11 +208,11 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
 }
 
 .c8:hover {
-  background-color: #f1e9dc;
+  background-color: #f8f2ea;
 }
 
 .c8:active {
-  background-color: #dad2c4;
+  background-color: #f1e9dc;
 }
 
 .c8 .childrenContainer {

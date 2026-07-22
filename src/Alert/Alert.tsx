@@ -1,7 +1,7 @@
 import { FC, ReactElement, useState } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
-import { MarginProps } from 'utils/space'
+import { MarginProps } from '../utils/space'
 import { NewColor, resolveToThemeColor } from '../ThemeProvider/utils/colourMap'
 
 import { Box } from '../Box'
