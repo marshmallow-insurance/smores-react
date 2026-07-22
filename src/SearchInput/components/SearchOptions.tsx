@@ -1,6 +1,6 @@
 import { FC, ReactNode, RefObject, createRef, useEffect, useRef } from 'react'
 import styled, { css } from 'styled-components'
-import { TransientProps } from 'utils/utilTypes'
+import { TransientProps } from '../../utils/utilTypes'
 import { Box } from '../../Box'
 import { Icon } from '../../Icon'
 import { EmptyResults } from './EmptyResults'

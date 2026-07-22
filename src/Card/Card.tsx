@@ -1,7 +1,7 @@
 import { darken } from 'polished'
 import { FC, MouseEventHandler, ReactNode } from 'react'
 import styled, { css, useTheme } from 'styled-components'
-import { TransientProps } from 'utils/utilTypes'
+import { TransientProps } from '../utils/utilTypes'
 import { Box } from '../Box'
 import { Icon, Icons } from '../Icon'
 
