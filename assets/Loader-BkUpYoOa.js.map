@@ -1,0 +1,1 @@
+{"version":3,"file":"Loader-BkUpYoOa.js","names":[],"sources":["../../src/Loader/index.ts"],"sourcesContent":["export { Loader } from './Loader'\n"],"mappings":"0GAAuB"}
