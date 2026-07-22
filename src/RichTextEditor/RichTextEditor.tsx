@@ -1,4 +1,4 @@
-import { CodeHighlightNode, CodeNode } from '@lexical/code'
+import { CodeHighlightNode, CodeNode } from '@lexical/code-core'
 import { $generateNodesFromDOM } from '@lexical/html'
 import { AutoLinkNode, LinkNode } from '@lexical/link'
 import { ListItemNode, ListNode } from '@lexical/list'
@@ -19,6 +19,7 @@ import styled from 'styled-components'
 import { Box } from '../Box'
 import { MarginProps } from '../utils/space'
 import CustomAutoLinkPlugin from './plugins/AutoLinkPlugin'
+import { CodeHighlightPlugin } from './plugins/CodeHighlightPlugin'
 import { EditorDefaultUpdatePlugin } from './plugins/EditorDefaultUpdatePlugin'
 import { EditorUpdatePlugin } from './plugins/EditorUpdatePlugin'
 import ToolbarPlugin from './plugins/ToolbarPlugin'
@@ -83,6 +84,7 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({
           <ListPlugin />
           <HistoryPlugin />
           <CustomAutoLinkPlugin />
+          <CodeHighlightPlugin />
           <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
           <EditorUpdatePlugin onChange={onChange} />
           <EditorDefaultUpdatePlugin defaultValue={defaultValue} />
