@@ -1,1 +1,0 @@
-{"version":3,"file":"Loader-BacTAth3.js","names":[],"sources":["../../src/Loader/index.ts"],"sourcesContent":["export { Loader } from './Loader'\n"],"mappings":"6tBAAuB"}

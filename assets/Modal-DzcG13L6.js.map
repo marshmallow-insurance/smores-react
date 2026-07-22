@@ -1,1 +1,0 @@
-{"version":3,"file":"Modal-DzcG13L6.js","names":[],"sources":["../../src/Modal/index.ts"],"sourcesContent":["export { Modal } from './Modal'\nexport type { ModalProps } from './Modal'\n"],"mappings":"ytBAAsB"}
