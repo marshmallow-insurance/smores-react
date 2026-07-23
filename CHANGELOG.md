@@ -1,3 +1,17 @@
+## [16.1.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.0.3...v16.1.0) (2026-07-23)
+
+### Features
+
+* **RET-2188:** migrate RichTextEditor from PrismJS to Shiki ([#5072](https://github.com/marshmallow-insurance/smores-react/issues/5072)) ([ee498e5](https://github.com/marshmallow-insurance/smores-react/commit/ee498e54d203238218bbeb9463a8befe1ad687e1))
+
+### Bug Fixes
+
+* **RET-1842:** update color tokens for smores-foundations@1.1.1 compat ([#4969](https://github.com/marshmallow-insurance/smores-react/issues/4969)) ([7116a07](https://github.com/marshmallow-insurance/smores-react/commit/7116a07e7bec9a41b05a99bbc76091d95f7b703c))
+
+### Performance Improvements
+
+* **tree-shaking:** declare sideEffects:false ([#5070](https://github.com/marshmallow-insurance/smores-react/issues/5070)) ([02059c2](https://github.com/marshmallow-insurance/smores-react/commit/02059c23a5f4aca341dcc5a95c9de41666e2f1c4)), closes [#9340](https://github.com/marshmallow-insurance/smores-react/issues/9340) [#9424](https://github.com/marshmallow-insurance/smores-react/issues/9424)
+
 ## [16.0.3](https://github.com/marshmallow-insurance/smores-react/compare/v16.0.2...v16.0.3) (2026-05-08)
 
 ## [16.0.2](https://github.com/marshmallow-insurance/smores-react/compare/v16.0.1...v16.0.2) (2026-05-08)
