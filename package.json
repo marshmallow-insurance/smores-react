@@ -94,7 +94,7 @@
     "jsdom": "^29.1.1",
     "lint-staged": "^17.0.8",
     "playwright": "^1.61.1",
-    "prettier": "^3.9.5",
+    "prettier": "^3.9.6",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "rimraf": "^6.1.3",
