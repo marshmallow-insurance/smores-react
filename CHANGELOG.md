@@ -1,3 +1,9 @@
+## [16.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.1.3...v16.2.0) (2026-08-05)
+
+### Features
+
+* **PCW-441:** add PromoCard component ([#5032](https://github.com/marshmallow-insurance/smores-react/issues/5032)) ([bd36cde](https://github.com/marshmallow-insurance/smores-react/commit/bd36cde152edbb5fd0227a4eb287461597681f03))
+
 ## [16.1.3](https://github.com/marshmallow-insurance/smores-react/compare/v16.1.2...v16.1.3) (2026-07-23)
 
 ## [16.1.2](https://github.com/marshmallow-insurance/smores-react/compare/v16.1.1...v16.1.2) (2026-07-23)
