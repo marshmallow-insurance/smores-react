@@ -2,8 +2,12 @@ name: Pull Request
 on:
   pull_request:
 
+concurrency:
+  group: pull-request-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
-  pull-request:
+  check-types:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,15 +19,50 @@ jobs:
           FONT_AWESOME_AUTH_TOKEN: ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
       - name: Run Check Types
         run: npm run check-types
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: marshmallow-insurance/campfire/.github/actions/setup-node-project@main
+        env:
+          FONT_AWESOME_AUTH_TOKEN: ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
       - name: Run Tests
         run: npm run test
+
+  storybook-test:
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright:v1.61.1-jammy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: marshmallow-insurance/campfire/.github/actions/setup-node-project@main
+        env:
+          FONT_AWESOME_AUTH_TOKEN: ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
       - name: Run Build Storybook
         run: |
           npm run build-storybook --quiet
-      - name: Install Playwright
-        run: npx playwright install --with-deps
       - name: Serve Storybook and test
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
             "npx wait-on tcp:6006 && npm run test-storybook:ci"
+
+  # Branch protection requires a status check named "pull-request" (the old single-job
+  # name). This aggregates the split jobs back into that name so protection still works.
+  pull-request:
+    needs: [check-types, test, storybook-test]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check all jobs succeeded
+        run: |
+          if [[ "${{ needs.check-types.result }}" != "success" || "${{ needs.test.result }}" != "success" || "${{ needs.storybook-test.result }}" != "success" ]]; then
+            echo "One or more required jobs failed"
+            exit 1
+          fi
