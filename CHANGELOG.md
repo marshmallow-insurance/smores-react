@@ -1,3 +1,9 @@
+## [16.2.4](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.3...v16.2.4) (2026-08-10)
+
+### Bug Fixes
+
+* **SearchInput:** reset results scroll position when search query changes ([#5105](https://github.com/marshmallow-insurance/smores-react/issues/5105)) ([a0e8af3](https://github.com/marshmallow-insurance/smores-react/commit/a0e8af3df156227134a2f9fa67f88a941942bc9b))
+
 ## [16.2.3](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.2...v16.2.3) (2026-08-10)
 
 ## [16.2.2](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.1...v16.2.2) (2026-08-10)
