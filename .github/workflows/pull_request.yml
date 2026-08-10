@@ -52,3 +52,17 @@ jobs:
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
             "npx wait-on tcp:6006 && npm run test-storybook:ci"
+
+  # Branch protection requires a status check named "pull-request" (the old single-job
+  # name). This aggregates the split jobs back into that name so protection still works.
+  pull-request:
+    needs: [check-types, test, storybook-test]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check all jobs succeeded
+        run: |
+          if [[ "${{ needs.check-types.result }}" != "success" || "${{ needs.test.result }}" != "success" || "${{ needs.storybook-test.result }}" != "success" ]]; then
+            echo "One or more required jobs failed"
+            exit 1
+          fi
