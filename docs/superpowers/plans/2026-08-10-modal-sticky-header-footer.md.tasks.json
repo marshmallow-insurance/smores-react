@@ -1,0 +1,40 @@
+{
+  "planPath": "docs/superpowers/plans/2026-08-10-modal-sticky-header-footer.md",
+  "tasks": [
+    {
+      "id": 1,
+      "subject": "Task 1: Restructure Container padding + add stickyHeader",
+      "status": "pending",
+      "description": "**Goal:** Move Container's padding onto new Header/ContentArea children (no visual change), then make the header row stickable via a new `stickyHeader` prop (default false).\n\n**Files:**\n- Modify: src/Modal/Modal.tsx\n- Modify: src/Modal/Modal.test.tsx\n- Modify (regenerated): src/Modal/__snapshots__/Modal.test.tsx.snap\n\n**Acceptance Criteria:**\n- [ ] Modal renders identically (visually) with default props\n- [ ] stickyHeader defaults to false; true applies position:sticky;top:0 to header\n- [ ] All tests pass\n\n**Verify:** npx vitest run src/Modal/Modal.test.tsx\n\n```json:metadata\n{\"files\": [\"src/Modal/Modal.tsx\", \"src/Modal/Modal.test.tsx\", \"src/Modal/__snapshots__/Modal.test.tsx.snap\"], \"verifyCommand\": \"npx vitest run src/Modal/Modal.test.tsx\", \"acceptanceCriteria\": [\"Modal renders identically with default props (structural snapshot diff only)\", \"stickyHeader defaults to false\", \"stickyHeader=true applies position:sticky;top:0 to header\", \"check-types and lint pass\"]}\n```"
+    },
+    {
+      "id": 2,
+      "subject": "Task 2: Add footer + stickyFooter",
+      "status": "pending",
+      "blockedBy": [1],
+      "description": "**Goal:** Add an optional `footer` slot rendered below the scrollable content, with opt-in `stickyFooter`, and a default flex layout (1 child fills row, 2 children split 50/50) matching the Figma reference.\n\n**Files:**\n- Modify: src/Modal/Modal.tsx\n- Modify: src/Modal/Modal.test.tsx\n- Modify (regenerated): src/Modal/__snapshots__/Modal.test.tsx.snap\n\n**Acceptance Criteria:**\n- [ ] Omitting footer renders nothing extra\n- [ ] footer renders flex row, gap theme.space[100], children flex:1, border-top 1px solid theme.color.border.subtle\n- [ ] stickyFooter defaults false; true applies position:sticky;bottom:0\n- [ ] All tests pass\n\n**Verify:** npx vitest run src/Modal/Modal.test.tsx\n\n```json:metadata\n{\"files\": [\"src/Modal/Modal.tsx\", \"src/Modal/Modal.test.tsx\", \"src/Modal/__snapshots__/Modal.test.tsx.snap\"], \"verifyCommand\": \"npx vitest run src/Modal/Modal.test.tsx\", \"acceptanceCriteria\": [\"footer omitted renders nothing extra\", \"footer flex layout with gap and flex:1 children plus divider border-top\", \"stickyFooter defaults false, true sticks footer to bottom\", \"check-types and lint pass\"]}\n```"
+    },
+    {
+      "id": 3,
+      "subject": "Task 3: Add Storybook story variants",
+      "status": "pending",
+      "blockedBy": [2],
+      "description": "**Goal:** Add Story exports covering every documented variant so Task 4's MDX page has live examples to embed.\n\n**Files:**\n- Modify: src/Modal/storybook/Modal.stories.tsx\n\n**Acceptance Criteria:**\n- [ ] Default and Interactive stories unchanged in behavior\n- [ ] New exports: BasicContentModal, CustomContentModal, SingleButtonFooter, TwoButtonFooter, StickyHeader, StickyFooter, StickyHeaderAndFooter, MobileDrawer\n- [ ] meta.tags includes '!autodocs'\n- [ ] Storybook builds without errors\n\n**Verify:** npm run build-storybook\n\n```json:metadata\n{\"files\": [\"src/Modal/storybook/Modal.stories.tsx\"], \"verifyCommand\": \"npm run build-storybook\", \"acceptanceCriteria\": [\"8 new story exports added\", \"meta.tags includes '!autodocs'\", \"check-types and lint pass\", \"build-storybook exits 0\"]}\n```"
+    },
+    {
+      "id": 4,
+      "subject": "Task 4: Add Modal MDX documentation page",
+      "status": "pending",
+      "blockedBy": [3],
+      "description": "**Goal:** Replace Modal's autodocs page with a hand-authored MDX page matching (and exceeding) the Figma guideline's structure, using live Story embeds instead of static images.\n\n**Files:**\n- Create: src/Modal/storybook/Modal.mdx\n- Modify: .storybook/main.ts\n\n**Acceptance Criteria:**\n- [ ] main.ts stories glob includes .mdx files\n- [ ] Docs page shows Overview, When to use/not, Types, Behaviour & interaction, Anatomy, Content guidelines, props table — all with live Canvas embeds\n- [ ] No duplicate docs entries for Modal\n- [ ] Storybook builds without errors\n\n**Verify:** npm run build-storybook\n\n```json:metadata\n{\"files\": [\".storybook/main.ts\", \"src/Modal/storybook/Modal.mdx\"], \"verifyCommand\": \"npm run build-storybook\", \"acceptanceCriteria\": [\"stories glob includes mdx\", \"MDX page renders all guideline sections with live Canvas embeds\", \"no duplicate Modal docs entries in sidebar\", \"build-storybook exits 0\"]}\n```"
+    },
+    {
+      "id": 5,
+      "subject": "Task 5: Final verification pass",
+      "status": "pending",
+      "blockedBy": [4],
+      "description": "**Goal:** Confirm the whole change set is consistent end-to-end.\n\n**Files:** None (verification only).\n\n**Acceptance Criteria:**\n- [ ] Full test suite passes (npm test)\n- [ ] check-types and lint pass repo-wide\n- [ ] build-storybook passes\n- [ ] Manual permutation check across all new stories confirms sticky behavior, divider/shadow rules, and mobile drawer\n\n```json:metadata\n{\"files\": [], \"verifyCommand\": \"npm test && npm run check-types && npm run lint && npm run build-storybook\", \"acceptanceCriteria\": [\"npm test passes fully\", \"check-types and lint pass repo-wide\", \"build-storybook exits 0\", \"manual permutation check done in local Storybook\"]}\n```"
+    }
+  ],
+  "lastUpdated": "2026-08-10T00:00:00Z"
+}
