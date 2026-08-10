@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - uses: marshmallow-insurance/campfire/.github/actions/setup-node-project@main
+      - uses: ./.github/actions/setup-node-project-cached
         env:
           FONT_AWESOME_AUTH_TOKEN: ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
       - name: Run Check Types
@@ -24,10 +24,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - uses: marshmallow-insurance/campfire/.github/actions/setup-node-project@main
+      - uses: ./.github/actions/setup-node-project-cached
         env:
           FONT_AWESOME_AUTH_TOKEN: ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
       - name: Run Tests
@@ -38,10 +38,10 @@ jobs:
     container: mcr.microsoft.com/playwright:v1.61.1-jammy
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - uses: marshmallow-insurance/campfire/.github/actions/setup-node-project@main
+      - uses: ./.github/actions/setup-node-project-cached
         env:
           FONT_AWESOME_AUTH_TOKEN: ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
       - name: Run Build Storybook
