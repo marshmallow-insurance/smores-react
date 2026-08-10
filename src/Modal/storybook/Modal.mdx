@@ -1,0 +1,107 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as ModalStories from './Modal.stories'
+
+<Meta of={ModalStories} />
+
+# Modal
+
+Modals are purposefully interruptive. A modal appears in front of content
+to provide critical information or ask for a decision. Modals disable all
+other functionality when they appear, and remain on screen until
+confirmed, dismissed, or a required action has been taken.
+
+<Canvas of={ModalStories.Default} />
+
+## When to use
+
+Use a modal:
+
+- If you want to interrupt the customer's flow.
+- If you want to confirm high-risk actions, like deleting progress.
+- If you want to gather more information and/or additional actions that
+  are relevant to the current task.
+
+Don't use a modal:
+
+- If you can display the content in a less intrusive way within a
+  screen, as part of the main flow.
+- If you want users to interact with the content beneath the modal.
+- For low or medium priority information.
+
+## Types
+
+### Basic content modal
+
+Plain text content, with or without a footer.
+
+<Canvas of={ModalStories.BasicContentModal} />
+
+### Custom content modal
+
+Any React content — images, illustrations, forms, or other components.
+
+<Canvas of={ModalStories.CustomContentModal} />
+
+## Behaviour & interaction
+
+Most modals should avoid scrolling. Even when scrolling is required, the
+title should stay pinned at the top and the buttons pinned at the bottom
+— via the `stickyHeader` and `stickyFooter` props — so the title and
+actions remain visible alongside the content, even upon scroll. Never
+scroll content outside of the modal, such as the page behind it —
+`Modal` already locks background scroll for you.
+
+### Sticky header
+
+<Canvas of={ModalStories.StickyHeader} />
+
+### Sticky footer
+
+<Canvas of={ModalStories.StickyFooter} />
+
+### Sticky header and footer
+
+The recommended combination for any modal with scrollable content.
+
+<Canvas of={ModalStories.StickyHeaderAndFooter} />
+
+### Mobile (drawer)
+
+On narrow viewports, `drawer` (on by default) turns the modal into a
+bottom sheet. Combine it with `stickyHeader`/`stickyFooter` so the title
+and actions stay reachable even though there's little room to tap
+outside the modal to dismiss it.
+
+<Canvas of={ModalStories.MobileDrawer} />
+
+## Anatomy
+
+1. **Title** — a single, short sentence or question. It can wrap to a
+   second line if necessary. Avoid apologies ("Sorry for the
+   interruption"), extra alarm ("Warning!"), or ambiguity ("Are you
+   sure?").
+2. **Close icon** — optional; used when there's no primary button in the
+   footer (pass `cross={false}` to hide it).
+3. **Content** — can be plain text (basic) or any custom React content.
+4. **Buttons** — one, two, or none. The confirming/primary action is
+   always closest to the edge (the last child of `footer`).
+
+<Canvas of={ModalStories.TwoButtonFooter} />
+
+## Content guidelines
+
+**Title**
+- Should be a single, short sentence or question.
+- Can wrap to a second line if necessary.
+- Avoid apologies, extra alarm, or ambiguity.
+
+**Buttons**
+- Describe the action in as few words as possible — ideally one or two.
+- Should summarise the purpose of the modal — if a user skips the title
+  and content, the button copy alone should tell them what they're
+  about to do.
+- Start with a strong, imperative verb, like "Pay", "Send", or "Log in".
+
+## Props
+
+<Controls />
