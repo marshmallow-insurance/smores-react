@@ -31,10 +31,10 @@
     {
       "id": 5,
       "subject": "Task 5: Final verification pass",
-      "status": "pending",
+      "status": "completed",
       "blockedBy": [4],
       "description": "**Goal:** Confirm the whole change set is consistent end-to-end.\n\n**Files:** None (verification only).\n\n**Acceptance Criteria:**\n- [ ] Full test suite passes (npm test)\n- [ ] check-types and lint pass repo-wide\n- [ ] build-storybook passes\n- [ ] Manual permutation check across all new stories confirms sticky behavior, divider/shadow rules, and mobile drawer\n\n```json:metadata\n{\"files\": [], \"verifyCommand\": \"npm test && npm run check-types && npm run lint && npm run build-storybook\", \"acceptanceCriteria\": [\"npm test passes fully\", \"check-types and lint pass repo-wide\", \"build-storybook exits 0\", \"manual permutation check done in local Storybook\"]}\n```"
     }
   ],
-  "lastUpdated": "2026-08-10T19:10:00Z"
+  "lastUpdated": "2026-08-10T20:20:00Z"
 }
