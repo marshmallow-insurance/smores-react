@@ -41,20 +41,21 @@ updates:
         patterns:
           - "@typescript-eslint*"
           - "@typescript-eslint/*"
+          - "typescript-eslint"
         update-types:
           - "minor"
           - "patch"
-      storybook-dependencies:
+      eslint:
         patterns:
-          - "storybook*"
-          - "@storybook/*"
-        update-types:
-          - "minor"
-          - "patch"
-      semantic-release-dependencies:
+          - "eslint"
+          - "eslint-plugin-*"
+          - "eslint-config-*"
+        exclude-patterns:
+          - "eslint-plugin-storybook"
+      testing-library:
         patterns:
-          - "@semantic-release*"
-          - "@semantic-release/*"
-        update-types:
-          - "minor"
-          - "patch"
+          - "@testing-library/*"
+      vite:
+        patterns:
+          - "vite"
+          - "vitest"
