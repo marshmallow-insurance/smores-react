@@ -17,7 +17,7 @@
     {
       "id": 3,
       "subject": "Task 3: Add Storybook story variants",
-      "status": "pending",
+      "status": "completed",
       "blockedBy": [2],
       "description": "**Goal:** Add Story exports covering every documented variant so Task 4's MDX page has live examples to embed.\n\n**Files:**\n- Modify: src/Modal/storybook/Modal.stories.tsx\n\n**Acceptance Criteria:**\n- [ ] Default and Interactive stories unchanged in behavior\n- [ ] New exports: BasicContentModal, CustomContentModal, SingleButtonFooter, TwoButtonFooter, StickyHeader, StickyFooter, StickyHeaderAndFooter, MobileDrawer\n- [ ] meta.tags includes '!autodocs'\n- [ ] Storybook builds without errors\n\n**Verify:** npm run build-storybook\n\n```json:metadata\n{\"files\": [\"src/Modal/storybook/Modal.stories.tsx\"], \"verifyCommand\": \"npm run build-storybook\", \"acceptanceCriteria\": [\"8 new story exports added\", \"meta.tags includes '!autodocs'\", \"check-types and lint pass\", \"build-storybook exits 0\"]}\n```"
     },
@@ -36,5 +36,5 @@
       "description": "**Goal:** Confirm the whole change set is consistent end-to-end.\n\n**Files:** None (verification only).\n\n**Acceptance Criteria:**\n- [ ] Full test suite passes (npm test)\n- [ ] check-types and lint pass repo-wide\n- [ ] build-storybook passes\n- [ ] Manual permutation check across all new stories confirms sticky behavior, divider/shadow rules, and mobile drawer\n\n```json:metadata\n{\"files\": [], \"verifyCommand\": \"npm test && npm run check-types && npm run lint && npm run build-storybook\", \"acceptanceCriteria\": [\"npm test passes fully\", \"check-types and lint pass repo-wide\", \"build-storybook exits 0\", \"manual permutation check done in local Storybook\"]}\n```"
     }
   ],
-  "lastUpdated": "2026-08-10T18:15:00Z"
+  "lastUpdated": "2026-08-10T18:30:00Z"
 }
