@@ -38,6 +38,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   notFoundComponent,
 }) => {
   const itemRefs = useRef<RefObject<HTMLLIElement | null>[]>([])
+  const resultsListRef = useRef<HTMLUListElement>(null)
 
   useEffect(() => {
     itemRefs.current = displayedList.map(
@@ -55,10 +56,21 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
     }
   }, [highlightedIndex])
 
+  useEffect(() => {
+    if (resultsListRef.current) {
+      resultsListRef.current.scrollTop = 0
+    }
+    setHighlightedIndex(-1)
+  }, [searchTerm, setHighlightedIndex])
+
   return (
     <BoxWithPositionRelative>
       <StyledResultsContainer $positionRelative={positionRelative}>
-        <ResultsList $resultsBorder={resultsBorder} onKeyDown={onKeyDown}>
+        <ResultsList
+          ref={resultsListRef}
+          $resultsBorder={resultsBorder}
+          onKeyDown={onKeyDown}
+        >
           {displayedList.length ? (
             displayedList.map((el, i) => {
               const isSelected =
