@@ -149,7 +149,7 @@ export const Modal: FC<ModalProps> = ({
         <ContentArea flex direction="column" $drawer={drawer}>
           {children}
         </ContentArea>
-        {footer && <Footer $sticky={stickyFooter}>{footer}</Footer>}
+        {footer ? <Footer $sticky={stickyFooter}>{footer}</Footer> : null}
       </Container>
     </Wrapper>,
     portalContainer,
