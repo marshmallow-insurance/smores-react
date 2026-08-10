@@ -43,6 +43,14 @@ export type ModalProps = {
   containerClass?: string
   portalContainer?: Element | DocumentFragment
   closeOnOverlayClick?: boolean
+  /**
+   * Pins the title/close row so it stays visible while the content
+   * scrolls. Recommended whenever content might overflow, especially on
+   * mobile where there's little room to tap outside the modal to dismiss
+   * it.
+   * @default false
+   */
+  stickyHeader?: boolean
 }
 
 export type TitleProps = TextProps
@@ -66,6 +74,7 @@ export const Modal: FC<ModalProps> = ({
   containerClass,
   portalContainer = document.body,
   closeOnOverlayClick = true,
+  stickyHeader = false,
 }) => {
   const modalRef = useRef<HTMLDivElement>(null)
   const theme = useTheme()
@@ -88,11 +97,12 @@ export const Modal: FC<ModalProps> = ({
         $width={width || '460px'}
         className={containerClass}
       >
-        <Box
+        <Header
           flex
           alignItems="flex-start"
           justifyContent="space-between"
-          mb="space.100"
+          $sticky={stickyHeader}
+          $drawer={drawer}
         >
           <TitleElements flex direction="column">
             <Text {...titleProps} />
@@ -118,10 +128,10 @@ export const Modal: FC<ModalProps> = ({
               </IconContainer>
             )}
           </Box>
-        </Box>
-        <Box flex direction="column">
+        </Header>
+        <ContentArea flex direction="column" $drawer={drawer}>
           {children}
-        </Box>
+        </ContentArea>
       </Container>
     </Wrapper>,
     portalContainer,
@@ -156,7 +166,6 @@ const Container = styled.div<IModalContainer>(
     background: ${({ theme }) => theme.color.background[100]};
     box-sizing: border-box;
     border-radius: 16px;
-    padding: ${({ theme }) => theme.space[300]};
     width: 100%;
     max-width: ${$width};
     position: fixed;
@@ -164,20 +173,61 @@ const Container = styled.div<IModalContainer>(
     overflow: auto;
     transition: all 0.3s ease-in-out;
 
-    ${$drawer === true &&
-    css`
-      @media (max-width: 768px) {
-        max-width: none;
-        border-radius: 16px 16px 0px 0px;
-        padding: 10% 24px;
-        max-height: 90vh;
+    ${
+      $drawer === true &&
+      css`
+        @media (max-width: 768px) {
+          max-width: none;
+          border-radius: 16px 16px 0px 0px;
+          max-height: 90vh;
 
-        position: fixed;
-        right: 0;
-        left: 0;
-        bottom: 0;
-      }
-    `}
+          position: fixed;
+          right: 0;
+          left: 0;
+          bottom: 0;
+        }
+      `
+    }
+  `,
+)
+
+const Header = styled(Box)<{ $sticky: boolean; $drawer: boolean }>(
+  ({ $sticky, $drawer, theme }) => css`
+    padding: ${theme.space[300]} ${theme.space[300]} ${theme.space[100]};
+    background: ${theme.color.background[100]};
+
+    ${
+      $sticky &&
+      css`
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      `
+    }
+
+    ${
+      $drawer &&
+      css`
+        @media (max-width: 768px) {
+          padding: 10% ${theme.space[300]} ${theme.space[100]};
+        }
+      `
+    }
+  `,
+)
+
+const ContentArea = styled(Box)<{ $drawer: boolean }>(
+  ({ $drawer, theme }) => css`
+    padding: 0 ${theme.space[300]} ${theme.space[300]};
+
+    ${
+      $drawer &&
+      css`
+        @media (max-width: 768px) {
+          padding: 0 ${theme.space[300]} 10%;
+        }
+      `
+    }
   `,
 )
 

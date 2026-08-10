@@ -18,4 +18,20 @@ describe('Modal', () => {
 
     expect(baseElement).toMatchSnapshot()
   })
+
+  it('renders correctly with sticky header', () => {
+    const { baseElement } = render(
+      <Modal
+        showModal={true}
+        handleClick={noop}
+        width={'600px'}
+        title={'Modal Title'}
+        stickyHeader
+      >
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+
+    expect(baseElement).toMatchSnapshot()
+  })
 })
