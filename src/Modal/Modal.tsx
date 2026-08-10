@@ -51,6 +51,21 @@ export type ModalProps = {
    * @default false
    */
   stickyHeader?: boolean
+  /**
+   * Optional footer content rendered below the scrollable body, outside
+   * `children` — e.g. one or two action buttons. When there are 1–2
+   * direct children, they're laid out as equal-width flex items with a
+   * gap. The confirming/primary action should be the last child, closest
+   * to the trailing edge.
+   * @default undefined (no footer rendered)
+   */
+  footer?: ReactNode
+  /**
+   * Pins `footer` so it stays visible while the content scrolls. Has no
+   * effect if `footer` isn't passed.
+   * @default false
+   */
+  stickyFooter?: boolean
 }
 
 export type TitleProps = TextProps
@@ -75,6 +90,8 @@ export const Modal: FC<ModalProps> = ({
   portalContainer = document.body,
   closeOnOverlayClick = true,
   stickyHeader = false,
+  footer,
+  stickyFooter = false,
 }) => {
   const modalRef = useRef<HTMLDivElement>(null)
   const theme = useTheme()
@@ -132,6 +149,7 @@ export const Modal: FC<ModalProps> = ({
         <ContentArea flex direction="column" $drawer={drawer}>
           {children}
         </ContentArea>
+        {footer && <Footer $sticky={stickyFooter}>{footer}</Footer>}
       </Container>
     </Wrapper>,
     portalContainer,
@@ -191,6 +209,10 @@ const Container = styled.div<IModalContainer>(
   `,
 )
 
+// NOTE: Header's bottom padding and ContentArea's top padding are a paired
+// invariant — in both drawer and non-drawer modes their sum must equal the
+// original pre-refactor gap between title and content. If you change one,
+// change the other (and re-check snapshots).
 const Header = styled(Box)<{ $sticky: boolean; $drawer: boolean }>(
   ({ $sticky, $drawer, theme }) => css`
     padding: ${theme.space[300]} ${theme.space[300]} ${theme.space[100]};
@@ -226,6 +248,29 @@ const ContentArea = styled(Box)<{ $drawer: boolean }>(
         @media (max-width: 768px) {
           padding: 0 ${theme.space[300]} 10%;
         }
+      `
+    }
+  `,
+)
+
+const Footer = styled.div<{ $sticky: boolean }>(
+  ({ $sticky, theme }) => css`
+    display: flex;
+    gap: ${theme.space[100]};
+    padding: ${theme.space[200]} ${theme.space[300]} ${theme.space[300]};
+    background: ${theme.color.background[100]};
+    border-top: 1px solid ${theme.color.border.subtle};
+
+    & > * {
+      flex: 1;
+    }
+
+    ${
+      $sticky &&
+      css`
+        position: sticky;
+        bottom: 0;
+        z-index: 1;
       `
     }
   `,

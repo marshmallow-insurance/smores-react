@@ -1,5 +1,589 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Modal > renders correctly with a footer 1`] = `
+.c3 {
+  display: flex;
+}
+
+.c5 {
+  display: flex;
+}
+
+.c8 {
+  display: flex;
+}
+
+.c9 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.c9 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c7 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  display: flex;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.c1 {
+  position: fixed;
+  background: #292924;
+  cursor: pointer;
+  opacity: 0.4;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.c2 {
+  background: #fbf8f5;
+  box-sizing: border-box;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  position: fixed;
+  max-height: calc(100vh - 64px);
+  overflow: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.c4 {
+  padding: 24px 24px 8px;
+  background: #fbf8f5;
+}
+
+.c10 {
+  padding: 0 24px 24px;
+}
+
+.c11 {
+  display: flex;
+  gap: 8px;
+  padding: 16px 24px 24px;
+  background: #fbf8f5;
+  border-top: 1px solid #dad2c4;
+}
+
+.c11>* {
+  flex: 1;
+}
+
+.c6 {
+  align-self: center;
+}
+
+.c12 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+  background-color: #dad2c4;
+}
+
+.c12:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c12:hover {
+  background-color: #beb4a0;
+}
+
+.c12:active {
+  background-color: #9d927b;
+}
+
+.c15 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c15:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c15:hover {
+  background-color: #f759a9;
+}
+
+.c15:active {
+  background-color: #e43e93;
+}
+
+.c13 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c14 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 0px) {
+  .c8 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c8 {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .c2 {
+    max-width: none;
+    border-radius: 16px 16px 0px 0px;
+    max-height: 90vh;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .c4 {
+    padding: 10% 24px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .c10 {
+    padding: 0 24px 10%;
+  }
+}
+
+<body>
+  <div />
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+    <div
+      class="c2"
+    >
+      <div
+        class="c3 c4"
+      >
+        <div
+          class="c5 c6"
+        >
+          <h2
+            class="c7"
+            cursor="inherit"
+            title=""
+          >
+            Modal Title
+          </h2>
+        </div>
+        <div
+          class="c8"
+        >
+          <button
+            class="c9"
+            role="button"
+            style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
+            title="Close modal"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-xmark"
+              color="#292924"
+              data-icon="xmark"
+              data-prefix="far"
+              role="img"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="c5 c10"
+      >
+        <div>
+          Modal Content ...
+        </div>
+      </div>
+      <div
+        class="c11"
+      >
+        <button
+          class="c12"
+        >
+          <div
+            class="c13"
+          >
+            <div
+              class="c14 childrenContainer"
+            >
+              Find out more
+            </div>
+          </div>
+        </button>
+        <button
+          class="c15"
+        >
+          <div
+            class="c13"
+          >
+            <div
+              class="c14 childrenContainer"
+            >
+              Got it
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Modal > renders correctly with a sticky footer 1`] = `
+.c3 {
+  display: flex;
+}
+
+.c5 {
+  display: flex;
+}
+
+.c8 {
+  display: flex;
+}
+
+.c9 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.c9 svg {
+  width: 100%;
+  height: 100%;
+}
+
+.c7 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: left;
+  color: #292924;
+}
+
+.c0 {
+  display: flex;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.c1 {
+  position: fixed;
+  background: #292924;
+  cursor: pointer;
+  opacity: 0.4;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.c2 {
+  background: #fbf8f5;
+  box-sizing: border-box;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  position: fixed;
+  max-height: calc(100vh - 64px);
+  overflow: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.c4 {
+  padding: 24px 24px 8px;
+  background: #fbf8f5;
+}
+
+.c10 {
+  padding: 0 24px 24px;
+}
+
+.c11 {
+  display: flex;
+  gap: 8px;
+  padding: 16px 24px 24px;
+  background: #fbf8f5;
+  border-top: 1px solid #dad2c4;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+.c11>* {
+  flex: 1;
+}
+
+.c6 {
+  align-self: center;
+}
+
+.c12 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c12:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c12:hover {
+  background-color: #f759a9;
+}
+
+.c12:active {
+  background-color: #e43e93;
+}
+
+.c13 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c14 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 0px) {
+  .c3 {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 0px) {
+  .c5 {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 0px) {
+  .c8 {
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) {
+  .c8 {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .c2 {
+    max-width: none;
+    border-radius: 16px 16px 0px 0px;
+    max-height: 90vh;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .c4 {
+    padding: 10% 24px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .c10 {
+    padding: 0 24px 10%;
+  }
+}
+
+<body>
+  <div />
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+    <div
+      class="c2"
+    >
+      <div
+        class="c3 c4"
+      >
+        <div
+          class="c5 c6"
+        >
+          <h2
+            class="c7"
+            cursor="inherit"
+            title=""
+          >
+            Modal Title
+          </h2>
+        </div>
+        <div
+          class="c8"
+        >
+          <button
+            class="c9"
+            role="button"
+            style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
+            title="Close modal"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-xmark"
+              color="#292924"
+              data-icon="xmark"
+              data-prefix="far"
+              role="img"
+              viewBox="0 0 384 512"
+            >
+              <path
+                d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="c5 c10"
+      >
+        <div>
+          Modal Content ...
+        </div>
+      </div>
+      <div
+        class="c11"
+      >
+        <button
+          class="c12"
+        >
+          <div
+            class="c13"
+          >
+            <div
+              class="c14 childrenContainer"
+            >
+              Got it
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`Modal > renders correctly with default props 1`] = `
 .c3 {
   display: flex;
