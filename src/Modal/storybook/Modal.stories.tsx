@@ -260,6 +260,14 @@ export const MobileDrawer: Story = {
     stickyFooter: true,
     footer: TwoButtonFooterContent,
   },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Same recommended sticky configuration as above — `drawer` (on by default) turns this into a bottom-sheet on narrow screens. Resize your browser below 768px to see the drawer treatment take effect.',
+      },
+    },
+  },
   render: (args) => (
     <Container {...args}>
       <LongContent />
