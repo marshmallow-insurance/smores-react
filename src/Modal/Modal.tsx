@@ -189,6 +189,7 @@ const Container = styled.div<IModalContainer>(
     position: fixed;
     max-height: calc(100vh - 64px);
     overflow: auto;
+    overscroll-behavior-y: contain;
     transition: all 0.3s ease-in-out;
 
     ${
