@@ -24,7 +24,7 @@
     {
       "id": 4,
       "subject": "Task 4: Add Modal MDX documentation page",
-      "status": "pending",
+      "status": "completed",
       "blockedBy": [3],
       "description": "**Goal:** Replace Modal's autodocs page with a hand-authored MDX page matching (and exceeding) the Figma guideline's structure, using live Story embeds instead of static images.\n\n**Files:**\n- Create: src/Modal/storybook/Modal.mdx\n- Modify: .storybook/main.ts\n\n**Acceptance Criteria:**\n- [ ] main.ts stories glob includes .mdx files\n- [ ] Docs page shows Overview, When to use/not, Types, Behaviour & interaction, Anatomy, Content guidelines, props table — all with live Canvas embeds\n- [ ] No duplicate docs entries for Modal\n- [ ] Storybook builds without errors\n\n**Verify:** npm run build-storybook\n\n```json:metadata\n{\"files\": [\".storybook/main.ts\", \"src/Modal/storybook/Modal.mdx\"], \"verifyCommand\": \"npm run build-storybook\", \"acceptanceCriteria\": [\"stories glob includes mdx\", \"MDX page renders all guideline sections with live Canvas embeds\", \"no duplicate Modal docs entries in sidebar\", \"build-storybook exits 0\"]}\n```"
     },
@@ -36,5 +36,5 @@
       "description": "**Goal:** Confirm the whole change set is consistent end-to-end.\n\n**Files:** None (verification only).\n\n**Acceptance Criteria:**\n- [ ] Full test suite passes (npm test)\n- [ ] check-types and lint pass repo-wide\n- [ ] build-storybook passes\n- [ ] Manual permutation check across all new stories confirms sticky behavior, divider/shadow rules, and mobile drawer\n\n```json:metadata\n{\"files\": [], \"verifyCommand\": \"npm test && npm run check-types && npm run lint && npm run build-storybook\", \"acceptanceCriteria\": [\"npm test passes fully\", \"check-types and lint pass repo-wide\", \"build-storybook exits 0\", \"manual permutation check done in local Storybook\"]}\n```"
     }
   ],
-  "lastUpdated": "2026-08-10T18:30:00Z"
+  "lastUpdated": "2026-08-10T19:10:00Z"
 }
