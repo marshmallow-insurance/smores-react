@@ -11,8 +11,25 @@ on:
 permissions:
   contents: write
 
+# On push, a new run cancels any in-progress run on the same ref, which
+# cancels the delay job below and restarts the 5-minute wait. Manual
+# dispatch runs get their own group (keyed by run_id) so they're never
+# cancelled by a push and always start immediately.
+concurrency:
+  group: bump-and-publish-${{ github.event_name == 'push' && github.ref || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
+  delay:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for other PRs to merge
+        run: sleep 300
+
   bump-and-publish:
+    needs: delay
+    if: ${{ !failure() && !cancelled() }}
     uses: marshmallow-insurance/campfire/.github/workflows/shared-semantic-release.yml@main
     permissions:
       contents: write # to be able to publish a GitHub release
