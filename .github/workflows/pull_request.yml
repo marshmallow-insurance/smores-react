@@ -2,8 +2,12 @@ name: Pull Request
 on:
   pull_request:
 
+concurrency:
+  group: pull-request-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
-  pull-request:
+  check-types:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,13 +19,34 @@ jobs:
           FONT_AWESOME_AUTH_TOKEN: ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
       - name: Run Check Types
         run: npm run check-types
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: marshmallow-insurance/campfire/.github/actions/setup-node-project@main
+        env:
+          FONT_AWESOME_AUTH_TOKEN: ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
       - name: Run Tests
         run: npm run test
+
+  storybook-test:
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright:v1.61.1-jammy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: marshmallow-insurance/campfire/.github/actions/setup-node-project@main
+        env:
+          FONT_AWESOME_AUTH_TOKEN: ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
       - name: Run Build Storybook
         run: |
           npm run build-storybook --quiet
-      - name: Install Playwright
-        run: npx playwright install --with-deps
       - name: Serve Storybook and test
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
