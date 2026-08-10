@@ -4,7 +4,7 @@
     {
       "id": 1,
       "subject": "Task 1: Restructure Container padding + add stickyHeader",
-      "status": "pending",
+      "status": "completed",
       "description": "**Goal:** Move Container's padding onto new Header/ContentArea children (no visual change), then make the header row stickable via a new `stickyHeader` prop (default false).\n\n**Files:**\n- Modify: src/Modal/Modal.tsx\n- Modify: src/Modal/Modal.test.tsx\n- Modify (regenerated): src/Modal/__snapshots__/Modal.test.tsx.snap\n\n**Acceptance Criteria:**\n- [ ] Modal renders identically (visually) with default props\n- [ ] stickyHeader defaults to false; true applies position:sticky;top:0 to header\n- [ ] All tests pass\n\n**Verify:** npx vitest run src/Modal/Modal.test.tsx\n\n```json:metadata\n{\"files\": [\"src/Modal/Modal.tsx\", \"src/Modal/Modal.test.tsx\", \"src/Modal/__snapshots__/Modal.test.tsx.snap\"], \"verifyCommand\": \"npx vitest run src/Modal/Modal.test.tsx\", \"acceptanceCriteria\": [\"Modal renders identically with default props (structural snapshot diff only)\", \"stickyHeader defaults to false\", \"stickyHeader=true applies position:sticky;top:0 to header\", \"check-types and lint pass\"]}\n```"
     },
     {
@@ -36,5 +36,5 @@
       "description": "**Goal:** Confirm the whole change set is consistent end-to-end.\n\n**Files:** None (verification only).\n\n**Acceptance Criteria:**\n- [ ] Full test suite passes (npm test)\n- [ ] check-types and lint pass repo-wide\n- [ ] build-storybook passes\n- [ ] Manual permutation check across all new stories confirms sticky behavior, divider/shadow rules, and mobile drawer\n\n```json:metadata\n{\"files\": [], \"verifyCommand\": \"npm test && npm run check-types && npm run lint && npm run build-storybook\", \"acceptanceCriteria\": [\"npm test passes fully\", \"check-types and lint pass repo-wide\", \"build-storybook exits 0\", \"manual permutation check done in local Storybook\"]}\n```"
     }
   ],
-  "lastUpdated": "2026-08-10T00:00:00Z"
+  "lastUpdated": "2026-08-10T17:00:00Z"
 }
