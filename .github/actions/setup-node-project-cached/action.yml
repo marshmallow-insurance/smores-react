@@ -1,5 +1,5 @@
 name: 'Setup Node Project (cached)'
-description: 'Checkout, setup node, restore node_modules from a cache keyed on package-lock.json, and only run npm ci on a cache miss'
+description: 'Checkout, setup node, restore node_modules from a cache keyed on package-lock.json and the Node version, and only run npm ci on a cache miss'
 
 inputs:
   registry-url:
@@ -21,7 +21,7 @@ runs:
       uses: actions/cache@v4
       with:
         path: node_modules
-        key: node-modules-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+        key: node-modules-${{ runner.os }}-${{ hashFiles('.nvmrc') }}-${{ hashFiles('package-lock.json') }}
 
     - name: Install Dependencies
       if: steps.cache-node-modules.outputs.cache-hit != 'true'
