@@ -1,3 +1,5 @@
+## [16.2.5](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.4...v16.2.5) (2026-08-10)
+
 ## [16.2.4](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.3...v16.2.4) (2026-08-10)
 
 ### Bug Fixes
