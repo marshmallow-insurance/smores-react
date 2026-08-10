@@ -17,3 +17,5 @@
 logs
 *.log
 npm-debug.log*
+
+.superpowers/
