@@ -16,7 +16,7 @@ const StyledBox = styled(Box)<{ height: string }>`
 `
 
 const Container: FC<ModalProps> = (props) => {
-  const [showModal, setShowModal] = useState(props.showModal ?? false)
+  const [showModal, setShowModal] = useState(false)
   const handleClick = () => {
     setShowModal(!showModal)
   }
@@ -83,7 +83,7 @@ type Story = StoryObj<typeof Modal>
 export const Default: Story = {
   args: {
     title: 'Generic modal',
-    showModal: true,
+    showModal: false,
   },
   render: (args) => {
     return (
@@ -135,7 +135,7 @@ export const Interactive: Story = {
 export const BasicContentModal: Story = {
   args: {
     title: 'Title of content',
-    showModal: true,
+    showModal: false,
   },
   render: (args) => (
     <Container {...args}>
@@ -151,7 +151,7 @@ export const BasicContentModal: Story = {
 export const CustomContentModal: Story = {
   args: {
     title: 'Title of content',
-    showModal: true,
+    showModal: false,
   },
   render: (args) => (
     <Container {...args}>
@@ -196,7 +196,7 @@ export const SingleButtonFooter: Story = {
 export const TwoButtonFooter: Story = {
   args: {
     title: 'Title of content',
-    showModal: true,
+    showModal: false,
     footer: TwoButtonFooterContent,
   },
   render: (args) => (
@@ -212,7 +212,7 @@ export const TwoButtonFooter: Story = {
 export const StickyHeader: Story = {
   args: {
     title: 'Title of content',
-    showModal: true,
+    showModal: false,
     stickyHeader: true,
   },
   render: (args) => (
@@ -225,7 +225,7 @@ export const StickyHeader: Story = {
 export const StickyFooter: Story = {
   args: {
     title: 'Title of content',
-    showModal: true,
+    showModal: false,
     stickyFooter: true,
     footer: TwoButtonFooterContent,
   },
@@ -239,7 +239,7 @@ export const StickyFooter: Story = {
 export const StickyHeaderAndFooter: Story = {
   args: {
     title: 'Title of content',
-    showModal: true,
+    showModal: false,
     stickyHeader: true,
     stickyFooter: true,
     footer: TwoButtonFooterContent,
@@ -254,7 +254,7 @@ export const StickyHeaderAndFooter: Story = {
 export const MobileDrawer: Story = {
   args: {
     title: 'Title of content',
-    showModal: true,
+    showModal: false,
     drawer: true,
     stickyHeader: true,
     stickyFooter: true,
