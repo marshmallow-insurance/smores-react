@@ -10,7 +10,7 @@
     {
       "id": 2,
       "subject": "Task 2: Add footer + stickyFooter",
-      "status": "pending",
+      "status": "completed",
       "blockedBy": [1],
       "description": "**Goal:** Add an optional `footer` slot rendered below the scrollable content, with opt-in `stickyFooter`, and a default flex layout (1 child fills row, 2 children split 50/50) matching the Figma reference.\n\n**Files:**\n- Modify: src/Modal/Modal.tsx\n- Modify: src/Modal/Modal.test.tsx\n- Modify (regenerated): src/Modal/__snapshots__/Modal.test.tsx.snap\n\n**Acceptance Criteria:**\n- [ ] Omitting footer renders nothing extra\n- [ ] footer renders flex row, gap theme.space[100], children flex:1, border-top 1px solid theme.color.border.subtle\n- [ ] stickyFooter defaults false; true applies position:sticky;bottom:0\n- [ ] All tests pass\n\n**Verify:** npx vitest run src/Modal/Modal.test.tsx\n\n```json:metadata\n{\"files\": [\"src/Modal/Modal.tsx\", \"src/Modal/Modal.test.tsx\", \"src/Modal/__snapshots__/Modal.test.tsx.snap\"], \"verifyCommand\": \"npx vitest run src/Modal/Modal.test.tsx\", \"acceptanceCriteria\": [\"footer omitted renders nothing extra\", \"footer flex layout with gap and flex:1 children plus divider border-top\", \"stickyFooter defaults false, true sticks footer to bottom\", \"check-types and lint pass\"]}\n```"
     },
@@ -36,5 +36,5 @@
       "description": "**Goal:** Confirm the whole change set is consistent end-to-end.\n\n**Files:** None (verification only).\n\n**Acceptance Criteria:**\n- [ ] Full test suite passes (npm test)\n- [ ] check-types and lint pass repo-wide\n- [ ] build-storybook passes\n- [ ] Manual permutation check across all new stories confirms sticky behavior, divider/shadow rules, and mobile drawer\n\n```json:metadata\n{\"files\": [], \"verifyCommand\": \"npm test && npm run check-types && npm run lint && npm run build-storybook\", \"acceptanceCriteria\": [\"npm test passes fully\", \"check-types and lint pass repo-wide\", \"build-storybook exits 0\", \"manual permutation check done in local Storybook\"]}\n```"
     }
   ],
-  "lastUpdated": "2026-08-10T17:00:00Z"
+  "lastUpdated": "2026-08-10T18:15:00Z"
 }
