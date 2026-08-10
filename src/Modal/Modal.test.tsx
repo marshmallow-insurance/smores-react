@@ -81,4 +81,32 @@ describe('Modal', () => {
 
     expect(baseElement).toMatchSnapshot()
   })
+
+  it('ignores stickyFooter when no footer is passed', () => {
+    const withoutStickyFooter = render(
+      <Modal
+        showModal={true}
+        handleClick={noop}
+        width={'600px'}
+        title={'Modal Title'}
+      >
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+    const withStickyFooter = render(
+      <Modal
+        showModal={true}
+        handleClick={noop}
+        width={'600px'}
+        title={'Modal Title'}
+        stickyFooter
+      >
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+
+    expect(withStickyFooter.baseElement.innerHTML).toBe(
+      withoutStickyFooter.baseElement.innerHTML,
+    )
+  })
 })
