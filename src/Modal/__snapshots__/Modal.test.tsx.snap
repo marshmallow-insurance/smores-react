@@ -67,6 +67,7 @@ exports[`Modal > renders correctly with a footer 1`] = `
   max-height: calc(100vh - 64px);
   overflow: auto;
   overscroll-behavior-y: none;
+  outline: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -216,7 +217,11 @@ exports[`Modal > renders correctly with a footer 1`] = `
       class="c1"
     />
     <div
+      aria-labelledby="_r_6_"
+      aria-modal="true"
       class="c2"
+      role="dialog"
+      tabindex="-1"
     >
       <div
         class="c3 c4"
@@ -227,6 +232,7 @@ exports[`Modal > renders correctly with a footer 1`] = `
           <h2
             class="c7"
             cursor="inherit"
+            id="_r_6_"
             title=""
           >
             Modal Title
@@ -367,6 +373,7 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
   max-height: calc(100vh - 64px);
   overflow: auto;
   overscroll-behavior-y: none;
+  outline: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -489,7 +496,11 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
       class="c1"
     />
     <div
+      aria-labelledby="_r_9_"
+      aria-modal="true"
       class="c2"
+      role="dialog"
+      tabindex="-1"
     >
       <div
         class="c3 c4"
@@ -500,6 +511,7 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
           <h2
             class="c7"
             cursor="inherit"
+            id="_r_9_"
             title=""
           >
             Modal Title
@@ -627,6 +639,7 @@ exports[`Modal > renders correctly with default props 1`] = `
   max-height: calc(100vh - 64px);
   overflow: auto;
   overscroll-behavior-y: none;
+  outline: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -694,7 +707,11 @@ exports[`Modal > renders correctly with default props 1`] = `
       class="c1"
     />
     <div
+      aria-labelledby="_r_0_"
+      aria-modal="true"
       class="c2"
+      role="dialog"
+      tabindex="-1"
     >
       <div
         class="c3 c4"
@@ -705,6 +722,7 @@ exports[`Modal > renders correctly with default props 1`] = `
           <h2
             class="c7"
             cursor="inherit"
+            id="_r_0_"
             title=""
           >
             Modal Title
@@ -815,6 +833,7 @@ exports[`Modal > renders correctly with sticky header 1`] = `
   max-height: calc(100vh - 64px);
   overflow: auto;
   overscroll-behavior-y: none;
+  outline: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -885,7 +904,11 @@ exports[`Modal > renders correctly with sticky header 1`] = `
       class="c1"
     />
     <div
+      aria-labelledby="_r_3_"
+      aria-modal="true"
       class="c2"
+      role="dialog"
+      tabindex="-1"
     >
       <div
         class="c3 c4"
@@ -896,6 +919,7 @@ exports[`Modal > renders correctly with sticky header 1`] = `
           <h2
             class="c7"
             cursor="inherit"
+            id="_r_3_"
             title=""
           >
             Modal Title
