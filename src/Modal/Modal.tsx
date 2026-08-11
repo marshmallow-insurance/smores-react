@@ -9,11 +9,6 @@ import { IconContainer } from '../sharedStyles/shared.styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
-interface IModalContainer {
-  $drawer: boolean
-  $width: string
-}
-
 export type ModalProps = {
   /**
    * Title of the modal
@@ -30,7 +25,6 @@ export type ModalProps = {
    * ```
    */
   title?: string | TitleProps
-  icon?: string
   children?: ReactNode
   rightPanel?: ReactNode
   showModal?: boolean
@@ -176,7 +170,7 @@ const Overlay = styled.div<{ $closeOnOverlayClick: boolean }>`
   right: 0;
 `
 
-const Container = styled.div<IModalContainer>(
+const Container = styled.div<{ $drawer: boolean; $width: string }>(
   ({ $drawer, $width }) => css`
     background: ${({ theme }) => theme.color.background[100]};
     box-sizing: border-box;

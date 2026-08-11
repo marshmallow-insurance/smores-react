@@ -100,7 +100,6 @@ export const Default: Story = {
 
 export const Interactive: Story = {
   args: {
-    icon: 'calendar',
     title: "Hello world i'm a beautiful modal",
     showModal: false,
     drawer: true,
