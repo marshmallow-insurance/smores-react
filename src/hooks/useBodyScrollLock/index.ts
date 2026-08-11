@@ -8,7 +8,6 @@ import {
 const enhancedDisabeBodyScroll = (node: HTMLElement | Element) => {
   disableBodyScroll(node, {
     reserveScrollBarGap: true,
-    allowTouchMove: () => true,
   })
 
   document.body.style.top = `-${window.scrollY}px`
