@@ -222,6 +222,27 @@ export const StickyHeader: Story = {
   ),
 }
 
+export const NonStickyFooter: Story = {
+  args: {
+    title: 'Title of content',
+    showModal: false,
+    footer: TwoButtonFooterContent,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'footer without stickyFooter -- scroll the content and the buttons scroll away with it, unlike StickyFooter below.',
+      },
+    },
+  },
+  render: (args) => (
+    <Container {...args}>
+      <LongContent />
+    </Container>
+  ),
+}
+
 export const StickyFooter: Story = {
   args: {
     title: 'Title of content',
