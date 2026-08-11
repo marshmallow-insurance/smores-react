@@ -300,7 +300,7 @@ const Footer = styled.div<{ $sticky: boolean }>(
   ({ $sticky, theme }) => css`
     display: flex;
     gap: ${theme.space[100]};
-    padding: ${theme.space[200]} ${theme.space[200]} ${theme.space[300]};
+    padding: ${theme.space[300]} ${theme.space[200]} ${theme.space[300]};
     background: ${theme.color.background[100]};
 
     & > * {

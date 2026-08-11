@@ -91,7 +91,7 @@ exports[`Modal > renders correctly with a footer 1`] = `
 .c12 {
   display: flex;
   gap: 8px;
-  padding: 16px 16px 24px;
+  padding: 24px 16px 24px;
   background: #fbf8f5;
 }
 
@@ -411,7 +411,7 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
 .c12 {
   display: flex;
   gap: 8px;
-  padding: 16px 16px 24px;
+  padding: 24px 16px 24px;
   background: #fbf8f5;
   position: sticky;
   bottom: 0;
