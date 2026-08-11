@@ -89,10 +89,11 @@ export const Modal: FC<ModalProps> = ({
   stickyFooter = false,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
+  const scrollAreaRef = useRef<HTMLDivElement>(null)
   const titleId = useId()
   const theme = useTheme()
 
-  useBodyScrollLock({ ref: containerRef, showModal })
+  useBodyScrollLock({ ref: scrollAreaRef, showModal })
 
   const latestRef = useRef({ handleClick, closeOnOverlayClick })
   latestRef.current = { handleClick, closeOnOverlayClick }
@@ -158,41 +159,46 @@ export const Modal: FC<ModalProps> = ({
         $width={width || '460px'}
         className={containerClass}
       >
-        <Header
-          flex
-          alignItems="flex-start"
-          justifyContent="space-between"
-          $sticky={stickyHeader}
-        >
-          <TitleElements flex direction="column">
-            <Text {...titleProps} id={titleId} />
-          </TitleElements>
-          <Box flex alignItems="center" gap={'space.100'}>
-            {rightPanel}
-            {cross && (
-              <IconContainer
-                as="button"
-                onClick={handleClick}
-                role="button"
-                title="Close modal"
-                $size={32}
-                style={{
-                  background: theme.color.illustration.neutral[300],
-                  borderRadius: '100%',
-                  padding: '6px',
-                  border: 'none',
-                  cursor: 'pointer',
-                }}
-              >
-                <FontAwesomeIcon icon={faXmark} color={theme.color.icon.base} />
-              </IconContainer>
-            )}
-          </Box>
-        </Header>
-        <ContentArea flex direction="column" $hasFooter={!!footer}>
-          {children}
-        </ContentArea>
-        {footer ? <Footer $sticky={stickyFooter}>{footer}</Footer> : null}
+        <ScrollArea ref={scrollAreaRef}>
+          <Header
+            flex
+            alignItems="flex-start"
+            justifyContent="space-between"
+            $sticky={stickyHeader}
+          >
+            <TitleElements flex direction="column">
+              <Text {...titleProps} id={titleId} />
+            </TitleElements>
+            <Box flex alignItems="center" gap={'space.100'}>
+              {rightPanel}
+              {cross && (
+                <IconContainer
+                  as="button"
+                  onClick={handleClick}
+                  role="button"
+                  title="Close modal"
+                  $size={32}
+                  style={{
+                    background: theme.color.illustration.neutral[300],
+                    borderRadius: '100%',
+                    padding: '6px',
+                    border: 'none',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={faXmark}
+                    color={theme.color.icon.base}
+                  />
+                </IconContainer>
+              )}
+            </Box>
+          </Header>
+          <ContentArea flex direction="column" $hasFooter={!!footer}>
+            {children}
+          </ContentArea>
+          {footer ? <Footer $sticky={stickyFooter}>{footer}</Footer> : null}
+        </ScrollArea>
       </Container>
     </Wrapper>,
     portalContainer,
@@ -224,6 +230,8 @@ const Overlay = styled.div<{ $closeOnOverlayClick: boolean }>`
 
 const Container = styled.div<{ $drawer: boolean; $width: string }>(
   ({ $drawer, $width }) => css`
+    display: flex;
+    flex-direction: column;
     background: ${({ theme }) => theme.color.background[100]};
     box-sizing: border-box;
     border-radius: 16px;
@@ -231,8 +239,7 @@ const Container = styled.div<{ $drawer: boolean; $width: string }>(
     max-width: ${$width};
     position: fixed;
     max-height: calc(100vh - 64px);
-    overflow: auto;
-    overscroll-behavior-y: none;
+    overflow: hidden;
     outline: none;
     transition: all 0.3s ease-in-out;
 
@@ -253,6 +260,17 @@ const Container = styled.div<{ $drawer: boolean; $width: string }>(
     }
   `,
 )
+
+// Container clips to the border-radius; ScrollArea is where the native
+// scrollbar actually lives. Without this split, the scrollbar's straight
+// edge cuts across the rounded corner (native scrollbars aren't clipped
+// to border-radius on their own scrolling element in any browser).
+const ScrollArea = styled.div`
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+`
 
 // Header's bottom padding and ContentArea's top padding are a paired
 // invariant: their sum must equal the gap between title and content.

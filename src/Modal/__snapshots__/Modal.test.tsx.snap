@@ -1,19 +1,19 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Modal > renders correctly with a footer 1`] = `
-.c3 {
+.c4 {
   display: flex;
 }
 
-.c5 {
-  display: flex;
-}
-
-.c8 {
+.c6 {
   display: flex;
 }
 
 .c9 {
+  display: flex;
+}
+
+.c10 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -21,12 +21,12 @@ exports[`Modal > renders correctly with a footer 1`] = `
   height: 32px;
 }
 
-.c9 svg {
+.c10 svg {
   width: 100%;
   height: 100%;
 }
 
-.c7 {
+.c8 {
   font-size: 20px;
   font-weight: 500;
   line-height: 28px;
@@ -58,6 +58,8 @@ exports[`Modal > renders correctly with a footer 1`] = `
 }
 
 .c2 {
+  display: flex;
+  flex-direction: column;
   background: #fbf8f5;
   box-sizing: border-box;
   border-radius: 16px;
@@ -65,37 +67,43 @@ exports[`Modal > renders correctly with a footer 1`] = `
   max-width: 600px;
   position: fixed;
   max-height: calc(100vh - 64px);
-  overflow: auto;
-  overscroll-behavior-y: none;
+  overflow: hidden;
   outline: none;
   transition: all 0.3s ease-in-out;
 }
 
-.c4 {
+.c3 {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+}
+
+.c5 {
   padding: 24px 16px 8px;
   background: #fbf8f5;
 }
 
-.c10 {
+.c11 {
   padding: 0 16px 0;
 }
 
-.c11 {
+.c12 {
   display: flex;
   gap: 8px;
   padding: 16px 16px 24px;
   background: #fbf8f5;
 }
 
-.c11>* {
+.c12>* {
   flex: 1;
 }
 
-.c6 {
+.c7 {
   align-self: center;
 }
 
-.c12 {
+.c13 {
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
@@ -112,20 +120,20 @@ exports[`Modal > renders correctly with a footer 1`] = `
   background-color: #dad2c4;
 }
 
-.c12:focus-visible {
+.c13:focus-visible {
   outline: 2px solid #292924;
   outline-offset: 2px;
 }
 
-.c12:hover {
+.c13:hover {
   background-color: #beb4a0;
 }
 
-.c12:active {
+.c13:active {
   background-color: #9d927b;
 }
 
-.c15 {
+.c16 {
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
@@ -141,57 +149,57 @@ exports[`Modal > renders correctly with a footer 1`] = `
   width: auto;
 }
 
-.c15:focus-visible {
+.c16:focus-visible {
   outline: 2px solid #292924;
   outline-offset: 2px;
 }
 
-.c15:hover {
+.c16:hover {
   background-color: #f759a9;
 }
 
-.c15:active {
+.c16:active {
   background-color: #e43e93;
 }
 
-.c13 {
+.c14 {
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 1;
 }
 
-.c14 {
+.c15 {
   padding: 16px 0;
   flex-grow: 1;
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c4 {
     justify-content: space-between;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c4 {
     align-items: flex-start;
   }
 }
 
 @media (min-width: 0px) {
-  .c5 {
+  .c6 {
     flex-direction: column;
   }
 }
 
 @media (min-width: 0px) {
-  .c8 {
+  .c9 {
     align-items: center;
   }
 }
 
 @media (min-width: 0px) {
-  .c8 {
+  .c9 {
     gap: 8px;
   }
 }
@@ -226,82 +234,86 @@ exports[`Modal > renders correctly with a footer 1`] = `
       tabindex="-1"
     >
       <div
-        class="c3 c4"
+        class="c3"
       >
         <div
-          class="c5 c6"
+          class="c4 c5"
         >
-          <h2
-            class="c7"
-            cursor="inherit"
-            id="_r_6_"
-            title=""
+          <div
+            class="c6 c7"
           >
-            Modal Title
-          </h2>
-        </div>
-        <div
-          class="c8"
-        >
-          <button
-            class="c9"
-            role="button"
-            style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
-            title="Close modal"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-xmark"
-              color="#292924"
-              data-icon="xmark"
-              data-prefix="far"
-              role="img"
-              viewBox="0 0 384 512"
+            <h2
+              class="c8"
+              cursor="inherit"
+              id="_r_6_"
+              title=""
             >
-              <path
-                d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
+              Modal Title
+            </h2>
+          </div>
+          <div
+            class="c9"
+          >
+            <button
+              class="c10"
+              role="button"
+              style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
+              title="Close modal"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-xmark"
+                color="#292924"
+                data-icon="xmark"
+                data-prefix="far"
+                role="img"
+                viewBox="0 0 384 512"
+              >
+                <path
+                  d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
-      <div
-        class="c5 c10"
-      >
-        <div>
-          Modal Content ...
+        <div
+          class="c6 c11"
+        >
+          <div>
+            Modal Content ...
+          </div>
         </div>
-      </div>
-      <div
-        class="c11"
-      >
-        <button
+        <div
           class="c12"
         >
-          <div
+          <button
             class="c13"
           >
             <div
-              class="c14 childrenContainer"
+              class="c14"
             >
-              Find out more
+              <div
+                class="c15 childrenContainer"
+              >
+                Find out more
+              </div>
             </div>
-          </div>
-        </button>
-        <button
-          class="c15"
-        >
-          <div
-            class="c13"
+          </button>
+          <button
+            class="c16"
           >
             <div
-              class="c14 childrenContainer"
+              class="c14"
             >
-              Got it
+              <div
+                class="c15 childrenContainer"
+              >
+                Got it
+              </div>
             </div>
-          </div>
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -309,19 +321,19 @@ exports[`Modal > renders correctly with a footer 1`] = `
 `;
 
 exports[`Modal > renders correctly with a sticky footer 1`] = `
-.c3 {
+.c4 {
   display: flex;
 }
 
-.c5 {
-  display: flex;
-}
-
-.c8 {
+.c6 {
   display: flex;
 }
 
 .c9 {
+  display: flex;
+}
+
+.c10 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -329,12 +341,12 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
   height: 32px;
 }
 
-.c9 svg {
+.c10 svg {
   width: 100%;
   height: 100%;
 }
 
-.c7 {
+.c8 {
   font-size: 20px;
   font-weight: 500;
   line-height: 28px;
@@ -366,6 +378,8 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
 }
 
 .c2 {
+  display: flex;
+  flex-direction: column;
   background: #fbf8f5;
   box-sizing: border-box;
   border-radius: 16px;
@@ -373,22 +387,28 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
   max-width: 600px;
   position: fixed;
   max-height: calc(100vh - 64px);
-  overflow: auto;
-  overscroll-behavior-y: none;
+  overflow: hidden;
   outline: none;
   transition: all 0.3s ease-in-out;
 }
 
-.c4 {
+.c3 {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+}
+
+.c5 {
   padding: 24px 16px 8px;
   background: #fbf8f5;
 }
 
-.c10 {
+.c11 {
   padding: 0 16px 0;
 }
 
-.c11 {
+.c12 {
   display: flex;
   gap: 8px;
   padding: 16px 16px 24px;
@@ -398,15 +418,15 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
   z-index: 1;
 }
 
-.c11>* {
+.c12>* {
   flex: 1;
 }
 
-.c6 {
+.c7 {
   align-self: center;
 }
 
-.c12 {
+.c13 {
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
@@ -422,57 +442,57 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
   width: auto;
 }
 
-.c12:focus-visible {
+.c13:focus-visible {
   outline: 2px solid #292924;
   outline-offset: 2px;
 }
 
-.c12:hover {
+.c13:hover {
   background-color: #f759a9;
 }
 
-.c12:active {
+.c13:active {
   background-color: #e43e93;
 }
 
-.c13 {
+.c14 {
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 1;
 }
 
-.c14 {
+.c15 {
   padding: 16px 0;
   flex-grow: 1;
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c4 {
     justify-content: space-between;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c4 {
     align-items: flex-start;
   }
 }
 
 @media (min-width: 0px) {
-  .c5 {
+  .c6 {
     flex-direction: column;
   }
 }
 
 @media (min-width: 0px) {
-  .c8 {
+  .c9 {
     align-items: center;
   }
 }
 
 @media (min-width: 0px) {
-  .c8 {
+  .c9 {
     gap: 8px;
   }
 }
@@ -507,69 +527,73 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
       tabindex="-1"
     >
       <div
-        class="c3 c4"
+        class="c3"
       >
         <div
-          class="c5 c6"
-        >
-          <h2
-            class="c7"
-            cursor="inherit"
-            id="_r_9_"
-            title=""
-          >
-            Modal Title
-          </h2>
-        </div>
-        <div
-          class="c8"
-        >
-          <button
-            class="c9"
-            role="button"
-            style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
-            title="Close modal"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-xmark"
-              color="#292924"
-              data-icon="xmark"
-              data-prefix="far"
-              role="img"
-              viewBox="0 0 384 512"
-            >
-              <path
-                d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="c5 c10"
-      >
-        <div>
-          Modal Content ...
-        </div>
-      </div>
-      <div
-        class="c11"
-      >
-        <button
-          class="c12"
+          class="c4 c5"
         >
           <div
+            class="c6 c7"
+          >
+            <h2
+              class="c8"
+              cursor="inherit"
+              id="_r_9_"
+              title=""
+            >
+              Modal Title
+            </h2>
+          </div>
+          <div
+            class="c9"
+          >
+            <button
+              class="c10"
+              role="button"
+              style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
+              title="Close modal"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-xmark"
+                color="#292924"
+                data-icon="xmark"
+                data-prefix="far"
+                role="img"
+                viewBox="0 0 384 512"
+              >
+                <path
+                  d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="c6 c11"
+        >
+          <div>
+            Modal Content ...
+          </div>
+        </div>
+        <div
+          class="c12"
+        >
+          <button
             class="c13"
           >
             <div
-              class="c14 childrenContainer"
+              class="c14"
             >
-              Got it
+              <div
+                class="c15 childrenContainer"
+              >
+                Got it
+              </div>
             </div>
-          </div>
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -577,19 +601,19 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
 `;
 
 exports[`Modal > renders correctly with default props 1`] = `
-.c3 {
+.c4 {
   display: flex;
 }
 
-.c5 {
-  display: flex;
-}
-
-.c8 {
+.c6 {
   display: flex;
 }
 
 .c9 {
+  display: flex;
+}
+
+.c10 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -597,12 +621,12 @@ exports[`Modal > renders correctly with default props 1`] = `
   height: 32px;
 }
 
-.c9 svg {
+.c10 svg {
   width: 100%;
   height: 100%;
 }
 
-.c7 {
+.c8 {
   font-size: 20px;
   font-weight: 500;
   line-height: 28px;
@@ -634,6 +658,8 @@ exports[`Modal > renders correctly with default props 1`] = `
 }
 
 .c2 {
+  display: flex;
+  flex-direction: column;
   background: #fbf8f5;
   box-sizing: border-box;
   border-radius: 16px;
@@ -641,51 +667,57 @@ exports[`Modal > renders correctly with default props 1`] = `
   max-width: 600px;
   position: fixed;
   max-height: calc(100vh - 64px);
-  overflow: auto;
-  overscroll-behavior-y: none;
+  overflow: hidden;
   outline: none;
   transition: all 0.3s ease-in-out;
 }
 
-.c4 {
+.c3 {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+}
+
+.c5 {
   padding: 24px 16px 8px;
   background: #fbf8f5;
 }
 
-.c10 {
+.c11 {
   padding: 0 16px 24px;
 }
 
-.c6 {
+.c7 {
   align-self: center;
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c4 {
     justify-content: space-between;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c4 {
     align-items: flex-start;
   }
 }
 
 @media (min-width: 0px) {
-  .c5 {
+  .c6 {
     flex-direction: column;
   }
 }
 
 @media (min-width: 0px) {
-  .c8 {
+  .c9 {
     align-items: center;
   }
 }
 
 @media (min-width: 0px) {
-  .c8 {
+  .c9 {
     gap: 8px;
   }
 }
@@ -720,51 +752,55 @@ exports[`Modal > renders correctly with default props 1`] = `
       tabindex="-1"
     >
       <div
-        class="c3 c4"
+        class="c3"
       >
         <div
-          class="c5 c6"
+          class="c4 c5"
         >
-          <h2
-            class="c7"
-            cursor="inherit"
-            id="_r_0_"
-            title=""
+          <div
+            class="c6 c7"
           >
-            Modal Title
-          </h2>
-        </div>
-        <div
-          class="c8"
-        >
-          <button
-            class="c9"
-            role="button"
-            style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
-            title="Close modal"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-xmark"
-              color="#292924"
-              data-icon="xmark"
-              data-prefix="far"
-              role="img"
-              viewBox="0 0 384 512"
+            <h2
+              class="c8"
+              cursor="inherit"
+              id="_r_0_"
+              title=""
             >
-              <path
-                d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
+              Modal Title
+            </h2>
+          </div>
+          <div
+            class="c9"
+          >
+            <button
+              class="c10"
+              role="button"
+              style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
+              title="Close modal"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-xmark"
+                color="#292924"
+                data-icon="xmark"
+                data-prefix="far"
+                role="img"
+                viewBox="0 0 384 512"
+              >
+                <path
+                  d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
-      <div
-        class="c5 c10"
-      >
-        <div>
-          Modal Content ...
+        <div
+          class="c6 c11"
+        >
+          <div>
+            Modal Content ...
+          </div>
         </div>
       </div>
     </div>
@@ -773,19 +809,19 @@ exports[`Modal > renders correctly with default props 1`] = `
 `;
 
 exports[`Modal > renders correctly with sticky header 1`] = `
-.c3 {
+.c4 {
   display: flex;
 }
 
-.c5 {
-  display: flex;
-}
-
-.c8 {
+.c6 {
   display: flex;
 }
 
 .c9 {
+  display: flex;
+}
+
+.c10 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -793,12 +829,12 @@ exports[`Modal > renders correctly with sticky header 1`] = `
   height: 32px;
 }
 
-.c9 svg {
+.c10 svg {
   width: 100%;
   height: 100%;
 }
 
-.c7 {
+.c8 {
   font-size: 20px;
   font-weight: 500;
   line-height: 28px;
@@ -830,6 +866,8 @@ exports[`Modal > renders correctly with sticky header 1`] = `
 }
 
 .c2 {
+  display: flex;
+  flex-direction: column;
   background: #fbf8f5;
   box-sizing: border-box;
   border-radius: 16px;
@@ -837,13 +875,19 @@ exports[`Modal > renders correctly with sticky header 1`] = `
   max-width: 600px;
   position: fixed;
   max-height: calc(100vh - 64px);
-  overflow: auto;
-  overscroll-behavior-y: none;
+  overflow: hidden;
   outline: none;
   transition: all 0.3s ease-in-out;
 }
 
-.c4 {
+.c3 {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+}
+
+.c5 {
   padding: 24px 16px 8px;
   background: #fbf8f5;
   position: sticky;
@@ -851,40 +895,40 @@ exports[`Modal > renders correctly with sticky header 1`] = `
   z-index: 1;
 }
 
-.c10 {
+.c11 {
   padding: 0 16px 24px;
 }
 
-.c6 {
+.c7 {
   align-self: center;
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c4 {
     justify-content: space-between;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c4 {
     align-items: flex-start;
   }
 }
 
 @media (min-width: 0px) {
-  .c5 {
+  .c6 {
     flex-direction: column;
   }
 }
 
 @media (min-width: 0px) {
-  .c8 {
+  .c9 {
     align-items: center;
   }
 }
 
 @media (min-width: 0px) {
-  .c8 {
+  .c9 {
     gap: 8px;
   }
 }
@@ -919,51 +963,55 @@ exports[`Modal > renders correctly with sticky header 1`] = `
       tabindex="-1"
     >
       <div
-        class="c3 c4"
+        class="c3"
       >
         <div
-          class="c5 c6"
+          class="c4 c5"
         >
-          <h2
-            class="c7"
-            cursor="inherit"
-            id="_r_3_"
-            title=""
+          <div
+            class="c6 c7"
           >
-            Modal Title
-          </h2>
-        </div>
-        <div
-          class="c8"
-        >
-          <button
-            class="c9"
-            role="button"
-            style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
-            title="Close modal"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-xmark"
-              color="#292924"
-              data-icon="xmark"
-              data-prefix="far"
-              role="img"
-              viewBox="0 0 384 512"
+            <h2
+              class="c8"
+              cursor="inherit"
+              id="_r_3_"
+              title=""
             >
-              <path
-                d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
+              Modal Title
+            </h2>
+          </div>
+          <div
+            class="c9"
+          >
+            <button
+              class="c10"
+              role="button"
+              style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
+              title="Close modal"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-xmark"
+                color="#292924"
+                data-icon="xmark"
+                data-prefix="far"
+                role="img"
+                viewBox="0 0 384 512"
+              >
+                <path
+                  d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
-      <div
-        class="c5 c10"
-      >
-        <div>
-          Modal Content ...
+        <div
+          class="c6 c11"
+        >
+          <div>
+            Modal Content ...
+          </div>
         </div>
       </div>
     </div>
