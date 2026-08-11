@@ -71,18 +71,18 @@ exports[`Modal > renders correctly with a footer 1`] = `
 }
 
 .c4 {
-  padding: 24px 24px 8px;
+  padding: 24px 16px 8px;
   background: #fbf8f5;
 }
 
 .c10 {
-  padding: 0 24px 24px;
+  padding: 0 16px 24px;
 }
 
 .c11 {
   display: flex;
   gap: 8px;
-  padding: 16px 24px 24px;
+  padding: 16px 16px 24px;
   background: #fbf8f5;
   border-top: 1px solid #dad2c4;
 }
@@ -205,18 +205,6 @@ exports[`Modal > renders correctly with a footer 1`] = `
     right: 0;
     left: 0;
     bottom: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .c4 {
-    padding: 10% 24px 8px;
-  }
-}
-
-@media (max-width: 768px) {
-  .c11 {
-    padding: 16px 24px 24px;
   }
 }
 
@@ -384,18 +372,18 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
 }
 
 .c4 {
-  padding: 24px 24px 8px;
+  padding: 24px 16px 8px;
   background: #fbf8f5;
 }
 
 .c10 {
-  padding: 0 24px 24px;
+  padding: 0 16px 24px;
 }
 
 .c11 {
   display: flex;
   gap: 8px;
-  padding: 16px 24px 24px;
+  padding: 16px 16px 24px;
   background: #fbf8f5;
   border-top: 1px solid #dad2c4;
   position: sticky;
@@ -491,18 +479,6 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
     right: 0;
     left: 0;
     bottom: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .c4 {
-    padding: 10% 24px 8px;
-  }
-}
-
-@media (max-width: 768px) {
-  .c11 {
-    padding: 16px 24px 24px;
   }
 }
 
@@ -657,12 +633,12 @@ exports[`Modal > renders correctly with default props 1`] = `
 }
 
 .c4 {
-  padding: 24px 24px 8px;
+  padding: 24px 16px 8px;
   background: #fbf8f5;
 }
 
 .c10 {
-  padding: 0 24px 24px;
+  padding: 0 16px 24px;
 }
 
 .c6 {
@@ -708,18 +684,6 @@ exports[`Modal > renders correctly with default props 1`] = `
     right: 0;
     left: 0;
     bottom: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .c4 {
-    padding: 10% 24px 8px;
-  }
-}
-
-@media (max-width: 768px) {
-  .c10 {
-    padding: 0 24px 10%;
   }
 }
 
@@ -857,7 +821,7 @@ exports[`Modal > renders correctly with sticky header 1`] = `
 }
 
 .c4 {
-  padding: 24px 24px 8px;
+  padding: 24px 16px 8px;
   background: #fbf8f5;
   position: sticky;
   top: 0;
@@ -865,7 +829,7 @@ exports[`Modal > renders correctly with sticky header 1`] = `
 }
 
 .c10 {
-  padding: 0 24px 24px;
+  padding: 0 16px 24px;
 }
 
 .c6 {
@@ -911,18 +875,6 @@ exports[`Modal > renders correctly with sticky header 1`] = `
     right: 0;
     left: 0;
     bottom: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .c4 {
-    padding: 10% 24px 8px;
-  }
-}
-
-@media (max-width: 768px) {
-  .c10 {
-    padding: 0 24px 10%;
   }
 }
 

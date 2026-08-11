@@ -119,7 +119,6 @@ export const Modal: FC<ModalProps> = ({
           alignItems="flex-start"
           justifyContent="space-between"
           $sticky={stickyHeader}
-          $drawer={drawer}
         >
           <TitleElements flex direction="column">
             <Text {...titleProps} />
@@ -146,19 +145,10 @@ export const Modal: FC<ModalProps> = ({
             )}
           </Box>
         </Header>
-        <ContentArea
-          flex
-          direction="column"
-          $drawer={drawer}
-          $hasFooter={!!footer}
-        >
+        <ContentArea flex direction="column">
           {children}
         </ContentArea>
-        {footer ? (
-          <Footer $sticky={stickyFooter} $drawer={drawer}>
-            {footer}
-          </Footer>
-        ) : null}
+        {footer ? <Footer $sticky={stickyFooter}>{footer}</Footer> : null}
       </Container>
     </Wrapper>,
     portalContainer,
@@ -220,18 +210,16 @@ const Container = styled.div<IModalContainer>(
 )
 
 // NOTE: Header's bottom padding and ContentArea's top padding are a paired
-// invariant — in both drawer and non-drawer modes their sum must equal the
-// original pre-refactor gap between title and content. If you change one,
-// change the other (and re-check snapshots).
+// invariant — their sum must equal the original pre-refactor gap between
+// title and content. If you change one, change the other (and re-check
+// snapshots).
 //
-// The drawer mode's 10% bottom inset belongs on whichever element is
-// actually last inside Container: ContentArea when there's no footer,
-// Footer when there is. ContentArea's $hasFooter prop switches that inset
-// off so it isn't wasted on an internal gap once Footer owns the true
-// bottom edge.
-const Header = styled(Box)<{ $sticky: boolean; $drawer: boolean }>(
-  ({ $sticky, $drawer, theme }) => css`
-    padding: ${theme.space[300]} ${theme.space[300]} ${theme.space[100]};
+// Header's top/left/right and Footer's bottom/left/right are the modal's
+// outer edge padding (24px top/bottom, 16px left/right) and are constant
+// across all viewports/drawer modes — no media-query overrides here.
+const Header = styled(Box)<{ $sticky: boolean }>(
+  ({ $sticky, theme }) => css`
+    padding: ${theme.space[300]} ${theme.space[200]} ${theme.space[100]};
     background: ${theme.color.background[100]};
 
     ${
@@ -242,39 +230,19 @@ const Header = styled(Box)<{ $sticky: boolean; $drawer: boolean }>(
         z-index: 1;
       `
     }
-
-    ${
-      $drawer &&
-      css`
-        @media (max-width: 768px) {
-          padding: 10% ${theme.space[300]} ${theme.space[100]};
-        }
-      `
-    }
   `,
 )
 
-const ContentArea = styled(Box)<{ $drawer: boolean; $hasFooter: boolean }>(
-  ({ $drawer, $hasFooter, theme }) => css`
-    padding: 0 ${theme.space[300]} ${theme.space[300]};
+const ContentArea = styled(Box)`
+  padding: 0 ${({ theme }) => theme.space[200]}
+    ${({ theme }) => theme.space[300]};
+`
 
-    ${
-      $drawer &&
-      !$hasFooter &&
-      css`
-        @media (max-width: 768px) {
-          padding: 0 ${theme.space[300]} 10%;
-        }
-      `
-    }
-  `,
-)
-
-const Footer = styled.div<{ $sticky: boolean; $drawer: boolean }>(
-  ({ $sticky, $drawer, theme }) => css`
+const Footer = styled.div<{ $sticky: boolean }>(
+  ({ $sticky, theme }) => css`
     display: flex;
     gap: ${theme.space[100]};
-    padding: ${theme.space[200]} ${theme.space[300]} ${theme.space[300]};
+    padding: ${theme.space[200]} ${theme.space[200]} ${theme.space[300]};
     background: ${theme.color.background[100]};
     border-top: 1px solid ${theme.color.border.subtle};
 
@@ -288,15 +256,6 @@ const Footer = styled.div<{ $sticky: boolean; $drawer: boolean }>(
         position: sticky;
         bottom: 0;
         z-index: 1;
-      `
-    }
-
-    ${
-      $drawer &&
-      css`
-        @media (max-width: 768px) {
-          padding: ${theme.space[200]} ${theme.space[300]} ${theme.space[300]};
-        }
       `
     }
   `,
