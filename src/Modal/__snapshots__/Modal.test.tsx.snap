@@ -80,7 +80,7 @@ exports[`Modal > renders correctly with a footer 1`] = `
 }
 
 .c5 {
-  padding: 24px 16px 8px;
+  padding: 24px 16px 24px;
   background: #fbf8f5;
 }
 
@@ -400,7 +400,7 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
 }
 
 .c5 {
-  padding: 24px 16px 8px;
+  padding: 24px 16px 24px;
   background: #fbf8f5;
 }
 
@@ -680,7 +680,7 @@ exports[`Modal > renders correctly with default props 1`] = `
 }
 
 .c5 {
-  padding: 24px 16px 8px;
+  padding: 24px 16px 24px;
   background: #fbf8f5;
 }
 
@@ -888,7 +888,7 @@ exports[`Modal > renders correctly with sticky header 1`] = `
 }
 
 .c5 {
-  padding: 24px 16px 8px;
+  padding: 24px 16px 24px;
   background: #fbf8f5;
   position: sticky;
   top: 0;

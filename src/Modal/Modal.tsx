@@ -276,7 +276,7 @@ const ScrollArea = styled.div`
 // invariant: their sum must equal the gap between title and content.
 const Header = styled(Box)<{ $sticky: boolean }>(
   ({ $sticky, theme }) => css`
-    padding: ${theme.space[300]} ${theme.space[200]} ${theme.space[100]};
+    padding: ${theme.space[300]} ${theme.space[200]} ${theme.space[300]};
     background: ${theme.color.background[100]};
 
     ${
