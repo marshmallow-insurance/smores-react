@@ -216,7 +216,7 @@ exports[`Modal > renders correctly with a footer 1`] = `
 
 @media (max-width: 768px) {
   .c11 {
-    padding: 16px 24px 16px;
+    padding: 16px 24px 24px;
   }
 }
 
@@ -502,7 +502,7 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
 
 @media (max-width: 768px) {
   .c11 {
-    padding: 16px 24px 16px;
+    padding: 16px 24px 24px;
   }
 }
 

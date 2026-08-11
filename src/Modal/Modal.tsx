@@ -295,7 +295,7 @@ const Footer = styled.div<{ $sticky: boolean; $drawer: boolean }>(
       $drawer &&
       css`
         @media (max-width: 768px) {
-          padding: ${theme.space[200]} ${theme.space[300]} ${theme.space[200]};
+          padding: ${theme.space[200]} ${theme.space[300]} ${theme.space[300]};
         }
       `
     }
