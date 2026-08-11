@@ -29,7 +29,10 @@ jobs:
 
   bump-and-publish:
     needs: delay
-    if: ${{ !failure() && !cancelled() }}
+    # `always()` is explicit that a skipped `delay` (the workflow_dispatch
+    # path) must not skip this job; `!failure() && !cancelled()` still stops
+    # it when the delay fails or a newer push cancels the run.
+    if: ${{ always() && !failure() && !cancelled() }}
     uses: marshmallow-insurance/campfire/.github/workflows/shared-semantic-release.yml@main
     permissions:
       contents: write # to be able to publish a GitHub release
