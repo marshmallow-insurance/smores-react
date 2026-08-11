@@ -145,7 +145,7 @@ export const Modal: FC<ModalProps> = ({
             )}
           </Box>
         </Header>
-        <ContentArea flex direction="column">
+        <ContentArea flex direction="column" $hasFooter={!!footer}>
           {children}
         </ContentArea>
         {footer ? <Footer $sticky={stickyFooter}>{footer}</Footer> : null}
@@ -233,10 +233,11 @@ const Header = styled(Box)<{ $sticky: boolean }>(
   `,
 )
 
-const ContentArea = styled(Box)`
-  padding: 0 ${({ theme }) => theme.space[200]}
-    ${({ theme }) => theme.space[300]};
-`
+const ContentArea = styled(Box)<{ $hasFooter: boolean }>(
+  ({ $hasFooter, theme }) => css`
+    padding: 0 ${theme.space[200]} ${$hasFooter ? '0' : theme.space[300]};
+  `,
+)
 
 const Footer = styled.div<{ $sticky: boolean }>(
   ({ $sticky, theme }) => css`
@@ -244,7 +245,6 @@ const Footer = styled.div<{ $sticky: boolean }>(
     gap: ${theme.space[100]};
     padding: ${theme.space[200]} ${theme.space[200]} ${theme.space[300]};
     background: ${theme.color.background[100]};
-    border-top: 1px solid ${theme.color.border.subtle};
 
     & > * {
       flex: 1;
