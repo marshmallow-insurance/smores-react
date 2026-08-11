@@ -213,4 +213,50 @@ describe('Modal', () => {
     fireEvent.keyDown(document, { key: 'Tab', shiftKey: true })
     expect(gotItButton).toHaveFocus()
   })
+
+  it('locks body scroll while open and restores it on close', () => {
+    const { rerender } = render(
+      <Modal showModal={false} handleClick={noop} title={'Modal Title'}>
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+    expect(document.body.style.overflow).not.toBe('hidden')
+
+    rerender(
+      <Modal showModal={true} handleClick={noop} title={'Modal Title'}>
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+    expect(document.body.style.overflow).toBe('hidden')
+
+    rerender(
+      <Modal showModal={false} handleClick={noop} title={'Modal Title'}>
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+    expect(document.body.style.overflow).not.toBe('hidden')
+  })
+
+  it('locks body scroll when showModal is true on first mount', () => {
+    render(
+      <Modal showModal={true} handleClick={noop} title={'Modal Title'}>
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+
+    expect(document.body.style.overflow).toBe('hidden')
+  })
+
+  it('unlocks body scroll on unmount', () => {
+    const { unmount } = render(
+      <Modal showModal={true} handleClick={noop} title={'Modal Title'}>
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+    expect(document.body.style.overflow).toBe('hidden')
+
+    unmount()
+
+    expect(document.body.style.overflow).not.toBe('hidden')
+  })
 })

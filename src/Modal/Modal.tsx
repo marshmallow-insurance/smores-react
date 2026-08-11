@@ -92,7 +92,7 @@ export const Modal: FC<ModalProps> = ({
   const titleId = useId()
   const theme = useTheme()
 
-  useBodyScrollLock({ node: containerRef.current, showModal })
+  useBodyScrollLock({ ref: containerRef, showModal })
 
   const latestRef = useRef({ handleClick, closeOnOverlayClick })
   latestRef.current = { handleClick, closeOnOverlayClick }

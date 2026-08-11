@@ -208,7 +208,9 @@ exports[`Modal > renders correctly with a footer 1`] = `
   }
 }
 
-<body>
+<body
+  style="top: 0px; padding-right: 1024px; overflow: hidden;"
+>
   <div />
   <div
     class="c0"
@@ -487,7 +489,9 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
   }
 }
 
-<body>
+<body
+  style="top: 0px; padding-right: 1024px; overflow: hidden;"
+>
   <div />
   <div
     class="c0"
@@ -698,7 +702,9 @@ exports[`Modal > renders correctly with default props 1`] = `
   }
 }
 
-<body>
+<body
+  style="padding-right: 1024px; overflow: hidden; top: 0px;"
+>
   <div />
   <div
     class="c0"
@@ -895,7 +901,9 @@ exports[`Modal > renders correctly with sticky header 1`] = `
   }
 }
 
-<body>
+<body
+  style="top: 0px; padding-right: 1024px; overflow: hidden;"
+>
   <div />
   <div
     class="c0"
