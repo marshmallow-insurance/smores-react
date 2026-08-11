@@ -10,9 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 interface IModalContainer {
-  // drawer state
   $drawer: boolean
-  // modal width
   $width: string
 }
 
@@ -209,14 +207,8 @@ const Container = styled.div<IModalContainer>(
   `,
 )
 
-// NOTE: Header's bottom padding and ContentArea's top padding are a paired
-// invariant — their sum must equal the original pre-refactor gap between
-// title and content. If you change one, change the other (and re-check
-// snapshots).
-//
-// Header's top/left/right and Footer's bottom/left/right are the modal's
-// outer edge padding (24px top/bottom, 16px left/right) and are constant
-// across all viewports/drawer modes — no media-query overrides here.
+// Header's bottom padding and ContentArea's top padding are a paired
+// invariant: their sum must equal the gap between title and content.
 const Header = styled(Box)<{ $sticky: boolean }>(
   ({ $sticky, theme }) => css`
     padding: ${theme.space[300]} ${theme.space[200]} ${theme.space[100]};
