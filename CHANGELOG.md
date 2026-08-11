@@ -1,3 +1,11 @@
+## [16.2.12](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.11...v16.2.12) (2026-08-11)
+
+## [16.2.11](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.10...v16.2.11) (2026-08-10)
+
+## [16.2.10](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.9...v16.2.10) (2026-08-10)
+
+## [16.2.9](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.8...v16.2.9) (2026-08-10)
+
 ## [16.2.8](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.7...v16.2.8) (2026-08-10)
 
 ## [16.2.7](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.6...v16.2.7) (2026-08-10)
