@@ -66,7 +66,7 @@ exports[`Modal > renders correctly with a footer 1`] = `
   position: fixed;
   max-height: calc(100vh - 64px);
   overflow: auto;
-  overscroll-behavior-y: contain;
+  overscroll-behavior-y: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -379,7 +379,7 @@ exports[`Modal > renders correctly with a sticky footer 1`] = `
   position: fixed;
   max-height: calc(100vh - 64px);
   overflow: auto;
-  overscroll-behavior-y: contain;
+  overscroll-behavior-y: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -652,7 +652,7 @@ exports[`Modal > renders correctly with default props 1`] = `
   position: fixed;
   max-height: calc(100vh - 64px);
   overflow: auto;
-  overscroll-behavior-y: contain;
+  overscroll-behavior-y: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -852,7 +852,7 @@ exports[`Modal > renders correctly with sticky header 1`] = `
   position: fixed;
   max-height: calc(100vh - 64px);
   overflow: auto;
-  overscroll-behavior-y: contain;
+  overscroll-behavior-y: none;
   transition: all 0.3s ease-in-out;
 }
 
