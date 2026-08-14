@@ -32,4 +32,24 @@ export default defineConfig({
     'typescript/no-unsafe-member-access': 'off',
     'typescript/no-unsafe-assignment': 'off',
   },
+
+  overrides: [
+    {
+      // Stories are demo code — logging from an example handler is the point.
+      files: ['**/storybook/**'],
+      rules: {
+        'no-console': 'off',
+      },
+    },
+    {
+      // Both rules misread table-driven tests: `test(description, …)` over a
+      // cases array reads as a non-string title, and asserting inside an
+      // `if (props.icon)` branch is how one case table covers both variants.
+      files: ['**/*.spec.tsx', '**/*.spec.ts', '**/*.test.tsx', '**/*.test.ts'],
+      rules: {
+        'vitest/valid-title': 'off',
+        'vitest/no-conditional-expect': 'off',
+      },
+    },
+  ],
 })

@@ -121,7 +121,7 @@ export const TextInput = forwardRef(function TextInput(
   return (
     <Field {...fieldProps} htmlFor={id} error={error}>
       <Box flex alignItems="center" justifyContent="flex-start">
-        {frontIconToRender && frontIconToRender}
+        {frontIconToRender}
         <Input
           disabled={disabled}
           type={type}
@@ -142,7 +142,7 @@ export const TextInput = forwardRef(function TextInput(
           onBlur={onBlur}
           inputMode={inputModeAttr}
         />
-        {trailingIconToRender && trailingIconToRender}
+        {trailingIconToRender}
       </Box>
     </Field>
   )
