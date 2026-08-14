@@ -146,17 +146,17 @@ export const StyledRow = styled.tr<TransientProps<TableStylesProps>>`
     `}
 
     ${({ $clickableRow, $rowColor, theme }) =>
-    $clickableRow &&
-    css`
-      cursor: pointer;
-      &:hover {
-        background: ${darken(0.1, $rowColor ?? theme.color.surface.base[300])};
-      }
-      &:focus-visible {
-        ${focusOutlineStyle}
-        background: ${darken(0.1, $rowColor ?? theme.color.surface.base[300])};
-      }
-    `}
+      $clickableRow &&
+      css`
+        cursor: pointer;
+        &:hover {
+          background: ${darken(0.1, $rowColor ?? theme.color.surface.base[300])};
+        }
+        &:focus-visible {
+          ${focusOutlineStyle}
+          background: ${darken(0.1, $rowColor ?? theme.color.surface.base[300])};
+        }
+      `}
 `
 
 type StyledSubTableCellProps = {

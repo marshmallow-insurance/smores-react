@@ -34,8 +34,7 @@ export type BaseRowAction<T> = {
 }
 
 export type RowAction<T> =
-  | RowActionButtonDefault<T>
-  | RowActionElementOverride<T>
+  RowActionButtonDefault<T> | RowActionElementOverride<T>
 
 export type RowActionButtonDefault<T> = {
   iconButton?: Pick<
@@ -174,8 +173,7 @@ export interface TableProps<T, K = undefined> extends CommonTableProps<T> {
  * For a React element, it will render that as the table footer.
  */
 export type TableFooter<K> =
-  | TableFooterColumnsProps<K>
-  | TableFooterElementProps<K>
+  TableFooterColumnsProps<K> | TableFooterElementProps<K>
 
 export interface TableRowProps<T> extends CommonTableProps<T> {
   rowData: T
