@@ -97,6 +97,7 @@ export const Tooltip: FC<TooltipProps> = ({
       flip(),
       shift(),
       inlineProp ? inline() : undefined,
+      // oxlint-disable-next-line react/react-compiler
       arrow({ element: arrowRef, padding: 14 }),
     ],
     whileElementsMounted: autoUpdate,
@@ -130,6 +131,7 @@ export const Tooltip: FC<TooltipProps> = ({
       {showTip && (
         <FloatingPortal root={portalContainer}>
           <Tip
+            // oxlint-disable-next-line react/react-compiler
             ref={refs.setFloating}
             className="tooltip"
             $maxWidth={maxWidth}

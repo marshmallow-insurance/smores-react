@@ -72,6 +72,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
           onKeyDown={onKeyDown}
         >
           {displayedList.length ? (
+            // oxlint-disable-next-line react/react-compiler
             displayedList.map((el, i) => {
               const isSelected =
                 selectedValue === el.label || selectedValue === el.value

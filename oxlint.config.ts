@@ -22,6 +22,19 @@ export default defineConfig({
     'campfire/no-color-prop': 'off',
     'campfire/no-theme-colors': 'off',
 
+    // These defaults are dead only according to the types — the props are declared
+    // required, so deleting the default would change runtime behaviour for untyped
+    // consumers of the published package.
+    // TODO: make `IconWrapper.render` and `StepItem.isCompleted` optional instead,
+    // which keeps the default meaningful, then re-enable this rule.
+    'typescript/no-useless-default-assignment': 'off',
+
+    // Modal's close control is already `as="button"`, so `role="button"` is
+    // genuinely redundant — but removing it changes the rendered DOM of a published
+    // component and fails its snapshot.
+    // TODO: drop the attribute and update the snapshot in a dedicated PR.
+    'jsx-a11y/prefer-tag-over-role': 'off',
+
     // TODO: Temporary disable/warn, to fix in separate PRs
     'typescript/no-explicit-any': 'warn',
     'typescript/no-unsafe-return': 'warn',
@@ -49,6 +62,12 @@ export default defineConfig({
       rules: {
         'vitest/valid-title': 'off',
         'vitest/no-conditional-expect': 'off',
+
+        // Where `vi.fn()` is passed straight into a prop, TypeScript already
+        // infers the signature from that prop, so an explicit type parameter adds
+        // nothing. The right parameter differs per call site, and a blanket
+        // `<() => void>` would break every `toHaveBeenCalledWith({ … })`.
+        'vitest/require-mock-type-parameters': 'off',
       },
     },
   ],

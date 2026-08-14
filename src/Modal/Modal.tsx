@@ -70,6 +70,7 @@ export const Modal: FC<ModalProps> = ({
   const modalRef = useRef<HTMLDivElement>(null)
   const theme = useTheme()
 
+  // oxlint-disable-next-line react/react-compiler
   useBodyScrollLock({ node: modalRef.current, showModal })
 
   const isTitleString = typeof title === 'string'

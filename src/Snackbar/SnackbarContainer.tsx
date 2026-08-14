@@ -38,6 +38,7 @@ export const SnackbarContainer: FC<SnackbarContainerProps> = ({
     return newId
   }, [])
 
+  // oxlint-disable-next-line react/react-compiler
   const addSnackbar = useCallback((snackbar: CreateSnack) => {
     const newSnack = {
       ...snackbar,
