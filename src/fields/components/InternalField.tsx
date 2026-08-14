@@ -75,12 +75,7 @@ export const InternalField = ({
 
       <Box>{children}</Box>
       {fieldType === 'field' && assistiveText && !renderAsTitle && (
-        <Text
-          tag={labelTag}
-          typo="caption"
-          color={textColor}
-          mt="space.050"
-        >
+        <Text tag={labelTag} typo="caption" color={textColor} mt="space.050">
           {assistiveText}
         </Text>
       )}

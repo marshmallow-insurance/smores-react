@@ -160,46 +160,54 @@ const Container = styled(Box)<IButton>(
 
     ${focusOutlineStyle}
 
-    ${$primary &&
-    css`
-      &:hover {
-        background-color: ${({ theme }) =>
-          !(disabled || $loading) && theme.color.interactive.primary.hover};
-      }
-      &:active {
-        background-color: ${({ theme }) =>
-          theme.color.interactive.primary.selected};
-      }
-    `}
+    ${
+      $primary &&
+      css`
+        &:hover {
+          background-color: ${({ theme }) =>
+            !(disabled || $loading) && theme.color.interactive.primary.hover};
+        }
+        &:active {
+          background-color: ${({ theme }) =>
+            theme.color.interactive.primary.selected};
+        }
+      `
+    }
 
-    ${$secondary &&
-    css`
-      background-color: ${({ theme }) =>
-        theme.color.interactive.secondary.base};
+    ${
+      $secondary &&
+      css`
+        background-color: ${({ theme }) =>
+          theme.color.interactive.secondary.base};
 
-      &:hover {
-        background-color: ${({ theme }) =>
-          !(disabled || $loading) && theme.color.interactive.secondary.hover};
-      }
-      &:active {
-        background-color: ${({ theme }) =>
-          theme.color.interactive.secondary.selected};
-      }
-    `}
-  ${$fallbackStyle &&
+        &:hover {
+          background-color: ${({ theme }) =>
+            !(disabled || $loading) && theme.color.interactive.secondary.hover};
+        }
+        &:active {
+          background-color: ${({ theme }) =>
+            theme.color.interactive.secondary.selected};
+        }
+      `
+    }
+  ${
+    $fallbackStyle &&
     css`
       background-color: ${({ theme }) => theme.color.interactive.neutral.subtle.base};
 
       &:hover {
         background-color: ${({ theme }) =>
-          !(disabled || $loading) && theme.color.interactive.neutral.subtle.hover};
+          !(disabled || $loading) &&
+          theme.color.interactive.neutral.subtle.hover};
       }
       &:active {
         background-color: ${({ theme }) =>
           theme.color.interactive.neutral.subtle.selected};
       }
-    `}
-  ${$smallButton &&
+    `
+  }
+  ${
+    $smallButton &&
     css`
       padding: 0 10px;
       min-width: 54px;
@@ -212,8 +220,10 @@ const Container = styled(Box)<IButton>(
       span {
         margin: 0 5px 0 0;
       }
-    `}
-  ${$textBtn &&
+    `
+  }
+  ${
+    $textBtn &&
     css`
       background-color: transparent;
       padding: 0;
@@ -228,7 +238,8 @@ const Container = styled(Box)<IButton>(
         background-color: transparent;
         color: ${({ theme }) => theme.color.text.subtle};
       }
-    `}
+    `
+  }
   `,
 )
 

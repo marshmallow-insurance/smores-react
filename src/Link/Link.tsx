@@ -81,23 +81,27 @@ const LinkWrapper = styled.a<{ $typo: LinkTypo; $highlight: boolean }>(
     display: inline-flex;
     flex-direction: row;
 
-    ${$typo === 'regular' &&
-    css`
-      font-size: 16px;
-      line-height: 20px;
-    `}
+    ${
+      $typo === 'regular' &&
+      css`
+        font-size: 16px;
+        line-height: 20px;
+      `
+    }
 
-    ${$typo === 'small' &&
-    css`
-      font-size: 14px;
-      line-height: 20px;
-    `}
+    ${
+      $typo === 'small' &&
+      css`
+        font-size: 14px;
+        line-height: 20px;
+      `
+    }
 
     font-weight: ${oldTheme.font.weight.medium};
     text-decoration: underline;
-    color: ${$highlight
-      ? theme.color.interactive.primary.base
-      : theme.color.text.base};
+    color: ${
+      $highlight ? theme.color.interactive.primary.base : theme.color.text.base
+    };
 
     background: none;
     cursor: pointer;

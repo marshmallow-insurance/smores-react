@@ -55,11 +55,7 @@ const styles: Record<SupportMessageType, StylesItem> = {
 }
 
 type SupportMessageType =
-  | 'info'
-  | 'fallbackStyle'
-  | 'alert'
-  | 'warning'
-  | 'success'
+  'info' | 'fallbackStyle' | 'alert' | 'warning' | 'success'
 
 export type SupportMessageProps = {
   className?: string

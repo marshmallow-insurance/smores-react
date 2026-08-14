@@ -67,7 +67,12 @@ export const Card: FC<CardProps> = ({
       {iconComponent}
     </IconContainer>
   ) : leadingIcon ? (
-    <Icon mr="space.150" render={leadingIcon} size={24} color="color.icon.base" />
+    <Icon
+      mr="space.150"
+      render={leadingIcon}
+      size={24}
+      color="color.icon.base"
+    />
   ) : null
 
   return (

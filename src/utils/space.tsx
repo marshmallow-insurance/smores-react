@@ -9,10 +9,7 @@ type LegacySpacing = '8px' | '12px' | '16px' | '24px' | '32px' | '48px' | '64px'
 export type ThemeSpacing = Prettify<Flatten<Pick<Theme, 'space'>>>
 
 export type SpacingProp =
-  | '0'
-  | LegacySpacing
-  | ThemeSpacing
-  | { custom: number | string }
+  '0' | LegacySpacing | ThemeSpacing | { custom: number | string }
 
 export const resolveSpacing = (value: SpacingProp | 'auto', theme?: Theme) => {
   if (typeof value === 'string') {
