@@ -24,7 +24,6 @@ updates:
         patterns:
           - "storybook*"
           - "@storybook/*"
-          - "eslint-plugin-storybook*"
         update-types:
           - "major"
           - "minor"
@@ -37,21 +36,11 @@ updates:
         update-types:
           - "minor"
           - "patch"
-      ts-eslint:
-        patterns:
-          - "@typescript-eslint*"
-          - "@typescript-eslint/*"
-          - "typescript-eslint"
-        update-types:
-          - "minor"
-          - "patch"
       eslint:
         patterns:
           - "eslint"
           - "eslint-plugin-*"
           - "eslint-config-*"
-        exclude-patterns:
-          - "eslint-plugin-storybook"
       testing-library:
         patterns:
           - "@testing-library/*"
