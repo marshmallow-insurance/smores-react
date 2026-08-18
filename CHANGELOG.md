@@ -1,3 +1,5 @@
+## [16.2.16](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.15...v16.2.16) (2026-08-18)
+
 ## [16.2.15](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.14...v16.2.15) (2026-08-18)
 
 ### Styles
