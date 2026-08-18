@@ -63,12 +63,8 @@ export const LeadingIcon: Story = {
 
 export const InParagraph: Story = {
   args: {
-    ...{
-      href: 'https://www.google.com',
-      openInNewTab: true,
-      children: 'Google link',
-      typo: 'regular',
-    },
+    openInNewTab: true,
+    typo: 'regular',
     href: 'https://en.wikipedia.org/wiki/Lorem_ipsum',
     children: 'here',
   },

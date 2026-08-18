@@ -113,7 +113,7 @@ export const Card: FC<CardProps> = ({
               )}
             </Box>
           </Box>
-          {rightAction && rightAction}
+          {rightAction}
         </Box>
         <Box mt={addChildMargin ? '16px' : { custom: '0px' }}>{children}</Box>
         {buttonAction && <Box mt="space.200">{buttonAction}</Box>}

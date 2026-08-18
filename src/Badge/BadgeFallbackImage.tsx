@@ -18,10 +18,12 @@ export function BadgeFallbackImage({ title }: Props) {
 
   const bgColour = useRef(
     fallbackBackgroundColours[
+      // oxlint-disable-next-line react/react-compiler
       Math.floor(Math.random() * fallbackBackgroundColours.length)
     ],
   )
   return (
+    // oxlint-disable-next-line react/react-compiler
     <StyledFallbackImage $backgroundColour={bgColour.current}>
       <Text typo="caption" style={{ fontWeight: 'bold' }}>
         {title?.substring(0, 2) ?? null}

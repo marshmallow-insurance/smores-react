@@ -57,7 +57,7 @@ export const RichTextEditor: FC<RichTextEditorProps> = ({
   const initialConfig = {
     editorState: defaultEditorState,
     namespace: 'MarshmallowRichTextEditor',
-    onError: (e: Error) => console.log(e),
+    onError: (e: Error) => console.error(e),
     nodes: [
       AutoLinkNode,
       LinkNode,
