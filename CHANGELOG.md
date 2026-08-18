@@ -1,3 +1,9 @@
+## [16.2.15](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.14...v16.2.15) (2026-08-18)
+
+### Styles
+
+* format with prettier ([#5122](https://github.com/marshmallow-insurance/smores-react/issues/5122)) ([81b659d](https://github.com/marshmallow-insurance/smores-react/commit/81b659dd26f28fefdc410292c790b7ab0749067d))
+
 ## [16.2.14](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.13...v16.2.14) (2026-08-11)
 
 ## [16.2.13](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.12...v16.2.13) (2026-08-11)
