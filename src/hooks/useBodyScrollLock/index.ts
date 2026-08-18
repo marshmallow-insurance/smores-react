@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { RefObject, useEffect } from 'react'
 import {
   clearAllBodyScrollLocks,
   disableBodyScroll,
@@ -8,17 +8,16 @@ import {
 const enhancedDisabeBodyScroll = (node: HTMLElement | Element) => {
   disableBodyScroll(node, {
     reserveScrollBarGap: true,
-    allowTouchMove: () => true,
   })
 
   document.body.style.top = `-${window.scrollY}px`
 }
 
 export function useBodyScrollLock({
-  node,
+  ref,
   showModal,
 }: {
-  node: HTMLDivElement | null
+  ref: RefObject<HTMLDivElement | null>
   showModal: boolean
 }) {
   useEffect(() => {
@@ -26,12 +25,13 @@ export function useBodyScrollLock({
   }, [])
 
   useEffect(() => {
+    if (!showModal) return
+
+    const node = ref.current
     if (node === null) return
 
-    if (showModal) {
-      enhancedDisabeBodyScroll(node)
-    } else {
-      enableBodyScroll(node)
-    }
-  }, [node, showModal])
+    enhancedDisabeBodyScroll(node)
+
+    return () => enableBodyScroll(node)
+  }, [ref, showModal])
 }
