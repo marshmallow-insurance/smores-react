@@ -171,42 +171,56 @@ const Wrapper = styled.label<
     $itemWidth,
     theme,
   }) => css`
-    ${($displayType === 'horizontal-card' ||
-      $displayType === 'vertical-card') &&
-    css`
-      border-radius: 12px;
-      background-color: ${$fallbackStyle
-        ? theme.color.surface.base['000']
-        : theme.color.surface.base[300]};
-      padding: ${checked ? '10px' : '12px'};
-      border: ${checked &&
-      ($isError
-        ? `2px solid ${theme.color.feedback.negative[200]}`
-        : `2px solid ${theme.color.border.contrast}`)};
-
-      &:hover {
-        ${!$disabled &&
-        css`
-          background-color: ${$fallbackStyle
-            ? theme.color.surface.base[100]
-            : theme.color.surface.base[400]};
-        `}
-      }
-    `}
-    ${$displayType === 'horizontal-card' &&
-    css`
-      justify-content: center;
-      ${!$itemWidth &&
+    ${
+      ($displayType === 'horizontal-card' ||
+        $displayType === 'vertical-card') &&
       css`
-        @media (min-width: 420px) {
-          width: calc(50% - ${ITEM_GAP / 2}px);
-        }
+        border-radius: 12px;
+        background-color: ${
+          $fallbackStyle
+            ? theme.color.surface.base['000']
+            : theme.color.surface.base[300]
+        };
+        padding: ${checked ? '10px' : '12px'};
+        border: ${
+          checked &&
+          ($isError
+            ? `2px solid ${theme.color.feedback.negative[200]}`
+            : `2px solid ${theme.color.border.contrast}`)
+        };
 
-        @media (min-width: 768px) {
-          width: 201px;
+        &:hover {
+          ${
+            !$disabled &&
+            css`
+              background-color: ${
+                $fallbackStyle
+                  ? theme.color.surface.base[100]
+                  : theme.color.surface.base[400]
+              };
+            `
+          }
         }
-      `}
-    `}
+      `
+    }
+    ${
+      $displayType === 'horizontal-card' &&
+      css`
+        justify-content: center;
+        ${
+          !$itemWidth &&
+          css`
+            @media (min-width: 420px) {
+              width: calc(50% - ${ITEM_GAP / 2}px);
+            }
+
+            @media (min-width: 768px) {
+              width: 201px;
+            }
+          `
+        }
+      `
+    }
   width: ${$itemWidth ?? '100%'};
   `}
 `

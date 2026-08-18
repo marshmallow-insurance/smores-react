@@ -164,20 +164,22 @@ const Container = styled.div<IModalContainer>(
     overflow: auto;
     transition: all 0.3s ease-in-out;
 
-    ${$drawer === true &&
-    css`
-      @media (max-width: 768px) {
-        max-width: none;
-        border-radius: 16px 16px 0px 0px;
-        padding: 10% 24px;
-        max-height: 90vh;
+    ${
+      $drawer === true &&
+      css`
+        @media (max-width: 768px) {
+          max-width: none;
+          border-radius: 16px 16px 0px 0px;
+          padding: 10% 24px;
+          max-height: 90vh;
 
-        position: fixed;
-        right: 0;
-        left: 0;
-        bottom: 0;
-      }
-    `}
+          position: fixed;
+          right: 0;
+          left: 0;
+          bottom: 0;
+        }
+      `
+    }
   `,
 )
 
