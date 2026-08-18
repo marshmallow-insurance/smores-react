@@ -1,14 +1,12 @@
 {
   "recommendations": [
-    "dbaeumer.vscode-eslint",
-    "GitHub.copilot",
+    "oxc.oxc-vscode",
     "esbenp.prettier-vscode",
     "styled-components.vscode-styled-components",
     "waderyan.gitblame",
     "mhutchie.git-graph",
     "naumovs.color-highlight",
     "jock.svg",
-    "YoavBls.pretty-ts-errors",
-    "Gruntfuggly.todo-tree"
+    "YoavBls.pretty-ts-errors"
   ]
 }
