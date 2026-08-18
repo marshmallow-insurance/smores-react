@@ -1,6 +1,5 @@
 {
   "recommendations": [
-    "dbaeumer.vscode-eslint",
     "GitHub.copilot",
     "esbenp.prettier-vscode",
     "styled-components.vscode-styled-components",
@@ -9,6 +8,7 @@
     "naumovs.color-highlight",
     "jock.svg",
     "YoavBls.pretty-ts-errors",
-    "Gruntfuggly.todo-tree"
+    "Gruntfuggly.todo-tree",
+    "oxc.oxc-vscode"
   ]
 }
