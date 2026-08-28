@@ -98,7 +98,7 @@
     "storybook": "^10.2.13",
     "styled-components": "^6.5.3",
     "typescript": "^7.0.2",
-    "vite": "^8.2.1",
+    "vite": "^8.2.2",
     "vitest": "^4.1.11"
   },
   "peerDependencies": {
