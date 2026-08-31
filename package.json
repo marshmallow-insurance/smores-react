@@ -80,7 +80,7 @@
     "@types/body-scroll-lock": "^3.1.2",
     "@types/node": "^26.2.0",
     "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
+    "@types/react-dom": "^19.2.5",
     "axe-playwright": "^2.2.2",
     "concurrently": "^10.0.5",
     "eslint-plugin-prettier": "^5.5.6",
