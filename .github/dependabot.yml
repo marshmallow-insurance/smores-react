@@ -6,6 +6,8 @@ updates:
     directory: '/'
     cooldown:
       default-days: 7
+      exclude:
+        - "@mrshmllw/*"
     # Always increase package version to the latest version even if lockfile is the only thing required to change
     versioning-strategy: increase
     schedule:
