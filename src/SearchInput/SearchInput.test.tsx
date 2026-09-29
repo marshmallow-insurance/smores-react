@@ -23,6 +23,17 @@ const openResults = (container: HTMLElement) => {
 }
 
 describe('SearchInput', () => {
+  it('cancels the leading icon width so the input aligns with its container', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} showIcon />,
+    )
+    const icon = container.querySelector('input')!
+      .previousElementSibling as HTMLElement
+    const style = getComputedStyle(icon)
+    expect(style.width).toBe('20px')
+    expect(style.marginLeft).toBe('-20px')
+  })
+
   it('resets the results list scroll position to the top when the search query changes', () => {
     const { container } = render(
       <SearchInput searchList={searchList} onFound={noop} />,
