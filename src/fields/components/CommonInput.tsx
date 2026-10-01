@@ -91,7 +91,7 @@ export const Input = styled.input<IInput>`
 export const InputLeadingIconContainer = styled(IconContainer)<SIcon>`
   position: relative;
   left: 36px;
-  margin-left: -24px;
+  margin-left: ${({ $size }) => -$size}px;
   z-index: 1;
   opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
   color: ${({ theme }) => theme.color.text.base};
