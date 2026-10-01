@@ -1,3 +1,9 @@
+## [16.2.17](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.16...v16.2.17) (2026-10-01)
+
+### Bug Fixes
+
+* **inputs:** align inputs with a leading icon to their container edge ([#5190](https://github.com/marshmallow-insurance/smores-react/issues/5190)) ([4d50e0f](https://github.com/marshmallow-insurance/smores-react/commit/4d50e0fd9c11de70f91aa7e39e06e01e9c0031aa))
+
 ## [16.2.16](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.15...v16.2.16) (2026-08-18)
 
 ## [16.2.15](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.14...v16.2.15) (2026-08-18)
