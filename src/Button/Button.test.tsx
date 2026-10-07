@@ -158,17 +158,19 @@ describe('Button', () => {
     )
   })
 
-  it('drops the icon gap on icon-only buttons', () => {
-    render(
-      <Button icon="arrow" aria-label="Next">
-        {null}
-      </Button>,
-    )
-    expect(screen.getByTestId('arrow-container').parentElement).toHaveStyleRule(
-      'gap',
-      '0',
-    )
-  })
+  it.each([null, undefined, false, ''])(
+    'drops the icon gap on icon-only buttons (children: %s)',
+    (children) => {
+      render(
+        <Button icon="arrow" aria-label="Next">
+          {children}
+        </Button>,
+      )
+      expect(
+        screen.getByTestId('arrow-container').parentElement,
+      ).toHaveStyleRule('gap', '0')
+    },
+  )
 
   it('renders without an icon when none is provided', () => {
     const { container } = render(<Button>Without Icon</Button>)

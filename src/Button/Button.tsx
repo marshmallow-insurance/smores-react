@@ -72,8 +72,9 @@ export const Button: FC<ButtonProps> = forwardRef<
     primary || !(secondary || tertiary || fallbackStyle || textBtn)
 
   // Icon-only buttons drop the gap so the icon stays centred
+  // React renders nothing for null, undefined, booleans and empty strings
   const hasLabel =
-    children !== undefined && children !== null && children !== ''
+    children != null && typeof children !== 'boolean' && children !== ''
 
   const iconToRender = iconComponent ? (
     <CustomIconContainer>{iconComponent}</CustomIconContainer>
