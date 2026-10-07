@@ -144,6 +144,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       },
     })
 
+    // oxlint-disable-next-line react/react-compiler
     const fuse = useMemo(() => {
       return new Fuse(searchList, {
         ...defaultFuzzySearchOptions,
@@ -151,6 +152,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       })
     }, [searchList])
 
+    // oxlint-disable-next-line react/react-compiler
     const filteredList = useMemo(() => {
       if (searchQuery === null || searchQuery === '') {
         return searchList
@@ -163,6 +165,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       return searchList.filter(({ label }) =>
         label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
+      // oxlint-disable-next-line react/react-compiler
     }, [searchQuery, enableFuzzySearch, !!fuzzySearchOptions])
 
     const getDisplayedInputText = () => {

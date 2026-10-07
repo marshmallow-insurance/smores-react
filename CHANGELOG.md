@@ -1,3 +1,61 @@
+## [16.3.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.3.0...v16.3.1) (2026-10-07)
+
+### Documentation
+
+* add AGENTS.md, CLAUDE.md and pre-PR review skill ([#5210](https://github.com/marshmallow-insurance/smores-react/issues/5210)) ([d02b527](https://github.com/marshmallow-insurance/smores-react/commit/d02b5279e07bb34766f7e8ee3e539493c0d65f4d)), closes [#5205](https://github.com/marshmallow-insurance/smores-react/issues/5205) [#5206](https://github.com/marshmallow-insurance/smores-react/issues/5206) [#5207](https://github.com/marshmallow-insurance/smores-react/issues/5207) [#5208](https://github.com/marshmallow-insurance/smores-react/issues/5208) [#5209](https://github.com/marshmallow-insurance/smores-react/issues/5209) [#5119](https://github.com/marshmallow-insurance/smores-react/issues/5119) [#5032](https://github.com/marshmallow-insurance/smores-react/issues/5032)
+
+## [16.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.17...v16.3.0) (2026-10-07)
+
+### Features
+
+* **Button:** add tertiary variant ([#5205](https://github.com/marshmallow-insurance/smores-react/issues/5205)) ([3715815](https://github.com/marshmallow-insurance/smores-react/commit/371581526714ba6271102b36caa8136f1e8b6e18))
+
+## [16.2.17](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.16...v16.2.17) (2026-10-01)
+
+### Bug Fixes
+
+* **inputs:** align inputs with a leading icon to their container edge ([#5190](https://github.com/marshmallow-insurance/smores-react/issues/5190)) ([4d50e0f](https://github.com/marshmallow-insurance/smores-react/commit/4d50e0fd9c11de70f91aa7e39e06e01e9c0031aa))
+
+## [16.2.16](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.15...v16.2.16) (2026-08-18)
+
+## [16.2.15](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.14...v16.2.15) (2026-08-18)
+
+### Styles
+
+* format with prettier ([#5122](https://github.com/marshmallow-insurance/smores-react/issues/5122)) ([81b659d](https://github.com/marshmallow-insurance/smores-react/commit/81b659dd26f28fefdc410292c790b7ab0749067d))
+
+## [16.2.14](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.13...v16.2.14) (2026-08-11)
+
+## [16.2.13](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.12...v16.2.13) (2026-08-11)
+
+## [16.2.12](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.11...v16.2.12) (2026-08-11)
+
+## [16.2.11](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.10...v16.2.11) (2026-08-10)
+
+## [16.2.10](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.9...v16.2.10) (2026-08-10)
+
+## [16.2.9](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.8...v16.2.9) (2026-08-10)
+
+## [16.2.8](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.7...v16.2.8) (2026-08-10)
+
+## [16.2.7](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.6...v16.2.7) (2026-08-10)
+
+## [16.2.6](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.5...v16.2.6) (2026-08-10)
+
+## [16.2.5](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.4...v16.2.5) (2026-08-10)
+
+## [16.2.4](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.3...v16.2.4) (2026-08-10)
+
+### Bug Fixes
+
+* **SearchInput:** reset results scroll position when search query changes ([#5105](https://github.com/marshmallow-insurance/smores-react/issues/5105)) ([a0e8af3](https://github.com/marshmallow-insurance/smores-react/commit/a0e8af3df156227134a2f9fa67f88a941942bc9b))
+
+## [16.2.3](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.2...v16.2.3) (2026-08-10)
+
+## [16.2.2](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.1...v16.2.2) (2026-08-10)
+
+## [16.2.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.0...v16.2.1) (2026-08-10)
+
 ## [16.2.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.1.3...v16.2.0) (2026-08-05)
 
 ### Features

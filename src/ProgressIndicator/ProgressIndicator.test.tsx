@@ -142,7 +142,5 @@ describe('ProgressIndicator', () => {
         currentStepState: 'current',
       })
     })
-
-    fireEvent
   })
 })

@@ -70,4 +70,22 @@ describe('Dropdown', () => {
     expect(screen.queryByTestId('dropdown-custom-icon')).not.toBeInTheDocument()
     expect(screen.queryByTestId('info-container')).not.toBeInTheDocument()
   })
+
+  it('cancels the leading icon width so the input aligns with its container', () => {
+    render(
+      <Dropdown
+        list={items}
+        onSelect={noop}
+        onInputChange={noop}
+        frontIcon="info"
+        iconComponent={<CustomIcon />}
+      />,
+    )
+
+    const style = getComputedStyle(
+      screen.getByTestId('dropdown-custom-icon').parentElement!,
+    )
+    expect(style.width).toBe('16px')
+    expect(style.marginLeft).toBe('-16px')
+  })
 })

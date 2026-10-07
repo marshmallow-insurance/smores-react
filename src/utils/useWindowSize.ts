@@ -56,6 +56,7 @@ export function useWindowSize(
     }
   }, [targetRef, isBrowser])
 
+  // oxlint-disable-next-line react/react-compiler
   const [viewport, setViewport] = useState<MeasuredSize>(getSize())
 
   // Element-specific effect when a ref is provided

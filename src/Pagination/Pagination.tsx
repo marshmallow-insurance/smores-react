@@ -45,6 +45,7 @@ export const Pagination: FC<PaginationProps> = ({
     // This is a rather hacky fix, in theory it should be listening to total, but because the total comes from the same endpoint as the data, it forces a reset to 1 every time
     // Using lastPage seems to bypass that
     if (currentPage) {
+      // oxlint-disable-next-line react/react-compiler
       setActivePage(currentPage)
     } else {
       setActivePage(1)
@@ -54,6 +55,7 @@ export const Pagination: FC<PaginationProps> = ({
   useEffect(() => {
     const numberOfPages = Math.ceil(total / partition)
     if (numberOfPages > 1) {
+      // oxlint-disable-next-line react/react-compiler
       setLastPage(numberOfPages)
     } else if (numberOfPages === 1) {
       // Sets last page to be null to avoid the last page being kept from previous state.
@@ -70,6 +72,7 @@ export const Pagination: FC<PaginationProps> = ({
 
   useEffect(() => {
     if (lastPage <= MAX_PAGES) {
+      // oxlint-disable-next-line react/react-compiler
       setShownPages(pages)
     } else if (activePage <= MAX_ADDITIONAL_PAGES) {
       setShownPages(pages.slice(0, MAX_ADDITIONAL_PAGES))
@@ -82,7 +85,9 @@ export const Pagination: FC<PaginationProps> = ({
   }, [lastPage, activePage, pages])
 
   useEffect(() => {
+    // oxlint-disable-next-line react/react-compiler
     setShowFirstDots(shownPages[0] !== pages[0])
+    // oxlint-disable-next-line react/react-compiler
     setShowLastDots(
       shownPages[shownPages.length - 1] !== pages[pages.length - 1],
     )

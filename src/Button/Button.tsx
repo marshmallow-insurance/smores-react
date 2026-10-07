@@ -6,7 +6,6 @@ import {
   forwardRef,
 } from 'react'
 import styled, { css } from 'styled-components'
-import { IconContainer as CommonIconContainer } from '../sharedStyles/shared.styles'
 
 import { TransientProps } from '../utils/utilTypes'
 import { Box } from '../Box'
@@ -25,7 +24,10 @@ type Props = {
   loading?: boolean
   primary?: boolean
   secondary?: boolean
+  /** Low-emphasis, text-only action, e.g. "Skip" or "Cancel" */
+  tertiary?: boolean
   fallbackStyle?: boolean
+  /** Legacy underlined text style. Prefer `tertiary` for new low-emphasis actions */
   textBtn?: boolean
   smallButton?: boolean
   icon?: Icons
@@ -52,6 +54,7 @@ export const Button: FC<ButtonProps> = forwardRef<
     loading = false,
     primary = false,
     secondary = false,
+    tertiary = false,
     fallbackStyle = false,
     textBtn = false,
     smallButton = false,
@@ -64,16 +67,25 @@ export const Button: FC<ButtonProps> = forwardRef<
     ...otherProps
   } = props
 
+  // Primary is the default type, so an untyped button gets Primary's hover and pressed states too
+  const isPrimary =
+    primary || !(secondary || tertiary || fallbackStyle || textBtn)
+
+  // Icon-only buttons drop the gap so the icon stays centred
+  // React renders nothing for null, undefined, booleans and empty strings
+  const hasLabel =
+    children != null && typeof children !== 'boolean' && children !== ''
+
   const iconToRender = iconComponent ? (
-    <CommonIconContainer $size={smallButton ? 16 : 24}>
-      {iconComponent}
-    </CommonIconContainer>
+    <CustomIconContainer>{iconComponent}</CustomIconContainer>
   ) : icon ? (
-    <IconContainer
-      $trailingIcon={trailingIcon}
+    <IconComponent
       render={icon}
-      size={smallButton ? 16 : 24}
-      color="color.icon.base"
+      size={iconSize}
+      // Matches the label, which tertiary dims by colour rather than opacity when disabled
+      color={
+        tertiary && disabled ? 'color.icon.nonEssential' : 'color.icon.contrast'
+      }
     />
   ) : null
 
@@ -85,8 +97,9 @@ export const Button: FC<ButtonProps> = forwardRef<
       disabled={disabled || loading}
       onClick={handleClick}
       $loading={loading}
-      $primary={primary}
+      $primary={isPrimary}
       $secondary={secondary}
+      $tertiary={tertiary}
       $fallbackStyle={fallbackStyle}
       $textBtn={textBtn}
       $smallButton={smallButton}
@@ -102,12 +115,12 @@ export const Button: FC<ButtonProps> = forwardRef<
           <Loader color="color.icon.base" height="16" />
         </LoaderContainer>
       )}
-      <ContentContainer $hasIcon={!!iconToRender} $loading={loading}>
+      <ContentContainer $loading={loading} $hasLabel={hasLabel}>
         {!trailingIcon && iconToRender ? iconToRender : null}
         <ChildrenContainer className="childrenContainer">
           {children}
         </ChildrenContainer>
-        {trailingIcon && iconToRender && textBtn ? iconToRender : null}
+        {trailingIcon && iconToRender ? iconToRender : null}
       </ContentContainer>
     </Container>
   )
@@ -121,6 +134,7 @@ type IButton = TransientProps<
       ButtonProps,
       | 'primary'
       | 'secondary'
+      | 'tertiary'
       | 'forcedWidth'
       | 'fallbackStyle'
       | 'textBtn'
@@ -139,6 +153,7 @@ const Container = styled(Box)<IButton>(
     $loading,
     $primary,
     $secondary,
+    $tertiary,
     $forcedWidth,
     $fallbackStyle,
     $textBtn,
@@ -147,7 +162,7 @@ const Container = styled(Box)<IButton>(
     position: relative;
     background-color: ${({ theme }) => theme.color.interactive.primary.base};
     box-shadow: none;
-    color: ${({ theme }) => theme.color.text.base};
+    color: ${({ theme }) => theme.color.text.contrast};
     padding: 0 20px;
     outline: none;
     border-radius: 10000px;
@@ -160,60 +175,90 @@ const Container = styled(Box)<IButton>(
 
     ${focusOutlineStyle}
 
-    ${$primary &&
+    ${
+      $primary &&
+      css`
+        &:hover {
+          background-color: ${({ theme }) =>
+            !(disabled || $loading) && theme.color.interactive.primary.hover};
+        }
+        &:active {
+          background-color: ${({ theme }) =>
+            theme.color.interactive.primary.selected};
+        }
+      `
+    }
+
+    ${
+      $secondary &&
+      css`
+        background-color: ${({ theme }) =>
+          theme.color.interactive.secondary.base};
+
+        &:hover {
+          background-color: ${({ theme }) =>
+            !(disabled || $loading) && theme.color.interactive.secondary.hover};
+        }
+        &:active {
+          background-color: ${({ theme }) =>
+            theme.color.interactive.secondary.selected};
+        }
+      `
+    }
+  ${
+    $tertiary &&
     css`
+      background-color: transparent;
+      opacity: 1;
+
       &:hover {
         background-color: ${({ theme }) =>
-          !(disabled || $loading) && theme.color.interactive.primary.hover};
+          !(disabled || $loading) &&
+          theme.color.interactive.neutral.subtle.hover};
       }
       &:active {
         background-color: ${({ theme }) =>
-          theme.color.interactive.primary.selected};
+          !(disabled || $loading) &&
+          theme.color.interactive.neutral.subtle.selected};
       }
-    `}
 
-    ${$secondary &&
-    css`
-      background-color: ${({ theme }) =>
-        theme.color.interactive.secondary.base};
-
-      &:hover {
-        background-color: ${({ theme }) =>
-          !(disabled || $loading) && theme.color.interactive.secondary.hover};
+      ${
+        disabled &&
+        css`
+          color: ${({ theme }) => theme.color.text.nonEssential};
+        `
       }
-      &:active {
-        background-color: ${({ theme }) =>
-          theme.color.interactive.secondary.selected};
-      }
-    `}
-  ${$fallbackStyle &&
+    `
+  }
+  ${
+    $fallbackStyle &&
     css`
       background-color: ${({ theme }) => theme.color.interactive.neutral.subtle.base};
 
       &:hover {
         background-color: ${({ theme }) =>
-          !(disabled || $loading) && theme.color.interactive.neutral.subtle.hover};
+          !(disabled || $loading) &&
+          theme.color.interactive.neutral.subtle.hover};
       }
       &:active {
         background-color: ${({ theme }) =>
           theme.color.interactive.neutral.subtle.selected};
       }
-    `}
-  ${$smallButton &&
+    `
+  }
+  ${
+    $smallButton &&
     css`
-      padding: 0 10px;
+      padding: 0 12px;
       min-width: 54px;
-      font-size: 14px;
 
       .childrenContainer {
-        padding: 9px 0;
+        padding: 8px 0;
       }
-
-      span {
-        margin: 0 5px 0 0;
-      }
-    `}
-  ${$textBtn &&
+    `
+  }
+  ${
+    $textBtn &&
     css`
       background-color: transparent;
       padding: 0;
@@ -228,7 +273,19 @@ const Container = styled(Box)<IButton>(
         background-color: transparent;
         color: ${({ theme }) => theme.color.text.subtle};
       }
-    `}
+
+      ${
+        $smallButton &&
+        css`
+          font-size: 14px;
+
+          .childrenContainer {
+            padding: 9px 0;
+          }
+        `
+      }
+    `
+  }
   `,
 )
 
@@ -243,22 +300,33 @@ const LoaderContainer = styled.div`
   justify-content: center;
 `
 
-const ContentContainer = styled.div<{ $loading: boolean; $hasIcon?: boolean }>`
+const ContentContainer = styled.div<{ $loading: boolean; $hasLabel: boolean }>`
   display: flex;
   align-items: center;
-  justify-content: ${({ $hasIcon }) => ($hasIcon ? 'space-evenly' : 'center')};
+  justify-content: center;
+  gap: ${({ $hasLabel }) => ($hasLabel ? '4px' : '0')};
   opacity: ${({ $loading }) => ($loading ? '0' : '1')};
 `
 
-const IconContainer = styled(IconComponent)<
-  TransientProps<Pick<ButtonProps, 'trailingIcon'>>
->(
-  ({ $trailingIcon }) => css`
-    margin: ${$trailingIcon ? '0 0 0 10px' : '0 10px 0 0'};
-  `,
-)
+const iconSize = 20
+
+// Figma icons use Font Awesome's square bounding box, in which the glyph's em height
+// takes up 80% of the box, so custom (Font Awesome) icons are drawn at that size
+const CustomIconContainer = styled.span`
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: ${iconSize}px;
+  height: ${iconSize}px;
+
+  svg {
+    width: 100%;
+    height: 80%;
+    overflow: visible;
+  }
+`
 
 const ChildrenContainer = styled.div`
   padding: 16px 0;
-  flex-grow: 1;
 `

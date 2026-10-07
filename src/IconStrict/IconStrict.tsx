@@ -115,15 +115,17 @@ const IconContainer = styled.div<IIconStrict>(
     background-color: ${$backgroundColor ?? 'none'};
     cursor: ${onClick ? 'pointer' : 'default'};
 
-    ${onClick &&
-    `
+    ${
+      onClick &&
+      `
     &:hover {
       background-color: ${
         $backgroundColor ? darken(0.1, $backgroundColor) : 'none'
       };
     }
       
-    `}
+    `
+    }
 
     ${focusOutlineStyle}
   `,

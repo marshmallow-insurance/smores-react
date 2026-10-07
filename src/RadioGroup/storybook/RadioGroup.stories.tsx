@@ -125,11 +125,7 @@ export const WithMultipleTextElements: Story = {
         label: 'Pay now',
         value: 'basic',
         bodyCopy: (
-          <Box
-            direction="column"
-            mt="space.050"
-            gap="space.050"
-          >
+          <Box direction="column" mt="space.050" gap="space.050">
             <Text>£189.38 today</Text>
             <Text typo="body-small" color="color.text.subtle">
               Your remaining 3 monthly payments stay at £39.43
@@ -141,11 +137,7 @@ export const WithMultipleTextElements: Story = {
         label: 'Spread the cost',
         value: 'standard',
         bodyCopy: (
-          <Box
-            direction="column"
-            mt="space.050"
-            gap="space.050"
-          >
+          <Box direction="column" mt="space.050" gap="space.050">
             <Text>£12.50 today</Text>
             <Text typo="body-small" color="color.text.subtle">
               Your remaining 3 monthly payments will increase to £94.22

@@ -122,26 +122,34 @@ const Container = styled(Box)<IButton>(
     cursor: ${disabled || $loading ? 'not-allowed' : 'pointer'};
     opacity: ${disabled ? '0.5' : '1'};
 
-    ${$primary &&
-    css`
-      &:hover {
-        border: ${!(disabled || $loading) &&
-        `2px solid ${theme.color.background[200]}`};
-        background-color: ${!(disabled || $loading) &&
-        theme.color.background[200]};
-      }
-    `}
-    ${$secondary &&
-    css`
-      color: ${theme.color.text.inverse};
-      background-color: ${theme.color.surface.base[900]};
-      border: 2px solid ${theme.color.surface.base[900]};
-      &:hover {
-        border: ${!(disabled || $loading) &&
-        `2px solid ${theme.color.text.subtle}`};
-        background-color: ${!(disabled || $loading) && theme.color.text.subtle};
-      }
-    `};
+    ${
+      $primary &&
+      css`
+        &:hover {
+          border: ${
+            !(disabled || $loading) &&
+            `2px solid ${theme.color.background[200]}`
+          };
+          background-color: ${
+            !(disabled || $loading) && theme.color.background[200]
+          };
+        }
+      `
+    }
+    ${
+      $secondary &&
+      css`
+        color: ${theme.color.text.inverse};
+        background-color: ${theme.color.surface.base[900]};
+        border: 2px solid ${theme.color.surface.base[900]};
+        &:hover {
+          border: ${
+            !(disabled || $loading) && `2px solid ${theme.color.text.subtle}`
+          };
+          background-color: ${!(disabled || $loading) && theme.color.text.subtle};
+        }
+      `
+    };
   `,
 )
 

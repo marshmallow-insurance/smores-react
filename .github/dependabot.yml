@@ -6,6 +6,8 @@ updates:
     directory: '/'
     cooldown:
       default-days: 7
+      exclude:
+        - "@mrshmllw/*"
     # Always increase package version to the latest version even if lockfile is the only thing required to change
     versioning-strategy: increase
     schedule:
@@ -24,7 +26,6 @@ updates:
         patterns:
           - "storybook*"
           - "@storybook/*"
-          - "eslint-plugin-storybook*"
         update-types:
           - "major"
           - "minor"
@@ -37,24 +38,15 @@ updates:
         update-types:
           - "minor"
           - "patch"
-      ts-eslint:
+      eslint:
         patterns:
-          - "@typescript-eslint*"
-          - "@typescript-eslint/*"
-        update-types:
-          - "minor"
-          - "patch"
-      storybook-dependencies:
+          - "eslint"
+          - "eslint-plugin-*"
+          - "eslint-config-*"
+      testing-library:
         patterns:
-          - "storybook*"
-          - "@storybook/*"
-        update-types:
-          - "minor"
-          - "patch"
-      semantic-release-dependencies:
+          - "@testing-library/*"
+      vite:
         patterns:
-          - "@semantic-release*"
-          - "@semantic-release/*"
-        update-types:
-          - "minor"
-          - "patch"
+          - "vite"
+          - "vitest"

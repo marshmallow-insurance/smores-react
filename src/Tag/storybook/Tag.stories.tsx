@@ -70,6 +70,7 @@ export const Colors: Story = {
     const map = Object.values(legacyColorMap).map((col) => {
       return (
         <Tag
+          key={col}
           {...args}
           label={col}
           bgColor={col}

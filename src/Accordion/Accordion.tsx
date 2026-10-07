@@ -26,11 +26,7 @@ export type AccordionProps = {
   borderColor?: 'oatmeal' | 'custard' | 'cream' | 'coconut' | UsableNewColors
   fullBorder?: boolean
   backgroundColor?:
-    | 'oatmeal'
-    | 'custard'
-    | 'cream'
-    | 'coconut'
-    | UsableNewColors
+    'oatmeal' | 'custard' | 'cream' | 'coconut' | UsableNewColors
   onToggle?: (isOpen: boolean) => void
   children: ReactNode
   defaultIsOpen?: boolean
@@ -123,16 +119,20 @@ const Wrapper = styled(Box)<
     border-bottom: 1px solid ${$borderColor};
     ${$borderTop && `border-top: 1px solid ${$backgroundColor};`}
 
-    ${$fullBorder &&
-    css`
-      border: 1px solid ${$borderColor};
-      border-radius: 16px;
-    `}
+    ${
+      $fullBorder &&
+      css`
+        border: 1px solid ${$borderColor};
+        border-radius: 16px;
+      `
+    }
 
-    ${$filledBackground &&
-    css`
-      background-color: ${$backgroundColor};
-    `}
+    ${
+      $filledBackground &&
+      css`
+        background-color: ${$backgroundColor};
+      `
+    }
   `,
 )
 

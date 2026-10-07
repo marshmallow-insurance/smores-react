@@ -67,7 +67,12 @@ export const Card: FC<CardProps> = ({
       {iconComponent}
     </IconContainer>
   ) : leadingIcon ? (
-    <Icon mr="space.150" render={leadingIcon} size={24} color="color.icon.base" />
+    <Icon
+      mr="space.150"
+      render={leadingIcon}
+      size={24}
+      color="color.icon.base"
+    />
   ) : null
 
   return (
@@ -108,7 +113,7 @@ export const Card: FC<CardProps> = ({
               )}
             </Box>
           </Box>
-          {rightAction && rightAction}
+          {rightAction}
         </Box>
         <Box mt={addChildMargin ? '16px' : { custom: '0px' }}>{children}</Box>
         {buttonAction && <Box mt="space.200">{buttonAction}</Box>}

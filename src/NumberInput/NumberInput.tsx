@@ -159,7 +159,7 @@ export const NumberInput = forwardRef(function NumberInput(
   return (
     <Field {...fieldProps} htmlFor={id} error={error}>
       <Box flex alignItems="center" justifyContent="flex-start">
-        {frontIconToRender && frontIconToRender}
+        {frontIconToRender}
         <Input
           ref={ref}
           $error={error}
@@ -174,7 +174,7 @@ export const NumberInput = forwardRef(function NumberInput(
           $fallbackStyle={fallbackStyle}
           onWheel={(e) => e.currentTarget.blur()}
           onChange={(e: FormEvent<HTMLInputElement>) => {
-            onChange && handleChange(e.currentTarget.value)
+            if (onChange) handleChange(e.currentTarget.value)
             onInputChange?.(e)
           }}
           onBlur={onBlur}

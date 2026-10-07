@@ -13,9 +13,8 @@
 .idea/
 .vscode/**/*
 !.vscode/extensions.json
+!.vscode/settings.json
 
 logs
 *.log
 npm-debug.log*
-
-.superpowers/

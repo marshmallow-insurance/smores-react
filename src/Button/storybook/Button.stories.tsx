@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, fn, userEvent, within } from 'storybook/test'
+import { faArrowRight } from '@awesome.me/kit-46ca99185c/icons/classic/solid'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button } from '../Button'
 import { CollectionPage } from './Collection'
 import { InteractivePlayground } from './InteractivePlayground'
@@ -54,6 +56,18 @@ export const Fallback: Story = {
   },
 }
 
+export const Tertiary: Story = {
+  args: {
+    tertiary: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const button = canvas.getByRole('button', { name: /Button/i })
+    await expect(button).toHaveStyle(`background-color: rgba(0, 0, 0, 0)`)
+    await expect(button).toHaveStyle(`text-decoration-line: none`)
+  },
+}
+
 export const TextButton: Story = {
   args: {
     textBtn: true,
@@ -62,6 +76,15 @@ export const TextButton: Story = {
     const canvas = within(canvasElement)
     const button = canvas.getByRole('button', { name: /Button/i })
     await expect(button).toHaveStyle(`background-color: rgba(0, 0, 0, 0)`)
+  },
+}
+
+export const WithFontAwesomeIcon: Story = {
+  args: {
+    primary: true,
+    children: 'Continue',
+    iconComponent: <FontAwesomeIcon icon={faArrowRight} />,
+    trailingIcon: true,
   },
 }
 

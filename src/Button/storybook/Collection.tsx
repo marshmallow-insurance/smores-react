@@ -9,6 +9,7 @@ export const buttonList: Array<ButtonProps> = [
   { primary: true, children: 'Save' },
   { secondary: true, children: 'Edit' },
   { fallbackStyle: true, children: 'Cancel' },
+  { tertiary: true, children: 'Skip' },
   { textBtn: true, children: 'View' },
   { smallButton: true, children: 'Small' },
   { smallButton: true, textBtn: true, children: 'Small' },

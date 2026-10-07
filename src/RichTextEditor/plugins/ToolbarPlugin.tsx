@@ -123,6 +123,7 @@ export default function ToolbarPlugin() {
     if (prevLinkURL !== '' && isLink && urlInputRef.current) {
       urlInputRef.current.focus()
     }
+    // oxlint-disable-next-line react/react-compiler
     setPrevLinkURL(linkURL)
   }, [linkURL])
 

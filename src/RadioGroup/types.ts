@@ -12,10 +12,7 @@ export type IconPosition = 'center' | 'start'
  *
  */
 export type DisplayType =
-  | 'normal'
-  | 'horizontal-normal'
-  | 'vertical-card'
-  | 'horizontal-card'
+  'normal' | 'horizontal-normal' | 'vertical-card' | 'horizontal-card'
 
 export type BaseValueType = string | boolean | null
 

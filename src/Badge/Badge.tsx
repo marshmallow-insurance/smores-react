@@ -93,12 +93,14 @@ const Container = styled.div<ContainerProps>((props) => {
     filter: ${props.$disabled ? 'contrast(0.5)' : 'none'};
     z-index: ${props.$zIndex || 0};
 
-    ${!props.$disabled &&
-    css`
-      &:hover {
-        cursor: pointer;
-        box-shadow: 0 0 0px 5px #f0f0f0;
-      }
-    `}
+    ${
+      !props.$disabled &&
+      css`
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0 0 0px 5px #f0f0f0;
+        }
+      `
+    }
   `
 })

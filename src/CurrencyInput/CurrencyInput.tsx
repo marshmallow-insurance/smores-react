@@ -127,7 +127,7 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
           $frontIcon={true}
           $fallbackStyle={fallbackStyle}
           onChange={(e: FormEvent<HTMLInputElement>) => {
-            onChange && handleChange(e.currentTarget.value)
+            if (onChange) handleChange(e.currentTarget.value)
             onInputChange?.(e)
           }}
           onWheel={(e: WheelEvent<HTMLInputElement>) => e.currentTarget.blur()}

@@ -5,7 +5,7 @@ exports[`Button > renders correctly when disabled 1`] = `
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -22,16 +22,20 @@ exports[`Button > renders correctly when disabled 1`] = `
   outline-offset: 2px;
 }
 
+.c0:active {
+  background-color: #e43e93;
+}
+
 .c1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   opacity: 1;
 }
 
 .c2 {
   padding: 16px 0;
-  flex-grow: 1;
 }
 
 <div>
@@ -75,7 +79,7 @@ exports[`Button > renders correctly when loading 1`] = `
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -90,6 +94,10 @@ exports[`Button > renders correctly when loading 1`] = `
 .c0:focus-visible {
   outline: 2px solid #292924;
   outline-offset: 2px;
+}
+
+.c0:active {
+  background-color: #e43e93;
 }
 
 .c1 {
@@ -107,12 +115,12 @@ exports[`Button > renders correctly when loading 1`] = `
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   opacity: 0;
 }
 
 .c7 {
   padding: 16px 0;
-  flex-grow: 1;
 }
 
 <div>
@@ -170,300 +178,7 @@ exports[`Button > renders correctly with a custom className 1`] = `
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
-  padding: 0 20px;
-  outline: none;
-  border-radius: 10000px;
-  font-weight: 500;
-  cursor: pointer;
-  line-height: 100%;
-  font-size: 16px;
-  opacity: 1;
-  width: auto;
-}
-
-.c0:focus-visible {
-  outline: 2px solid #292924;
-  outline-offset: 2px;
-}
-
-.c1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-}
-
-.c2 {
-  padding: 16px 0;
-  flex-grow: 1;
-}
-
-<div>
-  <button
-    class="c0 custom-class"
-  >
-    <div
-      class="c1"
-    >
-      <div
-        class="c2 childrenContainer"
-      >
-        Click Me
-      </div>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Button > renders correctly with a custom type 1`] = `
-.c0 {
-  position: relative;
-  background-color: #ff88c8;
-  box-shadow: none;
-  color: #292924;
-  padding: 0 20px;
-  outline: none;
-  border-radius: 10000px;
-  font-weight: 500;
-  cursor: pointer;
-  line-height: 100%;
-  font-size: 16px;
-  opacity: 1;
-  width: auto;
-}
-
-.c0:focus-visible {
-  outline: 2px solid #292924;
-  outline-offset: 2px;
-}
-
-.c1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-}
-
-.c2 {
-  padding: 16px 0;
-  flex-grow: 1;
-}
-
-<div>
-  <button
-    class="c0"
-    type="submit"
-  >
-    <div
-      class="c1"
-    >
-      <div
-        class="c2 childrenContainer"
-      >
-        Submit
-      </div>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Button > renders correctly with an icon 1`] = `
-.c2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  transform: rotate(0deg);
-}
-
-.c2 svg {
-  color: #292924!important;
-}
-
-.c0 {
-  position: relative;
-  background-color: #ff88c8;
-  box-shadow: none;
-  color: #292924;
-  padding: 0 20px;
-  outline: none;
-  border-radius: 10000px;
-  font-weight: 500;
-  cursor: pointer;
-  line-height: 100%;
-  font-size: 16px;
-  opacity: 1;
-  width: auto;
-}
-
-.c0:focus-visible {
-  outline: 2px solid #292924;
-  outline-offset: 2px;
-}
-
-.c1 {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  opacity: 1;
-}
-
-.c3 {
-  margin: 0 10px 0 0;
-}
-
-.c4 {
-  padding: 16px 0;
-  flex-grow: 1;
-}
-
-<div>
-  <button
-    class="c0"
-  >
-    <div
-      class="c1"
-    >
-      <span
-        class="c2 c3"
-        data-testid="info-container"
-      >
-        <svg
-          fill="none"
-          height="100%"
-          viewBox="0 0 24 24"
-          width="100%"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0zm-1 6.99a1 1 0 112 0c0 .553-.447 1.005-1 1.005-.553 0-1-.442-1-.995v-.01zM11 11a1 1 0 112 0v7a1 1 0 11-2 0v-7zm-9 1c0 5.514 4.486 10 10 10s10-4.486 10-10S17.514 2 12 2 2 6.486 2 12z"
-            fill="currentColor"
-            fill-rule="evenodd"
-          />
-        </svg>
-      </span>
-      <div
-        class="c4 childrenContainer"
-      >
-        With Icon
-      </div>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Button > renders correctly with default props 1`] = `
-.c0 {
-  position: relative;
-  background-color: #ff88c8;
-  box-shadow: none;
-  color: #292924;
-  padding: 0 20px;
-  outline: none;
-  border-radius: 10000px;
-  font-weight: 500;
-  cursor: pointer;
-  line-height: 100%;
-  font-size: 16px;
-  opacity: 1;
-  width: auto;
-}
-
-.c0:focus-visible {
-  outline: 2px solid #292924;
-  outline-offset: 2px;
-}
-
-.c1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-}
-
-.c2 {
-  padding: 16px 0;
-  flex-grow: 1;
-}
-
-<div>
-  <button
-    class="c0"
-  >
-    <div
-      class="c1"
-    >
-      <div
-        class="c2 childrenContainer"
-      >
-        Click Me
-      </div>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Button > renders correctly with forced width 1`] = `
-.c0 {
-  position: relative;
-  background-color: #ff88c8;
-  box-shadow: none;
-  color: #292924;
-  padding: 0 20px;
-  outline: none;
-  border-radius: 10000px;
-  font-weight: 500;
-  cursor: pointer;
-  line-height: 100%;
-  font-size: 16px;
-  opacity: 1;
-  width: 200px;
-}
-
-.c0:focus-visible {
-  outline: 2px solid #292924;
-  outline-offset: 2px;
-}
-
-.c1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-}
-
-.c2 {
-  padding: 16px 0;
-  flex-grow: 1;
-}
-
-<div>
-  <button
-    class="c0"
-  >
-    <div
-      class="c1"
-    >
-      <div
-        class="c2 childrenContainer"
-      >
-        Forced Width
-      </div>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Button > renders correctly with primary styling 1`] = `
-.c0 {
-  position: relative;
-  background-color: #ff88c8;
-  box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -492,12 +207,341 @@ exports[`Button > renders correctly with primary styling 1`] = `
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   opacity: 1;
 }
 
 .c2 {
   padding: 16px 0;
-  flex-grow: 1;
+}
+
+<div>
+  <button
+    class="c0 custom-class"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2 childrenContainer"
+      >
+        Click Me
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button > renders correctly with a custom type 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #0e0e0c;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  background-color: #f759a9;
+}
+
+.c0:active {
+  background-color: #e43e93;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+}
+
+<div>
+  <button
+    class="c0"
+    type="submit"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2 childrenContainer"
+      >
+        Submit
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button > renders correctly with an icon 1`] = `
+.c2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  transform: rotate(0deg);
+}
+
+.c2 svg {
+  color: #0e0e0c!important;
+}
+
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #0e0e0c;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  background-color: #f759a9;
+}
+
+.c0:active {
+  background-color: #e43e93;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  opacity: 1;
+}
+
+.c3 {
+  padding: 16px 0;
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <span
+        class="c2"
+        data-testid="info-container"
+      >
+        <svg
+          fill="none"
+          height="100%"
+          viewBox="0 0 24 24"
+          width="100%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0zm-1 6.99a1 1 0 112 0c0 .553-.447 1.005-1 1.005-.553 0-1-.442-1-.995v-.01zM11 11a1 1 0 112 0v7a1 1 0 11-2 0v-7zm-9 1c0 5.514 4.486 10 10 10s10-4.486 10-10S17.514 2 12 2 2 6.486 2 12z"
+            fill="currentColor"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <div
+        class="c3 childrenContainer"
+      >
+        With Icon
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button > renders correctly with default props 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #0e0e0c;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  background-color: #f759a9;
+}
+
+.c0:active {
+  background-color: #e43e93;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2 childrenContainer"
+      >
+        Click Me
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button > renders correctly with forced width 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #0e0e0c;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: 200px;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  background-color: #f759a9;
+}
+
+.c0:active {
+  background-color: #e43e93;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2 childrenContainer"
+      >
+        Forced Width
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button > renders correctly with primary styling 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #0e0e0c;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  background-color: #f759a9;
+}
+
+.c0:active {
+  background-color: #e43e93;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
 }
 
 <div>
@@ -522,7 +566,7 @@ exports[`Button > renders correctly with secondary styling 1`] = `
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -552,12 +596,12 @@ exports[`Button > renders correctly with secondary styling 1`] = `
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   opacity: 1;
 }
 
 .c2 {
   padding: 16px 0;
-  flex-grow: 1;
 }
 
 <div>
@@ -582,7 +626,7 @@ exports[`Button > renders correctly with small button styling 1`] = `
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -592,9 +636,8 @@ exports[`Button > renders correctly with small button styling 1`] = `
   font-size: 16px;
   opacity: 1;
   width: auto;
-  padding: 0 10px;
+  padding: 0 12px;
   min-width: 54px;
-  font-size: 14px;
 }
 
 .c0:focus-visible {
@@ -602,24 +645,28 @@ exports[`Button > renders correctly with small button styling 1`] = `
   outline-offset: 2px;
 }
 
-.c0 .childrenContainer {
-  padding: 9px 0;
+.c0:hover {
+  background-color: #f759a9;
 }
 
-.c0 span {
-  margin: 0 5px 0 0;
+.c0:active {
+  background-color: #e43e93;
+}
+
+.c0 .childrenContainer {
+  padding: 8px 0;
 }
 
 .c1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   opacity: 1;
 }
 
 .c2 {
   padding: 16px 0;
-  flex-grow: 1;
 }
 
 <div>
@@ -639,12 +686,73 @@ exports[`Button > renders correctly with small button styling 1`] = `
 </div>
 `;
 
+exports[`Button > renders correctly with tertiary styling 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #0e0e0c;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+  background-color: transparent;
+  opacity: 1;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  background-color: #f8f2ea;
+}
+
+.c0:active {
+  background-color: #f1e9dc;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2 childrenContainer"
+      >
+        Tertiary Button
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
 exports[`Button > renders correctly with text button styling 1`] = `
 .c0 {
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -678,12 +786,12 @@ exports[`Button > renders correctly with text button styling 1`] = `
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   opacity: 1;
 }
 
 .c2 {
   padding: 16px 0;
-  flex-grow: 1;
 }
 
 <div>
@@ -704,11 +812,25 @@ exports[`Button > renders correctly with text button styling 1`] = `
 `;
 
 exports[`Button > renders correctly with trailing icon 1`] = `
+.c3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  transform: rotate(0deg);
+}
+
+.c3 svg {
+  color: #0e0e0c!important;
+}
+
 .c0 {
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -725,16 +847,24 @@ exports[`Button > renders correctly with trailing icon 1`] = `
   outline-offset: 2px;
 }
 
+.c0:hover {
+  background-color: #f759a9;
+}
+
+.c0:active {
+  background-color: #e43e93;
+}
+
 .c1 {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 4px;
   opacity: 1;
 }
 
 .c2 {
   padding: 16px 0;
-  flex-grow: 1;
 }
 
 <div>
@@ -749,6 +879,23 @@ exports[`Button > renders correctly with trailing icon 1`] = `
       >
         Trailing Icon
       </div>
+      <span
+        class="c3"
+        data-testid="arrow-container"
+      >
+        <svg
+          fill="none"
+          height="100%"
+          viewBox="0 0 24 24"
+          width="100%"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.087 12.401c.014.033.042.058.06.089a.99.99 0 00.177.238c.008.007.01.018.018.025l8 7a1 1 0 101.316-1.505L5.661 13H21a1 1 0 100-2H5.661l5.997-5.248a1 1 0 10-1.316-1.504l-8 7c-.008.007-.011.018-.018.025a.99.99 0 00-.177.238c-.018.031-.045.056-.06.089a.97.97 0 000 .801z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
     </div>
   </button>
 </div>
