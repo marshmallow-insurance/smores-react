@@ -83,6 +83,20 @@ describe('Modal', () => {
     expect(document.body.style.overflow).toBe('hidden')
   })
 
+  it('keeps the lock and scroll offset until the last stacked modal closes', () => {
+    const bottomModal = renderModal()
+    const topModal = renderModal({ title: 'Top modal' })
+    expect(document.body.style.top).toBe('0px')
+
+    topModal.unmount()
+    expect(document.body.style.overflow).toBe('hidden')
+    expect(document.body.style.top).toBe('0px')
+
+    bottomModal.unmount()
+    expect(document.body.style.overflow).not.toBe('hidden')
+    expect(document.body.style.top).toBe('')
+  })
+
   it('unlocks body scroll on unmount', () => {
     const { unmount } = renderModal()
     expect(document.body.style.overflow).toBe('hidden')
