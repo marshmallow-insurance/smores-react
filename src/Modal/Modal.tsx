@@ -70,7 +70,7 @@ const getDefaultTitleProps = (title: string): TitleProps => ({
 })
 
 const FOCUSABLE_SELECTOR =
-  'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
 export const Modal: FC<ModalProps> = ({
   title = '',
@@ -101,32 +101,41 @@ export const Modal: FC<ModalProps> = ({
   })
 
   useEffect(() => {
-    if (!showModal) return
+    const container = containerRef.current
+    if (!showModal || !container) return
 
-    const previouslyFocused = document.activeElement as HTMLElement | null
-    containerRef.current?.focus()
+    // A child with autoFocus may already have focus, so leave it there.
+    const opener = container.contains(document.activeElement)
+      ? null
+      : (document.activeElement as HTMLElement | null)
+    if (opener) container.focus()
 
     const handleKeyDown = (event: KeyboardEvent) => {
+      const active = document.activeElement
+      // Only the modal that has focus responds, so stacked modals close one at a time.
+      if (!container.contains(active)) return
+
       if (event.key === 'Escape') {
+        if (event.defaultPrevented || event.isComposing) return
         if (latestRef.current.closeOnOverlayClick) {
           latestRef.current.handleClick()
         }
         return
       }
 
-      if (event.key !== 'Tab' || !containerRef.current) return
+      if (event.key !== 'Tab') return
 
       const focusable =
-        containerRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)
-      if (focusable.length === 0) return
-
+        container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)
       const first = focusable[0]
       const last = focusable[focusable.length - 1]
 
-      if (event.shiftKey && document.activeElement === first) {
+      if (!first) {
+        event.preventDefault()
+      } else if (event.shiftKey && (active === first || active === container)) {
         event.preventDefault()
         last.focus()
-      } else if (!event.shiftKey && document.activeElement === last) {
+      } else if (!event.shiftKey && active === last) {
         event.preventDefault()
         first.focus()
       }
@@ -136,7 +145,7 @@ export const Modal: FC<ModalProps> = ({
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown)
-      previouslyFocused?.focus()
+      opener?.focus()
     }
   }, [showModal])
 

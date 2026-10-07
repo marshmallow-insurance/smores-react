@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '../testUtils'
 import { Modal, ModalProps } from './Modal'
@@ -9,6 +10,12 @@ const renderModal = (props: Partial<ModalProps> = {}) =>
       <div>Modal Content ...</div>
     </Modal>,
   )
+
+const InputThatFocusesItself = () => {
+  const ref = useRef<HTMLInputElement>(null)
+  useEffect(() => ref.current?.focus(), [])
+  return <input aria-label="Name" ref={ref} />
+}
 
 const getHeader = () =>
   screen.getByRole('heading', { name: 'Modal Title' }).parentElement
@@ -122,6 +129,28 @@ describe('Modal', () => {
     trigger.remove()
   })
 
+  it('leaves focus on a child that focuses itself on mount', () => {
+    render(
+      <Modal showModal={true} handleClick={noop} title={'Modal Title'}>
+        <InputThatFocusesItself />
+      </Modal>,
+    )
+
+    expect(screen.getByRole('textbox', { name: 'Name' })).toHaveFocus()
+  })
+
+  it('only closes the focused modal on Escape', () => {
+    const closeBottom = vi.fn()
+    const closeTop = vi.fn()
+    renderModal({ handleClick: closeBottom })
+    renderModal({ handleClick: closeTop, title: 'Top modal' })
+
+    fireEvent.keyDown(document.activeElement!, { key: 'Escape' })
+
+    expect(closeTop).toHaveBeenCalledTimes(1)
+    expect(closeBottom).not.toHaveBeenCalled()
+  })
+
   it('closes on Escape only when closeOnOverlayClick is true', () => {
     const handleClick = vi.fn()
     const { unmount } = renderModal({ handleClick })
@@ -144,6 +173,10 @@ describe('Modal', () => {
     fireEvent.keyDown(document, { key: 'Tab' })
     expect(closeButton).toHaveFocus()
 
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true })
+    expect(gotItButton).toHaveFocus()
+
+    screen.getByRole('dialog').focus()
     fireEvent.keyDown(document, { key: 'Tab', shiftKey: true })
     expect(gotItButton).toHaveFocus()
   })
