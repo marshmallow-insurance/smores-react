@@ -60,6 +60,35 @@ describe('Button', () => {
     expect(container).toMatchSnapshot()
   })
 
+  it('renders correctly with tertiary styling', () => {
+    const { container } = render(<Button tertiary>Tertiary Button</Button>)
+    expect(container).toMatchSnapshot()
+  })
+
+  it('renders correctly with disabled tertiary styling', () => {
+    render(
+      <Button tertiary disabled>
+        Tertiary Button
+      </Button>,
+    )
+    const button = screen.getByRole('button', { name: 'Tertiary Button' })
+    expect(button).toHaveStyleRule('opacity', '1')
+    expect(button).toHaveStyleRule('color', '#9d927b')
+  })
+
+  it('mutes the icon of a disabled tertiary button', () => {
+    render(
+      <Button tertiary disabled icon="plus">
+        Tertiary Button
+      </Button>,
+    )
+    expect(screen.getByTestId('plus-container')).toHaveStyleRule(
+      'color',
+      '#9d927b !important',
+      { modifier: 'svg' },
+    )
+  })
+
   it('renders correctly with text button styling', () => {
     const { container } = render(<Button textBtn>Text Button</Button>)
     expect(container).toMatchSnapshot()
