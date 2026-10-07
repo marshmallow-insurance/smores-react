@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock'
 
-// Only the first lock records the scroll offset and only the last one clears it,
-// so stacked modals don't overwrite it.
+// body-scroll-lock restores the body on every unlock, even while other locks
+// remain, so count open locks and only release the body when the last closes.
 let openLocks = 0
 
 const enhancedDisabeBodyScroll = (node: HTMLElement | Element) => {
@@ -15,11 +15,12 @@ const enhancedDisabeBodyScroll = (node: HTMLElement | Element) => {
   openLocks++
 }
 
-const enhancedEnableBodyScroll = (node: HTMLElement | Element) => {
-  enableBodyScroll(node)
-
+const enhancedEnableBodyScroll = () => {
   openLocks--
-  if (openLocks === 0) document.body.style.top = ''
+  if (openLocks > 0) return
+
+  clearAllBodyScrollLocks()
+  document.body.style.top = ''
 }
 
 export function useBodyScrollLock({
@@ -34,6 +35,6 @@ export function useBodyScrollLock({
 
     enhancedDisabeBodyScroll(node)
 
-    return () => enhancedEnableBodyScroll(node)
+    return enhancedEnableBodyScroll
   }, [node, showModal])
 }
