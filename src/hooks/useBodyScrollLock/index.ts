@@ -26,12 +26,10 @@ export function useBodyScrollLock({
   }, [])
 
   useEffect(() => {
-    if (node === null) return
+    if (node === null || !showModal) return
 
-    if (showModal) {
-      enhancedDisabeBodyScroll(node)
-    } else {
-      enableBodyScroll(node)
-    }
+    enhancedDisabeBodyScroll(node)
+
+    return () => enableBodyScroll(node)
   }, [node, showModal])
 }

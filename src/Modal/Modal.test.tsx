@@ -50,4 +50,31 @@ describe('Modal', () => {
       screen.getByRole('button', { name: 'Got it' }).parentElement,
     ).toHaveStyleRule('position', 'sticky')
   })
+
+  it('locks body scroll while open and unlocks it on close', () => {
+    const { rerender } = renderModal({ showModal: false })
+    expect(document.body.style.overflow).not.toBe('hidden')
+
+    rerender(
+      <Modal showModal={true} handleClick={noop}>
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+    expect(document.body.style.overflow).toBe('hidden')
+
+    rerender(
+      <Modal showModal={false} handleClick={noop}>
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+    expect(document.body.style.overflow).not.toBe('hidden')
+  })
+
+  it('unlocks body scroll on unmount', () => {
+    const { unmount } = renderModal()
+    expect(document.body.style.overflow).toBe('hidden')
+
+    unmount()
+    expect(document.body.style.overflow).not.toBe('hidden')
+  })
 })
