@@ -639,6 +639,67 @@ exports[`Button > renders correctly with small button styling 1`] = `
 </div>
 `;
 
+exports[`Button > renders correctly with tertiary styling 1`] = `
+.c0 {
+  position: relative;
+  background-color: #ff88c8;
+  box-shadow: none;
+  color: #292924;
+  padding: 0 20px;
+  outline: none;
+  border-radius: 10000px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 100%;
+  font-size: 16px;
+  opacity: 1;
+  width: auto;
+  background-color: transparent;
+  opacity: 1;
+}
+
+.c0:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
+}
+
+.c0:hover {
+  background-color: #f8f2ea;
+}
+
+.c0:active {
+  background-color: #f8f2ea;
+}
+
+.c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.c2 {
+  padding: 16px 0;
+  flex-grow: 1;
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2 childrenContainer"
+      >
+        Tertiary Button
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
 exports[`Button > renders correctly with text button styling 1`] = `
 .c0 {
   position: relative;

@@ -54,6 +54,18 @@ export const Fallback: Story = {
   },
 }
 
+export const Tertiary: Story = {
+  args: {
+    tertiary: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const button = canvas.getByRole('button', { name: /Button/i })
+    await expect(button).toHaveStyle(`background-color: rgba(0, 0, 0, 0)`)
+    await expect(button).toHaveStyle(`text-decoration-line: none`)
+  },
+}
+
 export const TextButton: Story = {
   args: {
     textBtn: true,

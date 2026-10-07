@@ -25,7 +25,10 @@ type Props = {
   loading?: boolean
   primary?: boolean
   secondary?: boolean
+  /** Low-emphasis, text-only action, e.g. "Skip" or "Cancel" */
+  tertiary?: boolean
   fallbackStyle?: boolean
+  /** Legacy underlined text style. Prefer `tertiary` for new low-emphasis actions */
   textBtn?: boolean
   smallButton?: boolean
   icon?: Icons
@@ -52,6 +55,7 @@ export const Button: FC<ButtonProps> = forwardRef<
     loading = false,
     primary = false,
     secondary = false,
+    tertiary = false,
     fallbackStyle = false,
     textBtn = false,
     smallButton = false,
@@ -87,6 +91,7 @@ export const Button: FC<ButtonProps> = forwardRef<
       $loading={loading}
       $primary={primary}
       $secondary={secondary}
+      $tertiary={tertiary}
       $fallbackStyle={fallbackStyle}
       $textBtn={textBtn}
       $smallButton={smallButton}
@@ -121,6 +126,7 @@ type IButton = TransientProps<
       ButtonProps,
       | 'primary'
       | 'secondary'
+      | 'tertiary'
       | 'forcedWidth'
       | 'fallbackStyle'
       | 'textBtn'
@@ -139,6 +145,7 @@ const Container = styled(Box)<IButton>(
     $loading,
     $primary,
     $secondary,
+    $tertiary,
     $forcedWidth,
     $fallbackStyle,
     $textBtn,
@@ -190,6 +197,31 @@ const Container = styled(Box)<IButton>(
         }
       `
     }
+  ${
+    $tertiary &&
+    css`
+      background-color: transparent;
+      opacity: 1;
+
+      &:hover {
+        background-color: ${({ theme }) =>
+          !(disabled || $loading) &&
+          theme.color.interactive.neutral.subtle.hover};
+      }
+      &:active {
+        background-color: ${({ theme }) =>
+          !(disabled || $loading) &&
+          theme.color.interactive.neutral.subtle.pressed};
+      }
+
+      ${
+        disabled &&
+        css`
+          color: ${({ theme }) => theme.color.text.nonEssential};
+        `
+      }
+    `
+  }
   ${
     $fallbackStyle &&
     css`
