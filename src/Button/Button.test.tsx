@@ -108,6 +108,56 @@ describe('Button', () => {
     expect(container).toMatchSnapshot()
   })
 
+  it('gives a button with no type the primary hover and pressed colours', () => {
+    render(<Button>Untyped</Button>)
+    const button = screen.getByRole('button', { name: 'Untyped' })
+    expect(button).toHaveStyleRule('background-color', '#f759a9', {
+      modifier: ':hover',
+    })
+    expect(button).toHaveStyleRule('background-color', '#e43e93', {
+      modifier: ':active',
+    })
+  })
+
+  it('renders a trailing icon after the label on every button type', () => {
+    render(
+      <Button primary icon="arrow" trailingIcon>
+        Next
+      </Button>,
+    )
+    const content = screen.getByText('Next').parentElement!
+    expect(content.lastElementChild).toBe(screen.getByTestId('arrow-container'))
+  })
+
+  it('colours the icon to match the label', () => {
+    render(
+      <Button secondary icon="arrow">
+        Next
+      </Button>,
+    )
+    expect(screen.getByTestId('arrow-container')).toHaveStyleRule(
+      'color',
+      '#0e0e0c !important',
+      { modifier: 'svg' },
+    )
+    expect(screen.getByRole('button', { name: 'Next' })).toHaveStyleRule(
+      'color',
+      '#0e0e0c',
+    )
+  })
+
+  it('keeps the legacy small text button at 14px', () => {
+    render(
+      <Button textBtn smallButton>
+        Link
+      </Button>,
+    )
+    expect(screen.getByRole('button', { name: 'Link' })).toHaveStyleRule(
+      'font-size',
+      '14px',
+    )
+  })
+
   it('renders without an icon when none is provided', () => {
     const { container } = render(<Button>Without Icon</Button>)
 
