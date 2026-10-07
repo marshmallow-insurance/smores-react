@@ -1,3 +1,9 @@
+## [16.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.17...v16.3.0) (2026-10-07)
+
+### Features
+
+* **Button:** add tertiary variant ([#5205](https://github.com/marshmallow-insurance/smores-react/issues/5205)) ([3715815](https://github.com/marshmallow-insurance/smores-react/commit/371581526714ba6271102b36caa8136f1e8b6e18))
+
 ## [16.2.17](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.16...v16.2.17) (2026-10-01)
 
 ### Bug Fixes
