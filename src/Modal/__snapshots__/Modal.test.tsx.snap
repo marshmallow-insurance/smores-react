@@ -68,6 +68,7 @@ exports[`Modal > renders correctly with default props 1`] = `
   position: fixed;
   max-height: calc(100vh - 64px);
   overflow: hidden;
+  outline: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -143,7 +144,11 @@ exports[`Modal > renders correctly with default props 1`] = `
       class="c1"
     />
     <div
+      aria-labelledby="_r_0_"
+      aria-modal="true"
       class="c2"
+      role="dialog"
+      tabindex="-1"
     >
       <div
         class="c3"
@@ -157,6 +162,7 @@ exports[`Modal > renders correctly with default props 1`] = `
             <h2
               class="c8"
               cursor="inherit"
+              id="_r_0_"
               title=""
             >
               Modal Title
