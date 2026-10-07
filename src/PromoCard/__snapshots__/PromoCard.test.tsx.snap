@@ -95,7 +95,7 @@ exports[`PromoCard > renders correctly with explicit variant overrides on both b
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -106,9 +106,8 @@ exports[`PromoCard > renders correctly with explicit variant overrides on both b
   opacity: 1;
   width: auto;
   background-color: #dad2c4;
-  padding: 0 10px;
+  padding: 0 12px;
   min-width: 54px;
-  font-size: 14px;
 }
 
 .c6:focus-visible {
@@ -125,18 +124,14 @@ exports[`PromoCard > renders correctly with explicit variant overrides on both b
 }
 
 .c6 .childrenContainer {
-  padding: 9px 0;
-}
-
-.c6 span {
-  margin: 0 5px 0 0;
+  padding: 8px 0;
 }
 
 .c9 {
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -146,13 +141,13 @@ exports[`PromoCard > renders correctly with explicit variant overrides on both b
   font-size: 16px;
   opacity: 1;
   width: auto;
-  padding: 0 10px;
+  padding: 0 12px;
   min-width: 54px;
-  font-size: 14px;
   background-color: transparent;
   padding: 0;
   border-radius: 0;
   text-decoration: underline;
+  font-size: 14px;
 }
 
 .c9:focus-visible {
@@ -161,11 +156,7 @@ exports[`PromoCard > renders correctly with explicit variant overrides on both b
 }
 
 .c9 .childrenContainer {
-  padding: 9px 0;
-}
-
-.c9 span {
-  margin: 0 5px 0 0;
+  padding: 8px 0;
 }
 
 .c9:hover {
@@ -177,16 +168,20 @@ exports[`PromoCard > renders correctly with explicit variant overrides on both b
   color: #636768;
 }
 
+.c9 .childrenContainer {
+  padding: 9px 0;
+}
+
 .c7 {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   opacity: 1;
 }
 
 .c8 {
   padding: 16px 0;
-  flex-grow: 1;
 }
 
 .c3 {
@@ -321,7 +316,7 @@ exports[`PromoCard > renders correctly with imagePosition right 1`] = `
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -332,9 +327,8 @@ exports[`PromoCard > renders correctly with imagePosition right 1`] = `
   opacity: 1;
   width: auto;
   background-color: #dad2c4;
-  padding: 0 10px;
+  padding: 0 12px;
   min-width: 54px;
-  font-size: 14px;
 }
 
 .c7:focus-visible {
@@ -351,23 +345,19 @@ exports[`PromoCard > renders correctly with imagePosition right 1`] = `
 }
 
 .c7 .childrenContainer {
-  padding: 9px 0;
-}
-
-.c7 span {
-  margin: 0 5px 0 0;
+  padding: 8px 0;
 }
 
 .c8 {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   opacity: 1;
 }
 
 .c9 {
   padding: 16px 0;
-  flex-grow: 1;
 }
 
 .c4 {
@@ -505,7 +495,7 @@ exports[`PromoCard > renders correctly with tertiary variant on secondaryButton 
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -515,13 +505,13 @@ exports[`PromoCard > renders correctly with tertiary variant on secondaryButton 
   font-size: 16px;
   opacity: 1;
   width: auto;
-  padding: 0 10px;
+  padding: 0 12px;
   min-width: 54px;
-  font-size: 14px;
   background-color: transparent;
   padding: 0;
   border-radius: 0;
   text-decoration: underline;
+  font-size: 14px;
 }
 
 .c6:focus-visible {
@@ -530,11 +520,7 @@ exports[`PromoCard > renders correctly with tertiary variant on secondaryButton 
 }
 
 .c6 .childrenContainer {
-  padding: 9px 0;
-}
-
-.c6 span {
-  margin: 0 5px 0 0;
+  padding: 8px 0;
 }
 
 .c6:hover {
@@ -546,16 +532,20 @@ exports[`PromoCard > renders correctly with tertiary variant on secondaryButton 
   color: #636768;
 }
 
+.c6 .childrenContainer {
+  padding: 9px 0;
+}
+
 .c7 {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   opacity: 1;
 }
 
 .c8 {
   padding: 16px 0;
-  flex-grow: 1;
 }
 
 .c3 {
