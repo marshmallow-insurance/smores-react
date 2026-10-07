@@ -121,13 +121,15 @@ export const StickyHeaderAndFooter: Story = {
   render: (args) => {
     return (
       <Container {...args}>
-        {Array.from({ length: 12 }, (_, index) => (
-          <p key={index}>
-            [A modal window] creates a mode that disables the main window, but
-            keeps it visible with the modal window as a child window in front of
-            it.
-          </p>
-        ))}
+        <Box flex direction="column" gap="space.200">
+          {Array.from({ length: 12 }, (_, index) => (
+            <Box key={index}>
+              [A modal window] creates a mode that disables the main window, but
+              keeps it visible with the modal window as a child window in front
+              of it.
+            </Box>
+          ))}
+        </Box>
       </Container>
     )
   },
