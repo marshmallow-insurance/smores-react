@@ -254,7 +254,9 @@ const StyledSelect = styled.select.attrs(fieldFocusAttrs)<SSelect>(
         color: ${theme.color.text.base};
       }
 
-      &:hover:not(:disabled) {
+      // Hover mustn't override the focus border while the pointer is over a
+      // focused field.
+      &:hover:not(:disabled):not(:focus) {
         border-color: ${borderColor(theme.color.border.base)};
       }
 

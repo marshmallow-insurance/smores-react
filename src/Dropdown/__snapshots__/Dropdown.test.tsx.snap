@@ -84,7 +84,7 @@ exports[`Dropdown > renders correctly when completed 1`] = `
   color: #292924;
 }
 
-.c2:hover:not(:disabled) {
+.c2:hover:not(:disabled):not(:focus) {
   border-color: #9d927b;
 }
 
@@ -272,7 +272,7 @@ exports[`Dropdown > renders correctly with a list of items 1`] = `
   color: #292924;
 }
 
-.c2:hover:not(:disabled) {
+.c2:hover:not(:disabled):not(:focus) {
   border-color: #9d927b;
 }
 
@@ -442,7 +442,7 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
   color: #292924;
 }
 
-.c2:hover:not(:disabled) {
+.c2:hover:not(:disabled):not(:focus) {
   border-color: #d03c30;
 }
 

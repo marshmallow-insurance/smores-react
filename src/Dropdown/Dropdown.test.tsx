@@ -184,4 +184,17 @@ describe('Dropdown', () => {
       modifier: ':focus-visible:not([data-pointer-focus])',
     })
   })
+
+  it('keeps the focus border when a focused field is hovered', () => {
+    render(<Dropdown list={items} onSelect={noop} />)
+
+    const select = screen.getByRole('combobox')
+
+    expect(select).toHaveStyleRule('border-color', '#9d927b', {
+      modifier: ':hover:not(:disabled):not(:focus)',
+    })
+    expect(select).toHaveStyleRule('border-color', '#292924', {
+      modifier: ':focus',
+    })
+  })
 })
