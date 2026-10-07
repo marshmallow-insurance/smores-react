@@ -1,6 +1,8 @@
 import { darken } from 'polished'
 import { FC, MouseEventHandler, ReactNode } from 'react'
 import styled, { css } from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUpRightFromSquare } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
 import { Icon, Icons } from '../Icon'
 import { theme as oldTheme } from '../theme'
@@ -8,6 +10,8 @@ import { focusOutline } from '../utils/focusOutline'
 import { IconContainer } from '../sharedStyles/shared.styles'
 
 type LinkTypo = 'regular' | 'small'
+
+const ICON_SPACING = '4px'
 
 export type LinkProps = {
   className?: string
@@ -32,16 +36,22 @@ export const Link: FC<LinkProps> = ({
   children,
   typo = 'regular',
   highlight = false,
-  iconToRender: legacyIcon = openInNewTab ? 'new-window' : undefined,
-  iconComponent,
+  iconToRender: legacyIcon,
+  iconComponent = !legacyIcon && openInNewTab ? (
+    <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+  ) : undefined,
   isTrailingIcon = true,
 }) => {
+  // Icon-only links keep the icon flush
+  const iconSpacing = children ? ICON_SPACING : '0'
+
   const iconToRender = iconComponent ? (
     <IconContainer
       $size={typo === 'regular' ? 16 : 12}
       style={{
-        paddingRight: isTrailingIcon ? '0' : '4px',
-        paddingLeft: isTrailingIcon ? '8px' : '0',
+        alignSelf: 'center',
+        marginRight: isTrailingIcon ? '0' : iconSpacing,
+        marginLeft: isTrailingIcon ? iconSpacing : '0',
       }}
     >
       {iconComponent}
@@ -49,9 +59,12 @@ export const Link: FC<LinkProps> = ({
   ) : legacyIcon ? (
     <Icon
       mt={{ custom: '3px' }}
+      {...(isTrailingIcon
+        ? { ml: { custom: iconSpacing } }
+        : { mr: { custom: iconSpacing } })}
       size={typo === 'regular' ? 14 : 12}
       render={legacyIcon}
-      color={highlight ? 'color.surface.brand.400' : 'color.surface.base.900'}
+      color={highlight ? 'color.interactive.primary.base' : 'color.text.base'}
     />
   ) : null
 
