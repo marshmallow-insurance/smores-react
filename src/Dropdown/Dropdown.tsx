@@ -138,7 +138,7 @@ export const Dropdown = forwardRef(function Dropdown(
       {iconComponent}
     </InputLeadingIconContainer>
   ) : frontIcon ? (
-    <StyledFrontIcon render={frontIcon} color="sesame" />
+    <StyledFrontIcon render={frontIcon} color="color.icon.subtle" />
   ) : null
 
   return (
