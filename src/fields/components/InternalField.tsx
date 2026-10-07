@@ -5,12 +5,17 @@ import { Box } from '../../Box'
 import { Icon } from '../../Icon'
 import { Text } from '../../Text'
 import { CommonFieldProps } from '../commonFieldTypes'
+import { markPointerFocus } from './fieldStyles'
 
 interface InternalFieldProps extends CommonFieldProps {
   children: ReactNode
   className?: string
   htmlFor?: string
   fieldType: 'field' | 'fieldset'
+  /** id for the assistive text, so a control can reference it with `aria-describedby` */
+  assistiveTextId?: string
+  /** id for the error message, so a control can reference it with `aria-describedby` */
+  errorMsgId?: string
 }
 
 export const InternalField = ({
@@ -25,9 +30,15 @@ export const InternalField = ({
   errorMsg,
   required,
   completed,
+  assistiveTextId,
+  errorMsgId,
   ...marginProps
 }: InternalFieldProps) => {
   const labelTag = fieldType === 'field' ? 'label' : 'legend'
+  // Clicking a label focuses its field, which shouldn't show the focus ring.
+  const handleLabelPointerDown = htmlFor
+    ? () => markPointerFocus(document.getElementById(htmlFor))
+    : undefined
 
   const textColor = error ? 'color.feedback.negative.200' : 'color.text.subtle'
   return (
@@ -40,12 +51,22 @@ export const InternalField = ({
         <>
           {renderAsTitle ? (
             <Box mb="space.200">
-              <Text tag={labelTag} typo="heading-small" htmlFor={htmlFor}>
+              <Text
+                tag={labelTag}
+                typo="heading-small"
+                htmlFor={htmlFor}
+                onPointerDown={handleLabelPointerDown}
+              >
                 {label}
               </Text>
 
               {assistiveText && (
-                <Text tag="p" color="sesame" mt="space.050">
+                <Text
+                  tag="p"
+                  color="color.text.subtle"
+                  mt="space.050"
+                  id={assistiveTextId}
+                >
                   {assistiveText}
                 </Text>
               )}
@@ -56,6 +77,7 @@ export const InternalField = ({
               typo="label"
               color={textColor}
               htmlFor={htmlFor}
+              onPointerDown={handleLabelPointerDown}
               mb="space.050"
             >
               {label}
@@ -75,7 +97,13 @@ export const InternalField = ({
 
       <Box>{children}</Box>
       {fieldType === 'field' && assistiveText && !renderAsTitle && (
-        <Text tag={labelTag} typo="caption" color={textColor} mt="space.050">
+        <Text
+          tag={labelTag}
+          typo="caption"
+          color={textColor}
+          mt="space.050"
+          id={assistiveTextId}
+        >
           {assistiveText}
         </Text>
       )}
@@ -83,7 +111,13 @@ export const InternalField = ({
       {error &&
         errorMsg &&
         (typeof errorMsg === 'string' ? (
-          <Box flex alignItems="center" mt="space.100" gap="space.050">
+          <Box
+            flex
+            alignItems="center"
+            mt="space.100"
+            gap="space.050"
+            id={errorMsgId}
+          >
             <Icon
               render="warning"
               size={16}
@@ -94,7 +128,9 @@ export const InternalField = ({
             </Text>
           </Box>
         ) : (
-          <Box mt="space.100">{errorMsg}</Box>
+          <Box mt="space.100" id={errorMsgId}>
+            {errorMsg}
+          </Box>
         ))}
 
       {/* When completed is false, whitespace is rendered */}
