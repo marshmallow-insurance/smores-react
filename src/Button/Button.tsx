@@ -77,7 +77,10 @@ export const Button: FC<ButtonProps> = forwardRef<
       $trailingIcon={trailingIcon}
       render={icon}
       size={smallButton ? 16 : 24}
-      color="color.icon.base"
+      // Tertiary dims by colour rather than opacity when disabled
+      color={
+        tertiary && disabled ? 'color.icon.nonEssential' : 'color.icon.base'
+      }
     />
   ) : null
 

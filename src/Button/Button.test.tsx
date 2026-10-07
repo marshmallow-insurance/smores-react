@@ -76,6 +76,19 @@ describe('Button', () => {
     expect(button).toHaveStyleRule('color', '#9d927b')
   })
 
+  it('mutes the icon of a disabled tertiary button', () => {
+    render(
+      <Button tertiary disabled icon="plus">
+        Tertiary Button
+      </Button>,
+    )
+    expect(screen.getByTestId('plus-container')).toHaveStyleRule(
+      'color',
+      '#9d927b !important',
+      { modifier: 'svg' },
+    )
+  })
+
   it('renders correctly with text button styling', () => {
     const { container } = render(<Button textBtn>Text Button</Button>)
     expect(container).toMatchSnapshot()
