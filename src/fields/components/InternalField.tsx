@@ -63,7 +63,7 @@ export const InternalField = ({
               {assistiveText && (
                 <Text
                   tag="p"
-                  color="sesame"
+                  color="color.text.subtle"
                   mt="space.050"
                   id={assistiveTextId}
                 >
