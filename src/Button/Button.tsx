@@ -71,6 +71,10 @@ export const Button: FC<ButtonProps> = forwardRef<
   const isPrimary =
     primary || !(secondary || tertiary || fallbackStyle || textBtn)
 
+  // Icon-only buttons drop the gap so the icon stays centred
+  const hasLabel =
+    children !== undefined && children !== null && children !== ''
+
   const iconToRender = iconComponent ? (
     <CustomIconContainer>{iconComponent}</CustomIconContainer>
   ) : icon ? (
@@ -110,7 +114,7 @@ export const Button: FC<ButtonProps> = forwardRef<
           <Loader color="color.icon.base" height="16" />
         </LoaderContainer>
       )}
-      <ContentContainer $loading={loading}>
+      <ContentContainer $loading={loading} $hasLabel={hasLabel}>
         {!trailingIcon && iconToRender ? iconToRender : null}
         <ChildrenContainer className="childrenContainer">
           {children}
@@ -295,11 +299,11 @@ const LoaderContainer = styled.div`
   justify-content: center;
 `
 
-const ContentContainer = styled.div<{ $loading: boolean }>`
+const ContentContainer = styled.div<{ $loading: boolean; $hasLabel: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: ${({ $hasLabel }) => ($hasLabel ? '4px' : '0')};
   opacity: ${({ $loading }) => ($loading ? '0' : '1')};
 `
 
