@@ -219,7 +219,6 @@ const ScrollArea = styled.div`
 const Header = styled(Box)<{ $sticky: boolean }>(
   ({ $sticky, theme }) => css`
     padding: ${theme.space[300]} ${theme.space[200]} ${theme.space[200]};
-    background: ${theme.color.background[100]};
 
     ${
       $sticky &&
@@ -227,6 +226,7 @@ const Header = styled(Box)<{ $sticky: boolean }>(
         position: sticky;
         top: 0;
         z-index: 1;
+        background: ${theme.color.background[100]};
       `
     }
   `,
@@ -243,7 +243,6 @@ const Footer = styled.div<{ $sticky: boolean }>(
     display: flex;
     gap: ${theme.space[100]};
     padding: ${theme.space[300]} ${theme.space[200]};
-    background: ${theme.color.background[100]};
 
     & > * {
       flex: 1;
@@ -255,6 +254,7 @@ const Footer = styled.div<{ $sticky: boolean }>(
         position: sticky;
         bottom: 0;
         z-index: 1;
+        background: ${theme.color.background[100]};
       `
     }
   `,
