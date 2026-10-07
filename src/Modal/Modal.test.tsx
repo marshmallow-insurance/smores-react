@@ -68,6 +68,19 @@ describe('Modal', () => {
       </Modal>,
     )
     expect(document.body.style.overflow).not.toBe('hidden')
+    expect(document.body.style.top).toBe('')
+  })
+
+  it("keeps an open modal's lock when another modal unmounts", () => {
+    renderModal()
+    const closedModal = render(
+      <Modal showModal={false} handleClick={noop}>
+        <div>Other modal</div>
+      </Modal>,
+    )
+
+    closedModal.unmount()
+    expect(document.body.style.overflow).toBe('hidden')
   })
 
   it('unlocks body scroll on unmount', () => {

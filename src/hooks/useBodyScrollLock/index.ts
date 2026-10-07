@@ -1,9 +1,5 @@
 import { useEffect } from 'react'
-import {
-  clearAllBodyScrollLocks,
-  disableBodyScroll,
-  enableBodyScroll,
-} from 'body-scroll-lock'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 const enhancedDisabeBodyScroll = (node: HTMLElement | Element) => {
   disableBodyScroll(node, {
@@ -22,14 +18,13 @@ export function useBodyScrollLock({
   showModal: boolean
 }) {
   useEffect(() => {
-    return () => clearAllBodyScrollLocks()
-  }, [])
-
-  useEffect(() => {
     if (node === null || !showModal) return
 
     enhancedDisabeBodyScroll(node)
 
-    return () => enableBodyScroll(node)
+    return () => {
+      enableBodyScroll(node)
+      document.body.style.top = ''
+    }
   }, [node, showModal])
 }
