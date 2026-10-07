@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useId, useRef } from 'react'
+import { FC, ReactNode, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import styled, { css, useTheme } from 'styled-components'
 
@@ -8,6 +8,13 @@ import { useBodyScrollLock } from '../hooks/useBodyScrollLock'
 import { IconContainer } from '../sharedStyles/shared.styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+
+interface IModalContainer {
+  // drawer state
+  $drawer: boolean
+  // modal width
+  $width: string
+}
 
 export type ModalProps = {
   /**
@@ -25,6 +32,7 @@ export type ModalProps = {
    * ```
    */
   title?: string | TitleProps
+  icon?: string
   children?: ReactNode
   rightPanel?: ReactNode
   showModal?: boolean
@@ -36,25 +44,17 @@ export type ModalProps = {
   portalContainer?: Element | DocumentFragment
   closeOnOverlayClick?: boolean
   /**
-   * Pins the title/close row so it stays visible while the content
-   * scrolls. Recommended whenever content might overflow, especially on
-   * mobile where there's little room to tap outside the modal to dismiss
-   * it.
+   * Keeps the title and close button visible while the content scrolls.
    * @default false
    */
   stickyHeader?: boolean
   /**
-   * Optional footer content rendered below the scrollable body, outside
-   * `children` — e.g. one or two action buttons. When there are 1–2
-   * direct children, they're laid out as equal-width flex items with a
-   * gap. The confirming/primary action should be the last child, closest
-   * to the trailing edge.
-   * @default undefined (no footer rendered)
+   * Rendered below the content, e.g. one or two buttons, which share the
+   * width equally. Put the primary action last.
    */
   footer?: ReactNode
   /**
-   * Pins `footer` so it stays visible while the content scrolls. Has no
-   * effect if `footer` isn't passed.
+   * Keeps `footer` visible while the content scrolls.
    * @default false
    */
   stickyFooter?: boolean
@@ -68,9 +68,6 @@ const getDefaultTitleProps = (title: string): TitleProps => ({
   typo: 'heading-small',
   align: 'left',
 })
-
-const FOCUSABLE_SELECTOR =
-  'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
 export const Modal: FC<ModalProps> = ({
   title = '',
@@ -88,55 +85,11 @@ export const Modal: FC<ModalProps> = ({
   footer,
   stickyFooter = false,
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const scrollAreaRef = useRef<HTMLDivElement>(null)
-  const titleId = useId()
+  const modalRef = useRef<HTMLDivElement>(null)
   const theme = useTheme()
 
-  useBodyScrollLock({ ref: scrollAreaRef, showModal })
-
-  const latestRef = useRef({ handleClick, closeOnOverlayClick })
-  latestRef.current = { handleClick, closeOnOverlayClick }
-
-  useEffect(() => {
-    if (!showModal) return
-
-    const previouslyFocused = document.activeElement as HTMLElement | null
-    containerRef.current?.focus()
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        if (latestRef.current.closeOnOverlayClick) {
-          latestRef.current.handleClick()
-        }
-        return
-      }
-
-      if (event.key !== 'Tab' || !containerRef.current) return
-
-      const focusable =
-        containerRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)
-      if (focusable.length === 0) return
-
-      const first = focusable[0]
-      const last = focusable[focusable.length - 1]
-
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault()
-        last.focus()
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault()
-        first.focus()
-      }
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown)
-      previouslyFocused?.focus()
-    }
-  }, [showModal])
+  // oxlint-disable-next-line react/react-compiler
+  useBodyScrollLock({ node: modalRef.current, showModal })
 
   const isTitleString = typeof title === 'string'
   const titleProps = isTitleString ? getDefaultTitleProps(title) : title
@@ -144,22 +97,17 @@ export const Modal: FC<ModalProps> = ({
   if (!showModal) return null
 
   return createPortal(
-    <Wrapper>
+    <Wrapper ref={modalRef}>
       <Overlay
         onClick={() => closeOnOverlayClick && handleClick()}
         $closeOnOverlayClick={closeOnOverlayClick}
       />
       <Container
-        ref={containerRef}
-        tabIndex={-1}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={titleId}
         $drawer={drawer}
         $width={width || '460px'}
         className={containerClass}
       >
-        <ScrollArea ref={scrollAreaRef}>
+        <ScrollArea>
           <Header
             flex
             alignItems="flex-start"
@@ -167,7 +115,7 @@ export const Modal: FC<ModalProps> = ({
             $sticky={stickyHeader}
           >
             <TitleElements flex direction="column">
-              <Text {...titleProps} id={titleId} />
+              <Text {...titleProps} />
             </TitleElements>
             <Box flex alignItems="center" gap={'space.100'}>
               {rightPanel}
@@ -228,7 +176,7 @@ const Overlay = styled.div<{ $closeOnOverlayClick: boolean }>`
   right: 0;
 `
 
-const Container = styled.div<{ $drawer: boolean; $width: string }>(
+const Container = styled.div<IModalContainer>(
   ({ $drawer, $width }) => css`
     display: flex;
     flex-direction: column;
@@ -240,7 +188,6 @@ const Container = styled.div<{ $drawer: boolean; $width: string }>(
     position: fixed;
     max-height: calc(100vh - 64px);
     overflow: hidden;
-    outline: none;
     transition: all 0.3s ease-in-out;
 
     ${
@@ -261,10 +208,7 @@ const Container = styled.div<{ $drawer: boolean; $width: string }>(
   `,
 )
 
-// Container clips to the border-radius; ScrollArea is where the native
-// scrollbar actually lives. Without this split, the scrollbar's straight
-// edge cuts across the rounded corner (native scrollbars aren't clipped
-// to border-radius on their own scrolling element in any browser).
+// The scrollbar lives here so Container's border-radius can clip it.
 const ScrollArea = styled.div`
   flex: 1;
   min-height: 0;
@@ -272,8 +216,6 @@ const ScrollArea = styled.div`
   overscroll-behavior-y: none;
 `
 
-// Header's bottom padding and ContentArea's top padding are a paired
-// invariant: their sum must equal the gap between title and content.
 const Header = styled(Box)<{ $sticky: boolean }>(
   ({ $sticky, theme }) => css`
     padding: ${theme.space[300]} ${theme.space[200]} ${theme.space[200]};
@@ -300,7 +242,7 @@ const Footer = styled.div<{ $sticky: boolean }>(
   ({ $sticky, theme }) => css`
     display: flex;
     gap: ${theme.space[100]};
-    padding: ${theme.space[300]} ${theme.space[200]} ${theme.space[300]};
+    padding: ${theme.space[300]} ${theme.space[200]};
     background: ${theme.color.background[100]};
 
     & > * {

@@ -3,9 +3,7 @@ import { FC, useState } from 'react'
 import styled from 'styled-components'
 import { Box } from '../../Box'
 import { Button } from '../../Button'
-import { Text } from '../../Text'
 import { Modal, ModalProps } from '../Modal'
-import { noop } from '../../utils/noop'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowsMaximize } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 
@@ -33,34 +31,9 @@ const Container: FC<ModalProps> = (props) => {
   )
 }
 
-const LongContent = () => (
-  <Box flex direction="column" gap="space.200">
-    {Array.from({ length: 12 }).map((_, index) => (
-      <Text key={index}>
-        Paragraph {index + 1}: No Claims Discount (NCD) is the UK system that
-        recognises claim-free drivers by giving them a discount. So the more
-        years you drive without making a claim, the bigger your discount will
-        be.
-      </Text>
-    ))}
-  </Box>
-)
-
-const TwoButtonFooterContent = (
-  <>
-    <Button secondary handleClick={noop}>
-      Find out more
-    </Button>
-    <Button primary handleClick={noop}>
-      Got it
-    </Button>
-  </>
-)
-
 const meta: Meta<typeof Modal> = {
   title: 'Modal',
   component: Modal,
-  tags: ['!autodocs'],
   argTypes: {
     rightPanel: {
       description:
@@ -100,6 +73,7 @@ export const Default: Story = {
 
 export const Interactive: Story = {
   args: {
+    icon: 'calendar',
     title: "Hello world i'm a beautiful modal",
     showModal: false,
     drawer: true,
@@ -131,166 +105,30 @@ export const Interactive: Story = {
   },
 }
 
-export const BasicContentModal: Story = {
-  args: {
-    title: 'Title of content',
-    showModal: false,
-  },
-  render: (args) => (
-    <Container {...args}>
-      <Text>
-        No Claims Discount (NCD) is the UK system that recognises claim-free
-        drivers by giving them a discount. So the more years you drive without
-        making a claim, the bigger your discount will be.
-      </Text>
-    </Container>
-  ),
-}
-
-export const CustomContentModal: Story = {
-  args: {
-    title: 'Title of content',
-    showModal: false,
-  },
-  render: (args) => (
-    <Container {...args}>
-      <Box flex direction="column" gap="space.200">
-        <Box
-          style={{
-            height: '160px',
-            borderRadius: '12px',
-            background: '#EDE7DE',
-          }}
-        />
-        <Text>
-          No Claims Discount (NCD) is the UK system that recognises claim-free
-          drivers by giving them a discount. Outside the UK, this system is
-          often called Bonus Malus. And we accept them all!
-        </Text>
-      </Box>
-    </Container>
-  ),
-}
-
-export const SingleButtonFooter: Story = {
-  args: {
-    title: 'Title of content',
-    showModal: false,
-    footer: (
-      <Button primary handleClick={noop}>
-        Got it
-      </Button>
-    ),
-  },
-  render: (args) => (
-    <Container {...args}>
-      <Text>
-        No Claims Discount (NCD) is the UK system that recognises claim-free
-        drivers by giving them a discount.
-      </Text>
-    </Container>
-  ),
-}
-
-export const TwoButtonFooter: Story = {
-  args: {
-    title: 'Title of content',
-    showModal: false,
-    footer: TwoButtonFooterContent,
-  },
-  render: (args) => (
-    <Container {...args}>
-      <Text>
-        No Claims Discount (NCD) is the UK system that recognises claim-free
-        drivers by giving them a discount.
-      </Text>
-    </Container>
-  ),
-}
-
-export const StickyHeader: Story = {
-  args: {
-    title: 'Title of content',
-    showModal: false,
-    stickyHeader: true,
-  },
-  render: (args) => (
-    <Container {...args}>
-      <LongContent />
-    </Container>
-  ),
-}
-
-export const NonStickyFooter: Story = {
-  args: {
-    title: 'Title of content',
-    showModal: false,
-    footer: TwoButtonFooterContent,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'footer without stickyFooter -- scroll the content and the buttons scroll away with it, unlike StickyFooter below.',
-      },
-    },
-  },
-  render: (args) => (
-    <Container {...args}>
-      <LongContent />
-    </Container>
-  ),
-}
-
-export const StickyFooter: Story = {
-  args: {
-    title: 'Title of content',
-    showModal: false,
-    stickyFooter: true,
-    footer: TwoButtonFooterContent,
-  },
-  render: (args) => (
-    <Container {...args}>
-      <LongContent />
-    </Container>
-  ),
-}
-
 export const StickyHeaderAndFooter: Story = {
   args: {
-    title: 'Title of content',
+    title: 'Generic modal',
     showModal: false,
     stickyHeader: true,
     stickyFooter: true,
-    footer: TwoButtonFooterContent,
+    footer: (
+      <>
+        <Button secondary>Find out more</Button>
+        <Button primary>Got it</Button>
+      </>
+    ),
   },
-  render: (args) => (
-    <Container {...args}>
-      <LongContent />
-    </Container>
-  ),
-}
-
-export const MobileDrawer: Story = {
-  args: {
-    title: 'Title of content',
-    showModal: false,
-    drawer: true,
-    stickyHeader: true,
-    stickyFooter: true,
-    footer: TwoButtonFooterContent,
+  render: (args) => {
+    return (
+      <Container {...args}>
+        {Array.from({ length: 12 }, (_, index) => (
+          <p key={index}>
+            [A modal window] creates a mode that disables the main window, but
+            keeps it visible with the modal window as a child window in front of
+            it.
+          </p>
+        ))}
+      </Container>
+    )
   },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Same recommended sticky configuration as above — `drawer` (on by default) turns this into a bottom-sheet on narrow screens. Resize your browser below 768px to see the drawer treatment take effect.',
-      },
-    },
-  },
-  render: (args) => (
-    <Container {...args}>
-      <LongContent />
-    </Container>
-  ),
 }
