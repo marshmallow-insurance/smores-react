@@ -95,6 +95,14 @@ export const Modal: FC<ModalProps> = ({
 
   useBodyScrollLock({ node: modalNode, showModal })
 
+  // Record the opener while rendering the open state, before any child can take focus.
+  const [wasOpen, setWasOpen] = useState(false)
+  const [opener, setOpener] = useState<HTMLElement | null>(null)
+  if (showModal !== wasOpen) {
+    setWasOpen(showModal)
+    if (showModal) setOpener(document.activeElement as HTMLElement | null)
+  }
+
   const latestRef = useRef({ handleClick, closeOnOverlayClick })
   useEffect(() => {
     latestRef.current = { handleClick, closeOnOverlayClick }
@@ -105,10 +113,7 @@ export const Modal: FC<ModalProps> = ({
     if (!showModal || !container) return
 
     // A child with autoFocus may already have focus, so leave it there.
-    const opener = container.contains(document.activeElement)
-      ? null
-      : (document.activeElement as HTMLElement | null)
-    if (opener) container.focus()
+    if (!container.contains(document.activeElement)) container.focus()
 
     const handleKeyDown = (event: KeyboardEvent) => {
       const active = document.activeElement
@@ -147,7 +152,7 @@ export const Modal: FC<ModalProps> = ({
       document.removeEventListener('keydown', handleKeyDown)
       opener?.focus()
     }
-  }, [showModal])
+  }, [showModal, opener])
 
   const isTitleString = typeof title === 'string'
   const titleProps = isTitleString ? getDefaultTitleProps(title) : title

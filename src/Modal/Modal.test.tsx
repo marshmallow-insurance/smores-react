@@ -129,14 +129,22 @@ describe('Modal', () => {
     trigger.remove()
   })
 
-  it('leaves focus on a child that focuses itself on mount', () => {
-    render(
-      <Modal showModal={true} handleClick={noop} title={'Modal Title'}>
-        <InputThatFocusesItself />
-      </Modal>,
-    )
+  it('leaves focus on a child that focuses itself, and still restores it on close', () => {
+    const trigger = document.createElement('button')
+    document.body.appendChild(trigger)
+    trigger.focus()
 
+    const modal = (showModal: boolean) => (
+      <Modal showModal={showModal} handleClick={noop} title={'Modal Title'}>
+        <InputThatFocusesItself />
+      </Modal>
+    )
+    const { rerender } = render(modal(true))
     expect(screen.getByRole('textbox', { name: 'Name' })).toHaveFocus()
+
+    rerender(modal(false))
+    expect(trigger).toHaveFocus()
+    trigger.remove()
   })
 
   it('only closes the focused modal on Escape', () => {
