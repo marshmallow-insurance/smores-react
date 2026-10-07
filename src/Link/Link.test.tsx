@@ -60,6 +60,26 @@ describe('Link', () => {
     expect(screen.getByTestId('arrow-container')).toBeInTheDocument()
   })
 
+  it('spaces the icon 4px from the text', () => {
+    const { container } = render(
+      <Link href="https://www.google.com" openInNewTab>
+        Google Link
+      </Link>,
+    )
+
+    const icon = container.querySelector('svg')?.parentElement
+    expect(icon).toHaveStyle({ marginLeft: '4px' })
+  })
+
+  it('does not space the icon when there is no text', () => {
+    const { container } = render(
+      <Link href="https://www.google.com" openInNewTab />,
+    )
+
+    const icon = container.querySelector('svg')?.parentElement
+    expect(icon).toHaveStyle({ marginLeft: '0px', marginRight: '0px' })
+  })
+
   it('renders without an icon when none is provided', () => {
     const { container } = render(<Link href="https://www.google.com" />)
 

@@ -42,13 +42,16 @@ export const Link: FC<LinkProps> = ({
   ) : undefined,
   isTrailingIcon = true,
 }) => {
+  // Icon-only links keep the icon flush
+  const iconSpacing = children ? ICON_SPACING : '0'
+
   const iconToRender = iconComponent ? (
     <IconContainer
       $size={typo === 'regular' ? 16 : 12}
       style={{
         alignSelf: 'center',
-        marginRight: isTrailingIcon ? '0' : ICON_SPACING,
-        marginLeft: isTrailingIcon ? ICON_SPACING : '0',
+        marginRight: isTrailingIcon ? '0' : iconSpacing,
+        marginLeft: isTrailingIcon ? iconSpacing : '0',
       }}
     >
       {iconComponent}
@@ -57,11 +60,11 @@ export const Link: FC<LinkProps> = ({
     <Icon
       mt={{ custom: '3px' }}
       {...(isTrailingIcon
-        ? { ml: { custom: ICON_SPACING } }
-        : { mr: { custom: ICON_SPACING } })}
+        ? { ml: { custom: iconSpacing } }
+        : { mr: { custom: iconSpacing } })}
       size={typo === 'regular' ? 14 : 12}
       render={legacyIcon}
-      color={highlight ? 'color.surface.brand.400' : 'color.surface.base.900'}
+      color={highlight ? 'color.interactive.primary.base' : 'color.text.base'}
     />
   ) : null
 
