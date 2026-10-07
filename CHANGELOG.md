@@ -1,3 +1,9 @@
+## [16.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.4.0...v16.5.0) (2026-10-07)
+
+### Features
+
+* **Dropdown:** match Figma styles and fix accessibility ([#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211)) ([241623f](https://github.com/marshmallow-insurance/smores-react/commit/241623feff8ce45c13d9dbb19f98419d26f184cb))
+
 ## [16.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.3.1...v16.4.0) (2026-10-07)
 
 ### Features
