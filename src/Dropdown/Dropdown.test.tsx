@@ -1,5 +1,5 @@
-import { expect, it } from 'vitest'
-import { render, screen } from '../testUtils'
+import { expect, it, vi } from 'vitest'
+import { fireEvent, render, screen } from '../testUtils'
 import { Dropdown } from './Dropdown'
 import { noop } from '../utils/noop'
 
@@ -87,5 +87,101 @@ describe('Dropdown', () => {
     )
     expect(style.width).toBe('16px')
     expect(style.marginLeft).toBe('-16px')
+  })
+
+  it('makes room for a custom icon component on its own', () => {
+    render(
+      <Dropdown list={items} onSelect={noop} iconComponent={<CustomIcon />} />,
+    )
+
+    expect(screen.getByRole('combobox')).toHaveStyleRule(
+      'padding',
+      '12px 60px 12px 42px',
+    )
+  })
+
+  it('works with only onInputChange', () => {
+    const onInputChange = vi.fn()
+    render(<Dropdown list={items} onInputChange={onInputChange} />)
+
+    fireEvent.change(screen.getByRole('combobox'), {
+      target: { value: 'option2' },
+    })
+
+    expect(onInputChange).toHaveBeenCalledTimes(1)
+  })
+
+  it('exposes its label, description, required and invalid state', () => {
+    render(
+      <Dropdown
+        list={items}
+        onSelect={noop}
+        label="Day"
+        assistiveText="Pick a day"
+        required
+        error
+        errorMsg="Required"
+      />,
+    )
+
+    const select = screen.getByRole('combobox', { name: /Day/ })
+
+    expect(select).toHaveAttribute('aria-invalid', 'true')
+    expect(select).toHaveAttribute('aria-required', 'true')
+    expect(select).toHaveAccessibleDescription('Pick a day Required')
+  })
+
+  it('does not reference assistive text that is not rendered', () => {
+    render(
+      <Dropdown
+        list={items}
+        onSelect={noop}
+        aria-label="Day"
+        renderAsTitle
+        assistiveText="Pick a day"
+      />,
+    )
+
+    expect(screen.getByRole('combobox', { name: 'Day' })).not.toHaveAttribute(
+      'aria-describedby',
+    )
+  })
+
+  it('keeps the placeholder out of the option groups', () => {
+    render(
+      <Dropdown
+        list={[
+          { label: 'Monday', value: 'MONDAY', optionGroupLabel: 'Weekdays' },
+          { label: 'Saturday', value: 'SATURDAY', optionGroupLabel: 'Weekend' },
+        ]}
+        onSelect={noop}
+        placeholder="Pick a day"
+      />,
+    )
+
+    const select = screen.getByRole('combobox')
+    const groups = Array.from(select.querySelectorAll('optgroup'))
+
+    expect(select.firstElementChild).toHaveTextContent('Pick a day')
+    expect(groups.map((group) => group.label)).toEqual(['Weekdays', 'Weekend'])
+  })
+
+  it('only shows the focus ring for keyboard focus', () => {
+    render(<Dropdown list={items} onSelect={noop} label="Day" />)
+
+    const select = screen.getByRole('combobox')
+
+    fireEvent.pointerDown(select)
+    expect(select).toHaveAttribute('data-pointer-focus')
+
+    fireEvent.blur(select)
+    expect(select).not.toHaveAttribute('data-pointer-focus')
+
+    fireEvent.pointerDown(screen.getByText('Day'))
+    expect(select).toHaveAttribute('data-pointer-focus')
+
+    expect(select).toHaveStyleRule('outline', expect.stringContaining('2px'), {
+      modifier: ':focus-visible:not([data-pointer-focus])',
+    })
   })
 })

@@ -23,8 +23,8 @@ exports[`Dropdown > renders correctly when completed 1`] = `
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
 .c4 svg {
@@ -62,33 +62,56 @@ exports[`Dropdown > renders correctly when completed 1`] = `
 }
 
 .c2 {
-  border: none;
-  border-radius: 0;
-  font-size: 16px;
   appearance: none;
-  outline: none;
   width: 100%;
-  height: 32px;
-  color: #636768;
-  cursor: pointer;
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 18px 14px;
+  height: 48px;
+  margin: 0;
+  padding: 12px 60px 12px 12px;
   border: 2px solid #dad2c4;
-  height: auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #636768;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  outline: none;
+}
+
+.c2 option,
+.c2 optgroup {
+  color: #292924;
+}
+
+.c2:hover:not(:disabled) {
+  border-color: #9d927b;
+}
+
+.c2:focus {
+  border-color: #292924;
+}
+
+.c2:focus-visible:not([data-pointer-focus]) {
+  outline: 2px solid #0e0e0c;
+  outline-offset: 2px;
 }
 
 .c2:disabled {
+  border-color: #d2d2d2;
+  background-color: #e6e6e6;
+  color: #636768;
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 1;
+  -webkit-text-fill-color: currentColor;
 }
 
 .c3 {
   position: absolute;
   z-index: 1;
-  right: 15px;
+  right: 20px;
+  display: flex;
   pointer-events: none;
-  color: #9d927b;
 }
 
 @media (min-width: 0px) {
@@ -143,14 +166,14 @@ exports[`Dropdown > renders correctly when completed 1`] = `
             <svg
               aria-hidden="true"
               class="svg-inline--fa fa-chevron-down"
-              color="#9d927b"
+              color="#636768"
               data-icon="chevron-down"
-              data-prefix="far"
+              data-prefix="fas"
               role="img"
               viewBox="0 0 448 512"
             >
               <path
-                d="M207.5 409c9.4 9.4 24.6 9.4 33.9 0l200-200c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-183 183-183-183c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l200 200z"
+                d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
                 fill="currentColor"
               />
             </svg>
@@ -209,8 +232,8 @@ exports[`Dropdown > renders correctly with a list of items 1`] = `
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
 .c4 svg {
@@ -227,33 +250,56 @@ exports[`Dropdown > renders correctly with a list of items 1`] = `
 }
 
 .c2 {
-  border: none;
-  border-radius: 0;
-  font-size: 16px;
   appearance: none;
-  outline: none;
   width: 100%;
-  height: 32px;
-  color: #636768;
-  cursor: pointer;
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 18px 14px;
+  height: 48px;
+  margin: 0;
+  padding: 12px 60px 12px 12px;
   border: 2px solid #dad2c4;
-  height: auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #636768;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  outline: none;
+}
+
+.c2 option,
+.c2 optgroup {
+  color: #292924;
+}
+
+.c2:hover:not(:disabled) {
+  border-color: #9d927b;
+}
+
+.c2:focus {
+  border-color: #292924;
+}
+
+.c2:focus-visible:not([data-pointer-focus]) {
+  outline: 2px solid #0e0e0c;
+  outline-offset: 2px;
 }
 
 .c2:disabled {
+  border-color: #d2d2d2;
+  background-color: #e6e6e6;
+  color: #636768;
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 1;
+  -webkit-text-fill-color: currentColor;
 }
 
 .c3 {
   position: absolute;
   z-index: 1;
-  right: 15px;
+  right: 20px;
+  display: flex;
   pointer-events: none;
-  color: #9d927b;
 }
 
 @media (min-width: 0px) {
@@ -302,14 +348,14 @@ exports[`Dropdown > renders correctly with a list of items 1`] = `
             <svg
               aria-hidden="true"
               class="svg-inline--fa fa-chevron-down"
-              color="#9d927b"
+              color="#636768"
               data-icon="chevron-down"
-              data-prefix="far"
+              data-prefix="fas"
               role="img"
               viewBox="0 0 448 512"
             >
               <path
-                d="M207.5 409c9.4 9.4 24.6 9.4 33.9 0l200-200c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-183 183-183-183c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l200 200z"
+                d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
                 fill="currentColor"
               />
             </svg>
@@ -348,8 +394,8 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
 .c4 svg {
@@ -374,33 +420,56 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
 }
 
 .c2 {
-  border: none;
-  border-radius: 0;
-  font-size: 16px;
   appearance: none;
-  outline: none;
   width: 100%;
-  height: 32px;
-  color: #636768;
-  cursor: pointer;
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 18px 14px;
+  height: 48px;
+  margin: 0;
+  padding: 12px 60px 12px 12px;
   border: 2px solid #d03c30;
-  height: auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #636768;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  outline: none;
+}
+
+.c2 option,
+.c2 optgroup {
+  color: #292924;
+}
+
+.c2:hover:not(:disabled) {
+  border-color: #d03c30;
+}
+
+.c2:focus {
+  border-color: #d03c30;
+}
+
+.c2:focus-visible:not([data-pointer-focus]) {
+  outline: 2px solid #0e0e0c;
+  outline-offset: 2px;
 }
 
 .c2:disabled {
+  border-color: #d2d2d2;
+  background-color: #e6e6e6;
+  color: #636768;
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 1;
+  -webkit-text-fill-color: currentColor;
 }
 
 .c3 {
   position: absolute;
   z-index: 1;
-  right: 15px;
+  right: 20px;
+  display: flex;
   pointer-events: none;
-  color: #9d927b;
 }
 
 @media (min-width: 0px) {
@@ -439,6 +508,8 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
         style="position: relative;"
       >
         <select
+          aria-describedby="MM_SMORES_4-error"
+          aria-invalid="true"
           class="c2"
           id="MM_SMORES_4"
         >
@@ -467,14 +538,14 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
             <svg
               aria-hidden="true"
               class="svg-inline--fa fa-chevron-down"
-              color="#9d927b"
+              color="#636768"
               data-icon="chevron-down"
-              data-prefix="far"
+              data-prefix="fas"
               role="img"
               viewBox="0 0 448 512"
             >
               <path
-                d="M207.5 409c9.4 9.4 24.6 9.4 33.9 0l200-200c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-183 183-183-183c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l200 200z"
+                d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
                 fill="currentColor"
               />
             </svg>
@@ -484,6 +555,7 @@ exports[`Dropdown > renders correctly with an error message 1`] = `
     </div>
     <div
       class="c5"
+      id="MM_SMORES_4-error"
     >
       <span
         class="c6"
