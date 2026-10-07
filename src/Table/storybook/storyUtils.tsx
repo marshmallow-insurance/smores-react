@@ -320,7 +320,11 @@ export const columnsV2 = [
   {
     name: 'e.g1',
     cell: () => (
-      <Button primary smallButton onClick={() => exampleOnClick('e.g1 button')}>
+      <Button
+        variant="primary"
+        size="small"
+        onClick={() => exampleOnClick('e.g1 button')}
+      >
         e.g1
       </Button>
     ),
