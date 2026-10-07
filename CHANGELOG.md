@@ -1,3 +1,9 @@
+## [16.3.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.3.0...v16.3.1) (2026-10-07)
+
+### Documentation
+
+* add AGENTS.md, CLAUDE.md and pre-PR review skill ([#5210](https://github.com/marshmallow-insurance/smores-react/issues/5210)) ([d02b527](https://github.com/marshmallow-insurance/smores-react/commit/d02b5279e07bb34766f7e8ee3e539493c0d65f4d)), closes [#5205](https://github.com/marshmallow-insurance/smores-react/issues/5205) [#5206](https://github.com/marshmallow-insurance/smores-react/issues/5206) [#5207](https://github.com/marshmallow-insurance/smores-react/issues/5207) [#5208](https://github.com/marshmallow-insurance/smores-react/issues/5208) [#5209](https://github.com/marshmallow-insurance/smores-react/issues/5209) [#5119](https://github.com/marshmallow-insurance/smores-react/issues/5119) [#5032](https://github.com/marshmallow-insurance/smores-react/issues/5032)
+
 ## [16.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.17...v16.3.0) (2026-10-07)
 
 ### Features
