@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from 'react'
+import { FC, ReactNode, useEffect, useId, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import styled, { css, useTheme } from 'styled-components'
 
@@ -69,6 +69,9 @@ const getDefaultTitleProps = (title: string): TitleProps => ({
   align: 'left',
 })
 
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+
 export const Modal: FC<ModalProps> = ({
   title = '',
   children,
@@ -86,12 +89,74 @@ export const Modal: FC<ModalProps> = ({
   stickyFooter = false,
 }) => {
   const [modalNode, setModalNode] = useState<HTMLDivElement | null>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const titleId = useId()
   const theme = useTheme()
 
   useBodyScrollLock({ node: modalNode, showModal })
 
+  // Record the opener while rendering the open state, before any child can take focus.
+  const [wasOpen, setWasOpen] = useState(false)
+  const [opener, setOpener] = useState<HTMLElement | null>(null)
+  if (showModal !== wasOpen) {
+    setWasOpen(showModal)
+    if (showModal) setOpener(document.activeElement as HTMLElement | null)
+  }
+
+  const latestRef = useRef({ handleClick, closeOnOverlayClick })
+  useEffect(() => {
+    latestRef.current = { handleClick, closeOnOverlayClick }
+  })
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (!showModal || !container) return
+
+    // A child with autoFocus may already have focus, so leave it there.
+    if (!container.contains(document.activeElement)) container.focus()
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const active = document.activeElement
+      // Only the modal that has focus responds, so stacked modals close one at a time.
+      if (!container.contains(active)) return
+
+      if (event.key === 'Escape') {
+        if (event.defaultPrevented || event.isComposing) return
+        if (latestRef.current.closeOnOverlayClick) {
+          latestRef.current.handleClick()
+        }
+        return
+      }
+
+      if (event.key !== 'Tab') return
+
+      const focusable =
+        container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+
+      if (!first) {
+        event.preventDefault()
+      } else if (event.shiftKey && (active === first || active === container)) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && active === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      opener?.focus()
+    }
+  }, [showModal, opener])
+
   const isTitleString = typeof title === 'string'
   const titleProps = isTitleString ? getDefaultTitleProps(title) : title
+  const labelId = titleProps.id ?? titleId
 
   if (!showModal) return null
 
@@ -102,6 +167,11 @@ export const Modal: FC<ModalProps> = ({
         $closeOnOverlayClick={closeOnOverlayClick}
       />
       <Container
+        ref={containerRef}
+        tabIndex={-1}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={title ? labelId : undefined}
         $drawer={drawer}
         $width={width || '460px'}
         className={containerClass}
@@ -114,7 +184,7 @@ export const Modal: FC<ModalProps> = ({
             $sticky={stickyHeader}
           >
             <TitleElements flex direction="column">
-              <Text {...titleProps} />
+              <Text {...titleProps} id={labelId} />
             </TitleElements>
             <Box flex alignItems="center" gap={'space.100'}>
               {rightPanel}
@@ -187,6 +257,7 @@ const Container = styled.div<IModalContainer>(
     position: fixed;
     max-height: calc(100vh - 64px);
     overflow: hidden;
+    outline: none;
     transition: all 0.3s ease-in-out;
 
     ${

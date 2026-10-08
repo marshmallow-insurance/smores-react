@@ -1,5 +1,6 @@
-import { expect, it } from 'vitest'
-import { render, screen } from '../testUtils'
+import { useEffect, useRef } from 'react'
+import { expect, it, vi } from 'vitest'
+import { fireEvent, render, screen } from '../testUtils'
 import { Modal, ModalProps } from './Modal'
 import { noop } from '../utils/noop'
 
@@ -9,6 +10,12 @@ const renderModal = (props: Partial<ModalProps> = {}) =>
       <div>Modal Content ...</div>
     </Modal>,
   )
+
+const InputThatFocusesItself = () => {
+  const ref = useRef<HTMLInputElement>(null)
+  useEffect(() => ref.current?.focus(), [])
+  return <input aria-label="Name" ref={ref} />
+}
 
 const getHeader = () =>
   screen.getByRole('heading', { name: 'Modal Title' }).parentElement
@@ -95,6 +102,91 @@ describe('Modal', () => {
     bottomModal.unmount()
     expect(document.body.style.overflow).not.toBe('hidden')
     expect(document.body.style.top).toBe('')
+  })
+
+  it('is a modal dialog labelled by its title', () => {
+    renderModal()
+
+    const dialog = screen.getByRole('dialog')
+    expect(dialog).toHaveAttribute('aria-modal', 'true')
+    expect(dialog).toHaveAccessibleName('Modal Title')
+  })
+
+  it('moves focus into the dialog and restores it on close', () => {
+    const trigger = document.createElement('button')
+    document.body.appendChild(trigger)
+    trigger.focus()
+
+    const { rerender } = renderModal()
+    expect(screen.getByRole('dialog')).toHaveFocus()
+
+    rerender(
+      <Modal showModal={false} handleClick={noop}>
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+    expect(trigger).toHaveFocus()
+    trigger.remove()
+  })
+
+  it('leaves focus on a child that focuses itself, and still restores it on close', () => {
+    const trigger = document.createElement('button')
+    document.body.appendChild(trigger)
+    trigger.focus()
+
+    const modal = (showModal: boolean) => (
+      <Modal showModal={showModal} handleClick={noop} title={'Modal Title'}>
+        <InputThatFocusesItself />
+      </Modal>
+    )
+    const { rerender } = render(modal(true))
+    expect(screen.getByRole('textbox', { name: 'Name' })).toHaveFocus()
+
+    rerender(modal(false))
+    expect(trigger).toHaveFocus()
+    trigger.remove()
+  })
+
+  it('only closes the focused modal on Escape', () => {
+    const closeBottom = vi.fn()
+    const closeTop = vi.fn()
+    renderModal({ handleClick: closeBottom })
+    renderModal({ handleClick: closeTop, title: 'Top modal' })
+
+    fireEvent.keyDown(document.activeElement!, { key: 'Escape' })
+
+    expect(closeTop).toHaveBeenCalledTimes(1)
+    expect(closeBottom).not.toHaveBeenCalled()
+  })
+
+  it('closes on Escape only when closeOnOverlayClick is true', () => {
+    const handleClick = vi.fn()
+    const { unmount } = renderModal({ handleClick })
+    fireEvent.keyDown(document, { key: 'Escape' })
+    expect(handleClick).toHaveBeenCalledTimes(1)
+    unmount()
+
+    renderModal({ handleClick, closeOnOverlayClick: false })
+    fireEvent.keyDown(document, { key: 'Escape' })
+    expect(handleClick).toHaveBeenCalledTimes(1)
+  })
+
+  it('keeps Tab focus inside the dialog', () => {
+    renderModal({ footer: <button>Got it</button> })
+
+    const closeButton = screen.getByRole('button', { name: 'Close modal' })
+    const gotItButton = screen.getByRole('button', { name: 'Got it' })
+
+    gotItButton.focus()
+    fireEvent.keyDown(document, { key: 'Tab' })
+    expect(closeButton).toHaveFocus()
+
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true })
+    expect(gotItButton).toHaveFocus()
+
+    screen.getByRole('dialog').focus()
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true })
+    expect(gotItButton).toHaveFocus()
   })
 
   it('unlocks body scroll on unmount', () => {
