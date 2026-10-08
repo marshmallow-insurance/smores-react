@@ -50,4 +50,58 @@ describe('Modal', () => {
       screen.getByRole('button', { name: 'Got it' }).parentElement,
     ).toHaveStyleRule('position', 'sticky')
   })
+
+  it('locks body scroll while open and unlocks it on close', () => {
+    const { rerender } = renderModal({ showModal: false })
+    expect(document.body.style.overflow).not.toBe('hidden')
+
+    rerender(
+      <Modal showModal={true} handleClick={noop}>
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+    expect(document.body.style.overflow).toBe('hidden')
+
+    rerender(
+      <Modal showModal={false} handleClick={noop}>
+        <div>Modal Content ...</div>
+      </Modal>,
+    )
+    expect(document.body.style.overflow).not.toBe('hidden')
+    expect(document.body.style.top).toBe('')
+  })
+
+  it("keeps an open modal's lock when another modal unmounts", () => {
+    renderModal()
+    const closedModal = render(
+      <Modal showModal={false} handleClick={noop}>
+        <div>Other modal</div>
+      </Modal>,
+    )
+
+    closedModal.unmount()
+    expect(document.body.style.overflow).toBe('hidden')
+  })
+
+  it('keeps the lock and scroll offset until the last stacked modal closes', () => {
+    const bottomModal = renderModal()
+    const topModal = renderModal({ title: 'Top modal' })
+    expect(document.body.style.top).toBe('0px')
+
+    topModal.unmount()
+    expect(document.body.style.overflow).toBe('hidden')
+    expect(document.body.style.top).toBe('0px')
+
+    bottomModal.unmount()
+    expect(document.body.style.overflow).not.toBe('hidden')
+    expect(document.body.style.top).toBe('')
+  })
+
+  it('unlocks body scroll on unmount', () => {
+    const { unmount } = renderModal()
+    expect(document.body.style.overflow).toBe('hidden')
+
+    unmount()
+    expect(document.body.style.overflow).not.toBe('hidden')
+  })
 })
