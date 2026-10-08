@@ -1,4 +1,4 @@
-import { FC, ReactNode, useRef } from 'react'
+import { FC, ReactNode, useState } from 'react'
 import { createPortal } from 'react-dom'
 import styled, { css, useTheme } from 'styled-components'
 
@@ -85,11 +85,10 @@ export const Modal: FC<ModalProps> = ({
   footer,
   stickyFooter = false,
 }) => {
-  const modalRef = useRef<HTMLDivElement>(null)
+  const [modalNode, setModalNode] = useState<HTMLDivElement | null>(null)
   const theme = useTheme()
 
-  // oxlint-disable-next-line react/react-compiler
-  useBodyScrollLock({ node: modalRef.current, showModal })
+  useBodyScrollLock({ node: modalNode, showModal })
 
   const isTitleString = typeof title === 'string'
   const titleProps = isTitleString ? getDefaultTitleProps(title) : title
@@ -97,7 +96,7 @@ export const Modal: FC<ModalProps> = ({
   if (!showModal) return null
 
   return createPortal(
-    <Wrapper ref={modalRef}>
+    <Wrapper ref={setModalNode}>
       <Overlay
         onClick={() => closeOnOverlayClick && handleClick()}
         $closeOnOverlayClick={closeOnOverlayClick}

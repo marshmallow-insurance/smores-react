@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
-import {
-  clearAllBodyScrollLocks,
-  disableBodyScroll,
-  enableBodyScroll,
-} from 'body-scroll-lock'
+import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock'
+
+// body-scroll-lock restores the body on every unlock, even while other locks
+// remain, so count open locks and only release the body when the last closes.
+let openLocks = 0
 
 const enhancedDisabeBodyScroll = (node: HTMLElement | Element) => {
   disableBodyScroll(node, {
@@ -11,7 +11,16 @@ const enhancedDisabeBodyScroll = (node: HTMLElement | Element) => {
     allowTouchMove: () => true,
   })
 
-  document.body.style.top = `-${window.scrollY}px`
+  if (openLocks === 0) document.body.style.top = `-${window.scrollY}px`
+  openLocks++
+}
+
+const enhancedEnableBodyScroll = () => {
+  openLocks--
+  if (openLocks > 0) return
+
+  clearAllBodyScrollLocks()
+  document.body.style.top = ''
 }
 
 export function useBodyScrollLock({
@@ -22,16 +31,10 @@ export function useBodyScrollLock({
   showModal: boolean
 }) {
   useEffect(() => {
-    return () => clearAllBodyScrollLocks()
-  }, [])
+    if (node === null || !showModal) return
 
-  useEffect(() => {
-    if (node === null) return
+    enhancedDisabeBodyScroll(node)
 
-    if (showModal) {
-      enhancedDisabeBodyScroll(node)
-    } else {
-      enableBodyScroll(node)
-    }
+    return enhancedEnableBodyScroll
   }, [node, showModal])
 }

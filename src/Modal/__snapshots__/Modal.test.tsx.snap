@@ -132,7 +132,9 @@ exports[`Modal > renders correctly with default props 1`] = `
   }
 }
 
-<body>
+<body
+  style="padding-right: 1024px; overflow: hidden; top: 0px;"
+>
   <div />
   <div
     class="c0"
