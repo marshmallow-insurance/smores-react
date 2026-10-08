@@ -104,3 +104,33 @@ export const Interactive: Story = {
     )
   },
 }
+
+export const StickyHeaderAndFooter: Story = {
+  args: {
+    title: 'Generic modal',
+    showModal: false,
+    stickyHeader: true,
+    stickyFooter: true,
+    footer: (
+      <>
+        <Button secondary>Find out more</Button>
+        <Button primary>Got it</Button>
+      </>
+    ),
+  },
+  render: (args) => {
+    return (
+      <Container {...args}>
+        <Box flex direction="column" gap="space.200">
+          {Array.from({ length: 12 }, (_, index) => (
+            <Box key={index}>
+              [A modal window] creates a mode that disables the main window, but
+              keeps it visible with the modal window as a child window in front
+              of it.
+            </Box>
+          ))}
+        </Box>
+      </Container>
+    )
+  },
+}
