@@ -5,7 +5,7 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -34,7 +34,7 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -64,12 +64,12 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   opacity: 1;
 }
 
 .c5 {
   padding: 16px 0;
-  flex-grow: 1;
 }
 
 .c0 {
