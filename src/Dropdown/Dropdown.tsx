@@ -17,10 +17,15 @@ import {
   InputLeadingIconContainer,
   StyledFrontIcon,
 } from '../fields/components/CommonInput'
+import {
+  fieldDisabledStyle,
+  fieldFocusAttrs,
+  fieldFocusRing,
+} from '../fields/components/fieldStyles'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
 import { IconContainer } from '../sharedStyles/shared.styles'
-import { faChevronDown } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
+import { faChevronDown } from '@awesome.me/kit-46ca99185c/icons/classic/solid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export type DropdownItem = {
@@ -41,7 +46,11 @@ export interface Props extends CommonFieldProps {
   frontIcon?: Icons
   iconComponent?: ReactNode
   fallbackStyle?: boolean
-  onSelect: (element: string) => void
+  /** Accessible name, for when there is no visible `label` */
+  'aria-label'?: string
+  /** Lets the browser autofill the field, e.g. `honorific-prefix` */
+  autoComplete?: string
+  onSelect?: (element: string) => void
   onBlur?: (e: FocusEvent<HTMLSelectElement>) => void
 }
 
@@ -75,6 +84,9 @@ export const Dropdown = forwardRef(function Dropdown(
     frontIcon,
     iconComponent,
     fallbackStyle,
+    required,
+    'aria-label': ariaLabel,
+    autoComplete,
     ...fieldProps
   }: DropdownProps,
   ref: ForwardedRef<HTMLSelectElement>,
@@ -85,6 +97,8 @@ export const Dropdown = forwardRef(function Dropdown(
     stateProp: valueProp,
   })
   const id = useUniqueId(idProp)
+  const assistiveTextId = `${id}-assistive-text`
+  const errorMsgId = `${id}-error`
   const hasOptGroups = list.findIndex((item) => !!item.optionGroupLabel) !== -1
 
   const dropdownItemsGroups = useMemo(() => {
@@ -108,16 +122,34 @@ export const Dropdown = forwardRef(function Dropdown(
     return customDefaultOption ?? 'Select an option'
   }
 
+  // Only reference messages that the field actually renders.
+  const describedBy =
+    [
+      fieldProps.assistiveText &&
+        (!fieldProps.renderAsTitle || fieldProps.label) &&
+        assistiveTextId,
+      error && fieldProps.errorMsg && errorMsgId,
+    ]
+      .filter(Boolean)
+      .join(' ') || undefined
+
   const iconToRender = iconComponent ? (
     <InputLeadingIconContainer $size={16} $iconColor={theme.color.text.base}>
       {iconComponent}
     </InputLeadingIconContainer>
   ) : frontIcon ? (
-    <StyledFrontIcon $disabled={disabled} render={frontIcon} color="sesame" />
+    <StyledFrontIcon render={frontIcon} color="color.icon.subtle" />
   ) : null
 
   return (
-    <Field {...fieldProps} htmlFor={id} error={error}>
+    <Field
+      {...fieldProps}
+      htmlFor={id}
+      error={error}
+      required={required}
+      assistiveTextId={assistiveTextId}
+      errorMsgId={errorMsgId}
+    >
       <Box flex alignItems="center" style={{ position: 'relative' }}>
         {iconToRender}
         <StyledSelect
@@ -134,21 +166,18 @@ export const Dropdown = forwardRef(function Dropdown(
           ref={ref}
           onBlur={onBlur}
           name={name}
-          $frontIcon={frontIcon}
+          autoComplete={autoComplete}
+          aria-label={ariaLabel}
+          aria-invalid={error || undefined}
+          aria-required={required || undefined}
+          aria-describedby={describedBy}
+          $frontIcon={!!iconToRender}
           $fallbackStyle={fallbackStyle}
           value={value ?? ''}
         >
-          {hasOptGroups ? (
-            <optgroup label={defaultOptionLabel()}>
-              <option value="" hidden={!showDefaultOption} disabled>
-                {defaultOptionLabel()}
-              </option>
-            </optgroup>
-          ) : (
-            <option value="" hidden={!showDefaultOption} disabled>
-              {defaultOptionLabel()}
-            </option>
-          )}
+          <option value="" hidden={!showDefaultOption} disabled>
+            {defaultOptionLabel()}
+          </option>
 
           {dropdownItemsGroups.map((groupItems, i) =>
             hasOptGroups ? (
@@ -172,10 +201,10 @@ export const Dropdown = forwardRef(function Dropdown(
           )}
         </StyledSelect>
         <Caret>
-          <IconContainer $size={20}>
+          <IconContainer $size={16}>
             <FontAwesomeIcon
               icon={faChevronDown}
-              color={theme.color.illustration.neutral[400]}
+              color={theme.color.icon.subtle}
             />
           </IconContainer>
         </Caret>
@@ -184,69 +213,67 @@ export const Dropdown = forwardRef(function Dropdown(
   )
 })
 
-const resetSelect = css`
-  border: none;
-  border-radius: 0;
-  font-size: 16px;
-  appearance: none; /* remove default arrow */
-  outline: none;
-`
-
 interface SSelect {
   $error: boolean
-  $frontIcon?: string
+  $frontIcon: boolean
   $fallbackStyle?: boolean
   value?: string | null
 }
 
-const StyledSelect = styled.select<SSelect>`
-  ${resetSelect}
-  width: 100%;
-  height: 32px;
-  color: ${({ value, theme }) =>
-    value === '' ? theme.color.text.subtle : theme.color.text.base};
-  cursor: pointer;
-  background-color: ${({ $fallbackStyle, theme }) =>
-    $fallbackStyle
-      ? theme.color.surface.base[300]
-      : theme.color.background['000']};
+// Figma's 32px chevron slot sits 12px from the edge, 16px from the text
+const CHEVRON_INSET = 20
 
-  border-radius: 12px;
-  padding: 18px 14px;
-  border: 2px solid
-    ${({ $error, theme }) =>
-      $error ? theme.color.feedback.negative[200] : theme.color.border.subtle};
-  height: auto;
+const StyledSelect = styled.select.attrs(fieldFocusAttrs)<SSelect>(
+  ({ theme, $error, $frontIcon, $fallbackStyle, value }) => {
+    const borderColor = (color: string) =>
+      $error ? theme.color.feedback.negative[200] : color
 
-  ${({ $frontIcon }) =>
-    $frontIcon &&
-    $frontIcon != '' &&
-    `
-      padding-left: 42px;
-    `}
+    return css`
+      appearance: none;
+      width: 100%;
+      height: 48px;
+      margin: 0;
+      padding: 12px 60px 12px ${$frontIcon ? '42px' : '12px'};
+      border: 2px solid ${borderColor(theme.color.border.subtle)};
+      border-radius: 12px;
+      background-color: ${
+        $fallbackStyle
+          ? theme.color.surface.base[300]
+          : theme.color.background['000']
+      };
+      color: ${value === '' ? theme.color.text.subtle : theme.color.text.base};
+      font-family: inherit;
+      font-size: 16px;
+      line-height: 20px;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      outline: none;
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
-
-  ${({ $error }) =>
-    !$error &&
-    css`
-      :not(:disabled) {
-        &:hover,
-        &:focus,
-        &:focus-visible,
-        &:checked {
-          border-color: ${({ theme }) => theme.color.icon.nonEssential};
+      option,
+      optgroup {
+        color: ${theme.color.text.base};
       }
-    `}
-`
+
+      // Hover mustn't override the focus border while the pointer is over a
+      // focused field.
+      &:hover:not(:disabled):not(:focus) {
+        border-color: ${borderColor(theme.color.border.base)};
+      }
+
+      &:focus {
+        border-color: ${borderColor(theme.color.border.contrast)};
+      }
+
+      ${fieldFocusRing}
+      ${fieldDisabledStyle}
+    `
+  },
+)
 
 const Caret = styled.div`
   position: absolute;
   z-index: 1;
-  right: 15px;
+  right: ${CHEVRON_INSET}px;
+  display: flex;
   pointer-events: none;
-  color: ${({ theme }) => theme.color.icon.nonEssential};
 `
