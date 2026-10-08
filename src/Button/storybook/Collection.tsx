@@ -6,13 +6,13 @@ import { Text } from '../../Text'
 import { Button, ButtonProps } from '../Button'
 
 export const buttonList: Array<ButtonProps> = [
-  { primary: true, children: 'Save' },
-  { secondary: true, children: 'Edit' },
-  { fallbackStyle: true, children: 'Cancel' },
-  { tertiary: true, children: 'Skip' },
+  { variant: 'primary', children: 'Save' },
+  { variant: 'secondary', children: 'Edit' },
+  { variant: 'neutral', children: 'Cancel' },
+  { variant: 'tertiary', children: 'Skip' },
   { textBtn: true, children: 'View' },
-  { smallButton: true, children: 'Small' },
-  { smallButton: true, textBtn: true, children: 'Small' },
+  { size: 'small', children: 'Small' },
+  { size: 'small', textBtn: true, children: 'Small' },
 ]
 
 export const CollectionPage: FC = () => {

@@ -108,6 +108,46 @@ describe('Button', () => {
     expect(container).toMatchSnapshot()
   })
 
+  it.each([
+    ['primary', '#ff88c8'],
+    ['secondary', '#dad2c4'],
+    ['neutral', '#ffffff'],
+    ['tertiary', 'transparent'],
+  ] as const)('renders the %s variant', (variant, background) => {
+    render(<Button variant={variant}>Label</Button>)
+    expect(screen.getByRole('button', { name: 'Label' })).toHaveStyleRule(
+      'background-color',
+      background,
+    )
+  })
+
+  it('renders the small size', () => {
+    render(<Button size="small">Label</Button>)
+    expect(screen.getByRole('button', { name: 'Label' })).toHaveStyleRule(
+      'padding',
+      '0 12px',
+    )
+  })
+
+  it('prefers variant and size over the deprecated props', () => {
+    render(
+      <Button variant="secondary" size="regular" primary smallButton>
+        Label
+      </Button>,
+    )
+    const button = screen.getByRole('button', { name: 'Label' })
+    expect(button).toHaveStyleRule('background-color', '#dad2c4')
+    expect(button).toHaveStyleRule('padding', '0 20px')
+  })
+
+  it('maps the deprecated props to the matching variant', () => {
+    render(<Button fallbackStyle>Label</Button>)
+    expect(screen.getByRole('button', { name: 'Label' })).toHaveStyleRule(
+      'background-color',
+      '#ffffff',
+    )
+  })
+
   it('gives a button with no type the primary hover and pressed colours', () => {
     render(<Button>Untyped</Button>)
     const button = screen.getByRole('button', { name: 'Untyped' })

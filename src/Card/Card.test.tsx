@@ -45,7 +45,7 @@ describe('Card', () => {
     const { container } = render(
       <Card
         title="Card Title"
-        buttonAction={<Button primary>Action</Button>}
+        buttonAction={<Button variant="primary">Action</Button>}
       />,
     )
     expect(container).toMatchSnapshot()

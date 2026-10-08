@@ -176,8 +176,8 @@ export const rowActions = [
   {
     genericButton: {
       children: 'generic button',
-      primary: true,
-      smallButton: true,
+      variant: 'primary' as const,
+      size: 'small' as const,
     },
     onClick: () => exampleOnClick('generic button'),
     showCondition: (row: DataRow) => row.id === 7,
@@ -320,7 +320,11 @@ export const columnsV2 = [
   {
     name: 'e.g1',
     cell: () => (
-      <Button primary smallButton onClick={() => exampleOnClick('e.g1 button')}>
+      <Button
+        variant="primary"
+        size="small"
+        onClick={() => exampleOnClick('e.g1 button')}
+      >
         e.g1
       </Button>
     ),
