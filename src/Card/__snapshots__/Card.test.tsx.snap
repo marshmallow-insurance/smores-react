@@ -270,7 +270,7 @@ exports[`Card > renders correctly with action button 1`] = `
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -299,12 +299,12 @@ exports[`Card > renders correctly with action button 1`] = `
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   opacity: 1;
 }
 
 .c9 {
   padding: 16px 0;
-  flex-grow: 1;
 }
 
 @media (min-width: 0px) {

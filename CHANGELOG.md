@@ -1,3 +1,22 @@
+## [16.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.4.0...v16.5.0) (2026-10-07)
+
+### Features
+
+* **Dropdown:** match Figma styles and fix accessibility ([#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211)) ([241623f](https://github.com/marshmallow-insurance/smores-react/commit/241623feff8ce45c13d9dbb19f98419d26f184cb))
+
+## [16.4.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.3.1...v16.4.0) (2026-10-07)
+
+### Features
+
+* **Button:** align sizing, icons and colours with Figma ([#5207](https://github.com/marshmallow-insurance/smores-react/issues/5207)) ([080517f](https://github.com/marshmallow-insurance/smores-react/commit/080517fb2e9338a05ff9a08af66c1ea476a6085d)), closes [#0e0e0c](https://github.com/marshmallow-insurance/smores-react/issues/0e0e0c) [#292924](https://github.com/marshmallow-insurance/smores-react/issues/292924) [#f1e9dc](https://github.com/marshmallow-insurance/smores-react/issues/f1e9dc)
+* **Link:** use Font Awesome new window icon and add 4px icon spacing ([#5209](https://github.com/marshmallow-insurance/smores-react/issues/5209)) ([719fb7b](https://github.com/marshmallow-insurance/smores-react/commit/719fb7b6f62bee70ad0ad4663556173c84051022))
+
+## [16.3.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.3.0...v16.3.1) (2026-10-07)
+
+### Documentation
+
+* add AGENTS.md, CLAUDE.md and pre-PR review skill ([#5210](https://github.com/marshmallow-insurance/smores-react/issues/5210)) ([d02b527](https://github.com/marshmallow-insurance/smores-react/commit/d02b5279e07bb34766f7e8ee3e539493c0d65f4d)), closes [#5205](https://github.com/marshmallow-insurance/smores-react/issues/5205) [#5206](https://github.com/marshmallow-insurance/smores-react/issues/5206) [#5207](https://github.com/marshmallow-insurance/smores-react/issues/5207) [#5208](https://github.com/marshmallow-insurance/smores-react/issues/5208) [#5209](https://github.com/marshmallow-insurance/smores-react/issues/5209) [#5119](https://github.com/marshmallow-insurance/smores-react/issues/5119) [#5032](https://github.com/marshmallow-insurance/smores-react/issues/5032)
+
 ## [16.3.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.2.17...v16.3.0) (2026-10-07)
 
 ### Features

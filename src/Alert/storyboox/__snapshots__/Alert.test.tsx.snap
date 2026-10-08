@@ -186,7 +186,7 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
-  color: #292924;
+  color: #0e0e0c;
   padding: 0 20px;
   outline: none;
   border-radius: 10000px;
@@ -197,9 +197,8 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
   opacity: 1;
   width: auto;
   background-color: #ffffff;
-  padding: 0 10px;
+  padding: 0 12px;
   min-width: 54px;
-  font-size: 14px;
 }
 
 .c8:focus-visible {
@@ -216,23 +215,19 @@ exports[`Alert Component > should render correctly with button cta 1`] = `
 }
 
 .c8 .childrenContainer {
-  padding: 9px 0;
-}
-
-.c8 span {
-  margin: 0 5px 0 0;
+  padding: 8px 0;
 }
 
 .c9 {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   opacity: 1;
 }
 
 .c10 {
   padding: 16px 0;
-  flex-grow: 1;
 }
 
 .c0 {
