@@ -1,19 +1,19 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Modal > renders correctly with default props 1`] = `
-.c3 {
-  display: flex;
-}
-
 .c4 {
   display: flex;
 }
 
-.c7 {
+.c6 {
   display: flex;
 }
 
-.c8 {
+.c9 {
+  display: flex;
+}
+
+.c10 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -21,12 +21,12 @@ exports[`Modal > renders correctly with default props 1`] = `
   height: 32px;
 }
 
-.c8 svg {
+.c10 svg {
   width: 100%;
   height: 100%;
 }
 
-.c6 {
+.c8 {
   font-size: 20px;
   font-weight: 500;
   line-height: 28px;
@@ -58,54 +58,64 @@ exports[`Modal > renders correctly with default props 1`] = `
 }
 
 .c2 {
+  display: flex;
+  flex-direction: column;
   background: #fbf8f5;
   box-sizing: border-box;
   border-radius: 16px;
-  padding: 24px;
   width: 100%;
   max-width: 600px;
   position: fixed;
   max-height: calc(100vh - 64px);
-  overflow: auto;
+  overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
 
+.c3 {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+}
+
 .c5 {
+  padding: 24px 16px 16px;
+}
+
+.c11 {
+  padding: 0 16px 24px;
+}
+
+.c7 {
   align-self: center;
 }
 
 @media (min-width: 0px) {
-  .c3 {
-    margin-bottom: 8px;
-  }
-}
-
-@media (min-width: 0px) {
-  .c3 {
+  .c4 {
     justify-content: space-between;
   }
 }
 
 @media (min-width: 0px) {
-  .c3 {
+  .c4 {
     align-items: flex-start;
   }
 }
 
 @media (min-width: 0px) {
-  .c4 {
+  .c6 {
     flex-direction: column;
   }
 }
 
 @media (min-width: 0px) {
-  .c7 {
+  .c9 {
     align-items: center;
   }
 }
 
 @media (min-width: 0px) {
-  .c7 {
+  .c9 {
     gap: 8px;
   }
 }
@@ -114,7 +124,6 @@ exports[`Modal > renders correctly with default props 1`] = `
   .c2 {
     max-width: none;
     border-radius: 16px 16px 0px 0px;
-    padding: 10% 24px;
     max-height: 90vh;
     position: fixed;
     right: 0;
@@ -140,45 +149,49 @@ exports[`Modal > renders correctly with default props 1`] = `
         <div
           class="c4 c5"
         >
-          <h2
-            class="c6"
-            cursor="inherit"
-            title=""
+          <div
+            class="c6 c7"
           >
-            Modal Title
-          </h2>
+            <h2
+              class="c8"
+              cursor="inherit"
+              title=""
+            >
+              Modal Title
+            </h2>
+          </div>
+          <div
+            class="c9"
+          >
+            <button
+              class="c10"
+              role="button"
+              style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
+              title="Close modal"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-xmark"
+                color="#292924"
+                data-icon="xmark"
+                data-prefix="far"
+                role="img"
+                viewBox="0 0 384 512"
+              >
+                <path
+                  d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
         <div
-          class="c7"
+          class="c6 c11"
         >
-          <button
-            class="c8"
-            role="button"
-            style="background: rgb(218, 210, 196); border-radius: 100%; padding: 6px; border: medium; cursor: pointer;"
-            title="Close modal"
-          >
-            <svg
-              aria-hidden="true"
-              class="svg-inline--fa fa-xmark"
-              color="#292924"
-              data-icon="xmark"
-              data-prefix="far"
-              role="img"
-              viewBox="0 0 384 512"
-            >
-              <path
-                d="M7.5 105c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l151 151 151-151c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-151 151 151 151c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-151-151-151 151c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l151-151-151-151z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="c4"
-      >
-        <div>
-          Modal Content ...
+          <div>
+            Modal Content ...
+          </div>
         </div>
       </div>
     </div>
