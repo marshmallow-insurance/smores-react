@@ -8,7 +8,7 @@ import {
   resolveToThemeColor,
 } from '../ThemeProvider/utils/colourMap'
 import { Box } from '../Box'
-import { Button } from '../Button'
+import { Button, ButtonProps } from '../Button'
 import { Text } from '../Text'
 
 type PromoCardButtonVariant = 'secondary' | 'fallbackStyle' | 'tertiary'
@@ -36,14 +36,14 @@ export type PromoCardProps = {
 const toButtonProps = (
   { variant, disabled, loading }: PromoCardAction,
   defaultVariant: PromoCardButtonVariant,
-) => {
+): Pick<ButtonProps, 'disabled' | 'loading' | 'variant' | 'textBtn'> => {
   const resolved = variant ?? defaultVariant
+  // PromoCard's tertiary is the legacy underlined text button
+  if (resolved === 'tertiary') return { disabled, loading, textBtn: true }
   return {
     disabled,
     loading,
-    secondary: resolved === 'secondary',
-    fallbackStyle: resolved === 'fallbackStyle',
-    textBtn: resolved === 'tertiary',
+    variant: resolved === 'fallbackStyle' ? 'neutral' : 'secondary',
   }
 }
 
@@ -88,7 +88,7 @@ export const PromoCard: FC<PromoCardProps> = ({
         <Box flex direction="row" gap="space.100">
           {primaryButton && (
             <Button
-              smallButton
+              size="small"
               handleClick={primaryButton.onClick}
               {...toButtonProps(primaryButton, 'secondary')}
             >
@@ -97,7 +97,7 @@ export const PromoCard: FC<PromoCardProps> = ({
           )}
           {secondaryButton && (
             <Button
-              smallButton
+              size="small"
               handleClick={secondaryButton.onClick}
               {...toButtonProps(secondaryButton, 'fallbackStyle')}
             >

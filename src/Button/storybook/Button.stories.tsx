@@ -14,6 +14,31 @@ const meta: Meta<typeof Button> = {
     children: 'Button',
     handleClick: fn(),
     onClick: fn(),
+    variant: 'primary',
+    size: 'regular',
+  },
+  argTypes: {
+    variant: {
+      control: { type: 'radio' },
+      options: ['primary', 'secondary', 'neutral', 'tertiary'],
+    },
+    size: {
+      control: { type: 'radio' },
+      options: ['regular', 'small'],
+    },
+    ...Object.fromEntries(
+      [
+        'primary',
+        'secondary',
+        'tertiary',
+        'fallbackStyle',
+        'smallButton',
+        'textBtn',
+      ].map((prop) => [
+        prop,
+        { control: false, table: { category: 'Deprecated' } },
+      ]),
+    ),
   },
 }
 
@@ -22,7 +47,7 @@ type Story = StoryObj<typeof Button>
 
 export const Primary: Story = {
   args: {
-    primary: true,
+    variant: 'primary',
   },
   play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement)
@@ -36,7 +61,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    secondary: true,
+    variant: 'secondary',
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
@@ -45,9 +70,9 @@ export const Secondary: Story = {
   },
 }
 
-export const Fallback: Story = {
+export const Neutral: Story = {
   args: {
-    fallbackStyle: true,
+    variant: 'neutral',
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
@@ -58,7 +83,7 @@ export const Fallback: Story = {
 
 export const Tertiary: Story = {
   args: {
-    tertiary: true,
+    variant: 'tertiary',
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
@@ -70,6 +95,7 @@ export const Tertiary: Story = {
 
 export const TextButton: Story = {
   args: {
+    variant: undefined,
     textBtn: true,
   },
   play: async ({ canvasElement }) => {
@@ -79,9 +105,14 @@ export const TextButton: Story = {
   },
 }
 
+export const Small: Story = {
+  args: {
+    size: 'small',
+  },
+}
+
 export const WithFontAwesomeIcon: Story = {
   args: {
-    primary: true,
     children: 'Continue',
     iconComponent: <FontAwesomeIcon icon={faArrowRight} />,
     trailingIcon: true,
@@ -110,11 +141,7 @@ export const ForcedWidth: Story = {
   },
 }
 
-export const Playground: Story = {
-  args: {
-    primary: true,
-  },
-}
+export const Playground: Story = {}
 
 export const InteractivePlaygroundTemplate: Story = {
   render: (args) => <InteractivePlayground {...args} />,

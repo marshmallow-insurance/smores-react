@@ -46,6 +46,8 @@ export type RowActionButtonDefault<T> = {
     | 'children'
     | 'loading'
     | 'disabled'
+    | 'variant'
+    | 'size'
     | 'primary'
     | 'secondary'
     | 'fallbackStyle'

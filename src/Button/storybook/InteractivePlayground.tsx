@@ -19,7 +19,7 @@ export const InteractivePlayground: FC = () => {
 
   return (
     <Button
-      primary
+      variant="primary"
       icon="info"
       handleClick={void handleClick}
       loading={isLoading}

@@ -14,6 +14,10 @@ import { Icon as IconComponent, Icons } from '../Icon'
 import { Loader } from '../Loader'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
+import { useDeprecatedWarning } from '../utils/deprecated'
+
+export type ButtonVariant = 'primary' | 'secondary' | 'neutral' | 'tertiary'
+export type ButtonSize = 'regular' | 'small'
 
 type Props = {
   children: ReactNode
@@ -22,13 +26,26 @@ type Props = {
   disabled?: boolean
   handleClick?: (e: FormEvent<HTMLButtonElement>) => void
   loading?: boolean
+  /**
+   * Visual style of the button:
+   * - `primary`: the main action on a screen
+   * - `secondary`: supporting or alternative actions
+   * - `neutral`: as secondary, for when it lacks contrast with the background
+   * - `tertiary`: low-emphasis, text-only actions, e.g. "Skip" or "Cancel"
+   */
+  variant?: ButtonVariant
+  size?: ButtonSize
+  /** @deprecated Use `variant="primary"` */
   primary?: boolean
+  /** @deprecated Use `variant="secondary"` */
   secondary?: boolean
-  /** Low-emphasis, text-only action, e.g. "Skip" or "Cancel" */
+  /** @deprecated Use `variant="tertiary"` */
   tertiary?: boolean
+  /** @deprecated Use `variant="neutral"` */
   fallbackStyle?: boolean
-  /** Legacy underlined text style. Prefer `tertiary` for new low-emphasis actions */
+  /** Legacy underlined text style. Prefer `variant="tertiary"` for new low-emphasis actions */
   textBtn?: boolean
+  /** @deprecated Use `size="small"` */
   smallButton?: boolean
   icon?: Icons
   iconComponent?: ReactNode
@@ -52,6 +69,8 @@ export const Button: FC<ButtonProps> = forwardRef<
     disabled = false,
     handleClick,
     loading = false,
+    variant,
+    size,
     primary = false,
     secondary = false,
     tertiary = false,
@@ -67,9 +86,28 @@ export const Button: FC<ButtonProps> = forwardRef<
     ...otherProps
   } = props
 
-  // Primary is the default type, so an untyped button gets Primary's hover and pressed states too
-  const isPrimary =
-    primary || !(secondary || tertiary || fallbackStyle || textBtn)
+  useDeprecatedWarning({
+    enabled: primary || secondary || tertiary || fallbackStyle || smallButton,
+    title: 'Button',
+    message:
+      'The primary, secondary, tertiary, fallbackStyle and smallButton props are deprecated. Use variant="primary" | "secondary" | "neutral" | "tertiary" and size="regular" | "small" instead.',
+  })
+
+  // Legacy props resolve in the order their styles used to override each other.
+  // Primary is the default, except for the legacy text button which has no variant
+  const resolvedVariant: ButtonVariant | undefined =
+    variant ??
+    (fallbackStyle
+      ? 'neutral'
+      : tertiary
+        ? 'tertiary'
+        : secondary
+          ? 'secondary'
+          : primary || !textBtn
+            ? 'primary'
+            : undefined)
+  const isSmall = size ? size === 'small' : smallButton
+  const isTertiary = resolvedVariant === 'tertiary'
 
   // Icon-only buttons drop the gap so the icon stays centred
   // React renders nothing for null, undefined, booleans and empty strings
@@ -84,7 +122,9 @@ export const Button: FC<ButtonProps> = forwardRef<
       size={iconSize}
       // Matches the label, which tertiary dims by colour rather than opacity when disabled
       color={
-        tertiary && disabled ? 'color.icon.nonEssential' : 'color.icon.contrast'
+        isTertiary && disabled
+          ? 'color.icon.nonEssential'
+          : 'color.icon.contrast'
       }
     />
   ) : null
@@ -97,12 +137,12 @@ export const Button: FC<ButtonProps> = forwardRef<
       disabled={disabled || loading}
       onClick={handleClick}
       $loading={loading}
-      $primary={isPrimary}
-      $secondary={secondary}
-      $tertiary={tertiary}
-      $fallbackStyle={fallbackStyle}
+      $primary={resolvedVariant === 'primary'}
+      $secondary={resolvedVariant === 'secondary'}
+      $tertiary={isTertiary}
+      $neutral={resolvedVariant === 'neutral'}
       $textBtn={textBtn}
-      $smallButton={smallButton}
+      $smallButton={isSmall}
       $trailingIcon={trailingIcon}
       $forcedWidth={forcedWidth}
       {...(form ? { form } : {})}
@@ -136,13 +176,13 @@ type IButton = TransientProps<
       | 'secondary'
       | 'tertiary'
       | 'forcedWidth'
-      | 'fallbackStyle'
       | 'textBtn'
       | 'trailingIcon'
       | 'smallButton'
     >
   >
 > & {
+  $neutral: boolean
   $loading: NonNullable<ButtonProps['loading']>
   disabled: boolean
 }
@@ -155,7 +195,7 @@ const Container = styled(Box)<IButton>(
     $secondary,
     $tertiary,
     $forcedWidth,
-    $fallbackStyle,
+    $neutral,
     $textBtn,
     $smallButton,
   }) => css`
@@ -231,7 +271,7 @@ const Container = styled(Box)<IButton>(
     `
   }
   ${
-    $fallbackStyle &&
+    $neutral &&
     css`
       background-color: ${({ theme }) => theme.color.interactive.neutral.subtle.base};
 

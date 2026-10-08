@@ -138,7 +138,7 @@ export const Alert: FC<AlertProps> = ({
             message
           )}
           {ctaType === 'button' && typeof ctaAction === 'function' && (
-            <Button smallButton fallbackStyle onClick={() => ctaAction()}>
+            <Button size="small" variant="neutral" onClick={() => ctaAction()}>
               {ctaLabel}
             </Button>
           )}
