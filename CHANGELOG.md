@@ -1,3 +1,10 @@
+## [16.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.5.0...v16.6.0) (2026-10-08)
+
+### Features
+
+* **Button:** add variant and size props ([#5208](https://github.com/marshmallow-insurance/smores-react/issues/5208)) ([390ef1f](https://github.com/marshmallow-insurance/smores-react/commit/390ef1f83840cd2fb90bd01a186f271c8fe8fc44))
+* **Modal:** add sticky header and footer ([#5113](https://github.com/marshmallow-insurance/smores-react/issues/5113)) ([965ae05](https://github.com/marshmallow-insurance/smores-react/commit/965ae052ae2bce38330ed9fd34ec2e52f867f966)), closes [#5212](https://github.com/marshmallow-insurance/smores-react/issues/5212) [#5213](https://github.com/marshmallow-insurance/smores-react/issues/5213)
+
 ## [16.5.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.4.0...v16.5.0) (2026-10-07)
 
 ### Features
