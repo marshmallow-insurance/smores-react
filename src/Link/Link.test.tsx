@@ -37,6 +37,49 @@ describe('Link', () => {
     expect(screen.queryByTestId('arrow-container')).not.toBeInTheDocument()
   })
 
+  it('renders the Font Awesome new window icon when opening in a new tab', () => {
+    const { container } = render(
+      <Link href="https://www.google.com" openInNewTab>
+        Google Link
+      </Link>,
+    )
+
+    expect(
+      container.querySelector('svg[data-icon="arrow-up-right-from-square"]'),
+    ).toBeInTheDocument()
+    expect(screen.queryByTestId('new-window-container')).not.toBeInTheDocument()
+  })
+
+  it('renders the legacy icon over the default when opening in a new tab', () => {
+    render(
+      <Link href="https://www.google.com" openInNewTab iconToRender="arrow">
+        Google Link
+      </Link>,
+    )
+
+    expect(screen.getByTestId('arrow-container')).toBeInTheDocument()
+  })
+
+  it('spaces the icon 4px from the text', () => {
+    const { container } = render(
+      <Link href="https://www.google.com" openInNewTab>
+        Google Link
+      </Link>,
+    )
+
+    const icon = container.querySelector('svg')?.parentElement
+    expect(icon).toHaveStyle({ marginLeft: '4px' })
+  })
+
+  it('does not space the icon when there is no text', () => {
+    const { container } = render(
+      <Link href="https://www.google.com" openInNewTab />,
+    )
+
+    const icon = container.querySelector('svg')?.parentElement
+    expect(icon).toHaveStyle({ marginLeft: '0px', marginRight: '0px' })
+  })
+
   it('renders without an icon when none is provided', () => {
     const { container } = render(<Link href="https://www.google.com" />)
 

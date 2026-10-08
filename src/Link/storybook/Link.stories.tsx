@@ -56,7 +56,6 @@ export const LeadingIcon: Story = {
     openInNewTab: true,
     children: 'Google link',
     typo: 'regular',
-    iconToRender: 'new-window',
     isTrailingIcon: false,
   },
 }
