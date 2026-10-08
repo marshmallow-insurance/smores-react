@@ -74,7 +74,7 @@
     "@storybook/addon-docs": "^10.6.1",
     "@storybook/addon-links": "^10.6.1",
     "@storybook/react-vite": "^10.6.1",
-    "@storybook/test-runner": "^0.24.5",
+    "@storybook/test-runner": "^0.26.0",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
     "@types/body-scroll-lock": "^3.1.2",
