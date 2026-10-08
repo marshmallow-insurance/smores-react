@@ -1,3 +1,13 @@
+## [16.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.6.0...v16.7.0) (2026-10-08)
+
+### Features
+
+* **Modal:** add dialog semantics, focus management and Escape to close ([#5213](https://github.com/marshmallow-insurance/smores-react/issues/5213)) ([64524f8](https://github.com/marshmallow-insurance/smores-react/commit/64524f8c6f8e71dd24d76a4a7d73883fbd40c225)), closes [#5212](https://github.com/marshmallow-insurance/smores-react/issues/5212)
+
+### Bug Fixes
+
+* **Modal:** lock body scroll when the modal opens ([#5212](https://github.com/marshmallow-insurance/smores-react/issues/5212)) ([a975e71](https://github.com/marshmallow-insurance/smores-react/commit/a975e715af66ca84586d902455d90a877ac4ad69)), closes [#5113](https://github.com/marshmallow-insurance/smores-react/issues/5113)
+
 ## [16.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.5.0...v16.6.0) (2026-10-08)
 
 ### Features
