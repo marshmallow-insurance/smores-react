@@ -43,8 +43,6 @@ export const Input = styled.input.attrs(fieldFocusAttrs)<IInput>`
   line-height: 20px;
   outline: none;
 
-  // Hover mustn't override the focus border while the pointer is over a
-  // focused field.
   &:hover:not(:disabled):not(:focus) {
     border-color: ${({ $error, theme }) =>
       $error ? theme.color.feedback.negative[300] : theme.color.border.base};
