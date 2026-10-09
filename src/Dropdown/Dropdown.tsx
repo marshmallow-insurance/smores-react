@@ -201,7 +201,7 @@ export const Dropdown = forwardRef(function Dropdown(
           )}
         </StyledSelect>
         <Caret>
-          <IconContainer $size={16}>
+          <IconContainer $size={CHEVRON_SIZE}>
             <FontAwesomeIcon
               icon={faChevronDown}
               color={theme.color.icon.subtle}
@@ -220,8 +220,13 @@ interface SSelect {
   value?: string | null
 }
 
-// Figma's 32px chevron slot sits 12px from the edge, 16px from the text
+// Figma's 32px chevron slot sits 12px from the edge, which puts the 16px
+// chevron 20px in. The text stops 4px short of the chevron, so a narrow
+// select (e.g. a country code) keeps as much room for text as possible.
+const CHEVRON_SIZE = 16
 const CHEVRON_INSET = 20
+const CHEVRON_TEXT_GAP = 4
+const TEXT_PADDING_RIGHT = CHEVRON_INSET + CHEVRON_SIZE + CHEVRON_TEXT_GAP
 
 const StyledSelect = styled.select.attrs(fieldFocusAttrs)<SSelect>(
   ({ theme, $error, $frontIcon, $fallbackStyle, value }) => {
@@ -233,7 +238,7 @@ const StyledSelect = styled.select.attrs(fieldFocusAttrs)<SSelect>(
       width: 100%;
       height: 48px;
       margin: 0;
-      padding: 12px 60px 12px ${$frontIcon ? '42px' : '12px'};
+      padding: 12px ${TEXT_PADDING_RIGHT}px 12px ${$frontIcon ? '42px' : '12px'};
       border: 2px solid ${borderColor(theme.color.border.subtle)};
       border-radius: 12px;
       background-color: ${
