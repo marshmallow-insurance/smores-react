@@ -1,3 +1,9 @@
+## [16.7.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.7.0...v16.7.1) (2026-10-09)
+
+### Bug Fixes
+
+* **Dropdown:** reduce right padding so narrow dropdowns don't truncate ([#5216](https://github.com/marshmallow-insurance/smores-react/issues/5216)) ([49d268d](https://github.com/marshmallow-insurance/smores-react/commit/49d268d0c1d8d7be1a8da3346f58052e0c290b95)), closes [#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211)
+
 ## [16.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.6.0...v16.7.0) (2026-10-08)
 
 ### Features
