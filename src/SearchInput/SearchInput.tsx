@@ -129,12 +129,10 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         option.label === selectedValue || option.value === selectedValue,
     )?.label
 
+    // A null query shows the selected label (if any) and the full list, so
+    // clicking back in lets the user change their answer.
     const handleBlur = () => {
-      if (selectedValue) {
-        setSearchQuery(selectedValueLabel ?? null)
-      } else if (!selectedValue) {
-        setSearchQuery(null)
-      }
+      setSearchQuery(null)
     }
 
     useOnClickOutside({
@@ -198,9 +196,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       setShowOptions(true)
       if (searchQuery !== null) {
         updateSearchQuery(searchQuery)
-        setShowOptions(true)
-      } else if (selectedValue !== null && searchQuery === null) {
-        setSearchQuery(selectedValueLabel || null)
         setShowOptions(true)
       }
     }

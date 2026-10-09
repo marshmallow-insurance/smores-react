@@ -72,6 +72,37 @@ describe('SearchInput', () => {
     expect(onFound).toHaveBeenCalledWith('option-0')
     expect(container.querySelector('ul')).not.toBeInTheDocument()
   })
+  it('shows the full list again when clicking back into a field with a selection', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.click(screen.getByText('Option 3'))
+    expect(input).toHaveValue('Option 3')
+    expect(screen.queryByRole('listbox')).not.toBeInTheDocument()
+
+    fireEvent.click(input)
+
+    expect(input).toHaveValue('Option 3')
+    expect(screen.getAllByRole('option')).toHaveLength(searchList.length)
+  })
+
+  it('shows the full list again after clicking outside with a selection', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.click(screen.getByText('Option 3'))
+    fireEvent.click(input)
+    fireEvent.change(input, { target: { value: 'Option 1' } })
+
+    fireEvent.click(document.body)
+    expect(input).toHaveValue('Option 3')
+
+    fireEvent.click(input)
+    expect(screen.getAllByRole('option')).toHaveLength(searchList.length)
+  })
+
   describe('combobox semantics', () => {
     const renderSearch = () =>
       render(
