@@ -221,7 +221,7 @@ interface SSelect {
 }
 
 const CHEVRON_SIZE = 16
-const CHEVRON_INSET = 20
+const CHEVRON_INSET = 16
 const CHEVRON_TEXT_GAP = 4
 const TEXT_PADDING_RIGHT = CHEVRON_INSET + CHEVRON_SIZE + CHEVRON_TEXT_GAP
 
@@ -247,7 +247,10 @@ const StyledSelect = styled.select.attrs(fieldFocusAttrs)<SSelect>(
       font-family: inherit;
       font-size: 16px;
       line-height: 20px;
-      text-overflow: ellipsis;
+      /* Not an ellipsis: consumers clamp narrow selects (e.g. a country code
+         showing "(+44)" from "(+44) United Kingdom"), and the ellipsis takes
+         room from the code. The text is clipped before the chevron instead. */
+      text-overflow: clip;
       cursor: pointer;
       outline: none;
 

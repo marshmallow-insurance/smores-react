@@ -96,7 +96,7 @@ describe('Dropdown', () => {
 
     expect(screen.getByRole('combobox')).toHaveStyleRule(
       'padding',
-      '12px 40px 12px 42px',
+      '12px 36px 12px 42px',
     )
   })
 
@@ -196,5 +196,22 @@ describe('Dropdown', () => {
     expect(select).toHaveStyleRule('border-color', '#292924', {
       modifier: ':focus',
     })
+  })
+  it('clips long labels instead of adding an ellipsis, so narrow selects keep their code', () => {
+    // An ellipsis takes room from a clamped select, e.g. a country code that
+    // shows "(+44)" from "(+44) United Kingdom" and would become "(+4…".
+    render(
+      <Dropdown
+        list={[{ label: '(+44) United Kingdom', value: 'GB' }]}
+        value="GB"
+        onSelect={noop}
+      />,
+    )
+
+    const select = screen.getByRole('combobox')
+
+    expect(select).toHaveStyleRule('text-overflow', 'clip')
+    expect(select).not.toHaveStyleRule('text-overflow', 'ellipsis')
+    expect(select).toHaveStyleRule('padding', '12px 36px 12px 12px')
   })
 })
