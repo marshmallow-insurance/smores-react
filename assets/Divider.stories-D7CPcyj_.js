@@ -1,4 +1,0 @@
-import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./jsx-runtime-DeHZSEgm.js";import{n,t as r}from"./colourOptions-CB-SJtIO.js";import{n as i,t as a}from"./Divider-DIcXgf0Q.js";var o,s,c,l;function u(){return(u=e((()=>{n(),i(),o=t(),s={title:`Divider`,component:a,decorators:[e=>(0,o.jsx)(`div`,{style:{margin:`64px`},children:(0,o.jsx)(e,{})})],argTypes:{color:{control:`select`,options:r}}},c={args:{}},l=[`Default`],c.parameters={...c.parameters,docs:{...c.parameters?.docs,source:{originalSource:`{
-  args: {}
-}`,...c.parameters?.docs?.source}}}})))()}u();export{c as Default,l as __namedExportsOrder,s as default};
-//# sourceMappingURL=Divider.stories-D7CPcyj_.js.map
