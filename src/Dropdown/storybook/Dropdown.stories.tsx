@@ -1,3 +1,4 @@
+import { ReactElement } from 'react'
 import { Meta, StoryObj } from '@storybook/react-vite'
 import { useArgs } from 'storybook/preview-api'
 import { SupportMessage } from '../../SupportMessage'
@@ -213,4 +214,26 @@ export const ReactElementError: Story = {
       },
     },
   },
+}
+
+export const NarrowCountryCode: Story = {
+  args: {
+    id: 'country-code',
+    label: undefined,
+    placeholder: undefined,
+    'aria-label': 'Country code',
+    value: '+44',
+    list: [
+      { label: '(+44)', value: '+44' },
+      { label: '(+353)', value: '+353' },
+    ],
+  },
+  decorators: [
+    (Story: () => ReactElement) => (
+      <div style={{ width: 95 }}>
+        <Story />
+      </div>
+    ),
+  ],
+  render: InteractiveTemplate,
 }

@@ -96,7 +96,7 @@ describe('Dropdown', () => {
 
     expect(screen.getByRole('combobox')).toHaveStyleRule(
       'padding',
-      '12px 60px 12px 42px',
+      '12px 40px 12px 42px',
     )
   })
 
