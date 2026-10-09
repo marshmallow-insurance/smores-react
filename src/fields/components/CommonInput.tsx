@@ -47,7 +47,7 @@ export const Input = styled.input.attrs(fieldFocusAttrs)<IInput>`
   // focused field.
   &:hover:not(:disabled):not(:focus) {
     border-color: ${({ $error, theme }) =>
-      $error ? theme.color.feedback.negative[200] : theme.color.border.base};
+      $error ? theme.color.feedback.negative[300] : theme.color.border.base};
   }
 
   &:focus {

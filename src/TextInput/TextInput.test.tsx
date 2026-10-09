@@ -94,4 +94,22 @@ describe('TextInput', () => {
     const input = screen.getByLabelText('Name')
     expect(input).toHaveStyleRule('color', '#d03c30')
   })
+  it('goes a darker red on hover when invalid, and stays red on focus', () => {
+    render(
+      <TextInput
+        label="Name"
+        placeholder="Name"
+        value=""
+        onChange={noop}
+        error
+      />,
+    )
+    const input = screen.getByLabelText('Name')
+    expect(input).toHaveStyleRule('border-color', '#a32f26', {
+      modifier: ':hover:not(:disabled):not(:focus)',
+    })
+    expect(input).toHaveStyleRule('border-color', '#d03c30', {
+      modifier: ':focus',
+    })
+  })
 })
