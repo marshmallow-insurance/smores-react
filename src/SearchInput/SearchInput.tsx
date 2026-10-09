@@ -129,8 +129,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         option.label === selectedValue || option.value === selectedValue,
     )?.label
 
-    // A null query shows the selected label (if any) and the full list, so
-    // clicking back in lets the user change their answer.
     const handleBlur = () => {
       setSearchQuery(null)
     }
@@ -223,15 +221,12 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
     const listboxId = `${id}-listbox`
     const getOptionId = (index: number) => `${id}-option-${index}`
-    // Without results the list shows "No results", which is not a listbox.
     const hasResults = showOptions && filteredList.length > 0
     const hasHighlight = hasResults && highlightedIndex < filteredList.length
     const noResults = showOptions && filteredList.length === 0
 
     const handleKeyDown = (event: SearchKeyEvent) => {
       if (event.key === 'Escape') {
-        // Only close the list when it's open, so Escape still reaches a
-        // surrounding Modal otherwise.
         if (!showOptions) return
         event.preventDefault()
         event.stopPropagation()
@@ -366,7 +361,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             />
           )}
         </Field>
-        {/* Always mounted, as a live region added with its text isn't announced */}
         <LiveRegion role="status">{noResults ? 'No results' : ''}</LiveRegion>
       </Wrapper>
     )

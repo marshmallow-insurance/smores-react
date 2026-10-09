@@ -23,11 +23,8 @@ type SearchOptionsProps = {
   setHighlightedIndex: (arg: number) => void
   onSelect: (option: Option) => void
   onKeyDown: (e: SearchKeyEvent) => void
-  /** Id of the listbox, referenced by the input's `aria-controls` */
   listboxId: string
-  /** Accessible name of the listbox */
   listboxLabel: string
-  /** Id of the option at an index, referenced by `aria-activedescendant` */
   getOptionId: (index: number) => string
   positionRelative: boolean
   resultsBorder: boolean
@@ -84,7 +81,6 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
         <ResultsList
           ref={resultsListRef}
           id={listboxId}
-          // Only a list with options is a listbox. The empty state is a plain list.
           role={displayedList.length ? 'listbox' : undefined}
           aria-label={displayedList.length ? listboxLabel : undefined}
           $resultsBorder={resultsBorder}
