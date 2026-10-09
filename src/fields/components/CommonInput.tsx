@@ -1,6 +1,12 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Icon, Icons } from '../../Icon'
 import { IconContainer } from '../../sharedStyles/shared.styles'
+import {
+  fieldDisabledStyle,
+  fieldFocusAttrs,
+  fieldFocusRing,
+  fieldHoverBorderColor,
+} from './fieldStyles'
 
 interface IInput {
   $error?: boolean
@@ -17,36 +23,40 @@ interface SIcon {
   $disabled?: boolean
 }
 
-export const Input = styled.input<IInput>`
-  border: none;
-  color: ${({ $error, theme }) =>
-    $error ? theme.color.feedback.negative[200] : theme.color.text.base};
-  font-size: 16px;
+export const Input = styled.input.attrs(fieldFocusAttrs)<IInput>`
+  box-sizing: border-box;
   width: 100%;
-  outline: none;
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'initial')};
-  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
-  padding: 18px 14px;
+  height: 48px;
+  margin: 0;
+  padding: 12px;
+  border: 2px solid
+    ${({ $error, theme }) =>
+      $error ? theme.color.feedback.negative[200] : theme.color.border.subtle};
+  border-radius: 12px;
   background-color: ${({ $fallbackStyle, theme }) =>
     $fallbackStyle
       ? theme.color.surface.base[300]
       : theme.color.background['000']};
-  border: 2px solid
-    ${({ $error, theme }) =>
-      $error ? theme.color.feedback.negative[200] : theme.color.border.subtle};
+  color: ${({ $error, theme }) =>
+    $error ? theme.color.feedback.negative[200] : theme.color.text.base};
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  outline: none;
 
-  ${({ disabled, $error, theme }) =>
-    !disabled &&
-    !$error &&
-    css`
-      &:hover,
-      &:focus-within {
-        border-color: ${theme.color.border.base};
-      }
-    `}
+  &:hover:not(:disabled):not(:focus) {
+    border-color: ${({ $error, theme }) => fieldHoverBorderColor(theme, $error)};
+  }
 
-  border-radius: 12px;
-  height: auto;
+  &:focus {
+    border-color: ${({ $error, theme }) =>
+      $error
+        ? theme.color.feedback.negative[200]
+        : theme.color.border.contrast};
+  }
+
+  ${fieldFocusRing}
+  ${fieldDisabledStyle}
 
   ${({ $frontIcon }) =>
     $frontIcon &&

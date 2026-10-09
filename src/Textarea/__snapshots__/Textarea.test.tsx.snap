@@ -18,7 +18,7 @@ exports[`Textarea > renders correctly with required props 1`] = `
   box-sizing: border-box;
   border-radius: 12px;
   width: 100%;
-  padding: 18px 14px;
+  padding: 12px;
   color: #292924;
   resize: none;
   cursor: text;
