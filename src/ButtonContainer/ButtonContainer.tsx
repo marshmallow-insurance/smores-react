@@ -94,7 +94,7 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
           )}
         </ButtonGroup>
         {supportingText && (
-          <SupportingContent>
+          <SupportingText id={supportingTextId}>
             {supportingIcon && (
               <SupportingIconContainer>
                 <FontAwesomeIcon
@@ -103,10 +103,8 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
                 />
               </SupportingIconContainer>
             )}
-            <SupportingText id={supportingTextId}>
-              {supportingText}
-            </SupportingText>
-          </SupportingContent>
+            {supportingText}
+          </SupportingText>
         )}
       </Container>
     </>
@@ -195,31 +193,25 @@ const ButtonGroup = styled.div<{ $orientation: ButtonContainerOrientation }>(
   `,
 )
 
-const SupportingContent = styled.div(
-  ({ theme }) => css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: ${theme.space['050']};
-  `,
-)
-
 // Figma icons use Font Awesome's square "full" bounding box (640 units),
 // in which the glyph's 512 unit em height takes up 80% of the box
-const SupportingIconContainer = styled.span`
-  display: inline-flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
+const SupportingIconContainer = styled.span(
+  ({ theme }) => css`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-right: ${theme.space['050']};
+    vertical-align: top;
 
-  svg {
-    width: 100%;
-    height: 80%;
-    overflow: visible;
-  }
-`
+    svg {
+      width: 100%;
+      height: 80%;
+      overflow: visible;
+    }
+  `,
+)
 
 const SupportingText = styled.p(
   ({ theme }) => css`

@@ -97,20 +97,14 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
   gap: 12px;
 }
 
-.c7 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-
 .c8 {
   display: inline-flex;
-  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: 20px;
   height: 20px;
+  margin-right: 4px;
+  vertical-align: top;
 }
 
 .c8 svg {
@@ -119,7 +113,7 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
   overflow: visible;
 }
 
-.c9 {
+.c7 {
   margin: 0;
   font-size: 16px;
   font-weight: 400;
@@ -190,8 +184,9 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
         </div>
       </button>
     </div>
-    <div
+    <p
       class="c7"
+      id="MM_SMORES_0"
     >
       <span
         class="c8"
@@ -211,13 +206,8 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
           />
         </svg>
       </span>
-      <p
-        class="c9"
-        id="MM_SMORES_0"
-      >
-        This won't impact your credit score
-      </p>
-    </div>
+      This won't impact your credit score
+    </p>
   </div>
 </div>
 `;
