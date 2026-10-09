@@ -220,9 +220,6 @@ interface SSelect {
   value?: string | null
 }
 
-// Figma's 32px chevron slot sits 12px from the edge, which puts the 16px
-// chevron 20px in. The text stops 4px short of the chevron, so a narrow
-// select (e.g. a country code) keeps as much room for text as possible.
 const CHEVRON_SIZE = 16
 const CHEVRON_INSET = 20
 const CHEVRON_TEXT_GAP = 4
