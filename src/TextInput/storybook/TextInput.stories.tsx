@@ -50,6 +50,28 @@ export const TypePassword: Story = {
   render: InteractiveTemplate,
 }
 
+export const TypeDate: Story = {
+  args: {
+    id: 'textInputDate',
+    name: 'textInputDate',
+    label: 'Date',
+    placeholder: 'Date',
+    type: 'date',
+  },
+  render: InteractiveTemplate,
+}
+
+export const TypeTime: Story = {
+  args: {
+    id: 'textInputTime',
+    name: 'textInputTime',
+    label: 'Time',
+    placeholder: 'Time',
+    type: 'time',
+  },
+  render: InteractiveTemplate,
+}
+
 export const Generic: Story = {
   args: {
     id: 'generic',
