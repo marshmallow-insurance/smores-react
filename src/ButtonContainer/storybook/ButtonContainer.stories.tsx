@@ -194,9 +194,15 @@ const meta: Meta<StoryArgs> = {
       tertiaryButton={
         showTertiaryButton ? <Button tertiary>Skip</Button> : undefined
       }
-      supportingText={showSupportingText ? supportingText : undefined}
-      supportingIcon={
-        showSupportingIcon ? supportingIcons[supportingIcon] : undefined
+      supportingMessage={
+        showSupportingText
+          ? {
+              text: supportingText,
+              icon: showSupportingIcon
+                ? supportingIcons[supportingIcon]
+                : undefined,
+            }
+          : undefined
       }
     />
   ),

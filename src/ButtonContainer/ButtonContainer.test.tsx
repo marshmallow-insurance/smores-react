@@ -12,8 +12,7 @@ describe('ButtonContainer', () => {
       <ButtonContainer
         primaryButton={<Button primary>Continue</Button>}
         secondaryButton={<Button secondary>Back</Button>}
-        supportingText={supportingText}
-        supportingIcon={faLock}
+        supportingMessage={{ text: supportingText, icon: faLock }}
       />,
     )
 
@@ -28,7 +27,7 @@ describe('ButtonContainer', () => {
       <ButtonContainer
         primaryButton={<Button primary>Continue</Button>}
         secondaryButton={<Button secondary>Back</Button>}
-        supportingText={supportingText}
+        supportingMessage={{ text: supportingText }}
       />,
     )
 
@@ -50,7 +49,7 @@ describe('ButtonContainer', () => {
               Continue
             </Button>
           }
-          supportingText={supportingText}
+          supportingMessage={{ text: supportingText }}
         />
       </>,
     )
@@ -70,14 +69,15 @@ describe('ButtonContainer', () => {
     ).not.toHaveAttribute('aria-describedby')
   })
 
-  it('does not render an icon without supporting text', () => {
+  it('renders supporting text without an icon when none is given', () => {
     const { container } = render(
       <ButtonContainer
         primaryButton={<Button primary>Continue</Button>}
-        supportingIcon={faLock}
+        supportingMessage={{ text: supportingText }}
       />,
     )
 
+    expect(screen.getByText(supportingText)).toBeInTheDocument()
     expect(container.querySelector('svg')).not.toBeInTheDocument()
   })
 
@@ -85,8 +85,7 @@ describe('ButtonContainer', () => {
     const { container } = render(
       <ButtonContainer
         primaryButton={<Button primary>Continue</Button>}
-        supportingText={supportingText}
-        supportingIcon={faLock}
+        supportingMessage={{ text: supportingText, icon: faLock }}
       />,
     )
 
@@ -100,14 +99,28 @@ describe('ButtonContainer', () => {
     const { container } = render(
       <ButtonContainer
         primaryButton={<Button primary>Continue</Button>}
-        supportingText={supportingText}
-        supportingIcon={faLock}
+        supportingMessage={{ text: supportingText, icon: faLock }}
       />,
     )
 
     expect(screen.getByText(supportingText)).toContainElement(
       container.querySelector('svg'),
     )
+  })
+
+  it('renders nothing for a supporting message with empty text', () => {
+    const { container } = render(
+      <ButtonContainer
+        primaryButton={<Button primary>Continue</Button>}
+        supportingMessage={{ text: '', icon: faLock }}
+      />,
+    )
+
+    expect(container.querySelector('p')).not.toBeInTheDocument()
+    expect(container.querySelector('svg')).not.toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: 'Continue' }),
+    ).not.toHaveAttribute('aria-describedby')
   })
 
   it('renders a spacer only when pinned', () => {
@@ -145,7 +158,7 @@ describe('ButtonContainer', () => {
         primaryButton={<Button primary>Continue</Button>}
         secondaryButton={<Button secondary>Back</Button>}
         tertiaryButton={<Button tertiary>Skip</Button>}
-        supportingText={supportingText}
+        supportingMessage={{ text: supportingText }}
       />,
     )
 

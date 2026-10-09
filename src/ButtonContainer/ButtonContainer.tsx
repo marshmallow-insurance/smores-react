@@ -17,6 +17,13 @@ type ButtonElement = ReactElement<{ 'aria-describedby'?: string }>
 
 export type ButtonContainerOrientation = 'vertical' | 'horizontal'
 
+export type ButtonContainerSupportingMessage = {
+  /** Short plain text, e.g. reassurance copy. Required, so an icon never shows on its own */
+  text: string
+  /** Optional decorative icon shown before the text */
+  icon?: IconDefinition
+}
+
 export type ButtonContainerProps = {
   className?: string
   /** Main action. Shown first when vertical, last (right) when horizontal */
@@ -27,10 +34,8 @@ export type ButtonContainerProps = {
   tertiaryButton?: ButtonElement
   /** Stack the buttons vertically or lay them out side by side */
   orientation?: ButtonContainerOrientation
-  /** Short plain text shown below the buttons, e.g. reassurance copy */
-  supportingText?: string
-  /** Optional decorative icon shown before the supporting text */
-  supportingIcon?: IconDefinition
+  /** Optional message shown below the buttons, e.g. reassurance copy */
+  supportingMessage?: ButtonContainerSupportingMessage
   /**
    * Pin the container to the bottom of the viewport on mobile.
    * On larger screens it always sits in the page flow.
@@ -44,8 +49,7 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
   secondaryButton,
   tertiaryButton,
   orientation = 'vertical',
-  supportingText,
-  supportingIcon,
+  supportingMessage,
   pinned = true,
 }) => {
   const theme = useTheme()
@@ -66,7 +70,9 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
     return () => observer.disconnect()
   }, [pinned])
 
-  const describedPrimaryButton = supportingText
+  const hasSupportingMessage = Boolean(supportingMessage?.text)
+
+  const describedPrimaryButton = hasSupportingMessage
     ? cloneElement(primaryButton, {
         'aria-describedby': [
           primaryButton.props['aria-describedby'],
@@ -93,17 +99,17 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
               button && <Fragment key={index}>{button}</Fragment>,
           )}
         </ButtonGroup>
-        {supportingText && (
+        {supportingMessage && hasSupportingMessage && (
           <SupportingText id={supportingTextId}>
-            {supportingIcon && (
+            {supportingMessage.icon && (
               <SupportingIconContainer>
                 <FontAwesomeIcon
-                  icon={supportingIcon}
+                  icon={supportingMessage.icon}
                   color={theme.color.icon.subtle}
                 />
               </SupportingIconContainer>
             )}
-            {supportingText}
+            {supportingMessage.text}
           </SupportingText>
         )}
       </Container>
