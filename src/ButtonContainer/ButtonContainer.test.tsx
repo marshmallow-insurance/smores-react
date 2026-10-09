@@ -96,6 +96,20 @@ describe('ButtonContainer', () => {
     )
   })
 
+  it('keeps the icon inline inside the supporting text so it hugs the first line', () => {
+    const { container } = render(
+      <ButtonContainer
+        primaryButton={<Button primary>Continue</Button>}
+        supportingText={supportingText}
+        supportingIcon={faLock}
+      />,
+    )
+
+    expect(screen.getByText(supportingText)).toContainElement(
+      container.querySelector('svg'),
+    )
+  })
+
   it('renders a spacer only when pinned', () => {
     const { container, rerender } = render(
       <ButtonContainer primaryButton={<Button primary>Continue</Button>} />,
