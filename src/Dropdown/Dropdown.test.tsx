@@ -185,18 +185,6 @@ describe('Dropdown', () => {
     })
   })
 
-  it('keeps the focus border when a focused field is hovered', () => {
-    render(<Dropdown list={items} onSelect={noop} />)
-
-    const select = screen.getByRole('combobox')
-
-    expect(select).toHaveStyleRule('border-color', '#9d927b', {
-      modifier: ':hover:not(:disabled):not(:focus)',
-    })
-    expect(select).toHaveStyleRule('border-color', '#292924', {
-      modifier: ':focus',
-    })
-  })
   it('goes a darker red on hover when invalid, and stays red on focus', () => {
     render(<Dropdown list={items} onSelect={noop} error />)
 
@@ -206,6 +194,19 @@ describe('Dropdown', () => {
       modifier: ':hover:not(:disabled):not(:focus)',
     })
     expect(select).toHaveStyleRule('border-color', '#d03c30', {
+      modifier: ':focus',
+    })
+  })
+
+  it('keeps the focus border when a focused field is hovered', () => {
+    render(<Dropdown list={items} onSelect={noop} />)
+
+    const select = screen.getByRole('combobox')
+
+    expect(select).toHaveStyleRule('border-color', '#9d927b', {
+      modifier: ':hover:not(:disabled):not(:focus)',
+    })
+    expect(select).toHaveStyleRule('border-color', '#292924', {
       modifier: ':focus',
     })
   })
