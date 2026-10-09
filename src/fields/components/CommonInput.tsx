@@ -5,6 +5,7 @@ import {
   fieldDisabledStyle,
   fieldFocusAttrs,
   fieldFocusRing,
+  fieldHoverBorderColor,
 } from './fieldStyles'
 
 interface IInput {
@@ -44,8 +45,7 @@ export const Input = styled.input.attrs(fieldFocusAttrs)<IInput>`
   outline: none;
 
   &:hover:not(:disabled):not(:focus) {
-    border-color: ${({ $error, theme }) =>
-      $error ? theme.color.feedback.negative[300] : theme.color.border.base};
+    border-color: ${({ $error, theme }) => fieldHoverBorderColor(theme, $error)};
   }
 
   &:focus {
