@@ -19,7 +19,8 @@ import {
 import { useOnClickOutside } from '../hooks'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
-import { SearchOptions } from './components/SearchOptions'
+import { SearchKeyEvent, SearchOptions } from './components/SearchOptions'
+import { visuallyHidden } from '../utils/visuallyHidden'
 import { IconContainer } from '../sharedStyles/shared.styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -225,23 +226,41 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       setShowOptions(!showOptions)
     }
 
-    const handleKeyDown = (event: {
-      key: string
-      preventDefault: () => void
-    }) => {
-      if (event.key === 'Enter' && highlightedIndex !== -1) {
+    const listboxId = `${id}-listbox`
+    const getOptionId = (index: number) => `${id}-option-${index}`
+    // Without results the list shows "No results", which is not a listbox.
+    const hasResults = showOptions && filteredList.length > 0
+    const hasHighlight = hasResults && highlightedIndex < filteredList.length
+    const noResults = showOptions && filteredList.length === 0
+
+    const handleKeyDown = (event: SearchKeyEvent) => {
+      if (event.key === 'Escape') {
+        // Only close the list when it's open, so Escape still reaches a
+        // surrounding Modal otherwise.
+        if (!showOptions) return
         event.preventDefault()
-        const focusedItem = filteredList[highlightedIndex]
-        handleSelect(focusedItem)
+        event.stopPropagation()
+        setShowOptions(false)
+        setHighlightedIndex(-1)
+      } else if (event.key === 'Enter') {
+        if (hasHighlight && highlightedIndex !== -1) {
+          event.preventDefault()
+          handleSelect(filteredList[highlightedIndex])
+        }
       } else if (event.key === 'ArrowDown') {
         event.preventDefault()
-        const nextIndex = (highlightedIndex + 1) % filteredList.length
-        setHighlightedIndex(nextIndex)
+        if (!showOptions) {
+          setShowOptions(true)
+        } else if (filteredList.length > 0) {
+          setHighlightedIndex((highlightedIndex + 1) % filteredList.length)
+        }
       } else if (event.key === 'ArrowUp') {
         event.preventDefault()
-        const prevIndex =
-          (highlightedIndex - 1 + filteredList.length) % filteredList.length
-        setHighlightedIndex(prevIndex)
+        if (showOptions && filteredList.length > 0) {
+          setHighlightedIndex(
+            (highlightedIndex - 1 + filteredList.length) % filteredList.length,
+          )
+        }
       }
     }
 
@@ -274,6 +293,15 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               $frontIcon={showIcon}
               $fallbackStyle={fallbackStyle}
               autoComplete="off"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded={hasResults}
+              aria-controls={hasResults ? listboxId : undefined}
+              aria-activedescendant={
+                hasHighlight && highlightedIndex !== -1
+                  ? getOptionId(highlightedIndex)
+                  : undefined
+              }
               value={displayedInputText}
               onFocus={handleClick}
               onChange={handleInputChange}
@@ -331,6 +359,9 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               highlightedIndex={highlightedIndex}
               setHighlightedIndex={setHighlightedIndex}
               onKeyDown={handleKeyDown}
+              listboxId={listboxId}
+              listboxLabel={otherProps.label ?? placeholder ?? 'Search results'}
+              getOptionId={getOptionId}
               searchTerm={searchQuery || ''}
               onSelect={handleSelect}
               positionRelative={resultsRelativePosition}
@@ -340,6 +371,8 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             />
           )}
         </Field>
+        {/* Always mounted, as a live region added with its text isn't announced */}
+        <LiveRegion role="status">{noResults ? 'No results' : ''}</LiveRegion>
       </Wrapper>
     )
   },
@@ -347,6 +380,10 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
 const Wrapper = styled(Box)`
   position: relative;
+`
+
+const LiveRegion = styled.div`
+  ${visuallyHidden}
 `
 
 const Line = styled(Box)`

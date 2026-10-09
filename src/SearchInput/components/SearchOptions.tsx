@@ -10,13 +10,25 @@ type Option = {
   value: string
 }
 
+export type SearchKeyEvent = {
+  key: string
+  preventDefault: () => void
+  stopPropagation: () => void
+}
+
 type SearchOptionsProps = {
   displayedList: Array<Option>
   selectedValue: string | null
   highlightedIndex: number
   setHighlightedIndex: (arg: number) => void
   onSelect: (option: Option) => void
-  onKeyDown: (e: { key: string; preventDefault: () => void }) => void
+  onKeyDown: (e: SearchKeyEvent) => void
+  /** Id of the listbox, referenced by the input's `aria-controls` */
+  listboxId: string
+  /** Accessible name of the listbox */
+  listboxLabel: string
+  /** Id of the option at an index, referenced by `aria-activedescendant` */
+  getOptionId: (index: number) => string
   positionRelative: boolean
   resultsBorder: boolean
   onNotFound?: (searchTerm: string) => void
@@ -31,6 +43,9 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   setHighlightedIndex,
   onSelect,
   onKeyDown,
+  listboxId,
+  listboxLabel,
+  getOptionId,
   positionRelative,
   resultsBorder,
   onNotFound,
@@ -68,6 +83,10 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
       <StyledResultsContainer $positionRelative={positionRelative}>
         <ResultsList
           ref={resultsListRef}
+          id={listboxId}
+          // Only a list with options is a listbox. The empty state is a plain list.
+          role={displayedList.length ? 'listbox' : undefined}
+          aria-label={displayedList.length ? listboxLabel : undefined}
           $resultsBorder={resultsBorder}
           onKeyDown={onKeyDown}
         >
@@ -80,7 +99,9 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
               return (
                 <ListButton
                   key={el.label + '_list_item'}
-                  aria-label={el.label + '_list_item'}
+                  id={getOptionId(i)}
+                  role="option"
+                  aria-selected={highlightedIndex === i}
                   ref={itemRefs.current[i]}
                   onClick={() => onSelect(el)}
                   $isSelected={isSelected}
