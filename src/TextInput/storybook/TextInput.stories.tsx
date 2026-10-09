@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react-vite'
 import { useArgs } from 'storybook/preview-api'
 import { SupportMessage } from '../../SupportMessage'
@@ -40,6 +41,12 @@ export const DefaultFallback: Story = {
   render: InteractiveTemplate,
 }
 
+const LocalStateTemplate = (args: TextInputProps) => {
+  const [value, setValue] = useState(args.value ?? '')
+
+  return <TextInput {...args} value={value} onChange={setValue} />
+}
+
 export const TypePassword: Story = {
   args: {
     id: 'textInput3',
@@ -58,7 +65,7 @@ export const TypeDate: Story = {
     placeholder: 'Date',
     type: 'date',
   },
-  render: InteractiveTemplate,
+  render: LocalStateTemplate,
 }
 
 export const TypeTime: Story = {
@@ -69,7 +76,7 @@ export const TypeTime: Story = {
     placeholder: 'Time',
     type: 'time',
   },
-  render: InteractiveTemplate,
+  render: LocalStateTemplate,
 }
 
 export const Generic: Story = {
