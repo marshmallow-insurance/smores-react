@@ -247,9 +247,6 @@ const StyledSelect = styled.select.attrs(fieldFocusAttrs)<SSelect>(
       font-family: inherit;
       font-size: 16px;
       line-height: 20px;
-      /* Not an ellipsis: consumers clamp narrow selects (e.g. a country code
-         showing "(+44)" from "(+44) United Kingdom"), and the ellipsis takes
-         room from the code. The text is clipped before the chevron instead. */
       text-overflow: clip;
       cursor: pointer;
       outline: none;

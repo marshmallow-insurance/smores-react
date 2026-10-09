@@ -198,8 +198,6 @@ describe('Dropdown', () => {
     })
   })
   it('clips long labels instead of adding an ellipsis, so narrow selects keep their code', () => {
-    // An ellipsis takes room from a clamped select, e.g. a country code that
-    // shows "(+44)" from "(+44) United Kingdom" and would become "(+4…".
     render(
       <Dropdown
         list={[{ label: '(+44) United Kingdom', value: 'GB' }]}

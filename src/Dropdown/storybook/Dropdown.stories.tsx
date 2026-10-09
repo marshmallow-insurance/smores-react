@@ -264,10 +264,6 @@ const countryCodes = [
   { label: '(+44) Isle of Man', value: 'IM' },
 ]
 
-/**
- * How consumers (e.g. uk-auto-signup-www) wrap a Dropdown to make a narrow
- * country-code select next to a phone number field.
- */
 const ConsumerPhoneCode = styled.div<{ $width: number }>`
   min-width: ${({ $width }) => $width}px;
   margin-right: 8px;
@@ -278,11 +274,6 @@ const ConsumerPhoneCode = styled.div<{ $width: number }>`
   }
 `
 
-/**
- * The create-account page joins the code and the number into one bordered
- * group: the group draws the border, the code has a divider on its right, and
- * the select and the input lose their own borders.
- */
 const JoinedPhoneGroup = styled.div`
   display: flex;
   width: 100%;
@@ -335,7 +326,6 @@ const measureTextWidth = (text: string, select: HTMLSelectElement) => {
   return context.measureText(text).width
 }
 
-/** Width available for text in the closed select, and what its code needs. */
 const measureSelect = (select: HTMLSelectElement) => {
   const style = getComputedStyle(select)
   const room =
@@ -381,7 +371,6 @@ const PhoneRow = ({
       if (select) setMeasured(measureSelect(select))
     }
     measure()
-    // Circular may load after the first render.
     void document.fonts.ready.then(measure)
   }, [value, width])
 
@@ -438,12 +427,6 @@ const PhoneRow = ({
   )
 }
 
-/**
- * A Dropdown with real country-code labels next to a phone number field, as
- * in uk-auto-signup-www. Consumers clamp the select to `width` with
- * `max-width` and `padding-right: 42px`, so the closed select only has room
- * for the code: the rest of the label must be clipped, not replaced by "…".
- */
 export const PhoneCountryCode: StoryObj<PhoneCountryCodeArgs> = {
   args: { width: 96, value: 'GB' },
   argTypes: {
@@ -483,7 +466,6 @@ export const PhoneCountryCode: StoryObj<PhoneCountryCodeArgs> = {
       .querySelector('[data-testid="Consumer overrides"]')
       ?.querySelector('select')
     await expect(select).toBeTruthy()
-    // The code must not be replaced by an ellipsis in a narrow select.
     await expect(getComputedStyle(select!).textOverflow).not.toBe('ellipsis')
     const { room, needs } = measureSelect(select!)
     await expect(needs).toBeLessThanOrEqual(room)
