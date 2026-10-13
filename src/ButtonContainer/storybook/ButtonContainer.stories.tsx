@@ -274,6 +274,19 @@ export const Mobile: Story = {
   },
 }
 
+// Long copy at Figma's mobile width: the icon stays on the first line and wrapped lines centre without an indent
+export const LongSupportingText: Story = {
+  tags: ['!autodocs'],
+  args: {
+    showSupportingText: true,
+    supportingText:
+      "Checking your eligibility won't impact your credit score or show up to other lenders",
+  },
+  globals: {
+    viewport: { value: 'figmaMobile', isRotated: false },
+  },
+}
+
 export const Desktop: Story = {
   tags: ['!autodocs'],
   args: {

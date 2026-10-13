@@ -70,7 +70,7 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
     return () => observer.disconnect()
   }, [pinned])
 
-  const hasSupportingMessage = Boolean(supportingMessage?.text)
+  const hasSupportingMessage = Boolean(supportingMessage?.text?.trim())
 
   const describedPrimaryButton = hasSupportingMessage
     ? cloneElement(primaryButton, {

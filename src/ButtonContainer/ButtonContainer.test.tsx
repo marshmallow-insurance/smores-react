@@ -108,11 +108,14 @@ describe('ButtonContainer', () => {
     )
   })
 
-  it('renders nothing for a supporting message with empty text', () => {
+  it.each([
+    ['empty', ''],
+    ['whitespace-only', '  \n '],
+  ])('renders nothing for a supporting message with %s text', (_, text) => {
     const { container } = render(
       <ButtonContainer
         primaryButton={<Button primary>Continue</Button>}
-        supportingMessage={{ text: '', icon: faLock }}
+        supportingMessage={{ text, icon: faLock }}
       />,
     )
 
