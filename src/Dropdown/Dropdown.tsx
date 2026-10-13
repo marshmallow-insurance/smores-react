@@ -21,6 +21,7 @@ import {
   fieldDisabledStyle,
   fieldFocusAttrs,
   fieldFocusRing,
+  fieldHoverBorderColor,
 } from '../fields/components/fieldStyles'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
@@ -259,7 +260,7 @@ const StyledSelect = styled.select.attrs(fieldFocusAttrs)<SSelect>(
       // Hover mustn't override the focus border while the pointer is over a
       // focused field.
       &:hover:not(:disabled):not(:focus) {
-        border-color: ${borderColor(theme.color.border.base)};
+        border-color: ${fieldHoverBorderColor(theme, $error)};
       }
 
       &:focus {
