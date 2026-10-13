@@ -81,6 +81,7 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
   flex-direction: column;
   gap: 12px;
   width: 100%;
+  box-sizing: border-box;
   position: fixed;
   bottom: 0;
   left: 0;

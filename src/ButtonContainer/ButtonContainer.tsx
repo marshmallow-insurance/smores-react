@@ -137,6 +137,8 @@ const Container = styled.div<{ $pinned: boolean }>(
     flex-direction: column;
     gap: ${theme.space[150]};
     width: 100%;
+    // The library ships no CSS reset, so keep the pinned padding inside the viewport width
+    box-sizing: border-box;
 
     ${
       $pinned &&

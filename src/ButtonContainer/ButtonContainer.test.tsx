@@ -126,6 +126,14 @@ describe('ButtonContainer', () => {
     ).not.toHaveAttribute('aria-describedby')
   })
 
+  it('keeps its padding inside the full width without a CSS reset', () => {
+    const { container } = render(
+      <ButtonContainer primaryButton={<Button primary>Continue</Button>} />,
+    )
+
+    expect(container.children[1]).toHaveStyleRule('box-sizing', 'border-box')
+  })
+
   it('renders a spacer only when pinned', () => {
     const { container, rerender } = render(
       <ButtonContainer primaryButton={<Button primary>Continue</Button>} />,
