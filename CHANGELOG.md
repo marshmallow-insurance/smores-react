@@ -1,3 +1,29 @@
+## [16.8.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.7.1...v16.8.0) (2026-10-13)
+
+### Features
+
+* **inputs:** match Figma field height and states ([#5219](https://github.com/marshmallow-insurance/smores-react/issues/5219)) ([61e089d](https://github.com/marshmallow-insurance/smores-react/commit/61e089d8bf8d7dc64149654c3ff33228d6a169c8)), closes [#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211)
+
+### Bug Fixes
+
+* **Dropdown:** clip long labels so narrow selects keep their code ([#5220](https://github.com/marshmallow-insurance/smores-react/issues/5220)) ([db62c25](https://github.com/marshmallow-insurance/smores-react/commit/db62c253cd56caf32f9465c21da8e0e5032c55dc)), closes [#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211) [#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211) [#5216](https://github.com/marshmallow-insurance/smores-react/issues/5216) [#5216](https://github.com/marshmallow-insurance/smores-react/issues/5216) [#5219](https://github.com/marshmallow-insurance/smores-react/issues/5219)
+
+## [16.7.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.7.0...v16.7.1) (2026-10-09)
+
+### Bug Fixes
+
+* **Dropdown:** reduce right padding so narrow dropdowns don't truncate ([#5216](https://github.com/marshmallow-insurance/smores-react/issues/5216)) ([49d268d](https://github.com/marshmallow-insurance/smores-react/commit/49d268d0c1d8d7be1a8da3346f58052e0c290b95)), closes [#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211)
+
+## [16.7.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.6.0...v16.7.0) (2026-10-08)
+
+### Features
+
+* **Modal:** add dialog semantics, focus management and Escape to close ([#5213](https://github.com/marshmallow-insurance/smores-react/issues/5213)) ([64524f8](https://github.com/marshmallow-insurance/smores-react/commit/64524f8c6f8e71dd24d76a4a7d73883fbd40c225)), closes [#5212](https://github.com/marshmallow-insurance/smores-react/issues/5212)
+
+### Bug Fixes
+
+* **Modal:** lock body scroll when the modal opens ([#5212](https://github.com/marshmallow-insurance/smores-react/issues/5212)) ([a975e71](https://github.com/marshmallow-insurance/smores-react/commit/a975e715af66ca84586d902455d90a877ac4ad69)), closes [#5113](https://github.com/marshmallow-insurance/smores-react/issues/5113)
+
 ## [16.6.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.5.0...v16.6.0) (2026-10-08)
 
 ### Features

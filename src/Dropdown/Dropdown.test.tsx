@@ -96,7 +96,7 @@ describe('Dropdown', () => {
 
     expect(screen.getByRole('combobox')).toHaveStyleRule(
       'padding',
-      '12px 60px 12px 42px',
+      '12px 36px 12px 42px',
     )
   })
 
@@ -185,6 +185,19 @@ describe('Dropdown', () => {
     })
   })
 
+  it('goes a darker red on hover when invalid, and stays red on focus', () => {
+    render(<Dropdown list={items} onSelect={noop} error />)
+
+    const select = screen.getByRole('combobox')
+
+    expect(select).toHaveStyleRule('border-color', '#a32f26', {
+      modifier: ':hover:not(:disabled):not(:focus)',
+    })
+    expect(select).toHaveStyleRule('border-color', '#d03c30', {
+      modifier: ':focus',
+    })
+  })
+
   it('keeps the focus border when a focused field is hovered', () => {
     render(<Dropdown list={items} onSelect={noop} />)
 
@@ -196,5 +209,20 @@ describe('Dropdown', () => {
     expect(select).toHaveStyleRule('border-color', '#292924', {
       modifier: ':focus',
     })
+  })
+  it('clips long labels instead of adding an ellipsis, so narrow selects keep their code', () => {
+    render(
+      <Dropdown
+        list={[{ label: '(+44) United Kingdom', value: 'GB' }]}
+        value="GB"
+        onSelect={noop}
+      />,
+    )
+
+    const select = screen.getByRole('combobox')
+
+    expect(select).toHaveStyleRule('text-overflow', 'clip')
+    expect(select).not.toHaveStyleRule('text-overflow', 'ellipsis')
+    expect(select).toHaveStyleRule('padding', '12px 36px 12px 12px')
   })
 })

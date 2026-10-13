@@ -21,6 +21,7 @@ import {
   fieldDisabledStyle,
   fieldFocusAttrs,
   fieldFocusRing,
+  fieldHoverBorderColor,
 } from '../fields/components/fieldStyles'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
@@ -201,7 +202,7 @@ export const Dropdown = forwardRef(function Dropdown(
           )}
         </StyledSelect>
         <Caret>
-          <IconContainer $size={16}>
+          <IconContainer $size={CHEVRON_SIZE}>
             <FontAwesomeIcon
               icon={faChevronDown}
               color={theme.color.icon.subtle}
@@ -220,8 +221,10 @@ interface SSelect {
   value?: string | null
 }
 
-// Figma's 32px chevron slot sits 12px from the edge, 16px from the text
-const CHEVRON_INSET = 20
+const CHEVRON_SIZE = 16
+const CHEVRON_INSET = 16
+const CHEVRON_TEXT_GAP = 4
+const TEXT_PADDING_RIGHT = CHEVRON_INSET + CHEVRON_SIZE + CHEVRON_TEXT_GAP
 
 const StyledSelect = styled.select.attrs(fieldFocusAttrs)<SSelect>(
   ({ theme, $error, $frontIcon, $fallbackStyle, value }) => {
@@ -233,7 +236,7 @@ const StyledSelect = styled.select.attrs(fieldFocusAttrs)<SSelect>(
       width: 100%;
       height: 48px;
       margin: 0;
-      padding: 12px 60px 12px ${$frontIcon ? '42px' : '12px'};
+      padding: 12px ${TEXT_PADDING_RIGHT}px 12px ${$frontIcon ? '42px' : '12px'};
       border: 2px solid ${borderColor(theme.color.border.subtle)};
       border-radius: 12px;
       background-color: ${
@@ -245,7 +248,7 @@ const StyledSelect = styled.select.attrs(fieldFocusAttrs)<SSelect>(
       font-family: inherit;
       font-size: 16px;
       line-height: 20px;
-      text-overflow: ellipsis;
+      text-overflow: clip;
       cursor: pointer;
       outline: none;
 
@@ -257,7 +260,7 @@ const StyledSelect = styled.select.attrs(fieldFocusAttrs)<SSelect>(
       // Hover mustn't override the focus border while the pointer is over a
       // focused field.
       &:hover:not(:disabled):not(:focus) {
-        border-color: ${borderColor(theme.color.border.base)};
+        border-color: ${fieldHoverBorderColor(theme, $error)};
       }
 
       &:focus {
