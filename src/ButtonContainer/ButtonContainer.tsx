@@ -4,14 +4,13 @@ import {
   ReactElement,
   cloneElement,
   useEffect,
+  useId,
   useRef,
   useState,
 } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import { useUniqueId } from '../utils/id'
 
 type ButtonElement = ReactElement<{ 'aria-describedby'?: string }>
 
@@ -53,7 +52,7 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
   pinned = true,
 }) => {
   const theme = useTheme()
-  const supportingTextId = useUniqueId()
+  const supportingTextId = useId()
   const containerRef = useRef<HTMLDivElement>(null)
   const [containerHeight, setContainerHeight] = useState(0)
 

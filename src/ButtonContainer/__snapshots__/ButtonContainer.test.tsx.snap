@@ -158,7 +158,7 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
       class="c2"
     >
       <button
-        aria-describedby="MM_SMORES_0"
+        aria-describedby="_r_0_"
         class="c3"
       >
         <div
@@ -187,7 +187,7 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
     </div>
     <p
       class="c7"
-      id="MM_SMORES_0"
+      id="_r_0_"
     >
       <span
         class="c8"
