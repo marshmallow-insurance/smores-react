@@ -4,7 +4,7 @@ import {
   PointerEvent,
   PointerEventHandler,
 } from 'react'
-import { css } from 'styled-components'
+import { css, DefaultTheme } from 'styled-components'
 
 /**
  * Browsers treat text fields as `:focus-visible` even when they are clicked,
@@ -51,3 +51,6 @@ export const fieldDisabledStyle = css`
     -webkit-text-fill-color: currentColor;
   }
 `
+
+export const fieldHoverBorderColor = (theme: DefaultTheme, error?: boolean) =>
+  error ? theme.color.feedback.negative[300] : theme.color.border.base

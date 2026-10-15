@@ -1,3 +1,13 @@
+## [16.8.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.7.1...v16.8.0) (2026-10-13)
+
+### Features
+
+* **inputs:** match Figma field height and states ([#5219](https://github.com/marshmallow-insurance/smores-react/issues/5219)) ([61e089d](https://github.com/marshmallow-insurance/smores-react/commit/61e089d8bf8d7dc64149654c3ff33228d6a169c8)), closes [#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211)
+
+### Bug Fixes
+
+* **Dropdown:** clip long labels so narrow selects keep their code ([#5220](https://github.com/marshmallow-insurance/smores-react/issues/5220)) ([db62c25](https://github.com/marshmallow-insurance/smores-react/commit/db62c253cd56caf32f9465c21da8e0e5032c55dc)), closes [#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211) [#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211) [#5216](https://github.com/marshmallow-insurance/smores-react/issues/5216) [#5216](https://github.com/marshmallow-insurance/smores-react/issues/5216) [#5219](https://github.com/marshmallow-insurance/smores-react/issues/5219)
+
 ## [16.7.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.7.0...v16.7.1) (2026-10-09)
 
 ### Bug Fixes
