@@ -1,0 +1,2 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";var t,n;function r(){return(r=e((()=>{t=(e,t,n)=>{let r=e.replace(/\s+/g,`-`),i=[`control`];return n&&i.push(n),t&&i.push(t),i.push(r),i.join(`-`)},n=(e,t,n)=>{let r=e.replace(/\s+/g,`-`),i=[`set`];return n&&i.push(n),t&&i.push(t),i.push(r),i.join(`-`)}})))()}export{n,r,t};
+//# sourceMappingURL=chunk-QQBDHPVZ-DC5n6Pix.js.map
