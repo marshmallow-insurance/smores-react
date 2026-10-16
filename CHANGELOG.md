@@ -1,3 +1,9 @@
+## [16.11.2](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.1...v16.11.2) (2026-10-16)
+
+### Bug Fixes
+
+* **ButtonContainer:** keep supporting text centred under buttons ([#5239](https://github.com/marshmallow-insurance/smores-react/issues/5239)) ([e37d81f](https://github.com/marshmallow-insurance/smores-react/commit/e37d81fd7daa767525754dd1c24f41efa580fbbb))
+
 ## [16.11.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.0...v16.11.1) (2026-10-16)
 
 ### Bug Fixes
