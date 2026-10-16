@@ -185,7 +185,8 @@ const StyledResultsContainer = styled.div<
   top: -8px;
 
   ul {
-    max-height: 192px;
+    box-sizing: border-box;
+    max-height: 194px;
   }
 `
 
