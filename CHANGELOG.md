@@ -1,3 +1,9 @@
+## [16.10.6](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.5...v16.10.6) (2026-10-16)
+
+### Bug Fixes
+
+* **Accordion:** use border color instead of background color for top border ([#5232](https://github.com/marshmallow-insurance/smores-react/issues/5232)) ([6b46c66](https://github.com/marshmallow-insurance/smores-react/commit/6b46c6677657f3867a7dc58a74ff13aa10b59b4b))
+
 ## [16.10.5](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.4...v16.10.5) (2026-10-16)
 
 ### Bug Fixes
