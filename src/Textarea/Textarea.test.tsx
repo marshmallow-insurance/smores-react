@@ -48,4 +48,16 @@ describe('Textarea', () => {
       },
     )
   })
+
+  it('uses a grey fill when disabled, not opacity', () => {
+    render(<Textarea label="Notes" value="" onChange={noop} disabled />)
+    const textarea = screen.getByRole('textbox')
+
+    expect(textarea).toHaveStyleRule('background-color', expect.any(String), {
+      modifier: ':disabled',
+    })
+    expect(textarea).toHaveStyleRule('opacity', '1', {
+      modifier: ':disabled',
+    })
+  })
 })
