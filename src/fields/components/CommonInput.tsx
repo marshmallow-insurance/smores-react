@@ -105,6 +105,7 @@ export const InputLeadingIconContainer = styled(IconContainer)<SIcon>`
   z-index: 1;
   color: ${({ $disabled, theme }) =>
     $disabled ? theme.color.icon.subtle : theme.color.text.base};
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'inherit')};
 `
 
 export const StyledFrontIcon = styled(Icon)<SIcon>`
@@ -112,12 +113,14 @@ export const StyledFrontIcon = styled(Icon)<SIcon>`
   left: 36px;
   margin-left: -24px;
   z-index: 1;
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'inherit')};
 `
 
 export const StyledTrailingIcon = styled(Icon)<SIcon>`
   position: relative;
   right: 36px;
   margin-right: -36px;
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'inherit')};
 `
 
 export const InputTrailingIconContainer = styled(IconContainer)<SIcon>`
@@ -126,4 +129,5 @@ export const InputTrailingIconContainer = styled(IconContainer)<SIcon>`
   margin-right: -36px;
   color: ${({ $disabled, theme }) =>
     $disabled ? theme.color.icon.subtle : theme.color.text.base};
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'inherit')};
 `

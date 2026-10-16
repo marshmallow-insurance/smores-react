@@ -136,4 +136,20 @@ describe('TextInput', () => {
       modifier: ':focus',
     })
   })
+
+  it('shows the disabled cursor over a disabled icon', () => {
+    const { container } = render(
+      <TextInput
+        label="Name"
+        placeholder="Name"
+        value=""
+        onChange={noop}
+        disabled
+        frontIcon="search"
+      />,
+    )
+    const icon = container.querySelector('[data-testid="search-container"]')!
+
+    expect(icon).toHaveStyleRule('cursor', 'not-allowed')
+  })
 })
