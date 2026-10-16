@@ -2,6 +2,7 @@ import Fuse, { IFuseOptions } from 'fuse.js'
 import {
   ChangeEvent,
   FocusEvent,
+  MouseEvent,
   ReactNode,
   forwardRef,
   useMemo,
@@ -19,7 +20,8 @@ import {
 import { useOnClickOutside } from '../hooks'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
-import { SearchOptions } from './components/SearchOptions'
+import { SearchKeyEvent, SearchOptions } from './components/SearchOptions'
+import { visuallyHidden } from '../utils/visuallyHidden'
 import { IconContainer } from '../sharedStyles/shared.styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -122,6 +124,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     })
     const [searchQuery, setSearchQuery] = useState<string | null>(null)
     const [highlightedIndex, setHighlightedIndex] = useState(-1)
+    const [emptyMessage, setEmptyMessage] = useState('')
 
     const selectedValueLabel = searchList.find(
       (option) =>
@@ -129,44 +132,64 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     )?.label
 
     const handleBlur = () => {
-      if (selectedValue) {
-        setSearchQuery(selectedValueLabel ?? null)
-      } else if (!selectedValue) {
-        setSearchQuery(null)
-      }
+      setSearchQuery(null)
+    }
+
+    // Every way of closing the list goes through here, so a reopened list
+    // never starts with a stale highlighted option.
+    const closeOptions = () => {
+      setShowOptions(false)
+      setHighlightedIndex(-1)
     }
 
     useOnClickOutside({
       ref: wrapperRef,
       callback: () => {
         handleBlur()
-        setShowOptions(false)
+        closeOptions()
       },
     })
 
-    // oxlint-disable-next-line react/react-compiler
+    const isFuzzySearch = enableFuzzySearch || !!fuzzySearchOptions
+
     const fuse = useMemo(() => {
+      if (!isFuzzySearch) {
+        return null
+      }
       return new Fuse(searchList, {
         ...defaultFuzzySearchOptions,
         ...fuzzySearchOptions,
       })
-    }, [searchList])
+    }, [isFuzzySearch, searchList, fuzzySearchOptions])
 
-    // oxlint-disable-next-line react/react-compiler
     const filteredList = useMemo(() => {
       if (searchQuery === null || searchQuery === '') {
         return searchList
       }
 
-      if (enableFuzzySearch || !!fuzzySearchOptions) {
+      if (fuse) {
         return fuse.search(searchQuery).map(({ item }) => item)
       }
 
       return searchList.filter(({ label }) =>
         label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
-      // oxlint-disable-next-line react/react-compiler
-    }, [searchQuery, enableFuzzySearch, !!fuzzySearchOptions])
+    }, [searchQuery, searchList, fuse])
+
+    // If the options change under a highlighted one (e.g. searchList is
+    // swapped), clear the highlight so Enter can't pick a different option.
+    // Compare values, not identity, so an inline searchList that re-renders
+    // with the same options keeps the highlight.
+    const optionsKey = useMemo(
+      () => filteredList.map((option) => option.value).join('\n'),
+      [filteredList],
+    )
+    const [highlightedOptionsKey, setHighlightedOptionsKey] =
+      useState(optionsKey)
+    if (optionsKey !== highlightedOptionsKey) {
+      setHighlightedOptionsKey(optionsKey)
+      setHighlightedIndex(-1)
+    }
 
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
@@ -187,19 +210,34 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
       if (query === null) {
         setSelectedValue(null)
-        setShowOptions(false)
+        closeOptions()
       } else {
         setShowOptions(true)
       }
     }
 
-    const handleClick = () => {
+    // Reopening a field with a selection usually means changing it, so
+    // select the label and let typing replace it rather than append to it
+    const shouldSelectLabel =
+      !showOptions && searchQuery === null && selectedValue !== null
+
+    const handleMouseDown = (event: MouseEvent<HTMLInputElement>) => {
+      // Focus and select ourselves, so the browser doesn't place a caret
+      // (Safari can otherwise undo the selection on mouseup)
+      const input = event.currentTarget
+      if (shouldSelectLabel && document.activeElement !== input) {
+        event.preventDefault()
+        input.focus()
+      }
+    }
+
+    const handleClick = (event: { currentTarget: HTMLInputElement }) => {
+      if (shouldSelectLabel) {
+        event.currentTarget.select()
+      }
       setShowOptions(true)
       if (searchQuery !== null) {
         updateSearchQuery(searchQuery)
-        setShowOptions(true)
-      } else if (selectedValue !== null && searchQuery === null) {
-        setSearchQuery(selectedValueLabel || null)
         setShowOptions(true)
       }
     }
@@ -222,26 +260,47 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     }
 
     const handleCaretClick = () => {
-      setShowOptions(!showOptions)
+      if (showOptions) {
+        closeOptions()
+      } else {
+        setShowOptions(true)
+      }
     }
 
-    const handleKeyDown = (event: {
-      key: string
-      preventDefault: () => void
-    }) => {
-      if (event.key === 'Enter' && highlightedIndex !== -1) {
+    const listboxId = `${id}-listbox`
+    const getOptionId = (index: number) => `${id}-option-${index}`
+    const hasResults = showOptions && filteredList.length > 0
+    const hasHighlight =
+      hasResults &&
+      highlightedIndex >= 0 &&
+      highlightedIndex < filteredList.length
+    const noResults = showOptions && filteredList.length === 0
+
+    const handleKeyDown = (event: SearchKeyEvent) => {
+      if (event.key === 'Escape') {
+        if (!showOptions) return
         event.preventDefault()
-        const focusedItem = filteredList[highlightedIndex]
-        handleSelect(focusedItem)
+        event.stopPropagation()
+        closeOptions()
+      } else if (event.key === 'Enter') {
+        if (hasHighlight) {
+          event.preventDefault()
+          handleSelect(filteredList[highlightedIndex])
+        }
       } else if (event.key === 'ArrowDown') {
         event.preventDefault()
-        const nextIndex = (highlightedIndex + 1) % filteredList.length
-        setHighlightedIndex(nextIndex)
+        if (!showOptions) {
+          setShowOptions(true)
+        } else if (filteredList.length > 0) {
+          setHighlightedIndex((highlightedIndex + 1) % filteredList.length)
+        }
       } else if (event.key === 'ArrowUp') {
         event.preventDefault()
-        const prevIndex =
-          (highlightedIndex - 1 + filteredList.length) % filteredList.length
-        setHighlightedIndex(prevIndex)
+        if (showOptions && filteredList.length > 0) {
+          setHighlightedIndex(
+            (highlightedIndex - 1 + filteredList.length) % filteredList.length,
+          )
+        }
       }
     }
 
@@ -274,12 +333,25 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               $frontIcon={showIcon}
               $fallbackStyle={fallbackStyle}
               autoComplete="off"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded={hasResults}
+              aria-controls={hasResults ? listboxId : undefined}
+              aria-activedescendant={
+                hasHighlight ? getOptionId(highlightedIndex) : undefined
+              }
               value={displayedInputText}
               onFocus={handleClick}
               onChange={handleInputChange}
               selected={isSelected}
               onClick={handleClick}
-              onKeyDown={handleKeyDown}
+              onMouseDown={handleMouseDown}
+              onKeyDown={(event) => {
+                if (event.key === 'ArrowDown' && shouldSelectLabel) {
+                  event.currentTarget.select()
+                }
+                handleKeyDown(event)
+              }}
               onBlur={(e) => {
                 onBlur?.(e)
               }}
@@ -331,15 +403,20 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               highlightedIndex={highlightedIndex}
               setHighlightedIndex={setHighlightedIndex}
               onKeyDown={handleKeyDown}
+              listboxId={listboxId}
+              listboxLabel={otherProps.label ?? placeholder ?? 'Search results'}
+              getOptionId={getOptionId}
               searchTerm={searchQuery || ''}
               onSelect={handleSelect}
               positionRelative={resultsRelativePosition}
               resultsBorder={resultsBorder}
               onNotFound={onNotFound}
+              onEmptyMessageChange={setEmptyMessage}
               notFoundComponent={notFoundComponent?.(searchQuery ?? '')}
             />
           )}
         </Field>
+        <LiveRegion role="status">{noResults ? emptyMessage : ''}</LiveRegion>
       </Wrapper>
     )
   },
@@ -347,6 +424,10 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
 const Wrapper = styled(Box)`
   position: relative;
+`
+
+const LiveRegion = styled.div`
+  ${visuallyHidden}
 `
 
 const Line = styled(Box)`

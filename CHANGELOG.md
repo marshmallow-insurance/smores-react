@@ -1,3 +1,38 @@
+## [16.10.2](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.1...v16.10.2) (2026-10-16)
+
+### Bug Fixes
+
+* **SearchInput:** select the label and scroll to the selection when reopening ([#5229](https://github.com/marshmallow-insurance/smores-react/issues/5229)) ([ebebce2](https://github.com/marshmallow-insurance/smores-react/commit/ebebce210921b317d14d26514482aab6b9b61d93)), closes [#5218](https://github.com/marshmallow-insurance/smores-react/issues/5218)
+* **SearchInput:** update options when searchList or fuzzySearchOptions change ([#5228](https://github.com/marshmallow-insurance/smores-react/issues/5228)) ([df6be69](https://github.com/marshmallow-insurance/smores-react/commit/df6be698e74b9298ec1eed8830bb27f5179c02ed)), closes [#5218](https://github.com/marshmallow-insurance/smores-react/issues/5218)
+
+## [16.10.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.0...v16.10.1) (2026-10-16)
+
+### Bug Fixes
+
+* **SearchInput:** add combobox accessibility semantics ([#5218](https://github.com/marshmallow-insurance/smores-react/issues/5218)) ([0f207d6](https://github.com/marshmallow-insurance/smores-react/commit/0f207d62a52eccd7358482e0cf7c4fc11447abc3))
+
+## [16.10.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.9.0...v16.10.0) (2026-10-16)
+
+### Features
+
+* **ButtonContainer:** add align prop for start, centre or end buttons on desktop ([#5227](https://github.com/marshmallow-insurance/smores-react/issues/5227)) ([634d1b8](https://github.com/marshmallow-insurance/smores-react/commit/634d1b89f713834e171d6c7164fae0a74801b137)), closes [#5206](https://github.com/marshmallow-insurance/smores-react/issues/5206)
+
+## [16.9.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.8.0...v16.9.0) (2026-10-15)
+
+### Features
+
+* **ButtonContainer:** add ButtonContainer with supporting text ([#5206](https://github.com/marshmallow-insurance/smores-react/issues/5206)) ([9e7b256](https://github.com/marshmallow-insurance/smores-react/commit/9e7b2566a5b1aecfff3ef9ba4b881aaab0d08199)), closes [marshmallow-insurance/marshmallow-ios#4991](https://github.com/marshmallow-insurance/marshmallow-ios/issues/4991) [marshmallow-insurance/marshmallow-android#4718](https://github.com/marshmallow-insurance/marshmallow-android/issues/4718)
+
+## [16.8.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.7.1...v16.8.0) (2026-10-13)
+
+### Features
+
+* **inputs:** match Figma field height and states ([#5219](https://github.com/marshmallow-insurance/smores-react/issues/5219)) ([61e089d](https://github.com/marshmallow-insurance/smores-react/commit/61e089d8bf8d7dc64149654c3ff33228d6a169c8)), closes [#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211)
+
+### Bug Fixes
+
+* **Dropdown:** clip long labels so narrow selects keep their code ([#5220](https://github.com/marshmallow-insurance/smores-react/issues/5220)) ([db62c25](https://github.com/marshmallow-insurance/smores-react/commit/db62c253cd56caf32f9465c21da8e0e5032c55dc)), closes [#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211) [#5211](https://github.com/marshmallow-insurance/smores-react/issues/5211) [#5216](https://github.com/marshmallow-insurance/smores-react/issues/5216) [#5216](https://github.com/marshmallow-insurance/smores-react/issues/5216) [#5219](https://github.com/marshmallow-insurance/smores-react/issues/5219)
+
 ## [16.7.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.7.0...v16.7.1) (2026-10-09)
 
 ### Bug Fixes

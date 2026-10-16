@@ -1,4 +1,12 @@
-import { FC, ReactNode, RefObject, createRef, useEffect, useRef } from 'react'
+import {
+  FC,
+  ReactNode,
+  RefObject,
+  createRef,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+} from 'react'
 import styled, { css } from 'styled-components'
 import { TransientProps } from '../../utils/utilTypes'
 import { Box } from '../../Box'
@@ -10,16 +18,26 @@ type Option = {
   value: string
 }
 
+export type SearchKeyEvent = {
+  key: string
+  preventDefault: () => void
+  stopPropagation: () => void
+}
+
 type SearchOptionsProps = {
   displayedList: Array<Option>
   selectedValue: string | null
   highlightedIndex: number
   setHighlightedIndex: (arg: number) => void
   onSelect: (option: Option) => void
-  onKeyDown: (e: { key: string; preventDefault: () => void }) => void
+  onKeyDown: (e: SearchKeyEvent) => void
+  listboxId: string
+  listboxLabel: string
+  getOptionId: (index: number) => string
   positionRelative: boolean
   resultsBorder: boolean
   onNotFound?: (searchTerm: string) => void
+  onEmptyMessageChange: (message: string) => void
   searchTerm: string
   notFoundComponent?: ReactNode
 }
@@ -31,9 +49,13 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   setHighlightedIndex,
   onSelect,
   onKeyDown,
+  listboxId,
+  listboxLabel,
+  getOptionId,
   positionRelative,
   resultsBorder,
   onNotFound,
+  onEmptyMessageChange,
   searchTerm,
   notFoundComponent,
 }) => {
@@ -56,18 +78,48 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
     }
   }, [highlightedIndex])
 
+  // Only reset the scroll when the search term changes, not when the list
+  // opens, so the selected option stays centred
+  const scrollResetForSearchTerm = useRef(searchTerm)
   useEffect(() => {
-    if (resultsListRef.current) {
+    if (
+      resultsListRef.current &&
+      scrollResetForSearchTerm.current !== searchTerm
+    ) {
       resultsListRef.current.scrollTop = 0
     }
+    scrollResetForSearchTerm.current = searchTerm
     setHighlightedIndex(-1)
   }, [searchTerm, setHighlightedIndex])
+
+  // When the list opens, centre the selected option in it. This sets the
+  // list's own scrollTop so the page doesn't scroll.
+  const hasScrolledToSelected = useRef(false)
+  useLayoutEffect(() => {
+    if (hasScrolledToSelected.current) return
+    hasScrolledToSelected.current = true
+
+    const list = resultsListRef.current
+    const selectedIndex = displayedList.findIndex(
+      (el) => selectedValue === el.label || selectedValue === el.value,
+    )
+    const selectedItem = list?.children[selectedIndex] as
+      HTMLElement | undefined
+    if (list && selectedItem) {
+      list.scrollTop =
+        selectedItem.offsetTop -
+        (list.clientHeight - selectedItem.offsetHeight) / 2
+    }
+  }, [displayedList, selectedValue])
 
   return (
     <BoxWithPositionRelative>
       <StyledResultsContainer $positionRelative={positionRelative}>
         <ResultsList
           ref={resultsListRef}
+          id={listboxId}
+          role={displayedList.length ? 'listbox' : undefined}
+          aria-label={displayedList.length ? listboxLabel : undefined}
           $resultsBorder={resultsBorder}
           onKeyDown={onKeyDown}
         >
@@ -80,7 +132,9 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
               return (
                 <ListButton
                   key={el.label + '_list_item'}
-                  aria-label={el.label + '_list_item'}
+                  id={getOptionId(i)}
+                  role="option"
+                  aria-selected={highlightedIndex === i}
                   ref={itemRefs.current[i]}
                   onClick={() => onSelect(el)}
                   $isSelected={isSelected}
@@ -106,6 +160,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
           ) : (
             <EmptyResults
               onNotFound={onNotFound}
+              onMessageChange={onEmptyMessageChange}
               searchTerm={searchTerm}
               notFoundComponent={notFoundComponent}
             />
