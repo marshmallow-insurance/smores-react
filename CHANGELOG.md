@@ -1,3 +1,10 @@
+## [16.10.2](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.1...v16.10.2) (2026-10-16)
+
+### Bug Fixes
+
+* **SearchInput:** select the label and scroll to the selection when reopening ([#5229](https://github.com/marshmallow-insurance/smores-react/issues/5229)) ([ebebce2](https://github.com/marshmallow-insurance/smores-react/commit/ebebce210921b317d14d26514482aab6b9b61d93)), closes [#5218](https://github.com/marshmallow-insurance/smores-react/issues/5218)
+* **SearchInput:** update options when searchList or fuzzySearchOptions change ([#5228](https://github.com/marshmallow-insurance/smores-react/issues/5228)) ([df6be69](https://github.com/marshmallow-insurance/smores-react/commit/df6be698e74b9298ec1eed8830bb27f5179c02ed)), closes [#5218](https://github.com/marshmallow-insurance/smores-react/issues/5218)
+
 ## [16.10.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.0...v16.10.1) (2026-10-16)
 
 ### Bug Fixes
