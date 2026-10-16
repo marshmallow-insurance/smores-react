@@ -1,4 +1,4 @@
-import { FC, KeyboardEvent, useRef, useState } from 'react'
+import { FC, KeyboardEvent, useId, useRef, useState } from 'react'
 import styled, { css, useTheme } from 'styled-components'
 
 import { Box } from '../Box'
@@ -19,7 +19,6 @@ import {
   useListNavigation,
   useRole,
 } from '@floating-ui/react'
-import { useUniqueId } from '../utils/id'
 import { focusOutlineStyle } from '../utils/focusOutline'
 
 export type ActionDropdownProps = {
@@ -48,7 +47,8 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const listRef = useRef<Array<HTMLElement | null>>([])
 
-  const id = useUniqueId(idProp)
+  const generatedId = useId()
+  const id = idProp ?? generatedId
   const buttonId = `${id}-button`
 
   const theme = useTheme()
