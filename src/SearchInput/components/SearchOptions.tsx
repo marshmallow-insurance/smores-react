@@ -207,9 +207,10 @@ const ResultsList = styled.ul<
     0px 2px 4px rgba(18, 18, 23, 0.04);
 
   li {
-    padding: 16px 14px;
+    padding: 14px;
     box-sizing: border-box;
     font-size: 16px;
+    line-height: 20px;
     color: ${({ theme }) => theme.color.text.base};
     cursor: pointer;
   }
@@ -218,6 +219,7 @@ const ResultsList = styled.ul<
 const ListButton = styled.li<{ $isSelected: boolean; $showBg: boolean }>`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   &:focus {
     outline: none;
