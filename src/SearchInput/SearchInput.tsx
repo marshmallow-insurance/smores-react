@@ -2,6 +2,7 @@ import Fuse, { IFuseOptions } from 'fuse.js'
 import {
   ChangeEvent,
   FocusEvent,
+  MouseEvent,
   ReactNode,
   forwardRef,
   useMemo,
@@ -198,7 +199,25 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       }
     }
 
-    const handleClick = () => {
+    // Reopening a field with a selection usually means changing it, so
+    // select the label and let typing replace it rather than append to it
+    const shouldSelectLabel =
+      !showOptions && searchQuery === null && selectedValue !== null
+
+    const handleMouseDown = (event: MouseEvent<HTMLInputElement>) => {
+      // Focus and select ourselves, so the browser doesn't place a caret
+      // (Safari can otherwise undo the selection on mouseup)
+      const input = event.currentTarget
+      if (shouldSelectLabel && document.activeElement !== input) {
+        event.preventDefault()
+        input.focus()
+      }
+    }
+
+    const handleClick = (event: { currentTarget: HTMLInputElement }) => {
+      if (shouldSelectLabel) {
+        event.currentTarget.select()
+      }
       setShowOptions(true)
       if (searchQuery !== null) {
         updateSearchQuery(searchQuery)
@@ -309,7 +328,13 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               onChange={handleInputChange}
               selected={isSelected}
               onClick={handleClick}
-              onKeyDown={handleKeyDown}
+              onMouseDown={handleMouseDown}
+              onKeyDown={(event) => {
+                if (event.key === 'ArrowDown' && shouldSelectLabel) {
+                  event.currentTarget.select()
+                }
+                handleKeyDown(event)
+              }}
               onBlur={(e) => {
                 onBlur?.(e)
               }}
