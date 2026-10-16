@@ -25,6 +25,12 @@ export default meta
 
 const InteractiveTemplate = (args: CurrencyInputProps) => {
   const [value, setValue] = useState(args.value ?? '')
+  const [syncedArgValue, setSyncedArgValue] = useState(args.value)
+
+  if (args.value !== syncedArgValue) {
+    setSyncedArgValue(args.value)
+    setValue(args.value ?? '')
+  }
 
   const handleChange = (e: string) => {
     setValue(e)
