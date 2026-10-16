@@ -116,10 +116,10 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const wrapperRef = useRef(null)
     const theme = useTheme()
     const id = useUniqueId(idProp)
-    const { assistiveTextId, errorMsgId, controlAria } = getFieldAria(
-      id,
-      otherProps,
-    )
+    const { assistiveTextId, errorMsgId, controlAria } = getFieldAria(id, {
+      ...otherProps,
+      renderAsTitle,
+    })
     const [showOptions, setShowOptions] = useState(false)
     const [selectedValue, setSelectedValue] = useControllableState<
       string | null
