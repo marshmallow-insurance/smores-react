@@ -83,4 +83,43 @@ describe('Card', () => {
     fireEvent.keyDown(card, { key: 'Tab' })
     expect(cardOnClickAction).toHaveBeenCalledTimes(3)
   })
+
+  it('does not expose button semantics when it has its own buttonAction or rightAction', () => {
+    render(
+      <Card
+        title="With button action"
+        cardOnClickAction={vi.fn()}
+        buttonAction={<Button variant="primary">Action</Button>}
+      />,
+    )
+    expect(
+      screen.queryByRole('button', { name: 'With button action' }),
+    ).not.toBeInTheDocument()
+
+    render(
+      <Card
+        title="With right action"
+        cardOnClickAction={vi.fn()}
+        rightAction={<Button variant="primary">Right</Button>}
+      />,
+    )
+    expect(
+      screen.queryByRole('button', { name: 'With right action' }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('ignores keydowns that bubble up from an interactive descendant', () => {
+    const cardOnClickAction = vi.fn()
+    render(
+      <Card title="Card Title" cardOnClickAction={cardOnClickAction}>
+        <Button variant="primary">Nested</Button>
+      </Card>,
+    )
+
+    const nestedButton = screen.getByRole('button', { name: 'Nested' })
+    fireEvent.keyDown(nestedButton, { key: 'Enter' })
+    fireEvent.keyDown(nestedButton, { key: ' ' })
+
+    expect(cardOnClickAction).not.toHaveBeenCalled()
+  })
 })
