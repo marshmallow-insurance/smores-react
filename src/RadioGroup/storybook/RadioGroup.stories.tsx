@@ -1,10 +1,27 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
 import { BaseValueType } from '../types'
-import { useState } from 'react'
+import { ComponentProps, useState } from 'react'
 import { RadioGroup } from '../RadioGroup'
 import { Box } from '../../Box'
 import { Text } from '../../Text'
 import visualSvg from './radio-visual.svg'
+
+// Keeps the selection in state so clicks update the story. Without this the
+// stories are read-only, because RadioGroup is controlled by `value`. The
+// parent keys this component on `args.value`, so a Controls change remounts it.
+const StatefulRadioGroup = (args: ComponentProps<typeof RadioGroup>) => {
+  const [value, setValue] = useState<BaseValueType>(args.value)
+  return (
+    <RadioGroup
+      {...args}
+      value={value}
+      onChange={(newValue) => {
+        setValue(newValue)
+        args.onChange(newValue)
+      }}
+    />
+  )
+}
 
 const options = [
   { label: 'Social', value: 'social' },
@@ -27,6 +44,7 @@ const meta: Meta<typeof RadioGroup> = {
     options,
     displayType: 'normal',
   },
+  render: (args) => <StatefulRadioGroup key={`${args.value}`} {...args} />,
   decorators: [
     (Story) => (
       <div style={{ margin: '64px' }}>
@@ -43,10 +61,8 @@ type Story = StoryObj<typeof RadioGroup>
 export const Default: Story = {}
 
 export const Interactive: Story = {
-  render: (args) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [value, setValue] = useState<BaseValueType>('')
-    return <RadioGroup {...args} onChange={setValue} value={value} />
+  args: {
+    value: '',
   },
 }
 
