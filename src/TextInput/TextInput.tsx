@@ -107,7 +107,7 @@ export const TextInput = forwardRef(function TextInput(
     <StyledFrontIcon
       $disabled={disabled}
       render={frontIcon}
-      color="color.icon.base"
+      color={disabled ? 'color.icon.subtle' : 'color.icon.base'}
     />
   ) : null
 
@@ -119,7 +119,7 @@ export const TextInput = forwardRef(function TextInput(
     <StyledTrailingIcon
       $disabled={disabled}
       render={trailingIcon}
-      color="color.icon.base"
+      color={disabled ? 'color.icon.subtle' : 'color.icon.base'}
     />
   ) : null
 

@@ -123,7 +123,7 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
         >
           <FontAwesomeIcon
             icon={faSterlingSign}
-            color={theme.color.text.subtle}
+            color={disabled ? theme.color.icon.subtle : theme.color.text.subtle}
           />
         </InputLeadingIconContainer>
         <Input

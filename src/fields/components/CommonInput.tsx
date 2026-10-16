@@ -112,16 +112,12 @@ export const StyledFrontIcon = styled(Icon)<SIcon>`
   left: 36px;
   margin-left: -24px;
   z-index: 1;
-  color: ${({ $disabled, theme }) =>
-    $disabled ? theme.color.icon.subtle : theme.color.text.base};
 `
 
 export const StyledTrailingIcon = styled(Icon)<SIcon>`
   position: relative;
   right: 36px;
   margin-right: -36px;
-  color: ${({ $disabled, theme }) =>
-    $disabled ? theme.color.icon.subtle : theme.color.text.base};
 `
 
 export const InputTrailingIconContainer = styled(IconContainer)<SIcon>`
