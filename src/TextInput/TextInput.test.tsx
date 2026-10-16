@@ -152,4 +152,20 @@ describe('TextInput', () => {
 
     expect(icon).toHaveStyleRule('cursor', 'not-allowed')
   })
+
+  it('shows the disabled cursor over a disabled custom icon', () => {
+    render(
+      <TextInput
+        label="Name"
+        placeholder="Name"
+        value=""
+        onChange={noop}
+        disabled
+        frontIconComponent={<span data-testid="custom-icon">x</span>}
+      />,
+    )
+    const icon = screen.getByTestId('custom-icon').parentElement!
+
+    expect(icon).toHaveStyleRule('cursor', 'not-allowed')
+  })
 })

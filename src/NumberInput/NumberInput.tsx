@@ -142,7 +142,11 @@ export const NumberInput = forwardRef(function NumberInput(
   }
 
   const frontIconToRender = frontIconComponent ? (
-    <InputLeadingIconContainer $size={20} $iconColor={theme.color.text.subtle}>
+    <InputLeadingIconContainer
+      $size={20}
+      $disabled={disabled}
+      $iconColor={disabled ? theme.color.icon.subtle : theme.color.text.subtle}
+    >
       {frontIconComponent}
     </InputLeadingIconContainer>
   ) : frontIcon ? (
@@ -154,7 +158,11 @@ export const NumberInput = forwardRef(function NumberInput(
   ) : null
 
   const trailingIconToRender = trailingIconComponent ? (
-    <InputTrailingIconContainer $size={20} $iconColor={theme.color.text.subtle}>
+    <InputTrailingIconContainer
+      $size={20}
+      $disabled={disabled}
+      $iconColor={disabled ? theme.color.icon.subtle : theme.color.text.subtle}
+    >
       {trailingIconComponent}
     </InputTrailingIconContainer>
   ) : trailingIcon ? (
