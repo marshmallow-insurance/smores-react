@@ -1,4 +1,4 @@
-import { beforeEach, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '../testUtils'
 import { noop } from '../utils/noop'
 import { SearchInput } from './SearchInput'
@@ -17,11 +17,146 @@ beforeEach(() => {
     scrollIntoViewMock as unknown as Element['scrollIntoView']
 })
 
+afterEach(() => {
+  vi.restoreAllMocks()
+})
+
 const openResults = (container: HTMLElement) => {
   const input = container.querySelector('input')!
   fireEvent.click(input)
   return input
 }
+
+describe('SearchInput when searchList changes', () => {
+  const fruits = [
+    { label: 'Apple', value: 'apple', tags: ['red'] },
+    { label: 'Banana', value: 'banana', tags: ['yellow'] },
+  ]
+  const vegetables = [
+    { label: 'Carrot', value: 'carrot', tags: ['orange'] },
+    { label: 'Courgette', value: 'courgette', tags: ['green'] },
+  ]
+
+  it('shows the new options when the query is empty', () => {
+    const { container, rerender } = render(
+      <SearchInput searchList={fruits} onFound={noop} />,
+    )
+    rerender(<SearchInput searchList={vegetables} onFound={noop} />)
+    openResults(container)
+
+    expect(screen.getByText('Carrot')).toBeInTheDocument()
+    expect(screen.getByText('Courgette')).toBeInTheDocument()
+    expect(screen.queryByText('Apple')).not.toBeInTheDocument()
+  })
+
+  it('filters the new options when the query is unchanged', () => {
+    const { container, rerender } = render(
+      <SearchInput searchList={fruits} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.change(input, { target: { value: 'C' } })
+
+    rerender(<SearchInput searchList={vegetables} onFound={noop} />)
+
+    expect(screen.getByText('Carrot')).toBeInTheDocument()
+    expect(screen.getByText('Courgette')).toBeInTheDocument()
+  })
+
+  it('fuzzy searches the new options when the query is unchanged', () => {
+    const { container, rerender } = render(
+      <SearchInput searchList={fruits} onFound={noop} enableFuzzySearch />,
+    )
+    const input = openResults(container)
+    fireEvent.change(input, { target: { value: 'Carrot' } })
+
+    rerender(
+      <SearchInput searchList={vegetables} onFound={noop} enableFuzzySearch />,
+    )
+
+    expect(screen.getByText('Carrot')).toBeInTheDocument()
+  })
+
+  it('fuzzy searches with the new fuzzySearchOptions', () => {
+    const { container, rerender } = render(
+      <SearchInput
+        searchList={fruits}
+        onFound={noop}
+        fuzzySearchOptions={{ keys: ['label'] }}
+      />,
+    )
+    const input = openResults(container)
+    fireEvent.change(input, { target: { value: 'yellow' } })
+    expect(screen.queryByText('Banana')).not.toBeInTheDocument()
+
+    rerender(
+      <SearchInput
+        searchList={fruits}
+        onFound={noop}
+        fuzzySearchOptions={{ keys: ['tags'] }}
+      />,
+    )
+
+    expect(screen.getByText('Banana')).toBeInTheDocument()
+  })
+
+  it('stops fuzzy searching when enableFuzzySearch is turned off', () => {
+    const { container, rerender } = render(
+      <SearchInput searchList={fruits} onFound={noop} enableFuzzySearch />,
+    )
+    const input = openResults(container)
+    fireEvent.change(input, { target: { value: 'Bnana' } })
+    expect(screen.getByText('Banana')).toBeInTheDocument()
+
+    rerender(<SearchInput searchList={fruits} onFound={noop} />)
+
+    expect(screen.queryByText('Banana')).not.toBeInTheDocument()
+  })
+
+  it('does not select anything on Enter when the highlighted option was removed', () => {
+    const onFound = vi.fn()
+    const { container, rerender } = render(
+      <SearchInput searchList={vegetables} onFound={onFound} />,
+    )
+    const input = openResults(container)
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+
+    rerender(<SearchInput searchList={fruits.slice(0, 1)} onFound={onFound} />)
+
+    expect(() => fireEvent.keyDown(input, { key: 'Enter' })).not.toThrow()
+    expect(onFound).not.toHaveBeenCalled()
+  })
+
+  it('does not select a different option on Enter when the list is swapped at the same length', () => {
+    const onFound = vi.fn()
+    const { container, rerender } = render(
+      <SearchInput searchList={vegetables} onFound={onFound} />,
+    )
+    const input = openResults(container)
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+
+    rerender(<SearchInput searchList={fruits} onFound={onFound} />)
+    fireEvent.keyDown(input, { key: 'Enter' })
+
+    expect(onFound).not.toHaveBeenCalled()
+  })
+
+  it('keeps the highlight when the same options are passed as a new array', () => {
+    const onFound = vi.fn()
+    const { container, rerender } = render(
+      <SearchInput searchList={vegetables} onFound={onFound} />,
+    )
+    const input = openResults(container)
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+
+    rerender(<SearchInput searchList={[...vegetables]} onFound={onFound} />)
+    fireEvent.keyDown(input, { key: 'Enter' })
+
+    expect(onFound).toHaveBeenCalledWith('courgette')
+  })
+})
 
 describe('SearchInput', () => {
   it('cancels the leading icon width so the input aligns with its container', () => {
@@ -101,6 +236,123 @@ describe('SearchInput', () => {
 
     fireEvent.click(input)
     expect(screen.getAllByRole('option')).toHaveLength(searchList.length)
+  })
+
+  it('selects the label when reopening a field with a selection, so typing replaces it', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.click(screen.getByText('Option 3'))
+
+    fireEvent.click(input)
+    expect(input.selectionStart).toBe(0)
+    expect(input.selectionEnd).toBe('Option 3'.length)
+
+    // Once the list is open, clicking places the caret as normal
+    input.setSelectionRange(2, 2)
+    fireEvent.click(input)
+    expect(input.selectionStart).toBe(2)
+    expect(input.selectionEnd).toBe(2)
+  })
+
+  it('selects the label when tabbing into a field with a selection', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.click(screen.getByText('Option 3'))
+    input.setSelectionRange(2, 2)
+
+    fireEvent.focus(input)
+
+    expect(input.selectionStart).toBe(0)
+    expect(input.selectionEnd).toBe('Option 3'.length)
+  })
+
+  it('selects the label when reopening with ArrowDown', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.click(screen.getByText('Option 3'))
+    input.setSelectionRange(2, 2)
+
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+
+    expect(screen.getByRole('listbox')).toBeInTheDocument()
+    expect(input.selectionStart).toBe(0)
+    expect(input.selectionEnd).toBe('Option 3'.length)
+  })
+
+  it('takes over the mousedown only when focusing a field with a selection', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = container.querySelector('input')!
+    // No selection yet, so the browser handles the click as normal
+    expect(fireEvent.mouseDown(input)).toBe(true)
+
+    openResults(container)
+    fireEvent.click(screen.getByText('Option 3'))
+    input.blur()
+
+    expect(fireEvent.mouseDown(input)).toBe(false)
+    expect(input).toHaveFocus()
+    expect(input.selectionStart).toBe(0)
+    expect(input.selectionEnd).toBe('Option 3'.length)
+  })
+
+  it('does not select the text when reopening without a selection', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.change(input, { target: { value: 'Opt' } })
+    input.setSelectionRange(3, 3)
+    fireEvent.keyDown(input, { key: 'Escape' })
+
+    fireEvent.click(input)
+
+    expect(input.selectionStart).toBe(3)
+    expect(input.selectionEnd).toBe(3)
+  })
+
+  it('centres the selected option in the list when it opens', () => {
+    const itemHeight = 50
+    const listHeight = 200
+    vi.spyOn(HTMLElement.prototype, 'offsetTop', 'get').mockImplementation(
+      function (this: HTMLElement) {
+        const siblings = Array.from(this.parentElement?.children ?? [])
+        return siblings.indexOf(this) * itemHeight
+      },
+    )
+    vi.spyOn(HTMLElement.prototype, 'offsetHeight', 'get').mockReturnValue(
+      itemHeight,
+    )
+    vi.spyOn(HTMLElement.prototype, 'clientHeight', 'get').mockReturnValue(
+      listHeight,
+    )
+
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.click(screen.getByText('Option 20'))
+    fireEvent.click(input)
+
+    expect(screen.getByRole('listbox').scrollTop).toBe(
+      20 * itemHeight - (listHeight - itemHeight) / 2,
+    )
+  })
+
+  it('opens at the top when nothing is selected', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    openResults(container)
+
+    expect(screen.getByRole('listbox').scrollTop).toBe(0)
   })
 
   describe('combobox semantics', () => {
