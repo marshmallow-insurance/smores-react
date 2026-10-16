@@ -252,5 +252,43 @@ describe('SearchInput', () => {
       expect(input).not.toHaveAttribute('aria-activedescendant')
       expect(onFound).not.toHaveBeenCalled()
     })
+
+    it('announces the text of a custom notFoundComponent', () => {
+      render(
+        <SearchInput
+          label="Day"
+          searchList={searchList}
+          onFound={noop}
+          notFoundComponent={(searchTerm) => (
+            <div>
+              <p>
+                <span aria-hidden="true">🔍</span>No matches for &apos;
+                {searchTerm}&apos;.
+              </p>
+              <p>
+                Try another spelling
+                <br />
+                or browse the list.
+              </p>
+            </div>
+          )}
+        />,
+      )
+      const input = screen.getByRole('combobox')
+      fireEvent.click(input)
+
+      fireEvent.change(input, { target: { value: 'zzz' } })
+      expect(screen.getByRole('status')).toHaveTextContent(
+        "No matches for 'zzz'. Try another spelling or browse the list.",
+      )
+
+      fireEvent.change(input, { target: { value: 'zzzz' } })
+      expect(screen.getByRole('status')).toHaveTextContent(
+        "No matches for 'zzzz'. Try another spelling or browse the list.",
+      )
+
+      fireEvent.change(input, { target: { value: 'Option' } })
+      expect(screen.getByRole('status')).toBeEmptyDOMElement()
+    })
   })
 })

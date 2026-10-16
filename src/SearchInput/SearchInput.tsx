@@ -123,6 +123,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     })
     const [searchQuery, setSearchQuery] = useState<string | null>(null)
     const [highlightedIndex, setHighlightedIndex] = useState(-1)
+    const [emptyMessage, setEmptyMessage] = useState('')
 
     const selectedValueLabel = searchList.find(
       (option) =>
@@ -368,11 +369,12 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               positionRelative={resultsRelativePosition}
               resultsBorder={resultsBorder}
               onNotFound={onNotFound}
+              onEmptyMessageChange={setEmptyMessage}
               notFoundComponent={notFoundComponent?.(searchQuery ?? '')}
             />
           )}
         </Field>
-        <LiveRegion role="status">{noResults ? 'No results' : ''}</LiveRegion>
+        <LiveRegion role="status">{noResults ? emptyMessage : ''}</LiveRegion>
       </Wrapper>
     )
   },

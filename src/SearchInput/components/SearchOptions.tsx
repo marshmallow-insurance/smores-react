@@ -29,6 +29,7 @@ type SearchOptionsProps = {
   positionRelative: boolean
   resultsBorder: boolean
   onNotFound?: (searchTerm: string) => void
+  onEmptyMessageChange: (message: string) => void
   searchTerm: string
   notFoundComponent?: ReactNode
 }
@@ -46,6 +47,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   positionRelative,
   resultsBorder,
   onNotFound,
+  onEmptyMessageChange,
   searchTerm,
   notFoundComponent,
 }) => {
@@ -123,6 +125,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
           ) : (
             <EmptyResults
               onNotFound={onNotFound}
+              onMessageChange={onEmptyMessageChange}
               searchTerm={searchTerm}
               notFoundComponent={notFoundComponent}
             />
