@@ -6,6 +6,7 @@ import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { useUniqueId } from '../utils/id'
 import { getFieldAria } from '../fields/fieldAria'
 import {
+  fieldDisabledStyle,
   fieldFocusAttrs,
   fieldFocusRing,
   fieldHoverBorderColor,
@@ -118,7 +119,6 @@ const StyledTextArea = styled.textarea.attrs(fieldFocusAttrs)<TextArea>`
   color: ${({ theme }) => theme.color.text.base};
   resize: ${({ $resize }) => $resize};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'text')};
-  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   border-color: ${({ $error, theme }) =>
     $error ? theme.color.feedback.negative[200] : theme.color.border.subtle};
   outline: none;
@@ -135,4 +135,9 @@ const StyledTextArea = styled.textarea.attrs(fieldFocusAttrs)<TextArea>`
   }
 
   ${fieldFocusRing}
+  ${fieldDisabledStyle}
+
+  &::placeholder {
+    color: ${({ theme }) => theme.color.text.subtle};
+  }
 `
