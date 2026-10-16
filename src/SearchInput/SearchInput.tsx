@@ -144,29 +144,31 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       },
     })
 
-    // oxlint-disable-next-line react/react-compiler
+    const isFuzzySearch = enableFuzzySearch || !!fuzzySearchOptions
+
     const fuse = useMemo(() => {
+      if (!isFuzzySearch) {
+        return null
+      }
       return new Fuse(searchList, {
         ...defaultFuzzySearchOptions,
         ...fuzzySearchOptions,
       })
-    }, [searchList])
+    }, [isFuzzySearch, searchList, fuzzySearchOptions])
 
-    // oxlint-disable-next-line react/react-compiler
     const filteredList = useMemo(() => {
       if (searchQuery === null || searchQuery === '') {
         return searchList
       }
 
-      if (enableFuzzySearch || !!fuzzySearchOptions) {
+      if (fuse) {
         return fuse.search(searchQuery).map(({ item }) => item)
       }
 
       return searchList.filter(({ label }) =>
         label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
-      // oxlint-disable-next-line react/react-compiler
-    }, [searchQuery, enableFuzzySearch, !!fuzzySearchOptions])
+    }, [searchQuery, searchList, fuse])
 
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
@@ -229,9 +231,11 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       key: string
       preventDefault: () => void
     }) => {
-      if (event.key === 'Enter' && highlightedIndex !== -1) {
+      // searchList can change under a highlighted option, so check it still exists
+      const focusedItem = filteredList[highlightedIndex] as
+        SearchInputItem | undefined
+      if (event.key === 'Enter' && focusedItem) {
         event.preventDefault()
-        const focusedItem = filteredList[highlightedIndex]
         handleSelect(focusedItem)
       } else if (event.key === 'ArrowDown') {
         event.preventDefault()
