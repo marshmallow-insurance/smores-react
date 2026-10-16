@@ -15,6 +15,7 @@ import {
   InputLeadingIconContainer,
 } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
+import { getFieldAria } from '../fields/fieldAria'
 import { faSterlingSign } from '@awesome.me/kit-46ca99185c/icons/classic/regular'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useTheme } from 'styled-components'
@@ -65,6 +66,10 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
 ) {
   const theme = useTheme()
   const id = useUniqueId(idProp)
+  const { assistiveTextId, errorMsgId, controlAria } = getFieldAria(id, {
+    ...fieldProps,
+    error,
+  })
 
   const formatCurrency = (value: string) => {
     const decimalIndex = value.indexOf('.')
@@ -103,7 +108,13 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
   }
 
   return (
-    <Field {...fieldProps} htmlFor={id} error={error}>
+    <Field
+      {...fieldProps}
+      htmlFor={id}
+      error={error}
+      assistiveTextId={assistiveTextId}
+      errorMsgId={errorMsgId}
+    >
       <Box flex alignItems="center" justifyContent="flex-start">
         <InputLeadingIconContainer
           $size={20}
@@ -131,6 +142,7 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
             onInputChange?.(e)
           }}
           onWheel={(e: WheelEvent<HTMLInputElement>) => e.currentTarget.blur()}
+          {...controlAria}
           onBlur={onBlur}
         />
       </Box>
