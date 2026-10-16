@@ -19,7 +19,8 @@ import {
 import { useOnClickOutside } from '../hooks'
 import { useUniqueId } from '../utils/id'
 import { useControllableState } from '../utils/useControlledState'
-import { SearchOptions } from './components/SearchOptions'
+import { SearchKeyEvent, SearchOptions } from './components/SearchOptions'
+import { visuallyHidden } from '../utils/visuallyHidden'
 import { IconContainer } from '../sharedStyles/shared.styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -122,6 +123,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     })
     const [searchQuery, setSearchQuery] = useState<string | null>(null)
     const [highlightedIndex, setHighlightedIndex] = useState(-1)
+    const [emptyMessage, setEmptyMessage] = useState('')
 
     const selectedValueLabel = searchList.find(
       (option) =>
@@ -129,18 +131,21 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     )?.label
 
     const handleBlur = () => {
-      if (selectedValue) {
-        setSearchQuery(selectedValueLabel ?? null)
-      } else if (!selectedValue) {
-        setSearchQuery(null)
-      }
+      setSearchQuery(null)
+    }
+
+    // Every way of closing the list goes through here, so a reopened list
+    // never starts with a stale highlighted option.
+    const closeOptions = () => {
+      setShowOptions(false)
+      setHighlightedIndex(-1)
     }
 
     useOnClickOutside({
       ref: wrapperRef,
       callback: () => {
         handleBlur()
-        setShowOptions(false)
+        closeOptions()
       },
     })
 
@@ -189,7 +194,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
       if (query === null) {
         setSelectedValue(null)
-        setShowOptions(false)
+        closeOptions()
       } else {
         setShowOptions(true)
       }
@@ -199,9 +204,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       setShowOptions(true)
       if (searchQuery !== null) {
         updateSearchQuery(searchQuery)
-        setShowOptions(true)
-      } else if (selectedValue !== null && searchQuery === null) {
-        setSearchQuery(selectedValueLabel || null)
         setShowOptions(true)
       }
     }
@@ -224,28 +226,47 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     }
 
     const handleCaretClick = () => {
-      setShowOptions(!showOptions)
+      if (showOptions) {
+        closeOptions()
+      } else {
+        setShowOptions(true)
+      }
     }
 
-    const handleKeyDown = (event: {
-      key: string
-      preventDefault: () => void
-    }) => {
-      // searchList can change under a highlighted option, so check it still exists
-      const focusedItem = filteredList[highlightedIndex] as
-        SearchInputItem | undefined
-      if (event.key === 'Enter' && focusedItem) {
+    const listboxId = `${id}-listbox`
+    const getOptionId = (index: number) => `${id}-option-${index}`
+    const hasResults = showOptions && filteredList.length > 0
+    const hasHighlight =
+      hasResults &&
+      highlightedIndex >= 0 &&
+      highlightedIndex < filteredList.length
+    const noResults = showOptions && filteredList.length === 0
+
+    const handleKeyDown = (event: SearchKeyEvent) => {
+      if (event.key === 'Escape') {
+        if (!showOptions) return
         event.preventDefault()
-        handleSelect(focusedItem)
+        event.stopPropagation()
+        closeOptions()
+      } else if (event.key === 'Enter') {
+        if (hasHighlight) {
+          event.preventDefault()
+          handleSelect(filteredList[highlightedIndex])
+        }
       } else if (event.key === 'ArrowDown') {
         event.preventDefault()
-        const nextIndex = (highlightedIndex + 1) % filteredList.length
-        setHighlightedIndex(nextIndex)
+        if (!showOptions) {
+          setShowOptions(true)
+        } else if (filteredList.length > 0) {
+          setHighlightedIndex((highlightedIndex + 1) % filteredList.length)
+        }
       } else if (event.key === 'ArrowUp') {
         event.preventDefault()
-        const prevIndex =
-          (highlightedIndex - 1 + filteredList.length) % filteredList.length
-        setHighlightedIndex(prevIndex)
+        if (showOptions && filteredList.length > 0) {
+          setHighlightedIndex(
+            (highlightedIndex - 1 + filteredList.length) % filteredList.length,
+          )
+        }
       }
     }
 
@@ -278,6 +299,13 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               $frontIcon={showIcon}
               $fallbackStyle={fallbackStyle}
               autoComplete="off"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded={hasResults}
+              aria-controls={hasResults ? listboxId : undefined}
+              aria-activedescendant={
+                hasHighlight ? getOptionId(highlightedIndex) : undefined
+              }
               value={displayedInputText}
               onFocus={handleClick}
               onChange={handleInputChange}
@@ -335,15 +363,20 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               highlightedIndex={highlightedIndex}
               setHighlightedIndex={setHighlightedIndex}
               onKeyDown={handleKeyDown}
+              listboxId={listboxId}
+              listboxLabel={otherProps.label ?? placeholder ?? 'Search results'}
+              getOptionId={getOptionId}
               searchTerm={searchQuery || ''}
               onSelect={handleSelect}
               positionRelative={resultsRelativePosition}
               resultsBorder={resultsBorder}
               onNotFound={onNotFound}
+              onEmptyMessageChange={setEmptyMessage}
               notFoundComponent={notFoundComponent?.(searchQuery ?? '')}
             />
           )}
         </Field>
+        <LiveRegion role="status">{noResults ? emptyMessage : ''}</LiveRegion>
       </Wrapper>
     )
   },
@@ -351,6 +384,10 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
 const Wrapper = styled(Box)`
   position: relative;
+`
+
+const LiveRegion = styled.div`
+  ${visuallyHidden}
 `
 
 const Line = styled(Box)`
