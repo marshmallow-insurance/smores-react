@@ -149,7 +149,7 @@ export const NumberInput = forwardRef(function NumberInput(
     <StyledFrontIcon
       $disabled={disabled}
       render={frontIcon}
-      color={disabled ? 'color.icon.subtle' : 'sesame'}
+      color={disabled ? 'color.icon.subtle' : 'color.text.subtle'}
     />
   ) : null
 
@@ -161,7 +161,7 @@ export const NumberInput = forwardRef(function NumberInput(
     <StyledTrailingIcon
       $disabled={disabled}
       render={trailingIcon}
-      color={disabled ? 'color.icon.subtle' : 'sesame'}
+      color={disabled ? 'color.icon.subtle' : 'color.text.subtle'}
     />
   ) : null
 
