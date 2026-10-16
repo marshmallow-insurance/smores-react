@@ -12,6 +12,7 @@ import { TransientProps } from '../../utils/utilTypes'
 import { Box } from '../../Box'
 import { Icon } from '../../Icon'
 import { EmptyResults } from './EmptyResults'
+import { fontStyleMapping } from '../../Text/fontMapping'
 
 type Option = {
   label: string
@@ -184,7 +185,8 @@ const StyledResultsContainer = styled.div<
   top: -8px;
 
   ul {
-    max-height: 192px;
+    box-sizing: border-box;
+    max-height: 194px;
   }
 `
 
@@ -207,9 +209,9 @@ const ResultsList = styled.ul<
     0px 2px 4px rgba(18, 18, 23, 0.04);
 
   li {
-    padding: 16px 14px;
+    padding: 14px;
     box-sizing: border-box;
-    font-size: 16px;
+    ${fontStyleMapping['body-regular']};
     color: ${({ theme }) => theme.color.text.base};
     cursor: pointer;
   }
@@ -218,6 +220,7 @@ const ResultsList = styled.ul<
 const ListButton = styled.li<{ $isSelected: boolean; $showBg: boolean }>`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   &:focus {
     outline: none;
