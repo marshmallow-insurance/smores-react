@@ -1,3 +1,33 @@
+## [16.11.2](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.1...v16.11.2) (2026-10-16)
+
+### Bug Fixes
+
+* **ButtonContainer:** keep supporting text centred under buttons ([#5239](https://github.com/marshmallow-insurance/smores-react/issues/5239)) ([e37d81f](https://github.com/marshmallow-insurance/smores-react/commit/e37d81fd7daa767525754dd1c24f41efa580fbbb))
+
+## [16.11.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.0...v16.11.1) (2026-10-16)
+
+### Bug Fixes
+
+* **Inputs:** use a grey disabled style instead of opacity ([#5238](https://github.com/marshmallow-insurance/smores-react/issues/5238)) ([ce12ffc](https://github.com/marshmallow-insurance/smores-react/commit/ce12ffcec2ede881e60a6254a2f549aec5fb100a))
+
+## [16.11.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.8...v16.11.0) (2026-10-16)
+
+### Features
+
+* **CurrencyInput:** support comma-separated thousands formatting ([#5236](https://github.com/marshmallow-insurance/smores-react/issues/5236)) ([26b9253](https://github.com/marshmallow-insurance/smores-react/commit/26b92531be686b39f1b579965a9b5bde4c75efb2))
+
+## [16.10.8](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.7...v16.10.8) (2026-10-16)
+
+### Bug Fixes
+
+* **Textarea:** match Input hover and focus states ([#5237](https://github.com/marshmallow-insurance/smores-react/issues/5237)) ([26ee54a](https://github.com/marshmallow-insurance/smores-react/commit/26ee54a5a1391585c203bea6cfa9882e51fdb80c))
+
+## [16.10.7](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.6...v16.10.7) (2026-10-16)
+
+### Bug Fixes
+
+* **ActionDropdown:** make the dropdown keyboard and screen-reader accessible ([#5234](https://github.com/marshmallow-insurance/smores-react/issues/5234)) ([527aae1](https://github.com/marshmallow-insurance/smores-react/commit/527aae179e521ad7d4bdff4576037de5b174036b))
+
 ## [16.10.6](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.5...v16.10.6) (2026-10-16)
 
 ### Bug Fixes

@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
-.c3 {
+.c4 {
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
@@ -17,20 +17,20 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
   width: auto;
 }
 
-.c3:focus-visible {
+.c4:focus-visible {
   outline: 2px solid #292924;
   outline-offset: 2px;
 }
 
-.c3:hover {
+.c4:hover {
   background-color: #f759a9;
 }
 
-.c3:active {
+.c4:active {
   background-color: #e43e93;
 }
 
-.c6 {
+.c7 {
   position: relative;
   background-color: #ff88c8;
   box-shadow: none;
@@ -47,20 +47,20 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
   background-color: #dad2c4;
 }
 
-.c6:focus-visible {
+.c7:focus-visible {
   outline: 2px solid #292924;
   outline-offset: 2px;
 }
 
-.c6:hover {
+.c7:hover {
   background-color: #beb4a0;
 }
 
-.c6:active {
+.c7:active {
   background-color: #9d927b;
 }
 
-.c4 {
+.c5 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,7 +68,7 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
   opacity: 1;
 }
 
-.c5 {
+.c6 {
   padding: 16px 0;
 }
 
@@ -79,7 +79,6 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
 .c1 {
   display: flex;
   flex-direction: column;
-  gap: 12px;
   width: 100%;
   box-sizing: border-box;
   position: fixed;
@@ -93,12 +92,12 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
   border-radius: 16px 16px 0 0;
 }
 
-.c2 {
+.c3 {
   display: grid;
   gap: 12px;
 }
 
-.c8 {
+.c9 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -108,13 +107,20 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
   vertical-align: top;
 }
 
-.c8 svg {
+.c9 svg {
   width: 100%;
   height: 80%;
   overflow: visible;
 }
 
-.c7 {
+.c2 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.c8 {
   margin: 0;
   font-size: 16px;
   font-weight: 400;
@@ -140,9 +146,18 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
 }
 
 @media (min-width: 768px) {
-  .c2 {
+  .c3 {
     grid-template-columns: minmax(0, 400px);
     justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .c2 {
+    align-items: center;
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -157,58 +172,62 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
     <div
       class="c2"
     >
-      <button
-        aria-describedby="_r_0_"
+      <div
         class="c3"
       >
-        <div
+        <button
+          aria-describedby="_r_0_"
           class="c4"
         >
           <div
-            class="c5 childrenContainer"
+            class="c5"
           >
-            Continue
+            <div
+              class="c6 childrenContainer"
+            >
+              Continue
+            </div>
           </div>
-        </div>
-      </button>
-      <button
-        class="c6"
-      >
-        <div
-          class="c4"
+        </button>
+        <button
+          class="c7"
         >
           <div
-            class="c5 childrenContainer"
+            class="c5"
           >
-            Back
+            <div
+              class="c6 childrenContainer"
+            >
+              Back
+            </div>
           </div>
-        </div>
-      </button>
-    </div>
-    <p
-      class="c7"
-      id="_r_0_"
-    >
-      <span
+        </button>
+      </div>
+      <p
         class="c8"
+        id="_r_0_"
       >
-        <svg
-          aria-hidden="true"
-          class="svg-inline--fa fa-lock"
-          color="#636768"
-          data-icon="lock"
-          data-prefix="fas"
-          role="img"
-          viewBox="0 0 384 512"
+        <span
+          class="c9"
         >
-          <path
-            d="M128 96l0 64 128 0 0-64c0-35.3-28.7-64-64-64s-64 28.7-64 64zM64 160l0-64C64 25.3 121.3-32 192-32S320 25.3 320 96l0 64c35.3 0 64 28.7 64 64l0 224c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 224c0-35.3 28.7-64 64-64z"
-            fill="currentColor"
-          />
-        </svg>
-      </span>
-      This won't impact your credit score
-    </p>
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-lock"
+            color="#636768"
+            data-icon="lock"
+            data-prefix="fas"
+            role="img"
+            viewBox="0 0 384 512"
+          >
+            <path
+              d="M128 96l0 64 128 0 0-64c0-35.3-28.7-64-64-64s-64 28.7-64 64zM64 160l0-64C64 25.3 121.3-32 192-32S320 25.3 320 96l0 64c35.3 0 64 28.7 64 64l0 224c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 224c0-35.3 28.7-64 64-64z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        This won't impact your credit score
+      </p>
+    </div>
   </div>
 </div>
 `;

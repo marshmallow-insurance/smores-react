@@ -14,32 +14,6 @@ exports[`ActionDropdown > renders correctly with default props 1`] = `
   height: 100%;
 }
 
-.c5 {
-  padding: 0;
-  margin: 0;
-  max-height: 188px;
-}
-
-.c6 {
-  padding: 16px 24px;
-  text-align: left;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  box-sizing: border-box;
-  font-size: 14px;
-  cursor: pointer;
-  color: #292924;
-}
-
-.c6:hover {
-  background-color: #e2d2b8;
-}
-
-.c6:last-child {
-  border-bottom: none;
-}
-
 .c1 {
   color: #292924;
   background-color: #fbf8f5;
@@ -50,10 +24,18 @@ exports[`ActionDropdown > renders correctly with default props 1`] = `
   align-items: center;
   justify-content: space-between;
   text-align: center;
+  border: 0;
   border-radius: 100px;
   padding: 16px 16px 14px;
   box-sizing: border-box;
+  font: inherit;
+  cursor: pointer;
   user-select: none;
+}
+
+.c1:focus-visible {
+  outline: 2px solid #292924;
+  outline-offset: 2px;
 }
 
 .c2 {
@@ -69,8 +51,6 @@ exports[`ActionDropdown > renders correctly with default props 1`] = `
   width: 210px;
   height: 48px;
   text-align: center;
-  cursor: pointer;
-  outline: none;
   border-radius: 8px;
 }
 
@@ -91,8 +71,14 @@ exports[`ActionDropdown > renders correctly with default props 1`] = `
   <div
     class="c0"
   >
-    <div
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Select an option"
       class="c1"
+      id="_r_0_-button"
+      role="combobox"
+      type="button"
     >
       <span
         class="c2"
@@ -108,35 +94,20 @@ exports[`ActionDropdown > renders correctly with default props 1`] = `
           class="svg-inline--fa fa-chevron-down"
           color="#292924"
           data-icon="chevron-down"
-          data-prefix="far"
+          data-prefix="fas"
           role="img"
           viewBox="0 0 448 512"
         >
           <path
-            d="M207.5 409c9.4 9.4 24.6 9.4 33.9 0l200-200c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-183 183-183-183c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l200 200z"
+            d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
             fill="currentColor"
           />
         </svg>
       </span>
-    </div>
+    </button>
     <div
       class="c4"
-    >
-      <ul
-        class="c5"
-      >
-        <li
-          class="c6"
-        >
-          Default grey
-        </li>
-        <li
-          class="c6"
-        >
-          Brand
-        </li>
-      </ul>
-    </div>
+    />
   </div>
 </div>
 `;
