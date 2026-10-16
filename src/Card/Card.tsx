@@ -63,9 +63,16 @@ export const Card: FC<CardProps> = ({
     (!!iconComponent || !!leadingIcon || !!title || !!body) && children
 
   const isNotClickable = !cardOnClickAction
+  // buttonAction/rightAction can hold their own interactive element (Button, Link).
+  // role="button" would hide that element from assistive tech, so the whole-card
+  // keyboard/button semantics are only safe to add when there's nothing else to click.
+  const hasOwnInteractiveSlot = !!buttonAction || !!rightAction
+  const isKeyboardOperable = !isNotClickable && !hasOwnInteractiveSlot
 
   const handleKeyDown: KeyboardEventHandler<HTMLDivElement> = (event) => {
     if (!cardOnClickAction) return
+    // Ignore keydowns that bubbled up from a nested interactive child
+    if (event.target !== event.currentTarget) return
 
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault()
@@ -103,9 +110,9 @@ export const Card: FC<CardProps> = ({
       $fallbackStyle={fallbackStyle}
       $isNotClickable={isNotClickable}
       onClick={cardOnClickAction}
-      onKeyDown={isNotClickable ? undefined : handleKeyDown}
-      role={isNotClickable ? undefined : 'button'}
-      tabIndex={isNotClickable ? undefined : 0}
+      onKeyDown={isKeyboardOperable ? handleKeyDown : undefined}
+      role={isKeyboardOperable ? 'button' : undefined}
+      tabIndex={isKeyboardOperable ? 0 : undefined}
       {...otherProps}
     >
       {tag && visual && <TagWrapper>{tag}</TagWrapper>}
