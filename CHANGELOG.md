@@ -1,3 +1,9 @@
+## [16.10.7](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.6...v16.10.7) (2026-10-16)
+
+### Bug Fixes
+
+* **ActionDropdown:** make the dropdown keyboard and screen-reader accessible ([#5234](https://github.com/marshmallow-insurance/smores-react/issues/5234)) ([527aae1](https://github.com/marshmallow-insurance/smores-react/commit/527aae179e521ad7d4bdff4576037de5b174036b))
+
 ## [16.10.6](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.5...v16.10.6) (2026-10-16)
 
 ### Bug Fixes
