@@ -196,7 +196,7 @@ describe('ButtonContainer', () => {
     )
   })
 
-  it('aligns vertical buttons and supporting text to the start on desktop', () => {
+  it('aligns vertical buttons to the start on desktop and keeps supporting text centred', () => {
     render(
       <ButtonContainer
         align="start"
@@ -210,9 +210,13 @@ describe('ButtonContainer', () => {
     ).toHaveStyleRule('justify-content', 'start', {
       media: '(min-width: 768px)',
     })
-    expect(
-      screen.getByText("This won't impact your credit score"),
-    ).toHaveStyleRule('text-align', 'start', { media: '(min-width: 768px)' })
+    const supportingText = screen.getByText(
+      "This won't impact your credit score",
+    )
+    expect(supportingText).toHaveStyleRule('text-align', 'center')
+    expect(supportingText).toHaveStyleRule('margin', '0 auto 0 0', {
+      media: '(min-width: 768px)',
+    })
   })
 
   it('moves horizontal buttons to the start on desktop', () => {
@@ -230,7 +234,7 @@ describe('ButtonContainer', () => {
     ).toHaveStyleRule('margin', '0 auto 0 0', { media: '(min-width: 768px)' })
   })
 
-  it('aligns vertical buttons and supporting text to the end on desktop', () => {
+  it('aligns vertical buttons to the end on desktop and keeps supporting text centred', () => {
     render(
       <ButtonContainer
         align="end"
@@ -244,9 +248,13 @@ describe('ButtonContainer', () => {
     ).toHaveStyleRule('justify-content', 'end', {
       media: '(min-width: 768px)',
     })
-    expect(
-      screen.getByText("This won't impact your credit score"),
-    ).toHaveStyleRule('text-align', 'end', { media: '(min-width: 768px)' })
+    const supportingText = screen.getByText(
+      "This won't impact your credit score",
+    )
+    expect(supportingText).toHaveStyleRule('text-align', 'center')
+    expect(supportingText).toHaveStyleRule('margin', '0 0 0 auto', {
+      media: '(min-width: 768px)',
+    })
   })
 
   it('moves horizontal buttons to the end on desktop', () => {

@@ -108,7 +108,11 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
           )}
         </ButtonGroup>
         {supportingMessage && hasSupportingMessage && (
-          <SupportingText id={supportingTextId} $align={align}>
+          <SupportingText
+            id={supportingTextId}
+            $orientation={orientation}
+            $align={align}
+          >
             {supportingMessage.icon && (
               <SupportingIconContainer>
                 <FontAwesomeIcon
@@ -127,7 +131,7 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
 
 const desktopMediaQuery = '@media (min-width: 768px)'
 
-const horizontalMargins: Record<ButtonContainerAlignment, string> = {
+const desktopAlignMargins: Record<ButtonContainerAlignment, string> = {
   center: '0 auto',
   start: '0 auto 0 0',
   end: '0 0 0 auto',
@@ -211,7 +215,7 @@ const ButtonGroup = styled.div<{
           grid-auto-columns: minmax(${desktopHorizontalButtonMinWidth}, 1fr);
           width: fit-content;
           max-width: 100%;
-          margin: ${horizontalMargins[$align]};
+          margin: ${desktopAlignMargins[$align]};
         }
       `
     }
@@ -238,8 +242,13 @@ const SupportingIconContainer = styled.span(
   `,
 )
 
-const SupportingText = styled.p<{ $align: ButtonContainerAlignment }>(
-  ({ theme, $align }) => css`
+// Sits in the same box as the buttons on desktop, so it lines up with them
+// and is centred under them whatever `align` is
+const SupportingText = styled.p<{
+  $orientation: ButtonContainerOrientation
+  $align: ButtonContainerAlignment
+}>(
+  ({ theme, $orientation, $align }) => css`
     margin: 0;
     font-size: ${theme.font.body[200].fontSize};
     font-weight: ${theme.font.body[200].fontWeight};
@@ -247,13 +256,14 @@ const SupportingText = styled.p<{ $align: ButtonContainerAlignment }>(
     color: ${theme.color.text.subtle};
     text-align: center;
 
-    ${
-      $align !== 'center' &&
-      css`
-        ${desktopMediaQuery} {
-          text-align: ${$align};
-        }
-      `
+    ${desktopMediaQuery} {
+      width: ${
+        $orientation === 'vertical'
+          ? desktopVerticalButtonMaxWidth
+          : 'fit-content'
+      };
+      max-width: 100%;
+      margin: ${desktopAlignMargins[$align]};
     }
   `,
 )

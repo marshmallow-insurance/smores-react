@@ -146,6 +146,14 @@ exports[`ButtonContainer > renders both buttons and the supporting text 1`] = `
   }
 }
 
+@media (min-width: 768px) {
+  .c7 {
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
 <div>
   <div
     aria-hidden="true"
