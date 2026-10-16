@@ -27,6 +27,137 @@ const openResults = (container: HTMLElement) => {
   return input
 }
 
+describe('SearchInput when searchList changes', () => {
+  const fruits = [
+    { label: 'Apple', value: 'apple', tags: ['red'] },
+    { label: 'Banana', value: 'banana', tags: ['yellow'] },
+  ]
+  const vegetables = [
+    { label: 'Carrot', value: 'carrot', tags: ['orange'] },
+    { label: 'Courgette', value: 'courgette', tags: ['green'] },
+  ]
+
+  it('shows the new options when the query is empty', () => {
+    const { container, rerender } = render(
+      <SearchInput searchList={fruits} onFound={noop} />,
+    )
+    rerender(<SearchInput searchList={vegetables} onFound={noop} />)
+    openResults(container)
+
+    expect(screen.getByText('Carrot')).toBeInTheDocument()
+    expect(screen.getByText('Courgette')).toBeInTheDocument()
+    expect(screen.queryByText('Apple')).not.toBeInTheDocument()
+  })
+
+  it('filters the new options when the query is unchanged', () => {
+    const { container, rerender } = render(
+      <SearchInput searchList={fruits} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.change(input, { target: { value: 'C' } })
+
+    rerender(<SearchInput searchList={vegetables} onFound={noop} />)
+
+    expect(screen.getByText('Carrot')).toBeInTheDocument()
+    expect(screen.getByText('Courgette')).toBeInTheDocument()
+  })
+
+  it('fuzzy searches the new options when the query is unchanged', () => {
+    const { container, rerender } = render(
+      <SearchInput searchList={fruits} onFound={noop} enableFuzzySearch />,
+    )
+    const input = openResults(container)
+    fireEvent.change(input, { target: { value: 'Carrot' } })
+
+    rerender(
+      <SearchInput searchList={vegetables} onFound={noop} enableFuzzySearch />,
+    )
+
+    expect(screen.getByText('Carrot')).toBeInTheDocument()
+  })
+
+  it('fuzzy searches with the new fuzzySearchOptions', () => {
+    const { container, rerender } = render(
+      <SearchInput
+        searchList={fruits}
+        onFound={noop}
+        fuzzySearchOptions={{ keys: ['label'] }}
+      />,
+    )
+    const input = openResults(container)
+    fireEvent.change(input, { target: { value: 'yellow' } })
+    expect(screen.queryByText('Banana')).not.toBeInTheDocument()
+
+    rerender(
+      <SearchInput
+        searchList={fruits}
+        onFound={noop}
+        fuzzySearchOptions={{ keys: ['tags'] }}
+      />,
+    )
+
+    expect(screen.getByText('Banana')).toBeInTheDocument()
+  })
+
+  it('stops fuzzy searching when enableFuzzySearch is turned off', () => {
+    const { container, rerender } = render(
+      <SearchInput searchList={fruits} onFound={noop} enableFuzzySearch />,
+    )
+    const input = openResults(container)
+    fireEvent.change(input, { target: { value: 'Bnana' } })
+    expect(screen.getByText('Banana')).toBeInTheDocument()
+
+    rerender(<SearchInput searchList={fruits} onFound={noop} />)
+
+    expect(screen.queryByText('Banana')).not.toBeInTheDocument()
+  })
+
+  it('does not select anything on Enter when the highlighted option was removed', () => {
+    const onFound = vi.fn()
+    const { container, rerender } = render(
+      <SearchInput searchList={vegetables} onFound={onFound} />,
+    )
+    const input = openResults(container)
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+
+    rerender(<SearchInput searchList={fruits.slice(0, 1)} onFound={onFound} />)
+
+    expect(() => fireEvent.keyDown(input, { key: 'Enter' })).not.toThrow()
+    expect(onFound).not.toHaveBeenCalled()
+  })
+
+  it('does not select a different option on Enter when the list is swapped at the same length', () => {
+    const onFound = vi.fn()
+    const { container, rerender } = render(
+      <SearchInput searchList={vegetables} onFound={onFound} />,
+    )
+    const input = openResults(container)
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+
+    rerender(<SearchInput searchList={fruits} onFound={onFound} />)
+    fireEvent.keyDown(input, { key: 'Enter' })
+
+    expect(onFound).not.toHaveBeenCalled()
+  })
+
+  it('keeps the highlight when the same options are passed as a new array', () => {
+    const onFound = vi.fn()
+    const { container, rerender } = render(
+      <SearchInput searchList={vegetables} onFound={onFound} />,
+    )
+    const input = openResults(container)
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+
+    rerender(<SearchInput searchList={[...vegetables]} onFound={onFound} />)
+    fireEvent.keyDown(input, { key: 'Enter' })
+
+    expect(onFound).toHaveBeenCalledWith('courgette')
+  })
+})
+
 describe('SearchInput', () => {
   it('cancels the leading icon width so the input aligns with its container', () => {
     const { container } = render(
