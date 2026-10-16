@@ -5,7 +5,6 @@ import {
   WheelEvent,
   forwardRef,
   useCallback,
-  useLayoutEffect,
   useRef,
 } from 'react'
 
@@ -102,7 +101,6 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
     error,
   })
   const inputRef = useRef<HTMLInputElement | null>(null)
-  const pendingCaret = useRef<number | null>(null)
 
   const setInputRef = useCallback(
     (node: HTMLInputElement | null) => {
@@ -115,15 +113,12 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
 
   const displayValue = formatThousands ? addThousandsSeparators(value) : value
 
-  useLayoutEffect(() => {
+  const restoreCaret = (significantBeforeCaret: number) => {
     const input = inputRef.current
-    if (pendingCaret.current === null || !input) return
-    if (input.ownerDocument.activeElement === input) {
-      const position = caretAfterSignificant(input.value, pendingCaret.current)
-      input.setSelectionRange(position, position)
-    }
-    pendingCaret.current = null
-  }, [displayValue])
+    if (!input || input.ownerDocument.activeElement !== input) return
+    const position = caretAfterSignificant(input.value, significantBeforeCaret)
+    input.setSelectionRange(position, position)
+  }
 
   const formatCurrency = (value: string) => {
     const decimalIndex = value.indexOf('.')
@@ -198,9 +193,10 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
           onChange={(e: FormEvent<HTMLInputElement>) => {
             if (formatThousands) {
               const { value: typed, selectionStart } = e.currentTarget
-              pendingCaret.current = countSignificant(
+              const significantBeforeCaret = countSignificant(
                 typed.slice(0, selectionStart ?? typed.length),
               )
+              queueMicrotask(() => restoreCaret(significantBeforeCaret))
               if (onChange) handleChange(stripFormatting(typed))
             } else if (onChange) {
               handleChange(e.currentTarget.value)

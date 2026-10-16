@@ -104,6 +104,24 @@ describe('CurrencyInput', () => {
     expect(onChange).toHaveBeenLastCalledWith('.')
   })
 
+  it('keeps the caret when the first backspace removes a separator', async () => {
+    render(<ControlledCurrencyInput onChange={() => {}} initialValue="1000" />)
+    const input = screen.getByRole('textbox') as HTMLInputElement
+    expect(input).toHaveValue('1,000')
+
+    Object.getOwnPropertyDescriptor(
+      HTMLInputElement.prototype,
+      'value',
+    )?.set?.call(input, '1000')
+    input.focus()
+    input.setSelectionRange(1, 1)
+    fireEvent.input(input)
+    await Promise.resolve()
+
+    expect(input).toHaveValue('1,000')
+    expect(input.selectionStart).toBe(1)
+  })
+
   it('lets the user delete a separator without it getting stuck', () => {
     const onChange = vi.fn()
     render(<ControlledCurrencyInput onChange={onChange} initialValue="1000" />)
