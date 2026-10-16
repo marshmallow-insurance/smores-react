@@ -1,3 +1,9 @@
+## [16.11.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.0...v16.11.1) (2026-10-16)
+
+### Bug Fixes
+
+* **Inputs:** use a grey disabled style instead of opacity ([#5238](https://github.com/marshmallow-insurance/smores-react/issues/5238)) ([ce12ffc](https://github.com/marshmallow-insurance/smores-react/commit/ce12ffcec2ede881e60a6254a2f549aec5fb100a))
+
 ## [16.11.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.8...v16.11.0) (2026-10-16)
 
 ### Features
