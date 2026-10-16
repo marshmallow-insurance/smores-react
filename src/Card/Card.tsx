@@ -1,5 +1,11 @@
 import { darken } from 'polished'
-import { FC, MouseEventHandler, ReactNode } from 'react'
+import {
+  FC,
+  KeyboardEventHandler,
+  MouseEvent,
+  MouseEventHandler,
+  ReactNode,
+} from 'react'
 import styled, { css, useTheme } from 'styled-components'
 import { TransientProps } from '../utils/utilTypes'
 import { Box } from '../Box'
@@ -58,6 +64,16 @@ export const Card: FC<CardProps> = ({
 
   const isNotClickable = !cardOnClickAction
 
+  const handleKeyDown: KeyboardEventHandler<HTMLDivElement> = (event) => {
+    if (!cardOnClickAction) return
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      // cardOnClickAction is typed for mouse clicks, but must also fire from the keyboard
+      cardOnClickAction(event as unknown as MouseEvent<HTMLDivElement>)
+    }
+  }
+
   const iconToRender = iconComponent ? (
     <IconContainer
       style={{ marginRight: '12px' }}
@@ -87,6 +103,8 @@ export const Card: FC<CardProps> = ({
       $fallbackStyle={fallbackStyle}
       $isNotClickable={isNotClickable}
       onClick={cardOnClickAction}
+      onKeyDown={isNotClickable ? undefined : handleKeyDown}
+      role={isNotClickable ? undefined : 'button'}
       tabIndex={isNotClickable ? undefined : 0}
       {...otherProps}
     >
