@@ -16,7 +16,7 @@ type ButtonElement = ReactElement<{ 'aria-describedby'?: string }>
 
 export type ButtonContainerOrientation = 'vertical' | 'horizontal'
 
-export type ButtonContainerAlignment = 'center' | 'start'
+export type ButtonContainerAlignment = 'center' | 'start' | 'end'
 
 export type ButtonContainerSupportingMessage = {
   /** Short plain text, e.g. reassurance copy. Required, so an icon never shows on its own */
@@ -36,8 +36,9 @@ export type ButtonContainerProps = {
   /** Stack the buttons vertically or lay them out side by side */
   orientation?: ButtonContainerOrientation
   /**
-   * Where the buttons and supporting text sit from 768px up. Use `start` to
-   * line them up with left-aligned page content. On mobile they fill the width.
+   * Where the buttons and supporting text sit from 768px up. Use `start` or
+   * `end` to line them up with the edge of the page content. On mobile they
+   * fill the width.
    */
   align?: ButtonContainerAlignment
   /** Optional message shown below the buttons, e.g. reassurance copy */
@@ -125,6 +126,12 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
 }
 
 const desktopMediaQuery = '@media (min-width: 768px)'
+
+const horizontalMargins: Record<ButtonContainerAlignment, string> = {
+  center: '0 auto',
+  start: '0 auto 0 0',
+  end: '0 0 0 auto',
+}
 const desktopVerticalButtonMaxWidth = '400px'
 const desktopHorizontalButtonMinWidth = '160px'
 
@@ -204,7 +211,7 @@ const ButtonGroup = styled.div<{
           grid-auto-columns: minmax(${desktopHorizontalButtonMinWidth}, 1fr);
           width: fit-content;
           max-width: 100%;
-          margin: ${$align === 'center' ? '0 auto' : '0'};
+          margin: ${horizontalMargins[$align]};
         }
       `
     }
@@ -241,10 +248,10 @@ const SupportingText = styled.p<{ $align: ButtonContainerAlignment }>(
     text-align: center;
 
     ${
-      $align === 'start' &&
+      $align !== 'center' &&
       css`
         ${desktopMediaQuery} {
-          text-align: start;
+          text-align: ${$align};
         }
       `
     }

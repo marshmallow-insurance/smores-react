@@ -115,7 +115,7 @@ const DocsPage = () => (
   <>
     <Title />
     <Markdown>
-      {`Pins one to three buttons to the bottom of the screen on mobile, with optional supporting text below them. From 768px up it sits at the end of the content, centred by default or on the left with \`align="start"\`: vertical buttons are up to 400px wide, and horizontal buttons all match the longest label (at least 160px).`}
+      {`Pins one to three buttons to the bottom of the screen on mobile, with optional supporting text below them. From 768px up it sits at the end of the content, centred by default or on either edge with \`align="start"\` or \`align="end"\`: vertical buttons are up to 400px wide, and horizontal buttons all match the longest label (at least 160px).`}
     </Markdown>
     <Primary />
     <Controls />
@@ -164,7 +164,7 @@ const meta: Meta<StoryArgs> = {
     },
     align: {
       control: { type: 'radio' },
-      options: ['center', 'start'],
+      options: ['center', 'start', 'end'],
     },
     showSecondaryButton: { control: 'boolean' },
     showTertiaryButton: { control: 'boolean' },
@@ -313,6 +313,17 @@ export const DesktopStartAligned: Story = {
   tags: ['!autodocs'],
   args: {
     align: 'start',
+    showSupportingText: true,
+  },
+  globals: {
+    viewport: { value: 'desktop', isRotated: false },
+  },
+}
+
+export const DesktopEndAligned: Story = {
+  tags: ['!autodocs'],
+  args: {
+    align: 'end',
     showSupportingText: true,
   },
   globals: {

@@ -215,7 +215,7 @@ describe('ButtonContainer', () => {
     ).toHaveStyleRule('text-align', 'start', { media: '(min-width: 768px)' })
   })
 
-  it('drops the auto margin from horizontal buttons aligned to the start on desktop', () => {
+  it('moves horizontal buttons to the start on desktop', () => {
     render(
       <ButtonContainer
         align="start"
@@ -227,6 +227,40 @@ describe('ButtonContainer', () => {
 
     expect(
       screen.getByRole('button', { name: 'Continue' }).parentElement,
-    ).toHaveStyleRule('margin', '0', { media: '(min-width: 768px)' })
+    ).toHaveStyleRule('margin', '0 auto 0 0', { media: '(min-width: 768px)' })
+  })
+
+  it('aligns vertical buttons and supporting text to the end on desktop', () => {
+    render(
+      <ButtonContainer
+        align="end"
+        primaryButton={<Button primary>Continue</Button>}
+        supportingMessage={{ text: "This won't impact your credit score" }}
+      />,
+    )
+
+    expect(
+      screen.getByRole('button', { name: 'Continue' }).parentElement,
+    ).toHaveStyleRule('justify-content', 'end', {
+      media: '(min-width: 768px)',
+    })
+    expect(
+      screen.getByText("This won't impact your credit score"),
+    ).toHaveStyleRule('text-align', 'end', { media: '(min-width: 768px)' })
+  })
+
+  it('moves horizontal buttons to the end on desktop', () => {
+    render(
+      <ButtonContainer
+        align="end"
+        orientation="horizontal"
+        primaryButton={<Button primary>Continue</Button>}
+        secondaryButton={<Button secondary>Back</Button>}
+      />,
+    )
+
+    expect(
+      screen.getByRole('button', { name: 'Continue' }).parentElement,
+    ).toHaveStyleRule('margin', '0 0 0 auto', { media: '(min-width: 768px)' })
   })
 })
