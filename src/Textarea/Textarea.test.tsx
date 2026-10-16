@@ -35,4 +35,17 @@ describe('Textarea', () => {
       describedBy.map((id) => document.getElementById(id)?.textContent),
     ).toEqual(['Keep it short', 'Add some notes'])
   })
+
+  it('shows a focus ring only for keyboard focus', () => {
+    render(<Textarea label="Notes" value="" onChange={noop} />)
+    const textarea = screen.getByRole('textbox')
+
+    expect(textarea).toHaveStyleRule(
+      'outline',
+      expect.stringContaining('2px'),
+      {
+        modifier: ':focus-visible:not([data-pointer-focus])',
+      },
+    )
+  })
 })
