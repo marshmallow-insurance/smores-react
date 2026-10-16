@@ -183,4 +183,84 @@ describe('ButtonContainer', () => {
       'aria-describedby',
     )
   })
+
+  it('centres the buttons on desktop by default', () => {
+    const { container } = render(
+      <ButtonContainer primaryButton={<Button primary>Continue</Button>} />,
+    )
+
+    expect(container.children[1].firstElementChild).toHaveStyleRule(
+      'justify-content',
+      'center',
+      { media: '(min-width: 768px)' },
+    )
+  })
+
+  it('aligns vertical buttons and supporting text to the start on desktop', () => {
+    render(
+      <ButtonContainer
+        align="start"
+        primaryButton={<Button primary>Continue</Button>}
+        supportingMessage={{ text: "This won't impact your credit score" }}
+      />,
+    )
+
+    expect(
+      screen.getByRole('button', { name: 'Continue' }).parentElement,
+    ).toHaveStyleRule('justify-content', 'start', {
+      media: '(min-width: 768px)',
+    })
+    expect(
+      screen.getByText("This won't impact your credit score"),
+    ).toHaveStyleRule('text-align', 'start', { media: '(min-width: 768px)' })
+  })
+
+  it('moves horizontal buttons to the start on desktop', () => {
+    render(
+      <ButtonContainer
+        align="start"
+        orientation="horizontal"
+        primaryButton={<Button primary>Continue</Button>}
+        secondaryButton={<Button secondary>Back</Button>}
+      />,
+    )
+
+    expect(
+      screen.getByRole('button', { name: 'Continue' }).parentElement,
+    ).toHaveStyleRule('margin', '0 auto 0 0', { media: '(min-width: 768px)' })
+  })
+
+  it('aligns vertical buttons and supporting text to the end on desktop', () => {
+    render(
+      <ButtonContainer
+        align="end"
+        primaryButton={<Button primary>Continue</Button>}
+        supportingMessage={{ text: "This won't impact your credit score" }}
+      />,
+    )
+
+    expect(
+      screen.getByRole('button', { name: 'Continue' }).parentElement,
+    ).toHaveStyleRule('justify-content', 'end', {
+      media: '(min-width: 768px)',
+    })
+    expect(
+      screen.getByText("This won't impact your credit score"),
+    ).toHaveStyleRule('text-align', 'end', { media: '(min-width: 768px)' })
+  })
+
+  it('moves horizontal buttons to the end on desktop', () => {
+    render(
+      <ButtonContainer
+        align="end"
+        orientation="horizontal"
+        primaryButton={<Button primary>Continue</Button>}
+        secondaryButton={<Button secondary>Back</Button>}
+      />,
+    )
+
+    expect(
+      screen.getByRole('button', { name: 'Continue' }).parentElement,
+    ).toHaveStyleRule('margin', '0 0 0 auto', { media: '(min-width: 768px)' })
+  })
 })
