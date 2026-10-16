@@ -1,3 +1,9 @@
+## [16.11.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.8...v16.11.0) (2026-10-16)
+
+### Features
+
+* **CurrencyInput:** support comma-separated thousands formatting ([#5236](https://github.com/marshmallow-insurance/smores-react/issues/5236)) ([26b9253](https://github.com/marshmallow-insurance/smores-react/commit/26b92531be686b39f1b579965a9b5bde4c75efb2))
+
 ## [16.10.8](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.7...v16.10.8) (2026-10-16)
 
 ### Bug Fixes
