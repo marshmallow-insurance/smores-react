@@ -13,6 +13,30 @@ describe('TextInput', () => {
     expect(input).toHaveStyleRule('padding', '12px')
   })
 
+  it('describes the input with its help and error text', () => {
+    render(
+      <TextInput
+        label="Name"
+        placeholder="Name"
+        value=""
+        onChange={noop}
+        required
+        error
+        errorMsg="Enter your name"
+        assistiveText="Full name"
+      />,
+    )
+    const input = screen.getByRole('textbox')
+
+    expect(input).toHaveAttribute('aria-invalid', 'true')
+    expect(input).toHaveAttribute('aria-required', 'true')
+    const describedBy = input.getAttribute('aria-describedby')?.split(' ') ?? []
+    expect(describedBy).toHaveLength(2)
+    expect(
+      describedBy.map((id) => document.getElementById(id)?.textContent),
+    ).toEqual(['Full name', 'Enter your name'])
+  })
+
   it('only shows the focus ring for keyboard focus', () => {
     render(
       <TextInput label="Name" placeholder="Name" value="" onChange={noop} />,

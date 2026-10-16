@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { useUniqueId } from '../utils/id'
+import { getFieldAria } from '../fields/fieldAria'
 import { MarginProps } from '../utils/space'
 
 type BaseProps = {
@@ -54,8 +55,18 @@ export const Textarea = forwardRef(function Textarea(
   ref: ForwardedRef<HTMLTextAreaElement>,
 ) {
   const id = useUniqueId(idProp)
+  const { assistiveTextId, errorMsgId, controlAria } = getFieldAria(id, {
+    ...fieldProps,
+    error,
+  })
   return (
-    <Field {...fieldProps} htmlFor={id} error={error}>
+    <Field
+      {...fieldProps}
+      htmlFor={id}
+      error={error}
+      assistiveTextId={assistiveTextId}
+      errorMsgId={errorMsgId}
+    >
       <StyledTextArea
         ref={ref}
         $error={error}
@@ -73,6 +84,7 @@ export const Textarea = forwardRef(function Textarea(
         maxLength={maxLength}
         onBlur={onBlur}
         rows={rows}
+        {...controlAria}
       />
     </Field>
   )

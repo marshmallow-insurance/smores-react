@@ -19,6 +19,7 @@ import {
   StyledTrailingIcon,
 } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
+import { getFieldAria } from '../fields/fieldAria'
 import {
   faChevronDown,
   faChevronUp,
@@ -77,6 +78,10 @@ export const NumberInput = forwardRef(function NumberInput(
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   const id = useUniqueId(idProp)
+  const { assistiveTextId, errorMsgId, controlAria } = getFieldAria(id, {
+    ...fieldProps,
+    error,
+  })
   const theme = useTheme()
   // Check whether the min/max value exists is within the specified range
   const isInRange = (value: number) => {
@@ -157,7 +162,13 @@ export const NumberInput = forwardRef(function NumberInput(
   ) : null
 
   return (
-    <Field {...fieldProps} htmlFor={id} error={error}>
+    <Field
+      {...fieldProps}
+      htmlFor={id}
+      error={error}
+      assistiveTextId={assistiveTextId}
+      errorMsgId={errorMsgId}
+    >
       <Box flex alignItems="center" justifyContent="flex-start">
         {frontIconToRender}
         <Input
@@ -173,6 +184,7 @@ export const NumberInput = forwardRef(function NumberInput(
           step={step}
           $fallbackStyle={fallbackStyle}
           onWheel={(e) => e.currentTarget.blur()}
+          {...controlAria}
           onChange={(e: FormEvent<HTMLInputElement>) => {
             if (onChange) handleChange(e.currentTarget.value)
             onInputChange?.(e)
@@ -183,7 +195,7 @@ export const NumberInput = forwardRef(function NumberInput(
         {onChange && step > 0 && (
           <Spinner>
             <SpinnerButton
-              aria-label="step-up"
+              aria-label="Increase"
               onClick={incrementValue}
               disabled={disabled}
             >
@@ -196,7 +208,7 @@ export const NumberInput = forwardRef(function NumberInput(
             </SpinnerButton>
 
             <SpinnerButton
-              aria-label="step-down"
+              aria-label="Decrease"
               onClick={decrementValue}
               disabled={disabled}
             >

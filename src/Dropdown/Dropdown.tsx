@@ -24,6 +24,7 @@ import {
   fieldHoverBorderColor,
 } from '../fields/components/fieldStyles'
 import { useUniqueId } from '../utils/id'
+import { getFieldAria } from '../fields/fieldAria'
 import { useControllableState } from '../utils/useControlledState'
 import { IconContainer } from '../sharedStyles/shared.styles'
 import { faChevronDown } from '@awesome.me/kit-46ca99185c/icons/classic/solid'
@@ -98,8 +99,11 @@ export const Dropdown = forwardRef(function Dropdown(
     stateProp: valueProp,
   })
   const id = useUniqueId(idProp)
-  const assistiveTextId = `${id}-assistive-text`
-  const errorMsgId = `${id}-error`
+  const { assistiveTextId, errorMsgId, controlAria } = getFieldAria(id, {
+    ...fieldProps,
+    error,
+    required,
+  })
   const hasOptGroups = list.findIndex((item) => !!item.optionGroupLabel) !== -1
 
   const dropdownItemsGroups = useMemo(() => {
@@ -122,17 +126,6 @@ export const Dropdown = forwardRef(function Dropdown(
     }
     return customDefaultOption ?? 'Select an option'
   }
-
-  // Only reference messages that the field actually renders.
-  const describedBy =
-    [
-      fieldProps.assistiveText &&
-        (!fieldProps.renderAsTitle || fieldProps.label) &&
-        assistiveTextId,
-      error && fieldProps.errorMsg && errorMsgId,
-    ]
-      .filter(Boolean)
-      .join(' ') || undefined
 
   const iconToRender = iconComponent ? (
     <InputLeadingIconContainer $size={16} $iconColor={theme.color.text.base}>
@@ -169,9 +162,7 @@ export const Dropdown = forwardRef(function Dropdown(
           name={name}
           autoComplete={autoComplete}
           aria-label={ariaLabel}
-          aria-invalid={error || undefined}
-          aria-required={required || undefined}
-          aria-describedby={describedBy}
+          {...controlAria}
           $frontIcon={!!iconToRender}
           $fallbackStyle={fallbackStyle}
           value={value ?? ''}
