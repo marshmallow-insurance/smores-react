@@ -190,6 +190,30 @@ describe('SearchInput', () => {
       expect(screen.getByRole('listbox')).toBeInTheDocument()
     })
 
+    it.each([
+      ['clicking outside', () => fireEvent.click(document.body)],
+      [
+        'clicking the caret',
+        () => fireEvent.click(screen.getByTitle('icon-button')),
+      ],
+    ])(
+      'reopens with no highlighted option after %s closes the list',
+      (_, close) => {
+        renderSearch()
+        const input = screen.getByRole('combobox')
+        fireEvent.click(input)
+        fireEvent.keyDown(input, { key: 'ArrowDown' })
+        expect(input).toHaveAttribute('aria-activedescendant')
+
+        close()
+        expect(screen.queryByRole('listbox')).not.toBeInTheDocument()
+
+        fireEvent.click(screen.getByTitle('icon-button'))
+        expect(screen.getByRole('listbox')).toBeInTheDocument()
+        expect(input).not.toHaveAttribute('aria-activedescendant')
+      },
+    )
+
     it('keeps Escape from closing a surrounding Modal while the list is open', () => {
       const handleClick = vi.fn()
       render(

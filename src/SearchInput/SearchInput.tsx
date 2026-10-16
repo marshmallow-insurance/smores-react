@@ -133,11 +133,18 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       setSearchQuery(null)
     }
 
+    // Every way of closing the list goes through here, so a reopened list
+    // never starts with a stale highlighted option.
+    const closeOptions = () => {
+      setShowOptions(false)
+      setHighlightedIndex(-1)
+    }
+
     useOnClickOutside({
       ref: wrapperRef,
       callback: () => {
         handleBlur()
-        setShowOptions(false)
+        closeOptions()
       },
     })
 
@@ -184,7 +191,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
       if (query === null) {
         setSelectedValue(null)
-        setShowOptions(false)
+        closeOptions()
       } else {
         setShowOptions(true)
       }
@@ -216,13 +223,20 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     }
 
     const handleCaretClick = () => {
-      setShowOptions(!showOptions)
+      if (showOptions) {
+        closeOptions()
+      } else {
+        setShowOptions(true)
+      }
     }
 
     const listboxId = `${id}-listbox`
     const getOptionId = (index: number) => `${id}-option-${index}`
     const hasResults = showOptions && filteredList.length > 0
-    const hasHighlight = hasResults && highlightedIndex < filteredList.length
+    const hasHighlight =
+      hasResults &&
+      highlightedIndex >= 0 &&
+      highlightedIndex < filteredList.length
     const noResults = showOptions && filteredList.length === 0
 
     const handleKeyDown = (event: SearchKeyEvent) => {
@@ -230,10 +244,9 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         if (!showOptions) return
         event.preventDefault()
         event.stopPropagation()
-        setShowOptions(false)
-        setHighlightedIndex(-1)
+        closeOptions()
       } else if (event.key === 'Enter') {
-        if (hasHighlight && highlightedIndex !== -1) {
+        if (hasHighlight) {
           event.preventDefault()
           handleSelect(filteredList[highlightedIndex])
         }
@@ -288,9 +301,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               aria-expanded={hasResults}
               aria-controls={hasResults ? listboxId : undefined}
               aria-activedescendant={
-                hasHighlight && highlightedIndex !== -1
-                  ? getOptionId(highlightedIndex)
-                  : undefined
+                hasHighlight ? getOptionId(highlightedIndex) : undefined
               }
               value={displayedInputText}
               onFocus={handleClick}
