@@ -1,4 +1,4 @@
-import { beforeEach, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen } from '../testUtils'
 import { noop } from '../utils/noop'
 import { SearchInput } from './SearchInput'
@@ -15,6 +15,10 @@ beforeEach(() => {
   scrollIntoViewMock = vi.fn()
   Element.prototype.scrollIntoView =
     scrollIntoViewMock as unknown as Element['scrollIntoView']
+})
+
+afterEach(() => {
+  vi.restoreAllMocks()
 })
 
 const openResults = (container: HTMLElement) => {
@@ -232,6 +236,123 @@ describe('SearchInput', () => {
 
     fireEvent.click(input)
     expect(screen.getAllByRole('option')).toHaveLength(searchList.length)
+  })
+
+  it('selects the label when reopening a field with a selection, so typing replaces it', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.click(screen.getByText('Option 3'))
+
+    fireEvent.click(input)
+    expect(input.selectionStart).toBe(0)
+    expect(input.selectionEnd).toBe('Option 3'.length)
+
+    // Once the list is open, clicking places the caret as normal
+    input.setSelectionRange(2, 2)
+    fireEvent.click(input)
+    expect(input.selectionStart).toBe(2)
+    expect(input.selectionEnd).toBe(2)
+  })
+
+  it('selects the label when tabbing into a field with a selection', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.click(screen.getByText('Option 3'))
+    input.setSelectionRange(2, 2)
+
+    fireEvent.focus(input)
+
+    expect(input.selectionStart).toBe(0)
+    expect(input.selectionEnd).toBe('Option 3'.length)
+  })
+
+  it('selects the label when reopening with ArrowDown', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.click(screen.getByText('Option 3'))
+    input.setSelectionRange(2, 2)
+
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+
+    expect(screen.getByRole('listbox')).toBeInTheDocument()
+    expect(input.selectionStart).toBe(0)
+    expect(input.selectionEnd).toBe('Option 3'.length)
+  })
+
+  it('takes over the mousedown only when focusing a field with a selection', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = container.querySelector('input')!
+    // No selection yet, so the browser handles the click as normal
+    expect(fireEvent.mouseDown(input)).toBe(true)
+
+    openResults(container)
+    fireEvent.click(screen.getByText('Option 3'))
+    input.blur()
+
+    expect(fireEvent.mouseDown(input)).toBe(false)
+    expect(input).toHaveFocus()
+    expect(input.selectionStart).toBe(0)
+    expect(input.selectionEnd).toBe('Option 3'.length)
+  })
+
+  it('does not select the text when reopening without a selection', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.change(input, { target: { value: 'Opt' } })
+    input.setSelectionRange(3, 3)
+    fireEvent.keyDown(input, { key: 'Escape' })
+
+    fireEvent.click(input)
+
+    expect(input.selectionStart).toBe(3)
+    expect(input.selectionEnd).toBe(3)
+  })
+
+  it('centres the selected option in the list when it opens', () => {
+    const itemHeight = 50
+    const listHeight = 200
+    vi.spyOn(HTMLElement.prototype, 'offsetTop', 'get').mockImplementation(
+      function (this: HTMLElement) {
+        const siblings = Array.from(this.parentElement?.children ?? [])
+        return siblings.indexOf(this) * itemHeight
+      },
+    )
+    vi.spyOn(HTMLElement.prototype, 'offsetHeight', 'get').mockReturnValue(
+      itemHeight,
+    )
+    vi.spyOn(HTMLElement.prototype, 'clientHeight', 'get').mockReturnValue(
+      listHeight,
+    )
+
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+    fireEvent.click(screen.getByText('Option 20'))
+    fireEvent.click(input)
+
+    expect(screen.getByRole('listbox').scrollTop).toBe(
+      20 * itemHeight - (listHeight - itemHeight) / 2,
+    )
+  })
+
+  it('opens at the top when nothing is selected', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    openResults(container)
+
+    expect(screen.getByRole('listbox').scrollTop).toBe(0)
   })
 
   describe('combobox semantics', () => {
