@@ -183,4 +183,18 @@ describe('TextInput', () => {
 
     expect(icon).toHaveStyleRule('right', '36px')
   })
+
+  it('leaves room for a trailing icon so text does not run under it', () => {
+    render(
+      <TextInput
+        label="Name"
+        placeholder="Name"
+        value=""
+        onChange={noop}
+        trailingIconComponent={<span>x</span>}
+      />,
+    )
+
+    expect(screen.getByRole('textbox')).toHaveStyleRule('padding-right', '42px')
+  })
 })

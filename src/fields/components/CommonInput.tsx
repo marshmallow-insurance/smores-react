@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Icon, Icons } from '../../Icon'
+import { Icon } from '../../Icon'
 import { IconContainer } from '../../sharedStyles/shared.styles'
 import {
   fieldDisabledStyle,
@@ -16,7 +16,7 @@ interface IInput {
   step?: number
   value?: string
   $frontIcon?: boolean
-  $trailingIcon?: Icons
+  $trailingIcon?: boolean
   $fallbackStyle?: boolean
 }
 

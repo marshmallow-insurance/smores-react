@@ -156,6 +156,7 @@ export const TextInput = forwardRef(function TextInput(
           value={value}
           $error={error}
           $frontIcon={Boolean(frontIconToRender)}
+          $trailingIcon={Boolean(trailingIconToRender)}
           $fallbackStyle={fallbackStyle}
           autoComplete={autoCompleteAttr}
           onChange={(e: FormEvent<HTMLInputElement>) => {
