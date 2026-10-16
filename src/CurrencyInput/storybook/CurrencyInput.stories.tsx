@@ -41,7 +41,7 @@ export const Default: Story = {
     id: 'total_amount',
     label: 'Total Amount',
     name: 'totalAmount',
-    placeholder: '0',
+    placeholder: '200',
   },
 }
 
@@ -179,4 +179,15 @@ export const FallbackError: Story = {
       },
     },
   },
+}
+
+export const FormatThousands: Story = {
+  args: {
+    id: 'formatted_amount',
+    label: 'Amount',
+    name: 'formattedAmount',
+    placeholder: '1,000',
+    formatThousands: true,
+  },
+  render: InteractiveTemplate,
 }
