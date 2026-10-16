@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
+import { expect, userEvent, within } from 'storybook/test'
 import { Box } from '../../Box'
 import { Text } from '../../Text'
 import { SearchInput } from '../SearchInput'
@@ -34,6 +35,26 @@ const meta: Meta<typeof SearchInput> = {
 }
 
 export default meta
+
+export const ResultsOpen: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByRole('combobox')
+    await userEvent.click(input)
+    await userEvent.keyboard('{ArrowDown}')
+    await expect(canvas.getByRole('listbox')).toBeVisible()
+    await expect(input).toHaveAttribute('aria-expanded', 'true')
+    await expect(input).toHaveAttribute('aria-activedescendant')
+  },
+}
+
+export const NoResults: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.type(canvas.getByRole('combobox'), 'zzzz')
+    await expect(canvas.getByRole('status')).toHaveTextContent('No results')
+  },
+}
 
 export const OnNotFoundFunction: Story = {
   args: {
