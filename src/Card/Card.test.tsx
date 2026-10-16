@@ -1,5 +1,5 @@
-import { expect, it } from 'vitest'
-import { render, screen } from '../testUtils'
+import { expect, it, vi } from 'vitest'
+import { fireEvent, render, screen } from '../testUtils'
 import { Card } from './Card'
 import placeHolderSvg from './storybook/placeHolderImage.svg'
 import { Button } from '../Button'
@@ -56,5 +56,31 @@ describe('Card', () => {
     expect(container).toMatchSnapshot()
 
     expect(container.querySelector('[data-testid$="-container"]')).toBeNull()
+  })
+
+  it('is not exposed as a button when cardOnClickAction is omitted', () => {
+    render(<Card title="Card Title" />)
+
+    expect(screen.queryByRole('button')).not.toBeInTheDocument()
+  })
+
+  it('exposes cardOnClickAction as a focusable, keyboard-operable button', () => {
+    const cardOnClickAction = vi.fn()
+    render(<Card title="Card Title" cardOnClickAction={cardOnClickAction} />)
+
+    const card = screen.getByRole('button', { name: 'Card Title' })
+    expect(card).toHaveAttribute('tabindex', '0')
+
+    fireEvent.click(card)
+    expect(cardOnClickAction).toHaveBeenCalledTimes(1)
+
+    fireEvent.keyDown(card, { key: 'Enter' })
+    expect(cardOnClickAction).toHaveBeenCalledTimes(2)
+
+    fireEvent.keyDown(card, { key: ' ' })
+    expect(cardOnClickAction).toHaveBeenCalledTimes(3)
+
+    fireEvent.keyDown(card, { key: 'Tab' })
+    expect(cardOnClickAction).toHaveBeenCalledTimes(3)
   })
 })
