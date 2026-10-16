@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
-import { useArgs } from 'storybook/preview-api'
+import { useState } from 'react'
 import { SupportMessage } from '../../SupportMessage'
 import { CurrencyInput, CurrencyInputProps } from '../CurrencyInput'
 
@@ -24,10 +24,10 @@ const meta: Meta<typeof CurrencyInput> = {
 export default meta
 
 const InteractiveTemplate = (args: CurrencyInputProps) => {
-  const [{ value }, updateArgs] = useArgs<CurrencyInputProps>()
+  const [value, setValue] = useState(args.value ?? '')
 
   const handleChange = (e: string) => {
-    updateArgs({ value: String(e) })
+    setValue(e)
     args?.onChange?.(e)
   }
 
