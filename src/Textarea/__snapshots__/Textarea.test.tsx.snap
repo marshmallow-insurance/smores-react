@@ -27,10 +27,17 @@ exports[`Textarea > renders correctly with required props 1`] = `
   outline: none;
 }
 
-.c1:hover,
-.c1:focus,
-.c1:focus-visible {
+.c1:hover:not(:disabled):not(:focus) {
   border-color: #9d927b;
+}
+
+.c1:focus {
+  border-color: #292924;
+}
+
+.c1:focus-visible:not([data-pointer-focus]) {
+  outline: 2px solid #0e0e0c;
+  outline-offset: 2px;
 }
 
 <body>
