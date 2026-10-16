@@ -1,3 +1,9 @@
+## [16.10.8](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.7...v16.10.8) (2026-10-16)
+
+### Bug Fixes
+
+* **Textarea:** match Input hover and focus states ([#5237](https://github.com/marshmallow-insurance/smores-react/issues/5237)) ([26ee54a](https://github.com/marshmallow-insurance/smores-react/commit/26ee54a5a1391585c203bea6cfa9882e51fdb80c))
+
 ## [16.10.7](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.6...v16.10.7) (2026-10-16)
 
 ### Bug Fixes
