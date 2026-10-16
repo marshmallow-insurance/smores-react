@@ -101,29 +101,27 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
     <>
       {pinned && <Spacer aria-hidden="true" $height={containerHeight} />}
       <Container ref={containerRef} className={className} $pinned={pinned}>
-        <ButtonGroup $orientation={orientation} $align={align}>
-          {buttons.map(
-            (button, index) =>
-              button && <Fragment key={index}>{button}</Fragment>,
-          )}
-        </ButtonGroup>
-        {supportingMessage && hasSupportingMessage && (
-          <SupportingText
-            id={supportingTextId}
-            $orientation={orientation}
-            $align={align}
-          >
-            {supportingMessage.icon && (
-              <SupportingIconContainer>
-                <FontAwesomeIcon
-                  icon={supportingMessage.icon}
-                  color={theme.color.icon.subtle}
-                />
-              </SupportingIconContainer>
+        <Content $orientation={orientation} $align={align}>
+          <ButtonGroup $orientation={orientation} $align={align}>
+            {buttons.map(
+              (button, index) =>
+                button && <Fragment key={index}>{button}</Fragment>,
             )}
-            {supportingMessage.text}
-          </SupportingText>
-        )}
+          </ButtonGroup>
+          {supportingMessage && hasSupportingMessage && (
+            <SupportingText id={supportingTextId}>
+              {supportingMessage.icon && (
+                <SupportingIconContainer>
+                  <FontAwesomeIcon
+                    icon={supportingMessage.icon}
+                    color={theme.color.icon.subtle}
+                  />
+                </SupportingIconContainer>
+              )}
+              {supportingMessage.text}
+            </SupportingText>
+          )}
+        </Content>
       </Container>
     </>
   )
@@ -153,7 +151,6 @@ const Container = styled.div<{ $pinned: boolean }>(
   ({ theme, $pinned }) => css`
     display: flex;
     flex-direction: column;
-    gap: ${theme.space[150]};
     width: 100%;
     // The library ships no CSS reset, so keep the pinned padding inside the viewport width
     box-sizing: border-box;
@@ -215,7 +212,6 @@ const ButtonGroup = styled.div<{
           grid-auto-columns: minmax(${desktopHorizontalButtonMinWidth}, 1fr);
           width: fit-content;
           max-width: 100%;
-          margin: ${desktopAlignMargins[$align]};
         }
       `
     }
@@ -242,21 +238,20 @@ const SupportingIconContainer = styled.span(
   `,
 )
 
-// Sits in the same box as the buttons on desktop, so it lines up with them
-// and is centred under them whatever `align` is
-const SupportingText = styled.p<{
+// Groups the buttons and supporting text in one box, so on desktop they share
+// a centre line and the box lines up with `align` (vertical: button column width)
+const Content = styled.div<{
   $orientation: ButtonContainerOrientation
   $align: ButtonContainerAlignment
 }>(
   ({ theme, $orientation, $align }) => css`
-    margin: 0;
-    font-size: ${theme.font.body[200].fontSize};
-    font-weight: ${theme.font.body[200].fontWeight};
-    line-height: ${theme.font.body[200].lineHeight};
-    color: ${theme.color.text.subtle};
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: ${theme.space[150]};
+    width: 100%;
 
     ${desktopMediaQuery} {
+      align-items: center;
       width: ${
         $orientation === 'vertical'
           ? desktopVerticalButtonMaxWidth
@@ -265,5 +260,16 @@ const SupportingText = styled.p<{
       max-width: 100%;
       margin: ${desktopAlignMargins[$align]};
     }
+  `,
+)
+
+const SupportingText = styled.p(
+  ({ theme }) => css`
+    margin: 0;
+    font-size: ${theme.font.body[200].fontSize};
+    font-weight: ${theme.font.body[200].fontWeight};
+    line-height: ${theme.font.body[200].lineHeight};
+    color: ${theme.color.text.subtle};
+    text-align: center;
   `,
 )
