@@ -13,6 +13,7 @@ import { CommonFieldProps } from '../fields/commonFieldTypes'
 import {
   Input,
   InputLeadingIconContainer,
+  InputTrailingIconContainer,
   StyledFrontIcon,
   StyledTrailingIcon,
 } from '../fields/components/CommonInput'
@@ -99,11 +100,14 @@ export const TextInput = forwardRef(function TextInput(
     }
   }
 
+  const iconColor = disabled ? 'color.icon.subtle' : 'color.icon.base'
+  const iconFill = disabled ? theme.color.icon.subtle : theme.color.text.subtle
+
   const frontIconToRender = frontIconComponent ? (
     <InputLeadingIconContainer
       $size={20}
       $disabled={disabled}
-      $iconColor={disabled ? theme.color.icon.subtle : theme.color.text.subtle}
+      $iconColor={iconFill}
     >
       {frontIconComponent}
     </InputLeadingIconContainer>
@@ -111,23 +115,23 @@ export const TextInput = forwardRef(function TextInput(
     <StyledFrontIcon
       $disabled={disabled}
       render={frontIcon}
-      color={disabled ? 'color.icon.subtle' : 'color.icon.base'}
+      color={iconColor}
     />
   ) : null
 
   const trailingIconToRender = trailingIconComponent ? (
-    <InputLeadingIconContainer
+    <InputTrailingIconContainer
       $size={20}
       $disabled={disabled}
-      $iconColor={disabled ? theme.color.icon.subtle : theme.color.text.subtle}
+      $iconColor={iconFill}
     >
       {trailingIconComponent}
-    </InputLeadingIconContainer>
+    </InputTrailingIconContainer>
   ) : trailingIcon ? (
     <StyledTrailingIcon
       $disabled={disabled}
       render={trailingIcon}
-      color={disabled ? 'color.icon.subtle' : 'color.icon.base'}
+      color={iconColor}
     />
   ) : null
 

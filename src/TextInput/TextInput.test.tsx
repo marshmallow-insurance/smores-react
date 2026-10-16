@@ -168,4 +168,19 @@ describe('TextInput', () => {
 
     expect(icon).toHaveStyleRule('cursor', 'not-allowed')
   })
+
+  it('positions a custom trailing icon on the trailing side', () => {
+    render(
+      <TextInput
+        label="Name"
+        placeholder="Name"
+        value=""
+        onChange={noop}
+        trailingIconComponent={<span data-testid="custom-trailing">x</span>}
+      />,
+    )
+    const icon = screen.getByTestId('custom-trailing').parentElement!
+
+    expect(icon).toHaveStyleRule('right', '36px')
+  })
 })

@@ -141,11 +141,14 @@ export const NumberInput = forwardRef(function NumberInput(
     }
   }
 
+  const iconColor = disabled ? 'color.icon.subtle' : 'color.text.subtle'
+  const iconFill = disabled ? theme.color.icon.subtle : theme.color.text.subtle
+
   const frontIconToRender = frontIconComponent ? (
     <InputLeadingIconContainer
       $size={20}
       $disabled={disabled}
-      $iconColor={disabled ? theme.color.icon.subtle : theme.color.text.subtle}
+      $iconColor={iconFill}
     >
       {frontIconComponent}
     </InputLeadingIconContainer>
@@ -153,7 +156,7 @@ export const NumberInput = forwardRef(function NumberInput(
     <StyledFrontIcon
       $disabled={disabled}
       render={frontIcon}
-      color={disabled ? 'color.icon.subtle' : 'color.text.subtle'}
+      color={iconColor}
     />
   ) : null
 
@@ -161,7 +164,7 @@ export const NumberInput = forwardRef(function NumberInput(
     <InputTrailingIconContainer
       $size={20}
       $disabled={disabled}
-      $iconColor={disabled ? theme.color.icon.subtle : theme.color.text.subtle}
+      $iconColor={iconFill}
     >
       {trailingIconComponent}
     </InputTrailingIconContainer>
@@ -169,7 +172,7 @@ export const NumberInput = forwardRef(function NumberInput(
     <StyledTrailingIcon
       $disabled={disabled}
       render={trailingIcon}
-      color={disabled ? 'color.icon.subtle' : 'color.text.subtle'}
+      color={iconColor}
     />
   ) : null
 

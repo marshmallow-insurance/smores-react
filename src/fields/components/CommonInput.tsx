@@ -6,6 +6,7 @@ import {
   fieldFocusAttrs,
   fieldFocusRing,
   fieldHoverBorderColor,
+  fieldIconDisabledStyle,
 } from './fieldStyles'
 
 interface IInput {
@@ -105,7 +106,7 @@ export const InputLeadingIconContainer = styled(IconContainer)<SIcon>`
   z-index: 1;
   color: ${({ $disabled, theme }) =>
     $disabled ? theme.color.icon.subtle : theme.color.text.base};
-  ${({ $disabled }) => $disabled && 'cursor: not-allowed;'}
+  ${fieldIconDisabledStyle}
 `
 
 export const StyledFrontIcon = styled(Icon)<SIcon>`
@@ -113,14 +114,14 @@ export const StyledFrontIcon = styled(Icon)<SIcon>`
   left: 36px;
   margin-left: -24px;
   z-index: 1;
-  ${({ $disabled }) => $disabled && 'cursor: not-allowed;'}
+  ${fieldIconDisabledStyle}
 `
 
 export const StyledTrailingIcon = styled(Icon)<SIcon>`
   position: relative;
   right: 36px;
   margin-right: -36px;
-  ${({ $disabled }) => $disabled && 'cursor: not-allowed;'}
+  ${fieldIconDisabledStyle}
 `
 
 export const InputTrailingIconContainer = styled(IconContainer)<SIcon>`
@@ -129,5 +130,5 @@ export const InputTrailingIconContainer = styled(IconContainer)<SIcon>`
   margin-right: -36px;
   color: ${({ $disabled, theme }) =>
     $disabled ? theme.color.icon.subtle : theme.color.text.base};
-  ${({ $disabled }) => $disabled && 'cursor: not-allowed;'}
+  ${fieldIconDisabledStyle}
 `

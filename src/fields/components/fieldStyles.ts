@@ -52,5 +52,10 @@ export const fieldDisabledStyle = css`
   }
 `
 
+/** Disabled icons sit over the input, so they show its disabled cursor themselves. */
+export const fieldIconDisabledStyle = css<{ $disabled?: boolean }>`
+  ${({ $disabled }) => $disabled && 'cursor: not-allowed;'}
+`
+
 export const fieldHoverBorderColor = (theme: DefaultTheme, error?: boolean) =>
   error ? theme.color.feedback.negative[300] : theme.color.border.base
