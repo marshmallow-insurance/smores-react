@@ -74,6 +74,7 @@ exports[`ActionDropdown > renders correctly with default props 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Select an option"
       class="c1"
       id="MM_SMORES_0-button"
       role="combobox"

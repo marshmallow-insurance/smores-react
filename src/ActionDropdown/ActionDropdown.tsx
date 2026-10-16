@@ -110,6 +110,7 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
         ref={refs.setReference}
         id={buttonId}
         type="button"
+        aria-label={label ? undefined : 'Select an option'}
         $text={resolvedTextColor}
         $bg={resolvedBgColor}
         {...getReferenceProps()}

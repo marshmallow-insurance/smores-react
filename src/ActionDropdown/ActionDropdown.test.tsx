@@ -55,6 +55,20 @@ describe('ActionDropdown', () => {
       ).toHaveAttribute('aria-selected', 'true')
     })
 
+    it('gives the trigger an accessible name when there is no label', () => {
+      render(
+        <ActionDropdown
+          value={{ label: 'Default grey', value: 'DEFAULT' }}
+          list={options}
+          onSelect={noop}
+        />,
+      )
+
+      expect(
+        screen.getByRole('combobox', { name: 'Select an option' }),
+      ).toBeInTheDocument()
+    })
+
     it('opens with the keyboard and selects an option with Enter', () => {
       const onSelect = vi.fn()
       render(
