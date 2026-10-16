@@ -17,6 +17,7 @@ import {
   StyledTrailingIcon,
 } from '../fields/components/CommonInput'
 import { useUniqueId } from '../utils/id'
+import { getFieldAria } from '../fields/fieldAria'
 import { useTheme } from 'styled-components'
 
 interface Props extends CommonFieldProps {
@@ -86,6 +87,10 @@ export const TextInput = forwardRef(function TextInput(
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   const id = useUniqueId(idProp)
+  const { assistiveTextId, errorMsgId, controlAria } = getFieldAria(id, {
+    ...fieldProps,
+    error,
+  })
   const theme = useTheme()
 
   const handleAnimationEnd = (e: AnimationEvent<HTMLInputElement>) => {
@@ -119,7 +124,13 @@ export const TextInput = forwardRef(function TextInput(
   ) : null
 
   return (
-    <Field {...fieldProps} htmlFor={id} error={error}>
+    <Field
+      {...fieldProps}
+      htmlFor={id}
+      error={error}
+      assistiveTextId={assistiveTextId}
+      errorMsgId={errorMsgId}
+    >
       <Box flex alignItems="center" justifyContent="flex-start">
         {frontIconToRender}
         <Input
@@ -141,6 +152,7 @@ export const TextInput = forwardRef(function TextInput(
           }}
           onBlur={onBlur}
           inputMode={inputModeAttr}
+          {...controlAria}
         />
         {trailingIconToRender}
       </Box>

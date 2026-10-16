@@ -1,3 +1,15 @@
+## [16.10.4](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.3...v16.10.4) (2026-10-16)
+
+### Bug Fixes
+
+* **Inputs:** wire aria-invalid, aria-required and aria-describedby on text fields ([#5230](https://github.com/marshmallow-insurance/smores-react/issues/5230)) ([bca829a](https://github.com/marshmallow-insurance/smores-react/commit/bca829a5db06b81116aba2f79e19fc1e29e1ebda))
+
+## [16.10.3](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.2...v16.10.3) (2026-10-16)
+
+### Bug Fixes
+
+* **RadioGroup:** make storybook stories respond to clicks ([#5231](https://github.com/marshmallow-insurance/smores-react/issues/5231)) ([2464061](https://github.com/marshmallow-insurance/smores-react/commit/246406151e65f6daa9d88c2810f658c514955ae4))
+
 ## [16.10.2](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.1...v16.10.2) (2026-10-16)
 
 ### Bug Fixes

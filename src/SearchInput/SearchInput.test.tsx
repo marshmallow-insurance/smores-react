@@ -366,6 +366,22 @@ describe('SearchInput', () => {
         />,
       )
 
+    it('does not reference title help text when there is no label', () => {
+      render(
+        <SearchInput
+          id="search"
+          renderAsTitle
+          assistiveText="Pick a day"
+          searchList={searchList}
+          onFound={noop}
+        />,
+      )
+
+      expect(screen.getByRole('combobox')).not.toHaveAttribute(
+        'aria-describedby',
+      )
+    })
+
     it('exposes a combobox that controls a labelled listbox of options', () => {
       renderSearch()
       const input = screen.getByRole('combobox', { name: 'Day' })

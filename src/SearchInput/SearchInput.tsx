@@ -19,6 +19,7 @@ import {
 } from '../fields/components/CommonInput'
 import { useOnClickOutside } from '../hooks'
 import { useUniqueId } from '../utils/id'
+import { getFieldAria } from '../fields/fieldAria'
 import { useControllableState } from '../utils/useControlledState'
 import { SearchKeyEvent, SearchOptions } from './components/SearchOptions'
 import { visuallyHidden } from '../utils/visuallyHidden'
@@ -115,6 +116,10 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const wrapperRef = useRef(null)
     const theme = useTheme()
     const id = useUniqueId(idProp)
+    const { assistiveTextId, errorMsgId, controlAria } = getFieldAria(id, {
+      ...otherProps,
+      renderAsTitle,
+    })
     const [showOptions, setShowOptions] = useState(false)
     const [selectedValue, setSelectedValue] = useControllableState<
       string | null
@@ -313,6 +318,8 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           className={className}
           renderAsTitle={renderAsTitle}
           htmlFor={id}
+          assistiveTextId={assistiveTextId}
+          errorMsgId={errorMsgId}
           {...otherProps}
         >
           <Box flex alignItems="center" justifyContent="flex-start">
@@ -355,6 +362,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               onBlur={(e) => {
                 onBlur?.(e)
               }}
+              {...controlAria}
             />
             <Icons
               flex
