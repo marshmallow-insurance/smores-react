@@ -103,8 +103,8 @@ export const InputLeadingIconContainer = styled(IconContainer)<SIcon>`
   left: 36px;
   margin-left: ${({ $size }) => -$size}px;
   z-index: 1;
-  opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
-  color: ${({ theme }) => theme.color.text.base};
+  color: ${({ $disabled, theme }) =>
+    $disabled ? theme.color.icon.subtle : theme.color.text.base};
 `
 
 export const StyledFrontIcon = styled(Icon)<SIcon>`
@@ -112,22 +112,22 @@ export const StyledFrontIcon = styled(Icon)<SIcon>`
   left: 36px;
   margin-left: -24px;
   z-index: 1;
-  opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
-  color: ${({ theme }) => theme.color.text.base};
+  color: ${({ $disabled, theme }) =>
+    $disabled ? theme.color.icon.subtle : theme.color.text.base};
 `
 
 export const StyledTrailingIcon = styled(Icon)<SIcon>`
   position: relative;
   right: 36px;
   margin-right: -36px;
-  opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
-  color: ${({ theme }) => theme.color.text.base};
+  color: ${({ $disabled, theme }) =>
+    $disabled ? theme.color.icon.subtle : theme.color.text.base};
 `
 
 export const InputTrailingIconContainer = styled(IconContainer)<SIcon>`
   position: relative;
   right: 36px;
   margin-right: -36px;
-  opacity: ${({ $disabled }) => ($disabled ? '0.5' : '1')};
-  color: ${({ theme }) => theme.color.text.base};
+  color: ${({ $disabled, theme }) =>
+    $disabled ? theme.color.icon.subtle : theme.color.text.base};
 `
