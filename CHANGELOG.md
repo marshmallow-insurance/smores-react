@@ -1,3 +1,9 @@
+## [16.10.5](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.4...v16.10.5) (2026-10-16)
+
+### Bug Fixes
+
+* **SearchInput:** make dropdown option rows 48px ([#5233](https://github.com/marshmallow-insurance/smores-react/issues/5233)) ([f114885](https://github.com/marshmallow-insurance/smores-react/commit/f1148857a0ac095edee272ec3562628dd56f44f1))
+
 ## [16.10.4](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.3...v16.10.4) (2026-10-16)
 
 ### Bug Fixes
