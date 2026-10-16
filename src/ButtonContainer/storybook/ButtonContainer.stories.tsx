@@ -23,11 +23,16 @@ import { Box } from '../../Box'
 import { Button } from '../../Button'
 import { Divider } from '../../Divider'
 import { Text } from '../../Text'
-import { ButtonContainer, ButtonContainerOrientation } from '../ButtonContainer'
+import {
+  ButtonContainer,
+  ButtonContainerAlignment,
+  ButtonContainerOrientation,
+} from '../ButtonContainer'
 
 /** Mirrors the Figma component properties; mapped to props in `render` */
 type StoryArgs = {
   orientation: ButtonContainerOrientation
+  align: ButtonContainerAlignment
   showSecondaryButton: boolean
   showTertiaryButton: boolean
   showSupportingText: boolean
@@ -110,7 +115,7 @@ const DocsPage = () => (
   <>
     <Title />
     <Markdown>
-      {`Pins one to three buttons to the bottom of the screen on mobile, with optional supporting text below them. From 768px up it sits at the end of the content, centred: vertical buttons are up to 400px wide, and horizontal buttons all match the longest label (at least 160px).`}
+      {`Pins one to three buttons to the bottom of the screen on mobile, with optional supporting text below them. From 768px up it sits at the end of the content, centred by default or on the left with \`align="start"\`: vertical buttons are up to 400px wide, and horizontal buttons all match the longest label (at least 160px).`}
     </Markdown>
     <Primary />
     <Controls />
@@ -143,6 +148,7 @@ const meta: Meta<StoryArgs> = {
   title: 'ButtonContainer',
   args: {
     orientation: 'vertical',
+    align: 'center',
     showSecondaryButton: true,
     showTertiaryButton: false,
     showSupportingText: false,
@@ -155,6 +161,10 @@ const meta: Meta<StoryArgs> = {
     orientation: {
       control: { type: 'radio' },
       options: ['vertical', 'horizontal'],
+    },
+    align: {
+      control: { type: 'radio' },
+      options: ['center', 'start'],
     },
     showSecondaryButton: { control: 'boolean' },
     showTertiaryButton: { control: 'boolean' },
@@ -176,6 +186,7 @@ const meta: Meta<StoryArgs> = {
   },
   render: ({
     orientation,
+    align,
     showSecondaryButton,
     showTertiaryButton,
     showSupportingText,
@@ -186,6 +197,7 @@ const meta: Meta<StoryArgs> = {
   }) => (
     <ButtonContainer
       orientation={orientation}
+      align={align}
       pinned={pinned}
       primaryButton={<Button primary>Continue</Button>}
       secondaryButton={
@@ -290,6 +302,17 @@ export const LongSupportingText: Story = {
 export const Desktop: Story = {
   tags: ['!autodocs'],
   args: {
+    showSupportingText: true,
+  },
+  globals: {
+    viewport: { value: 'desktop', isRotated: false },
+  },
+}
+
+export const DesktopStartAligned: Story = {
+  tags: ['!autodocs'],
+  args: {
+    align: 'start',
     showSupportingText: true,
   },
   globals: {

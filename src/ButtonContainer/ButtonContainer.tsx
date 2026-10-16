@@ -16,6 +16,8 @@ type ButtonElement = ReactElement<{ 'aria-describedby'?: string }>
 
 export type ButtonContainerOrientation = 'vertical' | 'horizontal'
 
+export type ButtonContainerAlignment = 'center' | 'start'
+
 export type ButtonContainerSupportingMessage = {
   /** Short plain text, e.g. reassurance copy. Required, so an icon never shows on its own */
   text: string
@@ -33,6 +35,11 @@ export type ButtonContainerProps = {
   tertiaryButton?: ButtonElement
   /** Stack the buttons vertically or lay them out side by side */
   orientation?: ButtonContainerOrientation
+  /**
+   * Where the buttons and supporting text sit from 768px up. Use `start` to
+   * line them up with left-aligned page content. On mobile they fill the width.
+   */
+  align?: ButtonContainerAlignment
   /** Optional message shown below the buttons, e.g. reassurance copy */
   supportingMessage?: ButtonContainerSupportingMessage
   /**
@@ -48,6 +55,7 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
   secondaryButton,
   tertiaryButton,
   orientation = 'vertical',
+  align = 'center',
   supportingMessage,
   pinned = true,
 }) => {
@@ -92,14 +100,14 @@ export const ButtonContainer: FC<ButtonContainerProps> = ({
     <>
       {pinned && <Spacer aria-hidden="true" $height={containerHeight} />}
       <Container ref={containerRef} className={className} $pinned={pinned}>
-        <ButtonGroup $orientation={orientation}>
+        <ButtonGroup $orientation={orientation} $align={align}>
           {buttons.map(
             (button, index) =>
               button && <Fragment key={index}>{button}</Fragment>,
           )}
         </ButtonGroup>
         {supportingMessage && hasSupportingMessage && (
-          <SupportingText id={supportingTextId}>
+          <SupportingText id={supportingTextId} $align={align}>
             {supportingMessage.icon && (
               <SupportingIconContainer>
                 <FontAwesomeIcon
@@ -167,8 +175,11 @@ const Container = styled.div<{ $pinned: boolean }>(
 )
 
 // On desktop, horizontal buttons all match the width of the longest label
-const ButtonGroup = styled.div<{ $orientation: ButtonContainerOrientation }>(
-  ({ theme, $orientation }) => css`
+const ButtonGroup = styled.div<{
+  $orientation: ButtonContainerOrientation
+  $align: ButtonContainerAlignment
+}>(
+  ({ theme, $orientation, $align }) => css`
     display: grid;
     gap: ${theme.space[150]};
 
@@ -177,7 +188,7 @@ const ButtonGroup = styled.div<{ $orientation: ButtonContainerOrientation }>(
       css`
         ${desktopMediaQuery} {
           grid-template-columns: minmax(0, ${desktopVerticalButtonMaxWidth});
-          justify-content: center;
+          justify-content: ${$align};
         }
       `
     }
@@ -188,12 +199,12 @@ const ButtonGroup = styled.div<{ $orientation: ButtonContainerOrientation }>(
         grid-auto-flow: column;
         grid-auto-columns: minmax(0, 1fr);
 
-        // On desktop the buttons share the width of the longest label, centred
+        // On desktop the buttons share the width of the longest label
         ${desktopMediaQuery} {
           grid-auto-columns: minmax(${desktopHorizontalButtonMinWidth}, 1fr);
           width: fit-content;
           max-width: 100%;
-          margin: 0 auto;
+          margin: ${$align === 'center' ? '0 auto' : '0'};
         }
       `
     }
@@ -220,13 +231,22 @@ const SupportingIconContainer = styled.span(
   `,
 )
 
-const SupportingText = styled.p(
-  ({ theme }) => css`
+const SupportingText = styled.p<{ $align: ButtonContainerAlignment }>(
+  ({ theme, $align }) => css`
     margin: 0;
     font-size: ${theme.font.body[200].fontSize};
     font-weight: ${theme.font.body[200].fontWeight};
     line-height: ${theme.font.body[200].lineHeight};
     color: ${theme.color.text.subtle};
     text-align: center;
+
+    ${
+      $align === 'start' &&
+      css`
+        ${desktopMediaQuery} {
+          text-align: start;
+        }
+      `
+    }
   `,
 )
