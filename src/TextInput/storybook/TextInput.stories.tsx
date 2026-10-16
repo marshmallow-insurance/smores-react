@@ -34,7 +34,7 @@ const InteractiveTemplate = (args: TextInputProps) => {
   return (
     <TextInput
       {...args}
-      value={draft ?? value}
+      value={draft ?? value ?? ''}
       onChange={handleChange}
       onBlur={handleBlur}
     />
