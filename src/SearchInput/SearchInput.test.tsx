@@ -122,6 +122,36 @@ describe('SearchInput when searchList changes', () => {
     expect(() => fireEvent.keyDown(input, { key: 'Enter' })).not.toThrow()
     expect(onFound).not.toHaveBeenCalled()
   })
+
+  it('does not select a different option on Enter when the list is swapped at the same length', () => {
+    const onFound = vi.fn()
+    const { container, rerender } = render(
+      <SearchInput searchList={vegetables} onFound={onFound} />,
+    )
+    const input = openResults(container)
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+
+    rerender(<SearchInput searchList={fruits} onFound={onFound} />)
+    fireEvent.keyDown(input, { key: 'Enter' })
+
+    expect(onFound).not.toHaveBeenCalled()
+  })
+
+  it('keeps the highlight when the same options are passed as a new array', () => {
+    const onFound = vi.fn()
+    const { container, rerender } = render(
+      <SearchInput searchList={vegetables} onFound={onFound} />,
+    )
+    const input = openResults(container)
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+
+    rerender(<SearchInput searchList={[...vegetables]} onFound={onFound} />)
+    fireEvent.keyDown(input, { key: 'Enter' })
+
+    expect(onFound).toHaveBeenCalledWith('courgette')
+  })
 })
 
 describe('SearchInput', () => {

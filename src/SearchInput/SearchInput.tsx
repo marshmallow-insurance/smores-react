@@ -175,6 +175,21 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       )
     }, [searchQuery, searchList, fuse])
 
+    // If the options change under a highlighted one (e.g. searchList is
+    // swapped), clear the highlight so Enter can't pick a different option.
+    // Compare values, not identity, so an inline searchList that re-renders
+    // with the same options keeps the highlight.
+    const optionsKey = useMemo(
+      () => filteredList.map((option) => option.value).join('\n'),
+      [filteredList],
+    )
+    const [highlightedOptionsKey, setHighlightedOptionsKey] =
+      useState(optionsKey)
+    if (optionsKey !== highlightedOptionsKey) {
+      setHighlightedOptionsKey(optionsKey)
+      setHighlightedIndex(-1)
+    }
+
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
         return searchQuery
