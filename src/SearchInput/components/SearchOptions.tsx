@@ -1,4 +1,12 @@
-import { FC, ReactNode, RefObject, createRef, useEffect, useRef } from 'react'
+import {
+  FC,
+  ReactNode,
+  RefObject,
+  createRef,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+} from 'react'
 import styled, { css } from 'styled-components'
 import { TransientProps } from '../../utils/utilTypes'
 import { Box } from '../../Box'
@@ -70,12 +78,39 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
     }
   }, [highlightedIndex])
 
+  // Only reset the scroll when the search term changes, not when the list
+  // opens, so the selected option stays centred
+  const scrollResetForSearchTerm = useRef(searchTerm)
   useEffect(() => {
-    if (resultsListRef.current) {
+    if (
+      resultsListRef.current &&
+      scrollResetForSearchTerm.current !== searchTerm
+    ) {
       resultsListRef.current.scrollTop = 0
     }
+    scrollResetForSearchTerm.current = searchTerm
     setHighlightedIndex(-1)
   }, [searchTerm, setHighlightedIndex])
+
+  // When the list opens, centre the selected option in it. This sets the
+  // list's own scrollTop so the page doesn't scroll.
+  const hasScrolledToSelected = useRef(false)
+  useLayoutEffect(() => {
+    if (hasScrolledToSelected.current) return
+    hasScrolledToSelected.current = true
+
+    const list = resultsListRef.current
+    const selectedIndex = displayedList.findIndex(
+      (el) => selectedValue === el.label || selectedValue === el.value,
+    )
+    const selectedItem = list?.children[selectedIndex] as
+      HTMLElement | undefined
+    if (list && selectedItem) {
+      list.scrollTop =
+        selectedItem.offsetTop -
+        (list.clientHeight - selectedItem.offsetHeight) / 2
+    }
+  }, [displayedList, selectedValue])
 
   return (
     <BoxWithPositionRelative>

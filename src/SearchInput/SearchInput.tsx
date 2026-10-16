@@ -2,6 +2,7 @@ import Fuse, { IFuseOptions } from 'fuse.js'
 import {
   ChangeEvent,
   FocusEvent,
+  MouseEvent,
   ReactNode,
   forwardRef,
   useMemo,
@@ -149,29 +150,46 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       },
     })
 
-    // oxlint-disable-next-line react/react-compiler
+    const isFuzzySearch = enableFuzzySearch || !!fuzzySearchOptions
+
     const fuse = useMemo(() => {
+      if (!isFuzzySearch) {
+        return null
+      }
       return new Fuse(searchList, {
         ...defaultFuzzySearchOptions,
         ...fuzzySearchOptions,
       })
-    }, [searchList])
+    }, [isFuzzySearch, searchList, fuzzySearchOptions])
 
-    // oxlint-disable-next-line react/react-compiler
     const filteredList = useMemo(() => {
       if (searchQuery === null || searchQuery === '') {
         return searchList
       }
 
-      if (enableFuzzySearch || !!fuzzySearchOptions) {
+      if (fuse) {
         return fuse.search(searchQuery).map(({ item }) => item)
       }
 
       return searchList.filter(({ label }) =>
         label.toLowerCase().includes(searchQuery.toLocaleLowerCase()),
       )
-      // oxlint-disable-next-line react/react-compiler
-    }, [searchQuery, enableFuzzySearch, !!fuzzySearchOptions])
+    }, [searchQuery, searchList, fuse])
+
+    // If the options change under a highlighted one (e.g. searchList is
+    // swapped), clear the highlight so Enter can't pick a different option.
+    // Compare values, not identity, so an inline searchList that re-renders
+    // with the same options keeps the highlight.
+    const optionsKey = useMemo(
+      () => filteredList.map((option) => option.value).join('\n'),
+      [filteredList],
+    )
+    const [highlightedOptionsKey, setHighlightedOptionsKey] =
+      useState(optionsKey)
+    if (optionsKey !== highlightedOptionsKey) {
+      setHighlightedOptionsKey(optionsKey)
+      setHighlightedIndex(-1)
+    }
 
     const getDisplayedInputText = () => {
       if (searchQuery !== null) {
@@ -198,7 +216,25 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       }
     }
 
-    const handleClick = () => {
+    // Reopening a field with a selection usually means changing it, so
+    // select the label and let typing replace it rather than append to it
+    const shouldSelectLabel =
+      !showOptions && searchQuery === null && selectedValue !== null
+
+    const handleMouseDown = (event: MouseEvent<HTMLInputElement>) => {
+      // Focus and select ourselves, so the browser doesn't place a caret
+      // (Safari can otherwise undo the selection on mouseup)
+      const input = event.currentTarget
+      if (shouldSelectLabel && document.activeElement !== input) {
+        event.preventDefault()
+        input.focus()
+      }
+    }
+
+    const handleClick = (event: { currentTarget: HTMLInputElement }) => {
+      if (shouldSelectLabel) {
+        event.currentTarget.select()
+      }
       setShowOptions(true)
       if (searchQuery !== null) {
         updateSearchQuery(searchQuery)
@@ -309,7 +345,13 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               onChange={handleInputChange}
               selected={isSelected}
               onClick={handleClick}
-              onKeyDown={handleKeyDown}
+              onMouseDown={handleMouseDown}
+              onKeyDown={(event) => {
+                if (event.key === 'ArrowDown' && shouldSelectLabel) {
+                  event.currentTarget.select()
+                }
+                handleKeyDown(event)
+              }}
               onBlur={(e) => {
                 onBlur?.(e)
               }}
