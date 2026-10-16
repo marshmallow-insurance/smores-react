@@ -1,3 +1,9 @@
+## [16.10.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.10.0...v16.10.1) (2026-10-16)
+
+### Bug Fixes
+
+* **SearchInput:** add combobox accessibility semantics ([#5218](https://github.com/marshmallow-insurance/smores-react/issues/5218)) ([0f207d6](https://github.com/marshmallow-insurance/smores-react/commit/0f207d62a52eccd7358482e0cf7c4fc11447abc3))
+
 ## [16.10.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.9.0...v16.10.0) (2026-10-16)
 
 ### Features
