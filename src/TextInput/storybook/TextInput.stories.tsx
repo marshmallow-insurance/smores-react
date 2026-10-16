@@ -179,6 +179,28 @@ export const TrailingIcon: Story = {
   render: InteractiveTemplate,
 }
 
+export const DisabledLeadingIcon: Story = {
+  args: {
+    id: 'disabled-leading-icon',
+    label: 'First name',
+    placeholder: 'Enter name...',
+    frontIcon: 'search',
+    disabled: true,
+  },
+  render: InteractiveTemplate,
+}
+
+export const DisabledTrailingIcon: Story = {
+  args: {
+    id: 'disabled-trailing-icon',
+    label: 'First name',
+    placeholder: 'Enter name...',
+    trailingIcon: 'car',
+    disabled: true,
+  },
+  render: InteractiveTemplate,
+}
+
 export const AssistiveText: Story = {
   args: {
     id: 'assistive-text',
