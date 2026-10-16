@@ -12,6 +12,7 @@ import { TransientProps } from '../../utils/utilTypes'
 import { Box } from '../../Box'
 import { Icon } from '../../Icon'
 import { EmptyResults } from './EmptyResults'
+import { fontStyleMapping } from '../../Text/fontMapping'
 
 type Option = {
   label: string
@@ -209,8 +210,7 @@ const ResultsList = styled.ul<
   li {
     padding: 14px;
     box-sizing: border-box;
-    font-size: 16px;
-    line-height: 20px;
+    ${fontStyleMapping['body-regular']};
     color: ${({ theme }) => theme.color.text.base};
     cursor: pointer;
   }
