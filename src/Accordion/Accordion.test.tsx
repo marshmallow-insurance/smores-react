@@ -28,4 +28,16 @@ describe('Accordion', () => {
     )
     expect(container).toMatchSnapshot()
   })
+  it('uses the border color for the top border, matching the bottom border', () => {
+    const { container } = render(
+      <Accordion title="How it works" borderTop>
+        Lots of brilliant information about this beautiful component
+      </Accordion>,
+    )
+    const wrapper = container.firstChild as HTMLElement
+    const { borderTopColor, borderBottomColor } =
+      window.getComputedStyle(wrapper)
+    expect(borderTopColor).not.toBe('')
+    expect(borderTopColor).toBe(borderBottomColor)
+  })
 })
