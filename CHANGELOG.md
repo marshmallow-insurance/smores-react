@@ -1,3 +1,9 @@
+## [16.10.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.9.0...v16.10.0) (2026-10-16)
+
+### Features
+
+* **ButtonContainer:** add align prop for start, centre or end buttons on desktop ([#5227](https://github.com/marshmallow-insurance/smores-react/issues/5227)) ([634d1b8](https://github.com/marshmallow-insurance/smores-react/commit/634d1b89f713834e171d6c7164fae0a74801b137)), closes [#5206](https://github.com/marshmallow-insurance/smores-react/issues/5206)
+
 ## [16.9.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.8.0...v16.9.0) (2026-10-15)
 
 ### Features
