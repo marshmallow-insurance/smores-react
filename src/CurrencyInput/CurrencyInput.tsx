@@ -5,6 +5,7 @@ import {
   WheelEvent,
   forwardRef,
   useCallback,
+  useLayoutEffect,
   useRef,
 } from 'react'
 
@@ -101,6 +102,7 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
     error,
   })
   const inputRef = useRef<HTMLInputElement | null>(null)
+  const pendingCaret = useRef<{ value: string; position: number } | null>(null)
 
   const setInputRef = useCallback(
     (node: HTMLInputElement | null) => {
@@ -113,12 +115,17 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
 
   const displayValue = formatThousands ? addThousandsSeparators(value) : value
 
-  const restoreCaret = (significantBeforeCaret: number) => {
+  const applyPendingCaret = () => {
     const input = inputRef.current
-    if (!input || input.ownerDocument.activeElement !== input) return
-    const position = caretAfterSignificant(input.value, significantBeforeCaret)
-    input.setSelectionRange(position, position)
+    const pending = pendingCaret.current
+    if (!input || !pending || input.value !== pending.value) return
+    pendingCaret.current = null
+    if (input.ownerDocument.activeElement === input) {
+      input.setSelectionRange(pending.position, pending.position)
+    }
   }
+
+  useLayoutEffect(applyPendingCaret)
 
   const formatCurrency = (value: string) => {
     const decimalIndex = value.indexOf('.')
@@ -145,18 +152,15 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
     return value
   }
 
+  const normalise = (value: string) => {
+    const EMPTY_INPUT = ''
+    if (value === EMPTY_INPUT) return value
+    return applyMinMax(formatCurrency(value))
+  }
+
   const handleChange = (value: string) => {
     if (onChange === undefined) return
-    const EMPTY_INPUT = ''
-
-    if (value === EMPTY_INPUT) {
-      onChange(value)
-    } else {
-      const amount = formatCurrency(value)
-      const normalisedValue = applyMinMax(amount)
-
-      onChange(normalisedValue)
-    }
+    onChange(normalise(value))
   }
 
   return (
@@ -193,11 +197,22 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
           onChange={(e: FormEvent<HTMLInputElement>) => {
             if (formatThousands) {
               const { value: typed, selectionStart } = e.currentTarget
+              const raw = stripFormatting(typed)
+              const nextDisplay = addThousandsSeparators(
+                onChange ? normalise(raw) : raw,
+              )
               const significantBeforeCaret = countSignificant(
                 typed.slice(0, selectionStart ?? typed.length),
               )
-              queueMicrotask(() => restoreCaret(significantBeforeCaret))
-              if (onChange) handleChange(stripFormatting(typed))
+              pendingCaret.current = {
+                value: nextDisplay,
+                position: caretAfterSignificant(
+                  nextDisplay,
+                  significantBeforeCaret,
+                ),
+              }
+              queueMicrotask(applyPendingCaret)
+              if (onChange) handleChange(raw)
             } else if (onChange) {
               handleChange(e.currentTarget.value)
             }

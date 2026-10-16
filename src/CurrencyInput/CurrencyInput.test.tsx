@@ -122,6 +122,23 @@ describe('CurrencyInput', () => {
     expect(input.selectionStart).toBe(1)
   })
 
+  it('keeps the caret mid-number when a digit is typed', async () => {
+    render(<ControlledCurrencyInput onChange={() => {}} initialValue="1000" />)
+    const input = screen.getByRole('textbox') as HTMLInputElement
+
+    Object.getOwnPropertyDescriptor(
+      HTMLInputElement.prototype,
+      'value',
+    )?.set?.call(input, '1,0500')
+    input.focus()
+    input.setSelectionRange(4, 4)
+    fireEvent.input(input)
+    await Promise.resolve()
+
+    expect(input).toHaveValue('10,500')
+    expect(input.selectionStart).toBe(4)
+  })
+
   it('lets the user delete a separator without it getting stuck', () => {
     const onChange = vi.fn()
     render(<ControlledCurrencyInput onChange={onChange} initialValue="1000" />)
