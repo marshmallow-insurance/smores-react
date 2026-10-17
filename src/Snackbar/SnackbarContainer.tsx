@@ -47,7 +47,9 @@ export const SnackbarContainer: FC<SnackbarContainerProps> = ({
   }, [])
 
   const deleteSnackbar = (id: string) => {
-    setSnackbars(snackbars.filter((snackbar) => snackbar.id !== id))
+    setSnackbars((prevSnackbars) =>
+      prevSnackbars.filter((snackbar) => snackbar.id !== id),
+    )
   }
 
   return (
