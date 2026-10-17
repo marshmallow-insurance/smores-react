@@ -34,17 +34,16 @@ export const SnackbarContainer: FC<SnackbarContainerProps> = ({
   // create snackbar unique ID
   const newSnackId = useCallback(() => {
     const newId = `MM_SNACKBAR_${snackbarIdRef.current}`
-    snackbarIdRef.current = +1
+    snackbarIdRef.current += 1
     return newId
   }, [])
 
-  // oxlint-disable-next-line react/react-compiler
   const addSnackbar = useCallback((snackbar: CreateSnack) => {
     const newSnack = {
       ...snackbar,
       id: newSnackId(),
     }
-    setSnackbars([...snackbars, newSnack])
+    setSnackbars((prevSnackbars) => [...prevSnackbars, newSnack])
   }, [])
 
   const deleteSnackbar = (id: string) => {
