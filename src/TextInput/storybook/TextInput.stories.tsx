@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import type { FocusEvent } from 'react'
 import { Meta, StoryObj } from '@storybook/react-vite'
-import { useArgs } from 'storybook/preview-api'
+import { useArgs, useState } from 'storybook/preview-api'
 import { SupportMessage } from '../../SupportMessage'
 import { TextInput, TextInputProps } from '../TextInput'
 
@@ -14,13 +14,31 @@ type Story = StoryObj<TextInputProps>
 
 const InteractiveTemplate = (args: TextInputProps) => {
   const [{ value }, updateArgs] = useArgs<TextInputProps>()
+  // Typing stays in local state. Writing every keystroke into args rewrites the
+  // URL and re-renders the controls, which makes typing laggy in Storybook.
+  const [draft, setDraft] = useState<string | null>(null)
 
   const handleChange = (e: string) => {
-    updateArgs({ value: e })
+    setDraft(e)
     args?.onChange?.(e)
   }
 
-  return <TextInput {...args} value={value} onChange={handleChange} />
+  const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
+    if (draft !== null) {
+      updateArgs({ value: draft })
+      setDraft(null)
+    }
+    args?.onBlur?.(e)
+  }
+
+  return (
+    <TextInput
+      {...args}
+      value={draft ?? value ?? ''}
+      onChange={handleChange}
+      onBlur={handleBlur}
+    />
+  )
 }
 
 export const Default: Story = {
@@ -175,6 +193,28 @@ export const TrailingIcon: Story = {
     placeholder: 'Enter name...',
     trailingIcon: 'car',
     errorMsg: 'This field is required',
+  },
+  render: InteractiveTemplate,
+}
+
+export const DisabledLeadingIcon: Story = {
+  args: {
+    id: 'disabled-leading-icon',
+    label: 'First name',
+    placeholder: 'Enter name...',
+    frontIcon: 'search',
+    disabled: true,
+  },
+  render: InteractiveTemplate,
+}
+
+export const DisabledTrailingIcon: Story = {
+  args: {
+    id: 'disabled-trailing-icon',
+    label: 'First name',
+    placeholder: 'Enter name...',
+    trailingIcon: 'car',
+    disabled: true,
   },
   render: InteractiveTemplate,
 }

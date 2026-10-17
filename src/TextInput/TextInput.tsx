@@ -13,6 +13,7 @@ import { CommonFieldProps } from '../fields/commonFieldTypes'
 import {
   Input,
   InputLeadingIconContainer,
+  InputTrailingIconContainer,
   StyledFrontIcon,
   StyledTrailingIcon,
 } from '../fields/components/CommonInput'
@@ -99,27 +100,38 @@ export const TextInput = forwardRef(function TextInput(
     }
   }
 
+  const iconColor = disabled ? 'color.icon.subtle' : 'color.icon.base'
+  const iconFill = disabled ? theme.color.icon.subtle : theme.color.text.subtle
+
   const frontIconToRender = frontIconComponent ? (
-    <InputLeadingIconContainer $size={20} $iconColor={theme.color.text.subtle}>
+    <InputLeadingIconContainer
+      $size={20}
+      $disabled={disabled}
+      $iconColor={iconFill}
+    >
       {frontIconComponent}
     </InputLeadingIconContainer>
   ) : frontIcon ? (
     <StyledFrontIcon
       $disabled={disabled}
       render={frontIcon}
-      color="color.icon.base"
+      color={iconColor}
     />
   ) : null
 
   const trailingIconToRender = trailingIconComponent ? (
-    <InputLeadingIconContainer $size={20} $iconColor={theme.color.text.subtle}>
+    <InputTrailingIconContainer
+      $size={20}
+      $disabled={disabled}
+      $iconColor={iconFill}
+    >
       {trailingIconComponent}
-    </InputLeadingIconContainer>
+    </InputTrailingIconContainer>
   ) : trailingIcon ? (
     <StyledTrailingIcon
       $disabled={disabled}
       render={trailingIcon}
-      color="color.icon.base"
+      color={iconColor}
     />
   ) : null
 
@@ -144,6 +156,7 @@ export const TextInput = forwardRef(function TextInput(
           value={value}
           $error={error}
           $frontIcon={Boolean(frontIconToRender)}
+          $trailingIcon={Boolean(trailingIconToRender)}
           $fallbackStyle={fallbackStyle}
           autoComplete={autoCompleteAttr}
           onChange={(e: FormEvent<HTMLInputElement>) => {

@@ -5,6 +5,12 @@ import { Field } from '../fields/Field'
 import { CommonFieldProps } from '../fields/commonFieldTypes'
 import { useUniqueId } from '../utils/id'
 import { getFieldAria } from '../fields/fieldAria'
+import {
+  fieldDisabledStyle,
+  fieldFocusAttrs,
+  fieldFocusRing,
+  fieldHoverBorderColor,
+} from '../fields/components/fieldStyles'
 import { MarginProps } from '../utils/space'
 
 type BaseProps = {
@@ -97,7 +103,7 @@ interface TextArea {
   $fallbackStyle?: boolean
 }
 
-const StyledTextArea = styled.textarea<TextArea>`
+const StyledTextArea = styled.textarea.attrs(fieldFocusAttrs)<TextArea>`
   font-size: 16px;
   font: inherit;
   line-height: 20px;
@@ -113,15 +119,25 @@ const StyledTextArea = styled.textarea<TextArea>`
   color: ${({ theme }) => theme.color.text.base};
   resize: ${({ $resize }) => $resize};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'text')};
-  opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   border-color: ${({ $error, theme }) =>
     $error ? theme.color.feedback.negative[200] : theme.color.border.subtle};
   outline: none;
 
-  &:hover,
-  &:focus,
-  &:focus-visible {
+  &:hover:not(:disabled):not(:focus) {
+    border-color: ${({ $error, theme }) => fieldHoverBorderColor(theme, $error)};
+  }
+
+  &:focus {
     border-color: ${({ $error, theme }) =>
-      $error ? theme.color.feedback.negative[200] : theme.color.border.base};
+      $error
+        ? theme.color.feedback.negative[200]
+        : theme.color.border.contrast};
+  }
+
+  ${fieldFocusRing}
+  ${fieldDisabledStyle}
+
+  &::placeholder {
+    color: ${({ theme }) => theme.color.text.subtle};
   }
 `
