@@ -1,6 +1,8 @@
 import { darken } from 'polished'
 import {
+  Children,
   FC,
+  isValidElement,
   KeyboardEventHandler,
   MouseEvent,
   MouseEventHandler,
@@ -12,9 +14,37 @@ import { Box } from '../Box'
 import { Icon, Icons } from '../Icon'
 
 import { Text } from '../Text'
+import { Button } from '../Button'
+import { Link } from '../Link'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 import { IconContainer } from '../sharedStyles/shared.styles'
+
+const INTERACTIVE_HTML_TAGS = new Set([
+  'a',
+  'button',
+  'input',
+  'select',
+  'textarea',
+])
+const INTERACTIVE_COMPONENTS = new Set<unknown>([Button, Link])
+
+// Card can't know what a consumer puts in `children`, so it walks the tree
+// looking for known interactive elements (native tags or this library's own
+// Button/Link). role="button" on the card would make these presentational
+// to assistive tech, so their presence disables the card's own button role.
+const hasInteractiveContent = (node: ReactNode): boolean =>
+  Children.toArray(node).some((child) => {
+    if (!isValidElement<{ children?: ReactNode }>(child)) return false
+    if (
+      (typeof child.type === 'string' &&
+        INTERACTIVE_HTML_TAGS.has(child.type)) ||
+      INTERACTIVE_COMPONENTS.has(child.type)
+    ) {
+      return true
+    }
+    return hasInteractiveContent(child.props.children)
+  })
 
 export type CardProps = {
   children?: ReactNode
@@ -63,10 +93,12 @@ export const Card: FC<CardProps> = ({
     (!!iconComponent || !!leadingIcon || !!title || !!body) && children
 
   const isNotClickable = !cardOnClickAction
-  // buttonAction/rightAction can hold their own interactive element (Button, Link).
-  // role="button" would hide that element from assistive tech, so the whole-card
-  // keyboard/button semantics are only safe to add when there's nothing else to click.
-  const hasOwnInteractiveSlot = !!buttonAction || !!rightAction
+  // buttonAction/rightAction/children can hold their own interactive element
+  // (Button, Link). role="button" would hide that element from assistive
+  // tech, so the whole-card keyboard/button semantics are only safe to add
+  // when there's nothing else to click.
+  const hasOwnInteractiveSlot =
+    !!buttonAction || !!rightAction || hasInteractiveContent(children)
   const isKeyboardOperable = !isNotClickable && !hasOwnInteractiveSlot
 
   const handleKeyDown: KeyboardEventHandler<HTMLDivElement> = (event) => {
