@@ -65,6 +65,15 @@ export type CardProps = {
   marginY?: string
   narrow?: boolean
   wide?: boolean
+  /**
+   * Opt out of the card's own button role/keyboard handling even though
+   * `hasInteractiveContent` can't see a reason to. Some components (e.g.
+   * `IconStrict`) only render a nested `<button>` conditionally, at render
+   * time, so static tree-walking can't detect them. Set this when children
+   * contains interactive content the walk misses, to stop role="button"
+   * from making that content presentational to assistive tech.
+   */
+  suppressCardRole?: boolean
 } & MarginProps
 
 export const Card: FC<CardProps> = ({
@@ -86,6 +95,7 @@ export const Card: FC<CardProps> = ({
   marginY = '',
   narrow = false,
   wide = false,
+  suppressCardRole = false,
   ...otherProps
 }) => {
   const theme = useTheme()
@@ -96,9 +106,13 @@ export const Card: FC<CardProps> = ({
   // buttonAction/rightAction/children can hold their own interactive element
   // (Button, Link). role="button" would hide that element from assistive
   // tech, so the whole-card keyboard/button semantics are only safe to add
-  // when there's nothing else to click.
+  // when there's nothing else to click. suppressCardRole is the escape
+  // hatch for interactive content the walk can't see (see CardProps).
   const hasOwnInteractiveSlot =
-    !!buttonAction || !!rightAction || hasInteractiveContent(children)
+    !!buttonAction ||
+    !!rightAction ||
+    hasInteractiveContent(children) ||
+    suppressCardRole
   const isKeyboardOperable = !isNotClickable && !hasOwnInteractiveSlot
 
   const handleKeyDown: KeyboardEventHandler<HTMLDivElement> = (event) => {

@@ -3,6 +3,7 @@ import { fireEvent, render, screen } from '../testUtils'
 import { Card } from './Card'
 import placeHolderSvg from './storybook/placeHolderImage.svg'
 import { Button } from '../Button'
+import { IconStrict } from '../IconStrict'
 
 const CustomIcon = () => <span data-testid="card-custom-icon" />
 
@@ -146,5 +147,36 @@ describe('Card', () => {
     fireEvent.keyDown(nestedButton, { key: ' ' })
 
     expect(cardOnClickAction).not.toHaveBeenCalled()
+  })
+
+  it("gets a button role despite nested interactive content the walk can't see, like IconStrict", () => {
+    // IconStrict only renders as a <button> conditionally (when handleClick
+    // is passed), decided at render time, so hasInteractiveContent's static
+    // walk can't detect it. Without suppressCardRole the card still gets
+    // role="button" here, nesting an interactive button inside another -
+    // real browsers/AT make the inner button presentational when that
+    // happens, which jsdom's role queries don't model, so this asserts on
+    // the container's role directly rather than via getByRole counts.
+    const { container } = render(
+      <Card title="Card Title" cardOnClickAction={vi.fn()}>
+        <IconStrict render="edit" handleClick={vi.fn()} title="Edit" />
+      </Card>,
+    )
+
+    expect(container.querySelector('[role="button"]')).toHaveAccessibleName(
+      'Card Title',
+    )
+  })
+
+  it('suppressCardRole opts the card out of its own button role so nested content stays exposed', () => {
+    const { container } = render(
+      <Card title="Card Title" cardOnClickAction={vi.fn()} suppressCardRole>
+        <IconStrict render="edit" handleClick={vi.fn()} title="Edit" />
+      </Card>,
+    )
+
+    expect(container.querySelector('[role="button"]')).not.toBeInTheDocument()
+    expect(screen.getAllByRole('button')).toHaveLength(1)
+    expect(screen.getByRole('button', { name: 'Edit' })).toBeInTheDocument()
   })
 })
