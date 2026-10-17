@@ -136,4 +136,65 @@ describe('TextInput', () => {
       modifier: ':focus',
     })
   })
+
+  it('shows the disabled cursor over a disabled icon', () => {
+    const { container } = render(
+      <TextInput
+        label="Name"
+        placeholder="Name"
+        value=""
+        onChange={noop}
+        disabled
+        frontIcon="search"
+      />,
+    )
+    const icon = container.querySelector('[data-testid="search-container"]')!
+
+    expect(icon).toHaveStyleRule('cursor', 'not-allowed')
+  })
+
+  it('shows the disabled cursor over a disabled custom icon', () => {
+    render(
+      <TextInput
+        label="Name"
+        placeholder="Name"
+        value=""
+        onChange={noop}
+        disabled
+        frontIconComponent={<span data-testid="custom-icon">x</span>}
+      />,
+    )
+    const icon = screen.getByTestId('custom-icon').parentElement!
+
+    expect(icon).toHaveStyleRule('cursor', 'not-allowed')
+  })
+
+  it('positions a custom trailing icon on the trailing side', () => {
+    render(
+      <TextInput
+        label="Name"
+        placeholder="Name"
+        value=""
+        onChange={noop}
+        trailingIconComponent={<span data-testid="custom-trailing">x</span>}
+      />,
+    )
+    const icon = screen.getByTestId('custom-trailing').parentElement!
+
+    expect(icon).toHaveStyleRule('right', '36px')
+  })
+
+  it('leaves room for a trailing icon so text does not run under it', () => {
+    render(
+      <TextInput
+        label="Name"
+        placeholder="Name"
+        value=""
+        onChange={noop}
+        trailingIconComponent={<span>x</span>}
+      />,
+    )
+
+    expect(screen.getByRole('textbox')).toHaveStyleRule('padding-right', '42px')
+  })
 })

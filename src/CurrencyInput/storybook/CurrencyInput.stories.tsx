@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
-import { useArgs } from 'storybook/preview-api'
+import { useState } from 'react'
 import { SupportMessage } from '../../SupportMessage'
 import { CurrencyInput, CurrencyInputProps } from '../CurrencyInput'
 
@@ -24,10 +24,16 @@ const meta: Meta<typeof CurrencyInput> = {
 export default meta
 
 const InteractiveTemplate = (args: CurrencyInputProps) => {
-  const [{ value }, updateArgs] = useArgs<CurrencyInputProps>()
+  const [value, setValue] = useState(args.value ?? '')
+  const [syncedArgValue, setSyncedArgValue] = useState(args.value)
+
+  if (args.value !== syncedArgValue) {
+    setSyncedArgValue(args.value)
+    setValue(args.value ?? '')
+  }
 
   const handleChange = (e: string) => {
-    updateArgs({ value: String(e) })
+    setValue(e)
     args?.onChange?.(e)
   }
 
@@ -41,7 +47,7 @@ export const Default: Story = {
     id: 'total_amount',
     label: 'Total Amount',
     name: 'totalAmount',
-    placeholder: '0',
+    placeholder: '200',
   },
 }
 
@@ -179,4 +185,15 @@ export const FallbackError: Story = {
       },
     },
   },
+}
+
+export const FormatThousands: Story = {
+  args: {
+    id: 'formatted_amount',
+    label: 'Amount',
+    name: 'formattedAmount',
+    placeholder: '1,000',
+    formatThousands: true,
+  },
+  render: InteractiveTemplate,
 }

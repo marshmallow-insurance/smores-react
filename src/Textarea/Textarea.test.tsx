@@ -35,4 +35,29 @@ describe('Textarea', () => {
       describedBy.map((id) => document.getElementById(id)?.textContent),
     ).toEqual(['Keep it short', 'Add some notes'])
   })
+
+  it('shows a focus ring only for keyboard focus', () => {
+    render(<Textarea label="Notes" value="" onChange={noop} />)
+    const textarea = screen.getByRole('textbox')
+
+    expect(textarea).toHaveStyleRule(
+      'outline',
+      expect.stringContaining('2px'),
+      {
+        modifier: ':focus-visible:not([data-pointer-focus])',
+      },
+    )
+  })
+
+  it('uses a grey fill when disabled, not opacity', () => {
+    render(<Textarea label="Notes" value="" onChange={noop} disabled />)
+    const textarea = screen.getByRole('textbox')
+
+    expect(textarea).toHaveStyleRule('background-color', expect.any(String), {
+      modifier: ':disabled',
+    })
+    expect(textarea).toHaveStyleRule('opacity', '1', {
+      modifier: ':disabled',
+    })
+  })
 })
