@@ -85,16 +85,21 @@ describe('Card', () => {
   })
 
   it('does not expose button semantics when it has its own buttonAction or rightAction', () => {
-    render(
+    // role="button" would compose the card's accessible name from all its
+    // text content, including the nested action's label, so asserting by
+    // name here can't tell "no role" apart from "role, but name mismatch".
+    // Counting role=button elements is unambiguous: only the nested action
+    // itself should be exposed as a button, never the card too.
+    const { unmount } = render(
       <Card
         title="With button action"
         cardOnClickAction={vi.fn()}
         buttonAction={<Button variant="primary">Action</Button>}
       />,
     )
-    expect(
-      screen.queryByRole('button', { name: 'With button action' }),
-    ).not.toBeInTheDocument()
+    expect(screen.getAllByRole('button')).toHaveLength(1)
+    expect(screen.getByRole('button', { name: 'Action' })).toBeInTheDocument()
+    unmount()
 
     render(
       <Card
@@ -103,16 +108,36 @@ describe('Card', () => {
         rightAction={<Button variant="primary">Right</Button>}
       />,
     )
-    expect(
-      screen.queryByRole('button', { name: 'With right action' }),
-    ).not.toBeInTheDocument()
+    expect(screen.getAllByRole('button')).toHaveLength(1)
+    expect(screen.getByRole('button', { name: 'Right' })).toBeInTheDocument()
   })
 
-  it('ignores keydowns that bubble up from an interactive descendant', () => {
+  it('does not expose button semantics when children holds its own interactive content', () => {
+    render(
+      <Card title="With child button" cardOnClickAction={vi.fn()}>
+        <Button id="viewResult" variant="primary">
+          View result
+        </Button>
+      </Card>,
+    )
+
+    expect(screen.getAllByRole('button')).toHaveLength(1)
+    expect(
+      screen.getByRole('button', { name: 'View result' }),
+    ).toBeInTheDocument()
+  })
+
+  it("ignores keydowns that bubble up from an interactive element the detection can't see ahead of render", () => {
+    // A consumer-owned component that renders a button internally, rather
+    // than receiving it via `children` - hasInteractiveContent can't see
+    // this ahead of render, so the card still gets role="button" here. The
+    // keydown target-guard is what protects this case.
+    const OpaqueWidgetWithButton = () => <button>Nested</button>
+
     const cardOnClickAction = vi.fn()
     render(
       <Card title="Card Title" cardOnClickAction={cardOnClickAction}>
-        <Button variant="primary">Nested</Button>
+        <OpaqueWidgetWithButton />
       </Card>,
     )
 
