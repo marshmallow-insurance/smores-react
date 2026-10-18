@@ -23,6 +23,7 @@ exports[`Accordion > renders correctly for fullBorder and filledBackground varia
   font-weight: 500;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -109,7 +110,6 @@ exports[`Accordion > renders correctly for fullBorder and filledBackground varia
       >
         <h2
           class="c4"
-          cursor="inherit"
           title=""
         >
           How it works
@@ -166,6 +166,7 @@ exports[`Accordion > renders correctly when closed 1`] = `
   font-weight: 500;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -230,7 +231,6 @@ exports[`Accordion > renders correctly when closed 1`] = `
       >
         <h2
           class="c4"
-          cursor="inherit"
           title=""
         >
           How it works
@@ -282,6 +282,7 @@ exports[`Accordion > renders correctly when expanded 1`] = `
   font-weight: 500;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -365,7 +366,6 @@ exports[`Accordion > renders correctly when expanded 1`] = `
       >
         <h2
           class="c4"
-          cursor="inherit"
           title=""
         >
           How it works
