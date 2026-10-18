@@ -16,6 +16,7 @@ import { Icon, Icons } from '../Icon'
 import { Text } from '../Text'
 import { Button } from '../Button'
 import { Link } from '../Link'
+import { IconStrict } from '../IconStrict'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 import { IconContainer } from '../sharedStyles/shared.styles'
@@ -27,7 +28,12 @@ const INTERACTIVE_HTML_TAGS = new Set([
   'select',
   'textarea',
 ])
-const INTERACTIVE_COMPONENTS = new Set<unknown>([Button, Link])
+// IconStrict only renders as a <button> at runtime, based on whether it's
+// given a handleClick prop, so the static tree-walk below can't see that
+// case the way it sees Button/Link. Treat any IconStrict as interactive,
+// even when it renders as a non-interactive div, rather than miss the
+// button case and let Card's own role="button" swallow a real nested button.
+const INTERACTIVE_COMPONENTS = new Set<unknown>([Button, Link, IconStrict])
 
 // Card can't know what a consumer puts in `children`, so it walks the tree
 // looking for known interactive elements (native tags or this library's own

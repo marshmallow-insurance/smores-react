@@ -149,34 +149,36 @@ describe('Card', () => {
     expect(cardOnClickAction).not.toHaveBeenCalled()
   })
 
-  it("gets a button role despite nested interactive content the walk can't see, like IconStrict", () => {
+  it('does not expose button semantics when children holds an interactive IconStrict', () => {
     // IconStrict only renders as a <button> conditionally (when handleClick
     // is passed), decided at render time, so hasInteractiveContent's static
-    // walk can't detect it. Without suppressCardRole the card still gets
-    // role="button" here, nesting an interactive button inside another -
-    // real browsers/AT make the inner button presentational when that
-    // happens, which jsdom's role queries don't model, so this asserts on
-    // the container's role directly rather than via getByRole counts.
-    const { container } = render(
+    // walk can't see that the same way it sees Button/Link. IconStrict is
+    // treated as interactive regardless, so the card never nests a button
+    // inside its own role="button".
+    render(
       <Card title="Card Title" cardOnClickAction={vi.fn()}>
         <IconStrict render="edit" handleClick={vi.fn()} title="Edit" />
       </Card>,
     )
 
-    expect(container.querySelector('[role="button"]')).toHaveAccessibleName(
-      'Card Title',
-    )
+    expect(screen.getAllByRole('button')).toHaveLength(1)
+    expect(screen.getByRole('button', { name: 'Edit' })).toBeInTheDocument()
   })
 
-  it('suppressCardRole opts the card out of its own button role so nested content stays exposed', () => {
+  it('suppressCardRole opts the card out of its own button role for interactive content the walk truly cannot see', () => {
+    // Unlike IconStrict, this consumer-owned component isn't a known
+    // interactive component, so hasInteractiveContent can't detect it ahead
+    // of render - suppressCardRole is the escape hatch for this case.
+    const OpaqueWidgetWithButton = () => <button>Nested</button>
+
     const { container } = render(
       <Card title="Card Title" cardOnClickAction={vi.fn()} suppressCardRole>
-        <IconStrict render="edit" handleClick={vi.fn()} title="Edit" />
+        <OpaqueWidgetWithButton />
       </Card>,
     )
 
     expect(container.querySelector('[role="button"]')).not.toBeInTheDocument()
     expect(screen.getAllByRole('button')).toHaveLength(1)
-    expect(screen.getByRole('button', { name: 'Edit' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Nested' })).toBeInTheDocument()
   })
 })
