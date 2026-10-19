@@ -1,3 +1,9 @@
+## [16.11.3](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.2...v16.11.3) (2026-10-19)
+
+### Bug Fixes
+
+* **Inputs:** use min-height so fields grow with larger text ([#5245](https://github.com/marshmallow-insurance/smores-react/issues/5245)) ([03fbcc1](https://github.com/marshmallow-insurance/smores-react/commit/03fbcc1e30c256c3d08629fbb074984d55a16875))
+
 ## [16.11.2](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.1...v16.11.2) (2026-10-16)
 
 ### Bug Fixes
