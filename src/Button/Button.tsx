@@ -307,12 +307,18 @@ const Container = styled(Box)<IButton>(
 
       &:hover {
         background-color: ${({ theme }) =>
-          !(disabled || $loading) &&
-          theme.color.interactive.neutral.subtle.hover};
+          !(disabled || $loading) && theme.color.surface.brand[100]};
       }
       &:active {
-        background-color: transparent;
-        color: ${({ theme }) => theme.color.text.subtle};
+        background-color: ${({ theme }) =>
+          !(disabled || $loading) && theme.color.surface.brand[300]};
+      }
+
+      ${
+        disabled &&
+        css`
+          color: ${({ theme }) => theme.color.text.nonEssential};
+        `
       }
 
       ${

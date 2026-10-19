@@ -774,12 +774,11 @@ exports[`Button > renders correctly with text button styling 1`] = `
 }
 
 .c0:hover {
-  background-color: #f8f2ea;
+  background-color: #ffcce7;
 }
 
 .c0:active {
-  background-color: transparent;
-  color: #636768;
+  background-color: #ff88c8;
 }
 
 .c1 {

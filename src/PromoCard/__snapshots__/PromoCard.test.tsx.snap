@@ -160,12 +160,11 @@ exports[`PromoCard > renders correctly with explicit variant overrides on both b
 }
 
 .c9:hover {
-  background-color: #f8f2ea;
+  background-color: #ffcce7;
 }
 
 .c9:active {
-  background-color: transparent;
-  color: #636768;
+  background-color: #ff88c8;
 }
 
 .c9 .childrenContainer {
@@ -524,12 +523,11 @@ exports[`PromoCard > renders correctly with tertiary variant on secondaryButton 
 }
 
 .c6:hover {
-  background-color: #f8f2ea;
+  background-color: #ffcce7;
 }
 
 .c6:active {
-  background-color: transparent;
-  color: #636768;
+  background-color: #ff88c8;
 }
 
 .c6 .childrenContainer {
