@@ -57,6 +57,7 @@ export const ResultsOpen: Story = {
  * not clip them. Here the input is at the bottom of the modal, so they open
  * above it.
  */
+// To try by hand: scroll to the bottom and open the results
 export const InsideScrollingModal: Story = {
   args: { onFound: fn() },
   render: (args) => (
@@ -64,6 +65,12 @@ export const InsideScrollingModal: Story = {
       <SearchInput {...args} />
     </ScrollingModal>
   ),
+}
+
+// Runs the checks, and closes the modal at the end
+export const InsideScrollingModalTest: Story = {
+  ...InsideScrollingModal,
+  name: 'Inside Scrolling Modal (test)',
   play: async ({ args }) => {
     const body = within(document.body)
     const input = await body.findByRole('combobox')

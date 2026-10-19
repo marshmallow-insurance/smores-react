@@ -97,9 +97,16 @@ const InsideModal = (args: ActionDropdownProps) => {
  * clip it. Here the dropdown is at the bottom of the modal, so the menu opens
  * above it.
  */
+// To try by hand: scroll to the bottom and open the menu
 export const InsideScrollingModal: Story = {
   args: { value: actions[0] },
   render: (args) => <InsideModal {...args} />,
+}
+
+// Runs the checks, and closes the modal at the end
+export const InsideScrollingModalTest: Story = {
+  ...InsideScrollingModal,
+  name: 'Inside Scrolling Modal (test)',
   play: async () => {
     const body = within(document.body)
     const trigger = await body.findByRole('combobox')
