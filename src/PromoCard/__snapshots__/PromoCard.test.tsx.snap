@@ -145,7 +145,7 @@ exports[`PromoCard > renders correctly with explicit variant overrides on both b
   min-width: 54px;
   background-color: transparent;
   padding: 0;
-  border-radius: 0;
+  border-radius: 8px;
   text-decoration: underline;
   font-size: 14px;
 }
@@ -160,7 +160,7 @@ exports[`PromoCard > renders correctly with explicit variant overrides on both b
 }
 
 .c9:hover {
-  background-color: #f759a9;
+  background-color: #f8f2ea;
 }
 
 .c9:active {
@@ -509,7 +509,7 @@ exports[`PromoCard > renders correctly with tertiary variant on secondaryButton 
   min-width: 54px;
   background-color: transparent;
   padding: 0;
-  border-radius: 0;
+  border-radius: 8px;
   text-decoration: underline;
   font-size: 14px;
 }
@@ -524,7 +524,7 @@ exports[`PromoCard > renders correctly with tertiary variant on secondaryButton 
 }
 
 .c6:hover {
-  background-color: #f759a9;
+  background-color: #f8f2ea;
 }
 
 .c6:active {

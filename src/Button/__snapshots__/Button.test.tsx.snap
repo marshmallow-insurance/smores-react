@@ -764,7 +764,7 @@ exports[`Button > renders correctly with text button styling 1`] = `
   width: auto;
   background-color: transparent;
   padding: 0;
-  border-radius: 0;
+  border-radius: 8px;
   text-decoration: underline;
 }
 
@@ -774,7 +774,7 @@ exports[`Button > renders correctly with text button styling 1`] = `
 }
 
 .c0:hover {
-  background-color: #f759a9;
+  background-color: #f8f2ea;
 }
 
 .c0:active {

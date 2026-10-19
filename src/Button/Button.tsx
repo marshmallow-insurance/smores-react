@@ -302,12 +302,13 @@ const Container = styled(Box)<IButton>(
     css`
       background-color: transparent;
       padding: 0;
-      border-radius: 0;
+      border-radius: 8px;
       text-decoration: underline;
 
       &:hover {
         background-color: ${({ theme }) =>
-          !(disabled || $loading) && theme.color.interactive.primary.hover};
+          !(disabled || $loading) &&
+          theme.color.interactive.neutral.subtle.hover};
       }
       &:active {
         background-color: transparent;
