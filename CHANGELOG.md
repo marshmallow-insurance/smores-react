@@ -1,3 +1,9 @@
+## [16.11.4](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.3...v16.11.4) (2026-10-19)
+
+### Bug Fixes
+
+* **Button:** soften the text button highlight and round its corners ([#5247](https://github.com/marshmallow-insurance/smores-react/issues/5247)) ([61b8159](https://github.com/marshmallow-insurance/smores-react/commit/61b8159b32490f0faafc9adea2ed640eec71c81c))
+
 ## [16.11.3](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.2...v16.11.3) (2026-10-19)
 
 ### Bug Fixes
