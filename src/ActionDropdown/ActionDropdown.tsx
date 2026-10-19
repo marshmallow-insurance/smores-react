@@ -26,9 +26,7 @@ import {
 } from '@floating-ui/react'
 import { focusOutlineStyle } from '../utils/focusOutline'
 
-// The gap between the trigger and the menu, and between the menu and the edge
-// of the viewport
-const MENU_GAP = 8
+// The gap between the menu and the edge of the viewport
 const VIEWPORT_PADDING = 8
 const MENU_MAX_HEIGHT = 192
 
@@ -86,7 +84,7 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
     strategy: 'fixed',
     placement: 'bottom-start',
     middleware: [
-      offset(MENU_GAP),
+      offset(parseInt(theme.space[100])),
       flip({ padding: VIEWPORT_PADDING }),
       shift({ padding: VIEWPORT_PADDING }),
       size({
@@ -104,8 +102,12 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
 
   const click = useClick(context)
   // Escape is handled below, so it can stop the keypress reaching a
-  // surrounding Modal, which would otherwise close as well
-  const dismiss = useDismiss(context, { escapeKey: false })
+  // surrounding Modal, which would otherwise close as well. The menu closes
+  // when a parent scrolls, so it doesn't come loose from the trigger.
+  const dismiss = useDismiss(context, {
+    escapeKey: false,
+    ancestorScroll: true,
+  })
   const role = useRole(context, { role: 'listbox' })
   const listNavigation = useListNavigation(context, {
     listRef,

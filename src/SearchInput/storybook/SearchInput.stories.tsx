@@ -67,7 +67,7 @@ export const InsideScrollingModal: Story = {
   play: async ({ args }) => {
     const body = within(document.body)
     const input = await body.findByRole('combobox')
-    scrollModalToBottom(input)
+    await scrollModalToBottom(input)
     await userEvent.click(input)
     const listbox = await body.findByRole('listbox')
 
@@ -87,6 +87,16 @@ export const InsideScrollingModal: Story = {
       rect.top + rect.height / 2,
     )
     await expect(listbox).toContainElement(middle as HTMLElement)
+
+    // Narrowing the results keeps them above the input, next to it
+    await userEvent.type(input, 'Banana')
+    await expect(body.getAllByRole('option')).toHaveLength(1)
+    await waitFor(() => {
+      const narrowed = body.getByRole('listbox').getBoundingClientRect()
+      const inputTop = input.getBoundingClientRect().top
+      expect(narrowed.bottom).toBeLessThanOrEqual(inputTop)
+      expect(inputTop - narrowed.bottom).toBeLessThan(10)
+    })
 
     // Escape closes the results first and then the modal
     await userEvent.keyboard('{Escape}')

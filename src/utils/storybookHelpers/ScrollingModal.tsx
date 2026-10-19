@@ -34,8 +34,15 @@ export const ScrollingModal: FC<Props> = ({ children }) => {
   )
 }
 
-/** Scrolls the modal that contains `element` to the bottom */
-export const scrollModalToBottom = (element: HTMLElement) => {
+/**
+ * Scrolls the modal that contains `element` to the bottom, and waits for the
+ * scroll event, so that it can't close a menu that is opened straight after
+ */
+export const scrollModalToBottom = async (element: HTMLElement) => {
   const scrollArea = element.closest('[role="dialog"]')?.firstElementChild
-  if (scrollArea) scrollArea.scrollTop = scrollArea.scrollHeight
+  if (!scrollArea) return
+  scrollArea.scrollTop = scrollArea.scrollHeight
+  await new Promise((resolve) =>
+    requestAnimationFrame(() => requestAnimationFrame(resolve)),
+  )
 }

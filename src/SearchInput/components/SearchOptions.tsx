@@ -6,14 +6,18 @@ import {
   useEffect,
   useLayoutEffect,
   useRef,
+  useState,
 } from 'react'
 import {
   autoUpdate,
   flip,
+  hide,
   offset,
   shift,
   size,
   useFloating,
+  type Middleware,
+  type Placement,
 } from '@floating-ui/react'
 import styled, { css } from 'styled-components'
 import { TransientProps } from '../../utils/utilTypes'
@@ -63,6 +67,14 @@ const VIEWPORT_PADDING = 8
 const RESULTS_MAX_HEIGHT = 194
 const AVAILABLE_HEIGHT_VAR = '--search-options-available-height'
 
+// Records whether the input has a size, which it doesn't without layout
+const recordReferenceSize: Middleware = {
+  name: 'referenceSize',
+  fn: ({ rects }) => ({
+    data: { hasSize: rects.reference.width > 0 && rects.reference.height > 0 },
+  }),
+}
+
 export const SearchOptions: FC<SearchOptionsProps> = ({
   displayedList,
   selectedValue,
@@ -84,31 +96,49 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   const itemRefs = useRef<RefObject<HTMLLIElement | null>[]>([])
   const resultsListRef = useRef<HTMLUListElement>(null)
 
+  // The side the results open on is decided when they open and then kept, so
+  // they don't jump between above and below the input as the list gets
+  // shorter or longer while typing.
+  const [lockedPlacement, setLockedPlacement] = useState<Placement | null>(null)
+
   // `position: fixed` lets the results escape a scrolling or overflow hidden
   // parent such as a Modal. They stay in the DOM next to the input rather
   // than in a portal, so they remain inside the Modal's focus trap and
   // Escape handling.
-  const { refs, floatingStyles } = useFloating({
-    elements: { reference: positionRelative ? null : anchorElement },
-    strategy: 'fixed',
-    placement: 'bottom-start',
-    middleware: [
-      offset(RESULTS_GAP),
-      flip({ padding: VIEWPORT_PADDING }),
-      shift({ padding: VIEWPORT_PADDING }),
-      size({
-        padding: VIEWPORT_PADDING,
-        apply({ rects, availableHeight, elements }) {
-          elements.floating.style.width = `${rects.reference.width}px`
-          elements.floating.style.setProperty(
-            AVAILABLE_HEIGHT_VAR,
-            `${availableHeight}px`,
-          )
-        },
-      }),
-    ],
-    whileElementsMounted: autoUpdate,
-  })
+  const { refs, floatingStyles, isPositioned, placement, middlewareData } =
+    useFloating({
+      elements: { reference: positionRelative ? null : anchorElement },
+      strategy: 'fixed',
+      placement: lockedPlacement ?? 'bottom-start',
+      middleware: [
+        offset(RESULTS_GAP),
+        lockedPlacement ? undefined : flip({ padding: VIEWPORT_PADDING }),
+        shift({ padding: VIEWPORT_PADDING }),
+        size({
+          padding: VIEWPORT_PADDING,
+          apply({ rects, availableHeight, elements }) {
+            elements.floating.style.width = `${rects.reference.width}px`
+            elements.floating.style.setProperty(
+              AVAILABLE_HEIGHT_VAR,
+              `${availableHeight}px`,
+            )
+          },
+        }),
+        recordReferenceSize,
+        hide(),
+      ],
+      whileElementsMounted: autoUpdate,
+    })
+
+  if (isPositioned && !lockedPlacement) {
+    setLockedPlacement(placement)
+  }
+
+  // Hide the results when the input has scrolled out of view. Without layout,
+  // as in jsdom, every rect is zero and Floating UI would always hide them.
+  const isAnchorHidden =
+    !!middlewareData.hide?.referenceHidden &&
+    !!middlewareData.referenceSize?.hasSize
 
   useEffect(() => {
     itemRefs.current = displayedList.map(
@@ -141,10 +171,12 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   }, [searchTerm, setHighlightedIndex])
 
   // When the list opens, centre the selected option in it. This sets the
-  // list's own scrollTop so the page doesn't scroll.
+  // list's own scrollTop so the page doesn't scroll. Wait for the position,
+  // because that sets the list's final height.
   const hasScrolledToSelected = useRef(false)
+  const isReadyToMeasure = positionRelative || isPositioned
   useLayoutEffect(() => {
-    if (hasScrolledToSelected.current) return
+    if (hasScrolledToSelected.current || !isReadyToMeasure) return
     hasScrolledToSelected.current = true
 
     const list = resultsListRef.current
@@ -158,7 +190,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
         selectedItem.offsetTop -
         (list.clientHeight - selectedItem.offsetHeight) / 2
     }
-  }, [displayedList, selectedValue])
+  }, [displayedList, selectedValue, isReadyToMeasure])
 
   const results = (
     <ResultsList
@@ -223,7 +255,11 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
     <FloatingResults
       // oxlint-disable-next-line react/react-compiler
       ref={refs.setFloating}
-      style={floatingStyles}
+      style={
+        isAnchorHidden
+          ? { ...floatingStyles, visibility: 'hidden' }
+          : floatingStyles
+      }
     >
       {results}
     </FloatingResults>

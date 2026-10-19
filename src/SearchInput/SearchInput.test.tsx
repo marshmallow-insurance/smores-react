@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest'
-import { fireEvent, render, screen } from '../testUtils'
+import { fireEvent, render, screen, waitFor } from '../testUtils'
 import { noop } from '../utils/noop'
 import { SearchInput } from './SearchInput'
 import { Modal } from '../Modal'
@@ -318,7 +318,7 @@ describe('SearchInput', () => {
     expect(input.selectionEnd).toBe(3)
   })
 
-  it('centres the selected option in the list when it opens', () => {
+  it('centres the selected option in the list when it opens', async () => {
     const itemHeight = 50
     const listHeight = 200
     vi.spyOn(HTMLElement.prototype, 'offsetTop', 'get').mockImplementation(
@@ -341,8 +341,11 @@ describe('SearchInput', () => {
     fireEvent.click(screen.getByText('Option 20'))
     fireEvent.click(input)
 
-    expect(screen.getByRole('listbox').scrollTop).toBe(
-      20 * itemHeight - (listHeight - itemHeight) / 2,
+    // The list is centred once it has been positioned, so its height is final
+    await waitFor(() =>
+      expect(screen.getByRole('listbox').scrollTop).toBe(
+        20 * itemHeight - (listHeight - itemHeight) / 2,
+      ),
     )
   })
 

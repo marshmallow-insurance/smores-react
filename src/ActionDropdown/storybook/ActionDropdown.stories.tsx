@@ -103,7 +103,7 @@ export const InsideScrollingModal: Story = {
   play: async () => {
     const body = within(document.body)
     const trigger = await body.findByRole('combobox')
-    scrollModalToBottom(trigger)
+    await scrollModalToBottom(trigger)
     await userEvent.click(trigger)
     const listbox = await body.findByRole('listbox')
 
