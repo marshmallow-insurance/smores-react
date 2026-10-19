@@ -1,4 +1,5 @@
 import { FC, ReactNode, useState } from 'react'
+import { Button } from '../../Button'
 import { Modal } from '../../Modal'
 import { Text } from '../../Text'
 
@@ -10,27 +11,33 @@ type Props = {
  * An open Modal whose content scrolls, with `children` placed after a long
  * block of text and just before the end. Scrolled to the bottom, `children`
  * sit close to the bottom edge of the viewport, where a menu that opens below
- * them would be clipped by the Modal.
+ * them would be clipped by the Modal. Once closed, it can be opened again
+ * with a button, because the stories' play functions close it.
  */
 export const ScrollingModal: FC<Props> = ({ children }) => {
   const [showModal, setShowModal] = useState(true)
 
   return (
-    <Modal
-      title="Scrolling modal"
-      showModal={showModal}
-      handleClick={() => setShowModal(false)}
-      stickyHeader
-    >
-      {Array.from({ length: 10 }, (_, index) => (
-        <Text key={index} mb="space.200">
-          The content of this modal is longer than the screen, so the modal
-          scrolls. Scroll down to the field at the bottom.
-        </Text>
-      ))}
-      {children}
-      <Text mt="space.200">The end of the modal.</Text>
-    </Modal>
+    <>
+      {!showModal && (
+        <Button onClick={() => setShowModal(true)}>Open modal</Button>
+      )}
+      <Modal
+        title="Scrolling modal"
+        showModal={showModal}
+        handleClick={() => setShowModal(false)}
+        stickyHeader
+      >
+        {Array.from({ length: 10 }, (_, index) => (
+          <Text key={index} mb="space.200">
+            The content of this modal is longer than the screen, so the modal
+            scrolls. Scroll down to the field at the bottom.
+          </Text>
+        ))}
+        {children}
+        <Text mt="space.200">The end of the modal.</Text>
+      </Modal>
+    </>
   )
 }
 
