@@ -101,6 +101,8 @@ const InsideModal = (args: ActionDropdownProps) => {
 // tried by hand afterwards. Unit tests cover a second Escape closing the
 // modal.
 export const InsideScrollingModal: Story = {
+  // Left off the docs page, where its open modal would cover the page
+  tags: ['!autodocs'],
   args: { value: actions[0] },
   render: (args) => <InsideModal {...args} />,
   play: async () => {
