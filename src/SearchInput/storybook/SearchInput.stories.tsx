@@ -57,7 +57,9 @@ export const ResultsOpen: Story = {
  * not clip them. Here the input is at the bottom of the modal, so they open
  * above it.
  */
-// To try by hand: scroll to the bottom and open the results
+// The play function leaves the modal open, with the results closed and the
+// field empty, so it can be tried by hand afterwards. Unit tests cover a
+// second Escape closing the modal.
 export const InsideScrollingModal: Story = {
   args: { onFound: fn() },
   render: (args) => (
@@ -65,12 +67,6 @@ export const InsideScrollingModal: Story = {
       <SearchInput {...args} />
     </ScrollingModal>
   ),
-}
-
-// Runs the checks, and closes the modal at the end
-export const InsideScrollingModalTest: Story = {
-  ...InsideScrollingModal,
-  name: 'Inside Scrolling Modal (test)',
   play: async ({ args }) => {
     const body = within(document.body)
     const input = await body.findByRole('combobox')
@@ -105,13 +101,17 @@ export const InsideScrollingModalTest: Story = {
       expect(inputTop - narrowed.bottom).toBeLessThan(10)
     })
 
-    // Escape closes the results first and then the modal
+    // Escape closes the results without closing the modal
     await userEvent.keyboard('{Escape}')
     await expect(body.queryByRole('listbox')).not.toBeInTheDocument()
     await expect(body.getByRole('dialog')).toBeInTheDocument()
-    await userEvent.keyboard('{Escape}')
-    await expect(body.queryByRole('dialog')).not.toBeInTheDocument()
     await expect(args.onFound).not.toHaveBeenCalled()
+
+    // Leave the field empty for trying it by hand
+    await userEvent.clear(input)
+    await userEvent.keyboard('{Escape}')
+    await expect(body.queryByRole('listbox')).not.toBeInTheDocument()
+    await expect(body.getByRole('dialog')).toBeInTheDocument()
   },
 }
 

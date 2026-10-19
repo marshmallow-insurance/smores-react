@@ -12,7 +12,7 @@ type Props = {
  * block of text and just before the end. Scrolled to the bottom, `children`
  * sit close to the bottom edge of the viewport, where a menu that opens below
  * them would be clipped by the Modal. Once closed, it can be opened again
- * with a button, because the stories' play functions close it.
+ * with a button.
  */
 export const ScrollingModal: FC<Props> = ({ children }) => {
   const [showModal, setShowModal] = useState(true)

@@ -97,16 +97,12 @@ const InsideModal = (args: ActionDropdownProps) => {
  * clip it. Here the dropdown is at the bottom of the modal, so the menu opens
  * above it.
  */
-// To try by hand: scroll to the bottom and open the menu
+// The play function leaves the modal open with the menu closed, so it can be
+// tried by hand afterwards. Unit tests cover a second Escape closing the
+// modal.
 export const InsideScrollingModal: Story = {
   args: { value: actions[0] },
   render: (args) => <InsideModal {...args} />,
-}
-
-// Runs the checks, and closes the modal at the end
-export const InsideScrollingModalTest: Story = {
-  ...InsideScrollingModal,
-  name: 'Inside Scrolling Modal (test)',
   play: async () => {
     const body = within(document.body)
     const trigger = await body.findByRole('combobox')
@@ -135,12 +131,10 @@ export const InsideScrollingModalTest: Story = {
     await userEvent.keyboard('{ArrowDown}')
     await expect(body.getByRole('option', { name: 'Brand' })).toHaveFocus()
 
-    // Escape closes the menu first and then the modal
+    // Escape closes the menu without closing the modal
     await userEvent.keyboard('{Escape}')
     await expect(body.queryByRole('listbox')).not.toBeInTheDocument()
     await expect(trigger).toHaveFocus()
     await expect(body.getByRole('dialog')).toBeInTheDocument()
-    await userEvent.keyboard('{Escape}')
-    await expect(body.queryByRole('dialog')).not.toBeInTheDocument()
   },
 }
