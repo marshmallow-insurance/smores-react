@@ -225,7 +225,7 @@ const StyledSelect = styled.select.attrs(fieldFocusAttrs)<SSelect>(
     return css`
       appearance: none;
       width: 100%;
-      height: 48px;
+      min-height: 48px;
       margin: 0;
       padding: 12px ${TEXT_PADDING_RIGHT}px 12px ${$frontIcon ? '42px' : '12px'};
       border: 2px solid ${borderColor(theme.color.border.subtle)};

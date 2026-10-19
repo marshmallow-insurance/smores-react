@@ -9,7 +9,7 @@ describe('TextInput', () => {
       <TextInput label="Name" placeholder="Name" value="" onChange={noop} />,
     )
     const input = screen.getByLabelText('Name')
-    expect(input).toHaveStyleRule('height', '48px')
+    expect(input).toHaveStyleRule('min-height', '48px')
     expect(input).toHaveStyleRule('padding', '12px')
   })
 
