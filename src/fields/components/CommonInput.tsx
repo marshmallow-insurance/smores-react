@@ -27,7 +27,7 @@ interface SIcon {
 export const Input = styled.input.attrs(fieldFocusAttrs)<IInput>`
   box-sizing: border-box;
   width: 100%;
-  height: 48px;
+  min-height: 48px;
   margin: 0;
   padding: 12px;
   border: 2px solid
