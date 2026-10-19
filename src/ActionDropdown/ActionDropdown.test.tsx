@@ -3,6 +3,7 @@ import { fireEvent, render, screen } from '../testUtils'
 import { ActionDropdown } from './ActionDropdown'
 import { ActionListItem } from './List'
 import { noop } from '../utils/noop'
+import { Modal } from '../Modal'
 
 const options: ActionListItem[] = [
   {
@@ -29,6 +30,22 @@ describe('ActionDropdown', () => {
       />,
     )
     expect(container).toMatchSnapshot()
+  })
+
+  it('positions the menu with position: fixed, so a scrolling parent does not clip it', () => {
+    const { container } = render(
+      <ActionDropdown
+        value={{ label: 'Default grey', value: 'DEFAULT' }}
+        list={options}
+        onSelect={noop}
+      />,
+    )
+    fireEvent.click(screen.getByRole('combobox'))
+
+    const listbox = screen.getByRole('listbox')
+    expect(listbox).toHaveStyle({ position: 'fixed' })
+    // In the DOM next to the trigger rather than in a portal
+    expect(container).toContainElement(listbox)
   })
 
   describe('accessibility', () => {
@@ -106,6 +123,35 @@ describe('ActionDropdown', () => {
 
       expect(trigger).toHaveAttribute('aria-expanded', 'false')
       expect(trigger).toHaveFocus()
+    })
+
+    it('keeps Escape from closing a surrounding Modal while the menu is open', () => {
+      const handleClick = vi.fn()
+      render(
+        <Modal showModal handleClick={handleClick} title="Pick a status">
+          <ActionDropdown
+            value={{ label: 'Default grey', value: 'DEFAULT' }}
+            list={options}
+            onSelect={noop}
+          />
+        </Modal>,
+      )
+      const trigger = screen.getByRole('combobox')
+
+      fireEvent.click(trigger)
+      fireEvent.keyDown(screen.getByRole('listbox'), { key: 'Escape' })
+      expect(screen.queryByRole('listbox')).not.toBeInTheDocument()
+      expect(handleClick).not.toHaveBeenCalled()
+
+      // Escape on the trigger closes the menu too, without closing the Modal
+      fireEvent.click(trigger)
+      fireEvent.keyDown(trigger, { key: 'Escape' })
+      expect(screen.queryByRole('listbox')).not.toBeInTheDocument()
+      expect(handleClick).not.toHaveBeenCalled()
+
+      // With the menu closed, Escape closes the Modal
+      fireEvent.keyDown(trigger, { key: 'Escape' })
+      expect(handleClick).toHaveBeenCalledTimes(1)
     })
 
     it('shows a focus ring on the trigger for keyboard focus', () => {

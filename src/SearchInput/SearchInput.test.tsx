@@ -499,6 +499,20 @@ describe('SearchInput', () => {
       expect(handleClick).toHaveBeenCalledTimes(1)
     })
 
+    it('keeps Escape from closing a surrounding Modal when pressed on the results', () => {
+      const handleClick = vi.fn()
+      render(
+        <Modal showModal handleClick={handleClick} title="Pick a day">
+          <SearchInput label="Day" searchList={searchList} onFound={noop} />
+        </Modal>,
+      )
+      fireEvent.click(screen.getByRole('combobox'))
+
+      fireEvent.keyDown(screen.getByRole('listbox'), { key: 'Escape' })
+      expect(screen.queryByRole('listbox')).not.toBeInTheDocument()
+      expect(handleClick).not.toHaveBeenCalled()
+    })
+
     it('announces "No results" and survives arrow keys and Enter on an empty list', () => {
       const onFound = vi.fn()
       render(
@@ -558,5 +572,44 @@ describe('SearchInput', () => {
       fireEvent.change(input, { target: { value: 'Option' } })
       expect(screen.getByRole('status')).toBeEmptyDOMElement()
     })
+  })
+})
+
+describe('SearchInput results position', () => {
+  it('positions the results with position: fixed, so a scrolling parent does not clip them', () => {
+    render(<SearchInput label="Day" searchList={searchList} onFound={noop} />)
+    fireEvent.click(screen.getByRole('combobox'))
+
+    expect(screen.getByRole('listbox').parentElement).toHaveStyle({
+      position: 'fixed',
+    })
+  })
+
+  it('keeps the results in the DOM next to the input rather than in a portal', () => {
+    const { container } = render(
+      <SearchInput label="Day" searchList={searchList} onFound={noop} />,
+    )
+    fireEvent.click(screen.getByRole('combobox'))
+
+    expect(container).toContainElement(screen.getByRole('listbox'))
+  })
+
+  it('renders the results in the normal layout flow with resultsRelativePosition', () => {
+    const { container } = render(
+      <SearchInput
+        label="Day"
+        searchList={searchList}
+        onFound={noop}
+        resultsRelativePosition
+      />,
+    )
+    fireEvent.click(screen.getByRole('combobox'))
+
+    const listbox = screen.getByRole('listbox')
+    expect(container).toContainElement(listbox)
+    expect(listbox.parentElement).not.toHaveStyle({ position: 'fixed' })
+    expect(listbox.parentElement).not.toHaveAttribute('style')
+    expect(listbox.parentElement).not.toHaveStyleRule('position', 'absolute')
+    expect(listbox).toHaveStyleRule('margin-top', '14px')
   })
 })

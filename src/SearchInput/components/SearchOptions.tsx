@@ -7,6 +7,14 @@ import {
   useLayoutEffect,
   useRef,
 } from 'react'
+import {
+  autoUpdate,
+  flip,
+  offset,
+  shift,
+  size,
+  useFloating,
+} from '@floating-ui/react'
 import styled, { css } from 'styled-components'
 import { TransientProps } from '../../utils/utilTypes'
 import { Box } from '../../Box'
@@ -35,6 +43,11 @@ type SearchOptionsProps = {
   listboxId: string
   listboxLabel: string
   getOptionId: (index: number) => string
+  /**
+   * The element the results sit under. Unless `positionRelative` is set, the
+   * results are positioned against it with Floating UI.
+   */
+  anchorElement: HTMLElement | null
   positionRelative: boolean
   resultsBorder: boolean
   onNotFound?: (searchTerm: string) => void
@@ -42,6 +55,13 @@ type SearchOptionsProps = {
   searchTerm: string
   notFoundComponent?: ReactNode
 }
+
+// The gap between the input and the results, and between the results and the
+// edge of the viewport
+const RESULTS_GAP = 6
+const VIEWPORT_PADDING = 8
+const RESULTS_MAX_HEIGHT = 194
+const AVAILABLE_HEIGHT_VAR = '--search-options-available-height'
 
 export const SearchOptions: FC<SearchOptionsProps> = ({
   displayedList,
@@ -53,6 +73,7 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
   listboxId,
   listboxLabel,
   getOptionId,
+  anchorElement,
   positionRelative,
   resultsBorder,
   onNotFound,
@@ -62,6 +83,32 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
 }) => {
   const itemRefs = useRef<RefObject<HTMLLIElement | null>[]>([])
   const resultsListRef = useRef<HTMLUListElement>(null)
+
+  // `position: fixed` lets the results escape a scrolling or overflow hidden
+  // parent such as a Modal. They stay in the DOM next to the input rather
+  // than in a portal, so they remain inside the Modal's focus trap and
+  // Escape handling.
+  const { refs, floatingStyles } = useFloating({
+    elements: { reference: positionRelative ? null : anchorElement },
+    strategy: 'fixed',
+    placement: 'bottom-start',
+    middleware: [
+      offset(RESULTS_GAP),
+      flip({ padding: VIEWPORT_PADDING }),
+      shift({ padding: VIEWPORT_PADDING }),
+      size({
+        padding: VIEWPORT_PADDING,
+        apply({ rects, availableHeight, elements }) {
+          elements.floating.style.width = `${rects.reference.width}px`
+          elements.floating.style.setProperty(
+            AVAILABLE_HEIGHT_VAR,
+            `${availableHeight}px`,
+          )
+        },
+      }),
+    ],
+    whileElementsMounted: autoUpdate,
+  })
 
   useEffect(() => {
     itemRefs.current = displayedList.map(
@@ -113,85 +160,110 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
     }
   }, [displayedList, selectedValue])
 
-  return (
-    <BoxWithPositionRelative>
-      <StyledResultsContainer $positionRelative={positionRelative}>
-        <ResultsList
-          ref={resultsListRef}
-          id={listboxId}
-          role={displayedList.length ? 'listbox' : undefined}
-          aria-label={displayedList.length ? listboxLabel : undefined}
-          $resultsBorder={resultsBorder}
-          onKeyDown={onKeyDown}
-        >
-          {displayedList.length ? (
-            // oxlint-disable-next-line react/react-compiler
-            displayedList.map((el, i) => {
-              const isSelected =
-                selectedValue === el.label || selectedValue === el.value
+  const results = (
+    <ResultsList
+      $inFlow={positionRelative}
+      ref={resultsListRef}
+      id={listboxId}
+      role={displayedList.length ? 'listbox' : undefined}
+      aria-label={displayedList.length ? listboxLabel : undefined}
+      $resultsBorder={resultsBorder}
+      onKeyDown={onKeyDown}
+    >
+      {displayedList.length ? (
+        // oxlint-disable-next-line react/react-compiler
+        displayedList.map((el, i) => {
+          const isSelected =
+            selectedValue === el.label || selectedValue === el.value
 
-              return (
-                <ListButton
-                  key={el.label + '_list_item'}
-                  id={getOptionId(i)}
-                  role="option"
-                  aria-selected={highlightedIndex === i}
-                  ref={itemRefs.current[i]}
-                  onClick={() => onSelect(el)}
-                  $isSelected={isSelected}
-                  $showBg={highlightedIndex === i}
-                  onMouseEnter={() => {
-                    setHighlightedIndex(i)
-                  }}
-                  onFocus={() => {
-                    setHighlightedIndex(i)
-                  }}
-                >
-                  {el.label}
-                  {isSelected && (
-                    <Icon
-                      render="tick"
-                      size={16}
-                      color="color.surface.brand.300"
-                    />
-                  )}
-                </ListButton>
-              )
-            })
-          ) : (
-            <EmptyResults
-              onNotFound={onNotFound}
-              onMessageChange={onEmptyMessageChange}
-              searchTerm={searchTerm}
-              notFoundComponent={notFoundComponent}
-            />
-          )}
-        </ResultsList>
-      </StyledResultsContainer>
-    </BoxWithPositionRelative>
+          return (
+            <ListButton
+              key={el.label + '_list_item'}
+              id={getOptionId(i)}
+              role="option"
+              aria-selected={highlightedIndex === i}
+              ref={itemRefs.current[i]}
+              onClick={() => onSelect(el)}
+              $isSelected={isSelected}
+              $showBg={highlightedIndex === i}
+              onMouseEnter={() => {
+                setHighlightedIndex(i)
+              }}
+              onFocus={() => {
+                setHighlightedIndex(i)
+              }}
+            >
+              {el.label}
+              {isSelected && (
+                <Icon render="tick" size={16} color="color.surface.brand.300" />
+              )}
+            </ListButton>
+          )
+        })
+      ) : (
+        <EmptyResults
+          onNotFound={onNotFound}
+          onMessageChange={onEmptyMessageChange}
+          searchTerm={searchTerm}
+          notFoundComponent={notFoundComponent}
+        />
+      )}
+    </ResultsList>
+  )
+
+  if (positionRelative) {
+    return (
+      <BoxWithPositionRelative>
+        <StyledResultsContainer>{results}</StyledResultsContainer>
+      </BoxWithPositionRelative>
+    )
+  }
+
+  return (
+    <FloatingResults
+      // oxlint-disable-next-line react/react-compiler
+      ref={refs.setFloating}
+      style={floatingStyles}
+    >
+      {results}
+    </FloatingResults>
   )
 }
 
-const StyledResultsContainer = styled.div<
-  TransientProps<Pick<SearchOptionsProps, 'positionRelative'>>
->`
+// In normal layout flow (`resultsRelativePosition`)
+const StyledResultsContainer = styled.div`
   box-sizing: border-box;
   overflow: hidden;
   margin: -16px;
   padding: ${({ theme }) => theme.space[200]};
-  ${({ $positionRelative }) => !$positionRelative && 'position: absolute;'}
-  width:  calc(100% + 32px);
+  width: calc(100% + 32px);
   left: 0px;
   top: -8px;
 
   ul {
     box-sizing: border-box;
-    max-height: 194px;
+    max-height: ${RESULTS_MAX_HEIGHT}px;
+  }
+`
+
+// Positioned by Floating UI. Its width is set to the input's, and the list
+// shrinks to fit the space left in the viewport.
+const FloatingResults = styled.div`
+  z-index: 1000;
+
+  ul {
+    box-sizing: border-box;
+    max-height: min(
+      ${RESULTS_MAX_HEIGHT}px,
+      var(${AVAILABLE_HEIGHT_VAR}, ${RESULTS_MAX_HEIGHT}px)
+    );
   }
 `
 
 const ResultsList = styled.ul<
-  TransientProps<Pick<SearchOptionsProps, 'resultsBorder'>>
+  TransientProps<Pick<SearchOptionsProps, 'resultsBorder'>> & {
+    $inFlow: boolean
+  }
 >`
   position: relative;
   list-style: none;
@@ -200,7 +272,7 @@ const ResultsList = styled.ul<
   margin: 0;
   background-color: ${({ theme }) => theme.color.background['000']};
   border-radius: 12px;
-  margin-top: 14px;
+  ${({ $inFlow }) => $inFlow && 'margin-top: 14px;'}
   z-index: 1000;
   border: 1px solid ${({ theme }) => theme.color.border.subtle};
   box-shadow:
