@@ -240,5 +240,6 @@ const Menu = styled(ListContainer)`
   border-radius: 12px;
   background-color: ${({ theme }) => theme.color.surface.base[300]};
   overflow-y: auto;
-  z-index: 4;
+  /* Matches the SearchInput results and Tooltip */
+  z-index: 1000;
 `

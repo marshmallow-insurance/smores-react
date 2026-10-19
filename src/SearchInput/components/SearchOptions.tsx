@@ -130,6 +130,8 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
       whileElementsMounted: autoUpdate,
     })
 
+  // Set during render rather than in an effect, as Modal does, because the
+  // React Compiler lint rule doesn't allow setState in an effect
   if (isPositioned && !lockedPlacement) {
     setLockedPlacement(placement)
   }
