@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react-vite'
 import { useArgs } from 'storybook/preview-api'
+import { expect, userEvent, within } from 'storybook/test'
 import { Textarea, TextareaProps } from '../Textarea'
 
 const meta: Meta<typeof Textarea> = {
@@ -111,6 +113,67 @@ export const Fallback: Story = {
     disabled: false,
     placeholder: 'Here is some placeholder text.',
     fallbackStyle: true,
+  },
+  render: InteractiveTemplate,
+}
+
+// Keeps the value in local state, as updating args round-trips through the
+// manager and drops characters when typing quickly.
+const LocalStateTemplate = (args: TextareaProps) => {
+  const [value, setValue] = useState(args.value)
+
+  return <Textarea {...args} value={value} onChange={setValue} />
+}
+
+// rows * 20px line height + 24px padding + 4px border
+const heightForRows = (rows: number) => rows * 20 + 28
+
+export const AutoGrow: Story = {
+  args: {
+    id: 'textarea_id',
+    label: 'Textarea that grows with its content',
+    assistiveText: 'Starts at four lines, grows to eight, then scrolls.',
+    value: '',
+  },
+  render: LocalStateTemplate,
+  play: async ({ canvasElement }) => {
+    const textarea = within(canvasElement).getByRole('textbox')
+    const height = () => textarea.getBoundingClientRect().height
+
+    // Starts at exactly four lines
+    await expect(height()).toBe(heightForRows(4))
+
+    // Three lines still fit in the starting height
+    await userEvent.type(textarea, 'one{Enter}two{Enter}three')
+    await expect(height()).toBe(heightForRows(4))
+
+    // Growing past four lines grows the field
+    await userEvent.type(textarea, '{Enter}four{Enter}five{Enter}six')
+    await expect(height()).toBe(heightForRows(6))
+    await expect(textarea.style.overflowY).toBe('hidden')
+
+    // It stops at eight lines and scrolls from there
+    await userEvent.type(
+      textarea,
+      '{Enter}seven{Enter}eight{Enter}nine{Enter}ten',
+    )
+    await expect(height()).toBe(heightForRows(8))
+    await expect(textarea.style.overflowY).toBe('auto')
+    await expect(textarea.scrollHeight).toBeGreaterThan(textarea.clientHeight)
+
+    // Clearing the value shrinks it back to the starting height
+    await userEvent.clear(textarea)
+    await expect(height()).toBe(heightForRows(4))
+  },
+}
+
+export const AutoGrowResizable: Story = {
+  args: {
+    id: 'textarea_id',
+    label: 'Textarea that grows and can also be dragged',
+    resize: 'both',
+    maxRows: 6,
+    value: '',
   },
   render: InteractiveTemplate,
 }

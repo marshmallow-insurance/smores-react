@@ -1,5 +1,7 @@
-import { render, screen } from '../testUtils'
-import { Textarea } from './Textarea'
+import type { Mock } from 'vitest'
+import { createRef, useState } from 'react'
+import { render, screen, fireEvent } from '../testUtils'
+import { Textarea, TextareaProps } from './Textarea'
 import { noop } from '../utils/noop'
 
 describe('Textarea', () => {
@@ -58,6 +60,197 @@ describe('Textarea', () => {
     })
     expect(textarea).toHaveStyleRule('opacity', '1', {
       modifier: ':disabled',
+    })
+  })
+
+  describe('growing with content', () => {
+    // jsdom has no layout, so scrollHeight (padding included, border excluded) is mocked
+    let scrollHeight = 0
+    let scrollHeightSpy: Mock<() => number>
+
+    beforeEach(() => {
+      scrollHeightSpy = vi.fn<() => number>(() => scrollHeight)
+      Object.defineProperty(HTMLTextAreaElement.prototype, 'scrollHeight', {
+        configurable: true,
+        get: scrollHeightSpy,
+      })
+    })
+
+    afterEach(() => {
+      delete (HTMLTextAreaElement.prototype as { scrollHeight?: number })
+        .scrollHeight
+    })
+
+    // rows * 20px line height + 24px padding + 4px border
+    const heightOf = (rows: number) => `${rows * 20 + 28}px`
+
+    const renderTextarea = (props: Partial<TextareaProps> = {}) =>
+      render(<Textarea label="Notes" value="" onChange={noop} {...props} />)
+
+    it('starts at exactly four lines by default', () => {
+      scrollHeight = 104
+      renderTextarea()
+      const textarea = screen.getByRole('textbox')
+
+      expect(heightOf(4)).toBe('108px')
+      expect(textarea).toHaveStyle({ height: '108px' })
+      expect(textarea).toHaveAttribute('rows', '4')
+    })
+
+    it('never shrinks below the rows height', () => {
+      scrollHeight = 44
+      renderTextarea({ rows: 6 })
+
+      expect(screen.getByRole('textbox')).toHaveStyle({ height: heightOf(6) })
+    })
+
+    it('grows between the rows height and the max height', () => {
+      // 6 lines of text: 120px of text plus 24px of padding
+      scrollHeight = 144
+      renderTextarea()
+      const textarea = screen.getByRole('textbox')
+
+      expect(textarea).toHaveStyle({ height: heightOf(6) })
+      expect(textarea.style.overflowY).toBe('hidden')
+    })
+
+    it('stops growing at eight lines by default and then scrolls', () => {
+      scrollHeight = 24 + 20 * 12
+      renderTextarea()
+      const textarea = screen.getByRole('textbox')
+
+      expect(textarea).toHaveStyle({ height: heightOf(8) })
+      expect(textarea.style.overflowY).toBe('auto')
+    })
+
+    it('does not scroll when the content exactly fills the max height', () => {
+      scrollHeight = 24 + 20 * 8
+      renderTextarea()
+      const textarea = screen.getByRole('textbox')
+
+      expect(textarea).toHaveStyle({ height: heightOf(8) })
+      expect(textarea.style.overflowY).toBe('hidden')
+    })
+
+    it('respects maxRows', () => {
+      scrollHeight = 24 + 20 * 12
+      renderTextarea({ maxRows: 6 })
+
+      expect(screen.getByRole('textbox')).toHaveStyle({ height: heightOf(6) })
+    })
+
+    it('treats a maxRows lower than rows as rows', () => {
+      scrollHeight = 24 + 20 * 12
+      renderTextarea({ rows: 5, maxRows: 2 })
+      const textarea = screen.getByRole('textbox')
+
+      expect(textarea).toHaveStyle({ height: heightOf(5) })
+      expect(textarea.style.overflowY).toBe('auto')
+    })
+
+    it('recomputes when the value changes, including a reset from outside', () => {
+      const Controlled = () => {
+        const [value, setValue] = useState('')
+        return (
+          <>
+            <Textarea label="Notes" value={value} onChange={setValue} />
+            <button onClick={() => setValue('')}>Reset</button>
+          </>
+        )
+      }
+      scrollHeight = 104
+      render(<Controlled />)
+      const textarea = screen.getByRole('textbox')
+      expect(textarea).toHaveStyle({ height: heightOf(4) })
+
+      scrollHeight = 24 + 20 * 6
+      fireEvent.change(textarea, { target: { value: 'a\nb\nc\nd\ne\nf' } })
+      expect(textarea).toHaveStyle({ height: heightOf(6) })
+
+      scrollHeight = 104
+      fireEvent.click(screen.getByText('Reset'))
+      expect(textarea).toHaveStyle({ height: heightOf(4) })
+    })
+
+    it('measures from the natural height rather than the previous one', () => {
+      let heightWhenMeasured: string | undefined
+      scrollHeightSpy.mockImplementation(() => {
+        heightWhenMeasured = screen.getByRole('textbox').style.height
+        return 104
+      })
+      renderTextarea()
+
+      expect(heightWhenMeasured).toBe('auto')
+    })
+
+    it('keeps scrolling available when the box can be resized by the user', () => {
+      scrollHeight = 104
+      renderTextarea({ resize: 'both' })
+      const textarea = screen.getByRole('textbox')
+
+      expect(textarea).toHaveStyle({ height: heightOf(4) })
+      expect(textarea.style.overflowY).toBe('auto')
+      expect(textarea).toHaveStyleRule('resize', 'both')
+      // The max is applied in the calculation only, so the user can drag past it
+      expect(textarea).not.toHaveStyleRule('max-height', expect.anything())
+    })
+
+    it('recomputes when the width changes', () => {
+      const observers: { callback: () => void; disconnect: () => void }[] = []
+      class MockResizeObserver {
+        callback: () => void
+        constructor(callback: () => void) {
+          this.callback = callback
+          observers.push(this)
+        }
+        observe = vi.fn()
+        disconnect = vi.fn()
+      }
+      vi.stubGlobal('ResizeObserver', MockResizeObserver)
+      const frames: FrameRequestCallback[] = []
+      vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => {
+        frames.push(cb)
+        return frames.length
+      })
+      vi.stubGlobal('cancelAnimationFrame', vi.fn())
+
+      try {
+        scrollHeight = 104
+        const { unmount } = renderTextarea()
+        const textarea = screen.getByRole('textbox')
+        expect(textarea).toHaveStyle({ height: heightOf(4) })
+
+        // Narrower, so the text rewraps onto more lines
+        scrollHeight = 24 + 20 * 6
+        Object.defineProperty(textarea, 'offsetWidth', {
+          configurable: true,
+          value: 200,
+        })
+        observers[0].callback()
+        frames.forEach((frame) => frame(0))
+        expect(textarea).toHaveStyle({ height: heightOf(6) })
+
+        unmount()
+        expect(observers[0].disconnect).toHaveBeenCalled()
+      } finally {
+        vi.unstubAllGlobals()
+      }
+    })
+
+    it('still gives a forwarded ref the textarea element', () => {
+      const ref = createRef<HTMLTextAreaElement>()
+      scrollHeight = 104
+      renderTextarea({ ref } as Partial<TextareaProps>)
+
+      expect(ref.current).toBe(screen.getByRole('textbox'))
+    })
+
+    it('still calls a forwarded callback ref', () => {
+      const ref = vi.fn()
+      scrollHeight = 104
+      render(<Textarea ref={ref} label="Notes" value="" onChange={noop} />)
+
+      expect(ref).toHaveBeenCalledWith(screen.getByRole('textbox'))
     })
   })
 })

@@ -10,6 +10,7 @@ exports[`Textarea > renders correctly with required props 1`] = `
 }
 
 .c1 {
+  display: block;
   font-size: 16px;
   font: inherit;
   line-height: 20px;
@@ -64,6 +65,7 @@ exports[`Textarea > renders correctly with required props 1`] = `
           class="c1"
           id="MM_SMORES_0"
           rows="4"
+          style="overflow-y: hidden; height: 108px;"
         >
           Textarea label
         </textarea>
