@@ -114,6 +114,8 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     ref,
   ) {
     const wrapperRef = useRef(null)
+    // The results are positioned against the input row
+    const [inputRow, setInputRow] = useState<HTMLDivElement | null>(null)
     const theme = useTheme()
     const id = useUniqueId(idProp)
     const { assistiveTextId, errorMsgId, controlAria } = getFieldAria(id, {
@@ -322,7 +324,12 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           errorMsgId={errorMsgId}
           {...otherProps}
         >
-          <Box flex alignItems="center" justifyContent="flex-start">
+          <Box
+            ref={setInputRow}
+            flex
+            alignItems="center"
+            justifyContent="flex-start"
+          >
             {showIcon && (
               <InputLeadingIconContainer $size={20}>
                 <FontAwesomeIcon
@@ -416,6 +423,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               getOptionId={getOptionId}
               searchTerm={searchQuery || ''}
               onSelect={handleSelect}
+              anchorElement={inputRow}
               positionRelative={resultsRelativePosition}
               resultsBorder={resultsBorder}
               onNotFound={onNotFound}

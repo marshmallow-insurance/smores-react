@@ -11,7 +11,12 @@ import { faChevronDown } from '@awesome.me/kit-46ca99185c/icons/classic/solid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconContainer } from '../sharedStyles/shared.styles'
 import {
+  autoUpdate,
+  flip,
   FloatingFocusManager,
+  offset,
+  shift,
+  size,
   useClick,
   useDismiss,
   useFloating,
@@ -20,6 +25,10 @@ import {
   useRole,
 } from '@floating-ui/react'
 import { focusOutlineStyle } from '../utils/focusOutline'
+
+// The gap between the menu and the edge of the viewport
+const VIEWPORT_PADDING = 8
+const MENU_MAX_HEIGHT = 192
 
 export type ActionDropdownProps = {
   id?: string
@@ -62,16 +71,43 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
     theme,
   )
 
-  const { refs, context } = useFloating({
+  const { refs, floatingStyles, context } = useFloating({
     open,
     onOpenChange: (nextOpen) => {
       setOpen(nextOpen)
       if (!nextOpen) setActiveIndex(null)
     },
+    // `position: fixed` lets the menu escape a scrolling or overflow hidden
+    // parent such as a Modal. It stays in the DOM next to the trigger rather
+    // than in a portal, so it remains inside the Modal's focus trap and Escape
+    // handling.
+    strategy: 'fixed',
+    placement: 'bottom-start',
+    middleware: [
+      offset(parseInt(theme.space[100])),
+      flip({ padding: VIEWPORT_PADDING }),
+      shift({ padding: VIEWPORT_PADDING }),
+      size({
+        padding: VIEWPORT_PADDING,
+        apply({ rects, availableHeight, elements }) {
+          Object.assign(elements.floating.style, {
+            width: `${rects.reference.width}px`,
+            maxHeight: `${Math.min(MENU_MAX_HEIGHT, availableHeight)}px`,
+          })
+        },
+      }),
+    ],
+    whileElementsMounted: autoUpdate,
   })
 
   const click = useClick(context)
-  const dismiss = useDismiss(context)
+  // Escape is handled below, so it can stop the keypress reaching a
+  // surrounding Modal, which would otherwise close as well. The menu closes
+  // when a parent scrolls, so it doesn't come loose from the trigger.
+  const dismiss = useDismiss(context, {
+    escapeKey: false,
+    ancestorScroll: true,
+  })
   const role = useRole(context, { role: 'listbox' })
   const listNavigation = useListNavigation(context, {
     listRef,
@@ -91,7 +127,16 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
     setActiveIndex(null)
   }
 
+  const closeOnEscape = (event: KeyboardEvent<HTMLElement>) => {
+    if (event.key !== 'Escape' || !open) return
+    event.preventDefault()
+    event.stopPropagation()
+    setOpen(false)
+    setActiveIndex(null)
+  }
+
   const handleListKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+    closeOnEscape(event)
     if ((event.key === 'Enter' || event.key === ' ') && activeIndex !== null) {
       event.preventDefault()
       selectOption(list[activeIndex])
@@ -113,7 +158,7 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
         aria-label={label ? undefined : 'Select an option'}
         $text={resolvedTextColor}
         $bg={resolvedBgColor}
-        {...getReferenceProps()}
+        {...getReferenceProps({ onKeyDown: closeOnEscape })}
       >
         <SelectedOption>{value.label}</SelectedOption>
         <IconContainer
@@ -125,26 +170,25 @@ export const ActionDropdown: FC<ActionDropdownProps> = ({
           <FontAwesomeIcon icon={faChevronDown} color={resolvedTextColor} />
         </IconContainer>
       </Label>
-      <OuterContainer open={open}>
-        {open && (
-          <FloatingFocusManager context={context} modal={false} returnFocus>
-            <ListContainer
-              // oxlint-disable-next-line react/react-compiler
-              ref={refs.setFloating}
-              {...getFloatingProps({ onKeyDown: handleListKeyDown })}
-            >
-              <ListItems
-                options={list}
-                selectedValue={value.value}
-                activeIndex={activeIndex}
-                listRef={listRef}
-                getItemProps={getItemProps}
-                onSelect={selectOption}
-              />
-            </ListContainer>
-          </FloatingFocusManager>
-        )}
-      </OuterContainer>
+      {open && (
+        <FloatingFocusManager context={context} modal={false} returnFocus>
+          <Menu
+            // oxlint-disable-next-line react/react-compiler
+            ref={refs.setFloating}
+            style={floatingStyles}
+            {...getFloatingProps({ onKeyDown: handleListKeyDown })}
+          >
+            <ListItems
+              options={list}
+              selectedValue={value.value}
+              activeIndex={activeIndex}
+              listRef={listRef}
+              getItemProps={getItemProps}
+              onSelect={selectOption}
+            />
+          </Menu>
+        </FloatingFocusManager>
+      )}
     </Container>
   )
 }
@@ -192,21 +236,10 @@ const Container = styled(Box)`
   border-radius: 8px;
 `
 
-interface IOpen {
-  open: boolean
-}
-
-const OuterContainer = styled.div<IOpen>(
-  ({ open }) => css`
-    position: absolute;
-    width: 100%;
-    border-radius: 12px;
-    margin-top: ${({ theme }) => theme.space[100]};
-    display: ${open ? 'block' : 'none'};
-    max-height: ${open ? '235px' : '48px'};
-    background-color: ${({ theme }) => theme.color.surface.base[300]};
-    overflow-y: ${open ? 'auto' : 'hidden'};
-    z-index: 4;
-    transition: all 0.2s ease-in-out;
-  `,
-)
+const Menu = styled(ListContainer)`
+  border-radius: 12px;
+  background-color: ${({ theme }) => theme.color.surface.base[300]};
+  overflow-y: auto;
+  /* Matches the SearchInput results and Tooltip */
+  z-index: 1000;
+`

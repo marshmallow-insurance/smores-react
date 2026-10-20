@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest'
-import { fireEvent, render, screen } from '../testUtils'
+import { fireEvent, render, screen, waitFor } from '../testUtils'
 import { noop } from '../utils/noop'
 import { SearchInput } from './SearchInput'
 import { Modal } from '../Modal'
@@ -318,7 +318,7 @@ describe('SearchInput', () => {
     expect(input.selectionEnd).toBe(3)
   })
 
-  it('centres the selected option in the list when it opens', () => {
+  it('centres the selected option in the list when it opens', async () => {
     const itemHeight = 50
     const listHeight = 200
     vi.spyOn(HTMLElement.prototype, 'offsetTop', 'get').mockImplementation(
@@ -341,8 +341,11 @@ describe('SearchInput', () => {
     fireEvent.click(screen.getByText('Option 20'))
     fireEvent.click(input)
 
-    expect(screen.getByRole('listbox').scrollTop).toBe(
-      20 * itemHeight - (listHeight - itemHeight) / 2,
+    // The list is centred once it has been positioned, so its height is final
+    await waitFor(() =>
+      expect(screen.getByRole('listbox').scrollTop).toBe(
+        20 * itemHeight - (listHeight - itemHeight) / 2,
+      ),
     )
   })
 
@@ -499,6 +502,20 @@ describe('SearchInput', () => {
       expect(handleClick).toHaveBeenCalledTimes(1)
     })
 
+    it('keeps Escape from closing a surrounding Modal when pressed on the results', () => {
+      const handleClick = vi.fn()
+      render(
+        <Modal showModal handleClick={handleClick} title="Pick a day">
+          <SearchInput label="Day" searchList={searchList} onFound={noop} />
+        </Modal>,
+      )
+      fireEvent.click(screen.getByRole('combobox'))
+
+      fireEvent.keyDown(screen.getByRole('listbox'), { key: 'Escape' })
+      expect(screen.queryByRole('listbox')).not.toBeInTheDocument()
+      expect(handleClick).not.toHaveBeenCalled()
+    })
+
     it('announces "No results" and survives arrow keys and Enter on an empty list', () => {
       const onFound = vi.fn()
       render(
@@ -558,5 +575,44 @@ describe('SearchInput', () => {
       fireEvent.change(input, { target: { value: 'Option' } })
       expect(screen.getByRole('status')).toBeEmptyDOMElement()
     })
+  })
+})
+
+describe('SearchInput results position', () => {
+  it('positions the results with position: fixed, so a scrolling parent does not clip them', () => {
+    render(<SearchInput label="Day" searchList={searchList} onFound={noop} />)
+    fireEvent.click(screen.getByRole('combobox'))
+
+    expect(screen.getByRole('listbox').parentElement).toHaveStyle({
+      position: 'fixed',
+    })
+  })
+
+  it('keeps the results in the DOM next to the input rather than in a portal', () => {
+    const { container } = render(
+      <SearchInput label="Day" searchList={searchList} onFound={noop} />,
+    )
+    fireEvent.click(screen.getByRole('combobox'))
+
+    expect(container).toContainElement(screen.getByRole('listbox'))
+  })
+
+  it('renders the results in the normal layout flow with resultsRelativePosition', () => {
+    const { container } = render(
+      <SearchInput
+        label="Day"
+        searchList={searchList}
+        onFound={noop}
+        resultsRelativePosition
+      />,
+    )
+    fireEvent.click(screen.getByRole('combobox'))
+
+    const listbox = screen.getByRole('listbox')
+    expect(container).toContainElement(listbox)
+    expect(listbox.parentElement).not.toHaveStyle({ position: 'fixed' })
+    expect(listbox.parentElement).not.toHaveAttribute('style')
+    expect(listbox.parentElement).not.toHaveStyleRule('position', 'absolute')
+    expect(listbox).toHaveStyleRule('margin-top', '14px')
   })
 })

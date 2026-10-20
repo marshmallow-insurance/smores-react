@@ -1,7 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
-import { expect, userEvent, within } from 'storybook/test'
+import { expect, fn, userEvent, waitFor, within } from 'storybook/test'
 import { Box } from '../../Box'
 import { Text } from '../../Text'
+import {
+  ScrollingModal,
+  scrollModalToBottom,
+} from '../../utils/storybookHelpers/ScrollingModal'
 import { SearchInput } from '../SearchInput'
 import { industries } from './industries'
 import { occupations } from './occupations'
@@ -45,6 +49,71 @@ export const ResultsOpen: Story = {
     await expect(canvas.getByRole('listbox')).toBeVisible()
     await expect(input).toHaveAttribute('aria-expanded', 'true')
     await expect(input).toHaveAttribute('aria-activedescendant')
+  },
+}
+
+/**
+ * The results are positioned with `position: fixed`, so a scrolling Modal does
+ * not clip them. Here the input is at the bottom of the modal, so they open
+ * above it.
+ */
+// The play function leaves the modal open, with the results closed and the
+// field empty, so it can be tried by hand afterwards. Unit tests cover a
+// second Escape closing the modal.
+export const InsideScrollingModal: Story = {
+  // Left off the docs page, where its open modal would cover the page
+  tags: ['!autodocs'],
+  args: { onFound: fn() },
+  render: (args) => (
+    <ScrollingModal>
+      <SearchInput {...args} />
+    </ScrollingModal>
+  ),
+  play: async ({ args }) => {
+    const body = within(document.body)
+    const input = await body.findByRole('combobox')
+    await scrollModalToBottom(input)
+    await userEvent.click(input)
+    const listbox = await body.findByRole('listbox')
+
+    // Wait for the results to be positioned above the input
+    await waitFor(() =>
+      expect(listbox.getBoundingClientRect().bottom).toBeLessThanOrEqual(
+        input.getBoundingClientRect().top,
+      ),
+    )
+    const rect = listbox.getBoundingClientRect()
+    await expect(rect.top).toBeGreaterThanOrEqual(0)
+    await expect(rect.width).toBe(input.getBoundingClientRect().width)
+
+    // Nothing clips the results, so the one at the centre is what is on top
+    const middle = document.elementFromPoint(
+      rect.left + rect.width / 2,
+      rect.top + rect.height / 2,
+    )
+    await expect(listbox).toContainElement(middle as HTMLElement)
+
+    // Narrowing the results keeps them above the input, next to it
+    await userEvent.type(input, 'Banana')
+    await expect(body.getAllByRole('option')).toHaveLength(1)
+    await waitFor(() => {
+      const narrowed = body.getByRole('listbox').getBoundingClientRect()
+      const inputTop = input.getBoundingClientRect().top
+      expect(narrowed.bottom).toBeLessThanOrEqual(inputTop)
+      expect(inputTop - narrowed.bottom).toBeLessThan(10)
+    })
+
+    // Escape closes the results without closing the modal
+    await userEvent.keyboard('{Escape}')
+    await expect(body.queryByRole('listbox')).not.toBeInTheDocument()
+    await expect(body.getByRole('dialog')).toBeInTheDocument()
+    await expect(args.onFound).not.toHaveBeenCalled()
+
+    // Leave the field empty for trying it by hand
+    await userEvent.clear(input)
+    await userEvent.keyboard('{Escape}')
+    await expect(body.queryByRole('listbox')).not.toBeInTheDocument()
+    await expect(body.getByRole('dialog')).toBeInTheDocument()
   },
 }
 

@@ -54,19 +54,6 @@ exports[`ActionDropdown > renders correctly with default props 1`] = `
   border-radius: 8px;
 }
 
-.c4 {
-  position: absolute;
-  width: 100%;
-  border-radius: 12px;
-  margin-top: 8px;
-  display: none;
-  max-height: 48px;
-  background-color: #f1e9dc;
-  overflow-y: hidden;
-  z-index: 4;
-  transition: all 0.2s ease-in-out;
-}
-
 <div>
   <div
     class="c0"
@@ -105,9 +92,6 @@ exports[`ActionDropdown > renders correctly with default props 1`] = `
         </svg>
       </span>
     </button>
-    <div
-      class="c4"
-    />
   </div>
 </div>
 `;
