@@ -195,6 +195,64 @@ describe('SearchInput', () => {
     expect(scrollIntoViewMock).toHaveBeenCalled()
   })
 
+  it('highlights a hovered option without scrolling the list', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    openResults(container)
+
+    const option = screen.getByRole('option', { name: 'Option 3' })
+    fireEvent.mouseMove(option)
+
+    expect(option).toHaveAttribute('aria-selected', 'true')
+    expect(scrollIntoViewMock).not.toHaveBeenCalled()
+  })
+
+  it('does not highlight an option that scrolls under a still cursor', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    openResults(container)
+
+    const option = screen.getByRole('option', { name: 'Option 3' })
+    fireEvent.mouseEnter(option)
+
+    expect(option).toHaveAttribute('aria-selected', 'false')
+  })
+
+  it('does not highlight a hovered option that is scrolled out of the list', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    openResults(container)
+
+    // Four 48px options fit; the list's bottom edge hit-tests to the fifth
+    const list = screen.getByRole('listbox')
+    vi.spyOn(list, 'clientHeight', 'get').mockReturnValue(192)
+    const hidden = screen.getByRole('option', { name: 'Option 4' })
+    vi.spyOn(hidden, 'offsetTop', 'get').mockReturnValue(192)
+    vi.spyOn(hidden, 'offsetHeight', 'get').mockReturnValue(48)
+
+    fireEvent.mouseMove(hidden)
+
+    expect(hidden).toHaveAttribute('aria-selected', 'false')
+  })
+
+  it('scrolls on arrow key navigation after a hover', () => {
+    const { container } = render(
+      <SearchInput searchList={searchList} onFound={noop} />,
+    )
+    const input = openResults(container)
+
+    fireEvent.mouseMove(screen.getByRole('option', { name: 'Option 3' }))
+    fireEvent.keyDown(input, { key: 'ArrowDown' })
+
+    const next = screen.getByRole('option', { name: 'Option 4' })
+    expect(next).toHaveAttribute('aria-selected', 'true')
+    expect(scrollIntoViewMock).toHaveBeenCalledTimes(1)
+    expect(scrollIntoViewMock.mock.contexts[0]).toBe(next)
+  })
+
   it('still closes the results list and selects the option when an item is clicked', () => {
     const onFound = vi.fn()
     const { container } = render(
