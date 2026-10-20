@@ -2,7 +2,6 @@ import {
   FocusEvent,
   FormEvent,
   ForwardedRef,
-  WheelEvent,
   forwardRef,
   useCallback,
   useLayoutEffect,
@@ -28,16 +27,15 @@ export interface Props extends CommonFieldProps {
   name?: string
   value: string
   decimalNumber?: boolean
-  formatThousands?: boolean
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
   min?: number
   max?: number
 }
 
-const DIGITS_DOT_OR_MINUS = /[\d.-]/
-
-const stripFormatting = (value: string) => {
-  const cleaned = value.replace(/(?!^)-|[^\d.-]/g, '')
+const stripFormatting = (value: string, allowNegative: boolean) => {
+  const cleaned = allowNegative
+    ? value.replace(/[^\d.-]/g, '').replace(/(?!^)-/g, '')
+    : value.replace(/[^\d.]/g, '')
   const [integer, ...fraction] = cleaned.split('.')
   return fraction.length ? `${integer}.${fraction.join('')}` : integer
 }
@@ -49,13 +47,11 @@ const addThousandsSeparators = (value: string) => {
   return fraction === undefined ? grouped : `${grouped}.${fraction}`
 }
 
-const countSignificant = (value: string) => value.replace(/[^\d.-]/g, '').length
-
 const caretAfterSignificant = (formatted: string, count: number) => {
   let seen = 0
   for (let i = 0; i < formatted.length; i++) {
     if (seen === count) return i
-    if (DIGITS_DOT_OR_MINUS.test(formatted[i])) seen++
+    if (formatted[i] !== ',') seen++
   }
   return formatted.length
 }
@@ -82,7 +78,6 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
     name,
     value,
     decimalNumber = true,
-    formatThousands = false,
     onChange,
     onInputChange,
     onBlur,
@@ -113,7 +108,11 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
     [ref],
   )
 
-  const displayValue = formatThousands ? addThousandsSeparators(value) : value
+  const allowNegative = min !== undefined && min < 0
+  // Some apps pass a number or an already-formatted string despite the type
+  const displayValue = addThousandsSeparators(
+    stripFormatting(String(value ?? ''), true),
+  )
 
   const applyPendingCaret = () => {
     const input = inputRef.current
@@ -130,12 +129,7 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
   const formatCurrency = (value: string) => {
     const decimalIndex = value.indexOf('.')
 
-    if (!decimalNumber) {
-      const numberValue = Number(value)
-      return Number.isNaN(numberValue)
-        ? value
-        : Math.trunc(numberValue).toString()
-    }
+    if (!decimalNumber) return value.split('.')[0]
 
     if (decimalIndex >= 0 && value.length > decimalIndex + 1) {
       const fractionalString = value.substring(decimalIndex + 1).substring(0, 2)
@@ -147,8 +141,8 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
 
   const applyMinMax = (value: string) => {
     const numberValue = Number(value)
-    if (min && numberValue < min) return min.toString()
-    if (max && numberValue > max) return max.toString()
+    if (min !== undefined && numberValue < min) return min.toString()
+    if (max !== undefined && numberValue > max) return max.toString()
     return value
   }
 
@@ -186,8 +180,8 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
           ref={setInputRef}
           $error={error}
           disabled={disabled}
-          type={formatThousands ? 'text' : 'number'}
-          inputMode={formatThousands ? 'decimal' : undefined}
+          type="text"
+          inputMode={decimalNumber ? 'decimal' : 'numeric'}
           id={id}
           name={name}
           placeholder={placeholder}
@@ -195,34 +189,26 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
           $frontIcon={true}
           $fallbackStyle={fallbackStyle}
           onChange={(e: FormEvent<HTMLInputElement>) => {
-            if (formatThousands) {
-              const { value: typed, selectionStart } = e.currentTarget
-              const raw = stripFormatting(typed)
-              const nextDisplay = addThousandsSeparators(
-                onChange ? normalise(raw) : raw,
-              )
-              const significantBeforeCaret = countSignificant(
-                typed.slice(0, selectionStart ?? typed.length),
-              )
-              pendingCaret.current = {
-                value: nextDisplay,
-                position: caretAfterSignificant(
-                  nextDisplay,
-                  significantBeforeCaret,
-                ),
-              }
-              queueMicrotask(applyPendingCaret)
-              if (onChange) handleChange(raw)
-            } else if (onChange) {
-              handleChange(e.currentTarget.value)
+            const { value: typed, selectionStart } = e.currentTarget
+            const raw = stripFormatting(typed, allowNegative)
+            const nextDisplay = addThousandsSeparators(
+              onChange ? normalise(raw) : raw,
+            )
+            const significantBeforeCaret = stripFormatting(
+              typed.slice(0, selectionStart ?? typed.length),
+              allowNegative,
+            ).length
+            pendingCaret.current = {
+              value: nextDisplay,
+              position: caretAfterSignificant(
+                nextDisplay,
+                significantBeforeCaret,
+              ),
             }
+            queueMicrotask(applyPendingCaret)
+            handleChange(raw)
             onInputChange?.(e)
           }}
-          onWheel={
-            formatThousands
-              ? undefined
-              : (e: WheelEvent<HTMLInputElement>) => e.currentTarget.blur()
-          }
           {...controlAria}
           onBlur={onBlur}
         />

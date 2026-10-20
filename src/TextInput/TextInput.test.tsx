@@ -197,4 +197,24 @@ describe('TextInput', () => {
 
     expect(screen.getByRole('textbox')).toHaveStyleRule('padding-right', '42px')
   })
+
+  it.each(['decimal', 'tel'] as const)(
+    'passes inputModeAttr="%s" to the input',
+    (inputMode) => {
+      render(
+        <TextInput
+          label="APR"
+          placeholder="12.9"
+          value=""
+          onChange={noop}
+          inputModeAttr={inputMode}
+        />,
+      )
+
+      expect(screen.getByLabelText('APR')).toHaveAttribute(
+        'inputmode',
+        inputMode,
+      )
+    },
+  )
 })
