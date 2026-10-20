@@ -1,3 +1,15 @@
+## [16.12.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.5...v16.12.0) (2026-10-20)
+
+### Features
+
+* **Textarea:** grow with content up to eight rows ([#5252](https://github.com/marshmallow-insurance/smores-react/issues/5252)) ([760ac41](https://github.com/marshmallow-insurance/smores-react/commit/760ac41e428650472b8d89a267d970dbb423f621))
+
+## [16.11.5](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.4...v16.11.5) (2026-10-20)
+
+### Bug Fixes
+
+* **SearchInput:** stop the results list scrolling on hover ([#5253](https://github.com/marshmallow-insurance/smores-react/issues/5253)) ([487b92e](https://github.com/marshmallow-insurance/smores-react/commit/487b92e2504939a06a77f4048b7a68894acb50ac))
+
 ## [16.11.4](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.3...v16.11.4) (2026-10-19)
 
 ### Bug Fixes

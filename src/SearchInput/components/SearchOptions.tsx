@@ -69,7 +69,30 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
     )
   }, [displayedList.length])
 
+  // Only keyboard highlights scroll the list. Scrolling to a hovered option
+  // moves the next one under the cursor, which then highlights and scrolls
+  // too, so the list runs away from the mouse.
+  const highlightedByMouse = useRef(false)
+  const highlightWithMouse = (index: number, option: HTMLLIElement) => {
+    if (index === highlightedIndex) return
+    // The list's edge hit-tests to the option just past it, which is hidden
+    const list = resultsListRef.current
+    if (
+      list?.clientHeight &&
+      (option.offsetTop >= list.scrollTop + list.clientHeight ||
+        option.offsetTop + option.offsetHeight <= list.scrollTop)
+    ) {
+      return
+    }
+    highlightedByMouse.current = true
+    setHighlightedIndex(index)
+  }
+
   useEffect(() => {
+    if (highlightedByMouse.current) {
+      highlightedByMouse.current = false
+      return
+    }
     const focusedListItem = itemRefs?.current[highlightedIndex]?.current
     if (highlightedIndex >= 0 && focusedListItem) {
       focusedListItem.scrollIntoView({
@@ -140,12 +163,11 @@ export const SearchOptions: FC<SearchOptionsProps> = ({
                   onClick={() => onSelect(el)}
                   $isSelected={isSelected}
                   $showBg={highlightedIndex === i}
-                  onMouseEnter={() => {
-                    setHighlightedIndex(i)
-                  }}
-                  onFocus={() => {
-                    setHighlightedIndex(i)
-                  }}
+                  // Mouse move, not enter, so an option scrolling under a
+                  // still cursor doesn't take the highlight
+                  onMouseMove={(event) =>
+                    highlightWithMouse(i, event.currentTarget)
+                  }
                 >
                   {el.label}
                   {isSelected && (
