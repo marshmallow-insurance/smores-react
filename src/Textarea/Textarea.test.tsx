@@ -172,15 +172,68 @@ describe('Textarea', () => {
       expect(textarea).toHaveStyle({ height: heightOf(4) })
     })
 
-    it('measures from the natural height rather than the previous one', () => {
-      let heightWhenMeasured: string | undefined
-      scrollHeightSpy.mockImplementation(() => {
-        heightWhenMeasured = screen.getByRole('textbox').style.height
-        return 104
-      })
-      renderTextarea()
+    describe('with a height set in CSS', () => {
+      let offsetHeight = 0
 
-      expect(heightWhenMeasured).toBe('auto')
+      beforeEach(() => {
+        Object.defineProperty(HTMLTextAreaElement.prototype, 'offsetHeight', {
+          configurable: true,
+          get: () => offsetHeight,
+        })
+      })
+
+      afterEach(() => {
+        offsetHeight = 0
+        delete (HTMLTextAreaElement.prototype as { offsetHeight?: number })
+          .offsetHeight
+      })
+
+      it('starts at that height rather than the rows height', () => {
+        offsetHeight = 144
+        // scrollHeight is never less than the visible height: 144 - 4 border
+        scrollHeight = 140
+        renderTextarea()
+
+        expect(screen.getByRole('textbox')).toHaveStyle({ height: '144px' })
+      })
+
+      it('still grows up to the max height', () => {
+        offsetHeight = 144
+        scrollHeight = 24 + 20 * 7
+        renderTextarea()
+        expect(screen.getByRole('textbox')).toHaveStyle({ height: heightOf(7) })
+      })
+
+      it('stops at the max height and scrolls', () => {
+        offsetHeight = 144
+        scrollHeight = 24 + 20 * 12
+        renderTextarea()
+        const textarea = screen.getByRole('textbox')
+
+        expect(textarea).toHaveStyle({ height: heightOf(8) })
+        expect(textarea.style.overflowY).toBe('auto')
+      })
+
+      it('keeps a CSS height taller than the max height', () => {
+        offsetHeight = 300
+        scrollHeight = 296
+        renderTextarea()
+        const textarea = screen.getByRole('textbox')
+
+        expect(textarea).toHaveStyle({ height: '300px' })
+        expect(textarea.style.overflowY).toBe('hidden')
+      })
+
+      it('measures with the inline height cleared', () => {
+        let heightWhenMeasured: string | undefined
+        scrollHeightSpy.mockImplementation(() => {
+          heightWhenMeasured = screen.getByRole('textbox').style.height
+          return 104
+        })
+        renderTextarea()
+
+        expect(heightWhenMeasured).toBe('')
+      })
     })
 
     it('keeps scrolling available when the box can be resized by the user', () => {

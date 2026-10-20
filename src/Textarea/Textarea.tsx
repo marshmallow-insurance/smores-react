@@ -33,11 +33,15 @@ type BaseProps = {
   disabled?: boolean
   maxLength?: number
   onBlur?: (e: FocusEvent<HTMLTextAreaElement>) => void
-  /** Number of lines the textarea shows before it has any content to grow with. Defaults to 4. */
+  /**
+   * Number of lines the textarea shows before it has any content to grow with. Defaults to 4.
+   * A `height` set in CSS on the textarea becomes the starting height instead.
+   */
   rows?: number
   /**
    * The most lines the textarea grows to as the content gets longer. Past this it scrolls.
-   * Defaults to 8. A value lower than `rows` is treated as `rows`.
+   * Defaults to 8. A value lower than `rows` is treated as `rows`. A taller
+   * `height` set in CSS on the textarea raises the cap to match it.
    */
   maxRows?: number
   fallbackStyle?: boolean
@@ -100,13 +104,21 @@ export const Textarea = forwardRef(function Textarea(
     const el = innerRef.current
     if (!el || userSizedRef.current) return
 
-    const minHeight = rows * LINE_HEIGHT + CHROME_HEIGHT
-    const maxHeight = Math.max(rows, maxRows) * LINE_HEIGHT + CHROME_HEIGHT
-
-    // Measure from the natural height, without a scrollbar taking up width.
+    // Measure from the height the stylesheet gives the textarea, which is a
+    // height set in CSS if there is one, otherwise the `rows` height. Hide the
+    // scrollbar so it doesn't take up width and change how the text wraps.
     el.style.overflowY = 'hidden'
-    el.style.height = 'auto'
-    // scrollHeight includes the padding but not the border.
+    el.style.height = ''
+    const minHeight = Math.max(
+      el.offsetHeight,
+      rows * LINE_HEIGHT + CHROME_HEIGHT,
+    )
+    const maxHeight = Math.max(
+      Math.max(rows, maxRows) * LINE_HEIGHT + CHROME_HEIGHT,
+      minHeight,
+    )
+    // scrollHeight is never less than the visible height, and includes the
+    // padding but not the border.
     const contentHeight = el.scrollHeight + 2 * BORDER
 
     el.style.height = `${Math.min(Math.max(contentHeight, minHeight), maxHeight)}px`
