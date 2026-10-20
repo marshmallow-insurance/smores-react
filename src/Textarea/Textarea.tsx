@@ -95,6 +95,8 @@ export const Textarea = forwardRef(function Textarea(
   // and the height is no longer fitted to the content.
   const userSizedRef = useRef(false)
   const pointerDownRef = useRef(false)
+  // The height we last wrote, to tell our own size changes from the user's
+  const lastFitHeightRef = useRef<number | null>(null)
   const { assistiveTextId, errorMsgId, controlAria } = getFieldAria(id, {
     ...fieldProps,
     error,
@@ -121,24 +123,25 @@ export const Textarea = forwardRef(function Textarea(
     // padding but not the border.
     const contentHeight = el.scrollHeight + 2 * BORDER
 
-    el.style.height = `${Math.min(Math.max(contentHeight, minHeight), maxHeight)}px`
+    const height = Math.min(Math.max(contentHeight, minHeight), maxHeight)
+    lastFitHeightRef.current = height
+    el.style.height = `${height}px`
     // A box the user has dragged smaller than its content still needs to scroll.
     el.style.overflowY =
       contentHeight > maxHeight || resize === 'both' ? 'auto' : 'hidden'
   }, [rows, maxRows, resize])
 
-  // Runs for typing and for the value being reset from outside.
-  useLayoutEffect(() => {
-    fitHeightToContent()
-  }, [fitHeightToContent, value])
-
   // Dragging the resize handle is only possible with resize="both". Track
   // whether a pointer is down so the observer below can tell a drag from the
-  // container changing width.
+  // container changing width. This is declared before the effect that fits the
+  // height, so that leaving "both" forgets the dragged size first and the fit
+  // that follows (its callback changes with `resize`) is not skipped.
   useLayoutEffect(() => {
     const el = innerRef.current
     if (!el || resize !== 'both') {
       userSizedRef.current = false
+      // Drop the width a drag left behind
+      if (el) el.style.width = ''
       return
     }
 
@@ -153,16 +156,22 @@ export const Textarea = forwardRef(function Textarea(
     document.addEventListener('pointerup', onUp)
     document.addEventListener('pointercancel', onUp)
     return () => {
+      pointerDownRef.current = false
       el.removeEventListener('pointerdown', onDown)
       document.removeEventListener('pointerup', onUp)
       document.removeEventListener('pointercancel', onUp)
     }
   }, [resize])
 
+  // Runs for typing and for the value being reset from outside.
+  useLayoutEffect(() => {
+    fitHeightToContent()
+  }, [fitHeightToContent, value])
+
   // A change in width rewraps the text, so the height is fitted again. Height
   // changes are ignored so that resizing the box ourselves doesn't loop. A size
-  // change while the pointer is down is the user dragging the resize handle, so
-  // fitting stops for good.
+  // we didn't write, while the pointer is down, is the user dragging the resize
+  // handle, so fitting stops for good.
   useLayoutEffect(() => {
     const el = innerRef.current
     if (!el || typeof ResizeObserver === 'undefined') return
@@ -170,7 +179,11 @@ export const Textarea = forwardRef(function Textarea(
     let width = el.offsetWidth
     let frame = 0
     const observer = new ResizeObserver(() => {
-      if (pointerDownRef.current) {
+      if (
+        pointerDownRef.current &&
+        (el.offsetHeight !== lastFitHeightRef.current ||
+          el.offsetWidth !== width)
+      ) {
         userSizedRef.current = true
         cancelAnimationFrame(frame)
         width = el.offsetWidth

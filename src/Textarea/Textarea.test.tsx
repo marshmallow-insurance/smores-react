@@ -310,10 +310,19 @@ describe('Textarea', () => {
           return 1
         })
         vi.stubGlobal('cancelAnimationFrame', vi.fn())
+        // With no layout in jsdom, the box is as tall as its inline height
+        Object.defineProperty(HTMLTextAreaElement.prototype, 'offsetHeight', {
+          configurable: true,
+          get(this: HTMLTextAreaElement) {
+            return parseInt(this.style.height, 10) || 0
+          },
+        })
       })
 
       afterEach(() => {
         vi.unstubAllGlobals()
+        delete (HTMLTextAreaElement.prototype as { offsetHeight?: number })
+          .offsetHeight
       })
 
       const Controlled = ({ resize }: { resize: 'none' | 'both' }) => {
@@ -349,6 +358,68 @@ describe('Textarea', () => {
         scrollHeight = 24 + 20 * 6
         fireEvent.change(textarea, { target: { value: 'a\nb\nc\nd\ne\nf' } })
         expect(textarea).toHaveStyle({ height: '253px' })
+      })
+
+      it('does not treat its own size changes as a drag', () => {
+        scrollHeight = 104
+        render(<Controlled resize="both" />)
+        const textarea = screen.getByRole('textbox')
+
+        // A press and hold while the value changes, so our own fit changes the height
+        fireEvent.pointerDown(textarea)
+        scrollHeight = 24 + 20 * 6
+        fireEvent.change(textarea, { target: { value: 'a\nb\nc\nd\ne\nf' } })
+        expect(textarea).toHaveStyle({ height: heightOf(6) })
+        observers[0].callback()
+        fireEvent.pointerUp(document)
+
+        scrollHeight = 24 + 20 * 7
+        fireEvent.change(textarea, {
+          target: { value: 'a\nb\nc\nd\ne\nf\ng' },
+        })
+        expect(textarea).toHaveStyle({ height: heightOf(7) })
+      })
+
+      it('treats a width change by the user as a drag', () => {
+        scrollHeight = 104
+        render(<Controlled resize="both" />)
+        const textarea = screen.getByRole('textbox')
+
+        // Only the width changes, as the height is what we last wrote
+        fireEvent.pointerDown(textarea)
+        Object.defineProperty(textarea, 'offsetWidth', {
+          configurable: true,
+          value: 700,
+        })
+        observers[0].callback()
+        fireEvent.pointerUp(document)
+
+        scrollHeight = 24 + 20 * 6
+        fireEvent.change(textarea, { target: { value: 'a\nb\nc\nd\ne\nf' } })
+        expect(textarea).toHaveStyle({ height: heightOf(4) })
+      })
+
+      it('fits again and clears the dragged width when resize is turned off', () => {
+        scrollHeight = 104
+        const { rerender } = render(
+          <Textarea label="Notes" value="" onChange={noop} resize="both" />,
+        )
+        const textarea = screen.getByRole('textbox')
+
+        fireEvent.pointerDown(textarea)
+        textarea.style.height = '253px'
+        textarea.style.width = '780px'
+        observers[0].callback()
+        fireEvent.pointerUp(document)
+        expect(textarea).toHaveStyle({ height: '253px', width: '780px' })
+
+        rerender(
+          <Textarea label="Notes" value="" onChange={noop} resize="none" />,
+        )
+
+        expect(textarea).toHaveStyle({ height: heightOf(4) })
+        expect(textarea.style.width).toBe('')
+        expect(textarea.style.overflowY).toBe('hidden')
       })
 
       it('still fits when the width changes with no pointer down', () => {
