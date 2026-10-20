@@ -237,6 +237,118 @@ describe('Textarea', () => {
       }
     })
 
+    describe('when the user drags the resize handle', () => {
+      const observers: { callback: () => void }[] = []
+
+      beforeEach(() => {
+        observers.length = 0
+        class MockResizeObserver {
+          callback: () => void
+          constructor(callback: () => void) {
+            this.callback = callback
+            observers.push(this)
+          }
+          observe = vi.fn()
+          disconnect = vi.fn()
+        }
+        vi.stubGlobal('ResizeObserver', MockResizeObserver)
+        vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => {
+          cb(0)
+          return 1
+        })
+        vi.stubGlobal('cancelAnimationFrame', vi.fn())
+      })
+
+      afterEach(() => {
+        vi.unstubAllGlobals()
+      })
+
+      const Controlled = ({ resize }: { resize: 'none' | 'both' }) => {
+        const [value, setValue] = useState('')
+        return (
+          <Textarea
+            label="Notes"
+            value={value}
+            onChange={setValue}
+            resize={resize}
+          />
+        )
+      }
+
+      it('keeps their size from then on', () => {
+        scrollHeight = 104
+        render(<Controlled resize="both" />)
+        const textarea = screen.getByRole('textbox')
+        expect(textarea).toHaveStyle({ height: heightOf(4) })
+
+        fireEvent.pointerDown(textarea)
+        // The browser writes the dragged size, then the observer fires
+        textarea.style.height = '253px'
+        Object.defineProperty(textarea, 'offsetWidth', {
+          configurable: true,
+          value: 780,
+        })
+        observers[0].callback()
+        fireEvent.pointerUp(document)
+
+        expect(textarea).toHaveStyle({ height: '253px' })
+
+        scrollHeight = 24 + 20 * 6
+        fireEvent.change(textarea, { target: { value: 'a\nb\nc\nd\ne\nf' } })
+        expect(textarea).toHaveStyle({ height: '253px' })
+      })
+
+      it('still fits when the width changes with no pointer down', () => {
+        scrollHeight = 104
+        render(<Controlled resize="both" />)
+        const textarea = screen.getByRole('textbox')
+
+        fireEvent.pointerDown(textarea)
+        fireEvent.pointerUp(document)
+        scrollHeight = 24 + 20 * 6
+        Object.defineProperty(textarea, 'offsetWidth', {
+          configurable: true,
+          value: 200,
+        })
+        observers[0].callback()
+
+        expect(textarea).toHaveStyle({ height: heightOf(6) })
+      })
+
+      it('releases the pointer outside the textarea', () => {
+        scrollHeight = 104
+        render(<Controlled resize="both" />)
+        const textarea = screen.getByRole('textbox')
+
+        fireEvent.pointerDown(textarea)
+        fireEvent.pointerCancel(document)
+        scrollHeight = 24 + 20 * 6
+        Object.defineProperty(textarea, 'offsetWidth', {
+          configurable: true,
+          value: 200,
+        })
+        observers[0].callback()
+
+        expect(textarea).toHaveStyle({ height: heightOf(6) })
+      })
+
+      it('does not track the pointer without resize="both"', () => {
+        scrollHeight = 104
+        render(<Controlled resize="none" />)
+        const textarea = screen.getByRole('textbox')
+
+        fireEvent.pointerDown(textarea)
+        scrollHeight = 24 + 20 * 6
+        Object.defineProperty(textarea, 'offsetWidth', {
+          configurable: true,
+          value: 200,
+        })
+        observers[0].callback()
+
+        expect(textarea).toHaveStyle({ height: heightOf(6) })
+      })
+    })
+
     it('still gives a forwarded ref the textarea element', () => {
       const ref = createRef<HTMLTextAreaElement>()
       scrollHeight = 104
