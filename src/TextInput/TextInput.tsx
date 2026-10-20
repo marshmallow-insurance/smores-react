@@ -34,7 +34,7 @@ interface Props extends CommonFieldProps {
   onAutoFill?: () => void
 }
 
-type InputMode = 'text' | 'email' | 'numeric'
+type InputMode = 'text' | 'email' | 'numeric' | 'decimal' | 'tel'
 
 /** on change or on input required */
 type InputProps = (

@@ -187,13 +187,13 @@ export const FallbackError: Story = {
   },
 }
 
-export const FormatThousands: Story = {
+export const WholeNumbers: Story = {
   args: {
-    id: 'formatted_amount',
-    label: 'Amount',
-    name: 'formattedAmount',
-    placeholder: '1,000',
-    formatThousands: true,
+    id: 'whole_amount',
+    label: 'Gross annual income',
+    name: 'wholeAmount',
+    placeholder: '35,000',
+    decimalNumber: false,
   },
   render: InteractiveTemplate,
 }
