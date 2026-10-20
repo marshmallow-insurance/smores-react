@@ -262,6 +262,30 @@ describe('CurrencyInput', () => {
     expect(screen.getByRole('textbox')).toHaveValue('1,500')
   })
 
+  it('hides a minus in value unless min is negative', () => {
+    const { rerender } = render(
+      <CurrencyInput
+        label="Amount"
+        placeholder="0"
+        value="-5"
+        min={0}
+        onChange={() => {}}
+      />,
+    )
+    expect(screen.getByRole('textbox')).toHaveValue('5')
+
+    rerender(
+      <CurrencyInput
+        label="Amount"
+        placeholder="0"
+        value="-5"
+        min={-10}
+        onChange={() => {}}
+      />,
+    )
+    expect(screen.getByRole('textbox')).toHaveValue('-5')
+  })
+
   it('does not double up separators in an already-formatted value', () => {
     render(
       <CurrencyInput

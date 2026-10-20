@@ -111,7 +111,7 @@ export const CurrencyInput = forwardRef(function CurrencyInput(
   const allowNegative = min !== undefined && min < 0
   // Some apps pass a number or an already-formatted string despite the type
   const displayValue = addThousandsSeparators(
-    stripFormatting(String(value ?? ''), true),
+    stripFormatting(String(value ?? ''), allowNegative),
   )
 
   const applyPendingCaret = () => {
