@@ -1,3 +1,9 @@
+## [16.13.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.12.0...v16.13.0) (2026-10-20)
+
+### Features
+
+* **CurrencyInput:** always format thousands and show the number pad on mobile ([#5254](https://github.com/marshmallow-insurance/smores-react/issues/5254)) ([2ca676b](https://github.com/marshmallow-insurance/smores-react/commit/2ca676b0d292d0d458109c5e89a560a591afbf90))
+
 ## [16.12.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.11.5...v16.12.0) (2026-10-20)
 
 ### Features
