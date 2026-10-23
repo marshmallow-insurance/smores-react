@@ -112,5 +112,13 @@
   "author": "Todor Tsankov",
   "license": "MIT",
   "homepage": "https://github.com/marshmallow-insurance/smores-react#readme",
-  "snyk": true
+  "snyk": true,
+  "allowScripts": {
+    "esbuild@0.25.12": true,
+    "esbuild@0.27.7": true,
+    "@swc/core@1.13.5": true,
+    "fsevents@2.3.3": true,
+    "fsevents@2.3.2": true,
+    "unrs-resolver@1.11.1": true
+  }
 }
