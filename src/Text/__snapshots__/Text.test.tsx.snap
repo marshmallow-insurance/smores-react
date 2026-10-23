@@ -6,13 +6,13 @@ exports[`Text component > renders color.feedback.negative.200 / strawberry corre
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #d03c30;
 }
 
 <div>
   <p
     class="c0"
-    cursor="inherit"
     title=""
   >
     The quick brown fox jumps over the lazy dog
@@ -26,13 +26,13 @@ exports[`Text component > renders color.feedback.negative.200 / strawberry corre
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #d03c30;
 }
 
 <div>
   <p
     class="c0"
-    cursor="inherit"
     title=""
   >
     The quick brown fox jumps over the lazy dog
@@ -46,13 +46,13 @@ exports[`Text component > renders color.feedback.positive.200 / apple correctly 
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #317a4c;
 }
 
 <div>
   <p
     class="c0"
-    cursor="inherit"
     title=""
   >
     The quick brown fox jumps over the lazy dog
@@ -66,13 +66,13 @@ exports[`Text component > renders color.feedback.positive.200 / apple correctly 
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #317a4c;
 }
 
 <div>
   <p
     class="c0"
-    cursor="inherit"
     title=""
   >
     The quick brown fox jumps over the lazy dog
@@ -86,13 +86,13 @@ exports[`Text component > renders correctly with default props 1`] = `
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
 <div>
   <p
     class="c0"
-    cursor="inherit"
     title=""
   >
     The quick brown fox jumps over the lazy dog

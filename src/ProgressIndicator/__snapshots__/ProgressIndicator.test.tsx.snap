@@ -28,6 +28,7 @@ exports[`ProgressIndicator > snapshot > renders correctly with default props 1`]
   font-weight: 400;
   line-height: 16px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -153,7 +154,6 @@ exports[`ProgressIndicator > snapshot > renders correctly with default props 1`]
           />
           <p
             class="c10 c11"
-            cursor="inherit"
             title=""
           >
             Step 1
@@ -172,7 +172,6 @@ exports[`ProgressIndicator > snapshot > renders correctly with default props 1`]
           />
           <p
             class="c10 c11"
-            cursor="inherit"
             title=""
           >
             Step 2
@@ -191,7 +190,6 @@ exports[`ProgressIndicator > snapshot > renders correctly with default props 1`]
           />
           <p
             class="c10 c11"
-            cursor="inherit"
             title=""
           >
             Step 3
