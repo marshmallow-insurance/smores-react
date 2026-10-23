@@ -1,14 +1,56 @@
 import { darken } from 'polished'
-import { FC, MouseEventHandler, ReactNode } from 'react'
+import {
+  Children,
+  FC,
+  isValidElement,
+  KeyboardEventHandler,
+  MouseEvent,
+  MouseEventHandler,
+  ReactNode,
+} from 'react'
 import styled, { css, useTheme } from 'styled-components'
 import { TransientProps } from '../utils/utilTypes'
 import { Box } from '../Box'
 import { Icon, Icons } from '../Icon'
 
 import { Text } from '../Text'
+import { Button } from '../Button'
+import { Link } from '../Link'
+import { IconStrict } from '../IconStrict'
 import { focusOutlineStyle } from '../utils/focusOutline'
 import { MarginProps } from '../utils/space'
 import { IconContainer } from '../sharedStyles/shared.styles'
+
+const INTERACTIVE_HTML_TAGS = new Set([
+  'a',
+  'button',
+  'input',
+  'select',
+  'textarea',
+])
+// IconStrict only renders as a <button> at runtime, based on whether it's
+// given a handleClick prop, so the static tree-walk below can't see that
+// case the way it sees Button/Link. Treat any IconStrict as interactive,
+// even when it renders as a non-interactive div, rather than miss the
+// button case and let Card's own role="button" swallow a real nested button.
+const INTERACTIVE_COMPONENTS = new Set<unknown>([Button, Link, IconStrict])
+
+// Card can't know what a consumer puts in `children`, so it walks the tree
+// looking for known interactive elements (native tags or this library's own
+// Button/Link). role="button" on the card would make these presentational
+// to assistive tech, so their presence disables the card's own button role.
+const hasInteractiveContent = (node: ReactNode): boolean =>
+  Children.toArray(node).some((child) => {
+    if (!isValidElement<{ children?: ReactNode }>(child)) return false
+    if (
+      (typeof child.type === 'string' &&
+        INTERACTIVE_HTML_TAGS.has(child.type)) ||
+      INTERACTIVE_COMPONENTS.has(child.type)
+    ) {
+      return true
+    }
+    return hasInteractiveContent(child.props.children)
+  })
 
 export type CardProps = {
   children?: ReactNode
@@ -29,6 +71,15 @@ export type CardProps = {
   marginY?: string
   narrow?: boolean
   wide?: boolean
+  /**
+   * Opt out of the card's own button role/keyboard handling even though
+   * `hasInteractiveContent` can't see a reason to. Some components (e.g.
+   * `IconStrict`) only render a nested `<button>` conditionally, at render
+   * time, so static tree-walking can't detect them. Set this when children
+   * contains interactive content the walk misses, to stop role="button"
+   * from making that content presentational to assistive tech.
+   */
+  suppressCardRole?: boolean
 } & MarginProps
 
 export const Card: FC<CardProps> = ({
@@ -50,6 +101,7 @@ export const Card: FC<CardProps> = ({
   marginY = '',
   narrow = false,
   wide = false,
+  suppressCardRole = false,
   ...otherProps
 }) => {
   const theme = useTheme()
@@ -57,6 +109,29 @@ export const Card: FC<CardProps> = ({
     (!!iconComponent || !!leadingIcon || !!title || !!body) && children
 
   const isNotClickable = !cardOnClickAction
+  // buttonAction/rightAction/children can hold their own interactive element
+  // (Button, Link). role="button" would hide that element from assistive
+  // tech, so the whole-card keyboard/button semantics are only safe to add
+  // when there's nothing else to click. suppressCardRole is the escape
+  // hatch for interactive content the walk can't see (see CardProps).
+  const hasOwnInteractiveSlot =
+    !!buttonAction ||
+    !!rightAction ||
+    hasInteractiveContent(children) ||
+    suppressCardRole
+  const isKeyboardOperable = !isNotClickable && !hasOwnInteractiveSlot
+
+  const handleKeyDown: KeyboardEventHandler<HTMLDivElement> = (event) => {
+    if (!cardOnClickAction) return
+    // Ignore keydowns that bubbled up from a nested interactive child
+    if (event.target !== event.currentTarget) return
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      // cardOnClickAction is typed for mouse clicks, but must also fire from the keyboard
+      cardOnClickAction(event as unknown as MouseEvent<HTMLDivElement>)
+    }
+  }
 
   const iconToRender = iconComponent ? (
     <IconContainer
@@ -87,7 +162,9 @@ export const Card: FC<CardProps> = ({
       $fallbackStyle={fallbackStyle}
       $isNotClickable={isNotClickable}
       onClick={cardOnClickAction}
-      tabIndex={isNotClickable ? undefined : 0}
+      onKeyDown={isKeyboardOperable ? handleKeyDown : undefined}
+      role={isKeyboardOperable ? 'button' : undefined}
+      tabIndex={isKeyboardOperable ? 0 : undefined}
       {...otherProps}
     >
       {tag && visual && <TagWrapper>{tag}</TagWrapper>}
