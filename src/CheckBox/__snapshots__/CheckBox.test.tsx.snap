@@ -6,6 +6,7 @@ exports[`CheckBox > renders correctly when checked 1`] = `
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -107,7 +108,6 @@ exports[`CheckBox > renders correctly when checked 1`] = `
   >
     <span
       class="c1"
-      cursor="inherit"
       title=""
     >
       Accept Terms
@@ -129,6 +129,7 @@ exports[`CheckBox > renders correctly when unchecked 1`] = `
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -230,7 +231,6 @@ exports[`CheckBox > renders correctly when unchecked 1`] = `
   >
     <span
       class="c1"
-      cursor="inherit"
       title=""
     >
       Accept Terms
@@ -251,6 +251,7 @@ exports[`CheckBox > renders correctly with an error state 1`] = `
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #d03c30;
 }
 
@@ -358,7 +359,6 @@ exports[`CheckBox > renders correctly with an error state 1`] = `
   >
     <span
       class="c1"
-      cursor="inherit"
       title=""
     >
       Accept Terms
