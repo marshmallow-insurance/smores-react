@@ -208,6 +208,7 @@ import Upload from './iconFiles/Upload'
 import UploadDocuments from './iconFiles/UploadDocuments'
 import UploadEmail from './iconFiles/UploadEmail'
 import Vandalism from './iconFiles/Vandalism'
+import Verified from './iconFiles/Verified'
 import Village from './iconFiles/Village'
 import Visa from './iconFiles/Visa'
 import Warning from './iconFiles/Warning'
@@ -437,6 +438,7 @@ export const iconList = {
   twitter: Twitter,
   upload: Upload,
   vandalism: Vandalism,
+  verified: Verified,
   village: Village,
   visa: Visa,
   warning: Warning,
