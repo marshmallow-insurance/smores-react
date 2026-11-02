@@ -1,3 +1,9 @@
+## [16.14.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.13.1...v16.14.0) (2026-11-02)
+
+### Features
+
+* **Icon:** add verified icon ([#5270](https://github.com/marshmallow-insurance/smores-react/issues/5270)) ([434322b](https://github.com/marshmallow-insurance/smores-react/commit/434322b90a8137c9d58e826ace465eb06a342550))
+
 ## [16.13.1](https://github.com/marshmallow-insurance/smores-react/compare/v16.13.0...v16.13.1) (2026-10-23)
 
 ## [16.13.0](https://github.com/marshmallow-insurance/smores-react/compare/v16.12.0...v16.13.0) (2026-10-20)
