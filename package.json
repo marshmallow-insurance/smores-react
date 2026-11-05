@@ -91,7 +91,7 @@
     "oxlint": "^1.78.0",
     "oxlint-tsgolint": "^7.0.2005",
     "playwright": "^1.62.1",
-    "prettier": "^3.9.6",
+    "prettier": "^3.9.10",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "rimraf": "^6.1.3",
