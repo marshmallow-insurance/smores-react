@@ -257,15 +257,6 @@ exports[`Card > renders correctly with action button 1`] = `
   color: #292924;
 }
 
-.c0 {
-  background: #f1e9dc;
-  box-sizing: border-box;
-  border-radius: 16px;
-  padding: 16px;
-  position: relative;
-  overflow: hidden;
-}
-
 .c7 {
   position: relative;
   background-color: #ff88c8;
@@ -305,6 +296,15 @@ exports[`Card > renders correctly with action button 1`] = `
 
 .c9 {
   padding: 16px 0;
+}
+
+.c0 {
+  background: #f1e9dc;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (min-width: 0px) {
