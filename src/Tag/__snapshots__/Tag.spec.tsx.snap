@@ -7,6 +7,7 @@ exports[`Tag Component > renders snapshot test correctly 1`] = `
   font-weight: 500;
   text-transform: uppercase;
   text-align: left;
+  cursor: inherit;
   color: #9d927b;
 }
 
@@ -46,7 +47,6 @@ exports[`Tag Component > renders snapshot test correctly 1`] = `
   >
     <span
       class="c2 c3"
-      cursor="inherit"
       title=""
     >
       Snapshot Test Tag

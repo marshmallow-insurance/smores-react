@@ -14,6 +14,7 @@ exports[`BannerItem > render Critical banner correctly 1`] = `
   font-weight: 500;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #ffffff;
 }
 
@@ -55,7 +56,6 @@ exports[`BannerItem > render Critical banner correctly 1`] = `
     >
       <p
         class="c3"
-        cursor="inherit"
         title=""
       >
         This is a banner
@@ -82,6 +82,7 @@ exports[`BannerItem > render General banner correctly 1`] = `
   font-weight: 500;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #ffffff;
 }
 
@@ -123,7 +124,6 @@ exports[`BannerItem > render General banner correctly 1`] = `
     >
       <p
         class="c3"
-        cursor="inherit"
         title=""
       >
         This is a banner
@@ -150,6 +150,7 @@ exports[`BannerItem > render Success banner correctly 1`] = `
   font-weight: 500;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #ffffff;
 }
 
@@ -191,7 +192,6 @@ exports[`BannerItem > render Success banner correctly 1`] = `
     >
       <p
         class="c3"
-        cursor="inherit"
         title=""
       >
         This is a banner
@@ -218,6 +218,7 @@ exports[`BannerItem > render Upsell banner correctly 1`] = `
   font-weight: 500;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -259,7 +260,6 @@ exports[`BannerItem > render Upsell banner correctly 1`] = `
     >
       <p
         class="c3"
-        cursor="inherit"
         title=""
       >
         This is a banner

@@ -31,6 +31,7 @@ exports[`Modal > renders correctly with default props 1`] = `
   font-weight: 500;
   line-height: 28px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -161,7 +162,6 @@ exports[`Modal > renders correctly with default props 1`] = `
           >
             <h2
               class="c8"
-              cursor="inherit"
               id="_r_0_"
               title=""
             >
