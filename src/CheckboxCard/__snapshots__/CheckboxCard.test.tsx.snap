@@ -1,0 +1,966 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CheckboxCard > renders a checkbox named by its label 1`] = `
+.c3 {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: 0;
+}
+
+.c4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #292924;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+.c4 svg {
+  display: none;
+  height: 16px;
+  overflow: visible;
+}
+
+.c2:checked+.c4 {
+  border-color: #292924;
+  background-color: #292924;
+}
+
+.c2:checked+.c4 svg {
+  display: block;
+}
+
+.c2:focus-visible+.c4 {
+  outline: 2px solid #0e0e0c;
+  outline-offset: 2px;
+}
+
+.c0 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background-color: #f1e9dc;
+  color: #292924;
+  cursor: pointer;
+}
+
+.c1 {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.c5 {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.c2:checked~.c5 {
+  border-color: #292924;
+}
+
+.c6 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 4px 0;
+  overflow-wrap: break-word;
+}
+
+.c7 {
+  margin: -2px 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+@media (hover: hover) {
+  label:hover .c4 {
+    background-color: #f8f2ea;
+  }
+
+  label:hover .c2:checked+.c4 {
+    border-color: #0e0e0c;
+    background-color: #0e0e0c;
+  }
+}
+
+<div>
+  <div
+    class=""
+  >
+    <label
+      class="c0"
+    >
+      <span
+        class="c1"
+      >
+        <input
+          aria-labelledby="MM_SMORES_0-label"
+          class="c2 c3"
+          id="MM_SMORES_0"
+          type="checkbox"
+        />
+        <span
+          aria-hidden="true"
+          class="c4"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check"
+            data-icon="check"
+            data-prefix="fas"
+            role="img"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        <span
+          aria-hidden="true"
+          class="c5"
+        />
+        <span
+          class="c6"
+        >
+          <span
+            class="c7"
+            id="MM_SMORES_0-label"
+          >
+            Bereavement
+          </span>
+        </span>
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`CheckboxCard > shows the invalid state and its message 1`] = `
+.c3 {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: 0;
+}
+
+.c4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #d03c30;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+.c4 svg {
+  display: none;
+  height: 16px;
+  overflow: visible;
+}
+
+.c2:checked+.c4 {
+  border-color: #d03c30;
+  background-color: #d03c30;
+}
+
+.c2:checked+.c4 svg {
+  display: block;
+}
+
+.c2:focus-visible+.c4 {
+  outline: 2px solid #0e0e0c;
+  outline-offset: 2px;
+}
+
+.c9 {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #d03c30;
+}
+
+.c10 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.c10 svg {
+  width: 100%;
+  height: 80%;
+  overflow: visible;
+}
+
+.c0 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background-color: #f5cfcc;
+  color: #292924;
+  cursor: pointer;
+}
+
+.c1 {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.c5 {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.c2:checked~.c5 {
+  border-color: #292924;
+}
+
+.c5,
+.c2:checked~.c5 {
+  border-color: #d03c30;
+}
+
+.c6 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 4px 0;
+  overflow-wrap: break-word;
+}
+
+.c7 {
+  margin: -2px 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+@media (min-width: 0px) {
+  .c8 {
+    margin-top: 8px;
+  }
+}
+
+@media (hover: hover) {
+  label:hover .c4 {
+    background-color: #f5cfcc;
+  }
+
+  label:hover .c2:checked+.c4 {
+    border-color: #a32f26;
+    background-color: #a32f26;
+  }
+}
+
+<div>
+  <div
+    class=""
+  >
+    <label
+      class="c0"
+    >
+      <span
+        class="c1"
+      >
+        <input
+          aria-describedby="MM_SMORES_14-error"
+          aria-invalid="true"
+          aria-labelledby="MM_SMORES_14-label"
+          class="c2 c3"
+          id="MM_SMORES_14"
+          type="checkbox"
+        />
+        <span
+          aria-hidden="true"
+          class="c4"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-check"
+            data-icon="check"
+            data-prefix="fas"
+            role="img"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        <span
+          aria-hidden="true"
+          class="c5"
+        />
+        <span
+          class="c6"
+        >
+          <span
+            class="c7"
+            id="MM_SMORES_14-label"
+          >
+            I agree
+          </span>
+        </span>
+      </span>
+    </label>
+    <div
+      class="c8"
+    >
+      <div
+        class="c9"
+        id="MM_SMORES_14-error"
+      >
+        <span
+          aria-hidden="true"
+          class="c10"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-circle-exclamation"
+            data-icon="circle-exclamation"
+            data-prefix="fas"
+            role="img"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M256 512a256 256 0 1 1 0-512 256 256 0 1 1 0 512zm0-192a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm0-192c-18.2 0-32.7 15.5-31.4 33.7l7.4 104c.9 12.6 11.4 22.3 23.9 22.3 12.6 0 23-9.7 23.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        <span>
+          Confirm that you agree
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CheckboxCardGroup > marks every card invalid and shows one message 1`] = `
+.c6 {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: 0;
+}
+
+.c7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #d03c30;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+.c7 svg {
+  display: none;
+  height: 16px;
+  overflow: visible;
+}
+
+.c5:checked+.c7 {
+  border-color: #d03c30;
+  background-color: #d03c30;
+}
+
+.c5:checked+.c7 svg {
+  display: block;
+}
+
+.c5:focus-visible+.c7 {
+  outline: 2px solid #0e0e0c;
+  outline-offset: 2px;
+}
+
+.c12 {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #d03c30;
+}
+
+.c13 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.c13 svg {
+  width: 100%;
+  height: 80%;
+  overflow: visible;
+}
+
+.c3 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background-color: #f1e9dc;
+  color: #292924;
+  cursor: pointer;
+}
+
+.c4 {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.c8 {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.c5:checked~.c8 {
+  border-color: #292924;
+}
+
+.c8,
+.c5:checked~.c8 {
+  border-color: #d03c30;
+}
+
+.c9 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 4px 0;
+  overflow-wrap: break-word;
+}
+
+.c10 {
+  margin: -2px 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.c11 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.c0 {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.c1 {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #292924;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (hover: hover) {
+  label:hover .c7 {
+    background-color: #f5cfcc;
+  }
+
+  label:hover .c5:checked+.c7 {
+    border-color: #a32f26;
+    background-color: #a32f26;
+  }
+}
+
+<div>
+  <fieldset
+    class="c0"
+  >
+    <legend
+      class="c1"
+    >
+      What applies to you?
+    </legend>
+    <div
+      class="c2"
+    >
+      <div
+        class=""
+      >
+        <label
+          class="c3"
+        >
+          <span
+            class="c4"
+          >
+            <input
+              aria-describedby="MM_SMORES_24-error"
+              aria-invalid="true"
+              aria-labelledby="MM_SMORES_25-label"
+              class="c5 c6"
+              id="MM_SMORES_25"
+              type="checkbox"
+            />
+            <span
+              aria-hidden="true"
+              class="c7"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-check"
+                data-icon="check"
+                data-prefix="fas"
+                role="img"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              aria-hidden="true"
+              class="c8"
+            />
+            <span
+              class="c9"
+            >
+              <span
+                class="c10"
+                id="MM_SMORES_25-label"
+              >
+                Bereavement
+              </span>
+            </span>
+          </span>
+        </label>
+      </div>
+      <div
+        class=""
+      >
+        <label
+          class="c3"
+        >
+          <span
+            class="c4"
+          >
+            <input
+              aria-describedby="MM_SMORES_26-description MM_SMORES_24-error"
+              aria-invalid="true"
+              aria-labelledby="MM_SMORES_26-label"
+              class="c5 c6"
+              id="MM_SMORES_26"
+              type="checkbox"
+            />
+            <span
+              aria-hidden="true"
+              class="c7"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-check"
+                data-icon="check"
+                data-prefix="fas"
+                role="img"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              aria-hidden="true"
+              class="c8"
+            />
+            <span
+              class="c9"
+            >
+              <span
+                class="c10"
+                id="MM_SMORES_26-label"
+              >
+                Illness
+              </span>
+              <span
+                class="c11"
+                id="MM_SMORES_26-description"
+              >
+                Physical or mental
+              </span>
+            </span>
+          </span>
+        </label>
+      </div>
+      <div
+        class="c12"
+        id="MM_SMORES_24-error"
+      >
+        <span
+          aria-hidden="true"
+          class="c13"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-circle-exclamation"
+            data-icon="circle-exclamation"
+            data-prefix="fas"
+            role="img"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M256 512a256 256 0 1 1 0-512 256 256 0 1 1 0 512zm0-192a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm0-192c-18.2 0-32.7 15.5-31.4 33.7l7.4 104c.9 12.6 11.4 22.3 23.9 22.3 12.6 0 23-9.7 23.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        <span>
+          Choose at least one option
+        </span>
+      </div>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`CheckboxCardGroup > renders the cards in a group named by its label 1`] = `
+.c7 {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: 0;
+}
+
+.c8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #292924;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+.c8 svg {
+  display: none;
+  height: 16px;
+  overflow: visible;
+}
+
+.c6:checked+.c8 {
+  border-color: #292924;
+  background-color: #292924;
+}
+
+.c6:checked+.c8 svg {
+  display: block;
+}
+
+.c6:focus-visible+.c8 {
+  outline: 2px solid #0e0e0c;
+  outline-offset: 2px;
+}
+
+.c4 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background-color: #f1e9dc;
+  color: #292924;
+  cursor: pointer;
+}
+
+.c5 {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.c9 {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.c6:checked~.c9 {
+  border-color: #292924;
+}
+
+.c10 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 4px 0;
+  overflow-wrap: break-word;
+}
+
+.c11 {
+  margin: -2px 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.c0 {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.c1 {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #292924;
+}
+
+.c2 {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.33;
+  color: #292924;
+}
+
+.c3 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (hover: hover) {
+  label:hover .c8 {
+    background-color: #f8f2ea;
+  }
+
+  label:hover .c6:checked+.c8 {
+    border-color: #0e0e0c;
+    background-color: #0e0e0c;
+  }
+}
+
+<div>
+  <fieldset
+    aria-describedby="MM_SMORES_19-assistive-text"
+    class="c0"
+  >
+    <legend
+      class="c1"
+    >
+      What applies to you?
+    </legend>
+    <div
+      class="c2"
+      id="MM_SMORES_19-assistive-text"
+    >
+      Select all that apply
+    </div>
+    <div
+      class="c3"
+    >
+      <div
+        class=""
+      >
+        <label
+          class="c4"
+        >
+          <span
+            class="c5"
+          >
+            <input
+              aria-labelledby="MM_SMORES_20-label"
+              class="c6 c7"
+              id="MM_SMORES_20"
+              type="checkbox"
+            />
+            <span
+              aria-hidden="true"
+              class="c8"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-check"
+                data-icon="check"
+                data-prefix="fas"
+                role="img"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              aria-hidden="true"
+              class="c9"
+            />
+            <span
+              class="c10"
+            >
+              <span
+                class="c11"
+                id="MM_SMORES_20-label"
+              >
+                Bereavement
+              </span>
+            </span>
+          </span>
+        </label>
+      </div>
+      <div
+        class=""
+      >
+        <label
+          class="c4"
+        >
+          <span
+            class="c5"
+          >
+            <input
+              aria-labelledby="MM_SMORES_21-label"
+              class="c6 c7"
+              id="MM_SMORES_21"
+              type="checkbox"
+            />
+            <span
+              aria-hidden="true"
+              class="c8"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-check"
+                data-icon="check"
+                data-prefix="fas"
+                role="img"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              aria-hidden="true"
+              class="c9"
+            />
+            <span
+              class="c10"
+            >
+              <span
+                class="c11"
+                id="MM_SMORES_21-label"
+              >
+                Illness
+              </span>
+            </span>
+          </span>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+`;

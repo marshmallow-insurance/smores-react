@@ -136,6 +136,8 @@ yalc remove --all
 * [Card](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Card)
 * [CheckBox](https://github.com/marshmallow-insurance/smores-react/tree/master/src/CheckBox)
 * [CheckBoxGroup](https://github.com/marshmallow-insurance/smores-react/tree/master/src/CheckBoxGroup)
+* [CheckboxCard](https://github.com/marshmallow-insurance/smores-react/tree/master/src/CheckboxCard)
+* [CheckboxCardGroup](https://github.com/marshmallow-insurance/smores-react/tree/master/src/CheckboxCard)
 * [Chip](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Chip)
 * [Datepicker](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Datepicker)
 * [Divider](https://github.com/marshmallow-insurance/smores-react/tree/master/src/Divider)
