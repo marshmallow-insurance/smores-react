@@ -88,9 +88,10 @@ exports[`CheckboxCard > renders a checkbox named by its label 1`] = `
 }
 
 .c7 {
+  margin: -2px 0;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.25;
 }
 
 @media (hover: hover) {
@@ -276,9 +277,10 @@ exports[`CheckboxCard > shows the invalid state and its message 1`] = `
 }
 
 .c7 {
+  margin: -2px 0;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.25;
 }
 
 @media (min-width: 0px) {
@@ -309,11 +311,11 @@ exports[`CheckboxCard > shows the invalid state and its message 1`] = `
         class="c1"
       >
         <input
-          aria-describedby="MM_SMORES_13-error"
+          aria-describedby="MM_SMORES_14-error"
           aria-invalid="true"
-          aria-labelledby="MM_SMORES_13-label"
+          aria-labelledby="MM_SMORES_14-label"
           class="c2 c3"
-          id="MM_SMORES_13"
+          id="MM_SMORES_14"
           type="checkbox"
         />
         <span
@@ -343,7 +345,7 @@ exports[`CheckboxCard > shows the invalid state and its message 1`] = `
         >
           <span
             class="c7"
-            id="MM_SMORES_13-label"
+            id="MM_SMORES_14-label"
           >
             I agree
           </span>
@@ -355,7 +357,7 @@ exports[`CheckboxCard > shows the invalid state and its message 1`] = `
     >
       <div
         class="c9"
-        id="MM_SMORES_13-error"
+        id="MM_SMORES_14-error"
       >
         <span
           aria-hidden="true"
@@ -502,9 +504,10 @@ exports[`CheckboxCardGroup > marks every card invalid and shows one message 1`] 
 }
 
 .c10 {
+  margin: -2px 0;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.25;
 }
 
 .c11 {
@@ -515,6 +518,7 @@ exports[`CheckboxCardGroup > marks every card invalid and shows one message 1`] 
 
 .c0 {
   min-width: 0;
+  margin: 0;
   padding: 0;
   border: 0;
 }
@@ -569,59 +573,7 @@ exports[`CheckboxCardGroup > marks every card invalid and shows one message 1`] 
             class="c4"
           >
             <input
-              aria-describedby="MM_SMORES_23-error"
-              aria-invalid="true"
-              aria-labelledby="MM_SMORES_24-label"
-              class="c5 c6"
-              id="MM_SMORES_24"
-              type="checkbox"
-            />
-            <span
-              aria-hidden="true"
-              class="c7"
-            >
-              <svg
-                aria-hidden="true"
-                class="svg-inline--fa fa-check"
-                data-icon="check"
-                data-prefix="fas"
-                role="img"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-            <span
-              aria-hidden="true"
-              class="c8"
-            />
-            <span
-              class="c9"
-            >
-              <span
-                class="c10"
-                id="MM_SMORES_24-label"
-              >
-                Bereavement
-              </span>
-            </span>
-          </span>
-        </label>
-      </div>
-      <div
-        class=""
-      >
-        <label
-          class="c3"
-        >
-          <span
-            class="c4"
-          >
-            <input
-              aria-describedby="MM_SMORES_25-description MM_SMORES_23-error"
+              aria-describedby="MM_SMORES_24-error"
               aria-invalid="true"
               aria-labelledby="MM_SMORES_25-label"
               class="c5 c6"
@@ -657,11 +609,63 @@ exports[`CheckboxCardGroup > marks every card invalid and shows one message 1`] 
                 class="c10"
                 id="MM_SMORES_25-label"
               >
+                Bereavement
+              </span>
+            </span>
+          </span>
+        </label>
+      </div>
+      <div
+        class=""
+      >
+        <label
+          class="c3"
+        >
+          <span
+            class="c4"
+          >
+            <input
+              aria-describedby="MM_SMORES_26-description MM_SMORES_24-error"
+              aria-invalid="true"
+              aria-labelledby="MM_SMORES_26-label"
+              class="c5 c6"
+              id="MM_SMORES_26"
+              type="checkbox"
+            />
+            <span
+              aria-hidden="true"
+              class="c7"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-check"
+                data-icon="check"
+                data-prefix="fas"
+                role="img"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              aria-hidden="true"
+              class="c8"
+            />
+            <span
+              class="c9"
+            >
+              <span
+                class="c10"
+                id="MM_SMORES_26-label"
+              >
                 Illness
               </span>
               <span
                 class="c11"
-                id="MM_SMORES_25-description"
+                id="MM_SMORES_26-description"
               >
                 Physical or mental
               </span>
@@ -671,7 +675,7 @@ exports[`CheckboxCardGroup > marks every card invalid and shows one message 1`] 
       </div>
       <div
         class="c12"
-        id="MM_SMORES_23-error"
+        id="MM_SMORES_24-error"
       >
         <span
           aria-hidden="true"
@@ -788,13 +792,15 @@ exports[`CheckboxCardGroup > renders the cards in a group named by its label 1`]
 }
 
 .c11 {
+  margin: -2px 0;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.25;
 }
 
 .c0 {
   min-width: 0;
+  margin: 0;
   padding: 0;
   border: 0;
 }
@@ -837,7 +843,7 @@ exports[`CheckboxCardGroup > renders the cards in a group named by its label 1`]
 
 <div>
   <fieldset
-    aria-describedby="MM_SMORES_18-assistive-text"
+    aria-describedby="MM_SMORES_19-assistive-text"
     class="c0"
   >
     <legend
@@ -847,63 +853,13 @@ exports[`CheckboxCardGroup > renders the cards in a group named by its label 1`]
     </legend>
     <div
       class="c2"
-      id="MM_SMORES_18-assistive-text"
+      id="MM_SMORES_19-assistive-text"
     >
       Select all that apply
     </div>
     <div
       class="c3"
     >
-      <div
-        class=""
-      >
-        <label
-          class="c4"
-        >
-          <span
-            class="c5"
-          >
-            <input
-              aria-labelledby="MM_SMORES_19-label"
-              class="c6 c7"
-              id="MM_SMORES_19"
-              type="checkbox"
-            />
-            <span
-              aria-hidden="true"
-              class="c8"
-            >
-              <svg
-                aria-hidden="true"
-                class="svg-inline--fa fa-check"
-                data-icon="check"
-                data-prefix="fas"
-                role="img"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-            <span
-              aria-hidden="true"
-              class="c9"
-            />
-            <span
-              class="c10"
-            >
-              <span
-                class="c11"
-                id="MM_SMORES_19-label"
-              >
-                Bereavement
-              </span>
-            </span>
-          </span>
-        </label>
-      </div>
       <div
         class=""
       >
@@ -947,6 +903,56 @@ exports[`CheckboxCardGroup > renders the cards in a group named by its label 1`]
               <span
                 class="c11"
                 id="MM_SMORES_20-label"
+              >
+                Bereavement
+              </span>
+            </span>
+          </span>
+        </label>
+      </div>
+      <div
+        class=""
+      >
+        <label
+          class="c4"
+        >
+          <span
+            class="c5"
+          >
+            <input
+              aria-labelledby="MM_SMORES_21-label"
+              class="c6 c7"
+              id="MM_SMORES_21"
+              type="checkbox"
+            />
+            <span
+              aria-hidden="true"
+              class="c8"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-check"
+                data-icon="check"
+                data-prefix="fas"
+                role="img"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              aria-hidden="true"
+              class="c9"
+            />
+            <span
+              class="c10"
+            >
+              <span
+                class="c11"
+                id="MM_SMORES_21-label"
               >
                 Illness
               </span>

@@ -76,7 +76,7 @@ describe('CheckboxCard', () => {
   it('renders the slot content above the checkbox and label', () => {
     render(
       <CheckboxCard label="Illness">
-        <p>Extra content</p>
+        <span>Extra content</span>
       </CheckboxCard>,
     )
 
@@ -114,6 +114,17 @@ describe('CheckboxCard', () => {
     const checkbox = screen.getByRole('checkbox', { name: 'Accept' })
     expect(checkbox).not.toHaveAttribute('aria-labelledby')
     expect(checkbox.parentElement?.children).toHaveLength(3)
+  })
+
+  it('renders no slot when every child renders nothing', () => {
+    render(
+      <CheckboxCard label="Illness">
+        {false}
+        {null}
+      </CheckboxCard>,
+    )
+
+    expect(getCard('Illness').children).toHaveLength(1)
   })
 
   it('renders a 0 label', () => {
@@ -244,17 +255,30 @@ describe('CheckboxCardGroup', () => {
     expect(container).toMatchSnapshot()
   })
 
-  it('lets a card opt out of the group error', () => {
+  it('keeps a card invalid when its own error is false', () => {
     render(
       <CheckboxCardGroup error errorMsg="Choose at least one option">
-        <CheckboxCard label="Bereavement" />
         <CheckboxCard label="Illness" error={false} />
       </CheckboxCardGroup>,
     )
 
-    const optedOut = screen.getByRole('checkbox', { name: 'Illness' })
-    expect(optedOut).toBeValid()
-    expect(optedOut).not.toHaveAttribute('aria-describedby')
+    const checkbox = screen.getByRole('checkbox', { name: 'Illness' })
+    expect(checkbox).toBeInvalid()
+    expect(checkbox).toHaveAccessibleDescription('Choose at least one option')
+  })
+
+  it('removes the fieldset margin and applies margin props', () => {
+    render(
+      <CheckboxCardGroup label="Circumstances" mt="space.200">
+        <CheckboxCard label="Illness" />
+      </CheckboxCardGroup>,
+    )
+
+    const group = screen.getByRole('group', { name: 'Circumstances' })
+    expect(group).toHaveStyleRule('margin', '0')
+    expect(group).toHaveStyleRule('margin-top', '16px', {
+      media: '(min-width: 0px)',
+    })
   })
 
   it('shows no message when the group is not invalid', () => {

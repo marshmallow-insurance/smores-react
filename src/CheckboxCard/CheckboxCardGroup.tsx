@@ -1,9 +1,8 @@
 import { FC, ReactElement, ReactNode, useMemo } from 'react'
 import styled, { css } from 'styled-components'
 
-import { Box } from '../Box'
 import { useUniqueId } from '../utils/id'
-import { MarginProps } from '../utils/space'
+import { MarginProps, TransientMarginProps, margin } from '../utils/space'
 import { ErrorMessage } from './components/ErrorMessage'
 import { CheckboxCardGroupContext } from './context'
 
@@ -17,8 +16,6 @@ export type CheckboxCardGroupProps = {
   renderAsTitle?: boolean
   /** Description under the form title. Not shown with a small group label */
   assistiveText?: string | ReactElement
-  /** Adds an asterisk to a small group label */
-  required?: boolean
   /** Show every card in the group as invalid */
   error?: boolean
   /** Message shown under the cards when the group is invalid */
@@ -30,10 +27,16 @@ export const CheckboxCardGroup: FC<CheckboxCardGroupProps> = ({
   label,
   renderAsTitle = true,
   assistiveText,
-  required = false,
   error = false,
   errorMsg,
-  ...rootProps
+  className,
+  m,
+  mx,
+  my,
+  ml,
+  mr,
+  mt,
+  mb,
 }) => {
   const id = useUniqueId()
   const assistiveTextId = `${id}-assistive-text`
@@ -49,19 +52,22 @@ export const CheckboxCardGroup: FC<CheckboxCardGroupProps> = ({
 
   return (
     <Group
-      forwardedAs="fieldset"
+      className={className}
       aria-describedby={showAssistiveText ? assistiveTextId : undefined}
-      {...rootProps}
+      $m={m}
+      $mx={mx}
+      $my={my}
+      $ml={ml}
+      $mr={mr}
+      $mt={mt}
+      $mb={mb}
     >
       {/* The legend names the group only as the first child of the fieldset */}
       {label &&
         (renderAsTitle ? (
           <Title $hasAssistiveText={showAssistiveText}>{label}</Title>
         ) : (
-          <GroupLabel>
-            {label}
-            {required && <Asterisk aria-hidden="true">*</Asterisk>}
-          </GroupLabel>
+          <GroupLabel>{label}</GroupLabel>
         ))}
       {showAssistiveText && (
         <AssistiveText id={assistiveTextId}>{assistiveText}</AssistiveText>
@@ -79,10 +85,13 @@ export const CheckboxCardGroup: FC<CheckboxCardGroupProps> = ({
 }
 
 // The library ships no CSS reset, so remove the browser's fieldset styles
-const Group = styled(Box)`
+const Group = styled.fieldset<TransientMarginProps>`
   min-width: 0;
+  margin: 0;
   padding: 0;
   border: 0;
+
+  ${margin}
 `
 
 const legendReset = css`
@@ -111,12 +120,6 @@ const GroupLabel = styled.legend(
     line-height: ${theme.font.label[100].lineHeight};
     text-transform: uppercase;
     color: ${theme.color.text.base};
-  `,
-)
-
-const Asterisk = styled.span(
-  ({ theme }) => css`
-    color: ${theme.color.feedback.negative[200]};
   `,
 )
 

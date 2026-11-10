@@ -78,7 +78,7 @@ export const WithDescription: Story = {
 export const WithSlot: Story = {
   args: {
     children: (
-      <Text typo="body-small" color="color.text.subtle">
+      <Text tag="span" typo="body-small" color="color.text.subtle">
         Extra content, shown above the checkbox and label.
       </Text>
     ),

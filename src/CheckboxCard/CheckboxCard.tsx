@@ -1,4 +1,10 @@
-import { InputHTMLAttributes, ReactNode, forwardRef, useContext } from 'react'
+import {
+  Children,
+  InputHTMLAttributes,
+  ReactNode,
+  forwardRef,
+  useContext,
+} from 'react'
 import styled, { DefaultTheme, css } from 'styled-components'
 
 import { Box } from '../Box'
@@ -28,7 +34,7 @@ export type CheckboxCardProps = {
   children?: ReactNode
   /** `notice` is the high-emphasis style for agreements and confirmations */
   variant?: CheckboxCardVariant
-  /** Show the invalid state. Inside a `CheckboxCardGroup`, defaults to the group's `error` */
+  /** Show the invalid state. A card in an invalid `CheckboxCardGroup` is always invalid */
   error?: boolean
   /** Message shown under the card when it is invalid */
   errorMsg?: string
@@ -40,9 +46,10 @@ export type CheckboxCardProps = {
     'type' | 'children' | 'className' | 'style' | 'disabled'
   >
 
-// `false`, `null`, `undefined` and `''` render nothing, so they get no wrapper
+// Booleans, `null`, `undefined` and `''` render nothing, alone or in a list,
+// so they get no wrapper
 const hasContent = (node: ReactNode) =>
-  node !== null && node !== undefined && node !== false && node !== ''
+  Children.toArray(node).some((child) => child !== '')
 
 export const CheckboxCard = forwardRef<HTMLInputElement, CheckboxCardProps>(
   function CheckboxCard(
@@ -52,7 +59,7 @@ export const CheckboxCard = forwardRef<HTMLInputElement, CheckboxCardProps>(
       description,
       children,
       variant = 'default',
-      error,
+      error = false,
       errorMsg,
       valid = false,
       id: idProp,
@@ -74,7 +81,7 @@ export const CheckboxCard = forwardRef<HTMLInputElement, CheckboxCardProps>(
     const descriptionId = `${id}-description`
     const errorMsgId = `${id}-error`
 
-    const isInvalid = error ?? group.error ?? false
+    const isInvalid = error || Boolean(group.error)
     const state: CheckboxState = isInvalid
       ? 'invalid'
       : valid
@@ -168,8 +175,9 @@ const Card = styled.label<CardStyleProps>(
   `,
 )
 
-const Slot = styled.div`
-  width: 100%;
+// A span, because a label can only hold phrasing content
+const Slot = styled.span`
+  display: block;
 `
 
 const Row = styled.span(
@@ -230,9 +238,12 @@ const TextColumn = styled.span(
 
 const Label = styled.span(
   ({ theme }) => css`
+    // The label token's line height is 1, which makes wrapped lines touch.
+    // A 20px line with -2px margins keeps a one-line label the same size.
+    margin: -2px 0;
     font-size: ${theme.font.label[200].fontSize};
     font-weight: ${theme.font.label[200].fontWeight};
-    line-height: ${theme.font.label[200].lineHeight};
+    line-height: 1.25;
   `,
 )
 
