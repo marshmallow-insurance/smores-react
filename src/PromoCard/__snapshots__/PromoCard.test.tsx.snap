@@ -10,6 +10,7 @@ exports[`PromoCard > applies a custom backgroundColor (matcha) 1`] = `
   font-weight: 500;
   line-height: 28px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -18,6 +19,7 @@ exports[`PromoCard > applies a custom backgroundColor (matcha) 1`] = `
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -64,14 +66,12 @@ exports[`PromoCard > applies a custom backgroundColor (matcha) 1`] = `
       >
         <p
           class="c3"
-          cursor="inherit"
           title=""
         >
           Insure your home
         </p>
         <p
           class="c4"
-          cursor="inherit"
           title=""
         >
           Add home cover and save £75.
@@ -188,6 +188,7 @@ exports[`PromoCard > renders correctly with explicit variant overrides on both b
   font-weight: 500;
   line-height: 28px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -196,6 +197,7 @@ exports[`PromoCard > renders correctly with explicit variant overrides on both b
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -254,14 +256,12 @@ exports[`PromoCard > renders correctly with explicit variant overrides on both b
       >
         <p
           class="c3"
-          cursor="inherit"
           title=""
         >
           Insure your home
         </p>
         <p
           class="c4"
-          cursor="inherit"
           title=""
         >
           Add home cover and save £75.
@@ -364,6 +364,7 @@ exports[`PromoCard > renders correctly with imagePosition right 1`] = `
   font-weight: 500;
   line-height: 28px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -372,6 +373,7 @@ exports[`PromoCard > renders correctly with imagePosition right 1`] = `
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -446,14 +448,12 @@ exports[`PromoCard > renders correctly with imagePosition right 1`] = `
       >
         <p
           class="c4"
-          cursor="inherit"
           title=""
         >
           Insure your home
         </p>
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           Add home cover and save £75.
@@ -551,6 +551,7 @@ exports[`PromoCard > renders correctly with tertiary variant on secondaryButton 
   font-weight: 500;
   line-height: 28px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -559,6 +560,7 @@ exports[`PromoCard > renders correctly with tertiary variant on secondaryButton 
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -617,14 +619,12 @@ exports[`PromoCard > renders correctly with tertiary variant on secondaryButton 
       >
         <p
           class="c3"
-          cursor="inherit"
           title=""
         >
           Insure your home
         </p>
         <p
           class="c4"
-          cursor="inherit"
           title=""
         >
           Add home cover and save £75.
@@ -662,6 +662,7 @@ exports[`PromoCard > renders title and body correctly 1`] = `
   font-weight: 500;
   line-height: 28px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -670,6 +671,7 @@ exports[`PromoCard > renders title and body correctly 1`] = `
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -716,14 +718,12 @@ exports[`PromoCard > renders title and body correctly 1`] = `
       >
         <p
           class="c3"
-          cursor="inherit"
           title=""
         >
           Insure your home
         </p>
         <p
           class="c4"
-          cursor="inherit"
           title=""
         >
           Add home cover and save £75.
@@ -744,6 +744,7 @@ exports[`PromoCard > renders without body when body is omitted 1`] = `
   font-weight: 500;
   line-height: 28px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -790,7 +791,6 @@ exports[`PromoCard > renders without body when body is omitted 1`] = `
       >
         <p
           class="c3"
-          cursor="inherit"
           title=""
         >
           Insure your home

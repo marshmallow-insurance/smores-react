@@ -27,6 +27,7 @@ exports[`Datepicker > renders correctly with default props 1`] = `
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -236,7 +237,6 @@ exports[`Datepicker > renders correctly with default props 1`] = `
       </button>
       <h4
         class="c5 c6"
-        cursor="inherit"
         title=""
       >
         July

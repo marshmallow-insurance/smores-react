@@ -72,7 +72,7 @@ export const Text: FC<TextProps> = forwardRef<HTMLElement, TextProps>(
         $typo={typo}
         $align={align}
         $color={resolvedColor}
-        cursor={cursor}
+        $cursor={cursor}
         title={title}
         {...props}
         ref={ref}

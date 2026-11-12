@@ -23,6 +23,7 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
   font-weight: 500;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -31,6 +32,7 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -143,7 +145,6 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
       >
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           1
@@ -154,7 +155,6 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
       >
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           2
@@ -165,7 +165,6 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
       >
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           3
@@ -176,7 +175,6 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
       >
         <p
           class="c7"
-          cursor="inherit"
           title=""
         >
           4
@@ -187,7 +185,6 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
       >
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           5
@@ -198,7 +195,6 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
       >
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           ...
@@ -209,7 +205,6 @@ exports[`Pagination > renders correctly with current page prop 1`] = `
       >
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           12
@@ -265,6 +260,7 @@ exports[`Pagination > renders correctly with default props 1`] = `
   font-weight: 500;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -273,6 +269,7 @@ exports[`Pagination > renders correctly with default props 1`] = `
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -363,7 +360,6 @@ exports[`Pagination > renders correctly with default props 1`] = `
       >
         <p
           class="c3"
-          cursor="inherit"
           title=""
         >
           1
@@ -374,7 +370,6 @@ exports[`Pagination > renders correctly with default props 1`] = `
       >
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           2
@@ -385,7 +380,6 @@ exports[`Pagination > renders correctly with default props 1`] = `
       >
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           3
@@ -396,7 +390,6 @@ exports[`Pagination > renders correctly with default props 1`] = `
       >
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           4
@@ -407,7 +400,6 @@ exports[`Pagination > renders correctly with default props 1`] = `
       >
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           5
@@ -418,7 +410,6 @@ exports[`Pagination > renders correctly with default props 1`] = `
       >
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           ...
@@ -429,7 +420,6 @@ exports[`Pagination > renders correctly with default props 1`] = `
       >
         <p
           class="c5"
-          cursor="inherit"
           title=""
         >
           12

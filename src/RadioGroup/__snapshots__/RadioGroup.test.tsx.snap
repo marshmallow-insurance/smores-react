@@ -10,6 +10,7 @@ exports[`RadioGroup > renders React elements in bodyCopy 1`] = `
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -18,6 +19,7 @@ exports[`RadioGroup > renders React elements in bodyCopy 1`] = `
   font-weight: 400;
   line-height: 20px;
   text-align: left;
+  cursor: inherit;
   color: #636768;
 }
 
@@ -189,14 +191,12 @@ exports[`RadioGroup > renders React elements in bodyCopy 1`] = `
                 >
                   <p
                     class="c10"
-                    cursor="inherit"
                     title=""
                   >
                     £189.38 today
                   </p>
                   <p
                     class="c11"
-                    cursor="inherit"
                     title=""
                   >
                     Your remaining 3 monthly payments stay at £39.43
@@ -240,14 +240,12 @@ exports[`RadioGroup > renders React elements in bodyCopy 1`] = `
                 >
                   <p
                     class="c10"
-                    cursor="inherit"
                     title=""
                   >
                     £12.50 today
                   </p>
                   <p
                     class="c11"
-                    cursor="inherit"
                     title=""
                   >
                     Your remaining 3 monthly payments will increase to £94.22
@@ -291,6 +289,7 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
   font-weight: 400;
   line-height: 16px;
   text-align: left;
+  cursor: inherit;
   color: #d03c30;
 }
 
@@ -568,7 +567,6 @@ exports[`RadioGroup > renders correctly as a horizontal-card with an error messa
       </span>
       <span
         class="c13"
-        cursor="inherit"
         title=""
       >
         This is an error message.
@@ -588,6 +586,7 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
   font-weight: 400;
   line-height: 16px;
   text-align: left;
+  cursor: inherit;
   color: #292924;
 }
 
@@ -744,7 +743,6 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
               >
                 <p
                   class="c9"
-                  cursor="inherit"
                   title=""
                 >
                   This is the body copy for option 1.
@@ -784,7 +782,6 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
               >
                 <p
                   class="c9"
-                  cursor="inherit"
                   title=""
                 >
                   This is the body copy for option 2.
@@ -824,7 +821,6 @@ exports[`RadioGroup > renders correctly as a vertical-card with body copy 1`] = 
               >
                 <p
                   class="c9"
-                  cursor="inherit"
                   title=""
                 >
                   This is the body copy for option 3.
